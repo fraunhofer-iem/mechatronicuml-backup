@@ -25,6 +25,7 @@ import org.storydriven.core.CorePackage;
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface HwresourcePackage extends EPackage {
@@ -3721,13 +3722,22 @@ public interface HwresourcePackage extends EPackage {
 	int HW_PORT__PARENT_RESOURCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Parent Resource Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT__PARENT_RESOURCE_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>HW Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int HW_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3954,6 +3964,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_RESOURCE__PARENT_RESOURCE = HW_PORT__PARENT_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Parent Resource Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_RESOURCE__PARENT_RESOURCE_INSTANCE = HW_PORT__PARENT_RESOURCE_INSTANCE;
 
 	/**
 	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
@@ -5579,6 +5598,17 @@ public interface HwresourcePackage extends EPackage {
 	EReference getHWPort_ParentResource();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParentResourceInstance <em>Parent Resource Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent Resource Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParentResourceInstance()
+	 * @see #getHWPort()
+	 * @generated
+	 */
+	EReference getHWPort_ParentResourceInstance();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus <em>Bus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6188,6 +6218,14 @@ public interface HwresourcePackage extends EPackage {
 		 * @generated
 		 */
 		EReference HW_PORT__PARENT_RESOURCE = eINSTANCE.getHWPort_ParentResource();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Resource Instance</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HW_PORT__PARENT_RESOURCE_INSTANCE = eINSTANCE.getHWPort_ParentResourceInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.BusImpl <em>Bus</em>}' class.

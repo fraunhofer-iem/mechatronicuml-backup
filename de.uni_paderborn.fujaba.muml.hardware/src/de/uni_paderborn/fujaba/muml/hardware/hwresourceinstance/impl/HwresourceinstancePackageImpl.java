@@ -269,6 +269,15 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getResourceInstance_Hwports() {
+		return (EReference)resourceInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComputingResourceInstance() {
 		return computingResourceInstanceEClass;
 	}
@@ -501,6 +510,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		// Create classes and their features
 		resourceInstanceEClass = createEClass(RESOURCE_INSTANCE);
 		createEReference(resourceInstanceEClass, RESOURCE_INSTANCE__RESOURCE_TYPE);
+		createEReference(resourceInstanceEClass, RESOURCE_INSTANCE__HWPORTS);
 
 		computingResourceInstanceEClass = createEClass(COMPUTING_RESOURCE_INSTANCE);
 		createEReference(computingResourceInstanceEClass, COMPUTING_RESOURCE_INSTANCE__FREQUENCY);
@@ -573,7 +583,6 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 
 		// Add supertypes to classes
 		resourceInstanceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		resourceInstanceEClass.getESuperTypes().add(theHwresourcePackage.getResource());
 		computingResourceInstanceEClass.getESuperTypes().add(this.getAtomicResourceInstance());
 		memoryResourceInstanceEClass.getESuperTypes().add(this.getAtomicResourceInstance());
 		deviceInstanceEClass.getESuperTypes().add(this.getResourceInstance());
@@ -591,6 +600,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		// Initialize classes, features, and operations; add parameters
 		initEClass(resourceInstanceEClass, ResourceInstance.class, "ResourceInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceInstance_ResourceType(), theHwresourcePackage.getResource(), null, "resourceType", null, 1, 1, ResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResourceInstance_Hwports(), theHwresourcePackage.getHWPort(), theHwresourcePackage.getHWPort_ParentResourceInstance(), "hwports", null, 0, -1, ResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(computingResourceInstanceEClass, ComputingResourceInstance.class, "ComputingResourceInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComputingResourceInstance_Frequency(), theHwvaluetypePackage.getFrequency(), null, "frequency", null, 1, 1, ComputingResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -653,7 +663,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });						
+		   });							
 		addAnnotation
 		  (memoryResourceInstanceEClass, 
 		   source, 
@@ -699,7 +709,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";									
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";										
 		addAnnotation
 		  (memoryResourceInstanceEClass, 
 		   source, 

@@ -2,19 +2,17 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresource.impl;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
-
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -35,14 +33,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class CommunicationResourceImpl extends HWPortImpl implements CommunicationResource {
 	/**
-	 * The default value of the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPortKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final HWPortKind PORT_KIND_EDEFAULT = HWPortKind.BUS;
+	protected EStructuralFeature.Internal.SettingDelegate PORT_KIND__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwresourcePackage.Literals.COMMUNICATION_RESOURCE__PORT_KIND).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' reference.
@@ -65,22 +63,24 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 	protected Cardinality cardinality;
 
 	/**
-	 * The default value of the '{@link #isMultiHWPort() <em>Multi HW Port</em>}' attribute.
+	 * The cached setting delegate for the '{@link #isMultiHWPort() <em>Multi HW Port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isMultiHWPort()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean MULTI_HW_PORT_EDEFAULT = false;
+	protected EStructuralFeature.Internal.SettingDelegate MULTI_HW_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwresourcePackage.Literals.COMMUNICATION_RESOURCE__MULTI_HW_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommunicationResourceImpl() {
 		super();
+		DerivedAttributeAdapter adapter = new DerivedAttributeAdapter(this, HwresourcePackage.Literals.COMMUNICATION_RESOURCE__PORT_KIND);
+		adapter.addLocalDependency(HwresourcePackage.Literals.COMMUNICATION_RESOURCE__PROTOCOL);
 	}
 
 	/**
@@ -99,9 +99,7 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 	 * @generated
 	 */
 	public HWPortKind getPortKind() {
-		// TODO: implement this method to return the 'Port Kind' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (HWPortKind)PORT_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -110,9 +108,7 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 	 * @generated
 	 */
 	public void setPortKind(HWPortKind newPortKind) {
-		// TODO: implement this method to set the 'Port Kind' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		PORT_KIND__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPortKind);
 	}
 
 	/**
@@ -202,9 +198,7 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 	 * @generated
 	 */
 	public boolean isMultiHWPort() {
-		// TODO: implement this method to return the 'Multi HW Port' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Boolean)MULTI_HW_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -213,9 +207,7 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 	 * @generated
 	 */
 	public void setMultiHWPort(boolean newMultiHWPort) {
-		// TODO: implement this method to set the 'Multi HW Port' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		MULTI_HW_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newMultiHWPort);
 	}
 
 	/**
@@ -286,7 +278,7 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case HwresourcePackage.COMMUNICATION_RESOURCE__PORT_KIND:
-				setPortKind(PORT_KIND_EDEFAULT);
+				PORT_KIND__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 			case HwresourcePackage.COMMUNICATION_RESOURCE__PROTOCOL:
 				setProtocol((CommunicationProtocol)null);
@@ -295,7 +287,7 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 				setCardinality((Cardinality)null);
 				return;
 			case HwresourcePackage.COMMUNICATION_RESOURCE__MULTI_HW_PORT:
-				setMultiHWPort(MULTI_HW_PORT_EDEFAULT);
+				MULTI_HW_PORT__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,13 +302,13 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case HwresourcePackage.COMMUNICATION_RESOURCE__PORT_KIND:
-				return getPortKind() != PORT_KIND_EDEFAULT;
+				return PORT_KIND__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwresourcePackage.COMMUNICATION_RESOURCE__PROTOCOL:
 				return protocol != null;
 			case HwresourcePackage.COMMUNICATION_RESOURCE__CARDINALITY:
 				return cardinality != null;
 			case HwresourcePackage.COMMUNICATION_RESOURCE__MULTI_HW_PORT:
-				return isMultiHWPort() != MULTI_HW_PORT_EDEFAULT;
+				return MULTI_HW_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

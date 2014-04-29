@@ -15,7 +15,7 @@ modeltype HWValuetypePackage uses hardware::hwvaluetype('http://www.fujaba.de/mu
 	in this ResourceInstanceRepository.
 	Therefore this transformation creates all instances of the ResourceTypes which are contained in the corresponding ResourceTypeRepository.
 */
-/*
+
 main() {
 log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 	// process ResourceInstanceRepository
@@ -43,7 +43,7 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 			sri.isResourceTypeSet();
 			//sri.name:=sri.resourceType.name;
 			sri.embeddedAtomicResourceInstances+=sri.synchEmbeddedAtomicResourceInstances();
-			sri.hwportInstances+=sri.synchHWPortInstances();
+			sri.hwports+=sri.synchHWPortInstances();
 	};
 	
 	//process DeviceInstance
@@ -52,7 +52,7 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 		di.isResourceTypeSet();
 		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceType=ResourceTypePackage::DeviceKind::SENSOR) then{
 		//di.name:=di.resourceType.name;
-		di.hwportInstances+=di.synchHWPortInstances();
+		di.hwports+=di.synchHWPortInstances();
 		}
 		endif;
 	};
@@ -62,14 +62,14 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 		di.isResourceTypeSet();
 		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceType=ResourceTypePackage::DeviceKind::ACTUATOR) then{
 		//di.name:=di.resourceType.name;
-		di.hwportInstances+=di.synchHWPortInstances();
+		di.hwports+=di.synchHWPortInstances();
 		}
 		endif;
 	};
 		
 }
 
-*/
+
 
 
 /*tests if a resource type is set
@@ -80,15 +80,15 @@ helper ResourceInstance::isResourceTypeSet(){
 }
 
 
-/*
+
 //keeps the port types and port instances in synch
-helper ResourceInstance::synchHWPortInstances():OrderedSet(HWPortInstance){
-var resourceType : ResourceType := self.resourceType;
-var hwPortInstances : Set(HWPortInstance);
+helper ResourceInstance::synchHWPortInstances():OrderedSet(CommunicationResource){
+var resourceType : Resource := self.resourceType;
+var hwPortInstances : Set(CommunicationResource);
 var lowerBound : Integer;
-	self.hwportInstances->forEach(portInstance) {
+	self.hwports->forEach(portInstance) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (resourceType.hwports ->excludes(portInstance.hwportType)) then {
+		if (resourceType.hwports ->excludes(portInstance)) then {
 		
 				input.removeElement(portInstance);
 				portInstance.dump();
@@ -98,13 +98,14 @@ var lowerBound : Integer;
 	
 	//create new ports
 	resourceType.hwports -> forEach(hwport){
-	if((self.hwportInstances -> select(p | p.hwportType = hwport)) -> isEmpty()) then {
-		lowerBound:=hwport.cardinality.lowerBound.toInteger();
+	if((self.hwports -> select(p|p=hwport)) -> isEmpty()) then {
+	/*	lowerBound:=hwport.cardinality.lowerBound.toInteger();
 		while(lowerBound>0){
 			hwPortInstances += hwport ->map mapHWPort2HWPortInstance(lowerBound);
 			lowerBound:=lowerBound-1;
-			};
-		} endif;
+			}; */
+			hwPortInstances+=hwport.deepclone().oclAsType(hardware::hwresource::CommunicationResource);
+		} endif; 
 	};
 	
 	return hwPortInstances->asOrderedSet();
@@ -144,7 +145,7 @@ mapping  StructuredResource::mapStructuredResource2StructuredResourceInstance():
 	resourceType:=self;
 	//create the AtomicResourceInstances of this StructuredResourceInstance derived from the embedded AtomicResources of the StructuredResource
 	embeddedAtomicResourceInstances:=self.embeddedAtomicResources->map mapAtomicResource2AtomicResourceInstance();
-	hwportInstances+=result.synchHWPortInstances();
+	hwports+=result.synchHWPortInstances();
 }
 
 
@@ -179,15 +180,15 @@ mapping AtomicResource::mapAtomicResource2AtomicResourceInstance():AtomicResourc
 	log("create AtomicResourceInstance for:"+self.eClass().name+", Name:" +self.name+", Parent is:"+self.parentStructuredResource.name);
 	name:=self.name;
 	resourceType:=self;
-	hwportInstances:=null;
+	hwports:=null;
 	
 }
 
 
-
+/*
 //create a HWPortInstance derived from a HWPort
 // The type of the returned HWPortInstance is derminted by the portType of the HWPort.
-mapping HWPort::mapHWPort2HWPortInstance(number:Integer):HWPortInstance{
+mapping HWPort::mapHWPort2HWPortInstance(number:Integer):HW{
 	init{
 		switch{ 
 			case (self.portType=(HWPortKind::BUS)){
@@ -203,7 +204,7 @@ mapping HWPort::mapHWPort2HWPortInstance(number:Integer):HWPortInstance{
 	name:=self.name+" "+number.toString();
 }
 
-
+*/
 
 
 //create a DeviceInstance derived from a Device
@@ -223,7 +224,7 @@ init{
 	log("create DeviceInstance for:"+self.eClass().name+", Name:" +self.name);
 	name:=self.name;
 	resourceType:=self;
-	hwportInstances+=result.synchHWPortInstances();
+	hwports+=result.synchHWPortInstances();
 }
 
 
@@ -269,4 +270,4 @@ query NaturalNumber::toInteger() : Integer {
 	return self.value;
 }
 
-*/
+

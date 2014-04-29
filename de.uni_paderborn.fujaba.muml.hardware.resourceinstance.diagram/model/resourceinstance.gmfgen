@@ -5,7 +5,7 @@
     <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ResourceInstanceRepositoryEditHelper"/>
     <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ResourceInstanceRepository"/>
-    <childNodes xsi:type="gmfgen:GenChildSideAffixedNode" visualID="3008" editPartClassName="CommunicationResourceEditPart" itemSemanticEditPolicyClassName="CommunicationResourceItemSemanticEditPolicy" notationViewFactoryClassName="CommunicationResourceViewFactory" canonicalEditPolicyClassName="CommunicationResourceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="CommunicationResourceGraphicalNodeEditPolicy" createCommandClassName="CommunicationResourceCreateCommand" containers="//@diagram/@topLevelNodes.0 //@diagram/@topLevelNodes.1 //@diagram/@topLevelNodes.2" preferredSideName="EAST">
+    <childNodes xsi:type="gmfgen:GenChildSideAffixedNode" visualID="3014" editPartClassName="CommunicationResourceEditPart" itemSemanticEditPolicyClassName="CommunicationResourceItemSemanticEditPolicy" canonicalEditPolicyClassName="CommunicationResourceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="CommunicationResourceGraphicalNodeEditPolicy" createCommandClassName="CommunicationResourceCreateCommand" containers="//@diagram/@topLevelNodes.0 //@diagram/@topLevelNodes.1 //@diagram/@topLevelNodes.2" preferredSideName="EAST">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="CommunicationResourceEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure">
@@ -14,10 +14,10 @@
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.ResourceInstanceHWPortEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
-        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/hwports"/>
-        <childMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/hwports"/>
+        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ResourceInstance/hwports"/>
+        <childMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ResourceInstance/hwports"/>
       </modelFacet>
-      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5035" editPartClassName="HWPortLabelEditPart" itemSemanticEditPolicyClassName="HWPortLabelItemSemanticEditPolicy" notationViewFactoryClassName="CommunicationResourceLabelViewFactory">
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5068" editPartClassName="HWPortLabelEditPart" itemSemanticEditPolicyClassName="HWPortLabelItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="HWPortLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPortLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPortLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&lt;...>&quot;);this.setTextWrap(true);&#xA;this.setTextUnderline(true);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.0"/>
@@ -338,7 +338,7 @@
         <metaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
       </modelFacet>
     </links>
-    <compartments visualID="7002" editPartClassName="StructuredResourceInstanceStructuredResourceCompartmentEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy" notationViewFactoryClassName="StructuredResourceInstanceStructuredResourceCompartmentViewFactory" canonicalEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5" title="StructuredResourceCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2">
+    <compartments visualID="7002" editPartClassName="StructuredResourceInstanceStructuredResourceCompartmentEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy" notationViewFactoryClassName="StructuredResourceInstanceStructuredResourceCompartmentViewFactory" canonicalEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5" title="StructuredResourceCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2" listLayout="false">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureEmbeddedAtomicResources" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
@@ -453,7 +453,7 @@
     </providers>
   </expressionProviders>
   <labelParsers extensibleViaService="true">
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet" className="CommunicationResourceLabelExpressionLabelParser5035" viewExpression="//@expressionProviders/@providers.0/@expressions.0">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet" className="CommunicationResourceLabelExpressionLabelParser5068" viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
     </implementations>
     <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet"/>

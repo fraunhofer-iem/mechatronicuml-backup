@@ -126,8 +126,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getCommunicationResourceLabel_5035Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5035();
+	private IParser getCommunicationResourceLabel_5068Parser() {
+		return new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5068();
 	}
 
 	/**
@@ -375,7 +375,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
 			return getStructuredResourceInstanceLabel_5067Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
-			return getCommunicationResourceLabel_5035Parser();
+			return getCommunicationResourceLabel_5068Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceNameEditPart.VISUAL_ID:
 			return getCacheInstanceName_5042Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:

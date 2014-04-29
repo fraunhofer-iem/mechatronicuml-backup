@@ -100,7 +100,7 @@ public class HardwarePaletteFactory {
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.BusPortInstance5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.BusPortInstance5CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CommunicationResource_3008));
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CommunicationResource_3014));
 		entry.setId("createBusPortInstance5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/busportInst_small.gif")); //$NON-NLS-1$

@@ -332,7 +332,7 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
-						.getCommunicationResource_3008ContainedLinks(view));
+						.getCommunicationResource_3014ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

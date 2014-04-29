@@ -629,6 +629,15 @@ public interface HwplatforminstancePackage extends EPackage {
 	int HW_PORT_INSTANCE__PARENT_RESOURCE = HwresourcePackage.HW_PORT__PARENT_RESOURCE;
 
 	/**
+	 * The feature id for the '<em><b>Parent Resource Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE = HwresourcePackage.HW_PORT__PARENT_RESOURCE_INSTANCE;
+
+	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

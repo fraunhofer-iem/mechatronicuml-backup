@@ -7,7 +7,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlu
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -180,46 +179,6 @@ public class ResourceRepositoryItemProvider
 			(createChildParameter
 				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
 				 HwresourceFactory.eINSTANCE.createStructuredResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createStorageMemoryInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createProcessingMemoryInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createCacheInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createProgrammableLogicDeviceInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createProcessorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createStructuredResourceInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createSensorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createActuatorInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter

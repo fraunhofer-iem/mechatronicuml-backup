@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.edit
  */
 public class LinkInstanceEditor
 		extends
-			de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.CommunicationMediaInstanceEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorInstanceEditor {
 
 	/**
 	 * @generated
@@ -24,16 +24,8 @@ public class LinkInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorInstanceType_GeneralTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorInstanceConnectorEndpointInstances_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementComment_DocumentationTab_Editor(null, true);
+			addCommunicationMediaInstanceCommunicationMediaPart_GeneralTab_Editor(
+					null, true);
 		}
 
 	}
@@ -41,73 +33,22 @@ public class LinkInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorInstanceType_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorInstanceType_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorInstance_Type());
-
-		editor.setTooltipMessage("The connector that represents the type of this connector instance. May be undefined in case of a top level connector instance, which does not refer to a particular connector inside a structured component.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addConnectorInstanceConnectorEndpointInstances_GeneralTab_Editor(
+	protected void addCommunicationMediaInstanceCommunicationMediaPart_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createConnectorInstanceConnectorEndpointInstances_GeneralTab_Editor(),
+				createCommunicationMediaInstanceCommunicationMediaPart_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceConnectorEndpointInstances_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaInstanceCommunicationMediaPart_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorInstance_ConnectorEndpointInstances());
-
-		editor.setTooltipMessage("The connector endpoint instances connected by this connector instance.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementComment_DocumentationTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommentableElementComment_DocumentationTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
-
-		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
+						.getCommunicationMediaInstance_CommunicationMediaPart());
 
 		return editor;
 
@@ -145,9 +86,10 @@ public class LinkInstanceEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.extensions", "property.tab.general",
 							"property.tab.general",
-							"property.tab.documentation"}).contains(tab);
+							"property.tab.documentation",
+							"property.tab.extensions", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

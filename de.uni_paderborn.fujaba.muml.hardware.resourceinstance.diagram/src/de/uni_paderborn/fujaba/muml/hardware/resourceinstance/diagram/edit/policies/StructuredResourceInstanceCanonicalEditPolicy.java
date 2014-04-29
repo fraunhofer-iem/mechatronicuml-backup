@@ -52,8 +52,8 @@ public class StructuredResourceInstanceCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-				.getResource_Hwports();
+		return de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+				.getResourceInstance_Hwports();
 	}
 
 	/**

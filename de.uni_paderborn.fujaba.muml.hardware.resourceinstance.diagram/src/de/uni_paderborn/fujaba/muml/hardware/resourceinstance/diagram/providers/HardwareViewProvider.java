@@ -237,7 +237,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 			return createStructuredResourceInstance_2006(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
-			return createCommunicationResource_3008(domainElement,
+			return createCommunicationResource_3014(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
 			return createCacheInstance_3009(domainElement, containerView,
@@ -446,14 +446,14 @@ public class HardwareViewProvider extends AbstractProvider implements
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceStructuredResourceCompartmentEditPart.VISUAL_ID),
-				true, false, true, true);
+				true, false, false, false);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createCommunicationResource_3008(EObject domainElement,
+	public Node createCommunicationResource_3014(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -490,15 +490,15 @@ public class HardwareViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5035 = createLabel(
+		Node label5068 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
-		label5035.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5068.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5035 = (Location) label5035.getLayoutConstraint();
-		location5035.setX(0);
-		location5035.setY(5);
+		Location location5068 = (Location) label5068.getLayoutConstraint();
+		location5068.setX(0);
+		location5068.setY(5);
 		return node;
 	}
 

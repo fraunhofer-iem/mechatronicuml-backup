@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor;
  */
 public class CommunicationProtocolRepositoryEditor
 		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -55,8 +55,9 @@ public class CommunicationProtocolRepositoryEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
-					tab);
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.extensions"}).contains(tab);
 		}
 	}
 

@@ -2,15 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.util;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
@@ -75,7 +70,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 			case HwresourceinstancePackage.RESOURCE_INSTANCE: {
 				ResourceInstance resourceInstance = (ResourceInstance)theEObject;
 				T result = caseResourceInstance(resourceInstance);
-				if (result == null) result = caseResource(resourceInstance);
 				if (result == null) result = caseNamedElement(resourceInstance);
 				if (result == null) result = caseExtendableElement(resourceInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -86,7 +80,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				T result = caseComputingResourceInstance(computingResourceInstance);
 				if (result == null) result = caseAtomicResourceInstance(computingResourceInstance);
 				if (result == null) result = caseResourceInstance(computingResourceInstance);
-				if (result == null) result = caseResource(computingResourceInstance);
 				if (result == null) result = caseNamedElement(computingResourceInstance);
 				if (result == null) result = caseExtendableElement(computingResourceInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -97,7 +90,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				T result = caseMemoryResourceInstance(memoryResourceInstance);
 				if (result == null) result = caseAtomicResourceInstance(memoryResourceInstance);
 				if (result == null) result = caseResourceInstance(memoryResourceInstance);
-				if (result == null) result = caseResource(memoryResourceInstance);
 				if (result == null) result = caseNamedElement(memoryResourceInstance);
 				if (result == null) result = caseExtendableElement(memoryResourceInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -107,7 +99,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				DeviceInstance deviceInstance = (DeviceInstance)theEObject;
 				T result = caseDeviceInstance(deviceInstance);
 				if (result == null) result = caseResourceInstance(deviceInstance);
-				if (result == null) result = caseResource(deviceInstance);
 				if (result == null) result = caseNamedElement(deviceInstance);
 				if (result == null) result = caseExtendableElement(deviceInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -119,7 +110,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = caseMemoryResourceInstance(storageMemoryInstance);
 				if (result == null) result = caseAtomicResourceInstance(storageMemoryInstance);
 				if (result == null) result = caseResourceInstance(storageMemoryInstance);
-				if (result == null) result = caseResource(storageMemoryInstance);
 				if (result == null) result = caseNamedElement(storageMemoryInstance);
 				if (result == null) result = caseExtendableElement(storageMemoryInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -131,7 +121,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = caseMemoryResourceInstance(processingMemoryInstance);
 				if (result == null) result = caseAtomicResourceInstance(processingMemoryInstance);
 				if (result == null) result = caseResourceInstance(processingMemoryInstance);
-				if (result == null) result = caseResource(processingMemoryInstance);
 				if (result == null) result = caseNamedElement(processingMemoryInstance);
 				if (result == null) result = caseExtendableElement(processingMemoryInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -143,7 +132,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = caseMemoryResourceInstance(cacheInstance);
 				if (result == null) result = caseAtomicResourceInstance(cacheInstance);
 				if (result == null) result = caseResourceInstance(cacheInstance);
-				if (result == null) result = caseResource(cacheInstance);
 				if (result == null) result = caseNamedElement(cacheInstance);
 				if (result == null) result = caseExtendableElement(cacheInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -155,7 +143,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = caseComputingResourceInstance(programmableLogicDeviceInstance);
 				if (result == null) result = caseAtomicResourceInstance(programmableLogicDeviceInstance);
 				if (result == null) result = caseResourceInstance(programmableLogicDeviceInstance);
-				if (result == null) result = caseResource(programmableLogicDeviceInstance);
 				if (result == null) result = caseNamedElement(programmableLogicDeviceInstance);
 				if (result == null) result = caseExtendableElement(programmableLogicDeviceInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -167,7 +154,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = caseComputingResourceInstance(processorInstance);
 				if (result == null) result = caseAtomicResourceInstance(processorInstance);
 				if (result == null) result = caseResourceInstance(processorInstance);
-				if (result == null) result = caseResource(processorInstance);
 				if (result == null) result = caseNamedElement(processorInstance);
 				if (result == null) result = caseExtendableElement(processorInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -177,7 +163,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				AtomicResourceInstance atomicResourceInstance = (AtomicResourceInstance)theEObject;
 				T result = caseAtomicResourceInstance(atomicResourceInstance);
 				if (result == null) result = caseResourceInstance(atomicResourceInstance);
-				if (result == null) result = caseResource(atomicResourceInstance);
 				if (result == null) result = caseNamedElement(atomicResourceInstance);
 				if (result == null) result = caseExtendableElement(atomicResourceInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -187,7 +172,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				StructuredResourceInstance structuredResourceInstance = (StructuredResourceInstance)theEObject;
 				T result = caseStructuredResourceInstance(structuredResourceInstance);
 				if (result == null) result = caseResourceInstance(structuredResourceInstance);
-				if (result == null) result = caseResource(structuredResourceInstance);
 				if (result == null) result = caseNamedElement(structuredResourceInstance);
 				if (result == null) result = caseExtendableElement(structuredResourceInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -198,7 +182,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				T result = caseSensorInstance(sensorInstance);
 				if (result == null) result = caseDeviceInstance(sensorInstance);
 				if (result == null) result = caseResourceInstance(sensorInstance);
-				if (result == null) result = caseResource(sensorInstance);
 				if (result == null) result = caseNamedElement(sensorInstance);
 				if (result == null) result = caseExtendableElement(sensorInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -209,7 +192,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				T result = caseActuatorInstance(actuatorInstance);
 				if (result == null) result = caseDeviceInstance(actuatorInstance);
 				if (result == null) result = caseResourceInstance(actuatorInstance);
-				if (result == null) result = caseResource(actuatorInstance);
 				if (result == null) result = caseNamedElement(actuatorInstance);
 				if (result == null) result = caseExtendableElement(actuatorInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -464,21 +446,6 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResource(Resource object) {
 		return null;
 	}
 

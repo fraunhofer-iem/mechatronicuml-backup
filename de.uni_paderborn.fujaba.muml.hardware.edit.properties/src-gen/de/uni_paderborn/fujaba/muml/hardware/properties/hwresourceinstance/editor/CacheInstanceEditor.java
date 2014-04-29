@@ -58,6 +58,7 @@ public class CacheInstanceEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.general",
 							"property.tab.extensions"}).contains(tab);
 		}
 	}

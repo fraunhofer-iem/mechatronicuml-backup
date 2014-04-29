@@ -28,7 +28,7 @@ public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3008;
+	public static final int VISUAL_ID = 3014;
 
 	/**
 	 * @generated

@@ -806,6 +806,15 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getHWPort_ParentResourceInstance() {
+		return (EReference)hwPortEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBus() {
 		return busEClass;
 	}
@@ -1037,6 +1046,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 
 		hwPortEClass = createEClass(HW_PORT);
 		createEReference(hwPortEClass, HW_PORT__PARENT_RESOURCE);
+		createEReference(hwPortEClass, HW_PORT__PARENT_RESOURCE_INSTANCE);
 
 		busEClass = createEClass(BUS);
 
@@ -1086,6 +1096,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
+		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
 		HwvaluetypePackage theHwvaluetypePackage = (HwvaluetypePackage)EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI);
 
 		// Create type parameters
@@ -1179,7 +1190,8 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		initEAttribute(getCommunicationResource_MultiHWPort(), ecorePackage.getEBoolean(), "multiHWPort", null, 1, 1, CommunicationResource.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPortEClass, HWPort.class, "HWPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHWPort_ParentResource(), this.getResource(), this.getResource_Hwports(), "parentResource", null, 1, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPort_ParentResource(), this.getResource(), this.getResource_Hwports(), "parentResource", null, 0, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPort_ParentResourceInstance(), theHwresourceinstancePackage.getResourceInstance(), theHwresourceinstancePackage.getResourceInstance_Hwports(), "parentResourceInstance", null, 0, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(busEClass, Bus.class, "Bus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1266,7 +1278,15 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";					
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });					
 		addAnnotation
 		  (memoryResourceEClass, 
 		   source, 
@@ -1284,7 +1304,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueProtocolName"
-		   });																											
+		   });																												
 		addAnnotation
 		  (busEClass, 
 		   source, 
@@ -1306,7 +1326,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";						
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";							
 		addAnnotation
 		  (memoryResourceEClass, 
 		   source, 
@@ -1330,14 +1350,14 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		  (getCommunicationResource_PortKind(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.protocol.oclIsUndefined()) then\n\tnull\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\t\thwresource::HWPortKind::BUS\nelse\n\t\thwresource::HWPortKind::LINK\nendif endif"
+			 "derivation", "if (self.protocol.oclIsUndefined()) then\n\thwresource::HWPortKind::BUS\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\t\thwresource::HWPortKind::BUS\nelse\n\t\thwresource::HWPortKind::LINK\nendif endif"
 		   });				
 		addAnnotation
 		  (getCommunicationResource_MultiHWPort(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.cardinality.oclIsUndefined()) then false else self.cardinality.upperBound.value>1 endif\n"
-		   });						
+		   });							
 		addAnnotation
 		  (busEClass, 
 		   source, 

@@ -185,31 +185,32 @@ public class HwresourceValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the RAMimpliesRW constraint of '<em>Memory Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MEMORY_RESOURCE__RA_MIMPLIES_RW__EEXPRESSION = "self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE";
+
+	/**
 	 * Validates the RAMimpliesRW constraint of '<em>Memory Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateMemoryResource_RAMimpliesRW(MemoryResource memoryResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "RAMimpliesRW", getObjectLabel(memoryResource, context) },
-						 new Object[] { memoryResource },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(HwresourcePackage.Literals.MEMORY_RESOURCE,
+				 memoryResource,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RAMimpliesRW",
+				 MEMORY_RESOURCE__RA_MIMPLIES_RW__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -269,31 +270,37 @@ public class HwresourceValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the ownedCacheInSameStructuredResource constraint of '<em>Processor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PROCESSOR__OWNED_CACHE_IN_SAME_STRUCTURED_RESOURCE__EEXPRESSION = "if not self.ownedCache.oclIsUndefined() then\n" +
+		"\tself.parentStructuredResource=self.ownedCache.parentStructuredResource\n" +
+		"else\n" +
+		"\t true\n" +
+		"endif\n" +
+		"";
+
+	/**
 	 * Validates the ownedCacheInSameStructuredResource constraint of '<em>Processor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateProcessor_ownedCacheInSameStructuredResource(Processor processor, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ownedCacheInSameStructuredResource", getObjectLabel(processor, context) },
-						 new Object[] { processor },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(HwresourcePackage.Literals.PROCESSOR,
+				 processor,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ownedCacheInSameStructuredResource",
+				 PROCESSOR__OWNED_CACHE_IN_SAME_STRUCTURED_RESOURCE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -334,31 +341,32 @@ public class HwresourceValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the UniqueProtocolName constraint of '<em>Resource Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String RESOURCE_REPOSITORY__UNIQUE_PROTOCOL_NAME__EEXPRESSION = "self.protocols->isUnique(name)";
+
+	/**
 	 * Validates the UniqueProtocolName constraint of '<em>Resource Repository</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateResourceRepository_UniqueProtocolName(ResourceRepository resourceRepository, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "UniqueProtocolName", getObjectLabel(resourceRepository, context) },
-						 new Object[] { resourceRepository },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(HwresourcePackage.Literals.RESOURCE_REPOSITORY,
+				 resourceRepository,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueProtocolName",
+				 RESOURCE_REPOSITORY__UNIQUE_PROTOCOL_NAME__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -435,31 +443,32 @@ public class HwresourceValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the BusProtocol constraint of '<em>Bus</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String BUS__BUS_PROTOCOL__EEXPRESSION = "self.protocol.oclIsTypeOf(hwresource::BusProtocol)";
+
+	/**
 	 * Validates the BusProtocol constraint of '<em>Bus</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateBus_BusProtocol(Bus bus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "BusProtocol", getObjectLabel(bus, context) },
-						 new Object[] { bus },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(HwresourcePackage.Literals.BUS,
+				 bus,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "BusProtocol",
+				 BUS__BUS_PROTOCOL__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -482,31 +491,32 @@ public class HwresourceValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the LinkProtocol constraint of '<em>Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String LINK__LINK_PROTOCOL__EEXPRESSION = "self.protocol.oclIsTypeOf(hwresource::LinkProtocol)";
+
+	/**
 	 * Validates the LinkProtocol constraint of '<em>Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateLink_LinkProtocol(Link link, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "LinkProtocol", getObjectLabel(link, context) },
-						 new Object[] { link },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(HwresourcePackage.Literals.LINK,
+				 link,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "LinkProtocol",
+				 LINK__LINK_PROTOCOL__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

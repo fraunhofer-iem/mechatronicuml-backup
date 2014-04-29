@@ -102,22 +102,22 @@ public interface HwresourceinstancePackage extends EPackage {
 	int RESOURCE_INSTANCE__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_INSTANCE__HWPORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_INSTANCE__RESOURCE_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_INSTANCE__RESOURCE_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_INSTANCE__HWPORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Resource Instance</em>' class.
@@ -346,15 +346,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int ATOMIC_RESOURCE_INSTANCE__NAME = RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_RESOURCE_INSTANCE__HWPORTS = RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -362,6 +353,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATOMIC_RESOURCE_INSTANCE__RESOURCE_TYPE = RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_RESOURCE_INSTANCE__HWPORTS = RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource Instance</b></em>' container reference.
@@ -599,15 +599,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int COMPUTING_RESOURCE_INSTANCE__NAME = ATOMIC_RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPUTING_RESOURCE_INSTANCE__HWPORTS = ATOMIC_RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -615,6 +606,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPUTING_RESOURCE_INSTANCE__RESOURCE_TYPE = ATOMIC_RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPUTING_RESOURCE_INSTANCE__HWPORTS = ATOMIC_RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource Instance</b></em>' container reference.
@@ -861,15 +861,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int MEMORY_RESOURCE_INSTANCE__NAME = ATOMIC_RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMORY_RESOURCE_INSTANCE__HWPORTS = ATOMIC_RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -877,6 +868,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int MEMORY_RESOURCE_INSTANCE__RESOURCE_TYPE = ATOMIC_RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORY_RESOURCE_INSTANCE__HWPORTS = ATOMIC_RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource Instance</b></em>' container reference.
@@ -1141,15 +1141,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int DEVICE_INSTANCE__NAME = RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_INSTANCE__HWPORTS = RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1157,6 +1148,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_INSTANCE__RESOURCE_TYPE = RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_INSTANCE__HWPORTS = RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The number of structural features of the '<em>Device Instance</em>' class.
@@ -1385,15 +1385,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int STORAGE_MEMORY_INSTANCE__NAME = MEMORY_RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORAGE_MEMORY_INSTANCE__HWPORTS = MEMORY_RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1401,6 +1392,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int STORAGE_MEMORY_INSTANCE__RESOURCE_TYPE = MEMORY_RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORAGE_MEMORY_INSTANCE__HWPORTS = MEMORY_RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource Instance</b></em>' container reference.
@@ -1665,15 +1665,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int PROCESSING_MEMORY_INSTANCE__NAME = MEMORY_RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESSING_MEMORY_INSTANCE__HWPORTS = MEMORY_RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1681,6 +1672,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESSING_MEMORY_INSTANCE__RESOURCE_TYPE = MEMORY_RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSING_MEMORY_INSTANCE__HWPORTS = MEMORY_RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource Instance</b></em>' container reference.
@@ -1945,15 +1945,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int CACHE_INSTANCE__NAME = MEMORY_RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CACHE_INSTANCE__HWPORTS = MEMORY_RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1961,6 +1952,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int CACHE_INSTANCE__RESOURCE_TYPE = MEMORY_RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CACHE_INSTANCE__HWPORTS = MEMORY_RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource Instance</b></em>' container reference.
@@ -2225,15 +2225,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int PROGRAMMABLE_LOGIC_DEVICE_INSTANCE__NAME = COMPUTING_RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMMABLE_LOGIC_DEVICE_INSTANCE__HWPORTS = COMPUTING_RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2241,6 +2232,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int PROGRAMMABLE_LOGIC_DEVICE_INSTANCE__RESOURCE_TYPE = COMPUTING_RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMMABLE_LOGIC_DEVICE_INSTANCE__HWPORTS = COMPUTING_RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource Instance</b></em>' container reference.
@@ -2487,15 +2487,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int PROCESSOR_INSTANCE__NAME = COMPUTING_RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESSOR_INSTANCE__HWPORTS = COMPUTING_RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2503,6 +2494,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESSOR_INSTANCE__RESOURCE_TYPE = COMPUTING_RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSOR_INSTANCE__HWPORTS = COMPUTING_RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource Instance</b></em>' container reference.
@@ -2776,15 +2776,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int STRUCTURED_RESOURCE_INSTANCE__NAME = RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_RESOURCE_INSTANCE__HWPORTS = RESOURCE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2792,6 +2783,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE = RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_RESOURCE_INSTANCE__HWPORTS = RESOURCE_INSTANCE__HWPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Atomic Resource Instances</b></em>' containment reference list.
@@ -3029,15 +3029,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int SENSOR_INSTANCE__NAME = DEVICE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SENSOR_INSTANCE__HWPORTS = DEVICE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3045,6 +3036,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int SENSOR_INSTANCE__RESOURCE_TYPE = DEVICE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_INSTANCE__HWPORTS = DEVICE_INSTANCE__HWPORTS;
 
 	/**
 	 * The number of structural features of the '<em>Sensor Instance</em>' class.
@@ -3273,15 +3273,6 @@ public interface HwresourceinstancePackage extends EPackage {
 	int ACTUATOR_INSTANCE__NAME = DEVICE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTUATOR_INSTANCE__HWPORTS = DEVICE_INSTANCE__HWPORTS;
-
-	/**
 	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3289,6 +3280,15 @@ public interface HwresourceinstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTUATOR_INSTANCE__RESOURCE_TYPE = DEVICE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTUATOR_INSTANCE__HWPORTS = DEVICE_INSTANCE__HWPORTS;
 
 	/**
 	 * The number of structural features of the '<em>Actuator Instance</em>' class.
@@ -3737,6 +3737,17 @@ public interface HwresourceinstancePackage extends EPackage {
 	EReference getResourceInstance_ResourceType();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance#getHwports <em>Hwports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Hwports</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance#getHwports()
+	 * @see #getResourceInstance()
+	 * @generated
+	 */
+	EReference getResourceInstance_Hwports();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ComputingResourceInstance <em>Computing Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4016,6 +4027,14 @@ public interface HwresourceinstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE_INSTANCE__RESOURCE_TYPE = eINSTANCE.getResourceInstance_ResourceType();
+
+		/**
+		 * The meta object literal for the '<em><b>Hwports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE_INSTANCE__HWPORTS = eINSTANCE.getResourceInstance_Hwports();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ComputingResourceInstanceImpl <em>Computing Resource Instance</em>}' class.

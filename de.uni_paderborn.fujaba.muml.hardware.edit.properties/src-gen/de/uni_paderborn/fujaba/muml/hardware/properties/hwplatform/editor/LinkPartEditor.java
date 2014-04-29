@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor;
  */
 public class LinkPartEditor
 		extends
-			de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor.CommunicationMediaPartEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor {
 
 	/**
 	 * @generated
@@ -24,12 +24,8 @@ public class LinkPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorConnectorEndpoints_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementComment_DocumentationTab_Editor(null, true);
+			addCommunicationMediaPartCommunicationMedia_GeneralTab_Editor(null,
+					true);
 		}
 
 	}
@@ -37,47 +33,22 @@ public class LinkPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorConnectorEndpoints_GeneralTab_Editor(
+	protected void addCommunicationMediaPartCommunicationMedia_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createConnectorConnectorEndpoints_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorConnectorEndpoints_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnector_ConnectorEndpoints());
-
-		editor.setTooltipMessage("The endpoints connected by this connector.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementComment_DocumentationTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommentableElementComment_DocumentationTab_Editor(),
+		addEditorToCategory(
+				category,
+				createCommunicationMediaPartCommunicationMedia_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaPartCommunicationMedia_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
-
-		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+						.getCommunicationMediaPart_CommunicationMedia());
 
 		return editor;
 
@@ -115,8 +86,9 @@ public class LinkPartEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.documentation"}).contains(tab);
+							"property.tab.documentation",
+							"property.tab.extensions", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

@@ -6,7 +6,6 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import java.util.Collection;
@@ -99,7 +98,7 @@ public class ResourceInstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(HwresourcePackage.Literals.RESOURCE__HWPORTS);
+			childrenFeatures.add(HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__HWPORTS);
 		}
 		return childrenFeatures;
 	}
@@ -163,12 +162,12 @@ public class ResourceInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE__HWPORTS,
+				(HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__HWPORTS,
 				 HwplatforminstanceFactory.eINSTANCE.createHWPortInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE__HWPORTS,
+				(HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__HWPORTS,
 				 HwresourceFactory.eINSTANCE.createCommunicationResource()));
 	}
 

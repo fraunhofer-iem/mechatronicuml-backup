@@ -61,9 +61,55 @@ public class MemoryResourceInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMemorySizePropertyDescriptor(object);
+			addThroughputPropertyDescriptor(object);
 			addMemoryTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Memory Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMemorySizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MemoryResourceInstance_memorySize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MemoryResourceInstance_memorySize_feature", "_UI_MemoryResourceInstance_type"),
+				 HwresourceinstancePackage.Literals.MEMORY_RESOURCE_INSTANCE__MEMORY_SIZE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Throughput feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addThroughputPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MemoryResourceInstance_throughput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MemoryResourceInstance_throughput_feature", "_UI_MemoryResourceInstance_type"),
+				 HwresourceinstancePackage.Literals.MEMORY_RESOURCE_INSTANCE__THROUGHPUT,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

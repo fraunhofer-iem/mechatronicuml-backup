@@ -44,7 +44,7 @@
       <children
           referencedChild="//@nodes.2/@ownedChild/@children.5/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
       </children>
     </ownedChild>
   </nodes>
@@ -85,7 +85,7 @@
       <children
           referencedChild="//@nodes.2/@ownedChild/@children.5/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
       </children>
     </ownedChild>
   </nodes>
@@ -395,7 +395,7 @@
       </children>
       <children>
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/CommunicationResource"/>

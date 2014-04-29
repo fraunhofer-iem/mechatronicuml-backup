@@ -33,24 +33,14 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ResourceInstanceImpl#getHwports <em>Hwports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ResourceInstanceImpl#getResourceType <em>Resource Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ResourceInstanceImpl#getHwports <em>Hwports</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public abstract class ResourceInstanceImpl extends NamedElementImpl implements ResourceInstance {
-	/**
-	 * The cached value of the '{@link #getHwports() <em>Hwports</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHwports()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<HWPort> hwports;
-
 	/**
 	 * The cached value of the '{@link #getResourceType() <em>Resource Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -60,6 +50,16 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	 * @ordered
 	 */
 	protected Resource resourceType;
+
+	/**
+	 * The cached value of the '{@link #getHwports() <em>Hwports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHwports()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<HWPort> hwports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,7 +87,7 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	 */
 	public EList<HWPort> getHwports() {
 		if (hwports == null) {
-			hwports = new EObjectContainmentWithInverseEList<HWPort>(HWPort.class, this, HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS, HwresourcePackage.HW_PORT__PARENT_RESOURCE);
+			hwports = new EObjectContainmentWithInverseEList<HWPort>(HWPort.class, this, HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS, HwresourcePackage.HW_PORT__PARENT_RESOURCE_INSTANCE);
 		}
 		return hwports;
 	}
@@ -167,11 +167,11 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
-				return getHwports();
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
 				if (resolve) return getResourceType();
 				return basicGetResourceType();
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
+				return getHwports();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,12 +185,12 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
+				setResourceType((Resource)newValue);
+				return;
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
 				getHwports().clear();
 				getHwports().addAll((Collection<? extends HWPort>)newValue);
-				return;
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
-				setResourceType((Resource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -204,11 +204,11 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
-				getHwports().clear();
-				return;
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
 				setResourceType((Resource)null);
+				return;
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
+				getHwports().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -222,44 +222,12 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
-				return hwports != null && !hwports.isEmpty();
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
 				return resourceType != null;
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
+				return hwports != null && !hwports.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Resource.class) {
-			switch (derivedFeatureID) {
-				case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS: return HwresourcePackage.RESOURCE__HWPORTS;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Resource.class) {
-			switch (baseFeatureID) {
-				case HwresourcePackage.RESOURCE__HWPORTS: return HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ResourceInstanceImpl
