@@ -1,5 +1,6 @@
 import CSD2SDUtil;
 import helpers;
+import Patterns;
 
 library CSD2SD();
 
@@ -117,52 +118,3 @@ mapping storydiagrams::activities::StructuredNode :: StructuredNode2StructuredNo
    		 }
    		 
    		 
-mapping componentstorypattern::ComponentStoryPattern :: ComponentStoryPattern2StoryPattern() : StoryPattern{
-    	_comment := self._comment;
-//TODO what are binding semantics here?
-    	_bindingSemantics := BindingSemantics::MANDATORY;
-    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
-    	_extension := self._extension.deepclone().oclAsType(Extension);
-    	_variable := self.map createInitialCIC();
-    	_variable += self.thisVariable.map createComponentInstance();
-    //	_variable += self.thisVariable.map createStructuredComponentInstance();
-    	_linkVariable += map createLinkVaribale(self.map createInitialCIC(), self.thisVariable.map createComponentInstance(), getComponentInstancesReference());
-    	_variable += self.thisVariable.type.map createComponentType(self);
-    	_linkVariable += map createLinkVaribale(self.thisVariable.map createComponentInstance(), self.thisVariable.type.map createComponentType(self), getComponentTypeReference(self.thisVariable.map createComponentInstance().classifier));
-		_variable += self.thisVariable.map createEmbeddedCIC();
-		_linkVariable += map createLinkVaribale(self.thisVariable.map createComponentInstance(), self.thisVariable.map createEmbeddedCIC(), getEmbeddedCICReference());
-		self.thisVariable.partVariables->forEach(pV){
-			pV.map createPartVariableEquivalence(self, result);
-		}
-  //  	_variable += self.thisVariable.partVariables->map PartVariable2ObjectVariable();
-/*    	_constraint := self._constraint.map Constraint2Constraint();
-    	_linkVariable := self._linkVariable.map AbstractLinkVariable2AbstractLinkVariable();
-    	_parentPattern := self._parentPattern.map StoryPattern2StoryPattern();
-    	_containedPattern := self._containedPattern.map StoryPattern2StoryPattern();
-    	_templateSignature := self._templateSignature.map TemplateSignature2TemplateSignature()
-   		 
-   		 */
-   		 }
-
-// this mapping is not needed at the moment   		 
-mapping componentstorypattern::ComponentVariable :: ComponentVariable2ObjectVariable() : storydiagrams::patterns::ObjectVariable{
-    	_name := self._name;
-    	_bindingState := self._bindingState;
-    	_bindingSemantics := self._bindingSemantics;
-    	_bindingOperator := self._bindingOperator;
-    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
-    	_extension := self._extension.deepclone().oclAsType(Extension);
-/*    	_genericType := self._genericType.map EGenericType2EGenericType();
-    	_pattern := self._pattern.map ComponentStoryPattern2StoryPattern();
-    	_bindingExpression := self._bindingExpression.map Expression2Expression();
-    	_constraint := self._constraint.map Constraint2Constraint();
-    	_incomingLink := self._incomingLink.map AbstractLinkVariable2AbstractLinkVariable();
-    	_outgoingLink := self._outgoingLink.map AbstractLinkVariable2AbstractLinkVariable();
-    	_linkOrderConstraint := self._linkOrderConstraint.map LinkConstraint2LinkConstraint();
-    	_attributeAssignment := self._attributeAssignment.map AttributeAssignment2AttributeAssignment();
-    	*/
-    	_classifier := self.type.oclAsType(EClass);
-   		 }
-   		 
-   		 
-//mapping storydiagrams::patterns::AbstractVariable :: AbstractVariable2AbstractVariable() : storydiagrams::patterns::AbstractVariable disjuncts storydiagrams::patterns::CollectionVariable::CollectionVariable2CollectionVariable, storydiagrams::patterns::ObjectVariable::ObjectVariable2ObjectVariable, storydiagrams::patterns::PrimitiveVariable::PrimitiveVariable2PrimitiveVariable;
