@@ -38,7 +38,7 @@ public class LinkPartLabelExpressionLabelParser6003 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						23,
+						22,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 								.getLinkPart(), null).body();
 	}
@@ -47,13 +47,7 @@ public class LinkPartLabelExpressionLabelParser6003 extends
 	 * @generated
 	 */
 	public String getEditString(IAdaptable element, int flags) {
-		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
-				.getExpression(
-						24,
-						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-								.getLinkPart(), null).evaluate(target);
-		return String.valueOf(result);
+		return getPrintString(element, flags);
 	}
 
 	/**

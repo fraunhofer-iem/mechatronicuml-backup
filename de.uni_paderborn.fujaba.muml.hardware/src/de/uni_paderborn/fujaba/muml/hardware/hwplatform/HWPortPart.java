@@ -40,8 +40,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameProtocol BusPort2Bus LinkPort2Link'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='if (self.connectedMediaPart->size()>0) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif' BusPort2Bus='if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and  self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().oclIsTypeOf(platform::Bus)\nelse true\n\nendif' LinkPort2Link='if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and  self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().oclIsTypeOf(platform::Link)\nelse true\nendif'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameProtocol LinkPort2Link'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='if (self.connectedMediaPart->size()>0) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif' LinkPort2Link='if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n\ttrue\nelse \n\tif (self.portKind = hwresource::HWPortKind::BUS) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n\telse  self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\nendif endif'"
  * @generated
  */
 public interface HWPortPart extends ConnectorEndpoint {

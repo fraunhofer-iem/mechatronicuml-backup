@@ -88,7 +88,7 @@ var hwPortInstances : Set(CommunicationResource);
 var lowerBound : Integer;
 	self.hwports->forEach(portInstance) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (resourceType.hwports ->excludes(portInstance)) then {
+		if (resourceType.hwports ->select(p|p.name = portInstance.name)->isEmpty()) then {
 		
 				input.removeElement(portInstance);
 				portInstance.dump();
@@ -98,7 +98,7 @@ var lowerBound : Integer;
 	
 	//create new ports
 	resourceType.hwports -> forEach(hwport){
-	if((self.hwports -> select(p|p=hwport)) -> isEmpty()) then {
+	if((self.hwports -> select(p|p.name=hwport.name)) -> isEmpty()) then {
 	/*	lowerBound:=hwport.cardinality.lowerBound.toInteger();
 		while(lowerBound>0){
 			hwPortInstances += hwport ->map mapHWPort2HWPortInstance(lowerBound);

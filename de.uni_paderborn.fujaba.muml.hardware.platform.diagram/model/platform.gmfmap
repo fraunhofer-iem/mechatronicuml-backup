@@ -27,13 +27,12 @@
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/BusPart"/>
           <labelMappings
-              xsi:type="gmfmap:ExpressionLabelMapping">
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#BusBandwidth"/>
             <viewExpression
                 body="let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;bdwidth"/>
-            <editExpression
-                body="'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
@@ -346,13 +345,12 @@
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/LinkPart"/>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="platform.gmfgraph#LinkComment"/>
       <viewExpression
           body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;proto + '\n' + bdwidth"/>
-      <editExpression
-          body="'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
     </labelMappings>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
@@ -369,7 +367,7 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK) and (self.oclIsTypeOf(hwplatform::BridgePart)&lt;>oppositeEnd.oclIsTypeOf(hwplatform::BridgePart))"/>
+          body="self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK) "/>
       <targetEnd
           body="self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK)"/>
     </creationConstraints>
@@ -392,9 +390,9 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::BUS) and (self.oclIsTypeOf(hwplatform::BridgePart)&lt;>oppositeEnd.oclIsTypeOf(hwplatform::BridgePart))"/>
+          body="self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::BUS) "/>
       <targetEnd
-          body="self.oclIsTypeOf(hwplatform::BusPart)"/>
+          body="self.oclIsTypeOf(hwplatform::BridgePart) or self.oclIsTypeOf(hwplatform::BusPart) "/>
     </creationConstraints>
   </links>
   <diagram>

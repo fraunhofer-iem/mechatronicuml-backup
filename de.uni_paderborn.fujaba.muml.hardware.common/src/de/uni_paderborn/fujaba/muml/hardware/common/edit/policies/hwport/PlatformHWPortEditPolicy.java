@@ -4,6 +4,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import de.uni_paderborn.fujaba.muml.connector.Connector;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.HWPortKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
@@ -61,10 +63,28 @@ public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
 	@Override
 	protected boolean isMultiHWPort() {
 		EObject element = getSemanticElement();
+	
+		HWPortPart hwPortPart = null;
+
 		if (element != null) {
-				return ((HWPortPart) element).isMultiHWPort();
+			if (HwplatformPackage.Literals.HW_PORT_PART
+					.isSuperTypeOf(element.eClass())) {
+				hwPortPart = (HWPortPart) element;
+			} else if (HwplatformPackage.Literals.DELEGATION_HW_PORT
+					.isSuperTypeOf(element.eClass())) {
+				DelegationHWPort delegationPort = (DelegationHWPort) element;
+				if (!delegationPort.getConnectors().isEmpty()) {
+					Connector connector =delegationPort.getConnectors().get(0);
+					for(ConnectorEndpoint e :connector.getConnectorEndpoints()){
+						if(HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(e.eClass())){
+							hwPortPart = (HWPortPart) e;
+						}
+					}
+					
+				}
 			}
-		return false;
+		}
+		return hwPortPart.isMultiHWPort();
 	}
 
 
@@ -82,8 +102,13 @@ public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
 					.isSuperTypeOf(element.eClass())) {
 				DelegationHWPort delegationPort = (DelegationHWPort) element;
 				if (!delegationPort.getConnectors().isEmpty()) {
-					hwPortPart = (HWPortPart) delegationPort
-							.getConnectors().get(0);
+					Connector connector =delegationPort.getConnectors().get(0);
+					for(ConnectorEndpoint e :connector.getConnectorEndpoints()){
+						if(HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(e.eClass())){
+							hwPortPart = (HWPortPart) e;
+						}
+					}
+					
 				}
 			}
 			if (hwPortPart != null) {

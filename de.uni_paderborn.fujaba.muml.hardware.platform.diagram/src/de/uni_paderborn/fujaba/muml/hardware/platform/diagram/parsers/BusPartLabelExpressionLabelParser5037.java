@@ -47,13 +47,7 @@ public class BusPartLabelExpressionLabelParser5037 extends
 	 * @generated
 	 */
 	public String getEditString(IAdaptable element, int flags) {
-		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
-				.getExpression(
-						1,
-						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-								.getBusPart(), null).evaluate(target);
-		return String.valueOf(result);
+		return getPrintString(element, flags);
 	}
 
 	/**

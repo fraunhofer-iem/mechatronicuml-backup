@@ -38,7 +38,7 @@ public class HWPlatformPartLabelExpressionLabelParser5042 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						8,
+						7,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 								.getHWPlatformPart(), null).body();
 	}

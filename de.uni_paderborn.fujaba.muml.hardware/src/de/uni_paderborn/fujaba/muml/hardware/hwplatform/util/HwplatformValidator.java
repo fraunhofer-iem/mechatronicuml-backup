@@ -358,7 +358,6 @@ public class HwplatformValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hwPortPart, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hwPortPart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHWPortPart_SameProtocol(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHWPortPart_BusPort2Bus(hwPortPart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHWPortPart_LinkPort2Link(hwPortPart, diagnostics, context);
 		return result;
 	}
@@ -396,48 +395,18 @@ public class HwplatformValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the BusPort2Bus constraint of '<em>HW Port Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String HW_PORT_PART__BUS_PORT2_BUS__EEXPRESSION = "if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and  self.connectedMedia->size()>0) then\n" +
-		"\tself.connectedMedia->first().oclIsTypeOf(platform::Bus)\n" +
-		"else true\n" +
-		"\n" +
-		"endif";
-
-	/**
-	 * Validates the BusPort2Bus constraint of '<em>HW Port Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHWPortPart_BusPort2Bus(HWPortPart hwPortPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(HwplatformPackage.Literals.HW_PORT_PART,
-				 hwPortPart,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "BusPort2Bus",
-				 HW_PORT_PART__BUS_PORT2_BUS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * The cached validation expression for the LinkPort2Link constraint of '<em>HW Port Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and  self.connectedMedia->size()>0) then\n" +
-		"\tself.connectedMedia->first().oclIsTypeOf(platform::Link)\n" +
-		"else true\n" +
-		"endif";
+	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n" +
+		"\ttrue\n" +
+		"else \n" +
+		"\tif (self.portKind = hwresource::HWPortKind::BUS) then\n" +
+		"\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n" +
+		"\telse  self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n" +
+		"endif endif";
 
 	/**
 	 * Validates the LinkPort2Link constraint of '<em>HW Port Part</em>'.

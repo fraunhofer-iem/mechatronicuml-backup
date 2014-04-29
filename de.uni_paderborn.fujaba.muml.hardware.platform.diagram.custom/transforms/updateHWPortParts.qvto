@@ -4,16 +4,18 @@ modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype HardwarePackage uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype PlatformPackage uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
-/*
+modeltype ResourcePackage uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype ResourceInstancePackage uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.0/');
+
 
 main() {
-	input.rootObjects()[ResourceInstancePart]->forEach(part) {
-	assert fatal (not part.resourceInstanceType.oclIsUndefined()) with log("No Resource Instance is set.");
+	input.rootObjects()[ResourcePart]->forEach(part) {
+	assert fatal (not part.resourceType.oclIsUndefined()) with log("No Resource Instance is set.");
 	// IMPORTANT: Before replacing existing portParts, make sure that those portParts
 		// that will be removed after the replacement are also removed from the resource.
- 	part.hwportParts->forEach(port) {
+ 	part.hwPortParts->forEach(port) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (part.resourceInstanceType.hwportInstances ->excludes(port.hwPortInstance)) then {
+		if (part.resourceType.hwports ->excludes(port.communicationResource)) then {
 				
 			// Remove its Link the Bus is kept
 			//	var comMedia : Set(CommunicationMedia) := port.connectedMedia->select(m|m.oclIsTypeOf(Link));
@@ -40,9 +42,9 @@ main() {
 	
 	// IMPORTANT: Before replacing existing portParts, make sure that those portParts
 		// that will be removed after the replacement are also removed from the resource.
- 	part.delegationPorts->forEach(port) {
+ 	part.hwPortParts->forEach(port) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (part.hwplatformType.delegationPorts ->excludes(port.hwPortInstance)) then {
+		if (part.hwplatformType.delegationPorts.oclAsType(muml::connector::ConnectorEndpoint) ->excludes(port)) then {
 			//	
 			// Remove its Link the Bus is kept
 			//	var comMedia : Set(CommunicationMedia) := port.connectedMedia->select(m|m.oclIsTypeOf(Link));
@@ -52,7 +54,7 @@ main() {
 			//			part.parentComponent.connectors := part.parentComponent.connectors->excluding(c.oclAsType(PortConnector));
 			//		} endif; 
 			//	};  
-				 remove from resource
+			//	 remove from resource
 				input.removeElement(port);
 				port.dump();
 			}endif;
@@ -72,13 +74,13 @@ main() {
 
 
 // create new port parts for the component part
-helper createHWPortParts(inout resourceInstancePart : ResourceInstancePart) {
+helper createHWPortParts(inout resourcePart : ResourcePart) {
 	
-	var resourceInstance : ResourceInstance := resourceInstancePart.resourceInstanceType;
+	var resourceInstance : ResourceInstance := resourcePart.resourceType;
 	
-	resourceInstance.hwportInstances -> forEach(hwport){
-	if((resourceInstancePart.hwportParts -> select(p | p.hwPortInstance = hwport)) -> isEmpty()) then {
-			resourceInstancePart.hwportParts += new HWPortPart(hwport);
+	resourceInstance.hwports -> forEach(hwport){
+	if((resourcePart.hwPortParts -> select(p | p.communicationResource = hwport)) -> isEmpty()) then {
+			resourcePart.hwPortParts += new HWPortPart(hwport);
 		} endif;
 	};
 	
@@ -89,17 +91,21 @@ helper createHWPortParts(inout hwplatformPart : HWPlatformPart) {
 	var hwplatform : HWPlatform := hwplatformPart.hwplatformType;
 	
 	hwplatform.delegationPorts -> forEach(hwport){
-	if((hwplatformPart.delegationPorts -> select(p | p.hwPortInstance = hwport)) -> isEmpty()) then {
-			hwplatformPart.delegationPorts += new HWPortPart(hwport);
+	if((hwplatformPart.hwPortParts -> select(p | p.communicationResource = hwport)) -> isEmpty()) then {
+			hwplatformPart.hwPortParts += new HWPortPart(hwport);
 		} endif;
 	};
 	
 }
 
 // instantiate port part that references the given port
-constructor HWPortPart::HWPortPart(port : HWPortInstance) {
-	name := port.name;
-	hwPortInstance:=port;
+constructor HWPortPart::HWPortPart(port : HWPort) {
+//	name:=port.name;
+	communicationResource:=port.oclAsType(CommunicationResource);
 }
 
-*/
+
+constructor HWPortPart::HWPortPart(port : DelegationHWPort) {
+//	name:=port.name;
+	//communicationResource:=port.oclAsType(CommunicationResource);
+}

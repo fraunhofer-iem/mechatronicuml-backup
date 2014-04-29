@@ -38,7 +38,7 @@ public class BridgePartLabelExpressionLabelParser5039 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						3,
+						2,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 								.getBridgePart(), null).body();
 	}
