@@ -21,7 +21,7 @@ helper usesModelElementCategory(genDiagram : gmfgen::GenDiagram) : Boolean {
 
 helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
 	switch {
-		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceTypeRepository'){
+		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceRepository'){
 			return 'de.uni_paderborn.fujaba.muml.hardware.resource.category';
 		}
 		
@@ -37,7 +37,7 @@ helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
 
 helper modelElementCategoryName(genDiagram : gmfgen::GenDiagram) : String {
 switch {
-		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceTypeRepository'){
+		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceRepository'){
 			return 'resource';
 		}
 		
