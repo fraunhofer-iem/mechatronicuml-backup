@@ -43,7 +43,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="delegationPorts" upperBound="-1"
-          eType="#//hwplatform/DelegationHWPort" containment="true" eOpposite="#//hwplatform/DelegationHWPort/parentHWPlatform">
+          eType="#//hwplatform/DelegationHWPort" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The HWPortInstances of this HWPlatform that are used as delegation ports."/>
         </eAnnotations>
@@ -74,7 +74,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortParts" upperBound="-1"
-          eType="#//hwplatform/HWPortPart" containment="true" eOpposite="#//hwplatform/HWPortPart/parentPlatformPart">
+          eType="#//hwplatform/HWPortPart" containment="true" eOpposite="#//hwplatform/HWPortPart/parentResourcePart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The delegation ports of this HWPlatformPart.&#xA;They are derived from the hwPlatformType."/>
         </eAnnotations>
@@ -129,17 +129,14 @@
         <details key="HWPortPartToDelegationHWPort" value="self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::HWPortPart)) and ( self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::DelegationHWPort)) or self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::BusPart)))"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatform" lowerBound="1"
-          eType="#//hwplatform/HWPlatform" eOpposite="#//hwplatform/HWPlatform/delegationPorts"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwresource/CommunicationResource"/>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortPart" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="SameProtocol LinkPort2Link"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SameProtocol" value="if (self.connectedMediaPart->size()>0) then&#xA;&#x9;self.connectedMediaPart->first().protocol=self.protocol&#xA;else true&#xA;endif"/>
-        <details key="LinkPort2Link" value="if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()&lt;1) then&#xA;&#x9;true&#xA;else &#xA;&#x9;if (self.portKind = hwresource::HWPortKind::BUS) then&#xA;&#x9;&#x9;self.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))&#xA;&#x9;else  self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))&#xA;endif endif"/>
+        <details key="SameProtocol" value="if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then&#xA;&#x9;self.connectedMediaPart->first().protocol=self.protocol&#xA;else true&#xA;endif"/>
+        <details key="LinkPort2Link" value="if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()&lt;1) then&#xA;&#x9;true&#xA;else &#xA;&#x9;if (self.portKind = hwresource::HWPortKind::BUS) then&#xA;&#x9;&#x9;self.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))&#xA;&#x9;else if (self.portKind = hwresource::HWPortKind::LINK) then&#xA;&#x9;&#x9;self.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))&#xA;&#x9;else true&#xA;endif endif endif&#xA;"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a hardware port of a PlatformPart."/>
@@ -205,7 +202,7 @@
           <details key="documentation" value="The average size of the payload data that is transmitted over this HWPortInstance."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentPlatformPart" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentResourcePart" lowerBound="1"
           eType="#//hwplatform/PlatformPart" eOpposite="#//hwplatform/PlatformPart/hwPortParts"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BusConnector" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector #//hwplatform/NetworkingHardwarePart">

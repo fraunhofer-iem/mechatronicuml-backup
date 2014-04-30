@@ -44,7 +44,7 @@ main() {
 		// that will be removed after the replacement are also removed from the resource.
  	part.hwPortParts->forEach(port) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (part.hwplatformType.delegationPorts.oclAsType(muml::connector::ConnectorEndpoint) ->excludes(port)) then {
+		if (part.hwplatformType.delegationPorts.oclAsType(CommunicationResource) ->excludes(port.communicationResource)) then {
 			//	
 			// Remove its Link the Bus is kept
 			//	var comMedia : Set(CommunicationMedia) := port.connectedMedia->select(m|m.oclIsTypeOf(Link));
@@ -96,7 +96,7 @@ helper createHWPortParts(inout hwplatformPart : HWPlatformPart) {
 		} endif;
 	};
 	
-}
+} 
 
 // instantiate port part that references the given port
 constructor HWPortPart::HWPortPart(port : HWPort) {
@@ -107,5 +107,5 @@ constructor HWPortPart::HWPortPart(port : HWPort) {
 
 constructor HWPortPart::HWPortPart(port : DelegationHWPort) {
 //	name:=port.name;
-	//communicationResource:=port.oclAsType(CommunicationResource);
+	communicationResource:=port;
 }

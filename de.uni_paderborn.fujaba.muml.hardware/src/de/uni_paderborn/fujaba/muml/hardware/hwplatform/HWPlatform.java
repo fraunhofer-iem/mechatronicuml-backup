@@ -66,7 +66,6 @@ public interface HWPlatform extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Delegation Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort#getParentHWPlatform <em>Parent HW Platform</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -74,8 +73,7 @@ public interface HWPlatform extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Delegation Ports</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPlatform_DelegationPorts()
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort#getParentHWPlatform
-	 * @model opposite="parentHWPlatform" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<DelegationHWPort> getDelegationPorts();

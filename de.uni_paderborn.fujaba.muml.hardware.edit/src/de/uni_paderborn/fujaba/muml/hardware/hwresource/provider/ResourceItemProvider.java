@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresource.provider;
 
 
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
@@ -140,6 +141,11 @@ public class ResourceItemProvider
 			(createChildParameter
 				(HwresourcePackage.Literals.RESOURCE__HWPORTS,
 				 HwresourceFactory.eINSTANCE.createCommunicationResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwresourcePackage.Literals.RESOURCE__HWPORTS,
+				 HwplatformFactory.eINSTANCE.createDelegationHWPort()));
 
 		newChildDescriptors.add
 			(createChildParameter

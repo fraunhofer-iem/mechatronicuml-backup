@@ -25,7 +25,7 @@ public class HWPortPartItemSemanticEditPolicy
 	 */
 	public HWPortPartItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.HWPortPart_3017);
+				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.HWPortPart_3022);
 	}
 
 	/**

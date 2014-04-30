@@ -119,7 +119,7 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 	 */
 	public EList<DelegationHWPort> getDelegationPorts() {
 		if (delegationPorts == null) {
-			delegationPorts = new EObjectContainmentWithInverseEList<DelegationHWPort>(DelegationHWPort.class, this, HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS, HwplatformPackage.DELEGATION_HW_PORT__PARENT_HW_PLATFORM);
+			delegationPorts = new EObjectContainmentEList<DelegationHWPort>(DelegationHWPort.class, this, HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS);
 		}
 		return delegationPorts;
 	}
@@ -135,8 +135,6 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 		switch (featureID) {
 			case HwplatformPackage.HW_PLATFORM__EMBEDDED_PLATFORM_PARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEmbeddedPlatformParts()).basicAdd(otherEnd, msgs);
-			case HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDelegationPorts()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

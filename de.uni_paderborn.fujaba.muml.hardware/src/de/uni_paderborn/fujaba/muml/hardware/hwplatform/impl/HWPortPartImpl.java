@@ -3,34 +3,24 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl;
 
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorEndpointImpl;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval;
-
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
@@ -48,7 +38,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getQueuingTime <em>Queuing Time</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getPayloadDataSize <em>Payload Data Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getParentPlatformPart <em>Parent Platform Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getParentResourcePart <em>Parent Resource Part</em>}</li>
  * </ul>
  * </p>
  *
@@ -379,8 +369,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlatformPart getParentPlatformPart() {
-		if (eContainerFeatureID() != HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART) return null;
+	public PlatformPart getParentResourcePart() {
+		if (eContainerFeatureID() != HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART) return null;
 		return (PlatformPart)eInternalContainer();
 	}
 
@@ -389,8 +379,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetParentPlatformPart(PlatformPart newParentPlatformPart, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParentPlatformPart, HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART, msgs);
+	public NotificationChain basicSetParentResourcePart(PlatformPart newParentResourcePart, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentResourcePart, HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART, msgs);
 		return msgs;
 	}
 
@@ -399,20 +389,20 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentPlatformPart(PlatformPart newParentPlatformPart) {
-		if (newParentPlatformPart != eInternalContainer() || (eContainerFeatureID() != HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART && newParentPlatformPart != null)) {
-			if (EcoreUtil.isAncestor(this, newParentPlatformPart))
+	public void setParentResourcePart(PlatformPart newParentResourcePart) {
+		if (newParentResourcePart != eInternalContainer() || (eContainerFeatureID() != HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART && newParentResourcePart != null)) {
+			if (EcoreUtil.isAncestor(this, newParentResourcePart))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newParentPlatformPart != null)
-				msgs = ((InternalEObject)newParentPlatformPart).eInverseAdd(this, HwplatformPackage.PLATFORM_PART__HW_PORT_PARTS, PlatformPart.class, msgs);
-			msgs = basicSetParentPlatformPart(newParentPlatformPart, msgs);
+			if (newParentResourcePart != null)
+				msgs = ((InternalEObject)newParentResourcePart).eInverseAdd(this, HwplatformPackage.PLATFORM_PART__HW_PORT_PARTS, PlatformPart.class, msgs);
+			msgs = basicSetParentResourcePart(newParentResourcePart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART, newParentPlatformPart, newParentPlatformPart));
+			eNotify(new ENotificationImpl(this, Notification.SET, HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART, newParentResourcePart, newParentResourcePart));
 	}
 
 	/**
@@ -423,10 +413,10 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART:
+			case HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetParentPlatformPart((PlatformPart)otherEnd, msgs);
+				return basicSetParentResourcePart((PlatformPart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -445,8 +435,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 				return basicSetQueuingTime(null, msgs);
 			case HwplatformPackage.HW_PORT_PART__PAYLOAD_DATA_SIZE:
 				return basicSetPayloadDataSize(null, msgs);
-			case HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART:
-				return basicSetParentPlatformPart(null, msgs);
+			case HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART:
+				return basicSetParentResourcePart(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -459,7 +449,7 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART:
+			case HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART:
 				return eInternalContainer().eInverseRemove(this, HwplatformPackage.PLATFORM_PART__HW_PORT_PARTS, PlatformPart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -491,8 +481,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 				return getQueuingTime();
 			case HwplatformPackage.HW_PORT_PART__PAYLOAD_DATA_SIZE:
 				return getPayloadDataSize();
-			case HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART:
-				return getParentPlatformPart();
+			case HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART:
+				return getParentResourcePart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -528,8 +518,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 			case HwplatformPackage.HW_PORT_PART__PAYLOAD_DATA_SIZE:
 				setPayloadDataSize((DataSize)newValue);
 				return;
-			case HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART:
-				setParentPlatformPart((PlatformPart)newValue);
+			case HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART:
+				setParentResourcePart((PlatformPart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -564,8 +554,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 			case HwplatformPackage.HW_PORT_PART__PAYLOAD_DATA_SIZE:
 				setPayloadDataSize((DataSize)null);
 				return;
-			case HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART:
-				setParentPlatformPart((PlatformPart)null);
+			case HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART:
+				setParentResourcePart((PlatformPart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -595,8 +585,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 				return queuingTime != null;
 			case HwplatformPackage.HW_PORT_PART__PAYLOAD_DATA_SIZE:
 				return payloadDataSize != null;
-			case HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART:
-				return getParentPlatformPart() != null;
+			case HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART:
+				return getParentResourcePart() != null;
 		}
 		return super.eIsSet(featureID);
 	}

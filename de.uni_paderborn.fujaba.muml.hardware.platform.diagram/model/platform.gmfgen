@@ -168,10 +168,6 @@
             width="130"
             height="47"/>
       </viewmap>
-      <behaviour
-          xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourcePartEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatformPart"/>
@@ -276,7 +272,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3017"
+        visualID="3022"
         editPartClassName="HWPortPartEditPart"
         itemSemanticEditPolicyClassName="HWPortPartItemSemanticEditPolicy"
         notationViewFactoryClassName="HWPortPartViewFactory"
@@ -298,10 +294,6 @@
             width="24"
             height="24"/>
       </viewmap>
-      <behaviour
-          xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.PlatformHWPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPortPart"/>
@@ -312,7 +304,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5040"
+          visualID="5053"
           editPartClassName="HWPortLabelEditPart"
           itemSemanticEditPolicyClassName="HWPortLabelItemSemanticEditPolicy"
           notationViewFactoryClassName="HWPortPartLabelViewFactory">
@@ -1321,7 +1313,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
-        className="HWPortPartLabelExpressionLabelParser5040"
+        className="HWPortPartLabelExpressionLabelParser5053"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPortPart"/>

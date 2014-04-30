@@ -1839,13 +1839,67 @@ public interface HwplatformPackage extends EPackage {
 	int DELEGATION_HW_PORT__CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Parent HW Platform</b></em>' container reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_HW_PORT__PARENT_HW_PLATFORM = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
+	int DELEGATION_HW_PORT__NAME = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parent Resource</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_HW_PORT__PARENT_RESOURCE = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Parent Resource Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_HW_PORT__PARENT_RESOURCE_INSTANCE = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_HW_PORT__PORT_KIND = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_HW_PORT__PROTOCOL = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_HW_PORT__CARDINALITY = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Multi HW Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_HW_PORT__MULTI_HW_PORT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Delegation HW Port</em>' class.
@@ -1854,7 +1908,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_HW_PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+	int DELEGATION_HW_PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2155,13 +2209,13 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PORT_PART__PAYLOAD_DATA_SIZE = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Parent Platform Part</b></em>' container reference.
+	 * The feature id for the '<em><b>Parent Resource Part</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_PART__PARENT_PLATFORM_PART = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 8;
+	int HW_PORT_PART__PARENT_RESOURCE_PART = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>HW Port Part</em>' class.
@@ -3844,17 +3898,6 @@ public interface HwplatformPackage extends EPackage {
 	EClass getDelegationHWPort();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort#getParentHWPlatform <em>Parent HW Platform</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent HW Platform</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort#getParentHWPlatform()
-	 * @see #getDelegationHWPort()
-	 * @generated
-	 */
-	EReference getDelegationHWPort_ParentHWPlatform();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart <em>HW Port Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3953,15 +3996,15 @@ public interface HwplatformPackage extends EPackage {
 	EReference getHWPortPart_PayloadDataSize();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentPlatformPart <em>Parent Platform Part</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentResourcePart <em>Parent Resource Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent Platform Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentPlatformPart()
+	 * @return the meta object for the container reference '<em>Parent Resource Part</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentResourcePart()
 	 * @see #getHWPortPart()
 	 * @generated
 	 */
-	EReference getHWPortPart_ParentPlatformPart();
+	EReference getHWPortPart_ParentResourcePart();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector <em>Bus Connector</em>}'.
@@ -4296,14 +4339,6 @@ public interface HwplatformPackage extends EPackage {
 		EClass DELEGATION_HW_PORT = eINSTANCE.getDelegationHWPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent HW Platform</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DELEGATION_HW_PORT__PARENT_HW_PLATFORM = eINSTANCE.getDelegationHWPort_ParentHWPlatform();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl <em>HW Port Part</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4378,12 +4413,12 @@ public interface HwplatformPackage extends EPackage {
 		EReference HW_PORT_PART__PAYLOAD_DATA_SIZE = eINSTANCE.getHWPortPart_PayloadDataSize();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Platform Part</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Parent Resource Part</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HW_PORT_PART__PARENT_PLATFORM_PART = eINSTANCE.getHWPortPart_ParentPlatformPart();
+		EReference HW_PORT_PART__PARENT_RESOURCE_PART = eINSTANCE.getHWPortPart_ParentResourcePart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusConnectorImpl <em>Bus Connector</em>}' class.

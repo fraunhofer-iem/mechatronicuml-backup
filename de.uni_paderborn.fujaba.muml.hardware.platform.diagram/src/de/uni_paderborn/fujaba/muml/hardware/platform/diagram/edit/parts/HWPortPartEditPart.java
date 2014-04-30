@@ -28,7 +28,7 @@ public class HWPortPartEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3017;
+	public static final int VISUAL_ID = 3022;
 
 	/**
 	 * @generated
@@ -58,9 +58,6 @@ public class HWPortPartEditPart extends BorderedBorderItemEditPart {
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HWPortPartItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.PlatformHWPortEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

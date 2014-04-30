@@ -324,7 +324,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getHWPortPart_3017ContainedLinks(view));
+						.getHWPortPart_3022ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

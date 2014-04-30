@@ -33,9 +33,7 @@
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/ResourcePart/resourceType"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/Delegation"/>
-      <genClasses ecoreClass="hardware.ecore#//hwplatform/DelegationHWPort">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/DelegationHWPort/parentHWPlatform"/>
-      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//hwplatform/DelegationHWPort"/>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/HWPortPart">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/communicationResource"/>
@@ -47,7 +45,7 @@
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatform/HWPortPart/portKind"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/queuingTime"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/payloadDataSize"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/parentPlatformPart"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/parentResourcePart"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/BusConnector">
         <genFeatures property="None" createChild="false" propertySortChoices="true"

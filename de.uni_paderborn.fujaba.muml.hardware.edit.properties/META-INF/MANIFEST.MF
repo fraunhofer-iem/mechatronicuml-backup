@@ -22,10 +22,10 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.hardware.properties.metamodel,
- de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor,
- de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor,
  de.uni_paderborn.fujaba.muml.hardware.properties.hwplatform.editor,
- de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor,
  de.uni_paderborn.fujaba.muml.hardware.properties.hwresource.editor,
+ de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor,
+ de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor,
+ de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor,
  de.uni_paderborn.fujaba.muml.hardware.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

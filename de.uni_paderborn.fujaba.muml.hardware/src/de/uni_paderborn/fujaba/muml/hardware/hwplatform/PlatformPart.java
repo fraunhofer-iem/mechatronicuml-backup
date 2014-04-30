@@ -3,9 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.core.NamedElement;
 
 /**
@@ -90,7 +88,7 @@ public interface PlatformPart extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Hw Port Parts</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentPlatformPart <em>Parent Platform Part</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentResourcePart <em>Parent Resource Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -99,8 +97,8 @@ public interface PlatformPart extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hw Port Parts</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getPlatformPart_HwPortParts()
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentPlatformPart
-	 * @model opposite="parentPlatformPart" containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentResourcePart
+	 * @model opposite="parentResourcePart" containment="true"
 	 * @generated
 	 */
 	EList<HWPortPart> getHwPortParts();

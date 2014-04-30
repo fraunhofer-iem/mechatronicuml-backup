@@ -60,7 +60,6 @@ public class HWPortPartItemProvider
 
 			addCommunicationResourcePropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
-			addParentPlatformPartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,28 +100,6 @@ public class HWPortPartItemProvider
 				 getString("_UI_HWPortPart_protocol_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_protocol_feature", "_UI_HWPortPart_type"),
 				 HwplatformPackage.Literals.HW_PORT_PART__PROTOCOL,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Platform Part feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentPlatformPartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HWPortPart_parentPlatformPart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_parentPlatformPart_feature", "_UI_HWPortPart_type"),
-				 HwplatformPackage.Literals.HW_PORT_PART__PARENT_PLATFORM_PART,
 				 false,
 				 false,
 				 false,

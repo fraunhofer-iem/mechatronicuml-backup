@@ -35,13 +35,13 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getQueuingTime <em>Queuing Time</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getPayloadDataSize <em>Payload Data Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentPlatformPart <em>Parent Platform Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentResourcePart <em>Parent Resource Part</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameProtocol LinkPort2Link'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='if (self.connectedMediaPart->size()>0) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif' LinkPort2Link='if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n\ttrue\nelse \n\tif (self.portKind = hwresource::HWPortKind::BUS) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n\telse  self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\nendif endif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif' LinkPort2Link='if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n\ttrue\nelse \n\tif (self.portKind = hwresource::HWPortKind::BUS) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n\telse if (self.portKind = hwresource::HWPortKind::LINK) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))\n\telse true\nendif endif endif\n'"
  * @generated
  */
 public interface HWPortPart extends ConnectorEndpoint {
@@ -235,31 +235,31 @@ public interface HWPortPart extends ConnectorEndpoint {
 	void setPayloadDataSize(DataSize value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent Platform Part</b></em>' container reference.
+	 * Returns the value of the '<em><b>Parent Resource Part</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart#getHwPortParts <em>Hw Port Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parent Platform Part</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Parent Resource Part</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Platform Part</em>' container reference.
-	 * @see #setParentPlatformPart(PlatformPart)
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_ParentPlatformPart()
+	 * @return the value of the '<em>Parent Resource Part</em>' container reference.
+	 * @see #setParentResourcePart(PlatformPart)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_ParentResourcePart()
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart#getHwPortParts
 	 * @model opposite="hwPortParts" required="true" transient="false"
 	 * @generated
 	 */
-	PlatformPart getParentPlatformPart();
+	PlatformPart getParentResourcePart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentPlatformPart <em>Parent Platform Part</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getParentResourcePart <em>Parent Resource Part</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Platform Part</em>' container reference.
-	 * @see #getParentPlatformPart()
+	 * @param value the new value of the '<em>Parent Resource Part</em>' container reference.
+	 * @see #getParentResourcePart()
 	 * @generated
 	 */
-	void setParentPlatformPart(PlatformPart value);
+	void setParentResourcePart(PlatformPart value);
 
 } // HWPortPart

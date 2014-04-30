@@ -27,6 +27,14 @@ public abstract class CommunicationMediaEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addCommunicationMediaDataFrameSize_GeneralTab_Editor(null, false);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addCommunicationMediaBandwidth_GeneralTab_Editor(null, false);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCommunicationMediaProtocol_GeneralTab_Editor(null, true);
 		}
 
@@ -35,62 +43,6 @@ public abstract class CommunicationMediaEditor
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaDataFrameSize_GeneralTab_Editor(null, false);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaBandwidth_GeneralTab_Editor(null, false);
-		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addCommunicationMediaProtocol_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationMediaProtocol_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaProtocol_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getCommunicationMedia_Protocol());
-
-		editor.setTooltipMessage("The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addCommunicationMediaIsSerial_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationMediaIsSerial_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaIsSerial_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getCommunicationMedia_IsSerial());
-
-		editor.setTooltipMessage("Determines if this CommunicationMedia uses a serial communication.");
-
-		return editor;
 
 	}
 
@@ -138,6 +90,54 @@ public abstract class CommunicationMediaEditor
 						.getCommunicationMedia_Bandwidth());
 
 		editor.setTooltipMessage("The bandwidth of this CommunicationMedia.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCommunicationMediaProtocol_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommunicationMediaProtocol_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaProtocol_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+						.getCommunicationMedia_Protocol());
+
+		editor.setTooltipMessage("The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCommunicationMediaIsSerial_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommunicationMediaIsSerial_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaIsSerial_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+						.getCommunicationMedia_IsSerial());
+
+		editor.setTooltipMessage("Determines if this CommunicationMedia uses a serial communication.");
 
 		return editor;
 

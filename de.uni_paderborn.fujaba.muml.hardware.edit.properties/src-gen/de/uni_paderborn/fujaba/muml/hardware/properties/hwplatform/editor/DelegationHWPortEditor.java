@@ -23,33 +23,6 @@ public class DelegationHWPortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDelegationHWPortParentHWPlatform_GeneralTab_Editor(null, true);
-		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addDelegationHWPortParentHWPlatform_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDelegationHWPortParentHWPlatform_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDelegationHWPortParentHWPlatform_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-						.getDelegationHWPort_ParentHWPlatform());
-
-		return editor;
-
 	}
 
 	//
@@ -84,7 +57,6 @@ public class DelegationHWPortEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
 							"property.tab.documentation",
 							"property.tab.extensions"}).contains(tab);
 		}

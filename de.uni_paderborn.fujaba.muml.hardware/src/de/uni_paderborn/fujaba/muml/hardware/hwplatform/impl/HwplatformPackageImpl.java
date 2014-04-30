@@ -404,15 +404,6 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDelegationHWPort_ParentHWPlatform() {
-		return (EReference)delegationHWPortEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getHWPortPart() {
 		return hwPortPartEClass;
 	}
@@ -494,7 +485,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHWPortPart_ParentPlatformPart() {
+	public EReference getHWPortPart_ParentResourcePart() {
 		return (EReference)hwPortPartEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -684,7 +675,6 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		delegationEClass = createEClass(DELEGATION);
 
 		delegationHWPortEClass = createEClass(DELEGATION_HW_PORT);
-		createEReference(delegationHWPortEClass, DELEGATION_HW_PORT__PARENT_HW_PLATFORM);
 
 		hwPortPartEClass = createEClass(HW_PORT_PART);
 		createEReference(hwPortPartEClass, HW_PORT_PART__COMMUNICATION_RESOURCE);
@@ -695,7 +685,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		createEAttribute(hwPortPartEClass, HW_PORT_PART__PORT_KIND);
 		createEReference(hwPortPartEClass, HW_PORT_PART__QUEUING_TIME);
 		createEReference(hwPortPartEClass, HW_PORT_PART__PAYLOAD_DATA_SIZE);
-		createEReference(hwPortPartEClass, HW_PORT_PART__PARENT_PLATFORM_PART);
+		createEReference(hwPortPartEClass, HW_PORT_PART__PARENT_RESOURCE_PART);
 
 		busConnectorEClass = createEClass(BUS_CONNECTOR);
 		createEReference(busConnectorEClass, BUS_CONNECTOR__CONNECTED_BUS_PART);
@@ -763,6 +753,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		delegationEClass.getESuperTypes().add(this.getNetworkingHardwarePart());
 		delegationEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		delegationHWPortEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
+		delegationHWPortEClass.getESuperTypes().add(theHwresourcePackage.getCommunicationResource());
 		hwPortPartEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
 		busConnectorEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		busConnectorEClass.getESuperTypes().add(this.getNetworkingHardwarePart());
@@ -782,12 +773,12 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		initEClass(hwPlatformEClass, HWPlatform.class, "HWPlatform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatform_EmbeddedPlatformParts(), this.getPlatformPart(), this.getPlatformPart_ParentHWPlatform(), "embeddedPlatformParts", null, 1, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatform_NetworkingHardwareParts(), this.getNetworkingHardwarePart(), null, "networkingHardwareParts", null, 0, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPlatform_DelegationPorts(), this.getDelegationHWPort(), this.getDelegationHWPort_ParentHWPlatform(), "delegationPorts", null, 0, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatform_DelegationPorts(), this.getDelegationHWPort(), null, "delegationPorts", null, 0, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(platformPartEClass, PlatformPart.class, "PlatformPart", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPlatformPart_ParentHWPlatform(), this.getHWPlatform(), this.getHWPlatform_EmbeddedPlatformParts(), "parentHWPlatform", null, 1, 1, PlatformPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPlatformPart_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 1, 1, PlatformPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPlatformPart_HwPortParts(), this.getHWPortPart(), this.getHWPortPart_ParentPlatformPart(), "hwPortParts", null, 0, -1, PlatformPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPlatformPart_HwPortParts(), this.getHWPortPart(), this.getHWPortPart_ParentResourcePart(), "hwPortParts", null, 0, -1, PlatformPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPlatformPartEClass, HWPlatformPart.class, "HWPlatformPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatformPart_HwplatformType(), this.getHWPlatform(), null, "hwplatformType", null, 1, 1, HWPlatformPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -799,7 +790,6 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		initEClass(delegationEClass, Delegation.class, "Delegation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(delegationHWPortEClass, DelegationHWPort.class, "DelegationHWPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDelegationHWPort_ParentHWPlatform(), this.getHWPlatform(), this.getHWPlatform_DelegationPorts(), "parentHWPlatform", null, 1, 1, DelegationHWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPortPartEClass, HWPortPart.class, "HWPortPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPortPart_CommunicationResource(), theHwresourcePackage.getCommunicationResource(), null, "communicationResource", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -810,7 +800,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		initEAttribute(getHWPortPart_PortKind(), theHwresourcePackage.getHWPortKind(), "portKind", null, 0, 1, HWPortPart.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_QueuingTime(), theHwvaluetypePackage.getTimeInterval(), null, "queuingTime", null, 0, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_PayloadDataSize(), theHwvaluetypePackage.getDataSize(), null, "payloadDataSize", null, 0, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPortPart_ParentPlatformPart(), this.getPlatformPart(), this.getPlatformPart_HwPortParts(), "parentPlatformPart", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPortPart_ParentResourcePart(), this.getPlatformPart(), this.getPlatformPart_HwPortParts(), "parentResourcePart", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(busConnectorEClass, BusConnector.class, "BusConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBusConnector_ConnectedBusPart(), this.getBusPart(), null, "connectedBusPart", null, 0, -1, BusConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -928,8 +918,8 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		  (hwPortPartEClass, 
 		   source, 
 		   new String[] {
-			 "SameProtocol", "if (self.connectedMediaPart->size()>0) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif",
-			 "LinkPort2Link", "if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n\ttrue\nelse \n\tif (self.portKind = hwresource::HWPortKind::BUS) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n\telse  self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\nendif endif"
+			 "SameProtocol", "if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif",
+			 "LinkPort2Link", "if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n\ttrue\nelse \n\tif (self.portKind = hwresource::HWPortKind::BUS) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n\telse if (self.portKind = hwresource::HWPortKind::LINK) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))\n\telse true\nendif endif endif\n"
 		   });				
 		addAnnotation
 		  (getHWPortPart_ConnectedMediaPart(), 

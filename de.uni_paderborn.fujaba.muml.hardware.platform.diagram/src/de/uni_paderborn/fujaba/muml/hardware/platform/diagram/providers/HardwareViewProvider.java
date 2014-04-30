@@ -236,7 +236,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 			return createHWPlatformPart_3016(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
-			return createHWPortPart_3017(domainElement, containerView, index,
+			return createHWPortPart_3022(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart.VISUAL_ID:
 			return createDelegationHWPort_3018(domainElement, containerView,
@@ -481,7 +481,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createHWPortPart_3017(EObject domainElement,
+	public Node createHWPortPart_3022(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -518,15 +518,15 @@ public class HardwareViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5040 = createLabel(
+		Node label5053 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
-		label5040.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5053.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5040 = (Location) label5040.getLayoutConstraint();
-		location5040.setX(0);
-		location5040.setY(5);
+		Location location5053 = (Location) label5053.getLayoutConstraint();
+		location5053.setX(0);
+		location5053.setY(5);
 		return node;
 	}
 

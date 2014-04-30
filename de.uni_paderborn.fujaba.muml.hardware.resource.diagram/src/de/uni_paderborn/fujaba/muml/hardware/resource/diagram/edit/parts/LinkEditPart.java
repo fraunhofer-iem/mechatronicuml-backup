@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;

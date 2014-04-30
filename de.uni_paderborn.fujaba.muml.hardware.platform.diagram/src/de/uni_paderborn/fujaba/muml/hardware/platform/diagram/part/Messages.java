@@ -368,22 +368,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HWPortPart_3017_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HWPortPart_3017_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_DelegationHWPort_3018_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DelegationHWPort_3018_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HWPortPart_3022_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HWPortPart_3022_outgoinglinks;
 
 	/**
 	 * @generated

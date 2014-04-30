@@ -753,8 +753,8 @@
          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
-            name="hwresource">
+            key="de.uni_paderborn.fujaba.muml.hardware.resource.category"
+            name="resource">
          
          <child
                class="ResourceRepository"
@@ -772,7 +772,7 @@
             editorId="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorID"
             editorName="Hardware Editor"
             fileExtension="resource_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwresource.category"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.resource.category"
             modelId="Hardware">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/hardware/hwresource/1.0/"

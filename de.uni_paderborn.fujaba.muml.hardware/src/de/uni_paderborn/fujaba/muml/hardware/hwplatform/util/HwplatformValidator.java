@@ -368,7 +368,7 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__SAME_PROTOCOL__EEXPRESSION = "if (self.connectedMediaPart->size()>0) then\n" +
+	protected static final String HW_PORT_PART__SAME_PROTOCOL__EEXPRESSION = "if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n" +
 		"\tself.connectedMediaPart->first().protocol=self.protocol\n" +
 		"else true\n" +
 		"endif";
@@ -405,8 +405,11 @@ public class HwplatformValidator extends EObjectValidator {
 		"else \n" +
 		"\tif (self.portKind = hwresource::HWPortKind::BUS) then\n" +
 		"\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n" +
-		"\telse  self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n" +
-		"endif endif";
+		"\telse if (self.portKind = hwresource::HWPortKind::LINK) then\n" +
+		"\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))\n" +
+		"\telse true\n" +
+		"endif endif endif\n" +
+		"";
 
 	/**
 	 * Validates the LinkPort2Link constraint of '<em>HW Port Part</em>'.

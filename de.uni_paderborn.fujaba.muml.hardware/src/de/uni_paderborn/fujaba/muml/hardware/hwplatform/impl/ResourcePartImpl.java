@@ -4,14 +4,10 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -115,6 +111,7 @@ public class ResourcePartImpl extends PlatformPartImpl implements ResourcePart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

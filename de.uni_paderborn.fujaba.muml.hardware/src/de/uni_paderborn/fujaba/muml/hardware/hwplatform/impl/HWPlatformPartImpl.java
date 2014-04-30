@@ -6,18 +6,13 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -158,6 +153,7 @@ public class HWPlatformPartImpl extends PlatformPartImpl implements HWPlatformPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

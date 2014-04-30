@@ -6,25 +6,17 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
-
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.impl.NamedElementImpl;
 
 /**
@@ -173,7 +165,7 @@ public abstract class PlatformPartImpl extends NamedElementImpl implements Platf
 	 */
 	public EList<HWPortPart> getHwPortParts() {
 		if (hwPortParts == null) {
-			hwPortParts = new EObjectContainmentWithInverseEList<HWPortPart>(HWPortPart.class, this, HwplatformPackage.PLATFORM_PART__HW_PORT_PARTS, HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART);
+			hwPortParts = new EObjectContainmentWithInverseEList<HWPortPart>(HWPortPart.class, this, HwplatformPackage.PLATFORM_PART__HW_PORT_PARTS, HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART);
 		}
 		return hwPortParts;
 	}

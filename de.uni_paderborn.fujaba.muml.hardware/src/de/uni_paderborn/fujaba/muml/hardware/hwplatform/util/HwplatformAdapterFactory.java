@@ -7,6 +7,8 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.*;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -149,6 +151,14 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
 				return createConnectorEndpointAdapter();
+			}
+			@Override
+			public Adapter caseHWPort(HWPort object) {
+				return createHWPortAdapter();
+			}
+			@Override
+			public Adapter caseCommunicationResource(CommunicationResource object) {
+				return createCommunicationResourceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -433,6 +443,34 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectorEndpointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort <em>HW Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort
+	 * @generated
+	 */
+	public Adapter createHWPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource <em>Communication Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource
+	 * @generated
+	 */
+	public Adapter createCommunicationResourceAdapter() {
 		return null;
 	}
 
