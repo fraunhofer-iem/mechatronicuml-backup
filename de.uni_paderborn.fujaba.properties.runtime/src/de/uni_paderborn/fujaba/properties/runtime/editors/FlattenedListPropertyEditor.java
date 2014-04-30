@@ -120,7 +120,10 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		createElementEditor = new CreateElementEditor(adapterFactory);
 		createElementEditor.setInput(element);
 		categoryPropertyEditor.addPropertyEditor(createElementEditor);
-		RuntimePlugin.revalidateLayout(parentComposite);
+		
+		if (parentComposite != null) {
+			RuntimePlugin.revalidateLayout(parentComposite);
+		}
 	}
 	
 	protected class CreateElementEditor extends AbstractPropertyEditor {
