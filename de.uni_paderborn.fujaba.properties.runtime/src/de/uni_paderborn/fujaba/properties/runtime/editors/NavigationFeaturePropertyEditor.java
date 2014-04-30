@@ -41,7 +41,7 @@ public class NavigationFeaturePropertyEditor extends
 	protected Button buttonCreate;
 	protected Button buttonRemove;
 	protected ComboViewer classViewer;
-	private EObject manyValue;
+	protected EObject manyValue;
 	protected boolean createMode = false;
 	private boolean initiallyOpen = false;
 	private EClass selectedClass = null;
@@ -230,7 +230,7 @@ public class NavigationFeaturePropertyEditor extends
 		updateTitle();
 	}
 
-	private void updateTitle() {
+	protected void updateTitle() {
 		navigatedEditor.setTitle(getFeatureDescription());
 	}
 	
@@ -253,8 +253,8 @@ public class NavigationFeaturePropertyEditor extends
 
 	private void refreshButtons() {
 		if (buttonCreate != null && buttonRemove != null) {
-			// buttonCreate.setEnabled(value == null);
-			// buttonRemove.setEnabled(value != null);
+			buttonCreate.setEnabled(value == null);
+			buttonRemove.setEnabled(value != null);
 			buttonCreate.setSelection(isSet());
 			buttonRemove.setSelection(!isSet());
 		}

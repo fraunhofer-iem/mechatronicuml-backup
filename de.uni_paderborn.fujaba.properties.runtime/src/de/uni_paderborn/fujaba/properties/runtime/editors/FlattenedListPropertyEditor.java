@@ -103,6 +103,14 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 					protected boolean shouldShowClassesCombo() {
 						return false;
 					}
+					@Override
+					protected void updateTitle() {
+						String title = "";
+						if (manyValue != null && manyValue.eClass() != null && manyValue.eClass().getName() != null) {
+							title = manyValue.eClass().getName();
+						}
+						navigatedEditor.setTitle(RuntimePlugin.makeHumanReadable(title, true));
+					}
 				};
 				editor.setInput(element);
 				categoryPropertyEditor.addPropertyEditor(editor);
