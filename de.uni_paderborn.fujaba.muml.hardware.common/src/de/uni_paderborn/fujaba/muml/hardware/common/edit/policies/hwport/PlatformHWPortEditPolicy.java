@@ -106,15 +106,21 @@ public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
 					for(ConnectorEndpoint e :connector.getConnectorEndpoints()){
 						if(HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(e.eClass())){
 							hwPortPart = (HWPortPart) e;
+							break;
+						}
+						else if(HwplatformPackage.Literals.BUS_PART.isSuperTypeOf(e.eClass()) || HwplatformPackage.Literals.BRIDGE_PART.isSuperTypeOf(e.eClass())){
+							hwPortPart = null;
+							kind = HWPortKind.BUS;
+						}
 						}
 					}
 					
 				}
 			}
-			if (hwPortPart != null) {
-				modelPortKind = hwPortPart.getPortKind();
-			}
+			
 
+		if (hwPortPart != null) {
+			modelPortKind = hwPortPart.getPortKind();
 		}
 		switch (modelPortKind.getValue()) {
 		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):

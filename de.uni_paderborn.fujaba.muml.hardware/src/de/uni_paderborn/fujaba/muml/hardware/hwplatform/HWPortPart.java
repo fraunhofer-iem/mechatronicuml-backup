@@ -96,7 +96,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Protocol</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_Protocol()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if(self.communicationResource.oclIsUndefined()) then\n\tnull \nelse\n self.communicationResource.protocol\n endif'"
 	 * @generated
 	 */
@@ -167,7 +167,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
 	 * @see #setPortKind(HWPortKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_PortKind()
-	 * @model required="true" volatile="true" derived="true"
+	 * @model volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.communicationResource.oclIsUndefined()) then\n\tnull\nelse \n   self.communicationResource.portKind\n  endif'"
 	 * @generated
 	 */

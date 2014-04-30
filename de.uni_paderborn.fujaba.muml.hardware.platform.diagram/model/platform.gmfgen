@@ -1278,7 +1278,7 @@
           body="--let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then &#xA;--&#x9;self.name +' :'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name&#xA;--else &#xA;--&#x9;self.name&#xA;--endif &#xA;-- in&#xA;--nameToShow"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclIsTypeOf(hwplatform::HWPortPart)"/>
+          body="--self.oclIsKindOf(hwplatform::HWPortPart) or self.oclIsKindOf(hwplatform::BusPart)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--self.oclIsTypeOf(hwplatform::DelegationHWPort)"/>

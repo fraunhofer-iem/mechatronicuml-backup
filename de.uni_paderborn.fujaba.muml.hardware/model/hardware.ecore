@@ -155,9 +155,8 @@
           <details key="derivation" value="if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then&#xA;&#x9;self.connectors.oclAsType(hwplatform::BusConnector).connectedBusPart.oclAsType(hwplatform::CommunicationMediaPart)->asOrderedSet()&#xA;else &#xA;&#x9;self.connectors.oclAsType(hwplatform::CommunicationMediaPart)->asOrderedSet()&#xA;endif"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
-          eType="#//hwresource/CommunicationProtocol" changeable="false" volatile="true"
-          transient="true" derived="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
+          changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if(self.communicationResource.oclIsUndefined()) then&#xA;&#x9;null &#xA;else&#xA; self.communicationResource.protocol&#xA; endif"/>
         </eAnnotations>
@@ -185,8 +184,8 @@
           <details key="documentation" value="This attribute indicates whether this HWPort is a multi port or not."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" lowerBound="1"
-          eType="#//hwresource/HWPortKind" volatile="true" derived="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" eType="#//hwresource/HWPortKind"
+          volatile="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
         </eAnnotations>

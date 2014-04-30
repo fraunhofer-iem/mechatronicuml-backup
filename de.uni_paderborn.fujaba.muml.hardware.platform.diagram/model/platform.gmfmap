@@ -336,7 +336,7 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsTypeOf(hwplatform::HWPortPart)"/>
+          body="self.oclIsKindOf(hwplatform::HWPortPart) or self.oclIsKindOf(hwplatform::BusPart)"/>
       <targetEnd
           body="self.oclIsTypeOf(hwplatform::DelegationHWPort)"/>
     </creationConstraints>
