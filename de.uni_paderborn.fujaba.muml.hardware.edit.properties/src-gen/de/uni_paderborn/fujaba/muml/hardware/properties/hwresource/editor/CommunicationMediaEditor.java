@@ -36,6 +36,14 @@ public abstract class CommunicationMediaEditor
 					true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addCommunicationMediaDataFrameSize_GeneralTab_Editor(null, false);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addCommunicationMediaBandwidth_GeneralTab_Editor(null, false);
+		}
+
 	}
 
 	/**
@@ -81,6 +89,55 @@ public abstract class CommunicationMediaEditor
 						.getCommunicationMedia_IsSerial());
 
 		editor.setTooltipMessage("Determines if this CommunicationMedia uses a serial communication.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCommunicationMediaDataFrameSize_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommunicationMediaDataFrameSize_GeneralTab_Editor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaDataFrameSize_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+						.getCommunicationMedia_DataFrameSize());
+
+		editor.setTooltipMessage("The size of a data frame.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCommunicationMediaBandwidth_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommunicationMediaBandwidth_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaBandwidth_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+						.getCommunicationMedia_Bandwidth());
+
+		editor.setTooltipMessage("The bandwidth of this CommunicationMedia.");
 
 		return editor;
 
