@@ -136,7 +136,7 @@ public class NavigationFeaturePropertyEditor extends
 		}
 		
 		if (hasCreateButton()) {
-			buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
+			buttonCreate = toolkit.createButton(composite, "", SWT.NONE);
 			buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
 					12, 12));
 			buttonCreate.addSelectionListener(new SelectionAdapter() {
@@ -151,7 +151,7 @@ public class NavigationFeaturePropertyEditor extends
 		}
 		
 		if (hasRemoveButton()) {
-			buttonRemove = toolkit.createButton(composite, "", SWT.TOGGLE);
+			buttonRemove = toolkit.createButton(composite, "", SWT.NONE);
 			buttonRemove.setImage(RuntimePlugin.getImage(
 					RuntimePlugin.IMAGE_REMOVE, 12, 12));
 			buttonRemove.addSelectionListener(new SelectionAdapter() {
@@ -249,14 +249,15 @@ public class NavigationFeaturePropertyEditor extends
 	public void refresh() {
 		super.refresh();
 		navigatedEditor.refresh();
+		refreshButtons();
 	}
 
 	private void refreshButtons() {
 		if (buttonCreate != null && buttonRemove != null) {
 			buttonCreate.setEnabled(value == null);
 			buttonRemove.setEnabled(value != null);
-			buttonCreate.setSelection(isSet());
-			buttonRemove.setSelection(!isSet());
+			//buttonCreate.setSelection(isSet());
+			//buttonRemove.setSelection(!isSet());
 		}
 	}
 
