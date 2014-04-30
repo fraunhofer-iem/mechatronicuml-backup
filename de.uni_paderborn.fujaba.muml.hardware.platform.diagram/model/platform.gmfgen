@@ -765,15 +765,8 @@
             genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="BusPortInstance"
-            description="Create new BusPortInstance"
-            largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/busport_large.gif"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/busport_small.gif"
-            genNodes="//@diagram/@childNodes.4"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="LinkPortInstance"
-            description="Create new LinkPortInstance"
+            title="DelegationPort"
+            description="Create new Delegation Port"
             largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_large.gif"
             smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_small.gif"/>
       </groups>

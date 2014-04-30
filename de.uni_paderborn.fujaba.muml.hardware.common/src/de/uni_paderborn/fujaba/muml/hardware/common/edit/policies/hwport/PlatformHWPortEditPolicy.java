@@ -78,11 +78,16 @@ public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
 					for(ConnectorEndpoint e :connector.getConnectorEndpoints()){
 						if(HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(e.eClass())){
 							hwPortPart = (HWPortPart) e;
+							break;
 						}
 					}
 					
+					
 				}
 			}
+		}
+		if(hwPortPart==null){
+			return false;
 		}
 		return hwPortPart.isMultiHWPort();
 	}

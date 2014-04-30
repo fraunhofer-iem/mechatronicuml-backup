@@ -77,21 +77,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="BusPortInstance"
-          description="Create new BusPortInstance">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/busport_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-        <largeIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/busport_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="LinkPortInstance"
-          description="Create new LinkPortInstance">
+          title="DelegationPort"
+          description="Create new Delegation Port">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/linkport_small.gif"

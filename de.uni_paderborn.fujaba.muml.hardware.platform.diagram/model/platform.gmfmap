@@ -180,9 +180,6 @@
             <viewExpression
                 body="' '"/>
           </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="platform.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
         </ownedChild>

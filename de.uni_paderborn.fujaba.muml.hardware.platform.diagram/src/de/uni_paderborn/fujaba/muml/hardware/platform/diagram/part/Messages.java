@@ -303,22 +303,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String BusPortInstance6CreationTool_title;
+	public static String DelegationPort6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String BusPortInstance6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String LinkPortInstance7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String LinkPortInstance7CreationTool_desc;
+	public static String DelegationPort6CreationTool_desc;
 
 	/**
 	 * @generated
