@@ -59,6 +59,7 @@ public class PlatformPartItemProvider
 			super.getPropertyDescriptors(object);
 
 			addParentHWPlatformPropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +79,28 @@ public class PlatformPartItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformPart_parentHWPlatform_feature", "_UI_PlatformPart_type"),
 				 HwplatformPackage.Literals.PLATFORM_PART__PARENT_HW_PLATFORM,
 				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cardinality feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardinalityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PlatformPart_cardinality_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformPart_cardinality_feature", "_UI_PlatformPart_type"),
+				 HwplatformPackage.Literals.PLATFORM_PART__CARDINALITY,
+				 true,
 				 false,
 				 false,
 				 null,

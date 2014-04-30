@@ -27,6 +27,10 @@ public abstract class PlatformPartEditor
 			addPlatformPartParentHWPlatform_GeneralTab_Editor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addPlatformPartCardinality_GeneralTab_Editor(null, false);
+		}
+
 	}
 
 	/**
@@ -48,6 +52,30 @@ public abstract class PlatformPartEditor
 						.getPlatformPart_ParentHWPlatform());
 
 		editor.setTooltipMessage("The HWPlatform, this PlatformPart belongs to.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addPlatformPartCardinality_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createPlatformPartCardinality_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPlatformPartCardinality_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+						.getPlatformPart_Cardinality());
+
+		editor.setTooltipMessage("The cardinality of a PlatformPart determines how many instances are allowed to exist in the associated HWPlatformInstance at instance level.");
 
 		return editor;
 

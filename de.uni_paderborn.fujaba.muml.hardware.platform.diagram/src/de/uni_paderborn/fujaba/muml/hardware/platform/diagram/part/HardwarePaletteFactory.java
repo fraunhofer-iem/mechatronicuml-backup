@@ -145,11 +145,11 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDelegationPort6CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.DelegationPort6CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.Messages.DelegationPort6CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.DelegationHWPort_3018));
 		entry.setId("createDelegationPort6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_small.gif")); //$NON-NLS-1$

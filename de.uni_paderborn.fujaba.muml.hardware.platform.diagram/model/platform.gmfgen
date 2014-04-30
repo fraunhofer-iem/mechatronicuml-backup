@@ -768,7 +768,8 @@
             title="DelegationPort"
             description="Create new Delegation Port"
             largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_large.gif"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_small.gif"/>
+            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_small.gif"
+            genNodes="//@diagram/@childNodes.4"/>
       </groups>
       <groups
           title="Hardware-Platform"

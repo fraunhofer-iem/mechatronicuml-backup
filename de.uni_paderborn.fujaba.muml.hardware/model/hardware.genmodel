@@ -20,7 +20,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwplatform/PlatformPart">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/PlatformPart/parentHWPlatform"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/PlatformPart/cardinality"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/PlatformPart/cardinality"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/PlatformPart/hwPortParts"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/HWPlatformPart">
