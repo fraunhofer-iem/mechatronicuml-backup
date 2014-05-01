@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.H
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 
 
 /**
@@ -19,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
  * @author adann
  * 
  */
-public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
+public class HWDelegationPortEditPolicy extends HWPortBaseEditPolicy {
 	
 	@Override
 	public void handleNotificationEvent(Notification notification) {
@@ -31,7 +32,7 @@ public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
 		/**
 		 * 
 		 */
-		if (feature == HwplatformPackage.Literals.HW_PORT_PART__COMMUNICATION_RESOURCE) {
+		if (feature == HwresourcePackage.Literals.COMMUNICATION_RESOURCE__PORT_KIND || feature == HwresourcePackage.Literals.COMMUNICATION_RESOURCE__MULTI_HW_PORT) {
 			refreshHWPortFigure();
 
 		}
@@ -45,16 +46,7 @@ public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
 	 */
 	@Override
 	protected boolean isDelegationPort() {
-		EObject element = getSemanticElement();
-		if (element != null) {
-			if(HwplatformPackage.Literals.DELEGATION_HW_PORT.isSuperTypeOf(element.eClass())){
-				return true;
-			}
-			else if(HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(element.eClass())){
-				return false;
-			}
-		} 
-		return false;
+		return true;
 	}
 
 
@@ -64,32 +56,18 @@ public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
 	protected boolean isMultiHWPort() {
 		EObject element = getSemanticElement();
 	
-		HWPortPart hwPortPart = null;
+		DelegationHWPort hwPort = null;
 
 		if (element != null) {
-			if (HwplatformPackage.Literals.HW_PORT_PART
+			if (HwplatformPackage.Literals.DELEGATION_HW_PORT
 					.isSuperTypeOf(element.eClass())) {
-				hwPortPart = (HWPortPart) element;
-			} else if (HwplatformPackage.Literals.DELEGATION_HW_PORT
-					.isSuperTypeOf(element.eClass())) {
-				DelegationHWPort delegationPort = (DelegationHWPort) element;
-				if (!delegationPort.getConnectors().isEmpty()) {
-					Connector connector =delegationPort.getConnectors().get(0);
-					for(ConnectorEndpoint e :connector.getConnectorEndpoints()){
-						if(HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(e.eClass())){
-							hwPortPart = (HWPortPart) e;
-							break;
-						}
-					}
-					
-					
-				}
-			}
+				hwPort = (DelegationHWPort) element;
+			} 
 		}
-		if(hwPortPart==null){
+		if(hwPort==null){
 			return false;
 		}
-		return hwPortPart.isMultiHWPort();
+		return hwPort.isMultiHWPort();
 	}
 
 
@@ -98,34 +76,17 @@ public class PlatformHWPortEditPolicy extends HWPortBaseEditPolicy {
 		EObject element = getSemanticElement();
 		HWPortKind kind = HWPortKind.BUS;
 		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
-		HWPortPart hwPortPart = null;
+		DelegationHWPort hwPort = null;
 		if (element != null) {
-			if (HwplatformPackage.Literals.HW_PORT_PART
+			if (HwplatformPackage.Literals.DELEGATION_HW_PORT
 					.isSuperTypeOf(element.eClass())) {
-				hwPortPart = (HWPortPart) element;
-			} else if (HwplatformPackage.Literals.DELEGATION_HW_PORT
-					.isSuperTypeOf(element.eClass())) {
-				DelegationHWPort delegationPort = (DelegationHWPort) element;
-				if (!delegationPort.getConnectors().isEmpty()) {
-					Connector connector =delegationPort.getConnectors().get(0);
-					for(ConnectorEndpoint e :connector.getConnectorEndpoints()){
-						if(HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(e.eClass())){
-							hwPortPart = (HWPortPart) e;
-							break;
-						}
-						else if(HwplatformPackage.Literals.BUS_PART.isSuperTypeOf(e.eClass()) || HwplatformPackage.Literals.BRIDGE_PART.isSuperTypeOf(e.eClass())){
-							hwPortPart = null;
-							kind = HWPortKind.BUS;
-						}
-						}
-					}
-					
-				}
+				hwPort = (DelegationHWPort) element;
+			} 
 			}
 			
 
-		if (hwPortPart != null) {
-			modelPortKind = hwPortPart.getPortKind();
+		if (hwPort != null) {
+			modelPortKind = hwPort.getPortKind();
 		}
 		switch (modelPortKind.getValue()) {
 		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):

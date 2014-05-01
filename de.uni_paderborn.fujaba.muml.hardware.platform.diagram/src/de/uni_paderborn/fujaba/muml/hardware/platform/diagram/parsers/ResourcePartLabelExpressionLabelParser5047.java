@@ -38,7 +38,7 @@ public class ResourcePartLabelExpressionLabelParser5047 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						15,
+						18,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 								.getResourcePart(), null).body();
 	}
@@ -50,7 +50,7 @@ public class ResourcePartLabelExpressionLabelParser5047 extends
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						16,
+						19,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 								.getResourcePart(), null).evaluate(target);
 		return String.valueOf(result);

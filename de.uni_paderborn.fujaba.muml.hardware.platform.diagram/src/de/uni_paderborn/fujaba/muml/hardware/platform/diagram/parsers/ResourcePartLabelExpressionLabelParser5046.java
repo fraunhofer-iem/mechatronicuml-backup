@@ -38,7 +38,7 @@ public class ResourcePartLabelExpressionLabelParser5046 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						14,
+						17,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 								.getResourcePart(), null).body();
 	}

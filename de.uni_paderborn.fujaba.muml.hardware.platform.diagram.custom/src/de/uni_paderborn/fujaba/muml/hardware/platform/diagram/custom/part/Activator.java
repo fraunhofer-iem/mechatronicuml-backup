@@ -97,9 +97,10 @@ public class Activator extends AbstractUIPlugin {
 				transformationExecutor, modelExtents);
 		editingDomain.getCommandStack().execute(command);
 
-		if (!command.hasChanged()) {
-			editingDomain.getCommandStack().undo();
-		}
+		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
+			//	editingDomain.getCommandStack().undo();
+					command.undo();
+					}
 	}
 
 	/*

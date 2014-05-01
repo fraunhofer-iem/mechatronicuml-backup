@@ -106,6 +106,5 @@ constructor HWPortPart::HWPortPart(port : HWPort) {
 
 
 constructor HWPortPart::HWPortPart(port : DelegationHWPort) {
-//	name:=port.name;
 	communicationResource:=port;
 }

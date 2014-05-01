@@ -30,7 +30,7 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareAbstractExpression[27];
+		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareAbstractExpression[30];
 	}
 
 	/**
@@ -60,7 +60,10 @@ public class HardwareOCLFactory {
 					"--\': \' + if self.hwplatformType.oclIsUndefined() then \'null\' else self.hwplatformType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\n--let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\n--\'[\' + lowerBound + \'..\' + upperBound + \']\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'Enter cardinality in form of:  lowerBound..upperBound\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'delegation-port\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.name".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'resourceInstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
