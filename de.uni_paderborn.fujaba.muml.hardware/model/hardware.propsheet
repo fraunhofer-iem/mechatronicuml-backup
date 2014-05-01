@@ -43,10 +43,10 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties>
+      <properties tooltip="" reconcile="false">
         <genFeature href="hardware.genmodel#//hardware/hwplatform/PlatformPart/cardinality"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
@@ -74,6 +74,7 @@
     <classes>
       <genClass href="hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.0"/>
+      <superClasses href="#//@packages.1/@classes.14"/>
     </classes>
     <classes>
       <genClass href="hardware.genmodel#//hardware/hwplatform/HWPortPart"/>
@@ -265,10 +266,10 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties>
+      <properties tooltip="" reconcile="false">
         <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationResource/cardinality"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
       </properties>
     </classes>
     <classes>

@@ -77,7 +77,8 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CommunicationResource_3022 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.CommunicationResource_3022"); //$NON-NLS-1$
+	public static final IElementType HWPortInstance_3030 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstance_3030"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -194,9 +195,9 @@ public class HardwareElementTypes {
 							.getStorageMemoryInstance());
 
 			elements.put(
-					CommunicationResource_3022,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getCommunicationResource());
+					HWPortInstance_3030,
+					de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
+							.getHWPortInstance());
 
 			elements.put(
 					HWPlatformInstance_3023,
@@ -267,7 +268,7 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ProcessorInstance_3019);
 			KNOWN_ELEMENT_TYPES.add(ProcessingMemoryInstance_3020);
 			KNOWN_ELEMENT_TYPES.add(StorageMemoryInstance_3021);
-			KNOWN_ELEMENT_TYPES.add(CommunicationResource_3022);
+			KNOWN_ELEMENT_TYPES.add(HWPortInstance_3030);
 			KNOWN_ELEMENT_TYPES.add(HWPlatformInstance_3023);
 			KNOWN_ELEMENT_TYPES.add(ActuatorInstance_3024);
 			KNOWN_ELEMENT_TYPES.add(SensorInstance_3025);
@@ -302,8 +303,8 @@ public class HardwareElementTypes {
 			return ProcessingMemoryInstance_3020;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
 			return StorageMemoryInstance_3021;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
-			return CommunicationResource_3022;
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
+			return HWPortInstance_3030;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
 			return HWPlatformInstance_3023;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:

@@ -65,7 +65,7 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
-			return false;
+		  return false;
 		}
 		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
@@ -104,7 +104,7 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
-			return false;
+		  return false;
 		}
 		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()

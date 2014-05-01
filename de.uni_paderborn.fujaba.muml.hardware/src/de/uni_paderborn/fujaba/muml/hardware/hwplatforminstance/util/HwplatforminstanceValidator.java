@@ -165,7 +165,7 @@ public class HwplatforminstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DELEGATION_INSTANCE__HW_PORT_INSTANCE_TO_DELEGATION_PORT_INSTANCE__EEXPRESSION = "self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::HWPortInstance)) and ( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n" +
+	protected static final String DELEGATION_INSTANCE__HW_PORT_INSTANCE_TO_DELEGATION_PORT_INSTANCE__EEXPRESSION = "( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n" +
 		"";
 
 	/**

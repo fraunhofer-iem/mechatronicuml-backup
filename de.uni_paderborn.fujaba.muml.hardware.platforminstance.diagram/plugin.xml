@@ -93,8 +93,8 @@
          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.category"
-            name="platform">
+            key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
+            name="hwplatform">
          
          <child
                class="HWPlatformInstanceConfiguration"
@@ -113,7 +113,7 @@
             editorId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"
             editorName="PlatformInstance Editor"
             fileExtension="platforminstance_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.category"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
             modelId="PlatformInstance">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/"
@@ -328,7 +328,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="PlatformInstance"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3016,3017,3018,3019,3020,3021,3030,3023,3024,3025,3026,3027,3028"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4008,4009,4010"/>
       </viewProvider>
    </extension>
@@ -341,13 +341,13 @@
             <method name="getType()" value="PlatformInstance"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2002,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028"/>
+            <method name="getType()" value="2002,3016,3017,3018,3019,3020,3021,3030,3023,3024,3025,3026,3027,3028"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4008,4009,4010"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5080,5066,5067,5068,5042,5043,5044,5045,5046,5047,5048,5049,5050,5051,5052,5053,5054,5055,5056,5057,5058,5059,5060,5061,5062,5063,5064,5065,5079,5069,5070,5071,5072,5073,5074,5075,5076,5077,5078"/>
+            <method name="getType()" value="5080,5066,5067,5068,5042,5043,5044,5045,5046,5047,5048,5049,5050,5051,5052,5053,5054,5055,5056,5057,5058,5059,5060,5061,5062,5063,5064,5082,5079,5069,5070,5071,5072,5073,5074,5075,5076,5077,5078"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7004,7005,7006"/>
@@ -398,10 +398,10 @@
          <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StorageMemoryInstanceEditPart" id="StorageMemoryInstance_3021"/>
          <context elements="StorageMemoryInstance_3021"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfCommunicationResourceEditPart">
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfHWPortInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.CommunicationResourceEditPart" id="CommunicationResource_3022"/>
-         <context elements="CommunicationResource_3022"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart" id="HWPortInstance_3030"/>
+         <context elements="HWPortInstance_3030"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfHWPlatformInstance2EditPart">
          <Priority name="Lowest"/>
@@ -532,14 +532,14 @@
             <param name="semanticHint" value="3021"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.CommunicationResource_3022"
-               name="%metatype.name.CommunicationResource_3022"
+               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstance_3030"
+               name="%metatype.name.HWPortInstance_3030"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CommunicationResource"
-               edithelper="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.helpers.CommunicationResourceEditHelper">
-            <param name="semanticHint" value="3022"/>
+               eclass="HWPortInstance"
+               edithelper="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.helpers.HWPortInstanceEditHelper">
+            <param name="semanticHint" value="3030"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
@@ -651,7 +651,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProcessorInstance_3019"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProcessingMemoryInstance_3020"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.StorageMemoryInstance_3021"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.CommunicationResource_3022"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstance_3030"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstance_3023"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ActuatorInstance_3024"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.SensorInstance_3025"/>

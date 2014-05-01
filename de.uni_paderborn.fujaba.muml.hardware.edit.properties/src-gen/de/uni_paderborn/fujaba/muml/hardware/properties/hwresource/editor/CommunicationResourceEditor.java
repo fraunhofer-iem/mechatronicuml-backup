@@ -28,7 +28,7 @@ public class CommunicationResourceEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationResourceCardinality_GeneralTab_Editor(null, false);
+			addCommunicationResourceCardinality_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -71,7 +71,7 @@ public class CommunicationResourceEditor
 	 * @generated
 	 */
 	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationResourceCardinality_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 						.getCommunicationResource_Cardinality());

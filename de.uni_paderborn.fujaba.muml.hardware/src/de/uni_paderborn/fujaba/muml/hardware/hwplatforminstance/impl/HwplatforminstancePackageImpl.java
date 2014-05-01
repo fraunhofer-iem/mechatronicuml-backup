@@ -754,7 +754,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		  (getHWPortInstance_HwPortType(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.type.oclIsKindOf(hwresource::CommunicationResource))\nthen\nself.type.oclAsType(hwresource::CommunicationResource)\nelse\nnull\nendif"
+			 "derivation", "if (self.type.oclIsUndefined()) then\n\tnull\nelse\n\tself.type.oclAsType(hwplatform::HWPortPart).communicationResource\nendif"
 		   });			
 		addAnnotation
 		  (getHWPortInstance_ConnectedMediaInstances(), 
@@ -772,13 +772,13 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		  (getHWPortInstance_PortKind(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.protocol.oclIsUndefined()) then\n\tnull\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\t\thwresource::HWPortKind::BUS\nelse\n\t\thwresource::HWPortKind::LINK\nendif endif"
+			 "derivation", "if (self.hwPortType.oclIsUndefined()) then\n hwresource::HWPortKind::BUS\nelse\n self.hwPortType.portKind\nendif\n"
 		   });				
 		addAnnotation
 		  (delegationInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "HWPortInstanceToDelegationPortInstance", "self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::HWPortInstance)) and ( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n"
+			 "HWPortInstanceToDelegationPortInstance", "( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n"
 		   });		
 		addAnnotation
 		  (getBusConnectorInstance_ConnectedBusInstance(), 

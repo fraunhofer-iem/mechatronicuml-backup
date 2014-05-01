@@ -356,10 +356,10 @@ public class HWPlatformInstanceConfigurationCanonicalEditPolicy extends
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-						.getCommunicationResource_3022ContainedLinks(view));
+						.getHWPortInstance_3030ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

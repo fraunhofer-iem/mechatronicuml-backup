@@ -42,7 +42,7 @@ public interface HWPortInstance extends HWPort, ConnectorEndpointInstance {
 	 * @see #setHwPortType(CommunicationResource)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPortInstance_HwPortType()
 	 * @model required="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.type.oclIsKindOf(hwresource::CommunicationResource))\nthen\nself.type.oclAsType(hwresource::CommunicationResource)\nelse\nnull\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.type.oclIsUndefined()) then\n\tnull\nelse\n\tself.type.oclAsType(hwplatform::HWPortPart).communicationResource\nendif'"
 	 * @generated
 	 */
 	CommunicationResource getHwPortType();
@@ -101,7 +101,7 @@ public interface HWPortInstance extends HWPort, ConnectorEndpointInstance {
 	 * @see #setPortKind(HWPortKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPortInstance_PortKind()
 	 * @model required="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.protocol.oclIsUndefined()) then\n\tnull\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\t\thwresource::HWPortKind::BUS\nelse\n\t\thwresource::HWPortKind::LINK\nendif endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.hwPortType.oclIsUndefined()) then\n hwresource::HWPortKind::BUS\nelse\n self.hwPortType.portKind\nendif\n'"
 	 * @generated
 	 */
 	HWPortKind getPortKind();

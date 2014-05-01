@@ -5,11 +5,13 @@ modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype HardwarePackage uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype ResourcePackage uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype ResourceInstancePackage uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype PlatformPackage uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype PlatformInstancePackage uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype HWValueTypePackage uses hardware::hwvaluetype('http://www.fujaba.de/muml/hardware/1.0/');
 
-/* 
+
 
 
 //This transformation creates an initial HWPlatformInstance.
@@ -40,19 +42,18 @@ mapping HWPlatform::createHWPlatformInstance(number:String,parent:HWPlatformInst
 	log("Start to create the HWPlatformInstance for:" +result.eClass().name +", Name:" +result.name);
 	
 	//create the embedded CommunicationMedia	
-	result.communicationResources+=self.embeddedCommunicationResources[CommunicationMedia]->map createMedia(number)->asOrderedSet();
+	result.networkingHardwareInstances+=self.networkingHardwareParts->map createNetworkingResourceInstance(number)->asOrderedSet();
 		
-	//create the embedded Bridges
-	result.communicationResources+=self.embeddedCommunicationResources[Bridge]->map createBridge(number)->asOrderedSet();
+	//create the delegation ports
 	
-	
+	result.delegationPorts:=self.delegationPorts->map createDelegationHWPortInstance(number);
 	
 	//create the embedded ResourceInstances
 	var instances:Set(ResourceInstance);
-	self.embeddedPlatformParts[ResourceInstancePart]->forEach(rip){
-		instances+=rip.ResourceInstancePart2ResourceInstance(number,result)->asOrderedSet();
+	self.embeddedPlatformParts[ResourcePart]->forEach(rip){
+		instances+=rip.ResourcePart2ResourceInstance(number,result)->asOrderedSet();
 	};
-	result.resourceInstances:=instances;
+	result.resources:=instances;
 	
 	
 	//the delegation and delegation Ports are created by the mapping createPort(), to ease resolving
@@ -71,12 +72,12 @@ mapping HWPlatform::createHWPlatformInstance(number:String,parent:HWPlatformInst
 // each ResourceInstance gets a number
 //the number is used to distinguish between multiple instances of the same ResourceInstance
 // the argument parent is used to resolve the correct CommunicationMedia of the HWPortInstances
-query ResourceInstancePart::ResourceInstancePart2ResourceInstance(number:String,parent:HWPlatformInstance):Set(ResourceInstance){
+query ResourcePart::ResourcePart2ResourceInstance(number:String,parent:HWPlatformInstance):Set(ResourceInstance){
 	var instances:Set(ResourceInstance);
 	var lowerBound: Integer;
 	lowerBound:=InitValue(self);
 	while(lowerBound>0){
-			instances+=self.resourceInstanceType->map createStructuredResourceInstance(self.name,number+"."+lowerBound.toString(),parent)->asOrderedSet();
+			instances+=self->map createResourceInstance(self.name,number+"."+lowerBound.toString(),parent)->asOrderedSet();
 			lowerBound:=lowerBound-1;
 			};
 	return instances;
@@ -100,56 +101,76 @@ query HWPlatformPart::HWPlatformPart2HWPlatformInstance(number:String,parent:HWP
 }
 
 
+mapping  ResourcePart::createResourceInstance(partName:String,number:String,parent:HWPlatformInstance):ResourceInstance
+ disjuncts ResourcePart::createStructuredResourceInstance, ResourcePart::createActuatorInstance, ResourcePart::createSensorInstance
+	{}
+
+
 //create a StructuredResourceInstances
 // the argument parent is used to resolve the correct CommunicationMedia of the HWPortInstances
-mapping ResourceInstance::createStructuredResourceInstance(partName:String,number:String,parent:HWPlatformInstance):ResourceInstance{
-init{
-	switch{ 	
-			case (self.oclIsTypeOf(StructuredResourceInstance)){
-			result:=new StructuredResourceInstance();
-			result.oclAsType(StructuredResourceInstance).embeddedAtomicResourceInstances:=self.oclAsType(StructuredResourceInstance).embeddedAtomicResourceInstances.deepclone().oclAsType(AtomicResourceInstance);
-					}
-			case (self.oclIsTypeOf(SensorInstance)){
-			result:=new SensorInstance();
-					}
-			case (self.oclIsTypeOf(ActuatorInstance)){
-			result:=new ActuatorInstance();
-					}
-			else{//sollte nich aufgerufen werden
-				result:=new StructuredResourceInstance();
-				}
-		};	
-}
+mapping ResourcePart::createStructuredResourceInstance(partName:String,number:String,parent:HWPlatformInstance):StructuredResourceInstance when {self.resourceType.oclIsKindOf(StructuredResourceInstance)}{
 	result.name:=partName+number;
-	result.resourceType:=self.resourceType;
-	result.hwportInstances+=self.hwportInstances->map createPort(number,parent);
+	result.resourceType:=self.resourceType.resourceType;
+	result.hwports+=self.hwPortParts->createPortInstances(number,parent);
+	result.embeddedAtomicResourceInstances:=self.resourceType.oclAsType(StructuredResourceInstance).embeddedAtomicResourceInstances.deepclone().oclAsType(AtomicResourceInstance);
 	
 }
 
+
+mapping ResourcePart::createActuatorInstance(partName:String,number:String,parent:HWPlatformInstance):ActuatorInstance when {self.resourceType.oclIsKindOf(ActuatorInstance)}{
+	result.name:=partName+number;
+	result.resourceType:=self.resourceType.resourceType;
+ 	result.hwports+=self.hwPortParts->createPortInstances(number,parent);
+	
+}
+
+mapping ResourcePart::createSensorInstance(partName:String,number:String,parent:HWPlatformInstance):SensorInstance when {self.resourceType.oclIsKindOf(SensorInstance)}{
+	result.name:=partName+number;
+	result.resourceType:=self.resourceType.resourceType;
+ 	result.hwports+=self.hwPortParts->createPortInstances(number,parent);
+	
+}
+
+
+
+helper Set(HWPortPart)::createPortInstances(number:String,parent:HWPlatformInstance):Set(HWPortInstance){
+	var portInstances:Set(HWPortInstance);
+	var lowerBound: Integer;
+	self->forEach(portPart){
+		lowerBound:=self.connectors->size();
+		while(lowerBound>0){
+				portInstances+=self.map createPortInstance(number, parent);
+				lowerBound:=lowerBound-1;
+				};
+		};
+	return portInstances;
+}
+
 //create a HWPortInstance and resovle the correct connectedCommunicationMedia with the help of the argument parent
-mapping HWPortInstance::createPort(number:String,parent:HWPlatformInstance):HWPortInstance{
+mapping HWPortPart::createPortInstance(number:String,parent:HWPlatformInstance):HWPortInstance{
 init{
 	switch{ 	
-			case (self.oclIsTypeOf(BusPortInstance)){
-			result:=new BusPortInstance();
-			result.connectedMedia:=self.connectedMedia.resolve(Bus)->asOrderedSet()->intersection(parent.communicationResources[Bus]);
+			case (self.portKind = hardware::hwresource::HWPortKind::BUS){
+			result.connectorInstances:=self.connectors.resolve(BusConnectorInstance)->selectOne(c|c.connectorEndpointInstances->size()=1);
 					}
-			case (self.oclIsTypeOf(LinkPortInstance)){
-			result:=new LinkPortInstance();
-			result.connectedMedia:=self.connectedMedia.resolve(Link)->asOrderedSet()->intersection(parent.communicationResources[Link]);
-						
+			case (self.portKind = hardware::hwresource::HWPortKind::LINK){
+			result.connectorInstances:=self.connectors.resolve(LinkInstance)->selectOne(c|c.connectorEndpointInstances->size()=1);
 					}
 					
 			else{//sollte nich aufgerufen werden
-				result:=new BusPortInstance();
+				//result:=new BusPortInstance();
 				}
 			};	
 	}
-	result.name:=self.name+number;
-	result.hwportType:=self.hwportType;
-	result.queuingTime:=self.queuingTime.deepclone().oclAsType(TimeInterval);
-	result.payloadDataSize:=self.payloadDataSize.deepclone().oclAsType(DataSize);
-
+//	result.name:=self.name+number;
+	type:= self;
+	name:=self.communicationResource.name;
+	comment:=self.comment;
+	connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);
+//	result.hwportType:=self.hwportType;
+//	result.queuingTime:=self.queuingTime.deepclone().oclAsType(TimeInterval);
+//	result.payloadDataSize:=self.payloadDataSize.deepclone().oclAsType(DataSize);
+/*
 	if(self.isDelegationPort) then{
 	//resolve the corresponding delegation 
 		result.delegation:=parent.delegations->any(hwPortInstance->size()<=1);
@@ -160,9 +181,10 @@ init{
 	} else{
 		result.delegation:=self.delegation.createDelegation(number,parent);
 	}endif;
-	
+	*/
 }
 
+/*
 //create a delegation an the correspond Delegation Port
 helper Delegation::createDelegation(number:String, inout parent:HWPlatformInstance):Set(Delegation){
 	var delegations:Set(Delegation);
@@ -171,46 +193,57 @@ helper Delegation::createDelegation(number:String, inout parent:HWPlatformInstan
 	return delegations;
 }
 
+*/
 
 
 //creates a CommunicationMedia
-mapping CommunicationMedia::createMedia(number:String):CommunicationMedia{
-init{
-	switch{ 	
-			case (self.oclIsTypeOf(Bus)){
-			result:=new Bus();
-					}
-			case (self.oclIsTypeOf(Link)){
-			result:=new Link();
-					}
-			else{//sollte nich aufgerufen werden
-				result:=new Bus();
-				}
-			};
+mapping NetworkingHardwarePart::createNetworkingResourceInstance(number:String):NetworkingHardwareInstance
+disjuncts BusConnector::createBusConnectorInstance,BusPart::createBusInstance, BridgePart::createBridgeInstance, LinkPart::createLinkInstance, Delegation::createDelegationInstance{}
+//	result.comment:=self.comment+number;
+	//result.bandwidth:=self.bandwidth.deepclone().oclAsType(DataRate);
+	//result.protocol:=self.protocol;
+	//result.isSerial:=self.isSerial;
+	//result.dataFrameSize:=self.dataFrameSize.deepclone().oclAsType(DataSize);
+
+
+
+mapping BusConnector::createBusConnectorInstance(number:String):BusConnectorInstance{
+  	type:=self;
+	comment:=self.comment+number;
+	connectorEndpointInstances:=self.connectorEndpoints.oclAsType(NetworkingHardwarePart)->asSet()->map createNetworkingResourceInstance(number).oclAsType(muml::connector::ConnectorEndpointInstance);
 	}
+	
+mapping BridgePart::createBridgeInstance(number:String):BridgeInstance{
+	type:=self;
+	comment:=self.comment+number;	 
+	connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);
+	}
+	
+mapping LinkPart::createLinkInstance(number:String):LinkInstance{
+	type:=self;
+	result.comment:=self.comment+number;	
+	communicationMediaPart:=self; 
+	connectorEndpointInstances:=self.late resolve(muml::connector::ConnectorEndpointInstance);
+	}
+	
+mapping BusPart::createBusInstance(number:String):BusInstance{
+	type:=self;
 	result.comment:=self.comment+number;
-	result.bandwidth:=self.bandwidth.deepclone().oclAsType(DataRate);
-	result.protocol:=self.protocol;
-	result.isSerial:=self.isSerial;
-	result.dataFrameSize:=self.dataFrameSize.deepclone().oclAsType(DataSize);
-}
-
-
-//creates a Bridges and resolves the correct CommuncationMedia
-mapping Bridge::createBridge(number:String):Bridge{
+	communicationMediaPart	:=self; 	
+	//connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);	 
+	}	
+	
+mapping Delegation::createDelegationInstance(number:String):DelegationInstance{
+	type:=self;
 	result.comment:=self.comment+number;
-	result.delay:=self.delay.deepclone().oclAsType(TimeInterval);
-	result.connectedCommunicationMedia:=self.connectedCommunicationMedia.resolve(CommunicationMedia);
+	connectorEndpointInstances:=self.connectorEndpoints.late resolve(muml::connector::ConnectorEndpointInstance);
+	}	
+
+mapping DelegationHWPort::createDelegationHWPortInstance(number:String):DelegationHWPortInstance{
+	type:=self;
+	name:=self.name+number;
+	connectorInstances:=self.connectors.late resolve(DelegationInstance);
 }
-
-
-
-//creates a Delegation
-mapping Delegation::createDelegation(number:String):Delegation{
-	result.comment:=self.comment+number;
-}
-
-
 
 // Convenience query to cast a natural number to an integer, using -1 as value for infinity.
 query NaturalNumber::toInteger() : Integer {
@@ -233,4 +266,4 @@ else{
 	return part.cardinality.lowerBound.toInteger();
 }endif;
 }
- */
+ 

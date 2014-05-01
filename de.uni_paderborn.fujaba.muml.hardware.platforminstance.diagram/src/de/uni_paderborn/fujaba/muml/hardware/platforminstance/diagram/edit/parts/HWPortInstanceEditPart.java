@@ -23,12 +23,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
+public class HWPortInstanceEditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3022;
+	public static final int VISUAL_ID = 3030;
 
 	/**
 	 * @generated
@@ -43,7 +43,7 @@ public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public CommunicationResourceEditPart(View view) {
+	public HWPortInstanceEditPart(View view) {
 		super(view);
 	}
 
@@ -56,7 +56,7 @@ public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
 				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.CommunicationResourceItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPortInstanceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE,

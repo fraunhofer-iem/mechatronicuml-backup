@@ -28,7 +28,7 @@ public abstract class PlatformPartEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPlatformPartCardinality_GeneralTab_Editor(null, false);
+			addPlatformPartCardinality_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -70,7 +70,7 @@ public abstract class PlatformPartEditor
 	 * @generated
 	 */
 	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPlatformPartCardinality_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 						.getPlatformPart_Cardinality());

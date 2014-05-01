@@ -3,6 +3,9 @@ package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.HWPortKind;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationHWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -16,7 +19,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.Hwplatforminstan
  * 
  */
 
-public class HWPortInstanceEditPolicy extends HWPortBaseEditPolicy {
+public class HWDelegationPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 
 	/**
 	 * Returns whether it is a Bus- or Link-Port based on the Port-Type of this
@@ -36,7 +39,8 @@ public class HWPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 	 */
 	@Override
 	protected boolean isDelegationPort() {
-		return false;
+
+		return true;
 	}
 
 	/**
@@ -62,17 +66,20 @@ public class HWPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 		EObject element = getSemanticElement();
 		HWPortKind kind = HWPortKind.BUS;
 		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
-		HWPortInstance hwPortInstance = null;
+		DelegationHWPortInstance hwPortInstance = null;
 		if (element != null) {
-			if (HwplatforminstancePackage.Literals.HW_PORT_INSTANCE
+			if (HwplatforminstancePackage.Literals.DELEGATION_HW_PORT_INSTANCE
 					.isSuperTypeOf(element.eClass())) {
-				hwPortInstance = (HWPortInstance) element;
-			} 
-			if (hwPortInstance != null) {
-				modelPortKind = hwPortInstance.getPortKind();
+				hwPortInstance = (DelegationHWPortInstance) element;
 			}
-
+			if (hwPortInstance != null
+					&& HwplatformPackage.Literals.DELEGATION_HW_PORT
+							.isSuperTypeOf(hwPortInstance.getType().eClass())) {
+				modelPortKind = ((DelegationHWPort) hwPortInstance.getType())
+						.getPortKind();
+			}
 		}
+
 		switch (modelPortKind.getValue()) {
 		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
 			kind = HWPortKind.BUS;
