@@ -16,6 +16,7 @@
 
 [import de::uni_paderborn::fujaba::muml::model::gen::c::main::main_nxtOSEK]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::main::main_C]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::middleware::GlobalIdentifier]
 
 [**
  * Generates a main file. This file contains code to create, initialize
@@ -36,6 +37,7 @@ possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
 [generateNXTOSEK(aRootNode)/]
 [elseif (targetPlatform = 'C')]
 [generateANSIC(aRootNode)/]
+
 
 [else]
 not defined

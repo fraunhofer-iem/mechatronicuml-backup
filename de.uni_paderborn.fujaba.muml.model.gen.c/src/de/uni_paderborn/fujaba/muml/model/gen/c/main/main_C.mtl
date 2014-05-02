@@ -23,6 +23,7 @@
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::component]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::Message]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::operations]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::middleware::GlobalIdentifier]
 
 [**
  * Generates a main file. This file contains code to create, initialize
@@ -31,7 +32,6 @@
  */]
 [template public generateANSIC(aRootNode : RootNode)]
 [for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-
 [comment create files for every component type/]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 [generateTypeFiles(modelElementCategory, '')/]
