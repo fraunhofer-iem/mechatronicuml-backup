@@ -1,5 +1,5 @@
 import CSD2SDUtil;
-import helpers;
+import queries;
 import Patterns;
 
 library CSD2SD();
