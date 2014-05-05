@@ -15,7 +15,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -148,17 +151,30 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 			
 			if (eClasses.size() > 1) {
 				combo = new Combo(parent, SWT.BORDER | SWT.READ_ONLY);
-				ComboViewer classViewer = new ComboViewer(combo);
+				final ComboViewer classViewer = new ComboViewer(combo);
 				classViewer.setContentProvider(ArrayContentProvider.getInstance());
 				classViewer.setLabelProvider(new LabelProvider() {
 					public String getText(Object element) {
 						return ((EClass) element).getName();
 					}
 				});
+				
 				classViewer.setInput(eClasses);
 				if (!eClasses.isEmpty()) {
 					classViewer.setSelection(new StructuredSelection(selectedClass));
 				}
+				classViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+					
+					@Override
+					public void selectionChanged(SelectionChangedEvent event) {
+						IStructuredSelection selection = (IStructuredSelection) classViewer
+								.getSelection();
+						EClass newClass = (EClass) selection.getFirstElement();
+						if (newClass != selectedClass) {
+							selectedClass = newClass;
+						}
+					}
+				});
 			}
 				
 
