@@ -1,4 +1,4 @@
-import queries;
+import Queries;
 
 library CSD2SDUtil;
 

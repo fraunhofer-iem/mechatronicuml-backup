@@ -1,5 +1,5 @@
 import CSD2SDUtil;
-import queries;
+import Queries;
 
 library Patterns;
 
