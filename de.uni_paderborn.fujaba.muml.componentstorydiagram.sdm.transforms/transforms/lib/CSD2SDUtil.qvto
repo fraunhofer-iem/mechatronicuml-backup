@@ -1,4 +1,4 @@
-import helpers;
+import queries;
 
 library CSD2SDUtil;
 
@@ -126,13 +126,13 @@ mapping componentstorypattern::PortVariable :: createContinousPortInstance() : O
 
 mapping componentstorypattern::PortVariable :: createHybridPortInstance() : ObjectVariable
  when{self.type.eClass() = HybridPort}{
-	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
-    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := HybridPortInstance.oclAsType(EClass);
    	_bindingState := self._bindingState;
    	_bindingSemantics := self._bindingSemantics;
    	_bindingOperator := self._bindingOperator;
+   	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
     	
 }
 
@@ -173,10 +173,21 @@ mapping ConnectorVariable :: createConnectorInstance() : ObjectVariable disjunct
 
 mapping AssemblyVariable :: createAssemblyConnectorInstance() : ObjectVariable {
 	classifier := AssemblyConnectorInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+   	_bindingSemantics := self._bindingSemantics;
+   	_bindingOperator := self._bindingOperator;
+   	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	
 }
 
 mapping DelegationVariable :: createDelegationConnectorInstance() : ObjectVariable{
 	classifier := DelegationConnectorInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+   	_bindingSemantics := self._bindingSemantics;
+   	_bindingOperator := self._bindingOperator;
+   	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 }
 
 mapping PortConnector :: createConnectorType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable disjuncts AssemblyConnector::createAssemblyConnectorType, DelegationConnector::createDelegationConnectorType;

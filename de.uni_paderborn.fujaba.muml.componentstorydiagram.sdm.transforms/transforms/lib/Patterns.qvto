@@ -1,5 +1,5 @@
 import CSD2SDUtil;
-import helpers;
+import queries;
 
 library Patterns;
 
@@ -87,7 +87,7 @@ mapping ComponentVariable :: createThisVariableEquivalences(in compStoryPattern 
 		container._variable += embeddedCIC;
 		container._linkVariable += map createLinkVaribale(componentInstance, embeddedCIC, getEmbeddedCICReference());
 		self.portVariables->forEach(pV){
-			pV.map createPortVariableEquivalence(compStoryPattern, container, true);
+			pV.map createPortVariableEquivalence(compStoryPattern, container, false);
 		};
 		
 		self.partVariables->forEach(pV){
@@ -112,7 +112,7 @@ mapping PartVariable:: createPartVariableEquivalence(in compStoryPattern : compo
 
 	//make sure to not create a portPart for these ports
 	self.portVariables->forEach(pV){
-		pV.map createPortVariableEquivalence(compStoryPattern, container, false);
+		pV.map createPortVariableEquivalence(compStoryPattern, container, true);
 	};
 	
 	
@@ -156,12 +156,13 @@ mapping ConnectorVariable :: createConnectorVariableEquivalences(in compStoryPat
 				 else {assert fatal (false) with log("Unsupported subtype of ConnectorVariable found: "+self.eClass().toString())} };
 	container.variable += connectorType;												 
 	container.linkVariable += map createLinkVaribale(connectorInstance, connectorType, getTypeReference(connectorInstance.classifier));
-	//type to port part
 	
 	switch {	
 		case (self.oclIsTypeOf(AssemblyVariable)) {
 			self.portVariables->forEach(pV){
-				container.linkVariable += map createLinkVaribale(connectorType, pV.type.map createPortPart(compStoryPattern), getConnectorEndpointsReference(connectorType.classifier));
+				var portPart := pV.type.map createPortPart(compStoryPattern);
+				container.variable += portPart;
+				container.linkVariable += map createLinkVaribale(connectorType, portPart, getConnectorEndpointsReference(connectorType.classifier));
 			};	
 		}
 		case (self.oclIsTypeOf(DelegationVariable)) {
@@ -169,12 +170,13 @@ mapping ConnectorVariable :: createConnectorVariableEquivalences(in compStoryPat
 		//TODO test this
 			var portTypeVariable := compStoryPattern.thisVariable.portVariables->select(pV | self.oclAsType(DelegationVariable).connectorEndpoints->includes(pV))->first();
 			var portType := portTypeVariable.type.map createPortType(compStoryPattern);
+			container.variable += portType;
 			
-			container.linkVariable += map createLinkVaribale(connectorType, portType, getPortTypeReference(connectorType.classifier));
+			container.linkVariable += map createLinkVaribale(connectorType, portType, getPortReference(connectorType.classifier));
 			//we know that there are only two connector endpoints
 			var portPartVariable := self.oclAsType(DelegationVariable).portVariables->excluding(portTypeVariable)->any(true);
 			var portPart := portPartVariable.type.map createPortPart(compStoryPattern);
-
+			container.variable += portPart;
 			container.linkVariable += map createLinkVaribale(connectorType, portPart, getPortPartReference(connectorType.classifier));
 			}
 		else {assert fatal (false) with log("Unsupported subtype of ConnectorVariable found: "+self.eClass().toString())}
