@@ -49,14 +49,5 @@
             name="Initialize a Hardware Platform Instance">
       </command>
    </extension>
-   <extension
-         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
-      <editpolicyProvider
-            class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.providers.CustomPlatformInstanceEditPolicyProvider">
-         <Priority
-               name="Highest">
-         </Priority>
-      </editpolicyProvider>
-   </extension>
 
 </plugin>

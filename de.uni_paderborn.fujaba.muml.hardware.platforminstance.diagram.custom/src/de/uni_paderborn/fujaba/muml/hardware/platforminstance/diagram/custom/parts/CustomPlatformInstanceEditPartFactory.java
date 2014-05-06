@@ -23,8 +23,8 @@ public class CustomPlatformInstanceEditPartFactory extends HardwareEditPartFacto
 			case HWPlatformInstanceEditPart.VISUAL_ID:
 				return new CustomPlatformInstanceEditPart(view);
 				
-			case CustomHWPlatformInstanceConfigurationEditPart.VISUAL_ID:
-				return new CustomHWPlatformInstanceConfigurationEditPart(view);
+		//	case CustomHWPlatformInstanceConfigurationEditPart.VISUAL_ID:
+		//		return new CustomHWPlatformInstanceConfigurationEditPart(view);
 				
 			}
 			
