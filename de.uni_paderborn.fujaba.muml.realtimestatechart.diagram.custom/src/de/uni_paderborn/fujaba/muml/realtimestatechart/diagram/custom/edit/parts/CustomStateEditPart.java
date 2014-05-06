@@ -7,6 +7,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.command.SetCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
@@ -16,6 +17,7 @@ import de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPol
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.policies.BorderItemCreationEditPolicy;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry;
@@ -87,6 +89,15 @@ public class CustomStateEditPart extends StateEditPart {
 		}
 	
 		return childViews;
+	}
+
+	@Override
+	protected void createDefaultEditPolicies() {
+		// TODO Auto-generated method stub
+		super.createDefaultEditPolicies();
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new BorderItemCreationEditPolicy());
 	}
 
 }
