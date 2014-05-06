@@ -1,11 +1,10 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.codegen;
+package de.uni_paderborn.fujaba.muml.psm.codegen.allocation;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,20 +14,20 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefindedStructuredResourceInstance()
+ * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage#getRefindedStructuredResourceInstance()
  * @model
  * @generated
  */
-public interface RefindedStructuredResourceInstance extends EObject {
+public interface RefindedStructuredResourceInstance extends StructuredResourceInstance {
 	/**
 	 * Returns the value of the '<em><b>Allocated Atomic Component Instances</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance#getAllocatedResourceInstance <em>Allocated Resource Instance</em>}'.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedAtomicComponentInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedAtomicComponentInstance#getAllocatedResourceInstance <em>Allocated Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allocated Atomic Component Instances</em>' reference list isn't clear,
@@ -36,8 +35,8 @@ public interface RefindedStructuredResourceInstance extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocated Atomic Component Instances</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances()
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance#getAllocatedResourceInstance
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage#getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedAtomicComponentInstance#getAllocatedResourceInstance
 	 * @model opposite="allocatedResourceInstance"
 	 * @generated
 	 */
@@ -53,14 +52,14 @@ public interface RefindedStructuredResourceInstance extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocated Structured Resource Instance</em>' reference.
 	 * @see #setAllocatedStructuredResourceInstance(StructuredResourceInstance)
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage#getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance()
 	 * @model required="true"
 	 * @generated
 	 */
 	StructuredResourceInstance getAllocatedStructuredResourceInstance();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Allocated Structured Resource Instance</em>' reference.

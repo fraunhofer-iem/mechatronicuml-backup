@@ -1,8 +1,8 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
+package de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.codegen.*;
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
+public class AllocationFactoryImpl extends EFactoryImpl implements AllocationFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static CodegenFactory init() {
+	public static AllocationFactory init() {
 		try {
-			CodegenFactory theCodegenFactory = (CodegenFactory)EPackage.Registry.INSTANCE.getEFactory(CodegenPackage.eNS_URI);
-			if (theCodegenFactory != null) {
-				return theCodegenFactory;
+			AllocationFactory theAllocationFactory = (AllocationFactory)EPackage.Registry.INSTANCE.getEFactory(AllocationPackage.eNS_URI);
+			if (theAllocationFactory != null) {
+				return theAllocationFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new CodegenFactoryImpl();
+		return new AllocationFactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodegenFactoryImpl() {
+	public AllocationFactoryImpl() {
 		super();
 	}
 
@@ -56,9 +56,9 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE: return createRefinedAtomicComponentInstance();
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE: return createRefindedStructuredResourceInstance();
-			case CodegenPackage.COD_GEN: return createCodGen();
+			case AllocationPackage.REFINED_ATOMIC_COMPONENT_INSTANCE: return createRefinedAtomicComponentInstance();
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE: return createRefindedStructuredResourceInstance();
+			case AllocationPackage.COD_GEN_ALLOCATION: return createCodGenAllocation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,9 +89,9 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodGen createCodGen() {
-		CodGenImpl codGen = new CodGenImpl();
-		return codGen;
+	public CodGenAllocation createCodGenAllocation() {
+		CodGenAllocationImpl codGenAllocation = new CodGenAllocationImpl();
+		return codGenAllocation;
 	}
 
 	/**
@@ -99,8 +99,8 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodegenPackage getCodegenPackage() {
-		return (CodegenPackage)getEPackage();
+	public AllocationPackage getAllocationPackage() {
+		return (AllocationPackage)getEPackage();
 	}
 
 	/**
@@ -110,8 +110,8 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static CodegenPackage getPackage() {
-		return CodegenPackage.eINSTANCE;
+	public static AllocationPackage getPackage() {
+		return AllocationPackage.eINSTANCE;
 	}
 
-} //CodegenFactoryImpl
+} //AllocationFactoryImpl

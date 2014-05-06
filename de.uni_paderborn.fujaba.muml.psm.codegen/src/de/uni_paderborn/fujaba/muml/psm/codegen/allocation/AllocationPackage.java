@@ -1,8 +1,11 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.codegen;
+package de.uni_paderborn.fujaba.muml.psm.codegen.allocation;
+
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -19,18 +22,18 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenFactory
+ * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationFactory
  * @model kind="package"
  * @generated
  */
-public interface CodegenPackage extends EPackage {
+public interface AllocationPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "codegen";
+	String eNAME = "allocation";
 
 	/**
 	 * The package namespace URI.
@@ -38,7 +41,7 @@ public interface CodegenPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/codegen/0.1.0";
+	String eNS_URI = "http://www.fujaba.de/muml/psm/codegen/allocation/0.1.0";
 
 	/**
 	 * The package namespace name.
@@ -46,7 +49,7 @@ public interface CodegenPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "codegen";
+	String eNS_PREFIX = "allocation";
 
 	/**
 	 * The singleton instance of the package.
@@ -54,14 +57,14 @@ public interface CodegenPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	CodegenPackage eINSTANCE = de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl.init();
+	AllocationPackage eINSTANCE = de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedComponentInstanceImpl <em>Refined Component Instance</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefinedComponentInstanceImpl <em>Refined Component Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedComponentInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getRefinedComponentInstance()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefinedComponentInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl#getRefinedComponentInstance()
 	 * @generated
 	 */
 	int REFINED_COMPONENT_INSTANCE = 0;
@@ -319,11 +322,11 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_COMPONENT_INSTANCE_OPERATION_COUNT = InstancePackage.COMPONENT_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedAtomicComponentInstanceImpl <em>Refined Atomic Component Instance</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefinedAtomicComponentInstanceImpl <em>Refined Atomic Component Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedAtomicComponentInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getRefinedAtomicComponentInstance()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefinedAtomicComponentInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl#getRefinedAtomicComponentInstance()
 	 * @generated
 	 */
 	int REFINED_ATOMIC_COMPONENT_INSTANCE = 1;
@@ -590,14 +593,68 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_ATOMIC_COMPONENT_INSTANCE_OPERATION_COUNT = InstancePackage.ATOMIC_COMPONENT_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefindedStructuredResourceInstanceImpl <em>Refinded Structured Resource Instance</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefindedStructuredResourceInstanceImpl <em>Refinded Structured Resource Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefindedStructuredResourceInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getRefindedStructuredResourceInstance()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefindedStructuredResourceInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl#getRefindedStructuredResourceInstance()
 	 * @generated
 	 */
 	int REFINDED_STRUCTURED_RESOURCE_INSTANCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ANNOTATION = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__EXTENSION = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__NAME = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__HWPORTS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__HWPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Embedded Atomic Resource Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__EMBEDDED_ATOMIC_RESOURCE_INSTANCES = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__EMBEDDED_ATOMIC_RESOURCE_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Allocated Atomic Component Instances</b></em>' reference list.
@@ -606,7 +663,7 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = 0;
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Allocated Structured Resource Instance</b></em>' reference.
@@ -615,7 +672,7 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE = 1;
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Refinded Structured Resource Instance</em>' class.
@@ -624,7 +681,178 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT = 2;
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECLASS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EIS_PROXY = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ERESOURCE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECONTAINER = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECONTAINING_FEATURE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECONTAINMENT_FEATURE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECONTENTS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EALL_CONTENTS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECROSS_REFERENCES = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EGET__ESTRUCTURALFEATURE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EUNSET__ESTRUCTURALFEATURE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EINVOKE__EOPERATION_ELIST = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___PROVIDE_EXTENSION__ECLASS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___GET_ANNOTATION__STRING = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___PROVIDE_ANNOTATION__STRING = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Refinded Structured Resource Instance</em>' class.
@@ -633,17 +861,17 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE_OPERATION_COUNT = 0;
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE_OPERATION_COUNT = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenImpl <em>Cod Gen</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.CodGenAllocationImpl <em>Cod Gen Allocation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getCodGen()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.CodGenAllocationImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl#getCodGenAllocation()
 	 * @generated
 	 */
-	int COD_GEN = 3;
+	int COD_GEN_ALLOCATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>All Resource Instances</b></em>' containment reference list.
@@ -652,7 +880,7 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COD_GEN__ALL_RESOURCE_INSTANCES = 0;
+	int COD_GEN_ALLOCATION__ALL_RESOURCE_INSTANCES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Cic</b></em>' containment reference.
@@ -661,121 +889,121 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COD_GEN__CIC = 1;
+	int COD_GEN_ALLOCATION__CIC = 1;
 
 	/**
-	 * The number of structural features of the '<em>Cod Gen</em>' class.
+	 * The number of structural features of the '<em>Cod Gen Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COD_GEN_FEATURE_COUNT = 2;
+	int COD_GEN_ALLOCATION_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Cod Gen</em>' class.
+	 * The number of operations of the '<em>Cod Gen Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COD_GEN_OPERATION_COUNT = 0;
+	int COD_GEN_ALLOCATION_OPERATION_COUNT = 0;
 
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedComponentInstance <em>Refined Component Instance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedComponentInstance <em>Refined Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Refined Component Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefinedComponentInstance
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedComponentInstance
 	 * @generated
 	 */
 	EClass getRefinedComponentInstance();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance <em>Refined Atomic Component Instance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedAtomicComponentInstance <em>Refined Atomic Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Refined Atomic Component Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedAtomicComponentInstance
 	 * @generated
 	 */
 	EClass getRefinedAtomicComponentInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance#getAllocatedResourceInstance <em>Allocated Resource Instance</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedAtomicComponentInstance#getAllocatedResourceInstance <em>Allocated Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Allocated Resource Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance#getAllocatedResourceInstance()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedAtomicComponentInstance#getAllocatedResourceInstance()
 	 * @see #getRefinedAtomicComponentInstance()
 	 * @generated
 	 */
 	EReference getRefinedAtomicComponentInstance_AllocatedResourceInstance();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance <em>Refinded Structured Resource Instance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance <em>Refinded Structured Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Refinded Structured Resource Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance
 	 * @generated
 	 */
 	EClass getRefindedStructuredResourceInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Allocated Atomic Component Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances()
 	 * @see #getRefindedStructuredResourceInstance()
 	 * @generated
 	 */
 	EReference getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Allocated Structured Resource Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance()
 	 * @see #getRefindedStructuredResourceInstance()
 	 * @generated
 	 */
 	EReference getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGen <em>Cod Gen</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.CodGenAllocation <em>Cod Gen Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cod Gen</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGen
+	 * @return the meta object for class '<em>Cod Gen Allocation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.CodGenAllocation
 	 * @generated
 	 */
-	EClass getCodGen();
+	EClass getCodGenAllocation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGen#getAllResourceInstances <em>All Resource Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.CodGenAllocation#getAllResourceInstances <em>All Resource Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>All Resource Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGen#getAllResourceInstances()
-	 * @see #getCodGen()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.CodGenAllocation#getAllResourceInstances()
+	 * @see #getCodGenAllocation()
 	 * @generated
 	 */
-	EReference getCodGen_AllResourceInstances();
+	EReference getCodGenAllocation_AllResourceInstances();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGen#getCic <em>Cic</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.CodGenAllocation#getCic <em>Cic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Cic</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGen#getCic()
-	 * @see #getCodGen()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.CodGenAllocation#getCic()
+	 * @see #getCodGenAllocation()
 	 * @generated
 	 */
-	EReference getCodGen_Cic();
+	EReference getCodGenAllocation_Cic();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -784,7 +1012,7 @@ public interface CodegenPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	CodegenFactory getCodegenFactory();
+	AllocationFactory getAllocationFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -801,21 +1029,21 @@ public interface CodegenPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedComponentInstanceImpl <em>Refined Component Instance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefinedComponentInstanceImpl <em>Refined Component Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedComponentInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getRefinedComponentInstance()
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefinedComponentInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl#getRefinedComponentInstance()
 		 * @generated
 		 */
 		EClass REFINED_COMPONENT_INSTANCE = eINSTANCE.getRefinedComponentInstance();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedAtomicComponentInstanceImpl <em>Refined Atomic Component Instance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefinedAtomicComponentInstanceImpl <em>Refined Atomic Component Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedAtomicComponentInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getRefinedAtomicComponentInstance()
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefinedAtomicComponentInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl#getRefinedAtomicComponentInstance()
 		 * @generated
 		 */
 		EClass REFINED_ATOMIC_COMPONENT_INSTANCE = eINSTANCE.getRefinedAtomicComponentInstance();
@@ -829,11 +1057,11 @@ public interface CodegenPackage extends EPackage {
 		EReference REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE = eINSTANCE.getRefinedAtomicComponentInstance_AllocatedResourceInstance();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefindedStructuredResourceInstanceImpl <em>Refinded Structured Resource Instance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefindedStructuredResourceInstanceImpl <em>Refinded Structured Resource Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefindedStructuredResourceInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getRefindedStructuredResourceInstance()
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefindedStructuredResourceInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl#getRefindedStructuredResourceInstance()
 		 * @generated
 		 */
 		EClass REFINDED_STRUCTURED_RESOURCE_INSTANCE = eINSTANCE.getRefindedStructuredResourceInstance();
@@ -855,14 +1083,14 @@ public interface CodegenPackage extends EPackage {
 		EReference REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE = eINSTANCE.getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenImpl <em>Cod Gen</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.CodGenAllocationImpl <em>Cod Gen Allocation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getCodGen()
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.CodGenAllocationImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl#getCodGenAllocation()
 		 * @generated
 		 */
-		EClass COD_GEN = eINSTANCE.getCodGen();
+		EClass COD_GEN_ALLOCATION = eINSTANCE.getCodGenAllocation();
 
 		/**
 		 * The meta object literal for the '<em><b>All Resource Instances</b></em>' containment reference list feature.
@@ -870,7 +1098,7 @@ public interface CodegenPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COD_GEN__ALL_RESOURCE_INSTANCES = eINSTANCE.getCodGen_AllResourceInstances();
+		EReference COD_GEN_ALLOCATION__ALL_RESOURCE_INSTANCES = eINSTANCE.getCodGenAllocation_AllResourceInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>Cic</b></em>' containment reference feature.
@@ -878,8 +1106,8 @@ public interface CodegenPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COD_GEN__CIC = eINSTANCE.getCodGen_Cic();
+		EReference COD_GEN_ALLOCATION__CIC = eINSTANCE.getCodGenAllocation_Cic();
 
 	}
 
-} //CodegenPackage
+} //AllocationPackage

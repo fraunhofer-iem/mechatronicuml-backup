@@ -1,11 +1,11 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
+package de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl;
 
 import de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl;
 
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
-import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedComponentInstance;
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage;
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedComponentInstance;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -35,7 +35,7 @@ public abstract class RefinedComponentInstanceImpl extends ComponentInstanceImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CodegenPackage.Literals.REFINED_COMPONENT_INSTANCE;
+		return AllocationPackage.Literals.REFINED_COMPONENT_INSTANCE;
 	}
 
 } //RefinedComponentInstanceImpl

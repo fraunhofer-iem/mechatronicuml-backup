@@ -1,19 +1,27 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
+package de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance;
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
-import de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance;
-import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
+
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.StructuredResourceInstanceImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage;
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance;
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefinedAtomicComponentInstance;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -24,14 +32,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefindedStructuredResourceInstanceImpl#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefindedStructuredResourceInstanceImpl#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefindedStructuredResourceInstanceImpl#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.RefindedStructuredResourceInstanceImpl#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.Container implements RefindedStructuredResourceInstance {
+public class RefindedStructuredResourceInstanceImpl extends StructuredResourceInstanceImpl implements RefindedStructuredResourceInstance {
 	/**
 	 * The cached value of the '{@link #getAllocatedAtomicComponentInstances() <em>Allocated Atomic Component Instances</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -68,7 +76,7 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CodegenPackage.Literals.REFINDED_STRUCTURED_RESOURCE_INSTANCE;
+		return AllocationPackage.Literals.REFINDED_STRUCTURED_RESOURCE_INSTANCE;
 	}
 
 	/**
@@ -78,7 +86,7 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 	 */
 	public EList<RefinedAtomicComponentInstance> getAllocatedAtomicComponentInstances() {
 		if (allocatedAtomicComponentInstances == null) {
-			allocatedAtomicComponentInstances = new EObjectWithInverseResolvingEList<RefinedAtomicComponentInstance>(RefinedAtomicComponentInstance.class, this, CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES, CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE);
+			allocatedAtomicComponentInstances = new EObjectWithInverseResolvingEList<RefinedAtomicComponentInstance>(RefinedAtomicComponentInstance.class, this, AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES, AllocationPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE);
 		}
 		return allocatedAtomicComponentInstances;
 	}
@@ -94,7 +102,7 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 			allocatedStructuredResourceInstance = (StructuredResourceInstance)eResolveProxy(oldAllocatedStructuredResourceInstance);
 			if (allocatedStructuredResourceInstance != oldAllocatedStructuredResourceInstance) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE, oldAllocatedStructuredResourceInstance, allocatedStructuredResourceInstance));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE, oldAllocatedStructuredResourceInstance, allocatedStructuredResourceInstance));
 			}
 		}
 		return allocatedStructuredResourceInstance;
@@ -118,7 +126,7 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 		StructuredResourceInstance oldAllocatedStructuredResourceInstance = allocatedStructuredResourceInstance;
 		allocatedStructuredResourceInstance = newAllocatedStructuredResourceInstance;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE, oldAllocatedStructuredResourceInstance, allocatedStructuredResourceInstance));
+			eNotify(new ENotificationImpl(this, Notification.SET, AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE, oldAllocatedStructuredResourceInstance, allocatedStructuredResourceInstance));
 	}
 
 	/**
@@ -130,7 +138,7 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAllocatedAtomicComponentInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -144,7 +152,7 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				return ((InternalEList<?>)getAllocatedAtomicComponentInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -158,9 +166,9 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				return getAllocatedAtomicComponentInstances();
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE:
 				if (resolve) return getAllocatedStructuredResourceInstance();
 				return basicGetAllocatedStructuredResourceInstance();
 		}
@@ -176,11 +184,11 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				getAllocatedAtomicComponentInstances().clear();
 				getAllocatedAtomicComponentInstances().addAll((Collection<? extends RefinedAtomicComponentInstance>)newValue);
 				return;
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE:
 				setAllocatedStructuredResourceInstance((StructuredResourceInstance)newValue);
 				return;
 		}
@@ -195,10 +203,10 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				getAllocatedAtomicComponentInstances().clear();
 				return;
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE:
 				setAllocatedStructuredResourceInstance((StructuredResourceInstance)null);
 				return;
 		}
@@ -213,9 +221,9 @@ public class RefindedStructuredResourceInstanceImpl extends MinimalEObjectImpl.C
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES:
 				return allocatedAtomicComponentInstances != null && !allocatedAtomicComponentInstances.isEmpty();
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE:
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE:
 				return allocatedStructuredResourceInstance != null;
 		}
 		return super.eIsSet(featureID);

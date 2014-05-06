@@ -1,13 +1,20 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.codegen.util;
+package de.uni_paderborn.fujaba.muml.psm.codegen.allocation.util;
+
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.psm.codegen.*;
+
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
+
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
@@ -21,17 +28,17 @@ import org.storydriven.core.NamedElement;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage
+ * @see de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage
  * @generated
  */
-public class CodegenSwitch<T> extends Switch<T> {
+public class AllocationSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static CodegenPackage modelPackage;
+	protected static AllocationPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -39,9 +46,9 @@ public class CodegenSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodegenSwitch() {
+	public AllocationSwitch() {
 		if (modelPackage == null) {
-			modelPackage = CodegenPackage.eINSTANCE;
+			modelPackage = AllocationPackage.eINSTANCE;
 		}
 	}
 
@@ -68,7 +75,7 @@ public class CodegenSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CodegenPackage.REFINED_COMPONENT_INSTANCE: {
+			case AllocationPackage.REFINED_COMPONENT_INSTANCE: {
 				RefinedComponentInstance refinedComponentInstance = (RefinedComponentInstance)theEObject;
 				T result = caseRefinedComponentInstance(refinedComponentInstance);
 				if (result == null) result = caseComponentInstance(refinedComponentInstance);
@@ -77,7 +84,7 @@ public class CodegenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE: {
+			case AllocationPackage.REFINED_ATOMIC_COMPONENT_INSTANCE: {
 				RefinedAtomicComponentInstance refinedAtomicComponentInstance = (RefinedAtomicComponentInstance)theEObject;
 				T result = caseRefinedAtomicComponentInstance(refinedAtomicComponentInstance);
 				if (result == null) result = caseAtomicComponentInstance(refinedAtomicComponentInstance);
@@ -87,15 +94,19 @@ public class CodegenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE: {
+			case AllocationPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE: {
 				RefindedStructuredResourceInstance refindedStructuredResourceInstance = (RefindedStructuredResourceInstance)theEObject;
 				T result = caseRefindedStructuredResourceInstance(refindedStructuredResourceInstance);
+				if (result == null) result = caseStructuredResourceInstance(refindedStructuredResourceInstance);
+				if (result == null) result = caseResourceInstance(refindedStructuredResourceInstance);
+				if (result == null) result = caseNamedElement(refindedStructuredResourceInstance);
+				if (result == null) result = caseExtendableElement(refindedStructuredResourceInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CodegenPackage.COD_GEN: {
-				CodGen codGen = (CodGen)theEObject;
-				T result = caseCodGen(codGen);
+			case AllocationPackage.COD_GEN_ALLOCATION: {
+				CodGenAllocation codGenAllocation = (CodGenAllocation)theEObject;
+				T result = caseCodGenAllocation(codGenAllocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -149,17 +160,17 @@ public class CodegenSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cod Gen</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Cod Gen Allocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cod Gen</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Cod Gen Allocation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCodGen(CodGen object) {
+	public T caseCodGenAllocation(CodGenAllocation object) {
 		return null;
 	}
 
@@ -224,6 +235,36 @@ public class CodegenSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResourceInstance(ResourceInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Structured Resource Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Structured Resource Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStructuredResourceInstance(StructuredResourceInstance object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -239,4 +280,4 @@ public class CodegenSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //CodegenSwitch
+} //AllocationSwitch

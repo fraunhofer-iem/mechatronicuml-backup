@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codegen -->
       <package
-            uri="http://www.fujaba.de/muml/psm/codegen/0.1.0"
-            class="de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage"
+            uri="http://www.fujaba.de/muml/psm/codegen/allocation/0.1.0"
+            class="de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage"
             genModel="model/codegen.genmodel"/>
    </extension>
 

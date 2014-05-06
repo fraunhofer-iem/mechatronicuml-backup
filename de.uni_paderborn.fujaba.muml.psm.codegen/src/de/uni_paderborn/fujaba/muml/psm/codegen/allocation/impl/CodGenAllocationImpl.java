@@ -1,12 +1,12 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
+package de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl;
 
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodGen;
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
-import de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance;
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage;
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.CodGenAllocation;
+import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.RefindedStructuredResourceInstance;
 
 import java.util.Collection;
 
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Cod Gen</b></em>'.
+ * An implementation of the model object '<em><b>Cod Gen Allocation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenImpl#getAllResourceInstances <em>All Resource Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenImpl#getCic <em>Cic</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.CodGenAllocationImpl#getAllResourceInstances <em>All Resource Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.CodGenAllocationImpl#getCic <em>Cic</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
+public class CodGenAllocationImpl extends MinimalEObjectImpl.Container implements CodGenAllocation {
 	/**
 	 * The cached value of the '{@link #getAllResourceInstances() <em>All Resource Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CodGenImpl() {
+	protected CodGenAllocationImpl() {
 		super();
 	}
 
@@ -75,7 +75,7 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CodegenPackage.Literals.COD_GEN;
+		return AllocationPackage.Literals.COD_GEN_ALLOCATION;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 	 */
 	public EList<RefindedStructuredResourceInstance> getAllResourceInstances() {
 		if (allResourceInstances == null) {
-			allResourceInstances = new EObjectContainmentEList<RefindedStructuredResourceInstance>(RefindedStructuredResourceInstance.class, this, CodegenPackage.COD_GEN__ALL_RESOURCE_INSTANCES);
+			allResourceInstances = new EObjectContainmentEList<RefindedStructuredResourceInstance>(RefindedStructuredResourceInstance.class, this, AllocationPackage.COD_GEN_ALLOCATION__ALL_RESOURCE_INSTANCES);
 		}
 		return allResourceInstances;
 	}
@@ -108,7 +108,7 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 		ComponentInstanceConfiguration oldCic = cic;
 		cic = newCic;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CodegenPackage.COD_GEN__CIC, oldCic, newCic);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AllocationPackage.COD_GEN_ALLOCATION__CIC, oldCic, newCic);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -123,14 +123,14 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 		if (newCic != cic) {
 			NotificationChain msgs = null;
 			if (cic != null)
-				msgs = ((InternalEObject)cic).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CodegenPackage.COD_GEN__CIC, null, msgs);
+				msgs = ((InternalEObject)cic).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AllocationPackage.COD_GEN_ALLOCATION__CIC, null, msgs);
 			if (newCic != null)
-				msgs = ((InternalEObject)newCic).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CodegenPackage.COD_GEN__CIC, null, msgs);
+				msgs = ((InternalEObject)newCic).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AllocationPackage.COD_GEN_ALLOCATION__CIC, null, msgs);
 			msgs = basicSetCic(newCic, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CodegenPackage.COD_GEN__CIC, newCic, newCic));
+			eNotify(new ENotificationImpl(this, Notification.SET, AllocationPackage.COD_GEN_ALLOCATION__CIC, newCic, newCic));
 	}
 
 	/**
@@ -141,9 +141,9 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CodegenPackage.COD_GEN__ALL_RESOURCE_INSTANCES:
+			case AllocationPackage.COD_GEN_ALLOCATION__ALL_RESOURCE_INSTANCES:
 				return ((InternalEList<?>)getAllResourceInstances()).basicRemove(otherEnd, msgs);
-			case CodegenPackage.COD_GEN__CIC:
+			case AllocationPackage.COD_GEN_ALLOCATION__CIC:
 				return basicSetCic(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -157,9 +157,9 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CodegenPackage.COD_GEN__ALL_RESOURCE_INSTANCES:
+			case AllocationPackage.COD_GEN_ALLOCATION__ALL_RESOURCE_INSTANCES:
 				return getAllResourceInstances();
-			case CodegenPackage.COD_GEN__CIC:
+			case AllocationPackage.COD_GEN_ALLOCATION__CIC:
 				return getCic();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -174,11 +174,11 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CodegenPackage.COD_GEN__ALL_RESOURCE_INSTANCES:
+			case AllocationPackage.COD_GEN_ALLOCATION__ALL_RESOURCE_INSTANCES:
 				getAllResourceInstances().clear();
 				getAllResourceInstances().addAll((Collection<? extends RefindedStructuredResourceInstance>)newValue);
 				return;
-			case CodegenPackage.COD_GEN__CIC:
+			case AllocationPackage.COD_GEN_ALLOCATION__CIC:
 				setCic((ComponentInstanceConfiguration)newValue);
 				return;
 		}
@@ -193,10 +193,10 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CodegenPackage.COD_GEN__ALL_RESOURCE_INSTANCES:
+			case AllocationPackage.COD_GEN_ALLOCATION__ALL_RESOURCE_INSTANCES:
 				getAllResourceInstances().clear();
 				return;
-			case CodegenPackage.COD_GEN__CIC:
+			case AllocationPackage.COD_GEN_ALLOCATION__CIC:
 				setCic((ComponentInstanceConfiguration)null);
 				return;
 		}
@@ -211,12 +211,12 @@ public class CodGenImpl extends MinimalEObjectImpl.Container implements CodGen {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CodegenPackage.COD_GEN__ALL_RESOURCE_INSTANCES:
+			case AllocationPackage.COD_GEN_ALLOCATION__ALL_RESOURCE_INSTANCES:
 				return allResourceInstances != null && !allResourceInstances.isEmpty();
-			case CodegenPackage.COD_GEN__CIC:
+			case AllocationPackage.COD_GEN_ALLOCATION__CIC:
 				return cic != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CodGenImpl
+} //CodGenAllocationImpl
