@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -289,28 +290,20 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			   }
 			}
 			
-			// This implementation has problems: It does not find eClasses of extending metamodels.
-//			AdapterFactory adapterFactory = new ReflectiveItemProviderAdapterFactory();
-//	
-//			IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
-//					feature, IItemPropertySource.class);
-//	
-//			if (ips != null) {
-//				IItemPropertyDescriptor itemPropertyDescriptor = ips
-//						.getPropertyDescriptor(
-//								feature,
-//								org.eclipse.emf.ecore.EcorePackage.Literals.ETYPED_ELEMENT__ETYPE);
-//				for (Object object : itemPropertyDescriptor
-//						.getChoiceOfValues(feature)) {
-//					if (object instanceof EClass) {
-//						EClass eClass = (EClass) object;
-//						if (eClass != null && !eClass.isAbstract() && feature.getEReferenceType().isSuperTypeOf(eClass)) {
-//							eClasses.add(eClass);
-//						}
-//						
-//					}
-//				}
-//			}
+			Collections.sort(eClasses, new Comparator<EClass>() {
+
+				@Override
+				public int compare(EClass o1, EClass o2) {
+					if (o1 == null || o2 == null) {
+						return 0;
+					}
+					if (o1.getName() == null || o2.getName() == null) {
+						return 0;
+					}
+					return o1.getName().compareTo(o2.getName());
+				}
+
+			} );
 			foundEClasses.put(feature, eClasses);
 		}
 		return new ArrayList<EClass>(eClasses); 
