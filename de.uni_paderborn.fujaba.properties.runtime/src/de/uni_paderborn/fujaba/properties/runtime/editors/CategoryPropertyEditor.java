@@ -269,6 +269,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		if (orientation == SWT.VERTICAL) {
 			GridLayout layout = new GridLayout(2, false);
 			layout.marginWidth = layout.marginRight = 0;
+			layout.marginLeft = 5;
 			return layout;
 		} else if (orientation == SWT.HORIZONTAL) {
 			RowLayout layout = new RowLayout(orientation);
