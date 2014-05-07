@@ -2,6 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="codegen" nsURI="http://www.fujaba.de/muml/psm/codegen/0.1.0"
     nsPrefix="codegen">
+  <eClassifiers xsi:type="ecore:EClass" name="DeleteMe"/>
   <eSubpackages name="allocation" nsURI="http://www.fujaba.de/muml/psm/codegen/allocation/0.1.0"
       nsPrefix="allocation">
     <eClassifiers xsi:type="ecore:EClass" name="RefinedComponentInstance" abstract="true"
