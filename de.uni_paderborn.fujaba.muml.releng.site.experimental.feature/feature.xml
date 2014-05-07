@@ -24,8 +24,4 @@
          id="de.uni_paderborn.fujaba.muml.model.gen.c.feature"
          version="0.0.0"/>
 
-   <includes
-         id="de.uni_paderborn.fujaba.muml.cybertron.feature"
-         version="0.0.0"/>
-
 </feature>
