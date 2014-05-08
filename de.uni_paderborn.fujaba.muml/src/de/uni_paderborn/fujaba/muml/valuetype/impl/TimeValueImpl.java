@@ -20,6 +20,7 @@ import org.storydriven.core.expressions.common.LiteralExpression;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
@@ -55,7 +56,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final TimeUnit UNIT_EDEFAULT = null;
+	protected static final TimeUnit UNIT_EDEFAULT = (TimeUnit)ValuetypeFactory.eINSTANCE.createFromString(ValuetypePackage.eINSTANCE.getTimeUnit(), "MILLISECONDS");
 
 	/**
 	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.

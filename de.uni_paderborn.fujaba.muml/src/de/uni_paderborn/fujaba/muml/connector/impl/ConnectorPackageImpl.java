@@ -704,7 +704,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
 		addAnnotation
 		  (this, 
 		   source, 
@@ -712,13 +712,13 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });	
+		   });																
 		addAnnotation
 		  (discreteInteractionEndpointEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
-		   });
+		   });																										
 	}
 
 	/**
@@ -728,38 +728,38 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";								
 		addAnnotation
 		  (getConnector_SelfConnector(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->size() = 1\r\n-- author: bingo, cgerking, see MUML #872"
-		   });	
+		   });											
 		addAnnotation
 		  (discreteInteractionEndpointEClass, 
 		   source, 
 		   new String[] {
 			 "ReceivingInteractionEndpointRequiresMessageBuffer", "-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
-		   });	
+		   });									
 		addAnnotation
 		  (getDiscreteInteractionEndpoint_Multi(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n"
-		   });	
+		   });								
 		addAnnotation
 		  (getDiscreteSingleInteractionEndpointInstance_First(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.first endif"
-		   });	
+		   });			
 		addAnnotation
 		  (getDiscreteSingleInteractionEndpointInstance_Last(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.last endif"
-		   });
+		   });								
 	}
 
 } //ConnectorPackageImpl

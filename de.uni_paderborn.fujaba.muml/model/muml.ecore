@@ -2278,7 +2278,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//valuetype/TimeUnit"
-          unsettable="true">
+          defaultValueLiteral="MILLISECONDS" unsettable="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The time unit of a time value. Defining the value is optional."/>
         </eAnnotations>

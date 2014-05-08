@@ -65,6 +65,7 @@ public interface TimeValue extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' attribute.
+	 * The default value is <code>"MILLISECONDS"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Unit</em>' attribute isn't clear,
@@ -79,7 +80,7 @@ public interface TimeValue extends ExtendableElement {
 	 * @see #unsetUnit()
 	 * @see #setUnit(TimeUnit)
 	 * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getTimeValue_Unit()
-	 * @model unsettable="true" dataType="de.uni_paderborn.fujaba.muml.valuetype.TimeUnit"
+	 * @model default="MILLISECONDS" unsettable="true" dataType="de.uni_paderborn.fujaba.muml.valuetype.TimeUnit"
 	 * @generated
 	 */
 	TimeUnit getUnit();
