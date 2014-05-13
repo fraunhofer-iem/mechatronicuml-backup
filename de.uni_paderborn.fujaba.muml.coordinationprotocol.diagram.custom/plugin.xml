@@ -12,6 +12,12 @@
 		  class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.helpers.RoleEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
+        <adviceBinding
+              class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.helpers.CoordinationProtocolEditHelperAdvice"
+              id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.CoordinationProtocolAdviceBinding"
+              inheritance="all"
+              typeId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_2005">
+        </adviceBinding>
 
       </metamodel>
    </extension>
@@ -20,6 +26,9 @@
       <binding context="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"/>
          <advice ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.RoleAdvice"/>
+         <advice
+               ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.CoordinationProtocolAdviceBinding">
+         </advice>
       </binding>
    </extension>
    
