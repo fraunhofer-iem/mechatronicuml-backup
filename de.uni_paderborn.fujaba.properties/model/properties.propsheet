@@ -238,9 +238,9 @@
     </classes>
     <classes superClasses="//@packages.0/@classes.20">
       <genClass href="properties.genmodel#//properties/OCLFilter"/>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" reconcile="false">
         <genFeature href="properties.genmodel#//properties/OCLFilter/expression"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
       </properties>
     </classes>
     <classes>

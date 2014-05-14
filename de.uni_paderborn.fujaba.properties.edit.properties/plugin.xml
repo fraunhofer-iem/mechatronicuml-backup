@@ -165,12 +165,4 @@
     </propertyEditors>
  </extension>
 
-
- <extension
-       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
-    <metamodel
-          contributor="de.uni_paderborn.fujaba.properties.properties.metamodel.MetamodelContributor">
-    </metamodel>
- </extension>
-
 </plugin>
