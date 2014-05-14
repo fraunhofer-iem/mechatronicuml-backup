@@ -107,7 +107,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//OCLFilter/expression"/>
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//CreationConstraint">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//CreationConstraint/filters"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//CreationConstraint/filters"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
