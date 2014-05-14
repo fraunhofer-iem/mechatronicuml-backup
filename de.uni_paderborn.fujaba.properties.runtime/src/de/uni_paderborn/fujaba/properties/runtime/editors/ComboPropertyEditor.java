@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -18,6 +17,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -125,6 +125,9 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 
 			
 		});
+		
+		// Sort alphabetically
+		comboViewer.setSorter(new ViewerSorter());
 		
 		if (hasSearchButton) {
 			searchButton = new Button(parent, SWT.PUSH);
