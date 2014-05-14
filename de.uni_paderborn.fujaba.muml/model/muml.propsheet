@@ -1015,7 +1015,7 @@
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
-        <filters xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter" expression="cardinality.upperBound.value > 1"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="cardinality.upperBound.value > 1"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>

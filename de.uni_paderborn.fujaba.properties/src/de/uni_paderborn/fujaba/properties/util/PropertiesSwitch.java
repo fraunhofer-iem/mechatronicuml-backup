@@ -8,10 +8,13 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
+import de.uni_paderborn.fujaba.properties.CreationConstraint;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.Filter;
 import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
+import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
@@ -215,16 +218,22 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.PROPERTY_FILTER: {
-				PropertyFilter propertyFilter = (PropertyFilter)theEObject;
-				T result = casePropertyFilter(propertyFilter);
+			case PropertiesPackage.FILTER: {
+				Filter filter = (Filter)theEObject;
+				T result = caseFilter(filter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.OCL_PROPERTY_FILTER: {
-				OCLPropertyFilter oclPropertyFilter = (OCLPropertyFilter)theEObject;
-				T result = caseOCLPropertyFilter(oclPropertyFilter);
-				if (result == null) result = casePropertyFilter(oclPropertyFilter);
+			case PropertiesPackage.OCL_FILTER: {
+				OCLFilter oclFilter = (OCLFilter)theEObject;
+				T result = caseOCLFilter(oclFilter);
+				if (result == null) result = caseFilter(oclFilter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.CREATION_CONSTRAINT: {
+				CreationConstraint creationConstraint = (CreationConstraint)theEObject;
+				T result = caseCreationConstraint(creationConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -533,32 +542,47 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property Filter</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Filter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property Filter</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Filter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePropertyFilter(PropertyFilter object) {
+	public T caseFilter(Filter object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OCL Property Filter</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>OCL Filter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OCL Property Filter</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>OCL Filter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOCLPropertyFilter(OCLPropertyFilter object) {
+	public T caseOCLFilter(OCLFilter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Creation Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Creation Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreationConstraint(CreationConstraint object) {
 		return null;
 	}
 

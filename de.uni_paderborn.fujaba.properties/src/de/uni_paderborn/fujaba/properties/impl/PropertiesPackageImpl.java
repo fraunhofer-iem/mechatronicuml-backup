@@ -17,10 +17,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
+import de.uni_paderborn.fujaba.properties.CreationConstraint;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.Filter;
 import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
+import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
@@ -192,14 +195,21 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass propertyFilterEClass = null;
+	private EClass filterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass oclPropertyFilterEClass = null;
+	private EClass oclFilterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass creationConstraintEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -727,7 +737,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProperty_Filters() {
+	public EReference getProperty_VisibilityFilters() {
 		return (EReference)propertyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -783,6 +793,24 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 */
 	public EAttribute getProperty_Reconcile() {
 		return (EAttribute)propertyEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProperty_CreationConstraint() {
+		return (EReference)propertyEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProperty_CreationOppositeConstraint() {
+		return (EReference)propertyEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -925,8 +953,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPropertyFilter() {
-		return propertyFilterEClass;
+	public EClass getFilter() {
+		return filterEClass;
 	}
 
 	/**
@@ -934,8 +962,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOCLPropertyFilter() {
-		return oclPropertyFilterEClass;
+	public EClass getOCLFilter() {
+		return oclFilterEClass;
 	}
 
 	/**
@@ -943,8 +971,26 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOCLPropertyFilter_Expression() {
-		return (EAttribute)oclPropertyFilterEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOCLFilter_Expression() {
+		return (EAttribute)oclFilterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCreationConstraint() {
+		return creationConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCreationConstraint_Filters() {
+		return (EReference)creationConstraintEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1041,13 +1087,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		propertyEClass = createEClass(PROPERTY);
 		createEReference(propertyEClass, PROPERTY__GEN_FEATURE);
-		createEReference(propertyEClass, PROPERTY__FILTERS);
+		createEReference(propertyEClass, PROPERTY__VISIBILITY_FILTERS);
 		createEReference(propertyEClass, PROPERTY__TAB);
 		createEReference(propertyEClass, PROPERTY__EDITOR);
 		createEAttribute(propertyEClass, PROPERTY__TOOLTIP);
 		createEReference(propertyEClass, PROPERTY__CLAZZ);
 		createEReference(propertyEClass, PROPERTY__CATEGORY);
 		createEAttribute(propertyEClass, PROPERTY__RECONCILE);
+		createEReference(propertyEClass, PROPERTY__CREATION_CONSTRAINT);
+		createEReference(propertyEClass, PROPERTY__CREATION_OPPOSITE_CONSTRAINT);
 
 		propertyEditorEClass = createEClass(PROPERTY_EDITOR);
 		createEReference(propertyEditorEClass, PROPERTY_EDITOR__PROPERTY);
@@ -1075,10 +1123,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		customPropertyEditorEClass = createEClass(CUSTOM_PROPERTY_EDITOR);
 		createEAttribute(customPropertyEditorEClass, CUSTOM_PROPERTY_EDITOR__FULLY_QUALIFIED_CLASS_NAME);
 
-		propertyFilterEClass = createEClass(PROPERTY_FILTER);
+		filterEClass = createEClass(FILTER);
 
-		oclPropertyFilterEClass = createEClass(OCL_PROPERTY_FILTER);
-		createEAttribute(oclPropertyFilterEClass, OCL_PROPERTY_FILTER__EXPRESSION);
+		oclFilterEClass = createEClass(OCL_FILTER);
+		createEAttribute(oclFilterEClass, OCL_FILTER__EXPRESSION);
+
+		creationConstraintEClass = createEClass(CREATION_CONSTRAINT);
+		createEReference(creationConstraintEClass, CREATION_CONSTRAINT__FILTERS);
 
 		// Create enums
 		transformationPositionEEnum = createEEnum(TRANSFORMATION_POSITION);
@@ -1126,7 +1177,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		objectPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		oclPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		customPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
-		oclPropertyFilterEClass.getESuperTypes().add(this.getPropertyFilter());
+		oclFilterEClass.getESuperTypes().add(this.getFilter());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(propertyGeneratorEClass, PropertyGenerator.class, "PropertyGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1188,13 +1239,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProperty_GenFeature(), theGenModelPackage.getGenFeature(), null, "genFeature", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProperty_Filters(), this.getPropertyFilter(), null, "filters", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_VisibilityFilters(), this.getFilter(), null, "visibilityFilters", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Tab(), this.getPropertyTab(), null, "tab", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Editor(), this.getPropertyEditor(), this.getPropertyEditor_Property(), "editor", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Tooltip(), theEcorePackage.getEString(), "tooltip", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Clazz(), this.getClass_(), this.getClass_Properties(), "clazz", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Category(), this.getPropertyCategory(), this.getPropertyCategory_Properties(), "category", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Reconcile(), theEcorePackage.getEBoolean(), "reconcile", "true", 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_CreationConstraint(), this.getCreationConstraint(), null, "creationConstraint", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_CreationOppositeConstraint(), this.getCreationConstraint(), null, "creationOppositeConstraint", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEditorEClass, PropertyEditor.class, "PropertyEditor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPropertyEditor_Property(), this.getProperty(), this.getProperty_Editor(), "property", null, 1, 1, PropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1222,13 +1275,16 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEClass(customPropertyEditorEClass, CustomPropertyEditor.class, "CustomPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomPropertyEditor_FullyQualifiedClassName(), ecorePackage.getEString(), "fullyQualifiedClassName", null, 1, 1, CustomPropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(propertyFilterEClass, PropertyFilter.class, "PropertyFilter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(filterEClass, Filter.class, "Filter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(propertyFilterEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(filterEClass, ecorePackage.getEBoolean(), "isValid", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(oclPropertyFilterEClass, OCLPropertyFilter.class, "OCLPropertyFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOCLPropertyFilter_Expression(), ecorePackage.getEString(), "expression", null, 1, 1, OCLPropertyFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(oclFilterEClass, OCLFilter.class, "OCLFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOCLFilter_Expression(), ecorePackage.getEString(), "expression", null, 1, 1, OCLFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(creationConstraintEClass, CreationConstraint.class, "CreationConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCreationConstraint_Filters(), this.getFilter(), null, "filters", null, 0, -1, CreationConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(transformationPositionEEnum, TransformationPosition.class, "TransformationPosition");
@@ -1278,7 +1334,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueFeatures UniqueCategoryTitles PropertiesFromSelfOrSuperclasses"
-		   });		
+		   });				
+		addAnnotation
+		  (propertyEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "CreationConstraintForContainments CreationOppositeConstraintForContainers"
+		   });	
 	}
 
 	/**
@@ -1321,6 +1383,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		   source, 
 		   new String[] {
 			 "derivation", "self->closure(superClasses)"
+		   });			
+		addAnnotation
+		  (propertyEClass, 
+		   source, 
+		   new String[] {
+			 "CreationConstraintForContainments", "-- Creation Constraint must only be defined for Properties of containment references.\n(not creationConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).containment)",
+			 "CreationOppositeConstraintForContainers", "-- Creation Opposite Constraint must only be defined for Properties with an EOpposite of type containment reference.\n(not creationOppositeConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).container)"
 		   });
 	}
 

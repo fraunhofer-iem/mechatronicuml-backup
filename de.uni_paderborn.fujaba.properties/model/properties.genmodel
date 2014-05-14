@@ -69,13 +69,15 @@
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//Property">
       <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/genFeature"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/filters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/visibilityFilters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/tab"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/editor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/tooltip"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//Property/clazz"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/category"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/reconcile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/creationConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/creationOppositeConstraint"/>
     </genClasses>
     <genClasses image="false" ecoreClass="properties.ecore#//PropertyEditor">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//PropertyEditor/property"/>
@@ -96,13 +98,16 @@
     <genClasses ecoreClass="properties.ecore#//CustomPropertyEditor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//CustomPropertyEditor/fullyQualifiedClassName"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="properties.ecore#//PropertyFilter">
-      <genOperations ecoreOperation="properties.ecore#//PropertyFilter/isValid">
-        <genParameters ecoreParameter="properties.ecore#//PropertyFilter/isValid/object"/>
+    <genClasses image="false" ecoreClass="properties.ecore#//Filter">
+      <genOperations ecoreOperation="properties.ecore#//Filter/isValid">
+        <genParameters ecoreParameter="properties.ecore#//Filter/isValid/object"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="properties.ecore#//OCLPropertyFilter">
-      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute properties.ecore#//OCLPropertyFilter/expression"/>
+    <genClasses ecoreClass="properties.ecore#//OCLFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//OCLFilter/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="properties.ecore#//CreationConstraint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//CreationConstraint/filters"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -512,26 +512,49 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.properties.OCLPropertyFilter} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.properties.OCLFilter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OCLPropertyFilterItemProvider oclPropertyFilterItemProvider;
+	protected OCLFilterItemProvider oclFilterItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.properties.OCLPropertyFilter}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.properties.OCLFilter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createOCLPropertyFilterAdapter() {
-		if (oclPropertyFilterItemProvider == null) {
-			oclPropertyFilterItemProvider = new OCLPropertyFilterItemProvider(this);
+	public Adapter createOCLFilterAdapter() {
+		if (oclFilterItemProvider == null) {
+			oclFilterItemProvider = new OCLFilterItemProvider(this);
 		}
 
-		return oclPropertyFilterItemProvider;
+		return oclFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.properties.CreationConstraint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CreationConstraintItemProvider creationConstraintItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.properties.CreationConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCreationConstraintAdapter() {
+		if (creationConstraintItemProvider == null) {
+			creationConstraintItemProvider = new CreationConstraintItemProvider(this);
+		}
+
+		return creationConstraintItemProvider;
 	}
 
 	/**
@@ -652,7 +675,8 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (objectPropertyEditorItemProvider != null) objectPropertyEditorItemProvider.dispose();
 		if (oclPropertyEditorItemProvider != null) oclPropertyEditorItemProvider.dispose();
 		if (customPropertyEditorItemProvider != null) customPropertyEditorItemProvider.dispose();
-		if (oclPropertyFilterItemProvider != null) oclPropertyFilterItemProvider.dispose();
+		if (oclFilterItemProvider != null) oclFilterItemProvider.dispose();
+		if (creationConstraintItemProvider != null) creationConstraintItemProvider.dispose();
 	}
 
 }

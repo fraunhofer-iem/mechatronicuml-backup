@@ -17,18 +17,21 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getGenFeature <em>Gen Feature</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getFilters <em>Filters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getVisibilityFilters <em>Visibility Filters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getTab <em>Tab</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getTooltip <em>Tooltip</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCategory <em>Category</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#isReconcile <em>Reconcile</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCreationConstraint <em>Creation Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CreationConstraintForContainments CreationOppositeConstraintForContainers'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CreationConstraintForContainments='-- Creation Constraint must only be defined for Properties of containment references.\n(not creationConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).containment)' CreationOppositeConstraintForContainers='-- Creation Opposite Constraint must only be defined for Properties with an EOpposite of type containment reference.\n(not creationOppositeConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).container)'"
  * @generated
  */
 public interface Property extends EObject {
@@ -59,20 +62,20 @@ public interface Property extends EObject {
 	void setGenFeature(GenFeature value);
 
 	/**
-	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.PropertyFilter}.
+	 * Returns the value of the '<em><b>Visibility Filters</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.Filter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Filters</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Visibility Filters</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Filters</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_Filters()
+	 * @return the value of the '<em>Visibility Filters</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_VisibilityFilters()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<PropertyFilter> getFilters();
+	EList<Filter> getVisibilityFilters();
 
 	/**
 	 * Returns the value of the '<em><b>Tab</b></em>' reference.
@@ -236,5 +239,57 @@ public interface Property extends EObject {
 	 * @generated
 	 */
 	void setReconcile(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Creation Constraint</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Creation Constraint</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Creation Constraint</em>' containment reference.
+	 * @see #setCreationConstraint(CreationConstraint)
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_CreationConstraint()
+	 * @model containment="true"
+	 * @generated
+	 */
+	CreationConstraint getCreationConstraint();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.properties.Property#getCreationConstraint <em>Creation Constraint</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Creation Constraint</em>' containment reference.
+	 * @see #getCreationConstraint()
+	 * @generated
+	 */
+	void setCreationConstraint(CreationConstraint value);
+
+	/**
+	 * Returns the value of the '<em><b>Creation Opposite Constraint</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Creation Opposite Constraint</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Creation Opposite Constraint</em>' containment reference.
+	 * @see #setCreationOppositeConstraint(CreationConstraint)
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_CreationOppositeConstraint()
+	 * @model containment="true"
+	 * @generated
+	 */
+	CreationConstraint getCreationOppositeConstraint();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.properties.Property#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Creation Opposite Constraint</em>' containment reference.
+	 * @see #getCreationOppositeConstraint()
+	 * @generated
+	 */
+	void setCreationOppositeConstraint(CreationConstraint value);
 
 } // Property

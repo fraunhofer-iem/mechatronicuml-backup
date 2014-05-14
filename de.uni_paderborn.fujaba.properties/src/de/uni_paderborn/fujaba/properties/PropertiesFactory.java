@@ -193,13 +193,22 @@ public interface PropertiesFactory extends EFactory {
 	CustomPropertyEditor createCustomPropertyEditor();
 
 	/**
-	 * Returns a new object of class '<em>OCL Property Filter</em>'.
+	 * Returns a new object of class '<em>OCL Filter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OCL Property Filter</em>'.
+	 * @return a new object of class '<em>OCL Filter</em>'.
 	 * @generated
 	 */
-	OCLPropertyFilter createOCLPropertyFilter();
+	OCLFilter createOCLFilter();
+
+	/**
+	 * Returns a new object of class '<em>Creation Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Creation Constraint</em>'.
+	 * @generated
+	 */
+	CreationConstraint createCreationConstraint();
 
 	/**
 	 * Returns the package supported by this factory.

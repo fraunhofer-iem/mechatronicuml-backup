@@ -16,10 +16,13 @@ import org.eclipse.emf.ecore.util.EcoreValidator;
 
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
+import de.uni_paderborn.fujaba.properties.CreationConstraint;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.Filter;
 import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
+import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
@@ -149,10 +152,12 @@ public class PropertiesValidator extends EObjectValidator {
 				return validateOCLPropertyEditor((OCLPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR:
 				return validateCustomPropertyEditor((CustomPropertyEditor)value, diagnostics, context);
-			case PropertiesPackage.PROPERTY_FILTER:
-				return validatePropertyFilter((PropertyFilter)value, diagnostics, context);
-			case PropertiesPackage.OCL_PROPERTY_FILTER:
-				return validateOCLPropertyFilter((OCLPropertyFilter)value, diagnostics, context);
+			case PropertiesPackage.FILTER:
+				return validateFilter((Filter)value, diagnostics, context);
+			case PropertiesPackage.OCL_FILTER:
+				return validateOCLFilter((OCLFilter)value, diagnostics, context);
+			case PropertiesPackage.CREATION_CONSTRAINT:
+				return validateCreationConstraint((CreationConstraint)value, diagnostics, context);
 			case PropertiesPackage.TRANSFORMATION_POSITION:
 				return validateTransformationPosition((TransformationPosition)value, diagnostics, context);
 			default:
@@ -445,7 +450,78 @@ public class PropertiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProperty(Property property, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(property, diagnostics, context);
+		if (!validate_NoCircularContainment(property, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProperty_CreationConstraintForContainments(property, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProperty_CreationOppositeConstraintForContainers(property, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the CreationConstraintForContainments constraint of '<em>Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PROPERTY__CREATION_CONSTRAINT_FOR_CONTAINMENTS__EEXPRESSION = "-- Creation Constraint must only be defined for Properties of containment references.\n" +
+		"(not creationConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).containment)";
+
+	/**
+	 * Validates the CreationConstraintForContainments constraint of '<em>Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProperty_CreationConstraintForContainments(Property property, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PropertiesPackage.Literals.PROPERTY,
+				 property,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "CreationConstraintForContainments",
+				 PROPERTY__CREATION_CONSTRAINT_FOR_CONTAINMENTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the CreationOppositeConstraintForContainers constraint of '<em>Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PROPERTY__CREATION_OPPOSITE_CONSTRAINT_FOR_CONTAINERS__EEXPRESSION = "-- Creation Opposite Constraint must only be defined for Properties with an EOpposite of type containment reference.\n" +
+		"(not creationOppositeConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).container)";
+
+	/**
+	 * Validates the CreationOppositeConstraintForContainers constraint of '<em>Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProperty_CreationOppositeConstraintForContainers(Property property, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PropertiesPackage.Literals.PROPERTY,
+				 property,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "CreationOppositeConstraintForContainers",
+				 PROPERTY__CREATION_OPPOSITE_CONSTRAINT_FOR_CONTAINERS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -552,8 +628,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePropertyFilter(PropertyFilter propertyFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(propertyFilter, diagnostics, context);
+	public boolean validateFilter(Filter filter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(filter, diagnostics, context);
 	}
 
 	/**
@@ -561,8 +637,17 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOCLPropertyFilter(OCLPropertyFilter oclPropertyFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(oclPropertyFilter, diagnostics, context);
+	public boolean validateOCLFilter(OCLFilter oclFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(oclFilter, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCreationConstraint(CreationConstraint creationConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(creationConstraint, diagnostics, context);
 	}
 
 	/**

@@ -580,13 +580,13 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__GEN_FEATURE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Visibility Filters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__FILTERS = 1;
+	int PROPERTY__VISIBILITY_FILTERS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Tab</b></em>' reference.
@@ -643,13 +643,31 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__RECONCILE = 7;
 
 	/**
+	 * The feature id for the '<em><b>Creation Constraint</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__CREATION_CONSTRAINT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Creation Opposite Constraint</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__CREATION_OPPOSITE_CONSTRAINT = 9;
+
+	/**
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 8;
+	int PROPERTY_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
@@ -987,33 +1005,33 @@ public interface PropertiesPackage extends EPackage {
 	int CUSTOM_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyFilterImpl <em>Property Filter</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.FilterImpl <em>Filter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.properties.impl.PropertyFilterImpl
-	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
+	 * @see de.uni_paderborn.fujaba.properties.impl.FilterImpl
+	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getFilter()
 	 * @generated
 	 */
-	int PROPERTY_FILTER = 20;
+	int FILTER = 20;
 
 	/**
-	 * The number of structural features of the '<em>Property Filter</em>' class.
+	 * The number of structural features of the '<em>Filter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FILTER_FEATURE_COUNT = 0;
+	int FILTER_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.OCLPropertyFilterImpl <em>OCL Property Filter</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.OCLFilterImpl <em>OCL Filter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.properties.impl.OCLPropertyFilterImpl
-	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
+	 * @see de.uni_paderborn.fujaba.properties.impl.OCLFilterImpl
+	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOCLFilter()
 	 * @generated
 	 */
-	int OCL_PROPERTY_FILTER = 21;
+	int OCL_FILTER = 21;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1022,17 +1040,44 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OCL_PROPERTY_FILTER__EXPRESSION = PROPERTY_FILTER_FEATURE_COUNT + 0;
+	int OCL_FILTER__EXPRESSION = FILTER_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>OCL Property Filter</em>' class.
+	 * The number of structural features of the '<em>OCL Filter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OCL_PROPERTY_FILTER_FEATURE_COUNT = PROPERTY_FILTER_FEATURE_COUNT + 1;
+	int OCL_FILTER_FEATURE_COUNT = FILTER_FEATURE_COUNT + 1;
 
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.CreationConstraintImpl <em>Creation Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.properties.impl.CreationConstraintImpl
+	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getCreationConstraint()
+	 * @generated
+	 */
+	int CREATION_CONSTRAINT = 22;
+
+	/**
+	 * The feature id for the '<em><b>Filters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATION_CONSTRAINT__FILTERS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Creation Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATION_CONSTRAINT_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.TransformationPosition <em>Transformation Position</em>}' enum.
@@ -1042,7 +1087,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getTransformationPosition()
 	 * @generated
 	 */
-	int TRANSFORMATION_POSITION = 22;
+	int TRANSFORMATION_POSITION = 23;
 
 
 	/**
@@ -1576,15 +1621,15 @@ public interface PropertiesPackage extends EPackage {
 	EReference getProperty_GenFeature();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.properties.Property#getFilters <em>Filters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.properties.Property#getVisibilityFilters <em>Visibility Filters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Filters</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.Property#getFilters()
+	 * @return the meta object for the containment reference list '<em>Visibility Filters</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Property#getVisibilityFilters()
 	 * @see #getProperty()
 	 * @generated
 	 */
-	EReference getProperty_Filters();
+	EReference getProperty_VisibilityFilters();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.properties.Property#getTab <em>Tab</em>}'.
@@ -1651,6 +1696,28 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProperty_Reconcile();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.properties.Property#getCreationConstraint <em>Creation Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Creation Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Property#getCreationConstraint()
+	 * @see #getProperty()
+	 * @generated
+	 */
+	EReference getProperty_CreationConstraint();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.properties.Property#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Creation Opposite Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Property#getCreationOppositeConstraint()
+	 * @see #getProperty()
+	 * @generated
+	 */
+	EReference getProperty_CreationOppositeConstraint();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.PropertyEditor <em>Property Editor</em>}'.
@@ -1807,35 +1874,56 @@ public interface PropertiesPackage extends EPackage {
 	EAttribute getCustomPropertyEditor_FullyQualifiedClassName();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.PropertyFilter <em>Property Filter</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.Filter <em>Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Property Filter</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.PropertyFilter
+	 * @return the meta object for class '<em>Filter</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Filter
 	 * @generated
 	 */
-	EClass getPropertyFilter();
+	EClass getFilter();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.OCLPropertyFilter <em>OCL Property Filter</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.OCLFilter <em>OCL Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OCL Property Filter</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.OCLPropertyFilter
+	 * @return the meta object for class '<em>OCL Filter</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.OCLFilter
 	 * @generated
 	 */
-	EClass getOCLPropertyFilter();
+	EClass getOCLFilter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.properties.OCLPropertyFilter#getExpression <em>Expression</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.properties.OCLFilter#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.OCLPropertyFilter#getExpression()
-	 * @see #getOCLPropertyFilter()
+	 * @see de.uni_paderborn.fujaba.properties.OCLFilter#getExpression()
+	 * @see #getOCLFilter()
 	 * @generated
 	 */
-	EAttribute getOCLPropertyFilter_Expression();
+	EAttribute getOCLFilter_Expression();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.CreationConstraint <em>Creation Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Creation Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.CreationConstraint
+	 * @generated
+	 */
+	EClass getCreationConstraint();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.properties.CreationConstraint#getFilters <em>Filters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Filters</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.CreationConstraint#getFilters()
+	 * @see #getCreationConstraint()
+	 * @generated
+	 */
+	EReference getCreationConstraint_Filters();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.properties.TransformationPosition <em>Transformation Position</em>}'.
@@ -2280,12 +2368,12 @@ public interface PropertiesPackage extends EPackage {
 		EReference PROPERTY__GEN_FEATURE = eINSTANCE.getProperty_GenFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Filters</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Visibility Filters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY__FILTERS = eINSTANCE.getProperty_Filters();
+		EReference PROPERTY__VISIBILITY_FILTERS = eINSTANCE.getProperty_VisibilityFilters();
 
 		/**
 		 * The meta object literal for the '<em><b>Tab</b></em>' reference feature.
@@ -2334,6 +2422,22 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY__RECONCILE = eINSTANCE.getProperty_Reconcile();
+
+		/**
+		 * The meta object literal for the '<em><b>Creation Constraint</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY__CREATION_CONSTRAINT = eINSTANCE.getProperty_CreationConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Creation Opposite Constraint</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY__CREATION_OPPOSITE_CONSTRAINT = eINSTANCE.getProperty_CreationOppositeConstraint();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
@@ -2478,24 +2582,24 @@ public interface PropertiesPackage extends EPackage {
 		EAttribute CUSTOM_PROPERTY_EDITOR__FULLY_QUALIFIED_CLASS_NAME = eINSTANCE.getCustomPropertyEditor_FullyQualifiedClassName();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyFilterImpl <em>Property Filter</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.FilterImpl <em>Filter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.properties.impl.PropertyFilterImpl
-		 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
+		 * @see de.uni_paderborn.fujaba.properties.impl.FilterImpl
+		 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getFilter()
 		 * @generated
 		 */
-		EClass PROPERTY_FILTER = eINSTANCE.getPropertyFilter();
+		EClass FILTER = eINSTANCE.getFilter();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.OCLPropertyFilterImpl <em>OCL Property Filter</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.OCLFilterImpl <em>OCL Filter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.properties.impl.OCLPropertyFilterImpl
-		 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
+		 * @see de.uni_paderborn.fujaba.properties.impl.OCLFilterImpl
+		 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOCLFilter()
 		 * @generated
 		 */
-		EClass OCL_PROPERTY_FILTER = eINSTANCE.getOCLPropertyFilter();
+		EClass OCL_FILTER = eINSTANCE.getOCLFilter();
 
 		/**
 		 * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
@@ -2503,7 +2607,25 @@ public interface PropertiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OCL_PROPERTY_FILTER__EXPRESSION = eINSTANCE.getOCLPropertyFilter_Expression();
+		EAttribute OCL_FILTER__EXPRESSION = eINSTANCE.getOCLFilter_Expression();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.CreationConstraintImpl <em>Creation Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.properties.impl.CreationConstraintImpl
+		 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getCreationConstraint()
+		 * @generated
+		 */
+		EClass CREATION_CONSTRAINT = eINSTANCE.getCreationConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Filters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CREATION_CONSTRAINT__FILTERS = eINSTANCE.getCreationConstraint_Filters();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.TransformationPosition <em>Transformation Position</em>}' enum.

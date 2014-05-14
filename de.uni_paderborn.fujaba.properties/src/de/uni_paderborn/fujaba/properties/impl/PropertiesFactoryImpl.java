@@ -11,10 +11,12 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
+import de.uni_paderborn.fujaba.properties.CreationConstraint;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
 import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
+import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
@@ -94,7 +96,8 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.OBJECT_PROPERTY_EDITOR: return createObjectPropertyEditor();
 			case PropertiesPackage.OCL_PROPERTY_EDITOR: return createOCLPropertyEditor();
 			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR: return createCustomPropertyEditor();
-			case PropertiesPackage.OCL_PROPERTY_FILTER: return createOCLPropertyFilter();
+			case PropertiesPackage.OCL_FILTER: return createOCLFilter();
+			case PropertiesPackage.CREATION_CONSTRAINT: return createCreationConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -325,9 +328,19 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OCLPropertyFilter createOCLPropertyFilter() {
-		OCLPropertyFilterImpl oclPropertyFilter = new OCLPropertyFilterImpl();
-		return oclPropertyFilter;
+	public OCLFilter createOCLFilter() {
+		OCLFilterImpl oclFilter = new OCLFilterImpl();
+		return oclFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CreationConstraint createCreationConstraint() {
+		CreationConstraintImpl creationConstraint = new CreationConstraintImpl();
+		return creationConstraint;
 	}
 
 	/**

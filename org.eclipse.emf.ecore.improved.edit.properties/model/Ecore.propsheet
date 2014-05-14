@@ -182,8 +182,8 @@
           reconcile="false">
         <genFeature
             href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
-        <filters
-            xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter"
+        <visibilityFilters
+            xsi:type="de.uni_paderborn.fujaba:OCLFilter"
             expression="true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()"/>
         <editor
             xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor"
@@ -409,8 +409,8 @@
           reconcile="false">
         <genFeature
             href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
-        <filters
-            xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter"
+        <visibilityFilters
+            xsi:type="de.uni_paderborn.fujaba:OCLFilter"
             expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or eContainer().oclAsType(ecore::EAnnotation).source &lt;> 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
         <editor
             xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"
@@ -421,8 +421,8 @@
           reconcile="false">
         <genFeature
             href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
-        <filters
-            xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter"
+        <visibilityFilters
+            xsi:type="de.uni_paderborn.fujaba:OCLFilter"
             expression="eContainer().oclIsKindOf(ecore::EAnnotation) and eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
         <editor
             xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor"

@@ -2,6 +2,8 @@
  */
 package de.uni_paderborn.fujaba.properties.impl;
 
+import de.uni_paderborn.fujaba.properties.CreationConstraint;
+import de.uni_paderborn.fujaba.properties.Filter;
 import java.util.Collection;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
@@ -31,13 +33,15 @@ import de.uni_paderborn.fujaba.properties.PropertyTab;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getGenFeature <em>Gen Feature</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getFilters <em>Filters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getVisibilityFilters <em>Visibility Filters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getTab <em>Tab</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getTooltip <em>Tooltip</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#isReconcile <em>Reconcile</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCreationConstraint <em>Creation Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,14 +59,14 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	protected GenFeature genFeature;
 
 	/**
-	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
+	 * The cached value of the '{@link #getVisibilityFilters() <em>Visibility Filters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFilters()
+	 * @see #getVisibilityFilters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PropertyFilter> filters;
+	protected EList<Filter> visibilityFilters;
 
 	/**
 	 * The cached value of the '{@link #getTab() <em>Tab</em>}' reference.
@@ -135,6 +139,26 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	protected boolean reconcile = RECONCILE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getCreationConstraint() <em>Creation Constraint</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreationConstraint()
+	 * @generated
+	 * @ordered
+	 */
+	protected CreationConstraint creationConstraint;
+
+	/**
+	 * The cached value of the '{@link #getCreationOppositeConstraint() <em>Creation Opposite Constraint</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreationOppositeConstraint()
+	 * @generated
+	 * @ordered
+	 */
+	protected CreationConstraint creationOppositeConstraint;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,11 +220,11 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PropertyFilter> getFilters() {
-		if (filters == null) {
-			filters = new EObjectContainmentEList<PropertyFilter>(PropertyFilter.class, this, PropertiesPackage.PROPERTY__FILTERS);
+	public EList<Filter> getVisibilityFilters() {
+		if (visibilityFilters == null) {
+			visibilityFilters = new EObjectContainmentEList<Filter>(Filter.class, this, PropertiesPackage.PROPERTY__VISIBILITY_FILTERS);
 		}
-		return filters;
+		return visibilityFilters;
 	}
 
 	/**
@@ -432,6 +456,92 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CreationConstraint getCreationConstraint() {
+		return creationConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCreationConstraint(CreationConstraint newCreationConstraint, NotificationChain msgs) {
+		CreationConstraint oldCreationConstraint = creationConstraint;
+		creationConstraint = newCreationConstraint;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CREATION_CONSTRAINT, oldCreationConstraint, newCreationConstraint);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCreationConstraint(CreationConstraint newCreationConstraint) {
+		if (newCreationConstraint != creationConstraint) {
+			NotificationChain msgs = null;
+			if (creationConstraint != null)
+				msgs = ((InternalEObject)creationConstraint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__CREATION_CONSTRAINT, null, msgs);
+			if (newCreationConstraint != null)
+				msgs = ((InternalEObject)newCreationConstraint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__CREATION_CONSTRAINT, null, msgs);
+			msgs = basicSetCreationConstraint(newCreationConstraint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CREATION_CONSTRAINT, newCreationConstraint, newCreationConstraint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CreationConstraint getCreationOppositeConstraint() {
+		return creationOppositeConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCreationOppositeConstraint(CreationConstraint newCreationOppositeConstraint, NotificationChain msgs) {
+		CreationConstraint oldCreationOppositeConstraint = creationOppositeConstraint;
+		creationOppositeConstraint = newCreationOppositeConstraint;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT, oldCreationOppositeConstraint, newCreationOppositeConstraint);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCreationOppositeConstraint(CreationConstraint newCreationOppositeConstraint) {
+		if (newCreationOppositeConstraint != creationOppositeConstraint) {
+			NotificationChain msgs = null;
+			if (creationOppositeConstraint != null)
+				msgs = ((InternalEObject)creationOppositeConstraint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT, null, msgs);
+			if (newCreationOppositeConstraint != null)
+				msgs = ((InternalEObject)newCreationOppositeConstraint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT, null, msgs);
+			msgs = basicSetCreationOppositeConstraint(newCreationOppositeConstraint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT, newCreationOppositeConstraint, newCreationOppositeConstraint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -459,14 +569,18 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY__FILTERS:
-				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
+			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
+				return ((InternalEList<?>)getVisibilityFilters()).basicRemove(otherEnd, msgs);
 			case PropertiesPackage.PROPERTY__EDITOR:
 				return basicSetEditor(null, msgs);
 			case PropertiesPackage.PROPERTY__CLAZZ:
 				return basicSetClazz(null, msgs);
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				return basicSetCategory(null, msgs);
+			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
+				return basicSetCreationConstraint(null, msgs);
+			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
+				return basicSetCreationOppositeConstraint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -496,8 +610,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__GEN_FEATURE:
 				if (resolve) return getGenFeature();
 				return basicGetGenFeature();
-			case PropertiesPackage.PROPERTY__FILTERS:
-				return getFilters();
+			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
+				return getVisibilityFilters();
 			case PropertiesPackage.PROPERTY__TAB:
 				if (resolve) return getTab();
 				return basicGetTab();
@@ -512,6 +626,10 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return basicGetCategory();
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				return isReconcile();
+			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
+				return getCreationConstraint();
+			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
+				return getCreationOppositeConstraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -528,9 +646,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__GEN_FEATURE:
 				setGenFeature((GenFeature)newValue);
 				return;
-			case PropertiesPackage.PROPERTY__FILTERS:
-				getFilters().clear();
-				getFilters().addAll((Collection<? extends PropertyFilter>)newValue);
+			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
+				getVisibilityFilters().clear();
+				getVisibilityFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__TAB:
 				setTab((PropertyTab)newValue);
@@ -550,6 +668,12 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				setReconcile((Boolean)newValue);
 				return;
+			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
+				setCreationConstraint((CreationConstraint)newValue);
+				return;
+			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
+				setCreationOppositeConstraint((CreationConstraint)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -565,8 +689,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__GEN_FEATURE:
 				setGenFeature((GenFeature)null);
 				return;
-			case PropertiesPackage.PROPERTY__FILTERS:
-				getFilters().clear();
+			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
+				getVisibilityFilters().clear();
 				return;
 			case PropertiesPackage.PROPERTY__TAB:
 				setTab((PropertyTab)null);
@@ -586,6 +710,12 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				setReconcile(RECONCILE_EDEFAULT);
 				return;
+			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
+				setCreationConstraint((CreationConstraint)null);
+				return;
+			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
+				setCreationOppositeConstraint((CreationConstraint)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -600,8 +730,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 		switch (featureID) {
 			case PropertiesPackage.PROPERTY__GEN_FEATURE:
 				return genFeature != null;
-			case PropertiesPackage.PROPERTY__FILTERS:
-				return filters != null && !filters.isEmpty();
+			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
+				return visibilityFilters != null && !visibilityFilters.isEmpty();
 			case PropertiesPackage.PROPERTY__TAB:
 				return tab != null;
 			case PropertiesPackage.PROPERTY__EDITOR:
@@ -614,6 +744,10 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return category != null;
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				return reconcile != RECONCILE_EDEFAULT;
+			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
+				return creationConstraint != null;
+			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
+				return creationOppositeConstraint != null;
 		}
 		return super.eIsSet(featureID);
 	}

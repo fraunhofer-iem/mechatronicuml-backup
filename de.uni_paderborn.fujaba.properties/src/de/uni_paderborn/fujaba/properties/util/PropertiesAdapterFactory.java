@@ -9,10 +9,13 @@ import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
+import de.uni_paderborn.fujaba.properties.CreationConstraint;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.Filter;
 import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
+import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
@@ -166,12 +169,16 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 				return createCustomPropertyEditorAdapter();
 			}
 			@Override
-			public Adapter casePropertyFilter(PropertyFilter object) {
-				return createPropertyFilterAdapter();
+			public Adapter caseFilter(Filter object) {
+				return createFilterAdapter();
 			}
 			@Override
-			public Adapter caseOCLPropertyFilter(OCLPropertyFilter object) {
-				return createOCLPropertyFilterAdapter();
+			public Adapter caseOCLFilter(OCLFilter object) {
+				return createOCLFilterAdapter();
+			}
+			@Override
+			public Adapter caseCreationConstraint(CreationConstraint object) {
+				return createCreationConstraintAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -474,30 +481,44 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.properties.PropertyFilter <em>Property Filter</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.properties.Filter <em>Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.properties.PropertyFilter
+	 * @see de.uni_paderborn.fujaba.properties.Filter
 	 * @generated
 	 */
-	public Adapter createPropertyFilterAdapter() {
+	public Adapter createFilterAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.properties.OCLPropertyFilter <em>OCL Property Filter</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.properties.OCLFilter <em>OCL Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.properties.OCLPropertyFilter
+	 * @see de.uni_paderborn.fujaba.properties.OCLFilter
 	 * @generated
 	 */
-	public Adapter createOCLPropertyFilterAdapter() {
+	public Adapter createOCLFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.properties.CreationConstraint <em>Creation Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.properties.CreationConstraint
+	 * @generated
+	 */
+	public Adapter createCreationConstraintAdapter() {
 		return null;
 	}
 

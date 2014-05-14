@@ -60,7 +60,7 @@
         <genFeature href="properties.genmodel#//properties/Reconciler/reconcileClasses"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.1/@propertyCategories.0">
+      <properties tab="//@tabs.0" tooltip="" category="//@packages.0/@classes.1/@propertyCategories.0">
         <genFeature href="properties.genmodel#//properties/Reconciler/reconcileProperties"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
@@ -230,18 +230,26 @@
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
-      <genClass href="properties.genmodel#//properties/PropertyFilter"/>
-    </classes>
-    <classes superClasses="//@packages.0/@classes.19">
-      <genClass href="properties.genmodel#//properties/OCLPropertyFilter"/>
-      <properties tab="//@tabs.0" reconcile="false">
-        <genFeature href="properties.genmodel#//properties/OCLPropertyFilter/expression"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.properties.editor.CustomOCLPropertyEditor"/>
-      </properties>
-    </classes>
     <classes superClasses="//@packages.0/@classes.9">
       <genClass href="properties.genmodel#//properties/FlattenedListPropertyEditor"/>
+    </classes>
+    <classes>
+      <genClass href="properties.genmodel#//properties/Filter"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.20">
+      <genClass href="properties.genmodel#//properties/OCLFilter"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="properties.genmodel#//properties/OCLFilter/expression"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="properties.genmodel#//properties/CreationConstraint"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.22/@propertyCategories.0">
+        <genFeature href="properties.genmodel#//properties/CreationConstraint/filters"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.22/@properties.0"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

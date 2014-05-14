@@ -234,8 +234,10 @@ public class PropertyItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__FILTERS);
+			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__VISIBILITY_FILTERS);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__EDITOR);
+			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__CREATION_CONSTRAINT);
+			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__CREATION_OPPOSITE_CONSTRAINT);
 		}
 		return childrenFeatures;
 	}
@@ -304,8 +306,10 @@ public class PropertyItemProvider
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PropertiesPackage.PROPERTY__FILTERS:
+			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:
 			case PropertiesPackage.PROPERTY__EDITOR:
+			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
+			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -325,8 +329,8 @@ public class PropertyItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__FILTERS,
-				 PropertiesFactory.eINSTANCE.createOCLPropertyFilter()));
+				(PropertiesPackage.Literals.PROPERTY__VISIBILITY_FILTERS,
+				 PropertiesFactory.eINSTANCE.createOCLFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -377,6 +381,39 @@ public class PropertyItemProvider
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createCustomPropertyEditor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY__CREATION_CONSTRAINT,
+				 PropertiesFactory.eINSTANCE.createCreationConstraint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY__CREATION_OPPOSITE_CONSTRAINT,
+				 PropertiesFactory.eINSTANCE.createCreationConstraint()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == PropertiesPackage.Literals.PROPERTY__CREATION_CONSTRAINT ||
+			childFeature == PropertiesPackage.Literals.PROPERTY__CREATION_OPPOSITE_CONSTRAINT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
