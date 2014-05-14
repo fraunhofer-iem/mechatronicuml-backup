@@ -16,6 +16,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -114,13 +115,25 @@ public class PropertyItemProvider
 							genClass = property.getGenFeature().getTypeGenClass();
 						}
 					}
-					if (genClass != null) {
-						for (Object choice : super.getChoiceOfValues(object)) {
-							if (choice instanceof GenFeature) {
-								GenFeature genFeature = (GenFeature) choice;
-								if (genClass == genFeature.getGenClass()) {
-									valid.add(genFeature);
-								}
+					
+					
+					List<EClass> allowedEClasses = new ArrayList<EClass>();
+					if (genClass != null && genClass.getEcoreClass() != null) {
+						EClass ecoreClass = genClass.getEcoreClass();
+						allowedEClasses.add(ecoreClass);
+						for (EClass superType : ecoreClass.getEAllSuperTypes()) {
+							allowedEClasses.add(superType);
+						}
+					}
+					for (Object choice : super.getChoiceOfValues(object)) {
+						if (choice instanceof GenFeature) {
+							GenFeature genFeature = (GenFeature) choice;
+							EClass ecoreClass = null;
+							if (genFeature.getGenClass() != null) {
+								ecoreClass = genFeature.getGenClass().getEcoreClass();
+							}
+							if (allowedEClasses.contains(ecoreClass)) {
+								valid.add(genFeature);
 							}
 						}
 					}

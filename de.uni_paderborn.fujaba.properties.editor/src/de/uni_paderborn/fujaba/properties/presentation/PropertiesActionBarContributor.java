@@ -246,7 +246,7 @@ public class PropertiesActionBarContributor extends
 	 * with it as a selection provider. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void setActiveEditor(IEditorPart part) {
@@ -262,7 +262,9 @@ public class PropertiesActionBarContributor extends
 			selectionProvider = null;
 		} else {
 			selectionProvider = part.getSite().getSelectionProvider();
-			selectionProvider.addSelectionChangedListener(this);
+			if (selectionProvider != null) {
+				selectionProvider.addSelectionChangedListener(this);
+			}
 
 			// Fake a selection changed event to update the menus.
 			//
