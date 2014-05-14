@@ -193,6 +193,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreationConstraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
-        eType="#//Filter"/>
+        eType="#//Filter" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

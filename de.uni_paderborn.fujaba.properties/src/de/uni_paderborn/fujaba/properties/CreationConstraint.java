@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface CreationConstraint extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Filters</b></em>' reference list.
+	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.Filter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -32,9 +32,9 @@ public interface CreationConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Filters</em>' reference list.
+	 * @return the value of the '<em>Filters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getCreationConstraint_Filters()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Filter> getFilters();

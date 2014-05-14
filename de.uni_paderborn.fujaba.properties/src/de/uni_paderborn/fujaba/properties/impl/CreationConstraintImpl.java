@@ -8,13 +8,17 @@ import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +35,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class CreationConstraintImpl extends EObjectImpl implements CreationConstraint {
 	/**
-	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' reference list.
+	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFilters()
@@ -66,9 +70,23 @@ public class CreationConstraintImpl extends EObjectImpl implements CreationConst
 	 */
 	public EList<Filter> getFilters() {
 		if (filters == null) {
-			filters = new EObjectResolvingEList<Filter>(Filter.class, this, PropertiesPackage.CREATION_CONSTRAINT__FILTERS);
+			filters = new EObjectContainmentEList<Filter>(Filter.class, this, PropertiesPackage.CREATION_CONSTRAINT__FILTERS);
 		}
 		return filters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PropertiesPackage.CREATION_CONSTRAINT__FILTERS:
+				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
