@@ -7,10 +7,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.SourceStateExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TargetStateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DynamicPredicateExpr;
@@ -77,12 +82,56 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 	}
 	
 	@Check
-	public void checkComparisonType(final ComparisonExpr expr) { //make sure that inequalities are only used on naturally ordered elements
+	public void checkComparisonOperators(final ComparisonExpr expr) { //make sure that inequalities are only used on naturally ordered elements
 		if (isInequalityComparable(expr.getLhs()) && isInequalityComparable(expr.getRhs()))
 			return;
 		if (expr.getOp().equals(ComparisonOp.EQUALS) || expr.getOp().equals(ComparisonOp.NOT_EQUAL))
 			return;
 		error(expr.getOp().toString() + " is not allowed here",null);
+	}
+
+	@Check
+	public void checkTypesOfComparables(final ComparisonExpr compExpr) { //make sure that the types of elements in comparisons are compatible
+		int states = 0; // indicates the number of states used in expr, can be 0, 1 or 2
+		int transitions = 0;
+		int clockValues = 0; //clocks or constants
+		int numerals = 0; //variables or constants
+		int buffers = 0;
+		// one of these int variables should reach 2 in valid comparisons
+		
+		for (MapExpr expr : new MapExpr[] {compExpr.getLhs(), compExpr.getRhs()}) {
+			if (expr == null)
+				return;
+			
+			if (expr instanceof MumlElemExpr) {
+				EObject elem = ((MumlElemExpr) expr).getElem();
+				if (elem instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.State)
+					states++;
+				if (elem instanceof Transition)
+					transitions++;
+				if (elem instanceof Clock)
+					clockValues++;
+				if (elem instanceof Variable)
+					numerals++;
+				if (elem instanceof MessageBuffer)
+					buffers++;
+			}
+			
+			if (expr instanceof ConstExpr){
+				clockValues++;
+				numerals++;
+			}
+			
+			if (expr instanceof SourceStateExpr || expr instanceof TargetStateExpr)
+				states++;
+			
+			if (expr instanceof BufferMsgCountExpr)
+				numerals++;
+		}
+		
+		if (states == 2 || transitions == 2 || clockValues == 2 || numerals == 2 || buffers == 2)
+			return;
+		error("You cannot compare objects of these types", null);
 	}
 	
 	@Check
