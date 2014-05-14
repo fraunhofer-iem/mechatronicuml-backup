@@ -33,6 +33,11 @@ package «genPluginId()».util;
 package «genPluginId()».metamodel;
 «EXPAND metamodel::Metamodel::Metamodel»
 «ENDFILE»
+
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/constraint/CreationConstraintContributor.java"»
+package «genPluginId()».constraint;
+«EXPAND constraint::Constraint::Constraint»
+«ENDFILE»
 «ENDDEFINE»
 
 «DEFINE ClassEditor FOR Class»

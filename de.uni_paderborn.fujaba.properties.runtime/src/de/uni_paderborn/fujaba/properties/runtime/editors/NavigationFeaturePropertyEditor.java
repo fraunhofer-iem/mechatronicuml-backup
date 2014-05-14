@@ -9,7 +9,6 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -31,9 +30,9 @@ import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.events.IExpansionListener;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.eclipse.ui.forms.widgets.Section;
 
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
+import de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter;
 
 public class NavigationFeaturePropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
@@ -57,9 +56,13 @@ public class NavigationFeaturePropertyEditor extends
 	
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
-		this(adapterFactory, feature, false);
+		this(adapterFactory, feature, false, null);
 	}
 
+	public void setCreationFilters(List<ICreationFilter> filters) {
+		this.creationFilters.clear();
+		this.creationFilters.addAll(filters);
+	}
 
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature, boolean initiallyOpen, EObject currentValue) {

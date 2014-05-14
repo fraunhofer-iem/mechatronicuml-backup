@@ -13,7 +13,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -27,10 +26,6 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.jface.viewers.IFilter;
-import org.eclipse.ocl.ParserException;
-import org.eclipse.ocl.Query;
-import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.examples.eventmanager.EventFilter;
 import org.eclipse.ocl.examples.eventmanager.EventManager;
@@ -38,16 +33,17 @@ import org.eclipse.ocl.examples.eventmanager.EventManagerFactory;
 import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzer;
 import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzerFactory;
 import org.eclipse.ocl.examples.impactanalyzer.util.OCLFactory;
-import org.eclipse.ocl.options.ParsingOptions;
 import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
+import de.uni_paderborn.fujaba.properties.runtime.constraint.ICreationConstraintContributor;
+import de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter;
 
 public abstract class AbstractStructuralFeaturePropertyEditor extends
 		AbstractPropertyEditor implements IStructuralFeaturePropertyEditor {
 
 	private List<EObject> hookedObjects = new ArrayList<EObject>();
-	protected List<IFilter> creationFilters = new ArrayList<IFilter>();
+	protected List<ICreationFilter> creationFilters = new ArrayList<ICreationFilter>();
 	
 	private Map<Adapter, ResourceSet> eventAdapters = new HashMap<Adapter, ResourceSet>();
 
@@ -72,6 +68,11 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	public AbstractStructuralFeaturePropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
 		super(adapterFactory);
 		this.feature = feature;
+		if (feature instanceof EReference) {
+			for (ICreationConstraintContributor contributor : RuntimePlugin.getCreationConstraintContributors()) {
+				creationFilters.addAll(contributor.getCreationConstraints((EReference) feature));	
+			}
+		}
 	}
 
 	public String getLabelText() {
@@ -346,76 +347,15 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 		return null;
 	}
-	/**
-	 * Convenience method that creates an OCL expression, registers it with an
-	 * Impact Analyzer and uses it as visibility filter.
-	 * 
-	 * It updates the visibility of this editor each time the Impact Analyzer
-	 * decides it might be necessary.
-	 * @param context 
-	 * 
-	 * @param oclExpression
-	 *            The oclExpression to use.
-	 */
-	public void addVisibilityFilter(String oclExpression, EClassifier context) {
-
-		IFilter filter = createOCLFilter(oclExpression, context, new AdapterImpl() {
-
-			@Override
-			public void notifyChanged(Notification notification) {
-				updateVisibility(true, true);
-			}
-
-		});
-		if (filter != null) {
-			addVisibilityFilter(filter);
-		}
-	}
 	
-	public void addCreationConstraintFilter(String oclExpression, EClassifier context) {
-		IFilter filter = createOCLFilter(oclExpression, context, null);
-		if (filter != null) {
-			addCreationFilter(filter);
-		}
-	}
-	
-	public void addCreationFilter(IFilter filter) {
+	public void addCreationFilter(ICreationFilter filter) {
 		creationFilters.add(filter);
 	}
 	
-	public void removeCreationFilter(IFilter filter) {
+	public void removeCreationFilter(ICreationFilter filter) {
 		creationFilters.remove(filter);
 	}
 	
-
-	private IFilter createOCLFilter(String oclExpression, EClassifier context, Adapter adapter) {
-		
-		try {
-			Helper helper = RuntimePlugin.OCL_ECORE.createOCLHelper();
-			helper.setAttributeContext(context, feature);
-			ParsingOptions.setOption(helper.getEnvironment(),
-				    ParsingOptions.implicitRootClass(helper.getEnvironment()),
-				    EcorePackage.Literals.EOBJECT);
-			OCLExpression expression = helper.createQuery(oclExpression);
-			
-			if (adapter != null) {
-				registerOCLAdapter(expression, adapter);
-			}
-			
-			final Query<EClassifier, ?, ?> query = RuntimePlugin.OCL_ECORE.createQuery(expression);		 
-			return new IFilter() {
-
-				@Override
-				public boolean select(Object toTest) {
-					return Boolean.TRUE.equals(query.evaluate(input));
-				}
-				
-			};
-		} catch (ParserException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
 
 	public boolean registerOCLAdapter(OCLExpression expression, Adapter adapter) {
 		ResourceSet myResourceSet = getResourceSet();
@@ -475,8 +415,8 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		List<EClass> eClasses = new ArrayList<EClass>();
 		for (EClass eClass : RuntimePlugin.getEClasses((EReference) feature)) {
 			boolean mayCreate = true;
-			for (IFilter filter : creationFilters) {
-				if (!filter.select(eClass)) {
+			for (ICreationFilter filter : creationFilters) {
+				if (!filter.select(input, eClass)) {
 					mayCreate = false;
 				}
 			}

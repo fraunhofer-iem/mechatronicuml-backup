@@ -29,7 +29,7 @@ public class TextPropertyEditorEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addTextPropertyEditorMultiLine_GeneralTab_Editor(
+			addMultiLine_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -39,20 +39,19 @@ public class TextPropertyEditorEditor
 	/**
 	 * @generated
 	 */
-	protected void addTextPropertyEditorMultiLine_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createTextPropertyEditorMultiLine_GeneralTab_Editor(), front);
+	protected void addMultiLine_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createMultiLine_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextPropertyEditorMultiLine_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getTextPropertyEditor_MultiLine());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMultiLine_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getTextPropertyEditor_MultiLine();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

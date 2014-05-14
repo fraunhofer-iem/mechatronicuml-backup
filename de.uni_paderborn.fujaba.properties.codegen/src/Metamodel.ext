@@ -3,7 +3,7 @@ import ecore;
 import properties;
 
 String fullyQualifiedName(ecore::EClassifier this, genmodel::GenModel genmodel) :
-	fullyQualifiedName(getGenClassifier(this, genmodel));
+	fullyQualifiedName(getGenClassifier(this, { genmodel }));
 String fullyQualifiedName(genmodel::GenClassifier this) :
 	'';
 String fullyQualifiedName(genmodel::GenClass this) :
@@ -15,7 +15,7 @@ String fullyQualifiedName(GenBase this) :
 String fullyQualifiedName(genmodel::GenPackage this) :
 	(if basePackage.length > 0 then
 		basePackage + '.'
-	else if eContainer != null && { eContainer }.typeSelect(GenBase).size > 0 then
+	else if eContainer != null && { eContainer }.typeSelect(GenPackage).size > 0 then
 		 fullyQualifiedName({ eContainer }.typeSelect(GenBase).first()) + '.' 
 	else
 		'') + ecorePackage.name;
@@ -32,10 +32,13 @@ List[GenBase] getAllGenBases(GenModel this) :
 	getAllGenPackages().eAllContents.typeSelect(GenBase);
 	
 GenClassifier getType(GenFeature this) : 
-	getGenClassifier(ecoreFeature.eType, genClass.genPackage.genModel);
+	getGenClassifier(ecoreFeature.eType, { genClass.genPackage.genModel });
 	
-GenClassifier getGenClassifier(ecore::EClassifier this, genmodel::GenModel genModel) : 
-	genModel.getAllGenBases().typeSelect(GenClassifier).selectFirst(e | e.isGenClassifierFor(this));
+GenFeature getGenFeature(ecore::EStructuralFeature this, List[genmodel::GenModel] genModels) : 
+	getGenClassifier(eContainingClass, genModels).eContents.typeSelect(genmodel::GenFeature).selectFirst(e|e.ecoreFeature == this);
+
+GenClassifier getGenClassifier(ecore::EClassifier this, List[genmodel::GenModel] genModels) : 
+	genModels.getAllGenBases().typeSelect(GenClassifier).selectFirst(e | e.isGenClassifierFor(this));
 	
 Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClassifier this) :
 	false;
@@ -65,12 +68,14 @@ String genCategoryKey(PropertyCategory this) :
 	"de.uni_paderborn.fujaba.properties.category." + /*clazz.genClass.ecoreClass.name.toString() + "." +*/ title; // Reuse categories from super classes!
 
 String genAdder(Property this) :
-	'add'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';
+	'add'  + /*clazz.genClass.ecoreClass.name.toString().toFirstUpper() + */genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';
 
 String genCreator(Property this) :
-	'create'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';	
+	'create'  + /*clazz.genClass.ecoreClass.name.toString().toFirstUpper() + */genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';	
 
 
+String genClassLiteral(GenClassifier this) :
+	'';
 String genClassLiteral(GenClass this) :
 	genPackage.fullyQualifiedName() + '.' + genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + ecoreClass.name.toString().toFirstUpper() + (if ecoreClass.name.toString().toFirstUpper() == "Class" then '_' else '') + '()';
 

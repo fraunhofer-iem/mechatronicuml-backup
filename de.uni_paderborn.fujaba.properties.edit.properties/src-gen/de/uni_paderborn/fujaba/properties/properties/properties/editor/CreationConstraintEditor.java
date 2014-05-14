@@ -29,7 +29,7 @@ public class CreationConstraintEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addCreationConstraintFilters_GeneralTab_Editor(
+			addFilters_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -38,20 +38,18 @@ public class CreationConstraintEditor
 	/**
 	 * @generated
 	 */
-	protected void addCreationConstraintFilters_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCreationConstraintFilters_GeneralTab_Editor(), front);
+	protected void addFilters_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createFilters_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCreationConstraintFilters_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getCreationConstraint_Filters());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFilters_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getCreationConstraint_Filters();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

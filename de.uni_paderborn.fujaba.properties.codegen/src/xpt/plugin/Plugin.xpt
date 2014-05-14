@@ -1,4 +1,3 @@
-«REM» Error toFirstUpper can be ignored «ENDREM»
 «IMPORT properties»
 «EXTENSION Metamodel»
 «DEFINE Plugin FOR PropertyGenerator-»
@@ -8,6 +7,8 @@
 «EXPAND extensions-»
 </plugin>
 «ENDDEFINE»
+
+UNUSED:
 <propertyContributor
           contributorId="de.uni_paderborn.fujaba.properties.contributor">
        <propertyCategory
@@ -24,12 +25,15 @@
        </propertyCategory>
     </propertyContributor>
   </extension>
+  
+  
 «DEFINE extensions FOR PropertyGenerator»
 «EXPAND propertyContributor»
 «EXPAND propertyTabs»
 «EXPAND propertySections»
 «EXPAND propertyEditor»
 «EXPAND metamodelContributor»
+«EXPAND creationConstraintContributor»
 «ENDDEFINE»
 
 «DEFINE propertyContributor FOR PropertyGenerator»
@@ -111,5 +115,14 @@
     <metamodel
           contributor="«genPluginId()».metamodel.MetamodelContributor">
     </metamodel>
+ </extension>
+«ENDDEFINE»
+
+«DEFINE creationConstraintContributor FOR PropertyGenerator»
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+    <constraint
+          contributor="«genPluginId()».constraint.CreationConstraintContributor">
+    </constraint>
  </extension>
 «ENDDEFINE»

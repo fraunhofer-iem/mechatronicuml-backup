@@ -26,7 +26,7 @@ public class SpinnerPropertyEditorEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addSpinnerPropertyEditorDigits_GeneralTab_Editor(null, true);
+			addDigits_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -34,20 +34,18 @@ public class SpinnerPropertyEditorEditor
 	/**
 	 * @generated
 	 */
-	protected void addSpinnerPropertyEditorDigits_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createSpinnerPropertyEditorDigits_GeneralTab_Editor(), front);
+	protected void addDigits_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createDigits_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSpinnerPropertyEditorDigits_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getSpinnerPropertyEditor_Digits(), 0);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDigits_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getSpinnerPropertyEditor_Digits();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+				adapterFactory, feature, 0);
 
 		return editor;
 

@@ -27,25 +27,27 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.ocl.ecore.OCL.Helper;
+import org.eclipse.ocl.ecore.OCLExpression;
+import org.eclipse.ocl.options.ParsingOptions;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.graphics.Image;
@@ -60,10 +62,12 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import de.uni_paderborn.fujaba.properties.runtime.constraint.ICreationConstraintContributor;
 import de.uni_paderborn.fujaba.properties.runtime.editors.IValueChangedListener;
 import de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor;
 import de.uni_paderborn.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 import de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory;
+import de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter;
 import de.uni_paderborn.fujaba.properties.runtime.wizard.ElementSelectionWizardPage;
 import de.uni_paderborn.fujaba.properties.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 import de.uni_paderborn.fujaba.properties.runtime.wizard.PropertiesWizard;
@@ -88,8 +92,10 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			+ ".propertyEditors"; //$NON-NLS-1$
 	
 	public static final String METAMODEL_CONTRIBUTOR__EXTENSION_POINT_ID = PLUGIN_ID + ".metamodelContributor"; //$NON-NLS-1$
+	public static final String CREATION_CONSTRAINT_CONTRIBUTOR__EXTENSION_POINT_ID = PLUGIN_ID + ".creationConstraintContributor"; //$NON-NLS-1$
 
 
+	
 	public static final String IMAGE_ADD = "add";
 
 	public static final String IMAGE_REMOVE = "remove";
@@ -104,6 +110,8 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	public static AdapterFactory DEFAULT_ADAPTER_FACTORY;
 
 	public static org.eclipse.ocl.ecore.OCL OCL_ECORE = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
+
+	private static List<ICreationConstraintContributor> creationConstraintContributors = new ArrayList<ICreationConstraintContributor>();
 
 	/**
 	 * The constructor
@@ -155,6 +163,26 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		factories.add(new org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory());
 		factories.add(new org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory());
 		DEFAULT_ADAPTER_FACTORY = new ComposedAdapterFactory(factories);
+		
+		// Read creation constraint contributor extension point
+		creationConstraintContributors.clear();
+		org.eclipse.core.runtime.IConfigurationElement[] elements = org.eclipse.core.runtime.Platform
+				.getExtensionRegistry()
+				.getConfigurationElementsFor(
+						CREATION_CONSTRAINT_CONTRIBUTOR__EXTENSION_POINT_ID);
+		for (org.eclipse.core.runtime.IConfigurationElement element : elements) {
+			try {
+				Object object = element
+						.createExecutableExtension("contributor");
+				if (object instanceof ICreationConstraintContributor) {
+					ICreationConstraintContributor contributor = (ICreationConstraintContributor) object;
+					creationConstraintContributors.add(contributor);
+				}
+			} catch (org.eclipse.core.runtime.CoreException e) {
+				e.printStackTrace();
+			}
+		}
+
 	}
 
 	/*
@@ -167,6 +195,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		DEFAULT_ADAPTER_FACTORY = null;
+		creationConstraintContributors.clear();
 		super.stop(context);
 	}
 
@@ -177,6 +206,10 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	 */
 	public static RuntimePlugin getDefault() {
 		return plugin;
+	}
+	
+	public static List<ICreationConstraintContributor> getCreationConstraintContributors() {
+		return creationConstraintContributors;
 	}
 
 	public static List<IPropertyEditorFactory> getPropertyEditorFactories(EClassifier eClass) {
@@ -377,15 +410,12 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	public static void showCreateElementDialog(AdapterFactory adapterFactory, EObject container,
-			EStructuralFeature feature, List<IFilter> creationFilters) {
+			EStructuralFeature feature, List<ICreationFilter> creationFilters) {
 		
 		PropertiesWizard wizard = new PropertiesWizard();
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true);
-		
-		for (IFilter filter : creationFilters) {
-			editor.addCreationFilter(filter);
-		}
-		
+		editor.setCreationFilters(creationFilters);
+
 		final PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 		editor.addValueChangedListener(new IValueChangedListener() {
 			Collection<?> initialElements = null;
@@ -537,5 +567,27 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 
+
+	public static OCLExpression createOCLExpression(String oclExpression, EStructuralFeature feature, EClassifier context) {
+		
+		try {
+			Helper helper = RuntimePlugin.OCL_ECORE.createOCLHelper();
+			helper.setAttributeContext(context, feature);
+			ParsingOptions.setOption(helper.getEnvironment(),
+				    ParsingOptions.implicitRootClass(helper.getEnvironment()),
+				    EcorePackage.Literals.EOBJECT);
+			return helper.createQuery(oclExpression);
+			
+			
+		} catch (ParserException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+//	
+//	public static IFilter createOCLFilter(OCLExpression expression) {
+//		
+//	}
+	
 
 }

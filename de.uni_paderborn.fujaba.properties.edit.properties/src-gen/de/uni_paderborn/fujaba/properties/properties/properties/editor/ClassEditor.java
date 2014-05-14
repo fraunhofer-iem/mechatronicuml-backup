@@ -29,13 +29,13 @@ public class ClassEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addClassGenClass_GeneralTab_Editor(null, true);
+			addGenClass_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addClassSuperClasses_GeneralTab_Editor(
+			addSuperClasses_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -44,20 +44,18 @@ public class ClassEditor
 	/**
 	 * @generated
 	 */
-	protected void addClassGenClass_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createClassGenClass_GeneralTab_Editor(),
-				front);
+	protected void addGenClass_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createGenClass_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClassGenClass_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getClass_GenClass());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createGenClass_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getClass_GenClass();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
@@ -66,20 +64,20 @@ public class ClassEditor
 	/**
 	 * @generated
 	 */
-	protected void addClassSuperClasses_GeneralTab_Editor(String category,
+	protected void addSuperClasses_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createClassSuperClasses_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createSuperClasses_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClassSuperClasses_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getClass_SuperClasses());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSuperClasses_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getClass_SuperClasses();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

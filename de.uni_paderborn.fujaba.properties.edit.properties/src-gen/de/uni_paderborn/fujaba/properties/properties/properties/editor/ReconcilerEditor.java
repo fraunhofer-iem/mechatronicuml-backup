@@ -29,7 +29,7 @@ public class ReconcilerEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addReconcilerEnabled_GeneralTab_Editor(
+			addEnabled_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -37,7 +37,7 @@ public class ReconcilerEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addReconcilerReconcilePackages_GeneralTab_Editor(
+			addReconcilePackages_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -45,7 +45,7 @@ public class ReconcilerEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addReconcilerReconcileClasses_GeneralTab_Editor(
+			addReconcileClasses_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -53,7 +53,7 @@ public class ReconcilerEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addReconcilerReconcileProperties_GeneralTab_Editor(
+			addReconcileProperties_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -63,20 +63,40 @@ public class ReconcilerEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconcilerEnabled_GeneralTab_Editor(String category,
+	protected void addEnabled_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createEnabled_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEnabled_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getReconciler_Enabled();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addReconcilePackages_GeneralTab_Editor(String category,
 			boolean front) {
 		addEditorToCategory(category,
-				createReconcilerEnabled_GeneralTab_Editor(), front);
+				createReconcilePackages_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconcilerEnabled_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getReconciler_Enabled());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconcilePackages_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getReconciler_ReconcilePackages();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
@@ -85,20 +105,20 @@ public class ReconcilerEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconcilerReconcilePackages_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addReconcileClasses_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createReconcilerReconcilePackages_GeneralTab_Editor(), front);
+				createReconcileClasses_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconcilerReconcilePackages_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getReconciler_ReconcilePackages());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconcileClasses_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getReconciler_ReconcileClasses();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
@@ -107,42 +127,20 @@ public class ReconcilerEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconcilerReconcileClasses_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addReconcileProperties_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createReconcilerReconcileClasses_GeneralTab_Editor(), front);
+				createReconcileProperties_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconcilerReconcileClasses_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getReconciler_ReconcileClasses());
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addReconcilerReconcileProperties_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createReconcilerReconcileProperties_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconcilerReconcileProperties_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getReconciler_ReconcileProperties());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconcileProperties_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getReconciler_ReconcileProperties();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
