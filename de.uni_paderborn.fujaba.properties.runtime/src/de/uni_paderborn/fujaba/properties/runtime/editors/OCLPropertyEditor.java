@@ -162,7 +162,9 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	}
 	
 	protected void updateContext() {
-		updateContext(element.eClass());
+		if (element != null) {
+			updateContext(element.eClass());
+		}
 	}
 
 	protected void updateContext(final EClassifier contextClassifier) {
