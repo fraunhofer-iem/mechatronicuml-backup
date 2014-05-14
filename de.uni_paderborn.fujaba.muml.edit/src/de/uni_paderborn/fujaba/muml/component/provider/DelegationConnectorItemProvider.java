@@ -21,8 +21,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.muml.ItemProviderUtilities;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
+import de.uni_paderborn.fujaba.muml.connector.Connector;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.component.DelegationConnector} object.
@@ -124,14 +127,29 @@ public class DelegationConnectorItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DelegationConnector)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DelegationConnector_type") :
-			getString("_UI_DelegationConnector_type") + " " + label;
+		Connector connector = (Connector) object;
+
+		StringBuffer sb = new StringBuffer();
+		sb.append(getString("_UI_DelegationConnector_type"));
+
+		boolean first = true;
+		for (ConnectorEndpoint endpoint : connector.getConnectorEndpoints()) {
+			if (first) {
+				first = false;
+				sb.append(" (");
+			} else {
+				sb.append(", ");
+			}
+			sb.append(ItemProviderUtilities.getFullyQualifiedName(endpoint));
+		}
+		if (!first) {
+			sb.append(")");
+		}
+		return sb.toString();
 	}
 
 	/**

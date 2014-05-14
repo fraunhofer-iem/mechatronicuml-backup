@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 
 public class ItemProviderUtilities {
@@ -54,12 +55,19 @@ public class ItemProviderUtilities {
 	}
 
 	public static String getName(EObject object) {
+		if (object instanceof PortPart) {
+			PortPart portPart = (PortPart) object;
+			if (portPart.getPortType() != null) {
+				return getName(portPart.getPortType());
+			}
+		}
+		
 		if (object instanceof NamedElement) {
 			if (((NamedElement) object).getName()!= null) {
 				return ((NamedElement) object).getName();
 			}
 			return UNKNOWN_NAME_LITERAL;
-		}
+		}		
 		EAttribute nameFeature = null;
 		if (object.eClass() != null) {
 			for (EAttribute feature : object.eClass().getEAllAttributes()) {
@@ -77,5 +85,7 @@ public class ItemProviderUtilities {
 		
 		return UNKNOWN_NAME_LITERAL;
 	}
+	
+	
 
 }
