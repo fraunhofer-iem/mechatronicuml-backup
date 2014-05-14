@@ -629,7 +629,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		fadingComponentPartVariableEClass.getESuperTypes().add(this.getPartVariable());
 		componentPartVariableEClass.getESuperTypes().add(this.getPartVariable());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(componentStoryPatternEClass, ComponentStoryPattern.class, "ComponentStoryPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentStoryPattern_ThisVariable(), this.getComponentVariable(), null, "thisVariable", null, 1, 1, ComponentStoryPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
