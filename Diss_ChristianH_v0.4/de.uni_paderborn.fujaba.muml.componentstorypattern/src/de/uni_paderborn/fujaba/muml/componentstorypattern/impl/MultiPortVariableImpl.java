@@ -85,11 +85,14 @@ public class MultiPortVariableImpl extends PortVariableImpl implements MultiPort
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@SuppressWarnings("unchecked")
 	public EList<SinglePortVariable> getGmfSubPortVariables() {
-		return (EList<SinglePortVariable>)GMF_SUB_PORT_VARIABLES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		// The generated code had to be exchanged. Otherwise an
+		// UnmodifiyableEList is returned, which ends up in crashing
+		// de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.commands.SinglePortVariableCreateCommand.java
+				
+		return getSubPortVariables();
 	}
 
 	/**
