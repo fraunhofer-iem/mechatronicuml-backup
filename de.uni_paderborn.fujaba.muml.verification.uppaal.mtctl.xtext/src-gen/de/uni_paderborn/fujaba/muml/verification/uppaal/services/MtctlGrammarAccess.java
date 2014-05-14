@@ -1414,41 +1414,41 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	public class TimeUnitExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TimeUnitExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cDKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cHKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cMKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cSKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cMsKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cSKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cNsKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cDaysKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cHrsKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cMinsKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cSecsKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cMsecsKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cSecsKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cNsecsKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
 		
 		//TimeUnitExpr returns valuetype::TimeUnit:
-		//	"d" | "h" | "m" | "s" | "ms" | "µs" | "ns";
+		//	"days" | "hrs" | "mins" | "secs" | "msecs" | "µsecs" | "nsecs";
 		public ParserRule getRule() { return rule; }
 
-		//"d" | "h" | "m" | "s" | "ms" | "µs" | "ns"
+		//"days" | "hrs" | "mins" | "secs" | "msecs" | "µsecs" | "nsecs"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"d"
-		public Keyword getDKeyword_0() { return cDKeyword_0; }
+		//"days"
+		public Keyword getDaysKeyword_0() { return cDaysKeyword_0; }
 
-		//"h"
-		public Keyword getHKeyword_1() { return cHKeyword_1; }
+		//"hrs"
+		public Keyword getHrsKeyword_1() { return cHrsKeyword_1; }
 
-		//"m"
-		public Keyword getMKeyword_2() { return cMKeyword_2; }
+		//"mins"
+		public Keyword getMinsKeyword_2() { return cMinsKeyword_2; }
 
-		//"s"
-		public Keyword getSKeyword_3() { return cSKeyword_3; }
+		//"secs"
+		public Keyword getSecsKeyword_3() { return cSecsKeyword_3; }
 
-		//"ms"
-		public Keyword getMsKeyword_4() { return cMsKeyword_4; }
+		//"msecs"
+		public Keyword getMsecsKeyword_4() { return cMsecsKeyword_4; }
 
-		//"µs"
-		public Keyword getSKeyword_5() { return cSKeyword_5; }
+		//"µsecs"
+		public Keyword getSecsKeyword_5() { return cSecsKeyword_5; }
 
-		//"ns"
-		public Keyword getNsKeyword_6() { return cNsKeyword_6; }
+		//"nsecs"
+		public Keyword getNsecsKeyword_6() { return cNsecsKeyword_6; }
 	}
 
 	public class SetExprElements extends AbstractParserRuleElementFinder {
@@ -2253,7 +2253,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TimeUnitExpr returns valuetype::TimeUnit:
-	//	"d" | "h" | "m" | "s" | "ms" | "µs" | "ns";
+	//	"days" | "hrs" | "mins" | "secs" | "msecs" | "µsecs" | "nsecs";
 	public TimeUnitExprElements getTimeUnitExprAccess() {
 		return (pTimeUnitExpr != null) ? pTimeUnitExpr : (pTimeUnitExpr = new TimeUnitExprElements());
 	}

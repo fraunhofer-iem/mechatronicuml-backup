@@ -322,7 +322,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
-			if (parentQuantifier.getVar().getSet() instanceof SetExpr) //we might want to change this if some set elements are not comparable
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof SetExpr) //we might want to change this if some set elements are not comparable
 				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
 					scope.add(parentQuantifier.getVar());
 					namesOfBoundVariables.add(parentQuantifier.getVar().getName());

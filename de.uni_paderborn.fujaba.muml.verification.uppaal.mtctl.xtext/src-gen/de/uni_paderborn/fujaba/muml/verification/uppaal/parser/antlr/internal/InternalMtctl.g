@@ -2515,52 +2515,52 @@ ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
     }
     @after { leaveRule(); }:
 (
-	kw='d' 
+	kw='days' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDKeyword_0()); 
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); 
     }
 
     |
-	kw='h' 
+	kw='hrs' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHKeyword_1()); 
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHrsKeyword_1()); 
     }
 
     |
-	kw='m' 
+	kw='mins' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMKeyword_2()); 
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMinsKeyword_2()); 
     }
 
     |
-	kw='s' 
+	kw='secs' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSKeyword_3()); 
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSecsKeyword_3()); 
     }
 
     |
-	kw='ms' 
+	kw='msecs' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); 
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMsecsKeyword_4()); 
     }
 
     |
-	kw='\u00B5s' 
+	kw='\u00B5secs' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); 
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); 
     }
 
     |
-	kw='ns' 
+	kw='nsecs' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); 
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNsecsKeyword_6()); 
     }
 )
     ;

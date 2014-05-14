@@ -212,7 +212,7 @@ ConstExpr returns mtctl::ConstExpr:
 ;
 
 TimeUnitExpr returns valuetype::TimeUnit:
-	'd' | 'h' | 'm' | 's' | 'ms' | 'µs' | 'ns'
+	'days' | 'hrs' | 'mins' | 'secs' | 'msecs' | 'µsecs' | 'nsecs'
 ;
 
 //Sets

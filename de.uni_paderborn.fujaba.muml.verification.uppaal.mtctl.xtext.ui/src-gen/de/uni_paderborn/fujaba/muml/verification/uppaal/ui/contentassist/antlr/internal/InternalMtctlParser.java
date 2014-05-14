@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMtctlParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_SL_COMMENT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EF'", "'E<>'", "'AF'", "'A<>'", "'EG'", "'E[]'", "'AG'", "'A[]'", "'d'", "'h'", "'m'", "'s'", "'ms'", "'\\u00B5s'", "'ns'", "'=='", "'>'", "'>='", "'<'", "'<='", "'!='", "';'", "'leadsTo'", "'timeInterval'", "'['", "','", "']'", "'implies'", "'and'", "'or'", "'not'", "'forall'", "'('", "')'", "'exists'", "':'", "'deadlock'", "'bufferOverflow'", "'true'", "'false'", "'stateActive'", "'substateOf'", "'stateInStatechart'", "'messageInTransit'", "'messageInBuffer'", "'transitionFiring'", "'bufferMessageCount'", "'sourceState'", "'targetState'", "'States'", "'Transitions'", "'MessageTypes'", "'Clocks'", "'Buffers'", "'.'", "'-'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_SL_COMMENT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EF'", "'E<>'", "'AF'", "'A<>'", "'EG'", "'E[]'", "'AG'", "'A[]'", "'days'", "'hrs'", "'mins'", "'secs'", "'msecs'", "'\\u00B5secs'", "'nsecs'", "'=='", "'>'", "'>='", "'<'", "'<='", "'!='", "';'", "'leadsTo'", "'timeInterval'", "'['", "','", "']'", "'implies'", "'and'", "'or'", "'not'", "'forall'", "'('", "')'", "'exists'", "':'", "'deadlock'", "'bufferOverflow'", "'true'", "'false'", "'stateActive'", "'substateOf'", "'stateInStatechart'", "'messageInTransit'", "'messageInBuffer'", "'transitionFiring'", "'bufferMessageCount'", "'sourceState'", "'targetState'", "'States'", "'Transitions'", "'MessageTypes'", "'Clocks'", "'Buffers'", "'.'", "'-'"
     };
     public static final int RULE_ID=4;
     public static final int T__66=66;
@@ -5539,13 +5539,13 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeUnitExpr__Alternatives"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1904:1: rule__TimeUnitExpr__Alternatives : ( ( 'd' ) | ( 'h' ) | ( 'm' ) | ( 's' ) | ( 'ms' ) | ( '\\u00B5s' ) | ( 'ns' ) );
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1904:1: rule__TimeUnitExpr__Alternatives : ( ( 'days' ) | ( 'hrs' ) | ( 'mins' ) | ( 'secs' ) | ( 'msecs' ) | ( '\\u00B5secs' ) | ( 'nsecs' ) );
     public final void rule__TimeUnitExpr__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1908:1: ( ( 'd' ) | ( 'h' ) | ( 'm' ) | ( 's' ) | ( 'ms' ) | ( '\\u00B5s' ) | ( 'ns' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1908:1: ( ( 'days' ) | ( 'hrs' ) | ( 'mins' ) | ( 'secs' ) | ( 'msecs' ) | ( '\\u00B5secs' ) | ( 'nsecs' ) )
             int alt16=7;
             switch ( input.LA(1) ) {
             case 19:
@@ -5592,14 +5592,14 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
             switch (alt16) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1909:1: ( 'd' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1909:1: ( 'days' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1909:1: ( 'd' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1910:1: 'd'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1909:1: ( 'days' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1910:1: 'days'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getDKeyword_0()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); 
                     match(input,19,FollowSets000.FOLLOW_19_in_rule__TimeUnitExpr__Alternatives4082); 
-                     after(grammarAccess.getTimeUnitExprAccess().getDKeyword_0()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); 
 
                     }
 
@@ -5607,14 +5607,14 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1917:6: ( 'h' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1917:6: ( 'hrs' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1917:6: ( 'h' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1918:1: 'h'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1917:6: ( 'hrs' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1918:1: 'hrs'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getHKeyword_1()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getHrsKeyword_1()); 
                     match(input,20,FollowSets000.FOLLOW_20_in_rule__TimeUnitExpr__Alternatives4102); 
-                     after(grammarAccess.getTimeUnitExprAccess().getHKeyword_1()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getHrsKeyword_1()); 
 
                     }
 
@@ -5622,14 +5622,14 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1925:6: ( 'm' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1925:6: ( 'mins' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1925:6: ( 'm' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1926:1: 'm'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1925:6: ( 'mins' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1926:1: 'mins'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getMKeyword_2()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getMinsKeyword_2()); 
                     match(input,21,FollowSets000.FOLLOW_21_in_rule__TimeUnitExpr__Alternatives4122); 
-                     after(grammarAccess.getTimeUnitExprAccess().getMKeyword_2()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getMinsKeyword_2()); 
 
                     }
 
@@ -5637,14 +5637,14 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1933:6: ( 's' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1933:6: ( 'secs' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1933:6: ( 's' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1934:1: 's'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1933:6: ( 'secs' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1934:1: 'secs'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getSKeyword_3()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_3()); 
                     match(input,22,FollowSets000.FOLLOW_22_in_rule__TimeUnitExpr__Alternatives4142); 
-                     after(grammarAccess.getTimeUnitExprAccess().getSKeyword_3()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_3()); 
 
                     }
 
@@ -5652,14 +5652,14 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1941:6: ( 'ms' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1941:6: ( 'msecs' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1941:6: ( 'ms' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1942:1: 'ms'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1941:6: ( 'msecs' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1942:1: 'msecs'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getMsecsKeyword_4()); 
                     match(input,23,FollowSets000.FOLLOW_23_in_rule__TimeUnitExpr__Alternatives4162); 
-                     after(grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getMsecsKeyword_4()); 
 
                     }
 
@@ -5667,14 +5667,14 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1949:6: ( '\\u00B5s' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1949:6: ( '\\u00B5secs' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1949:6: ( '\\u00B5s' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1950:1: '\\u00B5s'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1949:6: ( '\\u00B5secs' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1950:1: '\\u00B5secs'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); 
                     match(input,24,FollowSets000.FOLLOW_24_in_rule__TimeUnitExpr__Alternatives4182); 
-                     after(grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); 
 
                     }
 
@@ -5682,14 +5682,14 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1957:6: ( 'ns' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1957:6: ( 'nsecs' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1957:6: ( 'ns' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1958:1: 'ns'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1957:6: ( 'nsecs' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1958:1: 'nsecs'
                     {
-                     before(grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); 
+                     before(grammarAccess.getTimeUnitExprAccess().getNsecsKeyword_6()); 
                     match(input,25,FollowSets000.FOLLOW_25_in_rule__TimeUnitExpr__Alternatives4202); 
-                     after(grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); 
+                     after(grammarAccess.getTimeUnitExprAccess().getNsecsKeyword_6()); 
 
                     }
 

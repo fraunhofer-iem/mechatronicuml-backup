@@ -1907,59 +1907,59 @@ rule__TimeUnitExpr__Alternatives
     }
 :
 (
-{ before(grammarAccess.getTimeUnitExprAccess().getDKeyword_0()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); }
 
-	'd' 
+	'days' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getDKeyword_0()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getHKeyword_1()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getHrsKeyword_1()); }
 
-	'h' 
+	'hrs' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getHKeyword_1()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getHrsKeyword_1()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getMKeyword_2()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getMinsKeyword_2()); }
 
-	'm' 
+	'mins' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getMKeyword_2()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getMinsKeyword_2()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getSKeyword_3()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_3()); }
 
-	's' 
+	'secs' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getSKeyword_3()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_3()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getMsecsKeyword_4()); }
 
-	'ms' 
+	'msecs' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getMsecsKeyword_4()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); }
 
-	'\u00B5s' 
+	'\u00B5secs' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); }
 )
 
     |(
-{ before(grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); }
+{ before(grammarAccess.getTimeUnitExprAccess().getNsecsKeyword_6()); }
 
-	'ns' 
+	'nsecs' 
 
-{ after(grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); }
+{ after(grammarAccess.getTimeUnitExprAccess().getNsecsKeyword_6()); }
 )
 
 ;

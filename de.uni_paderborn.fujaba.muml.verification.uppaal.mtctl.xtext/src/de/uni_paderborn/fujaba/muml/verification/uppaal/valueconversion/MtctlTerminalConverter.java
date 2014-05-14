@@ -17,7 +17,7 @@ public class MtctlTerminalConverter extends DefaultTerminalConverters {
 	public MtctlTerminalConverter() { 
 		TimeUnit[] timeUnits = {TimeUnit.DAYS, TimeUnit.HOURS, TimeUnit.MICROSECONDS,
 				TimeUnit.MILLISECONDS, TimeUnit.MINUTES, TimeUnit.NANOSECONDS, TimeUnit.SECONDS};
-		String[] timeUnitStrings = {"d", "h", "µs", "ms", "m", "ns", "s"};
+		String[] timeUnitStrings = {"days", "hrs", "µsecs", "msecs", "mins", "nsecs", "secs"};
 		
 		for (int i=0;i<timeUnits.length;i++) {
 			strToTimeUnit.put(timeUnitStrings[i], timeUnits[i]);
