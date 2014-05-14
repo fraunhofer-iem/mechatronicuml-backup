@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0"
-    defaultTab="//@tabs.0"
-    contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
   <reconciler/>
-  <genModel
-      href="Ecore.genmodel#/"/>
-  <plugin id="org.eclipse.emf.ecore.improved.edit.properties"
-      name="Properties"
-      vendor="University of Paderborn"
-      version="0.1">
+  <genModel href="Ecore.genmodel#/"/>
+  <plugin id="org.eclipse.emf.ecore.improved.edit.properties" name="Properties" vendor="University of Paderborn" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
@@ -20,437 +10,233 @@
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore.edit</requiredBundles>
   </plugin>
-  <tabs id="tab.default"
-      name="Default"/>
-  <tabs id="tab.documentation"
-      name="Documentation"
-      afterTab="tab.default"/>
-  <tabs id="tab.ocl"
-      name="OCL"
-      afterTab="tab.documentation"/>
+  <tabs id="tab.default" name="Default"/>
+  <tabs id="tab.documentation" name="Documentation" afterTab="tab.default"/>
+  <tabs id="tab.ocl" name="OCL" afterTab="tab.documentation"/>
   <packages>
-    <genPackage
-        href="Ecore.genmodel#//ecore"/>
-    <classes
-        superClasses="//@packages.0/@classes.15">
-      <genClass
-          href="Ecore.genmodel#//ecore/EAttribute"/>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.0/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EAttribute/iD"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+    <genPackage href="Ecore.genmodel#//ecore"/>
+    <classes superClasses="//@packages.0/@classes.15">
+      <genClass href="Ecore.genmodel#//ecore/EAttribute"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.0/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EAttribute/iD"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories
-          title="Booleans"
-          properties="//@packages.0/@classes.0/@properties.0"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.0/@properties.0"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.8">
-      <genClass
-          href="Ecore.genmodel#//ecore/EAnnotation"/>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EAnnotation/source"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.8">
+      <genClass href="Ecore.genmodel#//ecore/EAnnotation"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EAnnotation/source"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.1/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EAnnotation/references"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.1/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EAnnotation/references"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories
-          title="Lists"
-          properties="//@packages.0/@classes.1/@properties.1"/>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.1"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.3">
-      <genClass
-          href="Ecore.genmodel#//ecore/EClass"/>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.2/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EClass/abstract"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.3">
+      <genClass href="Ecore.genmodel#//ecore/EClass"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.2/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EClass/abstract"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.2/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EClass/interface"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.2/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EClass/interface"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.2/@propertyCategories.1">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EClass/eSuperTypes"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.2/@propertyCategories.1">
+        <genFeature href="Ecore.genmodel#//ecore/EClass/eSuperTypes"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories
-          title="Booleans"
-          properties="//@packages.0/@classes.2/@properties.0 //@packages.0/@classes.2/@properties.1"/>
-      <propertyCategories
-          title="Lists"
-          properties="//@packages.0/@classes.2/@properties.2"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.2/@properties.0 //@packages.0/@classes.2/@properties.1"/>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.2/@properties.2"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.9">
-      <genClass
-          href="Ecore.genmodel#//ecore/EClassifier"/>
-      <properties
-          tab="//@tabs.0"
-          reconcile="false">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EClassifier/instanceClassName"/>
+    <classes superClasses="//@packages.0/@classes.9">
+      <genClass href="Ecore.genmodel#//ecore/EClassifier"/>
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+        <genFeature href="Ecore.genmodel#//ecore/EClassifier/instanceClassName"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          reconcile="false">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EClassifier/instanceTypeName"/>
+      <properties tab="//@tabs.0" reconcile="false">
+        <genFeature href="Ecore.genmodel#//ecore/EClassifier/instanceTypeName"/>
       </properties>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.3">
-      <genClass
-          href="Ecore.genmodel#//ecore/EDataType"/>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.4/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EDataType/serializable"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.3">
+      <genClass href="Ecore.genmodel#//ecore/EDataType"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.4/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EDataType/serializable"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories
-          title="Booleans"
-          properties="//@packages.0/@classes.4/@properties.0"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.4/@properties.0"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.4">
-      <genClass
-          href="Ecore.genmodel#//ecore/EEnum"/>
+    <classes superClasses="//@packages.0/@classes.4">
+      <genClass href="Ecore.genmodel#//ecore/EEnum"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.9">
-      <genClass
-          href="Ecore.genmodel#//ecore/EEnumLiteral"/>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EEnumLiteral/value"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.9">
+      <genClass href="Ecore.genmodel#//ecore/EEnumLiteral"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EEnumLiteral/value"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EEnumLiteral/literal"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EEnumLiteral/literal"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.8">
-      <genClass
-          href="Ecore.genmodel#//ecore/EFactory"/>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EFactory/ePackage"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.8">
+      <genClass href="Ecore.genmodel#//ecore/EFactory"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EFactory/ePackage"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes>
-      <genClass
-          href="Ecore.genmodel#//ecore/EModelElement"/>
-      <properties
-          tab="//@tabs.1"
-          reconcile="false">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
-        <visibilityFilters
-            xsi:type="de.uni_paderborn.fujaba:OCLFilter"
-            expression="true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor"
-            fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.EcoreDocumentationPropertyEditor"/>
+      <genClass href="Ecore.genmodel#//ecore/EModelElement"/>
+      <properties tab="//@tabs.1" reconcile="false">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.EcoreDocumentationPropertyEditor"/>
       </properties>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.8">
-      <genClass
-          href="Ecore.genmodel#//ecore/ENamedElement"/>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/ENamedElement/name"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.8">
+      <genClass href="Ecore.genmodel#//ecore/ENamedElement"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/ENamedElement/name"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
     <classes>
-      <genClass
-          href="Ecore.genmodel#//ecore/EObject"/>
+      <genClass href="Ecore.genmodel#//ecore/EObject"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.16">
-      <genClass
-          href="Ecore.genmodel#//ecore/EOperation"/>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.11/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EOperation/eExceptions"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.16">
+      <genClass href="Ecore.genmodel#//ecore/EOperation"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.11/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EOperation/eExceptions"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories
-          title="Lists"
-          properties="//@packages.0/@classes.11/@properties.0"/>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.11/@properties.0"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.9">
-      <genClass
-          href="Ecore.genmodel#//ecore/EPackage"/>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EPackage/nsURI"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.9">
+      <genClass href="Ecore.genmodel#//ecore/EPackage"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EPackage/nsURI"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EPackage/nsPrefix"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EPackage/nsPrefix"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          reconcile="false">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EPackage/eFactoryInstance"/>
+      <properties tab="//@tabs.0" reconcile="false">
+        <genFeature href="Ecore.genmodel#//ecore/EPackage/eFactoryInstance"/>
       </properties>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.16">
-      <genClass
-          href="Ecore.genmodel#//ecore/EParameter"/>
+    <classes superClasses="//@packages.0/@classes.16">
+      <genClass href="Ecore.genmodel#//ecore/EParameter"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.15">
-      <genClass
-          href="Ecore.genmodel#//ecore/EReference"/>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.14/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EReference/containment"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.15">
+      <genClass href="Ecore.genmodel#//ecore/EReference"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.14/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EReference/containment"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.14/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EReference/resolveProxies"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.14/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EReference/resolveProxies"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EReference/eOpposite"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EReference/eOpposite"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.14/@propertyCategories.1">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EReference/eKeys"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.14/@propertyCategories.1">
+        <genFeature href="Ecore.genmodel#//ecore/EReference/eKeys"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories
-          title="Booleans"
-          properties="//@packages.0/@classes.14/@properties.0 //@packages.0/@classes.14/@properties.1"/>
-      <propertyCategories
-          title="Lists"
-          properties="//@packages.0/@classes.14/@properties.3"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.14/@properties.0 //@packages.0/@classes.14/@properties.1"/>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.14/@properties.3"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.16">
-      <genClass
-          href="Ecore.genmodel#//ecore/EStructuralFeature"/>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.15/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStructuralFeature/changeable"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.16">
+      <genClass href="Ecore.genmodel#//ecore/EStructuralFeature"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/changeable"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.15/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStructuralFeature/volatile"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/volatile"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.15/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStructuralFeature/transient"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/transient"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStructuralFeature/defaultValueLiteral"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      <properties tab="//@tabs.0" tooltip="">
+        <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/defaultValueLiteral"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(ecore::EAttribute)"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.15/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStructuralFeature/unsettable"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/unsettable"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.15/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStructuralFeature/derived"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/derived"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories
-          title="Booleans"
-          properties="//@packages.0/@classes.15/@properties.0 //@packages.0/@classes.15/@properties.1 //@packages.0/@classes.15/@properties.2 //@packages.0/@classes.15/@properties.4 //@packages.0/@classes.15/@properties.5"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.15/@properties.0 //@packages.0/@classes.15/@properties.1 //@packages.0/@classes.15/@properties.2 //@packages.0/@classes.15/@properties.4 //@packages.0/@classes.15/@properties.5"/>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.9">
-      <genClass
-          href="Ecore.genmodel#//ecore/ETypedElement"/>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.16/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/ETypedElement/ordered"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.9">
+      <genClass href="Ecore.genmodel#//ecore/ETypedElement"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.16/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/ordered"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          category="//@packages.0/@classes.16/@propertyCategories.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/ETypedElement/unique"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.16/@propertyCategories.0">
+        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/unique"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/ETypedElement/lowerBound"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/lowerBound"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/ETypedElement/upperBound"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/upperBound"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/ETypedElement/eType"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/eType"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <propertyCategories
-          title="Booleans"
-          properties="//@packages.0/@classes.16/@properties.0 //@packages.0/@classes.16/@properties.1"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.16/@properties.0 //@packages.0/@classes.16/@properties.1"/>
     </classes>
     <classes>
-      <genClass
-          href="Ecore.genmodel#//ecore/EStringToStringMapEntry"/>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStringToStringMapEntry/key"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      <genClass href="Ecore.genmodel#//ecore/EStringToStringMapEntry"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/key"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0"
-          reconcile="false">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
-        <visibilityFilters
-            xsi:type="de.uni_paderborn.fujaba:OCLFilter"
-            expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or eContainer().oclAsType(ecore::EAnnotation).source &lt;> 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"
-            multiLine="true"/>
+      <properties tab="//@tabs.0" reconcile="false">
+        <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or eContainer().oclAsType(ecore::EAnnotation).source &lt;> 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
       </properties>
-      <properties
-          tab="//@tabs.2"
-          reconcile="false">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
-        <visibilityFilters
-            xsi:type="de.uni_paderborn.fujaba:OCLFilter"
-            expression="eContainer().oclIsKindOf(ecore::EAnnotation) and eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor"
-            fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor"/>
+      <properties tab="//@tabs.2" reconcile="false">
+        <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="eContainer().oclIsKindOf(ecore::EAnnotation) and eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor"/>
       </properties>
     </classes>
     <classes>
-      <genClass
-          href="Ecore.genmodel#//ecore/EGenericType"/>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EGenericType/eTypeParameter"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      <genClass href="Ecore.genmodel#//ecore/EGenericType"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EGenericType/eTypeParameter"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties
-          tab="//@tabs.0">
-        <genFeature
-            href="Ecore.genmodel#//ecore/EGenericType/eClassifier"/>
-        <editor
-            xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="Ecore.genmodel#//ecore/EGenericType/eClassifier"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
-    <classes
-        superClasses="//@packages.0/@classes.9">
-      <genClass
-          href="Ecore.genmodel#//ecore/ETypeParameter"/>
+    <classes superClasses="//@packages.0/@classes.9">
+      <genClass href="Ecore.genmodel#//ecore/ETypeParameter"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

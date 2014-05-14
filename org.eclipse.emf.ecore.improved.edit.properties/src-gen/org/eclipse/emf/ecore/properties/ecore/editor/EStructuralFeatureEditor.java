@@ -149,6 +149,9 @@ public abstract class EStructuralFeatureEditor
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 						.getEStructuralFeature_DefaultValueLiteral(), false);
 
+		editor.addVisibilityFilter("self.oclIsKindOf(ecore::EAttribute)",
+				getEClass());
+
 		return editor;
 
 	}
