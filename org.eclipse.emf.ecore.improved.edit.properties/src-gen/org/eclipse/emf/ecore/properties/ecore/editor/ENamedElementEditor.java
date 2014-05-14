@@ -24,7 +24,7 @@ public abstract class ENamedElementEditor
 		super.createProperties();
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addENamedElementName_DefaultTab_Editor(null, true);
+			addName_DefaultTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,18 @@ public abstract class ENamedElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addENamedElementName_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createENamedElementName_DefaultTab_Editor(), front);
+	protected void addName_DefaultTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createName_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createENamedElementName_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getENamedElement_Name(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createName_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getENamedElement_Name();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		return editor;
 

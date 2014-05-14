@@ -24,7 +24,7 @@ public abstract class BehavioralElementEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
+			addBehavior_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,18 @@ public abstract class BehavioralElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addBehavioralElementBehavior_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createBehavioralElementBehavior_GeneralTab_Editor(), front);
+	protected void addBehavior_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createBehavior_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehavior_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getBehavioralElement_Behavior());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavior_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+				.getBehavioralElement_Behavior();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The behavior of this behavioral element.");
 

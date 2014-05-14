@@ -27,7 +27,7 @@ public abstract class StructuredComponentEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStructuredComponentConnectors_GeneralTab_Editor(
+			addConnectors_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -36,20 +36,20 @@ public abstract class StructuredComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addStructuredComponentConnectors_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createStructuredComponentConnectors_GeneralTab_Editor(), front);
+	protected void addConnectors_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createConnectors_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentConnectors_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getStructuredComponent_Connectors());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectors_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getStructuredComponent_Connectors();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The connectors this structured component contains. These can either be delegations or assemblies.");
 

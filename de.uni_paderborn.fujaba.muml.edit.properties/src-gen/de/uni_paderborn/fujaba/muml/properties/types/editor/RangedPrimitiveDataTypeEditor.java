@@ -24,11 +24,11 @@ public class RangedPrimitiveDataTypeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRangedPrimitiveDataTypeRangedType_GeneralTab_Editor(null, true);
+			addRangedType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRangedPrimitiveDataTypeRange_GeneralTab_Editor(null, false);
+			addRange_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -36,21 +36,20 @@ public class RangedPrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addRangedPrimitiveDataTypeRangedType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createRangedPrimitiveDataTypeRangedType_GeneralTab_Editor(),
+	protected void addRangedType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createRangedType_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangedPrimitiveDataTypeRangedType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
-						.getRangedPrimitiveDataType_RangedType());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangedType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+				.getRangedPrimitiveDataType_RangedType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The primitive data type that provides a superset of possible values.");
 
@@ -61,20 +60,18 @@ public class RangedPrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addRangedPrimitiveDataTypeRange_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createRangedPrimitiveDataTypeRange_GeneralTab_Editor(), front);
+	protected void addRange_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createRange_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangedPrimitiveDataTypeRange_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
-						.getRangedPrimitiveDataType_Range());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRange_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+				.getRangedPrimitiveDataType_Range();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The range of values provided by this data type.");
 

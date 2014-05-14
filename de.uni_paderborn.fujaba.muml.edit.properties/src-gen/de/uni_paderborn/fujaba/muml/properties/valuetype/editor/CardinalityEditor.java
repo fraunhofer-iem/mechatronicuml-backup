@@ -24,11 +24,11 @@ public class CardinalityEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCardinalityLowerBound_GeneralTab_Editor(null, true);
+			addLowerBound_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCardinalityUpperBound_GeneralTab_Editor(null, true);
+			addUpperBound_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,20 +36,20 @@ public class CardinalityEditor
 	/**
 	 * @generated
 	 */
-	protected void addCardinalityLowerBound_GeneralTab_Editor(String category,
+	protected void addLowerBound_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createCardinalityLowerBound_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createLowerBound_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityLowerBound_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getCardinality_LowerBound(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createLowerBound_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+				.getCardinality_LowerBound();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The lower bound of this cardinality.");
 
@@ -60,20 +60,20 @@ public class CardinalityEditor
 	/**
 	 * @generated
 	 */
-	protected void addCardinalityUpperBound_GeneralTab_Editor(String category,
+	protected void addUpperBound_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createCardinalityUpperBound_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createUpperBound_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityUpperBound_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getCardinality_UpperBound(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createUpperBound_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+				.getCardinality_UpperBound();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The upper bound of this cardinality.");
 

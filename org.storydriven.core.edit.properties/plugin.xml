@@ -125,4 +125,12 @@
     </metamodel>
  </extension>
 
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.storydriven.core.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
 </plugin>

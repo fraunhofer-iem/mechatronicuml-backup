@@ -24,7 +24,7 @@ public class PrimitiveDataTypeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPrimitiveDataTypePrimitiveType_GeneralTab_Editor(null, true);
+			addPrimitiveType_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class PrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addPrimitiveDataTypePrimitiveType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createPrimitiveDataTypePrimitiveType_GeneralTab_Editor(), front);
+	protected void addPrimitiveType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createPrimitiveType_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrimitiveDataTypePrimitiveType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
-						.getPrimitiveDataType_PrimitiveType());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrimitiveType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+				.getPrimitiveDataType_PrimitiveType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type.");
 

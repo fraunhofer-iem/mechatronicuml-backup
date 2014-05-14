@@ -32,8 +32,9 @@
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension"/>
-      <properties tooltip="">
+      <properties tab="//@tabs.0" tooltip="">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.1">

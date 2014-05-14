@@ -172,4 +172,12 @@
     </metamodel>
  </extension>
 
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+    <constraint
+          contributor="org.eclipse.emf.ecore.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
 </plugin>

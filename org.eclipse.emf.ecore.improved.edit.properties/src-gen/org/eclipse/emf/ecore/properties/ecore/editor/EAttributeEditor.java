@@ -27,7 +27,7 @@ public class EAttributeEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEAttributeID_DefaultTab_Editor(
+			addID_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -37,19 +37,18 @@ public class EAttributeEditor
 	/**
 	 * @generated
 	 */
-	protected void addEAttributeID_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createEAttributeID_DefaultTab_Editor(),
-				front);
+	protected void addID_DefaultTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createID_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEAttributeID_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getEAttribute_ID());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createID_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEAttribute_ID();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

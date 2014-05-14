@@ -24,11 +24,11 @@ public class DoEventEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDoEventAction_GeneralTab_Editor(null, false);
+			addAction_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDoEventPeriod_GeneralTab_Editor(null, false);
+			addPeriod_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -36,20 +36,18 @@ public class DoEventEditor
 	/**
 	 * @generated
 	 */
-	protected void addDoEventAction_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createDoEventAction_GeneralTab_Editor(),
-				front);
+	protected void addAction_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createAction_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDoEventAction_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getDoEvent_Action());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAction_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getDoEvent_Action();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Each entry or exit action has one or more actions.");
 
@@ -60,20 +58,18 @@ public class DoEventEditor
 	/**
 	 * @generated
 	 */
-	protected void addDoEventPeriod_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createDoEventPeriod_GeneralTab_Editor(),
-				front);
+	protected void addPeriod_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createPeriod_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDoEventPeriod_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getDoEvent_Period());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPeriod_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getDoEvent_Period();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("the lower bound of the period");
 

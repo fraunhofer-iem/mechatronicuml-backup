@@ -27,17 +27,16 @@ public class MessageBufferEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageBufferBufferSize_GeneralTab_Editor(null, true);
+			addBufferSize_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageBufferMessageType_GeneralTab_Editor(
+			addMessageType_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageBufferDiscreteInteractionEndpoint_GeneralTab_Editor(null,
-					true);
+			addDiscreteInteractionEndpoint_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -45,20 +44,20 @@ public class MessageBufferEditor
 	/**
 	 * @generated
 	 */
-	protected void addMessageBufferBufferSize_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createMessageBufferBufferSize_GeneralTab_Editor(), front);
+	protected void addBufferSize_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createBufferSize_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferBufferSize_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getMessageBuffer_BufferSize(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBufferSize_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getMessageBuffer_BufferSize();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The size of the message buffer. ");
 
@@ -69,20 +68,20 @@ public class MessageBufferEditor
 	/**
 	 * @generated
 	 */
-	protected void addMessageBufferMessageType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createMessageBufferMessageType_GeneralTab_Editor(), front);
+	protected void addMessageType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createMessageType_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferMessageType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getMessageBuffer_MessageType());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getMessageBuffer_MessageType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The message types this message buffer can store.");
 
@@ -93,22 +92,20 @@ public class MessageBufferEditor
 	/**
 	 * @generated
 	 */
-	protected void addMessageBufferDiscreteInteractionEndpoint_GeneralTab_Editor(
+	protected void addDiscreteInteractionEndpoint_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createMessageBufferDiscreteInteractionEndpoint_GeneralTab_Editor(),
-				front);
+		addEditorToCategory(category,
+				createDiscreteInteractionEndpoint_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferDiscreteInteractionEndpoint_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getMessageBuffer_DiscreteInteractionEndpoint());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpoint_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getMessageBuffer_DiscreteInteractionEndpoint();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The role that contains this message buffer.");
 

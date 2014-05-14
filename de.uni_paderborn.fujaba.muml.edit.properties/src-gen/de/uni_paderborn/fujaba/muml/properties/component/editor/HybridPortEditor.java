@@ -24,7 +24,7 @@ public class HybridPortEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHybridPortSamplingInterval_GeneralTab_Editor(null, false);
+			addSamplingInterval_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class HybridPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addHybridPortSamplingInterval_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addSamplingInterval_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createHybridPortSamplingInterval_GeneralTab_Editor(), front);
+				createSamplingInterval_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHybridPortSamplingInterval_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getHybridPort_SamplingInterval());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSamplingInterval_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getHybridPort_SamplingInterval();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. ");
 

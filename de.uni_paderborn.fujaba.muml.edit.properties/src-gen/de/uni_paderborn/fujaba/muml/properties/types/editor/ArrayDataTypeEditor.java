@@ -24,11 +24,11 @@ public class ArrayDataTypeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addArrayDataTypeType_GeneralTab_Editor(null, true);
+			addType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addArrayDataTypeCardinality_GeneralTab_Editor(null, true);
+			addCardinality_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,20 +36,18 @@ public class ArrayDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addArrayDataTypeType_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createArrayDataTypeType_GeneralTab_Editor(), front);
+	protected void addType_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
-						.getArrayDataType_Type());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+				.getArrayDataType_Type();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("This reference points to the definition of the data type.");
 
@@ -60,20 +58,20 @@ public class ArrayDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addArrayDataTypeCardinality_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createArrayDataTypeCardinality_GeneralTab_Editor(), front);
+	protected void addCardinality_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCardinality_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeCardinality_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
-						.getArrayDataType_Cardinality(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinality_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+				.getArrayDataType_Cardinality();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The cardinality that induces the index for this array data type.");
 

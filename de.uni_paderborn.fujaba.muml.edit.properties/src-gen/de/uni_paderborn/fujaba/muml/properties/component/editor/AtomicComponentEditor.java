@@ -24,29 +24,28 @@ public abstract class AtomicComponentEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addVerifiableElementVerificationConstraintRepositories_GeneralTab_Editor(
-					null, true);
+			addVerificationConstraintRepositories_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPorts_GeneralTab_Editor(
+			addPorts_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentComponentKind_GeneralTab_Editor(null, true);
+			addComponentKind_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementComment_DocumentationTab_Editor(null, true);
+			addComment_DocumentationTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
-			addExtendableElementExtension_ExtensionsTab_Editor(null, true);
+			addExtension_ExtensionsTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementName_GeneralTab_Editor(null, true);
+			addName_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -54,22 +53,21 @@ public abstract class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addVerifiableElementVerificationConstraintRepositories_GeneralTab_Editor(
+	protected void addVerificationConstraintRepositories_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createVerifiableElementVerificationConstraintRepositories_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createVerificationConstraintRepositories_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVerifiableElementVerificationConstraintRepositories_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getVerifiableElement_VerificationConstraintRepositories());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVerificationConstraintRepositories_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+				.getVerifiableElement_VerificationConstraintRepositories();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The referenced repository that contains verifiable constraints for this element.");
 
@@ -80,20 +78,18 @@ public abstract class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPorts_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createComponentPorts_GeneralTab_Editor(),
-				front);
+	protected void addPorts_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createPorts_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPorts_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponent_Ports());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPorts_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getComponent_Ports();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The ports of a component represent the interaction points between the component and its environment.");
 
@@ -104,20 +100,20 @@ public abstract class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentComponentKind_GeneralTab_Editor(String category,
+	protected void addComponentKind_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createComponentComponentKind_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createComponentKind_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentKind_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponent_ComponentKind());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentKind_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getComponent_ComponentKind();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("This attribute specifies the kind of the component. A component may be either\ndiscrete software component, a continuous component, a hybrid component \nor a hardware component.");
 
@@ -128,21 +124,20 @@ public abstract class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementComment_DocumentationTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommentableElementComment_DocumentationTab_Editor(),
+	protected void addComment_DocumentationTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComment_DocumentationTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComment_DocumentationTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+				.getCommentableElement_Comment();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, true);
 
 		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
@@ -153,20 +148,20 @@ public abstract class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addExtendableElementExtension_ExtensionsTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createExtendableElementExtension_ExtensionsTab_Editor(), front);
+	protected void addExtension_ExtensionsTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createExtension_ExtensionsTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtension_ExtensionsTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getExtendableElement_Extension());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtension_ExtensionsTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+				.getExtendableElement_Extension();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
@@ -175,20 +170,18 @@ public abstract class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementName_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createNamedElementName_GeneralTab_Editor(), front);
+	protected void addName_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createName_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createName_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+				.getNamedElement_Name();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The name attribute of a meta-model element.");
 

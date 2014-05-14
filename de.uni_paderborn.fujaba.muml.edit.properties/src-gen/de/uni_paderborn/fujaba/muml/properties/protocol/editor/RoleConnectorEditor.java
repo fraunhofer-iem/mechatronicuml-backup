@@ -24,12 +24,12 @@ public class RoleConnectorEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRoleConnectorCoordinationProtocol_GeneralTab_Editor(null, true);
+			addCoordinationProtocol_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRoleConnectorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(
-					null, false);
+			addConnectorQualityOfServiceAssumptions_GeneralTab_Editor(null,
+					false);
 		}
 
 	}
@@ -37,21 +37,20 @@ public class RoleConnectorEditor
 	/**
 	 * @generated
 	 */
-	protected void addRoleConnectorCoordinationProtocol_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addCoordinationProtocol_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createRoleConnectorCoordinationProtocol_GeneralTab_Editor(),
-				front);
+				createCoordinationProtocol_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorCoordinationProtocol_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-						.getRoleConnector_CoordinationProtocol());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocol_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+				.getRoleConnector_CoordinationProtocol();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The coordination protocol this role connector is part of.");
 
@@ -62,22 +61,21 @@ public class RoleConnectorEditor
 	/**
 	 * @generated
 	 */
-	protected void addRoleConnectorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(
+	protected void addConnectorQualityOfServiceAssumptions_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createRoleConnectorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createConnectorQualityOfServiceAssumptions_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorConnectorQualityOfServiceAssumptions_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-						.getRoleConnector_ConnectorQualityOfServiceAssumptions());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptions_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+				.getRoleConnector_ConnectorQualityOfServiceAssumptions();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss.");
 

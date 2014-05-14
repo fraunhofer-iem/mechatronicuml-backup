@@ -27,7 +27,7 @@ public abstract class ConnectorEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorConnectorEndpoints_GeneralTab_Editor(
+			addConnectorEndpoints_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -36,20 +36,20 @@ public abstract class ConnectorEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorConnectorEndpoints_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addConnectorEndpoints_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createConnectorConnectorEndpoints_GeneralTab_Editor(), front);
+				createConnectorEndpoints_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorConnectorEndpoints_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnector_ConnectorEndpoints());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpoints_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getConnector_ConnectorEndpoints();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The endpoints connected by this connector.");
 

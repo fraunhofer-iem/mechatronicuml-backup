@@ -27,7 +27,7 @@ public class EDataTypeEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEDataTypeSerializable_DefaultTab_Editor(
+			addSerializable_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -37,20 +37,20 @@ public class EDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addEDataTypeSerializable_DefaultTab_Editor(String category,
+	protected void addSerializable_DefaultTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createEDataTypeSerializable_DefaultTab_Editor(), front);
+		addEditorToCategory(category, createSerializable_DefaultTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEDataTypeSerializable_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEDataType_Serializable());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSerializable_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEDataType_Serializable();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

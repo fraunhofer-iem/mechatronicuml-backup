@@ -27,12 +27,12 @@ public abstract class ComponentEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPorts_GeneralTab_Editor(
+			addPorts_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentComponentKind_GeneralTab_Editor(null, true);
+			addComponentKind_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,20 +40,18 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPorts_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createComponentPorts_GeneralTab_Editor(),
-				front);
+	protected void addPorts_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createPorts_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPorts_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponent_Ports());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPorts_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getComponent_Ports();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The ports of a component represent the interaction points between the component and its environment.");
 
@@ -64,20 +62,20 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentComponentKind_GeneralTab_Editor(String category,
+	protected void addComponentKind_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createComponentComponentKind_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createComponentKind_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentKind_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponent_ComponentKind());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentKind_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getComponent_ComponentKind();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("This attribute specifies the kind of the component. A component may be either\ndiscrete software component, a continuous component, a hybrid component \nor a hardware component.");
 

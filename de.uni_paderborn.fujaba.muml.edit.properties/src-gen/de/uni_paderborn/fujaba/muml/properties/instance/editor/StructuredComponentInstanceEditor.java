@@ -24,8 +24,7 @@ public class StructuredComponentInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStructuredComponentInstanceEmbeddedCIC_GeneralTab_Editor(null,
-					false);
+			addEmbeddedCIC_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -33,22 +32,20 @@ public class StructuredComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addStructuredComponentInstanceEmbeddedCIC_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createStructuredComponentInstanceEmbeddedCIC_GeneralTab_Editor(),
+	protected void addEmbeddedCIC_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createEmbeddedCIC_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentInstanceEmbeddedCIC_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getStructuredComponentInstance_EmbeddedCIC());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEmbeddedCIC_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+				.getStructuredComponentInstance_EmbeddedCIC();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The component instances and connector instances that are embedded in this component instance\nare contained by the component instance configuration.");
 

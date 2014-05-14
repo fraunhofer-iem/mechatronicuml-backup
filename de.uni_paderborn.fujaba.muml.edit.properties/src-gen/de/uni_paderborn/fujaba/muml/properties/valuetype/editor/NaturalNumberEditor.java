@@ -27,11 +27,11 @@ public class NaturalNumberEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNaturalNumberValue_GeneralTab_Editor(null, true);
+			addValue_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNaturalNumberInfinity_GeneralTab_Editor(
+			addInfinity_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -41,20 +41,18 @@ public class NaturalNumberEditor
 	/**
 	 * @generated
 	 */
-	protected void addNaturalNumberValue_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createNaturalNumberValue_GeneralTab_Editor(), front);
+	protected void addValue_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createValue_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNaturalNumberValue_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getNaturalNumber_Value(), 0);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createValue_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+				.getNaturalNumber_Value();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+				adapterFactory, feature, 0);
 
 		editor.setTooltipMessage("The value of this natural number.");
 
@@ -65,20 +63,18 @@ public class NaturalNumberEditor
 	/**
 	 * @generated
 	 */
-	protected void addNaturalNumberInfinity_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createNaturalNumberInfinity_GeneralTab_Editor(), front);
+	protected void addInfinity_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createInfinity_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNaturalNumberInfinity_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getNaturalNumber_Infinity());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInfinity_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+				.getNaturalNumber_Infinity();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Determins whether this natural number represents infinity.");
 

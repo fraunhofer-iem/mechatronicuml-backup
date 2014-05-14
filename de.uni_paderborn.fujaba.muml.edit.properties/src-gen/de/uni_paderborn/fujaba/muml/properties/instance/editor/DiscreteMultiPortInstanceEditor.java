@@ -24,7 +24,7 @@ public class DiscreteMultiPortInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortInstanceComponentInstance_GeneralTab_Editor(null, true);
+			addComponentInstance_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class DiscreteMultiPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortInstanceComponentInstance_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addComponentInstance_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createPortInstanceComponentInstance_GeneralTab_Editor(), front);
+				createComponentInstance_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortInstanceComponentInstance_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getPortInstance_ComponentInstance());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstance_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+				.getPortInstance_ComponentInstance();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The component instance this port instance belongs to.");
 

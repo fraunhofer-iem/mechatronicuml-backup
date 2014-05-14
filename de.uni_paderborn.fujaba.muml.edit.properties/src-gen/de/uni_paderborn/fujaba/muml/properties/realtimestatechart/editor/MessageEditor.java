@@ -27,11 +27,11 @@ public class MessageEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageInstanceOf_GeneralTab_Editor(null, true);
+			addInstanceOf_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageParameterBinding_GeneralTab_Editor(
+			addParameterBinding_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -40,20 +40,20 @@ public class MessageEditor
 	/**
 	 * @generated
 	 */
-	protected void addMessageInstanceOf_GeneralTab_Editor(String category,
+	protected void addInstanceOf_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createMessageInstanceOf_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createInstanceOf_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageInstanceOf_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getMessage_InstanceOf());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInstanceOf_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getMessage_InstanceOf();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Retrieves the message type this message is typed over.");
 
@@ -64,20 +64,20 @@ public class MessageEditor
 	/**
 	 * @generated
 	 */
-	protected void addMessageParameterBinding_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addParameterBinding_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createMessageParameterBinding_GeneralTab_Editor(), front);
+				createParameterBinding_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageParameterBinding_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getMessage_ParameterBinding());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameterBinding_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getMessage_ParameterBinding();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The collection of parameter bindings for this message. All parameters of the message type must be bound exactly once.");
 

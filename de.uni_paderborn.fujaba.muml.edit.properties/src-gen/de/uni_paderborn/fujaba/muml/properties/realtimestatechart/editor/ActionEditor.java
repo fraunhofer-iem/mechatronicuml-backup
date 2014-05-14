@@ -24,7 +24,7 @@ public class ActionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addActionExpressions_GeneralTab_Editor(null, true);
+			addExpressions_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class ActionEditor
 	/**
 	 * @generated
 	 */
-	protected void addActionExpressions_GeneralTab_Editor(String category,
+	protected void addExpressions_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createActionExpressions_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createExpressions_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createActionExpressions_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getAction_Expressions());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExpressions_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getAction_Expressions();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("An action has a defined expression, which can be expressed in different languages.");
 

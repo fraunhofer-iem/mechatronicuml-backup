@@ -27,12 +27,12 @@ public abstract class EntryOrExitEventEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addEntryOrExitEventClockResets_GeneralTab_Editor(
+			addClockResets_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addEntryOrExitEventAction_GeneralTab_Editor(null, false);
+			addAction_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -40,20 +40,20 @@ public abstract class EntryOrExitEventEditor
 	/**
 	 * @generated
 	 */
-	protected void addEntryOrExitEventClockResets_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createEntryOrExitEventClockResets_GeneralTab_Editor(), front);
+	protected void addClockResets_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createClockResets_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEntryOrExitEventClockResets_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getEntryOrExitEvent_ClockResets());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockResets_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getEntryOrExitEvent_ClockResets();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The clock resets of this action");
 
@@ -64,20 +64,18 @@ public abstract class EntryOrExitEventEditor
 	/**
 	 * @generated
 	 */
-	protected void addEntryOrExitEventAction_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createEntryOrExitEventAction_GeneralTab_Editor(), front);
+	protected void addAction_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createAction_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEntryOrExitEventAction_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getEntryOrExitEvent_Action());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAction_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getEntryOrExitEvent_Action();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Each entry or exit event can have one or more actions.");
 

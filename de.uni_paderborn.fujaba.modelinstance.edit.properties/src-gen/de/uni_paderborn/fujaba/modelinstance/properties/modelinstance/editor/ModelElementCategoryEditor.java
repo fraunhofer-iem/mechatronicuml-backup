@@ -27,7 +27,7 @@ public class ModelElementCategoryEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addModelElementCategoryModelElements_GeneralTab_Editor(
+			addModelElements_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -36,21 +36,20 @@ public class ModelElementCategoryEditor
 	/**
 	 * @generated
 	 */
-	protected void addModelElementCategoryModelElements_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createModelElementCategoryModelElements_GeneralTab_Editor(),
+	protected void addModelElements_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createModelElements_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createModelElementCategoryModelElements_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-						.getModelElementCategory_ModelElements());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createModelElements_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+				.getModelElementCategory_ModelElements();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The ModelElements which are contained in this category. All model elements\nmust be of the same type.");
 

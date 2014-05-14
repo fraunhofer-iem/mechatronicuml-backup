@@ -30,57 +30,57 @@ public class StateEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateEmbeddedRegions_GeneralTab_Editor(
+			addEmbeddedRegions_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateDoEvent_GeneralTab_Editor(null, false);
+			addDoEvent_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateExitEvent_GeneralTab_Editor(null, false);
+			addExitEvent_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateEntryEvent_GeneralTab_Editor(null, false);
+			addEntryEvent_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateInvariants_GeneralTab_Editor(
+			addInvariants_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateInitial_GeneralTab_Editor(
+			addInitial_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateFinal_GeneralTab_Editor(
+			addFinal_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateUrgent_GeneralTab_Editor(
+			addUrgent_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateChannels_GeneralTab_Editor(
+			addChannels_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateConnectionPoints_GeneralTab_Editor(
+			addConnectionPoints_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateParentStatechart_GeneralTab_Editor(null, true);
+			addParentStatechart_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -88,20 +88,20 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateEmbeddedRegions_GeneralTab_Editor(String category,
+	protected void addEmbeddedRegions_GeneralTab_Editor(String category,
 			boolean front) {
 		addEditorToCategory(category,
-				createStateEmbeddedRegions_GeneralTab_Editor(), front);
+				createEmbeddedRegions_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateEmbeddedRegions_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_EmbeddedRegions());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEmbeddedRegions_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_EmbeddedRegions();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The regions of this state. Regions are used to model composite states.\nIn case of one region, we have an xor superstate, in case of multiple regions, \nwe have an AND-superstate.");
 
@@ -112,20 +112,18 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateDoEvent_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createStateDoEvent_GeneralTab_Editor(),
-				front);
+	protected void addDoEvent_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createDoEvent_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateDoEvent_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_DoEvent());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDoEvent_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_DoEvent();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The do event. It is executed periodically while the corresponding state is active.");
 
@@ -136,20 +134,19 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateExitEvent_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createStateExitEvent_GeneralTab_Editor(),
+	protected void addExitEvent_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createExitEvent_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateExitEvent_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_ExitEvent());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExitEvent_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_ExitEvent();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The exit action is exectuted once when the corresponding state is left.");
 
@@ -160,20 +157,20 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateEntryEvent_GeneralTab_Editor(String category,
+	protected void addEntryEvent_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createStateEntryEvent_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createEntryEvent_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateEntryEvent_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_EntryEvent());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEntryEvent_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_EntryEvent();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The entry action is exectuted once when the corresponding state is entered.");
 
@@ -184,20 +181,20 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateInvariants_GeneralTab_Editor(String category,
+	protected void addInvariants_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createStateInvariants_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createInvariants_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateInvariants_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_Invariants());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInvariants_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_Invariants();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks.");
 
@@ -208,20 +205,18 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateInitial_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createStateInitial_GeneralTab_Editor(),
-				front);
+	protected void addInitial_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createInitial_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateInitial_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_Initial());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInitial_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_Initial();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("An initial state is the first one to active if the statechart is activated. There is only one initial state allowed at the top hierarchy of a statechart.");
 
@@ -232,20 +227,18 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateFinal_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createStateFinal_GeneralTab_Editor(),
-				front);
+	protected void addFinal_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createFinal_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateFinal_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_Final());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFinal_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_Final();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("a final state is not allowed to have outgoing transitions.");
 
@@ -256,20 +249,18 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateUrgent_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createStateUrgent_GeneralTab_Editor(),
-				front);
+	protected void addUrgent_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createUrgent_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateUrgent_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_Urgent());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createUrgent_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_Urgent();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("If a state is active and urgent, no time is allowed to pass until the state is leaved.");
 
@@ -280,20 +271,18 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateChannels_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createStateChannels_GeneralTab_Editor(),
-				front);
+	protected void addChannels_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createChannels_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateChannels_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_Channels());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createChannels_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_Channels();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The synchronization channels provided by this state.");
 
@@ -304,20 +293,20 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateConnectionPoints_GeneralTab_Editor(String category,
+	protected void addConnectionPoints_GeneralTab_Editor(String category,
 			boolean front) {
 		addEditorToCategory(category,
-				createStateConnectionPoints_GeneralTab_Editor(), front);
+				createConnectionPoints_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPoints_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_ConnectionPoints());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectionPoints_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_ConnectionPoints();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("A state references its connection points. They can only exist, if a state embeds one or more statecharts.");
 
@@ -328,20 +317,20 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateParentStatechart_GeneralTab_Editor(String category,
+	protected void addParentStatechart_GeneralTab_Editor(String category,
 			boolean front) {
 		addEditorToCategory(category,
-				createStateParentStatechart_GeneralTab_Editor(), front);
+				createParentStatechart_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateParentStatechart_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_ParentStatechart());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentStatechart_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getState_ParentStatechart();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The realtime statechart this state belongs to.\n\\todoib{Should be 1..1, but GMF needs 0..1 here!}");
 

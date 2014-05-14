@@ -24,15 +24,15 @@ public class TextualExpressionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTextualExpressionExpressionText_GeneralTab_Editor(null, true);
+			addExpressionText_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTextualExpressionLanguage_GeneralTab_Editor(null, true);
+			addLanguage_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTextualExpressionLanguageVersion_GeneralTab_Editor(null, true);
+			addLanguageVersion_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,21 +40,20 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addTextualExpressionExpressionText_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createTextualExpressionExpressionText_GeneralTab_Editor(),
+	protected void addExpressionText_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createExpressionText_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionExpressionText_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
-						.getTextualExpression_ExpressionText(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExpressionText_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
+				.getTextualExpression_ExpressionText();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("Holds the expression, e.g. in OCL or Java.");
 
@@ -65,20 +64,18 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addTextualExpressionLanguage_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createTextualExpressionLanguage_GeneralTab_Editor(), front);
+	protected void addLanguage_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createLanguage_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguage_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
-						.getTextualExpression_Language(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createLanguage_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
+				.getTextualExpression_Language();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("String representation of the used language which has to be unique. Examples are OCL and Java.");
 
@@ -89,21 +86,20 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addTextualExpressionLanguageVersion_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addLanguageVersion_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createTextualExpressionLanguageVersion_GeneralTab_Editor(),
-				front);
+				createLanguageVersion_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguageVersion_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
-						.getTextualExpression_LanguageVersion(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createLanguageVersion_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
+				.getTextualExpression_LanguageVersion();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("String representation of the used language's version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]\nExamples: 1.4 or 3.0.1 or 1.0.2.20101208.");
 

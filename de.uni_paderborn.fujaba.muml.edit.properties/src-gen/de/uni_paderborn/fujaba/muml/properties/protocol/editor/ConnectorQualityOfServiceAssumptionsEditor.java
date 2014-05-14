@@ -27,17 +27,15 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorQualityOfServiceAssumptionsMinMessageDelay_GeneralTab_Editor(
-					null, false);
+			addMinMessageDelay_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorQualityOfServiceAssumptionsMaxMessageDelay_GeneralTab_Editor(
-					null, false);
+			addMaxMessageDelay_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorQualityOfServiceAssumptionsMessageLossPossible_GeneralTab_Editor(
+			addMessageLossPossible_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -47,22 +45,20 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorQualityOfServiceAssumptionsMinMessageDelay_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createConnectorQualityOfServiceAssumptionsMinMessageDelay_GeneralTab_Editor(),
-				front);
+	protected void addMinMessageDelay_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createMinMessageDelay_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMinMessageDelay_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-						.getConnectorQualityOfServiceAssumptions_MinMessageDelay());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMinMessageDelay_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+				.getConnectorQualityOfServiceAssumptions_MinMessageDelay();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The minimal time a message needs from the sender to the receiver using this connector.");
 
@@ -73,22 +69,20 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorQualityOfServiceAssumptionsMaxMessageDelay_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createConnectorQualityOfServiceAssumptionsMaxMessageDelay_GeneralTab_Editor(),
-				front);
+	protected void addMaxMessageDelay_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createMaxMessageDelay_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMaxMessageDelay_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-						.getConnectorQualityOfServiceAssumptions_MaxMessageDelay());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMaxMessageDelay_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+				.getConnectorQualityOfServiceAssumptions_MaxMessageDelay();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The maximal time a message needs from the sender to the receiver using this connector.");
 
@@ -99,22 +93,20 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorQualityOfServiceAssumptionsMessageLossPossible_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createConnectorQualityOfServiceAssumptionsMessageLossPossible_GeneralTab_Editor(),
-				front);
+	protected void addMessageLossPossible_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createMessageLossPossible_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMessageLossPossible_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-						.getConnectorQualityOfServiceAssumptions_MessageLossPossible());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageLossPossible_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+				.getConnectorQualityOfServiceAssumptions_MessageLossPossible();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Defines if messages that are send using this connector may be lost during transport.");
 

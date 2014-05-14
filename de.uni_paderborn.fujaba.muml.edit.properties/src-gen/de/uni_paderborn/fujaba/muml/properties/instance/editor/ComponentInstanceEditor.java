@@ -27,20 +27,20 @@ public abstract class ComponentInstanceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentInstanceComponentType_GeneralTab_Editor(null, true);
+			addComponentType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentInstancePortInstances_GeneralTab_Editor(
+			addPortInstances_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentInstanceComponentPart_GeneralTab_Editor(null, true);
+			addComponentPart_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentInstanceParentCIC_GeneralTab_Editor(null, true);
+			addParentCIC_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -48,20 +48,20 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentInstanceComponentType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentInstanceComponentType_GeneralTab_Editor(), front);
+	protected void addComponentType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentType_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceComponentType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getComponentInstance_ComponentType());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+				.getComponentInstance_ComponentType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The component type of which this instance is derived.");
 
@@ -72,20 +72,20 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentInstancePortInstances_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentInstancePortInstances_GeneralTab_Editor(), front);
+	protected void addPortInstances_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createPortInstances_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstancePortInstances_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getComponentInstance_PortInstances());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortInstances_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+				.getComponentInstance_PortInstances();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The port instances that belong to this component instance. \\todosd{Why are also DiscreteSinglePortInstances of DiscreteMultiPortInstances contained here and not in the DiscreteMultiPortInstance?}");
 
@@ -96,20 +96,20 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentInstanceComponentPart_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentInstanceComponentPart_GeneralTab_Editor(), front);
+	protected void addComponentPart_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentPart_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceComponentPart_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getComponentInstance_ComponentPart());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPart_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+				.getComponentInstance_ComponentPart();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("If the component instance is contained in a structured component instance,\nthen the corresponding structure component has has component part that \nwas used to include the component type of this instance. Then, this reference \npoints to this component part. We can use this reference for deciding how \nmany instances of a particular part exist in a structured component instance\nsuch that we can enforce the cardinalities of the component part during run-time.");
 
@@ -120,20 +120,19 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentInstanceParentCIC_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentInstanceParentCIC_GeneralTab_Editor(), front);
+	protected void addParentCIC_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createParentCIC_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceParentCIC_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getComponentInstance_ParentCIC());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentCIC_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+				.getComponentInstance_ParentCIC();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The component instance configuration that contains this component instance.");
 

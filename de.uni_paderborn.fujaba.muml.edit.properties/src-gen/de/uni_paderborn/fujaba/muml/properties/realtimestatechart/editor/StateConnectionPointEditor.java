@@ -24,7 +24,7 @@ public abstract class StateConnectionPointEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateConnectionPointState_GeneralTab_Editor(null, true);
+			addState_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,18 @@ public abstract class StateConnectionPointEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateConnectionPointState_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createStateConnectionPointState_GeneralTab_Editor(), front);
+	protected void addState_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createState_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPointState_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getStateConnectionPoint_State());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createState_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getStateConnectionPoint_State();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The StateEntryPoint is assigned to a state.");
 

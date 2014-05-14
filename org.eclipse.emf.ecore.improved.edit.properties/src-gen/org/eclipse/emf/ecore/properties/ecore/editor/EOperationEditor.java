@@ -27,7 +27,7 @@ public class EOperationEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEOperationEExceptions_DefaultTab_Editor(
+			addEExceptions_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -36,20 +36,20 @@ public class EOperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addEOperationEExceptions_DefaultTab_Editor(String category,
+	protected void addEExceptions_DefaultTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createEOperationEExceptions_DefaultTab_Editor(), front);
+		addEditorToCategory(category, createEExceptions_DefaultTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEOperationEExceptions_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEOperation_EExceptions());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEExceptions_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEOperation_EExceptions();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

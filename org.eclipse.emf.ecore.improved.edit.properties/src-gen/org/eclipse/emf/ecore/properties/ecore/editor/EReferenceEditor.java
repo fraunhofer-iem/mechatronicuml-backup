@@ -30,23 +30,23 @@ public class EReferenceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEReferenceContainment_DefaultTab_Editor(
+			addContainment_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEReferenceResolveProxies_DefaultTab_Editor(
+			addResolveProxies_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEReferenceEOpposite_DefaultTab_Editor(null, true);
+			addEOpposite_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEReferenceEKeys_DefaultTab_Editor(
+			addEKeys_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -55,20 +55,20 @@ public class EReferenceEditor
 	/**
 	 * @generated
 	 */
-	protected void addEReferenceContainment_DefaultTab_Editor(String category,
+	protected void addContainment_DefaultTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createEReferenceContainment_DefaultTab_Editor(), front);
+		addEditorToCategory(category, createContainment_DefaultTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEReferenceContainment_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEReference_Containment());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createContainment_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEReference_Containment();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
@@ -77,20 +77,20 @@ public class EReferenceEditor
 	/**
 	 * @generated
 	 */
-	protected void addEReferenceResolveProxies_DefaultTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createEReferenceResolveProxies_DefaultTab_Editor(), front);
+	protected void addResolveProxies_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createResolveProxies_DefaultTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEReferenceResolveProxies_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEReference_ResolveProxies());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createResolveProxies_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEReference_ResolveProxies();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
@@ -99,20 +99,19 @@ public class EReferenceEditor
 	/**
 	 * @generated
 	 */
-	protected void addEReferenceEOpposite_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createEReferenceEOpposite_DefaultTab_Editor(), front);
+	protected void addEOpposite_DefaultTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createEOpposite_DefaultTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEReferenceEOpposite_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEReference_EOpposite());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEOpposite_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEReference_EOpposite();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
@@ -121,20 +120,18 @@ public class EReferenceEditor
 	/**
 	 * @generated
 	 */
-	protected void addEReferenceEKeys_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createEReferenceEKeys_DefaultTab_Editor(), front);
+	protected void addEKeys_DefaultTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createEKeys_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEReferenceEKeys_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEReference_EKeys());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEKeys_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEReference_EKeys();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

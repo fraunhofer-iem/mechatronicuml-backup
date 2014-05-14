@@ -28,19 +28,19 @@ public abstract class VertexEditor
 				"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addVertexOutgoingTransitions_GeneralTab_Editor(
+			addOutgoingTransitions_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Transitions",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addVertexIncomingTransitions_GeneralTab_Editor(
+			addIncomingTransitions_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Transitions",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementName_GeneralTab_Editor(null, true);
+			addName_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -48,20 +48,20 @@ public abstract class VertexEditor
 	/**
 	 * @generated
 	 */
-	protected void addVertexOutgoingTransitions_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addOutgoingTransitions_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createVertexOutgoingTransitions_GeneralTab_Editor(), front);
+				createOutgoingTransitions_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVertexOutgoingTransitions_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getVertex_OutgoingTransitions());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOutgoingTransitions_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getVertex_OutgoingTransitions();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The outgoing transitions of this vertex");
 
@@ -72,20 +72,20 @@ public abstract class VertexEditor
 	/**
 	 * @generated
 	 */
-	protected void addVertexIncomingTransitions_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addIncomingTransitions_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createVertexIncomingTransitions_GeneralTab_Editor(), front);
+				createIncomingTransitions_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVertexIncomingTransitions_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getVertex_IncomingTransitions());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createIncomingTransitions_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getVertex_IncomingTransitions();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The incoming transitions of this vertex");
 
@@ -96,20 +96,18 @@ public abstract class VertexEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementName_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createNamedElementName_GeneralTab_Editor(), front);
+	protected void addName_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createName_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createName_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+				.getNamedElement_Name();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The name attribute of a meta-model element.");
 

@@ -24,18 +24,15 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstance_GeneralTab_Editor(
-					null, true);
+			addMultiInteractionEndpointInstance_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteSingleInteractionEndpointInstanceNext_GeneralTab_Editor(
-					null, true);
+			addNext_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteSingleInteractionEndpointInstancePrevious_GeneralTab_Editor(
-					null, true);
+			addPrevious_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -43,22 +40,21 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstance_GeneralTab_Editor(
+	protected void addMultiInteractionEndpointInstance_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstance_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createMultiInteractionEndpointInstance_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstance_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMultiInteractionEndpointInstance_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("If this is an instance of a multi discrete interaction endpoint, refers to the corresponding multi instance.");
 
@@ -69,22 +65,18 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteSingleInteractionEndpointInstanceNext_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteSingleInteractionEndpointInstanceNext_GeneralTab_Editor(),
-				front);
+	protected void addNext_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createNext_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstanceNext_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteSingleInteractionEndpointInstance_Next());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNext_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getDiscreteSingleInteractionEndpointInstance_Next();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("If this is an instance of a multi discrete interaction endpoint, refers to the next single instance.");
 
@@ -95,22 +87,18 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteSingleInteractionEndpointInstancePrevious_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteSingleInteractionEndpointInstancePrevious_GeneralTab_Editor(),
-				front);
+	protected void addPrevious_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createPrevious_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstancePrevious_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteSingleInteractionEndpointInstance_Previous());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrevious_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getDiscreteSingleInteractionEndpointInstance_Previous();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("If this is an instance of a multi discrete interaction endpoint, refers to the previous single instance.");
 

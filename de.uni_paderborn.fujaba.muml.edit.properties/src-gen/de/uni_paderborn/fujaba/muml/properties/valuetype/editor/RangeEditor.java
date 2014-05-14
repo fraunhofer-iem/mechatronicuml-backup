@@ -24,11 +24,11 @@ public class RangeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRangeLowerBound_GeneralTab_Editor(null, true);
+			addLowerBound_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRangeUpperBound_GeneralTab_Editor(null, true);
+			addUpperBound_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,20 +36,20 @@ public class RangeEditor
 	/**
 	 * @generated
 	 */
-	protected void addRangeLowerBound_GeneralTab_Editor(String category,
+	protected void addLowerBound_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createRangeLowerBound_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createLowerBound_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangeLowerBound_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getRange_LowerBound(), 0);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createLowerBound_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+				.getRange_LowerBound();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+				adapterFactory, feature, 0);
 
 		editor.setTooltipMessage("Defines the lower bound of the range.");
 
@@ -60,20 +60,20 @@ public class RangeEditor
 	/**
 	 * @generated
 	 */
-	protected void addRangeUpperBound_GeneralTab_Editor(String category,
+	protected void addUpperBound_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createRangeUpperBound_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createUpperBound_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangeUpperBound_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getRange_UpperBound(), 0);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createUpperBound_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+				.getRange_UpperBound();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+				adapterFactory, feature, 0);
 
 		editor.setTooltipMessage("Defines the upper bound of the range.");
 

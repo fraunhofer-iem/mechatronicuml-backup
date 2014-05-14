@@ -24,11 +24,11 @@ public class ParameterBindingEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addParameterBindingParameter_GeneralTab_Editor(null, true);
+			addParameter_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addParameterBindingValue_GeneralTab_Editor(null, true);
+			addValue_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,20 +36,19 @@ public class ParameterBindingEditor
 	/**
 	 * @generated
 	 */
-	protected void addParameterBindingParameter_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createParameterBindingParameter_GeneralTab_Editor(), front);
+	protected void addParameter_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createParameter_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingParameter_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getParameterBinding_Parameter());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameter_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+				.getParameterBinding_Parameter();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The mandatory parameter to which the value needs to be associated.");
 
@@ -60,20 +59,18 @@ public class ParameterBindingEditor
 	/**
 	 * @generated
 	 */
-	protected void addParameterBindingValue_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createParameterBindingValue_GeneralTab_Editor(), front);
+	protected void addValue_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createValue_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingValue_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getParameterBinding_Value());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createValue_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+				.getParameterBinding_Value();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The mandatory value which is associated with the parameter. The value is defined by an expression.");
 

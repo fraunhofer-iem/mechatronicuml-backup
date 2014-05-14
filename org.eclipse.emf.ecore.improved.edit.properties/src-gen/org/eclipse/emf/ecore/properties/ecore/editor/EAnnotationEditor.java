@@ -27,11 +27,11 @@ public class EAnnotationEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEAnnotationSource_DefaultTab_Editor(null, true);
+			addSource_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEAnnotationReferences_DefaultTab_Editor(
+			addReferences_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -40,20 +40,18 @@ public class EAnnotationEditor
 	/**
 	 * @generated
 	 */
-	protected void addEAnnotationSource_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createEAnnotationSource_DefaultTab_Editor(), front);
+	protected void addSource_DefaultTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createSource_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEAnnotationSource_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEAnnotation_Source(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSource_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEAnnotation_Source();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		return editor;
 
@@ -62,20 +60,20 @@ public class EAnnotationEditor
 	/**
 	 * @generated
 	 */
-	protected void addEAnnotationReferences_DefaultTab_Editor(String category,
+	protected void addReferences_DefaultTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createEAnnotationReferences_DefaultTab_Editor(), front);
+		addEditorToCategory(category, createReferences_DefaultTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEAnnotationReferences_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEAnnotation_References());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReferences_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEAnnotation_References();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

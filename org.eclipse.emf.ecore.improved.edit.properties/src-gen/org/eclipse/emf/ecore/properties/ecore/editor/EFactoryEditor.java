@@ -24,7 +24,7 @@ public class EFactoryEditor
 		super.createProperties();
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEFactoryEPackage_DefaultTab_Editor(null, true);
+			addEPackage_DefaultTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,18 @@ public class EFactoryEditor
 	/**
 	 * @generated
 	 */
-	protected void addEFactoryEPackage_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createEFactoryEPackage_DefaultTab_Editor(), front);
+	protected void addEPackage_DefaultTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createEPackage_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEFactoryEPackage_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEFactory_EPackage());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEPackage_DefaultTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+				.getEFactory_EPackage();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

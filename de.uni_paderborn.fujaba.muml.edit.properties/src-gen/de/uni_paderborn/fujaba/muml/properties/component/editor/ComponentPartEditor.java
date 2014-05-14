@@ -24,15 +24,15 @@ public class ComponentPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPartComponentType_GeneralTab_Editor(null, true);
+			addComponentType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPartParentComponent_GeneralTab_Editor(null, true);
+			addParentComponent_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPartCardinality_GeneralTab_Editor(null, true);
+			addCardinality_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,20 +40,20 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPartComponentType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentPartComponentType_GeneralTab_Editor(), front);
+	protected void addComponentType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentType_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartComponentType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponentPart_ComponentType());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getComponentPart_ComponentType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The component type typing this component part.");
 
@@ -64,20 +64,20 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPartParentComponent_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addParentComponent_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createComponentPartParentComponent_GeneralTab_Editor(), front);
+				createParentComponent_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartParentComponent_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponentPart_ParentComponent());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentComponent_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getComponentPart_ParentComponent();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The structured component type containing this component part.");
 
@@ -88,20 +88,20 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPartCardinality_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentPartCardinality_GeneralTab_Editor(), front);
+	protected void addCardinality_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCardinality_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartCardinality_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponentPart_Cardinality());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinality_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getComponentPart_Cardinality();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime.");
 

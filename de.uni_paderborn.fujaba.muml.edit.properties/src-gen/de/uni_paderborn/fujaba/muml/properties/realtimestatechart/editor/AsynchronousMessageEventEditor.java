@@ -24,7 +24,7 @@ public class AsynchronousMessageEventEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addAsynchronousMessageEventMessage_GeneralTab_Editor(null, false);
+			addMessage_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -32,21 +32,18 @@ public class AsynchronousMessageEventEditor
 	/**
 	 * @generated
 	 */
-	protected void addAsynchronousMessageEventMessage_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createAsynchronousMessageEventMessage_GeneralTab_Editor(),
-				front);
+	protected void addMessage_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createMessage_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAsynchronousMessageEventMessage_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getAsynchronousMessageEvent_Message());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessage_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getAsynchronousMessageEvent_Message();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The message associated with this event. The message is either requested to be\nreceived (trigger event) or it will be sent (raise event).");
 

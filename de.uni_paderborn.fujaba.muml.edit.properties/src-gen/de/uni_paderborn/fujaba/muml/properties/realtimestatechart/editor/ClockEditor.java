@@ -24,7 +24,7 @@ public class ClockEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addClockStatechart_GeneralTab_Editor(null, true);
+			addStatechart_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class ClockEditor
 	/**
 	 * @generated
 	 */
-	protected void addClockStatechart_GeneralTab_Editor(String category,
+	protected void addStatechart_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createClockStatechart_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createStatechart_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockStatechart_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getClock_Statechart());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStatechart_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+				.getClock_Statechart();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The realtime statechart this clock belongs to.\n\\todoib{Should be 1..1, but GMF needs 0..1 here!}\n\\todosd{is this info necessary?}");
 
