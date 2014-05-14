@@ -99,6 +99,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	public void removeVisibilityFilter(IFilter filter) {
 		visibilityFilters.remove(filter);
 	}
+	
 
 	public void updateVisibility(boolean relayout) {
 		boolean visibility = true;

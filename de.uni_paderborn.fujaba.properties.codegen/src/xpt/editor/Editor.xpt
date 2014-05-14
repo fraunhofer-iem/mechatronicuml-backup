@@ -116,6 +116,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 		«IF genDocumentation() != null»
 		editor.setTooltipMessage("«genDocumentation().replaceAll("\\\\", "\\\\\\\\").replaceAll("\"", "\\\\\"").replaceAll("\r\n", "\\\\n").replaceAll("\r", "\\\\n").replaceAll("\n", "\\\\n")»");
 		«ENDIF»
+		«EXPAND addCreationConstraintFilter("editor") FOREACH creationConstraint.filters»
 		return editor;
 
 	}
@@ -189,4 +190,11 @@ new «fullyQualifiedClassName»(adapterFactory, «property.genFeature.genFeature
 
 «DEFINE addVisibilityFilter(String editorVar) FOR OCLFilter»
  		«editorVar».addVisibilityFilter("«expression»", getEClass());
+«ENDDEFINE»
+
+
+«DEFINE addCreationConstraintFilter(String editorVar) FOR Filter»«ENDDEFINE»
+
+«DEFINE addCreationConstraintFilter(String editorVar) FOR OCLFilter»
+ 		«editorVar».addCreationConstraintFilter("«expression»", getEClass());
 «ENDDEFINE»

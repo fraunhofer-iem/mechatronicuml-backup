@@ -142,7 +142,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		public void createControls(Composite parent, FormToolkit toolkit) {
 			super.createControls(parent, toolkit);
 			
-			List<EClass> eClasses = RuntimePlugin.getEClasses((EReference) feature);
+			List<EClass> eClasses = getCreationEClasses();
 
 			selectedClass = null;
 			if (!eClasses.isEmpty()) {

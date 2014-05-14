@@ -89,7 +89,7 @@ public class NavigationFeaturePropertyEditor extends
 		layout.fill = true;
 		composite.setLayout(layout);
 
-		eClasses = RuntimePlugin.getEClasses((EReference) feature);
+		eClasses = getCreationEClasses();
 
 		selectedClass = null;
 		if (!eClasses.isEmpty()) {

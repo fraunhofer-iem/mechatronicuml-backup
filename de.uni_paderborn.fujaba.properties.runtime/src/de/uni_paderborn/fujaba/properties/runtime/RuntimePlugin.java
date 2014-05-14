@@ -37,6 +37,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -376,9 +377,14 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	public static void showCreateElementDialog(AdapterFactory adapterFactory, EObject container,
-			EStructuralFeature feature) {
+			EStructuralFeature feature, List<IFilter> creationFilters) {
+		
 		PropertiesWizard wizard = new PropertiesWizard();
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true);
+		
+		for (IFilter filter : creationFilters) {
+			editor.addCreationFilter(filter);
+		}
 		
 		final PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 		editor.addValueChangedListener(new IValueChangedListener() {

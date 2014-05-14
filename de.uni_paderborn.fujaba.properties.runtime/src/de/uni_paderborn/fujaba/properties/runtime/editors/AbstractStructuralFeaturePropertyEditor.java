@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
@@ -46,6 +47,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		AbstractPropertyEditor implements IStructuralFeaturePropertyEditor {
 
 	private List<EObject> hookedObjects = new ArrayList<EObject>();
+	protected List<IFilter> creationFilters = new ArrayList<IFilter>();
 	
 	private Map<Adapter, ResourceSet> eventAdapters = new HashMap<Adapter, ResourceSet>();
 
@@ -369,6 +371,22 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			addVisibilityFilter(filter);
 		}
 	}
+	
+	public void addCreationConstraintFilter(String oclExpression, EClassifier context) {
+		IFilter filter = createOCLFilter(oclExpression, context, null);
+		if (filter != null) {
+			addCreationFilter(filter);
+		}
+	}
+	
+	public void addCreationFilter(IFilter filter) {
+		creationFilters.add(filter);
+	}
+	
+	public void removeCreationFilter(IFilter filter) {
+		creationFilters.remove(filter);
+	}
+	
 
 	private IFilter createOCLFilter(String oclExpression, EClassifier context, Adapter adapter) {
 		
@@ -379,7 +397,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 				    ParsingOptions.implicitRootClass(helper.getEnvironment()),
 				    EcorePackage.Literals.EOBJECT);
 			OCLExpression expression = helper.createQuery(oclExpression);
-			registerOCLAdapter(expression, adapter)	;
+			
+			if (adapter != null) {
+				registerOCLAdapter(expression, adapter);
+			}
 			
 			final Query<EClassifier, ?, ?> query = RuntimePlugin.OCL_ECORE.createQuery(expression);		 
 			return new IFilter() {
@@ -450,5 +471,20 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 	}
 
+	public List<EClass> getCreationEClasses() {
+		List<EClass> eClasses = new ArrayList<EClass>();
+		for (EClass eClass : RuntimePlugin.getEClasses((EReference) feature)) {
+			boolean mayCreate = true;
+			for (IFilter filter : creationFilters) {
+				if (!filter.select(eClass)) {
+					mayCreate = false;
+				}
+			}
+			if (mayCreate) {
+				eClasses.add(eClass);
+			}
+		}
+		return eClasses;
+	}
 
 }
