@@ -17,7 +17,7 @@
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba(\..+)?|^org\.eclipse\.emf\.ecore\.improved(\..+)?|^de\.fujaba(\..+)?|^de\.fujaba\.modelinstance\.editor(\..+)?|^org\.storydriven\.core(\..+)?)" searchPathRef="muml" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?|^de\.upb\.swt(\..+)?)" searchPathRef="storydriven" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>
-  <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="qvto_luna_m5"/>
+  <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse_luna"/>
   <rm:locator pattern="^org\.eclipse\.xtext(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse\.xtend(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse\.emf\.edapt(\..+)?" searchPathRef="edapt"/>
@@ -80,13 +80,6 @@
   <rm:searchPath name="eclipse_luna">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
       <rm:uri format="http://download.eclipse.org/releases/luna?importType=binary">
-      </rm:uri>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="qvto_luna_m5">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-      <rm:uri format="file:///{0}/QVTo Luna M5">
-        <bc:propertyRef key="workspace.root"/>
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
