@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.Ass
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryDiagramEditPartFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart;
@@ -60,6 +61,8 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 			case ActivityFinalNodeEditPart.VISUAL_ID:
 				return new CustomActivityFinalNodeEditPart(view);
 
+			case ComponentStoryNodeEditPart.VISUAL_ID:
+				return new CustomComponentStoryNodeEditPart(view);
 			case ComponentStoryNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID:
 				return new CustomComponentStoryNodeComponentStoryNodeCompartmentEditPart(
 						view);	
