@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface CodegenPackage extends EPackage {
@@ -402,13 +403,13 @@ public interface CodegenPackage extends EPackage {
 	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Allocated Structured Resource Instance</b></em>' reference.
+	 * The feature id for the '<em><b>All Used Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 1;
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Refinded Structured Resource Instance</em>' class.
@@ -689,15 +690,15 @@ public interface CodegenPackage extends EPackage {
 	EReference getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllUsedMessageTypes <em>All Used Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Allocated Structured Resource Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance()
+	 * @return the meta object for the reference list '<em>All Used Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllUsedMessageTypes()
 	 * @see #getRefindedStructuredResourceInstance()
 	 * @generated
 	 */
-	EReference getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance();
+	EReference getRefindedStructuredResourceInstance_AllUsedMessageTypes();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation <em>Cod Gen Allocation</em>}'.
@@ -787,12 +788,12 @@ public interface CodegenPackage extends EPackage {
 		 */
 		EReference REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = eINSTANCE.getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances();
 		/**
-		 * The meta object literal for the '<em><b>Allocated Structured Resource Instance</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>All Used Message Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE = eINSTANCE.getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance();
+		EReference REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES = eINSTANCE.getRefindedStructuredResourceInstance_AllUsedMessageTypes();
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenAllocationImpl <em>Cod Gen Allocation</em>}' class.
 		 * <!-- begin-user-doc -->

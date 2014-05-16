@@ -8,6 +8,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenFactory;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
@@ -152,7 +153,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance() {
+	public EReference getRefindedStructuredResourceInstance_AllUsedMessageTypes() {
 		return (EReference)refindedStructuredResourceInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -216,7 +217,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		refindedStructuredResourceInstanceEClass = createEClass(REFINDED_STRUCTURED_RESOURCE_INSTANCE);
 		createEReference(refindedStructuredResourceInstanceEClass, REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES);
-		createEReference(refindedStructuredResourceInstanceEClass, REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE);
+		createEReference(refindedStructuredResourceInstanceEClass, REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES);
 
 		codGenAllocationEClass = createEClass(COD_GEN_ALLOCATION);
 		createEReference(codGenAllocationEClass, COD_GEN_ALLOCATION__HPIC);
@@ -249,6 +250,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		// Obtain other dependent packages
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
+		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		HwplatforminstancePackage theHwplatforminstancePackage = (HwplatforminstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI);
 
 		// Create type parameters
@@ -265,7 +267,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		initEClass(refindedStructuredResourceInstanceEClass, RefindedStructuredResourceInstance.class, "RefindedStructuredResourceInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances(), this.getRefinedAtomicComponentInstance(), this.getRefinedAtomicComponentInstance_AllocatedResourceInstance(), "allocatedAtomicComponentInstances", null, 0, -1, RefindedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "allocatedStructuredResourceInstance", null, 1, 1, RefindedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRefindedStructuredResourceInstance_AllUsedMessageTypes(), theMsgtypePackage.getMessageType(), null, "allUsedMessageTypes", null, 0, -1, RefindedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(codGenAllocationEClass, CodGenAllocation.class, "CodGenAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCodGenAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 0, -1, CodGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -273,6 +275,46 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });	
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";			
+		addAnnotation
+		  (getRefindedStructuredResourceInstance_AllUsedMessageTypes(), 
+		   source, 
+		   new String[] {
+			 "derivation", "let discrePortInstance : Set(muml::instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(muml::instance::DiscretePortInstance)).oclAsType(muml::instance::DIscretePortInstance) in\ndiscrePortInstance.receiverMessageTypes->asOrderedSet()->union(discrePortInstance.senderMessageTypes->asOrderedSet())->asOrderedSet()"
+		   });
 	}
 
 } //CodegenPackageImpl

@@ -4,6 +4,7 @@ package de.uni_paderborn.fujaba.muml.psm.codegen;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -15,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllUsedMessageTypes <em>All Used Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,29 +44,19 @@ public interface RefindedStructuredResourceInstance extends StructuredResourceIn
 	EList<RefinedAtomicComponentInstance> getAllocatedAtomicComponentInstances();
 
 	/**
-	 * Returns the value of the '<em><b>Allocated Structured Resource Instance</b></em>' reference.
+	 * Returns the value of the '<em><b>All Used Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.msgtype.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Allocated Structured Resource Instance</em>' reference isn't clear,
+	 * If the meaning of the '<em>All Used Message Types</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Allocated Structured Resource Instance</em>' reference.
-	 * @see #setAllocatedStructuredResourceInstance(StructuredResourceInstance)
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance()
-	 * @model required="true"
+	 * @return the value of the '<em>All Used Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefindedStructuredResourceInstance_AllUsedMessageTypes()
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let discrePortInstance : Set(muml::instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(muml::instance::DiscretePortInstance)).oclAsType(muml::instance::DIscretePortInstance) in\ndiscrePortInstance.receiverMessageTypes->asOrderedSet()->union(discrePortInstance.senderMessageTypes->asOrderedSet())->asOrderedSet()'"
 	 * @generated
 	 */
-	StructuredResourceInstance getAllocatedStructuredResourceInstance();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Allocated Structured Resource Instance</em>' reference.
-	 * @see #getAllocatedStructuredResourceInstance()
-	 * @generated
-	 */
-	void setAllocatedStructuredResourceInstance(StructuredResourceInstance value);
+	EList<MessageType> getAllUsedMessageTypes();
 
 } // RefindedStructuredResourceInstance
