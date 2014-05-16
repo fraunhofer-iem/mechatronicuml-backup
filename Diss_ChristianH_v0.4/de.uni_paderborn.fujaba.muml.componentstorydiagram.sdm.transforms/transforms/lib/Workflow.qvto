@@ -22,37 +22,43 @@ modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 
 modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
 
-//TODO
-//ports
-//connectors
-//binding semantics: if instance is already bound part, type etc are useless
+modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 mapping inout modelinstance::RootNode :: RootNode2RootNode(){
     	_categories += self._categories.map ModelElementCategory2ModelElementCategory();
-    	//_ecoreDataTypes := self._ecoreDataTypes.deepclone().oclAsType(EDataType);
    		 }
    		 
 mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElementCategory() : modelinstance::ModelElementCategory when{self.key = "org.storydriven.storydiagrams.activities.category"}{
     	_key := 'org.storydriven.storydiagrams.category';
     	_name := 'storydiagrams';
-    	_modelElements := self._modelElements[ComponentStoryRule].activity.map ExtendableElement2ExtendableElement();
+    	_modelElements := self._modelElements[ComponentStoryRule].activity.map Activity2Activity();
    		 }
    		 
-mapping core::ExtendableElement :: ExtendableElement2ExtendableElement() : core::ExtendableElement disjuncts storydiagrams::activities::Activity :: Activity2Activity, storydiagrams::activities::InitialNode::InitialNode2InitialNode;
 
 mapping storydiagrams::activities::Activity :: Activity2Activity() : storydiagrams::activities::Activity{
     	_comment := self._comment;
-    	_name := self._name;
+    	_name := self.container().oclAsType(ComponentStoryRule).signature.name;
     	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     	_extension := self._extension.deepclone().oclAsType(Extension);
-    	_inParameter := self._inParameter.deepclone().oclAsType(EParameter);
-    	_outParameter := self._outParameter.deepclone().oclAsType(EParameter);
+    	
+    	_inParameter := self.container().oclAsType(ComponentStoryRule).signature.parameters->map Parameter2EParameter();
+    	_outParameter := self.container().oclAsType(ComponentStoryRule).signature.returnParameters->map Parameter2EParameter();
+    	
     	_containedParameters := self._containedParameters.deepclone().oclAsType(EParameter);
     	_owningOperation := self._owningOperation.deepclone().oclAsType(OperationExtension);
     	_ownedActivityEdge := self._ownedActivityEdge.map ActivityEdge2ActivityEdge();
     	_precondition := self._precondition.deepclone().oclAsType(MatchingStoryNode);
     	_ownedActivityNode := self._ownedActivityNode.map ActivityNode2ActivityNode();
    		 }
+   		 
+mapping Parameter :: Parameter2EParameter() : EParameter{
+	name := self.name;
+	self.annotation->forEach(ann){
+		eAnnotations += ann.deepclone().oclAsType(EAnnotation);
+	};
+	eType := self.dataType.eClass();
+}
 
 mapping storydiagrams::activities::ActivityEdge :: ActivityEdge2ActivityEdge() : storydiagrams::activities::ActivityEdge{
     	_guard := self._guard;
@@ -66,21 +72,12 @@ mapping storydiagrams::activities::ActivityEdge :: ActivityEdge2ActivityEdge() :
    		 }
    		 
 mapping storydiagrams::activities::ActivityNode :: ActivityNode2ActivityNode() : storydiagrams::activities::ActivityNode disjuncts 
-//storydiagrams::activities::StoryNode::StoryNode2StoryNode,
- componentstorydiagram::ControllerExchangeNode::ControllerExchangeNode2ModifyingStoryNode,
- // storydiagrams::activities::ModifyingStoryNode::ModifyingStoryNode2ModifyingStoryNode,
-	 componentstorydiagram::ComponentStoryNode::ComponentStoryNode2ModifyingStoryNode, 
-	  storydiagrams::activities::InitialNode::InitialNode2InitialNode,
-	   storydiagrams::activities::JunctionNode::JunctionNode2JunctionNode,
-	    storydiagrams::activities::ActivityFinalNode::ActivityFinalNode2ActivityFinalNode;
-	//    storydiagrams::activities::MatchingStoryNode::MatchingStoryNode2MatchingStoryNode, storydiagrams::activities::StatementNode::StatementNode2StatementNode,
-	//     storydiagrams::activities::StructuredNode::StructuredNode2StructuredNode, storydiagrams::activities::FlowFinalNode::FlowFinalNode2FlowFinalNode,
-	//      storydiagrams::activities::ActivityCallNode::ActivityCallNode2ActivityCallNode;
-	     
-/*mapping storydiagrams::activities::StoryNode :: StoryNode2StoryNode() : storydiagrams::activities::StoryNode disjuncts
-	 storydiagrams::activities::ModifyingStoryNode::ModifyingStoryNode2ModifyingStoryNode,
-	  storydiagrams::activities::MatchingStoryNode::MatchingStoryNode2MatchingStoryNode;
- */
+componentstorydiagram::ControllerExchangeNode::ControllerExchangeNode2ModifyingStoryNode,
+ componentstorydiagram::ComponentStoryNode::ComponentStoryNode2ModifyingStoryNode, 
+  storydiagrams::activities::InitialNode::InitialNode2InitialNode,
+   storydiagrams::activities::JunctionNode::JunctionNode2JunctionNode,
+    storydiagrams::activities::ActivityFinalNode::ActivityFinalNode2ActivityFinalNode;
+
  
 mapping componentstorydiagram::ComponentStoryNode :: ComponentStoryNode2ModifyingStoryNode() : storydiagrams::activities::ModifyingStoryNode
 {
@@ -98,7 +95,7 @@ mapping componentstorydiagram::ComponentStoryNode :: ComponentStoryNode2Modifyin
    		 
 mapping componentstorydiagram::ControllerExchangeNode :: ControllerExchangeNode2ModifyingStoryNode() : storydiagrams::activities::ModifyingStoryNode
 {
-		//TODO how to map the deadline
+		//TODO  map the deadline
     	_name := self._name;
     	_comment := self._comment;
     	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
@@ -156,4 +153,4 @@ mapping storydiagrams::activities::ActivityFinalNode :: ActivityFinalNode2Activi
     	_owningActivityNode := self._owningActivityNode.map StructuredNode2StructuredNode();
     	_incoming := self._incoming.map ActivityEdge2ActivityEdge();
     	_returnValues := self._returnValues.deepclone().oclAsType(Expression);
-   		 }   		 
+   		 }

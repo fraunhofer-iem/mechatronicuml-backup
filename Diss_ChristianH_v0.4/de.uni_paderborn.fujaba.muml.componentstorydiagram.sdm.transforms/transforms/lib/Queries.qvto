@@ -68,8 +68,8 @@ query getPortPartReference(containerClass : EClass) : EReference{
     select(r | r.name = 'portPart')->first();
 }
 
-query getPortInstancesReference() : EReference{
-	return PortConnectorInstance.oclAsType(EClass).eAllReferences->
+query getPortInstancesReference(containerClass : EClass) : EReference{
+	return containerClass.oclAsType(EClass).eAllReferences->
     select(r | r.name = 'portInstances')->first();
 }
 
@@ -81,4 +81,36 @@ query getPortReference(containerClass : EClass) : EReference{
 query getPortTypeReference(containerClass : EClass) : EReference{
 	return containerClass.eAllReferences->
     select(r | r.name = 'portType')->first();
+}
+
+query getSubInteractionEndpointInstancesReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'subInteractionEndpointInstances')->first();
+}
+
+
+query PartVariable :: equalyManyPartVariablesWithOppositeBindingOperatorExist() : Boolean{
+	var container : ComponentVariable = self.container().oclAsType(ComponentVariable);
+	var create := container.partVariables->select(pV | pV.oclAsType(PartVariable).bindingOperator = BindingOperator::CREATE and pV.oclAsType(PartVariable).type=self.type);
+	var destroy := container.partVariables->select(pV | pV.oclAsType(PartVariable).bindingOperator = BindingOperator::DESTROY and pV.oclAsType(PartVariable).type=self.type);
+	return create->size() = destroy->size();
+}
+
+query PortVariable :: equalyManyPortVariablesWithOppositeBindingOperatorExist() : Boolean{
+	assert fatal(self.container().oclIsKindOf(ComponentVariable) or self.container().oclIsKindOf(PartVariable)) with log(""+self.toString()+" is whether contained by a ComponentVariable nor by a PartVariable");
+	var create : Set(ComponentStoryPatternVariable);
+	var destroy : Set(ComponentStoryPatternVariable);
+	
+	if(self.container().oclIsKindOf(ComponentVariable)){
+		var container : ComponentVariable = self.container().oclAsType(ComponentVariable);
+		create := container.portVariables->select(pV | pV.oclAsType(PortVariable).bindingOperator = BindingOperator::CREATE and pV.oclAsType(PortVariable).type=self.type);
+		destroy := container.portVariables->select(pV | pV.oclAsType(PortVariable).bindingOperator = BindingOperator::DESTROY and pV.oclAsType(PortVariable).type=self.type);
+	};
+	if(self.container().oclIsKindOf(PartVariable)){
+		var container : PartVariable = self.container().oclAsType(PartVariable);
+		create := container.portVariables->select(pV | pV.oclAsType(PortVariable).bindingOperator = BindingOperator::CREATE and pV.oclAsType(PortVariable).type=self.type);
+		destroy := container.portVariables->select(pV | pV.oclAsType(PortVariable).bindingOperator = BindingOperator::DESTROY and pV.oclAsType(PortVariable).type=self.type);
+	};
+	
+	return create->size() = destroy->size();
 }
