@@ -55,7 +55,43 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		return null;
+		switch (eClass.getClassifierID()) {
+			case CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE: return createRefinedAtomicComponentInstance();
+			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE: return createRefindedStructuredResourceInstance();
+			case CodegenPackage.COD_GEN_ALLOCATION: return createCodGenAllocation();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RefinedAtomicComponentInstance createRefinedAtomicComponentInstance() {
+		RefinedAtomicComponentInstanceImpl refinedAtomicComponentInstance = new RefinedAtomicComponentInstanceImpl();
+		return refinedAtomicComponentInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RefindedStructuredResourceInstance createRefindedStructuredResourceInstance() {
+		RefindedStructuredResourceInstanceImpl refindedStructuredResourceInstance = new RefindedStructuredResourceInstanceImpl();
+		return refindedStructuredResourceInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CodGenAllocation createCodGenAllocation() {
+		CodGenAllocationImpl codGenAllocation = new CodGenAllocationImpl();
+		return codGenAllocation;
 	}
 
 	/**

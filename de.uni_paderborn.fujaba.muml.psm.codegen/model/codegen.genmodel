@@ -8,23 +8,15 @@
   <foreignModel>codegen.ecore</foreignModel>
   <genPackages prefix="Codegen" basePackage="de.uni_paderborn.fujaba.muml.psm" disposableProviderFactory="true"
       ecorePackage="codegen.ecore#/">
-    <nestedGenPackages prefix="Allocation" basePackage="de.uni_paderborn.fujaba.muml.psm.codegen"
-        disposableProviderFactory="true" ecorePackage="codegen.ecore#//allocation">
-      <genClasses image="false" ecoreClass="codegen.ecore#//allocation/RefinedComponentInstance"/>
-      <genClasses ecoreClass="codegen.ecore#//allocation/RefinedAtomicComponentInstance">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference codegen.ecore#//allocation/RefinedAtomicComponentInstance/allocatedResourceInstance"/>
-      </genClasses>
-      <genClasses ecoreClass="codegen.ecore#//allocation/RefindedStructuredResourceInstance">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference codegen.ecore#//allocation/RefindedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference codegen.ecore#//allocation/RefindedStructuredResourceInstance/allocatedStructuredResourceInstance"/>
-      </genClasses>
-      <genClasses ecoreClass="codegen.ecore#//allocation/CodGenAllocation">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//allocation/CodGenAllocation/allResourceInstances"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//allocation/CodGenAllocation/cic"/>
-      </genClasses>
-    </nestedGenPackages>
+    <genClasses ecoreClass="codegen.ecore#//RefinedAtomicComponentInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codegen.ecore#//RefinedAtomicComponentInstance/allocatedResourceInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="codegen.ecore#//RefindedStructuredResourceInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codegen.ecore#//RefindedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="codegen.ecore#//CodGenAllocation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//CodGenAllocation/hpic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//CodGenAllocation/cic"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

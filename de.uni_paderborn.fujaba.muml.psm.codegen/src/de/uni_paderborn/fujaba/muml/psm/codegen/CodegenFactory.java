@@ -22,6 +22,33 @@ public interface CodegenFactory extends EFactory {
 	CodegenFactory eINSTANCE = de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Refined Atomic Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Refined Atomic Component Instance</em>'.
+	 * @generated
+	 */
+	RefinedAtomicComponentInstance createRefinedAtomicComponentInstance();
+
+	/**
+	 * Returns a new object of class '<em>Refinded Structured Resource Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Refinded Structured Resource Instance</em>'.
+	 * @generated
+	 */
+	RefindedStructuredResourceInstance createRefindedStructuredResourceInstance();
+
+	/**
+	 * Returns a new object of class '<em>Cod Gen Allocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cod Gen Allocation</em>'.
+	 * @generated
+	 */
+	CodGenAllocation createCodGenAllocation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

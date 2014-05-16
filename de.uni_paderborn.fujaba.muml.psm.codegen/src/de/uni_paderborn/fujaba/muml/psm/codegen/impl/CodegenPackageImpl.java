@@ -3,25 +3,19 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
-
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenFactory;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.AllocationPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.codegen.allocation.impl.AllocationPackageImpl;
-
+import de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance;
+import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -36,8 +30,19 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass deleteMeEClass = null;
-
+	private EClass refinedAtomicComponentInstanceEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass refindedStructuredResourceInstanceEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass codGenAllocationEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -91,16 +96,11 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
 
-		// Obtain or create and register interdependencies
-		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
-
 		// Create package meta-data objects
 		theCodegenPackage.createPackageContents();
-		theAllocationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCodegenPackage.initializePackageContents();
-		theAllocationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCodegenPackage.freeze();
@@ -116,8 +116,71 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDeleteMe() {
-		return deleteMeEClass;
+	public EClass getRefinedAtomicComponentInstance() {
+		return refinedAtomicComponentInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRefinedAtomicComponentInstance_AllocatedResourceInstance() {
+		return (EReference)refinedAtomicComponentInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRefindedStructuredResourceInstance() {
+		return refindedStructuredResourceInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances() {
+		return (EReference)refindedStructuredResourceInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance() {
+		return (EReference)refindedStructuredResourceInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCodGenAllocation() {
+		return codGenAllocationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCodGenAllocation_Hpic() {
+		return (EReference)codGenAllocationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCodGenAllocation_Cic() {
+		return (EReference)codGenAllocationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -148,7 +211,16 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		deleteMeEClass = createEClass(DELETE_ME);
+		refinedAtomicComponentInstanceEClass = createEClass(REFINED_ATOMIC_COMPONENT_INSTANCE);
+		createEReference(refinedAtomicComponentInstanceEClass, REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE);
+
+		refindedStructuredResourceInstanceEClass = createEClass(REFINDED_STRUCTURED_RESOURCE_INSTANCE);
+		createEReference(refindedStructuredResourceInstanceEClass, REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES);
+		createEReference(refindedStructuredResourceInstanceEClass, REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE);
+
+		codGenAllocationEClass = createEClass(COD_GEN_ALLOCATION);
+		createEReference(codGenAllocationEClass, COD_GEN_ALLOCATION__HPIC);
+		createEReference(codGenAllocationEClass, COD_GEN_ALLOCATION__CIC);
 	}
 
 	/**
@@ -175,19 +247,29 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		AllocationPackage theAllocationPackage = (AllocationPackage)EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theAllocationPackage);
+		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
+		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
+		HwplatforminstancePackage theHwplatforminstancePackage = (HwplatforminstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		refinedAtomicComponentInstanceEClass.getESuperTypes().add(theInstancePackage.getAtomicComponentInstance());
+		refindedStructuredResourceInstanceEClass.getESuperTypes().add(theHwresourceinstancePackage.getStructuredResourceInstance());
 
 		// Initialize classes, features, and operations; add parameters
-		//initEClass(deleteMeEClass, DeleteMe.class, "DeleteMe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(refinedAtomicComponentInstanceEClass, RefinedAtomicComponentInstance.class, "RefinedAtomicComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRefinedAtomicComponentInstance_AllocatedResourceInstance(), this.getRefindedStructuredResourceInstance(), this.getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances(), "allocatedResourceInstance", null, 1, 1, RefinedAtomicComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(refindedStructuredResourceInstanceEClass, RefindedStructuredResourceInstance.class, "RefindedStructuredResourceInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances(), this.getRefinedAtomicComponentInstance(), this.getRefinedAtomicComponentInstance_AllocatedResourceInstance(), "allocatedAtomicComponentInstances", null, 0, -1, RefindedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "allocatedStructuredResourceInstance", null, 1, 1, RefindedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(codGenAllocationEClass, CodGenAllocation.class, "CodGenAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCodGenAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 0, -1, CodGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCodGenAllocation_Cic(), theInstancePackage.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, CodGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

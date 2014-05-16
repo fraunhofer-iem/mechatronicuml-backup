@@ -2,6 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.util;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
+import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -10,6 +14,8 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,6 +74,42 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	protected CodegenSwitch<Adapter> modelSwitch =
 		new CodegenSwitch<Adapter>() {
 			@Override
+			public Adapter caseRefinedAtomicComponentInstance(RefinedAtomicComponentInstance object) {
+				return createRefinedAtomicComponentInstanceAdapter();
+			}
+			@Override
+			public Adapter caseRefindedStructuredResourceInstance(RefindedStructuredResourceInstance object) {
+				return createRefindedStructuredResourceInstanceAdapter();
+			}
+			@Override
+			public Adapter caseCodGenAllocation(CodGenAllocation object) {
+				return createCodGenAllocationAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseComponentInstance(ComponentInstance object) {
+				return createComponentInstanceAdapter();
+			}
+			@Override
+			public Adapter caseAtomicComponentInstance(AtomicComponentInstance object) {
+				return createAtomicComponentInstanceAdapter();
+			}
+			@Override
+			public Adapter caseResourceInstance(ResourceInstance object) {
+				return createResourceInstanceAdapter();
+			}
+			@Override
+			public Adapter caseStructuredResourceInstance(StructuredResourceInstance object) {
+				return createStructuredResourceInstanceAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -88,16 +130,128 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.DeleteMe <em>Delete Me</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance <em>Refined Atomic Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.DeleteMe
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance
 	 * @generated
 	 */
-	public Adapter createDeleteMeAdapter() {
+	public Adapter createRefinedAtomicComponentInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance <em>Refinded Structured Resource Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance
+	 * @generated
+	 */
+	public Adapter createRefindedStructuredResourceInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation <em>Cod Gen Allocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation
+	 * @generated
+	 */
+	public Adapter createCodGenAllocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.ExtendableElement
+	 * @generated
+	 */
+	public Adapter createExtendableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance <em>Component Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstance
+	 * @generated
+	 */
+	public Adapter createComponentInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance <em>Atomic Component Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance
+	 * @generated
+	 */
+	public Adapter createAtomicComponentInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance <em>Resource Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance
+	 * @generated
+	 */
+	public Adapter createResourceInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance <em>Structured Resource Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance
+	 * @generated
+	 */
+	public Adapter createStructuredResourceInstanceAdapter() {
 		return null;
 	}
 
