@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.p
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
@@ -33,12 +34,15 @@ public class CustomMultiPortVariableEditPart extends MultiPortVariableEditPart {
 			updateSinglePortVariableTypes();
 		}
 	}
-	
-	private void updateSinglePortVariableTypes(){
-		MultiPortVariable multiPortVariable = (MultiPortVariable) getNotationView();
-		for (SinglePortVariable singlePortVariable : multiPortVariable.getSubPortVariables()){
-			singlePortVariable.setType(multiPortVariable.getType());
-		}
+
+	private void updateSinglePortVariableTypes() {
+		MultiPortVariable multiPortVariable = (MultiPortVariable) getNotationView()
+				.getElement();
+		if (multiPortVariable != null)
+			for (SinglePortVariable singlePortVariable : multiPortVariable
+					.getSubPortVariables()) {
+				singlePortVariable.setType(multiPortVariable.getType());
+			}
 	}
 
 }
