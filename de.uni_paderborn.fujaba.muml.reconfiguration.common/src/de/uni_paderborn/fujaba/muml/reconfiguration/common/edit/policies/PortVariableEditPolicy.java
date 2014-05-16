@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
 public class PortVariableEditPolicy extends PortTypeEditPolicy {
 	@Override
@@ -26,5 +27,15 @@ public class PortVariableEditPolicy extends PortTypeEditPolicy {
 					.eGet(ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE);
 		}
 		return null;
+	}
+	
+	@Override
+	protected boolean isMulti() {
+		if (getSemanticElement() instanceof SinglePortVariable
+				&& ((SinglePortVariable) getSemanticElement())
+						.getMultiPortVariable() != null)
+			return false;
+		
+		return super.isMulti();
 	}
 }
