@@ -35,9 +35,12 @@ public class CustomMultiPortVariable2EditPart extends
 	}
 	
 	private void updateSinglePortVariableTypes(){
-		MultiPortVariable multiPortVariable = (MultiPortVariable) getNotationView().getElement();
-		for (SinglePortVariable singlePortVariable : multiPortVariable.getSubPortVariables()){
-			singlePortVariable.setType(multiPortVariable.getType());
-		}
+		MultiPortVariable multiPortVariable = (MultiPortVariable) getNotationView()
+				.getElement();
+		if (multiPortVariable != null)
+			for (SinglePortVariable singlePortVariable : multiPortVariable
+					.getSubPortVariables()) {
+				singlePortVariable.setType(multiPortVariable.getType());
+			}
 	}
 }
