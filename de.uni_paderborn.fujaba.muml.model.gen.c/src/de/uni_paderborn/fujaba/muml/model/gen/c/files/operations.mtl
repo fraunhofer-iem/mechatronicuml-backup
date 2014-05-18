@@ -13,6 +13,7 @@
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
 
 [import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
 [**
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
@@ -20,13 +21,11 @@
 [template public generateOperationFiles(root : RootNode, path : String)]
 [for (modelElementCategory : ModelElementCategory | root.categories)]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[let atomics : Sequence(AtomicComponentInstance) = modelElements->at(1).oclAsType(ComponentInstanceConfiguration).eAllContents(AtomicComponentInstance)]
-[let allOperations : Sequence(Operation) = atomics.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)]
-
+[let allOperations : Set(Operation) = modelElements->at(1).oclAsType(ComponentInstanceConfiguration).getAllOperations()]
 [generateOperationHeader(allOperations, path)/]
 [generateOperationClass(allOperations, path)/]
 [/let]
-[/let]
+
 [/if]
 [/for]
 [/template]
@@ -36,7 +35,7 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationHeader(allOperations : Sequence(Operation), path : String)]
+[template public generateOperationHeader(allOperations : Set(Operation), path : String)]
 
 [file (path+'operations/operations.h', false, 'UTF-8')]
 #ifndef OPERATIONS_H_
@@ -56,7 +55,7 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationClass(allOperations : Sequence(Operation), path : String)]
+[template public generateOperationClass(allOperations : Set(Operation), path : String)]
 
 [file (path+'operations/operations.c', false, 'UTF-8')]
 #include "operations.h"

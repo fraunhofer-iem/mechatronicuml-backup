@@ -387,29 +387,7 @@
 	[/let]
 [/for]
 
-[file ('hybridPortImpl.h', false, 'UTF-8')]
-#import "[getFileName(component, true)/]"
-[for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
-	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
-	void write_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value);
-	[hybridPort.dataType.getTypeName()/] read_[hybridPort.getName()/]([component.getClassName()/] *component);
-	[/let]
-[/for]
-[/file]
-[file ('hybridPortImpl.c', false, 'UTF-8')]
-#import "hybridPortImpl.h"
-[for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
-	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
-	//write port
-	void write_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value){
-	
-	}
-	[hybridPort.dataType.getTypeName()/] read_[hybridPort.getName()/]([component.getClassName()/] *component){
-	return [hybridPort.dataType.getDefaultValue()/];
-	}
-	[/let]
-[/for]
-[/file]
+
 [/template]
 
 

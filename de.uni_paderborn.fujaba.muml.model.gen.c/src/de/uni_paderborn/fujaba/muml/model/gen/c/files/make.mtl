@@ -79,9 +79,9 @@ TARGET_SOURCES := \
 		lib/discreteConnectionList.c\
 		lib/event.c \
 		lib/eventQueue.c\
-		lib/ports/discretePort.c\ 
+		lib/ports/discretePort.c\
 		msg/messages.c\
-		operations/operations.c
+		operations/operations.c\
 		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)][for (rtsc:RealtimeStatechart | comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))]		RTSCs/[rtsc.getClassName().toLowerFirst()/].c\

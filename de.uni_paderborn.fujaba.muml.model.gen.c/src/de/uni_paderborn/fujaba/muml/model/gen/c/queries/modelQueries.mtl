@@ -30,6 +30,30 @@
 	rtsc.states->select(state : State | state.initial)->at(1)
 /]
 
+[query public getAllComponentInstances(ci : ComponentInstance) : Set(ComponentInstance) =
+if (ci.oclIsTypeOf(StructuredComponentInstance)) then
+ci->asSet()->union(ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->asSet())
+else
+ci->asSet()
+endif
+/]
+
+[query public getAllComponentInstances(cic : ComponentInstanceConfiguration) : Set(ComponentInstance) =
+cic.componentInstances->union(cic.componentInstances->iterate(iterator : ComponentInstance; returnValue : Set(ComponentInstance) = null | getAllComponentInstances(iterator)))
+/]
+
+[query public getAllOperations(cic : ComponentInstanceConfiguration) : Set(Operation) =
+cic.getAllComponentInstances().eAllContents(AtomicComponentInstance)
+->iterate(iterator : AtomicComponentInstance; returnValue : Set(Operation) = null | 
+getAllOperations(iterator))
+
+/]
+
+[query public getAllOperations(ac : AtomicComponentInstance) : Set(Operation) =
+ac.componentType.oclAsType(AtomicComponent).behavior.eAllContents(Operation)->asSet()
+/]
+
+
 [**
  * @param state
 */]
