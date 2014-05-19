@@ -115,7 +115,7 @@ TASK(Task_initModel){
 		[/if]
 	[/for]
 
-TerminateTask();
+ChainTask(Task_Main);
 }
 
 
@@ -161,7 +161,9 @@ ChainTask(Task_Main);
 [for (modelElementCategory : ModelElementCategory | root.categories)]
 	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
 		[for (comp : Component | modelElementCategory.modelElements.oclAsType(Component))]
+[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.getFileName(true, false)/]"
+[/if]
 		[/for]
 [/if]
 [/for]
@@ -175,8 +177,10 @@ ChainTask(Task_Main);
  */]
 [template public generateTypeFiles(modelElementCategory : ModelElementCategory, path: String)? (key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
 [for (component : Component | modelElementCategory.modelElements.oclAsType(Component))]
+[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 [generate_ComponentHeader(component, path)/]
 [generate_ComponentClass(component, path)/]
+[/if]
 [/for]
 [/template]
 
@@ -187,9 +191,17 @@ ChainTask(Task_Main);
  * @param modelElementCategory
  */]
 [template public generateRTSCFiles(rootNode : RootNode, path : String) ]
-[for (comp: AtomicComponent | rootNode.eAllContents(AtomicComponent))]
-[generate_RTSCHeader(comp, comp.behavior.oclAsType(RealtimeStatechart),path)/]
-[generate_RTSC(comp, comp.behavior.oclAsType(RealtimeStatechart),path)/]
+[for (modelElementCategory : ModelElementCategory | rootNode.categories)]
+	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)]
+		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+		[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+			[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+			[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+		[/let]
+		[/if]
+		[/for]
+	[/if]
 [/for]
 [/template]
 
@@ -202,9 +214,13 @@ ChainTask(Task_Main);
 [template public generateComponentVariables(modelElementCategory : ModelElementCategory) ? (key.matches('de.uni_paderborn.fujaba.muml.instance.category')){
 cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 ]
+[let cic : ComponentInstanceConfiguration = modelElements->at(1).oclAsType(ComponentInstanceConfiguration)]
 [for (cInst : ComponentInstance | cic.eAllContents(ComponentInstance))]
+[if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 	[cInst.getClassName()/] * [cInst.getVariableName()/];
+[/if]
 [/for]
+[/let]
 [/template]
 
 
@@ -213,26 +229,11 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 ]
 [for (cInst : ComponentInstance | cic.componentInstances)]
+[if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 //instantiate components of [cInst.getName()/]
 	[cInst.getVariableName()/] = [getCreateMethodName(cInst)/]();
 	[cInst.configurateInstance()/]
-[comment]
-[if cInst.oclIsKindOf(StructuredComponentInstance)]
-[for (conInst : ConnectorInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.portConnectorInstances)]
-	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).portType)/],
-	[cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).portType)/], [conInst.isBidirectional()/]);
-	
-	DiscreteConnectionList_add([cInst.getVariableName()/],[conInst.getVariableName()/]);
-[/for]
-[for (conInst : ConnectorInstance | cic.portConnectorInstances)]
-	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([conInst.getEmbeddingComponent().getVariableName()/]->[conInst.getSourceComponent().getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).portType)/],
-	[conInst.getEmbeddingComponent().getVariableName()/]->[conInst.getTargetComponent().getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).portType)/], [conInst.isBidirectional()/]);
-
-	DiscreteConnectionList_add([conInst.getEmbeddingComponent().getVariableName()/]->connectorList,[conInst.getVariableName()/]);
-
-[/for]
 [/if]
-[/comment]
 [/for]
 [/template]
 
@@ -245,17 +246,21 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 [template private configurateInstance(cInst : ComponentInstance) ? (oclIsKindOf(StructuredComponentInstance))post(trim())]
 [for (cPart : ComponentPart | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->collect(componentPart)->asSet())]
 	[for (partInstance : ComponentInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->select(componentPart = cPart))]
+		[if ((partInstance.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (partInstance.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 		//instantiate components of [cInst.getName()/]
 		[partInstance.getVariableName()/] = [partInstance.getCreateMethodName()/]();
 		[getAddMethodName(cInst.componentType, partInstance.componentPart)/]([cInst.getVariableName()/], [partInstance.getVariableName()/]);
 		[configurateInstance(partInstance)/]
+		[/if]
 	[/for]
 [/for]
 [if cInst.oclIsKindOf(StructuredComponentInstance)]
 [for (conInst : ConnectorInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.portConnectorInstances)]
+	[if (conInst.connectorEndpointInstances->at(1).type.oclIsKindOf(DiscretePort))]
 	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([getVariablePath(conInst.getSourcePort())/],[getVariablePath(conInst.getTargetPort())/], [conInst.isBidirectional()/]);
 
 	DiscreteConnectionList_add([cInst.getVariableName()/]->connectorList,[conInst.getVariableName()/]);
+	[/if]
 [/for]
 [/if]
 

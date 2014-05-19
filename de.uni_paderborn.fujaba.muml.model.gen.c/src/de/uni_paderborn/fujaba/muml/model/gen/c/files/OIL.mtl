@@ -75,38 +75,11 @@ CPU ATMEL_AT91SAM7S256
       STACKSIZE = 512;
     };
 
-[comment generate task declarations for dynamic generated tasks/]
-[for (ci : ComponentInstance | aRootNode.eAllContents(ComponentInstance))]
-	[generateOSEKTask(ci)/]
-[/for]
+[comment @TODO generate task declarations for dynamic generated tasks/]
+
 };
 
 
-/* Definition of OSEK Alarm Counter */
-  COUNTER SysTimerCnt
-  {
-    MINCYCLE = 1;
-    MAXALLOWEDVALUE = 10000;
-    TICKSPERBASE = 1; /* One tick is equal to 1msec */ 
-  };
-
-
-
-
- ALARM Task_Main_Alarm
-  {
-    COUNTER = SysTimerCnt;
-    ACTION = ACTIVATETASK
-    {
-      TASK = Task_Main;
-    };
-    AUTOSTART = TRUE
-    {
-      ALARMTIME = 2;
-      CYCLETIME = 100;
-      APPMODE = appmode1;
-    };
-  };
 /* ----- End Of File ----- */
 [/file]
 [/template]

@@ -29,7 +29,7 @@
 [comment]
 possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
 [/comment]
-[let targetPlatform : String = 'C']
+[let targetPlatform : String = 'nxtOSEK']
 
 
 
