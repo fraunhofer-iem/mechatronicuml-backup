@@ -60,6 +60,7 @@ public class CommunicationProtocolItemProvider
 			addIsTimeTriggeredPropertyDescriptor(object);
 			addIsEventTriggeredPropertyDescriptor(object);
 			addFurtherInformationPropertyDescriptor(object);
+			addIsNetworkingProtocolPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -131,6 +132,28 @@ public class CommunicationProtocolItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Networking Protocol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsNetworkingProtocolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationProtocol_isNetworkingProtocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationProtocol_isNetworkingProtocol_feature", "_UI_CommunicationProtocol_type"),
+				 HwresourcePackage.Literals.COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,6 +182,7 @@ public class CommunicationProtocolItemProvider
 			case HwresourcePackage.COMMUNICATION_PROTOCOL__IS_TIME_TRIGGERED:
 			case HwresourcePackage.COMMUNICATION_PROTOCOL__IS_EVENT_TRIGGERED:
 			case HwresourcePackage.COMMUNICATION_PROTOCOL__FURTHER_INFORMATION:
+			case HwresourcePackage.COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

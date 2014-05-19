@@ -353,6 +353,15 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getHWPortInstance_IsNetworkInterface() {
+		return (EAttribute)hwPortInstanceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDelegationInstance() {
 		return delegationInstanceEClass;
 	}
@@ -572,6 +581,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		createEReference(hwPortInstanceEClass, HW_PORT_INSTANCE__CONNECTED_MEDIA_INSTANCES);
 		createEReference(hwPortInstanceEClass, HW_PORT_INSTANCE__PROTOCOL);
 		createEAttribute(hwPortInstanceEClass, HW_PORT_INSTANCE__PORT_KIND);
+		createEAttribute(hwPortInstanceEClass, HW_PORT_INSTANCE__IS_NETWORK_INTERFACE);
 
 		delegationInstanceEClass = createEClass(DELEGATION_INSTANCE);
 
@@ -673,6 +683,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		initEReference(getHWPortInstance_ConnectedMediaInstances(), this.getCommunicationMediaInstance(), null, "connectedMediaInstances", null, 0, -1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortInstance_Protocol(), theHwresourcePackage.getCommunicationProtocol(), null, "protocol", null, 1, 1, HWPortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHWPortInstance_PortKind(), theHwresourcePackage.getHWPortKind(), "portKind", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHWPortInstance_IsNetworkInterface(), ecorePackage.getEBoolean(), "isNetworkInterface", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(delegationInstanceEClass, DelegationInstance.class, "DelegationInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -727,7 +738,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																					
+		   });																						
 		addAnnotation
 		  (delegationInstanceEClass, 
 		   source, 
@@ -773,6 +784,12 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.hwPortType.oclIsUndefined()) then\n hwresource::HWPortKind::BUS\nelse\n self.hwPortType.portKind\nendif\n"
+		   });		
+		addAnnotation
+		  (getHWPortInstance_IsNetworkInterface(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if (self.protocol.oclIsUndefined()) then\n\tfalse\nelse self.protocol.isNetworkingProtocol\nendif"
 		   });				
 		addAnnotation
 		  (delegationInstanceEClass, 

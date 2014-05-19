@@ -689,6 +689,15 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCommunicationProtocol_IsNetworkingProtocol() {
+		return (EAttribute)communicationProtocolEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBusProtocol() {
 		return busProtocolEClass;
 	}
@@ -1029,6 +1038,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		createEAttribute(communicationProtocolEClass, COMMUNICATION_PROTOCOL__IS_TIME_TRIGGERED);
 		createEAttribute(communicationProtocolEClass, COMMUNICATION_PROTOCOL__IS_EVENT_TRIGGERED);
 		createEAttribute(communicationProtocolEClass, COMMUNICATION_PROTOCOL__FURTHER_INFORMATION);
+		createEAttribute(communicationProtocolEClass, COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL);
 
 		busProtocolEClass = createEClass(BUS_PROTOCOL);
 		createEAttribute(busProtocolEClass, BUS_PROTOCOL__BUS_PROTOCOL);
@@ -1172,6 +1182,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		initEAttribute(getCommunicationProtocol_IsTimeTriggered(), ecorePackage.getEBoolean(), "isTimeTriggered", "false", 1, 1, CommunicationProtocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationProtocol_IsEventTriggered(), ecorePackage.getEBoolean(), "isEventTriggered", "false", 1, 1, CommunicationProtocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationProtocol_FurtherInformation(), ecorePackage.getEString(), "furtherInformation", null, 0, 1, CommunicationProtocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationProtocol_IsNetworkingProtocol(), ecorePackage.getEBoolean(), "isNetworkingProtocol", "true", 1, 1, CommunicationProtocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(busProtocolEClass, BusProtocol.class, "BusProtocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBusProtocol_BusProtocol(), this.getBusProtocolKind(), "busProtocol", null, 1, 1, BusProtocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1304,7 +1315,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueProtocolName"
-		   });																												
+		   });																													
 		addAnnotation
 		  (busEClass, 
 		   source, 
@@ -1345,7 +1356,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		   source, 
 		   new String[] {
 			 "UniqueProtocolName", "self.protocols->isUnique(name)"
-		   });																					
+		   });																						
 		addAnnotation
 		  (getCommunicationResource_PortKind(), 
 		   source, 

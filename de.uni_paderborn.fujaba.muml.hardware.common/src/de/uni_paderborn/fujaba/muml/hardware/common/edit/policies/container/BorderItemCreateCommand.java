@@ -62,18 +62,6 @@ public class BorderItemCreateCommand extends CreateCommand {
 			Point diff=location.translate(containerBounds.getTopLeft().getNegated());
 			newBounds.setX(diff.x);
 			newBounds.setY(diff.y);
-			int position=getPosition(containerBounds, location,containerBounds.width/2-10,containerBounds.height/2-10);
-			if(position==PositionConstants.WEST){
-				newBounds.setX(containerWestX);
-			}
-			
-			else if(position==PositionConstants.EAST){
-				newBounds.setX(containerEastX);
-			}
-			else if(position==PositionConstants.NORTH){
-				newBounds.setY(containerNorthY);
-			}
-			
 			
 			shape.setLayoutConstraint(newBounds);
 			

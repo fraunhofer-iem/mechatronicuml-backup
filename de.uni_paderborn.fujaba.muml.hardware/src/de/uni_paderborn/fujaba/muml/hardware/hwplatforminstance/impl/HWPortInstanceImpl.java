@@ -50,6 +50,7 @@ import org.storydriven.core.CorePackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getConnectedMediaInstances <em>Connected Media Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getPortKind <em>Port Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#isIsNetworkInterface <em>Is Network Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -135,6 +136,16 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PORT_KIND__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__PORT_KIND).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsNetworkInterface() <em>Is Network Interface</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsNetworkInterface()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_NETWORK_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,6 +315,24 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsNetworkInterface() {
+		return (Boolean)IS_NETWORK_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsNetworkInterface(boolean newIsNetworkInterface) {
+		IS_NETWORK_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newIsNetworkInterface);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -353,6 +382,8 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 				return basicGetProtocol();
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				return getPortKind();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
+				return isIsNetworkInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -386,6 +417,9 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				setPortKind((HWPortKind)newValue);
 				return;
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
+				setIsNetworkInterface((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -416,6 +450,9 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				PORT_KIND__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
+				IS_NETWORK_INTERFACE__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -442,6 +479,8 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 				return PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				return PORT_KIND__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
+				return IS_NETWORK_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

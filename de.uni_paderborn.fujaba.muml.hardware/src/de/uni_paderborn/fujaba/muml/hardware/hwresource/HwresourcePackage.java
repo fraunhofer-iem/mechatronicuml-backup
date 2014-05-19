@@ -2945,13 +2945,22 @@ public interface HwresourcePackage extends EPackage {
 	int COMMUNICATION_PROTOCOL__FURTHER_INFORMATION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Is Networking Protocol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Communication Protocol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_PROTOCOL_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COMMUNICATION_PROTOCOL_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3196,6 +3205,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int BUS_PROTOCOL__FURTHER_INFORMATION = COMMUNICATION_PROTOCOL__FURTHER_INFORMATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Networking Protocol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUS_PROTOCOL__IS_NETWORKING_PROTOCOL = COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL;
 
 	/**
 	 * The feature id for the '<em><b>Bus Protocol</b></em>' attribute.
@@ -3467,6 +3485,15 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int LINK_PROTOCOL__FURTHER_INFORMATION = COMMUNICATION_PROTOCOL__FURTHER_INFORMATION;
+
+	/**
+	 * The feature id for the '<em><b>Is Networking Protocol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_PROTOCOL__IS_NETWORKING_PROTOCOL = COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL;
 
 	/**
 	 * The feature id for the '<em><b>Link Protocol</b></em>' attribute.
@@ -5461,6 +5488,17 @@ public interface HwresourcePackage extends EPackage {
 	EAttribute getCommunicationProtocol_FurtherInformation();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsNetworkingProtocol <em>Is Networking Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Networking Protocol</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsNetworkingProtocol()
+	 * @see #getCommunicationProtocol()
+	 * @generated
+	 */
+	EAttribute getCommunicationProtocol_IsNetworkingProtocol();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocol <em>Bus Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6106,6 +6144,14 @@ public interface HwresourcePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMMUNICATION_PROTOCOL__FURTHER_INFORMATION = eINSTANCE.getCommunicationProtocol_FurtherInformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Networking Protocol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL = eINSTANCE.getCommunicationProtocol_IsNetworkingProtocol();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.BusProtocolImpl <em>Bus Protocol</em>}' class.

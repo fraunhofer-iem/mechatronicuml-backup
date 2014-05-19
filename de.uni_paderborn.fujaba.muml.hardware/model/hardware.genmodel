@@ -136,6 +136,7 @@
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPortInstance/connectedMediaInstances"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPortInstance/protocol"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatforminstance/HWPortInstance/portKind"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/DelegationInstance"/>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/BusConnectorInstance">
@@ -278,6 +279,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationProtocol/isTimeTriggered"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationProtocol/isEventTriggered"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationProtocol/furtherInformation"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationProtocol/isNetworkingProtocol"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwresource/BusProtocol">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/BusProtocol/busProtocol"/>

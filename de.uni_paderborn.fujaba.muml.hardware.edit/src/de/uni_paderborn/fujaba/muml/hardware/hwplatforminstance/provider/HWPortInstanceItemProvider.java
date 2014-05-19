@@ -63,6 +63,7 @@ public class HWPortInstanceItemProvider
 			addConnectorInstancesPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
+			addIsNetworkInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -156,6 +157,28 @@ public class HWPortInstanceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Network Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsNetworkInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPortInstance_isNetworkInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortInstance_isNetworkInterface_feature", "_UI_HWPortInstance_type"),
+				 HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns HWPortInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,6 +220,7 @@ public class HWPortInstanceItemProvider
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_MEDIA_INSTANCES:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

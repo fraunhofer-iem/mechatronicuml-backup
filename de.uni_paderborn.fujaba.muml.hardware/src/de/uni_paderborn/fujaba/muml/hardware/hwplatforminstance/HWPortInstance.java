@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getConnectedMediaInstances <em>Connected Media Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind <em>Port Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#isIsNetworkInterface <em>Is Network Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -116,5 +117,32 @@ public interface HWPortInstance extends HWPort, ConnectorEndpointInstance {
 	 * @generated
 	 */
 	void setPortKind(HWPortKind value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Network Interface</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Network Interface</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Network Interface</em>' attribute.
+	 * @see #setIsNetworkInterface(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPortInstance_IsNetworkInterface()
+	 * @model required="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.protocol.oclIsUndefined()) then\n\tfalse\nelse self.protocol.isNetworkingProtocol\nendif'"
+	 * @generated
+	 */
+	boolean isIsNetworkInterface();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#isIsNetworkInterface <em>Is Network Interface</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Network Interface</em>' attribute.
+	 * @see #isIsNetworkInterface()
+	 * @generated
+	 */
+	void setIsNetworkInterface(boolean value);
 
 } // HWPortInstance

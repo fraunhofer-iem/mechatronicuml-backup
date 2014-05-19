@@ -23,6 +23,7 @@ import org.storydriven.core.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolImpl#isIsTimeTriggered <em>Is Time Triggered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolImpl#isIsEventTriggered <em>Is Event Triggered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolImpl#getFurtherInformation <em>Further Information</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolImpl#isIsNetworkingProtocol <em>Is Networking Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,6 +89,26 @@ public abstract class CommunicationProtocolImpl extends NamedElementImpl impleme
 	 * @ordered
 	 */
 	protected String furtherInformation = FURTHER_INFORMATION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsNetworkingProtocol() <em>Is Networking Protocol</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsNetworkingProtocol()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_NETWORKING_PROTOCOL_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isIsNetworkingProtocol() <em>Is Networking Protocol</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsNetworkingProtocol()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isNetworkingProtocol = IS_NETWORKING_PROTOCOL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,6 +197,27 @@ public abstract class CommunicationProtocolImpl extends NamedElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsNetworkingProtocol() {
+		return isNetworkingProtocol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsNetworkingProtocol(boolean newIsNetworkingProtocol) {
+		boolean oldIsNetworkingProtocol = isNetworkingProtocol;
+		isNetworkingProtocol = newIsNetworkingProtocol;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HwresourcePackage.COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL, oldIsNetworkingProtocol, isNetworkingProtocol));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -185,6 +227,8 @@ public abstract class CommunicationProtocolImpl extends NamedElementImpl impleme
 				return isIsEventTriggered();
 			case HwresourcePackage.COMMUNICATION_PROTOCOL__FURTHER_INFORMATION:
 				return getFurtherInformation();
+			case HwresourcePackage.COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL:
+				return isIsNetworkingProtocol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,6 +249,9 @@ public abstract class CommunicationProtocolImpl extends NamedElementImpl impleme
 				return;
 			case HwresourcePackage.COMMUNICATION_PROTOCOL__FURTHER_INFORMATION:
 				setFurtherInformation((String)newValue);
+				return;
+			case HwresourcePackage.COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL:
+				setIsNetworkingProtocol((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,6 +274,9 @@ public abstract class CommunicationProtocolImpl extends NamedElementImpl impleme
 			case HwresourcePackage.COMMUNICATION_PROTOCOL__FURTHER_INFORMATION:
 				setFurtherInformation(FURTHER_INFORMATION_EDEFAULT);
 				return;
+			case HwresourcePackage.COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL:
+				setIsNetworkingProtocol(IS_NETWORKING_PROTOCOL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -245,6 +295,8 @@ public abstract class CommunicationProtocolImpl extends NamedElementImpl impleme
 				return isEventTriggered != IS_EVENT_TRIGGERED_EDEFAULT;
 			case HwresourcePackage.COMMUNICATION_PROTOCOL__FURTHER_INFORMATION:
 				return FURTHER_INFORMATION_EDEFAULT == null ? furtherInformation != null : !FURTHER_INFORMATION_EDEFAULT.equals(furtherInformation);
+			case HwresourcePackage.COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL:
+				return isNetworkingProtocol != IS_NETWORKING_PROTOCOL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -265,6 +317,8 @@ public abstract class CommunicationProtocolImpl extends NamedElementImpl impleme
 		result.append(isEventTriggered);
 		result.append(", furtherInformation: ");
 		result.append(furtherInformation);
+		result.append(", isNetworkingProtocol: ");
+		result.append(isNetworkingProtocol);
 		result.append(')');
 		return result.toString();
 	}

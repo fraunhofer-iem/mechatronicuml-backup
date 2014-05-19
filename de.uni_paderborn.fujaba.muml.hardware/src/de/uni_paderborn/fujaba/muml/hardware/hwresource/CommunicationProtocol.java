@@ -20,6 +20,7 @@ import org.storydriven.core.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsTimeTriggered <em>Is Time Triggered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsEventTriggered <em>Is Event Triggered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getFurtherInformation <em>Further Information</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsNetworkingProtocol <em>Is Networking Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,5 +105,31 @@ public interface CommunicationProtocol extends NamedElement {
 	 * @generated
 	 */
 	void setFurtherInformation(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Networking Protocol</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Used t inidicate wether this Protocol is used for Networking ECUs or for triggering Sensors or Actuators.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Is Networking Protocol</em>' attribute.
+	 * @see #setIsNetworkingProtocol(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationProtocol_IsNetworkingProtocol()
+	 * @model default="true" required="true"
+	 * @generated
+	 */
+	boolean isIsNetworkingProtocol();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsNetworkingProtocol <em>Is Networking Protocol</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Networking Protocol</em>' attribute.
+	 * @see #isIsNetworkingProtocol()
+	 * @generated
+	 */
+	void setIsNetworkingProtocol(boolean value);
 
 } // CommunicationProtocol
