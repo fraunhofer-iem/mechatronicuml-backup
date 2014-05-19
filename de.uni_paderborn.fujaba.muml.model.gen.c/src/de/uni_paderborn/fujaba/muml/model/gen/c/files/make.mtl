@@ -19,7 +19,10 @@
 RTSC = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
 [/if]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-COMP = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
+COMP = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
+[/if]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+HYB = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]hybridPortImplOf[comp.getClassName().toLowerFirst()/].o [/if][/for] 
 [/if][/for]
 LIB = syncChannel.o discreteConnection.o discreteConnectionList.o event.o eventQueue.o discretePort.o messages.o
 
@@ -28,15 +31,15 @@ CFLAGS = -c
 all: app
 [for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.realtimestatechart.category'))]
-app : main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] [if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o[/if]
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] [if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o[/if] -o app
+app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] 
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if]  -o app
 [for (rtsc : RealtimeStatechart | modelElementCategory.modelElements.oclAsType(RealtimeStatechart))]
 [rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,false)/]
 	$(CC) $(CFLAGS) [rtsc.getFileName(false,false)/]
 [/for]
 [/if]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
+[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))]
 [comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,false)/]
 	$(CC) $(CFLAGS) [comp.getFileName(false,false)/]
 [/for]
@@ -59,9 +62,15 @@ messages.o: msg/messages.c
 [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o: operations/operations.c
 	$(CC) $(CFLAGS) operations/operations.c
 [/if]
-[if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o: hybridPortImpl.c
-	$(CC) $(CFLAGS) hybridPortImpl.c
+[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]
+hybridPortImplOf[comp.getClassName().toLowerFirst()/].o: hybridPorts/hybridPortImplOf[comp.getClassName().toLowerFirst()/].c
+	$(CC) $(CFLAGS) hybridPorts/hybridPortImplOf[comp.getClassName().toLowerFirst()/].c
 [/if]
+[/for]
+[/if]
+[/for]
 
 clean:
 	rm -rf *o app

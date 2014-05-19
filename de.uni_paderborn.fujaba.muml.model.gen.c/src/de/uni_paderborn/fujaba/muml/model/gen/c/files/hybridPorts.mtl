@@ -22,8 +22,9 @@
 
 [for (component : Component | cic.getAllComponentInstances().componentType)]
 [if ((component.eAllContents(HybridPort)->size()>0) and component.oclIsKindOf(AtomicComponent) and (component.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
-[file ('hybridPorts/hybridPortImplof'+component.getName()+'.h', false, 'UTF-8')]
-#import "[getFileName(component, true)/]"
+[file ('hybridPorts/hybridPortImplof'+component.getClassName()+'.h', false, 'UTF-8')]
+#include "../[getFileName(component, true)/]"
+#include "../lib/types.h"
 [for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
 	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
 	void write_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value);
@@ -37,15 +38,22 @@
 [for (component : Component | cic.getAllComponentInstances().componentType)]
 [if ((component.eAllContents(HybridPort)->size()>0) and component.oclIsKindOf(AtomicComponent) and (component.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
 
-[file ('hybridPorts/hybridPortImplof'+component.getName()+'.c', false, 'UTF-8')]
-#import "hybridPortImpl.h"
+[file ('hybridPorts/hybridPortImplof'+component.getClassName()+'.c', false, 'UTF-8')]
+#include "hybridPortImplof[component.getClassName()/].h"
 [for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
 	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
 	//write port
 	void write_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value){
+/** [protected ('implementation of write_'+hybridPort.getName()+' **/')] 
+
+/**[/protected]**/
 	
 	}
 	[hybridPort.dataType.getTypeName()/] read_[hybridPort.getName()/]([component.getClassName()/] *component){
+/** [protected ('implementation of read_'+hybridPort.getName()+' **/')] 
+
+/**[/protected]**/
+
 	return [hybridPort.dataType.getDefaultValue()/];
 	}
 	[/let]

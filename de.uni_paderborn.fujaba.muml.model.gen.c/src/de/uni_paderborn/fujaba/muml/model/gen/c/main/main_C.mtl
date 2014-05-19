@@ -120,7 +120,9 @@ while (1){
 [for (modelElementCategory : ModelElementCategory | root.categories)]
 	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 		[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
+		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.getFileName(true, false)/]"
+		[/if]
 		[/for]
 	[/if]
 [/for]
