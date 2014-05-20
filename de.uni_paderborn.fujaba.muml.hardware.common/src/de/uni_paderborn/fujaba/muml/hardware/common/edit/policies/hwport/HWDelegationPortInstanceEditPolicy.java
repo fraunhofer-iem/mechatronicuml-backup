@@ -72,7 +72,7 @@ public class HWDelegationPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 					.isSuperTypeOf(element.eClass())) {
 				hwPortInstance = (DelegationHWPortInstance) element;
 			}
-			if (hwPortInstance != null
+			if (hwPortInstance != null && hwPortInstance.getType() != null
 					&& HwplatformPackage.Literals.DELEGATION_HW_PORT
 							.isSuperTypeOf(hwPortInstance.getType().eClass())) {
 				modelPortKind = ((DelegationHWPort) hwPortInstance.getType())
