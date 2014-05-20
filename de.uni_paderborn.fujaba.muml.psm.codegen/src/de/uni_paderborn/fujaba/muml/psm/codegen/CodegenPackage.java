@@ -611,7 +611,7 @@ public interface CodegenPackage extends EPackage {
 	int COD_GEN_ALLOCATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Hpic</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Hpic</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -711,10 +711,10 @@ public interface CodegenPackage extends EPackage {
 	EClass getCodGenAllocation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation#getHpic <em>Hpic</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation#getHpic <em>Hpic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Hpic</em>'.
+	 * @return the meta object for the containment reference '<em>Hpic</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation#getHpic()
 	 * @see #getCodGenAllocation()
 	 * @generated
@@ -804,7 +804,7 @@ public interface CodegenPackage extends EPackage {
 		 */
 		EClass COD_GEN_ALLOCATION = eINSTANCE.getCodGenAllocation();
 		/**
-		 * The meta object literal for the '<em><b>Hpic</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Hpic</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

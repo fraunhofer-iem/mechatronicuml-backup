@@ -3,27 +3,15 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
-
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,14 +29,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CodGenAllocationImpl extends MinimalEObjectImpl.Container implements CodGenAllocation {
 	/**
-	 * The cached value of the '{@link #getHpic() <em>Hpic</em>}' containment reference list.
+	 * The cached value of the '{@link #getHpic() <em>Hpic</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHpic()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<HWPlatformInstanceConfiguration> hpic;
+	protected HWPlatformInstanceConfiguration hpic;
 
 	/**
 	 * The cached value of the '{@link #getCic() <em>Cic</em>}' containment reference.
@@ -84,11 +72,42 @@ public class CodGenAllocationImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<HWPlatformInstanceConfiguration> getHpic() {
-		if (hpic == null) {
-			hpic = new EObjectContainmentEList<HWPlatformInstanceConfiguration>(HWPlatformInstanceConfiguration.class, this, CodegenPackage.COD_GEN_ALLOCATION__HPIC);
-		}
+	public HWPlatformInstanceConfiguration getHpic() {
 		return hpic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHpic(HWPlatformInstanceConfiguration newHpic, NotificationChain msgs) {
+		HWPlatformInstanceConfiguration oldHpic = hpic;
+		hpic = newHpic;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CodegenPackage.COD_GEN_ALLOCATION__HPIC, oldHpic, newHpic);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHpic(HWPlatformInstanceConfiguration newHpic) {
+		if (newHpic != hpic) {
+			NotificationChain msgs = null;
+			if (hpic != null)
+				msgs = ((InternalEObject)hpic).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CodegenPackage.COD_GEN_ALLOCATION__HPIC, null, msgs);
+			if (newHpic != null)
+				msgs = ((InternalEObject)newHpic).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CodegenPackage.COD_GEN_ALLOCATION__HPIC, null, msgs);
+			msgs = basicSetHpic(newHpic, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CodegenPackage.COD_GEN_ALLOCATION__HPIC, newHpic, newHpic));
 	}
 
 	/**
@@ -143,7 +162,7 @@ public class CodGenAllocationImpl extends MinimalEObjectImpl.Container implement
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CodegenPackage.COD_GEN_ALLOCATION__HPIC:
-				return ((InternalEList<?>)getHpic()).basicRemove(otherEnd, msgs);
+				return basicSetHpic(null, msgs);
 			case CodegenPackage.COD_GEN_ALLOCATION__CIC:
 				return basicSetCic(null, msgs);
 		}
@@ -176,8 +195,7 @@ public class CodGenAllocationImpl extends MinimalEObjectImpl.Container implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CodegenPackage.COD_GEN_ALLOCATION__HPIC:
-				getHpic().clear();
-				getHpic().addAll((Collection<? extends HWPlatformInstanceConfiguration>)newValue);
+				setHpic((HWPlatformInstanceConfiguration)newValue);
 				return;
 			case CodegenPackage.COD_GEN_ALLOCATION__CIC:
 				setCic((ComponentInstanceConfiguration)newValue);
@@ -195,7 +213,7 @@ public class CodGenAllocationImpl extends MinimalEObjectImpl.Container implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CodegenPackage.COD_GEN_ALLOCATION__HPIC:
-				getHpic().clear();
+				setHpic((HWPlatformInstanceConfiguration)null);
 				return;
 			case CodegenPackage.COD_GEN_ALLOCATION__CIC:
 				setCic((ComponentInstanceConfiguration)null);
@@ -213,7 +231,7 @@ public class CodGenAllocationImpl extends MinimalEObjectImpl.Container implement
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CodegenPackage.COD_GEN_ALLOCATION__HPIC:
-				return hpic != null && !hpic.isEmpty();
+				return hpic != null;
 			case CodegenPackage.COD_GEN_ALLOCATION__CIC:
 				return cic != null;
 		}
