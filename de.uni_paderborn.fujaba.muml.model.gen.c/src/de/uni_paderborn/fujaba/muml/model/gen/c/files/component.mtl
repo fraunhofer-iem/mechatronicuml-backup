@@ -331,11 +331,11 @@
 		}
 	[/if]
 	[if component.oclIsKindOf(AtomicComponent)]
-		[for (hPort : HybridPort | component.eAllContents(HybridPort))]
+		[for (hPort : HybridPort | component.eAllContents(HybridPort)) ? (hPort.inPort)]
 			component->stateChart->[hPort.getVariableName()/] = read_[hPort.getName()/](component);
 		[/for]
 		[getProcessMethodName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/](component->stateChart);
-		[for (hPort : HybridPort | component.eAllContents(HybridPort))]
+		[for (hPort : HybridPort | component.eAllContents(HybridPort))? (hPort.outPort)]
 			write_[hPort.getName()/](component,component->stateChart->[hPort.getVariableName()/]);
 		[/for]
 	[/if]
