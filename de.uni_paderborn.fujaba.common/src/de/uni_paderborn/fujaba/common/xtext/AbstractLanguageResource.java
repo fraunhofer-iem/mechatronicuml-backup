@@ -25,7 +25,7 @@ import com.google.inject.name.Names;
  * It provides methods for parsing text and serializing
  * model objects.
  */
-public abstract class AbstractLanguageResource {
+public abstract class AbstractLanguageResource implements ILanguageResource {
 	
 	protected static class LoadResult implements ILoadResult {
 		
@@ -94,12 +94,6 @@ public abstract class AbstractLanguageResource {
 		return resource;
 	}
 	
-	/**
-	 * Parses a text
-	 * @param text the text
-	 * @param object the context object
-	 * @return the parsed model
-	 */
 	public ILoadResult loadFromString(String text, EObject object) {
 		Resource resource = getXtextResource(object);
 		LoadResult result = new LoadResult();
@@ -125,12 +119,6 @@ public abstract class AbstractLanguageResource {
 	 */
 	protected abstract boolean isSerializable(EObject object);
 
-	/**
-	 * Serializes the passed object.
-	 * @param object the object that should be serialized
-	 * @param container the context (which usually contains the object)
-	 * @return the serialized string
-	 */
 	public String serializeEObject(EObject object, EObject container) {
 		if (!isSerializable(object)) {
 			return null;
