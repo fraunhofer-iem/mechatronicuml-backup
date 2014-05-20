@@ -23,7 +23,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CodGenAllocation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hpic" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cic" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration"
         containment="true"/>
