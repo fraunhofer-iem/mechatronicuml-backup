@@ -61,9 +61,9 @@ def install(eclipseFile, distro_name, destination, configFile, platform):
     print(str(configFile)+" sucessfully installed")
 
 
-def createEclipseDistribution(eclipseFile, distro_name, destination, dir_ConfigFiles):
+def createEclipseDistribution(eclipseFile, distro_name, destination, dir_ConfigFiles, platforms=P2_PLATFORM_OPTS):
     configFiles = sorted([f for f in os.listdir(dir_ConfigFiles) if f.endswith(".conf")])
-    for platform in P2_PLATFORM_OPTS:
+    for platform in platforms:
         print("Create Eclipse Distribtuon {0} for {1}".format(distro_name, platform))
         for f in configFiles:
             install(eclipseFile, distro_name, destination, dir_ConfigFiles + os.sep + f, platform)
@@ -79,7 +79,11 @@ if __name__ == '__main__':
     parser.add_argument("distributionName", help="Name of the new Distribution in \" \" ")
     parser.add_argument("destinationDir", help="The Directory in which the new Distributions shall be created")
     parser.add_argument("configDir", help="Directory of the *.conf files")
+    parser.add_argument("--platform", help="For which platform the distribution shall be build: linux, linux32, windows, windows32, macosx", nargs='*')
     options = parser.parse_args()
-    createEclipseDistribution(os.path.abspath(options.eclipeFileLocation), re.escape(options.distributionName), os.path.abspath(options.destinationDir), os.path.abspath(options.configDir))
+    if options.platform:
+        createEclipseDistribution(os.path.abspath(options.eclipeFileLocation), re.escape(options.distributionName), os.path.abspath(options.destinationDir), os.path.abspath(options.configDir), options.platform)
+    else:
+        createEclipseDistribution(os.path.abspath(options.eclipeFileLocation), re.escape(options.distributionName), os.path.abspath(options.destinationDir), os.path.abspath(options.configDir))
     exit(1)
     
