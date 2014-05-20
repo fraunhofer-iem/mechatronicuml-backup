@@ -676,7 +676,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 
 		initEClass(hwPlatformInstanceConfigurationEClass, HWPlatformInstanceConfiguration.class, "HWPlatformInstanceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatformInstanceConfiguration_HwplatformInstances(), this.getHWPlatformInstance(), null, "hwplatformInstances", null, 0, -1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPlatformInstanceConfiguration_NetworkingHardwareInstances(), theHwplatformPackage.getNetworkingHardwarePart(), null, "networkingHardwareInstances", null, 0, -1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatformInstanceConfiguration_NetworkingHardwareInstances(), this.getNetworkingHardwareInstance(), null, "networkingHardwareInstances", null, 0, -1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPortInstanceEClass, HWPortInstance.class, "HWPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPortInstance_HwPortType(), theHwresourcePackage.getCommunicationResource(), null, "hwPortType", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

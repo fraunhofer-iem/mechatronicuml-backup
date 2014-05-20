@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
@@ -157,27 +156,27 @@ public class HWPlatformInstanceConfigurationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatformFactory.eINSTANCE.createDelegation()));
+				 HwplatforminstanceFactory.eINSTANCE.createDelegationInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatformFactory.eINSTANCE.createBusConnector()));
+				 HwplatforminstanceFactory.eINSTANCE.createBusConnectorInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatformFactory.eINSTANCE.createBusPart()));
+				 HwplatforminstanceFactory.eINSTANCE.createBusInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatformFactory.eINSTANCE.createLinkPart()));
+				 HwplatforminstanceFactory.eINSTANCE.createLinkInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatformFactory.eINSTANCE.createBridgePart()));
+				 HwplatforminstanceFactory.eINSTANCE.createBridgeInstance()));
 	}
 
 	/**

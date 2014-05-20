@@ -2,10 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.core.NamedElement;
 
 /**
@@ -49,7 +46,7 @@ public interface HWPlatformInstanceConfiguration extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Networking Hardware Instances</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkingHardwareInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -61,6 +58,6 @@ public interface HWPlatformInstanceConfiguration extends NamedElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<NetworkingHardwarePart> getNetworkingHardwareInstances();
+	EList<NetworkingHardwareInstance> getNetworkingHardwareInstances();
 
 } // HWPlatformInstanceConfiguration

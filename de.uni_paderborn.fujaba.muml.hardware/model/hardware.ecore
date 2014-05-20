@@ -495,7 +495,8 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="networkingHardwareInstances"
-          upperBound="-1" eType="#//hwplatform/NetworkingHardwarePart" containment="true">
+          upperBound="-1" eType="#//hwplatforminstance/NetworkingHardwareInstance"
+          containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The CommunicationMedia of this HWPlatformInstanceConfiguration. &#xA;The CommunicationMedia are used to connect different HWPlatformInstances via their Bridges or HWPortInstances."/>
         </eAnnotations>

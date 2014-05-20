@@ -2,24 +2,17 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkingHardwareInstance;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.impl.NamedElementImpl;
 
 /**
@@ -55,7 +48,7 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<NetworkingHardwarePart> networkingHardwareInstances;
+	protected EList<NetworkingHardwareInstance> networkingHardwareInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,9 +86,9 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<NetworkingHardwarePart> getNetworkingHardwareInstances() {
+	public EList<NetworkingHardwareInstance> getNetworkingHardwareInstances() {
 		if (networkingHardwareInstances == null) {
-			networkingHardwareInstances = new EObjectContainmentEList<NetworkingHardwarePart>(NetworkingHardwarePart.class, this, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES);
+			networkingHardwareInstances = new EObjectContainmentEList<NetworkingHardwareInstance>(NetworkingHardwareInstance.class, this, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES);
 		}
 		return networkingHardwareInstances;
 	}
@@ -147,7 +140,7 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 				return;
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES:
 				getNetworkingHardwareInstances().clear();
-				getNetworkingHardwareInstances().addAll((Collection<? extends NetworkingHardwarePart>)newValue);
+				getNetworkingHardwareInstances().addAll((Collection<? extends NetworkingHardwareInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
