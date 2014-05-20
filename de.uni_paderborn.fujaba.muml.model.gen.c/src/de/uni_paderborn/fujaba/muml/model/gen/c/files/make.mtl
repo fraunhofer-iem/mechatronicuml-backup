@@ -66,7 +66,7 @@ messages.o: msg/messages.c
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]
 hybridPortImplOf[comp.getClassName().toLowerFirst()/].o: hybridPorts/hybridPortImplOf[comp.getClassName().toLowerFirst()/].c
-	$(CC) $(CFLAGS) hybridPorts/hybridPortImplOf[comp.getClassName().toLowerFirst()/].c
+	$(CC) $(CFLAGS) hybridPorts/hybridPortImplOf[comp.getClassName()/].c
 [/if]
 [/for]
 [/if]
@@ -91,7 +91,7 @@ TARGET_SOURCES := \
 		lib/ports/discretePort.c\
 		msg/messages.c\
 		operations/operations.c\
-		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)][if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))][for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]		hybridPorts/hybridPortImplOf[comp.getClassName().toLowerFirst()/].c\
+		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)][if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))][for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]		hybridPorts/hybridPortImplOf[comp.getClassName()/].c\
 [/if][/for][/if][/for]
 		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)][if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))]		RTSCs/[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].c\
@@ -107,6 +107,6 @@ BUILD_MODE = ROM_ONLY
 
 O_PATH ?= build
 
-include ../ecrobot/ecrobot.mak
+include ../../ecrobot/ecrobot.mak
 [/file]
 [/template]

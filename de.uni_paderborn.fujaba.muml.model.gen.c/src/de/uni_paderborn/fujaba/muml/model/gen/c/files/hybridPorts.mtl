@@ -22,7 +22,7 @@
 
 [for (component : Component | cic.getAllComponentInstances().componentType)]
 [if ((component.eAllContents(HybridPort)->size()>0) and component.oclIsKindOf(AtomicComponent) and (component.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
-[file ('hybridPorts/hybridPortImplof'+component.getClassName()+'.h', false, 'UTF-8')]
+[file ('hybridPorts/hybridPortImplOf'+component.getClassName()+'.h', false, 'UTF-8')]
 #include "../[getFileName(component, true)/]"
 #include "../lib/types.h"
 [for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
@@ -38,8 +38,8 @@
 [for (component : Component | cic.getAllComponentInstances().componentType)]
 [if ((component.eAllContents(HybridPort)->size()>0) and component.oclIsKindOf(AtomicComponent) and (component.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
 
-[file ('hybridPorts/hybridPortImplof'+component.getClassName()+'.c', false, 'UTF-8')]
-#include "hybridPortImplof[component.getClassName()/].h"
+[file ('hybridPorts/hybridPortImplOf'+component.getClassName()+'.c', false, 'UTF-8')]
+#include "hybridPortImplOf[component.getClassName()/].h"
 [for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
 	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
 	//write port

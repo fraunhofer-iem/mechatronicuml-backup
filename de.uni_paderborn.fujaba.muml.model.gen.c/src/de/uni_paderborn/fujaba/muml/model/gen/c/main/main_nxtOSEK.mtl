@@ -36,7 +36,6 @@
 
 
 [for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-
 [comment create files for every component type/]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 [generateTypeFiles(modelElementCategory, '')/]
@@ -68,15 +67,16 @@
 
 [comment declaration of tasks for OSEK/]
 //declare used OSEK tasks and counter
-DeclareCounter(SysTimerCnt);
 DeclareTask(Task_Main);
 DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
+[comment]
 [for (ci : ComponentInstance | aRootNode.eAllContents(ComponentInstance))]
 	[if ci.oclIsKindOf(AtomicComponentInstance)]
 DeclareTask([ci.getTaskName()/]);
 	[/if]
 [/for]
+[/comment]
 
 [comment create variable for every used component instance/]
 //variables for component instances
@@ -112,8 +112,10 @@ TASK(Task_initModel){
 	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 			[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
+[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 				[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
-			[/for]
+[/if]		
+	[/for]
 		[/if]
 	[/for]
 
@@ -129,7 +131,9 @@ TASK(Task_Main){
 	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 	[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
+[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 		[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
+[/if]
 	[/for]
 	[/if]
 	[/for]
@@ -177,12 +181,13 @@ ChainTask(Task_Main);
  * (if modelElementCategory is 'components'
  * @param modelElementCategory
  */]
-[template public generateTypeFiles(modelElementCategory : ModelElementCategory, path: String)? (key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-[for (component : Component | modelElementCategory.modelElements.oclAsType(Component))]
+[template public generateTypeFiles(modelElementCategory : ModelElementCategory, path: String)? (key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+[for (component : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
 [if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 [generate_ComponentHeader(component, path)/]
 [generate_ComponentClass(component, path)/]
 [/if]
+
 [/for]
 [/template]
 
