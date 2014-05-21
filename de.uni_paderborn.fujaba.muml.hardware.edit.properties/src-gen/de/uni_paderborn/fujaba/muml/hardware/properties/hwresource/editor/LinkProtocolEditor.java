@@ -24,7 +24,7 @@ public class LinkProtocolEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addLinkProtocolLinkProtocol_GeneralTab_Editor(null, true);
+			addLinkProtocol_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class LinkProtocolEditor
 	/**
 	 * @generated
 	 */
-	protected void addLinkProtocolLinkProtocol_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createLinkProtocolLinkProtocol_GeneralTab_Editor(), front);
+	protected void addLinkProtocol_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createLinkProtocol_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createLinkProtocolLinkProtocol_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getLinkProtocol_LinkProtocol());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createLinkProtocol_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getLinkProtocol_LinkProtocol();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The link protocol type.");
 
@@ -87,7 +87,8 @@ public class LinkProtocolEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

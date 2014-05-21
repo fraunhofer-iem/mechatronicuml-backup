@@ -240,6 +240,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/isNetworkingProtocol"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
       <propertyCategories title="Booleans" properties="//@packages.1/@classes.11/@properties.0 //@packages.1/@classes.11/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>

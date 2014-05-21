@@ -24,15 +24,15 @@ public class ProcessorEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorOwnedCache_GeneralTab_Editor(null, true);
+			addOwnedCache_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorArchitecture_GeneralTab_Editor(null, true);
+			addArchitecture_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorFamily_GeneralTab_Editor(null, true);
+			addFamily_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,20 +40,20 @@ public class ProcessorEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorOwnedCache_GeneralTab_Editor(String category,
+	protected void addOwnedCache_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createProcessorOwnedCache_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createOwnedCache_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorOwnedCache_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getProcessor_OwnedCache());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOwnedCache_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getProcessor_OwnedCache();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The Cache which belongs to this Processor.");
 
@@ -64,20 +64,20 @@ public class ProcessorEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorArchitecture_GeneralTab_Editor(String category,
+	protected void addArchitecture_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createProcessorArchitecture_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createArchitecture_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorArchitecture_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getProcessor_Architecture());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArchitecture_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getProcessor_Architecture();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The architecture of this Processor (i.e. RISC,CISC,..).");
 
@@ -88,20 +88,18 @@ public class ProcessorEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorFamily_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createProcessorFamily_GeneralTab_Editor(), front);
+	protected void addFamily_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createFamily_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorFamily_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getProcessor_Family(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFamily_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getProcessor_Family();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The family of this Processor (i.e. x86, ARM, MIPS,..).");
 

@@ -24,7 +24,7 @@ public class TimeIntervalEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTimeIntervalUnit_GeneralTab_Editor(null, true);
+			addUnit_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,18 @@ public class TimeIntervalEditor
 	/**
 	 * @generated
 	 */
-	protected void addTimeIntervalUnit_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createTimeIntervalUnit_GeneralTab_Editor(), front);
+	protected void addUnit_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createUnit_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeIntervalUnit_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
-						.getTimeInterval_Unit());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createUnit_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
+				.getTimeInterval_Unit();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The unit for this TimeInterval.");
 

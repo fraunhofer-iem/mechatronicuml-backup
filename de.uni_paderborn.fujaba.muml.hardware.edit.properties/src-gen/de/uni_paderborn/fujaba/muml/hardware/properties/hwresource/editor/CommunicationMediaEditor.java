@@ -27,19 +27,19 @@ public abstract class CommunicationMediaEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaDataFrameSize_GeneralTab_Editor(null, false);
+			addDataFrameSize_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaBandwidth_GeneralTab_Editor(null, false);
+			addBandwidth_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaProtocol_GeneralTab_Editor(null, true);
+			addProtocol_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaIsSerial_GeneralTab_Editor(
+			addIsSerial_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -49,21 +49,20 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaDataFrameSize_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationMediaDataFrameSize_GeneralTab_Editor(),
+	protected void addDataFrameSize_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createDataFrameSize_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaDataFrameSize_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getCommunicationMedia_DataFrameSize());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDataFrameSize_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getCommunicationMedia_DataFrameSize();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The size of a data frame.");
 
@@ -74,20 +73,19 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaBandwidth_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationMediaBandwidth_GeneralTab_Editor(), front);
+	protected void addBandwidth_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createBandwidth_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaBandwidth_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getCommunicationMedia_Bandwidth());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBandwidth_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getCommunicationMedia_Bandwidth();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The bandwidth of this CommunicationMedia.");
 
@@ -98,20 +96,18 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaProtocol_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationMediaProtocol_GeneralTab_Editor(), front);
+	protected void addProtocol_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createProtocol_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaProtocol_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getCommunicationMedia_Protocol());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProtocol_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getCommunicationMedia_Protocol();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol.");
 
@@ -122,20 +118,18 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaIsSerial_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationMediaIsSerial_GeneralTab_Editor(), front);
+	protected void addIsSerial_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createIsSerial_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaIsSerial_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getCommunicationMedia_IsSerial());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createIsSerial_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getCommunicationMedia_IsSerial();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Determines if this CommunicationMedia uses a serial communication.");
 

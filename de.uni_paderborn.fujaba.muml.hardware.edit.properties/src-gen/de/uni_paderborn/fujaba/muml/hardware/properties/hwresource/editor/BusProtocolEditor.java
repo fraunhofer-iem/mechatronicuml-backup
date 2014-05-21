@@ -24,7 +24,7 @@ public class BusProtocolEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBusProtocolBusProtocol_GeneralTab_Editor(null, true);
+			addBusProtocol_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class BusProtocolEditor
 	/**
 	 * @generated
 	 */
-	protected void addBusProtocolBusProtocol_GeneralTab_Editor(String category,
+	protected void addBusProtocol_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createBusProtocolBusProtocol_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createBusProtocol_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBusProtocolBusProtocol_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getBusProtocol_BusProtocol());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBusProtocol_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getBusProtocol_BusProtocol();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The bus protocol type.");
 
@@ -87,7 +87,8 @@ public class BusProtocolEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

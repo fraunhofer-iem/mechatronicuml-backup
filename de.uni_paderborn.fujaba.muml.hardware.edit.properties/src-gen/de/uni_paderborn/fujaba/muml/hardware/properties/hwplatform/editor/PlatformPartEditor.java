@@ -24,11 +24,11 @@ public abstract class PlatformPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPlatformPartParentHWPlatform_GeneralTab_Editor(null, true);
+			addParentHWPlatform_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPlatformPartCardinality_GeneralTab_Editor(null, true);
+			addCardinality_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,20 +36,20 @@ public abstract class PlatformPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addPlatformPartParentHWPlatform_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addParentHWPlatform_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createPlatformPartParentHWPlatform_GeneralTab_Editor(), front);
+				createParentHWPlatform_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPlatformPartParentHWPlatform_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-						.getPlatformPart_ParentHWPlatform());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentHWPlatform_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+				.getPlatformPart_ParentHWPlatform();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The HWPlatform, this PlatformPart belongs to.");
 
@@ -60,20 +60,20 @@ public abstract class PlatformPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addPlatformPartCardinality_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createPlatformPartCardinality_GeneralTab_Editor(), front);
+	protected void addCardinality_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCardinality_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPlatformPartCardinality_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-						.getPlatformPart_Cardinality());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinality_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+				.getPlatformPart_Cardinality();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The cardinality of a PlatformPart determines how many instances are allowed to exist in the associated HWPlatformInstance at instance level.");
 

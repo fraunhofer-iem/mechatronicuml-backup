@@ -24,8 +24,7 @@ public abstract class AtomicResourceInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addAtomicResourceInstanceParentStructuredResourceInstance_GeneralTab_Editor(
-					null, true);
+			addParentStructuredResourceInstance_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -33,22 +32,21 @@ public abstract class AtomicResourceInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addAtomicResourceInstanceParentStructuredResourceInstance_GeneralTab_Editor(
+	protected void addParentStructuredResourceInstance_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createAtomicResourceInstanceParentStructuredResourceInstance_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createParentStructuredResourceInstance_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAtomicResourceInstanceParentStructuredResourceInstance_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-						.getAtomicResourceInstance_ParentStructuredResourceInstance());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentStructuredResourceInstance_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+				.getAtomicResourceInstance_ParentStructuredResourceInstance();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The StructuredResourceInstance, this AtomicResourceInstance belongs to.");
 

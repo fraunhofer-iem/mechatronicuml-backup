@@ -27,17 +27,17 @@ public class MemoryResourceEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceMemoryAccess_GeneralTab_Editor(null, true);
+			addMemoryAccess_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceIsVolatile_GeneralTab_Editor(
+			addIsVolatile_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceMemoryType_GeneralTab_Editor(null, true);
+			addMemoryType_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -45,20 +45,20 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceMemoryAccess_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createMemoryResourceMemoryAccess_GeneralTab_Editor(), front);
+	protected void addMemoryAccess_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createMemoryAccess_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryAccess_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getMemoryResource_MemoryAccess());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryAccess_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getMemoryResource_MemoryAccess();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Specifies what kind of access is allowed for this MemoryResource.");
 
@@ -69,20 +69,20 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceIsVolatile_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createMemoryResourceIsVolatile_GeneralTab_Editor(), front);
+	protected void addIsVolatile_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createIsVolatile_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceIsVolatile_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getMemoryResource_IsVolatile());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createIsVolatile_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getMemoryResource_IsVolatile();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Specifies if this MemoryResource is volatile or non-volatile. \nNon-volatile Memory (i.e. ROM) could be used to store the binary code.\nVolatile Memory (i.e SRAM) is used during execution of code.");
 
@@ -93,20 +93,20 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceMemoryType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createMemoryResourceMemoryType_GeneralTab_Editor(), front);
+	protected void addMemoryType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createMemoryType_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getMemoryResource_MemoryType());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getMemoryResource_MemoryType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The type of this MemoryResource.");
 

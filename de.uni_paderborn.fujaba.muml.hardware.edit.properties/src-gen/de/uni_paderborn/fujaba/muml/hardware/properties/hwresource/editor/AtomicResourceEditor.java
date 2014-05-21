@@ -24,8 +24,7 @@ public abstract class AtomicResourceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addAtomicResourceParentStructuredResource_GeneralTab_Editor(null,
-					true);
+			addParentStructuredResource_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -33,22 +32,20 @@ public abstract class AtomicResourceEditor
 	/**
 	 * @generated
 	 */
-	protected void addAtomicResourceParentStructuredResource_GeneralTab_Editor(
+	protected void addParentStructuredResource_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createAtomicResourceParentStructuredResource_GeneralTab_Editor(),
-				front);
+		addEditorToCategory(category,
+				createParentStructuredResource_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAtomicResourceParentStructuredResource_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getAtomicResource_ParentStructuredResource());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentStructuredResource_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getAtomicResource_ParentStructuredResource();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The StructuredResource, this AtomicResource belongs to.");
 

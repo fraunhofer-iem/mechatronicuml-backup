@@ -59,10 +59,6 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 	@Override
 	public Command getCommand(Request request) {
 		
-		if(request instanceof AutoSizeContainerRequest){
-			showSourceFeedback(request);
-		}
-
 		if (RequestConstants.REQ_RESIZE.equals(request.getType())
 				|| RequestConstants.REQ_MOVE.equals(request.getType())) {
 			return resizeContainerCommand(request);
@@ -231,20 +227,6 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 		return boundsCache.get(figure).getCopy();
 	}
 
-	/**
-	 * 
-	 * @param host
-	 * @return FIXME: this shall be removed / seems useless
-	 */
-	private IGraphicalEditPart getContainer(IGraphicalEditPart host) {
-		IGraphicalEditPart containerEditPart = getParentEditPart(host);
-		if (containerEditPart == null) {
-			containerEditPart = getParentEditPart(host);
-			if (containerEditPart == null)
-				return null;
-		}
-		return containerEditPart;
-	}
 
 	private boolean isVerticalAffected(Rectangle newBounds, Point moveDelta,
 			Rectangle bounds) {
@@ -277,7 +259,7 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 		figure.getParent().setConstraint(figure, bounds);
 	}
 
-	// here i think i have to calculate the resizing
+	// here i have to calculate the resizing
 	@SuppressWarnings({ "unchecked" })
 	private Rectangle calculateFeedbackBounds(ChangeBoundsRequest request,
 			Rectangle feedbackBounds, int level, IFigure containerFigure) {
@@ -293,7 +275,7 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 			Dimension preferredSize = containerFigure.getPreferredSize()
 					.getCopy();
 			editPart.getFigure().translateToAbsolute(preferredSize);
-
+/*deactivated automatical minimizing of container
 			if (request.getSizeDelta().height() < 0
 					|| request.getSizeDelta().width < 0
 					|| request.getMoveDelta().x < 0
@@ -330,20 +312,13 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 
 				result.setSize(max);
 
-			} else {
+			} else { */
 				result.union(transformedRect);
 				// FIXME:REMOVE DEBUG output
 				System.out.println("else teil");
 				Dimension max = Dimension.max(result.getSize(), preferredSize);
 
 				result.setSize(max);
-			}
-			/*
-			 * if (result.x < feedbackBounds.x || result.y < feedbackBounds.y) {
-			 * return feedbackBounds;
-			 * 
-			 * }
-			 */
 		}
 		return result;
 	}

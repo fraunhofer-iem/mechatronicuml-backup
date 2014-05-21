@@ -24,8 +24,7 @@ public class DelegationHWPortInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDelegationHWPortInstanceParentHWPlatformInstance_GeneralTab_Editor(
-					null, true);
+			addParentHWPlatformInstance_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -33,22 +32,20 @@ public class DelegationHWPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addDelegationHWPortInstanceParentHWPlatformInstance_GeneralTab_Editor(
+	protected void addParentHWPlatformInstance_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDelegationHWPortInstanceParentHWPlatformInstance_GeneralTab_Editor(),
-				front);
+		addEditorToCategory(category,
+				createParentHWPlatformInstance_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDelegationHWPortInstanceParentHWPlatformInstance_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-						.getDelegationHWPortInstance_ParentHWPlatformInstance());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentHWPlatformInstance_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
+				.getDelegationHWPortInstance_ParentHWPlatformInstance();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

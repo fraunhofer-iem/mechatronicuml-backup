@@ -24,15 +24,15 @@ public class ProcessorInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorInstanceMIPS_GeneralTab_Editor(null, true);
+			addMIPS_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorInstanceCPI_GeneralTab_Editor(null, true);
+			addCPI_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorInstanceOwnedCacheInstance_GeneralTab_Editor(null, true);
+			addOwnedCacheInstance_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,20 +40,18 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorInstanceMIPS_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createProcessorInstanceMIPS_GeneralTab_Editor(), front);
+	protected void addMIPS_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createMIPS_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceMIPS_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-						.getProcessorInstance_MIPS(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMIPS_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+				.getProcessorInstance_MIPS();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The MIPS-Rate (Million instructions per second) of this ProcessorInstance.");
 
@@ -64,20 +62,18 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorInstanceCPI_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createProcessorInstanceCPI_GeneralTab_Editor(), front);
+	protected void addCPI_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createCPI_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceCPI_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-						.getProcessorInstance_CPI(), false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCPI_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+				.getProcessorInstance_CPI();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("The average count of cycles per instruction (CPI) of this ProcessorInstance.");
 
@@ -88,21 +84,20 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorInstanceOwnedCacheInstance_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addOwnedCacheInstance_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createProcessorInstanceOwnedCacheInstance_GeneralTab_Editor(),
-				front);
+				createOwnedCacheInstance_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceOwnedCacheInstance_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-						.getProcessorInstance_OwnedCacheInstance());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOwnedCacheInstance_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+				.getProcessorInstance_OwnedCacheInstance();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The CacheInstance this ProcessorInstance uses.");
 

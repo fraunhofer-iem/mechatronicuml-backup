@@ -24,11 +24,11 @@ public abstract class MemoryResourceInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceInstanceMemorySize_GeneralTab_Editor(null, false);
+			addMemorySize_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceInstanceThroughput_GeneralTab_Editor(null, false);
+			addThroughput_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -36,21 +36,20 @@ public abstract class MemoryResourceInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceInstanceMemorySize_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createMemoryResourceInstanceMemorySize_GeneralTab_Editor(),
+	protected void addMemorySize_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createMemorySize_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceInstanceMemorySize_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-						.getMemoryResourceInstance_MemorySize());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemorySize_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+				.getMemoryResourceInstance_MemorySize();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The total size of  memory this instances provides.");
 
@@ -61,21 +60,20 @@ public abstract class MemoryResourceInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceInstanceThroughput_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createMemoryResourceInstanceThroughput_GeneralTab_Editor(),
+	protected void addThroughput_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createThroughput_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceInstanceThroughput_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-						.getMemoryResourceInstance_Throughput());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createThroughput_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+				.getMemoryResourceInstance_Throughput();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The maximum speed at which the memory can be read.");
 

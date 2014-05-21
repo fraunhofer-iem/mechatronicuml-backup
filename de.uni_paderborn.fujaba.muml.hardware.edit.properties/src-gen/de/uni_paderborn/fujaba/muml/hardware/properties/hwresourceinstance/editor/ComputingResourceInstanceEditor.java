@@ -24,7 +24,7 @@ public abstract class ComputingResourceInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComputingResourceInstanceFrequency_GeneralTab_Editor(null, false);
+			addFrequency_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -32,21 +32,19 @@ public abstract class ComputingResourceInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComputingResourceInstanceFrequency_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComputingResourceInstanceFrequency_GeneralTab_Editor(),
+	protected void addFrequency_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createFrequency_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComputingResourceInstanceFrequency_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-						.getComputingResourceInstance_Frequency());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFrequency_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+				.getComputingResourceInstance_Frequency();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The frequency or clock rate of this ComputingResource.");
 

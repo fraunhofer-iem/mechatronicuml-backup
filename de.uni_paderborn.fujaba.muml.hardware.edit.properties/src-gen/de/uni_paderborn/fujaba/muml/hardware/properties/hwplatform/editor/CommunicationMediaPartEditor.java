@@ -24,8 +24,7 @@ public abstract class CommunicationMediaPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaPartCommunicationMedia_GeneralTab_Editor(null,
-					true);
+			addCommunicationMedia_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -33,22 +32,20 @@ public abstract class CommunicationMediaPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaPartCommunicationMedia_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createCommunicationMediaPartCommunicationMedia_GeneralTab_Editor(),
-				front);
+	protected void addCommunicationMedia_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createCommunicationMedia_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaPartCommunicationMedia_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-						.getCommunicationMediaPart_CommunicationMedia());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMedia_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+				.getCommunicationMediaPart_CommunicationMedia();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

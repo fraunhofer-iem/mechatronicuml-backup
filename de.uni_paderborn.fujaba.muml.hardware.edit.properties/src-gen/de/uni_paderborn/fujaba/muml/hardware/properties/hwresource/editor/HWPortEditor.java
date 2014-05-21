@@ -24,7 +24,7 @@ public abstract class HWPortEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortParentResource_GeneralTab_Editor(null, true);
+			addParentResource_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public abstract class HWPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortParentResource_GeneralTab_Editor(String category,
+	protected void addParentResource_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createHWPortParentResource_GeneralTab_Editor(), front);
+		addEditorToCategory(category, createParentResource_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortParentResource_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-						.getHWPort_ParentResource());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentResource_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+				.getHWPort_ParentResource();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The Resource, this HWPort belongs to.");
 

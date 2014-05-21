@@ -24,16 +24,16 @@ public class HWPortInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorEndpointInstanceConnectorInstances_GeneralTab_Editor(
+			addConnectorInstances_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorEndpointInstanceType_GeneralTab_Editor(null, true);
+			addType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementComment_DocumentationTab_Editor(null, true);
+			addComment_DocumentationTab_Editor(null, true);
 		}
 
 	}
@@ -41,22 +41,20 @@ public class HWPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointInstanceConnectorInstances_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createConnectorEndpointInstanceConnectorInstances_GeneralTab_Editor(),
-				front);
+	protected void addConnectorInstances_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConnectorInstances_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceConnectorInstances_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpointInstance_ConnectorInstances());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstances_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getConnectorEndpointInstance_ConnectorInstances();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The connector instances attached to this endpoint instance.");
 
@@ -67,20 +65,18 @@ public class HWPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointInstanceType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointInstanceType_GeneralTab_Editor(), front);
+	protected void addType_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpointInstance_Type());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getConnectorEndpointInstance_Type();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The connector endpoint that represents the type of this instance.");
 
@@ -91,21 +87,20 @@ public class HWPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementComment_DocumentationTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommentableElementComment_DocumentationTab_Editor(),
+	protected void addComment_DocumentationTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComment_DocumentationTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComment_DocumentationTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+				.getCommentableElement_Comment();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, true);
 
 		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
