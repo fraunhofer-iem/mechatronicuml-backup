@@ -1,6 +1,6 @@
 [module expression('http://www.fujaba.de/muml/behavior/0.4.0',
 				'http://www.storydriven.org/core/0.3.1',
-				http://www.storydriven.org/core/expressions/0.3.1,
+				'http://www.storydriven.org/core/expressions/0.3.1',
 				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
 				'http://www.fujaba.de/muml/msgtype/0.4.0',
 				'http://www.fujaba.de/muml/types/0.4.0',
