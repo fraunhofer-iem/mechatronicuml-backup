@@ -22,7 +22,7 @@ RTSC = [for (comp : Component | modelElementCategory.modelElements.eAllContents(
 COMP = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
 [/if]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-HYB = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]hybridPortImplOf[comp.getClassName().toLowerFirst()/].o [/if][/for] 
+HYB = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]hybridPortImplOf[comp.getClassName()/].o [/if][/for] 
 [/if][/for]
 LIB = syncChannel.o discreteConnection.o discreteConnectionList.o event.o eventQueue.o discretePort.o messages.o
 
@@ -65,7 +65,7 @@ messages.o: msg/messages.c
 [for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]
-hybridPortImplOf[comp.getClassName().toLowerFirst()/].o: hybridPorts/hybridPortImplOf[comp.getClassName().toLowerFirst()/].c
+hybridPortImplOf[comp.getClassName()/].o: hybridPorts/hybridPortImplOf[comp.getClassName()/].c
 	$(CC) $(CFLAGS) hybridPorts/hybridPortImplOf[comp.getClassName()/].c
 [/if]
 [/for]

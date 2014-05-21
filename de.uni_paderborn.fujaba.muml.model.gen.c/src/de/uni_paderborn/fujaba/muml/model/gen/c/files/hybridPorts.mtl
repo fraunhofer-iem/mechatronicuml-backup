@@ -35,8 +35,8 @@
 [/if]
 [/for]
 
-[for (component : Component | cic.getAllComponentInstances().componentType)]
-[if ((component.eAllContents(HybridPort)->size()>0) and component.oclIsKindOf(AtomicComponent) and (component.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
+[for (component : Component | cic.eAllContents(ComponentInstance).componentType)]
+[if ((component.eAllContents(HybridPort)->size()>0) and component.oclIsKindOf(AtomicComponent))]
 
 [file ('hybridPorts/hybridPortImplOf'+component.getClassName()+'.c', false, 'UTF-8')]
 #include "hybridPortImplOf[component.getClassName()/].h"
