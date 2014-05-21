@@ -2,7 +2,7 @@
 <project basedir="." default="compile" name="de.uni_paderborn.fujaba.muml.model.gen.c">
     
     <property name="ECLIPSE_HOME" value="C:/data/Software/eclipse-juno_32_muml"/>
-    <property name="ECLIPSE_WORKSPACE" value="C:/data/muml-testing/ws"/>
+    <property name="ECLIPSE_WORKSPACE" value="../"/>
 
     <property name="SOURCE_FOLDER" value="${basedir}/src/"/>    
     <property name="OUTPUT_FOLDER" value="${basedir}/bin/"/>
