@@ -707,6 +707,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
+		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
 
@@ -722,6 +723,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		delegationConnectorInstanceEClass.getESuperTypes().add(this.getPortConnectorInstance());
 		componentInstanceConfigurationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		componentInstanceConfigurationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		componentInstanceConfigurationEClass.getESuperTypes().add(theConstraintPackage.getVerifiableElement());
 		continuousPortInstanceEClass.getESuperTypes().add(this.getPortInstance());
 		hybridPortInstanceEClass.getESuperTypes().add(this.getPortInstance());
 		discretePortInstanceEClass.getESuperTypes().add(this.getPortInstance());
@@ -900,7 +902,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getAssemblyConnectorInstance_AssemblyConnectorType(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.type.oclAsType(component::AssemblyConnector)"
+			 "derivation", "if  type.oclIsKindOf(muml::component::AssemblyConnector) then\r\n\ttype.oclAsType(muml::component::AssemblyConnector)\r\nelse\r\n\tfalse\r\nendif"
 		   });				
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
@@ -912,7 +914,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getDelegationConnectorInstance_DelegationConnectorType(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.type.oclAsType(component::DelegationConnector)"
+			 "derivation", "if  type.oclIsKindOf(muml::component::DelegationConnector) then\r\n\ttype.oclAsType(muml::component::DelegationConnector)\r\nelse\r\n\tfalse\r\nendif\r\n"
 		   });			
 		addAnnotation
 		  (componentInstanceConfigurationEClass, 

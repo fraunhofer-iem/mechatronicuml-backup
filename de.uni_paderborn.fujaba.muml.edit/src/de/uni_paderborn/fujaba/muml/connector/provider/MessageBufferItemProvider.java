@@ -21,7 +21,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.provider.CommentableElementItemProvider;
+import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDe
  * @generated
  */
 public class MessageBufferItemProvider
-	extends CommentableElementItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -67,6 +67,7 @@ public class MessageBufferItemProvider
 			addBufferSizePropertyDescriptor(object);
 			addMessageTypePropertyDescriptor(object);
 			addDiscreteInteractionEndpointPropertyDescriptor(object);
+			addBufferOverflowAvoidanceStrategyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -148,6 +149,28 @@ public class MessageBufferItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Buffer Overflow Avoidance Strategy feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBufferOverflowAvoidanceStrategyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageBuffer_bufferOverflowAvoidanceStrategy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageBuffer_bufferOverflowAvoidanceStrategy_feature", "_UI_MessageBuffer_type"),
+				 ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -196,7 +219,7 @@ public class MessageBufferItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MessageBuffer)object).getComment();
+		String label = ((MessageBuffer)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_MessageBuffer_type") :
 			getString("_UI_MessageBuffer_type") + " " + label;
@@ -214,6 +237,9 @@ public class MessageBufferItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MessageBuffer.class)) {
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

@@ -10,6 +10,8 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component Instance Configuration</b></em>'.
@@ -34,7 +36,7 @@ import org.storydriven.core.NamedElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentInstanceNames'"
  * @generated
  */
-public interface ComponentInstanceConfiguration extends NamedElement, CommentableElement {
+public interface ComponentInstanceConfiguration extends NamedElement, CommentableElement, VerifiableElement {
 	/**
 	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance}.

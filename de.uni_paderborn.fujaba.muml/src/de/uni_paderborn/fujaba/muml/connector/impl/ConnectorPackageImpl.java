@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.connector.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -19,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl;
+import de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
@@ -115,6 +117,13 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * @generated
 	 */
 	private EClass messageBufferEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum bufferOverflowAvoidanceStrategyEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -529,6 +538,24 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMessageBuffer_BufferOverflowAvoidanceStrategy() {
+		return (EAttribute)messageBufferEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getBufferOverflowAvoidanceStrategy() {
+		return bufferOverflowAvoidanceStrategyEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ConnectorFactory getConnectorFactory() {
 		return (ConnectorFactory)getEFactoryInstance();
 	}
@@ -594,6 +621,10 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		createEReference(messageBufferEClass, MESSAGE_BUFFER__BUFFER_SIZE);
 		createEReference(messageBufferEClass, MESSAGE_BUFFER__MESSAGE_TYPE);
 		createEReference(messageBufferEClass, MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT);
+		createEAttribute(messageBufferEClass, MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY);
+
+		// Create enums
+		bufferOverflowAvoidanceStrategyEEnum = createEEnum(BUFFER_OVERFLOW_AVOIDANCE_STRATEGY);
 	}
 
 	/**
@@ -641,7 +672,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		discreteInteractionEndpointInstanceEClass.getESuperTypes().add(this.getConnectorEndpointInstance());
 		discreteSingleInteractionEndpointInstanceEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointInstance());
 		discreteMultiInteractionEndpointInstanceEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointInstance());
-		messageBufferEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		messageBufferEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(connectorEndpointEClass, ConnectorEndpoint.class, "ConnectorEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -686,6 +717,12 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEReference(getMessageBuffer_BufferSize(), theValuetypePackage.getNaturalNumber(), null, "bufferSize", null, 1, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageBuffer_MessageType(), theMsgtypePackage.getMessageType(), null, "messageType", null, 1, -1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageBuffer_DiscreteInteractionEndpoint(), this.getDiscreteInteractionEndpoint(), this.getDiscreteInteractionEndpoint_ReceiverMessageBuffer(), "discreteInteractionEndpoint", null, 1, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageBuffer_BufferOverflowAvoidanceStrategy(), this.getBufferOverflowAvoidanceStrategy(), "bufferOverflowAvoidanceStrategy", "discard incoming message", 1, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.class, "BufferOverflowAvoidanceStrategy");
+		addEEnumLiteral(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.DISCARD_INCOMING_MESSAGE);
+		addEEnumLiteral(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.DISPLACE_OLDEST_MESSAGE_IN_BUFFER);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
@@ -168,6 +169,10 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 				return createConnectorEndpointInstanceAdapter();
 			}
 			@Override
+			public Adapter caseVerifiableElement(VerifiableElement object) {
+				return createVerifiableElementAdapter();
+			}
+			@Override
 			public Adapter caseDiscreteInteractionEndpointInstance(DiscreteInteractionEndpointInstance object) {
 				return createDiscreteInteractionEndpointInstanceAdapter();
 			}
@@ -252,6 +257,20 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectorEndpointInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement <em>Verifiable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerifiableElement
+	 * @generated
+	 */
+	public Adapter createVerifiableElementAdapter() {
 		return null;
 	}
 

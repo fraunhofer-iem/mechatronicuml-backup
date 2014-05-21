@@ -702,7 +702,7 @@
           <details key="documentation" value="The assembly that this assembly instance is built from."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.type.oclAsType(component::AssemblyConnector)"/>
+          <details key="derivation" value="if  type.oclIsKindOf(muml::component::AssemblyConnector) then&#xD;&#xA;&#x9;type.oclAsType(muml::component::AssemblyConnector)&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -723,11 +723,11 @@
           <details key="documentation" value="The delegation type of this delegation instance."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.type.oclAsType(component::DelegationConnector)"/>
+          <details key="derivation" value="if  type.oclIsKindOf(muml::component::DelegationConnector) then&#xD;&#xA;&#x9;type.oclAsType(muml::component::DelegationConnector)&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif&#xD;&#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//constraint/VerifiableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class encapsules represents a configuration. It contains all component instances and connector instances that belong to a concrete configuration."/>
       </eAnnotations>
@@ -2195,7 +2195,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination protocol. Message types are always stored in FIFO order."/>
       </eAnnotations>
@@ -2217,6 +2217,12 @@
           <details key="documentation" value="The role that contains this message buffer."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferOverflowAvoidanceStrategy"
+          lowerBound="1" eType="#//connector/BufferOverflowAvoidanceStrategy" defaultValueLiteral="discard incoming message"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="BufferOverflowAvoidanceStrategy">
+      <eLiterals name="DISCARD_INCOMING_MESSAGE" literal="discard incoming message"/>
+      <eLiterals name="DISPLACE_OLDEST_MESSAGE_IN_BUFFER" value="1" literal="displace oldest message in buffer"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/valuetype/0.4.0"

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
@@ -115,6 +116,8 @@ public class ConnectorValidator extends EObjectValidator {
 				return validateDiscreteMultiInteractionEndpointInstance((DiscreteMultiInteractionEndpointInstance)value, diagnostics, context);
 			case ConnectorPackage.MESSAGE_BUFFER:
 				return validateMessageBuffer((MessageBuffer)value, diagnostics, context);
+			case ConnectorPackage.BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
+				return validateBufferOverflowAvoidanceStrategy((BufferOverflowAvoidanceStrategy)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -273,6 +276,15 @@ public class ConnectorValidator extends EObjectValidator {
 	 */
 	public boolean validateMessageBuffer(MessageBuffer messageBuffer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(messageBuffer, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBufferOverflowAvoidanceStrategy(BufferOverflowAvoidanceStrategy bufferOverflowAvoidanceStrategy, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

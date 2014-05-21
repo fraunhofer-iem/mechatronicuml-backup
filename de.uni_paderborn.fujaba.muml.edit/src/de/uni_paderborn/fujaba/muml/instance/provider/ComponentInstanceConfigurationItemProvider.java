@@ -27,6 +27,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
@@ -174,6 +175,7 @@ public class ComponentInstanceConfigurationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES);
 		}
@@ -234,6 +236,7 @@ public class ComponentInstanceConfigurationItemProvider
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

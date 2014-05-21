@@ -23,6 +23,9 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
@@ -38,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getVerificationConstraintRepositories <em>Verification Constraint Repositories</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getParentPortInstances <em>Parent Port Instances</em>}</li>
@@ -67,6 +71,16 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVerificationConstraintRepositories() <em>Verification Constraint Repositories</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVerificationConstraintRepositories()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<VerificationConstraintRepository> verificationConstraintRepositories;
 
 	/**
 	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference list.
@@ -136,6 +150,18 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 		comment = newComment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<VerificationConstraintRepository> getVerificationConstraintRepositories() {
+		if (verificationConstraintRepositories == null) {
+			verificationConstraintRepositories = new EObjectContainmentEList<VerificationConstraintRepository>(VerificationConstraintRepository.class, this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES);
+		}
+		return verificationConstraintRepositories;
 	}
 
 	/**
@@ -249,6 +275,8 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				return ((InternalEList<?>)getVerificationConstraintRepositories()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return ((InternalEList<?>)getComponentInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
@@ -285,6 +313,8 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
 				return getComment();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				return getVerificationConstraintRepositories();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return getComponentInstances();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
@@ -308,6 +338,10 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
 				setComment((String)newValue);
+				return;
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				getVerificationConstraintRepositories().clear();
+				getVerificationConstraintRepositories().addAll((Collection<? extends VerificationConstraintRepository>)newValue);
 				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				getComponentInstances().clear();
@@ -335,6 +369,9 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				getVerificationConstraintRepositories().clear();
+				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				getComponentInstances().clear();
 				return;
@@ -358,6 +395,8 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				return verificationConstraintRepositories != null && !verificationConstraintRepositories.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return componentInstances != null && !componentInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
@@ -383,6 +422,12 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 				default: return -1;
 			}
 		}
+		if (baseClass == VerifiableElement.class) {
+			switch (derivedFeatureID) {
+				case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES: return ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -396,6 +441,12 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == VerifiableElement.class) {
+			switch (baseFeatureID) {
+				case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES: return InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES;
 				default: return -1;
 			}
 		}

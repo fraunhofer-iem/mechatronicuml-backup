@@ -161,7 +161,7 @@ public class ConnectorSwitch<T> extends Switch<T> {
 			case ConnectorPackage.MESSAGE_BUFFER: {
 				MessageBuffer messageBuffer = (MessageBuffer)theEObject;
 				T result = caseMessageBuffer(messageBuffer);
-				if (result == null) result = caseCommentableElement(messageBuffer);
+				if (result == null) result = caseNamedElement(messageBuffer);
 				if (result == null) result = caseExtendableElement(messageBuffer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

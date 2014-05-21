@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.connector;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
@@ -2209,7 +2210,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int MESSAGE_BUFFER__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -2218,16 +2219,16 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int MESSAGE_BUFFER__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int MESSAGE_BUFFER__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Buffer Size</b></em>' containment reference.
@@ -2236,7 +2237,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__BUFFER_SIZE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int MESSAGE_BUFFER__BUFFER_SIZE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Message Type</b></em>' reference list.
@@ -2245,7 +2246,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__MESSAGE_TYPE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int MESSAGE_BUFFER__MESSAGE_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Discrete Interaction Endpoint</b></em>' container reference.
@@ -2254,7 +2255,16 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Buffer Overflow Avoidance Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Message Buffer</em>' class.
@@ -2263,7 +2273,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2272,7 +2282,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
+	int MESSAGE_BUFFER___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -2281,7 +2291,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
+	int MESSAGE_BUFFER___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -2290,7 +2300,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
+	int MESSAGE_BUFFER___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -2299,7 +2309,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
+	int MESSAGE_BUFFER___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -2308,7 +2318,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
+	int MESSAGE_BUFFER___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -2317,7 +2327,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
+	int MESSAGE_BUFFER___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -2326,7 +2336,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
+	int MESSAGE_BUFFER___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -2335,7 +2345,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
+	int MESSAGE_BUFFER___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -2344,7 +2354,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
+	int MESSAGE_BUFFER___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2353,7 +2363,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int MESSAGE_BUFFER___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2362,7 +2372,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int MESSAGE_BUFFER___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -2371,7 +2381,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int MESSAGE_BUFFER___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -2380,7 +2390,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int MESSAGE_BUFFER___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -2389,7 +2399,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int MESSAGE_BUFFER___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -2398,7 +2408,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int MESSAGE_BUFFER___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -2407,7 +2417,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int MESSAGE_BUFFER___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2416,7 +2426,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int MESSAGE_BUFFER___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2425,7 +2435,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int MESSAGE_BUFFER___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2434,7 +2444,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int MESSAGE_BUFFER___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Message Buffer</em>' class.
@@ -2443,7 +2453,18 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+	int MESSAGE_BUFFER_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy
+	 * @see de.uni_paderborn.fujaba.muml.connector.impl.ConnectorPackageImpl#getBufferOverflowAvoidanceStrategy()
+	 * @generated
+	 */
+	int BUFFER_OVERFLOW_AVOIDANCE_STRATEGY = 9;
 
 
 	/**
@@ -2812,6 +2833,27 @@ public interface ConnectorPackage extends EPackage {
 	EReference getMessageBuffer_DiscreteInteractionEndpoint();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getBufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Buffer Overflow Avoidance Strategy</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getBufferOverflowAvoidanceStrategy()
+	 * @see #getMessageBuffer()
+	 * @generated
+	 */
+	EAttribute getMessageBuffer_BufferOverflowAvoidanceStrategy();
+
+	/**
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Buffer Overflow Avoidance Strategy</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy
+	 * @generated
+	 */
+	EEnum getBufferOverflowAvoidanceStrategy();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3122,6 +3164,24 @@ public interface ConnectorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT = eINSTANCE.getMessageBuffer_DiscreteInteractionEndpoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Buffer Overflow Avoidance Strategy</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY = eINSTANCE.getMessageBuffer_BufferOverflowAvoidanceStrategy();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy
+		 * @see de.uni_paderborn.fujaba.muml.connector.impl.ConnectorPackageImpl#getBufferOverflowAvoidanceStrategy()
+		 * @generated
+		 */
+		EEnum BUFFER_OVERFLOW_AVOIDANCE_STRATEGY = eINSTANCE.getBufferOverflowAvoidanceStrategy();
 
 	}
 

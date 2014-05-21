@@ -150,33 +150,6 @@ public class DiscretePortEditor
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
 
-		{
-			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-					.createOCLExpression("cardinality.upperBound.value > 1",
-							feature, getEClass());
-			editor.registerOCLAdapter(expression,
-					new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-						@Override
-						public void notifyChanged(
-								org.eclipse.emf.common.notify.Notification notification) {
-							editor.updateVisibility(true, true);
-						}
-					});
-			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-					.createQuery(expression);
-			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-				@Override
-				public boolean select(Object object) {
-					return Boolean.TRUE.equals(query.evaluate(object));
-				}
-
-			};
-			if (filter != null) {
-				editor.addVisibilityFilter(filter);
-			}
-		}
-
 		editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart we is obtained by the\nreference roleAndAdaptationBehavior.\nIf this port is a single-port, this reference will be undefined.");
 
 		return editor;

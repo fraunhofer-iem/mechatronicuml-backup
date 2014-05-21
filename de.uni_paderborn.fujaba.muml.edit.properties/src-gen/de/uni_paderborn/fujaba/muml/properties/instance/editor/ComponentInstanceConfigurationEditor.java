@@ -44,6 +44,10 @@ public class ComponentInstanceConfigurationEditor
 			addName_GeneralTab_Editor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addVerificationConstraintRepositories_GeneralTab_Editor(null, true);
+		}
+
 	}
 
 	/**
@@ -141,6 +145,31 @@ public class ComponentInstanceConfigurationEditor
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addVerificationConstraintRepositories_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createVerificationConstraintRepositories_GeneralTab_Editor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVerificationConstraintRepositories_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+				.getVerifiableElement_VerificationConstraintRepositories();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+				adapterFactory, feature);
+
+		editor.setTooltipMessage("The referenced repository that contains verifiable constraints for this element.");
+
+		return editor;
+
+	}
+
 	//
 	// instantiation
 	//
@@ -175,8 +204,8 @@ public class ComponentInstanceConfigurationEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
-					.contains(tab);
+							"property.tab.extensions", "property.tab.general",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

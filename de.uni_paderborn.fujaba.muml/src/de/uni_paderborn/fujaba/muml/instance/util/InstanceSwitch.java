@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
@@ -143,6 +144,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 				T result = caseComponentInstanceConfiguration(componentInstanceConfiguration);
 				if (result == null) result = caseNamedElement(componentInstanceConfiguration);
 				if (result == null) result = caseCommentableElement(componentInstanceConfiguration);
+				if (result == null) result = caseVerifiableElement(componentInstanceConfiguration);
 				if (result == null) result = caseExtendableElement(componentInstanceConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -296,6 +298,21 @@ public class InstanceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnectorEndpointInstance(ConnectorEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Verifiable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Verifiable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVerifiableElement(VerifiableElement object) {
 		return null;
 	}
 

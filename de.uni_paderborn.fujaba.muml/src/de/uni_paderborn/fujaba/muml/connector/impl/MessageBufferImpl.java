@@ -12,8 +12,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.core.impl.CommentableElementImpl;
+import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
@@ -30,12 +31,13 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getDiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getBufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MessageBufferImpl extends CommentableElementImpl implements MessageBuffer {
+public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer {
 	/**
 	 * The cached value of the '{@link #getBufferSize() <em>Buffer Size</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -55,6 +57,26 @@ public class MessageBufferImpl extends CommentableElementImpl implements Message
 	 * @ordered
 	 */
 	protected EList<MessageType> messageType;
+
+	/**
+	 * The default value of the '{@link #getBufferOverflowAvoidanceStrategy() <em>Buffer Overflow Avoidance Strategy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBufferOverflowAvoidanceStrategy()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BufferOverflowAvoidanceStrategy BUFFER_OVERFLOW_AVOIDANCE_STRATEGY_EDEFAULT = BufferOverflowAvoidanceStrategy.DISCARD_INCOMING_MESSAGE;
+
+	/**
+	 * The cached value of the '{@link #getBufferOverflowAvoidanceStrategy() <em>Buffer Overflow Avoidance Strategy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBufferOverflowAvoidanceStrategy()
+	 * @generated
+	 * @ordered
+	 */
+	protected BufferOverflowAvoidanceStrategy bufferOverflowAvoidanceStrategy = BUFFER_OVERFLOW_AVOIDANCE_STRATEGY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,6 +198,27 @@ public class MessageBufferImpl extends CommentableElementImpl implements Message
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BufferOverflowAvoidanceStrategy getBufferOverflowAvoidanceStrategy() {
+		return bufferOverflowAvoidanceStrategy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBufferOverflowAvoidanceStrategy(BufferOverflowAvoidanceStrategy newBufferOverflowAvoidanceStrategy) {
+		BufferOverflowAvoidanceStrategy oldBufferOverflowAvoidanceStrategy = bufferOverflowAvoidanceStrategy;
+		bufferOverflowAvoidanceStrategy = newBufferOverflowAvoidanceStrategy == null ? BUFFER_OVERFLOW_AVOIDANCE_STRATEGY_EDEFAULT : newBufferOverflowAvoidanceStrategy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY, oldBufferOverflowAvoidanceStrategy, bufferOverflowAvoidanceStrategy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -231,6 +274,8 @@ public class MessageBufferImpl extends CommentableElementImpl implements Message
 				return getMessageType();
 			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
 				return getDiscreteInteractionEndpoint();
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
+				return getBufferOverflowAvoidanceStrategy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -254,6 +299,9 @@ public class MessageBufferImpl extends CommentableElementImpl implements Message
 			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
 				setDiscreteInteractionEndpoint((DiscreteInteractionEndpoint)newValue);
 				return;
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
+				setBufferOverflowAvoidanceStrategy((BufferOverflowAvoidanceStrategy)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -275,6 +323,9 @@ public class MessageBufferImpl extends CommentableElementImpl implements Message
 			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
 				setDiscreteInteractionEndpoint((DiscreteInteractionEndpoint)null);
 				return;
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
+				setBufferOverflowAvoidanceStrategy(BUFFER_OVERFLOW_AVOIDANCE_STRATEGY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -293,8 +344,26 @@ public class MessageBufferImpl extends CommentableElementImpl implements Message
 				return messageType != null && !messageType.isEmpty();
 			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
 				return getDiscreteInteractionEndpoint() != null;
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
+				return bufferOverflowAvoidanceStrategy != BUFFER_OVERFLOW_AVOIDANCE_STRATEGY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (bufferOverflowAvoidanceStrategy: ");
+		result.append(bufferOverflowAvoidanceStrategy);
+		result.append(')');
+		return result.toString();
 	}
 
 } //MessageBufferImpl
