@@ -97,30 +97,5 @@
             bundle="/de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>
-    <tools
-        xsi:type="gmftool:ToolGroup"
-        title="Coordination Protocol"
-        description=""
-        collapsible="true"
-        active="//@palette/@tools.3/@tools.0">
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Coordination Protocol Part"
-          description="Create new Coordination Protocol Part">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/CoordinationProtocol.gif"
-            bundle="/de.uni_paderborn.fujaba.muml.common"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Refinement"
-          description="Create new Refinement">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/Refinement.gif"
-            bundle="/de.uni_paderborn.fujaba.muml.common"/>
-      </tools>
-    </tools>
   </palette>
 </gmftool:ToolRegistry>

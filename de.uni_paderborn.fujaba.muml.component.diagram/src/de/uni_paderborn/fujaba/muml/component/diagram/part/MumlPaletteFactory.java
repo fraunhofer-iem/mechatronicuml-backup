@@ -24,7 +24,6 @@ public class MumlPaletteFactory {
 		paletteRoot.add(createComponents1Group());
 		paletteRoot.add(createPorts2Group());
 		paletteRoot.add(createConnectors3Group());
-		paletteRoot.add(createCoordinationProtocol4Group());
 	}
 
 	/**
@@ -67,21 +66,6 @@ public class MumlPaletteFactory {
 				.setDescription(de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Connectors3Group_desc);
 		paletteContainer.add(createAssembly1CreationTool());
 		paletteContainer.add(createDelegation2CreationTool());
-		return paletteContainer;
-	}
-
-	/**
-	 * Creates "Coordination Protocol" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createCoordinationProtocol4Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.CoordinationProtocol4Group_title);
-		paletteContainer.setId("createCoordinationProtocol4Group"); //$NON-NLS-1$
-		paletteContainer
-				.setDescription(de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.CoordinationProtocol4Group_desc);
-		paletteContainer.add(createCoordinationProtocolPart1CreationTool());
-		paletteContainer.add(createRefinement2CreationTool());
 		return paletteContainer;
 	}
 
@@ -209,38 +193,6 @@ public class MumlPaletteFactory {
 		entry.setId("createDelegation2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createCoordinationProtocolPart1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.CoordinationProtocolPart1CreationTool_title,
-				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.CoordinationProtocolPart1CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolPart_3016));
-		entry.setId("createCoordinationProtocolPart1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createRefinement2CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Refinement2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Refinement2CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolPart_4004));
-		entry.setId("createRefinement2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Refinement.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

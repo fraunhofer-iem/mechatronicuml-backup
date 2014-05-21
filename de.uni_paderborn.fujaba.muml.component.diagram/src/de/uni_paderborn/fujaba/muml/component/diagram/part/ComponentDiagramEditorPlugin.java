@@ -154,6 +154,7 @@ public class ComponentDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
+		factories.add(new EcoreItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);
