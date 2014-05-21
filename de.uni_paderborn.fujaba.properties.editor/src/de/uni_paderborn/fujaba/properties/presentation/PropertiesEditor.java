@@ -1082,7 +1082,7 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 						public void doubleClick(DoubleClickEvent event) {
 							if (event.getSelection() instanceof IStructuredSelection) {
 								Object selectedElement = ((IStructuredSelection)event.getSelection()).getFirstElement();
-								if (selectedElement != null) {
+								if (selectedElement != null && selectedElement instanceof EObject) {
 									RuntimePlugin.showEditElementDialog(adapterFactory, (EObject) selectedElement);
 								}
 							}

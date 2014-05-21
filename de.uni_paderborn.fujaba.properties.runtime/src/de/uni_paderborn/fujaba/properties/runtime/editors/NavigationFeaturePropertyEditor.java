@@ -56,7 +56,7 @@ public class NavigationFeaturePropertyEditor extends
 	
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
-		this(adapterFactory, feature, false, null);
+		this(adapterFactory, feature, false);
 	}
 
 	public void setCreationFilters(List<ICreationFilter> filters) {
