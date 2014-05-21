@@ -21,8 +21,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
+import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance} object.
@@ -63,6 +66,16 @@ public class DelegationConnectorInstanceItemProvider
 		}
 		return itemPropertyDescriptors;
 	}
+	
+	@Override
+	protected boolean isValidConnectorType(PortConnector value,
+			PortConnectorInstance instance) {
+		if (value instanceof DelegationConnector && instance instanceof DelegationConnectorInstance) {
+			return true;
+		}
+		return false;
+	}
+
 
 	/**
 	 * This adds a property descriptor for the Delegation Connector Type feature.
