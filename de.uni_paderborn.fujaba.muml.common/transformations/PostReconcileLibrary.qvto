@@ -20,7 +20,24 @@ mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginNam
 	
 	//Set the Custom Preferenc Pages
 	self.diagram.preferencePages->map GenCustomPreferencePage(self);
-	
+	self.diagram.compartments->map addEnlargeCompoartmentEditPolicy();
+}
+
+
+mapping in GenCompartment::addEnlargeCompoartmentEditPolicy(){
+	if(not self.listLayout) then {
+		self.childNodes->map addEnlargeCompartmentEditPolicy();
+	}endif;
+}
+
+mapping inout GenChildNode::addEnlargeCompartmentEditPolicy(){
+	var enlargeCompartmentBehavior : CustomBehaviour;
+	if(self.behaviour[CustomBehaviour]->select(behavior|behavior.key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE")->isEmpty()) then{
+		enlargeCompartmentBehavior:=new CustomBehaviour();
+		enlargeCompartmentBehavior.key:="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE";
+		enlargeCompartmentBehavior.editPolicyQualifiedClassName:="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy";
+		self.behaviour+=enlargeCompartmentBehavior;
+	}endif;
 }
 
 mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginName:String,providerFraunhofer:Boolean) {

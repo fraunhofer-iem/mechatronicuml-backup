@@ -18,5 +18,7 @@ public interface EditPolicyRoles {
 	public static final String ERROR_FEEDBACK_ROLE = "ErrorFeedbackPolicy"; //$NON-NLS-1$
 
 	public static final String CONNECTION_POINT_VISUALIZATION_ROLE = "ConnectionPointVisualizationRole"; //$NON-NLS-1$
+	
+	public static final String ENLARGE_COMPARTMENT_ROLE = "EnlargeCompartmentRole";
 
 }
