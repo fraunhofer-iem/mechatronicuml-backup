@@ -72,40 +72,6 @@ public class PortConnectorInstanceItemProvider
 		return itemPropertyDescriptors;
 	}
 
-	@Override
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectorInstance_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorInstance_type_feature", "_UI_ConnectorInstance_type"),
-				 ConnectorPackage.Literals.CONNECTOR_INSTANCE__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				PortConnectorInstance instance = (PortConnectorInstance) object;
-				List<PortConnector> connectors = new ArrayList<PortConnector>();
-				for (Object value : super.getChoiceOfValues(object)) {
-					if (value instanceof PortConnector && isValidConnectorType((PortConnector) value, instance)) {
-						connectors.add((PortConnector) value);
-					}
-				}
-				return connectors;
-			}	
-		});
-	}
-	
-	protected boolean isValidConnectorType(PortConnector value,
-			PortConnectorInstance instance) {
-		return false;
-	}
-
 	/**
 	 * This adds a property descriptor for the Port Connector Type feature.
 	 * <!-- begin-user-doc -->

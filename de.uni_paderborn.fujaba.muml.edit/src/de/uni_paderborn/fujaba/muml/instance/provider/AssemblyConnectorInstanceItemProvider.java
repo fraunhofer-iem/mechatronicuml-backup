@@ -22,10 +22,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
-import de.uni_paderborn.fujaba.muml.component.PortConnector;
+import de.uni_paderborn.fujaba.muml.connector.Connector;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance} object.
@@ -68,8 +68,8 @@ public class AssemblyConnectorInstanceItemProvider
 	}
 	
 	@Override
-	protected boolean isValidConnectorType(PortConnector value,
-			PortConnectorInstance instance) {
+	protected boolean isValidConnectorType(Connector value,
+			ConnectorInstance instance) {
 		if (value instanceof AssemblyConnector && instance instanceof AssemblyConnectorInstance) {
 			return true;
 		}

@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.connector.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,9 +21,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 
+import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 
@@ -71,11 +75,11 @@ public class ConnectorInstanceItemProvider
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ConnectorInstance_type_feature"),
@@ -86,7 +90,24 @@ public class ConnectorInstanceItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				ConnectorInstance instance = (ConnectorInstance) object;
+				List<Connector> connectors = new ArrayList<Connector>();
+				for (Object value : super.getChoiceOfValues(object)) {
+					if (value instanceof Connector && isValidConnectorType((Connector) value, instance)) {
+						connectors.add((Connector) value);
+					}
+				}
+				return connectors;
+			}
+		});
+	}
+	
+	protected boolean isValidConnectorType(Connector value,
+			ConnectorInstance instance) {
+		return false;
 	}
 
 	/**
