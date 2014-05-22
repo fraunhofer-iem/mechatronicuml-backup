@@ -5,8 +5,14 @@ modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
 
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 
-transformation CSD2SDTransform(inout model: modelinstance);
+// For Debugging
+//transformation CSD2SDTransform(inout model: modelinstance);
+
+transformation CSD2SDTransform(in input: csd, out output : sd);
 
 main() {
-	model.objects()[RootNode]->map RootNode2RootNode();
+// For Debugging
+//	model.objects()[RootNode]->map RootNode2RootNode();
+
+input.objects()[storydiagrams::activities::Activity]->map Activity2Activity();
 }

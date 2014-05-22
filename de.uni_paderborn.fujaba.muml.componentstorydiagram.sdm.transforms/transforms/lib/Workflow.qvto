@@ -8,10 +8,10 @@ modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
 modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
 
 modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
-modeltype sdActivities uses 'http://www.storydriven.org/storydiagrams/activities/0.2.1';
+modeltype sdActivities uses storydiagrams::activities('http://www.storydriven.org/storydiagrams/0.2.1');
 modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
 
-modeltype componentInstanceConfiguration uses 'http://www.fujaba.de/muml/instance/0.4.0';
+modeltype componentInstanceConfiguration uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 
 modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
 modeltype storydrivenExpressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
@@ -25,6 +25,8 @@ modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0')
 modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
 modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
+/*
+For Debugging
 mapping inout modelinstance::RootNode :: RootNode2RootNode(){
     	_categories += self._categories.map ModelElementCategory2ModelElementCategory();
    		 }
@@ -35,7 +37,7 @@ mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElement
     	_modelElements := self._modelElements[ComponentStoryRule].activity.map Activity2Activity();
    		 }
    		 
-
+*/
 mapping storydiagrams::activities::Activity :: Activity2Activity() : storydiagrams::activities::Activity{
     	_comment := self._comment;
     	_name := self.container().oclAsType(ComponentStoryRule).signature.name;
