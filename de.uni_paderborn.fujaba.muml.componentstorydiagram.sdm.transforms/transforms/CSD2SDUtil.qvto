@@ -39,7 +39,7 @@ mapping componentstorypattern::ComponentStoryPatternVariable ::createComponentIn
    componentstorypattern::PartVariable ::createAtomicComponentInstance;
 
 mapping componentstorypattern::ComponentVariable :: createStructuredComponentInstance() : ObjectVariable
- when{self.type.eClass() = ReconfigurableStructuredComponent or self.type.eClass() = StaticStructuredComponent}{
+ when{self.type.eClass() = ReconfigurableStructuredComponent.oclAsType(EClass) or self.type.eClass() = StaticStructuredComponent.oclAsType(EClass)}{
  	annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
@@ -50,7 +50,7 @@ mapping componentstorypattern::ComponentVariable :: createStructuredComponentIns
 }
 
 mapping componentstorypattern::ComponentVariable :: createAtomicComponentInstance() : ObjectVariable 
-when {self.type.eClass() = AtomicComponent or self.type.eClass() = ReconfigurableAtomicComponent}{
+when {self.type.eClass() = AtomicComponent.oclAsType(EClass) or self.type.eClass() = ReconfigurableAtomicComponent.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
@@ -61,7 +61,7 @@ when {self.type.eClass() = AtomicComponent or self.type.eClass() = Reconfigurabl
 }
 
 mapping componentstorypattern::PartVariable ::createStructuredComponentInstance() : ObjectVariable
-when {self.type.componentType.eClass() = StaticStructuredComponent or self.type.componentType.eClass() = ReconfigurableStructuredComponent}{
+when {self.type.componentType.eClass() = StaticStructuredComponent.oclAsType(EClass) or self.type.componentType.eClass() = ReconfigurableStructuredComponent.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
@@ -72,7 +72,7 @@ when {self.type.componentType.eClass() = StaticStructuredComponent or self.type.
 }
 
 mapping componentstorypattern::PartVariable ::createAtomicComponentInstance() : ObjectVariable 
-when {self.type.componentType.eClass() = StaticAtomicComponent or self.type.componentType.eClass() = ReconfigurableAtomicComponent}{
+when {self.type.componentType.eClass() = StaticAtomicComponent.oclAsType(EClass) or self.type.componentType.eClass() = ReconfigurableAtomicComponent.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);	
 	name := self.name;
@@ -88,7 +88,7 @@ mapping componentstorypattern::PortVariable :: createPortInstance() : ObjectVari
    componentstorypattern::PortVariable :: createHybridPortInstance;
 
 mapping componentstorypattern::SinglePortVariable :: createDiscreteSinglePortInstance() : ObjectVariable
- when{self.type.eClass() = DiscretePort}{
+ when{self.type.eClass() = DiscretePort.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
@@ -100,7 +100,7 @@ mapping componentstorypattern::SinglePortVariable :: createDiscreteSinglePortIns
 
 
 mapping componentstorypattern::MultiPortVariable:: createDiscreteMultiPortInstance() : ObjectVariable
-when{self.type.eClass() = DiscretePort}
+when{self.type.eClass() = DiscretePort.oclAsType(EClass)}
 {
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
@@ -112,7 +112,7 @@ when{self.type.eClass() = DiscretePort}
 }
 
 mapping componentstorypattern::PortVariable :: createContinousPortInstance() : ObjectVariable
- when{self.type.eClass() = ContinuousPort}{
+ when{self.type.eClass() = ContinuousPort.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
@@ -123,7 +123,7 @@ mapping componentstorypattern::PortVariable :: createContinousPortInstance() : O
 }
 
 mapping componentstorypattern::PortVariable :: createHybridPortInstance() : ObjectVariable
- when{self.type.eClass() = HybridPort}{
+ when{self.type.eClass() = HybridPort.oclAsType(EClass)}{
 	name := self.name;
 	classifier := HybridPortInstance.oclAsType(EClass);
    	_bindingState := self._bindingState;
