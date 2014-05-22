@@ -1,4 +1,4 @@
-library queries;
+library Queries;
 
 modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
 

@@ -1,8 +1,8 @@
+library Workflow;
+
 import CSD2SDUtil;
 import Queries;
 import Patterns;
-
-library CSD2SD();
 
 modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
 modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
@@ -25,9 +25,9 @@ modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0')
 modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
 modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
-/*
-For Debugging
-mapping inout modelinstance::RootNode :: RootNode2RootNode(){
+
+//For Debugging
+/*mapping inout modelinstance::RootNode :: RootNode2RootNode(){
     	_categories += self._categories.map ModelElementCategory2ModelElementCategory();
    		 }
    		 
