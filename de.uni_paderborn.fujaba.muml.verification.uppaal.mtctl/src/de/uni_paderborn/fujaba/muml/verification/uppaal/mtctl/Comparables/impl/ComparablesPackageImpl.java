@@ -282,6 +282,15 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMumlElemExpr_ConnectorEndpointInstance() {
+		return (EReference)mumlElemExprEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTransitionMap() {
 		return transitionMapEClass;
 	}
@@ -352,6 +361,7 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 
 		mumlElemExprEClass = createEClass(MUML_ELEM_EXPR);
 		createEReference(mumlElemExprEClass, MUML_ELEM_EXPR__ELEM);
+		createEReference(mumlElemExprEClass, MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE);
 
 		transitionMapEClass = createEClass(TRANSITION_MAP);
 		createEReference(transitionMapEClass, TRANSITION_MAP__TRANSITION);
@@ -413,6 +423,7 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 
 		initEClass(mumlElemExprEClass, MumlElemExpr.class, "MumlElemExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMumlElemExpr_Elem(), ecorePackage.getEObject(), null, "elem", null, 0, 1, MumlElemExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMumlElemExpr_ConnectorEndpointInstance(), ecorePackage.getEObject(), null, "connectorEndpointInstance", null, 0, 1, MumlElemExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionMapEClass, TransitionMap.class, "TransitionMap", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransitionMap_Transition(), this.getMapExpr(), null, "transition", null, 0, 1, TransitionMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

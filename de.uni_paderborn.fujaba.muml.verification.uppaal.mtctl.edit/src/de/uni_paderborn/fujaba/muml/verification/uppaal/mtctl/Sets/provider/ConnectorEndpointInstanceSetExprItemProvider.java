@@ -1,11 +1,11 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.provider;
+package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.provider;
 
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -15,20 +15,20 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SubstateOfExprItemProvider
-	extends StaticPredicateExprItemProvider {
+public class ConnectorEndpointInstanceSetExprItemProvider
+	extends SetExprItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SubstateOfExprItemProvider(AdapterFactory adapterFactory) {
+	public ConnectorEndpointInstanceSetExprItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,8 +59,7 @@ public class SubstateOfExprItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__SUPERSTATE);
-			childrenFeatures.add(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE);
+			childrenFeatures.add(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT);
 		}
 		return childrenFeatures;
 	}
@@ -79,14 +78,14 @@ public class SubstateOfExprItemProvider
 	}
 
 	/**
-	 * This returns SubstateOfExpr.gif.
+	 * This returns ConnectorEndpointInstanceSetExpr.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SubstateOfExpr"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConnectorEndpointInstanceSetExpr"));
 	}
 
 	/**
@@ -107,8 +106,9 @@ public class SubstateOfExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SubstateOfExpr_type");
+		return getString("_UI_ConnectorEndpointInstanceSetExpr_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -121,9 +121,8 @@ public class SubstateOfExprItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SubstateOfExpr.class)) {
-			case PredicatesPackage.SUBSTATE_OF_EXPR__SUPERSTATE:
-			case PredicatesPackage.SUBSTATE_OF_EXPR__STATE:
+		switch (notification.getFeatureID(ConnectorEndpointInstanceSetExpr.class)) {
+			case SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -143,76 +142,28 @@ public class SubstateOfExprItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__SUPERSTATE,
+				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
 				 ComparablesFactory.eINSTANCE.createBufferMsgCountExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__SUPERSTATE,
+				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
 				 ComparablesFactory.eINSTANCE.createConstExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__SUPERSTATE,
+				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
 				 ComparablesFactory.eINSTANCE.createMumlElemExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__SUPERSTATE,
+				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
 				 ComparablesFactory.eINSTANCE.createSourceStateExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__SUPERSTATE,
+				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
 				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE,
-				 ComparablesFactory.eINSTANCE.createBufferMsgCountExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE,
-				 ComparablesFactory.eINSTANCE.createConstExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE,
-				 ComparablesFactory.eINSTANCE.createMumlElemExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE,
-				 ComparablesFactory.eINSTANCE.createSourceStateExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE,
-				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == PredicatesPackage.Literals.SUBSTATE_OF_EXPR__SUPERSTATE ||
-			childFeature == PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

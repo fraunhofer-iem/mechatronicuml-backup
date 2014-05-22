@@ -27,6 +27,14 @@ enabled="true"
 name="forall">forall(${name}:${Set})</template>
 
 <template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_Instances"
+deleted="false" 
+description="set of instances of some connector endpoint" 
+id="Instances"
+enabled="true" 
+name="Instances">Instances&lt;${ConnectorEndpoint}&gt;</template>
+
+<template autoinsert="true" 
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_exists"
 deleted="false" 
 description="there exists one element in the set for which the expression holds" 

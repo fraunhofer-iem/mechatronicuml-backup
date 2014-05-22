@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.MumlElemExprImpl#getElem <em>Elem</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.MumlElemExprImpl#getConnectorEndpointInstance <em>Connector Endpoint Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +37,16 @@ public class MumlElemExprImpl extends MapExprImpl implements MumlElemExpr {
 	 * @ordered
 	 */
 	protected EObject elem;
+
+	/**
+	 * The cached value of the '{@link #getConnectorEndpointInstance() <em>Connector Endpoint Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectorEndpointInstance()
+	 * @generated
+	 * @ordered
+	 */
+	protected EObject connectorEndpointInstance;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,12 +110,53 @@ public class MumlElemExprImpl extends MapExprImpl implements MumlElemExpr {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EObject getConnectorEndpointInstance() {
+		if (connectorEndpointInstance != null && connectorEndpointInstance.eIsProxy()) {
+			InternalEObject oldConnectorEndpointInstance = (InternalEObject)connectorEndpointInstance;
+			connectorEndpointInstance = eResolveProxy(oldConnectorEndpointInstance);
+			if (connectorEndpointInstance != oldConnectorEndpointInstance) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComparablesPackage.MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE, oldConnectorEndpointInstance, connectorEndpointInstance));
+			}
+		}
+		return connectorEndpointInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObject basicGetConnectorEndpointInstance() {
+		return connectorEndpointInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConnectorEndpointInstance(EObject newConnectorEndpointInstance) {
+		EObject oldConnectorEndpointInstance = connectorEndpointInstance;
+		connectorEndpointInstance = newConnectorEndpointInstance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComparablesPackage.MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE, oldConnectorEndpointInstance, connectorEndpointInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ComparablesPackage.MUML_ELEM_EXPR__ELEM:
 				if (resolve) return getElem();
 				return basicGetElem();
+			case ComparablesPackage.MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE:
+				if (resolve) return getConnectorEndpointInstance();
+				return basicGetConnectorEndpointInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +171,9 @@ public class MumlElemExprImpl extends MapExprImpl implements MumlElemExpr {
 		switch (featureID) {
 			case ComparablesPackage.MUML_ELEM_EXPR__ELEM:
 				setElem((EObject)newValue);
+				return;
+			case ComparablesPackage.MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE:
+				setConnectorEndpointInstance((EObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,6 +190,9 @@ public class MumlElemExprImpl extends MapExprImpl implements MumlElemExpr {
 			case ComparablesPackage.MUML_ELEM_EXPR__ELEM:
 				setElem((EObject)null);
 				return;
+			case ComparablesPackage.MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE:
+				setConnectorEndpointInstance((EObject)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,6 +207,8 @@ public class MumlElemExprImpl extends MapExprImpl implements MumlElemExpr {
 		switch (featureID) {
 			case ComparablesPackage.MUML_ELEM_EXPR__ELEM:
 				return elem != null;
+			case ComparablesPackage.MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE:
+				return connectorEndpointInstance != null;
 		}
 		return super.eIsSet(featureID);
 	}

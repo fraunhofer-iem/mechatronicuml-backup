@@ -210,6 +210,29 @@ public class SetsItemProviderAdapterFactory extends SetsAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectorEndpointInstanceSetExprItemProvider connectorEndpointInstanceSetExprItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConnectorEndpointInstanceSetExprAdapter() {
+		if (connectorEndpointInstanceSetExprItemProvider == null) {
+			connectorEndpointInstanceSetExprItemProvider = new ConnectorEndpointInstanceSetExprItemProvider(this);
+		}
+
+		return connectorEndpointInstanceSetExprItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -314,6 +337,7 @@ public class SetsItemProviderAdapterFactory extends SetsAdapterFactory implement
 		if (stateSetExprItemProvider != null) stateSetExprItemProvider.dispose();
 		if (transitionSetExprItemProvider != null) transitionSetExprItemProvider.dispose();
 		if (bufferSetExprItemProvider != null) bufferSetExprItemProvider.dispose();
+		if (connectorEndpointInstanceSetExprItemProvider != null) connectorEndpointInstanceSetExprItemProvider.dispose();
 	}
 
 }

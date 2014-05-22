@@ -7,7 +7,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
@@ -18,12 +21,18 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.Source
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TargetStateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DynamicPredicateExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicateExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StaticPredicateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
 
 /**
  * Custom validation rules. 
@@ -32,8 +41,99 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetEx
  */
 public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verification.uppaal.validation.AbstractMtctlJavaValidator {
 
+	private enum Type {NUMERAL, CLOCK_VALUE, BUFFER, STATE, TRANSITION, MESSAGE_TYPE, CONNECTOR_ENDPOINT, CONNECTOR_ENDPOINT_INSTANCE};
+	
+	public Type getType(MapExpr expr) {
+		if (expr == null)
+			return null;
+		
+		if (expr instanceof MumlElemExpr && ((MumlElemExpr) expr).getElem() instanceof BoundVariable) {
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof IntervalSetExpr) 
+				return Type.NUMERAL;
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof TransitionSetExpr)
+				return Type.TRANSITION;
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof ClockSetExpr)
+				return Type.CLOCK_VALUE;
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof StateSetExpr)
+				return Type.STATE;
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof MessageSetExpr)
+				return Type.MESSAGE_TYPE;
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof BufferSetExpr)
+				return Type.BUFFER;
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof ConnectorEndpointInstanceSetExpr)			
+				return Type.CONNECTOR_ENDPOINT_INSTANCE;
+		}
+			
+		if (expr instanceof MumlElemExpr) {
+			EObject elem = ((MumlElemExpr) expr).getElem();
+			if (elem instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.State)
+				return Type.STATE;
+			if (elem instanceof Transition)
+				return Type.TRANSITION;
+			if (elem instanceof Clock)
+				return Type.CLOCK_VALUE;
+			if (elem instanceof Variable)
+				return Type.NUMERAL;
+			if (elem instanceof MessageBuffer)
+				return Type.BUFFER;
+			if (elem instanceof MessageType)
+				return Type.MESSAGE_TYPE;
+			if (elem instanceof ConnectorEndpointInstance)
+				return Type.CONNECTOR_ENDPOINT_INSTANCE;
+			if (elem instanceof ConnectorEndpoint)
+				return Type.CONNECTOR_ENDPOINT;
+		}
+		
+		if (expr instanceof ConstExpr){
+			if (((ConstExpr) expr).getTimeUnit() == null)
+				return Type.NUMERAL;
+			else
+				return Type.CLOCK_VALUE;
+		}
+		
+		if (expr instanceof SourceStateExpr || expr instanceof TargetStateExpr)
+			return Type.STATE;
+				
+		if (expr instanceof BufferMsgCountExpr)
+			return Type.NUMERAL;
+		return null;
+	}
+	
+	/**
+	 * Returns true iff the expression can be evaluated statically to a value
+	 */
+	public boolean isStaticallyEvaluable(MapExpr expr) {
+		if (expr == null)
+			return true;
+		
+		if (expr instanceof MumlElemExpr && ((MumlElemExpr) expr).getElem() instanceof BoundVariable) {
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof ClockSetExpr)
+				return false;
+		}
+			
+		if (expr instanceof MumlElemExpr) {
+			EObject elem = ((MumlElemExpr) expr).getElem();
+			if (elem instanceof Clock)
+				return false;
+			if (elem instanceof Variable)
+				return false;
+		}
+		
+		if (expr instanceof BufferMsgCountExpr)
+			return false;
+		return true;
+	}
+	
 	@Check
-	public void checkTemporallyQuantified(final DynamicPredicateExpr expr) { //Check whether every predicate is bound to a TemporalQuantifier
+	public void checkTemporallyQuantified(final PredicateExpr expr) { //Check whether every predicate is bound to a TemporalQuantifier
+		if (expr instanceof StaticPredicateExpr)
+			return; //in this case, we're fine
+		
+		if (expr instanceof ComparisonExpr) {
+			if (isStaticallyEvaluable(((ComparisonExpr) expr).getLhs()) && isStaticallyEvaluable(((ComparisonExpr) expr).getRhs()))
+				return;
+		}
+			
 		EObject parent = expr;
 		while (parent != null) {
 			if (parent instanceof TemporalQuantifierExpr)
@@ -41,7 +141,7 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 			parent = parent.eContainer();
 		}
 		
-		error(expr.eClass().getName()+" must be bound to a Temporal Quantifier such as \"AG\"", null);
+		error("This "+expr.eClass().getName()+" must be bound to a Temporal Quantifier such as \"AG\"", null);
 	}
 	
 	@Check 
@@ -92,61 +192,34 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 
 	@Check
 	public void checkTypesOfComparables(final ComparisonExpr compExpr) { //make sure that the types of elements in comparisons are compatible
-		int states = 0; // indicates the number of states used in expr, can be 0, 1 or 2
-		int transitions = 0;
-		int clockValues = 0; //clocks or constants
-		int numerals = 0; //variables or constants
-		int buffers = 0;
-		// one of these int variables should reach 2 in valid comparisons
-		
-		for (MapExpr expr : new MapExpr[] {compExpr.getLhs(), compExpr.getRhs()}) {
-			if (expr == null)
-				return;
-			
-			if (expr instanceof MumlElemExpr) {
-				EObject elem = ((MumlElemExpr) expr).getElem();
-				if (elem instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.State)
-					states++;
-				if (elem instanceof Transition)
-					transitions++;
-				if (elem instanceof Clock)
-					clockValues++;
-				if (elem instanceof Variable)
-					numerals++;
-				if (elem instanceof MessageBuffer)
-					buffers++;
-			}
-			
-			if (expr instanceof ConstExpr){
-				clockValues++;
-				numerals++;
-			}
-			
-			if (expr instanceof SourceStateExpr || expr instanceof TargetStateExpr)
-				states++;
-			
-			if (expr instanceof BufferMsgCountExpr)
-				numerals++;
-		}
-		
-		if (states == 2 || transitions == 2 || clockValues == 2 || numerals == 2 || buffers == 2)
+		if (getType(compExpr.getLhs()) == getType(compExpr.getRhs()))
 			return;
+		if (compExpr.getLhs() instanceof ConstExpr && getType(compExpr.getRhs()) == Type.CLOCK_VALUE 
+				|| getType(compExpr.getLhs()) == Type.CLOCK_VALUE && compExpr.getRhs() instanceof ConstExpr)
+			return; // we can compare clocks with ConstExpr. checkClockComparisonTimeUnits will check existence of the time unit
 		error("You cannot compare objects of these types", null);
 	}
 	
 	@Check
-	public void checkClockComparisonTimeUnits(final ConstExpr expr) { //make sure that every ConstExpr has its TimeUnit set iff it's used in a clock comparison
-		boolean isUsedInClockComparison = false;
+	public void checkClockComparisonTimeUnits(final ConstExpr expr) { //make sure that every ConstExpr has its TimeUnit set iff it's used in a clock value comparison
+		boolean isUsedInClockValueComparison = false;
 		
-		if (expr.eContainer() instanceof ComparisonExpr) { //set isUsedInClockComparison appropriately
+		if (expr.eContainer() instanceof ComparisonExpr) { //set isUsedInClockValueComparison appropriately
 			ComparisonExpr parent = (ComparisonExpr) expr.eContainer();
-			isUsedInClockComparison = (parent.getLhs() instanceof MumlElemExpr && ((MumlElemExpr) parent.getLhs()).getElem() instanceof Clock)
-										|| (parent.getRhs() instanceof MumlElemExpr && ((MumlElemExpr) parent.getRhs()).getElem() instanceof Clock);
+			MapExpr other = parent.getLhs() == expr ? parent.getRhs() : parent.getLhs();
+			isUsedInClockValueComparison = getType(other) == Type.CLOCK_VALUE; 
 		}
 		
-		if (isUsedInClockComparison && (expr.getTimeUnit() == null))
+		if (isUsedInClockValueComparison && (expr.getTimeUnit() == null))
 			error("Time unit missing", null);
-		if (!isUsedInClockComparison && (expr.getTimeUnit() != null))
+		if (!isUsedInClockValueComparison && (expr.getTimeUnit() != null))
 			error("Not expecting time unit", null);
+	}
+	
+	@Check
+	public void checkMumlElemExprInstanceSet(final MumlElemExpr expr) { //checks whether the MumlElemExpr should include a reference to a ConnectorEndpointInstance
+		if (getType(expr) == Type.CONNECTOR_ENDPOINT && expr.getConnectorEndpointInstance() != null ) {
+			error("Connector endpoints should not have a reference to a ConnectorEndpointInstance", null);
+		} //TODO make this more comprehensive. Depends on whether we have 1:n communication, for example. 
 	}
 }

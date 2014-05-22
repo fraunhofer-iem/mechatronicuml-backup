@@ -191,6 +191,10 @@ MessageMapExpr returns mtctl::MapExpr:
 	MumlElemExpr
 ;
 
+ConnectorEndpointMapExpr returns mtctl::MapExpr:
+	MumlElemExpr
+;
+
 BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
 	'bufferMessageCount' '(' buffer=BufferMapExpr ')'
 ;
@@ -204,7 +208,7 @@ TargetStateExpr returns mtctl::TargetStateExpr:
 ;
 
 MumlElemExpr returns mtctl::MumlElemExpr:
-	elem=[ecore::EObject|QualifiedName]
+	elem=[ecore::EObject|QualifiedName] ('[' connectorEndpointInstance=[ecore::EObject|QualifiedName] ']')?
 ;
 
 ConstExpr returns mtctl::ConstExpr:
@@ -217,11 +221,15 @@ TimeUnitExpr returns valuetype::TimeUnit:
 
 //Sets
 SetExpr returns mtctl::SetExpr:
-	IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr} 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr} 'Buffers'
+	ConnectorEndpointInstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr} 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr} 'Buffers'
 ;
 
 IntervalSetExpr returns mtctl::SetExpr:
 	{mtctl::IntervalSetExpr} '[' lowerVal=INT ',' upperVal=INT ']'
+;
+
+ConnectorEndpointInstanceSetExpr returns mtctl::SetExpr:
+	{mtctl::ConnectorEndpointInstanceSetExpr} 'Instances' '<' connectorEndpoint=ConnectorEndpointMapExpr '>'
 ;
 
 //Other necessary definitions

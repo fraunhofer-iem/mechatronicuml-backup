@@ -22,10 +22,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMtctlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_COMMENT", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "';'", "'leadsTo'", "'timeInterval'", "'['", "','", "']'", "'implies'", "'and'", "'or'", "'not'", "'forall'", "'('", "')'", "'exists'", "':'", "'EF'", "'E<>'", "'AF'", "'A<>'", "'EG'", "'E[]'", "'AG'", "'A[]'", "'deadlock'", "'bufferOverflow'", "'true'", "'false'", "'stateActive'", "'substateOf'", "'stateInStatechart'", "'messageInTransit'", "'messageInBuffer'", "'transitionFiring'", "'bufferMessageCount'", "'sourceState'", "'targetState'", "'days'", "'hrs'", "'mins'", "'secs'", "'msecs'", "'\\u00B5secs'", "'nsecs'", "'States'", "'Transitions'", "'MessageTypes'", "'Clocks'", "'Buffers'", "'.'", "'-'", "'=='", "'>'", "'>='", "'<'", "'<='", "'!='"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_COMMENT", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "';'", "'leadsTo'", "'timeInterval'", "'['", "','", "']'", "'implies'", "'and'", "'or'", "'not'", "'forall'", "'('", "')'", "'exists'", "':'", "'EF'", "'E<>'", "'AF'", "'A<>'", "'EG'", "'E[]'", "'AG'", "'A[]'", "'deadlock'", "'bufferOverflow'", "'true'", "'false'", "'stateActive'", "'substateOf'", "'stateInStatechart'", "'messageInTransit'", "'messageInBuffer'", "'transitionFiring'", "'bufferMessageCount'", "'sourceState'", "'targetState'", "'days'", "'hrs'", "'mins'", "'secs'", "'msecs'", "'\\u00B5secs'", "'nsecs'", "'States'", "'Transitions'", "'MessageTypes'", "'Clocks'", "'Buffers'", "'Instances'", "'<'", "'>'", "'.'", "'-'", "'=='", "'>='", "'<='", "'!='"
     };
     public static final int RULE_ID=6;
     public static final int T__66=66;
+    public static final int T__67=67;
     public static final int T__64=64;
     public static final int T__29=29;
     public static final int T__65=65;
@@ -183,7 +184,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=RULE_INT && LA1_0<=RULE_ID)||LA1_0==13||(LA1_0>=20 && LA1_0<=22)||LA1_0==24||(LA1_0>=26 && LA1_0<=46)||LA1_0==60) ) {
+                if ( ((LA1_0>=RULE_INT && LA1_0<=RULE_ID)||LA1_0==13||(LA1_0>=20 && LA1_0<=22)||LA1_0==24||(LA1_0>=26 && LA1_0<=46)||LA1_0==63) ) {
                     alt1=1;
                 }
 
@@ -704,7 +705,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             if ( (LA4_0==13) ) {
                 alt4=1;
             }
-            else if ( ((LA4_0>=RULE_INT && LA4_0<=RULE_ID)||(LA4_0>=20 && LA4_0<=22)||LA4_0==24||(LA4_0>=26 && LA4_0<=46)||LA4_0==60) ) {
+            else if ( ((LA4_0>=RULE_INT && LA4_0<=RULE_ID)||(LA4_0>=20 && LA4_0<=22)||LA4_0==24||(LA4_0>=26 && LA4_0<=46)||LA4_0==63) ) {
                 alt4=2;
             }
             else {
@@ -1439,7 +1440,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             if ( (LA8_0==20) ) {
                 alt8=1;
             }
-            else if ( ((LA8_0>=RULE_INT && LA8_0<=RULE_ID)||(LA8_0>=21 && LA8_0<=22)||LA8_0==24||(LA8_0>=26 && LA8_0<=46)||LA8_0==60) ) {
+            else if ( ((LA8_0>=RULE_INT && LA8_0<=RULE_ID)||(LA8_0>=21 && LA8_0<=22)||LA8_0==24||(LA8_0>=26 && LA8_0<=46)||LA8_0==63) ) {
                 alt8=2;
             }
             else {
@@ -1642,7 +1643,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             case 44:
             case 45:
             case 46:
-            case 60:
+            case 63:
                 {
                 alt9=4;
                 }
@@ -3103,7 +3104,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             case 44:
             case 45:
             case 46:
-            case 60:
+            case 63:
                 {
                 alt15=3;
                 }
@@ -5248,7 +5249,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                 }
                 break;
             case RULE_INT:
-            case 60:
+            case 63:
                 {
                 alt19=3;
                 }
@@ -5851,8 +5852,87 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMessageMapExpr"
 
 
+    // $ANTLR start "entryRuleConnectorEndpointMapExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2258:1: entryRuleConnectorEndpointMapExpr returns [EObject current=null] : iv_ruleConnectorEndpointMapExpr= ruleConnectorEndpointMapExpr EOF ;
+    public final EObject entryRuleConnectorEndpointMapExpr() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleConnectorEndpointMapExpr = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2259:2: (iv_ruleConnectorEndpointMapExpr= ruleConnectorEndpointMapExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2260:2: iv_ruleConnectorEndpointMapExpr= ruleConnectorEndpointMapExpr EOF
+            {
+             newCompositeNode(grammarAccess.getConnectorEndpointMapExprRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleConnectorEndpointMapExpr_in_entryRuleConnectorEndpointMapExpr5517);
+            iv_ruleConnectorEndpointMapExpr=ruleConnectorEndpointMapExpr();
+
+            state._fsp--;
+
+             current =iv_ruleConnectorEndpointMapExpr; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConnectorEndpointMapExpr5527); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleConnectorEndpointMapExpr"
+
+
+    // $ANTLR start "ruleConnectorEndpointMapExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2267:1: ruleConnectorEndpointMapExpr returns [EObject current=null] : this_MumlElemExpr_0= ruleMumlElemExpr ;
+    public final EObject ruleConnectorEndpointMapExpr() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_MumlElemExpr_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2270:28: (this_MumlElemExpr_0= ruleMumlElemExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2272:5: this_MumlElemExpr_0= ruleMumlElemExpr
+            {
+             
+                    newCompositeNode(grammarAccess.getConnectorEndpointMapExprAccess().getMumlElemExprParserRuleCall()); 
+                
+            pushFollow(FollowSets000.FOLLOW_ruleMumlElemExpr_in_ruleConnectorEndpointMapExpr5573);
+            this_MumlElemExpr_0=ruleMumlElemExpr();
+
+            state._fsp--;
+
+             
+                    current = this_MumlElemExpr_0; 
+                    afterParserOrEnumRuleCall();
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleConnectorEndpointMapExpr"
+
+
     // $ANTLR start "entryRuleBufferMessageCountExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2258:1: entryRuleBufferMessageCountExpr returns [EObject current=null] : iv_ruleBufferMessageCountExpr= ruleBufferMessageCountExpr EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2288:1: entryRuleBufferMessageCountExpr returns [EObject current=null] : iv_ruleBufferMessageCountExpr= ruleBufferMessageCountExpr EOF ;
     public final EObject entryRuleBufferMessageCountExpr() throws RecognitionException {
         EObject current = null;
 
@@ -5860,17 +5940,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2259:2: (iv_ruleBufferMessageCountExpr= ruleBufferMessageCountExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2260:2: iv_ruleBufferMessageCountExpr= ruleBufferMessageCountExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2289:2: (iv_ruleBufferMessageCountExpr= ruleBufferMessageCountExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2290:2: iv_ruleBufferMessageCountExpr= ruleBufferMessageCountExpr EOF
             {
              newCompositeNode(grammarAccess.getBufferMessageCountExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBufferMessageCountExpr_in_entryRuleBufferMessageCountExpr5517);
+            pushFollow(FollowSets000.FOLLOW_ruleBufferMessageCountExpr_in_entryRuleBufferMessageCountExpr5607);
             iv_ruleBufferMessageCountExpr=ruleBufferMessageCountExpr();
 
             state._fsp--;
 
              current =iv_ruleBufferMessageCountExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBufferMessageCountExpr5527); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBufferMessageCountExpr5617); 
 
             }
 
@@ -5888,7 +5968,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBufferMessageCountExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2267:1: ruleBufferMessageCountExpr returns [EObject current=null] : (otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')' ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2297:1: ruleBufferMessageCountExpr returns [EObject current=null] : (otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')' ) ;
     public final EObject ruleBufferMessageCountExpr() throws RecognitionException {
         EObject current = null;
 
@@ -5901,30 +5981,30 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2270:28: ( (otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2271:1: (otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2300:28: ( (otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2301:1: (otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2271:1: (otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2271:3: otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2301:1: (otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2301:3: otherlv_0= 'bufferMessageCount' otherlv_1= '(' ( (lv_buffer_2_0= ruleBufferMapExpr ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleBufferMessageCountExpr5564); 
+            otherlv_0=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleBufferMessageCountExpr5654); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBufferMessageCountExprAccess().getBufferMessageCountKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleBufferMessageCountExpr5576); 
+            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleBufferMessageCountExpr5666); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getBufferMessageCountExprAccess().getLeftParenthesisKeyword_1());
                 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2279:1: ( (lv_buffer_2_0= ruleBufferMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2280:1: (lv_buffer_2_0= ruleBufferMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2309:1: ( (lv_buffer_2_0= ruleBufferMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2310:1: (lv_buffer_2_0= ruleBufferMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2280:1: (lv_buffer_2_0= ruleBufferMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2281:3: lv_buffer_2_0= ruleBufferMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2310:1: (lv_buffer_2_0= ruleBufferMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2311:3: lv_buffer_2_0= ruleBufferMapExpr
             {
              
             	        newCompositeNode(grammarAccess.getBufferMessageCountExprAccess().getBufferBufferMapExprParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleBufferMapExpr_in_ruleBufferMessageCountExpr5597);
+            pushFollow(FollowSets000.FOLLOW_ruleBufferMapExpr_in_ruleBufferMessageCountExpr5687);
             lv_buffer_2_0=ruleBufferMapExpr();
 
             state._fsp--;
@@ -5946,7 +6026,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleBufferMessageCountExpr5609); 
+            otherlv_3=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleBufferMessageCountExpr5699); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getBufferMessageCountExprAccess().getRightParenthesisKeyword_3());
                 
@@ -5971,7 +6051,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSourceStateExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2309:1: entryRuleSourceStateExpr returns [EObject current=null] : iv_ruleSourceStateExpr= ruleSourceStateExpr EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2339:1: entryRuleSourceStateExpr returns [EObject current=null] : iv_ruleSourceStateExpr= ruleSourceStateExpr EOF ;
     public final EObject entryRuleSourceStateExpr() throws RecognitionException {
         EObject current = null;
 
@@ -5979,17 +6059,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2310:2: (iv_ruleSourceStateExpr= ruleSourceStateExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2311:2: iv_ruleSourceStateExpr= ruleSourceStateExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2340:2: (iv_ruleSourceStateExpr= ruleSourceStateExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2341:2: iv_ruleSourceStateExpr= ruleSourceStateExpr EOF
             {
              newCompositeNode(grammarAccess.getSourceStateExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleSourceStateExpr_in_entryRuleSourceStateExpr5645);
+            pushFollow(FollowSets000.FOLLOW_ruleSourceStateExpr_in_entryRuleSourceStateExpr5735);
             iv_ruleSourceStateExpr=ruleSourceStateExpr();
 
             state._fsp--;
 
              current =iv_ruleSourceStateExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSourceStateExpr5655); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSourceStateExpr5745); 
 
             }
 
@@ -6007,7 +6087,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSourceStateExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2318:1: ruleSourceStateExpr returns [EObject current=null] : (otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2348:1: ruleSourceStateExpr returns [EObject current=null] : (otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' ) ;
     public final EObject ruleSourceStateExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6020,30 +6100,30 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2321:28: ( (otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2322:1: (otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2351:28: ( (otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2352:1: (otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2322:1: (otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2322:3: otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2352:1: (otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2352:3: otherlv_0= 'sourceState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleSourceStateExpr5692); 
+            otherlv_0=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleSourceStateExpr5782); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSourceStateExprAccess().getSourceStateKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleSourceStateExpr5704); 
+            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleSourceStateExpr5794); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSourceStateExprAccess().getLeftParenthesisKeyword_1());
                 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2330:1: ( (lv_transition_2_0= ruleTransitionMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2331:1: (lv_transition_2_0= ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2360:1: ( (lv_transition_2_0= ruleTransitionMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2361:1: (lv_transition_2_0= ruleTransitionMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2331:1: (lv_transition_2_0= ruleTransitionMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2332:3: lv_transition_2_0= ruleTransitionMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2361:1: (lv_transition_2_0= ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2362:3: lv_transition_2_0= ruleTransitionMapExpr
             {
              
             	        newCompositeNode(grammarAccess.getSourceStateExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_ruleSourceStateExpr5725);
+            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_ruleSourceStateExpr5815);
             lv_transition_2_0=ruleTransitionMapExpr();
 
             state._fsp--;
@@ -6065,7 +6145,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleSourceStateExpr5737); 
+            otherlv_3=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleSourceStateExpr5827); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getSourceStateExprAccess().getRightParenthesisKeyword_3());
                 
@@ -6090,7 +6170,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTargetStateExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2360:1: entryRuleTargetStateExpr returns [EObject current=null] : iv_ruleTargetStateExpr= ruleTargetStateExpr EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2390:1: entryRuleTargetStateExpr returns [EObject current=null] : iv_ruleTargetStateExpr= ruleTargetStateExpr EOF ;
     public final EObject entryRuleTargetStateExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6098,17 +6178,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2361:2: (iv_ruleTargetStateExpr= ruleTargetStateExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2362:2: iv_ruleTargetStateExpr= ruleTargetStateExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2391:2: (iv_ruleTargetStateExpr= ruleTargetStateExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2392:2: iv_ruleTargetStateExpr= ruleTargetStateExpr EOF
             {
              newCompositeNode(grammarAccess.getTargetStateExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTargetStateExpr_in_entryRuleTargetStateExpr5773);
+            pushFollow(FollowSets000.FOLLOW_ruleTargetStateExpr_in_entryRuleTargetStateExpr5863);
             iv_ruleTargetStateExpr=ruleTargetStateExpr();
 
             state._fsp--;
 
              current =iv_ruleTargetStateExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTargetStateExpr5783); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTargetStateExpr5873); 
 
             }
 
@@ -6126,7 +6206,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTargetStateExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2369:1: ruleTargetStateExpr returns [EObject current=null] : (otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2399:1: ruleTargetStateExpr returns [EObject current=null] : (otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' ) ;
     public final EObject ruleTargetStateExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6139,30 +6219,30 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2372:28: ( (otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2373:1: (otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2402:28: ( (otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2403:1: (otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2373:1: (otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2373:3: otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2403:1: (otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2403:3: otherlv_0= 'targetState' otherlv_1= '(' ( (lv_transition_2_0= ruleTransitionMapExpr ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleTargetStateExpr5820); 
+            otherlv_0=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleTargetStateExpr5910); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTargetStateExprAccess().getTargetStateKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleTargetStateExpr5832); 
+            otherlv_1=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleTargetStateExpr5922); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTargetStateExprAccess().getLeftParenthesisKeyword_1());
                 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2381:1: ( (lv_transition_2_0= ruleTransitionMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2382:1: (lv_transition_2_0= ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2411:1: ( (lv_transition_2_0= ruleTransitionMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2412:1: (lv_transition_2_0= ruleTransitionMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2382:1: (lv_transition_2_0= ruleTransitionMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2383:3: lv_transition_2_0= ruleTransitionMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2412:1: (lv_transition_2_0= ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2413:3: lv_transition_2_0= ruleTransitionMapExpr
             {
              
             	        newCompositeNode(grammarAccess.getTargetStateExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_ruleTargetStateExpr5853);
+            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_ruleTargetStateExpr5943);
             lv_transition_2_0=ruleTransitionMapExpr();
 
             state._fsp--;
@@ -6184,7 +6264,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleTargetStateExpr5865); 
+            otherlv_3=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleTargetStateExpr5955); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getTargetStateExprAccess().getRightParenthesisKeyword_3());
                 
@@ -6209,7 +6289,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMumlElemExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2411:1: entryRuleMumlElemExpr returns [EObject current=null] : iv_ruleMumlElemExpr= ruleMumlElemExpr EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2441:1: entryRuleMumlElemExpr returns [EObject current=null] : iv_ruleMumlElemExpr= ruleMumlElemExpr EOF ;
     public final EObject entryRuleMumlElemExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6217,17 +6297,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2412:2: (iv_ruleMumlElemExpr= ruleMumlElemExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2413:2: iv_ruleMumlElemExpr= ruleMumlElemExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2442:2: (iv_ruleMumlElemExpr= ruleMumlElemExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2443:2: iv_ruleMumlElemExpr= ruleMumlElemExpr EOF
             {
              newCompositeNode(grammarAccess.getMumlElemExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMumlElemExpr_in_entryRuleMumlElemExpr5901);
+            pushFollow(FollowSets000.FOLLOW_ruleMumlElemExpr_in_entryRuleMumlElemExpr5991);
             iv_ruleMumlElemExpr=ruleMumlElemExpr();
 
             state._fsp--;
 
              current =iv_ruleMumlElemExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMumlElemExpr5911); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMumlElemExpr6001); 
 
             }
 
@@ -6245,21 +6325,27 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMumlElemExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2420:1: ruleMumlElemExpr returns [EObject current=null] : ( ( ruleQualifiedName ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2450:1: ruleMumlElemExpr returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( ( ruleQualifiedName ) ) otherlv_3= ']' )? ) ;
     public final EObject ruleMumlElemExpr() throws RecognitionException {
         EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_3=null;
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2423:28: ( ( ( ruleQualifiedName ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2424:1: ( ( ruleQualifiedName ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2453:28: ( ( ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( ( ruleQualifiedName ) ) otherlv_3= ']' )? ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2454:1: ( ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( ( ruleQualifiedName ) ) otherlv_3= ']' )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2424:1: ( ( ruleQualifiedName ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2425:1: ( ruleQualifiedName )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2454:1: ( ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( ( ruleQualifiedName ) ) otherlv_3= ']' )? )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2454:2: ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( ( ruleQualifiedName ) ) otherlv_3= ']' )?
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2425:1: ( ruleQualifiedName )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2426:3: ruleQualifiedName
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2454:2: ( ( ruleQualifiedName ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2455:1: ( ruleQualifiedName )
+            {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2455:1: ( ruleQualifiedName )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2456:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -6267,9 +6353,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             	        }
                     
              
-            	        newCompositeNode(grammarAccess.getMumlElemExprAccess().getElemEObjectCrossReference_0()); 
+            	        newCompositeNode(grammarAccess.getMumlElemExprAccess().getElemEObjectCrossReference_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleMumlElemExpr5958);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleMumlElemExpr6049);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6277,6 +6363,66 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
              
             	        afterParserOrEnumRuleCall();
             	    
+
+            }
+
+
+            }
+
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2469:2: (otherlv_1= '[' ( ( ruleQualifiedName ) ) otherlv_3= ']' )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
+
+            if ( (LA21_0==14) ) {
+                int LA21_1 = input.LA(2);
+
+                if ( (LA21_1==RULE_ID) ) {
+                    alt21=1;
+                }
+            }
+            switch (alt21) {
+                case 1 :
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2469:4: otherlv_1= '[' ( ( ruleQualifiedName ) ) otherlv_3= ']'
+                    {
+                    otherlv_1=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleMumlElemExpr6062); 
+
+                        	newLeafNode(otherlv_1, grammarAccess.getMumlElemExprAccess().getLeftSquareBracketKeyword_1_0());
+                        
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2473:1: ( ( ruleQualifiedName ) )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2474:1: ( ruleQualifiedName )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2474:1: ( ruleQualifiedName )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2475:3: ruleQualifiedName
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMumlElemExprRule());
+                    	        }
+                            
+                     
+                    	        newCompositeNode(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceEObjectCrossReference_1_1_0()); 
+                    	    
+                    pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleMumlElemExpr6085);
+                    ruleQualifiedName();
+
+                    state._fsp--;
+
+                     
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_3=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleMumlElemExpr6097); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getMumlElemExprAccess().getRightSquareBracketKeyword_1_2());
+                        
+
+                    }
+                    break;
 
             }
 
@@ -6301,7 +6447,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConstExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2447:1: entryRuleConstExpr returns [EObject current=null] : iv_ruleConstExpr= ruleConstExpr EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2500:1: entryRuleConstExpr returns [EObject current=null] : iv_ruleConstExpr= ruleConstExpr EOF ;
     public final EObject entryRuleConstExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6309,17 +6455,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2448:2: (iv_ruleConstExpr= ruleConstExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2449:2: iv_ruleConstExpr= ruleConstExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2501:2: (iv_ruleConstExpr= ruleConstExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2502:2: iv_ruleConstExpr= ruleConstExpr EOF
             {
              newCompositeNode(grammarAccess.getConstExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConstExpr_in_entryRuleConstExpr5993);
+            pushFollow(FollowSets000.FOLLOW_ruleConstExpr_in_entryRuleConstExpr6135);
             iv_ruleConstExpr=ruleConstExpr();
 
             state._fsp--;
 
              current =iv_ruleConstExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConstExpr6003); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConstExpr6145); 
 
             }
 
@@ -6337,7 +6483,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConstExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2456:1: ruleConstExpr returns [EObject current=null] : ( ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2509:1: ruleConstExpr returns [EObject current=null] : ( ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )? ) ;
     public final EObject ruleConstExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6349,22 +6495,22 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2459:28: ( ( ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2460:1: ( ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )? )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2512:28: ( ( ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2513:1: ( ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2460:1: ( ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )? )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2460:2: ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )?
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2513:1: ( ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )? )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2513:2: ( (lv_val_0_0= ruleEInt ) ) ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )?
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2460:2: ( (lv_val_0_0= ruleEInt ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2461:1: (lv_val_0_0= ruleEInt )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2513:2: ( (lv_val_0_0= ruleEInt ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2514:1: (lv_val_0_0= ruleEInt )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2461:1: (lv_val_0_0= ruleEInt )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2462:3: lv_val_0_0= ruleEInt
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2514:1: (lv_val_0_0= ruleEInt )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2515:3: lv_val_0_0= ruleEInt
             {
              
             	        newCompositeNode(grammarAccess.getConstExprAccess().getValEIntParserRuleCall_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleConstExpr6049);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleConstExpr6191);
             lv_val_0_0=ruleEInt();
 
             state._fsp--;
@@ -6386,24 +6532,24 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2478:2: ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2531:2: ( (lv_timeUnit_1_0= ruleTimeUnitExpr ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( ((LA21_0>=47 && LA21_0<=53)) ) {
-                alt21=1;
+            if ( ((LA22_0>=47 && LA22_0<=53)) ) {
+                alt22=1;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2479:1: (lv_timeUnit_1_0= ruleTimeUnitExpr )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2532:1: (lv_timeUnit_1_0= ruleTimeUnitExpr )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2479:1: (lv_timeUnit_1_0= ruleTimeUnitExpr )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2480:3: lv_timeUnit_1_0= ruleTimeUnitExpr
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2532:1: (lv_timeUnit_1_0= ruleTimeUnitExpr )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2533:3: lv_timeUnit_1_0= ruleTimeUnitExpr
                     {
                      
                     	        newCompositeNode(grammarAccess.getConstExprAccess().getTimeUnitTimeUnitExprParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleTimeUnitExpr_in_ruleConstExpr6070);
+                    pushFollow(FollowSets000.FOLLOW_ruleTimeUnitExpr_in_ruleConstExpr6212);
                     lv_timeUnit_1_0=ruleTimeUnitExpr();
 
                     state._fsp--;
@@ -6449,7 +6595,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTimeUnitExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2504:1: entryRuleTimeUnitExpr returns [String current=null] : iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2557:1: entryRuleTimeUnitExpr returns [String current=null] : iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF ;
     public final String entryRuleTimeUnitExpr() throws RecognitionException {
         String current = null;
 
@@ -6457,17 +6603,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2505:2: (iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2506:2: iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2558:2: (iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2559:2: iv_ruleTimeUnitExpr= ruleTimeUnitExpr EOF
             {
              newCompositeNode(grammarAccess.getTimeUnitExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTimeUnitExpr_in_entryRuleTimeUnitExpr6108);
+            pushFollow(FollowSets000.FOLLOW_ruleTimeUnitExpr_in_entryRuleTimeUnitExpr6250);
             iv_ruleTimeUnitExpr=ruleTimeUnitExpr();
 
             state._fsp--;
 
              current =iv_ruleTimeUnitExpr.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTimeUnitExpr6119); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTimeUnitExpr6261); 
 
             }
 
@@ -6485,7 +6631,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeUnitExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2513:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2566:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' ) ;
     public final AntlrDatatypeRuleToken ruleTimeUnitExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6494,59 +6640,59 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2516:28: ( (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2517:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2569:28: ( (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2570:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2517:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' )
-            int alt22=7;
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2570:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' )
+            int alt23=7;
             switch ( input.LA(1) ) {
             case 47:
                 {
-                alt22=1;
+                alt23=1;
                 }
                 break;
             case 48:
                 {
-                alt22=2;
+                alt23=2;
                 }
                 break;
             case 49:
                 {
-                alt22=3;
+                alt23=3;
                 }
                 break;
             case 50:
                 {
-                alt22=4;
+                alt23=4;
                 }
                 break;
             case 51:
                 {
-                alt22=5;
+                alt23=5;
                 }
                 break;
             case 52:
                 {
-                alt22=6;
+                alt23=6;
                 }
                 break;
             case 53:
                 {
-                alt22=7;
+                alt23=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2518:2: kw= 'days'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2571:2: kw= 'days'
                     {
-                    kw=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleTimeUnitExpr6157); 
+                    kw=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleTimeUnitExpr6299); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDaysKeyword_0()); 
@@ -6555,9 +6701,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2525:2: kw= 'hrs'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2578:2: kw= 'hrs'
                     {
-                    kw=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleTimeUnitExpr6176); 
+                    kw=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleTimeUnitExpr6318); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHrsKeyword_1()); 
@@ -6566,9 +6712,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2532:2: kw= 'mins'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2585:2: kw= 'mins'
                     {
-                    kw=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleTimeUnitExpr6195); 
+                    kw=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleTimeUnitExpr6337); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMinsKeyword_2()); 
@@ -6577,9 +6723,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2539:2: kw= 'secs'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2592:2: kw= 'secs'
                     {
-                    kw=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleTimeUnitExpr6214); 
+                    kw=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleTimeUnitExpr6356); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSecsKeyword_3()); 
@@ -6588,9 +6734,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2546:2: kw= 'msecs'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2599:2: kw= 'msecs'
                     {
-                    kw=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleTimeUnitExpr6233); 
+                    kw=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleTimeUnitExpr6375); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMsecsKeyword_4()); 
@@ -6599,9 +6745,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2553:2: kw= '\\u00B5secs'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2606:2: kw= '\\u00B5secs'
                     {
-                    kw=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleTimeUnitExpr6252); 
+                    kw=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleTimeUnitExpr6394); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSecsKeyword_5()); 
@@ -6610,9 +6756,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2560:2: kw= 'nsecs'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2613:2: kw= 'nsecs'
                     {
-                    kw=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleTimeUnitExpr6271); 
+                    kw=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleTimeUnitExpr6413); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNsecsKeyword_6()); 
@@ -6641,7 +6787,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSetExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2573:1: entryRuleSetExpr returns [EObject current=null] : iv_ruleSetExpr= ruleSetExpr EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2626:1: entryRuleSetExpr returns [EObject current=null] : iv_ruleSetExpr= ruleSetExpr EOF ;
     public final EObject entryRuleSetExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6649,17 +6795,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2574:2: (iv_ruleSetExpr= ruleSetExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2575:2: iv_ruleSetExpr= ruleSetExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2627:2: (iv_ruleSetExpr= ruleSetExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2628:2: iv_ruleSetExpr= ruleSetExpr EOF
             {
              newCompositeNode(grammarAccess.getSetExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleSetExpr_in_entryRuleSetExpr6311);
+            pushFollow(FollowSets000.FOLLOW_ruleSetExpr_in_entryRuleSetExpr6453);
             iv_ruleSetExpr=ruleSetExpr();
 
             state._fsp--;
 
              current =iv_ruleSetExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSetExpr6321); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSetExpr6463); 
 
             }
 
@@ -6677,130 +6823,128 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSetExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2582:1: ruleSetExpr returns [EObject current=null] : (this_IntervalSetExpr_0= ruleIntervalSetExpr | ( () otherlv_2= 'States' ) | ( () otherlv_4= 'Transitions' ) | ( () otherlv_6= 'MessageTypes' ) | ( () otherlv_8= 'Clocks' ) | ( () otherlv_10= 'Buffers' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2635:1: ruleSetExpr returns [EObject current=null] : (this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) ) ;
     public final EObject ruleSetExpr() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_10=null;
-        EObject this_IntervalSetExpr_0 = null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        EObject this_ConnectorEndpointInstanceSetExpr_0 = null;
+
+        EObject this_IntervalSetExpr_1 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2585:28: ( (this_IntervalSetExpr_0= ruleIntervalSetExpr | ( () otherlv_2= 'States' ) | ( () otherlv_4= 'Transitions' ) | ( () otherlv_6= 'MessageTypes' ) | ( () otherlv_8= 'Clocks' ) | ( () otherlv_10= 'Buffers' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2586:1: (this_IntervalSetExpr_0= ruleIntervalSetExpr | ( () otherlv_2= 'States' ) | ( () otherlv_4= 'Transitions' ) | ( () otherlv_6= 'MessageTypes' ) | ( () otherlv_8= 'Clocks' ) | ( () otherlv_10= 'Buffers' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2638:28: ( (this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2639:1: (this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2586:1: (this_IntervalSetExpr_0= ruleIntervalSetExpr | ( () otherlv_2= 'States' ) | ( () otherlv_4= 'Transitions' ) | ( () otherlv_6= 'MessageTypes' ) | ( () otherlv_8= 'Clocks' ) | ( () otherlv_10= 'Buffers' ) )
-            int alt23=6;
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2639:1: (this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) )
+            int alt24=7;
             switch ( input.LA(1) ) {
+            case 59:
+                {
+                alt24=1;
+                }
+                break;
             case 14:
                 {
-                alt23=1;
+                alt24=2;
                 }
                 break;
             case 54:
                 {
-                alt23=2;
+                alt24=3;
                 }
                 break;
             case 55:
                 {
-                alt23=3;
+                alt24=4;
                 }
                 break;
             case 56:
                 {
-                alt23=4;
+                alt24=5;
                 }
                 break;
             case 57:
                 {
-                alt23=5;
+                alt24=6;
                 }
                 break;
             case 58:
                 {
-                alt23=6;
+                alt24=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2587:5: this_IntervalSetExpr_0= ruleIntervalSetExpr
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2640:5: this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr
                     {
                      
-                            newCompositeNode(grammarAccess.getSetExprAccess().getIntervalSetExprParserRuleCall_0()); 
+                            newCompositeNode(grammarAccess.getSetExprAccess().getConnectorEndpointInstanceSetExprParserRuleCall_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleIntervalSetExpr_in_ruleSetExpr6368);
-                    this_IntervalSetExpr_0=ruleIntervalSetExpr();
+                    pushFollow(FollowSets000.FOLLOW_ruleConnectorEndpointInstanceSetExpr_in_ruleSetExpr6510);
+                    this_ConnectorEndpointInstanceSetExpr_0=ruleConnectorEndpointInstanceSetExpr();
 
                     state._fsp--;
 
                      
-                            current = this_IntervalSetExpr_0; 
+                            current = this_ConnectorEndpointInstanceSetExpr_0; 
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2596:6: ( () otherlv_2= 'States' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2650:5: this_IntervalSetExpr_1= ruleIntervalSetExpr
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2596:6: ( () otherlv_2= 'States' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2596:7: () otherlv_2= 'States'
-                    {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2596:7: ()
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2597:5: 
-                    {
-
-                            current = forceCreateModelElement(
-                                grammarAccess.getSetExprAccess().getStateSetExprAction_1_0(),
-                                current);
+                     
+                            newCompositeNode(grammarAccess.getSetExprAccess().getIntervalSetExprParserRuleCall_1()); 
                         
+                    pushFollow(FollowSets000.FOLLOW_ruleIntervalSetExpr_in_ruleSetExpr6537);
+                    this_IntervalSetExpr_1=ruleIntervalSetExpr();
 
-                    }
+                    state._fsp--;
 
-                    otherlv_2=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleSetExpr6395); 
-
-                        	newLeafNode(otherlv_2, grammarAccess.getSetExprAccess().getStatesKeyword_1_1());
+                     
+                            current = this_IntervalSetExpr_1; 
+                            afterParserOrEnumRuleCall();
                         
-
-                    }
-
 
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2607:6: ( () otherlv_4= 'Transitions' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2659:6: ( () otherlv_3= 'States' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2607:6: ( () otherlv_4= 'Transitions' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2607:7: () otherlv_4= 'Transitions'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2659:6: ( () otherlv_3= 'States' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2659:7: () otherlv_3= 'States'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2607:7: ()
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2608:5: 
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2659:7: ()
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2660:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getSetExprAccess().getTransitionSetExprAction_2_0(),
+                                grammarAccess.getSetExprAccess().getStateSetExprAction_2_0(),
                                 current);
                         
 
                     }
 
-                    otherlv_4=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleSetExpr6424); 
+                    otherlv_3=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleSetExpr6564); 
 
-                        	newLeafNode(otherlv_4, grammarAccess.getSetExprAccess().getTransitionsKeyword_2_1());
+                        	newLeafNode(otherlv_3, grammarAccess.getSetExprAccess().getStatesKeyword_2_1());
                         
 
                     }
@@ -6809,25 +6953,25 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2618:6: ( () otherlv_6= 'MessageTypes' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2670:6: ( () otherlv_5= 'Transitions' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2618:6: ( () otherlv_6= 'MessageTypes' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2618:7: () otherlv_6= 'MessageTypes'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2670:6: ( () otherlv_5= 'Transitions' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2670:7: () otherlv_5= 'Transitions'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2618:7: ()
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2619:5: 
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2670:7: ()
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2671:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getSetExprAccess().getMessageSetExprAction_3_0(),
+                                grammarAccess.getSetExprAccess().getTransitionSetExprAction_3_0(),
                                 current);
                         
 
                     }
 
-                    otherlv_6=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleSetExpr6453); 
+                    otherlv_5=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleSetExpr6593); 
 
-                        	newLeafNode(otherlv_6, grammarAccess.getSetExprAccess().getMessageTypesKeyword_3_1());
+                        	newLeafNode(otherlv_5, grammarAccess.getSetExprAccess().getTransitionsKeyword_3_1());
                         
 
                     }
@@ -6836,25 +6980,25 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2629:6: ( () otherlv_8= 'Clocks' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2681:6: ( () otherlv_7= 'MessageTypes' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2629:6: ( () otherlv_8= 'Clocks' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2629:7: () otherlv_8= 'Clocks'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2681:6: ( () otherlv_7= 'MessageTypes' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2681:7: () otherlv_7= 'MessageTypes'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2629:7: ()
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2630:5: 
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2681:7: ()
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2682:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getSetExprAccess().getClockSetExprAction_4_0(),
+                                grammarAccess.getSetExprAccess().getMessageSetExprAction_4_0(),
                                 current);
                         
 
                     }
 
-                    otherlv_8=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleSetExpr6482); 
+                    otherlv_7=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleSetExpr6622); 
 
-                        	newLeafNode(otherlv_8, grammarAccess.getSetExprAccess().getClocksKeyword_4_1());
+                        	newLeafNode(otherlv_7, grammarAccess.getSetExprAccess().getMessageTypesKeyword_4_1());
                         
 
                     }
@@ -6863,25 +7007,52 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2640:6: ( () otherlv_10= 'Buffers' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2692:6: ( () otherlv_9= 'Clocks' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2640:6: ( () otherlv_10= 'Buffers' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2640:7: () otherlv_10= 'Buffers'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2692:6: ( () otherlv_9= 'Clocks' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2692:7: () otherlv_9= 'Clocks'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2640:7: ()
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2641:5: 
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2692:7: ()
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2693:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getSetExprAccess().getBufferSetExprAction_5_0(),
+                                grammarAccess.getSetExprAccess().getClockSetExprAction_5_0(),
                                 current);
                         
 
                     }
 
-                    otherlv_10=(Token)match(input,58,FollowSets000.FOLLOW_58_in_ruleSetExpr6511); 
+                    otherlv_9=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleSetExpr6651); 
 
-                        	newLeafNode(otherlv_10, grammarAccess.getSetExprAccess().getBuffersKeyword_5_1());
+                        	newLeafNode(otherlv_9, grammarAccess.getSetExprAccess().getClocksKeyword_5_1());
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2703:6: ( () otherlv_11= 'Buffers' )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2703:6: ( () otherlv_11= 'Buffers' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2703:7: () otherlv_11= 'Buffers'
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2703:7: ()
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2704:5: 
+                    {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getSetExprAccess().getBufferSetExprAction_6_0(),
+                                current);
+                        
+
+                    }
+
+                    otherlv_11=(Token)match(input,58,FollowSets000.FOLLOW_58_in_ruleSetExpr6680); 
+
+                        	newLeafNode(otherlv_11, grammarAccess.getSetExprAccess().getBuffersKeyword_6_1());
                         
 
                     }
@@ -6910,7 +7081,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntervalSetExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2658:1: entryRuleIntervalSetExpr returns [EObject current=null] : iv_ruleIntervalSetExpr= ruleIntervalSetExpr EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2721:1: entryRuleIntervalSetExpr returns [EObject current=null] : iv_ruleIntervalSetExpr= ruleIntervalSetExpr EOF ;
     public final EObject entryRuleIntervalSetExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6918,17 +7089,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2659:2: (iv_ruleIntervalSetExpr= ruleIntervalSetExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2660:2: iv_ruleIntervalSetExpr= ruleIntervalSetExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2722:2: (iv_ruleIntervalSetExpr= ruleIntervalSetExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2723:2: iv_ruleIntervalSetExpr= ruleIntervalSetExpr EOF
             {
              newCompositeNode(grammarAccess.getIntervalSetExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleIntervalSetExpr_in_entryRuleIntervalSetExpr6548);
+            pushFollow(FollowSets000.FOLLOW_ruleIntervalSetExpr_in_entryRuleIntervalSetExpr6717);
             iv_ruleIntervalSetExpr=ruleIntervalSetExpr();
 
             state._fsp--;
 
              current =iv_ruleIntervalSetExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIntervalSetExpr6558); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIntervalSetExpr6727); 
 
             }
 
@@ -6946,7 +7117,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntervalSetExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2667:1: ruleIntervalSetExpr returns [EObject current=null] : ( () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']' ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2730:1: ruleIntervalSetExpr returns [EObject current=null] : ( () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']' ) ;
     public final EObject ruleIntervalSetExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6959,14 +7130,14 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2670:28: ( ( () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2671:1: ( () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2733:28: ( ( () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2734:1: ( () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2671:1: ( () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2671:2: () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2734:1: ( () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2734:2: () otherlv_1= '[' ( (lv_lowerVal_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_upperVal_4_0= RULE_INT ) ) otherlv_5= ']'
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2671:2: ()
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2672:5: 
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2734:2: ()
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2735:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6976,17 +7147,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleIntervalSetExpr6604); 
+            otherlv_1=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleIntervalSetExpr6773); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getIntervalSetExprAccess().getLeftSquareBracketKeyword_1());
                 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2681:1: ( (lv_lowerVal_2_0= RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2682:1: (lv_lowerVal_2_0= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2744:1: ( (lv_lowerVal_2_0= RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2745:1: (lv_lowerVal_2_0= RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2682:1: (lv_lowerVal_2_0= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2683:3: lv_lowerVal_2_0= RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2745:1: (lv_lowerVal_2_0= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2746:3: lv_lowerVal_2_0= RULE_INT
             {
-            lv_lowerVal_2_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleIntervalSetExpr6621); 
+            lv_lowerVal_2_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleIntervalSetExpr6790); 
 
             			newLeafNode(lv_lowerVal_2_0, grammarAccess.getIntervalSetExprAccess().getLowerValINTTerminalRuleCall_2_0()); 
             		
@@ -7006,17 +7177,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleIntervalSetExpr6638); 
+            otherlv_3=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleIntervalSetExpr6807); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getIntervalSetExprAccess().getCommaKeyword_3());
                 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2703:1: ( (lv_upperVal_4_0= RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2704:1: (lv_upperVal_4_0= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2766:1: ( (lv_upperVal_4_0= RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2767:1: (lv_upperVal_4_0= RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2704:1: (lv_upperVal_4_0= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2705:3: lv_upperVal_4_0= RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2767:1: (lv_upperVal_4_0= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2768:3: lv_upperVal_4_0= RULE_INT
             {
-            lv_upperVal_4_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleIntervalSetExpr6655); 
+            lv_upperVal_4_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleIntervalSetExpr6824); 
 
             			newLeafNode(lv_upperVal_4_0, grammarAccess.getIntervalSetExprAccess().getUpperValINTTerminalRuleCall_4_0()); 
             		
@@ -7036,7 +7207,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleIntervalSetExpr6672); 
+            otherlv_5=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleIntervalSetExpr6841); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getIntervalSetExprAccess().getRightSquareBracketKeyword_5());
                 
@@ -7060,8 +7231,138 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleIntervalSetExpr"
 
 
+    // $ANTLR start "entryRuleConnectorEndpointInstanceSetExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2796:1: entryRuleConnectorEndpointInstanceSetExpr returns [EObject current=null] : iv_ruleConnectorEndpointInstanceSetExpr= ruleConnectorEndpointInstanceSetExpr EOF ;
+    public final EObject entryRuleConnectorEndpointInstanceSetExpr() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleConnectorEndpointInstanceSetExpr = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2797:2: (iv_ruleConnectorEndpointInstanceSetExpr= ruleConnectorEndpointInstanceSetExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2798:2: iv_ruleConnectorEndpointInstanceSetExpr= ruleConnectorEndpointInstanceSetExpr EOF
+            {
+             newCompositeNode(grammarAccess.getConnectorEndpointInstanceSetExprRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleConnectorEndpointInstanceSetExpr_in_entryRuleConnectorEndpointInstanceSetExpr6877);
+            iv_ruleConnectorEndpointInstanceSetExpr=ruleConnectorEndpointInstanceSetExpr();
+
+            state._fsp--;
+
+             current =iv_ruleConnectorEndpointInstanceSetExpr; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConnectorEndpointInstanceSetExpr6887); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleConnectorEndpointInstanceSetExpr"
+
+
+    // $ANTLR start "ruleConnectorEndpointInstanceSetExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2805:1: ruleConnectorEndpointInstanceSetExpr returns [EObject current=null] : ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>' ) ;
+    public final EObject ruleConnectorEndpointInstanceSetExpr() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject lv_connectorEndpoint_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2808:28: ( ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:1: ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>' )
+            {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:1: ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:2: () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>'
+            {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:2: ()
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2810:5: 
+            {
+
+                    current = forceCreateModelElement(
+                        grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointInstanceSetExprAction_0(),
+                        current);
+                
+
+            }
+
+            otherlv_1=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleConnectorEndpointInstanceSetExpr6933); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getInstancesKeyword_1());
+                
+            otherlv_2=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleConnectorEndpointInstanceSetExpr6945); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getLessThanSignKeyword_2());
+                
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2823:1: ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2824:1: (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr )
+            {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2824:1: (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2825:3: lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr
+            {
+             
+            	        newCompositeNode(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointConnectorEndpointMapExprParserRuleCall_3_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_ruleConnectorEndpointMapExpr_in_ruleConnectorEndpointInstanceSetExpr6966);
+            lv_connectorEndpoint_3_0=ruleConnectorEndpointMapExpr();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getConnectorEndpointInstanceSetExprRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"connectorEndpoint",
+                    		lv_connectorEndpoint_3_0, 
+                    		"ConnectorEndpointMapExpr");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleConnectorEndpointInstanceSetExpr6978); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getGreaterThanSignKeyword_4());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleConnectorEndpointInstanceSetExpr"
+
+
     // $ANTLR start "entryRuleQualifiedName"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2733:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2853:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -7069,17 +7370,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2734:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2735:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2854:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2855:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName6709);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName7015);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
 
              current =iv_ruleQualifiedName.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedName6720); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedName7026); 
 
             }
 
@@ -7097,7 +7398,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2742:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2862:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7108,40 +7409,40 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2745:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2746:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2865:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2866:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2746:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2746:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2866:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2866:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName6760); 
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName7066); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2753:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop24:
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2873:1: (kw= '.' this_ID_2= RULE_ID )*
+            loop25:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA24_0==59) ) {
-                    alt24=1;
+                if ( (LA25_0==62) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt25) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2754:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2874:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleQualifiedName6779); 
+            	    kw=(Token)match(input,62,FollowSets000.FOLLOW_62_in_ruleQualifiedName7085); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName6794); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName7100); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -7153,7 +7454,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop25;
                 }
             } while (true);
 
@@ -7178,7 +7479,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2774:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2894:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -7186,17 +7487,17 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2775:2: (iv_ruleEInt= ruleEInt EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2776:2: iv_ruleEInt= ruleEInt EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2895:2: (iv_ruleEInt= ruleEInt EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2896:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt6842);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt7148);
             iv_ruleEInt=ruleEInt();
 
             state._fsp--;
 
              current =iv_ruleEInt.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt6853); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt7159); 
 
             }
 
@@ -7214,7 +7515,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2783:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2903:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7224,24 +7525,24 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2786:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2787:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2906:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2907:1: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2787:1: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2787:2: (kw= '-' )? this_INT_1= RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2907:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2907:2: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2787:2: (kw= '-' )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2907:2: (kw= '-' )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA25_0==60) ) {
-                alt25=1;
+            if ( (LA26_0==63) ) {
+                alt26=1;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2788:2: kw= '-'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2908:2: kw= '-'
                     {
-                    kw=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleEInt6892); 
+                    kw=(Token)match(input,63,FollowSets000.FOLLOW_63_in_ruleEInt7198); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
@@ -7252,7 +7553,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt6909); 
+            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt7215); 
 
             		current.merge(this_INT_1);
                 
@@ -7280,7 +7581,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparisonOp"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2808:1: ruleComparisonOp returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<' ) | (enumLiteral_4= '<=' ) | (enumLiteral_5= '!=' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2928:1: ruleComparisonOp returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<' ) | (enumLiteral_4= '<=' ) | (enumLiteral_5= '!=' ) ) ;
     public final Enumerator ruleComparisonOp() throws RecognitionException {
         Enumerator current = null;
 
@@ -7293,57 +7594,57 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2810:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<' ) | (enumLiteral_4= '<=' ) | (enumLiteral_5= '!=' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2811:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<' ) | (enumLiteral_4= '<=' ) | (enumLiteral_5= '!=' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2930:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<' ) | (enumLiteral_4= '<=' ) | (enumLiteral_5= '!=' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2931:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<' ) | (enumLiteral_4= '<=' ) | (enumLiteral_5= '!=' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2811:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<' ) | (enumLiteral_4= '<=' ) | (enumLiteral_5= '!=' ) )
-            int alt26=6;
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2931:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '<' ) | (enumLiteral_4= '<=' ) | (enumLiteral_5= '!=' ) )
+            int alt27=6;
             switch ( input.LA(1) ) {
-            case 61:
-                {
-                alt26=1;
-                }
-                break;
-            case 62:
-                {
-                alt26=2;
-                }
-                break;
-            case 63:
-                {
-                alt26=3;
-                }
-                break;
             case 64:
                 {
-                alt26=4;
+                alt27=1;
+                }
+                break;
+            case 61:
+                {
+                alt27=2;
                 }
                 break;
             case 65:
                 {
-                alt26=5;
+                alt27=3;
+                }
+                break;
+            case 60:
+                {
+                alt27=4;
                 }
                 break;
             case 66:
                 {
-                alt26=6;
+                alt27=5;
+                }
+                break;
+            case 67:
+                {
+                alt27=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt26) {
+            switch (alt27) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2811:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2931:2: (enumLiteral_0= '==' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2811:2: (enumLiteral_0= '==' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2811:4: enumLiteral_0= '=='
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2931:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2931:4: enumLiteral_0= '=='
                     {
-                    enumLiteral_0=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleComparisonOp6968); 
+                    enumLiteral_0=(Token)match(input,64,FollowSets000.FOLLOW_64_in_ruleComparisonOp7274); 
 
                             current = grammarAccess.getComparisonOpAccess().getEQUALSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getComparisonOpAccess().getEQUALSEnumLiteralDeclaration_0()); 
@@ -7355,12 +7656,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2817:6: (enumLiteral_1= '>' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2937:6: (enumLiteral_1= '>' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2817:6: (enumLiteral_1= '>' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2817:8: enumLiteral_1= '>'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2937:6: (enumLiteral_1= '>' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2937:8: enumLiteral_1= '>'
                     {
-                    enumLiteral_1=(Token)match(input,62,FollowSets000.FOLLOW_62_in_ruleComparisonOp6985); 
+                    enumLiteral_1=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleComparisonOp7291); 
 
                             current = grammarAccess.getComparisonOpAccess().getGREATEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getComparisonOpAccess().getGREATEREnumLiteralDeclaration_1()); 
@@ -7372,12 +7673,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2823:6: (enumLiteral_2= '>=' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2943:6: (enumLiteral_2= '>=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2823:6: (enumLiteral_2= '>=' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2823:8: enumLiteral_2= '>='
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2943:6: (enumLiteral_2= '>=' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2943:8: enumLiteral_2= '>='
                     {
-                    enumLiteral_2=(Token)match(input,63,FollowSets000.FOLLOW_63_in_ruleComparisonOp7002); 
+                    enumLiteral_2=(Token)match(input,65,FollowSets000.FOLLOW_65_in_ruleComparisonOp7308); 
 
                             current = grammarAccess.getComparisonOpAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getComparisonOpAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_2()); 
@@ -7389,12 +7690,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2829:6: (enumLiteral_3= '<' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2949:6: (enumLiteral_3= '<' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2829:6: (enumLiteral_3= '<' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2829:8: enumLiteral_3= '<'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2949:6: (enumLiteral_3= '<' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2949:8: enumLiteral_3= '<'
                     {
-                    enumLiteral_3=(Token)match(input,64,FollowSets000.FOLLOW_64_in_ruleComparisonOp7019); 
+                    enumLiteral_3=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleComparisonOp7325); 
 
                             current = grammarAccess.getComparisonOpAccess().getLESSEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getComparisonOpAccess().getLESSEnumLiteralDeclaration_3()); 
@@ -7406,12 +7707,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2835:6: (enumLiteral_4= '<=' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2955:6: (enumLiteral_4= '<=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2835:6: (enumLiteral_4= '<=' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2835:8: enumLiteral_4= '<='
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2955:6: (enumLiteral_4= '<=' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2955:8: enumLiteral_4= '<='
                     {
-                    enumLiteral_4=(Token)match(input,65,FollowSets000.FOLLOW_65_in_ruleComparisonOp7036); 
+                    enumLiteral_4=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleComparisonOp7342); 
 
                             current = grammarAccess.getComparisonOpAccess().getLESS_OR_EQUALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getComparisonOpAccess().getLESS_OR_EQUALEnumLiteralDeclaration_4()); 
@@ -7423,12 +7724,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2841:6: (enumLiteral_5= '!=' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2961:6: (enumLiteral_5= '!=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2841:6: (enumLiteral_5= '!=' )
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2841:8: enumLiteral_5= '!='
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2961:6: (enumLiteral_5= '!=' )
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2961:8: enumLiteral_5= '!='
                     {
-                    enumLiteral_5=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleComparisonOp7053); 
+                    enumLiteral_5=(Token)match(input,67,FollowSets000.FOLLOW_67_in_ruleComparisonOp7359); 
 
                             current = grammarAccess.getComparisonOpAccess().getNOT_EQUALEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getComparisonOpAccess().getNOT_EQUALEnumLiteralDeclaration_5()); 
@@ -7467,7 +7768,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
     private static class FollowSets000 {
         public static final BitSet FOLLOW_rulePropertyRepository_in_entryRulePropertyRepository75 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRulePropertyRepository85 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleProperty_in_rulePropertyRepository130 = new BitSet(new long[]{0x10007FFFFD702062L});
+        public static final BitSet FOLLOW_ruleProperty_in_rulePropertyRepository130 = new BitSet(new long[]{0x80007FFFFD702062L});
         public static final BitSet FOLLOW_ruleProperty_in_entryRuleProperty172 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleProperty182 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleProperty232 = new BitSet(new long[]{0x0000000000000800L});
@@ -7479,37 +7780,37 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleLeadsToExpr_in_entryRuleLeadsToExpr397 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleLeadsToExpr407 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTimeIntervalExpr_in_ruleLeadsToExpr454 = new BitSet(new long[]{0x0000000000001002L});
-        public static final BitSet FOLLOW_12_in_ruleLeadsToExpr475 = new BitSet(new long[]{0x10007FFFFD703060L});
+        public static final BitSet FOLLOW_12_in_ruleLeadsToExpr475 = new BitSet(new long[]{0x80007FFFFD703060L});
         public static final BitSet FOLLOW_ruleTimeIntervalExpr_in_ruleLeadsToExpr496 = new BitSet(new long[]{0x0000000000001002L});
         public static final BitSet FOLLOW_ruleTimeIntervalExpr_in_entryRuleTimeIntervalExpr534 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleTimeIntervalExpr544 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_ruleTimeIntervalExpr582 = new BitSet(new long[]{0x10007FFFFD706060L});
+        public static final BitSet FOLLOW_13_in_ruleTimeIntervalExpr582 = new BitSet(new long[]{0x80007FFFFD706060L});
         public static final BitSet FOLLOW_ruleImplyExpr_in_ruleTimeIntervalExpr612 = new BitSet(new long[]{0x0000000000004000L});
         public static final BitSet FOLLOW_14_in_ruleTimeIntervalExpr624 = new BitSet(new long[]{0x0000000000000020L});
         public static final BitSet FOLLOW_RULE_INT_in_ruleTimeIntervalExpr641 = new BitSet(new long[]{0x0000000000008000L});
         public static final BitSet FOLLOW_15_in_ruleTimeIntervalExpr658 = new BitSet(new long[]{0x0000000000000020L});
         public static final BitSet FOLLOW_RULE_INT_in_ruleTimeIntervalExpr675 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleTimeIntervalExpr692 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_16_in_ruleTimeIntervalExpr692 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleImplyExpr_in_ruleTimeIntervalExpr713 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleImplyExpr_in_ruleTimeIntervalExpr742 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleImplyExpr_in_entryRuleImplyExpr777 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleImplyExpr787 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleAndExpr_in_ruleImplyExpr834 = new BitSet(new long[]{0x0000000000020002L});
-        public static final BitSet FOLLOW_17_in_ruleImplyExpr855 = new BitSet(new long[]{0x10007FFFFD722060L});
+        public static final BitSet FOLLOW_17_in_ruleImplyExpr855 = new BitSet(new long[]{0x80007FFFFD722060L});
         public static final BitSet FOLLOW_ruleAndExpr_in_ruleImplyExpr876 = new BitSet(new long[]{0x0000000000020002L});
         public static final BitSet FOLLOW_ruleAndExpr_in_entryRuleAndExpr914 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAndExpr924 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleOrExpr_in_ruleAndExpr971 = new BitSet(new long[]{0x0000000000040002L});
-        public static final BitSet FOLLOW_18_in_ruleAndExpr992 = new BitSet(new long[]{0x10007FFFFD742060L});
+        public static final BitSet FOLLOW_18_in_ruleAndExpr992 = new BitSet(new long[]{0x80007FFFFD742060L});
         public static final BitSet FOLLOW_ruleOrExpr_in_ruleAndExpr1013 = new BitSet(new long[]{0x0000000000040002L});
         public static final BitSet FOLLOW_ruleOrExpr_in_entryRuleOrExpr1051 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleOrExpr1061 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleOrExpr1108 = new BitSet(new long[]{0x0000000000080002L});
-        public static final BitSet FOLLOW_19_in_ruleOrExpr1129 = new BitSet(new long[]{0x10007FFFFD782060L});
+        public static final BitSet FOLLOW_19_in_ruleOrExpr1129 = new BitSet(new long[]{0x80007FFFFD782060L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleOrExpr1150 = new BitSet(new long[]{0x0000000000080002L});
         public static final BitSet FOLLOW_ruleNotExpr_in_entryRuleNotExpr1188 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleNotExpr1198 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_ruleNotExpr1236 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_20_in_ruleNotExpr1236 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleNotExpr1266 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleQuantifierExpr_in_ruleNotExpr1295 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleQuantifierExpr_in_entryRuleQuantifierExpr1330 = new BitSet(new long[]{0x0000000000000000L});
@@ -7523,19 +7824,19 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_21_in_ruleUniversalQuantExpr1550 = new BitSet(new long[]{0x0000000000400000L});
         public static final BitSet FOLLOW_22_in_ruleUniversalQuantExpr1562 = new BitSet(new long[]{0x0000000000000040L});
         public static final BitSet FOLLOW_ruleVariableBinding_in_ruleUniversalQuantExpr1592 = new BitSet(new long[]{0x0000000000800000L});
-        public static final BitSet FOLLOW_23_in_ruleUniversalQuantExpr1604 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_23_in_ruleUniversalQuantExpr1604 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleUniversalQuantExpr1625 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExistentialQuantExpr_in_entryRuleExistentialQuantExpr1661 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleExistentialQuantExpr1671 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_24_in_ruleExistentialQuantExpr1708 = new BitSet(new long[]{0x0000000000400000L});
         public static final BitSet FOLLOW_22_in_ruleExistentialQuantExpr1720 = new BitSet(new long[]{0x0000000000000040L});
         public static final BitSet FOLLOW_ruleVariableBinding_in_ruleExistentialQuantExpr1750 = new BitSet(new long[]{0x0000000000800000L});
-        public static final BitSet FOLLOW_23_in_ruleExistentialQuantExpr1762 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_23_in_ruleExistentialQuantExpr1762 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleExistentialQuantExpr1783 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleVariableBinding_in_entryRuleVariableBinding1819 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleVariableBinding1829 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_ID_in_ruleVariableBinding1871 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_25_in_ruleVariableBinding1888 = new BitSet(new long[]{0x07C0000000004000L});
+        public static final BitSet FOLLOW_25_in_ruleVariableBinding1888 = new BitSet(new long[]{0x0FC0000000004000L});
         public static final BitSet FOLLOW_ruleSetExpr_in_ruleVariableBinding1909 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTemporalQuantifierExpr_in_entryRuleTemporalQuantifierExpr1945 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleTemporalQuantifierExpr1955 = new BitSet(new long[]{0x0000000000000002L});
@@ -7545,27 +7846,27 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleAGExpr_in_ruleTemporalQuantifierExpr2083 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEFExpr_in_entryRuleEFExpr2118 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleEFExpr2128 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_ruleEFExpr2166 = new BitSet(new long[]{0x10007FFFFD702060L});
-        public static final BitSet FOLLOW_27_in_ruleEFExpr2184 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_26_in_ruleEFExpr2166 = new BitSet(new long[]{0x80007FFFFD702060L});
+        public static final BitSet FOLLOW_27_in_ruleEFExpr2184 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleEFExpr2215 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleAFExpr_in_entryRuleAFExpr2251 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAFExpr2261 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_ruleAFExpr2299 = new BitSet(new long[]{0x10007FFFFD702060L});
-        public static final BitSet FOLLOW_29_in_ruleAFExpr2317 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_28_in_ruleAFExpr2299 = new BitSet(new long[]{0x80007FFFFD702060L});
+        public static final BitSet FOLLOW_29_in_ruleAFExpr2317 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleAFExpr2348 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEGExpr_in_entryRuleEGExpr2384 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleEGExpr2394 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_ruleEGExpr2432 = new BitSet(new long[]{0x10007FFFFD702060L});
-        public static final BitSet FOLLOW_31_in_ruleEGExpr2450 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_30_in_ruleEGExpr2432 = new BitSet(new long[]{0x80007FFFFD702060L});
+        public static final BitSet FOLLOW_31_in_ruleEGExpr2450 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleEGExpr2481 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleAGExpr_in_entryRuleAGExpr2517 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAGExpr2527 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_ruleAGExpr2565 = new BitSet(new long[]{0x10007FFFFD702060L});
-        public static final BitSet FOLLOW_33_in_ruleAGExpr2583 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_32_in_ruleAGExpr2565 = new BitSet(new long[]{0x80007FFFFD702060L});
+        public static final BitSet FOLLOW_33_in_ruleAGExpr2583 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleNotExpr_in_ruleAGExpr2614 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleAtomExpr_in_entryRuleAtomExpr2650 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAtomExpr2660 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_ruleAtomExpr2698 = new BitSet(new long[]{0x10007FFFFDF02060L});
+        public static final BitSet FOLLOW_22_in_ruleAtomExpr2698 = new BitSet(new long[]{0x80007FFFFDF02060L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleAtomExpr2720 = new BitSet(new long[]{0x0000000000800000L});
         public static final BitSet FOLLOW_23_in_ruleAtomExpr2731 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rulePredicateExpr_in_ruleAtomExpr2760 = new BitSet(new long[]{0x0000000000000002L});
@@ -7599,21 +7900,21 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleStateActiveExpr_in_entryRuleStateActiveExpr3590 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleStateActiveExpr3600 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_38_in_ruleStateActiveExpr3637 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_22_in_ruleStateActiveExpr3649 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_22_in_ruleStateActiveExpr3649 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleStateMapExpr_in_ruleStateActiveExpr3670 = new BitSet(new long[]{0x0000000000800000L});
         public static final BitSet FOLLOW_23_in_ruleStateActiveExpr3682 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleSubstateOfExpr_in_entryRuleSubstateOfExpr3718 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleSubstateOfExpr3728 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_39_in_ruleSubstateOfExpr3765 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_22_in_ruleSubstateOfExpr3777 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_22_in_ruleSubstateOfExpr3777 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleStateMapExpr_in_ruleSubstateOfExpr3798 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleSubstateOfExpr3810 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_15_in_ruleSubstateOfExpr3810 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleStateMapExpr_in_ruleSubstateOfExpr3831 = new BitSet(new long[]{0x0000000000800000L});
         public static final BitSet FOLLOW_23_in_ruleSubstateOfExpr3843 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleStateInStatechartExpr_in_entryRuleStateInStatechartExpr3879 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleStateInStatechartExpr3889 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_40_in_ruleStateInStatechartExpr3926 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_22_in_ruleStateInStatechartExpr3938 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_22_in_ruleStateInStatechartExpr3938 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleStateMapExpr_in_ruleStateInStatechartExpr3959 = new BitSet(new long[]{0x0000000000008000L});
         public static final BitSet FOLLOW_15_in_ruleStateInStatechartExpr3971 = new BitSet(new long[]{0x0000000000000040L});
         public static final BitSet FOLLOW_ruleStatechartMapExpr_in_ruleStateInStatechartExpr3992 = new BitSet(new long[]{0x0000000000800000L});
@@ -7647,8 +7948,8 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_23_in_ruleTransitionFiringExpr4630 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleComparisonExpr_in_entryRuleComparisonExpr4666 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpr4676 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMapExpr_in_ruleComparisonExpr4731 = new BitSet(new long[]{0xE000000000000000L,0x0000000000000007L});
-        public static final BitSet FOLLOW_ruleComparisonOp_in_ruleComparisonExpr4752 = new BitSet(new long[]{0x10007FFFFD702060L});
+        public static final BitSet FOLLOW_ruleMapExpr_in_ruleComparisonExpr4731 = new BitSet(new long[]{0x3000000000000000L,0x000000000000000FL});
+        public static final BitSet FOLLOW_ruleComparisonOp_in_ruleComparisonExpr4752 = new BitSet(new long[]{0x80007FFFFD702060L});
         public static final BitSet FOLLOW_ruleMapExpr_in_ruleComparisonExpr4773 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleMapExpr_in_entryRuleMapExpr4809 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleMapExpr4819 = new BitSet(new long[]{0x0000000000000002L});
@@ -7674,70 +7975,83 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleMessageMapExpr_in_entryRuleMessageMapExpr5427 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleMessageMapExpr5437 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleMumlElemExpr_in_ruleMessageMapExpr5483 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBufferMessageCountExpr_in_entryRuleBufferMessageCountExpr5517 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleBufferMessageCountExpr5527 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_44_in_ruleBufferMessageCountExpr5564 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_22_in_ruleBufferMessageCountExpr5576 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleBufferMapExpr_in_ruleBufferMessageCountExpr5597 = new BitSet(new long[]{0x0000000000800000L});
-        public static final BitSet FOLLOW_23_in_ruleBufferMessageCountExpr5609 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSourceStateExpr_in_entryRuleSourceStateExpr5645 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleSourceStateExpr5655 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_45_in_ruleSourceStateExpr5692 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_22_in_ruleSourceStateExpr5704 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_ruleSourceStateExpr5725 = new BitSet(new long[]{0x0000000000800000L});
-        public static final BitSet FOLLOW_23_in_ruleSourceStateExpr5737 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTargetStateExpr_in_entryRuleTargetStateExpr5773 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTargetStateExpr5783 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_ruleTargetStateExpr5820 = new BitSet(new long[]{0x0000000000400000L});
-        public static final BitSet FOLLOW_22_in_ruleTargetStateExpr5832 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_ruleTargetStateExpr5853 = new BitSet(new long[]{0x0000000000800000L});
-        public static final BitSet FOLLOW_23_in_ruleTargetStateExpr5865 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMumlElemExpr_in_entryRuleMumlElemExpr5901 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleMumlElemExpr5911 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleMumlElemExpr5958 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConstExpr_in_entryRuleConstExpr5993 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleConstExpr6003 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleConstExpr6049 = new BitSet(new long[]{0x003F800000000002L});
-        public static final BitSet FOLLOW_ruleTimeUnitExpr_in_ruleConstExpr6070 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTimeUnitExpr_in_entryRuleTimeUnitExpr6108 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTimeUnitExpr6119 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_47_in_ruleTimeUnitExpr6157 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_48_in_ruleTimeUnitExpr6176 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_49_in_ruleTimeUnitExpr6195 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleTimeUnitExpr6214 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_51_in_ruleTimeUnitExpr6233 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_52_in_ruleTimeUnitExpr6252 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_53_in_ruleTimeUnitExpr6271 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSetExpr_in_entryRuleSetExpr6311 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleSetExpr6321 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIntervalSetExpr_in_ruleSetExpr6368 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_54_in_ruleSetExpr6395 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_55_in_ruleSetExpr6424 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_56_in_ruleSetExpr6453 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_57_in_ruleSetExpr6482 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_58_in_ruleSetExpr6511 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIntervalSetExpr_in_entryRuleIntervalSetExpr6548 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleIntervalSetExpr6558 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_ruleIntervalSetExpr6604 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleIntervalSetExpr6621 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleIntervalSetExpr6638 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleIntervalSetExpr6655 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleIntervalSetExpr6672 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName6709 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName6720 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName6760 = new BitSet(new long[]{0x0800000000000002L});
-        public static final BitSet FOLLOW_59_in_ruleQualifiedName6779 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName6794 = new BitSet(new long[]{0x0800000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt6842 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEInt6853 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_60_in_ruleEInt6892 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt6909 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_61_in_ruleComparisonOp6968 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_62_in_ruleComparisonOp6985 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_63_in_ruleComparisonOp7002 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_64_in_ruleComparisonOp7019 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_65_in_ruleComparisonOp7036 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_66_in_ruleComparisonOp7053 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConnectorEndpointMapExpr_in_entryRuleConnectorEndpointMapExpr5517 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleConnectorEndpointMapExpr5527 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMumlElemExpr_in_ruleConnectorEndpointMapExpr5573 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBufferMessageCountExpr_in_entryRuleBufferMessageCountExpr5607 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleBufferMessageCountExpr5617 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_44_in_ruleBufferMessageCountExpr5654 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_22_in_ruleBufferMessageCountExpr5666 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleBufferMapExpr_in_ruleBufferMessageCountExpr5687 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleBufferMessageCountExpr5699 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSourceStateExpr_in_entryRuleSourceStateExpr5735 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleSourceStateExpr5745 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_45_in_ruleSourceStateExpr5782 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_22_in_ruleSourceStateExpr5794 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_ruleSourceStateExpr5815 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleSourceStateExpr5827 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTargetStateExpr_in_entryRuleTargetStateExpr5863 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTargetStateExpr5873 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_ruleTargetStateExpr5910 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_22_in_ruleTargetStateExpr5922 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_ruleTargetStateExpr5943 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleTargetStateExpr5955 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMumlElemExpr_in_entryRuleMumlElemExpr5991 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleMumlElemExpr6001 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleMumlElemExpr6049 = new BitSet(new long[]{0x0000000000004002L});
+        public static final BitSet FOLLOW_14_in_ruleMumlElemExpr6062 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleMumlElemExpr6085 = new BitSet(new long[]{0x0000000000010000L});
+        public static final BitSet FOLLOW_16_in_ruleMumlElemExpr6097 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConstExpr_in_entryRuleConstExpr6135 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleConstExpr6145 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleConstExpr6191 = new BitSet(new long[]{0x003F800000000002L});
+        public static final BitSet FOLLOW_ruleTimeUnitExpr_in_ruleConstExpr6212 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTimeUnitExpr_in_entryRuleTimeUnitExpr6250 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTimeUnitExpr6261 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_47_in_ruleTimeUnitExpr6299 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_48_in_ruleTimeUnitExpr6318 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_49_in_ruleTimeUnitExpr6337 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleTimeUnitExpr6356 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_51_in_ruleTimeUnitExpr6375 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_52_in_ruleTimeUnitExpr6394 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_53_in_ruleTimeUnitExpr6413 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSetExpr_in_entryRuleSetExpr6453 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleSetExpr6463 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConnectorEndpointInstanceSetExpr_in_ruleSetExpr6510 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIntervalSetExpr_in_ruleSetExpr6537 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_54_in_ruleSetExpr6564 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_55_in_ruleSetExpr6593 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_56_in_ruleSetExpr6622 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_57_in_ruleSetExpr6651 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_58_in_ruleSetExpr6680 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIntervalSetExpr_in_entryRuleIntervalSetExpr6717 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleIntervalSetExpr6727 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_ruleIntervalSetExpr6773 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleIntervalSetExpr6790 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleIntervalSetExpr6807 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleIntervalSetExpr6824 = new BitSet(new long[]{0x0000000000010000L});
+        public static final BitSet FOLLOW_16_in_ruleIntervalSetExpr6841 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConnectorEndpointInstanceSetExpr_in_entryRuleConnectorEndpointInstanceSetExpr6877 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleConnectorEndpointInstanceSetExpr6887 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_59_in_ruleConnectorEndpointInstanceSetExpr6933 = new BitSet(new long[]{0x1000000000000000L});
+        public static final BitSet FOLLOW_60_in_ruleConnectorEndpointInstanceSetExpr6945 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleConnectorEndpointMapExpr_in_ruleConnectorEndpointInstanceSetExpr6966 = new BitSet(new long[]{0x2000000000000000L});
+        public static final BitSet FOLLOW_61_in_ruleConnectorEndpointInstanceSetExpr6978 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName7015 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName7026 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName7066 = new BitSet(new long[]{0x4000000000000002L});
+        public static final BitSet FOLLOW_62_in_ruleQualifiedName7085 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName7100 = new BitSet(new long[]{0x4000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt7148 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEInt7159 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_63_in_ruleEInt7198 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt7215 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_64_in_ruleComparisonOp7274 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_61_in_ruleComparisonOp7291 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_65_in_ruleComparisonOp7308 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_60_in_ruleComparisonOp7325 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_66_in_ruleComparisonOp7342 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_67_in_ruleComparisonOp7359 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

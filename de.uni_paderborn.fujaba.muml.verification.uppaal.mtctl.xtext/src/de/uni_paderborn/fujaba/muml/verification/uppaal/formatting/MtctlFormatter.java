@@ -26,6 +26,13 @@ public class MtctlFormatter extends AbstractDeclarativeFormatter {
 		for (Pair<Keyword, Keyword> pair : f.findKeywordPairs("[", "]")) { //get rid of excess spaces
 			c.setNoSpace().before(pair.getSecond());
 			c.setNoSpace().after(pair.getFirst());
+			c.setNoSpace().before(pair.getFirst());			
+		}
+		
+		for (Pair<Keyword, Keyword> pair : f.findKeywordPairs("<", ">")) { //get rid of excess spaces
+			c.setNoSpace().before(pair.getSecond());
+			c.setNoSpace().before(pair.getFirst());
+			c.setNoSpace().after(pair.getFirst());
 		}
 		
 		for (Keyword comma : f.findKeywords(",")) //excess spaces

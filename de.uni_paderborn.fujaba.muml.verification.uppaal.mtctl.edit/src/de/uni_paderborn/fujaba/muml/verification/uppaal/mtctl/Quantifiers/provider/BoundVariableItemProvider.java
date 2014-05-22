@@ -5,29 +5,17 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.provi
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.ExpressionItemProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -38,13 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class BoundVariableItemProvider
-	extends ExpressionItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -220,6 +202,11 @@ public class BoundVariableItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.BOUND_VARIABLE__SET,
 				 SetsFactory.eINSTANCE.createBufferSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.BOUND_VARIABLE__SET,
+				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
 	}
 
 	/**

@@ -20,6 +20,8 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
@@ -29,7 +31,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap;
@@ -44,6 +45,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundV
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
@@ -61,6 +63,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	protected List<MessageType> messageTypes = null;
 	protected List<MessageBuffer> buffers = null;
 	protected List<RealtimeStatechart> statecharts = null;
+	protected List<ConnectorEndpoint> connectorEndpoints = null;
+	protected List<ConnectorEndpointInstance> connectorEndpointInstances = null;
 	
 	/**
 	 * The mapping that determines how to call elements from the muml models
@@ -104,6 +108,9 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 				if (obj instanceof Port) //Ports are called component.port
 					return internalCreateName(obj.eContainer()).append(((DiscretePort) obj).getName());
 				
+				if (obj instanceof ConnectorEndpointInstance)
+					return QualifiedName.create(((ConnectorEndpointInstance) obj).getName());
+				
 				if (obj instanceof RealtimeStatechart)
 					if (((RealtimeStatechart) obj).getBehavioralElement() != null)
 						return internalCreateName(((RealtimeStatechart) obj).getBehavioralElement()).append(((RealtimeStatechart) obj).getName()); //top-level RTSC are called (role|port).rtsc
@@ -128,9 +135,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 				if (obj instanceof Variable)
 					return internalCreateName(obj.eContainer()).append(((Variable) obj).getName()); //variables are called rtsc.var
 				
-				if (obj instanceof MessageBuffer) {
-					int index = ((EList) obj.eContainer().eGet(obj.eContainingFeature())).indexOf(obj);
-					return internalCreateName(obj.eContainer()).append("Buffer"+index);
+				if (obj instanceof MessageBuffer) { // buffers are called role.bufferName
+					return internalCreateName(obj.eContainer()).append(QualifiedName.create(((MessageBuffer) obj).getName()));
 				}
 			} catch (RuntimeException e) {
 				System.out.println("Exception when computing qualified name for "+obj);
@@ -301,6 +307,36 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		return createScope(statecharts);
 	}
 	
+	/**
+	 * Returns the scope when looking for a connector endpoint
+	 */
+	public IScope getScopeConnectorEndpoint(EObject context, EReference reference) {
+		return createScope(connectorEndpoints);
+	}
+	
+	/**
+	 * Returns the scope when looking for a connector endpoint instance
+	 */
+	public IScope getScopeConnectorEndpointInstance(EObject context, EReference reference) {
+		List<EObject> scope = new ArrayList<EObject>();
+		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
+				
+		//Add connector endpoint instances from the model
+		scope.addAll(connectorEndpointInstances);
+		
+		//Add BoundVariables for clocks
+		QuantifierExpr parentQuantifier = findParentQuantifier(context);
+		while (parentQuantifier != null) {
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof ConnectorEndpointInstanceSetExpr)
+				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
+					scope.add(parentQuantifier.getVar());
+					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+				}
+			parentQuantifier = findParentQuantifier(parentQuantifier);
+		}
+		
+		return createScope(scope);
+	}
 	
 	/**
 	 * Returns the scope when looking for anything (mainly for comparisons)
@@ -353,6 +389,9 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		if (!(context instanceof MumlElemExpr) && ("MumlElemExpr".equals(reference.getEContainingClass().getName()))) //happens for proposals, but makes it impossible to judge the actual scope (too little information). So this scope provider will simply not react. The problem is solved in MtctlProposalProvider which makes sure that the correct call is also issued.
 			return IScope.NULLSCOPE;
 		
+		if (context instanceof MumlElemExpr && reference != null && "connectorEndpointInstance".equals(reference.getName()))
+			return getScopeConnectorEndpointInstance(context, reference);
+		
 		//The requested scope might be for a MumlElemExpr. 
 		if (context instanceof MumlElemExpr) {
 			//Because this is not very informative, we exchange the supplied values with the context and reference for the MumlElemExpr, not the reference itself
@@ -372,6 +411,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			return getScopeBuffer(context, reference);
 		if (context instanceof StateInStatechartExpr && reference != null && "statechart".equals(reference.getName()))
 			return getScopeStatechart(context, reference);
+		if (context instanceof ConnectorEndpointInstanceSetExpr)
+			return getScopeConnectorEndpoint(context, reference);
 		if (context instanceof ComparisonExpr)
 			return getScopeAny(context, reference);
 		
@@ -410,6 +451,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		
 		//States, Clocks, Variables, MessageTypes
 		for (Role role : object.getRoles()) {
+			connectorEndpoints.add(role);
 			addRtscElementsToArrays(role.getBehavior());
 			messageTypes.addAll(role.getReceiverMessageTypes());
 			messageTypes.addAll(role.getSenderMessageTypes());
@@ -435,6 +477,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Port behavior
 		for (Port port : object.getPorts()) {
 			if (port instanceof DiscretePort) {
+				connectorEndpoints.add(port);
 				addRtscElementsToArrays(((DiscretePort) port).getBehavior());
 				messageTypes.addAll(((DiscretePort) port).getReceiverMessageTypes());
 				messageTypes.addAll(((DiscretePort) port).getSenderMessageTypes());
@@ -491,6 +534,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		messageTypes = new ArrayList<MessageType>();
 		buffers = new ArrayList<MessageBuffer>();
 		statecharts = new ArrayList<RealtimeStatechart>();
+		connectorEndpoints = new ArrayList<ConnectorEndpoint>();
+		connectorEndpointInstances = new ArrayList<ConnectorEndpointInstance>();
 	}
 	
 	/**

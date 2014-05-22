@@ -4,32 +4,19 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.provi
 
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TimeIntervalExpr;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -40,13 +27,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class TimeIntervalExprItemProvider
-	extends TemporalQuantifierExprItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends TemporalQuantifierExprItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -355,6 +336,11 @@ public class TimeIntervalExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__LHS,
+				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__LHS,
 				 BooleanLogicFactory.eINSTANCE.createAndExpr()));
 
 		newChildDescriptors.add
@@ -531,6 +517,11 @@ public class TimeIntervalExprItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__RHS,
 				 SetsFactory.eINSTANCE.createBufferSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__RHS,
+				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -1,5 +1,6 @@
 RULE_ID=4
 T__66=66
+T__67=67
 T__64=64
 T__29=29
 T__65=65
@@ -64,6 +65,7 @@ RULE_WS=9
 'leadsTo'=33
 '>='=28
 '=='=26
+'Instances'=65
 '>'=27
 'exists'=45
 'States'=60
@@ -76,7 +78,7 @@ RULE_WS=9
 'MessageTypes'=62
 'forall'=42
 'E[]'=16
-'.'=65
+'.'=66
 'AG'=17
 'stateInStatechart'=53
 'true'=49
@@ -89,7 +91,7 @@ RULE_WS=9
 'not'=41
 '('=43
 ':'=46
-'-'=66
+'-'=67
 ','=36
 'AF'=13
 ']'=37

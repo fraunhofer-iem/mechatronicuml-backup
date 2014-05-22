@@ -76,6 +76,15 @@ public interface SetsFactory extends EFactory {
 	BufferSetExpr createBufferSetExpr();
 
 	/**
+	 * Returns a new object of class '<em>Connector Endpoint Instance Set Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Connector Endpoint Instance Set Expr</em>'.
+	 * @generated
+	 */
+	ConnectorEndpointInstanceSetExpr createConnectorEndpointInstanceSetExpr();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

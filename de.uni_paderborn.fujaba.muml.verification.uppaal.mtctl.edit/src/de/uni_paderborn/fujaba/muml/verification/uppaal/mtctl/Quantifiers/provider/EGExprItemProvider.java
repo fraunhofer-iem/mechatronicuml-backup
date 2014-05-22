@@ -15,12 +15,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -30,13 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class EGExprItemProvider
-	extends TemporalQuantifierExprItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends TemporalQuantifierExprItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -288,6 +277,11 @@ public class EGExprItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.EG_EXPR__EXPR,
 				 SetsFactory.eINSTANCE.createBufferSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.EG_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

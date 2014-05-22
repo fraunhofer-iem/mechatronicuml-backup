@@ -94,6 +94,10 @@ public class SetsAdapterFactory extends AdapterFactoryImpl {
 				return createBufferSetExprAdapter();
 			}
 			@Override
+			public Adapter caseConnectorEndpointInstanceSetExpr(ConnectorEndpointInstanceSetExpr object) {
+				return createConnectorEndpointInstanceSetExprAdapter();
+			}
+			@Override
 			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
 			}
@@ -212,6 +216,20 @@ public class SetsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBufferSetExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr <em>Connector Endpoint Instance Set Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr
+	 * @generated
+	 */
+	public Adapter createConnectorEndpointInstanceSetExprAdapter() {
 		return null;
 	}
 

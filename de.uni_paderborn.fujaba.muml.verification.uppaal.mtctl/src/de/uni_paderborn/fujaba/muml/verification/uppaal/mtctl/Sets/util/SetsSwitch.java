@@ -120,6 +120,14 @@ public class SetsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR: {
+				ConnectorEndpointInstanceSetExpr connectorEndpointInstanceSetExpr = (ConnectorEndpointInstanceSetExpr)theEObject;
+				T result = caseConnectorEndpointInstanceSetExpr(connectorEndpointInstanceSetExpr);
+				if (result == null) result = caseSetExpr(connectorEndpointInstanceSetExpr);
+				if (result == null) result = caseExpression(connectorEndpointInstanceSetExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -226,6 +234,21 @@ public class SetsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBufferSetExpr(BufferSetExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connector Endpoint Instance Set Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connector Endpoint Instance Set Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorEndpointInstanceSetExpr(ConnectorEndpointInstanceSetExpr object) {
 		return null;
 	}
 

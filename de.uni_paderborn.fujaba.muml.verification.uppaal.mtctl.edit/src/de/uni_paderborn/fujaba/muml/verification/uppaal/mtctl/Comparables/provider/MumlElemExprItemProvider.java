@@ -9,12 +9,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr} object.
@@ -23,13 +18,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class MumlElemExprItemProvider
-	extends MapExprItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends MapExprItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -52,6 +41,7 @@ public class MumlElemExprItemProvider
 			super.getPropertyDescriptors(object);
 
 			addElemPropertyDescriptor(object);
+			addConnectorEndpointInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -70,6 +60,28 @@ public class MumlElemExprItemProvider
 				 getString("_UI_MumlElemExpr_elem_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MumlElemExpr_elem_feature", "_UI_MumlElemExpr_type"),
 				 ComparablesPackage.Literals.MUML_ELEM_EXPR__ELEM,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connector Endpoint Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectorEndpointInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MumlElemExpr_connectorEndpointInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MumlElemExpr_connectorEndpointInstance_feature", "_UI_MumlElemExpr_type"),
+				 ComparablesPackage.Literals.MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE,
 				 true,
 				 false,
 				 true,

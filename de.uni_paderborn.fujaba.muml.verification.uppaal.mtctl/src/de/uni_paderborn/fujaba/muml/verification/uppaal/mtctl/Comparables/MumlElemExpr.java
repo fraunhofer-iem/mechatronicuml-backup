@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getElem <em>Elem</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getConnectorEndpointInstance <em>Connector Endpoint Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +50,31 @@ public interface MumlElemExpr extends MapExpr {
 	 * @generated
 	 */
 	void setElem(EObject value);
+
+	/**
+	 * Returns the value of the '<em><b>Connector Endpoint Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connector Endpoint Instance</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connector Endpoint Instance</em>' reference.
+	 * @see #setConnectorEndpointInstance(EObject)
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getMumlElemExpr_ConnectorEndpointInstance()
+	 * @model
+	 * @generated
+	 */
+	EObject getConnectorEndpointInstance();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getConnectorEndpointInstance <em>Connector Endpoint Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Connector Endpoint Instance</em>' reference.
+	 * @see #getConnectorEndpointInstance()
+	 * @generated
+	 */
+	void setConnectorEndpointInstance(EObject value);
 
 } // MumlElemExpr

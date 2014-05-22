@@ -42,6 +42,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.impl.Q
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
@@ -56,6 +57,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -113,6 +115,13 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * @generated
 	 */
 	private EClass bufferSetExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass connectorEndpointInstanceSetExprEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -290,6 +299,24 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConnectorEndpointInstanceSetExpr() {
+		return connectorEndpointInstanceSetExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConnectorEndpointInstanceSetExpr_ConnectorEndpoint() {
+		return (EReference)connectorEndpointInstanceSetExprEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SetsFactory getSetsFactory() {
 		return (SetsFactory)getEFactoryInstance();
 	}
@@ -328,6 +355,9 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 		transitionSetExprEClass = createEClass(TRANSITION_SET_EXPR);
 
 		bufferSetExprEClass = createEClass(BUFFER_SET_EXPR);
+
+		connectorEndpointInstanceSetExprEClass = createEClass(CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR);
+		createEReference(connectorEndpointInstanceSetExprEClass, CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT);
 	}
 
 	/**
@@ -355,6 +385,7 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 
 		// Obtain other dependent packages
 		MtctlPackage theMtctlPackage = (MtctlPackage)EPackage.Registry.INSTANCE.getEPackage(MtctlPackage.eNS_URI);
+		ComparablesPackage theComparablesPackage = (ComparablesPackage)EPackage.Registry.INSTANCE.getEPackage(ComparablesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -368,6 +399,7 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 		stateSetExprEClass.getESuperTypes().add(this.getSetExpr());
 		transitionSetExprEClass.getESuperTypes().add(this.getSetExpr());
 		bufferSetExprEClass.getESuperTypes().add(this.getSetExpr());
+		connectorEndpointInstanceSetExprEClass.getESuperTypes().add(this.getSetExpr());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(setExprEClass, SetExpr.class, "SetExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -385,6 +417,9 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 		initEClass(transitionSetExprEClass, TransitionSetExpr.class, "TransitionSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bufferSetExprEClass, BufferSetExpr.class, "BufferSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(connectorEndpointInstanceSetExprEClass, ConnectorEndpointInstanceSetExpr.class, "ConnectorEndpointInstanceSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConnectorEndpointInstanceSetExpr_ConnectorEndpoint(), theComparablesPackage.getMapExpr(), null, "connectorEndpoint", null, 0, 1, ConnectorEndpointInstanceSetExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //SetsPackageImpl
