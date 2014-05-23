@@ -304,7 +304,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -312,13 +312,13 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });	
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueParameterNames"
-		   });				
+		   });
 	}
 
 	/**
@@ -328,13 +328,13 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
 			 "UniqueParameterNames", "-- Parameter names must be unique\nself.parameters->isUnique(name)"
-		   });					
+		   });
 	}
 
 } //MsgtypePackageImpl

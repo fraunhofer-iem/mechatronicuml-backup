@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getAssemblyConnectorInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AssemblyConnectorInstanceNeedsTypeIfNotTopLevel'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AssemblyConnectorInstanceNeedsTypeIfNotTopLevel='-- Assembly Connector Instance needs type, if not top-level\nportInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\n'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AssemblyConnectorInstanceNeedsTypeIfNotTopLevel='-- Assembly Connector Instance needs type, if not top-level\r\nportInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\r\n'"
  * @generated
  */
 public interface AssemblyConnectorInstance extends PortConnectorInstance {
@@ -40,7 +40,7 @@ public interface AssemblyConnectorInstance extends PortConnectorInstance {
 	 * @return the value of the '<em>Assembly Connector Type</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getAssemblyConnectorInstance_AssemblyConnectorType()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if  type.oclIsKindOf(muml::component::AssemblyConnector) then\r\n\ttype.oclAsType(muml::component::AssemblyConnector)\r\nelse\r\n\tfalse\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if  type.oclIsKindOf(component::AssemblyConnector) then\r\n\ttype.oclAsType(component::AssemblyConnector)\r\nelse\r\n\tnull\r\nendif'"
 	 * @generated
 	 */
 	AssemblyConnector getAssemblyConnectorType();

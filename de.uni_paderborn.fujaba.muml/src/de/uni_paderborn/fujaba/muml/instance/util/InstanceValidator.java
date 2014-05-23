@@ -262,8 +262,8 @@ public class InstanceValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_INSTANCE_NEEDS_TYPE_IF_NOT_TOP_LEVEL__EEXPRESSION = "-- Assembly Connector Instance needs type, if not top-level\n" +
-		"portInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\n" +
+	protected static final String ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_INSTANCE_NEEDS_TYPE_IF_NOT_TOP_LEVEL__EEXPRESSION = "-- Assembly Connector Instance needs type, if not top-level\r\n" +
+		"portInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\r\n" +
 		"";
 
 	/**
