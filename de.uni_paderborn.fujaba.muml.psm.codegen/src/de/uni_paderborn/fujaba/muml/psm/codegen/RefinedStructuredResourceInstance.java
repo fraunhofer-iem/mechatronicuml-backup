@@ -55,7 +55,7 @@ public interface RefinedStructuredResourceInstance extends StructuredResourceIns
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>All Used Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefinedStructuredResourceInstance_AllUsedMessageTypes()
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let discrePortInstance : Set(muml::instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(muml::instance::DiscretePortInstance)).oclAsType(muml::instance::DIscretePortInstance) in\ndiscrePortInstance.receiverMessageTypes->asOrderedSet()->union(discrePortInstance.senderMessageTypes->asOrderedSet())->asOrderedSet()'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let discretePortInstance : Set(muml::instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(muml::instance::DiscretePortInstance)).oclAsType(muml::instance::DiscretePortInstance)->asOrderedSet() in\ndiscretePortInstance.receiverMessageTypes->asOrderedSet()->union(discretePortInstance.senderMessageTypes->asOrderedSet())->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<MessageType> getAllUsedMessageTypes();

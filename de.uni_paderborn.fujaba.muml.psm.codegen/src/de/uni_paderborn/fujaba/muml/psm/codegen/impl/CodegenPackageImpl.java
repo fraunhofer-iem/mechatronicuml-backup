@@ -325,7 +325,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		  (getRefinedStructuredResourceInstance_AllUsedMessageTypes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "let discrePortInstance : Set(muml::instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(muml::instance::DiscretePortInstance)).oclAsType(muml::instance::DIscretePortInstance) in\ndiscrePortInstance.receiverMessageTypes->asOrderedSet()->union(discrePortInstance.senderMessageTypes->asOrderedSet())->asOrderedSet()"
+			 "derivation", "let discretePortInstance : Set(muml::instance::DiscretePortInstance) = self.allocatedAtomicComponentInstances.portInstances->select(p | p.oclIsKindOf(muml::instance::DiscretePortInstance)).oclAsType(muml::instance::DiscretePortInstance)->asOrderedSet() in\ndiscretePortInstance.receiverMessageTypes->asOrderedSet()->union(discretePortInstance.senderMessageTypes->asOrderedSet())->asOrderedSet()"
 		   });
 	}
 
