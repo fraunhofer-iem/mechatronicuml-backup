@@ -434,6 +434,7 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(structuredResourceInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredResourceInstance_CheckResourceType(structuredResourceInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredResourceInstance_AllAtomicResourceTypesAreInitialized(structuredResourceInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredResourceInstance_UniquePortNames(structuredResourceInstance, diagnostics, context);
 		return result;
 	}
 
@@ -494,6 +495,35 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "AllAtomicResourceTypesAreInitialized",
 				 STRUCTURED_RESOURCE_INSTANCE__ALL_ATOMIC_RESOURCE_TYPES_ARE_INITIALIZED__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the UniquePortNames constraint of '<em>Structured Resource Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_RESOURCE_INSTANCE__UNIQUE_PORT_NAMES__EEXPRESSION = "self.hwports->isUnique(name)";
+
+	/**
+	 * Validates the UniquePortNames constraint of '<em>Structured Resource Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredResourceInstance_UniquePortNames(StructuredResourceInstance structuredResourceInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(HwresourceinstancePackage.Literals.STRUCTURED_RESOURCE_INSTANCE,
+				 structuredResourceInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniquePortNames",
+				 STRUCTURED_RESOURCE_INSTANCE__UNIQUE_PORT_NAMES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

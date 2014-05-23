@@ -1285,11 +1285,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StructuredResourceInstance" eSuperTypes="#//hwresourceinstance/ResourceInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="CheckResourceType AllAtomicResourceTypesAreInitialized "/>
+        <details key="constraints" value="CheckResourceType AllAtomicResourceTypesAreInitialized UniquePortNames"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AllAtomicResourceTypesAreInitialized" value="if(self.resourceType.oclIsUndefined()) then&#xA;&#x9;true&#xA;else &#xA;&#x9;self.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))&#xA;endif"/>
         <details key="CheckResourceType" value="self.resourceType.oclIsKindOf(hwresource::StructuredResource)"/>
+        <details key="UniquePortNames" value="self.hwports->isUnique(name)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a structured resource at instance level.&#xA;A StructuredResourceInstance is  derived from its resourcetype.&#xA;The embedded AtomicResourceInstances of this StructuredResourceInstance are derived from its type."/>

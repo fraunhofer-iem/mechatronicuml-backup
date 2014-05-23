@@ -698,7 +698,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		  (structuredResourceInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "CheckResourceType AllAtomicResourceTypesAreInitialized "
+			 "constraints", "CheckResourceType AllAtomicResourceTypesAreInitialized UniquePortNames"
 		   });							
 	}
 
@@ -751,7 +751,8 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		   source, 
 		   new String[] {
 			 "AllAtomicResourceTypesAreInitialized", "if(self.resourceType.oclIsUndefined()) then\n\ttrue\nelse \n\tself.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))\nendif",
-			 "CheckResourceType", "self.resourceType.oclIsKindOf(hwresource::StructuredResource)"
+			 "CheckResourceType", "self.resourceType.oclIsKindOf(hwresource::StructuredResource)",
+			 "UniquePortNames", "self.hwports->isUnique(name)"
 		   });						
 	}
 

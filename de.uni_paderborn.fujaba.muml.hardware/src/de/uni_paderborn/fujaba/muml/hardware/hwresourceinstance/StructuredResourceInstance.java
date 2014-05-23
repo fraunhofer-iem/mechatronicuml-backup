@@ -23,8 +23,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getStructuredResourceInstance()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckResourceType AllAtomicResourceTypesAreInitialized '"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllAtomicResourceTypesAreInitialized='if(self.resourceType.oclIsUndefined()) then\n\ttrue\nelse \n\tself.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))\nendif' CheckResourceType='self.resourceType.oclIsKindOf(hwresource::StructuredResource)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckResourceType AllAtomicResourceTypesAreInitialized UniquePortNames'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllAtomicResourceTypesAreInitialized='if(self.resourceType.oclIsUndefined()) then\n\ttrue\nelse \n\tself.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))\nendif' CheckResourceType='self.resourceType.oclIsKindOf(hwresource::StructuredResource)' UniquePortNames='self.hwports->isUnique(name)'"
  * @generated
  */
 public interface StructuredResourceInstance extends ResourceInstance {
