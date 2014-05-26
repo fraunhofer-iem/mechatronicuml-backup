@@ -673,6 +673,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		discreteSingleInteractionEndpointInstanceEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointInstance());
 		discreteMultiInteractionEndpointInstanceEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointInstance());
 		messageBufferEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		messageBufferEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(connectorEndpointEClass, ConnectorEndpoint.class, "ConnectorEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

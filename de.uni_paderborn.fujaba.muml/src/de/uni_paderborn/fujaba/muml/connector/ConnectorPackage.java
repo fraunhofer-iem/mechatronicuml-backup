@@ -2231,13 +2231,22 @@ public interface ConnectorPackage extends EPackage {
 	int MESSAGE_BUFFER__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Buffer Size</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__BUFFER_SIZE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int MESSAGE_BUFFER__BUFFER_SIZE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Message Type</b></em>' reference list.
@@ -2246,7 +2255,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__MESSAGE_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int MESSAGE_BUFFER__MESSAGE_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Discrete Interaction Endpoint</b></em>' container reference.
@@ -2255,7 +2264,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Buffer Overflow Avoidance Strategy</b></em>' attribute.
@@ -2264,7 +2273,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Message Buffer</em>' class.
@@ -2273,7 +2282,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.

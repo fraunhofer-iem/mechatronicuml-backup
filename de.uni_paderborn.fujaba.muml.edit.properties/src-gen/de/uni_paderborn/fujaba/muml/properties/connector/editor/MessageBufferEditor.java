@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.connector.editor;
  */
 public class MessageBufferEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -41,6 +41,10 @@ public class MessageBufferEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addBufferOverflowAvoidanceStrategy_GeneralTab_Editor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addName_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -140,6 +144,28 @@ public class MessageBufferEditor
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addName_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createName_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createName_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+				.getNamedElement_Name();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
+
+		return editor;
+
+	}
+
 	//
 	// instantiation
 	//
@@ -173,8 +199,10 @@ public class MessageBufferEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general",
+							"property.tab.documentation",
+							"property.tab.extensions", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

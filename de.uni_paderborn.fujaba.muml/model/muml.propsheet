@@ -1102,6 +1102,7 @@
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" properties="//@packages.9/@classes.8/@properties.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
   </packages>
