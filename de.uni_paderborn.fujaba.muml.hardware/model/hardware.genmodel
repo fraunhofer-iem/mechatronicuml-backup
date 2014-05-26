@@ -45,7 +45,7 @@
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatform/HWPortPart/portKind"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/queuingTime"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/payloadDataSize"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/parentResourcePart"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/parentResourcePart"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/BusConnector">
         <genFeatures property="None" createChild="false" propertySortChoices="true"
@@ -136,7 +136,7 @@
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPortInstance/connectedMediaInstances"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPortInstance/protocol"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatforminstance/HWPortInstance/portKind"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/DelegationInstance"/>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/BusConnectorInstance">
@@ -298,7 +298,7 @@
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwresource/HWPort">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/HWPort/parentResource"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/HWPort/parentResourceInstance"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/HWPort/parentResourceInstance"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwresource/Bus"/>
       <genClasses ecoreClass="hardware.ecore#//hwresource/Link"/>

@@ -170,7 +170,7 @@ public class HWPortInstanceItemProvider
 				 getString("_UI_HWPortInstance_isNetworkInterface_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortInstance_isNetworkInterface_feature", "_UI_HWPortInstance_type"),
 				 HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,

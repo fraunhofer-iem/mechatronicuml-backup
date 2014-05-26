@@ -62,6 +62,7 @@ public class DelegationHWPortItemProvider
 
 			addNamePropertyDescriptor(object);
 			addParentResourcePropertyDescriptor(object);
+			addParentResourceInstancePropertyDescriptor(object);
 			addPortKindPropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
@@ -106,6 +107,28 @@ public class DelegationHWPortItemProvider
 				 getString("_UI_HWPort_parentResource_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_parentResource_feature", "_UI_HWPort_type"),
 				 HwresourcePackage.Literals.HW_PORT__PARENT_RESOURCE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent Resource Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentResourceInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPort_parentResourceInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_parentResourceInstance_feature", "_UI_HWPort_type"),
+				 HwresourcePackage.Literals.HW_PORT__PARENT_RESOURCE_INSTANCE,
 				 false,
 				 false,
 				 false,
