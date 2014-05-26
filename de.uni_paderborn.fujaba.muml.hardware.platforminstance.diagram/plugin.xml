@@ -93,8 +93,8 @@
          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
-            name="hwplatform">
+            key="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.category"
+            name="platform">
          
          <child
                class="HWPlatformInstanceConfiguration"
@@ -113,7 +113,7 @@
             editorId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"
             editorName="PlatformInstance Editor"
             fileExtension="platforminstance_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.category"
             modelId="PlatformInstance">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/"

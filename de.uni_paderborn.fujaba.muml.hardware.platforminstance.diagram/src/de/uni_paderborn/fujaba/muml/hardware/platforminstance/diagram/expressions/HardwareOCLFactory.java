@@ -87,14 +87,14 @@ public class HardwareOCLFactory {
 					"--\'Bridge\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.name".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then \n--\tself.name.toString() +\' :\'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name.toString()\n--else \n--\tself.name.toString()\n--endif \n-- in\n--nameToShow".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwplatforminstance::HWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwplatforminstance::DelegationHWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsKindOf(hwplatforminstance::HWPortInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--proto + \'\\n\' + bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwplatforminstance::BridgeInstance) or (self.oclIsTypeOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK) and (self.oclIsTypeOf(hwplatforminstance::BridgeInstance)<>oppositeEnd.oclIsTypeOf(hwplatforminstance::BridgeInstance))".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwplatforminstance::BridgeInstance) or (self.oclIsTypeOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwplatforminstance::BridgeInstance) or (self.oclIsTypeOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::BUS) and (self.oclIsTypeOf(hwplatforminstance::BridgeInstance)<>oppositeEnd.oclIsTypeOf(hwplatforminstance::BridgeInstance))".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwplatforminstance::BusInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::BUS)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance) ".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],
