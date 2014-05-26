@@ -1320,7 +1320,7 @@
           body="--self.oclIsKindOf(hwplatform::HWPortPart) or self.oclIsKindOf(hwplatform::BusPart)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclIsTypeOf(hwplatform::DelegationHWPort)"/>
+          body="--self.oclIsKindOf(hwplatform::DelegationHWPort)"/>
       <expressions
           body="--let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;--let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;--proto + '\n' + bdwidth"/>
       <expressions

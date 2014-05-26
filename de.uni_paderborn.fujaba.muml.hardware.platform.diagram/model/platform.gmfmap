@@ -390,7 +390,7 @@
       <sourceEnd
           body="self.oclIsKindOf(hwplatform::HWPortPart) or self.oclIsKindOf(hwplatform::BusPart)"/>
       <targetEnd
-          body="self.oclIsTypeOf(hwplatform::DelegationHWPort)"/>
+          body="self.oclIsKindOf(hwplatform::DelegationHWPort)"/>
     </creationConstraints>
   </links>
   <links>
