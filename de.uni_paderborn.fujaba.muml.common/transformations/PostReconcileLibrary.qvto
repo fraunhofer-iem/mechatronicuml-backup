@@ -20,7 +20,7 @@ mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginNam
 	
 	//Set the Custom Preferenc Pages
 	self.diagram.preferencePages->map GenCustomPreferencePage(self);
-	self.diagram.compartments->map addEnlargeCompoartmentEditPolicy();
+	//self.diagram.compartments->map addEnlargeCompoartmentEditPolicy();
 }
 
 
