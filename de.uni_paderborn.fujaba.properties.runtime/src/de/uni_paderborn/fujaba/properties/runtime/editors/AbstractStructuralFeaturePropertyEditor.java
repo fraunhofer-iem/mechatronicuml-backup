@@ -292,6 +292,11 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		if (feature.isMany()) { // copy list
 			oldValue = new ArrayList<Object>((Collection<?>)oldValue);
 		}
+		
+		// Do not set value other than default value for invisible editors
+		if (!isVisible()) {
+			newValue = feature.getDefaultValue();
+		}
 
 		if (feature instanceof EReference && ((EReference)feature).isContainment()) {
 			if (!feature.isMany() && oldValue != null && newValue == null ) {
