@@ -137,7 +137,10 @@ helper Set(HWPortPart)::createPortInstances(number:String,parent:HWPlatformInsta
 	var portInstances:Set(HWPortInstance);
 	var lowerBound: Integer;
 	self->forEach(portPart){
-		lowerBound:=self.connectors->size();
+		if(portPart.cardinality.lowerBound.toInteger()< self.connectors->size()) then{
+					lowerBound:=self.connectors->size();	
+		}
+		endif;
 		while(lowerBound>0){
 				portInstances+=self.map createPortInstance(number, parent);
 				lowerBound:=lowerBound-1;
