@@ -134,11 +134,11 @@ public interface Transition extends PrioritizedElement, CommentableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The realtime statechart this transition belongs to.
+	 * The realtime statechart that this transition locically belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getTransition_Statechart()
-	 * @model required="true" transient="true" changeable="false" volatile="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if(self.source.oclIsKindOf(State))\r\nthen self.source.oclAsType(State).parentStatechart\r\nelse\r\n   if(self.target.oclIsKindOf(State))\r\n   then self.target.oclAsType(State).parentStatechart\r\n   else\r\n      if(self.source.oclIsKindOf(ExitPoint))\r\n      then self.source.oclAsType(ExitPoint).state.parentStatechart\r\n      else\r\n         if(self.target.oclIsKindOf(EntryPoint))\r\n\t  then self.target.oclAsType(EntryPoint).state.parentStatechart\r\n\t  else null -- this transition is illegal according to our syntactic constraints, no enclosing statechart can be assigned\r\n\t  endif\r\n      endif\r\n   endif\r\nendif\r\n'"
 	 * @generated
 	 */
