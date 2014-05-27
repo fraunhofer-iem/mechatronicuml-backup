@@ -16,9 +16,7 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.compartment;
  *
  */
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -36,12 +34,11 @@ import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+
 /**
  * 
  * @author andreas muelder - Initial contribution and API
@@ -58,13 +55,20 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 
 	@Override
 	public Command getCommand(Request request) {
-		
+
 		if (RequestConstants.REQ_RESIZE.equals(request.getType())
 				|| RequestConstants.REQ_MOVE.equals(request.getType())) {
-			return resizeContainerCommand(request);
-		}
-		else {
-			
+			if (request instanceof ChangeBoundsRequest
+					&& (((ChangeBoundsRequest) request).getMoveDelta().equals(
+							0, 0) || ((ChangeBoundsRequest) request)
+							.getSizeDelta().equals(0, 0))) {
+				// this is the initial create View Request thus we don't need to
+				// re-organize the compartment
+				return null;
+			} else {
+				return resizeContainerCommand(request);
+			}
+		} else {
 			return null;
 		}
 	}
@@ -72,35 +76,38 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 	public Command resizeContainerCommand(Request request) {
 		ChangeBoundsRequest cbr = (ChangeBoundsRequest) request;
 		CompoundCommand result = new CompoundCommand();
-
-		// Update Bounds of the container hierachy
-		for (IGraphicalEditPart currentContainer : containerHierachy) {
-			IFigure figure = currentContainer.getFigure();
-			SetBoundsCommand boundsCommand = new SetBoundsCommand(getHost()
-					.getEditingDomain(),
-					DiagramUIMessages.SetLocationCommand_Label_Resize,
-					new EObjectAdapter(currentContainer.getNotationView()),
-					figure.getBounds());
-			result.add(new ICommandProxy(boundsCommand));
-
-			// Update child bounds of elements that stand in the way...
-			List<IGraphicalEditPart> children = currentContainer.getParent()
-					.getChildren();
-			for (IGraphicalEditPart childPart : children) {
-				if (cbr.getEditParts().contains(childPart))
-					continue;
-				IFigure childFigure = childPart.getFigure();
-				if (childPart == currentContainer)
-					continue;
-				SetBoundsCommand childBoundsCommand = new SetBoundsCommand(
-						getHost().getEditingDomain(),
+		if (containerHierachy != null) {
+			// Update Bounds of the container hierachy
+			for (IGraphicalEditPart currentContainer : containerHierachy) {
+				IFigure figure = currentContainer.getFigure();
+				SetBoundsCommand boundsCommand = new SetBoundsCommand(getHost()
+						.getEditingDomain(),
 						DiagramUIMessages.SetLocationCommand_Label_Resize,
-						new EObjectAdapter(childPart.getNotationView()),
-						childFigure.getBounds());
-				result.add(new ICommandProxy(childBoundsCommand));
+						new EObjectAdapter(currentContainer.getNotationView()),
+						figure.getBounds());
+				result.add(new ICommandProxy(boundsCommand));
+
+				// Update child bounds of elements that stand in the way...
+				@SuppressWarnings("unchecked")
+				List<IGraphicalEditPart> children = currentContainer
+						.getParent().getChildren();
+				for (IGraphicalEditPart childPart : children) {
+					if (cbr.getEditParts().contains(childPart))
+						continue;
+					IFigure childFigure = childPart.getFigure();
+					if (childPart == currentContainer)
+						continue;
+					SetBoundsCommand childBoundsCommand = new SetBoundsCommand(
+							getHost().getEditingDomain(),
+							DiagramUIMessages.SetLocationCommand_Label_Resize,
+							new EObjectAdapter(childPart.getNotationView()),
+							childFigure.getBounds());
+					result.add(new ICommandProxy(childBoundsCommand));
+				}
 			}
+			return result;
 		}
-		return result;
+		return null;
 	}
 
 	@Override
@@ -156,10 +163,9 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 		return result;
 	}
 
-	@SuppressWarnings("unchecked")
 	/**
 	 * containerFeedbackBounds as absolute
-	 *
+	 * 
 	 * @param containerEditPart
 	 * @param containerFigure
 	 * @param containerFeedbackBounds
@@ -174,6 +180,7 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 				- originalBounds.width, containerFeedbackBounds.height
 				- originalBounds.height);
 
+		@SuppressWarnings("unchecked")
 		List<IGraphicalEditPart> children = containerEditPart.getParent()
 				.getChildren();
 
@@ -227,7 +234,6 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 		return boundsCache.get(figure).getCopy();
 	}
 
-
 	private boolean isVerticalAffected(Rectangle newBounds, Point moveDelta,
 			Rectangle bounds) {
 		boolean verticalAffected = (bounds.x > newBounds.x || bounds.x
@@ -275,50 +281,42 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 			Dimension preferredSize = containerFigure.getPreferredSize()
 					.getCopy();
 			editPart.getFigure().translateToAbsolute(preferredSize);
-/*deactivated automatical minimizing of container
-			if (request.getSizeDelta().height() < 0
-					|| request.getSizeDelta().width < 0
-					|| request.getMoveDelta().x < 0
-					|| request.getMoveDelta().y < 0) {
-				// FIXME:Remove Debug Output
-				// TODO :TEST
-				System.out.println("If pfad");
-				result.resize(request.getSizeDelta());
-				result.resize(request.getMoveDelta().x,
-						request.getMoveDelta().y);
+			/*
+			 * deactivated automatical minimizing of container if
+			 * (request.getSizeDelta().height() < 0 ||
+			 * request.getSizeDelta().width < 0 || request.getMoveDelta().x < 0
+			 * || request.getMoveDelta().y < 0) { // FIXME:Remove Debug Output
+			 * // TODO :TEST System.out.println("If pfad");
+			 * result.resize(request.getSizeDelta());
+			 * result.resize(request.getMoveDelta().x,
+			 * request.getMoveDelta().y);
+			 * 
+			 * ShapeCompartmentEditPart compartmentEditPart = null; if
+			 * (editPart.getParent() instanceof ShapeCompartmentEditPart) {
+			 * PrecisionRectangle transformedChildRect = null;
+			 * compartmentEditPart = (ShapeCompartmentEditPart) editPart
+			 * .getParent(); List<IGraphicalEditPart> childEditParts =
+			 * compartmentEditPart .getChildren(); for (IGraphicalEditPart
+			 * chidEditPart : childEditParts) { if (chidEditPart != editPart) {
+			 * transformedChildRect = new PrecisionRectangle(
+			 * chidEditPart.getFigure().getBounds());
+			 * transformedChildRect.expand(SPACEING * level, SPACEING * level);
+			 * chidEditPart.getFigure().translateToAbsolute(
+			 * transformedChildRect); result.union(transformedChildRect); } } }
+			 * 
+			 * Dimension max = Dimension.max(result.getSize(), containerFigure
+			 * .getMinimumSize().getCopy());
+			 * 
+			 * result.setSize(max);
+			 * 
+			 * } else {
+			 */
+			result.union(transformedRect);
+			// FIXME:REMOVE DEBUG output
+			System.out.println("else teil");
+			Dimension max = Dimension.max(result.getSize(), preferredSize);
 
-				ShapeCompartmentEditPart compartmentEditPart = null;
-				if (editPart.getParent() instanceof ShapeCompartmentEditPart) {
-					PrecisionRectangle transformedChildRect = null;
-					compartmentEditPart = (ShapeCompartmentEditPart) editPart
-							.getParent();
-					List<IGraphicalEditPart> childEditParts = compartmentEditPart
-							.getChildren();
-					for (IGraphicalEditPart chidEditPart : childEditParts) {
-						if (chidEditPart != editPart) {
-							transformedChildRect = new PrecisionRectangle(
-									chidEditPart.getFigure().getBounds());
-							transformedChildRect.expand(SPACEING * level,
-									SPACEING * level);
-							chidEditPart.getFigure().translateToAbsolute(
-									transformedChildRect);
-							result.union(transformedChildRect);
-						}
-					}
-				}
-
-				Dimension max = Dimension.max(result.getSize(), containerFigure
-						.getMinimumSize().getCopy());
-
-				result.setSize(max);
-
-			} else { */
-				result.union(transformedRect);
-				// FIXME:REMOVE DEBUG output
-				System.out.println("else teil");
-				Dimension max = Dimension.max(result.getSize(), preferredSize);
-
-				result.setSize(max);
+			result.setSize(max);
 		}
 		return result;
 	}
