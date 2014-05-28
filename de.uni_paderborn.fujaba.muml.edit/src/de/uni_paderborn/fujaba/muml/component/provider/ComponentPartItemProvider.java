@@ -256,12 +256,24 @@ public class ComponentPartItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		//String label = ((ComponentPart)object).getComment();
+		StringBuffer buffer = new StringBuffer();
+		String name = ((ComponentPart)object).getName();
+		
+		// "Component Part"
+		buffer.append(getString("_UI_ComponentPart_type"));
+
+		// Name of the Component Part
+		buffer.append(" ");
+		buffer.append(name == null ? "null" : name);
+
+		// Slash
+		buffer.append(" / ");
+
+		// Name of the type
 		Component componentType = ((ComponentPart) object).getComponentType();
-		String label = componentType == null ? "null" : componentType.getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentPart_type") :
-			getString("_UI_ComponentPart_type") + " " + label;
+		buffer.append(componentType == null || componentType.getName() == null ? "null" : componentType.getName());
+		
+		return buffer.toString();
 	}
 
 	/**
