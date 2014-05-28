@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.naming.QualifiedName;
@@ -24,6 +23,10 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import de.uni_paderborn.fujaba.muml.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -57,14 +60,14 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSet
  */
 public class MtctlScopeProvider extends AbstractScopeProvider {
 	private static MtctlScopeProvider instance = null;
-	protected List<State> states = null; //list of states in realtimestatecharts that are available in the current top-level muml element
-	protected List<Variable> variables = null;
-	protected List<Clock> clocks = null;
-	protected List<MessageType> messageTypes = null;
-	protected List<MessageBuffer> buffers = null;
-	protected List<RealtimeStatechart> statecharts = null;
-	protected List<ConnectorEndpoint> connectorEndpoints = null;
-	protected List<ConnectorEndpointInstance> connectorEndpointInstances = null;
+	protected Set<State> states = null; //set of states in realtimestatecharts that are available in the current top-level muml element
+	protected Set<Variable> variables = null;
+	protected Set<Clock> clocks = null;
+	protected Set<MessageType> messageTypes = null;
+	protected Set<MessageBuffer> buffers = null;
+	protected Set<RealtimeStatechart> statecharts = null;
+	protected Set<ConnectorEndpoint> connectorEndpoints = null;
+	protected Set<ConnectorEndpointInstance> connectorEndpointInstances = null;
 	
 	/**
 	 * The mapping that determines how to call elements from the muml models
@@ -149,7 +152,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	
 	private MtctlScopeProvider() {
 		super();
-		initLists();
+		initSets();
 	}
 	
 	/**
@@ -169,7 +172,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @return the scope
 	 */
 	public IScope getScopeState(EObject context, EReference reference) {
-		List<EObject> scope = new ArrayList<EObject>();
+		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 		
 		//Add states from the muml model
@@ -198,7 +201,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @return the scope
 	 */
 	public IScope getScopeTransition(EObject context, EReference reference) {
-		List<EObject> scope = new ArrayList<EObject>();
+		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add BoundVariables
@@ -222,7 +225,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @return the scope
 	 */
 	public IScope getScopeMessageType(EObject context, EReference reference) {
-		List<EObject> scope = new ArrayList<EObject>();
+		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add states from the muml model
@@ -249,7 +252,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @return the scope
 	 */
 	public IScope getScopeBuffer(EObject context, EReference reference) {
-		List<EObject> scope = new ArrayList<EObject>();
+		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add states from the muml model
@@ -276,7 +279,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @return the scope
 	 */
 	public IScope getScopeVariable(EObject context, EReference reference) {
-		List<EObject> scope = new ArrayList<EObject>();
+		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add clocks and variables from the model
@@ -318,7 +321,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * Returns the scope when looking for a connector endpoint instance
 	 */
 	public IScope getScopeConnectorEndpointInstance(EObject context, EReference reference) {
-		List<EObject> scope = new ArrayList<EObject>();
+		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add connector endpoint instances from the model
@@ -345,7 +348,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @return the scope
 	 */
 	public IScope getScopeAny(EObject context, EReference reference) {
-		List<EObject> scope = new ArrayList<EObject>();
+		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add elements from the model
@@ -426,7 +429,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param object
 	 */
 	public void setScopeForEObject(EObject object) {
-		initLists(); //clear previous data
+		initSets(); //clear previous data
 		if (object instanceof VerificationConstraintRepository && object != null) //this will happen when the editor is used to specify a list of constraints to save them in a foreign-created VerificationConstraintRepository
 			object = object.eContainer();
 		
@@ -435,6 +438,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			setScopeForCoordinationProtocol((CoordinationProtocol) object);
 		else if (object instanceof AtomicComponent)
 			setScopeForAtomicComponent((AtomicComponent) object);
+		else if (object instanceof ComponentInstanceConfiguration)
+			setScopeForCIC((ComponentInstanceConfiguration) object);
 		else
 			System.out.println("MtctlScopeProvider::setScopeForEObject: Don't know how to handle "+object.toString()+" :'(");
 		
@@ -489,6 +494,36 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		this.buffers.addAll(buffers);
 	}
 	
+	
+	/**
+	 * Called by setScopeForEObject() if the top-level-element is an ComponentInstanceConfiguration.
+	 * Collects everything that can be referenced from mtctl in an ComponentInstanceConfiguration.
+	 * @param object
+	 */
+	private void setScopeForCIC(ComponentInstanceConfiguration object) {
+		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
+		HashSet<MessageBuffer> buffers = new HashSet<MessageBuffer>();
+		
+		// add all RTSC elements, message types, and buffers from the Ports of the PortInstances of the contained ComponentInstances
+		for (ComponentInstance componentInstance : object.getComponentInstances()) {
+			if (componentInstance instanceof StructuredComponentInstance)
+				setScopeForCIC(((StructuredComponentInstance) componentInstance).getEmbeddedCIC());
+			for (PortInstance portInstance : componentInstance.getPortInstances()) {
+				connectorEndpointInstances.add(portInstance);
+				if (portInstance.getPortType() instanceof DiscretePort) {
+					DiscretePort port = (DiscretePort) portInstance.getPortType();
+					connectorEndpoints.add(port);
+					addRtscElementsToArrays(((DiscretePort) port).getBehavior());
+					messageTypes.addAll(((DiscretePort) port).getReceiverMessageTypes());
+					messageTypes.addAll(((DiscretePort) port).getSenderMessageTypes());
+					buffers.addAll(((DiscretePort) port).getReceiverMessageBuffer());					
+				}
+			}
+		}		
+		this.messageTypes.addAll(messageTypes);
+		this.buffers.addAll(buffers);
+	}
+	
 	/**
 	 * Adds the contained (interesting) elements of rtsc to the arrays "states", "clocks", ...
 	 * (Helper function)
@@ -527,15 +562,15 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	/**
 	 * Resets the lists containing the visible elements from the top-level muml element
 	 */
-	private void initLists() {
-		states = new ArrayList<State>();
-		variables = new ArrayList<Variable>();
-		clocks = new ArrayList<Clock>();
-		messageTypes = new ArrayList<MessageType>();
-		buffers = new ArrayList<MessageBuffer>();
-		statecharts = new ArrayList<RealtimeStatechart>();
-		connectorEndpoints = new ArrayList<ConnectorEndpoint>();
-		connectorEndpointInstances = new ArrayList<ConnectorEndpointInstance>();
+	private void initSets() {
+		states = new HashSet<State>();
+		variables = new HashSet<Variable>();
+		clocks = new HashSet<Clock>();
+		messageTypes = new HashSet<MessageType>();
+		buffers = new HashSet<MessageBuffer>();
+		statecharts = new HashSet<RealtimeStatechart>();
+		connectorEndpoints = new HashSet<ConnectorEndpoint>();
+		connectorEndpointInstances = new HashSet<ConnectorEndpointInstance>();
 	}
 	
 	/**
@@ -543,11 +578,11 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param list
 	 * @return
 	 */
-	private IScope createScope(List<? extends EObject> list) {
-		if (list == null || list.isEmpty()) {
+	private IScope createScope(Set<? extends EObject> set) {
+		if (set == null || set.isEmpty()) {
 			return IScope.NULLSCOPE;
 		}
-		IScope scope = Scopes.scopeFor(list, scopedElementNameMap, IScope.NULLSCOPE);
+		IScope scope = Scopes.scopeFor(set, scopedElementNameMap, IScope.NULLSCOPE);
 		
 		/*for (IEObjectDescription descr : scope.getAllElements()) //debugging log
 			System.out.println(descr.getQualifiedName().toString());

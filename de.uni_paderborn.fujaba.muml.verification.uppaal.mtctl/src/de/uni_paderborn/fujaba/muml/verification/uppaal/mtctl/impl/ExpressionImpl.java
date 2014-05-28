@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public abstract class ExpressionImpl extends EObjectImpl implements Expression {
+public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
