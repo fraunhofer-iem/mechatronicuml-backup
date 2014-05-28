@@ -10,7 +10,7 @@ Bundle-Version: «plugin.version»
 Require-Bundle: «EXPAND requiredBundles FOR plugin»
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: «genPluginId()».metamodel«IF !packages.isEmpty-»,
+Export-Package: «genPluginId()».metamodel, «genPluginId()».constraint«IF !packages.isEmpty-»,
 «FOREACH packages AS this SEPARATOR ',\n'» «genPackageName().toString()».editor«ENDFOREACH-»
 «IF !tabs.isEmpty»,
  «genPluginId()».tabs«ENDIF-»
