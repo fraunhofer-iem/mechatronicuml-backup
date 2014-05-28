@@ -26,15 +26,20 @@
 			targetElement = ((org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
 		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
-			java.util.List<org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy> editPolicies = org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
-					.getRegisteredEditPolicies(getDiagramView().getElement());
-			for (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy editPolicy : editPolicies) {
-				editPolicy.refresh();
-			}
+			doCanonicalRefresh();
 		}
 
 		super.handleNotificationEvent(notification);
 	}
+
+	protected void doCanonicalRefresh() {
+		java.util.List<org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy> editPolicies = org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
+			.getRegisteredEditPolicies(getDiagramView().getElement());
+		for (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy editPolicy : editPolicies) {
+			editPolicy.refresh();
+		}
+	}
+	
 «ENDIF»
 «targetDef.proceed()»
 «ENDAROUND»

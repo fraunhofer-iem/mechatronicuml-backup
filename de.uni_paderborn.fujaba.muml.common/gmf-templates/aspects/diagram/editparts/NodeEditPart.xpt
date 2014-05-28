@@ -17,13 +17,16 @@
 		boolean update = false;
 		«EXPAND doSome FOREACH genOutgoingLinks»
 		if (update) {
-			java.util.List<org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy> editPolicies = org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
-					.getRegisteredEditPolicies(getDiagramView().getElement());
-			for (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy editPolicy : editPolicies) {
-				editPolicy.refresh();
-			}
+			doCanonicalRefresh();
 		}
 		super.handleNotificationEvent(event);	
+	}
+	protected void doCanonicalRefresh() {
+		java.util.List<org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy> editPolicies = org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
+				.getRegisteredEditPolicies(getDiagramView().getElement());
+		for (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy editPolicy : editPolicies) {
+			editPolicy.refresh();
+		}
 	}
 «ENDIF»
 «targetDef.proceed()»

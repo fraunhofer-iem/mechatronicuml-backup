@@ -20,7 +20,7 @@ public class CustomPortPartEditPart extends PortPartEditPart {
 		Object feature = notification.getFeature();
 
 		if (ConnectorPackage.Literals.CONNECTOR_ENDPOINT__CONNECTORS.equals(feature)) {
-			executeTransformation();
+			//executeTransformation();
 		}
 		super.handleNotificationEvent(notification);
 	}
@@ -34,6 +34,10 @@ public class CustomPortPartEditPart extends PortPartEditPart {
 		}
 	}
 
+	@Override
+	protected void doCanonicalRefresh() {
+		// DO NOTHING TO PREVENT PROBLEMS
+	}
 
 
 }

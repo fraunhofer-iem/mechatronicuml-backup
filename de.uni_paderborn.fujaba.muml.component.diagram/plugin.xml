@@ -221,19 +221,52 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart" id="StaticAtomicComponent_2006"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart" id="StaticStructuredComponent_2005"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart" id="DiscretePort_3010"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart" id="ContinuousPort_3011"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart" id="HybridPort_3013"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart" id="ComponentPart_3012"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart" id="PortPart_3022"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart" id="CoordinationProtocolPart_3016"/>
-         <context elements="ModelElementCategory_1000,StaticAtomicComponent_2006,StaticStructuredComponent_2005,DiscretePort_3010,ContinuousPort_3011,HybridPort_3013,ComponentPart_3012,PortPart_3022,CoordinationProtocolPart_3016"/>
+         <context elements="ModelElementCategory_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfAtomicComponentEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart" id="StaticAtomicComponent_2006"/>
+         <context elements="StaticAtomicComponent_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfStaticStructuredComponentEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart" id="StaticStructuredComponent_2005"/>
+         <context elements="StaticStructuredComponent_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfDiscretePortEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart" id="DiscretePort_3010"/>
+         <context elements="DiscretePort_3010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfContinuousPortEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart" id="ContinuousPort_3011"/>
+         <context elements="ContinuousPort_3011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfHybridPortEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart" id="HybridPort_3013"/>
+         <context elements="HybridPort_3013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfComponentPartEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart" id="ComponentPart_3012"/>
+         <context elements="ComponentPart_3012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfPortPartEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart" id="PortPart_3022"/>
+         <context elements="PortPart_3022"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.assistants.MumlModelingAssistantProviderOfCoordinationProtocolPartEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart" id="CoordinationProtocolPart_3016"/>
+         <context elements="CoordinationProtocolPart_3016"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
