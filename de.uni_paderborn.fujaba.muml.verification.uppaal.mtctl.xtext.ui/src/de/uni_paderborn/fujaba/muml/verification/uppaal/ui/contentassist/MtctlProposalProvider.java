@@ -9,6 +9,7 @@ import java.util.HashSet;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
@@ -18,17 +19,21 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 import com.google.common.base.Function;
+import com.google.inject.Inject;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlScopeProvider;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.services.MtctlGrammarAccess;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
  */
 public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.AbstractMtctlProposalProvider {
+	@Inject
+	MtctlGrammarAccess grammarAccess;
+	
 	public static final String[] keywordExclude = new String[] {">","<",">=","<=","==","!=","(",")","A[]","A<>","E<>","E[]"}; // list of keywords to exclude from auto-complete
 	public static final HashSet<String> hashKeywordExclude = new HashSet<String>(Arrays.asList(keywordExclude));
 	public static final HashSet<String> temporalQuantifiers = new HashSet<String>(Arrays.asList(new String[] {"AG", "AF", "EG", "EF"}));
@@ -36,8 +41,8 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 	@Override
 	public void completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
 
-		if (hashKeywordExclude.contains(keyword.getValue()) || MtctlTemplateProposalProvider.templateNames.contains(keyword.getValue()))
-			return; // suppress <ignored keyword> and <keywords overruled by templates>
+		if (hashKeywordExclude.contains(keyword.getValue()) || MtctlTemplateProposalProvider.templateNames.contains(keyword.getValue()) || keyword.getValue().length() == 1)
+			return; // suppress <ignored keyword>, <keywords overruled by templates>, and <one char keywords>
 		
 		//suppress nested temporal quantifiers suggestions
 		EObject context = contentAssistContext.getCurrentModel();
@@ -93,4 +98,16 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 		
 		completeAssignmentUsingScope(PredicatesFactory.eINSTANCE.createComparisonExpr(), PredicatesPackage.eINSTANCE.getComparisonExpr_Lhs(), context, acceptor);
 	}
+	
+	/*
+	 * Overriding to supply keyword proposals for time units which are otherwise missing for some reason
+	 */
+	@Override
+	public void complete_TimeUnitExpr(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		for (AbstractElement k : grammarAccess.getTimeUnitExprAccess().getAlternatives().getElements()) {
+			if (k instanceof Keyword)
+				completeKeyword((Keyword) k, context, acceptor);
+		}
+	}
+
 }

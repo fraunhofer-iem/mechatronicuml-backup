@@ -17,8 +17,10 @@ import com.google.common.base.Function;
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
+import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
@@ -105,11 +107,11 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 				if (obj instanceof Role)
 					return QualifiedName.create(((Role) obj).getName()); //Roles are called by their names
 				
-				if (obj instanceof AtomicComponent)
-					return QualifiedName.create(((AtomicComponent) obj).getName()); //AtomicComponents are called by their names
-				
+				if (obj instanceof Component)
+					return QualifiedName.create(((Component) obj).getName()); //Components are called by their names
+								
 				if (obj instanceof Port) //Ports are called component.port
-					return internalCreateName(obj.eContainer()).append(((DiscretePort) obj).getName());
+					return internalCreateName(obj.eContainer()).append(((Port) obj).getName());
 				
 				if (obj instanceof ConnectorEndpointInstance)
 					return QualifiedName.create(((ConnectorEndpointInstance) obj).getName());
