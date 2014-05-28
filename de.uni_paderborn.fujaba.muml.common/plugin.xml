@@ -5,12 +5,12 @@
 	<extension point="org.eclipse.ui.menus">
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba?after=types">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
 	            icon="icons/TypeDialog.gif"
 	            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
-	            label="Open Type Dialog"
+	            label="Open Data-Type Dialog"
 	            style="push">
 	            	<visibleWhen checkEnabled="true">
           			</visibleWhen>

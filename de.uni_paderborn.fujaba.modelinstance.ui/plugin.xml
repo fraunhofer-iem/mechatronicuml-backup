@@ -55,6 +55,10 @@
                  visible="true">
            </separator>
            <separator
+                 name="types"
+                 visible="true">
+           </separator>
+           <separator
                  name="additions"
                  visible="false">
            </separator>

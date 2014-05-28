@@ -62,7 +62,7 @@
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=structural-diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba?after=types">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.messagetype.diagram.createDiagram"
 	            icon="icons/obj16/MessageinterfaceDiagramFile.gif"
@@ -277,14 +277,27 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.assistants.MumlModelingAssistantProviderOfMessageInterfaceDiagramEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart" id="ModelElementCategory_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart" id="MessageTypeRepository_2008"/>
-         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart" id="MessageType_3007"/>
-         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart" id="Parameter_3009"/>
-         <context elements="ModelElementCategory_1000,MessageTypeRepository_2008,MessageType_3007,Parameter_3009"/>
+         <context elements="ModelElementCategory_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.assistants.MumlModelingAssistantProviderOfMessageTypeRepositoryEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart" id="MessageTypeRepository_2008"/>
+         <context elements="MessageTypeRepository_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.assistants.MumlModelingAssistantProviderOfMessageTypeEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart" id="MessageType_3007"/>
+         <context elements="MessageType_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.assistants.MumlModelingAssistantProviderOfParameterEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart" id="Parameter_3009"/>
+         <context elements="Parameter_3009"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">

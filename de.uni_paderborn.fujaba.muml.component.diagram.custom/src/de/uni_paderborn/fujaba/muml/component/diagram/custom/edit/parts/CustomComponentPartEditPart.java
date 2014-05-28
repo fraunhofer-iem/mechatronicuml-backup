@@ -154,7 +154,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 			ComponentPart componentPart = (ComponentPart) getNotationView()
 					.getElement();
 			StructuredComponent component = componentPart.getParentComponent();
-			Activator.updateCoordinationProtocolParts(editingDomain, component);	
+			//Activator.updateCoordinationProtocolParts(editingDomain, component);	
 		}
 	}
 	/**
