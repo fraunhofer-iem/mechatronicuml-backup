@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -9,8 +12,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
@@ -26,6 +31,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  * 
  */
 public class CustomComponentPartEditPart extends ComponentPartEditPart {
+	
+	protected List<String> portListenerNames = new ArrayList<String>();
 
 	public CustomComponentPartEditPart(View view) {
 		super(view);
@@ -80,8 +87,18 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		super.addSemanticListeners();
 		
 		ComponentPart componentPart =  (ComponentPart) resolveSemanticElement();
+		Component componentType = componentPart.getComponentType();
+		if (componentType != null) {
+			addListenerFilter("ComponentType", this, componentType);//$NON-NLS-1$
+			int id = 0;
+			for (Port port : componentType.getPorts()) {
+				String listenerName = "Port" + id;
+				portListenerNames.add(listenerName);
+				addListenerFilter(listenerName, this, port);
+				id++;
+			}
+		}
 		Cardinality cardinality = componentPart.getCardinality();
-		addListenerFilter("ComponentType", this, componentPart.getComponentType());//$NON-NLS-1$
 		
 		if (cardinality != null) {
 			addListenerFilter("Cardinality", this, cardinality);//$NON-NLS-1
@@ -99,6 +116,11 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		removeListenerFilter("ComponentType"); //$NON-NLS-1$
 		removeListenerFilter("Cardinality"); //$NON-NLS-1$
 		removeListenerFilter("Cardinality.upperBound"); //$NON-NLS-1$
+		
+		// remove port listeners
+		for (String listenerName : portListenerNames) {
+			removeListenerFilter(listenerName);
+		}
 	}
 
 	/**
@@ -125,7 +147,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 
 
 			executeTransformation();
-		} else if (ComponentPackage.Literals.COMPONENT__PORTS == feature) {
+		} else if (ComponentPackage.Literals.COMPONENT__PORTS == feature || ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE == feature) {
 			executeTransformation();
 		}
 		super.handleNotificationEvent(notification);
