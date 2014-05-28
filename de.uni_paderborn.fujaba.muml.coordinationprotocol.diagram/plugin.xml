@@ -62,7 +62,7 @@
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba?after=structural-diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"

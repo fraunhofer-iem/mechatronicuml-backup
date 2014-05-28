@@ -54,12 +54,22 @@
 	«EXPAND diagraminformation»
 «ENDAROUND»
 
+«DEFINE afterSeparator FOR gmfgen::GenEditorGenerator-»
+«IF plugin.iD = 'de.uni_paderborn.fujaba.muml.component.diagram' or plugin.iD = 'de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram' or plugin.iD = 'de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram' or plugin.iD = 'de.uni_paderborn.fujaba.muml.messagetype.diagram'-»
+structural-diagrams«-»
+«ELSEIF plugin.iD = 'de.uni_paderborn.fujaba.muml.realtimestatechart.diagram'-»
+behavioral-diagrams«-»
+«ELSE-»
+diagrams«-»
+«ENDIF-»
+«ENDDEFINE»
+
 «DEFINE menus FOR gmfgen::GenEditorGenerator»
 	<extension point="org.eclipse.ui.menus">
 	   «EXPAND xpt::Common::xmlGeneratedTag»   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba?after=«EXPAND afterSeparator»">
 	      <command
 	            commandId="«plugin.iD».createDiagram"
 	            icon="«diagram.creationWizardIconPathX»"

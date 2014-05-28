@@ -43,8 +43,16 @@
               </visibleWhen>
            </command>
            <separator
+                 name="structural-diagrams"
+                 visible="true">
+           </separator>
+           <separator
+                 name="behavioral-diagrams"
+                 visible="true">
+           </separator>
+           <separator
                  name="diagrams"
-                 visible="false">
+                 visible="true">
            </separator>
            <separator
                  name="additions"
@@ -52,7 +60,7 @@
            </separator>
            <separator
                  name="utilities"
-                 visible="false">
+                 visible="true">
            </separator>
         </menu>
      </menuContribution>
