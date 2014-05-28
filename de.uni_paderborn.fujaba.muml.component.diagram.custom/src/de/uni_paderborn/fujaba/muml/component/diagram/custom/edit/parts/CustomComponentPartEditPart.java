@@ -165,7 +165,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		if (editingDomain != null) {
 			ComponentPart componentPart = (ComponentPart) getNotationView()
 					.getElement();
-			//Activator.updateComponentPart(editingDomain, componentPart);
+			Activator.updateComponentPart(editingDomain, componentPart);
 		}
 	}
 	
