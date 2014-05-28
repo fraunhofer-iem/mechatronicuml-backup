@@ -74,6 +74,8 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 	 * That behavior makes it difficult to find the correct scope (most prominently, getScope(messageInBufferExpr, MumlElemExpr.elem) cannot
 	 * distinguish whether the message (1st argument) or the buffer (2nd argument) is searched for, because both calls are the same.
 	 * This implementation fixes that, then lets the default provider do its thing.
+	 * 
+	 * The context given by the caller is not the context that we are actually interested in, but potentially a higher-level element.
 	 */
 	@Override
 	public void completeAssignment(Assignment assignment, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
@@ -81,12 +83,33 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 		if (currentModel == null) //normalize empty models
 			currentModel = MtctlFactory.eINSTANCE.createPropertyRepository();
 		
-		for (EReference reference : currentModel.eClass().getEAllReferences()) //find correct reference (O(1) for fixed metamodel)
-			if (reference.getName().equals(assignment.getFeature())) //compare reference with current feature to set
-				completeAssignmentUsingScope(currentModel, reference, contentAssistContext, acceptor); //add appropriate items from scoping
-	
+		EObject elementWithRef = findFirstElementWithReference(currentModel, assignment.getFeature());
+		if (elementWithRef != null) {	
+			for (EReference reference : elementWithRef.eClass().getEAllReferences()) //find fitting EReference 
+				if (reference.getName().equals(assignment.getFeature())) 
+					completeAssignmentUsingScope(elementWithRef, reference, contentAssistContext, acceptor); //add appropriate items from scoping
+		}
+		
 		super.completeAssignment(assignment, contentAssistContext, acceptor);
 	}
+	
+	/**
+	 * Searches the subtree rooted in model for the first element that possesses a reference with name referenceName
+	 */
+	private EObject findFirstElementWithReference(EObject model, String referenceName) {
+		//Check if model contains the reference
+		for (EReference ref : model.eClass().getEAllReferences())
+			if (ref.getName().equals(referenceName))
+				return model;
+		
+		//Otherwise, check children of this model element
+		for (EReference ref : model.eClass().getEAllReferences())
+			if (model.eGet(ref) instanceof EObject)
+				return findFirstElementWithReference((EObject) model.eGet(ref), referenceName);
+		
+		return null;
+	}
+
 	
 	/*
 	 * Overriding to supply helpful proposals wherever comparisons may be expected.
