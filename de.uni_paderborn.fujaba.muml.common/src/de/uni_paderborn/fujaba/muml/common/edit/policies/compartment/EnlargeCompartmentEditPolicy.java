@@ -265,7 +265,6 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 		figure.getParent().setConstraint(figure, bounds);
 	}
 
-	// here i have to calculate the resizing
 	@SuppressWarnings({ "unchecked" })
 	private Rectangle calculateFeedbackBounds(ChangeBoundsRequest request,
 			Rectangle feedbackBounds, int level, IFigure containerFigure) {
@@ -312,8 +311,6 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 			 * } else {
 			 */
 			result.union(transformedRect);
-			// FIXME:REMOVE DEBUG output
-			System.out.println("else teil");
 			Dimension max = Dimension.max(result.getSize(), preferredSize);
 
 			result.setSize(max);
