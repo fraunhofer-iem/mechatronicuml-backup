@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomClockConstraintLabelExpressionLabelParser5053;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomRTSCVariableLabelExpressionLabelParser5062;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomRegionLabelExpressionLabelParser5063;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomTransitionLabelExpressionLabelParser6005;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomTransitionLabelExpressionLabelParser6006;
@@ -22,6 +23,9 @@ public class CustomMumlParserProvider extends MumlParserProvider {
 			
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
 			return getClockConstraintLabel_5053Parser();
+		
+		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+			return getRTSCVariableLabel_5062Parser();
 			
 		}
 		return super.getParser(visualID);
@@ -40,10 +44,13 @@ public class CustomMumlParserProvider extends MumlParserProvider {
 		return new CustomTransitionLabelExpressionLabelParser6006();
 	}
 
+	protected IParser getRTSCVariableLabel_5062Parser() {
+		return new CustomRTSCVariableLabelExpressionLabelParser5062();
+	}
+
+
 	protected IParser getClockConstraintLabel_5053Parser() {
 		return new CustomClockConstraintLabelExpressionLabelParser5053();
 	}
-
-	
 
 }
