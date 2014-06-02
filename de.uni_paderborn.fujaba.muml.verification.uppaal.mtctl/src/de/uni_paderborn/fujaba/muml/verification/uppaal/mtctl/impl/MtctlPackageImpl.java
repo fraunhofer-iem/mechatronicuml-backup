@@ -314,6 +314,7 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		// Add supertypes to classes
 		propertyRepositoryEClass.getESuperTypes().add(theConstraintPackage.getVerificationConstraintRepository());
 		propertyEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		expressionEClass.getESuperTypes().add(ecorePackage.getEObject());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(propertyRepositoryEClass, PropertyRepository.class, "PropertyRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -21,6 +21,7 @@ public class MtctlStandaloneSetup extends MtctlStandaloneSetupGenerated{
 	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
 		//Also need to register our emf packages
+		
 		MtctlPackageImpl.init();
 		return super.createInjectorAndDoEMFRegistration();
 	}
