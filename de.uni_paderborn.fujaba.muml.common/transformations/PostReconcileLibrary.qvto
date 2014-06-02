@@ -20,11 +20,13 @@ mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginNam
 	
 	//Set the Custom Preferenc Pages
 	self.diagram.preferencePages->map GenCustomPreferencePage(self);
+	
+	//add the enlarge compartment edit policy to the childs of a compartment
 	//self.diagram.compartments->map addEnlargeCompoartmentEditPolicy();
 }
 
 
-mapping in GenCompartment::addEnlargeCompoartmentEditPolicy(){
+mapping inout GenCompartment::addEnlargeCompoartmentEditPolicy(){
 	if(not self.listLayout) then {
 		self.childNodes->map addEnlargeCompartmentEditPolicy();
 	}endif;
