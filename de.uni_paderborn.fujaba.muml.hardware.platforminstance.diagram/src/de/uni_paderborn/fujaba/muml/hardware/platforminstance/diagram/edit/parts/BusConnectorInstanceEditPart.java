@@ -102,14 +102,18 @@ public class BusConnectorInstanceEditPart extends ConnectionNodeEditPart
 		}
 		if (notification.getOldValue() == sourceElement
 				|| notification.getOldValue() == targetElement) {
-			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
-					.getRegisteredEditPolicies(getDiagramView().getElement());
-			for (CanonicalEditPolicy editPolicy : editPolicies) {
-				editPolicy.refresh();
-			}
+			doCanonicalRefresh();
 		}
 
 		super.handleNotificationEvent(notification);
+	}
+
+	protected void doCanonicalRefresh() {
+		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+				.getRegisteredEditPolicies(getDiagramView().getElement());
+		for (CanonicalEditPolicy editPolicy : editPolicies) {
+			editPolicy.refresh();
+		}
 	}
 
 }
