@@ -818,6 +818,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getProperty_InitializeOCLExpression() {
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPropertyEditor() {
 		return propertyEditorEClass;
 	}
@@ -1096,6 +1105,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEAttribute(propertyEClass, PROPERTY__RECONCILE);
 		createEReference(propertyEClass, PROPERTY__CREATION_CONSTRAINT);
 		createEReference(propertyEClass, PROPERTY__CREATION_OPPOSITE_CONSTRAINT);
+		createEAttribute(propertyEClass, PROPERTY__INITIALIZE_OCL_EXPRESSION);
 
 		propertyEditorEClass = createEClass(PROPERTY_EDITOR);
 		createEReference(propertyEditorEClass, PROPERTY_EDITOR__PROPERTY);
@@ -1248,6 +1258,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEAttribute(getProperty_Reconcile(), theEcorePackage.getEBoolean(), "reconcile", "true", 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_CreationConstraint(), this.getCreationConstraint(), null, "creationConstraint", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_CreationOppositeConstraint(), this.getCreationConstraint(), null, "creationOppositeConstraint", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_InitializeOCLExpression(), theEcorePackage.getEString(), "initializeOCLExpression", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEditorEClass, PropertyEditor.class, "PropertyEditor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPropertyEditor_Property(), this.getProperty(), this.getProperty_Editor(), "property", null, 1, 1, PropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

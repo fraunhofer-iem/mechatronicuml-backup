@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#isReconcile <em>Reconcile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCreationConstraint <em>Creation Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getInitializeOCLExpression <em>Initialize OCL Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -291,5 +292,31 @@ public interface Property extends EObject {
 	 * @generated
 	 */
 	void setCreationOppositeConstraint(CreationConstraint value);
+
+	/**
+	 * Returns the value of the '<em><b>Initialize OCL Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Initialize OCL Expression</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Initialize OCL Expression</em>' attribute.
+	 * @see #setInitializeOCLExpression(String)
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_InitializeOCLExpression()
+	 * @model
+	 * @generated
+	 */
+	String getInitializeOCLExpression();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.properties.Property#getInitializeOCLExpression <em>Initialize OCL Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Initialize OCL Expression</em>' attribute.
+	 * @see #getInitializeOCLExpression()
+	 * @generated
+	 */
+	void setInitializeOCLExpression(String value);
 
 } // Property

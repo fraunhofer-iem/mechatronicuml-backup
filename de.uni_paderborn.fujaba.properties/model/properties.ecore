@@ -157,6 +157,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="creationOppositeConstraint"
         eType="#//CreationConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializeOCLExpression"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyEditor" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"

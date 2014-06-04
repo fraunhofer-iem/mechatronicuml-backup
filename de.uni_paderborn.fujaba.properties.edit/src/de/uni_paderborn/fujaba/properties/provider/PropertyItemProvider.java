@@ -74,6 +74,7 @@ public class PropertyItemProvider
 			addTooltipPropertyDescriptor(object);
 			addCategoryPropertyDescriptor(object);
 			addReconcilePropertyDescriptor(object);
+			addInitializeOCLExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -236,6 +237,28 @@ public class PropertyItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Initialize OCL Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitializeOCLExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Property_initializeOCLExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Property_initializeOCLExpression_feature", "_UI_Property_type"),
+				 PropertiesPackage.Literals.PROPERTY__INITIALIZE_OCL_EXPRESSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -317,6 +340,7 @@ public class PropertyItemProvider
 			case PropertiesPackage.PROPERTY__GEN_FEATURE:
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 			case PropertiesPackage.PROPERTY__RECONCILE:
+			case PropertiesPackage.PROPERTY__INITIALIZE_OCL_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PropertiesPackage.PROPERTY__VISIBILITY_FILTERS:

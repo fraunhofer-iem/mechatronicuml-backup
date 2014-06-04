@@ -42,6 +42,7 @@ import de.uni_paderborn.fujaba.properties.PropertyTab;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#isReconcile <em>Reconcile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCreationConstraint <em>Creation Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getInitializeOCLExpression <em>Initialize OCL Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -157,6 +158,26 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * @ordered
 	 */
 	protected CreationConstraint creationOppositeConstraint;
+
+	/**
+	 * The default value of the '{@link #getInitializeOCLExpression() <em>Initialize OCL Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitializeOCLExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INITIALIZE_OCL_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInitializeOCLExpression() <em>Initialize OCL Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitializeOCLExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String initializeOCLExpression = INITIALIZE_OCL_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -542,6 +563,27 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInitializeOCLExpression() {
+		return initializeOCLExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitializeOCLExpression(String newInitializeOCLExpression) {
+		String oldInitializeOCLExpression = initializeOCLExpression;
+		initializeOCLExpression = newInitializeOCLExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__INITIALIZE_OCL_EXPRESSION, oldInitializeOCLExpression, initializeOCLExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -630,6 +672,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return getCreationConstraint();
 			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
 				return getCreationOppositeConstraint();
+			case PropertiesPackage.PROPERTY__INITIALIZE_OCL_EXPRESSION:
+				return getInitializeOCLExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -674,6 +718,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
 				setCreationOppositeConstraint((CreationConstraint)newValue);
 				return;
+			case PropertiesPackage.PROPERTY__INITIALIZE_OCL_EXPRESSION:
+				setInitializeOCLExpression((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -716,6 +763,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
 				setCreationOppositeConstraint((CreationConstraint)null);
 				return;
+			case PropertiesPackage.PROPERTY__INITIALIZE_OCL_EXPRESSION:
+				setInitializeOCLExpression(INITIALIZE_OCL_EXPRESSION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -748,6 +798,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return creationConstraint != null;
 			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
 				return creationOppositeConstraint != null;
+			case PropertiesPackage.PROPERTY__INITIALIZE_OCL_EXPRESSION:
+				return INITIALIZE_OCL_EXPRESSION_EDEFAULT == null ? initializeOCLExpression != null : !INITIALIZE_OCL_EXPRESSION_EDEFAULT.equals(initializeOCLExpression);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -766,6 +818,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 		result.append(tooltip);
 		result.append(", reconcile: ");
 		result.append(reconcile);
+		result.append(", initializeOCLExpression: ");
+		result.append(initializeOCLExpression);
 		result.append(')');
 		return result.toString();
 	}

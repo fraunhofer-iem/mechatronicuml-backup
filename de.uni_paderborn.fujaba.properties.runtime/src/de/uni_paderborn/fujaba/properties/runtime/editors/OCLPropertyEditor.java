@@ -98,6 +98,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 				});
 		updateContext();
 		refresh();
+		textModified();
 	}
 
 	protected void textModified() {

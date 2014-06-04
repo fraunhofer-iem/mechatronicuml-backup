@@ -58,6 +58,12 @@ public class PropertyEditor
 					true);
 		}
 
+		if (getTab() == null
+				|| "de.uni_paderborn.fujaba.properties.tab.general"
+						.equals(getTab())) {
+			addInitializeOCLExpression_GeneralTab_Editor(null, true);
+		}
+
 	}
 
 	/**
@@ -163,6 +169,28 @@ public class PropertyEditor
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addInitializeOCLExpression_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createInitializeOCLExpression_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInitializeOCLExpression_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+				.getProperty_InitializeOCLExpression();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OCLPropertyEditor(
+				adapterFactory, feature);
+
+		return editor;
+
+	}
+
 	//
 	// instantiation
 	//
@@ -195,6 +223,7 @@ public class PropertyEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{
+							"de.uni_paderborn.fujaba.properties.tab.general",
 							"de.uni_paderborn.fujaba.properties.tab.general",
 							"de.uni_paderborn.fujaba.properties.tab.general",
 							"de.uni_paderborn.fujaba.properties.tab.general",

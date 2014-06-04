@@ -661,13 +661,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__CREATION_OPPOSITE_CONSTRAINT = 9;
 
 	/**
+	 * The feature id for the '<em><b>Initialize OCL Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__INITIALIZE_OCL_EXPRESSION = 10;
+
+	/**
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 10;
+	int PROPERTY_FEATURE_COUNT = 11;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
@@ -1720,6 +1729,17 @@ public interface PropertiesPackage extends EPackage {
 	EReference getProperty_CreationOppositeConstraint();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.properties.Property#getInitializeOCLExpression <em>Initialize OCL Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initialize OCL Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Property#getInitializeOCLExpression()
+	 * @see #getProperty()
+	 * @generated
+	 */
+	EAttribute getProperty_InitializeOCLExpression();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.PropertyEditor <em>Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2438,6 +2458,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY__CREATION_OPPOSITE_CONSTRAINT = eINSTANCE.getProperty_CreationOppositeConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Initialize OCL Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY__INITIALIZE_OCL_EXPRESSION = eINSTANCE.getProperty_InitializeOCLExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.

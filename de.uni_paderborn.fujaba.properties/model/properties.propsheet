@@ -185,6 +185,10 @@
         <genFeature href="properties.genmodel#//properties/Property/reconcile"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+        <genFeature href="properties.genmodel#//properties/Property/initializeOCLExpression"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
+      </properties>
       <propertyCategories title="Booleans" properties="//@packages.0/@classes.8/@properties.4"/>
     </classes>
     <classes>

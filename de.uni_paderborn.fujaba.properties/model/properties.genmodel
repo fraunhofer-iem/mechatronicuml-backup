@@ -78,6 +78,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/reconcile"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/creationConstraint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/creationOppositeConstraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/initializeOCLExpression"/>
     </genClasses>
     <genClasses image="false" ecoreClass="properties.ecore#//PropertyEditor">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//PropertyEditor/property"/>
