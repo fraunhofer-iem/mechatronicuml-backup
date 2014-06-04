@@ -79,6 +79,9 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 	 */
 	@Override
 	public void completeAssignment(Assignment assignment, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
+		if ("elem".equals(assignment.getFeature())) //ignore extraneous calls for MumlElemExpr.elem
+			return;
+		
 		EObject currentModel = contentAssistContext.getCurrentModel();
 		if (currentModel == null) //normalize empty models
 			currentModel = MtctlFactory.eINSTANCE.createPropertyRepository();
@@ -97,6 +100,9 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 	 * Searches the subtree rooted in model for the first element that possesses a reference with name referenceName
 	 */
 	private EObject findFirstElementWithReference(EObject model, String referenceName) {
+		if (model == null)
+			return null;
+		
 		//Check if model contains the reference
 		for (EReference ref : model.eClass().getEAllReferences())
 			if (ref.getName().equals(referenceName))
@@ -104,7 +110,7 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 		
 		//Otherwise, check children of this model element
 		for (EReference ref : model.eClass().getEAllReferences())
-			if (model.eGet(ref) instanceof EObject)
+			if (ref.isContainment() && model.eGet(ref) instanceof EObject)
 				return findFirstElementWithReference((EObject) model.eGet(ref), referenceName);
 		
 		return null;

@@ -24,7 +24,7 @@ public class ConstExprEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
-			addConstExprTimeUnit_MtctlTab_Editor(null, true);
+			addTimeUnit_MtctlTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,18 @@ public class ConstExprEditor
 	/**
 	 * @generated
 	 */
-	protected void addConstExprTimeUnit_MtctlTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstExprTimeUnit_MtctlTab_Editor(), front);
+	protected void addTimeUnit_MtctlTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createTimeUnit_MtctlTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConstExprTimeUnit_MtctlTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage.eINSTANCE
-						.getConstExpr_TimeUnit());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeUnit_MtctlTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage.eINSTANCE
+				.getConstExpr_TimeUnit();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

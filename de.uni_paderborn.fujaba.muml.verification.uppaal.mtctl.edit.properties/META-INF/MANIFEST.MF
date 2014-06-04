@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.metamodel,
+Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.constraint,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.BooleanLogic.editor,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor,

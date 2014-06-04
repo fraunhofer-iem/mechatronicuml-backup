@@ -24,11 +24,11 @@ public class PropertyRepositoryEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
-			addPropertyRepositoryProperties_MtctlTab_Editor(null, true);
+			addProperties_MtctlTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
-			addPropertyRepositoryEnableVerification_MtctlTab_Editor(null, true);
+			addEnableVerification_MtctlTab_Editor(null, true);
 		}
 
 	}
@@ -36,20 +36,18 @@ public class PropertyRepositoryEditor
 	/**
 	 * @generated
 	 */
-	protected void addPropertyRepositoryProperties_MtctlTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createPropertyRepositoryProperties_MtctlTab_Editor(), front);
+	protected void addProperties_MtctlTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createProperties_MtctlTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyRepositoryProperties_MtctlTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage.eINSTANCE
-						.getPropertyRepository_Properties());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProperties_MtctlTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage.eINSTANCE
+				.getPropertyRepository_Properties();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 
@@ -58,21 +56,20 @@ public class PropertyRepositoryEditor
 	/**
 	 * @generated
 	 */
-	protected void addPropertyRepositoryEnableVerification_MtctlTab_Editor(
-			String category, boolean front) {
+	protected void addEnableVerification_MtctlTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createPropertyRepositoryEnableVerification_MtctlTab_Editor(),
-				front);
+				createEnableVerification_MtctlTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyRepositoryEnableVerification_MtctlTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage.eINSTANCE
-						.getPropertyRepository_EnableVerification());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEnableVerification_MtctlTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage.eINSTANCE
+				.getPropertyRepository_EnableVerification();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("True if the properties in this repository should be verified when starting the next verification");
 

@@ -16,11 +16,11 @@ import com.google.common.base.Function;
 
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.common.naming.MumlQualifiedNameProvider;
+import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap;
@@ -46,7 +47,6 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateAc
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.TransitionFiringExpr;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
@@ -67,9 +67,11 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	protected Set<Clock> clocks = null;
 	protected Set<MessageType> messageTypes = null;
 	protected Set<MessageBuffer> buffers = null;
+	protected Set<Transition> transitions = null;
 	protected Set<RealtimeStatechart> statecharts = null;
 	protected Set<ConnectorEndpoint> connectorEndpoints = null;
 	protected Set<ConnectorEndpointInstance> connectorEndpointInstances = null;
+	private EObject scope = null;
 	
 	/**
 	 * The mapping that determines how to call elements from the muml models
@@ -77,10 +79,12 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	Function<EObject, QualifiedName> scopedElementNameMap = new Function<EObject, QualifiedName>() {
 		final char[] forbiddenChars = new char[] {' ','.','-','/','*','+','&','(',')'}; //list of characters forbidden in QualifiedNames
 		
+		private QualifiedNameProvider nameProvider = new MtctlQualifiedNameProvider(new MumlQualifiedNameProvider());
+		
 		@Override
 		public QualifiedName apply(EObject obj) {
 			//Create name by recursively applying names
-			QualifiedName tmpResult = internalCreateName(obj);
+			QualifiedName tmpResult = QualifiedName.create(nameProvider.getQualifiedName(obj, scope).getSegments());
 			
 			//Normalize the segments (disallow some characters in names, for example)
 			QualifiedName result = QualifiedName.EMPTY;
@@ -91,64 +95,6 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			}
 			
 			return result;
-		}
-		
-		/**
-		 * Creates a name for the object recursively
-		 */
-		private QualifiedName internalCreateName(EObject obj) {
-			try {
-				if (obj == null)
-					return QualifiedName.EMPTY;
-				
-				if (obj instanceof BoundVariable)
-					return QualifiedName.create(((BoundVariable) obj).getName()); //BoundVariables are simply called by their name as specified in the mtctl sentence
-				
-				if (obj instanceof Role)
-					return QualifiedName.create(((Role) obj).getName()); //Roles are called by their names
-				
-				if (obj instanceof Component)
-					return QualifiedName.create(((Component) obj).getName()); //Components are called by their names
-								
-				if (obj instanceof Port) //Ports are called component.port
-					return internalCreateName(obj.eContainer()).append(((Port) obj).getName());
-				
-				if (obj instanceof ConnectorEndpointInstance)
-					return QualifiedName.create(((ConnectorEndpointInstance) obj).getName());
-				
-				if (obj instanceof RealtimeStatechart)
-					if (((RealtimeStatechart) obj).getBehavioralElement() != null)
-						return internalCreateName(((RealtimeStatechart) obj).getBehavioralElement()).append(((RealtimeStatechart) obj).getName()); //top-level RTSC are called (role|port).rtsc
-					else if (((RealtimeStatechart) obj).isEmbedded()) {
-						QualifiedName name = internalCreateName(((RealtimeStatechart) obj).getParentRegion().getParentState()); //embedded RTSC are called like their parent state, unless ...
-						if (((RealtimeStatechart) obj).getParentRegion().getParentState().getEmbeddedRegions().size() > 1)
-							name = name.append(((RealtimeStatechart) obj).getName()); //... if there is more than one region in the parent state, we further qualify the name
-						return name;
-					}
-					else
-						return QualifiedName.create(((RealtimeStatechart) obj).getName()); //fallback that should not happen
-				
-				if (obj instanceof State)
-					return internalCreateName(((State) obj).getParentStatechart()).append(((State) obj).getName()); //states are called rtsc.state
-				
-				if (obj instanceof MessageType)
-					return QualifiedName.create(((MessageType) obj).getRepository().getName(), ((MessageType) obj).getName()); //MessageTypes are called repository.messageType
-				
-				if (obj instanceof Clock)
-					return internalCreateName(((Clock) obj).getStatechart()).append(((Clock) obj).getName()); //clocks are called rtsc.clock
-				
-				if (obj instanceof Variable)
-					return internalCreateName(obj.eContainer()).append(((Variable) obj).getName()); //variables are called rtsc.var
-				
-				if (obj instanceof MessageBuffer) { // buffers are called role.bufferName
-					return internalCreateName(obj.eContainer()).append(QualifiedName.create(((MessageBuffer) obj).getName()));
-				}
-			} catch (RuntimeException e) {
-				System.out.println("Exception when computing qualified name for "+obj);
-				e.printStackTrace();
-			}
-			System.out.println("MtctlScopeProvider does not know how to name "+obj.toString());
-			return QualifiedName.create("de","uni_paderborn","fujaba","muml","verification","uppaal","mtctl","nameNotKnown");
 		}
 	};
 	
@@ -206,6 +152,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
+		scope.addAll(transitions);
+		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
@@ -357,6 +305,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		scope.addAll(clocks);
 		scope.addAll(variables);
 		scope.addAll(states);
+		scope.addAll(transitions);
 		scope.addAll(messageTypes);
 		scope.addAll(buffers);
 		
@@ -435,6 +384,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		if (object instanceof VerificationConstraintRepository && object != null) //this will happen when the editor is used to specify a list of constraints to save them in a foreign-created VerificationConstraintRepository
 			object = object.eContainer();
 		
+		this.scope = object; // set scope to be used when getting the QualifiedNames
 		//Delegate to the specific methods for the type of object
 		if (object instanceof CoordinationProtocol)
 			setScopeForCoordinationProtocol((CoordinationProtocol) object);
@@ -536,6 +486,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		
 		for (RealtimeStatechart innerRtsc : findEmbeddedStatecharts((RealtimeStatechart) rtsc)) {
 			states.addAll(innerRtsc.getStates());
+			transitions.addAll(innerRtsc.getTransitions());
 			clocks.addAll(innerRtsc.getClocks());
 			variables.addAll(innerRtsc.getVariables());
 			statecharts.add(innerRtsc);
@@ -569,6 +520,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		variables = new HashSet<Variable>();
 		clocks = new HashSet<Clock>();
 		messageTypes = new HashSet<MessageType>();
+		transitions = new HashSet<Transition>();
 		buffers = new HashSet<MessageBuffer>();
 		statecharts = new HashSet<RealtimeStatechart>();
 		connectorEndpoints = new HashSet<ConnectorEndpoint>();
