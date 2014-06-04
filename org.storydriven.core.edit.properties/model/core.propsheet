@@ -25,21 +25,21 @@
     </classes>
     <classes>
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement"/>
-      <properties tab="//@tabs.2" tooltip="" reconcile="false">
+      <properties tab="//@tabs.2" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement/extension"/>
         <editor xsi:type="de.uni_paderborn.fujaba:FlattenedListPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension"/>
-      <properties tab="//@tabs.0" tooltip="">
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement"/>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="self.oclAsType(ecore::EObject).eContainer().eContents()->size()">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
