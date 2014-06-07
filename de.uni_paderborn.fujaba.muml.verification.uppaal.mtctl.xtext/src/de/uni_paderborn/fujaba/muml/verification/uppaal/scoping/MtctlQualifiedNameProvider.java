@@ -2,15 +2,28 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.scoping;
 
 import org.eclipse.emf.ecore.EObject;
 
+import de.uni_paderborn.fujaba.muml.common.naming.MumlQualifiedNameProvider;
 import de.uni_paderborn.fujaba.muml.common.naming.QualifiedName;
 import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
 
+/**
+ * A {@link QualifiedNameProvider} for MTCTL.<br>
+ * This is used to compute QualifiedNames for the {@link MtctlScopeProvider}.
+ */
 public class MtctlQualifiedNameProvider extends QualifiedNameProvider {
+	/**
+	 * Construct a MtctlQualifiedNameProvider that works.
+	 */
 	public MtctlQualifiedNameProvider() {
-		super(new QualifiedNameProvider());
+		super(new MumlQualifiedNameProvider());
 	}
 	
+	/**
+	 * Construct a MtctlQualifiedNameProvider specifying a delegate.
+	 * (You probably want to ensure that MumlQualifiedNameProvider and 
+	 * QualifiedNameProvider are somewhere in the delegation chain)
+	 */
 	public MtctlQualifiedNameProvider(QualifiedNameProvider delegate) {
 		super(delegate);
 	}

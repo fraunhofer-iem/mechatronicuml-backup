@@ -7,28 +7,40 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.NamedElement;
 
-import com.google.common.base.Function;
-
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
-public class MumlQualifiedNameProvider extends QualifiedNameProvider {
+/**
+ * An implementation of QualifiedNameProvider that defines QualifiedNames for
+ * (most) classes in muml.ecore.
+ * 
+ * <p>This class is marked final because the delegation mechanism should be used to 
+ * define more specific naming (see {@link QualifiedNameProvider}).</p>
+ */
+public final class MumlQualifiedNameProvider extends QualifiedNameProvider {
 	
-	
+	/**
+	 * Construct a MumlQualifiedNameProvider that works on its own.
+	 * (Internally occasionally delegating to QualifiedNameProvider's default implementation)
+	 */
 	public MumlQualifiedNameProvider() {
 		super(new QualifiedNameProvider());
 	}
 	
+	/**
+	 * Construct a new MumlQualifiedNameProvider that uses 'delegate' 
+	 * as a fallback. 
+	 * 
+	 * <p>If you use this constructor, please make sure that there is 
+	 * an instance of QualifiedNameProvider itself somewhere along the 
+	 * delegation chain, otherwise errors will occur</p> 
+	 */
 	public MumlQualifiedNameProvider(QualifiedNameProvider delegate) {
 		super(delegate);
 	}
 	
-	/**
-	 * Returns the qualified name for a given object and relative to a given scope
-	 * (i.e. the name of the scope element will not appear in the qualified name)
-	 */
 	@Override
 	public QualifiedName getQualifiedName(EObject object, EObject scope) {
 		if (object == null)
@@ -78,10 +90,11 @@ public class MumlQualifiedNameProvider extends QualifiedNameProvider {
 	
 	/**
 	 * Returns a (not qualified) name for a transition that is as short as possible
-	 * It contains at least the segments NameOfSourceVertex_to_NameOfTargetVertex
-	 * The name is unique w.r.t. the set of the transitions of the RTSC it is contained in
+	 * It contains at least NameOfSourceVertex_to_NameOfTargetVertex, then appends information
+	 * with underscores.
+	 * The resulting name is unique w.r.t. the set of the transitions of the RTSC it is contained in
 	 */
-	private String getNameForTransition(Transition transition) {
+	protected String getNameForTransition(Transition transition) {
 		final NameMap nameMaps[] = new NameMap[] {
 				new NameMap() {
 					public String image(EObject object) {
