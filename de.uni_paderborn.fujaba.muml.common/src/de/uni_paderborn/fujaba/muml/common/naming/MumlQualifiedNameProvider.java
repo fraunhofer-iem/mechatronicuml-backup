@@ -106,7 +106,7 @@ public final class MumlQualifiedNameProvider extends QualifiedNameProvider {
 					// returns "_<name of the incoming message>"
 					public String image(EObject object) {
 						if (((Transition) object).getTriggerMessageEvent() == null)
-							return null;
+							return "_noMessage";
 						return  "_" + ((Transition) object).getTriggerMessageEvent().getMessage().getInstanceOf().getName();							
 					}
 				},
@@ -114,7 +114,7 @@ public final class MumlQualifiedNameProvider extends QualifiedNameProvider {
 					// returns "_<name of the outgoing message>"
 					public String image(EObject object) {
 						if (((Transition) object).getRaiseMessageEvent() == null)
-							return null;
+							return "_noMessage";
 						return  "_" + ((Transition) object).getRaiseMessageEvent().getMessage().getInstanceOf().getName();
 					}
 				},

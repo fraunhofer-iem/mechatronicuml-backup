@@ -6,12 +6,20 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.validation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr;
@@ -33,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetEx
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlQualifiedNameProvider;
 
 /**
  * Custom validation rules. 
@@ -216,10 +225,44 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 			error("Not expecting time unit", null);
 	}
 	
+	private static QualifiedNameProvider qualifiedNameProvider = new MtctlQualifiedNameProvider();
 	@Check
 	public void checkMumlElemExprInstanceSet(final MumlElemExpr expr) { //checks whether the MumlElemExpr should include a reference to a ConnectorEndpointInstance
-		if (getType(expr) == Type.CONNECTOR_ENDPOINT && expr.getConnectorEndpointInstance() != null ) {
+		if (getType(expr) == Type.CONNECTOR_ENDPOINT && expr.getConnectorEndpointInstance() != null )
 			error("Connector endpoints should not have a reference to a ConnectorEndpointInstance", null);
-		} //TODO make this more comprehensive. Depends on whether we have 1:n communication, for example. 
+		
+		if (getType(expr) == Type.CONNECTOR_ENDPOINT_INSTANCE && expr.getConnectorEndpointInstance() != null ) 
+			error("Connector endpoint instances should not have a reference to a ConnectorEndpointInstance.", null);
+		
+		if (expr.getElem() instanceof BoundVariable && expr.getConnectorEndpointInstance() != null)
+			error("BoundVariables should not have their ConnectorEndpointInstance set.", null);
+			
+		
+		if (expr.getConnectorEndpointInstance() != null)
+			return; // if a connector endpoint instance is set, we don't have to check the rest
+		
+		//After this point, it holds that no ConnectorEndpointInstance is set. We emit an error for cases where that's not okay
+		DiscreteInteractionEndpoint endpoint = null; //the parent endpoint of the referenced element
+		//Message Buffers
+		if (expr.getElem() instanceof MessageBuffer)
+			endpoint = ((MessageBuffer) expr.getElem()).getDiscreteInteractionEndpoint();
+		
+		//States, Transitions, Clocks, Variables
+		if (expr.getElem().eContainer() instanceof RealtimeStatechart) {
+			BehavioralElement behElem = ((RealtimeStatechart) expr.getElem().eContainer()).getHighestParentStatechart().getBehavioralElement();
+			if (behElem instanceof DiscreteInteractionEndpoint)
+				endpoint = (DiscreteInteractionEndpoint) behElem;
+		}
+		
+		if (endpoint == null)
+			return;
+		
+		if (endpoint instanceof Role || endpoint instanceof DiscretePort)
+			for (Role r : (endpoint instanceof Role ? ((Role) endpoint).getCoordinationProtocol() : ((DiscretePort) endpoint).getCoordinationProtocol()).getRoles())
+				if (r.isMulti()) {
+					error("ConnectorEndpointInstance must be set for this element because "+((CoordinationProtocol) endpoint.eContainer()).getName()+" is a 1:n coordination protocol. "
+							+ "\nWrite \""+qualifiedNameProvider.getQualifiedName(expr.getElem())+"<Instance>\" instead.", null);
+					return;
+				}
 	}
 }
