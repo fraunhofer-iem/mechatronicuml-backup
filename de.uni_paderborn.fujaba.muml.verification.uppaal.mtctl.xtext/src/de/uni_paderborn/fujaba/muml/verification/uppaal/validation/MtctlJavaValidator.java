@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExp
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.SourceStateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TargetStateExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.ComparablesPackageImpl;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicateExpr;
@@ -242,17 +243,7 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 			return; // if a connector endpoint instance is set, we don't have to check the rest
 		
 		//After this point, it holds that no ConnectorEndpointInstance is set. We emit an error for cases where that's not okay
-		DiscreteInteractionEndpoint endpoint = null; //the parent endpoint of the referenced element
-		//Message Buffers
-		if (expr.getElem() instanceof MessageBuffer)
-			endpoint = ((MessageBuffer) expr.getElem()).getDiscreteInteractionEndpoint();
-		
-		//States, Transitions, Clocks, Variables
-		if (expr.getElem().eContainer() instanceof RealtimeStatechart) {
-			BehavioralElement behElem = ((RealtimeStatechart) expr.getElem().eContainer()).getHighestParentStatechart().getBehavioralElement();
-			if (behElem instanceof DiscreteInteractionEndpoint)
-				endpoint = (DiscreteInteractionEndpoint) behElem;
-		}
+		DiscreteInteractionEndpoint endpoint = getDiscreteInteractionEndpoint(expr.getElem()); //the parent endpoint of the referenced element
 		
 		if (endpoint == null)
 			return;
@@ -261,8 +252,39 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 			for (Role r : (endpoint instanceof Role ? ((Role) endpoint).getCoordinationProtocol() : ((DiscretePort) endpoint).getCoordinationProtocol()).getRoles())
 				if (r.isMulti()) {
 					error("ConnectorEndpointInstance must be set for this element because "+((CoordinationProtocol) endpoint.eContainer()).getName()+" is a 1:n coordination protocol. "
-							+ "\nWrite \""+qualifiedNameProvider.getQualifiedName(expr.getElem())+"<Instance>\" instead.", null);
+							+ "\nWrite \""+qualifiedNameProvider.getQualifiedName(expr.getElem())+"[Instance]\" instead.", null);
 					return;
 				}
+	}
+	
+	private static DiscreteInteractionEndpoint getDiscreteInteractionEndpoint (EObject obj) {
+		//Message Buffers
+		if (obj instanceof MessageBuffer)
+			return ((MessageBuffer) obj).getDiscreteInteractionEndpoint();
+		
+		//States, Transitions, Clocks, Variables
+		if (obj.eContainer() instanceof RealtimeStatechart) {
+			BehavioralElement behElem = ((RealtimeStatechart) obj.eContainer()).getHighestParentStatechart().getBehavioralElement();
+			if (behElem instanceof DiscreteInteractionEndpoint)
+				return (DiscreteInteractionEndpoint) behElem;
+		}
+		if (obj instanceof ConnectorEndpointInstance) {
+			return (DiscreteInteractionEndpoint) ((ConnectorEndpointInstance) obj).getType();
+		}
+		return null;
+	}
+	
+	@Check
+	public void checkMumlElemExprConnectorEndpointInstances(final MumlElemExpr expr) { //checks whether the ConnectorEndpointInstance of the MumlElemExpr is consistent with its element (i.e. references an instance whose type (indirectly) contains it)
+		if (expr.getConnectorEndpointInstance() == null)
+			return;
+		if (expr.getConnectorEndpointInstance() instanceof BoundVariable) {
+			if (((MumlElemExpr)((ConnectorEndpointInstanceSetExpr)((BoundVariable) expr.getConnectorEndpointInstance()).getSet()).getConnectorEndpoint()).getElem() == getDiscreteInteractionEndpoint(expr.getElem()))
+				return;
+		}
+		if (getDiscreteInteractionEndpoint(expr.getElem()) == getDiscreteInteractionEndpoint(expr.getConnectorEndpointInstance()))
+			return;
+		
+		error("The connector endpoint instance has the wrong type to match " + qualifiedNameProvider.getQualifiedName(expr.getElem()) + ".", ComparablesPackageImpl.eINSTANCE.getMumlElemExpr_ConnectorEndpointInstance());
 	}
 }
