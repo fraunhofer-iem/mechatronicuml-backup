@@ -23,5 +23,6 @@ Export-Package: de.uni_paderborn.fujaba.properties.runtime,
  de.uni_paderborn.fujaba.properties.runtime.factory,
  de.uni_paderborn.fujaba.properties.runtime.filter,
  de.uni_paderborn.fujaba.properties.runtime.metamodel,
- de.uni_paderborn.fujaba.properties.runtime.sections
+ de.uni_paderborn.fujaba.properties.runtime.sections,
+ de.uni_paderborn.fujaba.properties.runtime.wizard
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

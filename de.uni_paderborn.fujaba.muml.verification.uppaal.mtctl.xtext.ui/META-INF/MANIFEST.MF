@@ -28,6 +28,7 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.ui.properties,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.ui,
  de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist,
  de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.antlr,
  de.uni_paderborn.fujaba.muml.verification.uppaal.ui.internal,
