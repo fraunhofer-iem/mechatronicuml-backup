@@ -1219,32 +1219,32 @@ public interface SetsPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.ConnectorEndpointInstanceSetExprImpl <em>Connector Endpoint Instance Set Expr</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.InstanceSetExprImpl <em>Instance Set Expr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.ConnectorEndpointInstanceSetExprImpl
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SetsPackageImpl#getConnectorEndpointInstanceSetExpr()
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.InstanceSetExprImpl
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SetsPackageImpl#getInstanceSetExpr()
 	 * @generated
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR = 7;
+	int INSTANCE_SET_EXPR = 7;
 
 	/**
-	 * The feature id for the '<em><b>Connector Endpoint</b></em>' containment reference.
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT = SET_EXPR_FEATURE_COUNT + 0;
+	int INSTANCE_SET_EXPR__TYPE = SET_EXPR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Connector Endpoint Instance Set Expr</em>' class.
+	 * The number of structural features of the '<em>Instance Set Expr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR_FEATURE_COUNT = SET_EXPR_FEATURE_COUNT + 1;
+	int INSTANCE_SET_EXPR_FEATURE_COUNT = SET_EXPR_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1253,7 +1253,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___ECLASS = SET_EXPR___ECLASS;
+	int INSTANCE_SET_EXPR___ECLASS = SET_EXPR___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -1262,7 +1262,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___EIS_PROXY = SET_EXPR___EIS_PROXY;
+	int INSTANCE_SET_EXPR___EIS_PROXY = SET_EXPR___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -1271,7 +1271,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___ERESOURCE = SET_EXPR___ERESOURCE;
+	int INSTANCE_SET_EXPR___ERESOURCE = SET_EXPR___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -1280,7 +1280,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___ECONTAINER = SET_EXPR___ECONTAINER;
+	int INSTANCE_SET_EXPR___ECONTAINER = SET_EXPR___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -1289,7 +1289,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___ECONTAINING_FEATURE = SET_EXPR___ECONTAINING_FEATURE;
+	int INSTANCE_SET_EXPR___ECONTAINING_FEATURE = SET_EXPR___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -1298,7 +1298,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___ECONTAINMENT_FEATURE = SET_EXPR___ECONTAINMENT_FEATURE;
+	int INSTANCE_SET_EXPR___ECONTAINMENT_FEATURE = SET_EXPR___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -1307,7 +1307,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___ECONTENTS = SET_EXPR___ECONTENTS;
+	int INSTANCE_SET_EXPR___ECONTENTS = SET_EXPR___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -1316,7 +1316,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___EALL_CONTENTS = SET_EXPR___EALL_CONTENTS;
+	int INSTANCE_SET_EXPR___EALL_CONTENTS = SET_EXPR___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -1325,7 +1325,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___ECROSS_REFERENCES = SET_EXPR___ECROSS_REFERENCES;
+	int INSTANCE_SET_EXPR___ECROSS_REFERENCES = SET_EXPR___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1334,7 +1334,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___EGET__ESTRUCTURALFEATURE = SET_EXPR___EGET__ESTRUCTURALFEATURE;
+	int INSTANCE_SET_EXPR___EGET__ESTRUCTURALFEATURE = SET_EXPR___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1343,7 +1343,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = SET_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int INSTANCE_SET_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = SET_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1352,7 +1352,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = SET_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int INSTANCE_SET_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = SET_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1361,7 +1361,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___EIS_SET__ESTRUCTURALFEATURE = SET_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+	int INSTANCE_SET_EXPR___EIS_SET__ESTRUCTURALFEATURE = SET_EXPR___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1370,7 +1370,7 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___EUNSET__ESTRUCTURALFEATURE = SET_EXPR___EUNSET__ESTRUCTURALFEATURE;
+	int INSTANCE_SET_EXPR___EUNSET__ESTRUCTURALFEATURE = SET_EXPR___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1379,17 +1379,16 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR___EINVOKE__EOPERATION_ELIST = SET_EXPR___EINVOKE__EOPERATION_ELIST;
+	int INSTANCE_SET_EXPR___EINVOKE__EOPERATION_ELIST = SET_EXPR___EINVOKE__EOPERATION_ELIST;
 
 	/**
-	 * The number of operations of the '<em>Connector Endpoint Instance Set Expr</em>' class.
+	 * The number of operations of the '<em>Instance Set Expr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR_OPERATION_COUNT = SET_EXPR_OPERATION_COUNT + 0;
-
+	int INSTANCE_SET_EXPR_OPERATION_COUNT = SET_EXPR_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr <em>Set Expr</em>}'.
@@ -1484,25 +1483,25 @@ public interface SetsPackage extends EPackage {
 	EClass getBufferSetExpr();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr <em>Connector Endpoint Instance Set Expr</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr <em>Instance Set Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Connector Endpoint Instance Set Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr
+	 * @return the meta object for class '<em>Instance Set Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr
 	 * @generated
 	 */
-	EClass getConnectorEndpointInstanceSetExpr();
+	EClass getInstanceSetExpr();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr#getConnectorEndpoint <em>Connector Endpoint</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Connector Endpoint</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr#getConnectorEndpoint()
-	 * @see #getConnectorEndpointInstanceSetExpr()
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr#getType()
+	 * @see #getInstanceSetExpr()
 	 * @generated
 	 */
-	EReference getConnectorEndpointInstanceSetExpr_ConnectorEndpoint();
+	EReference getInstanceSetExpr_Type();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1614,22 +1613,22 @@ public interface SetsPackage extends EPackage {
 		EClass BUFFER_SET_EXPR = eINSTANCE.getBufferSetExpr();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.ConnectorEndpointInstanceSetExprImpl <em>Connector Endpoint Instance Set Expr</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.InstanceSetExprImpl <em>Instance Set Expr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.ConnectorEndpointInstanceSetExprImpl
-		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SetsPackageImpl#getConnectorEndpointInstanceSetExpr()
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.InstanceSetExprImpl
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SetsPackageImpl#getInstanceSetExpr()
 		 * @generated
 		 */
-		EClass CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR = eINSTANCE.getConnectorEndpointInstanceSetExpr();
+		EClass INSTANCE_SET_EXPR = eINSTANCE.getInstanceSetExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector Endpoint</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT = eINSTANCE.getConnectorEndpointInstanceSetExpr_ConnectorEndpoint();
+		EReference INSTANCE_SET_EXPR__TYPE = eINSTANCE.getInstanceSetExpr_Type();
 
 	}
 

@@ -29,10 +29,10 @@ name="forall">forall(${name}:${Set})</template>
 <template autoinsert="true" 
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_Instances"
 deleted="false" 
-description="set of instances of some connector endpoint" 
+description="set of instances of a type" 
 id="Instances"
 enabled="true" 
-name="Instances">Instances&lt;${ConnectorEndpoint}&gt;</template>
+name="Instances">Instances&lt;${Type}&gt;</template>
 
 <template autoinsert="true" 
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_exists"

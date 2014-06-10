@@ -306,7 +306,7 @@ public class OrExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.OR_EXPR__LEFT_OPD,
-				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -491,7 +491,7 @@ public class OrExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.OR_EXPR__RIGHT_OPD,
-				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

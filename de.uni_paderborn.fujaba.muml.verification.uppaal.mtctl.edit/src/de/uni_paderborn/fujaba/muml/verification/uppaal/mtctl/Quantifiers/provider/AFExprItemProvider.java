@@ -281,7 +281,7 @@ public class AFExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.AF_EXPR__EXPR,
-				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

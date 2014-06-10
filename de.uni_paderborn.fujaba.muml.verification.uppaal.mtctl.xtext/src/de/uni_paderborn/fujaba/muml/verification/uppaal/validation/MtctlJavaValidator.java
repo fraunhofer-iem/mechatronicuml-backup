@@ -10,7 +10,6 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
@@ -37,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.Quanti
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
@@ -70,7 +69,7 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 				return Type.MESSAGE_TYPE;
 			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof BufferSetExpr)
 				return Type.BUFFER;
-			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof ConnectorEndpointInstanceSetExpr)			
+			if (((BoundVariable) ((MumlElemExpr) expr).getElem()).getSet() instanceof InstanceSetExpr)			
 				return Type.CONNECTOR_ENDPOINT_INSTANCE;
 		}
 			
@@ -229,17 +228,17 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 	private static QualifiedNameProvider qualifiedNameProvider = new MtctlQualifiedNameProvider();
 	@Check
 	public void checkMumlElemExprInstanceSet(final MumlElemExpr expr) { //checks whether the MumlElemExpr should include a reference to a ConnectorEndpointInstance
-		if (getType(expr) == Type.CONNECTOR_ENDPOINT && expr.getConnectorEndpointInstance() != null )
+		if (getType(expr) == Type.CONNECTOR_ENDPOINT && expr.getInstance() != null )
 			error("Connector endpoints should not have a reference to a ConnectorEndpointInstance", null);
 		
-		if (getType(expr) == Type.CONNECTOR_ENDPOINT_INSTANCE && expr.getConnectorEndpointInstance() != null ) 
+		if (getType(expr) == Type.CONNECTOR_ENDPOINT_INSTANCE && expr.getInstance() != null ) 
 			error("Connector endpoint instances should not have a reference to a ConnectorEndpointInstance.", null);
 		
-		if (expr.getElem() instanceof BoundVariable && expr.getConnectorEndpointInstance() != null)
+		if (expr.getElem() instanceof BoundVariable && expr.getInstance() != null)
 			error("BoundVariables should not have their ConnectorEndpointInstance set.", null);
 			
 		
-		if (expr.getConnectorEndpointInstance() != null)
+		if (expr.getInstance() != null)
 			return; // if a connector endpoint instance is set, we don't have to check the rest
 		
 		//After this point, it holds that no ConnectorEndpointInstance is set. We emit an error for cases where that's not okay
@@ -276,15 +275,15 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 	
 	@Check
 	public void checkMumlElemExprConnectorEndpointInstances(final MumlElemExpr expr) { //checks whether the ConnectorEndpointInstance of the MumlElemExpr is consistent with its element (i.e. references an instance whose type (indirectly) contains it)
-		if (expr.getConnectorEndpointInstance() == null)
+		if (expr.getInstance() == null)
 			return;
-		if (expr.getConnectorEndpointInstance() instanceof BoundVariable) {
-			if (((MumlElemExpr)((ConnectorEndpointInstanceSetExpr)((BoundVariable) expr.getConnectorEndpointInstance()).getSet()).getConnectorEndpoint()).getElem() == getDiscreteInteractionEndpoint(expr.getElem()))
+		if (expr.getInstance() instanceof BoundVariable) {
+			if (((MumlElemExpr)((InstanceSetExpr)((BoundVariable) expr.getInstance()).getSet()).getType()).getElem() == getDiscreteInteractionEndpoint(expr.getElem()))
 				return;
 		}
-		if (getDiscreteInteractionEndpoint(expr.getElem()) == getDiscreteInteractionEndpoint(expr.getConnectorEndpointInstance()))
+		if (getDiscreteInteractionEndpoint(expr.getElem()) == getDiscreteInteractionEndpoint(expr.getInstance()))
 			return;
 		
-		error("The connector endpoint instance has the wrong type to match " + qualifiedNameProvider.getQualifiedName(expr.getElem()) + ".", ComparablesPackageImpl.eINSTANCE.getMumlElemExpr_ConnectorEndpointInstance());
+		error("The connector endpoint instance has the wrong type to match " + qualifiedNameProvider.getQualifiedName(expr.getElem()) + ".", ComparablesPackageImpl.eINSTANCE.getMumlElemExpr_Instance());
 	}
 }

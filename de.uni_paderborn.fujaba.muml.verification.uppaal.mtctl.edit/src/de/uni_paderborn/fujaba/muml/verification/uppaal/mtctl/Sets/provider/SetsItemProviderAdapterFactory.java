@@ -210,26 +210,26 @@ public class SetsItemProviderAdapterFactory extends SetsAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConnectorEndpointInstanceSetExprItemProvider connectorEndpointInstanceSetExprItemProvider;
+	protected InstanceSetExprItemProvider instanceSetExprItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createConnectorEndpointInstanceSetExprAdapter() {
-		if (connectorEndpointInstanceSetExprItemProvider == null) {
-			connectorEndpointInstanceSetExprItemProvider = new ConnectorEndpointInstanceSetExprItemProvider(this);
+	public Adapter createInstanceSetExprAdapter() {
+		if (instanceSetExprItemProvider == null) {
+			instanceSetExprItemProvider = new InstanceSetExprItemProvider(this);
 		}
 
-		return connectorEndpointInstanceSetExprItemProvider;
+		return instanceSetExprItemProvider;
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class SetsItemProviderAdapterFactory extends SetsAdapterFactory implement
 		if (stateSetExprItemProvider != null) stateSetExprItemProvider.dispose();
 		if (transitionSetExprItemProvider != null) transitionSetExprItemProvider.dispose();
 		if (bufferSetExprItemProvider != null) bufferSetExprItemProvider.dispose();
-		if (connectorEndpointInstanceSetExprItemProvider != null) connectorEndpointInstanceSetExprItemProvider.dispose();
+		if (instanceSetExprItemProvider != null) instanceSetExprItemProvider.dispose();
 	}
 
 }

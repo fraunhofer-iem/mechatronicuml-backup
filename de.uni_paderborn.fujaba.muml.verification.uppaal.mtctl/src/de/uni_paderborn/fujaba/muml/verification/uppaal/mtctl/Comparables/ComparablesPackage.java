@@ -597,13 +597,13 @@ public interface ComparablesPackage extends EPackage {
 	int MUML_ELEM_EXPR__ELEM = MAP_EXPR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Connector Endpoint Instance</b></em>' reference.
+	 * The feature id for the '<em><b>Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE = MAP_EXPR_FEATURE_COUNT + 1;
+	int MUML_ELEM_EXPR__INSTANCE = MAP_EXPR_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Muml Elem Expr</em>' class.
@@ -1360,15 +1360,15 @@ public interface ComparablesPackage extends EPackage {
 	EReference getMumlElemExpr_Elem();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getConnectorEndpointInstance <em>Connector Endpoint Instance</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getInstance <em>Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connector Endpoint Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getConnectorEndpointInstance()
+	 * @return the meta object for the reference '<em>Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getInstance()
 	 * @see #getMumlElemExpr()
 	 * @generated
 	 */
-	EReference getMumlElemExpr_ConnectorEndpointInstance();
+	EReference getMumlElemExpr_Instance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap <em>Transition Map</em>}'.
@@ -1507,12 +1507,12 @@ public interface ComparablesPackage extends EPackage {
 		EReference MUML_ELEM_EXPR__ELEM = eINSTANCE.getMumlElemExpr_Elem();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector Endpoint Instance</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Instance</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE = eINSTANCE.getMumlElemExpr_ConnectorEndpointInstance();
+		EReference MUML_ELEM_EXPR__INSTANCE = eINSTANCE.getMumlElemExpr_Instance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.TransitionMapImpl <em>Transition Map</em>}' class.

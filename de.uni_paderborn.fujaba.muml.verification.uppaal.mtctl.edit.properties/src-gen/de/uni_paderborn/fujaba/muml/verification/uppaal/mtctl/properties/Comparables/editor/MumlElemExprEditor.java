@@ -24,7 +24,7 @@ public class MumlElemExprEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
-			addConnectorEndpointInstance_MtctlTab_Editor(null, true);
+			addInstance_MtctlTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class MumlElemExprEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointInstance_MtctlTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointInstance_MtctlTab_Editor(), front);
+	protected void addInstance_MtctlTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createInstance_MtctlTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstance_MtctlTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInstance_MtctlTab_Editor() {
 		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage.eINSTANCE
-				.getMumlElemExpr_ConnectorEndpointInstance();
+				.getMumlElemExpr_Instance();
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
+
+		editor.setTooltipMessage("The concrete instance which this Muml element belongs to (in case there are multiple at runtime). E.g., a ConnectorEndpointInstance for Role RTSC elements");
 
 		return editor;
 

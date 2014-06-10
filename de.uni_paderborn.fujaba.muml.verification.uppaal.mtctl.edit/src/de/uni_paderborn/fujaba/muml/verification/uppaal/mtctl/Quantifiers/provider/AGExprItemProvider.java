@@ -281,7 +281,7 @@ public class AGExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.AG_EXPR__EXPR,
-				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

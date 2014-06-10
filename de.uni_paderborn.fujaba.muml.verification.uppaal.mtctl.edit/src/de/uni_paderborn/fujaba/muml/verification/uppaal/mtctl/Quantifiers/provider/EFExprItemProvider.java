@@ -281,7 +281,7 @@ public class EFExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.EF_EXPR__EXPR,
-				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

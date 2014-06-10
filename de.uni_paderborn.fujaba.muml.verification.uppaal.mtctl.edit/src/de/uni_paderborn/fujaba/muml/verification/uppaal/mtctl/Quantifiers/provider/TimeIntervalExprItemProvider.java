@@ -336,7 +336,7 @@ public class TimeIntervalExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__LHS,
-				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -521,7 +521,7 @@ public class TimeIntervalExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__RHS,
-				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

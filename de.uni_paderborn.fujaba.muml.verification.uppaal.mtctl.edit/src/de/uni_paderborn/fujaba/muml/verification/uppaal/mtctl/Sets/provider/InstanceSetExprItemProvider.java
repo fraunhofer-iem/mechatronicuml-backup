@@ -4,31 +4,35 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.provider;
 
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
+
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorEndpointInstanceSetExprItemProvider
-	extends SetExprItemProvider {
+public class InstanceSetExprItemProvider extends SetExprItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConnectorEndpointInstanceSetExprItemProvider(AdapterFactory adapterFactory) {
+	public InstanceSetExprItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,7 +63,7 @@ public class ConnectorEndpointInstanceSetExprItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT);
+			childrenFeatures.add(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE);
 		}
 		return childrenFeatures;
 	}
@@ -78,14 +82,14 @@ public class ConnectorEndpointInstanceSetExprItemProvider
 	}
 
 	/**
-	 * This returns ConnectorEndpointInstanceSetExpr.gif.
+	 * This returns InstanceSetExpr.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConnectorEndpointInstanceSetExpr"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/InstanceSetExpr"));
 	}
 
 	/**
@@ -106,7 +110,7 @@ public class ConnectorEndpointInstanceSetExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ConnectorEndpointInstanceSetExpr_type");
+		return getString("_UI_InstanceSetExpr_type");
 	}
 	
 
@@ -121,8 +125,8 @@ public class ConnectorEndpointInstanceSetExprItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ConnectorEndpointInstanceSetExpr.class)) {
-			case SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT:
+		switch (notification.getFeatureID(InstanceSetExpr.class)) {
+			case SetsPackage.INSTANCE_SET_EXPR__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -142,27 +146,27 @@ public class ConnectorEndpointInstanceSetExprItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
+				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
 				 ComparablesFactory.eINSTANCE.createBufferMsgCountExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
+				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
 				 ComparablesFactory.eINSTANCE.createConstExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
+				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
 				 ComparablesFactory.eINSTANCE.createMumlElemExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
+				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
 				 ComparablesFactory.eINSTANCE.createSourceStateExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT,
+				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
 				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
 	}
 

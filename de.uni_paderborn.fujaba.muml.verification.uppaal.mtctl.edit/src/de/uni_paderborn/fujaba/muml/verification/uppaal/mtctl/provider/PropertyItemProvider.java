@@ -286,7 +286,7 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
-				 SetsFactory.eINSTANCE.createConnectorEndpointInstanceSetExpr()));
+				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

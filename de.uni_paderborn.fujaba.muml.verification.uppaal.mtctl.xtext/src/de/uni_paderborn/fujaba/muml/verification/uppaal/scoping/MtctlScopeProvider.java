@@ -50,7 +50,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.Transit
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
@@ -280,7 +280,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Add BoundVariables for clocks
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
-			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof ConnectorEndpointInstanceSetExpr)
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof InstanceSetExpr)
 				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
 					scope.add(parentQuantifier.getVar());
 					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
@@ -365,7 +365,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			return getScopeBuffer(context, reference);
 		if (context instanceof StateInStatechartExpr && reference != null && "statechart".equals(reference.getName()))
 			return getScopeStatechart(context, reference);
-		if (context instanceof ConnectorEndpointInstanceSetExpr)
+		if (context instanceof InstanceSetExpr)
 			return getScopeConnectorEndpoint(context, reference);
 		if (context instanceof ComparisonExpr)
 			return getScopeAny(context, reference);

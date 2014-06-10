@@ -3,11 +3,13 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.storydriven.core.CorePackage;
 
 /**

@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getElem <em>Elem</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getConnectorEndpointInstance <em>Connector Endpoint Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getInstance <em>Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,29 +52,28 @@ public interface MumlElemExpr extends MapExpr {
 	void setElem(EObject value);
 
 	/**
-	 * Returns the value of the '<em><b>Connector Endpoint Instance</b></em>' reference.
+	 * Returns the value of the '<em><b>Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Connector Endpoint Instance</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connector Endpoint Instance</em>' reference.
-	 * @see #setConnectorEndpointInstance(EObject)
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getMumlElemExpr_ConnectorEndpointInstance()
+	 * <!-- begin-model-doc -->
+	 * The concrete instance which this Muml element belongs to (in case there are multiple at runtime). E.g., a ConnectorEndpointInstance for Role RTSC elements
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Instance</em>' reference.
+	 * @see #setInstance(EObject)
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getMumlElemExpr_Instance()
 	 * @model
 	 * @generated
 	 */
-	EObject getConnectorEndpointInstance();
+	EObject getInstance();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getConnectorEndpointInstance <em>Connector Endpoint Instance</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr#getInstance <em>Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connector Endpoint Instance</em>' reference.
-	 * @see #getConnectorEndpointInstance()
+	 * @param value the new value of the '<em>Instance</em>' reference.
+	 * @see #getInstance()
 	 * @generated
 	 */
-	void setConnectorEndpointInstance(EObject value);
+	void setInstance(EObject value);
 
 } // MumlElemExpr

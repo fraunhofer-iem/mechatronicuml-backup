@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,34 +17,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Connector Endpoint Instance Set Expr</b></em>'.
+ * An implementation of the model object '<em><b>Instance Set Expr</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.ConnectorEndpointInstanceSetExprImpl#getConnectorEndpoint <em>Connector Endpoint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.InstanceSetExprImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements ConnectorEndpointInstanceSetExpr {
+public class InstanceSetExprImpl extends SetExprImpl implements InstanceSetExpr {
 	/**
-	 * The cached value of the '{@link #getConnectorEndpoint() <em>Connector Endpoint</em>}' containment reference.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConnectorEndpoint()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected MapExpr connectorEndpoint;
+	protected MapExpr type;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConnectorEndpointInstanceSetExprImpl() {
+	protected InstanceSetExprImpl() {
 		super();
 	}
 
@@ -55,7 +55,7 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SetsPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR;
+		return SetsPackage.Literals.INSTANCE_SET_EXPR;
 	}
 
 	/**
@@ -63,8 +63,8 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MapExpr getConnectorEndpoint() {
-		return connectorEndpoint;
+	public MapExpr getType() {
+		return type;
 	}
 
 	/**
@@ -72,11 +72,11 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetConnectorEndpoint(MapExpr newConnectorEndpoint, NotificationChain msgs) {
-		MapExpr oldConnectorEndpoint = connectorEndpoint;
-		connectorEndpoint = newConnectorEndpoint;
+	public NotificationChain basicSetType(MapExpr newType, NotificationChain msgs) {
+		MapExpr oldType = type;
+		type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT, oldConnectorEndpoint, newConnectorEndpoint);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SetsPackage.INSTANCE_SET_EXPR__TYPE, oldType, newType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -87,18 +87,18 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConnectorEndpoint(MapExpr newConnectorEndpoint) {
-		if (newConnectorEndpoint != connectorEndpoint) {
+	public void setType(MapExpr newType) {
+		if (newType != type) {
 			NotificationChain msgs = null;
-			if (connectorEndpoint != null)
-				msgs = ((InternalEObject)connectorEndpoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT, null, msgs);
-			if (newConnectorEndpoint != null)
-				msgs = ((InternalEObject)newConnectorEndpoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT, null, msgs);
-			msgs = basicSetConnectorEndpoint(newConnectorEndpoint, msgs);
+			if (type != null)
+				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SetsPackage.INSTANCE_SET_EXPR__TYPE, null, msgs);
+			if (newType != null)
+				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SetsPackage.INSTANCE_SET_EXPR__TYPE, null, msgs);
+			msgs = basicSetType(newType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT, newConnectorEndpoint, newConnectorEndpoint));
+			eNotify(new ENotificationImpl(this, Notification.SET, SetsPackage.INSTANCE_SET_EXPR__TYPE, newType, newType));
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT:
-				return basicSetConnectorEndpoint(null, msgs);
+			case SetsPackage.INSTANCE_SET_EXPR__TYPE:
+				return basicSetType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -123,8 +123,8 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT:
-				return getConnectorEndpoint();
+			case SetsPackage.INSTANCE_SET_EXPR__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -137,8 +137,8 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT:
-				setConnectorEndpoint((MapExpr)newValue);
+			case SetsPackage.INSTANCE_SET_EXPR__TYPE:
+				setType((MapExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,8 +152,8 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT:
-				setConnectorEndpoint((MapExpr)null);
+			case SetsPackage.INSTANCE_SET_EXPR__TYPE:
+				setType((MapExpr)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -167,10 +167,10 @@ public class ConnectorEndpointInstanceSetExprImpl extends SetExprImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SetsPackage.CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT:
-				return connectorEndpoint != null;
+			case SetsPackage.INSTANCE_SET_EXPR__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ConnectorEndpointInstanceSetExprImpl
+} //InstanceSetExprImpl

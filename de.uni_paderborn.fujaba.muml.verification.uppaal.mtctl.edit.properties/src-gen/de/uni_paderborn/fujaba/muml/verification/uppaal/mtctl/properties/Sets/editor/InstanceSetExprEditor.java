@@ -3,14 +3,14 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.e
 /**
  * @generated
  */
-public class ConnectorEndpointInstanceSetExprEditor
+public class InstanceSetExprEditor
 		extends
 			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.SetExprEditor {
 
 	/**
 	 * @generated
 	 */
-	public ConnectorEndpointInstanceSetExprEditor(String tab,
+	public InstanceSetExprEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -32,13 +32,13 @@ public class ConnectorEndpointInstanceSetExprEditor
 	/**
 	 * @generated
 	 */
-	public ConnectorEndpointInstanceSetExprEditor(String tab) {
+	public InstanceSetExprEditor(String tab) {
 		this(
 				tab,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage.eINSTANCE
-						.getConnectorEndpointInstanceSetExpr());
+						.getInstanceSetExpr());
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class ConnectorEndpointInstanceSetExprEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new ConnectorEndpointInstanceSetExprEditor(tab);
+			return new InstanceSetExprEditor(tab);
 		}
 
 		@Override

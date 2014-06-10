@@ -3,46 +3,27 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
-
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
-
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.impl.BooleanLogicPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.ComparablesPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.impl.QuantifiersPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ConnectorEndpointInstanceSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
@@ -50,13 +31,10 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -121,7 +99,7 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass connectorEndpointInstanceSetExprEClass = null;
+	private EClass instanceSetExprEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -299,8 +277,8 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConnectorEndpointInstanceSetExpr() {
-		return connectorEndpointInstanceSetExprEClass;
+	public EClass getInstanceSetExpr() {
+		return instanceSetExprEClass;
 	}
 
 	/**
@@ -308,8 +286,8 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnectorEndpointInstanceSetExpr_ConnectorEndpoint() {
-		return (EReference)connectorEndpointInstanceSetExprEClass.getEStructuralFeatures().get(0);
+	public EReference getInstanceSetExpr_Type() {
+		return (EReference)instanceSetExprEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -356,8 +334,8 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 
 		bufferSetExprEClass = createEClass(BUFFER_SET_EXPR);
 
-		connectorEndpointInstanceSetExprEClass = createEClass(CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR);
-		createEReference(connectorEndpointInstanceSetExprEClass, CONNECTOR_ENDPOINT_INSTANCE_SET_EXPR__CONNECTOR_ENDPOINT);
+		instanceSetExprEClass = createEClass(INSTANCE_SET_EXPR);
+		createEReference(instanceSetExprEClass, INSTANCE_SET_EXPR__TYPE);
 	}
 
 	/**
@@ -399,7 +377,7 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 		stateSetExprEClass.getESuperTypes().add(this.getSetExpr());
 		transitionSetExprEClass.getESuperTypes().add(this.getSetExpr());
 		bufferSetExprEClass.getESuperTypes().add(this.getSetExpr());
-		connectorEndpointInstanceSetExprEClass.getESuperTypes().add(this.getSetExpr());
+		instanceSetExprEClass.getESuperTypes().add(this.getSetExpr());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(setExprEClass, SetExpr.class, "SetExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -418,8 +396,8 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 
 		initEClass(bufferSetExprEClass, BufferSetExpr.class, "BufferSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(connectorEndpointInstanceSetExprEClass, ConnectorEndpointInstanceSetExpr.class, "ConnectorEndpointInstanceSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnectorEndpointInstanceSetExpr_ConnectorEndpoint(), theComparablesPackage.getMapExpr(), null, "connectorEndpoint", null, 0, 1, ConnectorEndpointInstanceSetExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(instanceSetExprEClass, InstanceSetExpr.class, "InstanceSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInstanceSetExpr_Type(), theComparablesPackage.getMapExpr(), null, "type", null, 0, 1, InstanceSetExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //SetsPackageImpl

@@ -41,7 +41,7 @@ public class MumlElemExprItemProvider
 			super.getPropertyDescriptors(object);
 
 			addElemPropertyDescriptor(object);
-			addConnectorEndpointInstancePropertyDescriptor(object);
+			addInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,19 +69,19 @@ public class MumlElemExprItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Connector Endpoint Instance feature.
+	 * This adds a property descriptor for the Instance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConnectorEndpointInstancePropertyDescriptor(Object object) {
+	protected void addInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MumlElemExpr_connectorEndpointInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MumlElemExpr_connectorEndpointInstance_feature", "_UI_MumlElemExpr_type"),
-				 ComparablesPackage.Literals.MUML_ELEM_EXPR__CONNECTOR_ENDPOINT_INSTANCE,
+				 getString("_UI_MumlElemExpr_instance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MumlElemExpr_instance_feature", "_UI_MumlElemExpr_type"),
+				 ComparablesPackage.Literals.MUML_ELEM_EXPR__INSTANCE,
 				 true,
 				 false,
 				 true,

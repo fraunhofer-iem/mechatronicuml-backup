@@ -248,8 +248,8 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.ConnectorEndpointInstanceSetExprEditor$Factory"
-             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#ConnectorEndpointInstanceSetExpr">
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.InstanceSetExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#InstanceSetExpr">
        </propertyEditor>
     
     </propertyEditors>

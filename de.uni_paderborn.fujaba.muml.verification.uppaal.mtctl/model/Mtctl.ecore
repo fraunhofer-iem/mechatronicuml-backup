@@ -209,10 +209,13 @@
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BufferSetExpr" eSuperTypes="#//Sets/SetExpr"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpointInstanceSetExpr"
-        eSuperTypes="#//Sets/SetExpr">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpoint" eType="#//Comparables/MapExpr"
-          containment="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InstanceSetExpr" eSuperTypes="#//Sets/SetExpr">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Comparables/MapExpr"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The type of all elements in the set (e.g., a ConnectorEndpoint or a Component)"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="BooleanLogic" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic"
@@ -277,8 +280,11 @@
           <details key="documentation" value="The referenced element/expression. Typing and scoping is done in the MtctlScopeProvider"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpointInstance"
-          eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instance" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The concrete instance which this Muml element belongs to (in case there are multiple at runtime). E.g., a ConnectorEndpointInstance for Role RTSC elements"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TransitionMap" abstract="true" eSuperTypes="#//Comparables/MapExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

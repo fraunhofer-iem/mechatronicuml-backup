@@ -109,8 +109,8 @@
       <genClasses ecoreClass="Mtctl.ecore#//Sets/StateSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/TransitionSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/BufferSetExpr"/>
-      <genClasses ecoreClass="Mtctl.ecore#//Sets/ConnectorEndpointInstanceSetExpr">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Sets/ConnectorEndpointInstanceSetExpr/connectorEndpoint"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Sets/InstanceSetExpr">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Sets/InstanceSetExpr/type"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="BooleanLogic" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
@@ -145,7 +145,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference Mtctl.ecore#//Comparables/MumlElemExpr/elem"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Mtctl.ecore#//Comparables/MumlElemExpr/connectorEndpointInstance"/>
+            ecoreFeature="ecore:EReference Mtctl.ecore#//Comparables/MumlElemExpr/instance"/>
       </genClasses>
       <genClasses image="false" ecoreClass="Mtctl.ecore#//Comparables/TransitionMap">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Comparables/TransitionMap/transition"/>
