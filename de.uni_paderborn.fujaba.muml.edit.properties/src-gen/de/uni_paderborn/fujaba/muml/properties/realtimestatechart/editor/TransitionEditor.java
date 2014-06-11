@@ -181,7 +181,7 @@ public class TransitionEditor
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
 
-		editor.setTooltipMessage("The realtime statechart this transition belongs to.");
+		editor.setTooltipMessage("The realtime statechart that this transition locically belongs to.");
 
 		return editor;
 
