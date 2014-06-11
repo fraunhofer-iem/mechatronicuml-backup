@@ -1,10 +1,15 @@
+import de.uni_paderborn.fujaba.muml.common._blackbox.LoadResourceBlackbox.LoadResourceLibUnit;
+
 modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
-
-
+modeltype propsheet uses properties('http://de.uni_paderborn.fujaba.properties/0.4.0');
 
 transformation transform(inout gmfgenModel : GMFGEN);
 
+--blackbox helper getResourceContents(uri : String) : Sequence(OclAny);
+
 main() {
+	getResourceContents("Test");
+
   --fix GMF BUG 331875
   gmfgenModel.objectsOfType(ExpressionLabelParser)->forEach(parser)
     {
@@ -56,6 +61,9 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     --model.propertySheet.map createTab("documentation", "Documentation", "org.storydriven.core.properties.tabs.DocumentationTabElementFilter");
     --model.propertySheet.map createTab("constraint", "Constraint", "org.storydriven.core.properties.tabs.ConstraintTabElementFilter");
    
+   
+   
+    --
 
     
   }
