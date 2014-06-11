@@ -9,6 +9,8 @@ import com.google.inject.Injector;
 import de.uni_paderborn.fujaba.common.xtext.AbstractLanguageResource;
 import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlFactoryImpl;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlPackageImpl;
@@ -23,7 +25,7 @@ import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractManyFeatureXte
 public class MtctlXtextPropertyEditor extends AbstractManyFeatureXtextPropertyEditor { 
 	
 	private static final String languageName = "de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl";
-	private static class VerificationPropertyLanguageResource extends AbstractLanguageResource {
+	public static class VerificationPropertyLanguageResource extends AbstractLanguageResource {
 		@Override
 		protected void init(EObject context) {
 			MtctlScopeProvider.getInstance().setScopeForEObject(context);
@@ -36,7 +38,7 @@ public class MtctlXtextPropertyEditor extends AbstractManyFeatureXtextPropertyEd
 
 		@Override
 		protected boolean isSerializable(EObject object) {
-			return object instanceof PropertyRepository;
+			return object instanceof PropertyRepository || object instanceof Property || object instanceof Expression;
 		}
 		
 	}
