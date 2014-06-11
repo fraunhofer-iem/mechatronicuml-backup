@@ -218,6 +218,7 @@ public class NavigationFeaturePropertyEditor extends
 		} else {
 			navigatedEditor.setInput(value);
 		}
+		navigatedEditor.setVisible(isVisible()); // calling setInput on the navigatedEditor evaluates its visibilityFilters which are empty and make it always visible.
 		updateTitle();
 	}
 
@@ -230,6 +231,7 @@ public class NavigationFeaturePropertyEditor extends
 		} else {
 			navigatedEditor.setInput(value);
 		}
+		navigatedEditor.setVisible(isVisible()); // calling setInput on the navigatedEditor evaluates its visibilityFilters which are empty and make it always visible.
 		updateTitle();
 	}
 
