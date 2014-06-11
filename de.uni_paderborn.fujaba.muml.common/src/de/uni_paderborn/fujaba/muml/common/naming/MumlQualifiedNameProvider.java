@@ -106,16 +106,16 @@ public final class MumlQualifiedNameProvider extends QualifiedNameProvider {
 					// returns "_<name of the incoming message>"
 					public String image(EObject object) {
 						if (((Transition) object).getTriggerMessageEvent() == null)
-							return "_noMessage";
-						return  "_" + ((Transition) object).getTriggerMessageEvent().getMessage().getInstanceOf().getName();							
+							return "";
+						return  "_inc" + firstToUpper(((Transition) object).getTriggerMessageEvent().getMessage().getInstanceOf().getName());							
 					}
 				},
 				new NameMap() {
 					// returns "_<name of the outgoing message>"
 					public String image(EObject object) {
 						if (((Transition) object).getRaiseMessageEvent() == null)
-							return "_noMessage";
-						return  "_" + ((Transition) object).getRaiseMessageEvent().getMessage().getInstanceOf().getName();
+							return "";
+						return  "_out" + firstToUpper(((Transition) object).getRaiseMessageEvent().getMessage().getInstanceOf().getName());
 					}
 				},
 				new NameMap() {
@@ -163,5 +163,11 @@ public final class MumlQualifiedNameProvider extends QualifiedNameProvider {
 		}
 		
 		return conflictSet.size() <= 1;
+	}
+	
+	private static String firstToUpper(String str) {
+		if (str == null || str.length() < 1)
+			return str;
+		return Character.toUpperCase(str.charAt(0))+str.substring(1);
 	}
 }

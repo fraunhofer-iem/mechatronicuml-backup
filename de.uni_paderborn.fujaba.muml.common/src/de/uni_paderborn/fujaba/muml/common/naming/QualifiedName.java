@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  */
 public class QualifiedName {
 	private ArrayList<String> segments = new ArrayList<String>();
-	private static final Pattern DISALLOWED_CHARS = Pattern.compile("[^a-zA-Z0-9]"); //matches any characters that may not be part of a segment
+	private static final Pattern DISALLOWED_CHARS = Pattern.compile("[^a-zA-Z0-9_]"); //matches any characters that may not be part of a segment
 	private static final Pattern DISALLOWED_CHARS_FIRST_POS = Pattern.compile("[0-9]"); //matches characters that are additionally disallowed at first position of a segment
 	
 	/**
