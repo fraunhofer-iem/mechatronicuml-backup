@@ -2,7 +2,7 @@
 <feature
       id="de.uni_paderborn.fujaba.core.feature"
       label="%featureName"
-      version="1.0.0.qualifier"
+      version="0.4.0.qualifier"
       provider-name="%providerName">
 
    <description>
