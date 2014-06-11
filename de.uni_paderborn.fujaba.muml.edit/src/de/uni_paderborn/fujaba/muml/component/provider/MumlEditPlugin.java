@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.component.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.storydriven.core.provider.CoreEditPlugin;
 
 import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceEditPlugin;
@@ -46,6 +47,7 @@ public final class MumlEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
 		     ModelinstanceEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

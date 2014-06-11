@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
@@ -173,6 +174,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 
 		// Initialize simple dependencies
 		ModelinstancePackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
@@ -756,7 +758,19 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		   source, 
 		   new String[] {
 			 "constraints", "ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
-		   });																										
+		   });														
+		addAnnotation
+		  (discreteSingleInteractionEndpointInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "StandaloneSingleEndpointInstanceRequiresSingleEndpointType"
+		   });											
+		addAnnotation
+		  (discreteMultiInteractionEndpointInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "TypeIsMultiDiscreteInteractionEndpoint NumberOfsubEndpointsCorrespondsToLowerBound NumberOfsubEndpointsCorrespondsToUpperBound"
+		   });							
 	}
 
 	/**
@@ -785,7 +799,13 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n"
-		   });								
+		   });				
+		addAnnotation
+		  (discreteSingleInteractionEndpointInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "StandaloneSingleEndpointInstanceRequiresSingleEndpointType", "-- For a DiscreteSingleInteractionEndpointInstance the type has to be a single DiscreteInteractionEndpoint, too.\n(not self.type.oclIsUndefined() and self.multiInteractionEndpointInstance.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (not self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\n-- adann"
+		   });							
 		addAnnotation
 		  (getDiscreteSingleInteractionEndpointInstance_First(), 
 		   source, 
@@ -797,6 +817,14 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.last endif"
+		   });			
+		addAnnotation
+		  (discreteMultiInteractionEndpointInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "TypeIsMultiDiscreteInteractionEndpoint", "-- For a DiscreteMultiInteractionEndpointInstance the type has to be a multi DiscreteInteractionEndpoint, too.\n(not self.type.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\n-- adann",
+			 "NumberOfsubEndpointsCorrespondsToLowerBound", "-- The number of subInteractionEndpointInstances is too low with respect to the cardinality\nlet discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\nlet lowerBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in\nif (lowerBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif\n-- adann",
+			 "NumberOfsubEndpointsCorrespondsToUpperBound", "-- The number of subInteractionEndpointInstances is too high with respect to the cardinality\nlet discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\nlet upperBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in\nif (upperBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()<=upperBoundOfsubInteractionEndpointInstance else true endif\n-- adann"
 		   });								
 	}
 

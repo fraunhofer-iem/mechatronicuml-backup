@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsPackage;
@@ -320,6 +321,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		// Initialize simple dependencies
 		ModelinstancePackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
@@ -1744,7 +1746,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "RaiseMessageEventImpliesParameterBinding"
-		   });													
+		   });										
+		addAnnotation
+		  (synchronizationChannelEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ValidSelectorType"
+		   });						
 		addAnnotation
 		  (synchronizationEClass, 
 		   source, 
@@ -1891,7 +1899,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "RaiseMessageEventImpliesParameterBinding", "-- A raise message event must bind a value to every parameter\nlet messageType : msgtype::MessageType = self.message.instanceOf in\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\n-- author: adann"
-		   });															
+		   });												
+		addAnnotation
+		  (synchronizationChannelEClass, 
+		   source, 
+		   new String[] {
+			 "ValidSelectorType", "-- The selector type must be of type BOOLEAN, INT, SHORT, or of type role iff this StateChart is a multi-role StateChart, or of type port iff this StateChart is a multi-port StateChart \r\nlet stateCharts : OrderedSet(realtimestatechart::RealtimeStatechart) = if(self.state.embeddedRegions->isEmpty()) then OrderedSet{} else self.state.embeddedRegions.embeddedStatechart->select(stateChart| (not stateChart.behavioralElement.oclIsUndefined()) and stateChart.behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and stateChart.behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)->asOrderedSet() endif in\n let behavElement : behavior::BehavioralElement = if (stateCharts->isEmpty()) then null else stateCharts->first().behavioralElement endif in\nlet selectorTypeIsValidPrimitiveType : Boolean = if (not self.selectorType.oclIsUndefined()) then self.selectorType.oclIsKindOf(types::PrimitiveDataType) and (self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BOOLEAN or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BYTE or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::SHORT)\nelse true endif in \nif self.selectorType.oclIsUndefined() then\n\ttrue\nelse \n\tif behavElement.oclIsUndefined() then \n\t\tselectorTypeIsValidPrimitiveType\n\telse \n\tselectorTypeIsValidPrimitiveType \nor (if behavElement.oclIsKindOf(protocol::Role) then behavElement.oclAsType(protocol::Role).multiRole and self.selectorType.oclIsKindOf(protocol::Role) else false endif)\nor (if behavElement.oclIsKindOf(component::DiscretePort) then behavElement.oclAsType(component::DiscretePort).multiPort and self.selectorType.oclIsKindOf(component::Port) else false endif)\nendif endif\n-- adann"
+		   });						
 		addAnnotation
 		  (synchronizationEClass, 
 		   source, 

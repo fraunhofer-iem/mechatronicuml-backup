@@ -24,7 +24,8 @@ package de.uni_paderborn.fujaba.muml.instance;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getStructuredComponentInstance()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NumberOfembeddedComponentInstancesCorrespondsToLowerBound=' -- Not all ComponentParts with a lowerBound > 0 are initialized\nlet componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\ncomponentParts->forAll(part| if (not part.cardinality.lowerBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()>=part.cardinality.lowerBound.value else true endif)\n-- adann' NumberOfembeddedComponentInstancesCorrespondsToUpperBound=' -- The number of initialized ComponentInstances does not corresponds to the specified upperBound\nlet componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\nlet componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\ncomponentParts->forAll(part| if (not part.cardinality.upperBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()<=part.cardinality.upperBound.value else true endif)\n-- adann'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NumberOfembeddedComponentInstancesCorrespondsToLowerBound NumberOfembeddedComponentInstancesCorrespondsToUpperBound'"
  * @generated
  */
 public interface StructuredComponentInstance extends ComponentInstance {

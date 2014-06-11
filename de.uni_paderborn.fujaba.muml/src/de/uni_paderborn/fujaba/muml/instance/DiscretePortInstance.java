@@ -37,6 +37,8 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscretePortInstance()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortTypeIsKindOfDiscretePort='-- The port type of a DiscretePortInstance has to be of kind DiscretePort\n(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::DiscretePort)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PortTypeIsKindOfDiscretePort'"
  * @generated
  */
 public interface DiscretePortInstance extends PortInstance, DiscreteInteractionEndpointInstance {

@@ -30,6 +30,8 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortConnectorInstance()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidPortConnectorInstance'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidPortConnectorInstance='-- The connected PortInstances do not correspond to the selected PortConnectorType\nlet directPortTypes : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint|endPoint.oclIsKindOf(component::Port)).oclAsType(component::Port)->asOrderedSet() else OrderedSet{} endif in\nlet portTypesFromPortParts : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint | endPoint.oclIsKindOf(component::PortPart)).oclAsType(component::PortPart)->collect(portType)->asOrderedSet() else OrderedSet{} endif  in\nlet allPortTypes : Set(component::Port) = directPortTypes->union(portTypesFromPortParts)->asOrderedSet() in\nif (self.type.oclIsUndefined() or self.connectorEndpointInstances->isEmpty()) then \n\ttrue\nelse\n\tallPortTypes->symmetricDifference(self.connectorEndpointInstances.type.oclAsType(component::Port)->asSet())->isEmpty()\nendif\n-- adann\r\n'"
  * @generated
  */
 public interface PortConnectorInstance extends ConnectorInstance {

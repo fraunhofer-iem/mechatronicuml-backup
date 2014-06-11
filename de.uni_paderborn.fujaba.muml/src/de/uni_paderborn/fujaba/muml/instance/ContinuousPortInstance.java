@@ -19,7 +19,8 @@ package de.uni_paderborn.fujaba.muml.instance;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getContinuousPortInstance()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortTypeIsKindOfContinuousPort='-- The port type of a ContinuousPortInstance has to be of kind ContinuousPort\n(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::ContinuousPort)\n-- adann'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PortTypeIsKindOfContinuousPort'"
  * @generated
  */
 public interface ContinuousPortInstance extends PortInstance {

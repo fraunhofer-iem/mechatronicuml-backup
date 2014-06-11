@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.msgtype.util;
 
+import de.uni_paderborn.fujaba.muml.msgtype.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;

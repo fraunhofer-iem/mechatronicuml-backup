@@ -589,6 +589,12 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a component instance. It is an instantiation of a component."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="AllPortsAreInitialized"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="AllPortsAreInitialized" value="-- All ContinuousPorts, HybridPorts and DiscretePorts, with  a lowerBound>0, must be initialized&#xA;let discretePorts : Set(component::DiscretePort) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->asOrderedSet() endif in&#xA;let nonDiscretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->reject(port| port.oclIsKindOf(component::DiscretePort)) endif in&#xA;let portsWichShallBeInitialized : Set(component::Port) = nonDiscretePorts->union(discretePorts->select(discretePort| discretePort.cardinality.lowerBound.value > 0 or discretePort.cardinality.lowerBound.infinity)) in&#xA;self.portInstances->forAll(portInstance| portsWichShallBeInitialized->exists(port| port = portInstance.type))&#xA;-- adann"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" lowerBound="1"
           eType="#//component/Component">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -617,6 +623,12 @@
         eSuperTypes="#//connector/ConnectorInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ValidPortConnectorInstance"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ValidPortConnectorInstance" value="-- The connected PortInstances do not correspond to the selected PortConnectorType&#xA;let directPortTypes : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint|endPoint.oclIsKindOf(component::Port)).oclAsType(component::Port)->asOrderedSet() else OrderedSet{} endif in&#xA;let portTypesFromPortParts : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint | endPoint.oclIsKindOf(component::PortPart)).oclAsType(component::PortPart)->collect(portType)->asOrderedSet() else OrderedSet{} endif  in&#xA;let allPortTypes : Set(component::Port) = directPortTypes->union(portTypesFromPortParts)->asOrderedSet() in&#xA;if (self.type.oclIsUndefined() or self.connectorEndpointInstances->isEmpty()) then &#xA;&#x9;true&#xA;else&#xA;&#x9;allPortTypes->symmetricDifference(self.connectorEndpointInstances.type.oclAsType(component::Port)->asSet())->isEmpty()&#xA;endif&#xA;-- adann&#xD;&#xA;"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorType" eType="#//component/PortConnector"
           changeable="false" volatile="true" transient="true" derived="true">
@@ -770,16 +782,34 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a continuous port at instance level. The port type of a&#xD;&#xA;continuous port instance must be a continuous port."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="PortTypeIsKindOfContinuousPort" value="-- The port type of a ContinuousPortInstance has to be of kind ContinuousPort&#xA;(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::ContinuousPort)&#xA;-- adann"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="PortTypeIsKindOfContinuousPort"/>
+      </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HybridPortInstance" eSuperTypes="#//instance/PortInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a hybrid port at instance level. The port type of a hybrid &#xD;&#xA;port instance must be a hybrid port."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="PortTypeIsKindOfHybridPort" value="-- The port type of a HybridPortInstance has to be of kind HybridPort&#xA;(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::HybridPort)&#xA;-- adann"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="PortTypeIsKindOfHybridPort"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance" abstract="true"
         eSuperTypes="#//instance/PortInstance #//connector/DiscreteInteractionEndpointInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a discrete port at instance level. At instance level, we &#xD;&#xA;distinguish between single-port instances and multi-port instances by using&#xD;&#xA;two subclasses of this abstract class."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="PortTypeIsKindOfDiscretePort" value="-- The port type of a DiscretePortInstance has to be of kind DiscretePort&#xA;(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::DiscretePort)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="PortTypeIsKindOfDiscretePort"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
           upperBound="-1" eType="#//msgtype/MessageType" changeable="false" volatile="true"
@@ -869,6 +899,13 @@
     <eClassifiers xsi:type="ecore:EClass" name="StructuredComponentInstance" eSuperTypes="#//instance/ComponentInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A structured component instance is a component instance that has been derived from a structured component type. A structured component instance specifies an embedded component instance configuration defining its inner structure. "/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="NumberOfembeddedComponentInstancesCorrespondsToLowerBound" value=" -- Not all ComponentParts with a lowerBound > 0 are initialized&#xA;let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in&#xA; let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in&#xA;componentParts->forAll(part| if (not part.cardinality.lowerBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()>=part.cardinality.lowerBound.value else true endif)&#xA;-- adann"/>
+        <details key="NumberOfembeddedComponentInstancesCorrespondsToUpperBound" value=" -- The number of initialized ComponentInstances does not corresponds to the specified upperBound&#xA;let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in&#xA;let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in&#xA;componentParts->forAll(part| if (not part.cardinality.upperBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()&lt;=part.cardinality.upperBound.value else true endif)&#xA;-- adann"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NumberOfembeddedComponentInstancesCorrespondsToLowerBound NumberOfembeddedComponentInstancesCorrespondsToUpperBound"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedCIC" lowerBound="1"
           eType="#//instance/ComponentInstanceConfiguration" containment="true" eOpposite="#//instance/ComponentInstanceConfiguration/parentStructuredComponentInstance">
@@ -1585,6 +1622,12 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Defines a type of a synchronization channel that can be used to synchronize&#xA;between statecharts contained as substatecharts in the same state.&#xA;Serves as a type for Synchronizations."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ValidSelectorType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ValidSelectorType" value="-- The selector type must be of type BOOLEAN, INT, SHORT, or of type role iff this StateChart is a multi-role StateChart, or of type port iff this StateChart is a multi-port StateChart &#xD;&#xA;let stateCharts : OrderedSet(realtimestatechart::RealtimeStatechart) = if(self.state.embeddedRegions->isEmpty()) then OrderedSet{} else self.state.embeddedRegions.embeddedStatechart->select(stateChart| (not stateChart.behavioralElement.oclIsUndefined()) and stateChart.behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and stateChart.behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)->asOrderedSet() endif in&#xA; let behavElement : behavior::BehavioralElement = if (stateCharts->isEmpty()) then null else stateCharts->first().behavioralElement endif in&#xA;let selectorTypeIsValidPrimitiveType : Boolean = if (not self.selectorType.oclIsUndefined()) then self.selectorType.oclIsKindOf(types::PrimitiveDataType) and (self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BOOLEAN or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BYTE or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::SHORT)&#xA;else true endif in &#xA;if self.selectorType.oclIsUndefined() then&#xA;&#x9;true&#xA;else &#xA;&#x9;if behavElement.oclIsUndefined() then &#xA;&#x9;&#x9;selectorTypeIsValidPrimitiveType&#xA;&#x9;else &#xA;&#x9;selectorTypeIsValidPrimitiveType &#xA;or (if behavElement.oclIsKindOf(protocol::Role) then behavElement.oclAsType(protocol::Role).multiRole and self.selectorType.oclIsKindOf(protocol::Role) else false endif)&#xA;or (if behavElement.oclIsKindOf(component::DiscretePort) then behavElement.oclAsType(component::DiscretePort).multiPort and self.selectorType.oclIsKindOf(component::Port) else false endif)&#xA;endif endif&#xA;-- adann"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
           eType="#//realtimestatechart/State" eOpposite="#//realtimestatechart/State/channels">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2135,6 +2178,13 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A single instance of a discrete interaction endpoint."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="StandaloneSingleEndpointInstanceRequiresSingleEndpointType"
+            value="-- For a DiscreteSingleInteractionEndpointInstance the type has to be a single DiscreteInteractionEndpoint, too.&#xA;(not self.type.oclIsUndefined() and self.multiInteractionEndpointInstance.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (not self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)&#xA;-- adann"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="StandaloneSingleEndpointInstanceRequiresSingleEndpointType"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="multiInteractionEndpointInstance"
           eType="#//connector/DiscreteMultiInteractionEndpointInstance" eOpposite="#//connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2176,6 +2226,14 @@
         abstract="true" eSuperTypes="#//connector/DiscreteInteractionEndpointInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A discrete interaction endpoint instance that comprises multiple single sub-instances."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="TypeIsMultiDiscreteInteractionEndpoint" value="-- For a DiscreteMultiInteractionEndpointInstance the type has to be a multi DiscreteInteractionEndpoint, too.&#xA;(not self.type.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)&#xA;-- adann"/>
+        <details key="NumberOfsubEndpointsCorrespondsToLowerBound" value="-- The number of subInteractionEndpointInstances is too low with respect to the cardinality&#xA;let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in&#xA;let lowerBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in&#xA;if (lowerBoundOfsubInteractionEndpointInstance &lt;>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif&#xA;-- adann"/>
+        <details key="NumberOfsubEndpointsCorrespondsToUpperBound" value="-- The number of subInteractionEndpointInstances is too high with respect to the cardinality&#xA;let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in&#xA;let upperBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in&#xA;if (upperBoundOfsubInteractionEndpointInstance &lt;>-1) then self.subInteractionEndpointInstances->size()&lt;=upperBoundOfsubInteractionEndpointInstance else true endif&#xA;-- adann"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="TypeIsMultiDiscreteInteractionEndpoint NumberOfsubEndpointsCorrespondsToLowerBound NumberOfsubEndpointsCorrespondsToUpperBound"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subInteractionEndpointInstances"
           upperBound="-1" eType="#//connector/DiscreteSingleInteractionEndpointInstance"

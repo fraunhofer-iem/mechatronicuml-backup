@@ -13,7 +13,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
@@ -1006,7 +1008,61 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateSynchronizationChannel(SynchronizationChannel synchronizationChannel, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(synchronizationChannel, diagnostics, context);
+		if (!validate_NoCircularContainment(synchronizationChannel, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(synchronizationChannel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(synchronizationChannel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(synchronizationChannel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(synchronizationChannel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(synchronizationChannel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(synchronizationChannel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(synchronizationChannel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(synchronizationChannel, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSynchronizationChannel_ValidSelectorType(synchronizationChannel, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValidSelectorType constraint of '<em>Synchronization Channel</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SYNCHRONIZATION_CHANNEL__VALID_SELECTOR_TYPE__EEXPRESSION = "-- The selector type must be of type BOOLEAN, INT, SHORT, or of type role iff this StateChart is a multi-role StateChart, or of type port iff this StateChart is a multi-port StateChart \r\n" +
+		"let stateCharts : OrderedSet(realtimestatechart::RealtimeStatechart) = if(self.state.embeddedRegions->isEmpty()) then OrderedSet{} else self.state.embeddedRegions.embeddedStatechart->select(stateChart| (not stateChart.behavioralElement.oclIsUndefined()) and stateChart.behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and stateChart.behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)->asOrderedSet() endif in\n" +
+		" let behavElement : behavior::BehavioralElement = if (stateCharts->isEmpty()) then null else stateCharts->first().behavioralElement endif in\n" +
+		"let selectorTypeIsValidPrimitiveType : Boolean = if (not self.selectorType.oclIsUndefined()) then self.selectorType.oclIsKindOf(types::PrimitiveDataType) and (self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BOOLEAN or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BYTE or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT or self.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::SHORT)\n" +
+		"else true endif in \n" +
+		"if self.selectorType.oclIsUndefined() then\n" +
+		"\ttrue\n" +
+		"else \n" +
+		"\tif behavElement.oclIsUndefined() then \n" +
+		"\t\tselectorTypeIsValidPrimitiveType\n" +
+		"\telse \n" +
+		"\tselectorTypeIsValidPrimitiveType \n" +
+		"or (if behavElement.oclIsKindOf(protocol::Role) then behavElement.oclAsType(protocol::Role).multiRole and self.selectorType.oclIsKindOf(protocol::Role) else false endif)\n" +
+		"or (if behavElement.oclIsKindOf(component::DiscretePort) then behavElement.oclAsType(component::DiscretePort).multiPort and self.selectorType.oclIsKindOf(component::Port) else false endif)\n" +
+		"endif endif\n" +
+		"-- adann";
+
+	/**
+	 * Validates the ValidSelectorType constraint of '<em>Synchronization Channel</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSynchronizationChannel_ValidSelectorType(SynchronizationChannel synchronizationChannel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL,
+				 synchronizationChannel,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidSelectorType",
+				 SYNCHRONIZATION_CHANNEL__VALID_SELECTOR_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

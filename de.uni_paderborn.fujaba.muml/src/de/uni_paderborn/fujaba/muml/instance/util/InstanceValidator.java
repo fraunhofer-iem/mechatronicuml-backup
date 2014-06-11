@@ -13,7 +13,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.instance.*;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
@@ -73,6 +76,14 @@ public class InstanceValidator extends MumlValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectorValidator connectorValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,6 +91,7 @@ public class InstanceValidator extends MumlValidator {
 	 */
 	public InstanceValidator() {
 		super();
+		connectorValidator = ConnectorValidator.INSTANCE;
 	}
 
 	/**
@@ -141,7 +153,51 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateComponentInstance(ComponentInstance componentInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(componentInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(componentInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentInstance_AllPortsAreInitialized(componentInstance, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AllPortsAreInitialized constraint of '<em>Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPONENT_INSTANCE__ALL_PORTS_ARE_INITIALIZED__EEXPRESSION = "-- All ContinuousPorts, HybridPorts and DiscretePorts, with  a lowerBound>0, must be initialized\n" +
+		"let discretePorts : Set(component::DiscretePort) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->asOrderedSet() endif in\n" +
+		"let nonDiscretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->reject(port| port.oclIsKindOf(component::DiscretePort)) endif in\n" +
+		"let portsWichShallBeInitialized : Set(component::Port) = nonDiscretePorts->union(discretePorts->select(discretePort| discretePort.cardinality.lowerBound.value > 0 or discretePort.cardinality.lowerBound.infinity)) in\n" +
+		"self.portInstances->forAll(portInstance| portsWichShallBeInitialized->exists(port| port = portInstance.type))\n" +
+		"-- adann";
+
+	/**
+	 * Validates the AllPortsAreInitialized constraint of '<em>Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentInstance_AllPortsAreInitialized(ComponentInstance componentInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.COMPONENT_INSTANCE,
+				 componentInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AllPortsAreInitialized",
+				 COMPONENT_INSTANCE__ALL_PORTS_ARE_INITIALIZED__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -150,7 +206,56 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validatePortConnectorInstance(PortConnectorInstance portConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(portConnectorInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(portConnectorInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(portConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(portConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(portConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(portConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(portConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(portConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(portConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(portConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortConnectorInstance_ValidPortConnectorInstance(portConnectorInstance, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValidPortConnectorInstance constraint of '<em>Port Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PORT_CONNECTOR_INSTANCE__VALID_PORT_CONNECTOR_INSTANCE__EEXPRESSION = "-- The connected PortInstances do not correspond to the selected PortConnectorType\n" +
+		"let directPortTypes : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint|endPoint.oclIsKindOf(component::Port)).oclAsType(component::Port)->asOrderedSet() else OrderedSet{} endif in\n" +
+		"let portTypesFromPortParts : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint | endPoint.oclIsKindOf(component::PortPart)).oclAsType(component::PortPart)->collect(portType)->asOrderedSet() else OrderedSet{} endif  in\n" +
+		"let allPortTypes : Set(component::Port) = directPortTypes->union(portTypesFromPortParts)->asOrderedSet() in\n" +
+		"if (self.type.oclIsUndefined() or self.connectorEndpointInstances->isEmpty()) then \n" +
+		"\ttrue\n" +
+		"else\n" +
+		"\tallPortTypes->symmetricDifference(self.connectorEndpointInstances.type.oclAsType(component::Port)->asSet())->isEmpty()\n" +
+		"endif\n" +
+		"-- adann\r\n" +
+		"";
+
+	/**
+	 * Validates the ValidPortConnectorInstance constraint of '<em>Port Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortConnectorInstance_ValidPortConnectorInstance(PortConnectorInstance portConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.PORT_CONNECTOR_INSTANCE,
+				 portConnectorInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidPortConnectorInstance",
+				 PORT_CONNECTOR_INSTANCE__VALID_PORT_CONNECTOR_INSTANCE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -252,6 +357,7 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assemblyConnectorInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assemblyConnectorInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortConnectorInstance_ValidPortConnectorInstance(assemblyConnectorInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnectorInstance_AssemblyConnectorInstanceNeedsTypeIfNotTopLevel(assemblyConnectorInstance, diagnostics, context);
 		return result;
 	}
@@ -302,6 +408,7 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(delegationConnectorInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationConnectorInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortConnectorInstance_ValidPortConnectorInstance(delegationConnectorInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnectorInstance_DelegateToEmbeddedCIC(delegationConnectorInstance, diagnostics, context);
 		return result;
 	}
@@ -402,7 +509,39 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuousPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(continuousPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateContinuousPortInstance_PortTypeIsKindOfContinuousPort(continuousPortInstance, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the PortTypeIsKindOfContinuousPort constraint of '<em>Continuous Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONTINUOUS_PORT_INSTANCE__PORT_TYPE_IS_KIND_OF_CONTINUOUS_PORT__EEXPRESSION = "-- The port type of a ContinuousPortInstance has to be of kind ContinuousPort\n" +
+		"(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::ContinuousPort)\n" +
+		"-- adann";
+
+	/**
+	 * Validates the PortTypeIsKindOfContinuousPort constraint of '<em>Continuous Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContinuousPortInstance_PortTypeIsKindOfContinuousPort(ContinuousPortInstance continuousPortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.CONTINUOUS_PORT_INSTANCE,
+				 continuousPortInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PortTypeIsKindOfContinuousPort",
+				 CONTINUOUS_PORT_INSTANCE__PORT_TYPE_IS_KIND_OF_CONTINUOUS_PORT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -422,7 +561,39 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(hybridPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHybridPortInstance_PortTypeIsKindOfHybridPort(hybridPortInstance, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the PortTypeIsKindOfHybridPort constraint of '<em>Hybrid Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String HYBRID_PORT_INSTANCE__PORT_TYPE_IS_KIND_OF_HYBRID_PORT__EEXPRESSION = "-- The port type of a HybridPortInstance has to be of kind HybridPort\n" +
+		"(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::HybridPort)\n" +
+		"-- adann";
+
+	/**
+	 * Validates the PortTypeIsKindOfHybridPort constraint of '<em>Hybrid Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHybridPortInstance_PortTypeIsKindOfHybridPort(HybridPortInstance hybridPortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.HYBRID_PORT_INSTANCE,
+				 hybridPortInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PortTypeIsKindOfHybridPort",
+				 HYBRID_PORT_INSTANCE__PORT_TYPE_IS_KIND_OF_HYBRID_PORT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -442,7 +613,38 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discretePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePortInstance_PortTypeIsKindOfDiscretePort(discretePortInstance, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the PortTypeIsKindOfDiscretePort constraint of '<em>Discrete Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT_INSTANCE__PORT_TYPE_IS_KIND_OF_DISCRETE_PORT__EEXPRESSION = "-- The port type of a DiscretePortInstance has to be of kind DiscretePort\n" +
+		"(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::DiscretePort)";
+
+	/**
+	 * Validates the PortTypeIsKindOfDiscretePort constraint of '<em>Discrete Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePortInstance_PortTypeIsKindOfDiscretePort(DiscretePortInstance discretePortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.DISCRETE_PORT_INSTANCE,
+				 discretePortInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PortTypeIsKindOfDiscretePort",
+				 DISCRETE_PORT_INSTANCE__PORT_TYPE_IS_KIND_OF_DISCRETE_PORT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -462,6 +664,8 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePortInstance_PortTypeIsKindOfDiscretePort(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteSingleInteractionEndpointInstance_StandaloneSingleEndpointInstanceRequiresSingleEndpointType(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscreteSinglePortInstance_PortInstanceNotMultipleAssemblyConnectorInstances(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscreteSinglePortInstance_PortInstanceNotMultipleDelegationConnectorInstances(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscreteSinglePortInstance_PortInstanceNeedsDelegationToParentOrAssembly(discreteSinglePortInstance, diagnostics, context);
@@ -587,6 +791,10 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteMultiPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discreteMultiPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePortInstance_PortTypeIsKindOfDiscretePort(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteMultiInteractionEndpointInstance_TypeIsMultiDiscreteInteractionEndpoint(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteMultiInteractionEndpointInstance_NumberOfsubEndpointsCorrespondsToLowerBound(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteMultiInteractionEndpointInstance_NumberOfsubEndpointsCorrespondsToUpperBound(discreteMultiPortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -605,7 +813,85 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateStructuredComponentInstance(StructuredComponentInstance structuredComponentInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(structuredComponentInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(structuredComponentInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentInstance_AllPortsAreInitialized(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponentInstance_NumberOfembeddedComponentInstancesCorrespondsToLowerBound(structuredComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponentInstance_NumberOfembeddedComponentInstancesCorrespondsToUpperBound(structuredComponentInstance, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the NumberOfembeddedComponentInstancesCorrespondsToLowerBound constraint of '<em>Structured Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_COMPONENT_INSTANCE__NUMBER_OFEMBEDDED_COMPONENT_INSTANCES_CORRESPONDS_TO_LOWER_BOUND__EEXPRESSION = " -- Not all ComponentParts with a lowerBound > 0 are initialized\n" +
+		"let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n" +
+		" let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\n" +
+		"componentParts->forAll(part| if (not part.cardinality.lowerBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()>=part.cardinality.lowerBound.value else true endif)\n" +
+		"-- adann";
+
+	/**
+	 * Validates the NumberOfembeddedComponentInstancesCorrespondsToLowerBound constraint of '<em>Structured Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredComponentInstance_NumberOfembeddedComponentInstancesCorrespondsToLowerBound(StructuredComponentInstance structuredComponentInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.STRUCTURED_COMPONENT_INSTANCE,
+				 structuredComponentInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NumberOfembeddedComponentInstancesCorrespondsToLowerBound",
+				 STRUCTURED_COMPONENT_INSTANCE__NUMBER_OFEMBEDDED_COMPONENT_INSTANCES_CORRESPONDS_TO_LOWER_BOUND__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NumberOfembeddedComponentInstancesCorrespondsToUpperBound constraint of '<em>Structured Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_COMPONENT_INSTANCE__NUMBER_OFEMBEDDED_COMPONENT_INSTANCES_CORRESPONDS_TO_UPPER_BOUND__EEXPRESSION = " -- The number of initialized ComponentInstances does not corresponds to the specified upperBound\n" +
+		"let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n" +
+		"let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\n" +
+		"componentParts->forAll(part| if (not part.cardinality.upperBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()<=part.cardinality.upperBound.value else true endif)\n" +
+		"-- adann";
+
+	/**
+	 * Validates the NumberOfembeddedComponentInstancesCorrespondsToUpperBound constraint of '<em>Structured Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredComponentInstance_NumberOfembeddedComponentInstancesCorrespondsToUpperBound(StructuredComponentInstance structuredComponentInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.STRUCTURED_COMPONENT_INSTANCE,
+				 structuredComponentInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NumberOfembeddedComponentInstancesCorrespondsToUpperBound",
+				 STRUCTURED_COMPONENT_INSTANCE__NUMBER_OFEMBEDDED_COMPONENT_INSTANCES_CORRESPONDS_TO_UPPER_BOUND__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -614,7 +900,17 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateAtomicComponentInstance(AtomicComponentInstance atomicComponentInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(atomicComponentInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(atomicComponentInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(atomicComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(atomicComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(atomicComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(atomicComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(atomicComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(atomicComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(atomicComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(atomicComponentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentInstance_AllPortsAreInitialized(atomicComponentInstance, diagnostics, context);
+		return result;
 	}
 
 	/**

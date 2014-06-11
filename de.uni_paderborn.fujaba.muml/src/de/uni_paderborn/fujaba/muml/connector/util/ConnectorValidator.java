@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.connector.util;
 
+import de.uni_paderborn.fujaba.muml.connector.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -257,7 +258,48 @@ public class ConnectorValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDiscreteSingleInteractionEndpointInstance(DiscreteSingleInteractionEndpointInstance discreteSingleInteractionEndpointInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(discreteSingleInteractionEndpointInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscreteSingleInteractionEndpointInstance_StandaloneSingleEndpointInstanceRequiresSingleEndpointType(discreteSingleInteractionEndpointInstance, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the StandaloneSingleEndpointInstanceRequiresSingleEndpointType constraint of '<em>Discrete Single Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__STANDALONE_SINGLE_ENDPOINT_INSTANCE_REQUIRES_SINGLE_ENDPOINT_TYPE__EEXPRESSION = "-- For a DiscreteSingleInteractionEndpointInstance the type has to be a single DiscreteInteractionEndpoint, too.\n" +
+		"(not self.type.oclIsUndefined() and self.multiInteractionEndpointInstance.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (not self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\n" +
+		"-- adann";
+
+	/**
+	 * Validates the StandaloneSingleEndpointInstanceRequiresSingleEndpointType constraint of '<em>Discrete Single Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteSingleInteractionEndpointInstance_StandaloneSingleEndpointInstanceRequiresSingleEndpointType(DiscreteSingleInteractionEndpointInstance discreteSingleInteractionEndpointInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE,
+				 discreteSingleInteractionEndpointInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "StandaloneSingleEndpointInstanceRequiresSingleEndpointType",
+				 DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__STANDALONE_SINGLE_ENDPOINT_INSTANCE_REQUIRES_SINGLE_ENDPOINT_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -266,7 +308,116 @@ public class ConnectorValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDiscreteMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance discreteMultiInteractionEndpointInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(discreteMultiInteractionEndpointInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscreteMultiInteractionEndpointInstance_TypeIsMultiDiscreteInteractionEndpoint(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscreteMultiInteractionEndpointInstance_NumberOfsubEndpointsCorrespondsToLowerBound(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscreteMultiInteractionEndpointInstance_NumberOfsubEndpointsCorrespondsToUpperBound(discreteMultiInteractionEndpointInstance, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the TypeIsMultiDiscreteInteractionEndpoint constraint of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__TYPE_IS_MULTI_DISCRETE_INTERACTION_ENDPOINT__EEXPRESSION = "-- For a DiscreteMultiInteractionEndpointInstance the type has to be a multi DiscreteInteractionEndpoint, too.\n" +
+		"(not self.type.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\n" +
+		"-- adann";
+
+	/**
+	 * Validates the TypeIsMultiDiscreteInteractionEndpoint constraint of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteMultiInteractionEndpointInstance_TypeIsMultiDiscreteInteractionEndpoint(DiscreteMultiInteractionEndpointInstance discreteMultiInteractionEndpointInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE,
+				 discreteMultiInteractionEndpointInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "TypeIsMultiDiscreteInteractionEndpoint",
+				 DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__TYPE_IS_MULTI_DISCRETE_INTERACTION_ENDPOINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NumberOfsubEndpointsCorrespondsToLowerBound constraint of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_LOWER_BOUND__EEXPRESSION = "-- The number of subInteractionEndpointInstances is too low with respect to the cardinality\n" +
+		"let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\n" +
+		"let lowerBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in\n" +
+		"if (lowerBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif\n" +
+		"-- adann";
+
+	/**
+	 * Validates the NumberOfsubEndpointsCorrespondsToLowerBound constraint of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteMultiInteractionEndpointInstance_NumberOfsubEndpointsCorrespondsToLowerBound(DiscreteMultiInteractionEndpointInstance discreteMultiInteractionEndpointInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE,
+				 discreteMultiInteractionEndpointInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NumberOfsubEndpointsCorrespondsToLowerBound",
+				 DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_LOWER_BOUND__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NumberOfsubEndpointsCorrespondsToUpperBound constraint of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_UPPER_BOUND__EEXPRESSION = "-- The number of subInteractionEndpointInstances is too high with respect to the cardinality\n" +
+		"let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\n" +
+		"let upperBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in\n" +
+		"if (upperBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()<=upperBoundOfsubInteractionEndpointInstance else true endif\n" +
+		"-- adann";
+
+	/**
+	 * Validates the NumberOfsubEndpointsCorrespondsToUpperBound constraint of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteMultiInteractionEndpointInstance_NumberOfsubEndpointsCorrespondsToUpperBound(DiscreteMultiInteractionEndpointInstance discreteMultiInteractionEndpointInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE,
+				 discreteMultiInteractionEndpointInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NumberOfsubEndpointsCorrespondsToUpperBound",
+				 DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_UPPER_BOUND__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

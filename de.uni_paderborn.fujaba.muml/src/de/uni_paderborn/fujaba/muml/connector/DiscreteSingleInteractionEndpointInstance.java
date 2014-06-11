@@ -29,6 +29,8 @@ package de.uni_paderborn.fujaba.muml.connector;
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteSingleInteractionEndpointInstance()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL StandaloneSingleEndpointInstanceRequiresSingleEndpointType='-- For a DiscreteSingleInteractionEndpointInstance the type has to be a single DiscreteInteractionEndpoint, too.\n(not self.type.oclIsUndefined() and self.multiInteractionEndpointInstance.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (not self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\n-- adann'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='StandaloneSingleEndpointInstanceRequiresSingleEndpointType'"
  * @generated
  */
 public interface DiscreteSingleInteractionEndpointInstance extends DiscreteInteractionEndpointInstance {

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
@@ -203,6 +204,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		// Initialize simple dependencies
 		ModelinstancePackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
@@ -814,7 +816,19 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });														
+		   });				
+		addAnnotation
+		  (componentInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AllPortsAreInitialized"
+		   });								
+		addAnnotation
+		  (portConnectorInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ValidPortConnectorInstance"
+		   });								
 		addAnnotation
 		  (portInstanceEClass, 
 		   source, 
@@ -838,13 +852,37 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueComponentInstanceNames"
-		   });																				
+		   });									
+		addAnnotation
+		  (continuousPortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "PortTypeIsKindOfContinuousPort"
+		   });				
+		addAnnotation
+		  (hybridPortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "PortTypeIsKindOfHybridPort"
+		   });				
+		addAnnotation
+		  (discretePortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "PortTypeIsKindOfDiscretePort"
+		   });												
 		addAnnotation
 		  (discreteSinglePortInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceNeedsDelegationToParentOrAssembly"
-		   });									
+		   });										
+		addAnnotation
+		  (structuredComponentInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "NumberOfembeddedComponentInstancesCorrespondsToLowerBound NumberOfembeddedComponentInstancesCorrespondsToUpperBound"
+		   });		
 	}
 
 	/**
@@ -854,7 +892,19 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";											
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";						
+		addAnnotation
+		  (componentInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "AllPortsAreInitialized", "-- All ContinuousPorts, HybridPorts and DiscretePorts, with  a lowerBound>0, must be initialized\nlet discretePorts : Set(component::DiscretePort) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->asOrderedSet() endif in\nlet nonDiscretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->reject(port| port.oclIsKindOf(component::DiscretePort)) endif in\nlet portsWichShallBeInitialized : Set(component::Port) = nonDiscretePorts->union(discretePorts->select(discretePort| discretePort.cardinality.lowerBound.value > 0 or discretePort.cardinality.lowerBound.infinity)) in\nself.portInstances->forAll(portInstance| portsWichShallBeInitialized->exists(port| port = portInstance.type))\n-- adann"
+		   });								
+		addAnnotation
+		  (portConnectorInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "ValidPortConnectorInstance", "-- The connected PortInstances do not correspond to the selected PortConnectorType\nlet directPortTypes : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint|endPoint.oclIsKindOf(component::Port)).oclAsType(component::Port)->asOrderedSet() else OrderedSet{} endif in\nlet portTypesFromPortParts : Set(component::Port) = if(not self.type.oclIsUndefined()) then self.type.connectorEndpoints->select(endPoint | endPoint.oclIsKindOf(component::PortPart)).oclAsType(component::PortPart)->collect(portType)->asOrderedSet() else OrderedSet{} endif  in\nlet allPortTypes : Set(component::Port) = directPortTypes->union(portTypesFromPortParts)->asOrderedSet() in\nif (self.type.oclIsUndefined() or self.connectorEndpointInstances->isEmpty()) then \n\ttrue\nelse\n\tallPortTypes->symmetricDifference(self.connectorEndpointInstances.type.oclAsType(component::Port)->asSet())->isEmpty()\nendif\n-- adann\r\n"
+		   });			
 		addAnnotation
 		  (getPortConnectorInstance_PortConnectorType(), 
 		   source, 
@@ -927,7 +977,25 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if self.parentStructuredComponentInstance.oclIsUndefined()\r\nthen OrderedSet {}\r\nelse self.parentStructuredComponentInstance.portInstances\r\nendif"
-		   });							
+		   });					
+		addAnnotation
+		  (continuousPortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "PortTypeIsKindOfContinuousPort", "-- The port type of a ContinuousPortInstance has to be of kind ContinuousPort\n(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::ContinuousPort)\n-- adann"
+		   });				
+		addAnnotation
+		  (hybridPortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "PortTypeIsKindOfHybridPort", "-- The port type of a HybridPortInstance has to be of kind HybridPort\n(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::HybridPort)\n-- adann"
+		   });				
+		addAnnotation
+		  (discretePortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "PortTypeIsKindOfDiscretePort", "-- The port type of a DiscretePortInstance has to be of kind DiscretePort\n(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::DiscretePort)"
+		   });			
 		addAnnotation
 		  (getDiscretePortInstance_ReceiverMessageTypes(), 
 		   source, 
@@ -966,6 +1034,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   new String[] {
 			 "derivation", "self.subInteractionEndpointInstances"
 		   });						
+		addAnnotation
+		  (structuredComponentInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "NumberOfembeddedComponentInstancesCorrespondsToLowerBound", " -- Not all ComponentParts with a lowerBound > 0 are initialized\nlet componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\ncomponentParts->forAll(part| if (not part.cardinality.lowerBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()>=part.cardinality.lowerBound.value else true endif)\n-- adann",
+			 "NumberOfembeddedComponentInstancesCorrespondsToUpperBound", " -- The number of initialized ComponentInstances does not corresponds to the specified upperBound\nlet componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\nlet componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\ncomponentParts->forAll(part| if (not part.cardinality.upperBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()<=part.cardinality.upperBound.value else true endif)\n-- adann"
+		   });			
 	}
 
 } //InstancePackageImpl

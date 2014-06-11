@@ -33,6 +33,8 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstance()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AllPortsAreInitialized'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllPortsAreInitialized='-- All ContinuousPorts, HybridPorts and DiscretePorts, with  a lowerBound>0, must be initialized\nlet discretePorts : Set(component::DiscretePort) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->asOrderedSet() endif in\nlet nonDiscretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->reject(port| port.oclIsKindOf(component::DiscretePort)) endif in\nlet portsWichShallBeInitialized : Set(component::Port) = nonDiscretePorts->union(discretePorts->select(discretePort| discretePort.cardinality.lowerBound.value > 0 or discretePort.cardinality.lowerBound.infinity)) in\nself.portInstances->forAll(portInstance| portsWichShallBeInitialized->exists(port| port = portInstance.type))\n-- adann'"
  * @generated
  */
 public interface ComponentInstance extends NamedElement {

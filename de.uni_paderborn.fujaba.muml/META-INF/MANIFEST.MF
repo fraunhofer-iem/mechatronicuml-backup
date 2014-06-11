@@ -4,7 +4,9 @@ Bundle-Name: MechatronicUML PIM Core Meta Model
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: de.uni_paderborn.fujaba.common;visibility:=reexport,

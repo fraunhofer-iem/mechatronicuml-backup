@@ -19,7 +19,8 @@ package de.uni_paderborn.fujaba.muml.instance;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getHybridPortInstance()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortTypeIsKindOfHybridPort='-- The port type of a HybridPortInstance has to be of kind HybridPort\n(not self.portType.oclIsUndefined()) implies self.portType.oclIsKindOf(component::HybridPort)\n-- adann'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PortTypeIsKindOfHybridPort'"
  * @generated
  */
 public interface HybridPortInstance extends PortInstance {
