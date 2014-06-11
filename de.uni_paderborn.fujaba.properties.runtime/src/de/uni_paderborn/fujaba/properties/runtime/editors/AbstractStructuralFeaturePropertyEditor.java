@@ -370,9 +370,12 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 		unregisteredOCLExpressions.remove(adapter);
 
+		EClass contextEClass = feature.getEContainingClass();
+		
 		final ImpactAnalyzer impactAnalyzer = ImpactAnalyzerFactory.INSTANCE
 				.createImpactAnalyzer(expression, // the expression to
 													// re-evaluate incrementally
+						contextEClass,
 						false, // whether to re-evaluate when new context
 								// objects appear
 						OCLFactory.getInstance());
