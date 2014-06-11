@@ -20,6 +20,14 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 
 
 «DEFINE classBody FOR Class»
+«REM»debug output:
+/*
+«FOREACH genLocalProperties() AS this»
+«genFeature.ecoreFeature.name»
+
+«ENDFOREACH»
+*/
+«ENDREM»
 
 	/**
 	 * @generated
@@ -37,7 +45,9 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 		«FOREACH propertyCategories.select(c | genLocalProperties().category.contains(c)) AS this»
 		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
 		«ENDFOREACH»
-		«FOREACH genLocalProperties().select(p | p.shouldGenerateEditor()) AS this»
+		«REM»reject inherited properties that a super constructor already initialized«ENDREM»
+		«FOREACH genLocalProperties().select(p | p.shouldGenerateEditor()).
+			reject(p | genInheritedProperties().select(p.shouldGenerateEditor()).genFeature.contains(p.genFeature)) AS this»
 			«EXPAND addEditor FOR editor»
 		«ENDFOREACH»
 	}
@@ -61,7 +71,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	protected void «genAdder()»(String category, boolean front) {
 		«IF editor != null»
 		category = "«category.genCategoryKey()»";
-		front = «EXPAND front FOR editor»
+		front = «EXPAND front FOR editor»;
 		super.«genAdder()»(category, front);
 		«ENDIF»
 	}
@@ -111,15 +121,18 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	@Override
 	«ENDIF-»
 	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = «genFeature.genFeatureLiteral()»;
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
-		«EXPAND addVisibilityFilter("editor", "feature") FOREACH visibilityFilters»
-		«IF genDocumentation() != null»
-		editor.setTooltipMessage("«genDocumentation().escapeString()»");
+		«IF !shouldGenerateEditor()-»
+			return null;
+		«ELSE-»
+			final org.eclipse.emf.ecore.EStructuralFeature feature = «genFeature.genFeatureLiteral()»;
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
+			«EXPAND addVisibilityFilter("editor", "feature") FOREACH visibilityFilters»
+			«IF genDocumentation() != null»
+			editor.setTooltipMessage("«genDocumentation().escapeString()»");
+			«ENDIF»
+			«EXPAND addCreationConstraintFilter("editor", "feature") FOREACH creationConstraint.filters»
+			return editor;
 		«ENDIF»
-		«EXPAND addCreationConstraintFilter("editor", "feature") FOREACH creationConstraint.filters»
-		return editor;
-
 	}
 «ENDDEFINE»
 
