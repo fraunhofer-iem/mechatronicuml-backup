@@ -91,6 +91,10 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	public void addPropertyEditor(String key, IPropertyEditor editor,
 			boolean front) {
+		if (editor == null) {
+			return;
+		}
+		
 		if (!propertyEditors.contains(editor) && !keys.containsKey(key)) {
 			if (childrenCreated) {
 				editor.createControls(childrenComposite, toolkit);
