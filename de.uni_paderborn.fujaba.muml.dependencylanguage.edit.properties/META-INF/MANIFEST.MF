@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Properties
+Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.dependencylanguage.edit.properties; singleton:=true
-Bundle-Version: 0.4
+Bundle-Version: 0.4.0.qualifier
 Require-Bundle: de.uni_paderborn.fujaba.muml.dependencylanguage,
  org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
@@ -16,4 +16,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: 
  de.uni_paderborn.fujaba.muml.dependencylanguage.properties.dependencylanguage.editor,
  de.uni_paderborn.fujaba.muml.dependencylanguage.properties.tabs
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: %providerName

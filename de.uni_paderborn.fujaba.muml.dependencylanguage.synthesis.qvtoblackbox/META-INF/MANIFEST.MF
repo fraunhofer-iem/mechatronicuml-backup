@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: QvtoBlackbox
+Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox.Activator
@@ -13,3 +13,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox
+Bundle-Vendor: %providerName

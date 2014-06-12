@@ -1,9 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Synthesis Plug-in
+Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui;singleton:=true
 Bundle-Version: 0.4.0
 Bundle-Vendor: 
+ %providerName
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: de.uni_paderborn.fujaba.muml,
  org.eclipse.jface,
