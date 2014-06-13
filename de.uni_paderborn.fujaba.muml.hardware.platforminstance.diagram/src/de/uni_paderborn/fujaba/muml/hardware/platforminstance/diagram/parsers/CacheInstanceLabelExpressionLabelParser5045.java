@@ -38,7 +38,7 @@ public class CacheInstanceLabelExpressionLabelParser5045 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						2,
+						4,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getCacheInstance(), null).body();
 	}
@@ -50,7 +50,7 @@ public class CacheInstanceLabelExpressionLabelParser5045 extends
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						3,
+						5,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getCacheInstance(), null).evaluate(target);
 		return String.valueOf(result);

@@ -38,7 +38,7 @@ public class StorageMemoryInstanceLabelExpressionLabelParser5063 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						22,
+						24,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getStorageMemoryInstance(), null).body();
 	}
@@ -50,7 +50,7 @@ public class StorageMemoryInstanceLabelExpressionLabelParser5063 extends
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						23,
+						25,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getStorageMemoryInstance(), null).evaluate(
 						target);

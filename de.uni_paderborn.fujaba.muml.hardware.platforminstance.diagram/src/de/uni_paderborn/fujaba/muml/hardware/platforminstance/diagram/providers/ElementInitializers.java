@@ -22,7 +22,7 @@ public class ElementInitializers {
 			instance.setMemorySize(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							13,
+							15,
 							de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 									.getDataSize(), null).evaluate(
 							newInstance_0_0);
@@ -49,7 +49,7 @@ public class ElementInitializers {
 			instance.setMemorySize(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							19,
+							21,
 							de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 									.getDataSize(), null).evaluate(
 							newInstance_0_0);

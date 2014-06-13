@@ -114,40 +114,31 @@ public interface HwplatforminstancePackage extends EPackage {
 	int HW_PLATFORM_INSTANCE__HWPLATFORM_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_INSTANCE__RESOURCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Networking Hardware Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Hwplatform Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_INSTANCE__HWPLATFORM_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Delegation Ports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE__DELEGATION_PORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int HW_PLATFORM_INSTANCE__DELEGATION_PORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Embedded HPIC</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PLATFORM_INSTANCE__EMBEDDED_HPIC = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Parent HPIC</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PLATFORM_INSTANCE__PARENT_HPIC = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>HW Platform Instance</em>' class.
@@ -156,7 +147,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int HW_PLATFORM_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -355,7 +346,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -364,16 +355,16 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Hwplatform Instances</b></em>' containment reference list.
@@ -382,7 +373,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Networking Hardware Instances</b></em>' containment reference list.
@@ -391,7 +382,25 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Parent HW Platform Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>HW Platform Instance Configuration</em>' class.
@@ -400,7 +409,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -409,7 +418,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -418,7 +427,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -427,7 +436,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -436,7 +445,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -445,7 +454,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -454,7 +463,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -463,7 +472,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -472,7 +481,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -481,7 +490,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -490,7 +499,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -499,7 +508,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -508,7 +517,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -517,7 +526,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -526,7 +535,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -535,7 +544,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -544,7 +553,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -553,7 +562,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -562,7 +571,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -571,7 +580,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>HW Platform Instance Configuration</em>' class.
@@ -580,7 +589,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_INSTANCE_CONFIGURATION_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int HW_PLATFORM_INSTANCE_CONFIGURATION_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl <em>HW Port Instance</em>}' class.
@@ -3026,39 +3035,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	EReference getHWPlatformInstance_HwplatformType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getResources <em>Resources</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Resources</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getResources()
-	 * @see #getHWPlatformInstance()
-	 * @generated
-	 */
-	EReference getHWPlatformInstance_Resources();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getNetworkingHardwareInstances <em>Networking Hardware Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Networking Hardware Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getNetworkingHardwareInstances()
-	 * @see #getHWPlatformInstance()
-	 * @generated
-	 */
-	EReference getHWPlatformInstance_NetworkingHardwareInstances();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getHwplatformInstances <em>Hwplatform Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Hwplatform Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getHwplatformInstances()
-	 * @see #getHWPlatformInstance()
-	 * @generated
-	 */
-	EReference getHWPlatformInstance_HwplatformInstances();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getDelegationPorts <em>Delegation Ports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3068,6 +3044,28 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHWPlatformInstance_DelegationPorts();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getEmbeddedHPIC <em>Embedded HPIC</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Embedded HPIC</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getEmbeddedHPIC()
+	 * @see #getHWPlatformInstance()
+	 * @generated
+	 */
+	EReference getHWPlatformInstance_EmbeddedHPIC();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getParentHPIC <em>Parent HPIC</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent HPIC</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getParentHPIC()
+	 * @see #getHWPlatformInstance()
+	 * @generated
+	 */
+	EReference getHWPlatformInstance_ParentHPIC();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration <em>HW Platform Instance Configuration</em>}'.
@@ -3100,6 +3098,28 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHWPlatformInstanceConfiguration_NetworkingHardwareInstances();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getResources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Resources</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getResources()
+	 * @see #getHWPlatformInstanceConfiguration()
+	 * @generated
+	 */
+	EReference getHWPlatformInstanceConfiguration_Resources();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getParentHWPlatformInstance <em>Parent HW Platform Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent HW Platform Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getParentHWPlatformInstance()
+	 * @see #getHWPlatformInstanceConfiguration()
+	 * @generated
+	 */
+	EReference getHWPlatformInstanceConfiguration_ParentHWPlatformInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance <em>HW Port Instance</em>}'.
@@ -3420,36 +3440,28 @@ public interface HwplatforminstancePackage extends EPackage {
 		EReference HW_PLATFORM_INSTANCE__HWPLATFORM_TYPE = eINSTANCE.getHWPlatformInstance_HwplatformType();
 
 		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HW_PLATFORM_INSTANCE__RESOURCES = eINSTANCE.getHWPlatformInstance_Resources();
-
-		/**
-		 * The meta object literal for the '<em><b>Networking Hardware Instances</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES = eINSTANCE.getHWPlatformInstance_NetworkingHardwareInstances();
-
-		/**
-		 * The meta object literal for the '<em><b>Hwplatform Instances</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HW_PLATFORM_INSTANCE__HWPLATFORM_INSTANCES = eINSTANCE.getHWPlatformInstance_HwplatformInstances();
-
-		/**
 		 * The meta object literal for the '<em><b>Delegation Ports</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference HW_PLATFORM_INSTANCE__DELEGATION_PORTS = eINSTANCE.getHWPlatformInstance_DelegationPorts();
+
+		/**
+		 * The meta object literal for the '<em><b>Embedded HPIC</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HW_PLATFORM_INSTANCE__EMBEDDED_HPIC = eINSTANCE.getHWPlatformInstance_EmbeddedHPIC();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent HPIC</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HW_PLATFORM_INSTANCE__PARENT_HPIC = eINSTANCE.getHWPlatformInstance_ParentHPIC();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl <em>HW Platform Instance Configuration</em>}' class.
@@ -3476,6 +3488,22 @@ public interface HwplatforminstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES = eINSTANCE.getHWPlatformInstanceConfiguration_NetworkingHardwareInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES = eINSTANCE.getHWPlatformInstanceConfiguration_Resources();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent HW Platform Instance</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE = eINSTANCE.getHWPlatformInstanceConfiguration_ParentHWPlatformInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl <em>HW Port Instance</em>}' class.

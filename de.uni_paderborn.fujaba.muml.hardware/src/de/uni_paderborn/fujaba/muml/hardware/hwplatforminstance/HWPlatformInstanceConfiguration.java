@@ -2,8 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.NamedElement;
+import org.storydriven.core.CommentableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,8 @@ import org.storydriven.core.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getHwplatformInstances <em>Hwplatform Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getNetworkingHardwareInstances <em>Networking Hardware Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getResources <em>Resources</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getParentHWPlatformInstance <em>Parent HW Platform Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +31,11 @@ import org.storydriven.core.NamedElement;
  * @model
  * @generated
  */
-public interface HWPlatformInstanceConfiguration extends NamedElement {
+public interface HWPlatformInstanceConfiguration extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Hwplatform Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getParentHPIC <em>Parent HPIC</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -39,7 +43,8 @@ public interface HWPlatformInstanceConfiguration extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hwplatform Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstanceConfiguration_HwplatformInstances()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getParentHPIC
+	 * @model opposite="parentHPIC" containment="true"
 	 * @generated
 	 */
 	EList<HWPlatformInstance> getHwplatformInstances();
@@ -59,5 +64,48 @@ public interface HWPlatformInstanceConfiguration extends NamedElement {
 	 * @generated
 	 */
 	EList<NetworkingHardwareInstance> getNetworkingHardwareInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ResourceInstances that belong to this HWPlatformInstance.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Resources</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstanceConfiguration_Resources()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ResourceInstance> getResources();
+
+	/**
+	 * Returns the value of the '<em><b>Parent HW Platform Instance</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getEmbeddedHPIC <em>Embedded HPIC</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent HW Platform Instance</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent HW Platform Instance</em>' container reference.
+	 * @see #setParentHWPlatformInstance(HWPlatformInstance)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstanceConfiguration_ParentHWPlatformInstance()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getEmbeddedHPIC
+	 * @model opposite="embeddedHPIC" transient="false"
+	 * @generated
+	 */
+	HWPlatformInstance getParentHWPlatformInstance();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getParentHWPlatformInstance <em>Parent HW Platform Instance</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent HW Platform Instance</em>' container reference.
+	 * @see #getParentHWPlatformInstance()
+	 * @generated
+	 */
+	void setParentHWPlatformInstance(HWPlatformInstance value);
 
 } // HWPlatformInstanceConfiguration

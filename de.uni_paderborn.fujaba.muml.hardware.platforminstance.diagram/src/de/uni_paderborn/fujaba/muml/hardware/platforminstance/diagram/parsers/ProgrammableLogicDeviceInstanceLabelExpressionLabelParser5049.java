@@ -38,7 +38,7 @@ public class ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5049
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						6,
+						8,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getProgrammableLogicDeviceInstance(), null)
 				.body();
@@ -51,7 +51,7 @@ public class ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5049
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						7,
+						9,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getProgrammableLogicDeviceInstance(), null)
 				.evaluate(target);

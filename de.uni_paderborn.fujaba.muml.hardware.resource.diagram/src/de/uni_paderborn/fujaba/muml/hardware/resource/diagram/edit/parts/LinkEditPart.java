@@ -1,9 +1,14 @@
 package de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts;
 
+import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.draw2d.PolylineShape;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
@@ -16,6 +21,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
@@ -109,14 +115,14 @@ public class LinkEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new BusFigure();
+		return primaryShape = new LinkResourceFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public BusFigure getPrimaryShape() {
-		return (BusFigure) primaryShape;
+	public LinkResourceFigure getPrimaryShape() {
+		return (LinkResourceFigure) primaryShape;
 	}
 
 	/**
@@ -125,12 +131,12 @@ public class LinkEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel21EditPart) {
 			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel21EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureBusBandwidthFigure());
+					.setLabel(getPrimaryShape().getFigureLinkResourceLabel1());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel22EditPart) {
 			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel22EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureBusProtocolFigure());
+					.setLabel(getPrimaryShape().getFigureLinkResourceLabel2());
 			return true;
 		}
 		return false;
@@ -180,11 +186,23 @@ public class LinkEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 50);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(150, 100);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
 
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		EditPolicy result = super.getPrimaryDragEditPolicy();
+		if (result instanceof ResizableEditPolicy) {
+			ResizableEditPolicy ep = (ResizableEditPolicy) result;
+			ep.setResizeDirections(PositionConstants.NONE);
+		}
 		return result;
 	}
 
@@ -277,49 +295,23 @@ public class LinkEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class BusFigure extends ScalablePolygonShape {
+	public class LinkResourceFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureBusProtocolFigure;
+		private WrappingLabel fFigureLinkResourceLabel1;
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureBusBandwidthFigure;
+		private WrappingLabel fFigureLinkResourceLabel2;
 
 		/**
 		 * @generated
 		 */
-		public BusFigure() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = false;
-			this.setLayoutManager(layoutThis);
-
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-					.DPtoLP(2)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(4)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(3)));
-			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode()
-					.DPtoLP(3)));
-			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode()
-					.DPtoLP(4)));
-			this.addPoint(new Point(getMapMode().DPtoLP(6), getMapMode()
-					.DPtoLP(2)));
-			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode()
-					.DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode()
-					.DPtoLP(1)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(1)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-					.DPtoLP(2)));
+		public LinkResourceFigure() {
+			this.setLayoutManager(new StackLayout());
+			this.setOutline(false);
 			createContents();
 		}
 
@@ -330,6 +322,7 @@ public class LinkEditPart extends ShapeNodeEditPart {
 
 			RectangleFigure busContainer0 = new RectangleFigure();
 
+			busContainer0.setFill(false);
 			busContainer0.setOutline(false);
 
 			GridData constraintBusContainer0 = new GridData();
@@ -347,52 +340,82 @@ public class LinkEditPart extends ShapeNodeEditPart {
 			layoutBusContainer0.makeColumnsEqualWidth = false;
 			busContainer0.setLayoutManager(layoutBusContainer0);
 
-			fFigureBusProtocolFigure = new WrappingLabel();
+			fFigureLinkResourceLabel1 = new WrappingLabel();
 
-			fFigureBusProtocolFigure.setText("<...>");
+			fFigureLinkResourceLabel1.setText("<...>");
 
-			fFigureBusProtocolFigure.setFont(FFIGUREBUSPROTOCOLFIGURE_FONT);
+			fFigureLinkResourceLabel1.setFont(FFIGURELINKRESOURCELABEL1_FONT);
 
-			GridData constraintFFigureBusProtocolFigure = new GridData();
-			constraintFFigureBusProtocolFigure.verticalAlignment = GridData.BEGINNING;
-			constraintFFigureBusProtocolFigure.horizontalAlignment = GridData.CENTER;
-			constraintFFigureBusProtocolFigure.horizontalIndent = 0;
-			constraintFFigureBusProtocolFigure.horizontalSpan = 1;
-			constraintFFigureBusProtocolFigure.verticalSpan = 0;
-			constraintFFigureBusProtocolFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureBusProtocolFigure.grabExcessVerticalSpace = true;
-			busContainer0.add(fFigureBusProtocolFigure,
-					constraintFFigureBusProtocolFigure);
+			GridData constraintFFigureLinkResourceLabel1 = new GridData();
+			constraintFFigureLinkResourceLabel1.verticalAlignment = GridData.BEGINNING;
+			constraintFFigureLinkResourceLabel1.horizontalAlignment = GridData.CENTER;
+			constraintFFigureLinkResourceLabel1.horizontalIndent = 0;
+			constraintFFigureLinkResourceLabel1.horizontalSpan = 1;
+			constraintFFigureLinkResourceLabel1.verticalSpan = 0;
+			constraintFFigureLinkResourceLabel1.grabExcessHorizontalSpace = true;
+			constraintFFigureLinkResourceLabel1.grabExcessVerticalSpace = true;
+			busContainer0.add(fFigureLinkResourceLabel1,
+					constraintFFigureLinkResourceLabel1);
 
-			fFigureBusBandwidthFigure = new WrappingLabel();
+			fFigureLinkResourceLabel2 = new WrappingLabel();
 
-			fFigureBusBandwidthFigure.setText("<...>");
+			fFigureLinkResourceLabel2.setText("<...>");
 
-			GridData constraintFFigureBusBandwidthFigure = new GridData();
-			constraintFFigureBusBandwidthFigure.verticalAlignment = GridData.BEGINNING;
-			constraintFFigureBusBandwidthFigure.horizontalAlignment = GridData.CENTER;
-			constraintFFigureBusBandwidthFigure.horizontalIndent = 0;
-			constraintFFigureBusBandwidthFigure.horizontalSpan = 1;
-			constraintFFigureBusBandwidthFigure.verticalSpan = 1;
-			constraintFFigureBusBandwidthFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureBusBandwidthFigure.grabExcessVerticalSpace = true;
-			busContainer0.add(fFigureBusBandwidthFigure,
-					constraintFFigureBusBandwidthFigure);
+			GridData constraintFFigureLinkResourceLabel2 = new GridData();
+			constraintFFigureLinkResourceLabel2.verticalAlignment = GridData.BEGINNING;
+			constraintFFigureLinkResourceLabel2.horizontalAlignment = GridData.CENTER;
+			constraintFFigureLinkResourceLabel2.horizontalIndent = 0;
+			constraintFFigureLinkResourceLabel2.horizontalSpan = 1;
+			constraintFFigureLinkResourceLabel2.verticalSpan = 0;
+			constraintFFigureLinkResourceLabel2.grabExcessHorizontalSpace = true;
+			constraintFFigureLinkResourceLabel2.grabExcessVerticalSpace = true;
+			busContainer0.add(fFigureLinkResourceLabel2,
+					constraintFFigureLinkResourceLabel2);
+
+			PolylineShape line0 = new PolylineShape();
+
+			line0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(40)));
+			line0.addPoint(new Point(getMapMode().DPtoLP(150), getMapMode()
+					.DPtoLP(40)));
+			line0.setLineWidth(3);
+
+			this.add(line0);
+
+			Ellipse circle11 = new Ellipse();
+
+			circle11.setOutline(false);
+			circle11.setBackgroundColor(ColorConstants.black);
+			circle11.setLocation(new Point(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(30)));
+			circle11.setSize(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20));
+
+			line0.add(circle11);
+
+			Ellipse circle21 = new Ellipse();
+
+			circle21.setOutline(false);
+			circle21.setBackgroundColor(ColorConstants.black);
+			circle21.setLocation(new Point(getMapMode().DPtoLP(132),
+					getMapMode().DPtoLP(30)));
+			circle21.setSize(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20));
+
+			line0.add(circle21);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureBusProtocolFigure() {
-			return fFigureBusProtocolFigure;
+		public WrappingLabel getFigureLinkResourceLabel1() {
+			return fFigureLinkResourceLabel1;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureBusBandwidthFigure() {
-			return fFigureBusBandwidthFigure;
+		public WrappingLabel getFigureLinkResourceLabel2() {
+			return fFigureLinkResourceLabel2;
 		}
 
 	}
@@ -400,7 +423,7 @@ public class LinkEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREBUSPROTOCOLFIGURE_FONT = new Font(
+	static final Font FFIGURELINKRESOURCELABEL1_FONT = new Font(
 			Display.getCurrent(), "BOLD", 9, SWT.BOLD);
 
 }

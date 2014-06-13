@@ -103,7 +103,7 @@ public class StructuredResourceInstanceCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-				.getStructuredResourceInstance_3016SemanticChildren(viewObject);
+				.getStructuredResourceInstance_3033SemanticChildren(viewObject);
 
 	}
 

@@ -11,11 +11,16 @@ Export-Package: de.uni_paderborn.fujaba.muml.hardware.common.edit.policies,
  de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource,
  de.uni_paderborn.fujaba.muml.hardware.common.figures,
  de.uni_paderborn.fujaba.muml.hardware.common.icons,
- de.uni_paderborn.fujaba.muml.hardware.common.parsers
+ de.uni_paderborn.fujaba.muml.hardware.common.parsers,
+ de.uni_paderborn.fujaba.muml.hardware.common.refactor
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
  de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.hardware,
  org.eclipse.gmf.runtime.diagram.ui,
- org.eclipse.gmf.runtime.emf.commands.core
+ org.eclipse.gmf.runtime.emf.commands.core,
+ org.eclipse.xtext,
+ de.uni_paderborn.fujaba.modelinstance.ui,
+ org.eclipse.gmf.runtime.diagram.ui.render,
+ org.eclipse.ui.ide;bundle-version="3.9.2"
 Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT
 Import-Package: org.eclipse.gmf.runtime.notation

@@ -25,7 +25,7 @@ public class BridgeInstanceItemSemanticEditPolicy
 	 */
 	public BridgeInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BridgeInstance_3027);
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BridgeInstance_3037);
 	}
 
 	/**

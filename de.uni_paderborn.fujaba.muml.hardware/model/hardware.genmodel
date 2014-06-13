@@ -120,14 +120,17 @@
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/HWPlatformInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstance/hwplatformType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstance/resources"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstance/networkingHardwareInstances"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstance/hwplatformInstances"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstance/delegationPorts"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstance/parentHPIC"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/HWPortInstance">
         <genFeatures property="None" createChild="false" propertySortChoices="true"

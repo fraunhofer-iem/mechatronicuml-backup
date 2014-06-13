@@ -20,6 +20,7 @@ import junit.textui.TestRunner;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getConnectedMediaInstances() <em>Connected Media Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getProtocol() <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind() <em>Port Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#isIsNetworkInterface() <em>Is Network Interface</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -151,6 +152,32 @@ public class HWPortInstanceTest extends HWPortTest {
 	 * @generated
 	 */
 	public void testSetPortKind() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#isIsNetworkInterface() <em>Is Network Interface</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#isIsNetworkInterface()
+	 * @generated
+	 */
+	public void testIsIsNetworkInterface() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#setIsNetworkInterface(boolean) <em>Is Network Interface</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#setIsNetworkInterface(boolean)
+	 * @generated
+	 */
+	public void testSetIsNetworkInterface() {
 		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

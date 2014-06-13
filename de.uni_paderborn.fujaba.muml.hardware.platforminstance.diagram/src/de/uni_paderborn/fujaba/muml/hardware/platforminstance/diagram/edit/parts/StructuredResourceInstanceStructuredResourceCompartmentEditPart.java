@@ -29,7 +29,7 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7005;
+	public static final int VISUAL_ID = 7009;
 
 	/**
 	 * @generated

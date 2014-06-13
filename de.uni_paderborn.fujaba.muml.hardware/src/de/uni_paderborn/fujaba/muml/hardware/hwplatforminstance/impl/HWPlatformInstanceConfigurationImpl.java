@@ -6,14 +6,19 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstan
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkingHardwareInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.impl.NamedElementImpl;
+import org.storydriven.core.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,12 +29,14 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getHwplatformInstances <em>Hwplatform Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getNetworkingHardwareInstances <em>Networking Hardware Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getParentHWPlatformInstance <em>Parent HW Platform Instance</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implements HWPlatformInstanceConfiguration {
+public class HWPlatformInstanceConfigurationImpl extends CommentableElementImpl implements HWPlatformInstanceConfiguration {
 	/**
 	 * The cached value of the '{@link #getHwplatformInstances() <em>Hwplatform Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -49,6 +56,16 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 	 * @ordered
 	 */
 	protected EList<NetworkingHardwareInstance> networkingHardwareInstances;
+
+	/**
+	 * The cached value of the '{@link #getResources() <em>Resources</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResources()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ResourceInstance> resources;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,7 +93,7 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 	 */
 	public EList<HWPlatformInstance> getHwplatformInstances() {
 		if (hwplatformInstances == null) {
-			hwplatformInstances = new EObjectContainmentEList<HWPlatformInstance>(HWPlatformInstance.class, this, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES);
+			hwplatformInstances = new EObjectContainmentWithInverseEList<HWPlatformInstance>(HWPlatformInstance.class, this, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES, HwplatforminstancePackage.HW_PLATFORM_INSTANCE__PARENT_HPIC);
 		}
 		return hwplatformInstances;
 	}
@@ -98,6 +115,78 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ResourceInstance> getResources() {
+		if (resources == null) {
+			resources = new EObjectContainmentEList<ResourceInstance>(ResourceInstance.class, this, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES);
+		}
+		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HWPlatformInstance getParentHWPlatformInstance() {
+		if (eContainerFeatureID() != HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE) return null;
+		return (HWPlatformInstance)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParentHWPlatformInstance(HWPlatformInstance newParentHWPlatformInstance, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentHWPlatformInstance, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentHWPlatformInstance(HWPlatformInstance newParentHWPlatformInstance) {
+		if (newParentHWPlatformInstance != eInternalContainer() || (eContainerFeatureID() != HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE && newParentHWPlatformInstance != null)) {
+			if (EcoreUtil.isAncestor(this, newParentHWPlatformInstance))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentHWPlatformInstance != null)
+				msgs = ((InternalEObject)newParentHWPlatformInstance).eInverseAdd(this, HwplatforminstancePackage.HW_PLATFORM_INSTANCE__EMBEDDED_HPIC, HWPlatformInstance.class, msgs);
+			msgs = basicSetParentHWPlatformInstance(newParentHWPlatformInstance, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE, newParentHWPlatformInstance, newParentHWPlatformInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHwplatformInstances()).basicAdd(otherEnd, msgs);
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentHWPlatformInstance((HWPlatformInstance)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -105,8 +194,26 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 				return ((InternalEList<?>)getHwplatformInstances()).basicRemove(otherEnd, msgs);
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES:
 				return ((InternalEList<?>)getNetworkingHardwareInstances()).basicRemove(otherEnd, msgs);
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES:
+				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
+				return basicSetParentHWPlatformInstance(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, HwplatforminstancePackage.HW_PLATFORM_INSTANCE__EMBEDDED_HPIC, HWPlatformInstance.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -121,6 +228,10 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 				return getHwplatformInstances();
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES:
 				return getNetworkingHardwareInstances();
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES:
+				return getResources();
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
+				return getParentHWPlatformInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -142,6 +253,13 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 				getNetworkingHardwareInstances().clear();
 				getNetworkingHardwareInstances().addAll((Collection<? extends NetworkingHardwareInstance>)newValue);
 				return;
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES:
+				getResources().clear();
+				getResources().addAll((Collection<? extends ResourceInstance>)newValue);
+				return;
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
+				setParentHWPlatformInstance((HWPlatformInstance)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -160,6 +278,12 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES:
 				getNetworkingHardwareInstances().clear();
 				return;
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES:
+				getResources().clear();
+				return;
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
+				setParentHWPlatformInstance((HWPlatformInstance)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -176,6 +300,10 @@ public class HWPlatformInstanceConfigurationImpl extends NamedElementImpl implem
 				return hwplatformInstances != null && !hwplatformInstances.isEmpty();
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES:
 				return networkingHardwareInstances != null && !networkingHardwareInstances.isEmpty();
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES:
+				return resources != null && !resources.isEmpty();
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
+				return getParentHWPlatformInstance() != null;
 		}
 		return super.eIsSet(featureID);
 	}

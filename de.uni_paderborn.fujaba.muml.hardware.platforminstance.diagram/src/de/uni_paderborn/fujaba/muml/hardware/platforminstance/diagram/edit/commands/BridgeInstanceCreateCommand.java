@@ -53,7 +53,7 @@ public class BridgeInstanceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BridgeInstance newElement = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory.eINSTANCE
 				.createBridgeInstance();
 
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getElementToEdit();
 		owner.getNetworkingHardwareInstances().add(newElement);
 
 		doConfigure(newElement, monitor, info);

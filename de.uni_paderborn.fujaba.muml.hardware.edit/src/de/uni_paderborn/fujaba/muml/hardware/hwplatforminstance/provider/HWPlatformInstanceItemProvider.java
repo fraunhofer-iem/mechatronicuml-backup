@@ -7,7 +7,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlu
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -60,6 +59,8 @@ public class HWPlatformInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addHwplatformTypePropertyDescriptor(object);
+			addEmbeddedHPICPropertyDescriptor(object);
+			addParentHPICPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,50 @@ public class HWPlatformInstanceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Embedded HPIC feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmbeddedHPICPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatformInstance_embeddedHPIC_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatformInstance_embeddedHPIC_feature", "_UI_HWPlatformInstance_type"),
+				 HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__EMBEDDED_HPIC,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent HPIC feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentHPICPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatformInstance_parentHPIC_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatformInstance_parentHPIC_feature", "_UI_HWPlatformInstance_type"),
+				 HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__PARENT_HPIC,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -98,10 +143,8 @@ public class HWPlatformInstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES);
-			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES);
-			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__HWPLATFORM_INSTANCES);
 			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__DELEGATION_PORTS);
+			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__EMBEDDED_HPIC);
 		}
 		return childrenFeatures;
 	}
@@ -156,10 +199,8 @@ public class HWPlatformInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HWPlatformInstance.class)) {
-			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE__RESOURCES:
-			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES:
-			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE__HWPLATFORM_INSTANCES:
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE__DELEGATION_PORTS:
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE__EMBEDDED_HPIC:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -179,78 +220,13 @@ public class HWPlatformInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createStorageMemoryInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createProcessingMemoryInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createCacheInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createProgrammableLogicDeviceInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createProcessorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createStructuredResourceInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createSensorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createActuatorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createDelegationInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createBusConnectorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createBusInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createLinkInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createBridgeInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__HWPLATFORM_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createHWPlatformInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__DELEGATION_PORTS,
 				 HwplatforminstanceFactory.eINSTANCE.createDelegationHWPortInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__EMBEDDED_HPIC,
+				 HwplatforminstanceFactory.eINSTANCE.createHWPlatformInstanceConfiguration()));
 	}
 
 	/**

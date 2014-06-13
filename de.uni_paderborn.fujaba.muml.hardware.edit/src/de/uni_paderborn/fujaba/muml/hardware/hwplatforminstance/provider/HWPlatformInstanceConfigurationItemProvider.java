@@ -7,12 +7,14 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlu
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -20,7 +22,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.provider.NamedElementItemProvider;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration} object.
@@ -29,7 +31,7 @@ import org.storydriven.core.provider.NamedElementItemProvider;
  * @generated
  */
 public class HWPlatformInstanceConfigurationItemProvider
-	extends NamedElementItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -57,8 +59,31 @@ public class HWPlatformInstanceConfigurationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addParentHWPlatformInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent HW Platform Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentHWPlatformInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPlatformInstanceConfiguration_parentHWPlatformInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPlatformInstanceConfiguration_parentHWPlatformInstance_feature", "_UI_HWPlatformInstanceConfiguration_type"),
+				 HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -75,6 +100,7 @@ public class HWPlatformInstanceConfigurationItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES);
 			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES);
+			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES);
 		}
 		return childrenFeatures;
 	}
@@ -111,7 +137,7 @@ public class HWPlatformInstanceConfigurationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((HWPlatformInstanceConfiguration)object).getName();
+		String label = ((HWPlatformInstanceConfiguration)object).getComment();
 		return label == null || label.length() == 0 ?
 			getString("_UI_HWPlatformInstanceConfiguration_type") :
 			getString("_UI_HWPlatformInstanceConfiguration_type") + " " + label;
@@ -131,6 +157,7 @@ public class HWPlatformInstanceConfigurationItemProvider
 		switch (notification.getFeatureID(HWPlatformInstanceConfiguration.class)) {
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES:
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES:
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -177,6 +204,46 @@ public class HWPlatformInstanceConfigurationItemProvider
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
 				 HwplatforminstanceFactory.eINSTANCE.createBridgeInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createStorageMemoryInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createProcessingMemoryInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createCacheInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createProgrammableLogicDeviceInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createProcessorInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createStructuredResourceInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createSensorInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createActuatorInstance()));
 	}
 
 	/**

@@ -457,25 +457,6 @@
           <details key="documentation" value="The HWPlatform type of which this instance is derived."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
-          eType="#//hwresourceinstance/ResourceInstance" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The ResourceInstances that belong to this HWPlatformInstance."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="networkingHardwareInstances"
-          upperBound="-1" eType="#//hwplatforminstance/NetworkingHardwareInstance"
-          containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The CommunicationResources that belong to this HWPlatformInstance."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hwplatformInstances"
-          upperBound="-1" eType="#//hwplatforminstance/HWPlatformInstance" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The HWPlatformInstances that are embedded in this HWPlatformInstance."/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="delegationPorts" upperBound="-1"
           eType="#//hwplatforminstance/DelegationHWPortInstance" containment="true"
           eOpposite="#//hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance">
@@ -483,13 +464,19 @@
           <details key="documentation" value="The delegation ports of this HWPlatformInstance. They are derived from the HWPlatform type."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedHPIC" lowerBound="1"
+          eType="#//hwplatforminstance/HWPlatformInstanceConfiguration" containment="true"
+          eOpposite="#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentHPIC" lowerBound="1"
+          eType="#//hwplatforminstance/HWPlatformInstanceConfiguration" eOpposite="#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstanceConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstanceConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a HWPlatformInstanceConfiguration.&#xA;A HWPlatformInstanceConfiguration consists of several HWPlatformInstances.&#xA;The HWPlatformInstances might be connected via different CommunicationMedia."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwplatformInstances"
-          upperBound="-1" eType="#//hwplatforminstance/HWPlatformInstance" containment="true">
+          upperBound="-1" eType="#//hwplatforminstance/HWPlatformInstance" containment="true"
+          eOpposite="#//hwplatforminstance/HWPlatformInstance/parentHPIC">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The set of HWPlatformInstances of this HWPlatformInstanceConfiguration."/>
         </eAnnotations>
@@ -501,6 +488,14 @@
           <details key="documentation" value="The CommunicationMedia of this HWPlatformInstanceConfiguration. &#xA;The CommunicationMedia are used to connect different HWPlatformInstances via their Bridges or HWPortInstances."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+          eType="#//hwresourceinstance/ResourceInstance" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ResourceInstances that belong to this HWPlatformInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatformInstance"
+          eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance" eSuperTypes="#//hwresource/HWPort ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance">
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortType" lowerBound="1"

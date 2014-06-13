@@ -129,12 +129,12 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseHWPort(HWPort object) {
-				return createHWPortAdapter();
-			}
-			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseHWPort(HWPort object) {
+				return createHWPortAdapter();
 			}
 			@Override
 			public Adapter caseConnectorEndpointInstance(ConnectorEndpointInstance object) {

@@ -53,7 +53,7 @@ public class HWPlatformInstance2CreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance newElement = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory.eINSTANCE
 				.createHWPlatformInstance();
 
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getElementToEdit();
 		owner.getHwplatformInstances().add(newElement);
 
 		doConfigure(newElement, monitor, info);

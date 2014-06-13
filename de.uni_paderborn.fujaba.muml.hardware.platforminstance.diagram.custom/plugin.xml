@@ -58,5 +58,48 @@
          </Priority>
       </editpolicyProvider>
    </extension>
+    <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <decoratorProvider
+            class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.refactor.ComponenInstanceDecorationProvider">
+         <Priority
+               name="Lowest">
+         </Priority>
+      </decoratorProvider>
+   </extension>
+      <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.refactor.ExtractSubdiagramHandler"
+            id="testCommand"
+            name="Refactor">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <command
+               commandId="testCommand"
+               id="testCommand"
+               label="Refaaa"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart">
+                        </instanceof></iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
 
 </plugin>

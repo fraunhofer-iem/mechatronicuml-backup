@@ -70,10 +70,10 @@ public class LinkInstanceReorientCommand extends EditElementCommand {
 		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) getLink()
+		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -108,10 +108,10 @@ public class LinkInstanceReorientCommand extends EditElementCommand {
 		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) getLink()
+		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());

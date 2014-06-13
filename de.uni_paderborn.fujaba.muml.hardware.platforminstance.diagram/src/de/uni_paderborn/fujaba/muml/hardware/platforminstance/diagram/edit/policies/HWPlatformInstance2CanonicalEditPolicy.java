@@ -3,11 +3,9 @@ package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.poli
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -104,7 +102,7 @@ public class HWPlatformInstance2CanonicalEditPolicy extends CanonicalEditPolicy 
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-				.getHWPlatformInstance_3023SemanticChildren(viewObject);
+				.getHWPlatformInstance_2004SemanticChildren(viewObject);
 
 	}
 

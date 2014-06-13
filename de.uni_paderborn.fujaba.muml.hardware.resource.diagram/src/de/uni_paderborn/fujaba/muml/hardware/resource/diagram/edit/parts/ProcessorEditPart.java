@@ -308,13 +308,17 @@ public class ProcessorEditPart extends ShapeNodeEditPart {
 		}
 
 		if (update) {
-			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
-					.getRegisteredEditPolicies(getDiagramView().getElement());
-			for (CanonicalEditPolicy editPolicy : editPolicies) {
-				editPolicy.refresh();
-			}
+			doCanonicalRefresh();
 		}
 		super.handleNotificationEvent(event);
+	}
+
+	protected void doCanonicalRefresh() {
+		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+				.getRegisteredEditPolicies(getDiagramView().getElement());
+		for (CanonicalEditPolicy editPolicy : editPolicies) {
+			editPolicy.refresh();
+		}
 	}
 
 }

@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.core.runtime.IStatus;
@@ -50,6 +51,8 @@ public class HardwareOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
+					"--self.name".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then \n--\tself.name.toString() +\' :\'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name.toString()\n--else \n--\tself.name.toString()\n--endif \n-- in\n--nameToShow".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
@@ -85,8 +88,6 @@ public class HardwareOCLFactory {
 					"--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--proto".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'Bridge\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.name".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then \n--\tself.name.toString() +\' :\'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name.toString()\n--else \n--\tself.name.toString()\n--endif \n-- in\n--nameToShow".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsKindOf(hwplatforminstance::HWPortInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--proto + \'\\n\' + bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

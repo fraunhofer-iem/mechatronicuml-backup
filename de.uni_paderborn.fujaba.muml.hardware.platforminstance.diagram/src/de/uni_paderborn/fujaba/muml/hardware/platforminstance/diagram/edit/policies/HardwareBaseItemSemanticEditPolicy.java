@@ -325,7 +325,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateDelegationInstance_4008(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
 				View sourceView, View targetView) {
@@ -337,7 +337,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateLinkInstance_4009(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
 				View sourceView, View targetView) {
@@ -349,7 +349,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateBusConnectorInstance_4010(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
 				View sourceView, View targetView) {
@@ -361,7 +361,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistDelegationInstance_4008(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
@@ -432,7 +432,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorDelegationInstance_4008(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
 				View sourceView, View targetView) {
@@ -526,7 +526,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistLinkInstance_4009(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.LinkInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
@@ -597,7 +597,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorLinkInstance_4009(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
 				View sourceView, View targetView) {
@@ -691,7 +691,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistBusConnectorInstance_4010(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusConnectorInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
@@ -762,7 +762,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorBusConnectorInstance_4010(
-				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container,
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
 				View sourceView, View targetView) {

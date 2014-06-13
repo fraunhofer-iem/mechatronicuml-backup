@@ -248,9 +248,10 @@ public class HardwarePaletteFactory {
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Link_2004));
 		entry.setId("createLinkResource2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Link_2004));
-		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/link_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/link_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 

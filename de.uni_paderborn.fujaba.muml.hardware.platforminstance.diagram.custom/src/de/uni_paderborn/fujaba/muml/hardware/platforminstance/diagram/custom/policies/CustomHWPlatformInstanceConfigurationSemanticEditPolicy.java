@@ -9,11 +9,11 @@ public class CustomHWPlatformInstanceConfigurationSemanticEditPolicy extends HWP
 	
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-	if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_2002 == req
+	if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_3031 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.commands.HWPlatformInstanceCreateCommand(
 					req));
-		}
+		} 
 		return super.getCreateCommand(req);
 	}
 

@@ -38,7 +38,7 @@ public class CacheInstanceLabelExpressionLabelParser5043 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						0,
+						2,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getCacheInstance(), null).body();
 	}

@@ -53,7 +53,7 @@ public class ActuatorInstanceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ActuatorInstance newElement = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
 				.createActuatorInstance();
 
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getElementToEdit();
 		owner.getResources().add(newElement);
 
 		doConfigure(newElement, monitor, info);

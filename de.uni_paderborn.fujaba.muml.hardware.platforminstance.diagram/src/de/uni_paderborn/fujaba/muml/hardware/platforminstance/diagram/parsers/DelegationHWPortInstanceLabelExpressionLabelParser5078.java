@@ -38,7 +38,7 @@ public class DelegationHWPortInstanceLabelExpressionLabelParser5078 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						35,
+						0,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 								.getDelegationHWPortInstance(), null).body();
 	}

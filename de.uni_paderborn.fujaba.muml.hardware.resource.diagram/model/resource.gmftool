@@ -140,9 +140,13 @@
           title="LinkResource"
           description="Create new Link">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/link_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
         <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/link_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
       </tools>
     </tools>
     <tools

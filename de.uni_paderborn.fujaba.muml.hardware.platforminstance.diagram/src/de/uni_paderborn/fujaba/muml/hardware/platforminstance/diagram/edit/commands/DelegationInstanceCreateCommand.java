@@ -31,7 +31,7 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container;
+	private final de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container;
 
 	/**
 	 * @generated
@@ -39,7 +39,7 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	public DelegationInstanceCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance container = null;
+		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
@@ -166,7 +166,7 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance getContainer() {
+	public de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration getContainer() {
 		return container;
 	}
 
@@ -175,15 +175,15 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance deduceContainer(
+	private static de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration deduceContainer(
 			EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) {
-				return (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
+				return (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) element;
 			}
 		}
 		return null;
@@ -194,12 +194,12 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance deduceContainerUsingViews(
+	private static de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration deduceContainerUsingViews(
 			View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view
 				.eContainer()) {
-			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) {
-				return (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance) view
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
+				return (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
 						.getElement();
 			}
 		}

@@ -26,7 +26,7 @@ public class ActuatorInstanceItemSemanticEditPolicy
 	 */
 	public ActuatorInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3024);
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3034);
 	}
 
 	/**

@@ -38,7 +38,7 @@ public class ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5048
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						5,
+						7,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getProgrammableLogicDeviceInstance(), null)
 				.body();

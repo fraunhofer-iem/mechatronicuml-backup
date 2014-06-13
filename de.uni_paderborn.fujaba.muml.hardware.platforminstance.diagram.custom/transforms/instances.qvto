@@ -41,8 +41,9 @@ mapping HWPlatform::createHWPlatformInstance(number:String,parent:HWPlatformInst
 	
 	log("Start to create the HWPlatformInstance for:" +result.eClass().name +", Name:" +result.name);
 	
+	result.embeddedHPIC:=new HWPlatformInstanceConfiguration();
 	//create the embedded CommunicationMedia	
-	result.networkingHardwareInstances+=self.networkingHardwareParts->map createNetworkingResourceInstance(number)->asOrderedSet();
+	result.embeddedHPIC.networkingHardwareInstances+=self.networkingHardwareParts->map createNetworkingResourceInstance(number)->asOrderedSet();
 		
 	//create the delegation ports
 	
@@ -53,7 +54,7 @@ mapping HWPlatform::createHWPlatformInstance(number:String,parent:HWPlatformInst
 	self.embeddedPlatformParts[ResourcePart]->forEach(rip){
 		instances+=rip.ResourcePart2ResourceInstance(number,result)->asOrderedSet();
 	};
-	result.resources:=instances;
+	result.embeddedHPIC.resources:=instances;
 	
 	
 	//the delegation and delegation Ports are created by the mapping createPort(), to ease resolving
@@ -64,7 +65,7 @@ mapping HWPlatform::createHWPlatformInstance(number:String,parent:HWPlatformInst
 	self.embeddedPlatformParts[HWPlatformPart]->forEach(hwp){
 		platforminstances+=hwp.HWPlatformPart2HWPlatformInstance(number,result);
 	};
-	result.hwplatformInstances:=platforminstances;
+	result.embeddedHPIC.hwplatformInstances:=platforminstances;
 }
 
 

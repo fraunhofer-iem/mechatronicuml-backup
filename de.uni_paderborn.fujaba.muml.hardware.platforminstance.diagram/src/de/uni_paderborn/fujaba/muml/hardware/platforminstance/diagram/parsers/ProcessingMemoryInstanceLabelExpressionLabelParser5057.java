@@ -38,7 +38,7 @@ public class ProcessingMemoryInstanceLabelExpressionLabelParser5057 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						15,
+						17,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getProcessingMemoryInstance(), null).body();
 	}

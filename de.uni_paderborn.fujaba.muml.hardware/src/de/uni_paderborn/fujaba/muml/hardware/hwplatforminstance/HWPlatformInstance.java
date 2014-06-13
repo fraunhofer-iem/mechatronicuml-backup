@@ -3,11 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.core.NamedElement;
 
 /**
@@ -23,10 +19,9 @@ import org.storydriven.core.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getHwplatformType <em>Hwplatform Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getResources <em>Resources</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getNetworkingHardwareInstances <em>Networking Hardware Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getHwplatformInstances <em>Hwplatform Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getDelegationPorts <em>Delegation Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getEmbeddedHPIC <em>Embedded HPIC</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getParentHPIC <em>Parent HPIC</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,51 +56,6 @@ public interface HWPlatformInstance extends NamedElement {
 	void setHwplatformType(HWPlatform value);
 
 	/**
-	 * Returns the value of the '<em><b>Resources</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The ResourceInstances that belong to this HWPlatformInstance.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Resources</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstance_Resources()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ResourceInstance> getResources();
-
-	/**
-	 * Returns the value of the '<em><b>Networking Hardware Instances</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkingHardwareInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The CommunicationResources that belong to this HWPlatformInstance.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Networking Hardware Instances</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstance_NetworkingHardwareInstances()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<NetworkingHardwareInstance> getNetworkingHardwareInstances();
-
-	/**
-	 * Returns the value of the '<em><b>Hwplatform Instances</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The HWPlatformInstances that are embedded in this HWPlatformInstance.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Hwplatform Instances</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstance_HwplatformInstances()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<HWPlatformInstance> getHwplatformInstances();
-
-	/**
 	 * Returns the value of the '<em><b>Delegation Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationHWPortInstance}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationHWPortInstance#getParentHWPlatformInstance <em>Parent HW Platform Instance</em>}'.
@@ -121,5 +71,61 @@ public interface HWPlatformInstance extends NamedElement {
 	 * @generated
 	 */
 	EList<DelegationHWPortInstance> getDelegationPorts();
+
+	/**
+	 * Returns the value of the '<em><b>Embedded HPIC</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getParentHWPlatformInstance <em>Parent HW Platform Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Embedded HPIC</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Embedded HPIC</em>' containment reference.
+	 * @see #setEmbeddedHPIC(HWPlatformInstanceConfiguration)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstance_EmbeddedHPIC()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getParentHWPlatformInstance
+	 * @model opposite="parentHWPlatformInstance" containment="true"
+	 * @generated
+	 */
+	HWPlatformInstanceConfiguration getEmbeddedHPIC();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getEmbeddedHPIC <em>Embedded HPIC</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Embedded HPIC</em>' containment reference.
+	 * @see #getEmbeddedHPIC()
+	 * @generated
+	 */
+	void setEmbeddedHPIC(HWPlatformInstanceConfiguration value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent HPIC</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getHwplatformInstances <em>Hwplatform Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent HPIC</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent HPIC</em>' container reference.
+	 * @see #setParentHPIC(HWPlatformInstanceConfiguration)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstance_ParentHPIC()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getHwplatformInstances
+	 * @model opposite="hwplatformInstances" required="true" transient="false"
+	 * @generated
+	 */
+	HWPlatformInstanceConfiguration getParentHPIC();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance#getParentHPIC <em>Parent HPIC</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent HPIC</em>' container reference.
+	 * @see #getParentHPIC()
+	 * @generated
+	 */
+	void setParentHPIC(HWPlatformInstanceConfiguration value);
 
 } // HWPlatformInstance

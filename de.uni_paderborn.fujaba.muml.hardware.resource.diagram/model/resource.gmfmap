@@ -522,17 +522,17 @@
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#BusBandwidth"/>
+            href="resource.gmfgraph#LinkResourceLabel"/>
         <viewExpression
             body="let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;bdwidth"/>
         <editExpression
-            body="'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
+            body="'Enter: bs/kbs/mbs'"/>
       </labelMappings>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#BusProtocol"/>
+            href="resource.gmfgraph#LinkResourceLabel2"/>
         <viewExpression
             body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;proto"/>
       </labelMappings>
@@ -540,7 +540,7 @@
           xsi:type="gmftool:CreationTool"
           href="resource.gmftool#//@palette/@tools.2/@tools.1"/>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Bus"/>
+          href="resource.gmfgraph#linkResourceNode"/>
     </ownedChild>
   </nodes>
   <nodes>

@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.navigator;
 
+import java.util.Iterator;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;

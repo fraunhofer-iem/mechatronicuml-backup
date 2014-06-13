@@ -26,7 +26,7 @@ public class SensorInstanceItemSemanticEditPolicy
 	 */
 	public SensorInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.SensorInstance_3025);
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.SensorInstance_3035);
 	}
 
 	/**

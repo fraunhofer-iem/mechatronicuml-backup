@@ -86,7 +86,7 @@ public class HwplatforminstanceSwitch<T> extends Switch<T> {
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION: {
 				HWPlatformInstanceConfiguration hwPlatformInstanceConfiguration = (HWPlatformInstanceConfiguration)theEObject;
 				T result = caseHWPlatformInstanceConfiguration(hwPlatformInstanceConfiguration);
-				if (result == null) result = caseNamedElement(hwPlatformInstanceConfiguration);
+				if (result == null) result = caseCommentableElement(hwPlatformInstanceConfiguration);
 				if (result == null) result = caseExtendableElement(hwPlatformInstanceConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

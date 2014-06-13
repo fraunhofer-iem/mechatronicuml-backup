@@ -245,7 +245,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHWPlatformInstance_Resources() {
+	public EReference getHWPlatformInstance_DelegationPorts() {
 		return (EReference)hwPlatformInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -254,7 +254,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHWPlatformInstance_NetworkingHardwareInstances() {
+	public EReference getHWPlatformInstance_EmbeddedHPIC() {
 		return (EReference)hwPlatformInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -263,17 +263,8 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHWPlatformInstance_HwplatformInstances() {
+	public EReference getHWPlatformInstance_ParentHPIC() {
 		return (EReference)hwPlatformInstanceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getHWPlatformInstance_DelegationPorts() {
-		return (EReference)hwPlatformInstanceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -301,6 +292,24 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 */
 	public EReference getHWPlatformInstanceConfiguration_NetworkingHardwareInstances() {
 		return (EReference)hwPlatformInstanceConfigurationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHWPlatformInstanceConfiguration_Resources() {
+		return (EReference)hwPlatformInstanceConfigurationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHWPlatformInstanceConfiguration_ParentHWPlatformInstance() {
+		return (EReference)hwPlatformInstanceConfigurationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -567,14 +576,15 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		// Create classes and their features
 		hwPlatformInstanceEClass = createEClass(HW_PLATFORM_INSTANCE);
 		createEReference(hwPlatformInstanceEClass, HW_PLATFORM_INSTANCE__HWPLATFORM_TYPE);
-		createEReference(hwPlatformInstanceEClass, HW_PLATFORM_INSTANCE__RESOURCES);
-		createEReference(hwPlatformInstanceEClass, HW_PLATFORM_INSTANCE__NETWORKING_HARDWARE_INSTANCES);
-		createEReference(hwPlatformInstanceEClass, HW_PLATFORM_INSTANCE__HWPLATFORM_INSTANCES);
 		createEReference(hwPlatformInstanceEClass, HW_PLATFORM_INSTANCE__DELEGATION_PORTS);
+		createEReference(hwPlatformInstanceEClass, HW_PLATFORM_INSTANCE__EMBEDDED_HPIC);
+		createEReference(hwPlatformInstanceEClass, HW_PLATFORM_INSTANCE__PARENT_HPIC);
 
 		hwPlatformInstanceConfigurationEClass = createEClass(HW_PLATFORM_INSTANCE_CONFIGURATION);
 		createEReference(hwPlatformInstanceConfigurationEClass, HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES);
 		createEReference(hwPlatformInstanceConfigurationEClass, HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES);
+		createEReference(hwPlatformInstanceConfigurationEClass, HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES);
+		createEReference(hwPlatformInstanceConfigurationEClass, HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE);
 
 		hwPortInstanceEClass = createEClass(HW_PORT_INSTANCE);
 		createEReference(hwPortInstanceEClass, HW_PORT_INSTANCE__HW_PORT_TYPE);
@@ -649,7 +659,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 
 		// Add supertypes to classes
 		hwPlatformInstanceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		hwPlatformInstanceConfigurationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		hwPlatformInstanceConfigurationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		hwPortInstanceEClass.getESuperTypes().add(theHwresourcePackage.getHWPort());
 		hwPortInstanceEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpointInstance());
 		delegationInstanceEClass.getESuperTypes().add(this.getNetworkingHardwareInstance());
@@ -669,14 +679,15 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		// Initialize classes, features, and operations; add parameters
 		initEClass(hwPlatformInstanceEClass, HWPlatformInstance.class, "HWPlatformInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatformInstance_HwplatformType(), theHwplatformPackage.getHWPlatform(), null, "hwplatformType", null, 1, 1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPlatformInstance_Resources(), theHwresourceinstancePackage.getResourceInstance(), null, "resources", null, 0, -1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPlatformInstance_NetworkingHardwareInstances(), this.getNetworkingHardwareInstance(), null, "networkingHardwareInstances", null, 0, -1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPlatformInstance_HwplatformInstances(), this.getHWPlatformInstance(), null, "hwplatformInstances", null, 0, -1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatformInstance_DelegationPorts(), this.getDelegationHWPortInstance(), this.getDelegationHWPortInstance_ParentHWPlatformInstance(), "delegationPorts", null, 0, -1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatformInstance_EmbeddedHPIC(), this.getHWPlatformInstanceConfiguration(), this.getHWPlatformInstanceConfiguration_ParentHWPlatformInstance(), "embeddedHPIC", null, 0, 1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatformInstance_ParentHPIC(), this.getHWPlatformInstanceConfiguration(), this.getHWPlatformInstanceConfiguration_HwplatformInstances(), "parentHPIC", null, 1, 1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPlatformInstanceConfigurationEClass, HWPlatformInstanceConfiguration.class, "HWPlatformInstanceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHWPlatformInstanceConfiguration_HwplatformInstances(), this.getHWPlatformInstance(), null, "hwplatformInstances", null, 0, -1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatformInstanceConfiguration_HwplatformInstances(), this.getHWPlatformInstance(), this.getHWPlatformInstance_ParentHPIC(), "hwplatformInstances", null, 0, -1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatformInstanceConfiguration_NetworkingHardwareInstances(), this.getNetworkingHardwareInstance(), null, "networkingHardwareInstances", null, 0, -1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatformInstanceConfiguration_Resources(), theHwresourceinstancePackage.getResourceInstance(), null, "resources", null, 0, -1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatformInstanceConfiguration_ParentHWPlatformInstance(), this.getHWPlatformInstance(), this.getHWPlatformInstance_EmbeddedHPIC(), "parentHWPlatformInstance", null, 0, 1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPortInstanceEClass, HWPortInstance.class, "HWPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPortInstance_HwPortType(), theHwresourcePackage.getCommunicationResource(), null, "hwPortType", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -738,7 +749,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																						
+		   });																				
 		addAnnotation
 		  (delegationInstanceEClass, 
 		   source, 
@@ -760,7 +771,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";												
 		addAnnotation
 		  (getHWPortInstance_HwPortType(), 
 		   source, 

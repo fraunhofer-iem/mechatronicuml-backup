@@ -85,7 +85,7 @@ public class HardwareOCLFactory {
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--proto".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'Enter: bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--proto".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'ProtocolRepository\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'BusProtocol\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
