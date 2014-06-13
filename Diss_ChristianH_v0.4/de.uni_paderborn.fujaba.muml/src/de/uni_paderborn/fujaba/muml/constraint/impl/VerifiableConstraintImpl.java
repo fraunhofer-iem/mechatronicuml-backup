@@ -1,0 +1,43 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package de.uni_paderborn.fujaba.muml.constraint.impl;
+
+import org.eclipse.emf.ecore.EClass;
+
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableConstraint;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Verifiable Constraint</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public abstract class VerifiableConstraintImpl extends ConstraintImpl implements VerifiableConstraint {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VerifiableConstraintImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ConstraintPackage.Literals.VERIFIABLE_CONSTRAINT;
+	}
+
+} //VerifiableConstraintImpl
