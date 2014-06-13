@@ -1658,7 +1658,7 @@ public class ComponentValidator extends MumlValidator {
 		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())\r\n" +
 		"implies \r\n" +
 		"let ports : OrderedSet(Port) = OrderedSet { portPart.portType, port } in\r\n" +
-		"(ports->forAll(oclIsKindOf(component::DiscretePort)) or ports->forAll(oclIsKindOf(component::DirectedTypedPort)))\r\n" +
+		"(ports->forAll(oclIsKindOf(connector::DiscreteInteractionEndpoint)) or ports->forAll(oclIsKindOf(component::DirectedTypedPort)))\r\n" +
 		"-- author: bingo, cgerking, see MUML #880";
 
 	/**
