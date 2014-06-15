@@ -126,8 +126,8 @@ public abstract class ReconfigurationPortEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_AdaptationBehavior());
 
-		editor.addVisibilityFilter("cardinality.upperBound.value > 1",
-				getEClass());
+	//	editor.addVisibilityFilter("cardinality.upperBound.value > 1",
+	//			getEClass());
 
 		editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart we is obtained by the\nreference roleAndAdaptationBehavior.\nIf this port is a single-port, this reference will be undefined.");
 
