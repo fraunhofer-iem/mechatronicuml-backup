@@ -69,6 +69,32 @@ public class ElementInitializers extends de.uni_paderborn.fujaba.muml.component.
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
+	
+	public void init_BroadcastPort_3078(
+			de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPort instance) {
+		try {
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
+			instance.setCardinality(newInstance_0_0);
+			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
+			
+
+			
+			newInstance_0_0_0_0.setValue(1);
+
+			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
+		
+			newInstance_0_0_1_0.setValue(1);
+			instance.setName("broadcast");
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
 	/**
 	 * @generated
 	 */

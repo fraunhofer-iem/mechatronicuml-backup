@@ -54,6 +54,7 @@ public class ReconfigurationElementTypes {
 	public static final IElementType HybridPort_3013 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.HybridPort_3013");
 	public static final IElementType ContinuousPort_3011 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.ContinuousPort_3011");
 	public static final IElementType FadingComponent_2079 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent_2079");
+	public static final IElementType BroadcastPort_3078 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.BroadcastPort_3078");
 
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
@@ -137,6 +138,10 @@ public class ReconfigurationElementTypes {
 					FadingComponent_2079,
 					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 							.getFadingComponent());
+			elements.put(
+					BroadcastPort_3078,
+					de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage.eINSTANCE
+							.getBroadcastPort());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -168,6 +173,7 @@ public class ReconfigurationElementTypes {
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3013);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3011);
 			KNOWN_ELEMENT_TYPES.add(FadingComponent_2079);
+			KNOWN_ELEMENT_TYPES.add(BroadcastPort_3078);
 			// TODO add Coordination Protocol Occurence
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -202,6 +208,8 @@ public class ReconfigurationElementTypes {
 			return DiscretePort_3010;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.FadingComponentEditPart.VISUAL_ID:
 			return FadingComponent_2079;
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID:
+			return BroadcastPort_3078;
 			// TODO add Coordination Protocol Occurence
 
 		}

@@ -46,17 +46,21 @@ public class ReconfigurableStructuredComponentItemSemanticEditPolicy
 					req));
 		}
 		
-		//TODO create commands
-//		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurationExecutionPort_3077== req
-//				.getElementType()) {
-//			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.ContinuousPortCreateCommand(
-//					req));
-//		}
-//		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011 == req
-//				.getElementType()) {
-//			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.ContinuousPortCreateCommand(
-//					req));
-//		}
+		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurationExecutionPort_3077== req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.ReconfigurationExecutionPortCreateCommand(
+					req));
+		}
+		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurationMessagePort_3076 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.ReconfigurationMessagePortCreateCommand(
+					req));
+		}
+		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.BroadcastPort_3078 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.BroadcastPortCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

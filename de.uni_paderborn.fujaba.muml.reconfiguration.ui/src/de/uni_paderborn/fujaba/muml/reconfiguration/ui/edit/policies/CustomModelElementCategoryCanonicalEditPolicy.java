@@ -262,6 +262,12 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID: {
+			
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.InternalReconfigurationCommunicationPortEditPart.VISUAL_ID: {
 			

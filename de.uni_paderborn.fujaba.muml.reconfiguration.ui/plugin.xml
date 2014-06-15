@@ -215,6 +215,15 @@
                   path="/reconfDrawer/"
                   permission="Full">
             </entry>
+            <entry
+                  defineOnly="false"
+                  description="Creates a broadcast port."
+                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.BroadcastPortTool"
+                  kind="tool"
+                  label="Broadcast Port"
+                  path="/reconfDrawer/"
+                  permission="Full">
+            </entry>
          </contribution>
      </paletteProvider>
 
@@ -351,6 +360,17 @@
                 <param
                       name="semanticHint"
                       value="2079">
+                </param>
+             </metamodelType>
+             <metamodelType
+                   eclass="BroadcastPort"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.BroadcastPortEditHelper"
+                   id="de.uni_paderborn.fujaba.muml.reconfiguration.BroadcastPort_3078"
+                   kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+                   name="BroadcastPort">
+                <param
+                      name="semanticHint"
+                      value="3078">
                 </param>
              </metamodelType>
           </metamodel>
