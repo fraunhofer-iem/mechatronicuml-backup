@@ -95,6 +95,13 @@ public class Generator {
 			createProject(project, Arrays.asList(new String[] { sourceFolder }),
 					new NullProgressMonitor());
 		}
+		
+		
+//		source.. = src-gen/
+//		output.. = bin/
+//		bin.includes = META-INF/,\
+//			.,\
+//			plugin.xml
 
 		// configure outlet
 		String containerName = project.getLocation().toPortableString();
@@ -128,8 +135,10 @@ public class Generator {
 		// generate
 
 		XpandFacade facade = XpandFacade.create(execCtx);
-		String templatePath = "xpt::Generator::Generate";
-		facade.evaluate(templatePath, generator);
+		outlet.setOverwrite(true);
+		facade.evaluate("xpt::Generator::GenerateOverwrite", generator);
+		outlet.setOverwrite(false);
+		facade.evaluate("xpt::Generator::GenerateOnce", generator);
 
 		project.refreshLocal(IResource.DEPTH_INFINITE, null);
 	}
