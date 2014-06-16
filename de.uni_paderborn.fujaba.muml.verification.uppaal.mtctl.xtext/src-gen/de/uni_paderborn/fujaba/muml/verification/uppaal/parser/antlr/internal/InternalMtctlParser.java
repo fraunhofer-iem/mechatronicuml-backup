@@ -5852,26 +5852,26 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMessageMapExpr"
 
 
-    // $ANTLR start "entryRuleConnectorEndpointMapExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2258:1: entryRuleConnectorEndpointMapExpr returns [EObject current=null] : iv_ruleConnectorEndpointMapExpr= ruleConnectorEndpointMapExpr EOF ;
-    public final EObject entryRuleConnectorEndpointMapExpr() throws RecognitionException {
+    // $ANTLR start "entryRuleInstanceTypeMapExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2258:1: entryRuleInstanceTypeMapExpr returns [EObject current=null] : iv_ruleInstanceTypeMapExpr= ruleInstanceTypeMapExpr EOF ;
+    public final EObject entryRuleInstanceTypeMapExpr() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleConnectorEndpointMapExpr = null;
+        EObject iv_ruleInstanceTypeMapExpr = null;
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2259:2: (iv_ruleConnectorEndpointMapExpr= ruleConnectorEndpointMapExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2260:2: iv_ruleConnectorEndpointMapExpr= ruleConnectorEndpointMapExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2259:2: (iv_ruleInstanceTypeMapExpr= ruleInstanceTypeMapExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2260:2: iv_ruleInstanceTypeMapExpr= ruleInstanceTypeMapExpr EOF
             {
-             newCompositeNode(grammarAccess.getConnectorEndpointMapExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConnectorEndpointMapExpr_in_entryRuleConnectorEndpointMapExpr5517);
-            iv_ruleConnectorEndpointMapExpr=ruleConnectorEndpointMapExpr();
+             newCompositeNode(grammarAccess.getInstanceTypeMapExprRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleInstanceTypeMapExpr_in_entryRuleInstanceTypeMapExpr5517);
+            iv_ruleInstanceTypeMapExpr=ruleInstanceTypeMapExpr();
 
             state._fsp--;
 
-             current =iv_ruleConnectorEndpointMapExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConnectorEndpointMapExpr5527); 
+             current =iv_ruleInstanceTypeMapExpr; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleInstanceTypeMapExpr5527); 
 
             }
 
@@ -5885,12 +5885,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleConnectorEndpointMapExpr"
+    // $ANTLR end "entryRuleInstanceTypeMapExpr"
 
 
-    // $ANTLR start "ruleConnectorEndpointMapExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2267:1: ruleConnectorEndpointMapExpr returns [EObject current=null] : this_MumlElemExpr_0= ruleMumlElemExpr ;
-    public final EObject ruleConnectorEndpointMapExpr() throws RecognitionException {
+    // $ANTLR start "ruleInstanceTypeMapExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2267:1: ruleInstanceTypeMapExpr returns [EObject current=null] : this_MumlElemExpr_0= ruleMumlElemExpr ;
+    public final EObject ruleInstanceTypeMapExpr() throws RecognitionException {
         EObject current = null;
 
         EObject this_MumlElemExpr_0 = null;
@@ -5903,9 +5903,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2272:5: this_MumlElemExpr_0= ruleMumlElemExpr
             {
              
-                    newCompositeNode(grammarAccess.getConnectorEndpointMapExprAccess().getMumlElemExprParserRuleCall()); 
+                    newCompositeNode(grammarAccess.getInstanceTypeMapExprAccess().getMumlElemExprParserRuleCall()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleMumlElemExpr_in_ruleConnectorEndpointMapExpr5573);
+            pushFollow(FollowSets000.FOLLOW_ruleMumlElemExpr_in_ruleInstanceTypeMapExpr5573);
             this_MumlElemExpr_0=ruleMumlElemExpr();
 
             state._fsp--;
@@ -5928,7 +5928,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleConnectorEndpointMapExpr"
+    // $ANTLR end "ruleInstanceTypeMapExpr"
 
 
     // $ANTLR start "entryRuleBufferMessageCountExpr"
@@ -6400,7 +6400,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     	        }
                             
                      
-                    	        newCompositeNode(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceEObjectCrossReference_1_1_0()); 
+                    	        newCompositeNode(grammarAccess.getMumlElemExprAccess().getInstanceEObjectCrossReference_1_1_0()); 
                     	    
                     pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleMumlElemExpr6085);
                     ruleQualifiedName();
@@ -6823,7 +6823,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSetExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2635:1: ruleSetExpr returns [EObject current=null] : (this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2635:1: ruleSetExpr returns [EObject current=null] : (this_InstanceSetExpr_0= ruleInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) ) ;
     public final EObject ruleSetExpr() throws RecognitionException {
         EObject current = null;
 
@@ -6832,7 +6832,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         Token otherlv_7=null;
         Token otherlv_9=null;
         Token otherlv_11=null;
-        EObject this_ConnectorEndpointInstanceSetExpr_0 = null;
+        EObject this_InstanceSetExpr_0 = null;
 
         EObject this_IntervalSetExpr_1 = null;
 
@@ -6840,10 +6840,10 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2638:28: ( (this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2639:1: (this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2638:28: ( (this_InstanceSetExpr_0= ruleInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2639:1: (this_InstanceSetExpr_0= ruleInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2639:1: (this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2639:1: (this_InstanceSetExpr_0= ruleInstanceSetExpr | this_IntervalSetExpr_1= ruleIntervalSetExpr | ( () otherlv_3= 'States' ) | ( () otherlv_5= 'Transitions' ) | ( () otherlv_7= 'MessageTypes' ) | ( () otherlv_9= 'Clocks' ) | ( () otherlv_11= 'Buffers' ) )
             int alt24=7;
             switch ( input.LA(1) ) {
             case 59:
@@ -6890,18 +6890,18 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             switch (alt24) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2640:5: this_ConnectorEndpointInstanceSetExpr_0= ruleConnectorEndpointInstanceSetExpr
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2640:5: this_InstanceSetExpr_0= ruleInstanceSetExpr
                     {
                      
-                            newCompositeNode(grammarAccess.getSetExprAccess().getConnectorEndpointInstanceSetExprParserRuleCall_0()); 
+                            newCompositeNode(grammarAccess.getSetExprAccess().getInstanceSetExprParserRuleCall_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleConnectorEndpointInstanceSetExpr_in_ruleSetExpr6510);
-                    this_ConnectorEndpointInstanceSetExpr_0=ruleConnectorEndpointInstanceSetExpr();
+                    pushFollow(FollowSets000.FOLLOW_ruleInstanceSetExpr_in_ruleSetExpr6510);
+                    this_InstanceSetExpr_0=ruleInstanceSetExpr();
 
                     state._fsp--;
 
                      
-                            current = this_ConnectorEndpointInstanceSetExpr_0; 
+                            current = this_InstanceSetExpr_0; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -7231,26 +7231,26 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleIntervalSetExpr"
 
 
-    // $ANTLR start "entryRuleConnectorEndpointInstanceSetExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2796:1: entryRuleConnectorEndpointInstanceSetExpr returns [EObject current=null] : iv_ruleConnectorEndpointInstanceSetExpr= ruleConnectorEndpointInstanceSetExpr EOF ;
-    public final EObject entryRuleConnectorEndpointInstanceSetExpr() throws RecognitionException {
+    // $ANTLR start "entryRuleInstanceSetExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2796:1: entryRuleInstanceSetExpr returns [EObject current=null] : iv_ruleInstanceSetExpr= ruleInstanceSetExpr EOF ;
+    public final EObject entryRuleInstanceSetExpr() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleConnectorEndpointInstanceSetExpr = null;
+        EObject iv_ruleInstanceSetExpr = null;
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2797:2: (iv_ruleConnectorEndpointInstanceSetExpr= ruleConnectorEndpointInstanceSetExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2798:2: iv_ruleConnectorEndpointInstanceSetExpr= ruleConnectorEndpointInstanceSetExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2797:2: (iv_ruleInstanceSetExpr= ruleInstanceSetExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2798:2: iv_ruleInstanceSetExpr= ruleInstanceSetExpr EOF
             {
-             newCompositeNode(grammarAccess.getConnectorEndpointInstanceSetExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleConnectorEndpointInstanceSetExpr_in_entryRuleConnectorEndpointInstanceSetExpr6877);
-            iv_ruleConnectorEndpointInstanceSetExpr=ruleConnectorEndpointInstanceSetExpr();
+             newCompositeNode(grammarAccess.getInstanceSetExprRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleInstanceSetExpr_in_entryRuleInstanceSetExpr6877);
+            iv_ruleInstanceSetExpr=ruleInstanceSetExpr();
 
             state._fsp--;
 
-             current =iv_ruleConnectorEndpointInstanceSetExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConnectorEndpointInstanceSetExpr6887); 
+             current =iv_ruleInstanceSetExpr; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleInstanceSetExpr6887); 
 
             }
 
@@ -7264,71 +7264,71 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleConnectorEndpointInstanceSetExpr"
+    // $ANTLR end "entryRuleInstanceSetExpr"
 
 
-    // $ANTLR start "ruleConnectorEndpointInstanceSetExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2805:1: ruleConnectorEndpointInstanceSetExpr returns [EObject current=null] : ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>' ) ;
-    public final EObject ruleConnectorEndpointInstanceSetExpr() throws RecognitionException {
+    // $ANTLR start "ruleInstanceSetExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2805:1: ruleInstanceSetExpr returns [EObject current=null] : ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_type_3_0= ruleInstanceTypeMapExpr ) ) otherlv_4= '>' ) ;
+    public final EObject ruleInstanceSetExpr() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        EObject lv_connectorEndpoint_3_0 = null;
+        EObject lv_type_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2808:28: ( ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:1: ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2808:28: ( ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_type_3_0= ruleInstanceTypeMapExpr ) ) otherlv_4= '>' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:1: ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_type_3_0= ruleInstanceTypeMapExpr ) ) otherlv_4= '>' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:1: ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:2: () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) ) otherlv_4= '>'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:1: ( () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_type_3_0= ruleInstanceTypeMapExpr ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:2: () otherlv_1= 'Instances' otherlv_2= '<' ( (lv_type_3_0= ruleInstanceTypeMapExpr ) ) otherlv_4= '>'
             {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2809:2: ()
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2810:5: 
             {
 
                     current = forceCreateModelElement(
-                        grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointInstanceSetExprAction_0(),
+                        grammarAccess.getInstanceSetExprAccess().getInstanceSetExprAction_0(),
                         current);
                 
 
             }
 
-            otherlv_1=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleConnectorEndpointInstanceSetExpr6933); 
+            otherlv_1=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleInstanceSetExpr6933); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getInstancesKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getInstanceSetExprAccess().getInstancesKeyword_1());
                 
-            otherlv_2=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleConnectorEndpointInstanceSetExpr6945); 
+            otherlv_2=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleInstanceSetExpr6945); 
 
-                	newLeafNode(otherlv_2, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getLessThanSignKeyword_2());
+                	newLeafNode(otherlv_2, grammarAccess.getInstanceSetExprAccess().getLessThanSignKeyword_2());
                 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2823:1: ( (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2824:1: (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2823:1: ( (lv_type_3_0= ruleInstanceTypeMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2824:1: (lv_type_3_0= ruleInstanceTypeMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2824:1: (lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2825:3: lv_connectorEndpoint_3_0= ruleConnectorEndpointMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2824:1: (lv_type_3_0= ruleInstanceTypeMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2825:3: lv_type_3_0= ruleInstanceTypeMapExpr
             {
              
-            	        newCompositeNode(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointConnectorEndpointMapExprParserRuleCall_3_0()); 
+            	        newCompositeNode(grammarAccess.getInstanceSetExprAccess().getTypeInstanceTypeMapExprParserRuleCall_3_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleConnectorEndpointMapExpr_in_ruleConnectorEndpointInstanceSetExpr6966);
-            lv_connectorEndpoint_3_0=ruleConnectorEndpointMapExpr();
+            pushFollow(FollowSets000.FOLLOW_ruleInstanceTypeMapExpr_in_ruleInstanceSetExpr6966);
+            lv_type_3_0=ruleInstanceTypeMapExpr();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getConnectorEndpointInstanceSetExprRule());
+            	            current = createModelElementForParent(grammarAccess.getInstanceSetExprRule());
             	        }
                    		set(
                    			current, 
-                   			"connectorEndpoint",
-                    		lv_connectorEndpoint_3_0, 
-                    		"ConnectorEndpointMapExpr");
+                   			"type",
+                    		lv_type_3_0, 
+                    		"InstanceTypeMapExpr");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -7337,9 +7337,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleConnectorEndpointInstanceSetExpr6978); 
+            otherlv_4=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleInstanceSetExpr6978); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getGreaterThanSignKeyword_4());
+                	newLeafNode(otherlv_4, grammarAccess.getInstanceSetExprAccess().getGreaterThanSignKeyword_4());
                 
 
             }
@@ -7358,7 +7358,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleConnectorEndpointInstanceSetExpr"
+    // $ANTLR end "ruleInstanceSetExpr"
 
 
     // $ANTLR start "entryRuleQualifiedName"
@@ -7975,9 +7975,9 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleMessageMapExpr_in_entryRuleMessageMapExpr5427 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleMessageMapExpr5437 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleMumlElemExpr_in_ruleMessageMapExpr5483 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConnectorEndpointMapExpr_in_entryRuleConnectorEndpointMapExpr5517 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleConnectorEndpointMapExpr5527 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMumlElemExpr_in_ruleConnectorEndpointMapExpr5573 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleInstanceTypeMapExpr_in_entryRuleInstanceTypeMapExpr5517 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleInstanceTypeMapExpr5527 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMumlElemExpr_in_ruleInstanceTypeMapExpr5573 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleBufferMessageCountExpr_in_entryRuleBufferMessageCountExpr5607 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleBufferMessageCountExpr5617 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_44_in_ruleBufferMessageCountExpr5654 = new BitSet(new long[]{0x0000000000400000L});
@@ -8017,7 +8017,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_53_in_ruleTimeUnitExpr6413 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleSetExpr_in_entryRuleSetExpr6453 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleSetExpr6463 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConnectorEndpointInstanceSetExpr_in_ruleSetExpr6510 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleInstanceSetExpr_in_ruleSetExpr6510 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleIntervalSetExpr_in_ruleSetExpr6537 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_54_in_ruleSetExpr6564 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_55_in_ruleSetExpr6593 = new BitSet(new long[]{0x0000000000000002L});
@@ -8031,12 +8031,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_15_in_ruleIntervalSetExpr6807 = new BitSet(new long[]{0x0000000000000020L});
         public static final BitSet FOLLOW_RULE_INT_in_ruleIntervalSetExpr6824 = new BitSet(new long[]{0x0000000000010000L});
         public static final BitSet FOLLOW_16_in_ruleIntervalSetExpr6841 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleConnectorEndpointInstanceSetExpr_in_entryRuleConnectorEndpointInstanceSetExpr6877 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleConnectorEndpointInstanceSetExpr6887 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_59_in_ruleConnectorEndpointInstanceSetExpr6933 = new BitSet(new long[]{0x1000000000000000L});
-        public static final BitSet FOLLOW_60_in_ruleConnectorEndpointInstanceSetExpr6945 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleConnectorEndpointMapExpr_in_ruleConnectorEndpointInstanceSetExpr6966 = new BitSet(new long[]{0x2000000000000000L});
-        public static final BitSet FOLLOW_61_in_ruleConnectorEndpointInstanceSetExpr6978 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleInstanceSetExpr_in_entryRuleInstanceSetExpr6877 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleInstanceSetExpr6887 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_59_in_ruleInstanceSetExpr6933 = new BitSet(new long[]{0x1000000000000000L});
+        public static final BitSet FOLLOW_60_in_ruleInstanceSetExpr6945 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleInstanceTypeMapExpr_in_ruleInstanceSetExpr6966 = new BitSet(new long[]{0x2000000000000000L});
+        public static final BitSet FOLLOW_61_in_ruleInstanceSetExpr6978 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName7015 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName7026 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName7066 = new BitSet(new long[]{0x4000000000000002L});

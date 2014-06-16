@@ -1186,25 +1186,25 @@ finally {
 
 
 
-// Entry rule entryRuleConnectorEndpointMapExpr
-entryRuleConnectorEndpointMapExpr 
+// Entry rule entryRuleInstanceTypeMapExpr
+entryRuleInstanceTypeMapExpr 
 :
-{ before(grammarAccess.getConnectorEndpointMapExprRule()); }
-	 ruleConnectorEndpointMapExpr
-{ after(grammarAccess.getConnectorEndpointMapExprRule()); } 
+{ before(grammarAccess.getInstanceTypeMapExprRule()); }
+	 ruleInstanceTypeMapExpr
+{ after(grammarAccess.getInstanceTypeMapExprRule()); } 
 	 EOF 
 ;
 
-// Rule ConnectorEndpointMapExpr
-ruleConnectorEndpointMapExpr
+// Rule InstanceTypeMapExpr
+ruleInstanceTypeMapExpr
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getConnectorEndpointMapExprAccess().getMumlElemExprParserRuleCall()); }
+{ before(grammarAccess.getInstanceTypeMapExprAccess().getMumlElemExprParserRuleCall()); }
 	ruleMumlElemExpr
-{ after(grammarAccess.getConnectorEndpointMapExprAccess().getMumlElemExprParserRuleCall()); }
+{ after(grammarAccess.getInstanceTypeMapExprAccess().getMumlElemExprParserRuleCall()); }
 )
 
 ;
@@ -1438,25 +1438,25 @@ finally {
 
 
 
-// Entry rule entryRuleConnectorEndpointInstanceSetExpr
-entryRuleConnectorEndpointInstanceSetExpr 
+// Entry rule entryRuleInstanceSetExpr
+entryRuleInstanceSetExpr 
 :
-{ before(grammarAccess.getConnectorEndpointInstanceSetExprRule()); }
-	 ruleConnectorEndpointInstanceSetExpr
-{ after(grammarAccess.getConnectorEndpointInstanceSetExprRule()); } 
+{ before(grammarAccess.getInstanceSetExprRule()); }
+	 ruleInstanceSetExpr
+{ after(grammarAccess.getInstanceSetExprRule()); } 
 	 EOF 
 ;
 
-// Rule ConnectorEndpointInstanceSetExpr
-ruleConnectorEndpointInstanceSetExpr
+// Rule InstanceSetExpr
+ruleInstanceSetExpr
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getGroup()); }
-(rule__ConnectorEndpointInstanceSetExpr__Group__0)
-{ after(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getGroup()); }
+{ before(grammarAccess.getInstanceSetExprAccess().getGroup()); }
+(rule__InstanceSetExpr__Group__0)
+{ after(grammarAccess.getInstanceSetExprAccess().getGroup()); }
 )
 
 ;
@@ -2029,9 +2029,9 @@ rule__SetExpr__Alternatives
     }
 :
 (
-{ before(grammarAccess.getSetExprAccess().getConnectorEndpointInstanceSetExprParserRuleCall_0()); }
-	ruleConnectorEndpointInstanceSetExpr
-{ after(grammarAccess.getSetExprAccess().getConnectorEndpointInstanceSetExprParserRuleCall_0()); }
+{ before(grammarAccess.getSetExprAccess().getInstanceSetExprParserRuleCall_0()); }
+	ruleInstanceSetExpr
+{ after(grammarAccess.getSetExprAccess().getInstanceSetExprParserRuleCall_0()); }
 )
 
     |(
@@ -6035,9 +6035,9 @@ rule__MumlElemExpr__Group_1__1__Impl
     }
 :
 (
-{ before(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceAssignment_1_1()); }
-(rule__MumlElemExpr__ConnectorEndpointInstanceAssignment_1_1)
-{ after(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceAssignment_1_1()); }
+{ before(grammarAccess.getMumlElemExprAccess().getInstanceAssignment_1_1()); }
+(rule__MumlElemExpr__InstanceAssignment_1_1)
+{ after(grammarAccess.getMumlElemExprAccess().getInstanceAssignment_1_1()); }
 )
 
 ;
@@ -6661,29 +6661,29 @@ finally {
 
 
 
-rule__ConnectorEndpointInstanceSetExpr__Group__0
+rule__InstanceSetExpr__Group__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConnectorEndpointInstanceSetExpr__Group__0__Impl
-	rule__ConnectorEndpointInstanceSetExpr__Group__1
+	rule__InstanceSetExpr__Group__0__Impl
+	rule__InstanceSetExpr__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConnectorEndpointInstanceSetExpr__Group__0__Impl
+rule__InstanceSetExpr__Group__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointInstanceSetExprAction_0()); }
+{ before(grammarAccess.getInstanceSetExprAccess().getInstanceSetExprAction_0()); }
 (
 
 )
-{ after(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointInstanceSetExprAction_0()); }
+{ after(grammarAccess.getInstanceSetExprAccess().getInstanceSetExprAction_0()); }
 )
 
 ;
@@ -6692,29 +6692,29 @@ finally {
 }
 
 
-rule__ConnectorEndpointInstanceSetExpr__Group__1
+rule__InstanceSetExpr__Group__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConnectorEndpointInstanceSetExpr__Group__1__Impl
-	rule__ConnectorEndpointInstanceSetExpr__Group__2
+	rule__InstanceSetExpr__Group__1__Impl
+	rule__InstanceSetExpr__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConnectorEndpointInstanceSetExpr__Group__1__Impl
+rule__InstanceSetExpr__Group__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getInstancesKeyword_1()); }
+{ before(grammarAccess.getInstanceSetExprAccess().getInstancesKeyword_1()); }
 
 	'Instances' 
 
-{ after(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getInstancesKeyword_1()); }
+{ after(grammarAccess.getInstanceSetExprAccess().getInstancesKeyword_1()); }
 )
 
 ;
@@ -6723,29 +6723,29 @@ finally {
 }
 
 
-rule__ConnectorEndpointInstanceSetExpr__Group__2
+rule__InstanceSetExpr__Group__2
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConnectorEndpointInstanceSetExpr__Group__2__Impl
-	rule__ConnectorEndpointInstanceSetExpr__Group__3
+	rule__InstanceSetExpr__Group__2__Impl
+	rule__InstanceSetExpr__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConnectorEndpointInstanceSetExpr__Group__2__Impl
+rule__InstanceSetExpr__Group__2__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getLessThanSignKeyword_2()); }
+{ before(grammarAccess.getInstanceSetExprAccess().getLessThanSignKeyword_2()); }
 
 	'<' 
 
-{ after(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getLessThanSignKeyword_2()); }
+{ after(grammarAccess.getInstanceSetExprAccess().getLessThanSignKeyword_2()); }
 )
 
 ;
@@ -6754,27 +6754,27 @@ finally {
 }
 
 
-rule__ConnectorEndpointInstanceSetExpr__Group__3
+rule__InstanceSetExpr__Group__3
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConnectorEndpointInstanceSetExpr__Group__3__Impl
-	rule__ConnectorEndpointInstanceSetExpr__Group__4
+	rule__InstanceSetExpr__Group__3__Impl
+	rule__InstanceSetExpr__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConnectorEndpointInstanceSetExpr__Group__3__Impl
+rule__InstanceSetExpr__Group__3__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointAssignment_3()); }
-(rule__ConnectorEndpointInstanceSetExpr__ConnectorEndpointAssignment_3)
-{ after(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointAssignment_3()); }
+{ before(grammarAccess.getInstanceSetExprAccess().getTypeAssignment_3()); }
+(rule__InstanceSetExpr__TypeAssignment_3)
+{ after(grammarAccess.getInstanceSetExprAccess().getTypeAssignment_3()); }
 )
 
 ;
@@ -6783,28 +6783,28 @@ finally {
 }
 
 
-rule__ConnectorEndpointInstanceSetExpr__Group__4
+rule__InstanceSetExpr__Group__4
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ConnectorEndpointInstanceSetExpr__Group__4__Impl
+	rule__InstanceSetExpr__Group__4__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConnectorEndpointInstanceSetExpr__Group__4__Impl
+rule__InstanceSetExpr__Group__4__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getGreaterThanSignKeyword_4()); }
+{ before(grammarAccess.getInstanceSetExprAccess().getGreaterThanSignKeyword_4()); }
 
 	'>' 
 
-{ after(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getGreaterThanSignKeyword_4()); }
+{ after(grammarAccess.getInstanceSetExprAccess().getGreaterThanSignKeyword_4()); }
 )
 
 ;
@@ -7585,18 +7585,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MumlElemExpr__ConnectorEndpointInstanceAssignment_1_1
+rule__MumlElemExpr__InstanceAssignment_1_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceEObjectCrossReference_1_1_0()); }
+{ before(grammarAccess.getMumlElemExprAccess().getInstanceEObjectCrossReference_1_1_0()); }
 (
-{ before(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1()); }
+{ before(grammarAccess.getMumlElemExprAccess().getInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getMumlElemExprAccess().getInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1()); }
 )
-{ after(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceEObjectCrossReference_1_1_0()); }
+{ after(grammarAccess.getMumlElemExprAccess().getInstanceEObjectCrossReference_1_1_0()); }
 )
 
 ;
@@ -7664,14 +7664,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ConnectorEndpointInstanceSetExpr__ConnectorEndpointAssignment_3
+rule__InstanceSetExpr__TypeAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointConnectorEndpointMapExprParserRuleCall_3_0()); }
-	ruleConnectorEndpointMapExpr{ after(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointConnectorEndpointMapExprParserRuleCall_3_0()); }
+{ before(grammarAccess.getInstanceSetExprAccess().getTypeInstanceTypeMapExprParserRuleCall_3_0()); }
+	ruleInstanceTypeMapExpr{ after(grammarAccess.getInstanceSetExprAccess().getTypeInstanceTypeMapExprParserRuleCall_3_0()); }
 )
 
 ;

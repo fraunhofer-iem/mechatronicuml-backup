@@ -2254,23 +2254,23 @@ ruleMessageMapExpr returns [EObject current=null]
 
 
 
-// Entry rule entryRuleConnectorEndpointMapExpr
-entryRuleConnectorEndpointMapExpr returns [EObject current=null] 
+// Entry rule entryRuleInstanceTypeMapExpr
+entryRuleInstanceTypeMapExpr returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getConnectorEndpointMapExprRule()); }
-	 iv_ruleConnectorEndpointMapExpr=ruleConnectorEndpointMapExpr 
-	 { $current=$iv_ruleConnectorEndpointMapExpr.current; } 
+	{ newCompositeNode(grammarAccess.getInstanceTypeMapExprRule()); }
+	 iv_ruleInstanceTypeMapExpr=ruleInstanceTypeMapExpr 
+	 { $current=$iv_ruleInstanceTypeMapExpr.current; } 
 	 EOF 
 ;
 
-// Rule ConnectorEndpointMapExpr
-ruleConnectorEndpointMapExpr returns [EObject current=null] 
+// Rule InstanceTypeMapExpr
+ruleInstanceTypeMapExpr returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 
     { 
-        newCompositeNode(grammarAccess.getConnectorEndpointMapExprAccess().getMumlElemExprParserRuleCall()); 
+        newCompositeNode(grammarAccess.getInstanceTypeMapExprAccess().getMumlElemExprParserRuleCall()); 
     }
     this_MumlElemExpr_0=ruleMumlElemExpr
     { 
@@ -2478,7 +2478,7 @@ ruleMumlElemExpr returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getMumlElemExprAccess().getConnectorEndpointInstanceEObjectCrossReference_1_1_0()); 
+	        newCompositeNode(grammarAccess.getMumlElemExprAccess().getInstanceEObjectCrossReference_1_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
@@ -2638,11 +2638,11 @@ ruleSetExpr returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getSetExprAccess().getConnectorEndpointInstanceSetExprParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getSetExprAccess().getInstanceSetExprParserRuleCall_0()); 
     }
-    this_ConnectorEndpointInstanceSetExpr_0=ruleConnectorEndpointInstanceSetExpr
+    this_InstanceSetExpr_0=ruleInstanceSetExpr
     { 
-        $current = $this_ConnectorEndpointInstanceSetExpr_0.current; 
+        $current = $this_InstanceSetExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -2792,55 +2792,55 @@ ruleIntervalSetExpr returns [EObject current=null]
 
 
 
-// Entry rule entryRuleConnectorEndpointInstanceSetExpr
-entryRuleConnectorEndpointInstanceSetExpr returns [EObject current=null] 
+// Entry rule entryRuleInstanceSetExpr
+entryRuleInstanceSetExpr returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getConnectorEndpointInstanceSetExprRule()); }
-	 iv_ruleConnectorEndpointInstanceSetExpr=ruleConnectorEndpointInstanceSetExpr 
-	 { $current=$iv_ruleConnectorEndpointInstanceSetExpr.current; } 
+	{ newCompositeNode(grammarAccess.getInstanceSetExprRule()); }
+	 iv_ruleInstanceSetExpr=ruleInstanceSetExpr 
+	 { $current=$iv_ruleInstanceSetExpr.current; } 
 	 EOF 
 ;
 
-// Rule ConnectorEndpointInstanceSetExpr
-ruleConnectorEndpointInstanceSetExpr returns [EObject current=null] 
+// Rule InstanceSetExpr
+ruleInstanceSetExpr returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointInstanceSetExprAction_0(),
+            grammarAccess.getInstanceSetExprAccess().getInstanceSetExprAction_0(),
             $current);
     }
 )	otherlv_1='Instances' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getInstancesKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getInstanceSetExprAccess().getInstancesKeyword_1());
     }
 	otherlv_2='<' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getLessThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getInstanceSetExprAccess().getLessThanSignKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConnectorEndpointInstanceSetExprAccess().getConnectorEndpointConnectorEndpointMapExprParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getInstanceSetExprAccess().getTypeInstanceTypeMapExprParserRuleCall_3_0()); 
 	    }
-		lv_connectorEndpoint_3_0=ruleConnectorEndpointMapExpr		{
+		lv_type_3_0=ruleInstanceTypeMapExpr		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getConnectorEndpointInstanceSetExprRule());
+	            $current = createModelElementForParent(grammarAccess.getInstanceSetExprRule());
 	        }
        		set(
        			$current, 
-       			"connectorEndpoint",
-        		lv_connectorEndpoint_3_0, 
-        		"ConnectorEndpointMapExpr");
+       			"type",
+        		lv_type_3_0, 
+        		"InstanceTypeMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )	otherlv_4='>' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getConnectorEndpointInstanceSetExprAccess().getGreaterThanSignKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getInstanceSetExprAccess().getGreaterThanSignKeyword_4());
     }
 )
 ;

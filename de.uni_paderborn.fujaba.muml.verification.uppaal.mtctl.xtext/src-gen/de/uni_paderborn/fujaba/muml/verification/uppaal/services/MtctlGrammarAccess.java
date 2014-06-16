@@ -1267,11 +1267,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getMumlElemExprParserRuleCall() { return cMumlElemExprParserRuleCall; }
 	}
 
-	public class ConnectorEndpointMapExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConnectorEndpointMapExpr");
+	public class InstanceTypeMapExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InstanceTypeMapExpr");
 		private final RuleCall cMumlElemExprParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//ConnectorEndpointMapExpr returns mtctl::MapExpr:
+		//InstanceTypeMapExpr returns mtctl::MapExpr:
 		//	MumlElemExpr;
 		public ParserRule getRule() { return rule; }
 
@@ -1383,16 +1383,16 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cElemEObjectQualifiedNameParserRuleCall_0_0_1 = (RuleCall)cElemEObjectCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cConnectorEndpointInstanceAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cConnectorEndpointInstanceEObjectCrossReference_1_1_0 = (CrossReference)cConnectorEndpointInstanceAssignment_1_1.eContents().get(0);
-		private final RuleCall cConnectorEndpointInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1 = (RuleCall)cConnectorEndpointInstanceEObjectCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cInstanceAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cInstanceEObjectCrossReference_1_1_0 = (CrossReference)cInstanceAssignment_1_1.eContents().get(0);
+		private final RuleCall cInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1 = (RuleCall)cInstanceEObjectCrossReference_1_1_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//MumlElemExpr returns mtctl::MumlElemExpr:
-		//	elem=[ecore::EObject|QualifiedName] ("[" connectorEndpointInstance=[ecore::EObject|QualifiedName] "]")?;
+		//	elem=[ecore::EObject|QualifiedName] ("[" instance=[ecore::EObject|QualifiedName] "]")?;
 		public ParserRule getRule() { return rule; }
 
-		//elem=[ecore::EObject|QualifiedName] ("[" connectorEndpointInstance=[ecore::EObject|QualifiedName] "]")?
+		//elem=[ecore::EObject|QualifiedName] ("[" instance=[ecore::EObject|QualifiedName] "]")?
 		public Group getGroup() { return cGroup; }
 
 		//elem=[ecore::EObject|QualifiedName]
@@ -1404,20 +1404,20 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getElemEObjectQualifiedNameParserRuleCall_0_0_1() { return cElemEObjectQualifiedNameParserRuleCall_0_0_1; }
 
-		//("[" connectorEndpointInstance=[ecore::EObject|QualifiedName] "]")?
+		//("[" instance=[ecore::EObject|QualifiedName] "]")?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"["
 		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
 
-		//connectorEndpointInstance=[ecore::EObject|QualifiedName]
-		public Assignment getConnectorEndpointInstanceAssignment_1_1() { return cConnectorEndpointInstanceAssignment_1_1; }
+		//instance=[ecore::EObject|QualifiedName]
+		public Assignment getInstanceAssignment_1_1() { return cInstanceAssignment_1_1; }
 
 		//[ecore::EObject|QualifiedName]
-		public CrossReference getConnectorEndpointInstanceEObjectCrossReference_1_1_0() { return cConnectorEndpointInstanceEObjectCrossReference_1_1_0; }
+		public CrossReference getInstanceEObjectCrossReference_1_1_0() { return cInstanceEObjectCrossReference_1_1_0; }
 
 		//QualifiedName
-		public RuleCall getConnectorEndpointInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1() { return cConnectorEndpointInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1; }
+		public RuleCall getInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1() { return cInstanceEObjectQualifiedNameParserRuleCall_1_1_0_1; }
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
@@ -1494,7 +1494,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	public class SetExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SetExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cConnectorEndpointInstanceSetExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cInstanceSetExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIntervalSetExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Action cStateSetExprAction_2_0 = (Action)cGroup_2.eContents().get(0);
@@ -1514,18 +1514,16 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////Sets
 		//SetExpr returns mtctl::SetExpr:
-		//	ConnectorEndpointInstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr}
-		//	"Transitions" | {mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr}
-		//	"Buffers";
+		//	InstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" |
+		//	{mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers";
 		public ParserRule getRule() { return rule; }
 
-		//ConnectorEndpointInstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr}
-		//"Transitions" | {mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr}
-		//"Buffers"
+		//InstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" |
+		//{mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//ConnectorEndpointInstanceSetExpr
-		public RuleCall getConnectorEndpointInstanceSetExprParserRuleCall_0() { return cConnectorEndpointInstanceSetExprParserRuleCall_0; }
+		//InstanceSetExpr
+		public RuleCall getInstanceSetExprParserRuleCall_0() { return cInstanceSetExprParserRuleCall_0; }
 
 		//IntervalSetExpr
 		public RuleCall getIntervalSetExprParserRuleCall_1() { return cIntervalSetExprParserRuleCall_1; }
@@ -1620,25 +1618,25 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
 	}
 
-	public class ConnectorEndpointInstanceSetExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConnectorEndpointInstanceSetExpr");
+	public class InstanceSetExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InstanceSetExpr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cConnectorEndpointInstanceSetExprAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cInstanceSetExprAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cInstancesKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cConnectorEndpointAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cConnectorEndpointConnectorEndpointMapExprParserRuleCall_3_0 = (RuleCall)cConnectorEndpointAssignment_3.eContents().get(0);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeInstanceTypeMapExprParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		private final Keyword cGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//ConnectorEndpointInstanceSetExpr returns mtctl::SetExpr:
-		//	{mtctl::ConnectorEndpointInstanceSetExpr} "Instances" "<" connectorEndpoint=ConnectorEndpointMapExpr ">";
+		//InstanceSetExpr returns mtctl::SetExpr:
+		//	{mtctl::InstanceSetExpr} "Instances" "<" type=InstanceTypeMapExpr ">";
 		public ParserRule getRule() { return rule; }
 
-		//{mtctl::ConnectorEndpointInstanceSetExpr} "Instances" "<" connectorEndpoint=ConnectorEndpointMapExpr ">"
+		//{mtctl::InstanceSetExpr} "Instances" "<" type=InstanceTypeMapExpr ">"
 		public Group getGroup() { return cGroup; }
 
-		//{mtctl::ConnectorEndpointInstanceSetExpr}
-		public Action getConnectorEndpointInstanceSetExprAction_0() { return cConnectorEndpointInstanceSetExprAction_0; }
+		//{mtctl::InstanceSetExpr}
+		public Action getInstanceSetExprAction_0() { return cInstanceSetExprAction_0; }
 
 		//"Instances"
 		public Keyword getInstancesKeyword_1() { return cInstancesKeyword_1; }
@@ -1646,11 +1644,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"<"
 		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
 
-		//connectorEndpoint=ConnectorEndpointMapExpr
-		public Assignment getConnectorEndpointAssignment_3() { return cConnectorEndpointAssignment_3; }
+		//type=InstanceTypeMapExpr
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
-		//ConnectorEndpointMapExpr
-		public RuleCall getConnectorEndpointConnectorEndpointMapExprParserRuleCall_3_0() { return cConnectorEndpointConnectorEndpointMapExprParserRuleCall_3_0; }
+		//InstanceTypeMapExpr
+		public RuleCall getTypeInstanceTypeMapExprParserRuleCall_3_0() { return cTypeInstanceTypeMapExprParserRuleCall_3_0; }
 
 		//">"
 		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
@@ -1808,7 +1806,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private StatechartMapExprElements pStatechartMapExpr;
 	private BufferMapExprElements pBufferMapExpr;
 	private MessageMapExprElements pMessageMapExpr;
-	private ConnectorEndpointMapExprElements pConnectorEndpointMapExpr;
+	private InstanceTypeMapExprElements pInstanceTypeMapExpr;
 	private BufferMessageCountExprElements pBufferMessageCountExpr;
 	private SourceStateExprElements pSourceStateExpr;
 	private TargetStateExprElements pTargetStateExpr;
@@ -1817,7 +1815,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private TimeUnitExprElements pTimeUnitExpr;
 	private SetExprElements pSetExpr;
 	private IntervalSetExprElements pIntervalSetExpr;
-	private ConnectorEndpointInstanceSetExprElements pConnectorEndpointInstanceSetExpr;
+	private InstanceSetExprElements pInstanceSetExpr;
 	private QualifiedNameElements pQualifiedName;
 	private EIntElements pEInt;
 	
@@ -2286,14 +2284,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessageMapExprAccess().getRule();
 	}
 
-	//ConnectorEndpointMapExpr returns mtctl::MapExpr:
+	//InstanceTypeMapExpr returns mtctl::MapExpr:
 	//	MumlElemExpr;
-	public ConnectorEndpointMapExprElements getConnectorEndpointMapExprAccess() {
-		return (pConnectorEndpointMapExpr != null) ? pConnectorEndpointMapExpr : (pConnectorEndpointMapExpr = new ConnectorEndpointMapExprElements());
+	public InstanceTypeMapExprElements getInstanceTypeMapExprAccess() {
+		return (pInstanceTypeMapExpr != null) ? pInstanceTypeMapExpr : (pInstanceTypeMapExpr = new InstanceTypeMapExprElements());
 	}
 	
-	public ParserRule getConnectorEndpointMapExprRule() {
-		return getConnectorEndpointMapExprAccess().getRule();
+	public ParserRule getInstanceTypeMapExprRule() {
+		return getInstanceTypeMapExprAccess().getRule();
 	}
 
 	//BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
@@ -2327,7 +2325,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MumlElemExpr returns mtctl::MumlElemExpr:
-	//	elem=[ecore::EObject|QualifiedName] ("[" connectorEndpointInstance=[ecore::EObject|QualifiedName] "]")?;
+	//	elem=[ecore::EObject|QualifiedName] ("[" instance=[ecore::EObject|QualifiedName] "]")?;
 	public MumlElemExprElements getMumlElemExprAccess() {
 		return (pMumlElemExpr != null) ? pMumlElemExpr : (pMumlElemExpr = new MumlElemExprElements());
 	}
@@ -2358,9 +2356,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Sets
 	//SetExpr returns mtctl::SetExpr:
-	//	ConnectorEndpointInstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr}
-	//	"Transitions" | {mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr}
-	//	"Buffers";
+	//	InstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" |
+	//	{mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers";
 	public SetExprElements getSetExprAccess() {
 		return (pSetExpr != null) ? pSetExpr : (pSetExpr = new SetExprElements());
 	}
@@ -2379,14 +2376,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getIntervalSetExprAccess().getRule();
 	}
 
-	//ConnectorEndpointInstanceSetExpr returns mtctl::SetExpr:
-	//	{mtctl::ConnectorEndpointInstanceSetExpr} "Instances" "<" connectorEndpoint=ConnectorEndpointMapExpr ">";
-	public ConnectorEndpointInstanceSetExprElements getConnectorEndpointInstanceSetExprAccess() {
-		return (pConnectorEndpointInstanceSetExpr != null) ? pConnectorEndpointInstanceSetExpr : (pConnectorEndpointInstanceSetExpr = new ConnectorEndpointInstanceSetExprElements());
+	//InstanceSetExpr returns mtctl::SetExpr:
+	//	{mtctl::InstanceSetExpr} "Instances" "<" type=InstanceTypeMapExpr ">";
+	public InstanceSetExprElements getInstanceSetExprAccess() {
+		return (pInstanceSetExpr != null) ? pInstanceSetExpr : (pInstanceSetExpr = new InstanceSetExprElements());
 	}
 	
-	public ParserRule getConnectorEndpointInstanceSetExprRule() {
-		return getConnectorEndpointInstanceSetExprAccess().getRule();
+	public ParserRule getInstanceSetExprRule() {
+		return getInstanceSetExprAccess().getRule();
 	}
 
 	////Other necessary definitions

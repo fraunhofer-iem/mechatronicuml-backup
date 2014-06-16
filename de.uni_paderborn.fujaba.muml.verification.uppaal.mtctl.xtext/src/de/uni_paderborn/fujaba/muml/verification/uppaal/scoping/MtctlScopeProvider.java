@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
+import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
@@ -71,6 +72,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	protected Set<RealtimeStatechart> statecharts = null;
 	protected Set<ConnectorEndpoint> connectorEndpoints = null;
 	protected Set<ConnectorEndpointInstance> connectorEndpointInstances = null;
+	protected Set<AtomicComponentInstance> componentInstances = null;
+	protected Set<AtomicComponent> components = null;
 	private EObject scope = null;
 	
 	/**
@@ -119,7 +122,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeState(EObject context, EReference reference) {
+	public Set<? extends EObject> getScopeState(EObject context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 		
@@ -138,7 +141,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
-		return createScope(scope);
+		return scope;
 	}
 	
 	
@@ -148,7 +151,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeTransition(EObject context, EReference reference) {
+	public Set<? extends EObject> getScopeTransition(EObject context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
@@ -165,7 +168,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
-		return createScope(scope);
+		return scope;
 	}
 	
 	/**
@@ -174,7 +177,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeMessageType(EObject context, EReference reference) {
+	public Set<? extends EObject> getScopeMessageType(EObject context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
@@ -192,7 +195,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
-		return createScope(scope);
+		return scope;
 	}
 	
 	/**
@@ -201,7 +204,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeBuffer(EObject context, EReference reference) {
+	public Set<? extends EObject> getScopeBuffer(EObject context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
@@ -219,7 +222,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
-		return createScope(scope);
+		return scope;
 	}
 	
 	/**
@@ -228,7 +231,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeVariable(EObject context, EReference reference) {
+	public Set<? extends EObject> getScopeVariable(EObject context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
@@ -247,7 +250,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
-		return createScope(scope);
+		return scope;
 	}
 	
 	/**
@@ -256,28 +259,33 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeStatechart(EObject context, EReference reference) {
-		return createScope(statecharts);
+	public Set<? extends EObject> getScopeStatechart(EObject context, EReference reference) {
+		return statecharts;
 	}
 	
 	/**
-	 * Returns the scope when looking for a connector endpoint
+	 * Returns the scope when looking for an instance type
 	 */
-	public IScope getScopeConnectorEndpoint(EObject context, EReference reference) {
-		return createScope(connectorEndpoints);
+	public Set<? extends EObject> getScopeInstanceTypes(EObject context, EReference reference) {
+		Set<EObject> scope = new HashSet<EObject>();
+		scope.addAll(connectorEndpoints);
+		scope.addAll(components);
+		
+		return scope;
 	}
 	
 	/**
-	 * Returns the scope when looking for a connector endpoint instance
+	 * Returns the scope when looking for an instance (ConnectorEndpointInstance or AtomicComponentInstance)
 	 */
-	public IScope getScopeConnectorEndpointInstance(EObject context, EReference reference) {
+	public Set<? extends EObject> getScopeInstances(EObject context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add connector endpoint instances from the model
 		scope.addAll(connectorEndpointInstances);
+		scope.addAll(componentInstances);
 		
-		//Add BoundVariables for clocks
+		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof InstanceSetExpr)
@@ -288,7 +296,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
-		return createScope(scope);
+		return scope;
 	}
 	
 	/**
@@ -297,7 +305,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeAny(EObject context, EReference reference) {
+	public Set<? extends EObject> getScopeAny(EObject context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
@@ -308,6 +316,10 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		scope.addAll(transitions);
 		scope.addAll(messageTypes);
 		scope.addAll(buffers);
+		scope.addAll(componentInstances);
+		scope.addAll(components);
+		scope.addAll(connectorEndpointInstances);
+		scope.addAll(connectorEndpoints);
 		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
@@ -320,7 +332,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
-		return createScope(scope);
+		return scope;
 	}
 	
 	/**
@@ -343,8 +355,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		if (!(context instanceof MumlElemExpr) && ("MumlElemExpr".equals(reference.getEContainingClass().getName()))) //happens for proposals, but makes it impossible to judge the actual scope (too little information). So this scope provider will simply not react. The problem is solved in MtctlProposalProvider which makes sure that the correct call is also issued.
 			return IScope.NULLSCOPE;
 		
-		if (context instanceof MumlElemExpr && reference != null && "connectorEndpointInstance".equals(reference.getName()))
-			return getScopeConnectorEndpointInstance(context, reference);
+		if (context instanceof MumlElemExpr && reference != null && "instance".equals(reference.getName()))
+			return createScope(getScopeInstances(context, reference));
 		
 		//The requested scope might be for a MumlElemExpr. 
 		if (context instanceof MumlElemExpr) {
@@ -356,19 +368,19 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		
 		//Take care of calling the correct method wrt. the type that is looked for		
 		if (context instanceof SubstateOfExpr || context instanceof StateActiveExpr || context instanceof StateInStatechartExpr && reference != null && "state".equals(reference.getName()))
-			return getScopeState(context, reference);
+			return createScope(getScopeState(context, reference));
 		if (context instanceof TransitionFiringExpr || context instanceof TransitionMap)
-			return getScopeTransition(context, reference);
+			return createScope(getScopeTransition(context, reference));
 		if (context instanceof MessageInTransitExpr || context instanceof MessageInBufferExpr && reference != null && "message".equals(reference.getName()))
-			return getScopeMessageType(context, reference);
+			return createScope(getScopeMessageType(context, reference));
 		if (context instanceof BufferMsgCountExpr || context instanceof MessageInBufferExpr && reference != null && "buffer".equals(reference.getName()))
-			return getScopeBuffer(context, reference);
+			return createScope(getScopeBuffer(context, reference));
 		if (context instanceof StateInStatechartExpr && reference != null && "statechart".equals(reference.getName()))
-			return getScopeStatechart(context, reference);
+			return createScope(getScopeStatechart(context, reference));
 		if (context instanceof InstanceSetExpr)
-			return getScopeConnectorEndpoint(context, reference);
+			return createScope(getScopeInstanceTypes(context, reference));
 		if (context instanceof ComparisonExpr)
-			return getScopeAny(context, reference);
+			return createScope(getScopeAny(context, reference));
 		
 		return IScope.NULLSCOPE;
 	}
@@ -428,6 +440,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
 		HashSet<MessageBuffer> buffers = new HashSet<MessageBuffer>();
 		
+		components.add(object);
 		//Component behavior
 		addRtscElementsToArrays(object.getBehavior());
 		
@@ -461,15 +474,19 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			if (componentInstance instanceof StructuredComponentInstance)
 				setScopeForCIC(((StructuredComponentInstance) componentInstance).getEmbeddedCIC());
 			for (PortInstance portInstance : componentInstance.getPortInstances()) {
-				connectorEndpointInstances.add(portInstance);
 				if (portInstance.getPortType() instanceof DiscretePort) {
+					connectorEndpointInstances.add(portInstance);
 					DiscretePort port = (DiscretePort) portInstance.getPortType();
 					connectorEndpoints.add(port);
-					addRtscElementsToArrays(((DiscretePort) port).getBehavior());
 					messageTypes.addAll(((DiscretePort) port).getReceiverMessageTypes());
 					messageTypes.addAll(((DiscretePort) port).getSenderMessageTypes());
 					buffers.addAll(((DiscretePort) port).getReceiverMessageBuffer());					
 				}
+			}
+			if (componentInstance instanceof AtomicComponentInstance) {
+				addRtscElementsToArrays(((AtomicComponent) componentInstance.getComponentType()).getBehavior());
+				components.add((AtomicComponent) componentInstance.getComponentType());
+				componentInstances.add((AtomicComponentInstance) componentInstance);
 			}
 		}		
 		this.messageTypes.addAll(messageTypes);
@@ -525,6 +542,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		statecharts = new HashSet<RealtimeStatechart>();
 		connectorEndpoints = new HashSet<ConnectorEndpoint>();
 		connectorEndpointInstances = new HashSet<ConnectorEndpointInstance>();
+		componentInstances = new HashSet<AtomicComponentInstance>();
+		components = new HashSet<AtomicComponent>();
 	}
 	
 	/**

@@ -4,21 +4,25 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.validation;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.scoping.IScopeProvider;
 import org.eclipse.xtext.validation.Check;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import com.google.inject.Inject;
+
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
+import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr;
@@ -42,6 +46,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExp
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlQualifiedNameProvider;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlScopeProvider;
 
 /**
  * Custom validation rules. 
@@ -51,6 +56,10 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlQualifiedNa
 public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verification.uppaal.validation.AbstractMtctlJavaValidator {
 
 	private enum Type {NUMERAL, CLOCK_VALUE, BUFFER, STATE, TRANSITION, MESSAGE_TYPE, CONNECTOR_ENDPOINT, CONNECTOR_ENDPOINT_INSTANCE};
+	
+	@Inject
+	private IScopeProvider scopeProvider;
+	private static QualifiedNameProvider qualifiedNameProvider = new MtctlQualifiedNameProvider();
 	
 	public Type getType(MapExpr expr) {
 		if (expr == null)
@@ -225,7 +234,6 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 			error("Not expecting time unit", null);
 	}
 	
-	private static QualifiedNameProvider qualifiedNameProvider = new MtctlQualifiedNameProvider();
 	@Check
 	public void checkMumlElemExprInstanceSet(final MumlElemExpr expr) { //checks whether the MumlElemExpr should include a reference to a ConnectorEndpointInstance
 		if (getType(expr) == Type.CONNECTOR_ENDPOINT && expr.getInstance() != null )
@@ -242,34 +250,51 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 			return; // if a connector endpoint instance is set, we don't have to check the rest
 		
 		//After this point, it holds that no ConnectorEndpointInstance is set. We emit an error for cases where that's not okay
-		DiscreteInteractionEndpoint endpoint = getDiscreteInteractionEndpoint(expr.getElem()); //the parent endpoint of the referenced element
+		EObject instanceType = getInstanceType(expr.getElem()); //the instance type of the referenced element
 		
-		if (endpoint == null)
+		if (instanceType == null)
 			return;
 		
-		if (endpoint instanceof Role || endpoint instanceof DiscretePort)
-			for (Role r : (endpoint instanceof Role ? ((Role) endpoint).getCoordinationProtocol() : ((DiscretePort) endpoint).getCoordinationProtocol()).getRoles())
+		if (instanceType instanceof Role || instanceType instanceof DiscretePort)
+			for (Role r : (instanceType instanceof Role ? ((Role) instanceType).getCoordinationProtocol() : ((DiscretePort) instanceType).getCoordinationProtocol()).getRoles())
 				if (r.isMulti()) {
-					error("ConnectorEndpointInstance must be set for this element because "+((CoordinationProtocol) endpoint.eContainer()).getName()+" is a 1:n coordination protocol. "
+					error("An instance must be set for this element because "+((CoordinationProtocol) instanceType.eContainer()).getName()+" is a 1:n coordination protocol. "
 							+ "\nWrite \""+qualifiedNameProvider.getQualifiedName(expr.getElem())+"[Instance]\" instead.", null);
 					return;
 				}
+		
+		if (instanceType instanceof AtomicComponent) {
+			int instanceCount = 0;
+			for (EObject instance : ((MtctlScopeProvider) scopeProvider).getScopeInstances(expr, null)) {
+				if (getInstanceType(instance) == instanceType)
+					if (++instanceCount >= 2) {
+						error("An instance must be set for this element because "+((AtomicComponent) instanceType).getName()+" has multiple instances", null);
+						return;
+					}
+			}
+		}
 	}
 	
-	private static DiscreteInteractionEndpoint getDiscreteInteractionEndpoint (EObject obj) {
+	private static EObject getInstanceType (EObject obj) {
+		if (obj == null)
+			return null;
 		//Message Buffers
 		if (obj instanceof MessageBuffer)
 			return ((MessageBuffer) obj).getDiscreteInteractionEndpoint();
 		
+		if (obj instanceof Region)
+			return getInstanceType(((Region) obj).getParentState());
+		
 		//States, Transitions, Clocks, Variables
 		if (obj.eContainer() instanceof RealtimeStatechart) {
-			BehavioralElement behElem = ((RealtimeStatechart) obj.eContainer()).getHighestParentStatechart().getBehavioralElement();
-			if (behElem instanceof DiscreteInteractionEndpoint)
-				return (DiscreteInteractionEndpoint) behElem;
+			if (((RealtimeStatechart) obj.eContainer()).getBehavioralElement() != null)
+				return ((RealtimeStatechart) obj.eContainer()).getBehavioralElement();
+			return getInstanceType(((RealtimeStatechart) obj.eContainer()).eContainer());
 		}
-		if (obj instanceof ConnectorEndpointInstance) {
-			return (DiscreteInteractionEndpoint) ((ConnectorEndpointInstance) obj).getType();
-		}
+		if (obj instanceof ConnectorEndpointInstance)
+			return ((ConnectorEndpointInstance) obj).getType();
+		if (obj instanceof ComponentInstance)
+			return ((ComponentInstance) obj).getComponentType();
 		return null;
 	}
 	
@@ -278,12 +303,11 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 		if (expr.getInstance() == null)
 			return;
 		if (expr.getInstance() instanceof BoundVariable) {
-			if (((MumlElemExpr)((InstanceSetExpr)((BoundVariable) expr.getInstance()).getSet()).getType()).getElem() == getDiscreteInteractionEndpoint(expr.getElem()))
+			if (((MumlElemExpr)((InstanceSetExpr)((BoundVariable) expr.getInstance()).getSet()).getType()).getElem() == getInstanceType(expr.getElem()))
 				return;
 		}
-		if (getDiscreteInteractionEndpoint(expr.getElem()) == getDiscreteInteractionEndpoint(expr.getInstance()))
+		if (getInstanceType(expr.getElem()) == getInstanceType(expr.getInstance()))
 			return;
-		
 		error("The connector endpoint instance has the wrong type to match " + qualifiedNameProvider.getQualifiedName(expr.getElem()) + ".", ComparablesPackageImpl.eINSTANCE.getMumlElemExpr_Instance());
 	}
 }
