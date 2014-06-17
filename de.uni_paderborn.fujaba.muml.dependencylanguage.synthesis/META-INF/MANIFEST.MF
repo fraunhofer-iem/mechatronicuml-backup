@@ -1,12 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Synthesis Plug-in
+Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis
-Bundle-Version: 0.4.0
+Bundle-Version: 0.4.0.qualifier
 Bundle-Vendor: 
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+ %providerName
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.dependencylanguage;bundle-version="0.4.0",

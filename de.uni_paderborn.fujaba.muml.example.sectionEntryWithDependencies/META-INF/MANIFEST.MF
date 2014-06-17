@@ -1,7 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: MechatronicUML SectionEntry Example
+Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.sectionEntryWithDependencies
 Bundle-Version: 0.4.0.qualifier
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: %providerName
 Require-Bundle: de.uni_paderborn.fujaba.muml;bundle-version="0.4.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
