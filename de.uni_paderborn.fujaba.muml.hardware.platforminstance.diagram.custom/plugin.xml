@@ -58,7 +58,7 @@
          </Priority>
       </editpolicyProvider>
    </extension>
-    <extension
+<!--    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <decoratorProvider
             class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.refactor.ComponenInstanceDecorationProvider">
@@ -101,5 +101,5 @@
          </command>
       </menuContribution>
    </extension>
-
+-->
 </plugin>
