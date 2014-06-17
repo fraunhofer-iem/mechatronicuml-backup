@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.m2m.qvt.oml;bundle-version="3.4.0",
  de.uni_paderborn.fujaba.muml.actionlanguage.xtext;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.dependencylanguage.xtext;bundle-version="1.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox
 Bundle-Vendor: %providerName

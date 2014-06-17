@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.dependencylanguage.provider.DependencylanguageEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.dependencylanguage;visibility:=reexport,
