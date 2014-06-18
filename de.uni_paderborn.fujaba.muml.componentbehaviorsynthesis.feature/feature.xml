@@ -34,7 +34,6 @@
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
@@ -43,7 +42,6 @@
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.uml2.common.edit"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.gmf.runtime.common.core"/>
@@ -71,6 +69,8 @@
       <import plugin="de.uni_paderborn.fujaba.common"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.jface.text"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.dependencylanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
