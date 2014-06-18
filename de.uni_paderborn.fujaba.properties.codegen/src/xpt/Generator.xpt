@@ -10,13 +10,13 @@ bin.includes = META-INF/,\
                plugin.xml
 «ENDFILE»
 
-«FILE 'META-INF/MANIFEST.MF'-»
-«EXPAND plugin::Manifest::Manifest-»
-«ENDFILE-»
-
 «ENDDEFINE»
 
 «DEFINE GenerateOverwrite FOR PropertyGenerator»
+
+«FILE 'META-INF/MANIFEST.MF'-»
+«EXPAND plugin::Manifest::Manifest-»
+«ENDFILE-»
 
 «FILE 'plugin.xml'-»
 «EXPAND plugin::Plugin::Plugin-»
