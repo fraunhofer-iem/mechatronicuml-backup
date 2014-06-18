@@ -16,6 +16,7 @@ import org.osgi.framework.BundleContext;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 
 public class Activator extends AbstractUIPlugin {
 
@@ -23,6 +24,8 @@ public class Activator extends AbstractUIPlugin {
 
 	public static final String CREATE_INSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom/transforms/instances.qvto";
 
+	public static final String CREATE_PROTOCOL_INSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom/transforms/protocolInstance.qvto";
+	
 	public static final String UPDATE_INSTANCE_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom/transforms/updateInstance.qvto";
 
 	private static Activator instance;
@@ -39,6 +42,8 @@ public class Activator extends AbstractUIPlugin {
 		// Create transformation executors
 		getTransformationExecutor(CREATE_INSTANCE_TRANSFORMATION);
 		getTransformationExecutor(UPDATE_INSTANCE_TRANSFORMATION);
+		getTransformationExecutor(CREATE_PROTOCOL_INSTANCE_TRANSFORMATION);
+
 	}
 
 	public TransformationExecutor getTransformationExecutor(
@@ -80,6 +85,49 @@ public class Activator extends AbstractUIPlugin {
 
 		TransformationExecutor transformationExecutor = Activator.getInstance()
 				.getTransformationExecutor(Activator.CREATE_INSTANCE_TRANSFORMATION, false);		
+		
+		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
+				transformationExecutor, modelExtents);
+		editingDomain.getCommandStack().execute(command);
+
+		if (!command.hasChanged()) {
+			editingDomain.getCommandStack().undo();
+		}
+		else{
+			Activator.createCoordinationProtocolInstance(editingDomain, componentInstance);
+		}
+	}
+	
+	public static void createCoordinationProtocolInstance(EditingDomain editingDomain, ComponentInstance componentInstance){
+		ModelExtent inputExtent = new BasicModelExtent(
+				Arrays.asList(new EObject[] { componentInstance }));
+
+		List<ModelExtent> modelExtents = Arrays
+				.asList(new ModelExtent[] { inputExtent });
+
+
+		TransformationExecutor transformationExecutor = Activator.getInstance()
+				.getTransformationExecutor(Activator.CREATE_PROTOCOL_INSTANCE_TRANSFORMATION, false);		
+		
+		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
+				transformationExecutor, modelExtents);
+		editingDomain.getCommandStack().execute(command);
+
+		if (!command.hasChanged()) {
+			editingDomain.getCommandStack().undo();
+		}
+	}
+	
+	public static void updateCoordinationProtocolInstance(EditingDomain editingDomain, ComponentInstanceConfiguration cic){
+		ModelExtent inputExtent = new BasicModelExtent(
+				Arrays.asList(new EObject[] { cic }));
+
+		List<ModelExtent> modelExtents = Arrays
+				.asList(new ModelExtent[] { inputExtent });
+
+
+		TransformationExecutor transformationExecutor = Activator.getInstance()
+				.getTransformationExecutor(Activator.CREATE_PROTOCOL_INSTANCE_TRANSFORMATION, false);		
 		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);

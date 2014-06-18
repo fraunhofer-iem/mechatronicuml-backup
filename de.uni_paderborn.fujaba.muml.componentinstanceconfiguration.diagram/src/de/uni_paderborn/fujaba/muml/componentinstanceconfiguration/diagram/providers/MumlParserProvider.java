@@ -63,6 +63,13 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser getCoordinationProtocolInstanceLabel_5048Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5048();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser getHybridPortInstanceLabel_5043Parser() {
 		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5043();
 	}
@@ -105,6 +112,13 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser getCoordinationProtocolInstanceLabel_5047Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5047();
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID:
@@ -119,6 +133,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getAtomicComponentInstanceLabel_5027Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getStructuredComponentInstanceLabel_5026Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+			return getCoordinationProtocolInstanceLabel_5048Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceName2EditPart.VISUAL_ID:
 			return getHybridPortInstanceLabel_5043Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart.VISUAL_ID:
@@ -131,6 +147,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getAtomicComponentInstanceLabel_5028Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
 			return getStructuredComponentInstanceLabel_5029Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+			return getCoordinationProtocolInstanceLabel_5047Parser();
 		}
 		return null;
 	}

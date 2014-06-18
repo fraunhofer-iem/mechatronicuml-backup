@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentPortInstances <em>Parent Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getCoordinationProtocolInstances <em>Coordination Protocol Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,5 +131,21 @@ public interface ComponentInstanceConfiguration extends NamedElement, Commentabl
 	 * @generated
 	 */
 	void setParentStructuredComponentInstance(StructuredComponentInstance value);
+
+	/**
+	 * Returns the value of the '<em><b>Coordination Protocol Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Coordination Protocol Instances</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Coordination Protocol Instances</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration_CoordinationProtocolInstances()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<CoordinationProtocolInstance> getCoordinationProtocolInstances();
 
 } // ComponentInstanceConfiguration

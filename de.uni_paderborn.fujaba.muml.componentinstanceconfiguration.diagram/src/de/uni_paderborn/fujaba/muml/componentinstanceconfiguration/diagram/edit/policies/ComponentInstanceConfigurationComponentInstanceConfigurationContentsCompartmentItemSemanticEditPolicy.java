@@ -32,6 +32,11 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.commands.StructuredComponentInstance2CreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_3035 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.commands.CoordinationProtocolInstance2CreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

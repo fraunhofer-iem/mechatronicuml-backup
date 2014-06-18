@@ -5,6 +5,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.MumlEditPartFactory;
@@ -55,6 +58,15 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			case StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
 				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartment2EditPart(
 						view);
+				
+			case CoordinationProtocolInstanceEditPart.VISUAL_ID:
+				return new CustomCoordinationProtocolInstanceEditPart(view);
+			
+			case CoordinationProtocolInstance2EditPart.VISUAL_ID:
+				return new CustomCoordinationProtocolInstance2EditPart(view);
+				
+			case ComponentInstanceConfigurationEditPart.VISUAL_ID:
+				return new CustomComponentInstanceConfigurationEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

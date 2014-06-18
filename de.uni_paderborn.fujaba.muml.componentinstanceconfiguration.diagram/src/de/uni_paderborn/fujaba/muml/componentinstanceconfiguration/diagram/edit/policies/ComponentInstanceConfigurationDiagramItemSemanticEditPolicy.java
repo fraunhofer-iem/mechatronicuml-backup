@@ -56,6 +56,11 @@ public class ComponentInstanceConfigurationDiagramItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.commands.StructuredComponentInstanceCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_2025 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.commands.CoordinationProtocolInstanceCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

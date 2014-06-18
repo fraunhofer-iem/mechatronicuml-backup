@@ -172,6 +172,7 @@ public class ComponentInstanceConfigurationItemProvider
 			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES);
+			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES);
 		}
 		return childrenFeatures;
 	}
@@ -233,6 +234,7 @@ public class ComponentInstanceConfigurationItemProvider
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -269,6 +271,11 @@ public class ComponentInstanceConfigurationItemProvider
 			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES,
 				 InstanceFactory.eINSTANCE.createDelegationConnectorInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES,
+				 InstanceFactory.eINSTANCE.createCoordinationProtocolInstance()));
 	}
 
 	/**

@@ -77,6 +77,11 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType CoordinationProtocolInstance_2025 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.CoordinationProtocolInstance_2025"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType DiscreteSinglePortInstance_3026 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_3026"); //$NON-NLS-1$
 	/**
 	 * @generated
@@ -109,11 +114,21 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType CoordinationProtocolInstance_3035 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.CoordinationProtocolInstance_3035"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType AssemblyConnectorInstance_4001 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType DelegationConnectorInstance_4002 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DelegationConnectorInstance_4002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType CoordinationProtocolInstancePortInstances_4003 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.CoordinationProtocolInstancePortInstances_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -189,6 +204,11 @@ public class MumlElementTypes {
 							.getStructuredComponentInstance());
 
 			elements.put(
+					CoordinationProtocolInstance_2025,
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+							.getCoordinationProtocolInstance());
+
+			elements.put(
 					DiscreteSinglePortInstance_3026,
 					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getDiscreteSinglePortInstance());
@@ -229,6 +249,11 @@ public class MumlElementTypes {
 							.getStructuredComponentInstance());
 
 			elements.put(
+					CoordinationProtocolInstance_3035,
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+							.getCoordinationProtocolInstance());
+
+			elements.put(
 					AssemblyConnectorInstance_4001,
 					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getAssemblyConnectorInstance());
@@ -237,6 +262,11 @@ public class MumlElementTypes {
 					DelegationConnectorInstance_4002,
 					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getDelegationConnectorInstance());
+
+			elements.put(
+					CoordinationProtocolInstancePortInstances_4003,
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+							.getCoordinationProtocolInstance_PortInstances());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -261,6 +291,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ContinuousPortInstance_2024);
 			KNOWN_ELEMENT_TYPES.add(AtomicComponentInstance_2016);
 			KNOWN_ELEMENT_TYPES.add(StructuredComponentInstance_2015);
+			KNOWN_ELEMENT_TYPES.add(CoordinationProtocolInstance_2025);
 			KNOWN_ELEMENT_TYPES.add(DiscreteSinglePortInstance_3026);
 			KNOWN_ELEMENT_TYPES.add(HybridPortInstance_3031);
 			KNOWN_ELEMENT_TYPES.add(DiscreteSinglePortInstance_3032);
@@ -269,8 +300,11 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfiguration_3023);
 			KNOWN_ELEMENT_TYPES.add(AtomicComponentInstance_3024);
 			KNOWN_ELEMENT_TYPES.add(StructuredComponentInstance_3025);
+			KNOWN_ELEMENT_TYPES.add(CoordinationProtocolInstance_3035);
 			KNOWN_ELEMENT_TYPES.add(AssemblyConnectorInstance_4001);
 			KNOWN_ELEMENT_TYPES.add(DelegationConnectorInstance_4002);
+			KNOWN_ELEMENT_TYPES
+					.add(CoordinationProtocolInstancePortInstances_4003);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -294,6 +328,8 @@ public class MumlElementTypes {
 			return AtomicComponentInstance_2016;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID:
 			return StructuredComponentInstance_2015;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID:
+			return CoordinationProtocolInstance_2025;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
 			return DiscreteSinglePortInstance_3026;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
@@ -310,10 +346,14 @@ public class MumlElementTypes {
 			return AtomicComponentInstance_3024;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
 			return StructuredComponentInstance_3025;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID:
+			return CoordinationProtocolInstance_3035;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
 			return AssemblyConnectorInstance_4001;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
 			return DelegationConnectorInstance_4002;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
+			return CoordinationProtocolInstancePortInstances_4003;
 		}
 		return null;
 	}

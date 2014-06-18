@@ -98,6 +98,9 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?ContinuousPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_2024); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/instance/0.4.0?CoordinationProtocolInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_2025); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?ComponentInstanceConfiguration", de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ComponentInstanceConfiguration_3023); //$NON-NLS-1$
@@ -122,12 +125,18 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?ContinuousPortInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_3034); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.fujaba.de/muml/instance/0.4.0?CoordinationProtocolInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_3035); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/instance/0.4.0?AssemblyConnectorInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AssemblyConnectorInstance_4001); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/instance/0.4.0?DelegationConnectorInstance", de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DelegationConnectorInstance_4002); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.fujaba.de/muml/instance/0.4.0?CoordinationProtocolInstance?portInstances", de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstancePortInstances_4003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -198,6 +207,8 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 			return getDiscreteMultiPortInstance_2023Text(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
 			return getContinuousPortInstance_2024Text(view);
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart.VISUAL_ID:
+			return getCoordinationProtocolInstance_2025Text(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
 			return getComponentInstanceConfiguration_3023Text(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID:
@@ -214,10 +225,14 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 			return getDiscreteMultiPortInstance_3033Text(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
 			return getContinuousPortInstance_3034Text(view);
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID:
+			return getCoordinationProtocolInstance_3035Text(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
 			return getAssemblyConnectorInstance_4001Text(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
 			return getDelegationConnectorInstance_4002Text(view);
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID:
+			return getCoordinationProtocolInstancePortInstances_4003Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -330,6 +345,14 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 	/**
 	 * @generated
 	 */
+	private String getCoordinationProtocolInstancePortInstances_4003Text(
+			View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getAtomicComponentInstance_3024Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlParserProvider
 				.getParser(
@@ -367,6 +390,28 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 			de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 					.getInstance().logError(
 							"Parser was not found for label " + 5042); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCoordinationProtocolInstance_2025Text(View view) {
+		IParser parser = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_2025,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 5048); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -550,6 +595,28 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 			de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 					.getInstance().logError(
 							"Parser was not found for label " + 5046); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCoordinationProtocolInstance_3035Text(View view) {
+		IParser parser = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.CoordinationProtocolInstance_3035,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 5047); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

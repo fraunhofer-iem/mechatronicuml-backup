@@ -4,7 +4,7 @@
     modelDirectory="/de.uni_paderborn.fujaba.muml/src" modelPluginID="de.uni_paderborn.fujaba.muml"
     modelName="Muml" testsDirectory="/de.uni_paderborn.fujaba.muml.modeltests/src"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    testsPluginID="de.uni_paderborn.fujaba.muml.modeltests" language="" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    testsPluginID="de.uni_paderborn.fujaba.muml.modeltests" language="" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance"
     operationReflection="true">
   <foreignModel>muml.ecore</foreignModel>
   <foreignModel>../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
@@ -145,6 +145,7 @@
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances"/>
         <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//instance/ContinuousPortInstance"/>
       <genClasses ecoreClass="muml.ecore#//instance/HybridPortInstance"/>

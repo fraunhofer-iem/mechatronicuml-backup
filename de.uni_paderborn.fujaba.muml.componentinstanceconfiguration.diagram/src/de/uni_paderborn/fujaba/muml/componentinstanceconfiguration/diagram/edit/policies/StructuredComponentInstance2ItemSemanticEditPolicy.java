@@ -8,8 +8,10 @@ import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
@@ -108,6 +110,16 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 								incomingLink));
 						continue;
 					}
+					if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(
+								incomingLink.getSource().getElement(), null,
+								incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it
 						.hasNext();) {
@@ -156,6 +168,16 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 						DestroyElementRequest r = new DestroyElementRequest(
 								incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
+					if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(
+								incomingLink.getSource().getElement(), null,
+								incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(),
 								incomingLink));
 						continue;
@@ -212,6 +234,16 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 								incomingLink));
 						continue;
 					}
+					if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(
+								incomingLink.getSource().getElement(), null,
+								incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it
 						.hasNext();) {
@@ -260,6 +292,16 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 						DestroyElementRequest r = new DestroyElementRequest(
 								incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
+					if (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstancePortInstancesEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(
+								incomingLink.getSource().getElement(), null,
+								incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(),
 								incomingLink));
 						continue;

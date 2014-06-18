@@ -311,8 +311,14 @@
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/componentInstances"/>
           </children>
+          <children
+              compartment="//@nodes.5/@ownedChild/@children.4/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.6/@ownedChild">
+            <containmentFeature
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
+          </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.4/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.4/@ownedChild/@children.1">
+              children="//@nodes.5/@ownedChild/@children.4/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.4/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.4/@ownedChild/@children.2">
             <compartment
                 href="componentinstanceconfiguration.gmfgraph#ComponentInstanceConfigurationContentsCompartment"/>
           </compartments>
@@ -323,6 +329,24 @@
         <compartment
             href="componentinstanceconfiguration.gmfgraph#ComponentInstanceContentsCompartment"/>
       </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/coordinationProtocolInstances"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance"/>
+      <labelMappings
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
+        <diagramLabel
+            href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfgraph#CoordinationProtocolName"/>
+        <viewExpression
+            body="self.name + ':' + if (self.coordinationProtocolPart.oclIsUndefined()) then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.coordinationProtocolPart.coordinationProtocol.name&#xA;endif"/>
+      </labelMappings>
+      <diagramNode
+          href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfgraph#CoordinationProtocol"/>
     </ownedChild>
   </nodes>
   <links>
@@ -362,6 +386,13 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
+  </links>
+  <links>
+    <diagramLink
+        href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfgraph#RolePattern"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
   </links>
   <diagram>
     <diagramCanvas

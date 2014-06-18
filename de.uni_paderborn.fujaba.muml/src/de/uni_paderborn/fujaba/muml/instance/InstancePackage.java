@@ -1514,13 +1514,22 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Coordination Protocol Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Component Instance Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 
 	/**
@@ -4351,6 +4360,17 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstanceConfiguration_ParentStructuredComponentInstance();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getCoordinationProtocolInstances <em>Coordination Protocol Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Coordination Protocol Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getCoordinationProtocolInstances()
+	 * @see #getComponentInstanceConfiguration()
+	 * @generated
+	 */
+	EReference getComponentInstanceConfiguration_CoordinationProtocolInstances();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance <em>Continuous Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4727,6 +4747,14 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE = eINSTANCE.getComponentInstanceConfiguration_ParentStructuredComponentInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Coordination Protocol Instances</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_CoordinationProtocolInstances();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.

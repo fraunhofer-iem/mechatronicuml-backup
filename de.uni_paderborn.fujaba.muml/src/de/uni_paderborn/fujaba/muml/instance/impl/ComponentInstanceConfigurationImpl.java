@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
@@ -46,6 +47,7 @@ import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getParentPortInstances <em>Parent Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getCoordinationProtocolInstances <em>Coordination Protocol Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,6 +113,16 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PARENT_PORT_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getCoordinationProtocolInstances() <em>Coordination Protocol Instances</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoordinationProtocolInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CoordinationProtocolInstance> coordinationProtocolInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,6 +265,18 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<CoordinationProtocolInstance> getCoordinationProtocolInstances() {
+		if (coordinationProtocolInstances == null) {
+			coordinationProtocolInstances = new EObjectContainmentEList<CoordinationProtocolInstance>(CoordinationProtocolInstance.class, this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES);
+		}
+		return coordinationProtocolInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -285,6 +309,8 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 				return ((InternalEList<?>)getParentPortInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
 				return basicSetParentStructuredComponentInstance(null, msgs);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES:
+				return ((InternalEList<?>)getCoordinationProtocolInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -323,6 +349,8 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 				return getParentPortInstances();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
 				return getParentStructuredComponentInstance();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES:
+				return getCoordinationProtocolInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,6 +382,10 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
 				setParentStructuredComponentInstance((StructuredComponentInstance)newValue);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES:
+				getCoordinationProtocolInstances().clear();
+				getCoordinationProtocolInstances().addAll((Collection<? extends CoordinationProtocolInstance>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -381,6 +413,9 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
 				setParentStructuredComponentInstance((StructuredComponentInstance)null);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES:
+				getCoordinationProtocolInstances().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -405,6 +440,8 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 				return isSetParentPortInstances();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
 				return getParentStructuredComponentInstance() != null;
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COORDINATION_PROTOCOL_INSTANCES:
+				return coordinationProtocolInstances != null && !coordinationProtocolInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

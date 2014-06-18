@@ -344,6 +344,23 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateCoordinationProtocolInstancePortInstances_4003(
+				de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance source,
+				de.uni_paderborn.fujaba.muml.instance.PortInstance target,
+				View sourceView, View targetView) {
+			if (source != null) {
+				if (source.getPortInstances().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistCoordinationProtocolInstancePortInstances_4003(
+					source, target, sourceView, targetView);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistAssemblyConnectorInstance_4001(
 				de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance linkInstance,
@@ -383,6 +400,26 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
+			return null;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistCoordinationProtocolInstancePortInstances_4003(
+				de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance source,
+				de.uni_paderborn.fujaba.muml.instance.PortInstance target,
+				View sourceView, View targetView) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorCoordinationProtocolInstancePortInstances_4003(
+				de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance source,
+				de.uni_paderborn.fujaba.muml.instance.PortInstance target,
 				View sourceView, View targetView) {
 			return null;
 		}

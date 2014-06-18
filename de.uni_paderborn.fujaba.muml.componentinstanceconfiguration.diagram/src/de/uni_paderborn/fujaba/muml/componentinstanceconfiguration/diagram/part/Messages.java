@@ -398,12 +398,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_CoordinationProtocolInstancePortInstances_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationProtocolInstancePortInstances_4003_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ContinuousPortInstance_2024_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ContinuousPortInstance_2024_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationProtocolInstance_2025_outgoinglinks;
 
 	/**
 	 * @generated
@@ -464,6 +479,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ContinuousPortInstance_3034_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationProtocolInstance_3035_outgoinglinks;
 
 	/**
 	 * @generated

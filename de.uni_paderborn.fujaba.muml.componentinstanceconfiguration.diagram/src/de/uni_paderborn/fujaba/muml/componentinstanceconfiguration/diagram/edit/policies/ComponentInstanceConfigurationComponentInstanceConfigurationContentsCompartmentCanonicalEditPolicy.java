@@ -3,10 +3,12 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import java.util.Set;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -28,6 +30,11 @@ import org.eclipse.gmf.runtime.notation.View;
 public class ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
+
+	/**
+	 * @generated
+	 */
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	public ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentCanonicalEditPolicy() {
 	}
@@ -52,9 +59,17 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 	/**
 	 * @generated
 	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-				.getComponentInstanceConfiguration_ComponentInstances();
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+							.getComponentInstanceConfiguration_ComponentInstances());
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+							.getComponentInstanceConfiguration_CoordinationProtocolInstances());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -89,7 +104,8 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 				List<Integer> visualIDs = Arrays
 						.asList(new Integer[] {
 								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID });
+								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -126,7 +142,8 @@ public class ComponentInstanceConfigurationComponentInstanceConfigurationContent
 		int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID;
+				|| visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart.VISUAL_ID;
 	}
 
 	/**
