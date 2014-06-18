@@ -1,4 +1,4 @@
-import de.uni_paderborn.fujaba.muml.common._blackbox.LoadResourceBlackbox.LoadResourceLibUnit;
+--import de.uni_paderborn.fujaba.muml.common._blackbox.LoadResourceBlackbox.LoadResourceLibUnit;
 
 modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
 modeltype propsheet uses properties('http://de.uni_paderborn.fujaba.properties/0.4.0');
@@ -8,7 +8,7 @@ transformation transform(inout gmfgenModel : GMFGEN);
 --blackbox helper getResourceContents(uri : String) : Sequence(OclAny);
 
 main() {
-	getResourceContents("Test");
+	--getResourceContents("Test");
 
   --fix GMF BUG 331875
   gmfgenModel.objectsOfType(ExpressionLabelParser)->forEach(parser)

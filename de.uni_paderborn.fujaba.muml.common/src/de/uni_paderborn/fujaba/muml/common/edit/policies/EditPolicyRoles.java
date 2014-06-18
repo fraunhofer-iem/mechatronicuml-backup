@@ -9,6 +9,8 @@ public interface EditPolicyRoles {
 	
 	public static final String COMPARTMENT_ORIENTATION_ROLE = "CompartmentOrientationRole"; //$NON-NLS-1$
 	
+	public static final String COMPONENT_COLOR_ROLE = "ComponentColorRole"; //$NON-NLS-1$
+	
 	public static final String PORT_VISUALIZATION_ROLE = "PortVisualizationRole"; //$NON-NLS-1$
 	
 	public static final String COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE = "ComponentStoryPatternVariableVisualizationRole"; //$NON-NLS-1$

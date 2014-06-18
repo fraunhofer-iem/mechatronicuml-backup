@@ -18,5 +18,20 @@ mapping inout GenEditorGenerator::settings() {
 
 
 mapping inout GenEditorGenerator::editorSpecific() {
-	-- put settings here, that are often lost to apply them permanently
+	var key = 'de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE';
+	var nodes := self.diagram.childNodes[GenNode]->union(self.diagram.topLevelNodes);
+	nodes->forEach(node) {
+		if (node.modelFacet.metaClass.ecoreClass.name = 'ComponentPart' or
+		    	node.modelFacet.metaClass.ecoreClass.name = 'StaticStructuredComponent' or
+		    	node.modelFacet.metaClass.ecoreClass.name = 'StaticAtomicComponent') then {
+			if (node.behaviour[CustomBehaviour]->select(cb | cb.key = key)->isEmpty()) then {
+				node.behaviour += new CustomBehaviour(key, 'de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy');
+			} endif;
+		} endif;
+	};
+}
+
+constructor CustomBehaviour::CustomBehaviour(k : String, editPolicy : String) {
+	key := k;
+	editPolicyQualifiedClassName := editPolicy;
 }

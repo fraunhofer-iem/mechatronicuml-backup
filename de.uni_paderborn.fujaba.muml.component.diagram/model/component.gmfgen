@@ -304,6 +304,10 @@
             width="130"
             height="47"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ComponentPart"/>
@@ -495,6 +499,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StaticAtomicComponent"/>
@@ -559,6 +567,10 @@
             width="130"
             height="47"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENT_COLOR_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StaticStructuredComponent"/>
