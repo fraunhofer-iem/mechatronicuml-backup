@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+   	<unit name="UtilsLibUnit" namespace="de.uni_paderborn.fujaba.muml.sdk._blackbox.UtilsBlackbox">
+    <library name="UtilsLib" 
+             class="de.uni_paderborn.fujaba.muml.sdk.blackbox.UtilsBlackbox">
+    </library>
+    </unit>
+   </extension> 
+ 
+</plugin>
