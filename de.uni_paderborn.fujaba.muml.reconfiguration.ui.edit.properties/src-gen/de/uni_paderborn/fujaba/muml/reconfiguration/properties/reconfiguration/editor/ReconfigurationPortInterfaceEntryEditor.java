@@ -24,11 +24,13 @@ public class ReconfigurationPortInterfaceEntryEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationPortInterfaceEntryDescriptionEditor(null, true);
+			addReconfigurationPortInterfaceEntryDescription_GeneralTab_Editor(
+					null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationPortInterfaceEntryMessageTypeEditor(null, true);
+			addReconfigurationPortInterfaceEntryMessageType_GeneralTab_Editor(
+					null, true);
 		}
 
 	}
@@ -36,17 +38,18 @@ public class ReconfigurationPortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationPortInterfaceEntryDescriptionEditor(
+	protected void addReconfigurationPortInterfaceEntryDescription_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createReconfigurationPortInterfaceEntryDescriptionEditor(),
+		addEditorToCategory(
+				category,
+				createReconfigurationPortInterfaceEntryDescription_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationPortInterfaceEntryDescriptionEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationPortInterfaceEntryDescription_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -62,17 +65,18 @@ public class ReconfigurationPortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationPortInterfaceEntryMessageTypeEditor(
+	protected void addReconfigurationPortInterfaceEntryMessageType_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createReconfigurationPortInterfaceEntryMessageTypeEditor(),
+		addEditorToCategory(
+				category,
+				createReconfigurationPortInterfaceEntryMessageType_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationPortInterfaceEntryMessageTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationPortInterfaceEntryMessageType_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE

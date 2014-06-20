@@ -24,15 +24,15 @@ public class FadingFunctionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addFadingFunctionFromPortEditor(null, true);
+			addFadingFunctionFromPort_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addFadingFunctionToPortEditor(null, true);
+			addFadingFunctionToPort_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementNameEditor(null, true);
+			addNamedElementName_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,16 +40,16 @@ public class FadingFunctionEditor
 	/**
 	 * @generated
 	 */
-	protected void addFadingFunctionFromPortEditor(String category,
+	protected void addFadingFunctionFromPort_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category, createFadingFunctionFromPortEditor(),
-				front);
+		addEditorToCategory(category,
+				createFadingFunctionFromPort_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFadingFunctionFromPortEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFadingFunctionFromPort_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -62,14 +62,16 @@ public class FadingFunctionEditor
 	/**
 	 * @generated
 	 */
-	protected void addFadingFunctionToPortEditor(String category, boolean front) {
-		addEditorToCategory(category, createFadingFunctionToPortEditor(), front);
+	protected void addFadingFunctionToPort_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createFadingFunctionToPort_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFadingFunctionToPortEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFadingFunctionToPort_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -82,14 +84,16 @@ public class FadingFunctionEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addNamedElementName_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createNamedElementName_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
