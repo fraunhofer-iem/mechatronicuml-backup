@@ -24,7 +24,7 @@ public class ReconfigurableAtomicComponentEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehavioralElementBehaviorEditor(null, true);
+			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public class ReconfigurableAtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addBehavioralElementBehaviorEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createBehavioralElementBehaviorEditor(),
-				front);
+	protected void addBehavioralElementBehavior_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createBehavioralElementBehavior_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehaviorEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehavior_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE

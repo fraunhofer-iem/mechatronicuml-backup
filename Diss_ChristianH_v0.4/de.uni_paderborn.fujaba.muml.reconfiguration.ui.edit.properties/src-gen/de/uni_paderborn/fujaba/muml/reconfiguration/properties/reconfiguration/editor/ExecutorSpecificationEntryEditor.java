@@ -24,11 +24,12 @@ public class ExecutorSpecificationEntryEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExecutorSpecificationEntryReconfigurationRuleEditor(null, true);
+			addExecutorSpecificationEntryReconfigurationRule_GeneralTab_Editor(
+					null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExecutorSpecificationEntryIdEditor(null, true);
+			addExecutorSpecificationEntryId_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,17 +37,18 @@ public class ExecutorSpecificationEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addExecutorSpecificationEntryReconfigurationRuleEditor(
+	protected void addExecutorSpecificationEntryReconfigurationRule_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createExecutorSpecificationEntryReconfigurationRuleEditor(),
+		addEditorToCategory(
+				category,
+				createExecutorSpecificationEntryReconfigurationRule_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutorSpecificationEntryReconfigurationRuleEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutorSpecificationEntryReconfigurationRule_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -61,16 +63,16 @@ public class ExecutorSpecificationEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addExecutorSpecificationEntryIdEditor(String category,
-			boolean front) {
+	protected void addExecutorSpecificationEntryId_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createExecutorSpecificationEntryIdEditor(), front);
+				createExecutorSpecificationEntryId_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutorSpecificationEntryIdEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutorSpecificationEntryId_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE

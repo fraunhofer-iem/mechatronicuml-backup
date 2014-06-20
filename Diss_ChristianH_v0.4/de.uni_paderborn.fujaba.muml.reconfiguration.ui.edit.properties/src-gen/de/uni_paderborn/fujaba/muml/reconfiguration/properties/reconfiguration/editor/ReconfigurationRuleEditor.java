@@ -24,7 +24,8 @@ public abstract class ReconfigurationRuleEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationRuleReconfiguredComponentEditor(null, true);
+			addReconfigurationRuleReconfiguredComponent_GeneralTab_Editor(null,
+					true);
 		}
 
 	}
@@ -32,16 +33,18 @@ public abstract class ReconfigurationRuleEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationRuleReconfiguredComponentEditor(
+	protected void addReconfigurationRuleReconfiguredComponent_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createReconfigurationRuleReconfiguredComponentEditor(), front);
+		addEditorToCategory(
+				category,
+				createReconfigurationRuleReconfiguredComponent_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationRuleReconfiguredComponentEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationRuleReconfiguredComponent_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE

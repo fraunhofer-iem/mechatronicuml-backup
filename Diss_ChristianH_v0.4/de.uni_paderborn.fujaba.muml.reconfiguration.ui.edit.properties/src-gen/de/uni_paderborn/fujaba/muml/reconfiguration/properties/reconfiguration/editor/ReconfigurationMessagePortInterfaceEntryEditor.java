@@ -24,12 +24,12 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationMessagePortInterfaceEntryReconfigurationMessageTypeEditor(
+			addReconfigurationMessagePortInterfaceEntryReconfigurationMessageType_GeneralTab_Editor(
 					null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationMessagePortInterfaceEntryExpectedResponseTimeEditor(
+			addReconfigurationMessagePortInterfaceEntryExpectedResponseTime_GeneralTab_Editor(
 					null, false);
 		}
 
@@ -38,18 +38,18 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationMessagePortInterfaceEntryReconfigurationMessageTypeEditor(
+	protected void addReconfigurationMessagePortInterfaceEntryReconfigurationMessageType_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createReconfigurationMessagePortInterfaceEntryReconfigurationMessageTypeEditor(),
+				createReconfigurationMessagePortInterfaceEntryReconfigurationMessageType_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessagePortInterfaceEntryReconfigurationMessageTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessagePortInterfaceEntryReconfigurationMessageType_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -64,18 +64,18 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationMessagePortInterfaceEntryExpectedResponseTimeEditor(
+	protected void addReconfigurationMessagePortInterfaceEntryExpectedResponseTime_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createReconfigurationMessagePortInterfaceEntryExpectedResponseTimeEditor(),
+				createReconfigurationMessagePortInterfaceEntryExpectedResponseTime_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessagePortInterfaceEntryExpectedResponseTimeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessagePortInterfaceEntryExpectedResponseTime_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
