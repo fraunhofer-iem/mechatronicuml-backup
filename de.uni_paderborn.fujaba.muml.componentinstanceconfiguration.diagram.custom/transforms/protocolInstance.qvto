@@ -110,7 +110,7 @@ query DiscretePortInstance::createCoordinationProtocolInstance(inout port:Discre
 
 
 query PortInstance::isValid() : Boolean {
-	return not self.connectorInstances[AssemblyConnector]->isEmpty() and self.portPart!=null and self.portPart.coordinationProtocolPart != null ;
+	return not self.connectorInstances[AssemblyConnector]->isEmpty() and (not self.portPart.oclIsUndefined()) and self.portPart.coordinationProtocolPart != null ;
 	//and self.componentInstance.parentCIC.coordinationProtocolInstances->select(p | not p.portInstances->intersection(self.allReachablePortInstances())->isEmpty())->excluding(self.componentInstance.parentCIC.coordinationProtocolInstances->any(p|p.portInstances->includes(self)))->isEmpty()
 } 
 
@@ -127,9 +127,15 @@ query PortInstance::allReachablePortInstances() : OrderedSet(PortInstance) {
 }
 
 constructor CoordinationProtocolInstance::CoordinationProtocolInstance(port:DiscretePortInstance) {
-	name:=port.portPart.coordinationProtocolPart.coordinationProtocol.name;
-	coordinationProtocolPart := port.portPart.coordinationProtocolPart;
-	setPortInstanceInProtocolInstance(result,port);
+	
+			name:=port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.name;
+			if( not port.portPart.oclIsUndefined()) then{
+							coordinationProtocolPart := port.portPart.coordinationProtocolPart;
+				
+			}endif;
+		setPortInstanceInProtocolInstance(result,port);
+
+
 }
 
 

@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart;
@@ -67,6 +68,9 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 				
 			case ComponentInstanceConfigurationEditPart.VISUAL_ID:
 				return new CustomComponentInstanceConfigurationEditPart(view);
+				
+			case ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
+				return new CustomComponentInstanceConfigurationDiagramEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);
