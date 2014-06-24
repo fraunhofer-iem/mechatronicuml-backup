@@ -31,7 +31,7 @@ public class CreationConstraintContributor
 
 			@Override
 			public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
-				return !eClass.isSuperTypeOf(myClass) || Boolean.TRUE.equals(query.evaluate(object));
+				return !eClass.isSuperTypeOf(myClass) || (object != null && Boolean.TRUE.equals(query.evaluate(object)));
 			}
 
 		};

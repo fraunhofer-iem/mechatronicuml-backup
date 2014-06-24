@@ -30,6 +30,7 @@ import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.examples.eventmanager.EventFilter;
 import org.eclipse.ocl.examples.eventmanager.EventManager;
 import org.eclipse.ocl.examples.eventmanager.EventManagerFactory;
+import org.eclipse.ocl.examples.eventmanager.filters.AbstractEventFilter;
 import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzer;
 import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzerFactory;
 import org.eclipse.ocl.examples.impactanalyzer.util.OCLFactory;
@@ -47,7 +48,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 	private Map<Adapter, ResourceSet> eventAdapters = new HashMap<Adapter, ResourceSet>();
 
-	private Map<Adapter, OCLExpression> unregisteredOCLExpressions = new HashMap<Adapter, OCLExpression>();
+	private Map<Adapter, OCLExpression> oclAdapters = new HashMap<Adapter, OCLExpression>();
 
 	protected EStructuralFeature feature = null;
 	
@@ -157,9 +158,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		updateAdapters();
 		
 		// Register those expressions that could not be registered before, because no editing domain was known before the first inputChanged() call
-		if (!unregisteredOCLExpressions.isEmpty()) {
-			for(Adapter adapter : unregisteredOCLExpressions.keySet()) {
-				OCLExpression expression = unregisteredOCLExpressions.get(adapter);
+		removeEventAdapters();
+		if (!oclAdapters.isEmpty()) {
+			for(Adapter adapter : oclAdapters.keySet()) {
+				OCLExpression expression = oclAdapters.get(adapter);
 				registerOCLAdapter(expression, adapter);
 			}
 		}
@@ -298,6 +300,13 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			newValue = feature.getDefaultValue();
 		}
 
+		if (itemPropertyDescriptor != null) {
+			itemPropertyDescriptor.setPropertyValue(element, newValue);
+		} else {
+			element.eSet(feature, newValue);
+		}
+		
+
 		if (feature instanceof EReference && ((EReference)feature).isContainment()) {
 			if (!feature.isMany() && oldValue != null && newValue == null ) {
 				DeleteCommand.create(getEditingDomain(element), oldValue).execute();
@@ -308,11 +317,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			}
 		}
 
-		if (itemPropertyDescriptor != null) {
-			itemPropertyDescriptor.setPropertyValue(element, newValue);
-		} else {
-			element.eSet(feature, newValue);
-		}
 	}
 
 	public EditingDomain getEditingDomain(Object object) {
@@ -363,19 +367,17 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 
 	public boolean registerOCLAdapter(OCLExpression expression, Adapter adapter) {
+		oclAdapters.put(adapter, expression);
+
 		ResourceSet myResourceSet = getResourceSet();
-		if (myResourceSet == null) {
-			unregisteredOCLExpressions.put(adapter, expression);
+		if (myResourceSet == null || element == null) {
 			return false;
 		}
-		unregisteredOCLExpressions.remove(adapter);
-
-		EClass contextEClass = feature.getEContainingClass();
 		
 		final ImpactAnalyzer impactAnalyzer = ImpactAnalyzerFactory.INSTANCE
 				.createImpactAnalyzer(expression, // the expression to
 													// re-evaluate incrementally
-						contextEClass,
+						element.eClass(),
 						false, // whether to re-evaluate when new context
 								// objects appear
 						OCLFactory.getInstance());
@@ -387,6 +389,9 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 		// store adapter to unregister them in dispose()
 		eventAdapters.put(adapter, myResourceSet);
+
+		
+		
 		return true;
 	}
 
@@ -434,5 +439,5 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 		return eClasses;
 	}
-
+	
 }
