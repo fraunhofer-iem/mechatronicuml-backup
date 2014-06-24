@@ -883,7 +883,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An instance of a coordination protocol part. It specifies the behavior of discrete (single/multi) port instances that are connected with each other."/>
+        <details key="documentation" value="An instance of a coordination protocol. It may also reference a specific coordination protocol part. It specifies the behavior of discrete (single/multi) port instances that are connected with each other."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" lowerBound="1"
           upperBound="-1" eType="#//instance/PortInstance">
@@ -892,9 +892,15 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
-          lowerBound="1" eType="#//component/CoordinationProtocolPart">
+          eType="#//component/CoordinationProtocolPart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The CoordinationProtocolPart of that instance."/>
+          <details key="documentation" value="The optional CoordinationProtocolPart of that instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+          lowerBound="1" eType="#//protocol/CoordinationProtocol">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The type of this instance."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

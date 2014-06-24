@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
  * @generated
  */
 public class RelativeDeadlineItemProvider
-	extends DeadlineItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends DeadlineItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

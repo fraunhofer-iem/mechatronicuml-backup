@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
  * @generated
  */
 public class ConnectorQualityOfServiceAssumptionsItemProvider
-	extends CommentableElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends CommentableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  * @generated
  */
 public class DiscretePortInstanceItemProvider
-	extends PortInstanceItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends PortInstanceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

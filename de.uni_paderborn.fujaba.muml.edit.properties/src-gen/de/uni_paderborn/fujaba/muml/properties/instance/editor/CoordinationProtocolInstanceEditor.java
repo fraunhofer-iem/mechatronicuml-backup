@@ -35,6 +35,10 @@ public class CoordinationProtocolInstanceEditor
 			addCoordinationProtocolPart_GeneralTab_Editor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addCoordinationProtocol_GeneralTab_Editor(null, true);
+		}
+
 	}
 
 	/**
@@ -79,7 +83,31 @@ public class CoordinationProtocolInstanceEditor
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
 
-		editor.setTooltipMessage("The CoordinationProtocolPart of that instance.");
+		editor.setTooltipMessage("The optional CoordinationProtocolPart of that instance.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCoordinationProtocol_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createCoordinationProtocol_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocol_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+				.getCoordinationProtocolInstance_CoordinationProtocol();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
+
+		editor.setTooltipMessage("The type of this instance.");
 
 		return editor;
 
@@ -118,7 +146,8 @@ public class CoordinationProtocolInstanceEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

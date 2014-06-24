@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
  * @generated
  */
 public class StructuredComponentItemProvider
-	extends ComponentItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends ComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

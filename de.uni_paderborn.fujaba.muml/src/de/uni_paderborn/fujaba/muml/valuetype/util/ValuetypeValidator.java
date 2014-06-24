@@ -14,9 +14,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
-import de.uni_paderborn.fujaba.muml.valuetype.*;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.valuetype.Range;

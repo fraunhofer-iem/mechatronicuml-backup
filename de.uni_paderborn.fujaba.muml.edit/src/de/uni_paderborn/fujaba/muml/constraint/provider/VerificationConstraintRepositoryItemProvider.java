@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
  * @generated
  */
 public class VerificationConstraintRepositoryItemProvider
-	extends ExtendableElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends ExtendableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

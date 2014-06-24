@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.PrioritizedEle
  * @generated
  */
 public class StateItemProvider
-	extends VertexItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends VertexItemProvider {
 	
 
 	/**

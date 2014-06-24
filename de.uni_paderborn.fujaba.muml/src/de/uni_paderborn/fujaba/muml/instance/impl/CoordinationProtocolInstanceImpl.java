@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +57,16 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 	 * @ordered
 	 */
 	protected CoordinationProtocolPart coordinationProtocolPart;
+
+	/**
+	 * The cached value of the '{@link #getCoordinationProtocol() <em>Coordination Protocol</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoordinationProtocol()
+	 * @generated
+	 * @ordered
+	 */
+	protected CoordinationProtocol coordinationProtocol;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,6 +142,44 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CoordinationProtocol getCoordinationProtocol() {
+		if (coordinationProtocol != null && coordinationProtocol.eIsProxy()) {
+			InternalEObject oldCoordinationProtocol = (InternalEObject)coordinationProtocol;
+			coordinationProtocol = (CoordinationProtocol)eResolveProxy(oldCoordinationProtocol);
+			if (coordinationProtocol != oldCoordinationProtocol) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL, oldCoordinationProtocol, coordinationProtocol));
+			}
+		}
+		return coordinationProtocol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoordinationProtocol basicGetCoordinationProtocol() {
+		return coordinationProtocol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCoordinationProtocol(CoordinationProtocol newCoordinationProtocol) {
+		CoordinationProtocol oldCoordinationProtocol = coordinationProtocol;
+		coordinationProtocol = newCoordinationProtocol;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL, oldCoordinationProtocol, coordinationProtocol));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -138,6 +188,9 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART:
 				if (resolve) return getCoordinationProtocolPart();
 				return basicGetCoordinationProtocolPart();
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL:
+				if (resolve) return getCoordinationProtocol();
+				return basicGetCoordinationProtocol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +211,9 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART:
 				setCoordinationProtocolPart((CoordinationProtocolPart)newValue);
 				return;
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL:
+				setCoordinationProtocol((CoordinationProtocol)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -176,6 +232,9 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART:
 				setCoordinationProtocolPart((CoordinationProtocolPart)null);
 				return;
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL:
+				setCoordinationProtocol((CoordinationProtocol)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +251,8 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 				return portInstances != null && !portInstances.isEmpty();
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART:
 				return coordinationProtocolPart != null;
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL:
+				return coordinationProtocol != null;
 		}
 		return super.eIsSet(featureID);
 	}

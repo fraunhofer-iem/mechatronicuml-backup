@@ -44,7 +44,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class ClockConstraintItemProvider extends ExtendableElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ClockConstraintItemProvider extends ExtendableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

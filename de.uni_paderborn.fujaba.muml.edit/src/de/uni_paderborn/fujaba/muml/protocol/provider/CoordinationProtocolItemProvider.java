@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
  * @generated
  */
 public class CoordinationProtocolItemProvider
-	extends AbstractCoordinationSpecificationItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends AbstractCoordinationSpecificationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

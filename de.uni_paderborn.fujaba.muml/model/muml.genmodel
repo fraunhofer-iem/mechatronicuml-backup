@@ -164,6 +164,8 @@
             ecoreFeature="ecore:EReference muml.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//instance/CoordinationProtocolInstance/coordinationProtocol"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//instance/StructuredComponentInstance">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>

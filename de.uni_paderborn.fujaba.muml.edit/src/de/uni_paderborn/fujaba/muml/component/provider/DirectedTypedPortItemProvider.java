@@ -40,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
  * @generated
  */
 public class DirectedTypedPortItemProvider
-	extends PortItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends PortItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

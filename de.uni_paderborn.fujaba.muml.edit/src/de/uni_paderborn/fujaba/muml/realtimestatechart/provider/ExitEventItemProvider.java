@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
  * @generated
  */
 public class ExitEventItemProvider
-	extends EntryOrExitEventItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends EntryOrExitEventItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

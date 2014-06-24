@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
  * @generated
  */
 public class CoordinationProtocolPartItemProvider
-	extends CommentableElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends CommentableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstanc
  * @generated
  */
 public class DiscreteInteractionEndpointInstanceItemProvider
-	extends ConnectorEndpointInstanceItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends ConnectorEndpointInstanceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -3402,13 +3402,22 @@ public interface InstancePackage extends EPackage {
 	int COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Coordination Protocol Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COORDINATION_PROTOCOL_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4508,6 +4517,17 @@ public interface InstancePackage extends EPackage {
 	EReference getCoordinationProtocolInstance_CoordinationProtocolPart();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocol <em>Coordination Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Coordination Protocol</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocol()
+	 * @see #getCoordinationProtocolInstance()
+	 * @generated
+	 */
+	EReference getCoordinationProtocolInstance_CoordinationProtocol();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance <em>Structured Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4871,6 +4891,14 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART = eINSTANCE.getCoordinationProtocolInstance_CoordinationProtocolPart();
+
+		/**
+		 * The meta object literal for the '<em><b>Coordination Protocol</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocolInstance_CoordinationProtocol();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.StructuredComponentInstanceImpl <em>Structured Component Instance</em>}' class.

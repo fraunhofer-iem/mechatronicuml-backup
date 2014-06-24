@@ -35,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * 
  * @generated
  */
-public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

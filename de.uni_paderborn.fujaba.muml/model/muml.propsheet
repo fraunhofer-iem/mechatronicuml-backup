@@ -25,12 +25,12 @@
     <genPackage href="muml.genmodel#//muml/valuetype"/>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/Cardinality"/>
-      <properties tooltip="" reconcile="false">
+      <properties tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties tooltip="" reconcile="false">
+      <properties tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
@@ -52,12 +52,12 @@
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/Range"/>
-      <properties>
+      <properties tooltip="" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/valuetype/Range/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
-      <properties>
+      <properties tooltip="" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/valuetype/Range/upperBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
@@ -554,6 +554,11 @@
       </properties>
       <properties tooltip="">
         <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>

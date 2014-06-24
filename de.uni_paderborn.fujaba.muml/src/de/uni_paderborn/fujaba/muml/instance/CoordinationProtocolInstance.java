@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
+import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +18,7 @@ import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An instance of a coordination protocol part. It specifies the behavior of discrete (single/multi) port instances that are connected with each other.
+ * An instance of a coordination protocol. It may also reference a specific coordination protocol part. It specifies the behavior of discrete (single/multi) port instances that are connected with each other.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -25,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,12 +57,12 @@ public interface CoordinationProtocolInstance extends NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The CoordinationProtocolPart of that instance.
+	 * The optional CoordinationProtocolPart of that instance.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol Part</em>' reference.
 	 * @see #setCoordinationProtocolPart(CoordinationProtocolPart)
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getCoordinationProtocolInstance_CoordinationProtocolPart()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	CoordinationProtocolPart getCoordinationProtocolPart();
@@ -74,5 +76,30 @@ public interface CoordinationProtocolInstance extends NamedElement {
 	 * @generated
 	 */
 	void setCoordinationProtocolPart(CoordinationProtocolPart value);
+
+	/**
+	 * Returns the value of the '<em><b>Coordination Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The type of this instance.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Coordination Protocol</em>' reference.
+	 * @see #setCoordinationProtocol(CoordinationProtocol)
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getCoordinationProtocolInstance_CoordinationProtocol()
+	 * @model required="true"
+	 * @generated
+	 */
+	CoordinationProtocol getCoordinationProtocol();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocol <em>Coordination Protocol</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Coordination Protocol</em>' reference.
+	 * @see #getCoordinationProtocol()
+	 * @generated
+	 */
+	void setCoordinationProtocol(CoordinationProtocol value);
 
 } // CoordinationProtocolInstance

@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
  * @generated
  */
 public class ParameterItemProvider
-	extends TypedNamedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends TypedNamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
