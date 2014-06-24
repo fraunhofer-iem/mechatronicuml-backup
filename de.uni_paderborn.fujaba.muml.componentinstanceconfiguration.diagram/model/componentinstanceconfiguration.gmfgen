@@ -2020,7 +2020,7 @@
       <expressions
           body="--let compName : String = if self.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;--let partName : String = if self.componentPart.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;--(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(partName.concat(' : '.concat(compName)))"/>
       <expressions
-          body="--self.name + ':' + if (self.coordinationProtocolPart.oclIsUndefined()) then&#xA;--&#x9;'null'&#xA;--else&#xA;--&#x9;self.coordinationProtocolPart.coordinationProtocol.name&#xA;--endif"/>
+          body="--self.name + ':' + if (self.coordinationProtocol.oclIsUndefined()) then&#xA;--&#x9;' '&#xA;--else&#xA;--&#x9;self.coordinationProtocol.name&#xA;--endif"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--not self.oclIsTypeOf(DelegationConnectorInstance)"/>

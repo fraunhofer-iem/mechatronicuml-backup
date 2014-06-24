@@ -128,7 +128,10 @@ query PortInstance::allReachablePortInstances() : OrderedSet(PortInstance) {
 
 constructor CoordinationProtocolInstance::CoordinationProtocolInstance(port:DiscretePortInstance) {
 	
-			name:=port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.name;
+			name:="";
+			if(not port.portType.oclIsUndefined() and port.portType.oclIsKindOf(DiscretePort) and not (port.portType.oclAsType(DiscretePort).refinedRole.oclIsUndefined() and port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclIsUndefined())) then{
+							coordinationProtocol:=port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
+			}endif;
 			if( not port.portPart.oclIsUndefined()) then{
 							coordinationProtocolPart := port.portPart.coordinationProtocolPart;
 				

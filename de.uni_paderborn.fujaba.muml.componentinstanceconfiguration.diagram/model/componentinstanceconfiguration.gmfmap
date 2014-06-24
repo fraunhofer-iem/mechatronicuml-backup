@@ -343,7 +343,7 @@
         <diagramLabel
             href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfgraph#CoordinationProtocolName"/>
         <viewExpression
-            body="self.name + ':' + if (self.coordinationProtocolPart.oclIsUndefined()) then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.coordinationProtocolPart.coordinationProtocol.name&#xA;endif"/>
+            body="self.name + ':' + if (self.coordinationProtocol.oclIsUndefined()) then&#xA;&#x9;' '&#xA;else&#xA;&#x9;self.coordinationProtocol.name&#xA;endif"/>
       </labelMappings>
       <diagramNode
           href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfgraph#CoordinationProtocol"/>

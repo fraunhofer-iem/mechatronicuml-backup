@@ -66,7 +66,7 @@ public class MumlOCLFactory {
 					"--\'instance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'configuration\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\n--let partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n--(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.name + \':\' + if (self.coordinationProtocolPart.oclIsUndefined()) then\n--\t\'null\'\n--else\n--\tself.coordinationProtocolPart.coordinationProtocol.name\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.name + \':\' + if (self.coordinationProtocol.oclIsUndefined()) then\n--\t\' \'\n--else\n--\tself.coordinationProtocol.name\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--not self.oclIsTypeOf(DelegationConnectorInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--not self.oclIsTypeOf(AssemblyConnectorInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
