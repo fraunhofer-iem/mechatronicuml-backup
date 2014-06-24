@@ -113,12 +113,4 @@
    </extension>
  
 
-	<extension point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
-   	<unit name="LoadResourceLibUnit" namespace="de.uni_paderborn.fujaba.muml.common._blackbox.LoadResourceBlackbox">
-    <library name="LoadResourceLib" 
-             class="de.uni_paderborn.fujaba.muml.common.blackbox.LoadResourceBlackbox">
-      <!--<metamodel nsURI=""/>-->       
-    </library>
-    </unit>
-   </extension> 
 </plugin>
