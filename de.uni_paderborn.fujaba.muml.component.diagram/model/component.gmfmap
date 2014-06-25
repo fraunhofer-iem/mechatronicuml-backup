@@ -12,17 +12,6 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StaticAtomicComponent"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'comp'"/>
-        </initializers>
-      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel

@@ -37,19 +37,20 @@ mapping inout GenEditorGenerator::reconcilePropsheet() {
 	
  	-- load propsheet to import initialize ocl expressions
 	var propertyGenerator = self.extensions.rootInput[PropertyGenerator]->any(true);
-	logConsole(self);
 	
 	if (propertyGenerator != null) then {
 	
 		var allPropertyGenerators := propertyGenerator->union(propertyGenerator->closure(referencedGenerators));
 		var expressionProvider := self.expressionProviders.providers->any(true);
 		if (expressionProvider != null) then {
+		
 			self.diagram.topLevelNodes.modelFacet[TypeModelFacet]->forEach(typeModelFacet) {
-				//logConsole(allPropertyGenerators.packages.classes->any(c | c.genClass.ecoreClass.name = typeModelFacet.metaClass.ecoreClass.name));
-			
-				allPropertyGenerators.packages.classes->select(c | c.genClass.ecoreClass.name = typeModelFacet.metaClass.ecoreClass.name).properties->forEach(prop) {
+				
+				allPropertyGenerators.packages.classes->select(c | c.genClass.ecoreClass.isSuperTypeOf(typeModelFacet.metaClass.ecoreClass)).properties->forEach(prop) {
+					logConsole("huhu");
 						
 					if ((not prop.initializeOCLExpression.oclIsUndefined()) and (prop.initializeOCLExpression != "")) then {
+					
 						var featureSeqInitializer : GenFeatureSeqInitializer := typeModelFacet.modelElementInitializer[GenFeatureSeqInitializer]->any(true);
 						if (featureSeqInitializer = null) then {
 							featureSeqInitializer := new GenFeatureSeqInitializer(typeModelFacet.metaClass);
