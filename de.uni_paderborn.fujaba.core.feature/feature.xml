@@ -21,7 +21,7 @@
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.uml2.common"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
-      <import plugin="org.eclipse.uml2.codegen.ecore" version="1.6.0" match="compatible"/>
+      <import plugin="org.eclipse.uml2.codegen.ecore" version="1.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ocl" version="3.0.0" match="compatible"/>
       <import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
       <import plugin="org.eclipse.uml2.common.edit"/>
