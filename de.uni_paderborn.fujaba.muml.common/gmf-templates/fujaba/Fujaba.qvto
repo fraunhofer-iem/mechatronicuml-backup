@@ -28,6 +28,9 @@ helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceInstanceRepository'){
 						return 'de.uni_paderborn.fujaba.muml.hardware.resource.category';
 		}
+		case (genDiagram.domainDiagramElement.ecoreClass.name = 'HWPlatformInstanceConfiguration'){
+				return 'de.uni_paderborn.fujaba.muml.hardware.hwplatform.category';
+		}
 		
 		else{
 			return getReflectionPackageName(genDiagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgtype', '\\.messagetype').xpandReplaceAll('\\.platforminstance', '\\.platform') + ".category";
@@ -45,7 +48,7 @@ switch {
 				return 'resource';
 		}
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'HWPlatformInstanceConfiguration'){
-				return 'platform';
+				return 'hwplatform';
 		}
 		
 		else{
