@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
+import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -64,6 +65,18 @@ public class NavigationFeaturePropertyEditor extends
 		this.creationFilters.addAll(filters);
 	}
 
+	
+	@Override
+	public void updateVisibility(boolean relayout, boolean setDefaultValue) {
+		navigatedEditor.updateVisibility(relayout);
+	}
+	
+	
+	@Override
+	public void updateVisibility(boolean relayout) {
+		navigatedEditor.updateVisibility(relayout);
+	}
+	
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature, boolean initiallyOpen, EObject currentValue) {
 		this(adapterFactory, feature, initiallyOpen);
@@ -334,5 +347,17 @@ public class NavigationFeaturePropertyEditor extends
 	@Override
 	protected Collection<Control> getControls() {
 		return navigatedEditor.getControls();
+	}
+	
+	@Override
+	public void addVisibilityFilter(IFilter filter) {
+		super.addVisibilityFilter(filter);
+		navigatedEditor.addVisibilityFilter(filter);
+	}
+	
+	@Override
+	public void removeVisibilityFilter(IFilter filter) {
+		super.removeVisibilityFilter(filter);
+		navigatedEditor.removeVisibilityFilter(filter);
 	}
 }
