@@ -202,9 +202,7 @@ public class NavigationFeaturePropertyEditor extends
 
 		// section.setSeparatorControl(toolkit.createSeparator(section,
 		// SWT.NONE));
-		if (shouldCreateInitially()) {
-			create();
-		}
+
 	}
 
 	protected boolean shouldShowClassesCombo() {
@@ -230,6 +228,9 @@ public class NavigationFeaturePropertyEditor extends
 			navigatedEditor.setInput(manyValue);
 		} else {
 			navigatedEditor.setInput(value);
+		}
+		if (input != null && shouldCreateInitially()) {
+			create();
 		}
 		updateTitle();
 	}

@@ -410,11 +410,10 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	public static void showCreateElementDialog(AdapterFactory adapterFactory, EObject container,
-			EStructuralFeature feature, List<ICreationFilter> creationFilters) {
+			EStructuralFeature feature) {
 		
 		PropertiesWizard wizard = new PropertiesWizard();
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true);
-		editor.setCreationFilters(creationFilters);
 
 		final PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 		editor.addValueChangedListener(new IValueChangedListener() {
@@ -447,13 +446,15 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	
 		// Add page, set input and show wizard
 		wizard.addPage(page);
-		page.setInput(container);
 		showWizardWithUndo(wizard, container);
+		page.setInput(container);
+
 	}
 	
 	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject container, EStructuralFeature feature, EObject currentValue) {
 		PropertiesWizard wizard = new PropertiesWizard();
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true, currentValue);
+
 		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 
 		// Get Element Name
@@ -475,8 +476,8 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	
 		// Add page, set input and show wizard
 		wizard.addPage(page);
-		page.setInput(container);
 		showWizardWithUndo(wizard, container);
+		page.setInput(container);
 	}
 	
 	public static List<Object> showReferenceElementDialog(
