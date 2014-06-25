@@ -18,6 +18,18 @@
  */]
 [query public getHeaderFile (rtsc : RealtimeStatechart) : String = rtsc.name.getName()+'.h'/]
 
+[query public getWriteMethod (cpi : ContinuousPortInstance) : String = 
+	'write_'+cpi.getName()+'_of'+cpi.componentInstance.componentType.getVariableName()+'_'+cpi.componentInstance.getName()
+/]
+
+
+[query public getReadMethod (cpi : ContinuousPortInstance) : String = 
+' read_'+cpi.getName()+'_of'+cpi.componentInstance.componentType.getVariableName()+'_'+cpi.componentInstance.getName()
+
+/]
+
+[query public getHeaderFile (ci : ComponentInstance) : String = ci.name.getName()+ci.componentType.getName()+'.h'/]
+
 [**
  * @param syncChannel
 */]
@@ -28,6 +40,11 @@
 [query public getValue(binding : ParameterBinding) : String =
 	binding.value.generateExpression(false, '')
 /]
+
+[query public getExecutionVerifierName(rtsc : RealtimeStatechart) : String =
+	rtsc.getName()+'_isExecutable'
+/]
+
 [**
  * @param syncChannel
 */]

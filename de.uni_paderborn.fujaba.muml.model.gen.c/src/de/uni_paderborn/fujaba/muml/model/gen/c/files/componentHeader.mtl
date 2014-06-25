@@ -128,9 +128,22 @@ struct [getClassName(component)/] {
 		[for (port : Port | component.ports)]
 			[if (port.oclIsTypeOf(DiscretePort))]
 				DiscretePort* [getVariableName(port)/];
-			[elseif (port.oclIsTypeOf(ContinuousPort))]
 			[/if]
 		[/for]
+
+		[if component.oclIsKindOf(AtomicComponent)]
+		[for (port : Port | component.ports)]
+			[if (port.oclIsTypeOf(HybridPort))]
+				[if port.oclAsType(HybridPort).outPort]
+					void (*setterOf_[port.oclAsType(HybridPort).getName()/])([port.oclAsType(HybridPort).dataType.getTypeName()/]);
+				[else]
+					[port.oclAsType(HybridPort).dataType.getTypeName()/] (*getterOf_[port.oclAsType(HybridPort).getName()/])(void);
+				[/if]
+
+			[/if]
+		[/for]
+			
+		[/if]
 		
 		[comment if structured comp, list all port connectors/]
 		[if component.oclIsKindOf(StructuredComponent)]

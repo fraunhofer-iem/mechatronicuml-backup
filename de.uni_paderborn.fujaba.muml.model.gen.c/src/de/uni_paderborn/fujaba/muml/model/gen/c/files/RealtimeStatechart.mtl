@@ -110,7 +110,6 @@
 				[/for]
 
 			
-				[comment TODO Member variables for the clocks of do actions. /]
 				[for (state : State | region.embeddedStatechart.states) ? (not state.doEvent.oclIsUndefined())]					
 					Clock_reset(stateChart->[getClockVariableName(state)/]);
 				[/for]
@@ -131,6 +130,8 @@
 				[for (innerRegion : Region | firstState.embeddedRegions)]
 					[getInitializeMethodName(innerRegion)/](stateChart);
 				[/for]
+			stateChart->[region.embeddedStatechart.getExecutionVerifierName()/] = true;
+
 			}
  		[/let]
 	[/for]
@@ -241,9 +242,13 @@
 					case [getName(state)/]:
 						[if (state.outgoingTransitions->size() > 0)]
 							[for (outgoingTransition : Transition | state.outgoingTransitions->sortedBy(priority)->reverse()) separator(' else ')]
-								if ( [transitionCondition(component, rtsc, outgoingTransition, true)/] ) {
+								[if outgoingTransition.synchronization.oclIsUndefined()]
+								if ( [transitionCondition(component, rtsc, outgoingTransition)/] ) {
 						    		[transition(component, outgoingTransition)/]
 								}
+								[else]
+									[transitionWithSync(component, rtsc, outgoingTransition)/]
+								[/if]
 							[/for] 
 							else {
 						[/if]
@@ -261,7 +266,8 @@
 					
 						[comment Execute the inner regions /]	
 						[for (reg : Region | state.embeddedRegions->sortedBy(priority)->reverse())]
-							[getProcessMethodName(reg.embeddedStatechart)/](stateChart);
+							if (stateChart->[reg.embeddedStatechart.getExecutionVerifierName()/])
+								[getProcessMethodName(reg.embeddedStatechart)/](stateChart);
 						[/for]
 
 
@@ -272,6 +278,7 @@
 				[/for]
 				default: break;
 			}
+			stateChart->[rtsc.getExecutionVerifierName()/] = false;
 		}		
 [/template]
 
@@ -289,14 +296,14 @@
 				// [getName(syncChannel)/] synchronization channel
 				[for (region : Region |	state.embeddedRegions->sortedBy(priority)->reverse())]
 					[for (transition : Transition | region.embeddedStatechart->collect(transitions)) separator (' else ') ? (transition.synchronization.kind.toString() = 'SEND' and transition.synchronization.syncChannel = syncChannel)]
-						if (stateChart->[getVariableName(transition.statechart)/] == [getName(transition.source.oclAsType(State))/] [transitionCondition(component, rtsc, transition, false)/]) {							
+						if (stateChart->[getVariableName(transition.statechart)/] == [getName(transition.source.oclAsType(State))/] [transitionCondition(component, rtsc, transition)/]) {							
 							[getClassName(syncChannel)/]_enableSend(stateChart->[getVariableName(syncChannel)/]);
 						}									
 					[/for]					
 				[/for]
 				[for (region : Region |	state.embeddedRegions->sortedBy(priority)->reverse())]
 					[for (transition : Transition | region.embeddedStatechart->collect(transitions)) separator (' else ') ? (transition.synchronization.kind.toString() = 'RECEIVE' and transition.synchronization.syncChannel = syncChannel)]
-						if (stateChart->[getVariableName(transition.statechart)/] == [getName(transition.source.oclAsType(State))/] [transitionCondition(component, statechart, transition, false)/]) {
+						if (stateChart->[getVariableName(transition.statechart)/] == [getName(transition.source.oclAsType(State))/] [transitionCondition(component, statechart, transition)/]) {
 							SyncChannel_enableReceive(stateChart->[getVariableName(syncChannel)/]);
 						}				
 					[/for]
@@ -422,17 +429,10 @@
  * @param transition the transition
  * @param sync is a sync channel used?
 */]
-[template public transitionCondition (component:Component, rtsc : RealtimeStatechart, transition : Transition, sync : Boolean )]
-	[if (transition.triggerMessageEvent->size()=0 and transition.clockConstraints->size()=0 and transition.guard.oclIsUndefined() and transition.synchronization.oclIsUndefined())]
+[template public transitionCondition (component:Component, rtsc : RealtimeStatechart, transition : Transition)]
+	[if (transition.triggerMessageEvent.oclIsUndefined() and transition.clockConstraints->size()=0 and transition.guard.oclIsUndefined())]
 		1
-	[elseif (sync  and (transition.synchronization.kind.toString() = 'SEND'))]
-		SyncChannel_send((SyncChannel*) stateChart->[getVariableName(transition.synchronization.syncChannel)/])
-	[elseif (sync and (transition.synchronization.kind.toString() = 'RECEIVE'))]
-		SyncChannel_receive((SyncChannel*) stateChart->[getVariableName(transition.synchronization.syncChannel)/])	
 	[else]
-		[if (not sync and (transition.triggerMessageEvent->notEmpty() or transition.clockConstraints->notEmpty() or transition.guard->notEmpty()))]
-			&&
-		[/if]
 		[comment checks for trigger events /]	
 		[if (transition.triggerMessageEvent->size()>0)]	
 		[for (msg : Message | transition.triggerMessageEvent.message) separator(' && ')]			
@@ -460,6 +460,32 @@
 	    [/if]
 	[/if] 
 [/template]
+
+[template public transitionWithSync (component:Component, rtsc : RealtimeStatechart, transition : Transition)]
+   [for (partnerTransition : Transition | component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).eAllContents(Transition))]
+		[if (not partnerTransition.synchronization.oclIsUndefined() and not (partnerTransition = transition))]
+		[if partnerTransition.synchronization.syncChannel.getVariableName() = transition.synchronization.syncChannel.getVariableName()]
+		[if ((partnerTransition.synchronization.kind = SynchronizationKind::SEND) and (transition.synchronization.kind = SynchronizationKind::RECEIVE))]
+			if (stateChart->[partnerTransition.statechart.getExecutionVerifierName()/])
+				if ([transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), partnerTransition)/] && [transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), transition)/]){
+					[transition(component, partnerTransition)/]
+					[transition(component, transition)/]
+		stateChart->[partnerTransition.statechart.getExecutionVerifierName()/] = false;
+			}
+		[else]
+			if (stateChart->[partnerTransition.statechart.getExecutionVerifierName()/])
+				if ([transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), partnerTransition)/] && [transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), transition)/]){
+					[transition(component, transition)/]
+					[transition(component, partnerTransition)/]
+		stateChart->[partnerTransition.statechart.getExecutionVerifierName()/] = false;
+			}
+		[/if]
+		[/if]
+		[/if]
+
+	[/for]
+[/template]
+
 
 
 [**

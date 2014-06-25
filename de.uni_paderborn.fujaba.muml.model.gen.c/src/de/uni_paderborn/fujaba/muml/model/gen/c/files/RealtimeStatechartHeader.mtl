@@ -82,23 +82,11 @@ struct [getClassName(rtsc)/] {
 		[for (region : Region | rtsc.eAllContents(Region))]
 			[getClassName(rtsc, true)/] [getVariableName(region.embeddedStatechart)/];
 		[/for]
-		[comment]
-		[for (state : State | rtsc.states)]
 
-				[if (not state.oclAsType(State).simple)]
-					[for (region : Region | state.embeddedRegions)]	
-				[getClassName(rtsc, true)/] [getVariableName(region.embeddedStatechart)/];
-						[for (innerState : State | region.embeddedStatechart.states)]
-							[if (not innerState.oclAsType(State).simple)]
-								[for (innerRegion : Region | innerState.embeddedRegions)]	
-				[getClassName(rtsc, true)/] [getVariableName(innerRegion.embeddedStatechart)/];
-								[/for]
-							[/if]
-						[/for]		
-					[/for]
-				[/if]
+		bool_t [rtsc.getExecutionVerifierName()/];
+		[for (region : Region | rtsc.eAllContents(Region))]
+			bool_t [region.embeddedStatechart.getExecutionVerifierName()/];
 		[/for]
-		[/comment]
 	
 		[comment Member variables for the clocks of each region. /]
 		[for (clock : Clock | rtsc.eAllContents(Clock))]

@@ -24,6 +24,7 @@
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::Message]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::operations]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::hybridPorts]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::ContinuousPorts]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::middleware::GlobalIdentifier]
 
 [**
@@ -37,8 +38,10 @@
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 [generateTypeFiles(modelElementCategory, '')/]
 [generatehybridPortFiles(modelElements->at(1).oclAsType(ComponentInstanceConfiguration), '')/]
+[generateContinuousPortFiles(modelElements->at(1).oclAsType(ComponentInstanceConfiguration), '')/]
 [/if]
 [/for]
+
 
 [comment create message file/]
 [generateMessageFiles(aRootNode,'')/]
@@ -77,6 +80,7 @@ int main(){
 			[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
 				[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 				[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
+
 				[/if]
 			[/for]
 		[/if]
@@ -197,6 +201,7 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 //instantiate components of [cInst.getName()/]
 	[cInst.getVariableName()/] = [getCreateMethodName(cInst)/]();
 	[cInst.configurateInstance()/]
+
 [/if]
 [/for]
 [/template]
@@ -215,6 +220,17 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 		[partInstance.getVariableName()/] = [partInstance.getCreateMethodName()/]();
 		[getAddMethodName(cInst.componentType, partInstance.componentPart)/]([cInst.getVariableName()/], [partInstance.getVariableName()/]);
 		[configurateInstance(partInstance)/]
+		[if (partInstance.oclIsKindOf(AtomicComponentInstance))]
+		[for (port : PortInstance | partInstance.portInstances)]
+			[if (port.oclIsTypeOf(HybridPortInstance))]
+				[if (port.portType.oclAsType(HybridPort).inPort)]
+					[partInstance.getVariableName()/]->getterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getReadMethod()/];
+				[else]
+					[partInstance.getVariableName()/]->setterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getWriteMethod()/];
+				[/if]
+			[/if]
+		[/for]
+		[/if]
 		[/if]
 	[/for]
 [/for]
