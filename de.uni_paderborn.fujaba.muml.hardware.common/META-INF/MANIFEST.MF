@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Common
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.common;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -22,5 +22,5 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
  de.uni_paderborn.fujaba.modelinstance.ui,
  org.eclipse.gmf.runtime.diagram.ui.render,
  org.eclipse.ui.ide;bundle-version="3.7.0"
-Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT
+Bundle-Vendor: %Bundle-Vendor
 Import-Package: org.eclipse.gmf.runtime.notation
