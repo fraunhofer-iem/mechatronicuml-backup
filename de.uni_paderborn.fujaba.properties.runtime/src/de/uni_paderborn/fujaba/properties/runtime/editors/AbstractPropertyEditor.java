@@ -31,6 +31,17 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	protected String tooltipMessage = "";
 
+	protected boolean controllingVisibility;
+	
+	public boolean isControllingVisibility() {
+		return controllingVisibility;
+	}
+	
+	public void setControllingVisibility(boolean controllingVisibility) {
+		this.controllingVisibility = controllingVisibility;
+	}
+
+	
 	protected FocusListener focusListener = new FocusAdapter() {
 		public void focusGained(org.eclipse.swt.events.FocusEvent e) {
 			// Write to status bar
@@ -40,6 +51,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	};
 
 	public AbstractPropertyEditor(AdapterFactory adapterFactory) {
+		controllingVisibility = true;
 		if (adapterFactory == null) {
 			adapterFactory = RuntimePlugin.DEFAULT_ADAPTER_FACTORY;
 		}
@@ -97,9 +109,11 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	public void removeVisibilityFilter(IFilter filter) {
 		visibilityFilters.remove(filter);
 	}
-	
 
 	public void updateVisibility(boolean relayout) {
+		if (!isControllingVisibility()) {
+			return;
+		}
 		boolean visibility = true;
 		for (IFilter filter : visibilityFilters) {
 			if (!filter.select(input)) {

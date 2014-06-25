@@ -32,5 +32,11 @@ public interface IPropertyEditor {
 	void setFocus();
 
 	void setTooltipMessage(String message);
+	
+	boolean isControllingVisibility();
+	
+	void setControllingVisibility(boolean controllingVisibility);
+
+
 
 }

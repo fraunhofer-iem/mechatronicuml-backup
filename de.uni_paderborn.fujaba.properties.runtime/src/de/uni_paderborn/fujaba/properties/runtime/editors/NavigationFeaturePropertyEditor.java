@@ -68,13 +68,13 @@ public class NavigationFeaturePropertyEditor extends
 	
 	@Override
 	public void updateVisibility(boolean relayout, boolean setDefaultValue) {
-		navigatedEditor.updateVisibility(relayout);
+		super.updateVisibility(relayout, setDefaultValue);
 	}
 	
 	
 	@Override
 	public void updateVisibility(boolean relayout) {
-		navigatedEditor.updateVisibility(relayout);
+		super.updateVisibility(relayout);
 	}
 	
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
@@ -86,7 +86,9 @@ public class NavigationFeaturePropertyEditor extends
 	}
 
 	protected ObjectPropertyEditor createNavigatedEditor() {
-		return new ObjectPropertyEditor(null, adapterFactory, "null", initiallyOpen);
+		ObjectPropertyEditor editor = new ObjectPropertyEditor(null, adapterFactory, "null", initiallyOpen);
+		editor.setControllingVisibility(false);
+		return editor;
 	}
 
 	@Override
@@ -353,12 +355,12 @@ public class NavigationFeaturePropertyEditor extends
 	@Override
 	public void addVisibilityFilter(IFilter filter) {
 		super.addVisibilityFilter(filter);
-		navigatedEditor.addVisibilityFilter(filter);
+		//navigatedEditor.addVisibilityFilter(filter);
 	}
 	
 	@Override
 	public void removeVisibilityFilter(IFilter filter) {
 		super.removeVisibilityFilter(filter);
-		navigatedEditor.removeVisibilityFilter(filter);
+		//navigatedEditor.removeVisibilityFilter(filter);
 	}
 }
