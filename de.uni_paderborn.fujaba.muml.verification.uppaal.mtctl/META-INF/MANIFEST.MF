@@ -23,6 +23,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.util,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.common,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.util
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
