@@ -39,7 +39,7 @@
 [for (port : PortInstance | ci.portInstances) ? (oclIsKindOf(ContinuousPortInstance))]
 	[let cpi  :ContinuousPortInstance = port.oclAsType(ContinuousPortInstance)]
 	[if (cpi.portType.oclAsType(ContinuousPort).inPort)]
-	[cpi.getWriteMethod()/]([cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] value);
+	void [cpi.getWriteMethod()/]([cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] value);
 	[else]
 	[cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] [getReadMethod(cpi)/]();
 	[/if]
@@ -54,7 +54,7 @@
 
 [file (path+'continuousComponents/ContImplementations.c',false, 'UTF-8')]
 #include "ContImplementations.h"
-/** [protected ('user includes **/')] 
+/** [protected ('user includes **/')]
 
 /**[/protected]**/
 [for (ci: ComponentInstance | cic.componentInstances) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
@@ -62,14 +62,14 @@
 	[let cpi  :ContinuousPortInstance = port.oclAsType(ContinuousPortInstance)]
 	[if (cpi.portType.oclAsType(ContinuousPort).inPort)]
 	void [cpi.getWriteMethod()/]([cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] value){
-	/** [protected (cpi.getWriteMethod())] 
+	/** [protected (cpi.getWriteMethod()+' **/')] 
 
 	/**[/protected]**/
 
 }
 	[else]
 	[cpi.portType.oclAsType(ContinuousPort).dataType.getTypeName()/] [getReadMethod(cpi)/](){
-	/** [protected (cpi.getReadMethod())] 
+	/** [protected (cpi.getReadMethod()+' **/')]
 
 	/**[/protected]**/
 	

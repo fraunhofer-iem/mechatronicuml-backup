@@ -48,7 +48,7 @@
 		// Processing the statechart
 		////////////////////////////////////////////////////////////////////////////////
 	
-		[verifySyncChannel(component, rtsc)/]
+		[comment verifySyncChannel(component, rtsc)/]
 
 		
 		[process(component, rtsc)/]
@@ -58,9 +58,6 @@
 		[isInState(component, rtsc)/]
 		[isTerminated(component, rtsc)/]
 
-		[comment getterAndSetter(component, statechart)/]
-
-		[comment connect(component, statechart)/]
 	[/file]
 [/template]
 
@@ -87,10 +84,7 @@
 	#include <stdlib.h>
 
 	#include "[getClassName(rtsc).toLowerFirst()/].h"
-[comment TODO/]
-	[comment for (syncChannel : SynchronizationChannel | rtsc.states->select(channels->size() > 0)->collect(channels)->select(parameters->size() > 0)->asSet())/]
-[comment getFileName(syncChannel., true)/]
-	[comment /for/]
+
 [/template]
 
 
@@ -180,17 +174,9 @@
 	[getClassName(rtsc)/]* [getCreateMethodName(rtsc)/]([getClassName(component)/]* parentComponent) {
 		[getClassName(rtsc)/]* stateChart = ([getClassName(rtsc)/]*)malloc(sizeof([getClassName(rtsc)/]));
 		if (stateChart != NULL) {
-			stateChart->parentComponent = parentComponent;
-		
-			[for (syncChannel : SynchronizationChannel | rtsc.eAllContents(State)->collect(channels)->asSet())]
-				stateChart->[getVariableName(syncChannel)/] = [getCreateMethodName(syncChannel)/]();
-			[/for]			
+			stateChart->parentComponent = parentComponent;		
 	/*
-			if (stateChart->parentComponent != NULL
-				[for (syncChannel : SynchronizationChannel | rtsc.eAllContents(State)->collect(channels)->asSet())]
-					&& stateChart->[getVariableName(syncChannel)/] != NULL				
-				[/for]			 
-			) {
+			if (stateChart->parentComponent != NULL) {
 				[getInitializeMethodName(rtsc)/](stateChart);
 			} else {
 				fprintf(stderr, "Initialization of [getClassName(rtsc)/] failed\n");
@@ -213,9 +199,7 @@
 [template private destroy(component : Component, rtsc:RealtimeStatechart)]
 	void [getDestroyMethodName(rtsc)/]([getSuperClassName(rtsc)/]* stateChart) {
 		if(stateChart != NULL) {
-		[for (syncChannel : SynchronizationChannel | rtsc.eAllContents(State)->collect(channels)->asSet())]
-			[getDestroyMethodName(syncChannel)/](stateChart->[getVariableName(syncChannel)/]);
-		[/for]
+
 
 			free(stateChart);
 		}
@@ -259,10 +243,6 @@
 						[else]
 							// nothing to do
 						[/if]
-
-						[if (state.channels->size() > 0)]
-							[getVerifyMethodName(state)/](stateChart);
-						[/if]
 					
 						[comment Execute the inner regions /]	
 						[for (reg : Region | state.embeddedRegions->sortedBy(priority)->reverse())]
@@ -282,36 +262,7 @@
 		}		
 [/template]
 
-[**
- * Generates the verify methods for each state with synchronization channels. This methods checks, 
- * if a synchornization channel is enabled
- * 
- * @param component
- * @param statechart
-*/]
-[template private verifySyncChannel (component : Component, rtsc : RealtimeStatechart) post(cdtbeautifier())]
-	[for (state : State | rtsc.eAllContents(State)) ? (state.channels->size()>0)]
-		static void [getVerifyMethodName(state)/]([getSuperClassName(rtsc)/]* stateChart) {
-			[for (syncChannel : SynchronizationChannel | state.channels)]
-				// [getName(syncChannel)/] synchronization channel
-				[for (region : Region |	state.embeddedRegions->sortedBy(priority)->reverse())]
-					[for (transition : Transition | region.embeddedStatechart->collect(transitions)) separator (' else ') ? (transition.synchronization.kind.toString() = 'SEND' and transition.synchronization.syncChannel = syncChannel)]
-						if (stateChart->[getVariableName(transition.statechart)/] == [getName(transition.source.oclAsType(State))/] [transitionCondition(component, rtsc, transition)/]) {							
-							[getClassName(syncChannel)/]_enableSend(stateChart->[getVariableName(syncChannel)/]);
-						}									
-					[/for]					
-				[/for]
-				[for (region : Region |	state.embeddedRegions->sortedBy(priority)->reverse())]
-					[for (transition : Transition | region.embeddedStatechart->collect(transitions)) separator (' else ') ? (transition.synchronization.kind.toString() = 'RECEIVE' and transition.synchronization.syncChannel = syncChannel)]
-						if (stateChart->[getVariableName(transition.statechart)/] == [getName(transition.source.oclAsType(State))/] [transitionCondition(component, statechart, transition)/]) {
-							SyncChannel_enableReceive(stateChart->[getVariableName(syncChannel)/]);
-						}				
-					[/for]
-				[/for]
-			[/for]			
-		}
-	[/for]
-[/template]
+
 
 [** generates all needed commands for fireing a transition. This includes all events, actions
  * clock resets and changing the state 
@@ -427,7 +378,6 @@
  * @param component
  * @param rtsc the realtime statechart
  * @param transition the transition
- * @param sync is a sync channel used?
 */]
 [template public transitionCondition (component:Component, rtsc : RealtimeStatechart, transition : Transition)]
 	[if (transition.triggerMessageEvent.oclIsUndefined() and transition.clockConstraints->size()=0 and transition.guard.oclIsUndefined())]

@@ -42,8 +42,6 @@
 		[processStep(component)/]
 	
 		[getterAndSetter(component)/]
-	
-		[createHybridPortMethods(component)/]
 
 		[queueMethods(component)/]
 
@@ -374,28 +372,7 @@
 [/template]
 
 
-[**
- * Generates the queue methods for multiparts.
- * 
- * @param component
-*/]
-[template private createHybridPortMethods (component : Component) post (trim())]
-[for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
-	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
-	//set value of hybrid port [hybridPort.getName()/]
-	void setValueOf_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value){
-		component->stateChart->[hybridPort.getVariableName()/] = value;
-	}
 
-	//get value of hybrid port [hybridPort.getName()/]
-	[hybridPort.dataType.getTypeName()/] getValueOf_[hybridPort.getName()/]([component.getClassName()/] *component){
-		return component->stateChart->[hybridPort.getVariableName()/];
-	}
-	[/let]
-[/for]
-
-
-[/template]
 
 
 [template private generatePorts(component : Component) post (trim())]

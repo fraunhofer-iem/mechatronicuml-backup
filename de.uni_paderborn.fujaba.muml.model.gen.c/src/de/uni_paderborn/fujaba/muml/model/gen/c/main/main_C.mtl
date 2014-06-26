@@ -23,7 +23,6 @@
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::component]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::Message]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::operations]
-[import de::uni_paderborn::fujaba::muml::model::gen::c::files::hybridPorts]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::ContinuousPorts]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::middleware::GlobalIdentifier]
 
@@ -37,7 +36,6 @@
 [comment create files for every component type/]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 [generateTypeFiles(modelElementCategory, '')/]
-[generatehybridPortFiles(modelElements->at(1).oclAsType(ComponentInstanceConfiguration), '')/]
 [generateContinuousPortFiles(modelElements->at(1).oclAsType(ComponentInstanceConfiguration), '')/]
 [/if]
 [/for]

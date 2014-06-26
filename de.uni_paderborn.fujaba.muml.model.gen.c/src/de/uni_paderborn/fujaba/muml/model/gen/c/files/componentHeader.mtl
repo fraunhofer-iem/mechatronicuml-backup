@@ -43,8 +43,6 @@
 			[processStep(component)/]
 		
 			[getterAndSetter(component)/]
-	
-			[createHybridPortMethods(component)/]
 		
 			[queueMethods(component)/]
 	
@@ -234,25 +232,5 @@ void [getAddMethodName(component,compPart)/]([getClassName(component)/]* compone
 void [getRemoveMethodName(component,compPart)/]([getClassName(compPart)/]* component, [getClassName(compPart)/]* multiPart);
 [/for]
 [/if]
-[/template]
-
-
-[template private createHybridPortMethods (component : Component) post (trim())]
-[for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
-	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
-	
-	void setValueOf_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value);
-	[hybridPort.dataType.getTypeName()/] getValueOf_[hybridPort.getName()/]([component.getClassName()/] *component);
-	[/let]
-[/for]
-[/template]
-
-[**
- * 
- * @param component
- * @param statechart
-*/]
-[template private connect (component : Component) post (trim())]
-	[comment @TODO only for continous ports?!/]
 [/template]
 
