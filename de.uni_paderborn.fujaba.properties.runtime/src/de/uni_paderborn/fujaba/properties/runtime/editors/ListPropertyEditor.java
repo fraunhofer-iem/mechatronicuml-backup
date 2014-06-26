@@ -233,7 +233,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		// this cast is safe, as we assert this in the constructor.
 		EReference reference = (EReference) feature;
 		if (reference.isContainment()) {
-			RuntimePlugin.showCreateElementDialog(adapterFactory, element, feature);
+			RuntimePlugin.showCreateElementDialog(adapterFactory, element, feature, creationFilters);
 		} else {
 			final Collection<?> currentValues = (Collection<?>) value;
 			
