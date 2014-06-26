@@ -45,9 +45,6 @@
 
 		[queueMethods(component)/]
 
-		[comment @TODO connect(component, statechart)/]
-
-		[comment @TODO introspection(component)/]
 	[/file]
 [/template]
 
@@ -61,9 +58,6 @@
 	#include <stdio.h>
 	[if component.oclIsKindOf(AtomicComponent)]
 		#include "../[getFileName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart), true, false)/]"
-	[/if]
-	[if component.eAllContents(HybridPort)->size()>0]
-	#include "../hybridPorts/hybridPortImplOf[component.getClassName()/].h"
 	[/if]
 
 	#include "[getClassName(component).toLowerFirst()/].h"

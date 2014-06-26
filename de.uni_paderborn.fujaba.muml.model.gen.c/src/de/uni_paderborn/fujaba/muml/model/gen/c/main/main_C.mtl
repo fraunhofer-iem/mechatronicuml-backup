@@ -108,16 +108,7 @@ while (1){
 //general includes
 #include <stdio.h>
 #include <stdlib.h>
-
-
-[comment]
-//including all files for used Realtime Statecharts
-[for (modelElementCategory : ModelElementCategory | root.categories)]
-[for (rtsc : RealtimeStatechart | modelElementCategory.modelElements.oclAsType(RealtimeStatechart))]
-#include "[rtsc.getFileName(true, false)/]"
-[/for]
-[/for]
-[/comment]
+#include "continuousComponents/ContImplementations.h"
 //including all files for used Components
 [for (modelElementCategory : ModelElementCategory | root.categories)]
 	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]

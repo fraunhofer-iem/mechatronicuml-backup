@@ -45,8 +45,7 @@
 			[getterAndSetter(component)/]
 		
 			[queueMethods(component)/]
-	
-			[comment @TODO connect(component)/]
+
 
 
 		#endif /* [getHeaderDefine(component)/] */
@@ -63,23 +62,15 @@
 	[if (component.eAllContents(DiscretePort)->size()>0)]
 		#include "../lib/ports/discretePort.h"
 		#include "../msg/messages.h"
-		[comment]
-		[let portList : Sequence(DiscretePort) = component.eAllContents(DiscretePort)]
-		[for (rep: MessageTypeRepository | portList.receiverMessageTypes->union(portList.senderMessageTypes).repository->asOrderedSet())]
-		#include "../[rep.getFileName(true)/]"
-		[/for]
-		[/let]
-		[/comment]
+
 	[/if]
-	[if (component.ports.eAllContents(ContinuousPort)->size() > 0)]
-		#warning ContinuosPorts are not supported yet.		
+	[if (component.ports.eAllContents(HybridPort)->size() > 0)]
+		#include "continuousComponents/ContImplementations.h"	
 	[/if]
 	[if component.oclIsKindOf(StructuredComponent)]	
 	[if (component.oclAsType(StructuredComponent).connectors->size() > 0)]
 		#include "../lib/discreteConnection.h"
 		#include "../lib/discreteConnectionList.h"
-	[comment @TODO only inlcude, if needed/]
-		#include "../lib/continuousConnection.h"
 	[/if]	
 
 
