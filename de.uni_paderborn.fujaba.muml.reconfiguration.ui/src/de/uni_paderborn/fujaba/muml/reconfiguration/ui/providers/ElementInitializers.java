@@ -95,17 +95,17 @@ public class ElementInitializers extends de.uni_paderborn.fujaba.muml.component.
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
-	/**
-	 * @generated
-	 */
+
+
 	public static de.uni_paderborn.fujaba.muml.component.diagram.providers.ElementInitializers getInstance() {
 		de.uni_paderborn.fujaba.muml.component.diagram.providers.ElementInitializers cached = de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.getInstance().getElementInitializers();
-		if (cached == null) {
+		//set the cached element initializer to this one
+		if (cached == null || !(cached instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ElementInitializers)) {
 			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().setElementInitializers(
-							cached = new ElementInitializers());
+							cached = new de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ElementInitializers());
 		}
-		return cached;
+		return (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ElementInitializers)cached;
 	}
 }

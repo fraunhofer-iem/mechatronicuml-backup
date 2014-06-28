@@ -174,3 +174,8 @@ constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
 		upperBound := new NaturalNumber(uBound, false);
 	} endif;
 }
+
+constructor ModelElementCategory::ModelElementCategory(theKey : String, theName : String){
+	name := theName;
+	key := theKey;
+}

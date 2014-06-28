@@ -27,6 +27,9 @@ property genMsgTypeFinished : String = 'finished';
 property genMsgTypeExecuteReconf : String = 'executeReconf';
 property genMsgTypeConfirmRequest : String = 'confirmRequest';
 property genMsgTypeConfirm : String = 'confirm';
+property genMsgTypeSetup : String = 'setup';
+property genMsgTypeFading : String = 'fading';
+property genMsgTypeTeardown : String = 'teardown';
 
 -- names of parameters of the reconfiguration message types that are NOT user defined
 property genParamExecute_Reconf : String = 'reconf';
@@ -114,16 +117,22 @@ property genSyncChanExecutorFinished : String = 'finished';
 property genSyncChanExecutorPerformReconf : String = 'performReconf';
 property genSyncChanExecutorFinish : String = 'finish';
 property genSyncChanExecutorFinished2PC : String = 'finished2PC';
+property genSyncChanExecutorPerformSetup : String = 'performSetup';
+property genSyncChanExecutorFinishPhase : String = 'finishPhase';
+property genSyncChanExecutorPerformFading : String = 'performFading';
+property genSyncChanExecutorPerformTeardown : String = 'performTeardown';
 property genSyncChanExecutorEmbeddedCISendReq : String = 'sendRequest';
 property genSyncChanExecutorEmbeddedCIReplyRecv : String = 'replyReceived';
 property genSyncChanExecutorEmbeddedCISendC : String = 'sendCommit';
 property genSyncChanExecutorEmbeddedCISendA : String = 'sendAbort';
 property genSyncChanExecutorEmbeddedCIReconfFinished : String = 'reconfFinished';
 
+-- names of the executor synchronization channels that are depending on user-defined messages
 property genSyncChanExecutorCheckPrefix : String = 'check';
 
 -- names of executor internal variables
 property genVarExecutor_Reconfiguration : String = 'reconfiguration';
+property genVarExecutor_SinglePhase : String = 'singlePhase';
 property genVarExecutor_TwoPCResult : String = 'twoPCResult';
 property genVarExecutor_TmpCommitTime : String = 'tmpCommitTime';
 property genVarExecutor_Events_Deadline : String = 'deadline';
@@ -162,6 +171,11 @@ property genStateExecutor_Parent_WaitForParent : String = 'WaitForParent';
 property genStateExecutor_Parent_Aborted : String = 'Aborted';
 property genStateExecutor_Parent_FinalizeAbort : String = 'FinalizeAbort';
 property genStateExecutor_Parent_Execution : String = 'Execution';
+property genStateExecutor_Parent_ExecuteSetup : String = 'ExecuteSetup';
+property genStateExecutor_Parent_WaitFading : String = 'WaitFading';
+property genStateExecutor_Parent_ExecuteFading : String = 'ExecuteFading';
+property genStateExecutor_Parent_WaitTeardown : String = 'WaitTeardown';
+property genStateExecutor_Parent_ExecuteTeardown : String = 'ExecuteTeardown';
 
 property genStateExecutor_Events_Idle : String = 'Idle';
 property genStateExecutor_Events_TimeOut : String = 'TimeOut';
