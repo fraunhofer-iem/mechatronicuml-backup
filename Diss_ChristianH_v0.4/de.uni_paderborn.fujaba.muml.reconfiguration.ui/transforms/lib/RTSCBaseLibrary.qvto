@@ -25,6 +25,16 @@ library RTSCBaseLibrary;
 
 ------------ helper functions --------------
 
+-- returns the model element category for real-time statecharts.
+helper getOrCreateRTSCCategory(inout rootNode : RootNode) : ModelElementCategory {
+	var rtscCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+	if(rtscCategory.oclIsUndefined()){
+		rtscCategory := new ModelElementCategory('de.uni_paderborn.fujaba.muml.realtimestatechart.category', 'realtimestatechart');
+		rootNode.categories += rtscCategory;
+	};
+	return rtscCategory;
+}
+
 -- adds a region including an embedded RTSC with the specified name to the specified state
 helper createEmbeddedRTSC(in name : String, inout state : State, in priority : Integer) : RealtimeStatechart{
 	var rtsc : RealtimeStatechart := new RealtimeStatechart(name);
@@ -144,11 +154,6 @@ helper getSynchronizationChannel(in rtsc : RealtimeStatechart, in channelName : 
 }
 
 ------------ helper queries ---------------
-
--- returns the model element category for real-time statecharts.
-query RootNode::getRTSCCategory() : ModelElementCategory {
-	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
-}
 
 -- returns the variable with the given name that is accessible from within the realtime statechart
 query RealtimeStatechart::getVariableByName(in theName : String) : Variable{

@@ -56,7 +56,7 @@ helper createExecutorImplementation(inout theComponent : ReconfigurableStructure
 	theComponent.executor.behavior := rtsc;
 	
 	-- add statechart to category
-	rootNode.getRTSCCategory().modelElements += rtsc;
+	getOrCreateRTSCCategory(rootNode).modelElements += rtsc;
 	
 	-- generate static statechart frame (black parts in the generation template)
 	generateStaticStatechartFrame(rootNode, theComponent.executor);
@@ -92,6 +92,9 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup);
+	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading);
+	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown);
 	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	buffer := new MessageBuffer(1);
@@ -103,6 +106,9 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
 	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup);
+	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading);
+	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown);
 	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	buffer := new MessageBuffer(1);
@@ -125,8 +131,13 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
 	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup);
+	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading);
+	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown);
 	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+
+
 	buffer := new MessageBuffer(1);
 	buffer.messageType := executorEmbeddedCIPort.receiverMessageTypes;
 	executorEmbeddedCIPort.receiverMessageBuffer := buffer;
@@ -172,6 +183,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	executorRTSC.states += initialState;
 	
 	-- add variables
+	executorRTSC.variables += new Variable(genVarExecutor_SinglePhase, rootNode.getPrimitiveType(boolType));
 	executorRTSC.variables += new Variable(genVarExecutor_Reconfiguration, rootNode.getPrimitiveType(intType));
 	executorRTSC.variables += new Variable(genVarExecutor_TwoPCResult, rootNode.getPrimitiveType(boolType));
 	executorRTSC.variables += new Variable(genVarExecutor_TmpCommitTime, rootNode.getPrimitiveType(intType));
@@ -186,7 +198,10 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformReconf, null);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinish, rootNode.getPrimitiveType(boolType));
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinished2PC, null);
-
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformSetup, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinishPhase, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformFading, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformTeardown, null);
 	
 	-- generate embedded statecharts
 	var parentSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_Parent, initialState, 2);
@@ -246,6 +261,21 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 	
 	var executionState : State := new State(genStateExecutor_Parent_Execution);
 	rtsc.states += executionState;
+	
+	var executeSetupState : State := new State(genStateExecutor_Parent_ExecuteSetup);
+	rtsc.states += executeSetupState;
+	
+	var waitFadingState : State := new State(genStateExecutor_Parent_WaitFading);
+	rtsc.states += waitFadingState;
+	
+	var executeFadingState : State := new State(genStateExecutor_Parent_ExecuteFading);
+	rtsc.states += executeFadingState;
+	
+	var waitTeardownState : State := new State(genStateExecutor_Parent_WaitTeardown);
+	rtsc.states += waitTeardownState;
+	
+	var executeTeardownState : State := new State(genStateExecutor_Parent_ExecuteTeardown);
+	rtsc.states += executeTeardownState;
 	
 	-- create transitions
 	var currentTrans : Transition = null;
@@ -318,6 +348,48 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 	
 	-- Execution -> Idle
 	currentTrans := new Transition(executionState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinished), SynchronizationKind::RECEIVE, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForParent -> ExecuteSetup
+	currentTrans := new Transition(waitForParentState, executeSetupState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformSetup), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteSetup -> WaitFading
+	currentTrans := new Transition(executeSetupState, waitFadingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinishPhase), SynchronizationKind::RECEIVE, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- WaitFading -> ExecuteFading
+	currentTrans := new Transition(waitFadingState, executeFadingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformFading), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteFading -> WaitTeardown
+	currentTrans := new Transition(executeFadingState, waitTeardownState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinishPhase), SynchronizationKind::RECEIVE, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- WaitTeardown -> ExecuteTeardown
+	currentTrans := new Transition(waitTeardownState, executeTeardownState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformTeardown), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteTeardown -> Idle
+	currentTrans := new Transition(executeTeardownState, idleState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinished), SynchronizationKind::RECEIVE, 
 			null);
 	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);

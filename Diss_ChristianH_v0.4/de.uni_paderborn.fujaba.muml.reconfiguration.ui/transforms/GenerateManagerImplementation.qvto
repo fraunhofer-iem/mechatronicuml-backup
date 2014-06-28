@@ -58,7 +58,7 @@ helper createManagerImplementation(inout theComponent : ReconfigurableStructured
 	theComponent.manager.behavior := rtsc;
 	
 	-- add statechart to category
-	rootNode.getRTSCCategory().modelElements += rtsc;
+	getOrCreateRTSCCategory(rootNode).modelElements += rtsc;
 	
 	--generate static statechart frame (black parts in the generation template)
 	generateStaticStatechartFrame(rootNode, theComponent.manager);
