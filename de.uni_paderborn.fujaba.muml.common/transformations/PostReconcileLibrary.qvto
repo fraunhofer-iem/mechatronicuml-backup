@@ -47,7 +47,6 @@ mapping inout GenEditorGenerator::reconcilePropsheet() {
 			self.diagram.topLevelNodes.modelFacet[TypeModelFacet]->forEach(typeModelFacet) {
 				
 				allPropertyGenerators.packages.classes->select(c | c.genClass.ecoreClass.isSuperTypeOf(typeModelFacet.metaClass.ecoreClass)).properties->forEach(prop) {
-					logConsole("huhu");
 						
 					if ((not prop.initializeOCLExpression.oclIsUndefined()) and (prop.initializeOCLExpression != "")) then {
 					
