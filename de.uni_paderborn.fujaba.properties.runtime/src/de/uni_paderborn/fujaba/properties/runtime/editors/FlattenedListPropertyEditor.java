@@ -201,11 +201,13 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 				selectedClass = eClasses.get(0);
 			}
 
-			classViewer.setInput(eClasses);
-			if (!eClasses.isEmpty()) {
-				classViewer.setSelection(new StructuredSelection(selectedClass));
-			} else {
-				combo.setVisible(false);
+			if (classViewer != null) {
+				classViewer.setInput(eClasses);
+				if (!eClasses.isEmpty()) {
+					classViewer.setSelection(new StructuredSelection(selectedClass));
+				} else if (combo != null) {
+					combo.setVisible(false);
+				}
 			}
 		}
 

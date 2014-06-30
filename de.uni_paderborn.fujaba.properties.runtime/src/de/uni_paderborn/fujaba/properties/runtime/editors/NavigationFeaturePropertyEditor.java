@@ -204,12 +204,14 @@ public class NavigationFeaturePropertyEditor extends
 			}
 		}
 
-		classViewer.setInput(eClasses);
-		if (!eClasses.isEmpty()) {
-			classViewer.setSelection(new StructuredSelection(selectedClass));
+		if (classViewer != null) {
+			classViewer.setInput(eClasses);
+			if (!eClasses.isEmpty()) {
+				classViewer.setSelection(new StructuredSelection(selectedClass));
+			}
+			
+			classViewer.getCombo().setVisible(shouldShowClassesCombo());
 		}
-		
-		classViewer.getCombo().setVisible(shouldShowClassesCombo());
 	}
 
 	protected boolean shouldShowClassesCombo() {
