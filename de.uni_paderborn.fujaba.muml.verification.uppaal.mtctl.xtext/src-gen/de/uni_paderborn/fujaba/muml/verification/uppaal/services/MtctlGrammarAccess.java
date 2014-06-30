@@ -1267,18 +1267,6 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getMumlElemExprParserRuleCall() { return cMumlElemExprParserRuleCall; }
 	}
 
-	public class InstanceTypeMapExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InstanceTypeMapExpr");
-		private final RuleCall cMumlElemExprParserRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//InstanceTypeMapExpr returns mtctl::MapExpr:
-		//	MumlElemExpr;
-		public ParserRule getRule() { return rule; }
-
-		//MumlElemExpr
-		public RuleCall getMumlElemExprParserRuleCall() { return cMumlElemExprParserRuleCall; }
-	}
-
 	public class BufferMessageCountExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BufferMessageCountExpr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1625,14 +1613,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cInstancesKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTypeInstanceTypeMapExprParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final RuleCall cTypeMumlElemExprParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		private final Keyword cGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//InstanceSetExpr returns mtctl::SetExpr:
-		//	{mtctl::InstanceSetExpr} "Instances" "<" type=InstanceTypeMapExpr ">";
+		//	{mtctl::InstanceSetExpr} "Instances" "<" type=MumlElemExpr ">";
 		public ParserRule getRule() { return rule; }
 
-		//{mtctl::InstanceSetExpr} "Instances" "<" type=InstanceTypeMapExpr ">"
+		//{mtctl::InstanceSetExpr} "Instances" "<" type=MumlElemExpr ">"
 		public Group getGroup() { return cGroup; }
 
 		//{mtctl::InstanceSetExpr}
@@ -1644,11 +1632,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"<"
 		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
 
-		//type=InstanceTypeMapExpr
+		//type=MumlElemExpr
 		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
-		//InstanceTypeMapExpr
-		public RuleCall getTypeInstanceTypeMapExprParserRuleCall_3_0() { return cTypeInstanceTypeMapExprParserRuleCall_3_0; }
+		//MumlElemExpr
+		public RuleCall getTypeMumlElemExprParserRuleCall_3_0() { return cTypeMumlElemExprParserRuleCall_3_0; }
 
 		//">"
 		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
@@ -1806,7 +1794,6 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private StatechartMapExprElements pStatechartMapExpr;
 	private BufferMapExprElements pBufferMapExpr;
 	private MessageMapExprElements pMessageMapExpr;
-	private InstanceTypeMapExprElements pInstanceTypeMapExpr;
 	private BufferMessageCountExprElements pBufferMessageCountExpr;
 	private SourceStateExprElements pSourceStateExpr;
 	private TargetStateExprElements pTargetStateExpr;
@@ -2284,16 +2271,6 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMessageMapExprAccess().getRule();
 	}
 
-	//InstanceTypeMapExpr returns mtctl::MapExpr:
-	//	MumlElemExpr;
-	public InstanceTypeMapExprElements getInstanceTypeMapExprAccess() {
-		return (pInstanceTypeMapExpr != null) ? pInstanceTypeMapExpr : (pInstanceTypeMapExpr = new InstanceTypeMapExprElements());
-	}
-	
-	public ParserRule getInstanceTypeMapExprRule() {
-		return getInstanceTypeMapExprAccess().getRule();
-	}
-
 	//BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
 	//	"bufferMessageCount" "(" buffer=BufferMapExpr ")";
 	public BufferMessageCountExprElements getBufferMessageCountExprAccess() {
@@ -2377,7 +2354,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InstanceSetExpr returns mtctl::SetExpr:
-	//	{mtctl::InstanceSetExpr} "Instances" "<" type=InstanceTypeMapExpr ">";
+	//	{mtctl::InstanceSetExpr} "Instances" "<" type=MumlElemExpr ">";
 	public InstanceSetExprElements getInstanceSetExprAccess() {
 		return (pInstanceSetExpr != null) ? pInstanceSetExpr : (pInstanceSetExpr = new InstanceSetExprElements());
 	}

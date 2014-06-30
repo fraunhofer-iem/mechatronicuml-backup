@@ -1,8 +1,6 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.scoping;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
@@ -14,30 +12,10 @@ import org.eclipse.xtext.scoping.impl.AbstractScopeProvider;
 
 import com.google.common.base.Function;
 
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.common.naming.MumlQualifiedNameProvider;
 import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
-import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
-import de.uni_paderborn.fujaba.muml.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap;
@@ -56,6 +34,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExp
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.common.MtctlModelElementProvider;
 
 /**
  * Provides scoping rules for Mtctl.
@@ -63,17 +42,8 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSet
  */
 public class MtctlScopeProvider extends AbstractScopeProvider {
 	private static MtctlScopeProvider instance = null;
-	protected Set<State> states = null; //set of states in realtimestatecharts that are available in the current top-level muml element
-	protected Set<Variable> variables = null;
-	protected Set<Clock> clocks = null;
-	protected Set<MessageType> messageTypes = null;
-	protected Set<MessageBuffer> buffers = null;
-	protected Set<Transition> transitions = null;
-	protected Set<RealtimeStatechart> statecharts = null;
-	protected Set<ConnectorEndpoint> connectorEndpoints = null;
-	protected Set<ConnectorEndpointInstance> connectorEndpointInstances = null;
-	protected Set<AtomicComponentInstance> componentInstances = null;
-	protected Set<AtomicComponent> components = null;
+	
+	private MtctlModelElementProvider elementProvider = null;
 	private EObject scope = null;
 	
 	/**
@@ -103,7 +73,6 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	
 	private MtctlScopeProvider() {
 		super();
-		initSets();
 	}
 	
 	/**
@@ -127,7 +96,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 		
 		//Add states from the muml model
-		scope.addAll(states);
+		scope.addAll(elementProvider.getStates());
 		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context); // returns the closest quantifier in the hierarchy of quantifiers
@@ -155,7 +124,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
-		scope.addAll(transitions);
+		scope.addAll(elementProvider.getTransitions());
 		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
@@ -182,7 +151,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add states from the muml model
-		scope.addAll(messageTypes);
+		scope.addAll(elementProvider.getMessageTypes());
 		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
@@ -209,7 +178,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add states from the muml model
-		scope.addAll(buffers);
+		scope.addAll(elementProvider.getBuffers());
 		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
@@ -236,8 +205,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add clocks and variables from the model
-		scope.addAll(clocks);
-		scope.addAll(variables);
+		scope.addAll(elementProvider.getClocks());
+		scope.addAll(elementProvider.getVariables());
 		
 		//Add BoundVariables for clocks
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
@@ -260,7 +229,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @return the scope
 	 */
 	public Set<? extends EObject> getScopeStatechart(EObject context, EReference reference) {
-		return statecharts;
+		return elementProvider.getStatecharts();
 	}
 	
 	/**
@@ -268,30 +237,36 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	public Set<? extends EObject> getScopeInstanceTypes(EObject context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
-		scope.addAll(connectorEndpoints);
-		scope.addAll(components);
+		scope.addAll(elementProvider.getConnectorEndpoints());
+		scope.addAll(elementProvider.getComponents());
 		
 		return scope;
 	}
 	
 	/**
 	 * Returns the scope when looking for an instance (ConnectorEndpointInstance or AtomicComponentInstance)
+	 * 
 	 */
-	public Set<? extends EObject> getScopeInstances(EObject context, EReference reference) {
+	public Set<? extends EObject> getScopeInstances(MumlElemExpr context, EReference reference) {
 		Set<EObject> scope = new HashSet<EObject>();
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
-		//Add connector endpoint instances from the model
-		scope.addAll(connectorEndpointInstances);
-		scope.addAll(componentInstances);
+		//Add instances from the model
+		for (EObject instance : elementProvider.getAllInstances())
+			if (elementProvider.getInstanceType(instance) == elementProvider.getInstanceType(context.getElem()))
+				scope.add(instance);
+		
 		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof InstanceSetExpr)
 				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
-					scope.add(parentQuantifier.getVar());
-					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+					MumlElemExpr type = ((InstanceSetExpr) parentQuantifier.getVar().getSet()).getType();
+					if (type.getElem() == elementProvider.getInstanceType(context.getElem())) { //add only if referenced type fits 
+						scope.add(parentQuantifier.getVar());
+						namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+					}
 				}
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
@@ -310,16 +285,16 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add elements from the model
-		scope.addAll(clocks);
-		scope.addAll(variables);
-		scope.addAll(states);
-		scope.addAll(transitions);
-		scope.addAll(messageTypes);
-		scope.addAll(buffers);
-		scope.addAll(componentInstances);
-		scope.addAll(components);
-		scope.addAll(connectorEndpointInstances);
-		scope.addAll(connectorEndpoints);
+		scope.addAll(elementProvider.getClocks());
+		scope.addAll(elementProvider.getVariables());
+		scope.addAll(elementProvider.getStates());
+		scope.addAll(elementProvider.getTransitions());
+		scope.addAll(elementProvider.getMessageTypes());
+		scope.addAll(elementProvider.getBuffers());
+		scope.addAll(elementProvider.getComponentInstances());
+		scope.addAll(elementProvider.getComponents());
+		scope.addAll(elementProvider.getConnectorEndpointInstances());
+		scope.addAll(elementProvider.getConnectorEndpoints());
 		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
@@ -356,7 +331,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			return IScope.NULLSCOPE;
 		
 		if (context instanceof MumlElemExpr && reference != null && "instance".equals(reference.getName()))
-			return createScope(getScopeInstances(context, reference));
+			return createScope(getScopeInstances((MumlElemExpr) context, reference));
 		
 		//The requested scope might be for a MumlElemExpr. 
 		if (context instanceof MumlElemExpr) {
@@ -392,158 +367,11 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param object
 	 */
 	public void setScopeForEObject(EObject object) {
-		initSets(); //clear previous data
 		if (object instanceof VerificationConstraintRepository && object != null) //this will happen when the editor is used to specify a list of constraints to save them in a foreign-created VerificationConstraintRepository
 			object = object.eContainer();
 		
-		this.scope = object; // set scope to be used when getting the QualifiedNames
-		//Delegate to the specific methods for the type of object
-		if (object instanceof CoordinationProtocol)
-			setScopeForCoordinationProtocol((CoordinationProtocol) object);
-		else if (object instanceof AtomicComponent)
-			setScopeForAtomicComponent((AtomicComponent) object);
-		else if (object instanceof ComponentInstanceConfiguration)
-			setScopeForCIC((ComponentInstanceConfiguration) object);
-		else
-			System.out.println("MtctlScopeProvider::setScopeForEObject: Don't know how to handle "+object.toString()+" :'(");
-		
-	}
-
-	/**
-	 * Called by setScopeForEObject() if the top-level-element is a CoordinationProtocol.
-	 * Collects everything that can be referenced from mtctl in a CoordinationProtocol.
-	 * @param object
-	 */
-	private void setScopeForCoordinationProtocol(CoordinationProtocol object) {
-		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
-		HashSet<MessageBuffer> buffers = new HashSet<MessageBuffer>();
-		
-		//States, Clocks, Variables, MessageTypes
-		for (Role role : object.getRoles()) {
-			connectorEndpoints.add(role);
-			addRtscElementsToArrays(role.getBehavior());
-			messageTypes.addAll(role.getReceiverMessageTypes());
-			messageTypes.addAll(role.getSenderMessageTypes());
-			buffers.addAll(role.getReceiverMessageBuffer());
-		}
-		
-		this.messageTypes.addAll(messageTypes);
-		this.buffers.addAll(buffers);
-	}
-	
-	/**
-	 * Called by setScopeForEObject() if the top-level-element is an AtomicComponent.
-	 * Collects everything that can be referenced from mtctl in an AtomicComponent.
-	 * @param object
-	 */
-	private void setScopeForAtomicComponent(AtomicComponent object) {
-		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
-		HashSet<MessageBuffer> buffers = new HashSet<MessageBuffer>();
-		
-		components.add(object);
-		//Component behavior
-		addRtscElementsToArrays(object.getBehavior());
-		
-		//Port behavior
-		for (Port port : object.getPorts()) {
-			if (port instanceof DiscretePort) {
-				connectorEndpoints.add(port);
-				addRtscElementsToArrays(((DiscretePort) port).getBehavior());
-				messageTypes.addAll(((DiscretePort) port).getReceiverMessageTypes());
-				messageTypes.addAll(((DiscretePort) port).getSenderMessageTypes());
-				buffers.addAll(((DiscretePort) port).getReceiverMessageBuffer());
-			}
-		}
-		
-		this.messageTypes.addAll(messageTypes);
-		this.buffers.addAll(buffers);
-	}
-	
-	
-	/**
-	 * Called by setScopeForEObject() if the top-level-element is an ComponentInstanceConfiguration.
-	 * Collects everything that can be referenced from mtctl in an ComponentInstanceConfiguration.
-	 * @param object
-	 */
-	private void setScopeForCIC(ComponentInstanceConfiguration object) {
-		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
-		HashSet<MessageBuffer> buffers = new HashSet<MessageBuffer>();
-		
-		// add all RTSC elements, message types, and buffers from the Ports of the PortInstances of the contained ComponentInstances
-		for (ComponentInstance componentInstance : object.getComponentInstances()) {
-			if (componentInstance instanceof StructuredComponentInstance)
-				setScopeForCIC(((StructuredComponentInstance) componentInstance).getEmbeddedCIC());
-			for (PortInstance portInstance : componentInstance.getPortInstances()) {
-				if (portInstance.getPortType() instanceof DiscretePort) {
-					connectorEndpointInstances.add(portInstance);
-					DiscretePort port = (DiscretePort) portInstance.getPortType();
-					connectorEndpoints.add(port);
-					messageTypes.addAll(((DiscretePort) port).getReceiverMessageTypes());
-					messageTypes.addAll(((DiscretePort) port).getSenderMessageTypes());
-					buffers.addAll(((DiscretePort) port).getReceiverMessageBuffer());					
-				}
-			}
-			if (componentInstance instanceof AtomicComponentInstance) {
-				addRtscElementsToArrays(((AtomicComponent) componentInstance.getComponentType()).getBehavior());
-				components.add((AtomicComponent) componentInstance.getComponentType());
-				componentInstances.add((AtomicComponentInstance) componentInstance);
-			}
-		}		
-		this.messageTypes.addAll(messageTypes);
-		this.buffers.addAll(buffers);
-	}
-	
-	/**
-	 * Adds the contained (interesting) elements of rtsc to the arrays "states", "clocks", ...
-	 * (Helper function)
-	 */
-	private void addRtscElementsToArrays(Behavior rtsc) {
-		if (rtsc == null || !(rtsc instanceof RealtimeStatechart))
-			return;
-		
-		for (RealtimeStatechart innerRtsc : findEmbeddedStatecharts((RealtimeStatechart) rtsc)) {
-			states.addAll(innerRtsc.getStates());
-			transitions.addAll(innerRtsc.getTransitions());
-			clocks.addAll(innerRtsc.getClocks());
-			variables.addAll(innerRtsc.getVariables());
-			statecharts.add(innerRtsc);
-		}
-	}
-	
-	/**
-	 * Computes the transitive closure of the sub-statechart relation rooted in rtsc
-	 * @param rtsc statechart to start from
-	 * @return list of all statecharts that are sub-statecharts of rtsc
-	 */
-	private List<RealtimeStatechart> findEmbeddedStatecharts(RealtimeStatechart rtsc) {
-		ArrayList<RealtimeStatechart> result = new ArrayList<RealtimeStatechart>();
-		if (rtsc == null)
-			return result; 
-		result.add(rtsc);
-		
-		for (State state : rtsc.getStates())
-			for (Region region : state.getEmbeddedRegions()) //find all regions in direct substates
-				result.addAll(findEmbeddedStatecharts(region.getEmbeddedStatechart())); //find all statecharts in there, add them
-		
-		return result;
-	}
-	
-
-	/**
-	 * Resets the lists containing the visible elements from the top-level muml element
-	 */
-	private void initSets() {
-		states = new HashSet<State>();
-		variables = new HashSet<Variable>();
-		clocks = new HashSet<Clock>();
-		messageTypes = new HashSet<MessageType>();
-		transitions = new HashSet<Transition>();
-		buffers = new HashSet<MessageBuffer>();
-		statecharts = new HashSet<RealtimeStatechart>();
-		connectorEndpoints = new HashSet<ConnectorEndpoint>();
-		connectorEndpointInstances = new HashSet<ConnectorEndpointInstance>();
-		componentInstances = new HashSet<AtomicComponentInstance>();
-		components = new HashSet<AtomicComponent>();
+		elementProvider = new MtctlModelElementProvider((VerifiableElement) object);		
+		this.scope = object; // set scope to be used when getting the QualifiedNames		
 	}
 	
 	/**
@@ -557,10 +385,10 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		}
 		IScope scope = Scopes.scopeFor(set, scopedElementNameMap, IScope.NULLSCOPE);
 		
-		/*for (IEObjectDescription descr : scope.getAllElements()) //debugging log
-			System.out.println(descr.getQualifiedName().toString());
-		System.out.println();*/
-		
 		return scope;
+	}
+	
+	public MtctlModelElementProvider getElementProvider() {
+		return elementProvider;
 	}
 }

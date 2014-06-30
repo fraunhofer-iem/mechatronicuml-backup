@@ -2,17 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
-
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -37,7 +33,7 @@ public class InstanceSetExprImpl extends SetExprImpl implements InstanceSetExpr 
 	 * @generated
 	 * @ordered
 	 */
-	protected MapExpr type;
+	protected MumlElemExpr type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +59,7 @@ public class InstanceSetExprImpl extends SetExprImpl implements InstanceSetExpr 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MapExpr getType() {
+	public MumlElemExpr getType() {
 		return type;
 	}
 
@@ -72,8 +68,8 @@ public class InstanceSetExprImpl extends SetExprImpl implements InstanceSetExpr 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetType(MapExpr newType, NotificationChain msgs) {
-		MapExpr oldType = type;
+	public NotificationChain basicSetType(MumlElemExpr newType, NotificationChain msgs) {
+		MumlElemExpr oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SetsPackage.INSTANCE_SET_EXPR__TYPE, oldType, newType);
@@ -87,7 +83,7 @@ public class InstanceSetExprImpl extends SetExprImpl implements InstanceSetExpr 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(MapExpr newType) {
+	public void setType(MumlElemExpr newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
@@ -138,7 +134,7 @@ public class InstanceSetExprImpl extends SetExprImpl implements InstanceSetExpr 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SetsPackage.INSTANCE_SET_EXPR__TYPE:
-				setType((MapExpr)newValue);
+				setType((MumlElemExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,7 +149,7 @@ public class InstanceSetExprImpl extends SetExprImpl implements InstanceSetExpr 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SetsPackage.INSTANCE_SET_EXPR__TYPE:
-				setType((MapExpr)null);
+				setType((MumlElemExpr)null);
 				return;
 		}
 		super.eUnset(featureID);

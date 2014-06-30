@@ -2254,36 +2254,6 @@ ruleMessageMapExpr returns [EObject current=null]
 
 
 
-// Entry rule entryRuleInstanceTypeMapExpr
-entryRuleInstanceTypeMapExpr returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getInstanceTypeMapExprRule()); }
-	 iv_ruleInstanceTypeMapExpr=ruleInstanceTypeMapExpr 
-	 { $current=$iv_ruleInstanceTypeMapExpr.current; } 
-	 EOF 
-;
-
-// Rule InstanceTypeMapExpr
-ruleInstanceTypeMapExpr returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-
-    { 
-        newCompositeNode(grammarAccess.getInstanceTypeMapExprAccess().getMumlElemExprParserRuleCall()); 
-    }
-    this_MumlElemExpr_0=ruleMumlElemExpr
-    { 
-        $current = $this_MumlElemExpr_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-;
-
-
-
-
-
 // Entry rule entryRuleBufferMessageCountExpr
 entryRuleBufferMessageCountExpr returns [EObject current=null] 
 	:
@@ -2823,9 +2793,9 @@ ruleInstanceSetExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInstanceSetExprAccess().getTypeInstanceTypeMapExprParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getInstanceSetExprAccess().getTypeMumlElemExprParserRuleCall_3_0()); 
 	    }
-		lv_type_3_0=ruleInstanceTypeMapExpr		{
+		lv_type_3_0=ruleMumlElemExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInstanceSetExprRule());
 	        }
@@ -2833,7 +2803,7 @@ ruleInstanceSetExpr returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_3_0, 
-        		"InstanceTypeMapExpr");
+        		"MumlElemExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 

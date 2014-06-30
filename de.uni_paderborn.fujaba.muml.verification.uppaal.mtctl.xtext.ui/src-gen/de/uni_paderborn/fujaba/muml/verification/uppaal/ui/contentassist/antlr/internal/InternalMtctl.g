@@ -1186,34 +1186,6 @@ finally {
 
 
 
-// Entry rule entryRuleInstanceTypeMapExpr
-entryRuleInstanceTypeMapExpr 
-:
-{ before(grammarAccess.getInstanceTypeMapExprRule()); }
-	 ruleInstanceTypeMapExpr
-{ after(grammarAccess.getInstanceTypeMapExprRule()); } 
-	 EOF 
-;
-
-// Rule InstanceTypeMapExpr
-ruleInstanceTypeMapExpr
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getInstanceTypeMapExprAccess().getMumlElemExprParserRuleCall()); }
-	ruleMumlElemExpr
-{ after(grammarAccess.getInstanceTypeMapExprAccess().getMumlElemExprParserRuleCall()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 // Entry rule entryRuleBufferMessageCountExpr
 entryRuleBufferMessageCountExpr 
 :
@@ -7670,8 +7642,8 @@ rule__InstanceSetExpr__TypeAssignment_3
     }
 :
 (
-{ before(grammarAccess.getInstanceSetExprAccess().getTypeInstanceTypeMapExprParserRuleCall_3_0()); }
-	ruleInstanceTypeMapExpr{ after(grammarAccess.getInstanceSetExprAccess().getTypeInstanceTypeMapExprParserRuleCall_3_0()); }
+{ before(grammarAccess.getInstanceSetExprAccess().getTypeMumlElemExprParserRuleCall_3_0()); }
+	ruleMumlElemExpr{ after(grammarAccess.getInstanceSetExprAccess().getTypeMumlElemExprParserRuleCall_3_0()); }
 )
 
 ;

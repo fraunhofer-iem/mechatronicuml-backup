@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,12 +29,12 @@ public interface InstanceSetExpr extends SetExpr {
 	 * The type of all elements in the set (e.g., a ConnectorEndpoint or a Component)
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(MapExpr)
+	 * @see #setType(MumlElemExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage#getInstanceSetExpr_Type()
 	 * @model containment="true"
 	 * @generated
 	 */
-	MapExpr getType();
+	MumlElemExpr getType();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr#getType <em>Type</em>}' containment reference.
@@ -44,6 +44,6 @@ public interface InstanceSetExpr extends SetExpr {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(MapExpr value);
+	void setType(MumlElemExpr value);
 
 } // InstanceSetExpr

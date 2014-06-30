@@ -71,15 +71,14 @@ protected class ThisRootNode extends RootToken {
 			case 38: return new StatechartMapExpr_MumlElemExprParserRuleCall(this, this, 38, inst);
 			case 39: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 39, inst);
 			case 40: return new MessageMapExpr_MumlElemExprParserRuleCall(this, this, 40, inst);
-			case 41: return new InstanceTypeMapExpr_MumlElemExprParserRuleCall(this, this, 41, inst);
-			case 42: return new BufferMessageCountExpr_Group(this, this, 42, inst);
-			case 43: return new SourceStateExpr_Group(this, this, 43, inst);
-			case 44: return new TargetStateExpr_Group(this, this, 44, inst);
-			case 45: return new MumlElemExpr_Group(this, this, 45, inst);
-			case 46: return new ConstExpr_Group(this, this, 46, inst);
-			case 47: return new SetExpr_Alternatives(this, this, 47, inst);
-			case 48: return new IntervalSetExpr_Group(this, this, 48, inst);
-			case 49: return new InstanceSetExpr_Group(this, this, 49, inst);
+			case 41: return new BufferMessageCountExpr_Group(this, this, 41, inst);
+			case 42: return new SourceStateExpr_Group(this, this, 42, inst);
+			case 43: return new TargetStateExpr_Group(this, this, 43, inst);
+			case 44: return new MumlElemExpr_Group(this, this, 44, inst);
+			case 45: return new ConstExpr_Group(this, this, 45, inst);
+			case 46: return new SetExpr_Alternatives(this, this, 46, inst);
+			case 47: return new IntervalSetExpr_Group(this, this, 47, inst);
+			case 48: return new InstanceSetExpr_Group(this, this, 48, inst);
 			default: return null;
 		}	
 	}	
@@ -6738,52 +6737,6 @@ protected class MessageMapExpr_MumlElemExprParserRuleCall extends RuleCallToken 
 /************ end Rule MessageMapExpr ****************/
 
 
-/************ begin Rule InstanceTypeMapExpr ****************
- *
- * InstanceTypeMapExpr returns mtctl::MapExpr:
- * 	MumlElemExpr;
- *
- **/
-
-// MumlElemExpr
-protected class InstanceTypeMapExpr_MumlElemExprParserRuleCall extends RuleCallToken {
-	
-	public InstanceTypeMapExpr_MumlElemExprParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public RuleCall getGrammarElement() {
-		return grammarAccess.getInstanceTypeMapExprAccess().getMumlElemExprParserRuleCall();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new MumlElemExpr_Group(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getMumlElemExprRule().getType().getClassifier())
-			return null;
-		if(checkForRecursion(MumlElemExpr_Group.class, eObjectConsumer)) return null;
-		return eObjectConsumer;
-	}
-	
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
-		}	
-	}	
-}
-
-/************ end Rule InstanceTypeMapExpr ****************/
-
-
 /************ begin Rule BufferMessageCountExpr ****************
  *
  * BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
@@ -8247,11 +8200,11 @@ protected class IntervalSetExpr_RightSquareBracketKeyword_5 extends KeywordToken
 /************ begin Rule InstanceSetExpr ****************
  *
  * InstanceSetExpr returns mtctl::SetExpr:
- * 	{mtctl::InstanceSetExpr} "Instances" "<" type=InstanceTypeMapExpr ">";
+ * 	{mtctl::InstanceSetExpr} "Instances" "<" type=MumlElemExpr ">";
  *
  **/
 
-// {mtctl::InstanceSetExpr} "Instances" "<" type=InstanceTypeMapExpr ">"
+// {mtctl::InstanceSetExpr} "Instances" "<" type=MumlElemExpr ">"
 protected class InstanceSetExpr_Group extends GroupToken {
 	
 	public InstanceSetExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8350,7 +8303,7 @@ protected class InstanceSetExpr_LessThanSignKeyword_2 extends KeywordToken  {
 
 }
 
-// type=InstanceTypeMapExpr
+// type=MumlElemExpr
 protected class InstanceSetExpr_TypeAssignment_3 extends AssignmentToken  {
 	
 	public InstanceSetExpr_TypeAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -8365,7 +8318,7 @@ protected class InstanceSetExpr_TypeAssignment_3 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new InstanceTypeMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
+			case 0: return new MumlElemExpr_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -8376,9 +8329,9 @@ protected class InstanceSetExpr_TypeAssignment_3 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("type");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getInstanceTypeMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getMumlElemExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getInstanceSetExprAccess().getTypeInstanceTypeMapExprParserRuleCall_3_0(); 
+				element = grammarAccess.getInstanceSetExprAccess().getTypeMumlElemExprParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}

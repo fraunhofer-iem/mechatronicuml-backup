@@ -59,12 +59,19 @@ public class MtctlModelElementProvider {
 	 * Creates a MtctlModelElementProvider for an expression, setting root to its verifiable element
 	 */
 	public MtctlModelElementProvider(Expression expr) {
+		this.root = getVerifiableElement(expr);
+		init();
+	}
+	
+	/**
+	 * Returns the VerifiableElement that the supplied mtctl expression belongs to
+	 */
+	public static VerifiableElement getVerifiableElement(Expression expr) {
 		EObject obj = expr;
 		while (!(obj instanceof VerifiableElement)) {
 			obj = obj.eContainer();
 		}
-		this.root = (VerifiableElement) obj;
-		init();
+		return (VerifiableElement) obj;
 	}
 	
 	private void init() {

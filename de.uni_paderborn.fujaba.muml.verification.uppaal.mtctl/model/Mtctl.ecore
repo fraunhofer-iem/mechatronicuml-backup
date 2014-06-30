@@ -210,7 +210,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BufferSetExpr" eSuperTypes="#//Sets/SetExpr"/>
     <eClassifiers xsi:type="ecore:EClass" name="InstanceSetExpr" eSuperTypes="#//Sets/SetExpr">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Comparables/MapExpr"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Comparables/MumlElemExpr"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The type of all elements in the set (e.g., a ConnectorEndpoint or a Component)"/>

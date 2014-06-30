@@ -4,18 +4,13 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.provider;
 
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -147,27 +142,7 @@ public class InstanceSetExprItemProvider extends SetExprItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
-				 ComparablesFactory.eINSTANCE.createBufferMsgCountExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
-				 ComparablesFactory.eINSTANCE.createConstExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
 				 ComparablesFactory.eINSTANCE.createMumlElemExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
-				 ComparablesFactory.eINSTANCE.createSourceStateExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SetsPackage.Literals.INSTANCE_SET_EXPR__TYPE,
-				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
 	}
 
 }

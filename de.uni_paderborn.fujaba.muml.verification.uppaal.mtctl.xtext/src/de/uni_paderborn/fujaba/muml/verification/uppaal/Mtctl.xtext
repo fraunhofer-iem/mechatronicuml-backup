@@ -184,10 +184,6 @@ MessageMapExpr returns mtctl::MapExpr:
 	MumlElemExpr
 ;
 
-InstanceTypeMapExpr returns mtctl::MapExpr:
-	MumlElemExpr
-;
-
 BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
 	'bufferMessageCount' '(' buffer=BufferMapExpr ')'
 ;
@@ -222,7 +218,7 @@ IntervalSetExpr returns mtctl::SetExpr:
 ;
 
 InstanceSetExpr returns mtctl::SetExpr:
-	{mtctl::InstanceSetExpr} 'Instances' '<' type=InstanceTypeMapExpr '>'
+	{mtctl::InstanceSetExpr} 'Instances' '<' type=MumlElemExpr '>'
 ;
 
 //Other necessary definitions
