@@ -10,7 +10,6 @@ import java.util.Map;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -133,7 +132,8 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		private Button buttonCreate;
 		private EClass selectedClass;
 		private Combo combo;
-
+		private ComboViewer classViewer; 
+		
 		protected CreateElementEditor(AdapterFactory adapterFactory) {
 			super(adapterFactory);
 		}
@@ -142,40 +142,28 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		public void createControls(Composite parent, FormToolkit toolkit) {
 			super.createControls(parent, toolkit);
 			
-			List<EClass> eClasses = getCreationEClasses();
-
-			selectedClass = null;
-			if (!eClasses.isEmpty()) {
-				selectedClass = eClasses.get(0);
-			}
-			
-			if (eClasses.size() > 1) {
-				combo = new Combo(parent, SWT.BORDER | SWT.READ_ONLY);
-				final ComboViewer classViewer = new ComboViewer(combo);
-				classViewer.setContentProvider(ArrayContentProvider.getInstance());
-				classViewer.setLabelProvider(new LabelProvider() {
-					public String getText(Object element) {
-						return ((EClass) element).getName();
-					}
-				});
-				
-				classViewer.setInput(eClasses);
-				if (!eClasses.isEmpty()) {
-					classViewer.setSelection(new StructuredSelection(selectedClass));
+			combo = new Combo(parent, SWT.BORDER | SWT.READ_ONLY);
+			classViewer = new ComboViewer(combo);
+			classViewer.setContentProvider(ArrayContentProvider.getInstance());
+			classViewer.setLabelProvider(new LabelProvider() {
+				public String getText(Object element) {
+					return ((EClass) element).getName();
 				}
-				classViewer.addSelectionChangedListener(new ISelectionChangedListener() {
-					
-					@Override
-					public void selectionChanged(SelectionChangedEvent event) {
-						IStructuredSelection selection = (IStructuredSelection) classViewer
-								.getSelection();
-						EClass newClass = (EClass) selection.getFirstElement();
-						if (newClass != selectedClass) {
-							selectedClass = newClass;
-						}
+			});
+
+						
+			classViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+				
+				@Override
+				public void selectionChanged(SelectionChangedEvent event) {
+					IStructuredSelection selection = (IStructuredSelection) classViewer
+							.getSelection();
+					EClass newClass = (EClass) selection.getFirstElement();
+					if (newClass != selectedClass) {
+						selectedClass = newClass;
 					}
-				});
-			}
+				}
+			});
 				
 
 			buttonCreate = new Button(parent, SWT.NONE);
@@ -192,8 +180,36 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 					create();
 				}
 			});
+			
+			
+			updateEClassesList();
 
 		}
+		
+		@Override
+		protected void inputChanged(Object oldObject) {
+			super.inputChanged(oldObject);
+			updateEClassesList();
+		}
+		
+		
+		private void updateEClassesList() {
+			List<EClass> eClasses = getCreationEClasses();
+
+			selectedClass = null;
+			if (!eClasses.isEmpty()) {
+				selectedClass = eClasses.get(0);
+			}
+
+			classViewer.setInput(eClasses);
+			if (!eClasses.isEmpty()) {
+				classViewer.setSelection(new StructuredSelection(selectedClass));
+			} else {
+				combo.setVisible(false);
+			}
+		}
+
+
 
 		@Override
 		public void dispose() {
@@ -229,5 +245,5 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		}
 	}
 
-
 }
+

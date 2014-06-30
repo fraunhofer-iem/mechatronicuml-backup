@@ -106,52 +106,33 @@ public class NavigationFeaturePropertyEditor extends
 		layout.spacing = 5;
 		layout.fill = true;
 		composite.setLayout(layout);
-
-		eClasses = getCreationEClasses();
-
-		selectedClass = null;
-		if (!eClasses.isEmpty()) {
-			selectedClass = eClasses.get(0);
-		}
-		if (manyValue != null) {
-			EClass eClass = manyValue.eClass();
-			if (eClasses.contains(eClass)) {
-				selectedClass = eClass;
-			} else {
-				selectedClass = null;
-			}
-		}
-		if (shouldShowClassesCombo()) {
-			Combo combo = new Combo(composite, SWT.BORDER | SWT.READ_ONLY);
-			classViewer = new ComboViewer(combo);
-			classViewer.setContentProvider(ArrayContentProvider.getInstance());
-			classViewer.setLabelProvider(new LabelProvider() {
-				public String getText(Object element) {
-					return ((EClass) element).getName();
-				}
-			});
 		
-			classViewer.addSelectionChangedListener(new ISelectionChangedListener() {
-				
-				@Override
-				public void selectionChanged(SelectionChangedEvent event) {
-					IStructuredSelection selection = (IStructuredSelection) classViewer
-							.getSelection();
-					EClass newClass = (EClass) selection.getFirstElement();
-					if (newClass != selectedClass) {
-						selectedClass = newClass;
-						if (isSet()) {
-							remove();
-							create();
-						}
+		Combo combo = new Combo(composite, SWT.BORDER | SWT.READ_ONLY);
+		classViewer = new ComboViewer(combo);
+		classViewer.setContentProvider(ArrayContentProvider.getInstance());
+		classViewer.setLabelProvider(new LabelProvider() {
+			public String getText(Object element) {
+				return ((EClass) element).getName();
+			}
+		});
+	
+		classViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				IStructuredSelection selection = (IStructuredSelection) classViewer
+						.getSelection();
+				EClass newClass = (EClass) selection.getFirstElement();
+				if (newClass != selectedClass) {
+					selectedClass = newClass;
+					if (isSet()) {
+						remove();
+						create();
 					}
 				}
-			});
-			classViewer.setInput(eClasses);
-			if (!eClasses.isEmpty()) {
-				classViewer.setSelection(new StructuredSelection(selectedClass));
 			}
-		}
+		});
+
 		
 		if (hasCreateButton()) {
 			buttonCreate = toolkit.createButton(composite, "", SWT.NONE);
@@ -202,9 +183,33 @@ public class NavigationFeaturePropertyEditor extends
 			}
 		});
 
-		// section.setSeparatorControl(toolkit.createSeparator(section,
-		// SWT.NONE));
+		updateEClassesList();
 
+	}
+	
+	private void updateEClassesList() {
+
+		eClasses = getCreationEClasses();
+
+		selectedClass = null;
+		if (!eClasses.isEmpty()) {
+			selectedClass = eClasses.get(0);
+		}
+		if (manyValue != null) {
+			EClass eClass = manyValue.eClass();
+			if (eClasses.contains(eClass)) {
+				selectedClass = eClass;
+			} else {
+				selectedClass = null;
+			}
+		}
+
+		classViewer.setInput(eClasses);
+		if (!eClasses.isEmpty()) {
+			classViewer.setSelection(new StructuredSelection(selectedClass));
+		}
+		
+		classViewer.getCombo().setVisible(shouldShowClassesCombo());
 	}
 
 	protected boolean shouldShowClassesCombo() {
@@ -235,6 +240,7 @@ public class NavigationFeaturePropertyEditor extends
 			create();
 		}
 		updateTitle();
+		updateEClassesList();
 	}
 
 	@Override
