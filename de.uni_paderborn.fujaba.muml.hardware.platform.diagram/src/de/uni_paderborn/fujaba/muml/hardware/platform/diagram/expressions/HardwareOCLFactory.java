@@ -76,8 +76,8 @@ public class HardwareOCLFactory {
 					"--self.oclIsKindOf(hwplatform::HWPortPart) or self.oclIsKindOf(hwplatform::BusPart)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsKindOf(hwplatform::DelegationHWPort)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--proto + \'\\n\' + bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK) ".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatform::DelegationHWPort) ".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatform::DelegationHWPort) ".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::BUS) ".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(hwplatform::BridgePart) or self.oclIsTypeOf(hwplatform::BusPart) ".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};

@@ -131,7 +131,6 @@ public class LinkPartEditPart extends ConnectionNodeEditPart implements
 			fFigureLinkCommentFigure = new WrappingLabel();
 
 			fFigureLinkCommentFigure.setText("<...>");
-			fFigureLinkCommentFigure.setTextWrap(true);
 
 			this.add(fFigureLinkCommentFigure);
 
@@ -171,14 +170,18 @@ public class LinkPartEditPart extends ConnectionNodeEditPart implements
 		}
 		if (notification.getOldValue() == sourceElement
 				|| notification.getOldValue() == targetElement) {
-			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
-					.getRegisteredEditPolicies(getDiagramView().getElement());
-			for (CanonicalEditPolicy editPolicy : editPolicies) {
-				editPolicy.refresh();
-			}
+			doCanonicalRefresh();
 		}
 
 		super.handleNotificationEvent(notification);
+	}
+
+	protected void doCanonicalRefresh() {
+		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+				.getRegisteredEditPolicies(getDiagramView().getElement());
+		for (CanonicalEditPolicy editPolicy : editPolicies) {
+			editPolicy.refresh();
+		}
 	}
 
 }

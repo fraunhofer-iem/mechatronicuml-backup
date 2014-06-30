@@ -686,9 +686,6 @@ public class HWPortLabel2EditPart extends LabelEditPart implements
 		 */
 		public HWPortLabelFigure() {
 			this.setText("<...>");
-			this.setTextUnderline(true);
-			this.setTextWrap(true);
-
 		}
 
 	}

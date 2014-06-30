@@ -583,9 +583,9 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)"/>
+          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
       <targetEnd
-          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)"/>
+          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)  or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
     </creationConstraints>
   </links>
   <links>

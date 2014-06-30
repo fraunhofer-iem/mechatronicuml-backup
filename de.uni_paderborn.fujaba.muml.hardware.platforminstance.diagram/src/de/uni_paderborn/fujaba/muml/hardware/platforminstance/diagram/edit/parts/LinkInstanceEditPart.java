@@ -131,7 +131,6 @@ public class LinkInstanceEditPart extends ConnectionNodeEditPart implements
 			fFigureLinkCommentFigure = new WrappingLabel();
 
 			fFigureLinkCommentFigure.setText("<...>");
-			fFigureLinkCommentFigure.setTextWrap(true);
 
 			this.add(fFigureLinkCommentFigure);
 
