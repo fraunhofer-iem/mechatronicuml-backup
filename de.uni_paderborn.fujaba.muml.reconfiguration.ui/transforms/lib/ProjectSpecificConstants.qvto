@@ -126,6 +126,9 @@ property genSyncChanExecutorEmbeddedCIReplyRecv : String = 'replyReceived';
 property genSyncChanExecutorEmbeddedCISendC : String = 'sendCommit';
 property genSyncChanExecutorEmbeddedCISendA : String = 'sendAbort';
 property genSyncChanExecutorEmbeddedCIReconfFinished : String = 'reconfFinished';
+property genSyncChanExecutorEmbeddedCISendSetup : String = 'sendSetup';
+property genSyncChanExecutorEmbeddedCISendFading : String = 'sendFading';
+property genSyncChanExecutorEmbeddedCISendTeardown : String = 'sendTeardown';
 
 -- names of the executor synchronization channels that are depending on user-defined messages
 property genSyncChanExecutorCheckPrefix : String = 'check';
@@ -152,6 +155,9 @@ property genVarExecutor_EmbeddedCI_Adapt_Abort_Finished : String = 'finished';
 property genVarExecutor_EmbeddedCI_SubRole_CommitTime : String = 'commitTime';
 property genVarExecutor_EmbeddedCI_SubRole_TimeForDec : String = 'timeForDecision';
 property genVarExecutor_EmbeddedCI_SubRole_TimeForExec : String = 'timeForExecution';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForSetup : String = 'timeForSetup';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForFading : String = 'timeForFading';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForTeardown : String = 'timeForTeardown';
 
 -- names of executor internal clocks
 property genClockExecutor_Parent_c2 : String = 'c2';
@@ -207,7 +213,8 @@ property genStateExecutor_embeddedCI_Adaptation_PrepareY_Prefix : String = 'Prep
 property genStateExecutor_embeddedCI_Adaptation_Vote : String = 'Vote';
 property genStateExecutor_embeddedCI_Adaptation_Report : String = 'Report';
 property genStateExecutor_embeddedCI_Adaptation_WaitForParent : String = 'WaitForParent';
-property genStateExecutor_embeddedCI_Adaptation_Execute : String = 'Execute';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteSinglePhase : String = 'Execute_SinglePhase';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase : String = 'Execute_ThreePhase';
 property genStateExecutor_embeddedCI_Adaptation_Abort : String = 'Abort';
 property genStateExecutor_embeddedCI_Adaptation_Vote_TriggerSubPort : String = 'TriggerSubPort';
 property genStateExecutor_embeddedCI_Adaptation_Vote_GetReplies : String = 'GetReplies';
@@ -225,6 +232,11 @@ property genStateExecutor_embeddedCI_Subrole_VotedAbort : String = 'VotedAbort';
 property genStateExecutor_embeddedCI_Subrole_ReplyReceived : String = 'ReplyReceived';
 property genStateExecutor_embeddedCI_Subrole_AwaitFinish : String = 'AwaitFinish';
 property genStateExecutor_embeddedCI_Subrole_Execute : String = 'Execute';
+property genStateExecutor_embeddedCI_Subrole_ExecuteSetup : String = 'ExecuteSetup';
+property genStateExecutor_embeddedCI_Subrole_WaitFading : String = 'WaitFading';
+property genStateExecutor_embeddedCI_Subrole_ExecuteFading : String = 'ExecuteFading';
+property genStateExecutor_embeddedCI_Subrole_WaitTeardown : String = 'WaitTeardown';
+property genStateExecutor_embeddedCI_Subrole_ExecuteTeardown : String = 'ExecuteTeardown';
 
 -- names of executor internal operations
 property genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction : String = 'getNextPortInstanceForAction';
