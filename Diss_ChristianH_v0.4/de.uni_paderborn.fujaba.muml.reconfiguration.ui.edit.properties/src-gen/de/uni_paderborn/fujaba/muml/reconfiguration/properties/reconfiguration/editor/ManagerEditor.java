@@ -24,8 +24,36 @@ public class ManagerEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addManagerSpecificationEntries_GeneralTab_Editor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
 		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addManagerSpecificationEntries_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createManagerSpecificationEntries_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createManagerSpecificationEntries_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+						.getManager_SpecificationEntries());
+
+		editor.setTooltipMessage("The specification entries of the manager. Each specification entry defines one\nmessage type and how the component reacts to this message type.");
+
+		return editor;
 
 	}
 
@@ -84,7 +112,8 @@ public class ManagerEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation",
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}

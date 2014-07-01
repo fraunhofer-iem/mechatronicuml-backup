@@ -24,8 +24,36 @@ public class ExecutorEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addExecutorSpecificationEntries_GeneralTab_Editor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
 		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addExecutorSpecificationEntries_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createExecutorSpecificationEntries_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutorSpecificationEntries_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+						.getExecutor_SpecificationEntries());
+
+		editor.setTooltipMessage("These are the specification entries that form the declarative specification of\nthe executor. Each of the entries defines a reconfiguration rule that the executor\ncan execute on the component.");
+
+		return editor;
 
 	}
 
@@ -84,7 +112,8 @@ public class ExecutorEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation",
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}
