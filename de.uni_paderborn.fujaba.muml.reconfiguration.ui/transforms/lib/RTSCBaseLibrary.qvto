@@ -47,6 +47,16 @@ helper createEmbeddedRTSC(in name : String, inout state : State, in priority : I
 	return rtsc;
 }
 
+-- creates a TypedNamedElementExpression or the negation (UnaryExpression with embedded TypedNamedElementExpression) depending on the bool parameter
+helper createSimpleGuardExpression(in variable : Variable, in bool : Boolean) : Expression{
+	var tNE : TypedNamedElementExpression := new TypedNamedElementExpression(variable);
+	
+	if(not bool)
+		return new UnaryExpression(UnaryOperator::NOT, tNE);
+	
+	return tNE;
+}
+
 -- creates a comparison expression where a variable is compared to a literal
 helper createSimpleCompareGuardExpression(in variable : Variable, in value : String) : ComparisonExpression{
 	
@@ -274,4 +284,9 @@ constructor ClockConstraint::ClockConstraint(in newClock : Clock, in op : Compar
 	clock := newClock;
 	operator := op;
 	bound := new TimeValue(newValue, newUnit);
+}
+
+constructor UnaryExpression::UnaryExpression(in theOperator : UnaryOperator, in theEnclosedExpression : Expression){
+	operator := theOperator;
+	enclosedExpression := theEnclosedExpression;
 }
