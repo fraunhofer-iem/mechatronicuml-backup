@@ -188,6 +188,11 @@ property genStateExecutor_Events_Busy : String = 'Busy';
 property genStateExecutor_Events_Finished : String = 'Finished';
 property genStateExecutor_Events_WaitForAnswer : String = 'WaitForAnswer';
 property genStateExecutor_Events_AnswerReceived : String = 'AnswerReceived';
+property genStateExecutor_Events_DoSetup : String = 'DoSetup';
+property genStateExecutor_Events_BusySetup : String = 'BusySetup';
+property genStateExecutor_Events_DoFading : String = 'DoFading';
+property genStateExecutor_Events_BusyFading : String = 'BusyFading';
+property genStateExecutor_Events_DoTeardown : String = 'DoTeardown';
 
 property genStateExecutor_InternalBehavior_Idle : String = 'Idle';
 property genStateExecutor_InternalBehavior_Start : String = 'Start';
