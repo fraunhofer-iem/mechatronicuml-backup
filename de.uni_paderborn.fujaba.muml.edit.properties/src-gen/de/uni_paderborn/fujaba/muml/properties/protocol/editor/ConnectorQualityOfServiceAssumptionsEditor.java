@@ -26,12 +26,20 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addSubCategory(
+				"de.uni_paderborn.fujaba.properties.category.Message Delay",
+				"Message Delay", org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMinMessageDelay_GeneralTab_Editor(null, false);
+			addMinMessageDelay_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Message Delay",
+					false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMaxMessageDelay_GeneralTab_Editor(null, false);
+			addMaxMessageDelay_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Message Delay",
+					false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {

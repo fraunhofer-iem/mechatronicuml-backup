@@ -193,12 +193,12 @@
         <genFeature href="Ecore.genmodel#//ecore/ETypedElement/unique"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/lowerBound"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.16/@propertyCategories.1" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/upperBound"/>
         <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/upperBound"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.16/@propertyCategories.1" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/ETypedElement/lowerBound"/>
         <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
@@ -206,6 +206,7 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Booleans" properties="//@packages.0/@classes.16/@properties.0 //@packages.0/@classes.16/@properties.1"/>
+      <propertyCategories title="Cardinality" properties="//@packages.0/@classes.16/@properties.3 //@packages.0/@classes.16/@properties.2"/>
     </classes>
     <classes>
       <genClass href="Ecore.genmodel#//ecore/EStringToStringMapEntry"/>

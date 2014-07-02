@@ -161,7 +161,8 @@ public abstract class EStructuralFeatureEditor
 
 				@Override
 				public boolean select(Object object) {
-					return Boolean.TRUE.equals(query.evaluate(object));
+					return object != null
+							&& Boolean.TRUE.equals(query.evaluate(object));
 				}
 
 			};
