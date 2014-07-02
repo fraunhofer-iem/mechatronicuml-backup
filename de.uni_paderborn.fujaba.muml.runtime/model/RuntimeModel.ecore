@@ -31,11 +31,13 @@
         lowerBound="1" eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/messageBuffer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechartInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="StateAndTransitionActive" value="-- A State and a Transition of one RTSC can not be active at the same time&#xD;&#xA;activeState.oclIsUndefined() or activeTransition.oclIsUndefined()"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBehavioralElement"
         eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/statechartInstance"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="active" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeState" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subRealtimeStatechartInstances"
         upperBound="-1" eType="#//RealtimeStatechartInstance" containment="true" eOpposite="#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
@@ -56,6 +58,7 @@
         <details key="derivation" value="-- traverse to parent if no runtime behavioral element itself&#xD;&#xA;if self.runtimeBehavioralElement.oclIsUndefined() then&#xD;&#xA;&#x9;-- guard against NPE&#xD;&#xA;&#x9;if (self.parentRealtimeStatechartInstance.oclIsUndefined()) then&#x9;&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;self.runtimeBehavioralElement&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeTransition" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeMessage" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"

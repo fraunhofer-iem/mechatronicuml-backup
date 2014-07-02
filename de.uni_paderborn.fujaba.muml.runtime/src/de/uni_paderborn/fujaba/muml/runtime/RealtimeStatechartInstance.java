@@ -11,6 +11,7 @@ import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,17 +23,18 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActive <em>Active</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveState <em>Active State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getVariableBindings <em>Variable Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getAllAvailableVariableBindings <em>All Available Variable Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveTransition <em>Active Transition</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL StateAndTransitionActive='-- A State and a Transition of one RTSC can not be active at the same time\r\nactiveState.oclIsUndefined() or activeTransition.oclIsUndefined()'"
  * @generated
  */
 public interface RealtimeStatechartInstance extends ExtendableElement {
@@ -75,7 +77,7 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * @return the value of the '<em>Instance Of</em>' reference.
 	 * @see #setInstanceOf(RealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_InstanceOf()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	RealtimeStatechart getInstanceOf();
@@ -91,30 +93,30 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	void setInstanceOf(RealtimeStatechart value);
 
 	/**
-	 * Returns the value of the '<em><b>Active</b></em>' reference.
+	 * Returns the value of the '<em><b>Active State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Active</em>' reference isn't clear,
+	 * If the meaning of the '<em>Active State</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Active</em>' reference.
-	 * @see #setActive(State)
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_Active()
+	 * @return the value of the '<em>Active State</em>' reference.
+	 * @see #setActiveState(State)
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_ActiveState()
 	 * @model required="true"
 	 * @generated
 	 */
-	State getActive();
+	State getActiveState();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActive <em>Active</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveState <em>Active State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Active</em>' reference.
-	 * @see #getActive()
+	 * @param value the new value of the '<em>Active State</em>' reference.
+	 * @see #getActiveState()
 	 * @generated
 	 */
-	void setActive(State value);
+	void setActiveState(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list.
@@ -221,5 +223,31 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * @generated
 	 */
 	void setNearestRuntimeBehavioralElement(RuntimeBehavioralElement value);
+
+	/**
+	 * Returns the value of the '<em><b>Active Transition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Active Transition</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Active Transition</em>' reference.
+	 * @see #setActiveTransition(Transition)
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_ActiveTransition()
+	 * @model
+	 * @generated
+	 */
+	Transition getActiveTransition();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveTransition <em>Active Transition</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Active Transition</em>' reference.
+	 * @see #getActiveTransition()
+	 * @generated
+	 */
+	void setActiveTransition(Transition value);
 
 } // RealtimeStatechartInstance

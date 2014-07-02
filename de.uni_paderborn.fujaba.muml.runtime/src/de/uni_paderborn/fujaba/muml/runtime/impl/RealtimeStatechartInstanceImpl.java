@@ -24,6 +24,7 @@ import org.storydriven.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
@@ -38,12 +39,13 @@ import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getActive <em>Active</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getActiveState <em>Active State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getVariableBindings <em>Variable Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getAllAvailableVariableBindings <em>All Available Variable Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getActiveTransition <em>Active Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,14 +73,14 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	protected RealtimeStatechart instanceOf;
 
 	/**
-	 * The cached value of the '{@link #getActive() <em>Active</em>}' reference.
+	 * The cached value of the '{@link #getActiveState() <em>Active State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActive()
+	 * @see #getActiveState()
 	 * @generated
 	 * @ordered
 	 */
-	protected State active;
+	protected State activeState;
 
 	/**
 	 * The cached value of the '{@link #getSubRealtimeStatechartInstances() <em>Sub Realtime Statechart Instances</em>}' containment reference list.
@@ -119,6 +121,16 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RuntimePackage.Literals.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getActiveTransition() <em>Active Transition</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActiveTransition()
+	 * @generated
+	 * @ordered
+	 */
+	protected Transition activeTransition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -240,6 +252,44 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State getActiveState() {
+		if (activeState != null && activeState.eIsProxy()) {
+			InternalEObject oldActiveState = (InternalEObject)activeState;
+			activeState = (State)eResolveProxy(oldActiveState);
+			if (activeState != oldActiveState) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE, oldActiveState, activeState));
+			}
+		}
+		return activeState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State basicGetActiveState() {
+		return activeState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActiveState(State newActiveState) {
+		State oldActiveState = activeState;
+		activeState = newActiveState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE, oldActiveState, activeState));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 * 
 	 * Returns all States of the real-time statechart. This method has been implemented in Java rather than OCL
@@ -262,44 +312,6 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			return statechart.getStates();
 		}
 		return ECollections.emptyEList();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State getActive() {
-		if (active != null && active.eIsProxy()) {
-			InternalEObject oldActive = (InternalEObject)active;
-			active = (State)eResolveProxy(oldActive);
-			if (active != oldActive) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE, oldActive, active));
-			}
-		}
-		return active;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State basicGetActive() {
-		return active;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setActive(State newActive) {
-		State oldActive = active;
-		active = newActive;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE, oldActive, active));
 	}
 
 	/**
@@ -409,6 +421,44 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Transition getActiveTransition() {
+		if (activeTransition != null && activeTransition.eIsProxy()) {
+			InternalEObject oldActiveTransition = (InternalEObject)activeTransition;
+			activeTransition = (Transition)eResolveProxy(oldActiveTransition);
+			if (activeTransition != oldActiveTransition) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_TRANSITION, oldActiveTransition, activeTransition));
+			}
+		}
+		return activeTransition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Transition basicGetActiveTransition() {
+		return activeTransition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActiveTransition(Transition newActiveTransition) {
+		Transition oldActiveTransition = activeTransition;
+		activeTransition = newActiveTransition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_TRANSITION, oldActiveTransition, activeTransition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -475,9 +525,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				if (resolve) return getInstanceOf();
 				return basicGetInstanceOf();
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
-				if (resolve) return getActive();
-				return basicGetActive();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE:
+				if (resolve) return getActiveState();
+				return basicGetActiveState();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				return getSubRealtimeStatechartInstances();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
@@ -489,6 +539,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
 				if (resolve) return getNearestRuntimeBehavioralElement();
 				return basicGetNearestRuntimeBehavioralElement();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_TRANSITION:
+				if (resolve) return getActiveTransition();
+				return basicGetActiveTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -508,8 +561,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				setInstanceOf((RealtimeStatechart)newValue);
 				return;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
-				setActive((State)newValue);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE:
+				setActiveState((State)newValue);
 				return;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				getSubRealtimeStatechartInstances().clear();
@@ -524,6 +577,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
 				setNearestRuntimeBehavioralElement((RuntimeBehavioralElement)newValue);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_TRANSITION:
+				setActiveTransition((Transition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -543,8 +599,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				setInstanceOf((RealtimeStatechart)null);
 				return;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
-				setActive((State)null);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE:
+				setActiveState((State)null);
 				return;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				getSubRealtimeStatechartInstances().clear();
@@ -557,6 +613,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
 				setNearestRuntimeBehavioralElement((RuntimeBehavioralElement)null);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_TRANSITION:
+				setActiveTransition((Transition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -574,8 +633,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return runtimeBehavioralElement != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				return instanceOf != null;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
-				return active != null;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE:
+				return activeState != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				return subRealtimeStatechartInstances != null && !subRealtimeStatechartInstances.isEmpty();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
@@ -586,6 +645,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
 				return NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_TRANSITION:
+				return activeTransition != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -744,13 +744,13 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE__INSTANCE_OF = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Active</b></em>' reference.
+	 * The feature id for the '<em><b>Active State</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__ACTIVE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int REALTIME_STATECHART_INSTANCE__ACTIVE_STATE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list.
@@ -798,13 +798,22 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Active Transition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART_INSTANCE__ACTIVE_TRANSITION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Realtime Statechart Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 8;
+	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2104,15 +2113,15 @@ public interface RuntimePackage extends EPackage {
 	EReference getRealtimeStatechartInstance_InstanceOf();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActive <em>Active</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveState <em>Active State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Active</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActive()
+	 * @return the meta object for the reference '<em>Active State</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveState()
 	 * @see #getRealtimeStatechartInstance()
 	 * @generated
 	 */
-	EReference getRealtimeStatechartInstance_Active();
+	EReference getRealtimeStatechartInstance_ActiveState();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}'.
@@ -2168,6 +2177,17 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRealtimeStatechartInstance_NearestRuntimeBehavioralElement();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveTransition <em>Active Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Active Transition</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveTransition()
+	 * @see #getRealtimeStatechartInstance()
+	 * @generated
+	 */
+	EReference getRealtimeStatechartInstance_ActiveTransition();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage <em>Message</em>}'.
@@ -2582,12 +2602,12 @@ public interface RuntimePackage extends EPackage {
 		EReference REALTIME_STATECHART_INSTANCE__INSTANCE_OF = eINSTANCE.getRealtimeStatechartInstance_InstanceOf();
 
 		/**
-		 * The meta object literal for the '<em><b>Active</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Active State</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REALTIME_STATECHART_INSTANCE__ACTIVE = eINSTANCE.getRealtimeStatechartInstance_Active();
+		EReference REALTIME_STATECHART_INSTANCE__ACTIVE_STATE = eINSTANCE.getRealtimeStatechartInstance_ActiveState();
 
 		/**
 		 * The meta object literal for the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list feature.
@@ -2628,6 +2648,14 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT = eINSTANCE.getRealtimeStatechartInstance_NearestRuntimeBehavioralElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Active Transition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REALTIME_STATECHART_INSTANCE__ACTIVE_TRANSITION = eINSTANCE.getRealtimeStatechartInstance_ActiveTransition();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageImpl <em>Message</em>}' class.
