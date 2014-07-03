@@ -21,7 +21,7 @@
 [template public generateOperationFiles(root : RootNode, path : String)]
 [for (modelElementCategory : ModelElementCategory | root.categories)]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[let allOperations : Set(Operation) = modelElements->at(1).oclAsType(ComponentInstanceConfiguration).getAllOperations()]
+[let allOperations : Set(Operation) = root.eAllContents(Operation)->asSet()]
 [generateOperationHeader(allOperations, path)/]
 [generateOperationClass(allOperations, path)/]
 [/let]

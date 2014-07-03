@@ -230,7 +230,7 @@
 								if ( [transitionCondition(component, rtsc, outgoingTransition)/] ) {
 						    		[transition(component, outgoingTransition)/]
 								}
-								[else]
+								[else] 
 									[transitionWithSync(component, rtsc, outgoingTransition)/]
 								[/if]
 							[/for] 
@@ -412,28 +412,34 @@
 [/template]
 
 [template public transitionWithSync (component:Component, rtsc : RealtimeStatechart, transition : Transition)]
-   [for (partnerTransition : Transition | component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).eAllContents(Transition))]
+   [for (partnerTransition : Transition | component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).eAllContents(Transition)->sortedBy(priority)->reverse())]
 		[if (not partnerTransition.synchronization.oclIsUndefined() and not (partnerTransition = transition))]
 		[if partnerTransition.synchronization.syncChannel.getVariableName() = transition.synchronization.syncChannel.getVariableName()]
 		[if ((partnerTransition.synchronization.kind = SynchronizationKind::SEND) and (transition.synchronization.kind = SynchronizationKind::RECEIVE))]
-			if (stateChart->[partnerTransition.statechart.getExecutionVerifierName()/])
+			if ((stateChart->[partnerTransition.statechart.getExecutionVerifierName()/]) &&(stateChart->[getVariableName(partnerTransition.statechart)/] == [partnerTransition.source.oclAsType(State).getName()/])){
 				if ([transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), partnerTransition)/] && [transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), transition)/]){
 					[transition(component, partnerTransition)/]
 					[transition(component, transition)/]
 		stateChart->[partnerTransition.statechart.getExecutionVerifierName()/] = false;
+		stateChart->[transition.statechart.getExecutionVerifierName()/] = false;
+//break;
+				}
 			}
+			else
 		[else]
-			if (stateChart->[partnerTransition.statechart.getExecutionVerifierName()/])
+			if ((stateChart->[partnerTransition.statechart.getExecutionVerifierName()/]) &&(stateChart->[getVariableName(partnerTransition.statechart)/] == [partnerTransition.source.oclAsType(State).getName()/])){
 				if ([transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), partnerTransition)/] && [transitionCondition(component, component.oclAsType(AtomicComponent).getRTSC(), transition)/]){
 					[transition(component, transition)/]
 					[transition(component, partnerTransition)/]
 		stateChart->[partnerTransition.statechart.getExecutionVerifierName()/] = false;
+		stateChart->[transition.statechart.getExecutionVerifierName()/] = false;
+//break;
+				}
 			}
-		[/if]
-		[/if]
-		[/if]
-
-	[/for]
+			else [/if][/if][/if] [/for]
+if (1){
+	//dummy
+}
 [/template]
 
 

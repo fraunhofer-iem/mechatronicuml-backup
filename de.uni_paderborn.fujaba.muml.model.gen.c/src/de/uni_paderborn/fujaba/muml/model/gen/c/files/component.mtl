@@ -104,18 +104,7 @@
 		[for (port : Port | component.ports)]
 			[if (port.oclIsKindOf(DiscretePort))]
 				DiscretePort_initialize(component->[getVariableName(port)/]);
-			[comment]			
-			[elseif (port.kind = PortKind::CONTINUOUS)]
-				@TODO Continuous ports?			
-				[getVariableName(port)/] = new [getClassName(port)/]();
-				[if (component.behavior.oclIsUndefined() )]
-					[if (port.getPortType() = RoleType::IN and port.outgoingConnectors->size() = 0)]
-						[getVariableName(port, false)/] = [getDefaultValue(port.receiverInterface)/];
-					[elseif (port.getPortType() = RoleType::OUT and port.incomingConnectors->size() = 0)]
-						[getVariableName(port, false)/] = [getDefaultValue(port.senderInterface)/];
-					[/if]
-				[/if]
-			[/comment]		 				
+	 				
 			[/if]
 		[/for]
 	}
