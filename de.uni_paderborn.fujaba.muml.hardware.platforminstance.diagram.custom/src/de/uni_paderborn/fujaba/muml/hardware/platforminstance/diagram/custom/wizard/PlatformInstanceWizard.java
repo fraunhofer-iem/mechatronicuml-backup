@@ -17,7 +17,6 @@ import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.com
 public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
 	// wizard pages
-	private ConfigurePage configPage;
 	private PlatformTypePage platformTypePage;
 
 	// the model
@@ -26,27 +25,27 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 	// the workbench instance
 	private IWorkbench workbench;
 
-//	private TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
-	//		.createEditingDomain();
-	
+	// private TransactionalEditingDomain editingDomain =
+	// GMFEditingDomainFactory.INSTANCE
+	// .createEditingDomain();
+
 	private TransactionalEditingDomain editingDomain;
 
 	private IStructuredSelection selection;
 
 	public PlatformInstanceWizard(
-			HWPlatformInstanceConfiguration selectedElement, TransactionalEditingDomain editingDomain) {
+			HWPlatformInstanceConfiguration selectedElement,
+			TransactionalEditingDomain editingDomain) {
 		super();
 		model = new WizardModel();
 		model.setSelectedHWPlatformInstanceConfiguration(selectedElement);
-		this.editingDomain=editingDomain;
+		this.editingDomain = editingDomain;
 	}
 
 	@Override
 	public void addPages() {
 		platformTypePage = new PlatformTypePage();
 		addPage(platformTypePage);
-		configPage = new ConfigurePage();
-		addPage(configPage);
 	}
 
 	public IPath getModelPath() {
@@ -69,12 +68,13 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 		return null;
 	}
 
-/*	public Resource getModelResource() {
-		URI modelURI = URI.createPlatformResourceURI(getModelPath()
-				.toOSString(), true);
-		return editingDomain.getResourceSet().getResource(modelURI, true);
-
-	} */
+	/*
+	 * public Resource getModelResource() { URI modelURI =
+	 * URI.createPlatformResourceURI(getModelPath() .toOSString(), true); return
+	 * editingDomain.getResourceSet().getResource(modelURI, true);
+	 * 
+	 * }
+	 */
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.selection = selection;
@@ -83,17 +83,12 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
 	@Override
 	public boolean performFinish() {
-		if(configPage.active){
-			configPage.saveDataToModel();
 
-		}
+		platformTypePage.saveDataToModel();
+
 		executeTransformation();
 
 		return true;
-	}
-
-	public ConfigurePage getConfigPage() {
-		return configPage;
 	}
 
 	public PlatformTypePage getPlatformTypePage() {
@@ -107,7 +102,8 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 	private void executeTransformation() {
 		if (editingDomain != null) {
 			CreateInstancesCommand command = new CreateInstancesCommand(
-					model.getSelectedHWPlatformInstanceConfiguration(),model.getSelectedHWPlatform(),model.getConfiguration());
+					model.getSelectedHWPlatformInstanceConfiguration(),
+					model.getSelectedHWPlatform(), model.getConfiguration());
 			editingDomain.getCommandStack().execute(command);
 		}
 	}
