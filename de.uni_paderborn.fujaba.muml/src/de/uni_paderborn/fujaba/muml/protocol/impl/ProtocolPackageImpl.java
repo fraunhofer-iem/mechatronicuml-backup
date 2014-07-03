@@ -499,7 +499,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresRoleAndAdaptationBehavior"
+			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior"
 		   });	
 		addAnnotation
 		  (roleConnectorEClass, 
@@ -544,7 +544,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 			 "RoleRequiresBehavior", "-- Role requires behavior\nnot self.behavior.oclIsUndefined()",
 			 "RoleRequiresMessageTypes", "-- Role requires message types to be set\nself.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))",
-			 "MultiRoleRequiresRoleAndAdaptationBehavior", "-- Multi roles need adaptationBehavior and roleAndAdaptationBehavior set\r\nself.multiRole implies \r\n((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"
+			 "MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior", "-- Multi roles need adaptationBehavior and subroleBehavior set\r\nself.multiRole implies \r\n((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))"
 		   });	
 		addAnnotation
 		  (getRole_RoleConnector(), 

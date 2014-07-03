@@ -42,7 +42,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getSubroleBehavior <em>Subrole Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#isMulti <em>Multi</em>}</li>
@@ -113,14 +113,14 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	protected Behavior adaptationBehavior;
 
 	/**
-	 * The cached value of the '{@link #getRoleAndAdaptationBehavior() <em>Role And Adaptation Behavior</em>}' reference.
+	 * The cached value of the '{@link #getSubroleBehavior() <em>Subrole Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoleAndAdaptationBehavior()
+	 * @see #getSubroleBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected Behavior roleAndAdaptationBehavior;
+	protected Behavior subroleBehavior;
 
 	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
@@ -319,16 +319,16 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Behavior getRoleAndAdaptationBehavior() {
-		if (roleAndAdaptationBehavior != null && roleAndAdaptationBehavior.eIsProxy()) {
-			InternalEObject oldRoleAndAdaptationBehavior = (InternalEObject)roleAndAdaptationBehavior;
-			roleAndAdaptationBehavior = (Behavior)eResolveProxy(oldRoleAndAdaptationBehavior);
-			if (roleAndAdaptationBehavior != oldRoleAndAdaptationBehavior) {
+	public Behavior getSubroleBehavior() {
+		if (subroleBehavior != null && subroleBehavior.eIsProxy()) {
+			InternalEObject oldSubroleBehavior = (InternalEObject)subroleBehavior;
+			subroleBehavior = (Behavior)eResolveProxy(oldSubroleBehavior);
+			if (subroleBehavior != oldSubroleBehavior) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR, oldSubroleBehavior, subroleBehavior));
 			}
 		}
-		return roleAndAdaptationBehavior;
+		return subroleBehavior;
 	}
 
 	/**
@@ -336,8 +336,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Behavior basicGetRoleAndAdaptationBehavior() {
-		return roleAndAdaptationBehavior;
+	public Behavior basicGetSubroleBehavior() {
+		return subroleBehavior;
 	}
 
 	/**
@@ -345,11 +345,11 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoleAndAdaptationBehavior(Behavior newRoleAndAdaptationBehavior) {
-		Behavior oldRoleAndAdaptationBehavior = roleAndAdaptationBehavior;
-		roleAndAdaptationBehavior = newRoleAndAdaptationBehavior;
+	public void setSubroleBehavior(Behavior newSubroleBehavior) {
+		Behavior oldSubroleBehavior = subroleBehavior;
+		subroleBehavior = newSubroleBehavior;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR, oldSubroleBehavior, subroleBehavior));
 	}
 
 	/**
@@ -473,9 +473,9 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
 				if (resolve) return getAdaptationBehavior();
 				return basicGetAdaptationBehavior();
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
-				if (resolve) return getRoleAndAdaptationBehavior();
-				return basicGetRoleAndAdaptationBehavior();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR:
+				if (resolve) return getSubroleBehavior();
+				return basicGetSubroleBehavior();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				return getCardinality();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
@@ -512,8 +512,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)newValue);
 				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
-				setRoleAndAdaptationBehavior((Behavior)newValue);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR:
+				setSubroleBehavior((Behavior)newValue);
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				setCardinality((Cardinality)newValue);
@@ -549,8 +549,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)null);
 				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
-				setRoleAndAdaptationBehavior((Behavior)null);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR:
+				setSubroleBehavior((Behavior)null);
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				setCardinality((Cardinality)null);
@@ -580,8 +580,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
 				return adaptationBehavior != null;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
-				return roleAndAdaptationBehavior != null;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR:
+				return subroleBehavior != null;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				return cardinality != null;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:

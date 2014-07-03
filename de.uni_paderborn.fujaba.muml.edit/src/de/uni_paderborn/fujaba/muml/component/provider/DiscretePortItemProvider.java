@@ -14,12 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -68,7 +63,7 @@ public class DiscretePortItemProvider
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
-			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
+			addSubroleBehaviorPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addReceiverMessageBufferPropertyDescriptor(object);
 			addMultiPropertyDescriptor(object);
@@ -171,19 +166,19 @@ public class DiscretePortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Role And Adaptation Behavior feature.
+	 * This adds a property descriptor for the Subrole Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRoleAndAdaptationBehaviorPropertyDescriptor(Object object) {
+	protected void addSubroleBehaviorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscreteInteractionEndpoint_roleAndAdaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_roleAndAdaptationBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
-				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR,
+				 getString("_UI_DiscreteInteractionEndpoint_subroleBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_subroleBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR,
 				 true,
 				 false,
 				 true,
@@ -191,7 +186,6 @@ public class DiscretePortItemProvider
 				 null,
 				 null));
 	}
-
 
 	/**
 	 * This adds a property descriptor for the Cardinality feature.

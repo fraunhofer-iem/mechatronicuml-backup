@@ -433,7 +433,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
+            ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/subroleBehavior"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//connector/DiscreteInteractionEndpoint/multi"/>

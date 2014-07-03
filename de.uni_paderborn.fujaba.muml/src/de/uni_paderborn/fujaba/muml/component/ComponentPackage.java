@@ -1326,13 +1326,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 4;
+	int DISCRETE_PORT__SUBROLE_BEHAVIOR = PORT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.

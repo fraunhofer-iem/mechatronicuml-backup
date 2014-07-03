@@ -67,7 +67,7 @@
         <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"/>
+        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="DiscretePortRequiresMessageTypes" value="-- Discrete Port must define sender or receiver message types&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
@@ -77,8 +77,8 @@
         <details key="DiscretePortAndRoleSameMessageTypes" value="-- Discrete Port must have the same message types as its refined role&#xD;&#xA;not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"/>
         <details key="DiscretePortCardinalityMustComplyWithRefinedRoleCardinality"
             value="-- Cardinality of discrete port and its refined role must match&#xD;&#xA;((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) &#xD;&#xA;implies &#xD;&#xA;((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))"/>
-        <details key="MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"
-            value="-- Multi port of atomic component requires adaptationBehavior and roleAndAdaptationBehavior&#xD;&#xA;(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) &#xD;&#xA;implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"/>
+        <details key="MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior"
+            value="-- Multi port of atomic component requires adaptationBehavior and subroleBehavior&#xD;&#xA;(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) &#xD;&#xA;implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -989,13 +989,13 @@
         <details key="documentation" value="This class represents a role of a coordination protocol."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresRoleAndAdaptationBehavior"/>
+        <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="RoleRequiresBehavior" value="-- Role requires behavior&#xA;not self.behavior.oclIsUndefined()"/>
         <details key="RoleRequiresMessageTypes" value="-- Role requires message types to be set&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
         <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
-        <details key="MultiRoleRequiresRoleAndAdaptationBehavior" value="-- Multi roles need adaptationBehavior and roleAndAdaptationBehavior set&#xD;&#xA;self.multiRole implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"/>
+        <details key="MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior" value="-- Multi roles need adaptationBehavior and subroleBehavior set&#xD;&#xA;self.multiRole implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/AbstractCoordinationSpecification" eOpposite="#//protocol/AbstractCoordinationSpecification/roles">
@@ -2145,8 +2145,7 @@
           <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior of the multi-port.  Then, this real-time statechart &#xD;&#xA;is contained in the only state of the real-time statechart we is obtained by the&#xD;&#xA;reference roleAndAdaptationBehavior.&#xD;&#xA;If this port is a single-port, this reference will be undefined."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
-          eType="#//behavior/Behavior">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subroleBehavior" eType="#//behavior/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior and the sub-port behavior. Thus, this real-time&#xD;&#xA;statechart only contains one state which embeds the real-time statecharts&#xD;&#xA;specifying the adaptation behavior and the sub-port behavior."/>
         </eAnnotations>

@@ -13,10 +13,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
-import de.uni_paderborn.fujaba.muml.protocol.*;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
@@ -358,7 +356,7 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresMessageTypes(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_MultiRoleRequiresRoleAndAdaptationBehavior(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior(role, diagnostics, context);
 		return result;
 	}
 
@@ -461,22 +459,22 @@ public class ProtocolValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the MultiRoleRequiresRoleAndAdaptationBehavior constraint of '<em>Role</em>'.
+	 * The cached validation expression for the MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__MULTI_ROLE_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- Multi roles need adaptationBehavior and roleAndAdaptationBehavior set\r\n" +
+	protected static final String ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- Multi roles need adaptationBehavior and subroleBehavior set\r\n" +
 		"self.multiRole implies \r\n" +
-		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))";
+		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))";
 
 	/**
-	 * Validates the MultiRoleRequiresRoleAndAdaptationBehavior constraint of '<em>Role</em>'.
+	 * Validates the MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRole_MultiRoleRequiresRoleAndAdaptationBehavior(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRole_MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ProtocolPackage.Literals.ROLE,
@@ -484,8 +482,8 @@ public class ProtocolValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "MultiRoleRequiresRoleAndAdaptationBehavior",
-				 ROLE__MULTI_ROLE_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION,
+				 "MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior",
+				 ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

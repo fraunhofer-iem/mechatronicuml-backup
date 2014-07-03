@@ -61,11 +61,12 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 									"Refined Role must be set for this Port, to copy the Role properties.");
 				} else if (role.getCardinality() != null
 						&& role.getCardinality().getUpperBound().getValue() > 1
-						&& role.getRoleAndAdaptationBehavior() == null) {
+						&& role.getAdaptationBehavior() == null
+						&& role.getSubroleBehavior() == null) {
 					MessageDialog
 							.openInformation(window.getShell(),
-									"RoleAndAdaptationBehavior not set",
-									"The multi Role needs to specify a \"RoleAndAdaptationBehavior\".");
+									"SubroleBehavior or AdaptationBehavior not set",
+									"The multi role needs to specify a \"SubroleBehavior\" and a \"AdaptationBehavior\".");
 
 				} else if (FujabaCommonPlugin.showValidationResults(Collections.singletonList(role), "Role validation failed, no role properties were copied.")) {
 					updatePort(editPart.getEditingDomain(), port);

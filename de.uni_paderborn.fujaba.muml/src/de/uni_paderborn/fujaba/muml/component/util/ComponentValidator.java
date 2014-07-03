@@ -13,9 +13,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
-import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -294,7 +292,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(discretePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior(discretePort, diagnostics, context);
 		return result;
 	}
 
@@ -487,23 +485,23 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.
+	 * The cached validation expression for the MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- Multi port of atomic component requires adaptationBehavior and roleAndAdaptationBehavior\r\n" +
+	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- Multi port of atomic component requires adaptationBehavior and subroleBehavior\r\n" +
 		"(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) \r\n" +
 		"implies \r\n" +
-		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))";
+		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))";
 
 	/**
-	 * Validates the MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.
+	 * Validates the MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDiscretePort_MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.DISCRETE_PORT,
@@ -511,8 +509,8 @@ public class ComponentValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior",
-				 DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION,
+				 "MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior",
+				 DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSubroleBehavior <em>Subrole Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#isMulti <em>Multi</em>}</li>
@@ -103,7 +103,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	void setAdaptationBehavior(Behavior value);
 
 	/**
-	 * Returns the value of the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * Returns the value of the '<em><b>Subrole Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -112,23 +112,23 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * statechart only contains one state which embeds the real-time statecharts
 	 * specifying the adaptation behavior and the sub-port behavior.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Role And Adaptation Behavior</em>' reference.
-	 * @see #setRoleAndAdaptationBehavior(Behavior)
-	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior()
+	 * @return the value of the '<em>Subrole Behavior</em>' reference.
+	 * @see #setSubroleBehavior(Behavior)
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint_SubroleBehavior()
 	 * @model
 	 * @generated
 	 */
-	Behavior getRoleAndAdaptationBehavior();
+	Behavior getSubroleBehavior();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSubroleBehavior <em>Subrole Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role And Adaptation Behavior</em>' reference.
-	 * @see #getRoleAndAdaptationBehavior()
+	 * @param value the new value of the '<em>Subrole Behavior</em>' reference.
+	 * @see #getSubroleBehavior()
 	 * @generated
 	 */
-	void setRoleAndAdaptationBehavior(Behavior value);
+	void setSubroleBehavior(Behavior value);
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

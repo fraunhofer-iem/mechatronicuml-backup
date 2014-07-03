@@ -42,16 +42,16 @@ public class RoleEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRoleAndAdaptationBehavior_GeneralTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCardinality_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addReceiverMessageBuffer_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addSubroleBehavior_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -164,30 +164,6 @@ public class RoleEditor
 	/**
 	 * @generated
 	 */
-	protected void addRoleAndAdaptationBehavior_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createRoleAndAdaptationBehavior_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRoleAndAdaptationBehavior_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-				.getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior and the sub-port behavior. Thus, this real-time\nstatechart only contains one state which embeds the real-time statecharts\nspecifying the adaptation behavior and the sub-port behavior.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void addCardinality_GeneralTab_Editor(String category,
 			boolean front) {
 		addEditorToCategory(category, createCardinality_GeneralTab_Editor(),
@@ -228,6 +204,30 @@ public class RoleEditor
 				adapterFactory, feature);
 
 		editor.setTooltipMessage("A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addSubroleBehavior_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createSubroleBehavior_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSubroleBehavior_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getDiscreteInteractionEndpoint_SubroleBehavior();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
+
+		editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior and the sub-port behavior. Thus, this real-time\nstatechart only contains one state which embeds the real-time statecharts\nspecifying the adaptation behavior and the sub-port behavior.");
 
 		return editor;
 

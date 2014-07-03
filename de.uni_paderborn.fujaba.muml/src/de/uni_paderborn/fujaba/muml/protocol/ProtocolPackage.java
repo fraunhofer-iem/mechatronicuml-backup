@@ -701,13 +701,13 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE__ADAPTATION_BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR;
+	int ROLE__SUBROLE_BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.

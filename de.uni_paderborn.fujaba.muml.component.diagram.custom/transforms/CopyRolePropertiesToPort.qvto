@@ -28,17 +28,26 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode 
 	-- get role
 	var theRole := thePort.refinedRole;
 	
-	assert fatal (theRole != null) with log ("Refined Role must be specified");
+	assert fatal (theRole != null) with log ("Refined role must be specified");
 	
 	-- check constraint
-	-- multi port => roleAndAdaptationBehavior must be set
+	-- multi port => subroleBehavior must be set
 	assert fatal (
 		(theRole.cardinality.upperBound.value > 1)
 		implies
-		(not theRole.roleAndAdaptationBehavior.oclIsUndefined())
+		(not theRole.subroleBehavior.oclIsUndefined())
 	)
-	with log("Multi Role must have 'roleAndAdaptationBehavior' property set!");
+	with log("Multi role must have 'subroleBehavior' property set!");
 
+	-- check constraint
+	-- multi port => adaptationBehavior must be set
+	assert fatal (
+		(theRole.cardinality.upperBound.value > 1)
+		implies
+		(not theRole.adaptationBehavior.oclIsUndefined())
+	)
+	with log("Multi role must have 'adaptationBehavior' property set!");
+	
 	-- copy cardinality (creating a new one, to force notification in the diagram)
 	thePort.cardinality := theRole.cardinality.map copyCardinality();
 	
@@ -70,40 +79,36 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout th
 
 	if(thePort.component.oclIsKindOf(AtomicComponent)) then {
 		-- copy real-time statechart
-		if(thePort.cardinality.upperBound.value <= 1) then{
-			-- single port, RTSC is referenced by behavior reference
-			thePort.behavior := (theRole.behavior.deepclone()).oclAsType(RealtimeStatechart);
-			
-			-- contain in resource
-			storeRealtimeStatechart(thePort.behavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
-			
-			-- adjust name
-			thePort.behavior.oclAsType(RealtimeStatechart).name := thePort.behavior.oclAsType(RealtimeStatechart).name + '_' + thePort.name;
-		} else {
-			-- multi port, RTSC is referenced by roleAndAdaptationBehavior
-			thePort.roleAndAdaptationBehavior := (theRole.roleAndAdaptationBehavior.deepclone()).oclAsType(RealtimeStatechart);
 
-			-- contain copied RTSC in resource
-			storeRealtimeStatechart(thePort.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
+		-- RTSC is referenced by behavior reference
+		thePort.behavior := (theRole.behavior.deepclone()).oclAsType(RealtimeStatechart);
+		
+		-- contain in resource
+		storeRealtimeStatechart(thePort.behavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
+		
+		-- adjust name
+		thePort.behavior.oclAsType(RealtimeStatechart).name := thePort.behavior.oclAsType(RealtimeStatechart).name + '_' + thePort.name;
+
+		if(thePort.cardinality.upperBound.value > 1) then{			
 			
 			-- set behavior and adaptationBehavior references
-			thePort.behavior := getMultiPortBehaviorRTSC(theRole, thePort);
+			thePort.subroleBehavior := getMultiPortSubroleBehaviorRTSC(theRole, thePort);
 			thePort.adaptationBehavior := getMultiPortAdaptationRTSC(theRole, thePort);
 			
-			-- adjust name
-			thePort.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart).name := thePort.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart).name + '_' + thePort.name;
 		} endif;
 	} endif;
 }
 
 -- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
 helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNode : RootNode, inout component : AtomicComponent){
+	
 	-- create component RTSC if it does not exists yet
 	if (component.behavior.oclIsUndefined()) then{
 		var behavior := new RealtimeStatechart(component.name);
 		var category : ModelElementCategory := getRTSCCategory(theRootNode);
 		category.modelElements += behavior;
 		component.behavior := behavior;
+		component.behavior.oclAsType(RealtimeStatechart).states -> first().name :=  component.name + '_main';
 	} endif;
 
 	-- hook into component RTSC
@@ -136,16 +141,13 @@ query getMaxPriority(regions:Set(Region)):Integer{
 	return maxPriority;
 }
 
-
-
-
--- returns the RTSC of a multi-port corresponding to the behavior RTSC of a multirole 
-query getMultiPortBehaviorRTSC(in theRole : Role, in thePort : DiscretePort) : RealtimeStatechart{
+-- returns the RTSC of a multi-port corresponding to the subrole RTSC of a multirole 
+query getMultiPortSubroleBehaviorRTSC(in theRole : Role, in thePort : DiscretePort) : RealtimeStatechart{
 	-- obtain RTSC name
-	var rtscName := theRole.behavior.oclAsType(RealtimeStatechart).name;
+	var rtscName := theRole.subroleBehavior.oclAsType(RealtimeStatechart).name;
 	
 	-- search in port RTSC
-	thePort.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart).states -> forEach(state){
+	thePort.behavior.oclAsType(RealtimeStatechart).states -> forEach(state){
 		state.embeddedRegions -> forEach(region){
 			if(region.embeddedStatechart.name = rtscName) then{
 				return region.embeddedStatechart;
@@ -162,7 +164,7 @@ query getMultiPortAdaptationRTSC(in theRole : Role, in thePort : DiscretePort) :
 	var rtscName := theRole.adaptationBehavior.oclAsType(RealtimeStatechart).name;
 	
 	-- search in port RTSC
-	thePort.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart).states -> forEach(state){
+	thePort.behavior.oclAsType(RealtimeStatechart).states -> forEach(state){
 		state.embeddedRegions -> forEach(region){
 			if(region.embeddedStatechart.name = rtscName) then{
 				return region.embeddedStatechart;

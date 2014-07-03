@@ -1135,13 +1135,13 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
+	int DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -2637,15 +2637,15 @@ public interface ConnectorPackage extends EPackage {
 	EReference getDiscreteInteractionEndpoint_AdaptationBehavior();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSubroleBehavior <em>Subrole Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior()
+	 * @return the meta object for the reference '<em>Subrole Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSubroleBehavior()
 	 * @see #getDiscreteInteractionEndpoint()
 	 * @generated
 	 */
-	EReference getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior();
+	EReference getDiscreteInteractionEndpoint_SubroleBehavior();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCardinality <em>Cardinality</em>}'.
@@ -3015,12 +3015,12 @@ public interface ConnectorPackage extends EPackage {
 		EReference DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionEndpoint_AdaptationBehavior();
 
 		/**
-		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Subrole Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior();
+		EReference DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR = eINSTANCE.getDiscreteInteractionEndpoint_SubroleBehavior();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
