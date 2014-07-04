@@ -14,16 +14,17 @@ import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Platf
  * @author andreas muelder - Initial contribution and API
  *
  */
-public enum StatechartImages {
+public enum HWPlatformInstanceImages {
 
-	SUB_STATECHART_PICTOGRAM("platform:/plugin/de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom/icons/platforminstance_large.gif"),
+	COLLAPSE_PICTOGRAM("platform:/plugin/de.uni_paderborn.fujaba.muml.hardware.common/icons/collapse_large.gif"),
+	EXPAND_PICTOGRAM("platform:/plugin/de.uni_paderborn.fujaba.muml.hardware.common/icons/expand_large.gif"),
 
 	LOGO("icons/obj16/logo-16.png");
 	
 
 	private final String path;
 
-	private StatechartImages(String path) {
+	private HWPlatformInstanceImages(String path) {
 		this.path = path;
 	}
 

@@ -12,7 +12,7 @@ import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Platf
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
 
 
-public class CICExtractSubdiagram extends AbstractExtractSubdiagramRefactoring<HWPlatformInstance> {
+public class HWPICExtractSubdiagram extends AbstractExtractSubdiagramRefactoring<HWPlatformInstance> {
 
 	@Override
 	protected boolean elementIsHierachical(HWPlatformInstance element) {

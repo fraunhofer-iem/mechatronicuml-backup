@@ -23,14 +23,14 @@ import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
  * @author andreas muelder - Initial contribution and API
  * 
  */
-public class ComponenInstanceDecorationProvider extends AbstractDecoratorProvider implements IDecoratorProvider {
+public class HWPlatformInstanceDecorationProvider extends AbstractDecoratorProvider implements IDecoratorProvider {
 
-	protected static final String DECORATOR_KEY = StructuredComponentDecorator.class.getSimpleName();
+	protected static final String DECORATOR_KEY = HWPlatformInstaceDecorator.class.getSimpleName();
 
 	public void createDecorators(IDecoratorTarget decoratorTarget) {
 		Object adapter = decoratorTarget.getAdapter(EObject.class);
 		if (adapter instanceof HWPlatformInstance)
-			decoratorTarget.installDecorator(DECORATOR_KEY, new StructuredComponentDecorator(decoratorTarget));
+			decoratorTarget.installDecorator(DECORATOR_KEY, new HWPlatformInstaceDecorator(decoratorTarget));
 	}
 
 	

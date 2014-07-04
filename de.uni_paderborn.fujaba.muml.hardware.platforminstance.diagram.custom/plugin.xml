@@ -58,16 +58,16 @@
          </Priority>
       </editpolicyProvider>
    </extension>
-<!--    <extension
+    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <decoratorProvider
-            class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.refactor.ComponenInstanceDecorationProvider">
+            class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.refactor.HWPlatformInstanceDecorationProvider">
          <Priority
                name="Lowest">
          </Priority>
       </decoratorProvider>
    </extension>
-      <extension
+<!--      <extension
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
@@ -76,7 +76,7 @@
             name="Refactor">
       </command>
    </extension>
-   <extension
+  <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"

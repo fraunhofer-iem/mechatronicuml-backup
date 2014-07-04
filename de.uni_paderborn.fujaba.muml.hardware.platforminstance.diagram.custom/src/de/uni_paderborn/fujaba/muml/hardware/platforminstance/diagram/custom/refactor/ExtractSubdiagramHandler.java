@@ -27,6 +27,6 @@ public class ExtractSubdiagramHandler extends AbstractViewRefactoringHandler {
 
 	@Override
 	public AbstractRefactoring<View> createRefactoring() {
-		return new CICExtractSubdiagram();
+		return new HWPICExtractSubdiagram();
 	}
 }

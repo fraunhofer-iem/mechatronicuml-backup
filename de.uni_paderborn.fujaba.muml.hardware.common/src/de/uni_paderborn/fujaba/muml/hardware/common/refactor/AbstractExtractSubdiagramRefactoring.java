@@ -118,7 +118,7 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject> ex
 			subdiagram.insertChild((View) figureCompartment.getChildren().get(0));
 		}  
 	//	subdiagram.insertChild((View) figureCompartment);
-		//figureCompartment.setVisible(false);
+		figureCompartment.setVisible(false);
 		contextView.removeChild(figureCompartment);
 		 
 		return subdiagram;
