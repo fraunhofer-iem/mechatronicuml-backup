@@ -10,6 +10,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.common.refactor;
 
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
@@ -32,28 +33,30 @@ import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
  * @author andreas muelder - Initial contribution and API
  * 
  */
-public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject> extends AbstractRefactoring<View> {
+public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject>
+		extends AbstractRefactoring<View> {
 
 	private Diagram subdiagram;
 
 	protected abstract boolean elementIsHierachical(T element);
-	
+
 	protected abstract String getEditorID();
-	
+
 	protected abstract PreferencesHint getEditorPreferenceHINT();
-	
-	protected abstract int getCompartmentViewID();
-	
-	protected abstract EObject getElementToExtract(T element) ;
-	
-	
+
+	protected abstract List<Integer> getCompartmentViewIDs();
+
+	protected abstract EObject getElementToExtract(T element);
+
 	@Override
 	public boolean isExecutable() {
 		T element = (T) getContextObject().getElement();
-		BooleanValueStyle inlineStyle = DiagramPartitioningUtil.getInlineStyle(getContextObject());
-		System.out.println("Exe:"+super.isExecutable());
-		System.out.println("Hier:"+elementIsHierachical(element));
-		return super.isExecutable() && elementIsHierachical(element) && (inlineStyle == null || !inlineStyle.isBooleanValue());
+		BooleanValueStyle inlineStyle = DiagramPartitioningUtil
+				.getInlineStyle(getContextObject());
+		System.out.println("Exe:" + super.isExecutable());
+		System.out.println("Hier:" + elementIsHierachical(element));
+		return super.isExecutable() && elementIsHierachical(element)
+				&& (inlineStyle == null || !inlineStyle.isBooleanValue());
 	}
 
 	@Override
@@ -65,7 +68,8 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject> ex
 
 	@Override
 	protected boolean internalDoUndo() {
-		boolean close = DiagramPartitioningUtil.closeSubdiagramEditors((T) subdiagram.getElement());
+		boolean close = DiagramPartitioningUtil
+				.closeSubdiagramEditors((T) subdiagram.getElement());
 		if (!close)
 			return false;
 		// Since the canonical edit policy creates edges for the semantic
@@ -77,25 +81,23 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject> ex
 		return true;
 	}
 
-	
-
 	/**
 	 * Sets the GMF inline {@link Style} to true
 	 */
 	@SuppressWarnings("unchecked")
 	protected void setNotationStyle() {
-		BooleanValueStyle inlineStyle = DiagramPartitioningUtil.getInlineStyle(getContextObject());
+		BooleanValueStyle inlineStyle = DiagramPartitioningUtil
+				.getInlineStyle(getContextObject());
 		if (inlineStyle == null) {
 			inlineStyle = DiagramPartitioningUtil.createInlineStyle();
 			getContextObject().getStyles().add(inlineStyle);
 		}
 		inlineStyle.setBooleanValue(false);
 	}
-	
+
 	/**
-	 * HERE IS THE EDITOR DEPENDEND CODE;
-	 * adann
-	 * TODO: modifiy this part it is editor dependent
+	 * HERE IS THE EDITOR DEPENDEND CODE; adann TODO: modifiy this part it is
+	 * editor dependent
 	 */
 	/**
 	 * Creates a new {@link Diagram} and copies child elements
@@ -105,24 +107,33 @@ public abstract class AbstractExtractSubdiagramRefactoring<T extends EObject> ex
 		T contextElement = (T) contextView.getElement();
 		Map<String, IDiagramInformation> diagramInformationMap = FujabaNewwizardPlugin
 				.getDefault().getDiagramInformationMap();
-		IDiagramInformation information = diagramInformationMap.get(getEditorID());
-		Diagram subdiagram = ViewService.createDiagram(getElementToExtract(contextElement), information.getModelId(), getEditorPreferenceHINT());
-		
-		View figureCompartment = ViewUtil.getChildBySemanticHint(contextView, String.valueOf(getCompartmentViewID()));
-		
+		IDiagramInformation information = diagramInformationMap
+				.get(getEditorID());
+		Diagram subdiagram = ViewService.createDiagram(
+				getElementToExtract(contextElement), information.getModelId(),
+				getEditorPreferenceHINT());
+		View figureCompartment = null;
+		for (Integer viewID : getCompartmentViewIDs()) {
+			figureCompartment = ViewUtil.getChildBySemanticHint(contextView,
+					String.valueOf(viewID));
+			if (figureCompartment != null) {
+				break;
+			}
+		}
+
 		getResource().getContents().add(subdiagram);
-		
-	
+
 		while (figureCompartment.getChildren().size() > 0) {
-			
-			subdiagram.insertChild((View) figureCompartment.getChildren().get(0));
-		}  
-	//	subdiagram.insertChild((View) figureCompartment);
+
+			subdiagram.insertChild((View) figureCompartment.getChildren()
+					.get(0));
+		}
+		// subdiagram.insertChild((View) figureCompartment);
 		figureCompartment.setVisible(false);
 		contextView.removeChild(figureCompartment);
-		 
+
 		return subdiagram;
-		
+
 	}
 
 	protected void setPreferredSize() {

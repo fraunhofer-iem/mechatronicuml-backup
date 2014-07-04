@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.refactor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 
@@ -33,9 +36,11 @@ public class HWPICExtractSubdiagram extends AbstractExtractSubdiagramRefactoring
 	}
 
 	@Override
-	protected int getCompartmentViewID() {
+	protected List<Integer> getCompartmentViewIDs() {
 		// TODO Auto-generated method stub
-		return HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID;
+		List<Integer> list =new ArrayList<Integer>();
+		list.add(HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID);
+		return list;
 		
 	}
 
