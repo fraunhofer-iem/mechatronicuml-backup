@@ -18,6 +18,7 @@ import org.eclipse.draw2d.ImageFigure;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.render.util.CopyToImageUtil;
 import org.eclipse.gmf.runtime.diagram.ui.services.decorator.Decoration;
 import org.eclipse.gmf.runtime.diagram.ui.services.decorator.IDecoratorTarget;
 import org.eclipse.gmf.runtime.diagram.ui.services.decorator.IDecoratorTarget.Direction;
@@ -35,22 +36,28 @@ import org.eclipse.xtext.EcoreUtil2;
  */
 public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 		extends InteractiveDecorator {
-	
+
 	public AbstractHierarchicalElementDecorator(IDecoratorTarget decoratorTarget) {
 		super(decoratorTarget);
 	}
 
 	protected abstract Class<T> getTClass();
 
-
 	protected abstract Image getDecorationImageElement(T element);
-	
+
 	protected abstract EObject getEmbeddedElement(T element);
 
 	protected Diagram getTooltipDiagramToRenderElement(T element) {
-		return getDiagramForSemanticElement(element);
+		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget()
+				.getAdapter(IGraphicalEditPart.class);
+		BooleanValueStyle style = GMFNotationUtil
+				.getBooleanValueStyle(adapter.getNotationView(),
+						DiagramPartitioningUtil.INLINE_STYLE);
+		if (style != null && !style.isBooleanValue()) {
+			return getDiagramForSemanticElement(element);
+		}
+		return null;
 	}
-	
 
 	private Diagram getDiagramForSemanticElement(T element) {
 		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget()
@@ -59,7 +66,8 @@ public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 		Collection<Diagram> diagrams = EcoreUtil2.getObjectsByType(view
 				.eResource().getContents(), NotationPackage.Literals.DIAGRAM);
 		for (Diagram diagram : diagrams) {
-			if (EcoreUtil.equals(diagram.getElement(), getEmbeddedElement(element))) {
+			if (EcoreUtil.equals(diagram.getElement(),
+					getEmbeddedElement(element))) {
 				return diagram;
 			}
 		}
@@ -68,16 +76,18 @@ public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 
 	@Override
 	public boolean shouldDecorate(EObject element) {
-		if(getTClass().isInstance(element)){
-			IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget()
-					.getAdapter(IGraphicalEditPart.class);
-			BooleanValueStyle style = GMFNotationUtil
-					.getBooleanValueStyle(adapter.getNotationView(),
-							DiagramPartitioningUtil.INLINE_STYLE);
-			return style == null ? false : !style.isBooleanValue();
-		}
-		return false;
-		
+		// if(getTClass().isInstance(element)){
+		// IGraphicalEditPart adapter = (IGraphicalEditPart)
+		// getDecoratorTarget()
+		// .getAdapter(IGraphicalEditPart.class);
+		// BooleanValueStyle style = GMFNotationUtil
+		// .getBooleanValueStyle(adapter.getNotationView(),
+		// DiagramPartitioningUtil.INLINE_STYLE);
+		// return style == null ? false : !style.isBooleanValue();
+		// }
+		// return false;
+		return true;
+
 	}
 
 	@Override
@@ -105,19 +115,31 @@ public abstract class AbstractHierarchicalElementDecorator<T extends EObject>
 		Image resize = resize(renderImage,
 				(int) (0.7071 * renderImage.getBounds().width),
 				(int) (0.7071 * renderImage.getBounds().height));
-		return resize; 
+		return resize;
 	}
-	
+
 	@Override
 	protected Direction getDecoratorPosition() {
 		return IDecoratorTarget.Direction.SOUTH_EAST;
 	}
-	
+
 	@Override
 	protected void mousePressed(Decoration decoration, EObject semanticElement) {
-		Diagram diagramToOpen = getDiagramForSemanticElement((T) semanticElement);
-		DiagramPartitioningUtil.openEditor(diagramToOpen);
+		// Diagram diagramToOpen = getDiagramForSemanticElement((T)
+		// semanticElement);
+		// DiagramPartitioningUtil.openEditor(diagramToOpen);
+		IGraphicalEditPart adapter = (IGraphicalEditPart) getDecoratorTarget()
+				.getAdapter(IGraphicalEditPart.class);
+		BooleanValueStyle style = GMFNotationUtil
+				.getBooleanValueStyle(adapter.getNotationView(),
+						DiagramPartitioningUtil.INLINE_STYLE);
+		if (style == null || style.isBooleanValue()) {
+			getExtractClass().execute();
+		} else {
+
+		}
 
 	}
-	
+
+	protected abstract AbstractExtractSubdiagramRefactoring<T> getExtractClass();
 }

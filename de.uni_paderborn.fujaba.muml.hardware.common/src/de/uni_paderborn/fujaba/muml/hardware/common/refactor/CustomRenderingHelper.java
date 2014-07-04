@@ -1,47 +1,52 @@
 package de.uni_paderborn.fujaba.muml.hardware.common.refactor;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.antlr.runtime.tree.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.common.ui.services.editor.EditorService;
 import org.eclipse.gmf.runtime.diagram.ui.OffscreenEditPartFactory;
+import org.eclipse.gmf.runtime.diagram.ui.DiagramUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.render.clipboard.DiagramImageGenerator;
+import org.eclipse.gmf.runtime.diagram.ui.render.util.CopyToImageUtil;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Shell;
 
 public class CustomRenderingHelper {
-	
 	public static org.eclipse.swt.graphics.Image renderToSWTImage(
 			Diagram diagram) {
 		if (null == diagram) {
 			throw new NullPointerException("Argument 'diagram' is null"); //$NON-NLS-1$
 		}
 
-        Shell shell = new Shell();
-        try {
-    		DiagramEditPart diagramEP = OffscreenEditPartFactory.getInstance()
-    			.createDiagramEditPart(diagram, shell);
-    		/*  DiagramEditDomain editDomain = new DiagramEditDomain(null);
-    	        editDomain.setCommandStack(
-    	            new DiagramCommandStack(editDomain));
-    	        
-    		for(Object view:diagram.getChildren()){
-    			if(!(((View)view).getElement() instanceof ComponentInstanceConfiguration )){
-    				((View)view).setVisible(false);
-    			}
-    		} */
-    		DiagramImageGenerator imageGenerator = new DiagramImageGenerator(
-    			diagramEP);
+		Shell shell = new Shell();
+		try {
 
-    		return imageGenerator.createSWTImageDescriptorForDiagram()
-    			.createImage();
-        } finally {
-            shell.dispose();
-        }
-            
+			DiagramEditPart diagramEP = OffscreenEditPartFactory.getInstance()
+					.createDiagramEditPart(diagram, shell);
+
+			DiagramImageGenerator imageGenerator = new DiagramImageGenerator(
+					diagramEP);
+
+			// Image image = imageGenerator.createSWTImageDescriptorForDiagram()
+			// .createImage();
+			List<EditPart> editParts = new ArrayList<EditPart>();
+			editParts.add(diagramEP.getPrimaryChildEditPart());
+			Image image = imageGenerator.createSWTImageDescriptorForParts(
+					editParts).createImage();
+			return image;
+		} finally {
+			shell.dispose();
+		}
+
 	}
-	
-	
-	
-	
 
 }
-
-
