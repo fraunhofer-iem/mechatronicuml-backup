@@ -99,4 +99,11 @@ public class HWDelegationPortEditPolicy extends HWPortBaseEditPolicy {
 		}
 		return kind;
 	}
+
+
+	@Override
+	protected boolean isOptionalPort() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

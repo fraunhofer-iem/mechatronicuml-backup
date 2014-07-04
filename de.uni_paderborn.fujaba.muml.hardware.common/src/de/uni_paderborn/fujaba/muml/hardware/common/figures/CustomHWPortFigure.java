@@ -10,6 +10,7 @@ import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
 /**
@@ -178,6 +179,10 @@ public class CustomHWPortFigure extends RectangleFigure {
 		return fFigureOuterRectContainer;
 	}
 
+	public RectangleFigure getfFigureShadowRectangle() {
+		return fFigureShadowRectangle;
+	}
+
 	/**
 	 * @generated
 	 */
@@ -249,6 +254,20 @@ public class CustomHWPortFigure extends RectangleFigure {
 			getFigureOuterRectangleFigure().setBorder(
 					new MarginBorder(marginTopRight, 0, 0, marginTopRight));
 		}
+	}
+	
+	public void setOptional(boolean isOptional){
+		if(isOptional){
+			getFigureInnerRectContainer().setLineStyle(SWT.LINE_DASH);
+			getFigureOuterRectangleFigure().setLineStyle(SWT.LINE_DASH);
+			getfFigureShadowRectangle().setLineStyle(SWT.LINE_DASH);
+		}
+		else{
+			getFigureInnerRectContainer().setLineStyle(SWT.LINE_SOLID);
+			getFigureOuterRectangleFigure().setLineStyle(SWT.LINE_SOLID);
+			getfFigureShadowRectangle().setLineStyle(SWT.LINE_SOLID);
+		}
+		
 	}
 
 }

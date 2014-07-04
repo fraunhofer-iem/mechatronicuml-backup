@@ -78,4 +78,10 @@ public class ResourceInstanceHWPortEditPolicy extends HWPortBaseEditPolicy {
 		}
 		return kind;
 	}
+
+	@Override
+	protected boolean isOptionalPort() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

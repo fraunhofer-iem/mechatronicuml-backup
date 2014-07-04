@@ -11,16 +11,16 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 
-
 /**
- * Base edit policy for all {@link HWPortPart}s that uses the CustomHWPortFigure.
- *  Provides handling model notifications and updating the hwport figure accordingly. 
+ * Base edit policy for all {@link HWPortPart}s that uses the
+ * CustomHWPortFigure. Provides handling model notifications and updating the
+ * hwport figure accordingly.
  * 
  * @author adann
  * 
  */
 public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
-	
+
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		EStructuralFeature feature = null;
@@ -37,8 +37,7 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 		}
 		super.handleNotificationEvent(notification);
 	}
-	
-	
+
 	/**
 	 * Returns whether its HWPortInstance is a delegation port.
 	 * 
@@ -49,27 +48,23 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 		return false;
 	}
 
-
-
-
 	@Override
 	protected boolean isMultiHWPort() {
 		EObject element = getSemanticElement();
-	
+
 		HWPortPart hwPortPart = null;
 
 		if (element != null) {
-			if (HwplatformPackage.Literals.HW_PORT_PART
-					.isSuperTypeOf(element.eClass())) {
+			if (HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(element
+					.eClass())) {
 				hwPortPart = (HWPortPart) element;
 			}
 		}
-		if(hwPortPart==null){
+		if (hwPortPart == null) {
 			return false;
 		}
 		return hwPortPart.isMultiHWPort();
 	}
-
 
 	@Override
 	protected HWPortKind getHWPortKind() {
@@ -78,12 +73,11 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
 		HWPortPart hwPortPart = null;
 		if (element != null) {
-			if (HwplatformPackage.Literals.HW_PORT_PART
-					.isSuperTypeOf(element.eClass())) {
+			if (HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(element
+					.eClass())) {
 				hwPortPart = (HWPortPart) element;
 			}
-			}
-			
+		}
 
 		if (hwPortPart != null) {
 			modelPortKind = hwPortPart.getPortKind();
@@ -98,5 +92,13 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 
 		}
 		return kind;
+	}
+
+	@Override
+	protected boolean isOptionalPort() {
+		EObject element = getSemanticElement();
+		HWPortPart portPart = (HWPortPart) element;
+
+		return portPart.getCardinality().getLowerBound().getValue() == 0;
 	}
 }

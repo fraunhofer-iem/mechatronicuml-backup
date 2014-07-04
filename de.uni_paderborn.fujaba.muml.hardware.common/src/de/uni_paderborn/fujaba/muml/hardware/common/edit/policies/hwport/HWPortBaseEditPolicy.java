@@ -46,9 +46,11 @@ public abstract class HWPortBaseEditPolicy extends
 		HWPortKind kind = getHWPortKind();
 		boolean delegation = isDelegationPort();
 		boolean isMultiPort = isMultiHWPort();
+		boolean isOptional = isOptionalPort();
 		getHWPortFigure().setHWPortKind(kind);
 		getHWPortFigure().setDelegationPort(delegation);
 		getHWPortFigure().setMulti(isMultiPort);
+		getHWPortFigure().setOptional(isOptional);
 	}
 
 	
@@ -58,5 +60,7 @@ public abstract class HWPortBaseEditPolicy extends
 	protected abstract HWPortKind getHWPortKind();
 
 	protected abstract boolean isDelegationPort();
+	
+	protected abstract boolean isOptionalPort();
 
 }
