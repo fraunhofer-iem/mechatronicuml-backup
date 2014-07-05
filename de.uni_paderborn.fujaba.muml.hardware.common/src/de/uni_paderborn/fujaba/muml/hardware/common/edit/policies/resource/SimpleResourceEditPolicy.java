@@ -12,7 +12,6 @@ import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditP
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.ICustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Device;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
@@ -28,7 +27,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
  * @author adann
  * 
  */
-public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
+public class SimpleResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 
 	static final Font BOLD_FONT = new Font(Display.getCurrent(), Display
 			.getDefault().getSystemFont().getFontData()[0].getName(), 9,
@@ -45,8 +44,8 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 		return ((AbstractGraphicalEditPart) getHost()).getContentPane();
 	}
 
-	public ICustomResourceFigure getResourceFigure() {
-		return (ICustomResourceFigure) getContentPane();
+	public CustomResourceFigure getResourceFigure() {
+		return (CustomResourceFigure) getContentPane();
 	}
 
 	public CustomIconFigure getIconFigure() {
@@ -62,7 +61,7 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 		Resource element = getResource();
 		ResourceType kind = ResourceType.PROCESSOR;
 		Boolean isResourceInstance = isResourceInstance();
-	//	getResourceFigure().getFigureResourceInfoRectangle().setVisible(true);
+		getResourceFigure().getFigureResourceInfoRectangle().setVisible(true);
 
 		if (element != null) {
 			if (HwresourcePackage.Literals.STRUCTURED_RESOURCE
@@ -77,8 +76,8 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 					kind = ResourceType.ACTUATOR;
 				}
 
-			//	getResourceFigure().getFigureResourceInfoRectangle()
-			//			.setVisible(false);
+				getResourceFigure().getFigureResourceInfoRectangle()
+						.setVisible(false);
 			}
 			if (HwresourcePackage.Literals.PROCESSOR.isSuperTypeOf(element
 					.eClass())) {

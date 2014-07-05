@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.Res
  * @author adann
  * 
  */
-public class CustomSimpleResourceFigure extends RectangleFigure {
+public class CustomSimpleResourceFigure extends RectangleFigure implements ICustomResourceFigure{
 
 	/**
 	 * @generated
