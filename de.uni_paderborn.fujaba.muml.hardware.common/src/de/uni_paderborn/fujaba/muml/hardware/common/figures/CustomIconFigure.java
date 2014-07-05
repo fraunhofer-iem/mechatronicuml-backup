@@ -5,6 +5,7 @@ import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
@@ -15,16 +16,19 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.icons.Cpu;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 
 /**
- * The custom icon figure gallery for all {@link ResourceType}s and {@link ResourceInstance}s.
+ * The custom icon figure gallery for all {@link ResourceType}s and
+ * {@link ResourceInstance}s.
+ * 
  * @author adann
- *
+ * 
  */
 public class CustomIconFigure extends RectangleFigure {
 
 	public static enum ResourceType {
-		PROCESSOR, PLD, MEMORY, ACTUATOR, SENSOR, CACHE, STRUCTURED, PLATFORM
+		PROCESSOR, PLD, MEMORY, ACTUATOR, SENSOR, CACHE, STRUCTURED, PLATFORM, COMMUNICATION
 	}
 
 	private RectangleFigure sensorIconFigure;
@@ -32,6 +36,8 @@ public class CustomIconFigure extends RectangleFigure {
 	private RectangleFigure actuatorIconFigure;
 
 	private RectangleFigure processorIconFigure;
+
+	private RectangleFigure networkIconFigure;
 
 	private RectangleFigure pldIconFigure;
 
@@ -81,6 +87,7 @@ public class CustomIconFigure extends RectangleFigure {
 		drawStructuredIcon(container);
 		// drawPlatformIcon(container);
 
+		drawNetworkIcon(container);
 		// PLDIcon
 		pldIconFigure = new RectangleFigure();
 
@@ -145,14 +152,12 @@ public class CustomIconFigure extends RectangleFigure {
 
 		icon.add(disk, new Rectangle(1, 0, 28, 10));
 		icon.add(line, new Rectangle(0, 4, 30, 23));
-		icon.add(line2, new Rectangle(0, 4, 30, 23)); 
+		icon.add(line2, new Rectangle(0, 4, 30, 23));
 
-		memoryIconFigure.add(icon); 
-	
-//		memoryIconFigure.add(icon,new Rectangle(0,10,30,10)); 
-//		memoryIconFigure.add(icon,new Rectangle(0,20,30,10)); 
+		memoryIconFigure.add(icon);
 
-
+		// memoryIconFigure.add(icon,new Rectangle(0,10,30,10));
+		// memoryIconFigure.add(icon,new Rectangle(0,20,30,10));
 
 		container.add(memoryIconFigure);
 
@@ -252,10 +257,8 @@ public class CustomIconFigure extends RectangleFigure {
 		 * processorIconFigure.add(icon);
 		 */
 
-		
 		Cpu cpu0 = new Cpu();
 		processorIconFigure.add(cpu0);
-
 		container.add(processorIconFigure);
 	}
 
@@ -307,9 +310,80 @@ public class CustomIconFigure extends RectangleFigure {
 		sensorIconFigure.setVisible(resourceType == ResourceType.SENSOR);
 		actuatorIconFigure.setVisible(resourceType == ResourceType.ACTUATOR);
 		processorIconFigure.setVisible(resourceType == ResourceType.PROCESSOR);
+
 		pldIconFigure.setVisible(resourceType == ResourceType.PLD);
 		memoryIconFigure.setVisible(resourceType == ResourceType.MEMORY);
 		structuredIconFigure.setVisible(resourceType == ResourceType.STRUCTURED
 				|| resourceType == ResourceType.PLATFORM);
+		networkIconFigure
+				.setVisible(resourceType == ResourceType.COMMUNICATION);
+	}
+
+	public void drawNetworkIcon(RectangleFigure container) {
+		networkIconFigure = new RectangleFigure();
+		networkIconFigure.setLayoutManager(new XYLayout());
+		networkIconFigure.setOutline(false);
+
+		RectangleFigure first = new RectangleFigure();
+		first.setBackgroundColor(ColorConstants.black);
+		first.setFill(false);
+		// first.setPreferredSize(5, 5);
+		first.setSize(10, 10);
+		first.setLocation(new Point(10, 0));
+		first.setLineWidth(2);
+
+		RectangleFigure second = new RectangleFigure();
+		second.setBackgroundColor(ColorConstants.black);
+		second.setFill(false);
+		// first.setPreferredSize(5, 5);
+		second.setSize(10, 10);
+		second.setLocation(new Point(0, 20));
+		second.setLineWidth(2);
+
+		RectangleFigure third = new RectangleFigure();
+		third.setBackgroundColor(ColorConstants.black);
+		third.setFill(false);
+		// first.setPreferredSize(5, 5);
+		third.setSize(10, 10);
+		third.setLocation(new Point(20, 20));
+		third.setLineWidth(2);
+
+		PolylineShape horizontalLine = new PolylineShape();
+		horizontalLine.addPoint(new Point(0, 15));
+		horizontalLine.addPoint(new Point(30, 15));
+		horizontalLine.setFill(true);
+		horizontalLine.setLineWidth(2);
+		horizontalLine.setBackgroundColor(ColorConstants.black);
+
+		PolylineShape vLine1 = new PolylineShape();
+		vLine1.addPoint(new Point(5, 15));
+		vLine1.addPoint(new Point(5, 20));
+		vLine1.setFill(true);
+		vLine1.setLineWidth(2);
+		vLine1.setBackgroundColor(ColorConstants.black);
+
+		PolylineShape vLine2 = new PolylineShape();
+		vLine2.addPoint(new Point(25, 15));
+		vLine2.addPoint(new Point(25, 20));
+		vLine2.setFill(true);
+		vLine2.setLineWidth(2);
+		vLine2.setBackgroundColor(ColorConstants.black);
+
+		PolylineShape vLine3 = new PolylineShape();
+		vLine3.addPoint(new Point(15, 10));
+		vLine3.addPoint(new Point(15, 15));
+		vLine3.setFill(true);
+		vLine3.setLineWidth(2);
+		vLine3.setBackgroundColor(ColorConstants.black);
+
+		networkIconFigure.add(first);
+		networkIconFigure.add(second);
+		networkIconFigure.add(third);
+		networkIconFigure.add(horizontalLine, new Rectangle(0, 0, 30, 30));
+		networkIconFigure.add(vLine1, new Rectangle(0, 0, 30, 30));
+		networkIconFigure.add(vLine2, new Rectangle(0, 0, 30, 30));
+		networkIconFigure.add(vLine3, new Rectangle(0, 0, 30, 30));
+
+		container.add(networkIconFigure);
 	}
 }
