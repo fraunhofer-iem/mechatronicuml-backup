@@ -113,18 +113,26 @@
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPort"/>
       <properties>
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPort/interfaceEntries"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.4">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry"/>
       <properties>
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/minimumCommitTime"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/timeForDecision"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/timeForExecutionPhase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -233,10 +241,25 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationRule/signature"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Signature"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Signature/parameters"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Signature/returnParameters"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
     <classes>
