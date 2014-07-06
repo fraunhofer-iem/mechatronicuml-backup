@@ -311,6 +311,7 @@ public class LinkEditPart extends ShapeNodeEditPart {
 		 */
 		public LinkResourceFigure() {
 			this.setLayoutManager(new StackLayout());
+			this.setFill(false);
 			this.setOutline(false);
 			createContents();
 		}

@@ -116,6 +116,9 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.0/?LinkProtocol", de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3007); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.0/?CommunicationResource", de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3008); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/hardware/hwresource/1.0/?Processor?ownedCache", de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4001); //$NON-NLS-1$
@@ -201,6 +204,8 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 			return getBusProtocol_3006Text(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
 			return getLinkProtocol_3007Text(view);
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
+			return getCommunicationResource_3008Text(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID:
 			return getProcessorOwnedCache_4001Text(view);
 		}
@@ -484,6 +489,28 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
 					.getInstance().logError(
 							"Parser was not found for label " + 5031); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getCommunicationResource_3008Text(View view) {
+		IParser parser = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3008,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 5033); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

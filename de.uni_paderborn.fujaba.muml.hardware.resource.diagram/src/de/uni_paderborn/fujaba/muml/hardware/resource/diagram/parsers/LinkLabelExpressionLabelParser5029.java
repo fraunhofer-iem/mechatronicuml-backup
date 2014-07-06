@@ -38,7 +38,7 @@ public class LinkLabelExpressionLabelParser5029 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						36,
+						41,
 						de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 								.getLink(), null).body();
 	}

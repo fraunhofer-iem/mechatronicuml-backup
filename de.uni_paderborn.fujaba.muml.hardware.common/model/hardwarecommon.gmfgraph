@@ -234,6 +234,45 @@
       <accessors accessor="getFigureBusProtocolFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0"/>
       <accessors figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.1"/>
     </descriptors>
+    <descriptors name="SimpleResourceFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ResourceFigure">
+        <layout xsi:type="gmfgraph:GridLayout"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ResourceContainerFigure" outline="false">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="BEGINNING"/>
+          <layout xsi:type="gmfgraph:StackLayout"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Rectangle" name="ResourceNameRectangle" outline="false" fill="false">
+            <layout xsi:type="gmfgraph:GridLayout" numColumns="3" equalWidth="false"/>
+            <children xsi:type="gmfgraph:Label" name="ResourceNameFigure" text="&lt;...>">
+              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="END"/>
+            </children>
+            <children xsi:type="gmfgraph:Label" name="ResourceKindFigure" text="&lt;...>">
+              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="BEGINNING"/>
+            </children>
+            <children xsi:type="gmfgraph:Label" name="ResourceCardinalityFigure" text="&lt;...>">
+              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="BEGINNING"/>
+            </children>
+          </children>
+          <children xsi:type="gmfgraph:Rectangle" name="ResourceIconRectangle" outline="false" fill="false">
+            <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+            <children xsi:type="gmfgraph:CustomFigure" name="CustomIconFigure" qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure"/>
+          </children>
+        </children>
+      </actualFigure>
+      <accessors accessor="getFigureResourceNameFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors accessor="getFigureResourceKindFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.0/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.0/@children.2"/>
+      <accessors figure="//@figures.0/@descriptors.10/@actualFigure/@children.0/@children.1/@children.0"/>
+    </descriptors>
+    <descriptors name="SimpleResourceFigureRef">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="SimpleResourceFigure" qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure"/>
+      <accessors accessor="getFigureResourceNameFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors accessor="getFigureResourceKindFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.2"/>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1/@children.0"/>
+    </descriptors>
   </figures>
   <nodes name="HWPort" figure="HWPortFigureRef" affixedParentSide="EAST">
     <facets xsi:type="gmfgraph:DefaultSizeFacet">
@@ -270,6 +309,11 @@
       <defaultSize dx="130" dy="50"/>
     </facets>
   </nodes>
+  <nodes name="SimpleResource" figure="SimpleResourceFigureRef">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="130" dy="47"/>
+    </facets>
+  </nodes>
   <compartments name="StructuredResourceCompartment" figure="StructuredResourceFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <compartments name="HWPlatformCompartment" figure="HWPlatform" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <labels name="HWPortLabel" figure="HWPortLabelFigure" elementIcon="false">
@@ -286,4 +330,7 @@
   <labels name="HWPlatformName" figure="HWPlatform" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels name="BusProtocol" figure="BusFigure" elementIcon="false" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels name="BusBandwidth" figure="BusFigure" elementIcon="false" accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+  <labels name="SimpleResourceNameLabel" figure="SimpleResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="SimpleResourceKindLabel" figure="SimpleResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels name="SimpleResourceCardinalityLabel" figure="SimpleResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
 </gmfgraph:Canvas>

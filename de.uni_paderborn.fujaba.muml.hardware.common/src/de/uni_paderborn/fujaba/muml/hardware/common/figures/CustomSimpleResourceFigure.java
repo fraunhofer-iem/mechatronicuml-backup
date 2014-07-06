@@ -1,11 +1,13 @@
 package de.uni_paderborn.fujaba.muml.hardware.common.figures;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
 
@@ -19,6 +21,9 @@ import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.Res
  */
 public class CustomSimpleResourceFigure extends RectangleFigure implements ICustomResourceFigure{
 
+	
+	private static final Color COLOR_DEVICE = new Color(null, 230, 230, 230);
+
 	/**
 	 * @generated
 	 */
@@ -31,6 +36,8 @@ public class CustomSimpleResourceFigure extends RectangleFigure implements ICust
 	 * @generated
 	 */
 	private WrappingLabel fFigureResourceCardinalityFigure;
+	
+	private RectangleFigure resourceContainerFigure0;
 	/**
 	 * @generated
 	 */
@@ -54,7 +61,7 @@ public class CustomSimpleResourceFigure extends RectangleFigure implements ICust
 	 */
 	private void createContents() {
 
-		RectangleFigure resourceContainerFigure0 = new RectangleFigure();
+		resourceContainerFigure0 = new RectangleFigure();
 
 		resourceContainerFigure0.setOutline(false);
 		resourceContainerFigure0.setBorder(new MarginBorder(5));
@@ -193,6 +200,19 @@ public class CustomSimpleResourceFigure extends RectangleFigure implements ICust
 	public void isResourceInstance(Boolean isInstance) {
 		this.fFigureResourceNameFigure.setTextUnderline(isInstance);
 		this.fFigureResourceKindFigure.setTextUnderline(isInstance);
+	}
+
+	@Override
+	public void isDevice(Boolean isDevice) {
+		if(isDevice){
+			this.setBackgroundColor(COLOR_DEVICE);
+			this.setFill(true);
+			
+		}
+		else{
+			this.setBackgroundColor(ColorConstants.white);
+		}
+		
 	}
 
 }

@@ -243,7 +243,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ResourceType1Group_title;
+	public static String General1Group_title;
 
 	/**
 	 * @generated
@@ -273,12 +273,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String HWPort2CreationTool_title;
+	public static String CommunicationResource2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HWPort2CreationTool_desc;
+	public static String CommunicationResource2CreationTool_desc;
 
 	/**
 	 * @generated

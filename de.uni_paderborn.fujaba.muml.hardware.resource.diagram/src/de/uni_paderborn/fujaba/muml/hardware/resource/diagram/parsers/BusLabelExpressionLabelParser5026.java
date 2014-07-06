@@ -38,7 +38,7 @@ public class BusLabelExpressionLabelParser5026 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						30,
+						35,
 						de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 								.getBus(), null).body();
 	}
@@ -50,7 +50,7 @@ public class BusLabelExpressionLabelParser5026 extends
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						31,
+						36,
 						de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 								.getBus(), null).evaluate(target);
 		return String.valueOf(result);

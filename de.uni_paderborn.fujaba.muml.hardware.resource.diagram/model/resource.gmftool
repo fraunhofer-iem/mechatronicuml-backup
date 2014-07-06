@@ -8,7 +8,7 @@
       title="resourcetypePalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="ResourceType"
+        title="General"
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
@@ -25,8 +25,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="HWPort"
-          description="Create new HWPort">
+          title="Communication-Resource"
+          description="Create new Communication-Resource">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/port_small.gif"
@@ -39,7 +39,7 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="StructuredResource and emebedded Resources"
+        title="Structured Resource and emebedded Resources"
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
@@ -120,7 +120,7 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="CommunicationMedia"
+        title="Communication Media"
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
@@ -151,15 +151,15 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="CommunicationProtocol"
+        title="Communication Protocol"
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
           title="ProtocolRepository">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/ProtocolRepo.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.resource.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

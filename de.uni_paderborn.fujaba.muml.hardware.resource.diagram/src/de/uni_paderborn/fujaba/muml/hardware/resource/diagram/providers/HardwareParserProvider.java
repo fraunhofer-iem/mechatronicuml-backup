@@ -147,6 +147,41 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser communicationResourceName_5033Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommunicationResourceName_5033Parser() {
+		if (communicationResourceName_5033Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
+					features, editableFeatures);
+			communicationResourceName_5033Parser = parser;
+		}
+		return communicationResourceName_5033Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommunicationResourceLabel_5034Parser() {
+		return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5034();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommunicationResourceLabel_5035Parser() {
+		return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5035();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser cacheName_5005Parser;
 
 	/**
@@ -393,6 +428,12 @@ public class HardwareParserProvider extends AbstractProvider implements
 			return getCommunicationProtocolRepositoryName_5032Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
 			return getCommunicationResourceLabel_5001Parser();
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceNameEditPart.VISUAL_ID:
+			return getCommunicationResourceName_5033Parser();
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel23EditPart.VISUAL_ID:
+			return getCommunicationResourceLabel_5034Parser();
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel24EditPart.VISUAL_ID:
+			return getCommunicationResourceLabel_5035Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheNameEditPart.VISUAL_ID:
 			return getCacheName_5005Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:

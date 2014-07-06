@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdap
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -40,7 +41,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class StructuredResourceEditPart extends AbstractBorderedShapeEditPart {
+public class StructuredResourceEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
@@ -68,19 +69,10 @@ public class StructuredResourceEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.StructuredResourceItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.StructuredResourceCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -102,12 +94,6 @@ public class StructuredResourceEditPart extends AbstractBorderedShapeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
-					return new BorderItemSelectionEditPolicy();
-				}
 				EditPolicy result = child
 						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -170,15 +156,6 @@ public class StructuredResourceEditPart extends AbstractBorderedShapeEditPart {
 					.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.EAST);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
 		return false;
 	}
 
@@ -199,13 +176,6 @@ public class StructuredResourceEditPart extends AbstractBorderedShapeEditPart {
 			IFigure pane = getPrimaryShape().getFigureEmbeddedAtomicResources();
 			pane.remove(((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart) childEditPart)
 					.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart) childEditPart)
-							.getFigure());
 			return true;
 		}
 		return false;
@@ -238,9 +208,6 @@ public class StructuredResourceEditPart extends AbstractBorderedShapeEditPart {
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceStructuredResourceCompartmentEditPart) {
 			return getPrimaryShape().getFigureEmbeddedAtomicResources();
 		}
-		if (editPart instanceof IBorderItemEditPart) {
-			return getBorderedFigure().getBorderItemContainer();
-		}
 		return getContentPane();
 	}
 
@@ -264,7 +231,7 @@ public class StructuredResourceEditPart extends AbstractBorderedShapeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createMainFigure() {
+	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();

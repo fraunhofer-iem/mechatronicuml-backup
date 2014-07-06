@@ -23,12 +23,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class CacheLabelExpressionLabelParser5009 extends
+public class CommunicationResourceLabelExpressionLabelParser5035 extends
 		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public CacheLabelExpressionLabelParser5009() {
+	public CommunicationResourceLabelExpressionLabelParser5035() {
 	}
 
 	/**
@@ -38,9 +38,9 @@ public class CacheLabelExpressionLabelParser5009 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						17,
+						12,
 						de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-								.getCache(), null).body();
+								.getCommunicationResource(), null).body();
 	}
 
 	/**

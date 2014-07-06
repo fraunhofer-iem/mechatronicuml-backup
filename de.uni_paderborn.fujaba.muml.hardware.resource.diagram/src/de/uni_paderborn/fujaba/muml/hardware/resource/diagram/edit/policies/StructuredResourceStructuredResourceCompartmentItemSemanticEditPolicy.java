@@ -22,6 +22,11 @@ public class StructuredResourceStructuredResourceCompartmentItemSemanticEditPoli
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
+		if (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3008 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.commands.CommunicationResource2CreateCommand(
+					req));
+		}
 		if (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Cache_3002 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.commands.CacheCreateCommand(

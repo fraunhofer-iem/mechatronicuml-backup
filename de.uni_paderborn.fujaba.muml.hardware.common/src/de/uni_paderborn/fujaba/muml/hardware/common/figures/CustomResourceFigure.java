@@ -279,4 +279,10 @@ public class CustomResourceFigure extends RectangleFigure implements ICustomReso
 		this.fFigureResourceKindFigure.setTextUnderline(isInstance);
 	}
 
+	@Override
+	public void isDevice(Boolean isDevice) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

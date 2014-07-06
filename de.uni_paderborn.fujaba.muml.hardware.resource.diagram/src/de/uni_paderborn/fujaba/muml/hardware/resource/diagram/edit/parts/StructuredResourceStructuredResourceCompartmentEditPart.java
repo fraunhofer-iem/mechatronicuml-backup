@@ -55,11 +55,6 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
 				.createFigure();
-		result.getScrollPane().setVerticalScrollBar(null);
-		result.getScrollPane().setHorizontalScrollBar(null);
-		result.getScrollPane().setVerticalScrollBarVisibility(ScrollPane.NEVER);
-		result.getScrollPane().setHorizontalScrollBarVisibility(ScrollPane.NEVER);
-		
 
 		result.setTitleVisibility(false);
 
@@ -116,6 +111,9 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3008) {
+				return this;
+			}
 			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Cache_3002) {
 				return this;
 			}

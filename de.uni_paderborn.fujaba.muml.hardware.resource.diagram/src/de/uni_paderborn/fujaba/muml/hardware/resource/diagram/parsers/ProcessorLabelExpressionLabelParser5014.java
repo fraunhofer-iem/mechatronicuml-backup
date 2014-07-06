@@ -38,7 +38,7 @@ public class ProcessorLabelExpressionLabelParser5014 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						18,
+						23,
 						de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 								.getProcessor(), null).body();
 	}

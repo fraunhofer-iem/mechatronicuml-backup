@@ -30,7 +30,7 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression[42];
+		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression[47];
 	}
 
 	/**
@@ -58,6 +58,11 @@ public class HardwareOCLFactory {
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\': \' + self.deviceType.toString()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'StructuredResource\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'Com.Resource\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\n--let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\n--\'[\' + lowerBound + \'..\' + upperBound + \']\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'cache\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' : Cache\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

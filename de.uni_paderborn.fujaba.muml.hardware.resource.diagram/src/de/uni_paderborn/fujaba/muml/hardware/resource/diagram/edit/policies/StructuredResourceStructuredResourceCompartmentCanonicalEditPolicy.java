@@ -3,10 +3,12 @@ package de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import java.util.Set;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -28,6 +30,11 @@ import org.eclipse.gmf.runtime.notation.View;
 public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
+
+	/**
+	 * @generated
+	 */
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	public StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy() {
 	}
@@ -52,9 +59,17 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-				.getStructuredResource_EmbeddedAtomicResources();
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+							.getResource_Hwports());
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+							.getStructuredResource_EmbeddedAtomicResources());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -88,6 +103,7 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays
 						.asList(new Integer[] {
+								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID,
@@ -128,6 +144,7 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy
 		int visualID = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view);
 		switch (visualID) {
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID:

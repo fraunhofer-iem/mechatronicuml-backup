@@ -38,7 +38,7 @@ public class MemoryResourceLabelExpressionLabelParser5022 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						26,
+						31,
 						de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 								.getMemoryResource(), null).body();
 	}

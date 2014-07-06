@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,22 +23,22 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
-		paletteRoot.add(createResourceType1Group());
+		paletteRoot.add(createGeneral1Group());
 		paletteRoot.add(createStructuredResourceandemebeddedResources2Group());
 		paletteRoot.add(createCommunicationMedia3Group());
 		paletteRoot.add(createCommunicationProtocol4Group());
 	}
 
 	/**
-	 * Creates "ResourceType" palette tool group
+	 * Creates "General" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createResourceType1Group() {
+	private PaletteContainer createGeneral1Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.ResourceType1Group_title);
-		paletteContainer.setId("createResourceType1Group"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.General1Group_title);
+		paletteContainer.setId("createGeneral1Group"); //$NON-NLS-1$
 		paletteContainer.add(createDevice1CreationTool());
-		paletteContainer.add(createHWPort2CreationTool());
+		paletteContainer.add(createCommunicationResource2CreationTool());
 		return paletteContainer;
 	}
 
@@ -106,13 +107,15 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createHWPort2CreationTool() {
+	private ToolEntry createCommunicationResource2CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3001);
+		types.add(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3008);
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.HWPort2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.HWPort2CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3001));
-		entry.setId("createHWPort2CreationTool"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationResource2CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationResource2CreationTool_desc,
+				types);
+		entry.setId("createCommunicationResource2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/port_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
@@ -265,8 +268,8 @@ public class HardwarePaletteFactory {
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2005));
 		entry.setId("createProtocolRepository1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2005));
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.resource.diagram/icons/ProtocolRepo.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

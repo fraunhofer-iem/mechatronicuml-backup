@@ -65,7 +65,7 @@
 	         locationURI="popup:de.uni_paderborn.fujaba?after=psmdiagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.createDiagram"
-	            icon="icons/obj16/PlatforminstanceDiagramFile.gif"
+	            icon="icons/obj16/HwplatforminstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.createDiagram"
 	            label="Create PlatformInstance Diagram"
 	            style="push">

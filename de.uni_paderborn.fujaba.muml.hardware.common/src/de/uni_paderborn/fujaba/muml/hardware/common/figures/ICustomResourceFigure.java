@@ -11,5 +11,7 @@ public interface ICustomResourceFigure {
 	public de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure getFigureCustomIconFigure();
 	public void isResourceInstance(Boolean isInstance);
 	
+	public void isDevice(Boolean isDevice);
+	
 
 }

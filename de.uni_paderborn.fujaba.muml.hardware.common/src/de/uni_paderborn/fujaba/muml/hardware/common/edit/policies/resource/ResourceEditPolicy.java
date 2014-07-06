@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.swt.SWT;
@@ -18,12 +19,12 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 
-
 /**
- * Base edit policy for all {@link ResourceType}s that uses the CustomResourceFigure.
- *  It provides handling model notifications and updating the CustomResourceFigure accordingly. 
- *  This base implementation does not depend on any semantic classes, but subclasses
- * should override handleNotificationEvent() and call refreshIcon() method.
+ * Base edit policy for all {@link ResourceType}s that uses the
+ * CustomResourceFigure. It provides handling model notifications and updating
+ * the CustomResourceFigure accordingly. This base implementation does not
+ * depend on any semantic classes, but subclasses should override
+ * handleNotificationEvent() and call refreshIcon() method.
  * 
  * @author adann
  * 
@@ -54,15 +55,15 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 	}
 
 	/**
-	 * This method sets the correct icon for a {@link ResourceType} based on its kind.
+	 * This method sets the correct icon for a {@link ResourceType} based on its
+	 * kind.
 	 * 
 	 */
 	public void refreshIcon() {
 
-		Resource element = getResource();
+		EObject element = getSemanticElement();
 		ResourceType kind = ResourceType.PROCESSOR;
 		Boolean isResourceInstance = isResourceInstance();
-	//	getResourceFigure().getFigureResourceInfoRectangle().setVisible(true);
 
 		if (element != null) {
 			if (HwresourcePackage.Literals.STRUCTURED_RESOURCE
@@ -76,9 +77,7 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 				} else {
 					kind = ResourceType.ACTUATOR;
 				}
-
-			//	getResourceFigure().getFigureResourceInfoRectangle()
-			//			.setVisible(false);
+				getResourceFigure().isDevice(true);
 			}
 			if (HwresourcePackage.Literals.PROCESSOR.isSuperTypeOf(element
 					.eClass())) {
@@ -92,6 +91,10 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 					.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.MEMORY;
 			}
+			if (HwresourcePackage.Literals.COMMUNICATION_RESOURCE
+					.isSuperTypeOf(element.eClass())) {
+				kind = ResourceType.COMMUNICATION;
+			}
 			getIconFigure().setIcon(kind);
 			getResourceFigure().isResourceInstance(isResourceInstance);
 		}
@@ -100,6 +103,7 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 
 	/**
 	 * Get the current ResourceType
+	 * 
 	 * @return the semanticElement as a {@link ResourceType}
 	 */
 	protected Resource getResource() {
@@ -108,12 +112,13 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 
 	/**
 	 * A ResourceType is never a ResourceInstance
+	 * 
 	 * @return false
 	 */
 	protected boolean isResourceInstance() {
 		return false;
 	}
-	
+
 	protected void setFont() {
 		getResourceFigure().getFigureResourceNameFigure().setFont(BOLD_FONT);
 		getResourceFigure().getFigureResourceKindFigure().setFont(BOLD_FONT);
