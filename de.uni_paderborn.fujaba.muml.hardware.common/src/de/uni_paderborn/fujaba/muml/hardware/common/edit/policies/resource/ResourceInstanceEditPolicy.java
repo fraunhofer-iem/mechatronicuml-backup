@@ -21,7 +21,7 @@ public class ResourceInstanceEditPolicy extends ResourceEditPolicy {
 	 * 
 	 */
 	@Override
-	protected de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource getResource(){
+	protected EObject getElement(){
 		EObject element = getSemanticElement();
 		if (element != null) {
 			return (de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource) element

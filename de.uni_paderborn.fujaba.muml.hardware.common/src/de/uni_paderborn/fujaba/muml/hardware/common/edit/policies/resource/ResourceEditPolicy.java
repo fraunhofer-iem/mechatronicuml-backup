@@ -61,7 +61,7 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 	 */
 	public void refreshIcon() {
 
-		EObject element = getSemanticElement();
+		EObject element = getElement();
 		ResourceType kind = ResourceType.PROCESSOR;
 		Boolean isResourceInstance = isResourceInstance();
 
@@ -102,12 +102,12 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 	}
 
 	/**
-	 * Get the current ResourceType
+	 * Get the current Element, to which this EditPolicy is installed
 	 * 
 	 * @return the semanticElement as a {@link ResourceType}
 	 */
-	protected Resource getResource() {
-		return (de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource) getSemanticElement();
+	protected EObject getElement() {
+		return getSemanticElement();
 	}
 
 	/**

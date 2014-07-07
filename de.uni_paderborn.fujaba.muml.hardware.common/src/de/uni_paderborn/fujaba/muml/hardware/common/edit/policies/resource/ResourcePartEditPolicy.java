@@ -22,7 +22,7 @@ public class ResourcePartEditPolicy extends ResourceEditPolicy {
 	 *  based on its corresponding {@link ResourceInstance}.
 	 */
 	@Override
-	protected de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource getResource(){
+	protected EObject getElement(){
 		EObject element = getSemanticElement();
 		if (element != null) {
 				ResourceInstance instance=(ResourceInstance) element.eGet(HwplatformPackage.Literals.RESOURCE_PART__RESOURCE_TYPE);
