@@ -15,6 +15,14 @@
       
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"/>
+      </binding>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"/>
          <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"/>
       </binding>
@@ -25,6 +33,19 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"/>
          <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"/>
       </binding>
+   </extension>
+   
+   
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
+        <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstanceAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.AssemblyConnectorInstance_4001"
+		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.AssemblyConnectorInstanceEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">

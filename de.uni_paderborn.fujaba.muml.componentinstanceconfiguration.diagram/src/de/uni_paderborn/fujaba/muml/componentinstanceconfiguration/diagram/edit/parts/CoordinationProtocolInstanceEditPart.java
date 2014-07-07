@@ -12,6 +12,7 @@
  */
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts;
 
+import java.util.Collection;
 import java.util.List;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
@@ -49,6 +50,29 @@ public class CoordinationProtocolInstanceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 2025;
+
+	/**
+	 * MUML FIX, see code comments.
+	 *
+	 * @generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(Request request) {
+
+		@SuppressWarnings("unchecked")
+		Collection<Object> hosts = super.disableCanonicalFor(request);
+
+		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
+		// because GMF supports adding additional commands using Edit Helpers concept,
+		// which could trigger refresh of any canonical edit policy.
+		// So it should be the cleanest solution to disable all canonical edit policies. 
+		EditPart part = this;
+		while (part != null) {
+			hosts.add(part);
+			part = part.getParent();
+		}
+		return hosts;
+	}
 
 	/**
 	 * @generated

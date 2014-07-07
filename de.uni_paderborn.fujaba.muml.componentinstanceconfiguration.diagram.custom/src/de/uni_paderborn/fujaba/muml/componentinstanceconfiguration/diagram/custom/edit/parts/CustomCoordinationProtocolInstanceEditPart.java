@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;

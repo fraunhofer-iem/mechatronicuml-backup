@@ -127,14 +127,14 @@ public class Activator extends AbstractUIPlugin {
 
 
 		TransformationExecutor transformationExecutor = Activator.getInstance()
-				.getTransformationExecutor(Activator.CREATE_PROTOCOL_INSTANCE_TRANSFORMATION, false);		
+				.getTransformationExecutor(Activator.CREATE_PROTOCOL_INSTANCE_TRANSFORMATION, true);		
 		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);
 		editingDomain.getCommandStack().execute(command);
 
 		if (!command.hasChanged()) {
-			editingDomain.getCommandStack().undo();
+		//	editingDomain.getCommandStack().undo();
 		}
 	}
 

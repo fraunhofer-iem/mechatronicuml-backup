@@ -3,10 +3,9 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.cust
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.CoordinationProtocolInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart;
@@ -59,18 +58,16 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			case StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
 				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartment2EditPart(
 						view);
-				
+
 			case CoordinationProtocolInstanceEditPart.VISUAL_ID:
 				return new CustomCoordinationProtocolInstanceEditPart(view);
-			
+
 			case CoordinationProtocolInstance2EditPart.VISUAL_ID:
 				return new CustomCoordinationProtocolInstance2EditPart(view);
-				
-			case ComponentInstanceConfigurationEditPart.VISUAL_ID:
-				return new CustomComponentInstanceConfigurationEditPart(view);
-				
-			case ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
-				return new CustomComponentInstanceConfigurationDiagramEditPart(view);
+
+			case AssemblyConnectorInstanceEditPart.VISUAL_ID:
+				return new CustomAssemblyConnectorInstanceEditPart(view);
+
 			}
 		}
 		return super.createEditPart(context, model);

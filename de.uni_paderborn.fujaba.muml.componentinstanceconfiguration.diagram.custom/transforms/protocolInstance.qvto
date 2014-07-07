@@ -47,7 +47,7 @@ helper updateCoordinationProtocolInstancesFlat(inout cic:ComponentInstanceConfig
 			protocolInstance.portInstances:=protocolInstance.portInstances->symmetricDifference(invalidPortInstances);
 			
 		};
-		-- Remove empty CoordinationProtocolParts
+		-- Remove empty CoordinationProtocolInstances
 		cic.coordinationProtocolInstances->select(portInstances->isEmpty())->forEach(p) {
 			instance.removeElement(p);
 		};
@@ -56,8 +56,9 @@ helper updateCoordinationProtocolInstancesFlat(inout cic:ComponentInstanceConfig
 		aci.portInstances->select(p|p.oclIsKindOf(DiscretePortInstance) and not (p.allReachablePortInstances()->isEmpty())).oclAsType(DiscretePortInstance)->forEach(portInstance){
 				portInstance.createCoordinationProtocolInstance(portInstance);
 		};
-	};
+	}; 
 	
+	return null;
 }
 
 query ComponentInstanceConfiguration::getAllComponentInstances():OrderedSet(ComponentInstance){
@@ -80,7 +81,7 @@ query StructuredComponentInstance::getAllembeddedCICs():OrderedSet(ComponentInst
 }
 
 /*******************************************************
-****** Test for CoordinationProtoColInstances
+****** Test for CoordinationProtocolInstances
 **********************************************************/
 /**
 Shall be called after a CIC is complettly/sucessfully created
@@ -94,14 +95,13 @@ query DiscretePortInstance::createCoordinationProtocolInstance(inout port:Discre
 			var refinedRole : Role := port.refinedRole;
 		-- Find CoordinationProtocolPart that already contains any PortPart that is reachable via AssemblyConnectors.
 		var coordinationProtocolInstance: CoordinationProtocolInstance := port.componentInstance.parentCIC.coordinationProtocolInstances->any(c | not c.portInstances->intersection(reachablePortInstances)->isEmpty());
-		
 			-- Make sure we have one CoordinationProtocolPart to add to; if none was found, create a new one
 	if (coordinationProtocolInstance = null) then {
-				coordinationProtocolInstance := new CoordinationProtocolInstance(port);
-				port.componentInstance.parentCIC.coordinationProtocolInstances += coordinationProtocolInstance;
+			coordinationProtocolInstance := new CoordinationProtocolInstance(port);
+			port.componentInstance.parentCIC.coordinationProtocolInstances += coordinationProtocolInstance;
 			}
 			else{
-				coordinationProtocolInstance.setPortInstanceInProtocolInstance(coordinationProtocolInstance,port);
+			coordinationProtocolInstance.setPortInstanceInProtocolInstance(coordinationProtocolInstance,port);
 			} endif;
 			
 			-- Associate this PortPart with the Coordination Protocol Part
@@ -110,12 +110,12 @@ query DiscretePortInstance::createCoordinationProtocolInstance(inout port:Discre
 
 
 query PortInstance::isValid() : Boolean {
-	return not self.connectorInstances[AssemblyConnector]->isEmpty() and (not self.portPart.oclIsUndefined()) and self.portPart.coordinationProtocolPart != null ;
+	return (not self.connectorInstances[AssemblyConnector]->isEmpty() and (not self.portPart.oclIsUndefined()) and (self.portPart.coordinationProtocolPart != null) and self.oclIsKindOf(DiscreteInteractionEndpointInstance)) ;
 	//and self.componentInstance.parentCIC.coordinationProtocolInstances->select(p | not p.portInstances->intersection(self.allReachablePortInstances())->isEmpty())->excluding(self.componentInstance.parentCIC.coordinationProtocolInstances->any(p|p.portInstances->includes(self)))->isEmpty()
 } 
 
 query CoordinationProtocolInstance::isReachable(port : PortInstance) : Boolean {
-	return not self.portInstances.allReachablePortInstances()->includes(port);
+	return not (self.portInstances.allReachablePortInstances()->includes(port));
 }
 
 query PortInstance::allReachablePortInstances() : OrderedSet(PortInstance) {
@@ -127,26 +127,23 @@ query PortInstance::allReachablePortInstances() : OrderedSet(PortInstance) {
 }
 
 constructor CoordinationProtocolInstance::CoordinationProtocolInstance(port:DiscretePortInstance) {
-	
-			name:="";
-			if(not port.portType.oclIsUndefined() and port.portType.oclIsKindOf(DiscretePort) and not (port.portType.oclAsType(DiscretePort).refinedRole.oclIsUndefined() and port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclIsUndefined())) then{
-							coordinationProtocol:=port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
-			}endif;
-			if( not port.portPart.oclIsUndefined()) then{
-							coordinationProtocolPart := port.portPart.coordinationProtocolPart;
-				
-			}endif;
-		setPortInstanceInProtocolInstance(result,port);
-
-
+	name:="";
+	if(not port.portType.oclIsUndefined() and port.portType.oclIsKindOf(DiscretePort) and not (port.portType.oclAsType(DiscretePort).refinedRole.oclIsUndefined() and port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclIsUndefined())) then{
+			coordinationProtocol:=port.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
+	}endif;
+	if(not port.portPart.oclIsUndefined()) then{
+			coordinationProtocolPart := port.portPart.coordinationProtocolPart;
+	}endif;
+	setPortInstanceInProtocolInstance(result,port);
 }
 
 
 helper CoordinationProtocolInstance::setPortInstanceInProtocolInstance(inout coordinationProtocolInstance:CoordinationProtocolInstance,port:DiscretePortInstance){
-	if(port.oclIsKindOf(DiscreteSinglePortInstance) and not port.oclAsType(DiscreteSinglePortInstance).multiInteractionEndpointInstance.oclIsUndefined()) then{
+if(port.oclIsKindOf(DiscreteSinglePortInstance) and not port.oclAsType(DiscreteSinglePortInstance).multiInteractionEndpointInstance.oclIsUndefined()) then{
 		coordinationProtocolInstance.portInstances+=port.oclAsType(DiscreteSinglePortInstance).multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance);
 	}
 	else{
 		coordinationProtocolInstance.portInstances+=port;
 	}endif;
+return null;
 }
