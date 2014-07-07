@@ -249,6 +249,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Add supertypes to classes
 		verificationConstraintRepositoryEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		verifiableElementEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(verificationConstraintRepositoryEClass, VerificationConstraintRepository.class, "VerificationConstraintRepository", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -271,7 +272,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
 		addAnnotation
 		  (this, 
 		   source, 
@@ -279,7 +280,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });
+		   });			
 	}
 
 } //ConstraintPackageImpl

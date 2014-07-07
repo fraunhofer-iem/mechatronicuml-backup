@@ -13,7 +13,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -397,7 +399,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION = "-- Discrete Prot at Structured Component must not have behavior\n" +
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION = "-- Discrete Port at Structured Component must not have behavior\n" +
 		"(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::StructuredComponent))\n" +
 		"\timplies self.behavior.oclIsUndefined()";
 
@@ -490,10 +492,9 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- Multi port of atomic component requires adaptationBehavior and subroleBehavior\r\n" +
-		"(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) \r\n" +
-		"implies \r\n" +
-		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))";
+	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- adaptationBehavior and subroleBehavior should be set if and only if this is a multiport\r\n" +
+		"((self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.adaptationBehavior.oclIsUndefined())\r\n" +
+		"and self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()";
 
 	/**
 	 * Validates the MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.

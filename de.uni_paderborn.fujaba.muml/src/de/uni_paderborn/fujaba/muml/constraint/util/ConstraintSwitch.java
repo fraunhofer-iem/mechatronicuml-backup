@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.util;
 
+import de.uni_paderborn.fujaba.muml.constraint.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -83,6 +84,7 @@ public class ConstraintSwitch<T> extends Switch<T> {
 			case ConstraintPackage.VERIFIABLE_ELEMENT: {
 				VerifiableElement verifiableElement = (VerifiableElement)theEObject;
 				T result = caseVerifiableElement(verifiableElement);
+				if (result == null) result = caseExtendableElement(verifiableElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

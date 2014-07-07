@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.constraint.editor;
  */
 public abstract class VerifiableElementEditor
 		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated

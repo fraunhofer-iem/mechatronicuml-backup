@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.core.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
@@ -39,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
  *
  * @generated
  */
-public abstract class VerifiableElementImpl extends EObjectImpl implements VerifiableElement {
+public abstract class VerifiableElementImpl extends ExtendableElementImpl implements VerifiableElement {
 	/**
 	 * The cached value of the '{@link #getVerificationConstraintRepositories() <em>Verification Constraint Repositories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

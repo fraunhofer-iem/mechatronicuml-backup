@@ -80,8 +80,8 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * <!-- begin-model-doc -->
 	 * If this port is a multi-port, this reference points to the real-time statechart that
 	 * contains the adaptation behavior of the multi-port.  Then, this real-time statechart 
-	 * is contained in the only state of the real-time statechart we is obtained by the
-	 * reference roleAndAdaptationBehavior.
+	 * is contained in the only state of the real-time statechart obtained by the
+	 * behavior reference.
 	 * If this port is a single-port, this reference will be undefined.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adaptation Behavior</em>' reference.
@@ -108,9 +108,10 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * If this port is a multi-port, this reference points to the real-time statechart that
-	 * contains the adaptation behavior and the sub-port behavior. Thus, this real-time
-	 * statechart only contains one state which embeds the real-time statecharts
-	 * specifying the adaptation behavior and the sub-port behavior.
+	 * contains the subrole behavior of the multi-port.  Then, this real-time statechart 
+	 * is contained in the only state of the real-time statechart obtained by the
+	 * behavior reference.
+	 * If this port is a single-port, this reference will be undefined.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Subrole Behavior</em>' reference.
 	 * @see #setSubroleBehavior(Behavior)

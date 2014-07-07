@@ -72,13 +72,13 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="DiscretePortRequiresMessageTypes" value="-- Discrete Port must define sender or receiver message types&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
         <details key="DiscretePortRequiresBehavior" value="-- A discrete port of an atomic component must have a Behavior Specification&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
-        <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="-- Discrete Prot at Structured Component must not have behavior&#xA;(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
+        <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="-- Discrete Port at Structured Component must not have behavior&#xA;(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
         <details key="DiscretePortRequiresRole" value="-- Discrete Port must refine a role&#xA;self.oclIsKindOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
         <details key="DiscretePortAndRoleSameMessageTypes" value="-- Discrete Port must have the same message types as its refined role&#xD;&#xA;not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"/>
         <details key="DiscretePortCardinalityMustComplyWithRefinedRoleCardinality"
             value="-- Cardinality of discrete port and its refined role must match&#xD;&#xA;((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) &#xD;&#xA;implies &#xD;&#xA;((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))"/>
         <details key="MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior"
-            value="-- Multi port of atomic component requires adaptationBehavior and subroleBehavior&#xD;&#xA;(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) &#xD;&#xA;implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))"/>
+            value="-- adaptationBehavior and subroleBehavior should be set if and only if this is a multiport&#xD;&#xA;((self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.adaptationBehavior.oclIsUndefined())&#xD;&#xA;and self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -563,7 +563,8 @@
         <details key="documentation" value="Represents a repository for verifiable constraints the element has to fulfill. A verifiable constraint may be an TCTL expression. Thus, the constraint may be the input for a model checker."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VerifiableElement" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="VerifiableElement" abstract="true"
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Represents an element that may be verified by formal verification, e.g., model checking. Therefore, this class provides a repository to store verification constraints."/>
       </eAnnotations>
@@ -995,7 +996,7 @@
         <details key="RoleRequiresBehavior" value="-- Role requires behavior&#xA;not self.behavior.oclIsUndefined()"/>
         <details key="RoleRequiresMessageTypes" value="-- Role requires message types to be set&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
         <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
-        <details key="MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior" value="-- Multi roles need adaptationBehavior and subroleBehavior set&#xD;&#xA;self.multiRole implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))"/>
+        <details key="MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior" value="-- adaptationBehavior and subroleBehavior should be set if and only if this is a multirole&#xD;&#xA;(self.multiRole = not self.adaptationBehavior.oclIsUndefined())&#xD;&#xA;and self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/AbstractCoordinationSpecification" eOpposite="#//protocol/AbstractCoordinationSpecification/roles">
@@ -2142,12 +2143,12 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior" eType="#//behavior/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior of the multi-port.  Then, this real-time statechart &#xD;&#xA;is contained in the only state of the real-time statechart we is obtained by the&#xD;&#xA;reference roleAndAdaptationBehavior.&#xD;&#xA;If this port is a single-port, this reference will be undefined."/>
+          <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior of the multi-port.  Then, this real-time statechart &#xD;&#xA;is contained in the only state of the real-time statechart obtained by the&#xD;&#xA;behavior reference.&#xD;&#xA;If this port is a single-port, this reference will be undefined."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subroleBehavior" eType="#//behavior/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior and the sub-port behavior. Thus, this real-time&#xD;&#xA;statechart only contains one state which embeds the real-time statecharts&#xD;&#xA;specifying the adaptation behavior and the sub-port behavior."/>
+          <details key="documentation" value="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the subrole behavior of the multi-port.  Then, this real-time statechart &#xD;&#xA;is contained in the only state of the real-time statechart obtained by the&#xD;&#xA;behavior reference.&#xD;&#xA;If this port is a single-port, this reference will be undefined."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"

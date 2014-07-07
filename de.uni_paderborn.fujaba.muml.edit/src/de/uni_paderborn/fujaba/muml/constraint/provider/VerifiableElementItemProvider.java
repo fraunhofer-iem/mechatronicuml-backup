@@ -29,6 +29,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.storydriven.core.provider.ExtendableElementItemProvider;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
@@ -40,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  * @generated
  */
 public class VerifiableElementItemProvider
-	extends ItemProviderAdapter
+	extends ExtendableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

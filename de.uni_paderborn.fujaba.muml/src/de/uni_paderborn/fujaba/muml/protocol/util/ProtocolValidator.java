@@ -13,8 +13,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.protocol.*;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
@@ -464,9 +466,9 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- Multi roles need adaptationBehavior and subroleBehavior set\r\n" +
-		"self.multiRole implies \r\n" +
-		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.subroleBehavior.oclIsUndefined()))";
+	protected static final String ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- adaptationBehavior and subroleBehavior should be set if and only if this is a multirole\r\n" +
+		"(self.multiRole = not self.adaptationBehavior.oclIsUndefined())\r\n" +
+		"and self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()";
 
 	/**
 	 * Validates the MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Role</em>'.

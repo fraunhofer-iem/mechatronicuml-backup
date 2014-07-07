@@ -12,8 +12,13 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.TransitionEvent;
 
@@ -24,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.TransitionEvent;
  * @generated
  */
 public class TransitionEventItemProvider
-	extends EventItemProvider {
+	extends EventItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
