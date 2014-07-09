@@ -16,6 +16,7 @@ import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
@@ -289,8 +290,10 @@ public class MtctlModelElementProvider {
 		boolean belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint = belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint(obj);
 		for (EObject instance : instances) {
 			if (getInstanceType(instance) == objInstanceType) {
-				if ((instance instanceof DiscreteMultiInteractionEndpointInstance) == !belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint) //condition for adding: [obj belongs to subrole xor added instance is multi]
+				if (!(instance instanceof DiscreteInteractionEndpointInstance))
 					result.add(instance);
+				else if ((instance instanceof DiscreteMultiInteractionEndpointInstance) == !belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint) //condition for adding: [obj belongs to subrole xor added instance is multi]
+					result.add(instance);				
 			}
 		}
 		
