@@ -15,6 +15,8 @@ import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
@@ -241,11 +243,58 @@ public class MtctlModelElementProvider {
 		return null;
 	}
 	
+	/**
+	 * Returns true iff obj belongs to a subroleInstance of a MultiDiscreteInteractionEndpoint at runtime
+	 */
+	public boolean belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint(EObject obj) {
+		if (obj == null)
+			return false;
+		
+		EObject instanceType = getInstanceType(obj);
+		if (instanceType instanceof DiscreteInteractionEndpoint) {
+			if (!((DiscreteInteractionEndpoint) instanceType).isMulti())
+				return false;
+			if (obj instanceof MessageBuffer)
+				return true; //message buffers of multiDIEs, belong to the subroleInstances at runtime 
+			// RTSCs and their subelements belong to the subroleInstances at runtime iff they are embedded in the subrole behavior
+			while (obj != null) { //check whether obj is a subobject of the multi-DiscreteInteractionEndpoint subrole behavior
+				if (obj == ((DiscreteInteractionEndpoint) instanceType).getSubroleBehavior())
+					return true;
+				obj = obj.eContainer();
+			}
+			return false;
+		}
+		
+		return false;
+	}
+	
+
+	/**
+	 * Returns the set of all instances
+	 */
 	public Set<EObject> getAllInstances() {
 		Set<EObject> instances = new HashSet<EObject>();
 		instances.addAll(getConnectorEndpointInstances());
 		instances.addAll(getComponentInstances());
 		return instances;
+	}
+	
+	/**
+	 * Returns the set of instances that logically belong to obj (i.e. the language accepts it as an instance for obj)
+	 */
+	public Set<EObject> getAllInstancesFor(EObject obj) {
+		Set<EObject> instances = getAllInstances();
+		Set<EObject> result = new HashSet<EObject>();
+		EObject objInstanceType = getInstanceType(obj);
+		boolean belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint = belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint(obj);
+		for (EObject instance : instances) {
+			if (getInstanceType(instance) == objInstanceType) {
+				if ((instance instanceof DiscreteMultiInteractionEndpointInstance) == !belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint) //condition for adding: [obj belongs to subrole xor added instance is multi]
+					result.add(instance);
+			}
+		}
+		
+		return result;
 	}
 
 	public VerifiableElement getRoot() {

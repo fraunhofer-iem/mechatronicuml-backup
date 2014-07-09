@@ -252,9 +252,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 				
 		//Add instances from the model
-		for (EObject instance : elementProvider.getAllInstances())
-			if (elementProvider.getInstanceType(instance) == elementProvider.getInstanceType(context.getElem()))
-				scope.add(instance);
+		scope.addAll(elementProvider.getAllInstancesFor(context.getElem()));
 		
 		
 		//Add BoundVariables

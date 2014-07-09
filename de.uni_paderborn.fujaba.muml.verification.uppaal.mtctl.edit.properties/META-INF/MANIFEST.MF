@@ -22,3 +22,4 @@ Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.propertie
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-ClassPath: .
