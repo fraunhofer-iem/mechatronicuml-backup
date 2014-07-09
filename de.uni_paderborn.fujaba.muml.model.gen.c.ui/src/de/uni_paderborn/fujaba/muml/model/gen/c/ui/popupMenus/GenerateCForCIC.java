@@ -47,7 +47,7 @@ import org.osgi.framework.Bundle;
 /**
  * C code generation.
  */
-public class AcceleoGenerateCAction extends ActionDelegate implements IActionDelegate {
+public class GenerateCForCIC extends ActionDelegate implements IActionDelegate {
 	
 	/**
 	 * Selected model files.
@@ -86,7 +86,10 @@ public class AcceleoGenerateCAction extends ActionDelegate implements IActionDel
 								IContainer target = model.getProject().getFolder("src-gen");
 								GenerateAll generator = new GenerateAll(modelURI, target, getArguments());
 								generator.doGenerate(monitor);
-
+								URL resources = FileLocator.toFileURL(bundle.getEntry("resources"));
+								File sourceFolder = new File(resources.toURI());
+								File targetFolder = new File(model.getProject().getFolder("src-gen").getLocationURI());
+								copyFolder(sourceFolder, targetFolder);
 							} catch (IOException e) {
 								IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
 								Activator.getDefault().getLog().log(status);
@@ -98,6 +101,7 @@ public class AcceleoGenerateCAction extends ActionDelegate implements IActionDel
 						IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
 						Activator.getDefault().getLog().log(status);
 					}
+					catch (URISyntaxException e){}
 				}
 			};
 			try {
@@ -120,6 +124,37 @@ public class AcceleoGenerateCAction extends ActionDelegate implements IActionDel
 	 */
 	protected List<? extends Object> getArguments() {
 		return new ArrayList<String>();
+	}
+	
+	public void copyFolder(File sourceLocation , File targetLocation) throws IOException 
+	{
+	    if (sourceLocation.isDirectory()) 
+	    {
+	        if (!targetLocation.exists()) 
+	        {
+	            targetLocation.mkdir();
+	        }
+	        String[] subFolder = sourceLocation.list();
+	        for (int i=0; i<subFolder.length; i++) 
+	        {
+	            copyFolder(new File(sourceLocation, subFolder[i]),
+	                    new File(targetLocation, subFolder[i]));
+	        }
+	    } 
+	    else 
+	    {
+	        byte[] buffer = new byte[1024];
+	        int x;
+	        InputStream input = new FileInputStream(sourceLocation);
+	        OutputStream output = new FileOutputStream(targetLocation);
+	        
+	        while ((x = input.read(buffer)) > 0) 
+	        {
+	            output.write(buffer, 0, x);
+	        }
+	        input.close();
+	        output.close();
+	    }
 	}
 
 

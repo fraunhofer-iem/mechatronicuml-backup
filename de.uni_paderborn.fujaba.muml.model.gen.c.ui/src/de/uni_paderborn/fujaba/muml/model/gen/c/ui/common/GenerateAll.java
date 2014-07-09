@@ -10,7 +10,13 @@
  *******************************************************************************/
 package de.uni_paderborn.fujaba.muml.model.gen.c.ui.common;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -18,12 +24,25 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.osgi.framework.Bundle;
+
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.ui.internal.keys.model.ModelElement;
+import org.osgi.framework.Bundle;
+import org.storydriven.core.ExtendableElement;
 
 
 /**
@@ -92,7 +111,27 @@ public class GenerateAll {
 		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.model.gen.c", "de.uni_paderborn.fujaba.muml.model.gen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
-			
+	
+		//copy library to every CIC folder
+		try{
+			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.model.gen.c.Activator.PLUGIN_ID).getEntry("resources"));
+			File sourceFolder = new File(resources.toURI());
+	    	Resource resource = new ResourceSetImpl().getResource(modelURI, true);
+	    	RootNode rootNode = (RootNode) resource.getContents().get(0);
+	    	
+	    	for (ModelElementCategory mec : rootNode.getCategories()){
+	    		if (mec.getKey().matches("de.uni_paderborn.fujaba.muml.instance.category")){
+	    			for (ExtendableElement me : mec.getModelElements()){
+	    				ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)me;
+	    				File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
+						this.copyFolder(sourceFolder, target);
+	    			}
+	    		}
+	    	}
+		}
+		catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -144,5 +183,37 @@ public class GenerateAll {
 		}
 		return result;
 	}
+	
+	public void copyFolder(File sourceLocation , File targetLocation) throws IOException 
+	{
+	    if (sourceLocation.isDirectory()) 
+	    {
+	        if (!targetLocation.exists()) 
+	        {
+	            targetLocation.mkdir();
+	        }
+	        String[] subFolder = sourceLocation.list();
+	        for (int i=0; i<subFolder.length; i++) 
+	        {
+	            copyFolder(new File(sourceLocation, subFolder[i]),
+	                    new File(targetLocation, subFolder[i]));
+	        }
+	    } 
+	    else 
+	    {
+	        byte[] buffer = new byte[1024];
+	        int x;
+	        InputStream input = new FileInputStream(sourceLocation);
+	        OutputStream output = new FileOutputStream(targetLocation);
+	        
+	        while ((x = input.read(buffer)) > 0) 
+	        {
+	            output.write(buffer, 0, x);
+	        }
+	        input.close();
+	        output.close();
+	    }
+	}
+
 
 }
