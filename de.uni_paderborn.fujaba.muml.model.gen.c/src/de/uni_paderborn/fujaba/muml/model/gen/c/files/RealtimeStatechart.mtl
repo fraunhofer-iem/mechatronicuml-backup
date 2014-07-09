@@ -175,7 +175,7 @@
 		[getClassName(rtsc)/]* stateChart = ([getClassName(rtsc)/]*)malloc(sizeof([getClassName(rtsc)/]));
 		if (stateChart != NULL) {
 			stateChart->parentComponent = parentComponent;		
-	/*
+	
 			if (stateChart->parentComponent != NULL) {
 				[getInitializeMethodName(rtsc)/](stateChart);
 			} else {
@@ -186,7 +186,7 @@
 			}
 		} else {
 			fprintf(stderr, "Creation of [getClassName(rtsc)/] failed\n");
-		*/}
+		}
 		return stateChart;
 	}
 [/template]
@@ -583,7 +583,7 @@ if (1){
  * @param statechart
 */]
 [template private isInState (component : Component, rtsc : RealtimeStatechart) post(cdtbeautifier())]
-	int [getIsInStateMethodName(rtsc)/]([getSuperClassName(rtsc)/]* stateChart, [getSuperClassName(rtsc, true)/] state) {
+	bool_t [getIsInStateMethodName(rtsc)/]([getSuperClassName(rtsc)/]* stateChart, [getSuperClassName(rtsc, true)/] state) {
 		[if (rtsc.getAllRegions()->size()>0)]
 		return ([for (region : Region | rtsc.getAllRegions()->collect(oclAsType(Region))) separator (' || ')]stateChart->[getVariableName(region)/] == state[/for]);
 		[else]
@@ -594,7 +594,7 @@ if (1){
 [/template]
 
 [template private isTerminated (component : Component, rtsc : RealtimeStatechart) post(cdtbeautifier())]
-	bool [getTerminateMethodName(rtsc)/]([getSuperClassName(rtsc)/]* stateChart) {
+	bool_t [getTerminateMethodName(rtsc)/]([getSuperClassName(rtsc)/]* stateChart) {
 		//TODO
 	return true;
 } 

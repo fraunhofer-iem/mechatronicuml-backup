@@ -18,16 +18,13 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationFiles(root : RootNode, path : String)]
-[for (modelElementCategory : ModelElementCategory | root.categories)]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[let allOperations : Set(Operation) = root.eAllContents(Operation)->asSet()]
+[template public generateOperationFiles(cic : ComponentInstanceConfiguration, path : String)]
+
+[let allOperations : Set(Operation) = cic.eAllContents(Operation)->asSet()]
 [generateOperationHeader(allOperations, path)/]
 [generateOperationClass(allOperations, path)/]
 [/let]
 
-[/if]
-[/for]
 [/template]
 
 

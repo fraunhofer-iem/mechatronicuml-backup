@@ -24,77 +24,62 @@
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::Message]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::operations]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::ContinuousPorts]
-[import de::uni_paderborn::fujaba::muml::model::gen::c::middleware::GlobalIdentifier]
 
 [**
  * Generates a main file. This file contains code to create, initialize
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generateANSIC(aRootNode : RootNode)]
-[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-[comment create files for every component type/]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[generateTypeFiles(modelElementCategory, '')/]
-[generateContinuousPortFiles(modelElements->at(1).oclAsType(ComponentInstanceConfiguration), '')/]
-[/if]
-[/for]
+[template public generateANSIC(cic : ComponentInstanceConfiguration)]
 
+[comment create files for every component type/]
+[generateContinuousPortFiles(cic, cic.name+'/')/]
 
 [comment create message file/]
-[generateMessageFiles(aRootNode,'')/]
+[generateMessageFiles(cic,cic.name+'/')/]
+
+[comment craete type files for all used components/]
+[generateTypeFiles(cic, cic.name+'/')/]
 
 [comment craeate files for RTSCs/]
-[generateRTSCFiles(aRootNode,'')/]
+[generateRTSCFiles(cic,cic.name+'/')/]
 
 [comment create makefile for gcc/]
-[generateMakeFile(aRootNode,'')/]
+[generateMakeFile(cic,cic.name+'/')/]
 
 [comment create Operation files/]
-[generateOperationFiles(aRootNode,'')/]
+[generateOperationFiles(cic,cic.name+'/')/]
 
 [comment create 'main.c'/]
-[file('main.c',false,'UTF-8')]
-[includes(aRootNode)/]
+[file(cic.name+'/main.c',false,'UTF-8')]
+[includes(cic)/]
 
 [comment create variable for every used component instance/]
 //variables for component instances
-[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[generateComponentVariables(modelElementCategory)/]
-	[/if]
-[/for]
+[generateComponentVariables(cic)/]
+
 
 int main(){
 	[comment create model/]
-	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-			[generateInstanceConfiguration(modelElementCategory)/]
-		[/if]
-	[/for]
-	//initialize model
-	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-			[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
-				[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-				[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
+	[generateInstanceConfiguration(cic)/]
 
-				[/if]
-			[/for]
+	//initialize model
+	[for (ci : ComponentInstance | cic.componentInstances)]
+		[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+			[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
 		[/if]
 	[/for]
+
 
 while (1){
 	[comment execution of model/]
-	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-	[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
+
+	[for (ci : ComponentInstance | cic.componentInstances)]
 		[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-		[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
+			[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
 		[/if]
 	[/for]
-	[/if]
-	[/for]
+
 }
 }
 [/file]
@@ -104,21 +89,17 @@ while (1){
 
 
 
-[template private includes(root : RootNode)]
+[template private includes(cic : ComponentInstanceConfiguration)]
 //general includes
 #include <stdio.h>
 #include <stdlib.h>
 #include "continuousComponents/ContImplementations.h"
 //including all files for used Components
-[for (modelElementCategory : ModelElementCategory | root.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
+		[for (comp : Component | cic.componentInstances.componentType)]
 		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.getFileName(true, false)/]"
 		[/if]
 		[/for]
-	[/if]
-[/for]
 [/template]
 
 
@@ -127,8 +108,8 @@ while (1){
  * (if modelElementCategory is 'components'
  * @param modelElementCategory
  */]
-[template public generateTypeFiles(modelElementCategory : ModelElementCategory, path: String)? (key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[for (component : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
+[template public generateTypeFiles(cic : ComponentInstanceConfiguration, path : String)]
+[for (component : Component | cic.eAllContents(ComponentInstance).componentType)]
 [if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 [generate_ComponentHeader(component, path)/]
 [generate_ComponentClass(component, path)/]
@@ -143,19 +124,17 @@ while (1){
  * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
  * @param modelElementCategory
  */]
-[template public generateRTSCFiles(rootNode : RootNode, path: String) ]
-[for (modelElementCategory : ModelElementCategory | rootNode.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)]
-		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
-		[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
-			[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
-			[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
-		[/let]
-		[/if]
-		[/for]
+[template public generateRTSCFiles(cic : ComponentInstanceConfiguration, path: String) ]
+
+	[for (comp : Component | cic.eAllContents(AtomicComponentInstance).componentType)]
+	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+		[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+		[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+	[/let]
 	[/if]
-[/for]
+	[/for]
+
 [/template]
 
 [**
@@ -164,14 +143,12 @@ while (1){
  * call 'generateTypeFiles' and 'generateRTSCFiles'!
  * @param modelElementCategory
  */]
-[template public generateComponentVariables(modelElementCategory : ModelElementCategory) ? (key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[let cic : ComponentInstanceConfiguration = modelElements->at(1).oclAsType(ComponentInstanceConfiguration)]
+[template public generateComponentVariables(cic : ComponentInstanceConfiguration)]
 [for (cInst : ComponentInstance | cic.eAllContents(ComponentInstance))]
 [if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 	[cInst.getClassName()/] * [cInst.getVariableName()/];
 [/if]
 [/for]
-[/let]
 [/template]
 
 
@@ -182,9 +159,7 @@ while (1){
  * call 'generateTypeFiles' and 'generateRTSCFiles'!
  * @param modelElementCategory
  */]
-[template public generateInstanceConfiguration(modelElementCategory : ModelElementCategory) ? (key.matches('de.uni_paderborn.fujaba.muml.instance.category')){
-cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
-]
+[template public generateInstanceConfiguration(cic : ComponentInstanceConfiguration)]
 [for (cInst : ComponentInstance | cic.componentInstances)]
 [if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 //instantiate components of [cInst.getName()/]
@@ -194,11 +169,6 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 [/if]
 [/for]
 [/template]
-
-
-
-
-
 
 
 [template private configurateInstance(cInst : ComponentInstance) ? (oclIsKindOf(StructuredComponentInstance))post(trim())]

@@ -16,14 +16,13 @@
 
 [import de::uni_paderborn::fujaba::muml::model::gen::c::main::main_nxtOSEK]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::main::main_C]
-[import de::uni_paderborn::fujaba::muml::model::gen::c::middleware::GlobalIdentifier]
 
 [**
  * Generates a main file. This file contains code to create, initialize
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generate(aRootNode : RootNode)]
+[template public generate(root : RootNode)]
 [comment @main/]
 
 [comment]
@@ -33,15 +32,22 @@ possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
 
 
 
-[if (targetPlatform = 'nxtOSEK')]
-[generateNXTOSEK(aRootNode)/]
-[elseif (targetPlatform = 'C')]
-[generateANSIC(aRootNode)/]
 
 
-[else]
-not defined
-[/if]
+
+[for (mec : ModelElementCategory | root.categories)]
+	[if mec.key.matches('de.uni_paderborn.fujaba.muml.instance.category')]
+		[for (cic : ComponentInstanceConfiguration | mec.modelElements.oclAsType(ComponentInstanceConfiguration))]
+			[if (targetPlatform = 'nxtOSEK')]
+				[generateNXTOSEK(cic)/]
+			[elseif (targetPlatform = 'C')]
+				[generateANSIC(cic)/]
+			[else]
+				not defined
+			[/if]
+		[/for]
+	[/if]
+[/for]
 [/let]
 [/template]
 

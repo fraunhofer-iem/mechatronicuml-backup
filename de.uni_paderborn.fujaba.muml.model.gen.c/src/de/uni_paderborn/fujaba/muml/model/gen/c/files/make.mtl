@@ -11,40 +11,32 @@
 
 [import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
-[template public generateMakeFile(aRootNode : RootNode, path : String)]
+[template public generateMakeFile(cic : ComponentInstanceConfiguration, path : String)]
 
 [file (path+'makefile', false, 'UTF-8')]
-[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-RTSC = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
-[/if]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-COMP = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
-[/if]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-HYB = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]hybridPortImplOf[comp.getClassName()/].o [/if][/for] 
-[/if][/for]
-LIB = syncChannel.o discreteConnection.o discreteConnectionList.o event.o eventQueue.o discretePort.o messages.o
+
+RTSC = [for (comp : Component | cic.eAllContents(ComponentInstance).componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
+COMP = [for (comp : Component | cic.eAllContents(ComponentInstance).componentType)][if (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
+LIB = ContImplementations.o syncChannel.o discreteConnection.o discreteConnectionList.o event.o eventQueue.o discretePort.o messages.o
 
 CC = gcc
 CFLAGS = -c
 all: app
-[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.realtimestatechart.category'))]
-app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] 
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if]  -o app
-[for (rtsc : RealtimeStatechart | modelElementCategory.modelElements.oclAsType(RealtimeStatechart))]
+
+app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (cic.eAllContents(Operation)->size() > 0)]operations.o[/if] 
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (cic.eAllContents(Operation)->size() > 0)]operations.o[/if]  -o app
+[for (comp : Component | cic.eAllContents(AtomicComponentInstance).componentType)? (componentKind=ComponentKind::SOFTWARE_COMPONENT)]
+[let rtsc : RealtimeStatechart = comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
 [rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,false)/]
 	$(CC) $(CFLAGS) [rtsc.getFileName(false,false)/]
+[/let]
 [/for]
-[/if]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))]
+[for (comp : Component | cic.eAllContents(ComponentInstance).componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))]
 [comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,false)/]
 	$(CC) $(CFLAGS) [comp.getFileName(false,false)/]
 [/for]
-[/if]
-[/for]
+ContImplementations.o: continuousComponents/ContImplementations.c
+	$(CC) $(CFLAGS) continuousComponents/ContImplementations.c
 syncChannel.o: lib/syncChannel.c
 	$(CC) $(CFLAGS) lib/syncChannel.c
 discreteConnection.o: lib/discreteConnection.c
@@ -59,18 +51,9 @@ eventQueue.o: lib/eventQueue.c
 	$(CC) $(CFLAGS) lib/eventQueue.c
 messages.o: msg/messages.c
 	$(CC) $(CFLAGS) msg/messages.c
-[if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o: operations/operations.c
+[if (cic.eAllContents(Operation)->size() > 0)]operations.o: operations/operations.c
 	$(CC) $(CFLAGS) operations/operations.c
 [/if]
-[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]
-hybridPortImplOf[comp.getClassName()/].o: hybridPorts/hybridPortImplOf[comp.getClassName()/].c
-	$(CC) $(CFLAGS) hybridPorts/hybridPortImplOf[comp.getClassName()/].c
-[/if]
-[/for]
-[/if]
-[/for]
 
 clean:
 	rm -rf *o app
@@ -78,7 +61,7 @@ clean:
 [/template]
 
 
-[template public generateMakeFileForNXTOSEK(aRootNode : RootNode, path : String)]
+[template public generateMakeFileForNXTOSEK(cic : ComponentInstanceConfiguration, path : String)]
 [file (path+'makefile', false, 'UTF-8')]
 # Targets
 TARGET = nxtOSEKImpl
@@ -91,14 +74,10 @@ TARGET_SOURCES := \
 		lib/ports/discretePort.c\
 		msg/messages.c\
 		operations/operations.c\
-		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)][if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))][for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) and (comp.oclIsKindOf(AtomicComponent)) and (comp.eAllContents(HybridPort)->size()>0))]		hybridPorts/hybridPortImplOf[comp.getClassName()/].c\
-[/if][/for][/if][/for]
-		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)][if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))]		RTSCs/[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].c\
-[/if][/for][/if]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))]		components/[comp.getClassName().toLowerFirst()/].c\
-[/for][/if][/for]
+		[for (comp : Component | cic.eAllContents(ComponentInstance).componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))]		RTSCs/[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].c\
+[/if][/for]
+		[for (comp : Component | cic.eAllContents(ComponentInstance).componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))]		components/[comp.getClassName().toLowerFirst()/].c\
+[/for]
 		main.c
 
 		

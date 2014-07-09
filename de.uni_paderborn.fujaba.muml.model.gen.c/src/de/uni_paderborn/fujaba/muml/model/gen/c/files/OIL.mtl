@@ -18,7 +18,7 @@
  * The documentation of the template generateOILFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOILFile(aRootNode : RootNode, path : String)]
+[template public generateOILFile(cic : ComponentInstanceConfiguration, path : String)]
 [file (path+'nxtOSEK.oil', false, 'UTF-8')]
 [comment generate OSEK declarations for sytem properties and standard tasks/]
 # include "implementation.oil"		

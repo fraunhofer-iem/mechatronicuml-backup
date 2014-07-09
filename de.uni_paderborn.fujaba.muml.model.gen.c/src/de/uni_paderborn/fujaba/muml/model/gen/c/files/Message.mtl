@@ -19,10 +19,10 @@
 [**
  * The documentation of the template generateMessageFiles.
  */]
-[template public generateMessageFiles(root : RootNode, path : String)]
+[template public generateMessageFiles(cic : ComponentInstanceConfiguration, path : String)]
 
-[generateMessageClass(root, path)/]
-[generateMessageHeader(root, path)/]
+[generateMessageClass(cic, path)/]
+[generateMessageHeader(cic, path)/]
 
 [/template]
 
@@ -30,7 +30,7 @@
 [**
  * The documentation of the template generateMessageClass.
  */]
-[template public generateMessageClass(root : RootNode, path : String)]
+[template public generateMessageClass(cic : ComponentInstanceConfiguration, path : String)]
 
 [file (path+'msg/messages.h', false, 'UTF-8')]
 
@@ -39,12 +39,12 @@
 		
 #include "../lib/event.h"
 
-		[for (msg : MessageType | root.eAllContents(MessageType))]
+[let dPorts : Sequence(DiscretePort) = cic.eAllContents(DiscretePortInstance).portType]
+[for (msg : MessageType | (dPorts.senderMessageTypes->addAll(dPorts.receiverMessageTypes))->asSet())]
 			extern Event [getVariableName(msg)/];
-		[/for]
+[/for]
+[/let]
 #endif /* MESSAGES_H_ */
-
-
 [/file]
 
 [/template]
@@ -53,15 +53,17 @@
 [**
  * The documentation of the template generateMessageHeader.
  */]
-[template public generateMessageHeader(root : RootNode, path : String)]
+[template public generateMessageHeader(cic : ComponentInstanceConfiguration, path : String)]
 
 [file (path+'msg/messages.c', false, 'UTF-8')]
 
 #include "../lib/event.h"
 
-		[for (msg : MessageType | root.eAllContents(MessageType))]
+[let dPorts : Sequence(DiscretePort) = cic.eAllContents(DiscretePortInstance).portType]
+[for (msg : MessageType | (dPorts.senderMessageTypes->addAll(dPorts.receiverMessageTypes))->asSet())]
 			Event [getVariableName(msg)/] = {[i/], "[getVariableName(msg)/]"};
-		[/for]
+[/for]
+[/let]
 
 
 [/file]

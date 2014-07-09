@@ -313,7 +313,7 @@
 	[/if]
 	[if component.oclIsKindOf(AtomicComponent)]
 		[for (hPort : HybridPort | component.eAllContents(HybridPort)) ? (hPort.inPort)]
-			component->stateChart->[hPort.getVariableName()/] = component->getterOf_[hPort.getName()/](void);
+			component->stateChart->[hPort.getVariableName()/] = component->getterOf_[hPort.getName()/]();
 		[/for]
 
 		[let rtsc : RealtimeStatechart = component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]

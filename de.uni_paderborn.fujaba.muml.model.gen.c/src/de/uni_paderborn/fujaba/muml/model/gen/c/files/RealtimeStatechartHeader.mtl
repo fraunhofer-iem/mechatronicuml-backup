@@ -166,10 +166,10 @@ struct [getClassName(rtsc)/] {
 [/template]
 
 [template private isInState (rtsc : RealtimeStatechart) post(trim())]
-	int [getIsInStateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc, [getClassName(rtsc, true)/] state);
+	bool_t [getIsInStateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc, [getClassName(rtsc, true)/] state);
 [/template]
 [template private isTerminated (rtsc : RealtimeStatechart) post(trim())]
-	bool [getTerminateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc);
+	bool_t [getTerminateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc);
 [/template]
 
 

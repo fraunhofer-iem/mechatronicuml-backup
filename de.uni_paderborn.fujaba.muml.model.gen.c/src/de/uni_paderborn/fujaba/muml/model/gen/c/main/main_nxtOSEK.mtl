@@ -27,39 +27,38 @@
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::operations]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::files::ContinuousPorts]
 
+
 [**
  * Generates a main file. This file contains code to create, initialize
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generateNXTOSEK(aRootNode : RootNode)]
-[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+[template public generateNXTOSEK(cic : ComponentInstanceConfiguration)]
+
 [comment create files for every component type/]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[generateTypeFiles(modelElementCategory, '')/]
-[generateContinuousPortFiles(modelElements->at(1).oclAsType(ComponentInstanceConfiguration), '')/]
-[/if]
-[/for]
+[generateTypeFiles(cic, '')/]
+[generateContinuousPortFiles(cic, '')/]
+
 
 [comment create message file/]
-[generateMessageFiles(aRootNode,'')/]
+[generateMessageFiles(cic,'')/]
 
 [comment craeate files for RTSCs/]
-[generateRTSCFiles(aRootNode,'')/]
+[generateRTSCFiles(cic,'')/]
 
 [comment create makefile for gcc/]
-[generateMakeFileForNXTOSEK(aRootNode,'')/]
+[generateMakeFileForNXTOSEK(cic,'')/]
 
 [comment create OIL file/]
-[generateOILFile(aRootNode,'')/]
+[generateOILFile(cic,'')/]
 
 [comment create Operation files/]
-[generateOperationFiles(aRootNode,'')/]
+[generateOperationFiles(cic,'')/]
 
 
 [comment create 'main.c'/]
 [file('main.c',false,'UTF-8')]
-[includes(aRootNode)/]
+[includes(cic)/]
 
 
 
@@ -78,11 +77,8 @@ DeclareTask([ci.getTaskName()/]);
 
 [comment create variable for every used component instance/]
 //variables for component instances
-[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[generateComponentVariables(modelElementCategory)/]
-	[/if]
-[/for]
+
+		[generateComponentVariables(cic)/]
 
 
 [comment OSEK methods/]
@@ -100,22 +96,16 @@ void ecrobot_device_terminate()
 }
 TASK(Task_initModel){
 	[comment create model/]
-	[comment create model/]
-	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-			[generateInstanceConfiguration(modelElementCategory)/]
-		[/if]
-	[/for]
+
+	[generateInstanceConfiguration(cic)/]
+
 	//initialize model
-	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-			[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
-[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+
+		[for (ci : ComponentInstance | cic.componentInstances)]
+			[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 				[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
-[/if]		
-	[/for]
-		[/if]
-	[/for]
+			[/if]		
+[/for]
 
 ChainTask(Task_Main);
 }
@@ -126,15 +116,12 @@ TASK(Task_Main){
 	/* currently only the main task is used to execute the behavior
 	*  later, we will use one task per atomic component
 	*/
-	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-	[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
-[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+[for (ci : ComponentInstance | cic.componentInstances)]
+	[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 		[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
-[/if]
-	[/for]
 	[/if]
-	[/for]
+[/for]
+
 
 ChainTask(Task_MsgExchange);
 }
@@ -151,7 +138,7 @@ ChainTask(Task_Main);
 
 
 
-[template private includes(root : RootNode)]
+[template private includes(cic : ComponentInstanceConfiguration)]
 //general includes
 #include <stdio.h>
 #include <stdlib.h>
@@ -162,14 +149,10 @@ ChainTask(Task_Main);
 
 
 //including all files for used Components
-[for (modelElementCategory : ModelElementCategory | root.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.oclAsType(Component))]
-[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+[for (comp : Component | cic.componentInstances.componentType)]
+	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.getFileName(true, false)/]"
-[/if]
-		[/for]
-[/if]
+	[/if]
 [/for]
 [/template]
 
@@ -179,8 +162,8 @@ ChainTask(Task_Main);
  * (if modelElementCategory is 'components'
  * @param modelElementCategory
  */]
-[template public generateTypeFiles(modelElementCategory : ModelElementCategory, path: String)? (key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[for (component : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
+[template public generateTypeFiles(cic : ComponentInstanceConfiguration, path : String)]
+[for (component : Component | cic.componentInstances.componentType)]
 [if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 [generate_ComponentHeader(component, path)/]
 [generate_ComponentClass(component, path)/]
@@ -195,19 +178,17 @@ ChainTask(Task_Main);
  * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
  * @param modelElementCategory
  */]
-[template public generateRTSCFiles(rootNode : RootNode, path : String) ]
-[for (modelElementCategory : ModelElementCategory | rootNode.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)]
-		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
-		[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
-			[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
-			[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
-		[/let]
-		[/if]
-		[/for]
+[template public generateRTSCFiles(cic : ComponentInstanceConfiguration, path: String) ]
+
+	[for (comp : Component | cic.eAllContents(AtomicComponentInstance).componentType)]
+	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+		[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+		[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+	[/let]
 	[/if]
-[/for]
+	[/for]
+
 [/template]
 
 [**
@@ -216,36 +197,32 @@ ChainTask(Task_Main);
  * call 'generateTypeFiles' and 'generateRTSCFiles'!
  * @param modelElementCategory
  */]
-[template public generateComponentVariables(modelElementCategory : ModelElementCategory) ? (key.matches('de.uni_paderborn.fujaba.muml.instance.category')){
-cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
-]
-[let cic : ComponentInstanceConfiguration = modelElements->at(1).oclAsType(ComponentInstanceConfiguration)]
+[template public generateComponentVariables(cic : ComponentInstanceConfiguration)]
 [for (cInst : ComponentInstance | cic.eAllContents(ComponentInstance))]
 [if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 	[cInst.getClassName()/] * [cInst.getVariableName()/];
 [/if]
 [/for]
-[/let]
 [/template]
 
 
 
-[template public generateInstanceConfiguration(modelElementCategory : ModelElementCategory) ? (key.matches('de.uni_paderborn.fujaba.muml.instance.category')){
-cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
-]
+[**
+ * Generates code to instanciate a given component instance configuration.
+ * (based on the component type files). Before using this template, it is necessary to
+ * call 'generateTypeFiles' and 'generateRTSCFiles'!
+ * @param modelElementCategory
+ */]
+[template public generateInstanceConfiguration(cic : ComponentInstanceConfiguration)]
 [for (cInst : ComponentInstance | cic.componentInstances)]
 [if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
 //instantiate components of [cInst.getName()/]
 	[cInst.getVariableName()/] = [getCreateMethodName(cInst)/]();
 	[cInst.configurateInstance()/]
+
 [/if]
 [/for]
 [/template]
-
-
-
-
-
 
 
 [template private configurateInstance(cInst : ComponentInstance) ? (oclIsKindOf(StructuredComponentInstance))post(trim())]
@@ -256,6 +233,17 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 		[partInstance.getVariableName()/] = [partInstance.getCreateMethodName()/]();
 		[getAddMethodName(cInst.componentType, partInstance.componentPart)/]([cInst.getVariableName()/], [partInstance.getVariableName()/]);
 		[configurateInstance(partInstance)/]
+		[if (partInstance.oclIsKindOf(AtomicComponentInstance))]
+		[for (port : PortInstance | partInstance.portInstances)]
+			[if (port.oclIsTypeOf(HybridPortInstance))]
+				[if (port.portType.oclAsType(HybridPort).inPort)]
+					[partInstance.getVariableName()/]->getterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getReadMethod()/];
+				[else]
+					[partInstance.getVariableName()/]->setterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getWriteMethod()/];
+				[/if]
+			[/if]
+		[/for]
+		[/if]
 		[/if]
 	[/for]
 [/for]
