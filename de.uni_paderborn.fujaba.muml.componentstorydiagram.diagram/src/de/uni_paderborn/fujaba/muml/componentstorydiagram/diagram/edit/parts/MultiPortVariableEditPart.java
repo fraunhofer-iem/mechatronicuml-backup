@@ -104,6 +104,7 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.PortVariableOperatorEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableNameEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.UnderlinedLabelEditPart.VISUAL_ID:
 					return new de.uni_paderborn.fujaba.muml.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -207,7 +208,8 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	protected void addBorderItem(IFigure borderItemContainer,
 			IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.PortVariableOperatorEditPart
-				|| borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableNameEditPart) {
+				|| borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableNameEditPart
+				|| borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.UnderlinedLabelEditPart) {
 			// bug-fix: allows the free positioning of external Labels
 			de.uni_paderborn.fujaba.muml.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.muml.common.figures.CustomExternalLabelBorderItemLocator(
 					getMainFigure(), PositionConstants.SOUTH);

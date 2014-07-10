@@ -96,11 +96,13 @@ public class ComponentStoryDiagramInitDiagramFileAction
 		ComponentStoryRule cSR = getInitialComponentStoryRule(diagramRoot
 				.eResource());
 
-		abstract class AddInitialComponentStoryRuleCommand extends AbstractTransactionalCommand {
+		abstract class AddInitialComponentStoryRuleCommand extends
+				AbstractTransactionalCommand {
 			protected ComponentStoryRule compoStoryRule;
 			protected IDiagramInformation diagramInformation;
 
-			public AddInitialComponentStoryRuleCommand(ComponentStoryRule componentStoryRule,
+			public AddInitialComponentStoryRuleCommand(
+					ComponentStoryRule componentStoryRule,
 					TransactionalEditingDomain domain, String label,
 					List affectedFiles, IDiagramInformation diagramInformation) {
 				super(domain, label, affectedFiles);

@@ -35,12 +35,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class FadingComponentPartVariableLabelExpressionLabelParser5054 extends
+public class SinglePortVariableLabelExpressionLabelParser5059 extends
 		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public FadingComponentPartVariableLabelExpressionLabelParser5054() {
+	public SinglePortVariableLabelExpressionLabelParser5059() {
 	}
 
 	/**
@@ -50,9 +50,9 @@ public class FadingComponentPartVariableLabelExpressionLabelParser5054 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						17,
+						8,
 						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-								.getFadingComponentPartVariable(), null).body();
+								.getSinglePortVariable(), null).body();
 	}
 
 	/**

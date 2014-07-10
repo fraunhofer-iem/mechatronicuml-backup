@@ -652,6 +652,15 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		Location location5022 = (Location) label5022.getLayoutConstraint();
 		location5022.setX(0);
 		location5022.setY(5);
+		Node label5056 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.UnderlinedLabelEditPart.VISUAL_ID));
+		label5056.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5056 = (Location) label5056.getLayoutConstraint();
+		location5056.setX(0);
+		location5056.setY(5);
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
@@ -761,6 +770,15 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		Location location5024 = (Location) label5024.getLayoutConstraint();
 		location5024.setX(0);
 		location5024.setY(5);
+		Node label5057 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.UnderlinedLabel2EditPart.VISUAL_ID));
+		label5057.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5057 = (Location) label5057.getLayoutConstraint();
+		location5057.setX(0);
+		location5057.setY(5);
 		return node;
 	}
 
@@ -822,6 +840,15 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		Location location5026 = (Location) label5026.getLayoutConstraint();
 		location5026.setX(0);
 		location5026.setY(5);
+		Node label5058 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.UnderlinedLabel3EditPart.VISUAL_ID));
+		label5058.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5058 = (Location) label5058.getLayoutConstraint();
+		location5058.setX(0);
+		location5058.setY(5);
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
@@ -888,6 +915,15 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		Location location5028 = (Location) label5028.getLayoutConstraint();
 		location5028.setX(0);
 		location5028.setY(5);
+		Node label5059 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.UnderlinedLabel4EditPart.VISUAL_ID));
+		label5059.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5059 = (Location) label5059.getLayoutConstraint();
+		location5059.setX(0);
+		location5059.setY(5);
 		return node;
 	}
 
