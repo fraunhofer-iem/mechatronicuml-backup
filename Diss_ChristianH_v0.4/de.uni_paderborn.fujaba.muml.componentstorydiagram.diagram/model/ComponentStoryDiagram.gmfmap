@@ -196,6 +196,13 @@
                         <editableFeatures
                             href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                       </labelMappings>
+                      <labelMappings
+                          xsi:type="gmfmap:ExpressionLabelMapping">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PortVariableTypeLabel"/>
+                        <viewExpression
+                            body="':'.concat(self.type.name)"/>
+                      </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
                           href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
@@ -244,6 +251,13 @@
                             href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                         <editableFeatures
                             href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      </labelMappings>
+                      <labelMappings
+                          xsi:type="gmfmap:ExpressionLabelMapping">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PortVariableTypeLabel"/>
+                        <viewExpression
+                            body="':'.concat(self.type.name)"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"

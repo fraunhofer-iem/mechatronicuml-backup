@@ -30,7 +30,7 @@ public class ComponentStoryDiagramOCLFactory {
 	 * @generated
 	 */
 	protected ComponentStoryDiagramOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[20];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[22];
 	}
 
 	/**
@@ -56,7 +56,9 @@ public class ComponentStoryDiagramOCLFactory {
 					"--storydiagrams::patterns::BindingState::BOUND".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--storydiagrams::patterns::BindingSemantics::MANDATORY".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'componentStoryNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\':\'.concat(self.type.name)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.multiPortVariable.oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\':\'.concat(self.type.name)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\n--let partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\n--let selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\n--if bindingState = storydiagrams::patterns::BindingState::BOUND then\r\n--selfName\r\n--else\r\n--selfName.concat(partName.concat(\' : \'.concat(compName)))\r\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'componentStoryPattern\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'this\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

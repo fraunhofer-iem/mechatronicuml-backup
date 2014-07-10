@@ -79,7 +79,8 @@ public class ComponentStoryDiagramCreationWizard
 	public Resource createDiagram(URI diagramURI, final URI modelURI,
 			IProgressMonitor progressMonitor) {
 
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
+				.createEditingDomain();
 		progressMonitor.beginTask(
 				Messages.DiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet()
@@ -87,15 +88,15 @@ public class ComponentStoryDiagramCreationWizard
 		final String diagramName = diagramURI.lastSegment();
 		final Resource modelResource = editingDomain.getResourceSet()
 				.getResource(modelURI, true);
-		
-		String signatureName = diagramURI.lastSegment().substring(0, diagramURI.lastSegment().lastIndexOf("."));
+
+		String signatureName = diagramURI.lastSegment().substring(0,
+				diagramURI.lastSegment().lastIndexOf("."));
 		ComponentStoryRule cSR = null;
 
-		
 		AbstractTransactionalCommand createInitModelElementsCommand = null;
-		if(getSelectedElement() == null){
+		if (getSelectedElement() == null) {
 			cSR = getInitialComponentStoryRule(modelResource, signatureName);
-			createInitModelElementsCommand  = new AddInitialComponentStoryRuleCommand(
+			createInitModelElementsCommand = new AddInitialComponentStoryRuleCommand(
 					cSR, editingDomain, "Add initial ComponentStoryRule",
 					Collections.EMPTY_LIST, getDiagramInformation()) {
 
@@ -111,7 +112,8 @@ public class ComponentStoryDiagramCreationWizard
 						if (rootElement instanceof RootNode) {
 							RootNode rootNode = (RootNode) rootElement;
 							elementCategory = getModelElementCategory(rootNode,
-									diagramInformation.getModelElementCategoryKey());
+									diagramInformation
+											.getModelElementCategoryKey());
 
 							if (compoStoryRule != null) {
 								elementCategory.getModelElements().add(
@@ -124,9 +126,10 @@ public class ComponentStoryDiagramCreationWizard
 				}
 			};
 		}
-		
-		EObject selectedElement = getSelectedElement()== null ? cSR : getSelectedElement();
-		
+
+		EObject selectedElement = getSelectedElement() == null ? cSR
+				: getSelectedElement();
+
 		AbstractTransactionalCommand command = new CreateDiagramCommand(
 				editingDomain,
 				Messages.DiagramEditorUtil_CreateDiagramCommandLabel,
@@ -134,10 +137,12 @@ public class ComponentStoryDiagramCreationWizard
 				selectedElement, getSelectedContents(), diagramName,
 				getDiagramInformation());
 		try {
-			if(createInitModelElementsCommand != null){
-				IStatus status =OperationHistoryFactory.getOperationHistory().execute(createInitModelElementsCommand,
-						new SubProgressMonitor(progressMonitor, 1), null);
-				if(status.isOK()){
+			if (createInitModelElementsCommand != null) {
+				IStatus status = OperationHistoryFactory.getOperationHistory()
+						.execute(createInitModelElementsCommand,
+								new SubProgressMonitor(progressMonitor, 1),
+								null);
+				if (status.isOK()) {
 					modelResource.save(DiagramEditorUtil.getSaveOptions());
 				}
 			}
@@ -156,7 +161,7 @@ public class ComponentStoryDiagramCreationWizard
 				.getFile(diagramResource));
 		return diagramResource;
 	}
-	
+
 	protected ModelElementCategory getModelElementCategory(RootNode rootNode,
 			String categoryKey) {
 		ModelElementCategory result = null;
@@ -185,7 +190,7 @@ public class ComponentStoryDiagramCreationWizard
 		}
 		return result;
 	}
-	
+
 	private ComponentStoryRule getInitialComponentStoryRule(
 			Resource modelResource, String signatureName) {
 		ComponentStoryRule initComponentStoryrule = ComponentstorydiagramFactory.eINSTANCE
@@ -199,22 +204,24 @@ public class ComponentStoryDiagramCreationWizard
 
 		return initComponentStoryrule;
 	}
-	
+
 	@Override
 	public EObject getSelectedElement() {
 		EObject selectedElement = null;
 		if (diagramElementSelectionPage != null) {
 			selectedElement = diagramElementSelectionPage.getSelectedElement();
 		}
-		
+
 		return selectedElement;
 	}
-	
-	abstract class AddInitialComponentStoryRuleCommand extends AbstractTransactionalCommand {
+
+	abstract class AddInitialComponentStoryRuleCommand extends
+			AbstractTransactionalCommand {
 		protected ComponentStoryRule compoStoryRule;
 		protected IDiagramInformation diagramInformation;
 
-		public AddInitialComponentStoryRuleCommand(ComponentStoryRule componentStoryRule,
+		public AddInitialComponentStoryRuleCommand(
+				ComponentStoryRule componentStoryRule,
 				TransactionalEditingDomain domain, String label,
 				List affectedFiles, IDiagramInformation diagramInformation) {
 			super(domain, label, affectedFiles);
