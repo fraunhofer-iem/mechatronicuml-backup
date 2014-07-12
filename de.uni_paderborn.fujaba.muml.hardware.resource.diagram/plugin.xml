@@ -128,7 +128,7 @@
       <editor
          id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorID"
          name="%editorName"
-         icon="icons/obj16/HwresourceDiagramFile.gif"
+         icon="icons/custom/ResourceDiagramFile.gif"
          extensions="resource_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditor"
