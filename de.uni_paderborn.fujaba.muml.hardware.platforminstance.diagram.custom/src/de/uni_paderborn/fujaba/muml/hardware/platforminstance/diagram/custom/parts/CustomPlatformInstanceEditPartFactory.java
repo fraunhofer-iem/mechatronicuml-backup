@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.pa
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HardwareEditPartFactory;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
@@ -21,7 +22,10 @@ public class CustomPlatformInstanceEditPartFactory extends HardwareEditPartFacto
 				return new CustomStructuredResourceInstanceEditPart(view);
 				
 			case HWPlatformInstanceEditPart.VISUAL_ID:
-				return new CustomPlatformInstanceEditPart(view);
+				return new CustomHWPlatformInstanceEditPart(view);
+				
+			case HWPlatformInstance2EditPart.VISUAL_ID:
+				return new CustomHWPlatformInstance2EditPart(view);
 				
 		//	case CustomHWPlatformInstanceConfigurationEditPart.VISUAL_ID:
 		//		return new CustomHWPlatformInstanceConfigurationEditPart(view);

@@ -64,7 +64,7 @@
    </extension>
 
 <extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
+      <?gmfgen generated="false"?>
       <editor
          id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
          name="%editorName"

@@ -26,7 +26,7 @@ public class CustomStructuredResourceInstanceEditPart extends
 	
 	@Override
 	protected IFigure createNodeShape() {
-		 primaryShape = new StructuredResourceFigure();
+		 primaryShape = new CustomStructuredResourceFigure();
 		 ((StructuredResourceFigure) primaryShape).getFigureStructuredResourceNameFigure().setTextUnderline(true);
 		 ((StructuredResourceFigure) primaryShape).getFigureStructuredResourceKindFigure().setTextUnderline(true);
 		 ((StructuredResourceFigure) primaryShape).getFigureCustomStructuredIconFigure().setIcon(ResourceType.STRUCTURED);

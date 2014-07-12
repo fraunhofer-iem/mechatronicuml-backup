@@ -16,9 +16,9 @@ import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts
  * @author adann
  * 
  */
-public class CustomPlatformInstanceEditPart extends HWPlatformInstanceEditPart {
+public class CustomHWPlatformInstanceEditPart extends HWPlatformInstanceEditPart {
 
-	public CustomPlatformInstanceEditPart(View view) {
+	public CustomHWPlatformInstanceEditPart(View view) {
 		super(view);
 	}
 

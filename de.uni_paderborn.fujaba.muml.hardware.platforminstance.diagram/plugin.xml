@@ -21,11 +21,11 @@
 	
 	
 	<extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="true"?>
+      <?gmfgen generated="false"?>
       <editor
          id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"
          name="%editorName"
-         icon="icons/obj16/HwplatforminstanceDiagramFile.gif"
+         icon="icons/custom/PlatformInstanceDiagramFile.gif"
          extensions="platforminstance_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor"
