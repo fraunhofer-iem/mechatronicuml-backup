@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts;
 
+import java.util.Collection;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -47,6 +48,29 @@ public class StructuredResourceInstanceEditPart extends
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 2006;
+
+	/**
+	 * MUML FIX, see code comments.
+	 *
+	 * @generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(Request request) {
+
+		@SuppressWarnings("unchecked")
+		Collection<Object> hosts = super.disableCanonicalFor(request);
+
+		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
+		// because GMF supports adding additional commands using Edit Helpers concept,
+		// which could trigger refresh of any canonical edit policy.
+		// So it should be the cleanest solution to disable all canonical edit policies. 
+		EditPart part = this;
+		while (part != null) {
+			hosts.add(part);
+			part = part.getParent();
+		}
+		return hosts;
+	}
 
 	/**
 	 * @generated
@@ -389,6 +413,7 @@ public class StructuredResourceInstanceEditPart extends
 
 			RectangleFigure structuredContainer0 = new RectangleFigure();
 
+			structuredContainer0.setFill(false);
 			structuredContainer0.setOutline(false);
 			structuredContainer0.setBorder(new MarginBorder(getMapMode()
 					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
@@ -411,6 +436,7 @@ public class StructuredResourceInstanceEditPart extends
 
 			RectangleFigure structuredName1 = new RectangleFigure();
 
+			structuredName1.setFill(false);
 			structuredName1.setOutline(false);
 
 			GridData constraintStructuredName1 = new GridData();

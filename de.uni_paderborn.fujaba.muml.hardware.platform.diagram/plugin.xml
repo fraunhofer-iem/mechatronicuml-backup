@@ -25,7 +25,7 @@
       <editor
          id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorID"
          name="%editorName"
-         icon="icons/custom/PlatformDiagramFile.gif"
+         icon="icons/obj16/HwplatformDiagramFile.gif"
          extensions="platform_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditor"

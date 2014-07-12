@@ -106,13 +106,13 @@
     <descriptors name="StructuredResourceFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="StructuredResourceFigure">
         <layout xsi:type="gmfgraph:GridLayout"/>
-        <children xsi:type="gmfgraph:Rectangle" name="StructuredContainer" outline="false">
+        <children xsi:type="gmfgraph:Rectangle" name="StructuredContainer" outline="false" fill="false">
           <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING" horizontalAlignment="FILL"/>
           <layout xsi:type="gmfgraph:GridLayout" numColumns="2" equalWidth="false"/>
           <border xsi:type="gmfgraph:MarginBorder">
             <insets top="5" left="5" bottom="5" right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Rectangle" name="StructuredName" outline="false">
+          <children xsi:type="gmfgraph:Rectangle" name="StructuredName" outline="false" fill="false">
             <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
             <layout xsi:type="gmfgraph:GridLayout" numColumns="3" equalWidth="false"/>
             <children xsi:type="gmfgraph:Label" name="StructuredResourceNameFigure" text="&lt;...>">
@@ -198,7 +198,7 @@
           <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
           <children xsi:type="gmfgraph:Label" name="HWPlatformNameLabel" text="Platform"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="HWPlatformCompartment" outline="false" fill="false">
+        <children xsi:type="gmfgraph:Rectangle" name="HWPlatformCompartment" outline="false">
           <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
         </children>
       </actualFigure>

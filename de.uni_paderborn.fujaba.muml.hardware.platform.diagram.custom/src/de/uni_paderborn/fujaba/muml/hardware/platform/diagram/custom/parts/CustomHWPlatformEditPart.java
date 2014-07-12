@@ -1,46 +1,51 @@
 package de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Color;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus;
-import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.Link;
+import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart;
+
 /**
- * A customized EditPart for a {@link HWPlatform}.
- * This customized EditPart fixes the visualization of:
- * 		-a connection between from {@link BusPortInstance} to  a {@link Bus}
- * 		-a {@link Link} between two {@link LinkPortInstance}
- * 		-a connection between a {@link Bus} and a {@link Bridge}
+ * A customized EditPart for a {@link HWPlatform}. This customized EditPart
+ * fixes the visualization of: -a connection between from
+ * {@link BusPortInstance} to a {@link Bus} -a {@link Link} between two
+ * {@link LinkPortInstance} -a connection between a {@link Bus} and a
+ * {@link Bridge}
+ * 
  * @author adann
- *
+ * 
  */
-public class CustomHWPlatformEditPart extends HWPlatformEditPart {
+public class CustomHWPlatformEditPart extends HWPlatform2EditPart {
 
 	public CustomHWPlatformEditPart(View view) {
 		super(view);
 	}
 
-/*	@Override
-	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
-		removeEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HWPlatformCanonicalEditPolicy(
-						true) {
+	@Override
+	protected IFigure createNodeShape() {
+		// TODO Auto-generated method stub
+		return primaryShape = new CustomHWPlatformFigure();
 
-							@Override
-							protected EditPart getSourceEditPart(
-									UpdaterLinkDescriptor descriptor,
-									Domain2Notation domain2NotationMap) {
-								if (descriptor.getVisualID()==HWPortPartConnectedMediaEditPart.VISUAL_ID || descriptor.getVisualID()==CommunicationMediaConnectedBridgesEditPart.VISUAL_ID) {
-								return null;
-								}
-								return super.getSourceEditPart(descriptor, domain2NotationMap);
-							}
-					
-			
-		});
-	} */
-
+	}
+	
+	public class CustomHWPlatformFigure extends HWPlatform{
+		
+		@Override
+		protected void fillShape(Graphics graphics) {
+			Color bgColor = graphics.getBackgroundColor();
+			Color fgColor = graphics.getForegroundColor();
+			// Set the graphics color
+			graphics.setForegroundColor(ColorConstants.buttonLightest);
+			graphics.setBackgroundColor(ColorConstants.buttonDarker);
+			// Restore the original colors
+			graphics.fillGradient(getBounds(), true);
+			graphics.setBackgroundColor(bgColor);
+			graphics.setForegroundColor(fgColor);
+		}
+	}
 }

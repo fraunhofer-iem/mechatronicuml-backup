@@ -62,7 +62,7 @@ public class CustomIconFigure extends RectangleFigure {
 	 * @generated
 	 */
 	private void createContents() {
-
+		this.setFill(false);
 		// Icon Container
 		RectangleFigure container = new RectangleFigure();
 		container.setLayoutManager(new StackLayout());

@@ -1,9 +1,12 @@
 package de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
@@ -40,12 +43,12 @@ public class CustomStructuredResourceInstanceEditPart extends
 
 	@Override
 	protected IFigure createNodeShape() {
-		primaryShape = new StructuredResourceFigure();
-		((StructuredResourceFigure) primaryShape)
+		primaryShape = new CustomStructuredResourceFigure();
+		((CustomStructuredResourceFigure) primaryShape)
 				.getFigureStructuredResourceNameFigure().setTextUnderline(true);
-		((StructuredResourceFigure) primaryShape)
+		((CustomStructuredResourceFigure) primaryShape)
 				.getFigureStructuredResourceKindFigure().setTextUnderline(true);
-		((StructuredResourceFigure) primaryShape)
+		((CustomStructuredResourceFigure) primaryShape)
 				.getFigureCustomStructuredIconFigure().setIcon(
 						ResourceType.STRUCTURED);
 		return primaryShape;
@@ -73,6 +76,22 @@ public class CustomStructuredResourceInstanceEditPart extends
 					.getElement();
 			Activator.createInstance(editingDomain, resourceInstance);
 		}
+	}
+	
+	public class CustomStructuredResourceFigure extends StructuredResourceFigure{
+		@Override
+		protected void fillShape(Graphics graphics) {
+			Color bgColor = graphics.getBackgroundColor();
+			Color fgColor = graphics.getForegroundColor();
+			// Set the graphics color
+			graphics.setForegroundColor(ColorConstants.white);
+			graphics.setBackgroundColor(ColorConstants.lightGray);
+			// Restore the original colors
+			graphics.fillGradient(getBounds(), true);
+			graphics.setBackgroundColor(bgColor);
+			graphics.setForegroundColor(fgColor);
+		}
+		
 	}
 
 }
