@@ -22,7 +22,7 @@
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generate(root : RootNode)]
+[template public generate(cic : ComponentInstanceConfiguration)]
 [comment @main/]
 
 [comment]
@@ -31,23 +31,14 @@ possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
 [let targetPlatform : String = 'C']
 
 
-
-
-
-
-[for (mec : ModelElementCategory | root.categories)]
-	[if mec.key.matches('de.uni_paderborn.fujaba.muml.instance.category')]
-		[for (cic : ComponentInstanceConfiguration | mec.modelElements.oclAsType(ComponentInstanceConfiguration))]
-			[if (targetPlatform = 'nxtOSEK')]
+		[if (targetPlatform = 'nxtOSEK')]
 				[generateNXTOSEK(cic)/]
-			[elseif (targetPlatform = 'C')]
+		[elseif (targetPlatform = 'C')]
 				[generateANSIC(cic)/]
-			[else]
+		[else]
 				not defined
-			[/if]
-		[/for]
-	[/if]
-[/for]
+		[/if]
+
 [/let]
 [/template]
 
