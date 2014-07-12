@@ -403,7 +403,7 @@
                   xsi:type="gmftool:CreationTool"
                   href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.2"/>
               <diagramNode
-                  href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
+                  href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
               <children
                   referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.5/@ownedChild">
                 <containmentFeature
@@ -446,7 +446,7 @@
                   xsi:type="gmftool:CreationTool"
                   href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.1"/>
               <diagramNode
-                  href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
+                  href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
               <children
                   referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.5/@ownedChild">
                 <containmentFeature

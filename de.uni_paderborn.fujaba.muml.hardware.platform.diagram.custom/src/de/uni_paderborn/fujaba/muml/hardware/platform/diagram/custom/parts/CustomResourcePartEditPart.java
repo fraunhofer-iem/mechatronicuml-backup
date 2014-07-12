@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parts;
 
-
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,21 +30,20 @@ import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.Resourc
  * @author adann
  * 
  */
-public class CustomResourcePartEditPart extends
-		ResourcePartEditPart {
+public class CustomResourcePartEditPart extends ResourcePartEditPart {
 	private static final Color COLOR_DEVICE = new Color(null, 230, 230, 230);
 	private static final Color COLOR_NORMAL = new Color(null, 255, 255, 255);
-
+	private boolean isDevice = false;
 
 	public CustomResourcePartEditPart(View view) {
 		super(view);
 
 	}
-	
 
 	/**
-	 * The execution of the transformation keeps the ports of
-	 * this instance and its type in synch.
+	 * The execution of the transformation keeps the ports of this instance and
+	 * its type in synch.
+	 * 
 	 * @author adann
 	 */
 	@Override
@@ -55,15 +55,14 @@ public class CustomResourcePartEditPart extends
 		executeTransformation();
 	}
 
-
 	@Override
 	protected IFigure createNodeShape() {
-		IFigure result = super.createNodeShape();
-		result.setToolTip(new Label("Double-Click to open ResourceInstance"));
-		return result;
+		primaryShape = new ModifiedCustomResourceFigure();
+
+		primaryShape.setToolTip(new Label(
+				"Double-Click to open ResourceInstance"));
+		return primaryShape;
 	}
-	
-	
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
@@ -86,18 +85,45 @@ public class CustomResourcePartEditPart extends
 			Activator.updateHWPortParts(editingDomain, platformPart);
 		}
 	}
-	
-	private void refreshFigure(){
+
+	private void refreshFigure() {
 		ResourcePart element = (ResourcePart) resolveSemanticElement();
-		CustomResourceFigure figure= (CustomResourceFigure) getContentPane();
-		if(element.getResourceType()!=null && HwresourceinstancePackage.Literals.DEVICE_INSTANCE.isSuperTypeOf(element.getResourceType().eClass())){
+		CustomResourceFigure figure = (CustomResourceFigure) getContentPane();
+		if (element.getResourceType() != null
+				&& HwresourceinstancePackage.Literals.DEVICE_INSTANCE
+						.isSuperTypeOf(element.getResourceType().eClass())) {
+			isDevice = true;
 			figure.getFigureResourceInfoRectangle().setVisible(false);
 			figure.setBackgroundColor(COLOR_DEVICE);
-		}
-		else{
+
+		} else {
+			isDevice = false;
 			figure.getFigureResourceInfoRectangle().setVisible(true);
 			figure.setBackgroundColor(COLOR_NORMAL);
 
+		}
+	}
+
+	public class ModifiedCustomResourceFigure extends CustomResourceFigure {
+
+		@Override
+		protected void fillShape(Graphics graphics) {
+			if (isDevice) {
+				super.fillShape(graphics);
+			}
+
+			else {
+				Color bgColor = graphics.getBackgroundColor();
+				Color fgColor = graphics.getForegroundColor();
+				// Set the graphics color
+				graphics.setForegroundColor(ColorConstants.buttonLightest);
+				graphics.setBackgroundColor(ColorConstants.buttonDarker);
+				// Restore the original colors
+				graphics.fillGradient(getBounds(), true);
+				graphics.setBackgroundColor(bgColor);
+				graphics.setForegroundColor(fgColor);
+
+			}
 		}
 	}
 }

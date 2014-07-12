@@ -40,11 +40,20 @@ public class CustomHWPlatform2EditPart extends HWPlatform2EditPart {
 		
 		@Override
 		protected void fillShape(Graphics graphics) {
+//			Color bgColor = graphics.getBackgroundColor();
+//			Color fgColor = graphics.getForegroundColor();
+//			// Set the graphics color
+//			graphics.setForegroundColor(ColorConstants.buttonLightest);
+//			graphics.setBackgroundColor(ColorConstants.buttonDarker);
+//			// Restore the original colors
+//			graphics.fillGradient(getBounds(), true);
+//			graphics.setBackgroundColor(bgColor);
+//			graphics.setForegroundColor(fgColor);
 			Color bgColor = graphics.getBackgroundColor();
 			Color fgColor = graphics.getForegroundColor();
 			// Set the graphics color
-			graphics.setForegroundColor(ColorConstants.buttonLightest);
-			graphics.setBackgroundColor(ColorConstants.buttonDarker);
+			graphics.setForegroundColor(ColorConstants.menuBackground);
+			graphics.setBackgroundColor(ColorConstants.menuBackgroundSelected);
 			// Restore the original colors
 			graphics.fillGradient(getBounds(), true);
 			graphics.setBackgroundColor(bgColor);

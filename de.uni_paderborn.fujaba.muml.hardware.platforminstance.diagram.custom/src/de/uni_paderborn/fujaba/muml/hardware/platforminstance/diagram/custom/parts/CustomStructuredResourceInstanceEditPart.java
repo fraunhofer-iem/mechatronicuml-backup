@@ -1,7 +1,10 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
@@ -35,5 +38,18 @@ public class CustomStructuredResourceInstanceEditPart extends
 		super.activate();
 		}
 	
-	
+	public class CustomStructuredResourceFigure extends StructuredResourceFigure{
+		@Override
+		protected void fillShape(Graphics graphics) {
+			Color bgColor = graphics.getBackgroundColor();
+			Color fgColor = graphics.getForegroundColor();
+			// Set the graphics color
+			graphics.setForegroundColor(ColorConstants.buttonLightest);
+			graphics.setBackgroundColor(ColorConstants.buttonDarker);
+			// Restore the original colors
+			graphics.fillGradient(getBounds(), true);
+			graphics.setBackgroundColor(bgColor);
+			graphics.setForegroundColor(fgColor);
+		}
+	}
 }
