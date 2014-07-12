@@ -65,6 +65,7 @@ public class CustomSimpleResourceFigure extends RectangleFigure implements ICust
 
 		resourceContainerFigure0.setOutline(false);
 		resourceContainerFigure0.setBorder(new MarginBorder(5));
+		resourceContainerFigure0.setFill(false);
 
 		GridData constraintResourceContainerFigure0 = new GridData();
 		constraintResourceContainerFigure0.verticalAlignment = GridData.BEGINNING;

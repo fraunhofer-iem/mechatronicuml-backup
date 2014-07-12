@@ -8,11 +8,14 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Color;
 
+import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ComputingResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.part.Activator;
@@ -28,6 +31,9 @@ import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.Resourc
  */
 public class CustomResourcePartEditPart extends
 		ResourcePartEditPart {
+	private static final Color COLOR_DEVICE = new Color(null, 230, 230, 230);
+	private static final Color COLOR_NORMAL = new Color(null, 255, 255, 255);
+
 
 	public CustomResourcePartEditPart(View view) {
 		super(view);
@@ -45,6 +51,7 @@ public class CustomResourcePartEditPart extends
 		super.activate();
 		Request refreshRequest = new Request(RequestConstants.REQ_REFRESH);
 		this.performRequest(refreshRequest);
+		refreshFigure();
 		executeTransformation();
 	}
 
@@ -65,6 +72,7 @@ public class CustomResourcePartEditPart extends
 				.equals(feature)) {
 
 			executeTransformation();
+			refreshFigure();
 		}
 		super.handleNotificationEvent(notification);
 	}
@@ -76,6 +84,20 @@ public class CustomResourcePartEditPart extends
 			PlatformPart platformPart = (PlatformPart) getNotationView()
 					.getElement();
 			Activator.updateHWPortParts(editingDomain, platformPart);
+		}
+	}
+	
+	private void refreshFigure(){
+		ResourcePart element = (ResourcePart) resolveSemanticElement();
+		CustomResourceFigure figure= (CustomResourceFigure) getContentPane();
+		if(element.getResourceType()!=null && HwresourceinstancePackage.Literals.DEVICE_INSTANCE.isSuperTypeOf(element.getResourceType().eClass())){
+			figure.getFigureResourceInfoRectangle().setVisible(false);
+			figure.setBackgroundColor(COLOR_DEVICE);
+		}
+		else{
+			figure.getFigureResourceInfoRectangle().setVisible(true);
+			figure.setBackgroundColor(COLOR_NORMAL);
+
 		}
 	}
 }

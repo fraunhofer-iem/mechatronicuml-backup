@@ -1,13 +1,18 @@
 package de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parts;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
+import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure;
+import de.uni_paderborn.fujaba.muml.hardware.common.figures.ICustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
@@ -43,12 +48,10 @@ public class CustomHWPlatformPartEditPart extends HWPlatformPartEditPart {
 
 	@Override
 	protected IFigure createNodeShape() {
-		primaryShape = super.createNodeShape();
+		primaryShape = new ModifiedCustomSimpleResourceFigure();
 		primaryShape.setToolTip(new Label("Double-Click to open Platform"));
-		((CustomResourceFigure) primaryShape).getFigureCustomIconFigure()
+		((ICustomResourceFigure) primaryShape).getFigureCustomIconFigure()
 				.setIcon(ResourceType.PLATFORM);
-		((CustomResourceFigure) primaryShape).getFigureResourceInfoRectangle()
-				.setVisible(false);
 		return primaryShape;
 	}
 
@@ -71,6 +74,21 @@ public class CustomHWPlatformPartEditPart extends HWPlatformPartEditPart {
 			PlatformPart platformPart = (PlatformPart) getNotationView()
 					.getElement();
 			Activator.updateHWPortParts(editingDomain, platformPart);
+		}
+	}
+	
+	public class ModifiedCustomSimpleResourceFigure extends CustomSimpleResourceFigure{
+		@Override
+		protected void fillShape(Graphics graphics) {
+			Color bgColor = graphics.getBackgroundColor();
+			Color fgColor = graphics.getForegroundColor();
+			// Set the graphics color
+			graphics.setForegroundColor(ColorConstants.menuBackground);
+			graphics.setBackgroundColor(ColorConstants.menuBackgroundSelected);
+			// Restore the original colors
+			graphics.fillGradient(getBounds(), true);
+			graphics.setBackgroundColor(bgColor);
+			graphics.setForegroundColor(fgColor);
 		}
 	}
 

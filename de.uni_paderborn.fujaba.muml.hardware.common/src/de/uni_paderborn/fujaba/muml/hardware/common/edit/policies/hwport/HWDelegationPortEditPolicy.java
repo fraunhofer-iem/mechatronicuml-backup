@@ -36,6 +36,11 @@ public class HWDelegationPortEditPolicy extends HWPortBaseEditPolicy {
 			refreshHWPortFigure();
 
 		}
+		if (HwresourcePackage.Literals.COMMUNICATION_RESOURCE__PROTOCOL
+				.equals(feature)){
+			refreshHWPortFigure();
+		}
+		
 		super.handleNotificationEvent(notification);
 	}
 	

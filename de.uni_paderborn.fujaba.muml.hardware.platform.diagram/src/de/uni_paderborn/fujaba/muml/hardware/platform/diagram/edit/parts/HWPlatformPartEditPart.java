@@ -144,14 +144,14 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure();
+		return primaryShape = new de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure getPrimaryShape() {
-		return (de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure) primaryShape;
+	public de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure getPrimaryShape() {
+		return (de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure) primaryShape;
 	}
 
 	/**

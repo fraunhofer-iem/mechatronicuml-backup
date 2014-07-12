@@ -24,36 +24,8 @@ public abstract class PlatformPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addParentHWPlatform_GeneralTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCardinality_GeneralTab_Editor(null, true);
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addParentHWPlatform_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createParentHWPlatform_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParentHWPlatform_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-				.getPlatformPart_ParentHWPlatform();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The HWPlatform, this PlatformPart belongs to.");
-
-		return editor;
 
 	}
 

@@ -273,6 +273,7 @@ public class CustomIconFigure extends RectangleFigure {
 		RectangleFigure icon = new RectangleFigure();
 		icon.setLayoutManager(new XYLayout());
 		icon.setOutline(false);
+		icon.setFill(false);
 
 		Color SHADOW = new Color(null, 140, 140, 140);
 

@@ -159,7 +159,7 @@
               xsi:type="gmftool:CreationTool"
               href="platform.gmftool#//@palette/@tools.1/@tools.0"/>
           <diagramNode
-              href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
+              href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
           <children
               referencedChild="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild">
             <containmentFeature

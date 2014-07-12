@@ -4,9 +4,12 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider;
 
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourceInstancePropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart;
+
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -61,11 +64,11 @@ public class ResourcePartItemProvider
 	 * This adds a property descriptor for the Resource Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addResourceTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ResourceInstancePropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ResourcePart_resourceType_feature"),
