@@ -673,7 +673,7 @@
           editHelperClassName="SensorInstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure">
+          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="130"
@@ -759,7 +759,7 @@
           editHelperClassName="ActuatorInstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure">
+          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="130"

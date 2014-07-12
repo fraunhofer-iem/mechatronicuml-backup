@@ -5,7 +5,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BridgePartEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusPartEditPart;
-import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart;
+import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HardwareEditPartFactory;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart;
@@ -34,8 +34,8 @@ public class CustomPlatformEditPartFactory extends
 			case BridgePartEditPart.VISUAL_ID:
 				return new CustomBridgeEditPart(view);
 				
-			case HWPlatformEditPart.VISUAL_ID:
-				return new CustomHWPlatformEditPart(view);
+			case HWPlatform2EditPart.VISUAL_ID:
+				return new CustomHWPlatform2EditPart(view);
 				
 			case BusPartEditPart.VISUAL_ID:
 				return new CustomBusEditPart(view);

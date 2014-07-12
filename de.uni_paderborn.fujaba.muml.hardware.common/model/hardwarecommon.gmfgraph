@@ -193,6 +193,9 @@
     <descriptors name="HWPlatform">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="HWPlatformFigure">
         <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
         <children xsi:type="gmfgraph:Rectangle" name="HWPlatformTitleAreaFigure" outline="false" fill="false">
           <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
           <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
