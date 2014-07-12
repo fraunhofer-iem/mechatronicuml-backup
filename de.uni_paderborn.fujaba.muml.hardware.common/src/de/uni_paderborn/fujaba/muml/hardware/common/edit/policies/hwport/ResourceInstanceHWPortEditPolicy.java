@@ -81,7 +81,18 @@ public class ResourceInstanceHWPortEditPolicy extends HWPortBaseEditPolicy {
 
 	@Override
 	protected boolean isOptionalPort() {
-		// TODO Auto-generated method stub
-		return false;
+		EObject element = getSemanticElement();
+		Boolean isOptinal = false;
+		if (element != null) {
+			if (HwresourcePackage.Literals.COMMUNICATION_RESOURCE
+					.isSuperTypeOf(element.eClass())) {
+				CommunicationResource castedElement =((CommunicationResource) element);
+				if(castedElement.getCardinality()!=null && castedElement.getCardinality().getLowerBound()!=null){
+					isOptinal=castedElement.getCardinality().getLowerBound().getValue()==0;
+				}
+
+			}
+		}
+		return isOptinal;
 	}
 }

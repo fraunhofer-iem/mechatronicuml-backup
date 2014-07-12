@@ -288,7 +288,7 @@
         <genFeature href="hardware.genmodel#//hardware/hwresource/HWPort/parentResource"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <properties reconcile="false" initializeOCLExpression="">
+      <properties tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="hardware.genmodel#//hardware/hwresource/HWPort/parentResourceInstance"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
@@ -444,10 +444,9 @@
     </classes>
     <classes superClasses="//@packages.3/@classes.0">
       <genClass href="hardware.genmodel#//hardware/hwresourceinstance/AtomicResourceInstance"/>
-      <properties>
+      <properties tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/AtomicResourceInstance/parentStructuredResourceInstance"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.3/@classes.0">
