@@ -284,15 +284,13 @@
     </classes>
     <classes>
       <genClass href="hardware.genmodel#//hardware/hwresource/HWPort"/>
-      <properties>
+      <properties reconcile="false" initializeOCLExpression="">
         <genFeature href="hardware.genmodel#//hardware/hwresource/HWPort/parentResource"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties>
+      <properties reconcile="false" initializeOCLExpression="">
         <genFeature href="hardware.genmodel#//hardware/hwresource/HWPort/parentResourceInstance"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
