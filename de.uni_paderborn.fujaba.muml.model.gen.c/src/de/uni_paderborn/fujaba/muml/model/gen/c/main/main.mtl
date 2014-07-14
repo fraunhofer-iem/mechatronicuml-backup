@@ -30,7 +30,7 @@ possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
 [/comment]
 [let targetPlatform : String = 'C']
 
-
+[if cic.eContainer().oclIsKindOf(ModelElementCategory)]
 		[if (targetPlatform = 'nxtOSEK')]
 				[generateNXTOSEK(cic)/]
 		[elseif (targetPlatform = 'C')]
@@ -38,7 +38,7 @@ possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
 		[else]
 				not defined
 		[/if]
-
+[/if]
 [/let]
 [/template]
 

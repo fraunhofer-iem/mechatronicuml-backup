@@ -25,7 +25,13 @@
  */]
 [template public generate_ComponentHeader(component : Component, path : String)]
 	[file (path+getFileName(component, true), false, 'UTF-8')]
-
+/**
+ * @file 
+ * @author generated
+ * @brief Specification of Component of Type: [component.getName()/]
+ * @details This files contains a description of the [component.getName()/] in form of the [getClassName(component)/]
+ * 			and all methods which can be executed on an Instance of this Component
+ */
 		#ifndef [getHeaderDefine(component)/]
 		#define [getHeaderDefine(component)/]
 			[includes(component)/]
@@ -96,9 +102,22 @@
 */]
 [template private variables (component : Component) post (trim())]
 [if component.oclIsKindOf(AtomicComponent)]
+/**
+ * @brief Forward Declaration of the struct [getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/] which describes the behavior of [getClassName(component)/]
+ * 
+ */
  typedef struct [getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/] [getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/];
 [/if]
+/**
+ * @brief Forward Declaration of the struct [getClassName(component)/]
+ */
 	typedef struct [getClassName(component)/] [getClassName(component)/];
+
+/**
+*  
+* @brief Description for a ComponentInstance of Type: [component.getName()/]
+* @details This struct describes a specific Component Instances which is typed over the Component: [component.getName()/]
+*/
 struct [getClassName(component)/] {
 
 		[comment if structured component, list all embedded components/]
@@ -109,14 +128,14 @@ struct [getClassName(component)/] {
 		[/if]
 
 		[comment if atomic, list the RTSC of the component/]
-		[if component.oclIsKindOf(AtomicComponent)]
-			[getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/]* stateChart;	
+		[if (component.oclIsKindOf(AtomicComponent) and (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT)))]
+			[getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/]* stateChart;	/**< The [getClassName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/] of the Component [component.getName()/] */
 		[/if]
 	
 		[comment list all ports of the component/]
 		[for (port : Port | component.ports)]
 			[if (port.oclIsTypeOf(DiscretePort))]
-				DiscretePort* [getVariableName(port)/];
+				DiscretePort* [getVariableName(port)/]; /**< A Pointer to the Component's Port: [port.getName()/] */
 			[/if]
 		[/for]
 
@@ -124,9 +143,9 @@ struct [getClassName(component)/] {
 		[for (port : Port | component.ports)]
 			[if (port.oclIsTypeOf(HybridPort))]
 				[if port.oclAsType(HybridPort).outPort]
-					void (*setterOf_[port.oclAsType(HybridPort).getName()/])([port.oclAsType(HybridPort).dataType.getTypeName()/]);
+					void (*setterOf_[port.oclAsType(HybridPort).getName()/])([port.oclAsType(HybridPort).dataType.getTypeName()/]);/**< A Pointer to the setter function of the hybrid port: [port.getName()/] */
 				[else]
-					[port.oclAsType(HybridPort).dataType.getTypeName()/] (*getterOf_[port.oclAsType(HybridPort).getName()/])(void);
+					[port.oclAsType(HybridPort).dataType.getTypeName()/] (*getterOf_[port.oclAsType(HybridPort).getName()/])(void);/**< A Pointer to the getter function of the hybrid port: [port.getName()/] */
 				[/if]
 
 			[/if]
@@ -136,11 +155,11 @@ struct [getClassName(component)/] {
 		
 		[comment if structured comp, list all port connectors/]
 		[if component.oclIsKindOf(StructuredComponent)]
-		DiscreteConnectionList * connectorList;
+		DiscreteConnectionList * connectorList; /**< A Pointer to the list of port connectors of the component*/
 		[/if]
 
 		[comment add list pointer/]
-		[component.getClassName()/] * next;
+		[component.getClassName()/] * next;/**< A Pointer to the next component part, if this component ist part of a multipart in the CIC */
 		
 	};
 
@@ -151,6 +170,12 @@ struct [getClassName(component)/] {
  * @param statechart
 */]
 [template private initialize (component : Component) post (trim())]
+/**
+* @brief This Methodes intializes the Component: [component.getName()/]
+* @details All struct members of the struct [getClassName(component)/] are initialized
+* 
+* @param component The [getClassName(component)/] to be initialized
+*/	
 	void [getInitializeMethodName(component)/]([getClassName(component)/]* component);
 [/template]
 
@@ -161,6 +186,11 @@ struct [getClassName(component)/] {
  * @param statechart
 */]
 [template public constructor (component : Component) post (trim())]
+/**
+* @brief Creates a Instance of the Component: [component.getName()/]
+* @details Allocates Memory for the struct [getClassName(component)/]
+* @return A Pointer to the new created [getClassName(component)/]
+*/
 	[getClassName(component)/]* [getCreateMethodName(component)/]();
 [/template]
 
@@ -168,6 +198,12 @@ struct [getClassName(component)/] {
  * 
 */]
 [template private destroy(component : Component)]
+/**
+ * @brief Destroys a Component: [component.getName()/]
+ * @details Frees the Memory for the struct [getClassName(component)/]
+ * 
+* @param component The specific [getClassName(component)/] to be destroyed
+ */
 	void [getDestroyMethodName(component)/]([getClassName(component)/]* component);
 [/template]
 
@@ -178,6 +214,13 @@ struct [getClassName(component)/] {
  * @param statechart
 */]
 [template private isTerminated (component : Component) post (trim())]
+/**
+* @brief Checks if the execution of the Component: [component.getName()/]  is terminated
+* @details To Check if the execution is terminated the Method is terminated of the stateChart is called
+*		
+* @param component The specific [getClassName(component)/] which shall be checked
+* @return True, if the Component is terminated, otherwise false
+*/
 	bool_t [getTerminateMethodName(component)/]([getClassName(component)/]* component);
 [/template]
 
@@ -188,6 +231,12 @@ struct [getClassName(component)/] {
  * @param statechart
 */]
 [template private processStep (component : Component) post (trim())]
+/**
+* @brief Executes the next Step of the behavior an Instance of the Component: [component.getName()/]
+* @details The behavior of the Component:  [component.getName()/] is executed.
+*			
+* @param component The [getClassName(component)/] whose behavior shall be checked
+*/
 	void [getProcessMethodName(component)/]([getClassName(component)/]* component);
 [/template]
 
@@ -206,6 +255,13 @@ struct [getClassName(component)/] {
 
 	[for (port : Port | component.ports)]
 	[if (port.oclIsKindOf(DiscretePort))]
+/**
+		 * @brief Get the Port: [port.getName()/] of an Instance of the Component: [component.getName()/]
+		 * @details The Pointer [getClassName(component)/]::[getVariableName(port)/] is returned
+		 * 
+		 * @param component The specific Instance [getClassName(component)/]  of the Component: [component.getName()/] whose Port shall be returned
+		 * @return A Pointer to the Port [port.getName()/] of the struct [getClassName(component)/]
+		 */
 		[getClassName(port)/]* [getGetterName(port)/]([getClassName(component)/]* component);
 	[/if]
 	[/for]

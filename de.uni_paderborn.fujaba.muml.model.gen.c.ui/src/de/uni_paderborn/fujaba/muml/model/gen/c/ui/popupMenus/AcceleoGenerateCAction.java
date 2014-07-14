@@ -83,7 +83,7 @@ public class AcceleoGenerateCAction extends ActionDelegate implements IActionDel
 							try {
 								Bundle bundle = Platform.getBundle(de.uni_paderborn.fujaba.muml.model.gen.c.Activator.PLUGIN_ID);
 								System.out.println(bundle.toString());
-								IContainer target = model.getProject().getFolder("src-gen");
+								IContainer target = model.getProject().getFolder("src-gen2");
 								GenerateAll generator = new GenerateAll(modelURI, target, getArguments());
 								generator.doGenerate(monitor);
 

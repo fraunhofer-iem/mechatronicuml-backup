@@ -40,7 +40,12 @@
 
 #include "../lib/types.h"
 [for (operation : Operation | allOperations)]
-
+/**
+ * @brief Implementation stub of operation [operation.name/]
+ * @details This function shall contain the implementation of the operation [operation.name/]. Up to now, there is no generated implementation. It has to be written by the developer.
+ *
+ * [for (p: Parameter | operation.parameters)]@param [p.getName()/] [/for]
+ */
 [operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]);
 [/for]
 

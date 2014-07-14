@@ -24,8 +24,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -38,14 +39,8 @@ import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.ui.internal.keys.model.ModelElement;
-import org.osgi.framework.Bundle;
 import org.storydriven.core.ExtendableElement;
-import org.eclipse.gmf.runtime.notation.impl.DiagramImpl;
+
 
 
 /**
@@ -108,54 +103,66 @@ public class GenerateAll {
 		//	}
 		//};
 		//gen0.doGenerate(BasicMonitor.toMonitor(monitor));
-    	Resource modelResource = new ResourceSetImpl().getResource(modelURI, true);
-		if (modelResource.getContents().get(0).eClass().getName() == "Diagram"){
-    		DiagramImpl diagImpl = (DiagramImpl) modelResource.getContents().get(0);
-    		this.modelURI = diagImpl.getElement().eResource().getURI();
-		}
+		try {		
+			monitor.subTask("Loading...");		
+			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.model.gen.c.Activator.PLUGIN_ID).getEntry("resources"));
+			File sourceFolder = new File(resources.toURI());
+			Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
+			int monitorCounter = 1;
 
-    	try {
+			Resource modelResource = new ResourceSetImpl().getResource(modelURI, true);
+			
+			if (modelResource.getContents().get(0).eClass().getName() == "Diagram"){
+				Diagram diagImpl = (Diagram) modelResource.getContents().get(0);
+
+				ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)diagImpl.getElement();
+				System.out.println(cic.getName());
+
+				monitor.subTask("generating "+cic.getName()+"...");
+				de.uni_paderborn.fujaba.muml.model.gen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.model.gen.c.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
+				String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.model.gen.c", "de.uni_paderborn.fujaba.muml.model.gen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+				gen0.setGenerationID(generationID);
+				gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+				monitor.worked(monitorCounter);
+				/*
+				monitor.subTask("Copying library to target folders...");
+
+				File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
+				this.copyFolder(sourceFolder, target);
+				monitor.worked(++monitorCounter);
+				*/
 				
-		    		monitor.subTask("Loading...");
-		    		URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.model.gen.c.Activator.PLUGIN_ID).getEntry("resources"));
-					File sourceFolder = new File(resources.toURI());
-			    	Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
-			    	RootNode rootNode = (RootNode) resource.getContents().get(0);
-			    	int monitorCounter = 1;
-			    	for (ModelElementCategory mec : rootNode.getCategories()){
-			    		if (mec.getKey().matches("de.uni_paderborn.fujaba.muml.instance.category")){
-			    			for (ExtendableElement me : mec.getModelElements()){
-			    				ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)me;
-			    				File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
-								this.copyFolder(sourceFolder, target);
-					    		monitor.subTask("generating "+cic.getName()+"...");
-								de.uni_paderborn.fujaba.muml.model.gen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.model.gen.c.main.Main(cic.eResource().getURI(), targetFolder.getLocation().toFile(), arguments);
-								monitor.worked(++monitorCounter);
-								String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.model.gen.c", "de.uni_paderborn.fujaba.muml.model.gen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
-								gen0.setGenerationID(generationID);
-								gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+			}else if (modelResource.getContents().get(0).eClass().getName() == "RootNode") {
+				RootNode rootNode = (RootNode) resource.getContents().get(0);
 
-			    			}
-			    		}
-			    	}
-					monitor.subTask("Copying library to target folders...");
-					monitor.worked(++monitorCounter);
-					for (ModelElementCategory mec : rootNode.getCategories()){
-			    		if (mec.getKey().matches("de.uni_paderborn.fujaba.muml.instance.category")){
-			    			for (ExtendableElement me : mec.getModelElements()){
-			    				ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)me;
-			    				File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
-								this.copyFolder(sourceFolder, target);
-			    			}
-			    		}
-			    	}
-					monitor.worked(++monitorCounter);
+				for (ModelElementCategory mec : rootNode.getCategories()){
+					if (mec.getKey().matches("de.uni_paderborn.fujaba.muml.instance.category")){
 
-    	}
-    	catch (UnsupportedOperationException e){
-    		e.printStackTrace();
-    	}
-    	catch (URISyntaxException e) {
+						for (ExtendableElement me : mec.getModelElements()){
+							ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)me;
+
+							monitor.subTask("generating "+cic.getName()+"...");
+							de.uni_paderborn.fujaba.muml.model.gen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.model.gen.c.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
+							monitor.worked(++monitorCounter);
+							
+							monitor.subTask("Copying library to target folder...");
+							File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
+							this.copyFolder(sourceFolder, target);
+							monitor.worked(++monitorCounter);
+							
+							String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.model.gen.c", "de.uni_paderborn.fujaba.muml.model.gen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+							gen0.setGenerationID(generationID);
+							gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+
+						}
+					}
+				}
+			}
+		}
+		catch (UnsupportedOperationException e){
+			e.printStackTrace();
+		}
+		catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
 		
@@ -170,7 +177,7 @@ public class GenerateAll {
 	 *            is the relative path of the template in the plug-in
 	 * @return the template URI
 	 * @throws IOException
-	 * @generated
+	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
 	private URI getTemplateURI(String bundleID, IPath relativePath) throws IOException {
