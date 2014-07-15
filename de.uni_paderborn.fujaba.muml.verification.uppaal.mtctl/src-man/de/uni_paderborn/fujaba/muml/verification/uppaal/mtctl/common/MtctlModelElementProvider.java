@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
@@ -247,14 +248,14 @@ public class MtctlModelElementProvider {
 	/**
 	 * Returns true iff obj belongs to a subroleInstance of a MultiDiscreteInteractionEndpoint at runtime
 	 */
-	public boolean belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint(EObject obj) {
+	public boolean belongsToDiscreteSinglePortInstance(EObject obj) {
 		if (obj == null)
 			return false;
 		
 		EObject instanceType = getInstanceType(obj);
 		if (instanceType instanceof DiscreteInteractionEndpoint) {
 			if (!((DiscreteInteractionEndpoint) instanceType).isMulti())
-				return false;
+				return true;
 			if (obj instanceof MessageBuffer)
 				return true; //message buffers of multiDIEs, belong to the subroleInstances at runtime 
 			// RTSCs and their subelements belong to the subroleInstances at runtime iff they are embedded in the subrole behavior
@@ -287,13 +288,15 @@ public class MtctlModelElementProvider {
 		Set<EObject> instances = getAllInstances();
 		Set<EObject> result = new HashSet<EObject>();
 		EObject objInstanceType = getInstanceType(obj);
-		boolean belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint = belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint(obj);
+		boolean belongsToDiscreteSinglePortInstance = belongsToDiscreteSinglePortInstance(obj);
 		for (EObject instance : instances) {
 			if (getInstanceType(instance) == objInstanceType) {
 				if (!(instance instanceof DiscreteInteractionEndpointInstance))
 					result.add(instance);
-				else if ((instance instanceof DiscreteMultiInteractionEndpointInstance) == !belongsToSubroleInstanceOfMultiDiscreteInteractionEndpoint) //condition for adding: [obj belongs to subrole xor added instance is multi]
-					result.add(instance);				
+				else if ((instance instanceof DiscreteSingleInteractionEndpointInstance) && belongsToDiscreteSinglePortInstance) //condition for adding: [obj belongs to single port iff added instance is single]
+					result.add(instance);
+				else if ((instance instanceof DiscreteMultiInteractionEndpointInstance) && !belongsToDiscreteSinglePortInstance) //condition for adding: [obj belongs to single port iff added instance is single]
+					result.add(instance);
 			}
 		}
 		
