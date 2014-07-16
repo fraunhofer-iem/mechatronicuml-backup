@@ -19,7 +19,6 @@
 
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="de.uni_paderborn.fujaba.muml"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.ocl"/>
@@ -28,20 +27,19 @@
       <import plugin="org.eclipse.acceleo.model" version="3.2.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.profiler" version="3.2.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.engine" version="3.2.1" match="greaterOrEqual"/>
-      <import plugin="com.google.guava"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.model.gen.c.beautifier" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.cdt.core" version="5.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.8.2" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.logging" version="1.0.4" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.swt"/>
       <import plugin="org.eclipse.gmf.runtime.notation"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.model.gen.c.beautifier" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.model.gen.c" version="0.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
