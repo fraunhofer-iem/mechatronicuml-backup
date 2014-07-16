@@ -6,8 +6,6 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.gen.c
 Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.model.gen.c.Activator
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml,
- de.uni_paderborn.fujaba.modelinstance,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.ocl,
@@ -17,9 +15,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.model;bundle-version="3.2.1",
  org.eclipse.acceleo.profiler;bundle-version="3.2.1",
  org.eclipse.acceleo.engine;bundle-version="3.2.1",
- com.google.guava,
- de.uni_paderborn.fujaba.muml.model.gen.c.beautifier;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.model.gen.c.beautifier;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml;bundle-version="0.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
