@@ -8,10 +8,13 @@ package de.uni_paderborn.fujaba.muml.runtime.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
@@ -20,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.types.DataType;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,14 +50,14 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 	 */
 	protected RealtimeStatechartInstance statechartInstance;
 	/**
-	 * The cached value of the '{@link #getMessageBuffer() <em>Message Buffer</em>}' containment reference.
+	 * The cached value of the '{@link #getMessageBuffer() <em>Message Buffer</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMessageBuffer()
 	 * @generated
 	 * @ordered
 	 */
-	protected RuntimeMessageBuffer messageBuffer;
+	protected EList<RuntimeMessageBuffer> messageBuffer;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,7 +142,10 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeMessageBuffer getMessageBuffer() {
+	public EList<RuntimeMessageBuffer> getMessageBuffer() {
+		if (messageBuffer == null) {
+			messageBuffer = new EObjectContainmentWithInverseEList<RuntimeMessageBuffer>(RuntimeMessageBuffer.class, this, RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER, RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT);
+		}
 		return messageBuffer;
 	}
 
@@ -147,40 +154,7 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMessageBuffer(RuntimeMessageBuffer newMessageBuffer, NotificationChain msgs) {
-		RuntimeMessageBuffer oldMessageBuffer = messageBuffer;
-		messageBuffer = newMessageBuffer;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER, oldMessageBuffer, newMessageBuffer);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMessageBuffer(RuntimeMessageBuffer newMessageBuffer) {
-		if (newMessageBuffer != messageBuffer) {
-			NotificationChain msgs = null;
-			if (messageBuffer != null)
-				msgs = ((InternalEObject)messageBuffer).eInverseRemove(this, RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, RuntimeMessageBuffer.class, msgs);
-			if (newMessageBuffer != null)
-				msgs = ((InternalEObject)newMessageBuffer).eInverseAdd(this, RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, RuntimeMessageBuffer.class, msgs);
-			msgs = basicSetMessageBuffer(newMessageBuffer, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER, newMessageBuffer, newMessageBuffer));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -189,9 +163,7 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 					msgs = ((InternalEObject)statechartInstance).eInverseRemove(this, RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT, RealtimeStatechartInstance.class, msgs);
 				return basicSetStatechartInstance((RealtimeStatechartInstance)otherEnd, msgs);
 			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER:
-				if (messageBuffer != null)
-					msgs = ((InternalEObject)messageBuffer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER, null, msgs);
-				return basicSetMessageBuffer((RuntimeMessageBuffer)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMessageBuffer()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -207,7 +179,7 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__STATECHART_INSTANCE:
 				return basicSetStatechartInstance(null, msgs);
 			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER:
-				return basicSetMessageBuffer(null, msgs);
+				return ((InternalEList<?>)getMessageBuffer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -234,6 +206,7 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -241,7 +214,8 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 				setStatechartInstance((RealtimeStatechartInstance)newValue);
 				return;
 			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER:
-				setMessageBuffer((RuntimeMessageBuffer)newValue);
+				getMessageBuffer().clear();
+				getMessageBuffer().addAll((Collection<? extends RuntimeMessageBuffer>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -259,7 +233,7 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 				setStatechartInstance((RealtimeStatechartInstance)null);
 				return;
 			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER:
-				setMessageBuffer((RuntimeMessageBuffer)null);
+				getMessageBuffer().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -276,7 +250,7 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__STATECHART_INSTANCE:
 				return statechartInstance != null;
 			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER:
-				return messageBuffer != null;
+				return messageBuffer != null && !messageBuffer.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

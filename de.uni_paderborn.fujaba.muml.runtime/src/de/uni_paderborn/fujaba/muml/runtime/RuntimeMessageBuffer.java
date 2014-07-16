@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
 
@@ -13,9 +14,9 @@ import org.storydriven.core.ExtendableElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getBufferSize <em>Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getMessages <em>Messages</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,32 +25,6 @@ import org.storydriven.core.ExtendableElement;
  * @generated
  */
 public interface RuntimeMessageBuffer extends ExtendableElement {
-	/**
-	 * Returns the value of the '<em><b>Buffer Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Buffer Size</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Buffer Size</em>' attribute.
-	 * @see #setBufferSize(int)
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeMessageBuffer_BufferSize()
-	 * @model
-	 * @generated
-	 */
-	int getBufferSize();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getBufferSize <em>Buffer Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Buffer Size</em>' attribute.
-	 * @see #getBufferSize()
-	 * @generated
-	 */
-	void setBufferSize(int value);
-
 	/**
 	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage}.
@@ -93,5 +68,31 @@ public interface RuntimeMessageBuffer extends ExtendableElement {
 	 * @generated
 	 */
 	void setRuntimeBehavioralElement(RuntimeBehavioralElement value);
+
+	/**
+	 * Returns the value of the '<em><b>Message Buffer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Message Buffer</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Message Buffer</em>' reference.
+	 * @see #setMessageBuffer(MessageBuffer)
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeMessageBuffer_MessageBuffer()
+	 * @model required="true"
+	 * @generated
+	 */
+	MessageBuffer getMessageBuffer();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getMessageBuffer <em>Message Buffer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Message Buffer</em>' reference.
+	 * @see #getMessageBuffer()
+	 * @generated
+	 */
+	void setMessageBuffer(MessageBuffer value);
 
 } // RuntimeMessageBuffer

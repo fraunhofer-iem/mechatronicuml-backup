@@ -198,7 +198,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_COMPONENT_INSTANCE__STATECHART_INSTANCE = InstancePackage.COMPONENT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -351,7 +351,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE__STATECHART_INSTANCE = InstancePackage.DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -425,7 +425,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -490,7 +490,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__STATECHART_INSTANCE = RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -581,7 +581,7 @@ public interface RuntimePackage extends EPackage {
 	int ROLE_INSTANCE__STATECHART_INSTANCE = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__STATECHART_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -672,22 +672,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_MESSAGE_BUFFER__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Buffer Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE_BUFFER__MESSAGES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int RUNTIME_MESSAGE_BUFFER__MESSAGES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Behavioral Element</b></em>' container reference.
@@ -696,7 +687,16 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Message Buffer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_MESSAGE_BUFFER__MESSAGE_BUFFER = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Message Buffer</em>' class.
@@ -1024,7 +1024,7 @@ public interface RuntimePackage extends EPackage {
 	int SINGLE_ROLE_INSTANCE__STATECHART_INSTANCE = ROLE_INSTANCE__STATECHART_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1168,7 +1168,7 @@ public interface RuntimePackage extends EPackage {
 	int MULTI_ROLE_INSTANCE__STATECHART_INSTANCE = ROLE_INSTANCE__STATECHART_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1713,7 +1713,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__STATECHART_INSTANCE = RUNTIME_DISCRETE_PORT_INSTANCE__STATECHART_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1957,7 +1957,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__STATECHART_INSTANCE = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2048,17 +2048,6 @@ public interface RuntimePackage extends EPackage {
 	EClass getRuntimeMessageBuffer();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getBufferSize <em>Buffer Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Buffer Size</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getBufferSize()
-	 * @see #getRuntimeMessageBuffer()
-	 * @generated
-	 */
-	EAttribute getRuntimeMessageBuffer_BufferSize();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getMessages <em>Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2079,6 +2068,17 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRuntimeMessageBuffer_RuntimeBehavioralElement();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getMessageBuffer <em>Message Buffer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Message Buffer</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getMessageBuffer()
+	 * @see #getRuntimeMessageBuffer()
+	 * @generated
+	 */
+	EReference getRuntimeMessageBuffer_MessageBuffer();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance <em>Realtime Statechart Instance</em>}'.
@@ -2318,10 +2318,10 @@ public interface RuntimePackage extends EPackage {
 	EReference getRuntimeBehavioralElement_StatechartInstance();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Message Buffer</em>'.
+	 * @return the meta object for the containment reference list '<em>Message Buffer</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getMessageBuffer()
 	 * @see #getRuntimeBehavioralElement()
 	 * @generated
@@ -2552,14 +2552,6 @@ public interface RuntimePackage extends EPackage {
 		EClass RUNTIME_MESSAGE_BUFFER = eINSTANCE.getRuntimeMessageBuffer();
 
 		/**
-		 * The meta object literal for the '<em><b>Buffer Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE = eINSTANCE.getRuntimeMessageBuffer_BufferSize();
-
-		/**
 		 * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2574,6 +2566,14 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT = eINSTANCE.getRuntimeMessageBuffer_RuntimeBehavioralElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Buffer</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUNTIME_MESSAGE_BUFFER__MESSAGE_BUFFER = eINSTANCE.getRuntimeMessageBuffer_MessageBuffer();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl <em>Realtime Statechart Instance</em>}' class.
@@ -2762,7 +2762,7 @@ public interface RuntimePackage extends EPackage {
 		EReference RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE = eINSTANCE.getRuntimeBehavioralElement_StatechartInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Message Buffer</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Message Buffer</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

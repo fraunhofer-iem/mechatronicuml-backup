@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
+import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
 
 /**
@@ -23,6 +24,7 @@ import org.storydriven.core.NamedElement;
  *
  * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeBehavioralElement()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ElementMustNotContainMessageBuffers='if(self.oclIsTypeOf(RuntimeComponentInstance) or self.oclIsTypeOf(MultiRoleInstance) or self.oclIsTypeOf(RuntimeDiscreteMultiPortInstance))\r\nthen messageBuffer->size() = 0\r\nelse true\r\nendif'"
  * @generated
  */
 public interface RuntimeBehavioralElement extends NamedElement {
@@ -55,7 +57,8 @@ public interface RuntimeBehavioralElement extends NamedElement {
 	void setStatechartInstance(RealtimeStatechartInstance value);
 
 	/**
-	 * Returns the value of the '<em><b>Message Buffer</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Message Buffer</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -63,23 +66,12 @@ public interface RuntimeBehavioralElement extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Buffer</em>' containment reference.
-	 * @see #setMessageBuffer(RuntimeMessageBuffer)
+	 * @return the value of the '<em>Message Buffer</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeBehavioralElement_MessageBuffer()
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getRuntimeBehavioralElement
 	 * @model opposite="runtimeBehavioralElement" containment="true"
 	 * @generated
 	 */
-	RuntimeMessageBuffer getMessageBuffer();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Buffer</em>' containment reference.
-	 * @see #getMessageBuffer()
-	 * @generated
-	 */
-	void setMessageBuffer(RuntimeMessageBuffer value);
+	EList<RuntimeMessageBuffer> getMessageBuffer();
 
 } // RuntimeBehavioralElement

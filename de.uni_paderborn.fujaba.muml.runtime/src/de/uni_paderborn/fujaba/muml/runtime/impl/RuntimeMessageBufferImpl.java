@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime.impl;
 
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -27,35 +28,15 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageBufferImpl#getMessages <em>Messages</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageBufferImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageBufferImpl#getMessageBuffer <em>Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements RuntimeMessageBuffer {
-	/**
-	 * The default value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBufferSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int BUFFER_SIZE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBufferSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected int bufferSize = BUFFER_SIZE_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getMessages() <em>Messages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -65,6 +46,16 @@ public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements R
 	 * @ordered
 	 */
 	protected EList<RuntimeMessage> messages;
+
+	/**
+	 * The cached value of the '{@link #getMessageBuffer() <em>Message Buffer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageBuffer()
+	 * @generated
+	 * @ordered
+	 */
+	protected MessageBuffer messageBuffer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,27 +74,6 @@ public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements R
 	@Override
 	protected EClass eStaticClass() {
 		return RuntimePackage.Literals.RUNTIME_MESSAGE_BUFFER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getBufferSize() {
-		return bufferSize;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBufferSize(int newBufferSize) {
-		int oldBufferSize = bufferSize;
-		bufferSize = newBufferSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE, oldBufferSize, bufferSize));
 	}
 
 	/**
@@ -164,6 +134,44 @@ public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MessageBuffer getMessageBuffer() {
+		if (messageBuffer != null && messageBuffer.eIsProxy()) {
+			InternalEObject oldMessageBuffer = (InternalEObject)messageBuffer;
+			messageBuffer = (MessageBuffer)eResolveProxy(oldMessageBuffer);
+			if (messageBuffer != oldMessageBuffer) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGE_BUFFER, oldMessageBuffer, messageBuffer));
+			}
+		}
+		return messageBuffer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageBuffer basicGetMessageBuffer() {
+		return messageBuffer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMessageBuffer(MessageBuffer newMessageBuffer) {
+		MessageBuffer oldMessageBuffer = messageBuffer;
+		messageBuffer = newMessageBuffer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGE_BUFFER, oldMessageBuffer, messageBuffer));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -213,12 +221,13 @@ public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements R
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE:
-				return getBufferSize();
 			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				return getMessages();
 			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				return getRuntimeBehavioralElement();
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGE_BUFFER:
+				if (resolve) return getMessageBuffer();
+				return basicGetMessageBuffer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -232,15 +241,15 @@ public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE:
-				setBufferSize((Integer)newValue);
-				return;
 			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				getMessages().clear();
 				getMessages().addAll((Collection<? extends RuntimeMessage>)newValue);
 				return;
 			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				setRuntimeBehavioralElement((RuntimeBehavioralElement)newValue);
+				return;
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGE_BUFFER:
+				setMessageBuffer((MessageBuffer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -254,14 +263,14 @@ public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE:
-				setBufferSize(BUFFER_SIZE_EDEFAULT);
-				return;
 			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				getMessages().clear();
 				return;
 			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				setRuntimeBehavioralElement((RuntimeBehavioralElement)null);
+				return;
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGE_BUFFER:
+				setMessageBuffer((MessageBuffer)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -275,30 +284,14 @@ public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE:
-				return bufferSize != BUFFER_SIZE_EDEFAULT;
 			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				return messages != null && !messages.isEmpty();
 			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				return getRuntimeBehavioralElement() != null;
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGE_BUFFER:
+				return messageBuffer != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (bufferSize: ");
-		result.append(bufferSize);
-		result.append(')');
-		return result.toString();
 	}
 
 } //RuntimeMessageBufferImpl
