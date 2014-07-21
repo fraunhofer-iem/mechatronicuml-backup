@@ -47,7 +47,7 @@ public class DataMergeImpl extends DependencyImpl implements DataMerge {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VARIABLE_NAME_EDEFAULT = null;
+	protected static final String VARIABLE_NAME_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' attribute.

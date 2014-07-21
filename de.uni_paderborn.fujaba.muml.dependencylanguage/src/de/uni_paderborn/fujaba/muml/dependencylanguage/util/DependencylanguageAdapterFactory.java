@@ -10,7 +10,6 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.Extension;
 import org.storydriven.core.expressions.Expression;
-
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.AuxiliaryClockCondition;

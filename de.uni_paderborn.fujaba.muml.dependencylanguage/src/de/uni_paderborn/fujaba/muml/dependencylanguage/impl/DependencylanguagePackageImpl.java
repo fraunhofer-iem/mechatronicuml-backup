@@ -1455,8 +1455,8 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		initEAttribute(getClockMerge_ClockName(), ecorePackage.getEString(), "clockName", null, 0, 1, ClockMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataMergeEClass, DataMerge.class, "DataMerge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataMerge_Variables(), theBehaviorPackage.getVariable(), null, "variables", null, 2, -1, DataMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataMerge_VariableName(), ecorePackage.getEString(), "variableName", null, 0, 1, DataMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataMerge_Variables(), theBehaviorPackage.getVariable(), null, "variables", null, 1, -1, DataMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataMerge_VariableName(), ecorePackage.getEString(), "variableName", "", 0, 1, DataMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionalDependencyEClass, ConditionalDependency.class, "ConditionalDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConditionalDependency_Event(), this.getEvent(), null, "event", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1589,7 +1589,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 	 * @generated
 	 */
 	protected void createImportAnnotations() {
-		String source = "http://www.eclipse.org/OCL/Import";		
+		String source = "http://www.eclipse.org/OCL/Import";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -1603,7 +1603,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 			 "realtimestatechart", "/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart",
 			 "valueType", "/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype",
 			 "sdcec", "/resource/org.storydriven.core/model/core.ecore#//expressions/common"
-		   });																																																																																														
+		   });
 	}
 
 	/**
@@ -1613,7 +1613,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -1621,7 +1621,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																																																													
+		   });
 	}
 
 	/**
@@ -1631,13 +1631,13 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";							
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (getSynthesizableBehavior_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if(not self.base.oclIsUndefined() and self.base.oclIsKindOf(component::AtomicComponent))\nthen (self.base).oclAsType(component::AtomicComponent).name.concat(\'-synth\')\nelse\nnull endif"
-		   });																																																																																									
+		   });
 	}
 
 } //DependencylanguagePackageImpl

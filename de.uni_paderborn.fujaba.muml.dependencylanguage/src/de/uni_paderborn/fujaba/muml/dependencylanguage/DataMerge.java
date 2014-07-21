@@ -42,13 +42,14 @@ public interface DataMerge extends Dependency {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Variables</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage#getDataMerge_Variables()
-	 * @model lower="2"
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<Variable> getVariables();
 
 	/**
 	 * Returns the value of the '<em><b>Variable Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Variable Name</em>' attribute isn't clear,
@@ -61,7 +62,7 @@ public interface DataMerge extends Dependency {
 	 * @return the value of the '<em>Variable Name</em>' attribute.
 	 * @see #setVariableName(String)
 	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage#getDataMerge_VariableName()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getVariableName();

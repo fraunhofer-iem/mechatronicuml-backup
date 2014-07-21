@@ -12,7 +12,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage,
  de.uni_paderborn.fujaba.muml.dependencylanguage.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.actionlanguage;visibility:=reexport;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0";visibility:=reexport,
  org.storydriven.core;visibility:=reexport,
- de.uni_paderborn.fujaba.muml;visibility:=reexport;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml;bundle-version="0.4.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
