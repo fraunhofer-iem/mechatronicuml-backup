@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.model.gen.c.feature"
+      id="de.uni_paderborn.fujaba.muml.codegen.c.feature"
       label="%featureName"
       version="0.4.0.qualifier"
       provider-name="%providerName">
@@ -30,6 +30,7 @@
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.codegen.c.beautifier" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.cdt.core" version="5.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.8.2" match="greaterOrEqual"/>
@@ -38,26 +39,24 @@
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.swt"/>
       <import plugin="org.eclipse.gmf.runtime.notation"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.model.gen.c.beautifier" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.model.gen.c" version="0.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.model.gen.c"
+         id="de.uni_paderborn.fujaba.muml.codegen.c.beautifier"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.model.gen.c.beautifier"
+         id="de.uni_paderborn.fujaba.muml.codegen.c.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.model.gen.c.ui"
+         id="de.uni_paderborn.fujaba.muml.codegen.c"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -65,7 +65,7 @@ The Fujaba Real-Time Tool Suite is implemented as a plug-in to the Eclipse frame
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.model.gen.c.feature"
+         id="de.uni_paderborn.fujaba.muml.codegen.c.feature"
          version="0.0.0"/>
 
    <includes
