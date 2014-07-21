@@ -18,7 +18,7 @@
         <acceleoCompiler 
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
-            dependencies="${target.folder}/../../de.uni_paderborn.fujaba.muml.model.gen.c.beautifier;"
+            dependencies="${target.folder}/../../de.uni_paderborn.fujaba.muml.codegen.c.beautifier;"
             binaryResource="false"
             packagesToRegister="">
         </acceleoCompiler>

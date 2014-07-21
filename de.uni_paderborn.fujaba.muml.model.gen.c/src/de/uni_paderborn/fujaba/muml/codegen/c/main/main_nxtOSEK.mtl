@@ -1,0 +1,260 @@
+
+
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module main.
+ */]
+[module main_nxtOSEK('http://www.fujaba.de/muml/connector/0.4.0', 'http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+
+
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::make]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::OIL]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::RealtimeStatechart]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::RealtimeStatechartHeader]
+[import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::componentHeader]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::component]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::Message]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::operations]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::ContinuousPorts]
+
+
+[**
+ * Generates a main file. This file contains code to create, initialize
+ * and execute a given MUML model on nxtOSEK.
+ * @param aModelElementCategory
+ */]
+[template public generateNXTOSEK(cic : ComponentInstanceConfiguration)]
+
+[comment create files for every component type/]
+[generateTypeFiles(cic, '')/]
+[generateContinuousPortFiles(cic, '')/]
+
+
+[comment create message file/]
+[generateMessageFiles(cic,'')/]
+
+[comment craeate files for RTSCs/]
+[generateRTSCFiles(cic,'')/]
+
+[comment create makefile for gcc/]
+[generateMakeFileForNXTOSEK(cic,'')/]
+
+[comment create OIL file/]
+[generateOILFile(cic,'')/]
+
+[comment create Operation files/]
+[generateOperationFiles(cic,'')/]
+
+
+[comment create 'main.c'/]
+[file('main.c',false,'UTF-8')]
+[includes(cic)/]
+
+
+
+[comment declaration of tasks for OSEK/]
+//declare used OSEK tasks and counter
+DeclareTask(Task_Main);
+DeclareTask(Task_initModel);
+DeclareTask(Task_MsgExchange);
+[comment]
+[for (ci : ComponentInstance | aRootNode.eAllContents(ComponentInstance))]
+	[if ci.oclIsKindOf(AtomicComponentInstance)]
+DeclareTask([ci.getTaskName()/]);
+	[/if]
+[/for]
+[/comment]
+
+[comment create variable for every used component instance/]
+//variables for component instances
+
+		[generateComponentVariables(cic)/]
+
+
+[comment OSEK methods/]
+/* nxtOSEK hook to be invoked from an ISR in category 2 */
+void user_1ms_isr_type2(void){ /* do nothing */ }
+
+/* LEJOS OSEK hooks */
+void ecrobot_device_initialize()
+{
+	[comment TODO/]
+}
+void ecrobot_device_terminate()
+{
+	[comment TODO/]
+}
+TASK(Task_initModel){
+	[comment create model/]
+
+	[generateInstanceConfiguration(cic)/]
+
+	//initialize model
+
+		[for (ci : ComponentInstance | cic.componentInstances)]
+			[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+				[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
+			[/if]		
+[/for]
+
+ChainTask(Task_Main);
+}
+
+
+TASK(Task_Main){
+
+	/* currently only the main task is used to execute the behavior
+	*  later, we will use one task per atomic component
+	*/
+[for (ci : ComponentInstance | cic.componentInstances)]
+	[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+		[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
+	[/if]
+[/for]
+
+
+ChainTask(Task_MsgExchange);
+}
+
+TASK(Task_MsgExchange){
+[comment currently the message exchange is executed inside of the structured components. Will be changed, if using several tasks for components/]
+
+ChainTask(Task_Main);
+}
+[/file]
+[/template]
+
+
+
+
+
+[template private includes(cic : ComponentInstanceConfiguration)]
+//general includes
+#include <stdio.h>
+#include <stdlib.h>
+//nxtOSEK includes
+#include "kernel.h"
+#include "kernel_id.h"
+#include "ecrobot_interface.h"
+
+
+//including all files for used Components
+[for (comp : Component | cic.componentInstances.componentType)]
+	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+#include "[comp.getFileName(true, false)/]"
+	[/if]
+[/for]
+[/template]
+
+
+[**
+ * Creates a header and an implementation file for every component (type) of the model
+ * (if modelElementCategory is 'components'
+ * @param modelElementCategory
+ */]
+[template public generateTypeFiles(cic : ComponentInstanceConfiguration, path : String)]
+[for (component : Component | cic.componentInstances.componentType)]
+[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
+[generate_ComponentHeader(component, path)/]
+[generate_ComponentClass(component, path)/]
+[/if]
+
+[/for]
+[/template]
+
+
+[**
+ * Creates a header and an implementation file for every realtime statechart, which is the behavior of
+ * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
+ * @param modelElementCategory
+ */]
+[template public generateRTSCFiles(cic : ComponentInstanceConfiguration, path: String) ]
+
+	[for (comp : Component | cic.eAllContents(AtomicComponentInstance).componentType)]
+	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+		[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+		[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+	[/let]
+	[/if]
+	[/for]
+
+[/template]
+
+[**
+ * Generates code to instanciate a given component instance configuration.
+ * (based on the component type files). Before using this template, it is necessary to
+ * call 'generateTypeFiles' and 'generateRTSCFiles'!
+ * @param modelElementCategory
+ */]
+[template public generateComponentVariables(cic : ComponentInstanceConfiguration)]
+[for (cInst : ComponentInstance | cic.eAllContents(ComponentInstance))]
+[if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+	[cInst.getClassName()/] * [cInst.getVariableName()/];
+[/if]
+[/for]
+[/template]
+
+
+
+[**
+ * Generates code to instanciate a given component instance configuration.
+ * (based on the component type files). Before using this template, it is necessary to
+ * call 'generateTypeFiles' and 'generateRTSCFiles'!
+ * @param modelElementCategory
+ */]
+[template public generateInstanceConfiguration(cic : ComponentInstanceConfiguration)]
+[for (cInst : ComponentInstance | cic.componentInstances)]
+[if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+//instantiate components of [cInst.getName()/]
+	[cInst.getVariableName()/] = [getCreateMethodName(cInst)/]();
+	[cInst.configurateInstance()/]
+
+[/if]
+[/for]
+[/template]
+
+
+[template private configurateInstance(cInst : ComponentInstance) ? (oclIsKindOf(StructuredComponentInstance))post(trim())]
+[for (cPart : ComponentPart | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->collect(componentPart)->asSet())]
+	[for (partInstance : ComponentInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->select(componentPart = cPart))]
+		[if ((partInstance.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (partInstance.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+		//instantiate components of [cInst.getName()/]
+		[partInstance.getVariableName()/] = [partInstance.getCreateMethodName()/]();
+		[getAddMethodName(cInst.componentType, partInstance.componentPart)/]([cInst.getVariableName()/], [partInstance.getVariableName()/]);
+		[configurateInstance(partInstance)/]
+		[if (partInstance.oclIsKindOf(AtomicComponentInstance))]
+		[for (port : PortInstance | partInstance.portInstances)]
+			[if (port.oclIsTypeOf(HybridPortInstance))]
+				[if (port.portType.oclAsType(HybridPort).inPort)]
+					[partInstance.getVariableName()/]->getterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getReadMethod()/];
+				[else]
+					[partInstance.getVariableName()/]->setterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getWriteMethod()/];
+				[/if]
+			[/if]
+		[/for]
+		[/if]
+		[/if]
+	[/for]
+[/for]
+[if cInst.oclIsKindOf(StructuredComponentInstance)]
+[for (conInst : ConnectorInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.portConnectorInstances)]
+	[if (conInst.connectorEndpointInstances->at(1).type.oclIsKindOf(DiscretePort))]
+	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([getVariablePath(conInst.getSourcePort())/],[getVariablePath(conInst.getTargetPort())/], [conInst.isBidirectional()/]);
+
+	DiscreteConnectionList_add([cInst.getVariableName()/]->connectorList,[conInst.getVariableName()/]);
+	[/if]
+[/for]
+[/if]
+
+[/template]

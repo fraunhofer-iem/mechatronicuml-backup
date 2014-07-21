@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.gen.c
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.codegen.c
 Bundle-Version: 0.4.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.model.gen.c.Activator
+Bundle-Activator: de.uni_paderborn.fujaba.muml.codegen.c.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
@@ -16,12 +16,12 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.profiler;bundle-version="3.2.1",
  org.eclipse.acceleo.engine;bundle-version="3.2.1",
  de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.model.gen.c.beautifier;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.codegen.c.beautifier;bundle-version="0.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: de.uni_paderborn.fujaba.muml.model.gen.c,
- de.uni_paderborn.fujaba.muml.model.gen.c.main
+Export-Package: de.uni_paderborn.fujaba.muml.codegen.c,
+ de.uni_paderborn.fujaba.muml.codegen.c.main
 
