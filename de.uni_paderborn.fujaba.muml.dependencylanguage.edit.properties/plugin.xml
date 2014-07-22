@@ -29,6 +29,7 @@
           <propertyTab
              category="domain"
              id="de.uni_paderborn.fujaba.muml.dependencylanguage"
+             afterTab=""
              label="Dependencies"/>
           
       </propertyTabs>
@@ -59,10 +60,26 @@
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.dependencylanguage.editor.SynthesizableBehaviorEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.dependencylanguage.SynthesizableBehavior">
+             type="http://www.fujaba.de/muml/dependencylanguage/0.4.0#SynthesizableBehavior">
        </propertyEditor>
     
     </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+    <metamodel
+          contributor="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+    <constraint
+          contributor="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.constraint.CreationConstraintContributor">
+    </constraint>
  </extension>
 
 </plugin>
