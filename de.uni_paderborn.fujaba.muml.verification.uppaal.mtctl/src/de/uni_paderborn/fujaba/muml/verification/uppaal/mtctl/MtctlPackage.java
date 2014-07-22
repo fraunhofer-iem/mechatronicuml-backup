@@ -3,13 +3,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.storydriven.core.CorePackage;
 
 /**
@@ -99,22 +96,13 @@ public interface MtctlPackage extends EPackage {
 	int PROPERTY_REPOSITORY__PROPERTIES = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Enable Verification</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_REPOSITORY__ENABLE_VERIFICATION = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Property Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_REPOSITORY_FEATURE_COUNT = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY_FEATURE_COUNT + 2;
+	int PROPERTY_REPOSITORY_FEATURE_COUNT = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -717,17 +705,6 @@ public interface MtctlPackage extends EPackage {
 	EReference getPropertyRepository_Properties();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository#isEnableVerification <em>Enable Verification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Enable Verification</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository#isEnableVerification()
-	 * @see #getPropertyRepository()
-	 * @generated
-	 */
-	EAttribute getPropertyRepository_EnableVerification();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -798,14 +775,6 @@ public interface MtctlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY_REPOSITORY__PROPERTIES = eINSTANCE.getPropertyRepository_Properties();
-
-		/**
-		 * The meta object literal for the '<em><b>Enable Verification</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROPERTY_REPOSITORY__ENABLE_VERIFICATION = eINSTANCE.getPropertyRepository_EnableVerification();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.PropertyImpl <em>Property</em>}' class.

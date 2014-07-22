@@ -19,7 +19,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository#getProperties <em>Properties</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository#isEnableVerification <em>Enable Verification</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,31 +42,5 @@ public interface PropertyRepository extends VerificationConstraintRepository {
 	 * @generated
 	 */
 	EList<Property> getProperties();
-
-	/**
-	 * Returns the value of the '<em><b>Enable Verification</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * True if the properties in this repository should be verified when starting the next verification
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Enable Verification</em>' attribute.
-	 * @see #setEnableVerification(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage#getPropertyRepository_EnableVerification()
-	 * @model default="true" required="true"
-	 * @generated
-	 */
-	boolean isEnableVerification();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository#isEnableVerification <em>Enable Verification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enable Verification</em>' attribute.
-	 * @see #isEnableVerification()
-	 * @generated
-	 */
-	void setEnableVerification(boolean value);
 
 } // PropertyRepository

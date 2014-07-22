@@ -2,7 +2,7 @@
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler/>
   <genModel href="Mtctl.genmodel#/"/>
-  <plugin id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit.properties" name="Mtctl Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+  <plugin id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit.properties" name="Mtctl Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
@@ -128,10 +128,6 @@
       <properties tab="//@tabs.0" tooltip="" reconcile="false">
         <genFeature href="Mtctl.genmodel#//mtctl/PropertyRepository/properties"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" tooltip="Enable verification of the properties in this repository">
-        <genFeature href="Mtctl.genmodel#//mtctl/PropertyRepository/enableVerification"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
     </classes>
     <classes>

@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -48,7 +47,6 @@ public class PropertyRepositoryItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPropertiesPropertyDescriptor(object);
-			addEnableVerificationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -71,28 +69,6 @@ public class PropertyRepositoryItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Enable Verification feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEnableVerificationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyRepository_enableVerification_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyRepository_enableVerification_feature", "_UI_PropertyRepository_type"),
-				 MtctlPackage.Literals.PROPERTY_REPOSITORY__ENABLE_VERIFICATION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -156,8 +132,7 @@ public class PropertyRepositoryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		PropertyRepository propertyRepository = (PropertyRepository)object;
-		return getString("_UI_PropertyRepository_type") + " " + propertyRepository.isEnableVerification();
+		return getString("_UI_PropertyRepository_type");
 	}
 
 	/**
@@ -172,9 +147,6 @@ public class PropertyRepositoryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PropertyRepository.class)) {
-			case MtctlPackage.PROPERTY_REPOSITORY__ENABLE_VERIFICATION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case MtctlPackage.PROPERTY_REPOSITORY__PROPERTIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
