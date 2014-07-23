@@ -18,7 +18,6 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
@@ -30,9 +29,12 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.Source
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TargetStateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DeadlockExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StaticPredicateExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.AGExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.EFExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
@@ -171,6 +173,18 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 		}
 		
 		error("This "+expr.eClass().getName()+" must be bound to a Temporal Quantifier such as \"AG\"", null);
+	}
+	
+	@Check
+	public void checkDeadlockTemporalQuantifier(final DeadlockExpr expr) { //check that deadlock expressions are only bound to AG or EF (because Uppaal cannot handle it otherwise)
+		EObject parent = expr;
+		while (parent != null) {
+			if (parent instanceof AGExpr || parent instanceof EFExpr)
+				return; //we're safe
+			parent = parent.eContainer();
+		}
+		
+		error("deadlocks can only be checked when using AG or EF quantifiers", null);
 	}
 	
 	@Check 
