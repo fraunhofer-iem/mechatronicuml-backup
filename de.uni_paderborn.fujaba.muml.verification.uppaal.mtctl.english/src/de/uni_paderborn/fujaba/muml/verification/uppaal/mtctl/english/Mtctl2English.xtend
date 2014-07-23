@@ -276,17 +276,16 @@ class Mtctl2English {
 	
 	//Special Cases
 	def dispatch specialCase(QuantifierExpr expr, boolean positive) {
-		if (expr.formula instanceof ImplyExpr) {
+		if (expr.formula instanceof ImplyExpr && expr instanceof UniversalQuantExpr || expr.formula instanceof AndExpr && expr instanceof ExistenceQuantExpr) {
 			var thereIs = positive == (expr instanceof ExistenceQuantExpr);
-			var leftOpd = (expr.formula as ImplyExpr).leftOpd;
+			var leftOpd = if (expr.formula instanceof ImplyExpr) (expr.formula as ImplyExpr).leftOpd else (expr.formula as AndExpr).leftOpd;
 			switch (leftOpd) {
 				SubstateOfExpr case leftOpd.state instanceof MumlElemExpr && (leftOpd.state as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there is a substate«ELSE»for all substates«ENDIF» «expr.^var.name» of «expr(leftOpd.superstate, true)» «itHoldsThat((expr.formula as ImplyExpr).rightOpd, positive)»'''
 				SubstateOfExpr case leftOpd.superstate instanceof MumlElemExpr && (leftOpd.superstate as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there is a superstate«ELSE»for all superstates«ENDIF» «expr.^var.name» of «expr(leftOpd.state, true)» «itHoldsThat((expr.formula as ImplyExpr).rightOpd, positive)»'''
 				StateInStatechartExpr case leftOpd.state instanceof MumlElemExpr && (leftOpd.state as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there is a state«ELSE»for all states«ENDIF» «expr.^var.name» in «expr(leftOpd.statechart, true)» «itHoldsThat((expr.formula as ImplyExpr).rightOpd, positive)»'''
 				default: return null
 			}
-		}
-		else
+		} else
 			return null
 	}
 	

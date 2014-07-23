@@ -35,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.Existe
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.LeadsToExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.UniversalQuantExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr;
@@ -961,30 +962,59 @@ public class Mtctl2English {
   
   protected CharSequence _specialCase(final QuantifierExpr expr, final boolean positive) {
     CharSequence _xifexpression = null;
+    boolean _or = false;
+    boolean _and = false;
     Expression _formula = expr.getFormula();
-    if ((_formula instanceof ImplyExpr)) {
+    if (!(_formula instanceof ImplyExpr)) {
+      _and = false;
+    } else {
+      _and = ((_formula instanceof ImplyExpr) && (expr instanceof UniversalQuantExpr));
+    }
+    if (_and) {
+      _or = true;
+    } else {
+      boolean _and_1 = false;
+      Expression _formula_1 = expr.getFormula();
+      if (!(_formula_1 instanceof AndExpr)) {
+        _and_1 = false;
+      } else {
+        _and_1 = ((_formula_1 instanceof AndExpr) && (expr instanceof ExistenceQuantExpr));
+      }
+      _or = (_and || _and_1);
+    }
+    if (_or) {
       CharSequence _xblockexpression = null;
       {
         boolean thereIs = (positive == (expr instanceof ExistenceQuantExpr));
-        Expression _formula_1 = expr.getFormula();
-        Expression leftOpd = ((ImplyExpr) _formula_1).getLeftOpd();
+        Expression _xifexpression_1 = null;
+        Expression _formula_2 = expr.getFormula();
+        if ((_formula_2 instanceof ImplyExpr)) {
+          Expression _formula_3 = expr.getFormula();
+          Expression _leftOpd = ((ImplyExpr) _formula_3).getLeftOpd();
+          _xifexpression_1 = _leftOpd;
+        } else {
+          Expression _formula_4 = expr.getFormula();
+          Expression _leftOpd_1 = ((AndExpr) _formula_4).getLeftOpd();
+          _xifexpression_1 = _leftOpd_1;
+        }
+        Expression leftOpd = _xifexpression_1;
         CharSequence _switchResult = null;
         boolean _matched = false;
         if (!_matched) {
           if (leftOpd instanceof SubstateOfExpr) {
             final SubstateOfExpr _substateOfExpr = (SubstateOfExpr)leftOpd;
-            boolean _and = false;
+            boolean _and_2 = false;
             MapExpr _state = _substateOfExpr.getState();
             if (!(_state instanceof MumlElemExpr)) {
-              _and = false;
+              _and_2 = false;
             } else {
               MapExpr _state_1 = _substateOfExpr.getState();
               EObject _elem = ((MumlElemExpr) _state_1).getElem();
               BoundVariable _var = expr.getVar();
               boolean _equals = Objects.equal(_elem, _var);
-              _and = ((_state instanceof MumlElemExpr) && _equals);
+              _and_2 = ((_state instanceof MumlElemExpr) && _equals);
             }
-            if (_and) {
+            if (_and_2) {
               _matched=true;
               StringConcatenation _builder = new StringConcatenation();
               {
@@ -1003,8 +1033,8 @@ public class Mtctl2English {
               Object _expr = this.expr(_superstate, true);
               _builder.append(_expr, "");
               _builder.append(" ");
-              Expression _formula_2 = expr.getFormula();
-              Expression _rightOpd = ((ImplyExpr) _formula_2).getRightOpd();
+              Expression _formula_5 = expr.getFormula();
+              Expression _rightOpd = ((ImplyExpr) _formula_5).getRightOpd();
               CharSequence _itHoldsThat = this.itHoldsThat(_rightOpd, positive);
               _builder.append(_itHoldsThat, "");
               _switchResult = _builder;
@@ -1014,18 +1044,18 @@ public class Mtctl2English {
         if (!_matched) {
           if (leftOpd instanceof SubstateOfExpr) {
             final SubstateOfExpr _substateOfExpr = (SubstateOfExpr)leftOpd;
-            boolean _and = false;
+            boolean _and_2 = false;
             MapExpr _superstate = _substateOfExpr.getSuperstate();
             if (!(_superstate instanceof MumlElemExpr)) {
-              _and = false;
+              _and_2 = false;
             } else {
               MapExpr _superstate_1 = _substateOfExpr.getSuperstate();
               EObject _elem = ((MumlElemExpr) _superstate_1).getElem();
               BoundVariable _var = expr.getVar();
               boolean _equals = Objects.equal(_elem, _var);
-              _and = ((_superstate instanceof MumlElemExpr) && _equals);
+              _and_2 = ((_superstate instanceof MumlElemExpr) && _equals);
             }
-            if (_and) {
+            if (_and_2) {
               _matched=true;
               StringConcatenation _builder = new StringConcatenation();
               {
@@ -1044,8 +1074,8 @@ public class Mtctl2English {
               Object _expr = this.expr(_state, true);
               _builder.append(_expr, "");
               _builder.append(" ");
-              Expression _formula_2 = expr.getFormula();
-              Expression _rightOpd = ((ImplyExpr) _formula_2).getRightOpd();
+              Expression _formula_5 = expr.getFormula();
+              Expression _rightOpd = ((ImplyExpr) _formula_5).getRightOpd();
               CharSequence _itHoldsThat = this.itHoldsThat(_rightOpd, positive);
               _builder.append(_itHoldsThat, "");
               _switchResult = _builder;
@@ -1055,18 +1085,18 @@ public class Mtctl2English {
         if (!_matched) {
           if (leftOpd instanceof StateInStatechartExpr) {
             final StateInStatechartExpr _stateInStatechartExpr = (StateInStatechartExpr)leftOpd;
-            boolean _and = false;
+            boolean _and_2 = false;
             MapExpr _state = _stateInStatechartExpr.getState();
             if (!(_state instanceof MumlElemExpr)) {
-              _and = false;
+              _and_2 = false;
             } else {
               MapExpr _state_1 = _stateInStatechartExpr.getState();
               EObject _elem = ((MumlElemExpr) _state_1).getElem();
               BoundVariable _var = expr.getVar();
               boolean _equals = Objects.equal(_elem, _var);
-              _and = ((_state instanceof MumlElemExpr) && _equals);
+              _and_2 = ((_state instanceof MumlElemExpr) && _equals);
             }
-            if (_and) {
+            if (_and_2) {
               _matched=true;
               StringConcatenation _builder = new StringConcatenation();
               {
@@ -1085,8 +1115,8 @@ public class Mtctl2English {
               Object _expr = this.expr(_statechart, true);
               _builder.append(_expr, "");
               _builder.append(" ");
-              Expression _formula_2 = expr.getFormula();
-              Expression _rightOpd = ((ImplyExpr) _formula_2).getRightOpd();
+              Expression _formula_5 = expr.getFormula();
+              Expression _rightOpd = ((ImplyExpr) _formula_5).getRightOpd();
               CharSequence _itHoldsThat = this.itHoldsThat(_rightOpd, positive);
               _builder.append(_itHoldsThat, "");
               _switchResult = _builder;
