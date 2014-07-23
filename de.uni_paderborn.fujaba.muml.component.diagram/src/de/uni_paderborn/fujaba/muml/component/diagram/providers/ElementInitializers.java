@@ -19,9 +19,28 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							0,
+							11,
 							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 									.getStaticAtomicComponent(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_StaticStructuredComponent_2005(
+			de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							12,
+							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+									.getStaticStructuredComponent(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
@@ -44,7 +63,7 @@ public class ElementInitializers {
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							1,
+							0,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
@@ -59,7 +78,7 @@ public class ElementInitializers {
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							2,
+							1,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -71,7 +90,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							3,
+							13,
 							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 									.getDiscretePort(), null)
 					.evaluate(instance);
@@ -90,7 +109,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							5,
+							14,
 							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 									.getContinuousPort(), null).evaluate(
 							instance);
@@ -109,7 +128,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							6,
+							15,
 							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 									.getHybridPort(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -133,7 +152,7 @@ public class ElementInitializers {
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							7,
+							3,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
@@ -148,7 +167,7 @@ public class ElementInitializers {
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							8,
+							4,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -158,6 +177,13 @@ public class ElementInitializers {
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
+			Object value_1 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							16,
+							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+									.getComponentPart(), null).evaluate(
+							instance);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

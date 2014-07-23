@@ -12,6 +12,8 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
+import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 /**
  * @generated
@@ -51,7 +53,7 @@ public class MumlPaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_2016);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.AtomicComponentInstance_3024);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.AtomicComponentInstance1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.AtomicComponentInstance1CreationTool_desc,
 				types);
@@ -69,7 +71,7 @@ public class MumlPaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_2015);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.StructuredComponentInstance_3025);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.StructuredComponentInstance2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.StructuredComponentInstance2CreationTool_desc,
 				types);
@@ -84,7 +86,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAssemblyInstance3CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.AssemblyInstance3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.AssemblyInstance3CreationTool_desc,
 				Collections
@@ -100,7 +102,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDelegationInstance4CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.DelegationInstance4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.DelegationInstance4CreationTool_desc,
 				Collections
@@ -120,7 +122,7 @@ public class MumlPaletteFactory {
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_2022);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3026);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteSinglePortInstance_3032);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.DiscreteSinglePortInstance5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.DiscreteSinglePortInstance5CreationTool_desc,
 				types);
@@ -138,7 +140,7 @@ public class MumlPaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_2023);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.DiscreteMultiPortInstance_3033);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.DiscreteMultiPortInstance6CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.DiscreteMultiPortInstance6CreationTool_desc,
 				types);
@@ -156,7 +158,7 @@ public class MumlPaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_2024);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.ContinuousPortInstance_3034);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ContinuousPortInstance7CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.ContinuousPortInstance7CreationTool_desc,
 				types);
@@ -174,7 +176,7 @@ public class MumlPaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_2021);
 		types.add(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlElementTypes.HybridPortInstance_3031);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.HybridPortInstance8CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.HybridPortInstance8CreationTool_desc,
 				types);
@@ -183,63 +185,5 @@ public class MumlPaletteFactory {
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class NodeToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> elementTypes;
-
-		/**
-		 * @generated
-		 */
-		private NodeToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LinkToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> relationshipTypes;
-
-		/**
-		 * @generated
-		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> relationshipTypes) {
-			super(title, description, null, null);
-			this.relationshipTypes = relationshipTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
 	}
 }

@@ -50,7 +50,7 @@ public class CoordinationProtocolInstanceLabelExpressionLabelParser5048 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						16,
+						9,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getCoordinationProtocolInstance(), null)
 				.body();

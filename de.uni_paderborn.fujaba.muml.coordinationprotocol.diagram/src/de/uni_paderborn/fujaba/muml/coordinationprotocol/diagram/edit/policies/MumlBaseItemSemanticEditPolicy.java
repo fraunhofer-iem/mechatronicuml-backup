@@ -407,7 +407,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									13,
+									10,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -450,7 +450,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									13,
+									10,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$

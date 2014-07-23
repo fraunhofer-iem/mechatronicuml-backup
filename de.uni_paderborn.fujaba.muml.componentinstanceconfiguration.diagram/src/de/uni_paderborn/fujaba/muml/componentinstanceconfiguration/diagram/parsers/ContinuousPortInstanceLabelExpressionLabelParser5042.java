@@ -38,7 +38,7 @@ public class ContinuousPortInstanceLabelExpressionLabelParser5042 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						10,
+						5,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getContinuousPortInstance(), null).body();
 	}

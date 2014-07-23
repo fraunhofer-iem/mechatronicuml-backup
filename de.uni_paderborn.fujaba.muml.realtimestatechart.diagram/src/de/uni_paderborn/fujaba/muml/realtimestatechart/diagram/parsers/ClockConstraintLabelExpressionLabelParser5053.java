@@ -38,7 +38,7 @@ public class ClockConstraintLabelExpressionLabelParser5053 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						5,
+						4,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getClockConstraint(), null).body();
 	}

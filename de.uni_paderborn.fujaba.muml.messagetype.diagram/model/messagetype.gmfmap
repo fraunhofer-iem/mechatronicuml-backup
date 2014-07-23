@@ -12,17 +12,6 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageTypeRepository"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'Repository'"/>
-        </initializers>
-      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -42,17 +31,6 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
-          <domainInitializer
-              xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'messagetype'"/>
-            </initializers>
-          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -72,17 +50,6 @@
             <ownedChild>
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"/>
-              <domainInitializer
-                  xsi:type="gmfmap:FeatureSeqInitializer">
-                <initializers
-                    xsi:type="gmfmap:FeatureValueSpec">
-                  <feature
-                      xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  <value
-                      body="'p'"/>
-                </initializers>
-              </domainInitializer>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping">
                 <diagramLabel

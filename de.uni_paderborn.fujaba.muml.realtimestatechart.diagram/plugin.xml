@@ -276,22 +276,67 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfModelElementCategoryEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart" id="RealtimeStatechart_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart" id="RealtimeStatechart_2007"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart" id="State_3032"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart" id="EntryEvent_3033"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart" id="DoEvent_3034"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart" id="ExitEvent_3035"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart" id="ClockConstraint_3036"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart" id="SynchronizationChannel_3037"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart" id="Region_3042"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart" id="RealtimeStatechart_3043"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart" id="EntryPoint_3040"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart" id="ExitPoint_3041"/>
-         <context elements="RealtimeStatechart_1000,RealtimeStatechart_2007,State_3032,EntryEvent_3033,DoEvent_3034,ExitEvent_3035,ClockConstraint_3036,SynchronizationChannel_3037,Region_3042,RealtimeStatechart_3043,EntryPoint_3040,ExitPoint_3041"/>
+         <context elements="RealtimeStatechart_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRealtimeStatechartEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart" id="RealtimeStatechart_2007"/>
+         <context elements="RealtimeStatechart_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfStateEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart" id="State_3032"/>
+         <context elements="State_3032"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfEntryEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart" id="EntryEvent_3033"/>
+         <context elements="EntryEvent_3033"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfDoEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart" id="DoEvent_3034"/>
+         <context elements="DoEvent_3034"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfExitEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart" id="ExitEvent_3035"/>
+         <context elements="ExitEvent_3035"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfClockConstraintEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart" id="ClockConstraint_3036"/>
+         <context elements="ClockConstraint_3036"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfSynchronizationChannelEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart" id="SynchronizationChannel_3037"/>
+         <context elements="SynchronizationChannel_3037"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRegionEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart" id="Region_3042"/>
+         <context elements="Region_3042"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfRealtimeStatechart2EditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart" id="RealtimeStatechart_3043"/>
+         <context elements="RealtimeStatechart_3043"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfEntryPointEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart" id="EntryPoint_3040"/>
+         <context elements="EntryPoint_3040"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assistants.MumlModelingAssistantProviderOfExitPointEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart" id="ExitPoint_3041"/>
+         <context elements="ExitPoint_3041"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">

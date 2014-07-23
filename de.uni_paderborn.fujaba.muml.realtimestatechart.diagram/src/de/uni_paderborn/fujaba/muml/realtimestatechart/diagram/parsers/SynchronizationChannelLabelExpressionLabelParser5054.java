@@ -38,7 +38,7 @@ public class SynchronizationChannelLabelExpressionLabelParser5054 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						7,
+						5,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getSynchronizationChannel(), null).body();
 	}

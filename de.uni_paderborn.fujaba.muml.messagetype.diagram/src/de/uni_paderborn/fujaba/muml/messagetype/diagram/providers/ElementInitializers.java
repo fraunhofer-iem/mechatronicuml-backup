@@ -17,7 +17,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							0,
+							2,
 							de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 									.getMessageTypeRepository(), null)
 					.evaluate(instance);
@@ -36,7 +36,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							1,
+							3,
 							de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 									.getMessageType(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -54,7 +54,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							2,
+							4,
 							de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 									.getParameter(), null).evaluate(instance);
 			instance.setName((String) value_0);

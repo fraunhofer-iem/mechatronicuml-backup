@@ -390,7 +390,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									11,
+									7,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -415,7 +415,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									12,
+									8,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -458,7 +458,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									11,
+									7,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -495,7 +495,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									12,
+									8,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -551,7 +551,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									13,
+									9,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -576,7 +576,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									14,
+									10,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -619,7 +619,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									13,
+									9,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -656,7 +656,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									14,
+									10,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$

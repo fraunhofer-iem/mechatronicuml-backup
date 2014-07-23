@@ -358,7 +358,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									22,
+									18,
 									de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 											.getVertex(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -401,7 +401,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									22,
+									18,
 									de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 											.getVertex(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$

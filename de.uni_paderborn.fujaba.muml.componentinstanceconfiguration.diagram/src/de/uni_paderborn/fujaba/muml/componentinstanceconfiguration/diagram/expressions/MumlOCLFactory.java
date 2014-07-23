@@ -29,8 +29,64 @@ public class MumlOCLFactory {
 	/**
 	 * @generated
 	 */
+	private final String[] expressionBodies;
+
+	/**
+	 * @generated
+	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlAbstractExpression[19];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlAbstractExpression[28];
+		this.expressionBodies = new String[] {
+				"\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)", //$NON-NLS-1$
+				"self.multiInteractionEndpointInstance.oclIsUndefined()", //$NON-NLS-1$
+				"\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)", //$NON-NLS-1$
+				"if self.multiInteractionEndpointInstance.oclIsUndefined() then\n\tnull\nelse\n\tif  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then\n\t\tself.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance\n\telse\n\t\tnull\n\tendif\nendif", //$NON-NLS-1$
+				"\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)", //$NON-NLS-1$
+				"\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)", //$NON-NLS-1$
+				"let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
+				"\'configuration\'", //$NON-NLS-1$
+				"let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
+				"self.name + \':\' + if (self.coordinationProtocol.oclIsUndefined()) then\n\t\' \'\nelse\n\tself.coordinationProtocol.name\nendif", //$NON-NLS-1$
+				"not self.oclIsTypeOf(DelegationConnectorInstance)", //$NON-NLS-1$
+				"not self.oclIsTypeOf(AssemblyConnectorInstance)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	private static MumlOCLFactory getInstance() {
+		MumlOCLFactory instance = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+				.getInstance().getMumlOCLFactory();
+		if (instance == null) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().setMumlOCLFactory(
+							instance = new MumlOCLFactory());
+		}
+		return instance;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static String getExpressionBody(int index) {
+		return getInstance().expressionBodies[index];
 	}
 
 	/**
@@ -38,40 +94,13 @@ public class MumlOCLFactory {
 	 */
 	public static de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlAbstractExpression getExpression(
 			int index, EClassifier context, Map<String, EClassifier> environment) {
-		MumlOCLFactory cached = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.getInstance().getMumlOCLFactory();
-		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-					.getInstance().setMumlOCLFactory(
-							cached = new MumlOCLFactory());
-		}
+		MumlOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] {
-					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.multiInteractionEndpointInstance.oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--if self.multiInteractionEndpointInstance.oclIsUndefined() then\n--\tnull\n--else\n--\tif  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then\n--\t\tself.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance\n--\telse\n--\t\tnull\n--\tendif\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'instance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\n--let partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n--(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'instance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'configuration\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\n--let partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n--(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.name + \':\' + if (self.coordinationProtocol.oclIsUndefined()) then\n--\t\' \'\n--else\n--\tself.coordinationProtocol.name\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--not self.oclIsTypeOf(DelegationConnectorInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--not self.oclIsTypeOf(AssemblyConnectorInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-			};
 			cached.expressions[index] = getExpression(
-					exprBodies[index],
+					cached.expressionBodies[index],
 					context,
 					environment == null ? Collections
 							.<String, EClassifier> emptyMap() : environment);

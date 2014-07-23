@@ -38,7 +38,7 @@ public class RegionLabelExpressionLabelParser5063 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						14,
+						12,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getRegion(), null).body();
 	}

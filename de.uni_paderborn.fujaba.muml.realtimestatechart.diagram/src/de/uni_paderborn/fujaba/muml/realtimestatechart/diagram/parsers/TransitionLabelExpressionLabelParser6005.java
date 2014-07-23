@@ -38,7 +38,7 @@ public class TransitionLabelExpressionLabelParser6005 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						20,
+						16,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getTransition(), null).body();
 	}

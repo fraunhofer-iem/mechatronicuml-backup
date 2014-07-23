@@ -38,7 +38,7 @@ public class EntryEventLabelExpressionLabelParser5050 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						1,
+						0,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getEntryEvent(), null).body();
 	}

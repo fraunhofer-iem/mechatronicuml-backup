@@ -38,7 +38,7 @@ public class DoEventLabelExpressionLabelParser5051 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						3,
+						2,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getDoEvent(), null).body();
 	}

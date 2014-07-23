@@ -63,6 +63,9 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 
 		resource.getContents().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.ElementInitializers
+				.getInstance().init_RealtimeStatechart_2007(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

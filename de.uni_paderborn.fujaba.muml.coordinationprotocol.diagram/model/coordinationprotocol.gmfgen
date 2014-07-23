@@ -49,7 +49,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="CoordinationProtocolFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationProtocolNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationProtocolNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCoordinationProtocolNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationProtocolNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationProtocolNameFigure, constraintFFigureCoordinationProtocolNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationProtocolNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationProtocolNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationProtocolNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationProtocolNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCoordinationProtocolNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationProtocolNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationProtocolNameFigure, constraintFFigureCoordinationProtocolNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationProtocolNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationProtocolNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
@@ -57,6 +57,17 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.12">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5005"
@@ -122,12 +133,6 @@
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.9">
-            <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-          </initializers>
-          <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
                 href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
@@ -139,7 +144,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.10">
+                      value="//@expressionProviders/@providers.0/@expressions.7">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -152,7 +157,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.11">
+                      value="//@expressionProviders/@providers.0/@expressions.8">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -161,6 +166,12 @@
               <elementClass
                   href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality"/>
             </newElementInitializers>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.13">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -210,19 +221,13 @@
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.0">
-            <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-          </initializers>
-          <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
                 href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.1">
+                  value="//@expressionProviders/@providers.0/@expressions.0">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -238,7 +243,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.2">
+                          value="//@expressionProviders/@providers.0/@expressions.1">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                       </initializers>
@@ -251,7 +256,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.3">
+                          value="//@expressionProviders/@providers.0/@expressions.2">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                       </initializers>
@@ -266,12 +271,6 @@
             </newElementInitializers>
             <newElementInitializers>
               <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.4">
-                <feature
-                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-              </initializers>
-              <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
                     href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
@@ -283,7 +282,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.5">
+                          value="//@expressionProviders/@providers.0/@expressions.3">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                       </initializers>
@@ -296,7 +295,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.6">
+                          value="//@expressionProviders/@providers.0/@expressions.4">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                       </initializers>
@@ -315,7 +314,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.7">
+                  value="//@expressionProviders/@providers.0/@expressions.5">
                 <feature
                     href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
               </initializers>
@@ -326,7 +325,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.8">
+                      value="//@expressionProviders/@providers.0/@expressions.6">
                     <feature
                         href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
                   </initializers>
@@ -335,6 +334,12 @@
               <elementClass
                   href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector"/>
             </newElementInitializers>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.11">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -353,7 +358,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="RolePatternFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RolePatternFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureRolePatternLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RolePatternFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRolePatternLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureRolePatternLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureRolePatternLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureRolePatternLabel() {&#xA;&#x9;&#x9;return fFigureRolePatternLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RolePatternFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureRolePatternLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RolePatternFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRolePatternLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureRolePatternLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureRolePatternLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureRolePatternLabel() {&#xA;&#x9;&#x9;return fFigureRolePatternLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
@@ -392,7 +397,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.12">
+                  value="//@expressionProviders/@providers.0/@expressions.9">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
               </initializers>
@@ -405,7 +410,7 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.13"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.10"/>
     </links>
     <compartments
         visualID="7005"
@@ -424,7 +429,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="CoordinationProtocolContainerCompartmentFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolContainerCompartmentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolContainerCompartmentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolContainerCompartmentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolContainerCompartmentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
     </compartments>
     <palette>
       <groups
@@ -642,34 +647,34 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="--'proto'"/>
+          body="'role1'"/>
       <expressions
-          body="--'role1'"/>
+          body="1"/>
       <expressions
-          body="--1"/>
+          body="1"/>
       <expressions
-          body="--1"/>
+          body="1"/>
       <expressions
-          body="--'role2'"/>
+          body="1"/>
       <expressions
-          body="--1"/>
+          body="OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
       <expressions
-          body="--1"/>
+          body="''"/>
       <expressions
-          body="--OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
+          body="1"/>
       <expressions
-          body="--''"/>
+          body="1"/>
       <expressions
-          body="--'role'"/>
-      <expressions
-          body="--1"/>
-      <expressions
-          body="--1"/>
-      <expressions
-          body="--''"/>
+          body="''"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
+          body="self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -683,4 +688,8 @@
     <items
         xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
+  <extensions>
+    <rootInput
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  </extensions>
 </gmfgen:GenEditorGenerator>

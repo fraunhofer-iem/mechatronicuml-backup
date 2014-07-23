@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.parts;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.AccessibleEditPart;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.requests.DirectEditRequest;
@@ -58,6 +60,29 @@ public class WrappingLabel3EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 5026;
+
+	/**
+	 * MUML FIX, see code comments.
+	 *
+	 * @generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(Request request) {
+
+		@SuppressWarnings("unchecked")
+		Collection<Object> hosts = super.disableCanonicalFor(request);
+
+		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
+		// because GMF supports adding additional commands using Edit Helpers concept,
+		// which could trigger refresh of any canonical edit policy.
+		// So it should be the cleanest solution to disable all canonical edit policies. 
+		EditPart part = this;
+		while (part != null) {
+			hosts.add(part);
+			part = part.getParent();
+		}
+		return hosts;
+	}
 
 	/**
 	 * @generated
@@ -317,7 +342,7 @@ public class WrappingLabel3EditPart extends CompartmentEditPart implements
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager2(
+			setManager(new TextDirectEditManager(
 					this,
 					null,
 					de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.MumlEditPartFactory
@@ -344,8 +369,8 @@ public class WrappingLabel3EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager2.class) {
-			((TextDirectEditManager2) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager.class) {
+			((TextDirectEditManager) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}
@@ -356,9 +381,6 @@ public class WrappingLabel3EditPart extends CompartmentEditPart implements
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
-		} else // 
-		if (getManager() instanceof TextDirectEditManager2) {
-			((TextDirectEditManager2) getManager()).show(initialCharacter);
 		} else //
 		{
 			performDirectEdit();

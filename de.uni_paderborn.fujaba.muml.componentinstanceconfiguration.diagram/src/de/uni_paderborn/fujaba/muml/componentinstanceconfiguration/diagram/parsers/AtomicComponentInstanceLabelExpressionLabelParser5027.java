@@ -38,7 +38,7 @@ public class AtomicComponentInstanceLabelExpressionLabelParser5027 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						12,
+						6,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getAtomicComponentInstance(), null).body();
 	}

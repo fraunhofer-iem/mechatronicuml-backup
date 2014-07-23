@@ -38,7 +38,7 @@ public class CoordinationProtocolPartLabelExpressionLabelParser5026 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						10,
+						6,
 						de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 								.getCoordinationProtocolPart(), null).body();
 	}

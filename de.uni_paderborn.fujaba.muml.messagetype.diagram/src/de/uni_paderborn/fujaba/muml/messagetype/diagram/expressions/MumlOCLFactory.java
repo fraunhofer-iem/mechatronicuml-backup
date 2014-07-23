@@ -29,8 +29,41 @@ public class MumlOCLFactory {
 	/**
 	 * @generated
 	 */
+	private final String[] expressionBodies;
+
+	/**
+	 * @generated
+	 */
 	protected MumlOCLFactory() {
 		this.expressions = new de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlAbstractExpression[5];
+		this.expressionBodies = new String[] {
+				"(\nif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\n\t\t\'\'\n\telse\n\t\t\' \'\n\tendif\n).concat(\n\tif self.name.oclIsUndefined() then\n\t\t\'null\'\n\telse\n\t\tself.name\n\tendif\n).concat(\n\tif self.dataType.name.oclIsUndefined() then\n\t\t\'\'\n\telse\n\t\t\' : \'.concat(self.dataType.name)\n\tendif\n).concat(\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\n\t\t\'\'\n\telse\n\t\t\',\'\n\tendif\n)\n\n", //$NON-NLS-1$
+				"if self.name.oclIsUndefined() then\n\t\'\'\nelse\n\tself.name\nendif", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	private static MumlOCLFactory getInstance() {
+		MumlOCLFactory instance = de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
+				.getInstance().getMumlOCLFactory();
+		if (instance == null) {
+			de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
+					.getInstance().setMumlOCLFactory(
+							instance = new MumlOCLFactory());
+		}
+		return instance;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static String getExpressionBody(int index) {
+		return getInstance().expressionBodies[index];
 	}
 
 	/**
@@ -38,26 +71,13 @@ public class MumlOCLFactory {
 	 */
 	public static de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlAbstractExpression getExpression(
 			int index, EClassifier context, Map<String, EClassifier> environment) {
-		MumlOCLFactory cached = de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
-				.getInstance().getMumlOCLFactory();
-		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MessageTypeDiagramEditorPlugin
-					.getInstance().setMumlOCLFactory(
-							cached = new MumlOCLFactory());
-		}
+		MumlOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] {
-					"--\'Repository\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'messagetype\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'p\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--(\n--if self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\n--\t\t\'\'\n--\telse\n--\t\t\' \'\n--\tendif\n--).concat(\n--\tif self.name.oclIsUndefined() then\n--\t\t\'null\'\n--\telse\n--\t\tself.name\n--\tendif\n--).concat(\n--\tif self.dataType.name.oclIsUndefined() then\n--\t\t\'\'\n--\telse\n--\t\t\' : \'.concat(self.dataType.name)\n--\tendif\n--).concat(\n--\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\n--\t\t\'\'\n--\telse\n--\t\t\',\'\n--\tendif\n--)\n--\n--".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--if self.name.oclIsUndefined() then\n--\t\'\'\n--else\n--\tself.name\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-			};
 			cached.expressions[index] = getExpression(
-					exprBodies[index],
+					cached.expressionBodies[index],
 					context,
 					environment == null ? Collections
 							.<String, EClassifier> emptyMap() : environment);

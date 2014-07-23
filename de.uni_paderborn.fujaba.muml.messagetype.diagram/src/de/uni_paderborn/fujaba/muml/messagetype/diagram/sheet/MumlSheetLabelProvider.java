@@ -13,6 +13,7 @@
 package de.uni_paderborn.fujaba.muml.messagetype.diagram.sheet;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.BaseLabelProvider;
@@ -31,6 +32,17 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements
 	 */
 	public String getText(Object element) {
 		element = unwrap(element);
+
+		// BEGIN: Added for MUML #912
+		if (element instanceof IAdaptable) {
+			IAdaptable adaptable = (IAdaptable) element;
+			EObject eObject = (EObject) adaptable.getAdapter(EObject.class);
+			if (eObject != null) {
+				return eObject.eClass().getName();
+			}
+		}
+		// END: Added for MUML #912
+
 		if (element instanceof de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlNavigatorGroup) {
 			return ((de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlNavigatorGroup) element)
 					.getGroupName();

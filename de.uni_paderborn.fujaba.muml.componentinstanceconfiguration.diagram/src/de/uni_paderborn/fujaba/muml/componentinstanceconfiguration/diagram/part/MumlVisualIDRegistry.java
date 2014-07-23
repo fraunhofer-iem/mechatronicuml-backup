@@ -554,7 +554,7 @@ public class MumlVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						2,
+						1,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), null)
 				.evaluate(domainElement);
@@ -568,7 +568,7 @@ public class MumlVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						2,
+						1,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), null)
 				.evaluate(domainElement);
@@ -582,7 +582,7 @@ public class MumlVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						17,
+						10,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getAssemblyConnectorInstance(), null)
 				.evaluate(domainElement);
@@ -596,7 +596,7 @@ public class MumlVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						18,
+						11,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDelegationConnectorInstance(), null)
 				.evaluate(domainElement);

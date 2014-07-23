@@ -38,7 +38,7 @@ public class DiscreteSinglePortInstanceLabelExpressionLabelParser5040 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						4,
+						2,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), null).body();
 	}

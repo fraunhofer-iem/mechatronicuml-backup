@@ -44,7 +44,7 @@ mapping inout GenEditorGenerator::reconcilePropsheet() {
 		var expressionProvider := self.expressionProviders.providers->any(true);
 		if (expressionProvider != null) then {
 		
-			self.diagram.topLevelNodes.modelFacet[TypeModelFacet]->forEach(typeModelFacet) {
+			self.diagram.getAllNodes().modelFacet[TypeModelFacet]->forEach(typeModelFacet) {
 				
 				allPropertyGenerators.packages.classes->select(c | c.genClass.ecoreClass.isSuperTypeOf(typeModelFacet.metaClass.ecoreClass)).properties->forEach(prop) {
 						
@@ -58,7 +58,7 @@ mapping inout GenEditorGenerator::reconcilePropsheet() {
 						if (featureSeqInitializer.initializers->select(i | i.feature = prop.genFeature)->isEmpty()) then {
 							var valueExpression := new ValueExpression(prop.initializeOCLExpression);
 							expressionProvider.expressions += valueExpression;
-							featureSeqInitializer.initializers += new GenFeatureValueSpec(valueExpression);
+							featureSeqInitializer.initializers += new GenFeatureValueSpec(prop.genFeature, valueExpression);
 						} endif;
 					} endif;
 				};
@@ -73,8 +73,9 @@ constructor ValueExpression::ValueExpression(ocl : String) {
 constructor GenFeatureSeqInitializer::GenFeatureSeqInitializer(genClass : genmodel::GenClass) {
 	elementClass := genClass;
 }
-constructor GenFeatureValueSpec::GenFeatureValueSpec(v : ValueExpression) {
+constructor GenFeatureValueSpec::GenFeatureValueSpec(f : GenFeature, v : ValueExpression) {
 	value := v;
+	feature := f;
 }
 
 mapping inout GenCompartment::addEnlargeCompoartmentEditPolicy(){

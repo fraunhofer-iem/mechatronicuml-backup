@@ -38,7 +38,7 @@ public class HybridPortInstanceLabelExpressionLabelParser5039 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						1,
+						0,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getHybridPortInstance(), null).body();
 	}

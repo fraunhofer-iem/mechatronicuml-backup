@@ -34,17 +34,6 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
-          <domainInitializer
-              xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'State'"/>
-            </initializers>
-          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -168,17 +157,6 @@
             <ownedChild>
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/SynchronizationChannel"/>
-              <domainInitializer
-                  xsi:type="gmfmap:FeatureSeqInitializer">
-                <initializers
-                    xsi:type="gmfmap:FeatureValueSpec">
-                  <feature
-                      xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  <value
-                      body="'channel'"/>
-                </initializers>
-              </domainInitializer>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
@@ -340,17 +318,6 @@
             <ownedChild>
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/EntryPoint"/>
-              <domainInitializer
-                  xsi:type="gmfmap:FeatureSeqInitializer">
-                <initializers
-                    xsi:type="gmfmap:FeatureValueSpec">
-                  <feature
-                      xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  <value
-                      body="'entry'"/>
-                </initializers>
-              </domainInitializer>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.4"/>
@@ -364,17 +331,6 @@
             <ownedChild>
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/ExitPoint"/>
-              <domainInitializer
-                  xsi:type="gmfmap:FeatureSeqInitializer">
-                <initializers
-                    xsi:type="gmfmap:FeatureValueSpec">
-                  <feature
-                      xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  <value
-                      body="'exit'"/>
-                </initializers>
-              </domainInitializer>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.5"/>

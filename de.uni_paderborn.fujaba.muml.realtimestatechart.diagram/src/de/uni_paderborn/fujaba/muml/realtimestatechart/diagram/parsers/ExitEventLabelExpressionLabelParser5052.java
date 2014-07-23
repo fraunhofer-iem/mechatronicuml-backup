@@ -38,7 +38,7 @@ public class ExitEventLabelExpressionLabelParser5052 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						4,
+						3,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getExitEvent(), null).body();
 	}

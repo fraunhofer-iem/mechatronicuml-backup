@@ -12,17 +12,6 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/HybridPortInstance"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'portinstance'"/>
-        </initializers>
-      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -46,17 +35,6 @@
           href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteSinglePortInstance"/>
       <domainSpecialization
           body="self.multiInteractionEndpointInstance.oclIsUndefined()"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'portinstance'"/>
-        </initializers>
-      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -78,17 +56,6 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteMultiPortInstance"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'portinstance'"/>
-        </initializers>
-      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -109,16 +76,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteSinglePortInstance"/>
-          <domainInitializer
-              xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'portinstance'"/>
-            </initializers>
+           <domainInitializer
+               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
@@ -148,17 +107,6 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ContinuousPortInstance"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'portinstance'"/>
-        </initializers>
-      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
@@ -180,17 +128,6 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AtomicComponentInstance"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'instance'"/>
-        </initializers>
-      </domainInitializer>
       <labelMappings
           xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
@@ -233,14 +170,6 @@
           href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/StructuredComponentInstance"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'instance'"/>
-        </initializers>
         <initializers
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature

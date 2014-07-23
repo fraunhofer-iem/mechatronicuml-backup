@@ -15,14 +15,6 @@
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          <value
-              body="'proto'"/>
-        </initializers>
-        <initializers
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
@@ -82,14 +74,6 @@
                 href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/Role"/>
           </newElementInitializers>
           <newElementInitializers>
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'role2'"/>
-            </initializers>
             <initializers
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
@@ -204,14 +188,6 @@
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/Role"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'role'"/>
-            </initializers>
             <initializers
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
