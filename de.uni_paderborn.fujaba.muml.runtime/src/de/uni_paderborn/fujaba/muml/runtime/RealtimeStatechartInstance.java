@@ -12,6 +12,7 @@ import org.storydriven.core.ExtendableElement;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +24,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveState <em>Active State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveVertex <em>Active Vertex</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getVariableBindings <em>Variable Bindings</em>}</li>
@@ -34,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL StateAndTransitionActive='-- A State and a Transition of one RTSC can not be active at the same time\r\nactiveState.oclIsUndefined() or activeTransition.oclIsUndefined()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL StateAndTransitionActive='-- A Vertex and a Transition of one RTSC can not be active at the same time\r\nactiveVertex.oclIsUndefined() or activeTransition.oclIsUndefined()'"
  * @generated
  */
 public interface RealtimeStatechartInstance extends ExtendableElement {
@@ -93,30 +94,30 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	void setInstanceOf(RealtimeStatechart value);
 
 	/**
-	 * Returns the value of the '<em><b>Active State</b></em>' reference.
+	 * Returns the value of the '<em><b>Active Vertex</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Active State</em>' reference isn't clear,
+	 * If the meaning of the '<em>Active Vertex</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Active State</em>' reference.
-	 * @see #setActiveState(State)
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_ActiveState()
-	 * @model required="true"
+	 * @return the value of the '<em>Active Vertex</em>' reference.
+	 * @see #setActiveVertex(Vertex)
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_ActiveVertex()
+	 * @model
 	 * @generated
 	 */
-	State getActiveState();
+	Vertex getActiveVertex();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveState <em>Active State</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveVertex <em>Active Vertex</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Active State</em>' reference.
-	 * @see #getActiveState()
+	 * @param value the new value of the '<em>Active Vertex</em>' reference.
+	 * @see #getActiveVertex()
 	 * @generated
 	 */
-	void setActiveState(State value);
+	void setActiveVertex(Vertex value);
 
 	/**
 	 * Returns the value of the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list.

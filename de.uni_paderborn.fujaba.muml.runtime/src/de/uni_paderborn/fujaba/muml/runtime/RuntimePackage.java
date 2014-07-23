@@ -744,13 +744,13 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE__INSTANCE_OF = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Active State</b></em>' reference.
+	 * The feature id for the '<em><b>Active Vertex</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__ACTIVE_STATE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list.
@@ -2113,15 +2113,15 @@ public interface RuntimePackage extends EPackage {
 	EReference getRealtimeStatechartInstance_InstanceOf();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveState <em>Active State</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveVertex <em>Active Vertex</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Active State</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveState()
+	 * @return the meta object for the reference '<em>Active Vertex</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActiveVertex()
 	 * @see #getRealtimeStatechartInstance()
 	 * @generated
 	 */
-	EReference getRealtimeStatechartInstance_ActiveState();
+	EReference getRealtimeStatechartInstance_ActiveVertex();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}'.
@@ -2602,12 +2602,12 @@ public interface RuntimePackage extends EPackage {
 		EReference REALTIME_STATECHART_INSTANCE__INSTANCE_OF = eINSTANCE.getRealtimeStatechartInstance_InstanceOf();
 
 		/**
-		 * The meta object literal for the '<em><b>Active State</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Active Vertex</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REALTIME_STATECHART_INSTANCE__ACTIVE_STATE = eINSTANCE.getRealtimeStatechartInstance_ActiveState();
+		EReference REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX = eINSTANCE.getRealtimeStatechartInstance_ActiveVertex();
 
 		/**
 		 * The meta object literal for the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list feature.

@@ -25,6 +25,7 @@ import org.storydriven.core.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
@@ -39,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getInstanceOf <em>Instance Of</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getActiveState <em>Active State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getActiveVertex <em>Active Vertex</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getVariableBindings <em>Variable Bindings</em>}</li>
@@ -73,14 +74,14 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	protected RealtimeStatechart instanceOf;
 
 	/**
-	 * The cached value of the '{@link #getActiveState() <em>Active State</em>}' reference.
+	 * The cached value of the '{@link #getActiveVertex() <em>Active Vertex</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActiveState()
+	 * @see #getActiveVertex()
 	 * @generated
 	 * @ordered
 	 */
-	protected State activeState;
+	protected Vertex activeVertex;
 
 	/**
 	 * The cached value of the '{@link #getSubRealtimeStatechartInstances() <em>Sub Realtime Statechart Instances</em>}' containment reference list.
@@ -254,16 +255,16 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State getActiveState() {
-		if (activeState != null && activeState.eIsProxy()) {
-			InternalEObject oldActiveState = (InternalEObject)activeState;
-			activeState = (State)eResolveProxy(oldActiveState);
-			if (activeState != oldActiveState) {
+	public Vertex getActiveVertex() {
+		if (activeVertex != null && activeVertex.eIsProxy()) {
+			InternalEObject oldActiveVertex = (InternalEObject)activeVertex;
+			activeVertex = (Vertex)eResolveProxy(oldActiveVertex);
+			if (activeVertex != oldActiveVertex) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE, oldActiveState, activeState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX, oldActiveVertex, activeVertex));
 			}
 		}
-		return activeState;
+		return activeVertex;
 	}
 
 	/**
@@ -271,8 +272,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State basicGetActiveState() {
-		return activeState;
+	public Vertex basicGetActiveVertex() {
+		return activeVertex;
 	}
 
 	/**
@@ -280,11 +281,11 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActiveState(State newActiveState) {
-		State oldActiveState = activeState;
-		activeState = newActiveState;
+	public void setActiveVertex(Vertex newActiveVertex) {
+		Vertex oldActiveVertex = activeVertex;
+		activeVertex = newActiveVertex;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE, oldActiveState, activeState));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX, oldActiveVertex, activeVertex));
 	}
 
 	/**
@@ -525,9 +526,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				if (resolve) return getInstanceOf();
 				return basicGetInstanceOf();
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE:
-				if (resolve) return getActiveState();
-				return basicGetActiveState();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX:
+				if (resolve) return getActiveVertex();
+				return basicGetActiveVertex();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				return getSubRealtimeStatechartInstances();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
@@ -561,8 +562,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				setInstanceOf((RealtimeStatechart)newValue);
 				return;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE:
-				setActiveState((State)newValue);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX:
+				setActiveVertex((Vertex)newValue);
 				return;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				getSubRealtimeStatechartInstances().clear();
@@ -599,8 +600,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				setInstanceOf((RealtimeStatechart)null);
 				return;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE:
-				setActiveState((State)null);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX:
+				setActiveVertex((Vertex)null);
 				return;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				getSubRealtimeStatechartInstances().clear();
@@ -633,8 +634,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return runtimeBehavioralElement != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				return instanceOf != null;
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_STATE:
-				return activeState != null;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX:
+				return activeVertex != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				return subRealtimeStatechartInstances != null && !subRealtimeStatechartInstances.isEmpty();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:

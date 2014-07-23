@@ -372,7 +372,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRealtimeStatechartInstance_ActiveState() {
+	public EReference getRealtimeStatechartInstance_ActiveVertex() {
 		return (EReference)realtimeStatechartInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -717,7 +717,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		realtimeStatechartInstanceEClass = createEClass(REALTIME_STATECHART_INSTANCE);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__INSTANCE_OF);
-		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__ACTIVE_STATE);
+		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__ACTIVE_VERTEX);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS);
@@ -851,7 +851,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEClass(realtimeStatechartInstanceEClass, RealtimeStatechartInstance.class, "RealtimeStatechartInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRealtimeStatechartInstance_RuntimeBehavioralElement(), this.getRuntimeBehavioralElement(), this.getRuntimeBehavioralElement_StatechartInstance(), "runtimeBehavioralElement", null, 0, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_InstanceOf(), theRealtimestatechartPackage.getRealtimeStatechart(), null, "instanceOf", null, 0, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRealtimeStatechartInstance_ActiveState(), theRealtimestatechartPackage.getState(), null, "activeState", null, 1, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechartInstance_ActiveVertex(), theRealtimestatechartPackage.getVertex(), null, "activeVertex", null, 0, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_SubRealtimeStatechartInstances(), this.getRealtimeStatechartInstance(), this.getRealtimeStatechartInstance_ParentRealtimeStatechartInstance(), "subRealtimeStatechartInstances", null, 0, -1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_ParentRealtimeStatechartInstance(), this.getRealtimeStatechartInstance(), this.getRealtimeStatechartInstance_SubRealtimeStatechartInstances(), "parentRealtimeStatechartInstance", null, 0, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_VariableBindings(), this.getVariableBinding(), null, "variableBindings", null, 0, -1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -953,7 +953,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		  (realtimeStatechartInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "StateAndTransitionActive", "-- A State and a Transition of one RTSC can not be active at the same time\r\nactiveState.oclIsUndefined() or activeTransition.oclIsUndefined()"
+			 "StateAndTransitionActive", "-- A Vertex and a Transition of one RTSC can not be active at the same time\r\nactiveVertex.oclIsUndefined() or activeTransition.oclIsUndefined()"
 		   });	
 		addAnnotation
 		  (getRealtimeStatechartInstance_AllAvailableVariableBindings(), 

@@ -33,13 +33,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechartInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="StateAndTransitionActive" value="-- A State and a Transition of one RTSC can not be active at the same time&#xD;&#xA;activeState.oclIsUndefined() or activeTransition.oclIsUndefined()"/>
+      <details key="StateAndTransitionActive" value="-- A Vertex and a Transition of one RTSC can not be active at the same time&#xD;&#xA;activeVertex.oclIsUndefined() or activeTransition.oclIsUndefined()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBehavioralElement"
         eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/statechartInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="activeState" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeVertex" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Vertex"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subRealtimeStatechartInstances"
         upperBound="-1" eType="#//RealtimeStatechartInstance" containment="true" eOpposite="#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentRealtimeStatechartInstance"
