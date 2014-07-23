@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MtctlEnglish
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english
+Bundle-Version: 0.4.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.xtend.lib,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0"
+Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english
+
