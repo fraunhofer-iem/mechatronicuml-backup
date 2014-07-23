@@ -1,5 +1,5 @@
 «REM» Remove the commments (--) before the OCL Expressions, which were added by: /de.uni_paderborn.fujaba.common/transformations/pre-reconcile.qvto «ENDREM»
-
+«REM»
 «AROUND _initInterpreterFactory FOR gmfgen::GenExpressionInterpreter-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private final «container.getAbstractExpressionQualifiedClassName()»[] expressions; 
@@ -28,3 +28,4 @@
 		return cached.expressions[index];
 	}
 «ENDAROUND»
+«ENDREM»
