@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts;
 
 import java.util.Collection;
+
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;

@@ -354,7 +354,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(
+			setManager(new TextDirectEditManager2(
 					this,
 					null,
 					de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.MumlEditPartFactory
@@ -381,8 +381,8 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager.class) {
-			((TextDirectEditManager) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager2.class) {
+			((TextDirectEditManager2) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}
@@ -393,6 +393,9 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
+		} else // 
+		if (getManager() instanceof TextDirectEditManager2) {
+			((TextDirectEditManager2) getManager()).show(initialCharacter);
 		} else //
 		{
 			performDirectEdit();

@@ -11,8 +11,6 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
-import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 /**
  * @generated
@@ -75,7 +73,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAtomicComponent1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.AtomicComponent1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.AtomicComponent1CreationTool_desc,
 				Collections
@@ -91,7 +89,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createStructuredComponent2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StructuredComponent2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StructuredComponent2CreationTool_desc,
 				Collections
@@ -107,7 +105,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createComponentPart3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ComponentPart3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ComponentPart3CreationTool_desc,
 				Collections
@@ -123,7 +121,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDiscretePort1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.DiscretePort1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.DiscretePort1CreationTool_desc,
 				Collections
@@ -139,7 +137,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createContinuousPort2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ContinuousPort2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ContinuousPort2CreationTool_desc,
 				Collections
@@ -155,7 +153,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createHybridPort3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.HybridPort3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.HybridPort3CreationTool_desc,
 				Collections
@@ -171,7 +169,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAssembly1CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+		LinkToolEntry entry = new LinkToolEntry(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Assembly1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Assembly1CreationTool_desc,
 				Collections
@@ -187,7 +185,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDelegation2CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+		LinkToolEntry entry = new LinkToolEntry(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Delegation2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Delegation2CreationTool_desc,
 				Collections
@@ -197,5 +195,63 @@ public class MumlPaletteFactory {
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class NodeToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final List<IElementType> elementTypes;
+
+		/**
+		 * @generated
+		 */
+		private NodeToolEntry(String title, String description,
+				List<IElementType> elementTypes) {
+			super(title, description, null, null);
+			this.elementTypes = elementTypes;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
+			tool.setProperties(getToolProperties());
+			return tool;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class LinkToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final List<IElementType> relationshipTypes;
+
+		/**
+		 * @generated
+		 */
+		private LinkToolEntry(String title, String description,
+				List<IElementType> relationshipTypes) {
+			super(title, description, null, null);
+			this.relationshipTypes = relationshipTypes;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
+			tool.setProperties(getToolProperties());
+			return tool;
+		}
 	}
 }

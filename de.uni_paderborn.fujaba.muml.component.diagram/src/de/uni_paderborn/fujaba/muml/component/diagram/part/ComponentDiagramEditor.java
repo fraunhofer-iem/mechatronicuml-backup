@@ -37,7 +37,6 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ShowInContext;
-import org.eclipse.ui.views.properties.IPropertySheetPage;
 
 /**
  * @generated

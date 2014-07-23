@@ -339,7 +339,7 @@ public class StaticStructuredComponentNameEditPart extends CompartmentEditPart
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(
+			setManager(new TextDirectEditManager2(
 					this,
 					null,
 					de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.MumlEditPartFactory
@@ -366,8 +366,8 @@ public class StaticStructuredComponentNameEditPart extends CompartmentEditPart
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager.class) {
-			((TextDirectEditManager) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager2.class) {
+			((TextDirectEditManager2) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}
@@ -378,6 +378,9 @@ public class StaticStructuredComponentNameEditPart extends CompartmentEditPart
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
+		} else // 
+		if (getManager() instanceof TextDirectEditManager2) {
+			((TextDirectEditManager2) getManager()).show(initialCharacter);
 		} else //
 		{
 			performDirectEdit();

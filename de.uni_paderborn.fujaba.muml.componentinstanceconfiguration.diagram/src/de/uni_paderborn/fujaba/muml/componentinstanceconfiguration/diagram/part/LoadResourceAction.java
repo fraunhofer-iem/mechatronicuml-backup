@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part;
 
-import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.presentation.EcoreActionBarContributor;

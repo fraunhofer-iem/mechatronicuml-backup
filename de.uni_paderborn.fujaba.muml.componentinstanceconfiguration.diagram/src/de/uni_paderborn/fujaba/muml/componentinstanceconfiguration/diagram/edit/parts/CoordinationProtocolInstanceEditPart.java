@@ -14,6 +14,7 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;

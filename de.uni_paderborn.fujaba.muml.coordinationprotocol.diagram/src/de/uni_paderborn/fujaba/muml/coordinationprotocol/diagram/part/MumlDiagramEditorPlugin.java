@@ -9,14 +9,12 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -34,11 +32,6 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public static final String ID = "de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"; //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	private LogHelper myLogHelper;
 
 	/**
 	 * @generated
@@ -88,7 +81,6 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
-		myLogHelper = new LogHelper(this);
 		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
 				getPreferenceStore());
 		adapterFactory = createAdapterFactory();
@@ -304,34 +296,54 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void logError(String error) {
-		getLogHelper().logError(error, null);
+		logError(error, null);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logError(String error, Throwable throwable) {
-		getLogHelper().logError(error, throwable);
+		if (error == null && throwable != null) {
+			error = throwable.getMessage();
+		}
+		getLog().log(
+				new Status(IStatus.ERROR, MumlDiagramEditorPlugin.ID,
+						IStatus.OK, error, throwable));
+		debug(error, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message) {
-		getLogHelper().logInfo(message, null);
+		logInfo(message, null);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message, Throwable throwable) {
-		getLogHelper().logInfo(message, throwable);
+		if (message == null && throwable != null) {
+			message = throwable.getMessage();
+		}
+		getLog().log(
+				new Status(IStatus.INFO, MumlDiagramEditorPlugin.ID,
+						IStatus.OK, message, throwable));
+		debug(message, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
-	public LogHelper getLogHelper() {
-		return myLogHelper;
+	private void debug(String message, Throwable throwable) {
+		if (!isDebugging()) {
+			return;
+		}
+		if (message != null) {
+			System.err.println(message);
+		}
+		if (throwable != null) {
+			throwable.printStackTrace();
+		}
 	}
 }

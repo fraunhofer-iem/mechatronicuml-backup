@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part;
 
 import java.util.Collections;
-import java.util.List;
 
+import java.util.List;
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
@@ -11,8 +11,6 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
-import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 /**
  * @generated
@@ -65,7 +63,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createState1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.State1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.State1CreationTool_desc,
 				Collections
@@ -81,7 +79,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createTransition2CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+		LinkToolEntry entry = new LinkToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.Transition2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.Transition2CreationTool_desc,
 				Collections
@@ -97,7 +95,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createEntryAction1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.EntryAction1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.EntryAction1CreationTool_desc,
 				Collections
@@ -113,7 +111,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDoAction2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.DoAction2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.DoAction2CreationTool_desc,
 				Collections
@@ -129,7 +127,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExitAction3CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.ExitAction3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.ExitAction3CreationTool_desc,
 				Collections
@@ -145,7 +143,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRegion4CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.Region4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.Region4CreationTool_desc,
 				Collections
@@ -161,7 +159,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createEntryPoint5CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.EntryPoint5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.EntryPoint5CreationTool_desc,
 				Collections
@@ -177,7 +175,7 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExitPoint6CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.ExitPoint6CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.ExitPoint6CreationTool_desc,
 				Collections
@@ -187,5 +185,63 @@ public class MumlPaletteFactory {
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_exit_point.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class NodeToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final List<IElementType> elementTypes;
+
+		/**
+		 * @generated
+		 */
+		private NodeToolEntry(String title, String description,
+				List<IElementType> elementTypes) {
+			super(title, description, null, null);
+			this.elementTypes = elementTypes;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
+			tool.setProperties(getToolProperties());
+			return tool;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class LinkToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final List<IElementType> relationshipTypes;
+
+		/**
+		 * @generated
+		 */
+		private LinkToolEntry(String title, String description,
+				List<IElementType> relationshipTypes) {
+			super(title, description, null, null);
+			this.relationshipTypes = relationshipTypes;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
+			tool.setProperties(getToolProperties());
+			return tool;
+		}
 	}
 }

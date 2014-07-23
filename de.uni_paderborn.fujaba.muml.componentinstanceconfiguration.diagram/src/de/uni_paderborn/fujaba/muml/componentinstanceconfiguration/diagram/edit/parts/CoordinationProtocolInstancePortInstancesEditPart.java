@@ -13,6 +13,7 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts;
 
 import java.util.Collection;
+
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.gef.EditPart;
