@@ -998,6 +998,18 @@ public class Mtctl2English {
           _xifexpression_1 = _leftOpd_1;
         }
         Expression leftOpd = _xifexpression_1;
+        Expression _xifexpression_2 = null;
+        Expression _formula_5 = expr.getFormula();
+        if ((_formula_5 instanceof ImplyExpr)) {
+          Expression _formula_6 = expr.getFormula();
+          Expression _rightOpd = ((ImplyExpr) _formula_6).getRightOpd();
+          _xifexpression_2 = _rightOpd;
+        } else {
+          Expression _formula_7 = expr.getFormula();
+          Expression _rightOpd_1 = ((AndExpr) _formula_7).getRightOpd();
+          _xifexpression_2 = _rightOpd_1;
+        }
+        Expression rightOpd = _xifexpression_2;
         CharSequence _switchResult = null;
         boolean _matched = false;
         if (!_matched) {
@@ -1032,10 +1044,13 @@ public class Mtctl2English {
               MapExpr _superstate = _substateOfExpr.getSuperstate();
               Object _expr = this.expr(_superstate, true);
               _builder.append(_expr, "");
+              {
+                if (thereIs) {
+                  _builder.append(" so that");
+                }
+              }
               _builder.append(" ");
-              Expression _formula_5 = expr.getFormula();
-              Expression _rightOpd = ((ImplyExpr) _formula_5).getRightOpd();
-              CharSequence _itHoldsThat = this.itHoldsThat(_rightOpd, positive);
+              CharSequence _itHoldsThat = this.itHoldsThat(rightOpd, positive);
               _builder.append(_itHoldsThat, "");
               _switchResult = _builder;
             }
@@ -1073,10 +1088,13 @@ public class Mtctl2English {
               MapExpr _state = _substateOfExpr.getState();
               Object _expr = this.expr(_state, true);
               _builder.append(_expr, "");
+              {
+                if (thereIs) {
+                  _builder.append(" so that");
+                }
+              }
               _builder.append(" ");
-              Expression _formula_5 = expr.getFormula();
-              Expression _rightOpd = ((ImplyExpr) _formula_5).getRightOpd();
-              CharSequence _itHoldsThat = this.itHoldsThat(_rightOpd, positive);
+              CharSequence _itHoldsThat = this.itHoldsThat(rightOpd, positive);
               _builder.append(_itHoldsThat, "");
               _switchResult = _builder;
             }
@@ -1114,10 +1132,13 @@ public class Mtctl2English {
               MapExpr _statechart = _stateInStatechartExpr.getStatechart();
               Object _expr = this.expr(_statechart, true);
               _builder.append(_expr, "");
+              {
+                if (thereIs) {
+                  _builder.append(" so that");
+                }
+              }
               _builder.append(" ");
-              Expression _formula_5 = expr.getFormula();
-              Expression _rightOpd = ((ImplyExpr) _formula_5).getRightOpd();
-              CharSequence _itHoldsThat = this.itHoldsThat(_rightOpd, positive);
+              CharSequence _itHoldsThat = this.itHoldsThat(rightOpd, positive);
               _builder.append(_itHoldsThat, "");
               _switchResult = _builder;
             }
