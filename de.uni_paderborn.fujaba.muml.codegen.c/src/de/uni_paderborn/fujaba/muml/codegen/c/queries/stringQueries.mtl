@@ -311,7 +311,7 @@ getName(channel.name)
 /]
 
 [query public getVariableName(var : Variable) : String = 
-	getName(var).toLowerFirst()
+	getName(var)
 /]
 
 
