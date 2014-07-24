@@ -24,12 +24,12 @@ Expression returns mtctl::Expression:
 
 //Binary operators (increasing precedence)
 LeadsToExpr returns mtctl::Expression:
-	TimeIntervalExpr ({mtctl::LeadsToExpr.leftOpd=current} 'leadsTo' rightOpd=TimeIntervalExpr)*
+	ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} 'leadsTo' rightOpd=ImplyExpr)*
 ;
 
-TimeIntervalExpr returns mtctl::Expression:
+/*TimeIntervalExpr returns mtctl::Expression:
 	'timeInterval' {mtctl::TimeIntervalExpr} lhs=ImplyExpr '[' lower=INT ',' upper=INT ']' rhs=ImplyExpr | ImplyExpr //TODO use units from action lang
-;
+;*/
 
 ImplyExpr returns mtctl::Expression:
 	AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*

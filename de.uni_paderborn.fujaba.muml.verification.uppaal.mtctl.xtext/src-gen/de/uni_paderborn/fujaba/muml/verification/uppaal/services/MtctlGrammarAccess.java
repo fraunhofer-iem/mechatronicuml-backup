@@ -81,25 +81,25 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	public class LeadsToExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LeadsToExpr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cTimeIntervalExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cImplyExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cLeadsToExprLeftOpdAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Keyword cLeadsToKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cRightOpdAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightOpdTimeIntervalExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightOpdImplyExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
 		
 		////Binary operators (increasing precedence)
 		//LeadsToExpr returns mtctl::Expression:
-		//	TimeIntervalExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=TimeIntervalExpr)*;
+		//	ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*;
 		public ParserRule getRule() { return rule; }
 
-		//TimeIntervalExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=TimeIntervalExpr)*
+		//ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*
 		public Group getGroup() { return cGroup; }
 
-		//TimeIntervalExpr
-		public RuleCall getTimeIntervalExprParserRuleCall_0() { return cTimeIntervalExprParserRuleCall_0; }
+		//ImplyExpr
+		public RuleCall getImplyExprParserRuleCall_0() { return cImplyExprParserRuleCall_0; }
 
-		//({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=TimeIntervalExpr)*
+		//({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{mtctl::LeadsToExpr.leftOpd=current}
@@ -108,86 +108,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"leadsTo"
 		public Keyword getLeadsToKeyword_1_1() { return cLeadsToKeyword_1_1; }
 
-		//rightOpd=TimeIntervalExpr
+		//rightOpd=ImplyExpr
 		public Assignment getRightOpdAssignment_1_2() { return cRightOpdAssignment_1_2; }
 
-		//TimeIntervalExpr
-		public RuleCall getRightOpdTimeIntervalExprParserRuleCall_1_2_0() { return cRightOpdTimeIntervalExprParserRuleCall_1_2_0; }
-	}
-
-	public class TimeIntervalExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TimeIntervalExpr");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cTimeIntervalKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Action cTimeIntervalExprAction_0_1 = (Action)cGroup_0.eContents().get(1);
-		private final Assignment cLhsAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cLhsImplyExprParserRuleCall_0_2_0 = (RuleCall)cLhsAssignment_0_2.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
-		private final Assignment cLowerAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
-		private final RuleCall cLowerINTTerminalRuleCall_0_4_0 = (RuleCall)cLowerAssignment_0_4.eContents().get(0);
-		private final Keyword cCommaKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
-		private final Assignment cUpperAssignment_0_6 = (Assignment)cGroup_0.eContents().get(6);
-		private final RuleCall cUpperINTTerminalRuleCall_0_6_0 = (RuleCall)cUpperAssignment_0_6.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_0_7 = (Keyword)cGroup_0.eContents().get(7);
-		private final Assignment cRhsAssignment_0_8 = (Assignment)cGroup_0.eContents().get(8);
-		private final RuleCall cRhsImplyExprParserRuleCall_0_8_0 = (RuleCall)cRhsAssignment_0_8.eContents().get(0);
-		private final RuleCall cImplyExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//TimeIntervalExpr returns mtctl::Expression:
-		//	"timeInterval" {mtctl::TimeIntervalExpr} lhs=ImplyExpr "[" lower=INT "," upper=INT "]" rhs=ImplyExpr | //TODO use units from action lang
-		//	ImplyExpr;
-		public ParserRule getRule() { return rule; }
-
-		//"timeInterval" {mtctl::TimeIntervalExpr} lhs=ImplyExpr "[" lower=INT "," upper=INT "]" rhs=ImplyExpr | //TODO use units from action lang
 		//ImplyExpr
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"timeInterval" {mtctl::TimeIntervalExpr} lhs=ImplyExpr "[" lower=INT "," upper=INT "]" rhs=ImplyExpr
-		public Group getGroup_0() { return cGroup_0; }
-
-		//"timeInterval"
-		public Keyword getTimeIntervalKeyword_0_0() { return cTimeIntervalKeyword_0_0; }
-
-		//{mtctl::TimeIntervalExpr}
-		public Action getTimeIntervalExprAction_0_1() { return cTimeIntervalExprAction_0_1; }
-
-		//lhs=ImplyExpr
-		public Assignment getLhsAssignment_0_2() { return cLhsAssignment_0_2; }
-
-		//ImplyExpr
-		public RuleCall getLhsImplyExprParserRuleCall_0_2_0() { return cLhsImplyExprParserRuleCall_0_2_0; }
-
-		//"["
-		public Keyword getLeftSquareBracketKeyword_0_3() { return cLeftSquareBracketKeyword_0_3; }
-
-		//lower=INT
-		public Assignment getLowerAssignment_0_4() { return cLowerAssignment_0_4; }
-
-		//INT
-		public RuleCall getLowerINTTerminalRuleCall_0_4_0() { return cLowerINTTerminalRuleCall_0_4_0; }
-
-		//","
-		public Keyword getCommaKeyword_0_5() { return cCommaKeyword_0_5; }
-
-		//upper=INT
-		public Assignment getUpperAssignment_0_6() { return cUpperAssignment_0_6; }
-
-		//INT
-		public RuleCall getUpperINTTerminalRuleCall_0_6_0() { return cUpperINTTerminalRuleCall_0_6_0; }
-
-		//"]"
-		public Keyword getRightSquareBracketKeyword_0_7() { return cRightSquareBracketKeyword_0_7; }
-
-		//rhs=ImplyExpr
-		public Assignment getRhsAssignment_0_8() { return cRhsAssignment_0_8; }
-
-		//ImplyExpr
-		public RuleCall getRhsImplyExprParserRuleCall_0_8_0() { return cRhsImplyExprParserRuleCall_0_8_0; }
-
-		////TODO use units from action lang
-		//ImplyExpr
-		public RuleCall getImplyExprParserRuleCall_1() { return cImplyExprParserRuleCall_1; }
+		public RuleCall getRightOpdImplyExprParserRuleCall_1_2_0() { return cRightOpdImplyExprParserRuleCall_1_2_0; }
 	}
 
 	public class ImplyExprElements extends AbstractParserRuleElementFinder {
@@ -200,7 +125,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightOpdAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightOpdAndExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
 		
-		//ImplyExpr returns mtctl::Expression:
+		/// *TimeIntervalExpr returns mtctl::Expression:
+		//	'timeInterval' {mtctl::TimeIntervalExpr} lhs=ImplyExpr '[' lower=INT ',' upper=INT ']' rhs=ImplyExpr | ImplyExpr //TODO use units from action lang
+		//;* / ImplyExpr returns mtctl::Expression:
 		//	AndExpr ({mtctl::ImplyExpr.leftOpd=current} "implies" rightOpd=AndExpr)*;
 		public ParserRule getRule() { return rule; }
 
@@ -1756,7 +1683,6 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private PropertyElements pProperty;
 	private ExpressionElements pExpression;
 	private LeadsToExprElements pLeadsToExpr;
-	private TimeIntervalExprElements pTimeIntervalExpr;
 	private ImplyExprElements pImplyExpr;
 	private AndExprElements pAndExpr;
 	private OrExprElements pOrExpr;
@@ -1876,7 +1802,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Binary operators (increasing precedence)
 	//LeadsToExpr returns mtctl::Expression:
-	//	TimeIntervalExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=TimeIntervalExpr)*;
+	//	ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*;
 	public LeadsToExprElements getLeadsToExprAccess() {
 		return (pLeadsToExpr != null) ? pLeadsToExpr : (pLeadsToExpr = new LeadsToExprElements());
 	}
@@ -1885,18 +1811,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getLeadsToExprAccess().getRule();
 	}
 
-	//TimeIntervalExpr returns mtctl::Expression:
-	//	"timeInterval" {mtctl::TimeIntervalExpr} lhs=ImplyExpr "[" lower=INT "," upper=INT "]" rhs=ImplyExpr | //TODO use units from action lang
-	//	ImplyExpr;
-	public TimeIntervalExprElements getTimeIntervalExprAccess() {
-		return (pTimeIntervalExpr != null) ? pTimeIntervalExpr : (pTimeIntervalExpr = new TimeIntervalExprElements());
-	}
-	
-	public ParserRule getTimeIntervalExprRule() {
-		return getTimeIntervalExprAccess().getRule();
-	}
-
-	//ImplyExpr returns mtctl::Expression:
+	/// *TimeIntervalExpr returns mtctl::Expression:
+	//	'timeInterval' {mtctl::TimeIntervalExpr} lhs=ImplyExpr '[' lower=INT ',' upper=INT ']' rhs=ImplyExpr | ImplyExpr //TODO use units from action lang
+	//;* / ImplyExpr returns mtctl::Expression:
 	//	AndExpr ({mtctl::ImplyExpr.leftOpd=current} "implies" rightOpd=AndExpr)*;
 	public ImplyExprElements getImplyExprAccess() {
 		return (pImplyExpr != null) ? pImplyExpr : (pImplyExpr = new ImplyExprElements());

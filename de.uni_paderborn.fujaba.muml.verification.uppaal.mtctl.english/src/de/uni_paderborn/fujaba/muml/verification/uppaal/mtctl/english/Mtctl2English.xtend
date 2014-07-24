@@ -51,7 +51,7 @@ class Mtctl2English {
 		if (specialCase(expr, positive) != null)
 			return specialCase(expr, positive);
 		if (thereIs) {
-			'''there is «boundVariable(expr.^var, true)» so that «itHoldsThat(expr.formula, positive)»'''
+			'''there exists «boundVariable(expr.^var, true)» so that «itHoldsThat(expr.formula, positive)»'''
 		} else {
 			'''for all «boundVariable(expr.^var, false)» «itHoldsThat(expr.formula, positive)»'''
 		}
@@ -282,9 +282,9 @@ class Mtctl2English {
 			var leftOpd = if (expr.formula instanceof ImplyExpr) (expr.formula as ImplyExpr).leftOpd else (expr.formula as AndExpr).leftOpd;
 			var rightOpd = if (expr.formula instanceof ImplyExpr) (expr.formula as ImplyExpr).rightOpd else (expr.formula as AndExpr).rightOpd;
 			switch (leftOpd) {
-				SubstateOfExpr case leftOpd.state instanceof MumlElemExpr && (leftOpd.state as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there is a substate«ELSE»for all substates«ENDIF» «expr.^var.name» of «expr(leftOpd.superstate, true)»«IF thereIs» so that«ENDIF» «itHoldsThat(rightOpd, positive)»'''
-				SubstateOfExpr case leftOpd.superstate instanceof MumlElemExpr && (leftOpd.superstate as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there is a superstate«ELSE»for all superstates«ENDIF» «expr.^var.name» of «expr(leftOpd.state, true)»«IF thereIs» so that«ENDIF» «itHoldsThat(rightOpd, positive)»'''
-				StateInStatechartExpr case leftOpd.state instanceof MumlElemExpr && (leftOpd.state as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there is a state«ELSE»for all states«ENDIF» «expr.^var.name» in «expr(leftOpd.statechart, true)»«IF thereIs» so that«ENDIF» «itHoldsThat(rightOpd, positive)»'''
+				SubstateOfExpr case leftOpd.state instanceof MumlElemExpr && (leftOpd.state as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there exists a substate«ELSE»for all substates«ENDIF» «expr.^var.name» of «expr(leftOpd.superstate, true)»«IF thereIs» so that«ENDIF» «itHoldsThat(rightOpd, positive)»'''
+				SubstateOfExpr case leftOpd.superstate instanceof MumlElemExpr && (leftOpd.superstate as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there exists a superstate«ELSE»for all superstates«ENDIF» «expr.^var.name» of «expr(leftOpd.state, true)»«IF thereIs» so that«ENDIF» «itHoldsThat(rightOpd, positive)»'''
+				StateInStatechartExpr case leftOpd.state instanceof MumlElemExpr && (leftOpd.state as MumlElemExpr).elem == expr.^var: '''«IF thereIs»there exists a state«ELSE»for all states«ENDIF» «expr.^var.name» in «expr(leftOpd.statechart, true)»«IF thereIs» so that«ENDIF» «itHoldsThat(rightOpd, positive)»'''
 				default: return null
 			}
 		} else
@@ -292,7 +292,7 @@ class Mtctl2English {
 	}
 	
 	def itHoldsThat(Expression expr, boolean positive) {
-		if (expr instanceof TemporalQuantifierExpr || expr.eContainer() instanceof TemporalQuantifierExpr)
+		if (expr instanceof TemporalQuantifierExpr || expr.eContainer() instanceof TemporalQuantifierExpr || expr instanceof QuantifierExpr || expr instanceof NotExpr)
 			 '''«expr(expr, positive)»'''
 		else
 			'''it holds that «expr(expr, positive)»'''

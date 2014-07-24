@@ -220,11 +220,11 @@ ruleLeadsToExpr returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getLeadsToExprAccess().getTimeIntervalExprParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getLeadsToExprAccess().getImplyExprParserRuleCall_0()); 
     }
-    this_TimeIntervalExpr_0=ruleTimeIntervalExpr
+    this_ImplyExpr_0=ruleImplyExpr
     { 
-        $current = $this_TimeIntervalExpr_0.current; 
+        $current = $this_ImplyExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
 ((
@@ -240,9 +240,9 @@ ruleLeadsToExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLeadsToExprAccess().getRightOpdTimeIntervalExprParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getLeadsToExprAccess().getRightOpdImplyExprParserRuleCall_1_2_0()); 
 	    }
-		lv_rightOpd_3_0=ruleTimeIntervalExpr		{
+		lv_rightOpd_3_0=ruleImplyExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLeadsToExprRule());
 	        }
@@ -250,137 +250,12 @@ ruleLeadsToExpr returns [EObject current=null]
        			$current, 
        			"rightOpd",
         		lv_rightOpd_3_0, 
-        		"TimeIntervalExpr");
+        		"ImplyExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 ))*)
-;
-
-
-
-
-
-// Entry rule entryRuleTimeIntervalExpr
-entryRuleTimeIntervalExpr returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getTimeIntervalExprRule()); }
-	 iv_ruleTimeIntervalExpr=ruleTimeIntervalExpr 
-	 { $current=$iv_ruleTimeIntervalExpr.current; } 
-	 EOF 
-;
-
-// Rule TimeIntervalExpr
-ruleTimeIntervalExpr returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((	otherlv_0='timeInterval' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getTimeIntervalExprAccess().getTimeIntervalKeyword_0_0());
-    }
-(
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1(),
-            $current);
-    }
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getTimeIntervalExprAccess().getLhsImplyExprParserRuleCall_0_2_0()); 
-	    }
-		lv_lhs_2_0=ruleImplyExpr		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTimeIntervalExprRule());
-	        }
-       		set(
-       			$current, 
-       			"lhs",
-        		lv_lhs_2_0, 
-        		"ImplyExpr");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_3='[' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getTimeIntervalExprAccess().getLeftSquareBracketKeyword_0_3());
-    }
-(
-(
-		lv_lower_4_0=RULE_INT
-		{
-			newLeafNode(lv_lower_4_0, grammarAccess.getTimeIntervalExprAccess().getLowerINTTerminalRuleCall_0_4_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTimeIntervalExprRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"lower",
-        		lv_lower_4_0, 
-        		"INT");
-	    }
-
-)
-)	otherlv_5=',' 
-    {
-    	newLeafNode(otherlv_5, grammarAccess.getTimeIntervalExprAccess().getCommaKeyword_0_5());
-    }
-(
-(
-		lv_upper_6_0=RULE_INT
-		{
-			newLeafNode(lv_upper_6_0, grammarAccess.getTimeIntervalExprAccess().getUpperINTTerminalRuleCall_0_6_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTimeIntervalExprRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"upper",
-        		lv_upper_6_0, 
-        		"INT");
-	    }
-
-)
-)	otherlv_7=']' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getTimeIntervalExprAccess().getRightSquareBracketKeyword_0_7());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getTimeIntervalExprAccess().getRhsImplyExprParserRuleCall_0_8_0()); 
-	    }
-		lv_rhs_8_0=ruleImplyExpr		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTimeIntervalExprRule());
-	        }
-       		set(
-       			$current, 
-       			"rhs",
-        		lv_rhs_8_0, 
-        		"ImplyExpr");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-    |
-    { 
-        newCompositeNode(grammarAccess.getTimeIntervalExprAccess().getImplyExprParserRuleCall_1()); 
-    }
-    this_ImplyExpr_9=ruleImplyExpr
-    { 
-        $current = $this_ImplyExpr_9.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
 ;
 
 

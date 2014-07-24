@@ -37,7 +37,6 @@ public class MtctlParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getTimeIntervalExprAccess().getAlternatives(), "rule__TimeIntervalExpr__Alternatives");
 					put(grammarAccess.getNotExprAccess().getAlternatives(), "rule__NotExpr__Alternatives");
 					put(grammarAccess.getQuantifierExprAccess().getAlternatives(), "rule__QuantifierExpr__Alternatives");
 					put(grammarAccess.getTemporalQuantifierExprAccess().getAlternatives(), "rule__TemporalQuantifierExpr__Alternatives");
@@ -58,7 +57,6 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPropertyAccess().getGroup(), "rule__Property__Group__0");
 					put(grammarAccess.getLeadsToExprAccess().getGroup(), "rule__LeadsToExpr__Group__0");
 					put(grammarAccess.getLeadsToExprAccess().getGroup_1(), "rule__LeadsToExpr__Group_1__0");
-					put(grammarAccess.getTimeIntervalExprAccess().getGroup_0(), "rule__TimeIntervalExpr__Group_0__0");
 					put(grammarAccess.getImplyExprAccess().getGroup(), "rule__ImplyExpr__Group__0");
 					put(grammarAccess.getImplyExprAccess().getGroup_1(), "rule__ImplyExpr__Group_1__0");
 					put(grammarAccess.getAndExprAccess().getGroup(), "rule__AndExpr__Group__0");
@@ -105,10 +103,6 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPropertyAccess().getExpressionAssignment_0(), "rule__Property__ExpressionAssignment_0");
 					put(grammarAccess.getPropertyAccess().getCommentAssignment_2(), "rule__Property__CommentAssignment_2");
 					put(grammarAccess.getLeadsToExprAccess().getRightOpdAssignment_1_2(), "rule__LeadsToExpr__RightOpdAssignment_1_2");
-					put(grammarAccess.getTimeIntervalExprAccess().getLhsAssignment_0_2(), "rule__TimeIntervalExpr__LhsAssignment_0_2");
-					put(grammarAccess.getTimeIntervalExprAccess().getLowerAssignment_0_4(), "rule__TimeIntervalExpr__LowerAssignment_0_4");
-					put(grammarAccess.getTimeIntervalExprAccess().getUpperAssignment_0_6(), "rule__TimeIntervalExpr__UpperAssignment_0_6");
-					put(grammarAccess.getTimeIntervalExprAccess().getRhsAssignment_0_8(), "rule__TimeIntervalExpr__RhsAssignment_0_8");
 					put(grammarAccess.getImplyExprAccess().getRightOpdAssignment_1_2(), "rule__ImplyExpr__RightOpdAssignment_1_2");
 					put(grammarAccess.getAndExprAccess().getRightOpdAssignment_1_2(), "rule__AndExpr__RightOpdAssignment_1_2");
 					put(grammarAccess.getOrExprAccess().getRightOpdAssignment_1_2(), "rule__OrExpr__RightOpdAssignment_1_2");

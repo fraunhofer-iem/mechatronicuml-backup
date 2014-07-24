@@ -34,51 +34,50 @@ protected class ThisRootNode extends RootToken {
 			case 1: return new Property_Group(this, this, 1, inst);
 			case 2: return new Expression_LeadsToExprParserRuleCall(this, this, 2, inst);
 			case 3: return new LeadsToExpr_Group(this, this, 3, inst);
-			case 4: return new TimeIntervalExpr_Alternatives(this, this, 4, inst);
-			case 5: return new ImplyExpr_Group(this, this, 5, inst);
-			case 6: return new AndExpr_Group(this, this, 6, inst);
-			case 7: return new OrExpr_Group(this, this, 7, inst);
-			case 8: return new NotExpr_Alternatives(this, this, 8, inst);
-			case 9: return new QuantifierExpr_Alternatives(this, this, 9, inst);
-			case 10: return new UniversalQuantExpr_Group(this, this, 10, inst);
-			case 11: return new ExistentialQuantExpr_Group(this, this, 11, inst);
-			case 12: return new VariableBinding_Group(this, this, 12, inst);
-			case 13: return new TemporalQuantifierExpr_Alternatives(this, this, 13, inst);
-			case 14: return new EFExpr_Group(this, this, 14, inst);
-			case 15: return new AFExpr_Group(this, this, 15, inst);
-			case 16: return new EGExpr_Group(this, this, 16, inst);
-			case 17: return new AGExpr_Group(this, this, 17, inst);
-			case 18: return new AtomExpr_Alternatives(this, this, 18, inst);
-			case 19: return new PredicateExpr_Alternatives(this, this, 19, inst);
-			case 20: return new DeadlockExpr_Group(this, this, 20, inst);
-			case 21: return new BufferOverflowExpr_Group(this, this, 21, inst);
-			case 22: return new TrueExpr_Group(this, this, 22, inst);
-			case 23: return new FalseExpr_Group(this, this, 23, inst);
-			case 24: return new StateExpr_Alternatives(this, this, 24, inst);
-			case 25: return new StateActiveExpr_Group(this, this, 25, inst);
-			case 26: return new SubstateOfExpr_Group(this, this, 26, inst);
-			case 27: return new StateInStatechartExpr_Group(this, this, 27, inst);
-			case 28: return new MessageExpr_Alternatives(this, this, 28, inst);
-			case 29: return new MessageInTransitExpr_Group(this, this, 29, inst);
-			case 30: return new MessageInBufferExpr_Group(this, this, 30, inst);
-			case 31: return new TransitionExpr_TransitionFiringExprParserRuleCall(this, this, 31, inst);
-			case 32: return new TransitionFiringExpr_Group(this, this, 32, inst);
-			case 33: return new ComparisonExpr_Group(this, this, 33, inst);
-			case 34: return new MapExpr_Alternatives(this, this, 34, inst);
-			case 35: return new IntegerMapExpr_Alternatives(this, this, 35, inst);
-			case 36: return new TransitionMapExpr_MumlElemExprParserRuleCall(this, this, 36, inst);
-			case 37: return new StateMapExpr_Alternatives(this, this, 37, inst);
-			case 38: return new StatechartMapExpr_MumlElemExprParserRuleCall(this, this, 38, inst);
-			case 39: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 39, inst);
-			case 40: return new MessageMapExpr_MumlElemExprParserRuleCall(this, this, 40, inst);
-			case 41: return new BufferMessageCountExpr_Group(this, this, 41, inst);
-			case 42: return new SourceStateExpr_Group(this, this, 42, inst);
-			case 43: return new TargetStateExpr_Group(this, this, 43, inst);
-			case 44: return new MumlElemExpr_Group(this, this, 44, inst);
-			case 45: return new ConstExpr_Group(this, this, 45, inst);
-			case 46: return new SetExpr_Alternatives(this, this, 46, inst);
-			case 47: return new IntervalSetExpr_Group(this, this, 47, inst);
-			case 48: return new InstanceSetExpr_Group(this, this, 48, inst);
+			case 4: return new ImplyExpr_Group(this, this, 4, inst);
+			case 5: return new AndExpr_Group(this, this, 5, inst);
+			case 6: return new OrExpr_Group(this, this, 6, inst);
+			case 7: return new NotExpr_Alternatives(this, this, 7, inst);
+			case 8: return new QuantifierExpr_Alternatives(this, this, 8, inst);
+			case 9: return new UniversalQuantExpr_Group(this, this, 9, inst);
+			case 10: return new ExistentialQuantExpr_Group(this, this, 10, inst);
+			case 11: return new VariableBinding_Group(this, this, 11, inst);
+			case 12: return new TemporalQuantifierExpr_Alternatives(this, this, 12, inst);
+			case 13: return new EFExpr_Group(this, this, 13, inst);
+			case 14: return new AFExpr_Group(this, this, 14, inst);
+			case 15: return new EGExpr_Group(this, this, 15, inst);
+			case 16: return new AGExpr_Group(this, this, 16, inst);
+			case 17: return new AtomExpr_Alternatives(this, this, 17, inst);
+			case 18: return new PredicateExpr_Alternatives(this, this, 18, inst);
+			case 19: return new DeadlockExpr_Group(this, this, 19, inst);
+			case 20: return new BufferOverflowExpr_Group(this, this, 20, inst);
+			case 21: return new TrueExpr_Group(this, this, 21, inst);
+			case 22: return new FalseExpr_Group(this, this, 22, inst);
+			case 23: return new StateExpr_Alternatives(this, this, 23, inst);
+			case 24: return new StateActiveExpr_Group(this, this, 24, inst);
+			case 25: return new SubstateOfExpr_Group(this, this, 25, inst);
+			case 26: return new StateInStatechartExpr_Group(this, this, 26, inst);
+			case 27: return new MessageExpr_Alternatives(this, this, 27, inst);
+			case 28: return new MessageInTransitExpr_Group(this, this, 28, inst);
+			case 29: return new MessageInBufferExpr_Group(this, this, 29, inst);
+			case 30: return new TransitionExpr_TransitionFiringExprParserRuleCall(this, this, 30, inst);
+			case 31: return new TransitionFiringExpr_Group(this, this, 31, inst);
+			case 32: return new ComparisonExpr_Group(this, this, 32, inst);
+			case 33: return new MapExpr_Alternatives(this, this, 33, inst);
+			case 34: return new IntegerMapExpr_Alternatives(this, this, 34, inst);
+			case 35: return new TransitionMapExpr_MumlElemExprParserRuleCall(this, this, 35, inst);
+			case 36: return new StateMapExpr_Alternatives(this, this, 36, inst);
+			case 37: return new StatechartMapExpr_MumlElemExprParserRuleCall(this, this, 37, inst);
+			case 38: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 38, inst);
+			case 39: return new MessageMapExpr_MumlElemExprParserRuleCall(this, this, 39, inst);
+			case 40: return new BufferMessageCountExpr_Group(this, this, 40, inst);
+			case 41: return new SourceStateExpr_Group(this, this, 41, inst);
+			case 42: return new TargetStateExpr_Group(this, this, 42, inst);
+			case 43: return new MumlElemExpr_Group(this, this, 43, inst);
+			case 44: return new ConstExpr_Group(this, this, 44, inst);
+			case 45: return new SetExpr_Alternatives(this, this, 45, inst);
+			case 46: return new IntervalSetExpr_Group(this, this, 46, inst);
+			case 47: return new InstanceSetExpr_Group(this, this, 47, inst);
 			default: return null;
 		}	
 	}	
@@ -331,7 +330,6 @@ protected class Expression_LeadsToExprParserRuleCall extends RuleCallToken {
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
@@ -355,11 +353,11 @@ protected class Expression_LeadsToExprParserRuleCall extends RuleCallToken {
  *
  * //Binary operators (increasing precedence)
  * LeadsToExpr returns mtctl::Expression:
- * 	TimeIntervalExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=TimeIntervalExpr)*;
+ * 	ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*;
  *
  **/
 
-// TimeIntervalExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=TimeIntervalExpr)*
+// ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*
 protected class LeadsToExpr_Group extends GroupToken {
 	
 	public LeadsToExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -375,7 +373,7 @@ protected class LeadsToExpr_Group extends GroupToken {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new LeadsToExpr_Group_1(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new LeadsToExpr_TimeIntervalExprParserRuleCall_0(lastRuleCallOrigin, this, 1, inst);
+			case 1: return new LeadsToExpr_ImplyExprParserRuleCall_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -401,7 +399,6 @@ protected class LeadsToExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
@@ -411,29 +408,29 @@ protected class LeadsToExpr_Group extends GroupToken {
 
 }
 
-// TimeIntervalExpr
-protected class LeadsToExpr_TimeIntervalExprParserRuleCall_0 extends RuleCallToken {
+// ImplyExpr
+protected class LeadsToExpr_ImplyExprParserRuleCall_0 extends RuleCallToken {
 	
-	public LeadsToExpr_TimeIntervalExprParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public LeadsToExpr_ImplyExprParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getLeadsToExprAccess().getTimeIntervalExprParserRuleCall_0();
+		return grammarAccess.getLeadsToExprAccess().getImplyExprParserRuleCall_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new TimeIntervalExpr_Alternatives(this, this, 0, inst);
+			case 0: return new ImplyExpr_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(checkForRecursion(TimeIntervalExpr_Alternatives.class, eObjectConsumer)) return null;
+		if(checkForRecursion(ImplyExpr_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -445,7 +442,7 @@ protected class LeadsToExpr_TimeIntervalExprParserRuleCall_0 extends RuleCallTok
 	}	
 }
 
-// ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=TimeIntervalExpr)*
+// ({mtctl::LeadsToExpr.leftOpd=current} "leadsTo" rightOpd=ImplyExpr)*
 protected class LeadsToExpr_Group_1 extends GroupToken {
 	
 	public LeadsToExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -490,7 +487,7 @@ protected class LeadsToExpr_LeadsToExprLeftOpdAction_1_0 extends ActionToken  {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new LeadsToExpr_Group_1(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new LeadsToExpr_TimeIntervalExprParserRuleCall_0(lastRuleCallOrigin, this, 1, inst);
+			case 1: return new LeadsToExpr_ImplyExprParserRuleCall_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -526,7 +523,7 @@ protected class LeadsToExpr_LeadsToKeyword_1_1 extends KeywordToken  {
 
 }
 
-// rightOpd=TimeIntervalExpr
+// rightOpd=ImplyExpr
 protected class LeadsToExpr_RightOpdAssignment_1_2 extends AssignmentToken  {
 	
 	public LeadsToExpr_RightOpdAssignment_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -541,7 +538,7 @@ protected class LeadsToExpr_RightOpdAssignment_1_2 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new TimeIntervalExpr_Alternatives(this, this, 0, inst);
+			case 0: return new ImplyExpr_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -552,9 +549,9 @@ protected class LeadsToExpr_RightOpdAssignment_1_2 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("rightOpd");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getTimeIntervalExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getImplyExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getLeadsToExprAccess().getRightOpdTimeIntervalExprParserRuleCall_1_2_0(); 
+				element = grammarAccess.getLeadsToExprAccess().getRightOpdImplyExprParserRuleCall_1_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -577,413 +574,11 @@ protected class LeadsToExpr_RightOpdAssignment_1_2 extends AssignmentToken  {
 /************ end Rule LeadsToExpr ****************/
 
 
-/************ begin Rule TimeIntervalExpr ****************
- *
- * TimeIntervalExpr returns mtctl::Expression:
- * 	"timeInterval" {mtctl::TimeIntervalExpr} lhs=ImplyExpr "[" lower=INT "," upper=INT "]" rhs=ImplyExpr | //TODO use units from action lang
- * 	ImplyExpr;
- *
- **/
-
-// "timeInterval" {mtctl::TimeIntervalExpr} lhs=ImplyExpr "[" lower=INT "," upper=INT "]" rhs=ImplyExpr | //TODO use units from action lang
-// ImplyExpr
-protected class TimeIntervalExpr_Alternatives extends AlternativesToken {
-
-	public TimeIntervalExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Alternatives getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getAlternatives();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TimeIntervalExpr_Group_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new TimeIntervalExpr_ImplyExprParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getAFExprAccess().getAFExprAction_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getAGExprAccess().getAGExprAction_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getAndExprAccess().getAndExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getComparisonExprAccess().getComparisonExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getDeadlockExprAccess().getDeadlockExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getEFExprAccess().getEFExprAction_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getEGExprAccess().getEGExprAction_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
-			return null;
-		return eObjectConsumer;
-	}
-
-}
-
-// "timeInterval" {mtctl::TimeIntervalExpr} lhs=ImplyExpr "[" lower=INT "," upper=INT "]" rhs=ImplyExpr
-protected class TimeIntervalExpr_Group_0 extends GroupToken {
-	
-	public TimeIntervalExpr_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Group getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getGroup_0();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TimeIntervalExpr_RhsAssignment_0_8(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier())
-			return null;
-		return eObjectConsumer;
-	}
-
-}
-
-// "timeInterval"
-protected class TimeIntervalExpr_TimeIntervalKeyword_0_0 extends KeywordToken  {
-	
-	public TimeIntervalExpr_TimeIntervalKeyword_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getTimeIntervalKeyword_0_0();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
-		}	
-	}
-
-}
-
-// {mtctl::TimeIntervalExpr}
-protected class TimeIntervalExpr_TimeIntervalExprAction_0_1 extends ActionToken  {
-
-	public TimeIntervalExpr_TimeIntervalExprAction_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Action getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TimeIntervalExpr_TimeIntervalKeyword_0_0(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(!eObjectConsumer.isConsumed()) return null;
-		return eObjectConsumer;
-	}
-}
-
-// lhs=ImplyExpr
-protected class TimeIntervalExpr_LhsAssignment_0_2 extends AssignmentToken  {
-	
-	public TimeIntervalExpr_LhsAssignment_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getLhsAssignment_0_2();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new ImplyExpr_Group(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("lhs",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("lhs");
-		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
-			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getImplyExprRule().getType().getClassifier())) {
-				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getTimeIntervalExprAccess().getLhsImplyExprParserRuleCall_0_2_0(); 
-				consumed = obj;
-				return param;
-			}
-		}
-		return null;
-	}
-
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		if(value == inst.getEObject() && !inst.isConsumed()) return null;
-		switch(index) {
-			case 0: return new TimeIntervalExpr_TimeIntervalExprAction_0_1(lastRuleCallOrigin, next, actIndex, consumed);
-			default: return null;
-		}	
-	}	
-}
-
-// "["
-protected class TimeIntervalExpr_LeftSquareBracketKeyword_0_3 extends KeywordToken  {
-	
-	public TimeIntervalExpr_LeftSquareBracketKeyword_0_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getLeftSquareBracketKeyword_0_3();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TimeIntervalExpr_LhsAssignment_0_2(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-}
-
-// lower=INT
-protected class TimeIntervalExpr_LowerAssignment_0_4 extends AssignmentToken  {
-	
-	public TimeIntervalExpr_LowerAssignment_0_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getLowerAssignment_0_4();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TimeIntervalExpr_LeftSquareBracketKeyword_0_3(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("lower",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("lower");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getTimeIntervalExprAccess().getLowerINTTerminalRuleCall_0_4_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getTimeIntervalExprAccess().getLowerINTTerminalRuleCall_0_4_0();
-			return obj;
-		}
-		return null;
-	}
-
-}
-
-// ","
-protected class TimeIntervalExpr_CommaKeyword_0_5 extends KeywordToken  {
-	
-	public TimeIntervalExpr_CommaKeyword_0_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getCommaKeyword_0_5();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TimeIntervalExpr_LowerAssignment_0_4(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-}
-
-// upper=INT
-protected class TimeIntervalExpr_UpperAssignment_0_6 extends AssignmentToken  {
-	
-	public TimeIntervalExpr_UpperAssignment_0_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getUpperAssignment_0_6();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TimeIntervalExpr_CommaKeyword_0_5(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("upper",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("upper");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getTimeIntervalExprAccess().getUpperINTTerminalRuleCall_0_6_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getTimeIntervalExprAccess().getUpperINTTerminalRuleCall_0_6_0();
-			return obj;
-		}
-		return null;
-	}
-
-}
-
-// "]"
-protected class TimeIntervalExpr_RightSquareBracketKeyword_0_7 extends KeywordToken  {
-	
-	public TimeIntervalExpr_RightSquareBracketKeyword_0_7(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getRightSquareBracketKeyword_0_7();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TimeIntervalExpr_UpperAssignment_0_6(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-}
-
-// rhs=ImplyExpr
-protected class TimeIntervalExpr_RhsAssignment_0_8 extends AssignmentToken  {
-	
-	public TimeIntervalExpr_RhsAssignment_0_8(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getRhsAssignment_0_8();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new ImplyExpr_Group(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("rhs",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("rhs");
-		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
-			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getImplyExprRule().getType().getClassifier())) {
-				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getTimeIntervalExprAccess().getRhsImplyExprParserRuleCall_0_8_0(); 
-				consumed = obj;
-				return param;
-			}
-		}
-		return null;
-	}
-
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		if(value == inst.getEObject() && !inst.isConsumed()) return null;
-		switch(index) {
-			case 0: return new TimeIntervalExpr_RightSquareBracketKeyword_0_7(lastRuleCallOrigin, next, actIndex, consumed);
-			default: return null;
-		}	
-	}	
-}
-
-
-// //TODO use units from action lang
-// ImplyExpr
-protected class TimeIntervalExpr_ImplyExprParserRuleCall_1 extends RuleCallToken {
-	
-	public TimeIntervalExpr_ImplyExprParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public RuleCall getGrammarElement() {
-		return grammarAccess.getTimeIntervalExprAccess().getImplyExprParserRuleCall_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new ImplyExpr_Group(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(checkForRecursion(ImplyExpr_Group.class, eObjectConsumer)) return null;
-		return eObjectConsumer;
-	}
-	
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
-		}	
-	}	
-}
-
-
-/************ end Rule TimeIntervalExpr ****************/
-
-
 /************ begin Rule ImplyExpr ****************
  *
- * ImplyExpr returns mtctl::Expression:
+ * / *TimeIntervalExpr returns mtctl::Expression:
+ * 	'timeInterval' {mtctl::TimeIntervalExpr} lhs=ImplyExpr '[' lower=INT ',' upper=INT ']' rhs=ImplyExpr | ImplyExpr //TODO use units from action lang
+ * ;* / ImplyExpr returns mtctl::Expression:
  * 	AndExpr ({mtctl::ImplyExpr.leftOpd=current} "implies" rightOpd=AndExpr)*;
  *
  **/
@@ -1030,7 +625,6 @@ protected class ImplyExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
@@ -1255,7 +849,6 @@ protected class AndExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
@@ -1480,7 +1073,6 @@ protected class OrExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
@@ -1706,7 +1298,6 @@ protected class NotExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
@@ -1929,7 +1520,6 @@ protected class QuantifierExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
@@ -3546,7 +3136,6 @@ protected class AtomExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateInStatechartExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())

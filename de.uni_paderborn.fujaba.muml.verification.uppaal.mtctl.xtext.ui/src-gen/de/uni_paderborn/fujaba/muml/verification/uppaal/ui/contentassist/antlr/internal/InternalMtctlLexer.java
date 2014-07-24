@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class InternalMtctlLexer extends Lexer {
     public static final int RULE_ID=4;
     public static final int T__66=66;
-    public static final int T__67=67;
     public static final int T__29=29;
     public static final int T__64=64;
     public static final int T__28=28;
@@ -576,10 +575,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:34:7: ( 'timeInterval' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:34:9: 'timeInterval'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:34:7: ( 'implies' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:34:9: 'implies'
             {
-            match("timeInterval"); 
+            match("implies"); 
 
 
             }
@@ -597,10 +596,11 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:35:7: ( '[' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:35:9: '['
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:35:7: ( 'and' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:35:9: 'and'
             {
-            match('['); 
+            match("and"); 
+
 
             }
 
@@ -617,10 +617,11 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:36:7: ( ',' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:36:9: ','
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:36:7: ( 'or' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:36:9: 'or'
             {
-            match(','); 
+            match("or"); 
+
 
             }
 
@@ -637,10 +638,11 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:37:7: ( ']' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:37:9: ']'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:37:7: ( 'not' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:37:9: 'not'
             {
-            match(']'); 
+            match("not"); 
+
 
             }
 
@@ -657,10 +659,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:38:7: ( 'implies' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:38:9: 'implies'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:38:7: ( 'forall' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:38:9: 'forall'
             {
-            match("implies"); 
+            match("forall"); 
 
 
             }
@@ -678,11 +680,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:39:7: ( 'and' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:39:9: 'and'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:39:7: ( '(' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:39:9: '('
             {
-            match("and"); 
-
+            match('('); 
 
             }
 
@@ -699,11 +700,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:40:7: ( 'or' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:40:9: 'or'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:40:7: ( ')' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:40:9: ')'
             {
-            match("or"); 
-
+            match(')'); 
 
             }
 
@@ -720,10 +720,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:41:7: ( 'not' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:41:9: 'not'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:41:7: ( 'exists' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:41:9: 'exists'
             {
-            match("not"); 
+            match("exists"); 
 
 
             }
@@ -741,11 +741,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:42:7: ( 'forall' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:42:9: 'forall'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:42:7: ( ':' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:42:9: ':'
             {
-            match("forall"); 
-
+            match(':'); 
 
             }
 
@@ -762,10 +761,11 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:43:7: ( '(' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:43:9: '('
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:43:7: ( 'deadlock' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:43:9: 'deadlock'
             {
-            match('('); 
+            match("deadlock"); 
+
 
             }
 
@@ -782,10 +782,11 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:44:7: ( ')' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:44:9: ')'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:44:7: ( 'bufferOverflow' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:44:9: 'bufferOverflow'
             {
-            match(')'); 
+            match("bufferOverflow"); 
+
 
             }
 
@@ -802,10 +803,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:45:7: ( 'exists' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:45:9: 'exists'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:45:7: ( 'true' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:45:9: 'true'
             {
-            match("exists"); 
+            match("true"); 
 
 
             }
@@ -823,10 +824,11 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:46:7: ( ':' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:46:9: ':'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:46:7: ( 'false' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:46:9: 'false'
             {
-            match(':'); 
+            match("false"); 
+
 
             }
 
@@ -843,10 +845,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:47:7: ( 'deadlock' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:47:9: 'deadlock'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:47:7: ( 'stateActive' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:47:9: 'stateActive'
             {
-            match("deadlock"); 
+            match("stateActive"); 
 
 
             }
@@ -864,10 +866,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:48:7: ( 'bufferOverflow' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:48:9: 'bufferOverflow'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:48:7: ( 'substateOf' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:48:9: 'substateOf'
             {
-            match("bufferOverflow"); 
+            match("substateOf"); 
 
 
             }
@@ -885,11 +887,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:49:7: ( 'true' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:49:9: 'true'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:49:7: ( ',' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:49:9: ','
             {
-            match("true"); 
-
+            match(','); 
 
             }
 
@@ -906,10 +907,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:50:7: ( 'false' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:50:9: 'false'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:50:7: ( 'stateInStatechart' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:50:9: 'stateInStatechart'
             {
-            match("false"); 
+            match("stateInStatechart"); 
 
 
             }
@@ -927,10 +928,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:51:7: ( 'stateActive' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:51:9: 'stateActive'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:51:7: ( 'messageInTransit' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:51:9: 'messageInTransit'
             {
-            match("stateActive"); 
+            match("messageInTransit"); 
 
 
             }
@@ -948,10 +949,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:52:7: ( 'substateOf' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:52:9: 'substateOf'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:52:7: ( 'messageInBuffer' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:52:9: 'messageInBuffer'
             {
-            match("substateOf"); 
+            match("messageInBuffer"); 
 
 
             }
@@ -969,10 +970,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:53:7: ( 'stateInStatechart' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:53:9: 'stateInStatechart'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:53:7: ( 'transitionFiring' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:53:9: 'transitionFiring'
             {
-            match("stateInStatechart"); 
+            match("transitionFiring"); 
 
 
             }
@@ -990,10 +991,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:54:7: ( 'messageInTransit' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:54:9: 'messageInTransit'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:54:7: ( 'bufferMessageCount' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:54:9: 'bufferMessageCount'
             {
-            match("messageInTransit"); 
+            match("bufferMessageCount"); 
 
 
             }
@@ -1011,10 +1012,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:55:7: ( 'messageInBuffer' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:55:9: 'messageInBuffer'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:55:7: ( 'sourceState' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:55:9: 'sourceState'
             {
-            match("messageInBuffer"); 
+            match("sourceState"); 
 
 
             }
@@ -1032,10 +1033,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:56:7: ( 'transitionFiring' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:56:9: 'transitionFiring'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:56:7: ( 'targetState' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:56:9: 'targetState'
             {
-            match("transitionFiring"); 
+            match("targetState"); 
 
 
             }
@@ -1053,11 +1054,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:57:7: ( 'bufferMessageCount' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:57:9: 'bufferMessageCount'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:57:7: ( '[' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:57:9: '['
             {
-            match("bufferMessageCount"); 
-
+            match('['); 
 
             }
 
@@ -1074,11 +1074,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:58:7: ( 'sourceState' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:58:9: 'sourceState'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:58:7: ( ']' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:58:9: ']'
             {
-            match("sourceState"); 
-
+            match(']'); 
 
             }
 
@@ -1095,10 +1094,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:59:7: ( 'targetState' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:59:9: 'targetState'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:59:7: ( 'States' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:59:9: 'States'
             {
-            match("targetState"); 
+            match("States"); 
 
 
             }
@@ -1116,10 +1115,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:60:7: ( 'States' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:60:9: 'States'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:60:7: ( 'Transitions' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:60:9: 'Transitions'
             {
-            match("States"); 
+            match("Transitions"); 
 
 
             }
@@ -1137,10 +1136,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:61:7: ( 'Transitions' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:61:9: 'Transitions'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:61:7: ( 'MessageTypes' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:61:9: 'MessageTypes'
             {
-            match("Transitions"); 
+            match("MessageTypes"); 
 
 
             }
@@ -1158,10 +1157,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:62:7: ( 'MessageTypes' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:62:9: 'MessageTypes'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:62:7: ( 'Clocks' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:62:9: 'Clocks'
             {
-            match("MessageTypes"); 
+            match("Clocks"); 
 
 
             }
@@ -1179,10 +1178,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:63:7: ( 'Clocks' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:63:9: 'Clocks'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:63:7: ( 'Buffers' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:63:9: 'Buffers'
             {
-            match("Clocks"); 
+            match("Buffers"); 
 
 
             }
@@ -1200,10 +1199,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:64:7: ( 'Buffers' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:64:9: 'Buffers'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:64:7: ( 'Instances' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:64:9: 'Instances'
             {
-            match("Buffers"); 
+            match("Instances"); 
 
 
             }
@@ -1221,11 +1220,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:65:7: ( 'Instances' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:65:9: 'Instances'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:65:7: ( '.' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:65:9: '.'
             {
-            match("Instances"); 
-
+            match('.'); 
 
             }
 
@@ -1242,28 +1240,8 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:66:7: ( '.' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:66:9: '.'
-            {
-            match('.'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__66"
-
-    // $ANTLR start "T__67"
-    public final void mT__67() throws RecognitionException {
-        try {
-            int _type = T__67;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:67:7: ( '-' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:67:9: '-'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:66:7: ( '-' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:66:9: '-'
             {
             match('-'); 
 
@@ -1275,17 +1253,17 @@ public class InternalMtctlLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__67"
+    // $ANTLR end "T__66"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7655:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7655:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7257:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7257:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7655:11: ( '^' )?
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7257:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1294,7 +1272,7 @@ public class InternalMtctlLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7655:11: '^'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7257:11: '^'
                     {
                     match('^'); 
 
@@ -1312,7 +1290,7 @@ public class InternalMtctlLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7655:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7257:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1361,10 +1339,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7657:10: ( ( '0' .. '9' )+ )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7657:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7259:10: ( ( '0' .. '9' )+ )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7259:12: ( '0' .. '9' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7657:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7259:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1378,7 +1356,7 @@ public class InternalMtctlLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7657:13: '0' .. '9'
+            	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7259:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1410,10 +1388,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1431,10 +1409,10 @@ public class InternalMtctlLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1450,7 +1428,7 @@ public class InternalMtctlLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1466,7 +1444,7 @@ public class InternalMtctlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1491,10 +1469,10 @@ public class InternalMtctlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1510,7 +1488,7 @@ public class InternalMtctlLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1526,7 +1504,7 @@ public class InternalMtctlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7659:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7261:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1569,12 +1547,12 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7661:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7661:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7263:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7263:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7661:24: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7263:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1599,7 +1577,7 @@ public class InternalMtctlLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7661:52: .
+            	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7263:52: .
             	    {
             	    matchAny(); 
 
@@ -1629,12 +1607,12 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7663:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7663:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7265:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7265:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7663:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7265:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1647,7 +1625,7 @@ public class InternalMtctlLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7663:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7265:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1667,7 +1645,7 @@ public class InternalMtctlLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7663:40: ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7265:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1676,9 +1654,9 @@ public class InternalMtctlLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7663:41: ( '\\r' )? '\\n'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7265:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7663:41: ( '\\r' )?
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7265:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1687,7 +1665,7 @@ public class InternalMtctlLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7663:41: '\\r'
+                            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7265:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1719,10 +1697,10 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7665:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7665:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7267:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7267:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7665:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7267:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1776,8 +1754,8 @@ public class InternalMtctlLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7667:16: ( . )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7667:18: .
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7269:16: ( . )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:7269:18: .
             {
             matchAny(); 
 
@@ -1792,8 +1770,8 @@ public class InternalMtctlLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=64;
+        // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=63;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -2189,56 +2167,49 @@ public class InternalMtctlLexer extends Lexer {
                 }
                 break;
             case 57 :
-                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:346: T__67
-                {
-                mT__67(); 
-
-                }
-                break;
-            case 58 :
-                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:352: RULE_ID
+                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:346: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 59 :
-                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:360: RULE_INT
+            case 58 :
+                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:354: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 60 :
-                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:369: RULE_STRING
+            case 59 :
+                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:363: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 61 :
-                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:381: RULE_ML_COMMENT
+            case 60 :
+                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:375: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 62 :
-                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:397: RULE_SL_COMMENT
+            case 61 :
+                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:391: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 63 :
-                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:413: RULE_WS
+            case 62 :
+                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:407: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 64 :
-                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:421: RULE_ANY_OTHER
+            case 63 :
+                // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1:415: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2252,107 +2223,102 @@ public class InternalMtctlLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\6\60\1\53\1\60\1\53\1\104\1\106\1\53\1\uffff\2\60\3\uffff"+
-        "\4\60\2\uffff\1\60\1\uffff\7\60\2\uffff\1\53\2\uffff\3\53\2\uffff"+
-        "\1\147\1\uffff\1\150\2\uffff\1\151\1\uffff\1\152\1\uffff\12\60\1"+
-        "\uffff\2\60\7\uffff\4\60\3\uffff\2\60\1\176\2\60\2\uffff\1\60\1"+
-        "\uffff\7\60\13\uffff\2\60\1\u008b\10\60\1\u0094\6\60\1\u009b\1\uffff"+
-        "\12\60\1\u00a6\1\60\1\uffff\1\u00a8\2\60\1\u00ab\4\60\1\uffff\2"+
-        "\60\1\u00b2\3\60\1\uffff\12\60\1\uffff\1\60\1\uffff\1\u00c1\1\60"+
-        "\1\uffff\3\60\1\u00c7\2\60\1\uffff\4\60\1\u00ce\11\60\1\uffff\5"+
-        "\60\1\uffff\5\60\1\u00e2\1\uffff\1\u00e3\1\60\1\u00e6\2\60\1\u00e9"+
-        "\10\60\1\u00f2\3\60\1\u00f6\2\uffff\2\60\1\uffff\2\60\1\uffff\1"+
-        "\u00fb\1\60\1\u00fd\5\60\1\uffff\3\60\1\uffff\4\60\1\uffff\1\60"+
-        "\1\uffff\14\60\1\u0118\4\60\1\u011d\10\60\1\uffff\2\60\1\u0128\1"+
-        "\60\1\uffff\1\u012a\2\60\1\u012d\2\60\1\u0130\3\60\1\uffff\1\60"+
-        "\1\uffff\1\u0135\1\60\1\uffff\2\60\1\uffff\1\u0139\3\60\1\uffff"+
-        "\3\60\1\uffff\4\60\1\u0144\2\60\1\u0147\2\60\1\uffff\1\60\1\u014b"+
-        "\1\uffff\1\60\1\u014d\1\60\1\uffff\1\u014f\1\uffff\1\60\1\uffff"+
-        "\1\u0151\1\uffff";
+        "\1\uffff\6\60\1\53\1\60\1\53\1\104\1\106\1\53\1\uffff\5\60\2\uffff"+
+        "\1\60\1\uffff\2\60\3\uffff\6\60\2\uffff\1\53\2\uffff\3\53\2\uffff"+
+        "\1\146\1\uffff\1\147\2\uffff\1\150\1\uffff\1\151\1\uffff\12\60\1"+
+        "\uffff\2\60\7\uffff\3\60\1\171\2\60\2\uffff\1\60\1\uffff\3\60\3"+
+        "\uffff\6\60\13\uffff\2\60\1\u0089\10\60\1\u0092\2\60\1\u0095\1\uffff"+
+        "\15\60\1\u00a3\1\60\1\uffff\1\u00a5\2\60\1\u00a8\4\60\1\uffff\2"+
+        "\60\1\uffff\4\60\1\u00b3\10\60\1\uffff\1\60\1\uffff\1\u00bd\1\60"+
+        "\1\uffff\3\60\1\u00c3\3\60\1\u00c7\2\60\1\uffff\11\60\1\uffff\5"+
+        "\60\1\uffff\2\60\1\u00da\1\uffff\1\u00db\3\60\1\u00e0\2\60\1\u00e3"+
+        "\10\60\1\u00ec\1\u00ed\2\uffff\4\60\1\uffff\2\60\1\uffff\1\u00f4"+
+        "\1\60\1\u00f6\5\60\2\uffff\6\60\1\uffff\1\60\1\uffff\13\60\1\u010f"+
+        "\4\60\1\u0114\7\60\1\uffff\2\60\1\u011e\1\60\1\uffff\1\u0120\3\60"+
+        "\1\u0124\1\u0125\3\60\1\uffff\1\60\1\uffff\3\60\2\uffff\1\u012d"+
+        "\6\60\1\uffff\3\60\1\u0137\3\60\1\u013b\1\60\1\uffff\2\60\1\u013f"+
+        "\1\uffff\2\60\1\u0142\1\uffff\1\u0143\1\60\2\uffff\1\u0145\1\uffff";
     static final String DFA12_eofS =
-        "\u0152\uffff";
+        "\u0146\uffff";
     static final String DFA12_minS =
-        "\1\0\2\74\1\141\1\162\2\145\1\163\1\157\4\75\1\uffff\1\145\1\141"+
-        "\3\uffff\1\155\1\156\1\162\1\141\2\uffff\1\170\1\uffff\1\165\1\164"+
+        "\1\0\2\74\1\141\1\162\2\145\1\163\1\157\4\75\1\uffff\1\145\1\155"+
+        "\1\156\1\162\1\141\2\uffff\1\170\1\uffff\1\165\1\141\3\uffff\1\164"+
         "\1\162\1\145\1\154\1\165\1\156\2\uffff\1\101\2\uffff\2\0\1\52\2"+
         "\uffff\1\60\1\uffff\1\60\2\uffff\1\60\1\uffff\1\60\1\uffff\1\171"+
         "\1\141\1\163\1\156\1\145\1\163\1\143\1\141\1\142\1\165\1\uffff\1"+
-        "\145\1\164\7\uffff\1\141\1\155\1\141\1\162\3\uffff\1\160\1\144\1"+
-        "\60\1\162\1\154\2\uffff\1\151\1\uffff\1\146\2\141\1\163\1\157\1"+
-        "\146\1\163\13\uffff\1\163\1\144\1\60\1\163\1\143\2\163\1\164\1\163"+
-        "\1\162\1\143\1\60\1\144\2\145\1\156\1\147\1\154\1\60\1\uffff\1\141"+
-        "\2\163\1\146\1\164\1\156\1\163\1\143\1\146\1\164\1\60\1\154\1\uffff"+
-        "\1\60\1\163\1\141\1\60\1\145\1\164\1\143\1\163\1\uffff\1\163\1\111"+
-        "\1\60\1\163\1\145\1\151\1\uffff\1\154\1\145\1\164\2\145\1\163\1"+
-        "\141\1\153\1\145\1\141\1\uffff\1\157\1\uffff\1\60\1\147\1\uffff"+
-        "\1\101\1\141\1\145\1\60\1\124\1\156\1\uffff\1\151\1\164\1\145\1"+
-        "\154\1\60\1\163\1\162\1\163\1\151\1\147\1\163\1\162\1\156\1\143"+
-        "\1\uffff\1\145\1\143\1\156\1\164\1\123\1\uffff\1\157\2\164\1\123"+
-        "\1\163\1\60\1\uffff\1\60\1\115\1\60\1\164\1\145\1\60\1\163\1\143"+
-        "\1\153\1\111\1\164\1\123\1\145\1\164\1\60\1\145\1\151\1\164\1\60"+
-        "\2\uffff\1\166\1\145\1\uffff\1\151\1\124\1\uffff\1\60\1\145\1\60"+
-        "\1\156\1\151\1\164\1\117\1\141\1\uffff\1\162\1\157\1\141\1\uffff"+
-        "\1\145\1\163\1\157\1\171\1\uffff\1\163\1\uffff\1\102\1\166\1\141"+
-        "\1\146\1\164\1\166\1\156\1\164\1\162\1\163\1\156\1\160\1\60\1\162"+
-        "\1\165\1\145\1\164\1\60\1\145\1\141\1\106\1\145\1\146\1\141\1\163"+
-        "\1\145\1\uffff\1\141\1\146\1\60\1\145\1\uffff\1\60\1\154\1\151\1"+
-        "\60\1\154\1\147\1\60\1\163\1\156\1\146\1\uffff\1\143\1\uffff\1\60"+
-        "\1\162\1\uffff\1\157\1\145\1\uffff\1\60\1\163\1\145\1\150\1\uffff"+
-        "\1\151\1\167\1\103\1\uffff\1\151\1\162\1\141\1\156\1\60\1\157\1"+
-        "\164\1\60\1\162\1\147\1\uffff\1\165\1\60\1\uffff\1\164\1\60\1\156"+
-        "\1\uffff\1\60\1\uffff\1\164\1\uffff\1\60\1\uffff";
+        "\145\1\164\7\uffff\1\141\1\160\1\144\1\60\1\162\1\154\2\uffff\1"+
+        "\151\1\uffff\1\146\1\141\1\162\3\uffff\2\141\1\163\1\157\1\146\1"+
+        "\163\13\uffff\1\163\1\144\1\60\1\163\1\143\2\163\1\164\1\163\1\162"+
+        "\1\143\1\60\1\144\1\154\1\60\1\uffff\1\141\2\163\1\146\1\145\1\156"+
+        "\1\147\1\164\1\156\1\163\1\143\1\146\1\164\1\60\1\154\1\uffff\1"+
+        "\60\1\163\1\141\1\60\1\145\1\164\1\143\1\163\1\uffff\1\163\1\151"+
+        "\1\uffff\1\154\1\145\1\164\1\145\1\60\1\163\2\145\1\163\1\141\1"+
+        "\153\1\145\1\141\1\uffff\1\157\1\uffff\1\60\1\147\1\uffff\1\101"+
+        "\1\141\1\145\1\60\1\124\1\145\1\154\1\60\1\163\1\162\1\uffff\1\151"+
+        "\1\164\1\163\1\151\1\147\1\163\1\162\1\156\1\143\1\uffff\1\145\1"+
+        "\143\1\156\1\164\1\123\1\uffff\1\157\1\163\1\60\1\uffff\1\60\1\115"+
+        "\1\164\1\123\1\60\1\164\1\145\1\60\1\163\1\143\1\153\1\111\1\164"+
+        "\1\123\1\145\1\164\2\60\2\uffff\1\166\1\145\1\151\1\164\1\uffff"+
+        "\1\151\1\124\1\uffff\1\60\1\145\1\60\1\156\1\151\1\164\1\117\1\141"+
+        "\2\uffff\1\145\1\163\1\157\1\141\1\157\1\171\1\uffff\1\163\1\uffff"+
+        "\1\102\1\166\1\141\1\146\1\164\1\162\1\163\1\156\1\164\1\156\1\160"+
+        "\1\60\1\162\1\165\1\145\1\164\1\60\1\145\1\146\1\141\1\106\1\145"+
+        "\1\163\1\145\1\uffff\1\141\1\146\1\60\1\145\1\uffff\1\60\1\154\1"+
+        "\147\1\151\2\60\1\163\1\156\1\146\1\uffff\1\143\1\uffff\1\157\1"+
+        "\145\1\162\2\uffff\1\60\1\163\1\145\1\150\1\167\1\103\1\151\1\uffff"+
+        "\1\151\1\162\1\141\1\60\1\157\1\156\1\164\1\60\1\162\1\uffff\1\165"+
+        "\1\147\1\60\1\uffff\1\164\1\156\1\60\1\uffff\1\60\1\164\2\uffff"+
+        "\1\60\1\uffff";
     static final String DFA12_maxS =
         "\1\uffff\2\133\1\145\1\162\1\163\1\165\2\163\4\75\1\uffff\1\145"+
-        "\1\162\3\uffff\1\155\1\156\1\162\1\157\2\uffff\1\170\1\uffff\1\165"+
+        "\1\155\1\156\1\162\1\157\2\uffff\1\170\1\uffff\1\165\1\162\3\uffff"+
         "\1\164\1\162\1\145\1\154\1\165\1\156\2\uffff\1\172\2\uffff\2\uffff"+
         "\1\57\2\uffff\1\172\1\uffff\1\172\2\uffff\1\172\1\uffff\1\172\1"+
         "\uffff\1\171\1\141\1\163\1\156\1\145\1\163\1\143\1\141\1\142\1\165"+
-        "\1\uffff\1\145\1\164\7\uffff\1\141\1\155\1\165\1\162\3\uffff\1\160"+
-        "\1\144\1\172\1\162\1\154\2\uffff\1\151\1\uffff\1\146\2\141\1\163"+
-        "\1\157\1\146\1\163\13\uffff\1\163\1\144\1\172\1\163\1\143\2\163"+
-        "\1\164\1\163\1\162\1\143\1\172\1\144\2\145\1\156\1\147\1\154\1\172"+
-        "\1\uffff\1\141\2\163\1\146\1\164\1\156\1\163\1\143\1\146\1\164\1"+
-        "\172\1\154\1\uffff\1\172\1\163\1\141\1\172\1\145\1\164\1\143\1\163"+
-        "\1\uffff\1\163\1\111\1\172\1\163\1\145\1\151\1\uffff\1\154\1\145"+
-        "\1\164\2\145\1\163\1\141\1\153\1\145\1\141\1\uffff\1\157\1\uffff"+
-        "\1\172\1\147\1\uffff\1\111\1\141\1\145\1\172\1\124\1\156\1\uffff"+
-        "\1\151\1\164\1\145\1\154\1\172\1\163\1\162\1\163\1\151\1\147\1\163"+
-        "\1\162\1\156\1\143\1\uffff\1\145\1\143\1\156\1\164\1\123\1\uffff"+
-        "\1\157\2\164\1\123\1\163\1\172\1\uffff\1\172\1\117\1\172\1\164\1"+
-        "\145\1\172\1\163\1\143\1\153\1\111\1\164\1\123\1\145\1\164\1\172"+
-        "\1\145\1\151\1\164\1\172\2\uffff\1\166\1\145\1\uffff\1\151\1\124"+
-        "\1\uffff\1\172\1\145\1\172\1\156\1\151\1\164\1\117\1\141\1\uffff"+
-        "\1\162\1\157\1\141\1\uffff\1\145\1\163\1\157\1\171\1\uffff\1\163"+
-        "\1\uffff\1\124\1\166\1\141\1\146\1\164\1\166\1\156\1\164\1\162\1"+
-        "\163\1\156\1\160\1\172\1\162\1\165\1\145\1\164\1\172\1\145\1\141"+
-        "\1\106\1\145\1\146\1\141\1\163\1\145\1\uffff\1\141\1\146\1\172\1"+
-        "\145\1\uffff\1\172\1\154\1\151\1\172\1\154\1\147\1\172\1\163\1\156"+
-        "\1\146\1\uffff\1\143\1\uffff\1\172\1\162\1\uffff\1\157\1\145\1\uffff"+
-        "\1\172\1\163\1\145\1\150\1\uffff\1\151\1\167\1\103\1\uffff\1\151"+
-        "\1\162\1\141\1\156\1\172\1\157\1\164\1\172\1\162\1\147\1\uffff\1"+
-        "\165\1\172\1\uffff\1\164\1\172\1\156\1\uffff\1\172\1\uffff\1\164"+
-        "\1\uffff\1\172\1\uffff";
+        "\1\uffff\1\145\1\164\7\uffff\1\141\1\160\1\144\1\172\1\162\1\154"+
+        "\2\uffff\1\151\1\uffff\1\146\1\165\1\162\3\uffff\2\141\1\163\1\157"+
+        "\1\146\1\163\13\uffff\1\163\1\144\1\172\1\163\1\143\2\163\1\164"+
+        "\1\163\1\162\1\143\1\172\1\144\1\154\1\172\1\uffff\1\141\2\163\1"+
+        "\146\1\145\1\156\1\147\1\164\1\156\1\163\1\143\1\146\1\164\1\172"+
+        "\1\154\1\uffff\1\172\1\163\1\141\1\172\1\145\1\164\1\143\1\163\1"+
+        "\uffff\1\163\1\151\1\uffff\1\154\1\145\1\164\1\145\1\172\1\163\2"+
+        "\145\1\163\1\141\1\153\1\145\1\141\1\uffff\1\157\1\uffff\1\172\1"+
+        "\147\1\uffff\1\111\1\141\1\145\1\172\1\124\1\145\1\154\1\172\1\163"+
+        "\1\162\1\uffff\1\151\1\164\1\163\1\151\1\147\1\163\1\162\1\156\1"+
+        "\143\1\uffff\1\145\1\143\1\156\1\164\1\123\1\uffff\1\157\1\163\1"+
+        "\172\1\uffff\1\172\1\117\1\164\1\123\1\172\1\164\1\145\1\172\1\163"+
+        "\1\143\1\153\1\111\1\164\1\123\1\145\1\164\2\172\2\uffff\1\166\1"+
+        "\145\1\151\1\164\1\uffff\1\151\1\124\1\uffff\1\172\1\145\1\172\1"+
+        "\156\1\151\1\164\1\117\1\141\2\uffff\1\145\1\163\1\157\1\141\1\157"+
+        "\1\171\1\uffff\1\163\1\uffff\1\124\1\166\1\141\1\146\1\164\1\162"+
+        "\1\163\1\156\1\164\1\156\1\160\1\172\1\162\1\165\1\145\1\164\1\172"+
+        "\1\145\1\146\1\141\1\106\1\145\1\163\1\145\1\uffff\1\141\1\146\1"+
+        "\172\1\145\1\uffff\1\172\1\154\1\147\1\151\2\172\1\163\1\156\1\146"+
+        "\1\uffff\1\143\1\uffff\1\157\1\145\1\162\2\uffff\1\172\1\163\1\145"+
+        "\1\150\1\167\1\103\1\151\1\uffff\1\151\1\162\1\141\1\172\1\157\1"+
+        "\156\1\164\1\172\1\162\1\uffff\1\165\1\147\1\172\1\uffff\1\164\1"+
+        "\156\1\172\1\uffff\1\172\1\164\2\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\15\uffff\1\26\2\uffff\1\31\1\32\1\33\4\uffff\1\41\1\42\1\uffff"+
-        "\1\44\7\uffff\1\70\1\71\1\uffff\1\72\1\73\3\uffff\1\77\1\100\1\uffff"+
-        "\1\2\1\uffff\1\6\1\72\1\uffff\1\4\1\uffff\1\10\12\uffff\1\16\2\uffff"+
-        "\1\20\1\22\1\21\1\24\1\23\1\25\1\26\4\uffff\1\31\1\32\1\33\5\uffff"+
-        "\1\41\1\42\1\uffff\1\44\7\uffff\1\70\1\71\1\73\1\74\1\75\1\76\1"+
-        "\77\1\1\1\5\1\3\1\7\23\uffff\1\36\14\uffff\1\12\10\uffff\1\37\6"+
-        "\uffff\1\35\12\uffff\1\11\1\uffff\1\13\2\uffff\1\14\6\uffff\1\47"+
-        "\16\uffff\1\15\5\uffff\1\17\6\uffff\1\50\23\uffff\1\40\1\43\2\uffff"+
-        "\1\62\2\uffff\1\65\10\uffff\1\27\3\uffff\1\34\4\uffff\1\66\1\uffff"+
-        "\1\45\32\uffff\1\67\4\uffff\1\52\12\uffff\1\51\1\uffff\1\60\2\uffff"+
-        "\1\61\2\uffff\1\63\4\uffff\1\30\3\uffff\1\64\12\uffff\1\46\2\uffff"+
-        "\1\55\3\uffff\1\54\1\uffff\1\56\1\uffff\1\53\1\uffff\1\57";
+        "\15\uffff\1\26\5\uffff\1\35\1\36\1\uffff\1\40\2\uffff\1\47\1\57"+
+        "\1\60\6\uffff\1\67\1\70\1\uffff\1\71\1\72\3\uffff\1\76\1\77\1\uffff"+
+        "\1\2\1\uffff\1\6\1\71\1\uffff\1\4\1\uffff\1\10\12\uffff\1\16\2\uffff"+
+        "\1\20\1\22\1\21\1\24\1\23\1\25\1\26\6\uffff\1\35\1\36\1\uffff\1"+
+        "\40\3\uffff\1\47\1\57\1\60\6\uffff\1\67\1\70\1\72\1\73\1\74\1\75"+
+        "\1\76\1\1\1\5\1\3\1\7\17\uffff\1\32\17\uffff\1\12\10\uffff\1\33"+
+        "\2\uffff\1\31\15\uffff\1\11\1\uffff\1\13\2\uffff\1\14\12\uffff\1"+
+        "\43\11\uffff\1\15\5\uffff\1\17\3\uffff\1\44\22\uffff\1\34\1\37\4"+
+        "\uffff\1\61\2\uffff\1\64\10\uffff\1\27\1\30\6\uffff\1\65\1\uffff"+
+        "\1\41\30\uffff\1\66\4\uffff\1\46\11\uffff\1\45\1\uffff\1\55\3\uffff"+
+        "\1\56\1\62\7\uffff\1\63\11\uffff\1\42\3\uffff\1\52\3\uffff\1\51"+
+        "\2\uffff\1\53\1\50\1\uffff\1\54";
     static final String DFA12_specialS =
-        "\1\2\46\uffff\1\1\1\0\u0129\uffff}>";
+        "\1\1\46\uffff\1\2\1\0\u011d\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\53\2\52\2\53\1\52\22\53\1\52\1\14\1\47\4\53\1\50\1\27\1"+
-            "\30\2\53\1\21\1\43\1\42\1\51\12\46\1\32\1\15\1\13\1\11\1\12"+
+            "\11\53\2\52\2\53\1\52\22\53\1\52\1\14\1\47\4\53\1\50\1\23\1"+
+            "\24\2\53\1\31\1\43\1\42\1\51\12\46\1\26\1\15\1\13\1\11\1\12"+
             "\2\53\1\2\1\40\1\37\1\45\1\1\3\45\1\41\3\45\1\36\5\45\1\34\1"+
-            "\35\6\45\1\20\1\53\1\22\1\44\1\45\1\53\1\24\1\33\1\45\1\3\1"+
-            "\31\1\26\1\45\1\4\1\23\2\45\1\16\1\5\1\10\1\25\3\45\1\6\1\17"+
+            "\35\6\45\1\32\1\53\1\33\1\44\1\45\1\53\1\20\1\27\1\45\1\3\1"+
+            "\25\1\22\1\45\1\4\1\17\2\45\1\16\1\5\1\10\1\21\3\45\1\6\1\30"+
             "\6\45\72\53\1\7\uff4a\53",
             "\1\55\11\uffff\1\54\1\56\23\uffff\1\57",
             "\1\62\11\uffff\1\61\1\63\23\uffff\1\64",
@@ -2368,17 +2334,18 @@ public class InternalMtctlLexer extends Lexer {
             "\1\107",
             "",
             "\1\111",
-            "\1\114\7\uffff\1\112\10\uffff\1\113",
+            "\1\112",
+            "\1\113",
+            "\1\114",
+            "\1\116\15\uffff\1\115",
             "",
             "",
-            "",
-            "\1\120",
             "\1\121",
-            "\1\122",
-            "\1\124\15\uffff\1\123",
+            "",
+            "\1\123",
+            "\1\125\20\uffff\1\124",
             "",
             "",
-            "\1\127",
             "",
             "\1\131",
             "\1\132",
@@ -2386,15 +2353,14 @@ public class InternalMtctlLexer extends Lexer {
             "\1\134",
             "\1\135",
             "\1\136",
-            "\1\137",
             "",
             "",
             "\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
-            "\0\143",
-            "\0\143",
-            "\1\144\4\uffff\1\145",
+            "\0\142",
+            "\0\142",
+            "\1\143\4\uffff\1\144",
             "",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
@@ -2406,6 +2372,7 @@ public class InternalMtctlLexer extends Lexer {
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
+            "\1\152",
             "\1\153",
             "\1\154",
             "\1\155",
@@ -2415,71 +2382,71 @@ public class InternalMtctlLexer extends Lexer {
             "\1\161",
             "\1\162",
             "\1\163",
+            "",
             "\1\164",
-            "",
             "\1\165",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\166",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\167",
             "\1\170",
-            "\1\172\23\uffff\1\171",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\172",
             "\1\173",
             "",
             "",
-            "",
             "\1\174",
+            "",
             "\1\175",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\177",
+            "\1\177\23\uffff\1\176",
             "\1\u0080",
             "",
             "",
-            "\1\u0081",
             "",
+            "\1\u0081",
             "\1\u0082",
             "\1\u0083",
             "\1\u0084",
             "\1\u0085",
             "\1\u0086",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u0087",
             "\1\u0088",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0089",
-            "\1\u008a",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u008a",
+            "\1\u008b",
             "\1\u008c",
             "\1\u008d",
             "\1\u008e",
             "\1\u008f",
             "\1\u0090",
             "\1\u0091",
-            "\1\u0092",
-            "\1\u0093",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u0095",
+            "\1\u0093",
+            "\1\u0094",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "",
             "\1\u0096",
             "\1\u0097",
             "\1\u0098",
             "\1\u0099",
             "\1\u009a",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "",
+            "\1\u009b",
             "\1\u009c",
             "\1\u009d",
             "\1\u009e",
@@ -2487,45 +2454,45 @@ public class InternalMtctlLexer extends Lexer {
             "\1\u00a0",
             "\1\u00a1",
             "\1\u00a2",
-            "\1\u00a3",
-            "\1\u00a4",
-            "\1\u00a5",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u00a7",
+            "\1\u00a4",
             "",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00a6",
+            "\1\u00a7",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u00a9",
             "\1\u00aa",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00ab",
             "\1\u00ac",
+            "",
             "\1\u00ad",
             "\1\u00ae",
-            "\1\u00af",
             "",
+            "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
+            "\1\u00b2",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
-            "",
             "\1\u00b6",
             "\1\u00b7",
             "\1\u00b8",
             "\1\u00b9",
             "\1\u00ba",
             "\1\u00bb",
-            "\1\u00bc",
-            "\1\u00bd",
-            "\1\u00be",
-            "\1\u00bf",
             "",
-            "\1\u00c0",
+            "\1\u00bc",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u00c2",
+            "\1\u00be",
             "",
-            "\1\u00c3\7\uffff\1\u00c4",
+            "\1\u00bf\7\uffff\1\u00c0",
+            "\1\u00c1",
+            "\1\u00c2",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00c4",
             "\1\u00c5",
             "\1\u00c6",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
@@ -2536,11 +2503,12 @@ public class InternalMtctlLexer extends Lexer {
             "\1\u00cb",
             "\1\u00cc",
             "\1\u00cd",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00ce",
             "\1\u00cf",
             "\1\u00d0",
             "\1\u00d1",
             "\1\u00d2",
+            "",
             "\1\u00d3",
             "\1\u00d4",
             "\1\u00d5",
@@ -2549,145 +2517,131 @@ public class InternalMtctlLexer extends Lexer {
             "",
             "\1\u00d8",
             "\1\u00d9",
-            "\1\u00da",
-            "\1\u00db",
-            "\1\u00dc",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
-            "\1\u00dd",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00dd\1\uffff\1\u00dc",
             "\1\u00de",
             "\1\u00df",
-            "\1\u00e0",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u00e1",
+            "\1\u00e2",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u00e5\1\uffff\1\u00e4",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00e4",
+            "\1\u00e5",
+            "\1\u00e6",
             "\1\u00e7",
             "\1\u00e8",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00e9",
             "\1\u00ea",
             "\1\u00eb",
-            "\1\u00ec",
-            "\1\u00ed",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "",
+            "",
             "\1\u00ee",
             "\1\u00ef",
             "\1\u00f0",
             "\1\u00f1",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "",
+            "\1\u00f2",
             "\1\u00f3",
-            "\1\u00f4",
+            "",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u00f5",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "",
-            "",
             "\1\u00f7",
             "\1\u00f8",
-            "",
             "\1\u00f9",
             "\1\u00fa",
+            "\1\u00fb",
             "",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "",
             "\1\u00fc",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00fd",
             "\1\u00fe",
             "\1\u00ff",
             "\1\u0100",
             "\1\u0101",
+            "",
             "\1\u0102",
             "",
-            "\1\u0103",
-            "\1\u0104",
+            "\1\u0104\21\uffff\1\u0103",
             "\1\u0105",
-            "",
             "\1\u0106",
             "\1\u0107",
             "\1\u0108",
             "\1\u0109",
-            "",
             "\1\u010a",
-            "",
-            "\1\u010c\21\uffff\1\u010b",
+            "\1\u010b",
+            "\1\u010c",
             "\1\u010d",
             "\1\u010e",
-            "\1\u010f",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u0110",
             "\1\u0111",
             "\1\u0112",
             "\1\u0113",
-            "\1\u0114",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u0115",
             "\1\u0116",
             "\1\u0117",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u0118",
             "\1\u0119",
             "\1\u011a",
             "\1\u011b",
+            "",
             "\1\u011c",
+            "\1\u011d",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u011e",
             "\1\u011f",
-            "\1\u0120",
+            "",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u0121",
             "\1\u0122",
             "\1\u0123",
-            "\1\u0124",
-            "\1\u0125",
-            "",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u0126",
             "\1\u0127",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u0128",
+            "",
             "\1\u0129",
             "",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u012a",
             "\1\u012b",
             "\1\u012c",
+            "",
+            "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u012e",
             "\1\u012f",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u0130",
             "\1\u0131",
             "\1\u0132",
             "\1\u0133",
             "",
             "\1\u0134",
-            "",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u0135",
             "\1\u0136",
-            "",
-            "\1\u0137",
-            "\1\u0138",
-            "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u0138",
+            "\1\u0139",
             "\1\u013a",
-            "\1\u013b",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u013c",
             "",
             "\1\u013d",
             "\1\u013e",
-            "\1\u013f",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "\1\u0140",
             "\1\u0141",
-            "\1\u0142",
-            "\1\u0143",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u0145",
-            "\1\u0146",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u0148",
-            "\1\u0149",
-            "",
-            "\1\u014a",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
-            "\1\u014c",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u014e",
+            "\1\u0144",
             "",
-            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "",
-            "\1\u0150",
             "",
             "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             ""
@@ -2723,7 +2677,7 @@ public class InternalMtctlLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -2733,23 +2687,13 @@ public class InternalMtctlLexer extends Lexer {
                         int LA12_40 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_40>='\u0000' && LA12_40<='\uFFFF')) ) {s = 99;}
+                        if ( ((LA12_40>='\u0000' && LA12_40<='\uFFFF')) ) {s = 98;}
 
                         else s = 43;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_39 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_39>='\u0000' && LA12_39<='\uFFFF')) ) {s = 99;}
-
-                        else s = 43;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -2781,31 +2725,31 @@ public class InternalMtctlLexer extends Lexer {
 
                         else if ( (LA12_0=='l') ) {s = 14;}
 
-                        else if ( (LA12_0=='t') ) {s = 15;}
+                        else if ( (LA12_0=='i') ) {s = 15;}
 
-                        else if ( (LA12_0=='[') ) {s = 16;}
+                        else if ( (LA12_0=='a') ) {s = 16;}
 
-                        else if ( (LA12_0==',') ) {s = 17;}
+                        else if ( (LA12_0=='o') ) {s = 17;}
 
-                        else if ( (LA12_0==']') ) {s = 18;}
+                        else if ( (LA12_0=='f') ) {s = 18;}
 
-                        else if ( (LA12_0=='i') ) {s = 19;}
+                        else if ( (LA12_0=='(') ) {s = 19;}
 
-                        else if ( (LA12_0=='a') ) {s = 20;}
+                        else if ( (LA12_0==')') ) {s = 20;}
 
-                        else if ( (LA12_0=='o') ) {s = 21;}
+                        else if ( (LA12_0=='e') ) {s = 21;}
 
-                        else if ( (LA12_0=='f') ) {s = 22;}
+                        else if ( (LA12_0==':') ) {s = 22;}
 
-                        else if ( (LA12_0=='(') ) {s = 23;}
+                        else if ( (LA12_0=='b') ) {s = 23;}
 
-                        else if ( (LA12_0==')') ) {s = 24;}
+                        else if ( (LA12_0=='t') ) {s = 24;}
 
-                        else if ( (LA12_0=='e') ) {s = 25;}
+                        else if ( (LA12_0==',') ) {s = 25;}
 
-                        else if ( (LA12_0==':') ) {s = 26;}
+                        else if ( (LA12_0=='[') ) {s = 26;}
 
-                        else if ( (LA12_0=='b') ) {s = 27;}
+                        else if ( (LA12_0==']') ) {s = 27;}
 
                         else if ( (LA12_0=='S') ) {s = 28;}
 
@@ -2838,6 +2782,16 @@ public class InternalMtctlLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 42;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||(LA12_0>='?' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\u00B4')||(LA12_0>='\u00B6' && LA12_0<='\uFFFF')) ) {s = 43;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_39 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_39>='\u0000' && LA12_39<='\uFFFF')) ) {s = 98;}
+
+                        else s = 43;
 
                         if ( s>=0 ) return s;
                         break;

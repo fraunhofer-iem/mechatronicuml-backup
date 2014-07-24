@@ -76,7 +76,7 @@ public class Mtctl2English {
       CharSequence _xifexpression = null;
       if (thereIs) {
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("there is ");
+        _builder.append("there exists ");
         BoundVariable _var = expr.getVar();
         CharSequence _boundVariable = this.boundVariable(_var, true);
         _builder.append(_boundVariable, "");
@@ -1031,7 +1031,7 @@ public class Mtctl2English {
               StringConcatenation _builder = new StringConcatenation();
               {
                 if (thereIs) {
-                  _builder.append("there is a substate");
+                  _builder.append("there exists a substate");
                 } else {
                   _builder.append("for all substates");
                 }
@@ -1075,7 +1075,7 @@ public class Mtctl2English {
               StringConcatenation _builder = new StringConcatenation();
               {
                 if (thereIs) {
-                  _builder.append("there is a superstate");
+                  _builder.append("there exists a superstate");
                 } else {
                   _builder.append("for all superstates");
                 }
@@ -1119,7 +1119,7 @@ public class Mtctl2English {
               StringConcatenation _builder = new StringConcatenation();
               {
                 if (thereIs) {
-                  _builder.append("there is a state");
+                  _builder.append("there exists a state");
                 } else {
                   _builder.append("for all states");
                 }
@@ -1159,11 +1159,23 @@ public class Mtctl2English {
   public CharSequence itHoldsThat(final Expression expr, final boolean positive) {
     CharSequence _xifexpression = null;
     boolean _or = false;
+    boolean _or_1 = false;
+    boolean _or_2 = false;
     if ((expr instanceof TemporalQuantifierExpr)) {
-      _or = true;
+      _or_2 = true;
     } else {
       EObject _eContainer = expr.eContainer();
-      _or = ((expr instanceof TemporalQuantifierExpr) || (_eContainer instanceof TemporalQuantifierExpr));
+      _or_2 = ((expr instanceof TemporalQuantifierExpr) || (_eContainer instanceof TemporalQuantifierExpr));
+    }
+    if (_or_2) {
+      _or_1 = true;
+    } else {
+      _or_1 = (_or_2 || (expr instanceof QuantifierExpr));
+    }
+    if (_or_1) {
+      _or = true;
+    } else {
+      _or = (_or_1 || (expr instanceof NotExpr));
     }
     if (_or) {
       StringConcatenation _builder = new StringConcatenation();
