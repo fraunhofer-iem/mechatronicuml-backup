@@ -14,6 +14,8 @@ import com.google.common.base.Function;
 
 import de.uni_paderborn.fujaba.muml.common.naming.MumlQualifiedNameProvider;
 import de.uni_paderborn.fujaba.muml.common.naming.QualifiedNameProvider;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
@@ -33,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetEx
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.common.MtctlModelElementProvider;
 
@@ -244,6 +247,18 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	}
 	
 	/**
+	 * Returns the scope when looking for a subinstance type
+	 */
+	public Set<? extends EObject> getScopeSubinstanceTypes(EObject context, EReference reference) {
+		Set<EObject> scope = new HashSet<EObject>();
+		for (EObject instance : elementProvider.getConnectorEndpoints())
+			if (((DiscreteInteractionEndpoint) instance).isMulti())
+				scope.add(instance);
+		
+		return scope;
+	}
+	
+	/**
 	 * Returns the scope when looking for an instance (ConnectorEndpointInstance or AtomicComponentInstance)
 	 * 
 	 */
@@ -260,8 +275,20 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof InstanceSetExpr)
 				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
-					MumlElemExpr type = ((InstanceSetExpr) parentQuantifier.getVar().getSet()).getType();
-					if (type.getElem() == elementProvider.getInstanceType(context.getElem())) { //add only if referenced type fits 
+					EObject type = ((InstanceSetExpr) parentQuantifier.getVar().getSet()).getType().getElem();
+					if (type == elementProvider.getInstanceType(context.getElem()) //add only if referenced type fits
+							&& (!(type instanceof DiscreteInteractionEndpoint && ((DiscreteInteractionEndpoint) type).isMulti())
+									|| !elementProvider.belongsToDiscreteSingleInteractionEndpointInstance(context.getElem()))) {  
+						scope.add(parentQuantifier.getVar());
+						namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+					}
+				}
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof SubinstanceSetExpr)
+				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
+					EObject type = ((SubinstanceSetExpr) parentQuantifier.getVar().getSet()).getType().getElem();
+					if (type == elementProvider.getInstanceType(context.getElem())
+							&& (type instanceof DiscreteInteractionEndpoint && ((DiscreteInteractionEndpoint) type).isMulti()
+									&& elementProvider.belongsToDiscreteSingleInteractionEndpointInstance(context.getElem()))) { //add only if referenced type fits 
 						scope.add(parentQuantifier.getVar());
 						namesOfBoundVariables.add(parentQuantifier.getVar().getName());
 					}
@@ -352,6 +379,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			return createScope(getScopeStatechart(context, reference));
 		if (context instanceof InstanceSetExpr)
 			return createScope(getScopeInstanceTypes(context, reference));
+		if (context instanceof SubinstanceSetExpr)
+			return createScope(getScopeSubinstanceTypes(context, reference));
 		if (context instanceof ComparisonExpr)
 			return createScope(getScopeAny(context, reference));
 		

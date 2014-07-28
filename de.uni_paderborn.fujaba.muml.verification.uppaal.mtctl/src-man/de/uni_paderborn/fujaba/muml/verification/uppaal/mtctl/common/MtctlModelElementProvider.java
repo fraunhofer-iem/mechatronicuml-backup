@@ -235,29 +235,30 @@ public class MtctlModelElementProvider {
 		}
 		
 		//States, Transitions, Clocks, Variables
-		if (obj.eContainer() instanceof RealtimeStatechart) {
+		if (obj.eContainer() instanceof RealtimeStatechart)
 			return getInstanceType(obj.eContainer());
-		}
+		
 		if (obj instanceof ConnectorEndpointInstance)
 			return ((ConnectorEndpointInstance) obj).getType();
 		if (obj instanceof ComponentInstance)
 			return ((ComponentInstance) obj).getComponentType();
+		
 		return null;
 	}
 	
 	/**
 	 * Returns true iff obj belongs to a subroleInstance of a MultiDiscreteInteractionEndpoint at runtime
 	 */
-	public boolean belongsToDiscreteSinglePortInstance(EObject obj) {
+	public boolean belongsToDiscreteSingleInteractionEndpointInstance(EObject obj) {
 		if (obj == null)
 			return false;
+		if (obj instanceof MessageBuffer)
+			return true; //message buffers (of (multi-)DIEs) belong to the subroleInstances at runtime 
 		
 		EObject instanceType = getInstanceType(obj);
 		if (instanceType instanceof DiscreteInteractionEndpoint) {
 			if (!((DiscreteInteractionEndpoint) instanceType).isMulti())
 				return true;
-			if (obj instanceof MessageBuffer)
-				return true; //message buffers of multiDIEs, belong to the subroleInstances at runtime 
 			// RTSCs and their subelements belong to the subroleInstances at runtime iff they are embedded in the subrole behavior
 			while (obj != null) { //check whether obj is a subobject of the multi-DiscreteInteractionEndpoint subrole behavior
 				if (obj == ((DiscreteInteractionEndpoint) instanceType).getSubroleBehavior())
@@ -282,20 +283,53 @@ public class MtctlModelElementProvider {
 	}
 	
 	/**
+	 * Returns the set of all subinstances for a multi discrete interaction endpoint
+	 */
+	public Set<EObject> getAllSubinstancesOf(EObject obj) {
+		if (obj == null || !(obj instanceof DiscreteInteractionEndpoint && ((DiscreteInteractionEndpoint) obj).isMulti()))
+			throw new UnsupportedOperationException("no subinstances for "+obj);
+		HashSet<EObject> result = new HashSet<EObject>();
+		for (EObject instance : getAllInstances()) {
+			if (instance instanceof DiscreteSingleInteractionEndpointInstance && ((DiscreteSingleInteractionEndpointInstance) instance).getType() == obj)
+				result.add(instance);
+		}
+		return result;
+	}
+	
+	/**
+	 * Returns the set of all direct instances of obj (i.e. excluding subinstances)
+	 */
+	public Set<EObject> getAllInstancesOf(EObject obj) {
+		if (obj == null || !(obj instanceof DiscreteInteractionEndpoint))
+			throw new UnsupportedOperationException("unfortunately no instances for "+obj);
+		HashSet<EObject> result = new HashSet<EObject>();
+		for (EObject instance : getAllInstances()) {
+			if (instance instanceof DiscreteInteractionEndpointInstance && ((DiscreteInteractionEndpointInstance) instance).getType() == obj) {
+				if (((DiscreteInteractionEndpoint) obj).isMulti() && instance instanceof DiscreteSingleInteractionEndpointInstance) //filter all single instances out. Use getAllSubinstancesOf for this
+					continue;
+				
+				result.add(instance);
+			}
+		}			
+		
+		return result;
+	}
+	
+	/**
 	 * Returns the set of instances that logically belong to obj (i.e. the language accepts it as an instance for obj)
 	 */
 	public Set<EObject> getAllInstancesFor(EObject obj) {
 		Set<EObject> instances = getAllInstances();
 		Set<EObject> result = new HashSet<EObject>();
 		EObject objInstanceType = getInstanceType(obj);
-		boolean belongsToDiscreteSinglePortInstance = belongsToDiscreteSinglePortInstance(obj);
+		boolean belongsToDiscreteSingleInteractionEndpointInstance = belongsToDiscreteSingleInteractionEndpointInstance(obj);
 		for (EObject instance : instances) {
 			if (getInstanceType(instance) == objInstanceType) {
 				if (!(instance instanceof DiscreteInteractionEndpointInstance))
+					throw new RuntimeException("Unexpected instance type in getAllInstancesFor("+obj+")");
+				else if ((instance instanceof DiscreteSingleInteractionEndpointInstance) && belongsToDiscreteSingleInteractionEndpointInstance) 
 					result.add(instance);
-				else if ((instance instanceof DiscreteSingleInteractionEndpointInstance) && belongsToDiscreteSinglePortInstance) //condition for adding: [obj belongs to single port iff added instance is single]
-					result.add(instance);
-				else if ((instance instanceof DiscreteMultiInteractionEndpointInstance) && !belongsToDiscreteSinglePortInstance) //condition for adding: [obj belongs to single port iff added instance is single]
+				else if ((instance instanceof DiscreteMultiInteractionEndpointInstance) && !belongsToDiscreteSingleInteractionEndpointInstance) 
 					result.add(instance);
 			}
 		}

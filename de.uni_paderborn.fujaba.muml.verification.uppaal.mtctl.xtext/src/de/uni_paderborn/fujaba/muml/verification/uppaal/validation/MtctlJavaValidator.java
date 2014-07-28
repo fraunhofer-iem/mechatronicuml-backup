@@ -55,7 +55,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlScopeProvid
  */
 public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verification.uppaal.validation.AbstractMtctlJavaValidator {
 
-	private enum Type {NUMERAL, CLOCK_VALUE, BUFFER, STATE, TRANSITION, MESSAGE_TYPE, CONNECTOR_ENDPOINT, CONNECTOR_ENDPOINT_INSTANCE};
+	public enum Type {NUMERAL, CLOCK_VALUE, BUFFER, STATE, TRANSITION, MESSAGE_TYPE, CONNECTOR_ENDPOINT, CONNECTOR_ENDPOINT_INSTANCE};
 	
 	protected MtctlModelElementProvider elementProvider = null;
 	protected static QualifiedNameProvider qualifiedNameProvider = new MtctlQualifiedNameProvider();
@@ -269,7 +269,6 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 		
 		if (expr.getElem() instanceof BoundVariable && expr.getInstance() != null)
 			error("BoundVariables should not have their instance set.", null);
-			
 		
 		if (expr.getInstance() != null)
 			return; // if a connector endpoint instance is set, we don't have to check the rest
@@ -277,7 +276,7 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 		//After this point, it holds that no ConnectorEndpointInstance is set. We emit an error for cases where that's not okay
 		EObject instanceType = getElementProvider().getInstanceType(expr.getElem()); //the instance type of the referenced element
 		
-		if (instanceType == null)
+		if (instanceType == null || instanceType == expr.getElem())
 			return;
 		
 		if (instanceType instanceof Role)
