@@ -1,22 +1,13 @@
-package de.uni_paderborn.fujaba.modelinstance.ui;
+package de.uni_paderborn.fujaba.common;
 
 import org.eclipse.osgi.util.NLS;
 
-/**
- * @generated
- */
 public class Messages extends NLS {
 
-	/**
-	 * @generated
-	 */
 	static {
 		NLS.initializeMessages("messages", Messages.class); //$NON-NLS-1$
 	}
 
-	/**
-	 * @generated
-	 */
 	private Messages() {
 	}
 
@@ -46,5 +37,4 @@ public class Messages extends NLS {
 	public static String ModelSelectionPageSelectModelDesc;
 	public static String PredefinedModelExtensionPredefinedModels;
 
-	// TODO: put accessor fields manually
 }

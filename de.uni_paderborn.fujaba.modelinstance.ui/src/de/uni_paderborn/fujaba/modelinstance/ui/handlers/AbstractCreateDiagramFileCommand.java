@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelinstance.ui.ui.commands;
+package de.uni_paderborn.fujaba.modelinstance.ui.handlers;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -20,8 +20,8 @@ import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.ui.PartInitException;
 
+import de.uni_paderborn.fujaba.common.Messages;
 import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
-import de.uni_paderborn.fujaba.modelinstance.ui.Messages;
 import de.uni_paderborn.fujaba.modelinstance.ui.commands.CreateEmptyDiagramCommand;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;

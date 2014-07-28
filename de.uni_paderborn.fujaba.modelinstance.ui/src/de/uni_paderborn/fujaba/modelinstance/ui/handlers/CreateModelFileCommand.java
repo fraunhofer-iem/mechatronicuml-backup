@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelinstance.ui.ui.commands;
+package de.uni_paderborn.fujaba.modelinstance.ui.handlers;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;

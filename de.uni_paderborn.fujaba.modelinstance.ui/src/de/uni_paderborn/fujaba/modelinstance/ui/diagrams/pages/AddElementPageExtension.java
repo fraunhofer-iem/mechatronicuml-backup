@@ -20,7 +20,7 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
-import de.uni_paderborn.fujaba.modelinstance.ui.ui.ModelSelectionPageExtension;
+import de.uni_paderborn.fujaba.common.ui.ModelSelectionPageExtension;
 
 /**
  * A Page Extension for the ModelSelectionPage with a check box. The user can

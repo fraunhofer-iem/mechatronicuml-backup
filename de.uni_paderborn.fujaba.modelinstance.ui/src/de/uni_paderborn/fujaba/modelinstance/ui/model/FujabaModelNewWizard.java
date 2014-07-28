@@ -21,10 +21,10 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
+import de.uni_paderborn.fujaba.common.Messages;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
-import de.uni_paderborn.fujaba.modelinstance.ui.Messages;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.pages.NewExtendedFileCreationPage;
 

@@ -5,16 +5,17 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.modelinstance.ui;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
- org.eclipse.ui.ide,
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
  de.uni_paderborn.fujaba.modelinstance;bundle-version="0.3.1",
- org.storydriven.core
+ org.storydriven.core,
+ de.uni_paderborn.fujaba.common;bundle-version="0.4.0",
+ org.eclipse.ui.ide;bundle-version="3.10.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.modelinstance.ui,
  de.uni_paderborn.fujaba.modelinstance.ui.commands,
  de.uni_paderborn.fujaba.modelinstance.ui.diagrams,
  de.uni_paderborn.fujaba.modelinstance.ui.diagrams.pages,
- de.uni_paderborn.fujaba.modelinstance.ui.initializer,
- de.uni_paderborn.fujaba.modelinstance.ui.ui.commands
+ de.uni_paderborn.fujaba.modelinstance.ui.handlers,
+ de.uni_paderborn.fujaba.modelinstance.ui.initializer
 Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH

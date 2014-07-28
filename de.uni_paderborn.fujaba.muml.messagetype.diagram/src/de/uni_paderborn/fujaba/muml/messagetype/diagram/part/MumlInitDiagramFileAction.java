@@ -8,7 +8,7 @@ import org.eclipse.core.runtime.IPath;
  */
 public class MumlInitDiagramFileAction
 		extends
-		de.uni_paderborn.fujaba.modelinstance.ui.ui.commands.AbstractCreateDiagramFileCommand {
+		de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	/**
 	 * @generated

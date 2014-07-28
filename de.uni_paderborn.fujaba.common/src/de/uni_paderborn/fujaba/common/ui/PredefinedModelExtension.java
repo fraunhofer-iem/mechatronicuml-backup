@@ -9,7 +9,7 @@
  * Contributors:
  *    Dmitry Stadnik - initial API and implementation
  */
-package de.uni_paderborn.fujaba.modelinstance.ui.ui;
+package de.uni_paderborn.fujaba.common.ui;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ import org.eclipse.ui.forms.events.IHyperlinkListener;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Hyperlink;
 
-import de.uni_paderborn.fujaba.modelinstance.ui.Messages;
+import de.uni_paderborn.fujaba.common.Messages;
 
 /**
  * @author dstadnik

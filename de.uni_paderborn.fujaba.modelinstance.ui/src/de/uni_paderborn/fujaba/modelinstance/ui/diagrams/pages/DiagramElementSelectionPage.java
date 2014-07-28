@@ -22,9 +22,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
+import de.uni_paderborn.fujaba.common.Messages;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.modelinstance.ui.Messages;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramElementValidator;
 
 public class DiagramElementSelectionPage extends WizardPage implements

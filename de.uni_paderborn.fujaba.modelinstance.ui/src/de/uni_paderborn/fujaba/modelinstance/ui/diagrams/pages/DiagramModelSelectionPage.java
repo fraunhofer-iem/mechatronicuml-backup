@@ -16,13 +16,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
+import de.uni_paderborn.fujaba.common.ui.ExtensibleModelSelectionPage;
+import de.uni_paderborn.fujaba.common.ui.ModelSelectionPageExtension;
+import de.uni_paderborn.fujaba.common.ui.PredefinedModelExtension;
+import de.uni_paderborn.fujaba.common.ui.ResourceLocationProvider;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
-import de.uni_paderborn.fujaba.modelinstance.ui.ui.ExtensibleModelSelectionPage;
-import de.uni_paderborn.fujaba.modelinstance.ui.ui.ModelSelectionPageExtension;
-import de.uni_paderborn.fujaba.modelinstance.ui.ui.PredefinedModelExtension;
-import de.uni_paderborn.fujaba.modelinstance.ui.ui.ResourceLocationProvider;
 
 /**
  * A Wizard Page that allows selecting the Diagram Element within an

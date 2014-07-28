@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelinstance.ui.ui.commands;
+package de.uni_paderborn.fujaba.modelinstance.ui.handlers;
 
 import java.lang.reflect.InvocationTargetException;
 

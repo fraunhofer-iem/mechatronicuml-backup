@@ -91,7 +91,7 @@
      </category>
      <command
            categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.ui.commands.CreateModelFileCommand"
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateModelFileCommand"
            description="Create new Fujaba Model"
            id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
            name="Create new Fujaba Model">

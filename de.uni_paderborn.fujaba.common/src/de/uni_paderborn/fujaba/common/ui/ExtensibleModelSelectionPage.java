@@ -9,7 +9,7 @@
  * Contributors:
  *    Dmitry Stadnik - initial API and implementation
  */
-package de.uni_paderborn.fujaba.modelinstance.ui.ui;
+package de.uni_paderborn.fujaba.common.ui;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

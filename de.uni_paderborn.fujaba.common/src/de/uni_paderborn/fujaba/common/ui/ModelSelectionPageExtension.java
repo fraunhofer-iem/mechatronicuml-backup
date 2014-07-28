@@ -9,7 +9,7 @@
  * Contributors:
  *    Dmitry Stadnik - initial API and implementation
  */
-package de.uni_paderborn.fujaba.modelinstance.ui.ui;
+package de.uni_paderborn.fujaba.common.ui;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.swt.widgets.Composite;

@@ -9,7 +9,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
-import de.uni_paderborn.fujaba.modelinstance.ui.Messages;
+import de.uni_paderborn.fujaba.common.Messages;
 
 /**
  * A Wizard Page for creating new diagramResource files that have a certain file
