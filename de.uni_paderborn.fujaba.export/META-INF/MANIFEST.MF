@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Export Mechanism
+Bundle-SymbolicName: de.uni_paderborn.fujaba.export;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.export.ExportPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ org.eclipse.emf.ecore,
+ org.eclipse.ui.forms,
+ de.uni_paderborn.fujaba.common,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.emf.workspace
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

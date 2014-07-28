@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <category
+            id="de.uni_paderborn.fujaba.export"
+            name="Fujaba">
+      </category>
+      <wizard
+            category="de.uni_paderborn.fujaba.export"
+            class="de.uni_paderborn.fujaba.export.example.ExampleFujabaExportWizard"
+            id="de.uni_paderborn.fujaba.export.ExampleWizard"
+            name="Example Export Wizard">
+      </wizard>
+   </extension>
+
+</plugin>
