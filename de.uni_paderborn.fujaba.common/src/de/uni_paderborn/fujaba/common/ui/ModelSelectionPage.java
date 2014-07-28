@@ -103,8 +103,8 @@ public class ModelSelectionPage extends WizardPage {
 		return modelFileExtension;
 	}
 
-	public final void createControl(Composite parent) {
-		Composite plate = new Composite(parent, SWT.NONE);
+	public void createControl(Composite parent) {
+		Composite plate = createPlate(parent);
 		{
 			GridLayout layout = new GridLayout();
 			plate.setLayout(layout);
@@ -122,7 +122,7 @@ public class ModelSelectionPage extends WizardPage {
 	}
 
 	protected void createTitleAndButtonsRow(Composite parent) {
-		Composite plate = new Composite(parent, SWT.NONE);
+		Composite plate = createPlate(parent);
 		{
 			GridLayout layout = new GridLayout();
 			layout.numColumns = 4;
@@ -130,19 +130,19 @@ public class ModelSelectionPage extends WizardPage {
 
 			plate.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		}
-		Label label = new Label(plate, SWT.NONE);
+		Label label = createLabel(plate);
 		label.setText(Messages.ModelSelectionPageModelURI);
 		label.setLayoutData(new GridData());
 
-		browseFsBtn = new Button(plate, SWT.PUSH);
+		browseFsBtn = createButton(plate, SWT.PUSH);
 		browseFsBtn.setText(Messages.ModelSelectionPageBrowseFS);
 		browseFsBtn.setLayoutData(new GridData(SWT.END, SWT.CENTER, true, false));
 
-		browseWsBtn = new Button(plate, SWT.PUSH);
+		browseWsBtn = createButton(plate, SWT.PUSH);
 		browseWsBtn.setText(Messages.ModelSelectionPageBrowseWS);
 		browseWsBtn.setLayoutData(new GridData());
 
-		findInWsBtn = new Button(plate, SWT.PUSH);
+		findInWsBtn = createButton(plate, SWT.PUSH);
 		findInWsBtn.setText(Messages.ModelSelectionPageFindInWS);
 		findInWsBtn.setLayoutData(new GridData());
 
@@ -206,8 +206,24 @@ public class ModelSelectionPage extends WizardPage {
 		});
 	}
 
+	protected Composite createPlate(Composite parent) {
+		return new Composite(parent, SWT.NONE);
+	}
+
+	protected Button createButton(Composite parent, int style) {
+		return new Button(parent, style);
+	}
+	
+	protected Text createText(Composite parent, int style) {
+		return new Text(parent, style);
+	}
+	
+	protected Label createLabel(Composite parent) {
+		return new Label(parent, SWT.NONE);
+	}
+	
 	protected void createUriRow(Composite parent) {
-		Composite plate = new Composite(parent, SWT.NONE);
+		Composite plate = createPlate(parent);
 		{
 			GridLayout layout = new GridLayout();
 			layout.numColumns = 2;
@@ -218,14 +234,14 @@ public class ModelSelectionPage extends WizardPage {
 			data.grabExcessHorizontalSpace = true;
 			plate.setLayoutData(data);
 		}
-		uriFld = new Text(plate, SWT.SINGLE | SWT.BORDER);
+		uriFld = createText(plate, SWT.SINGLE | SWT.BORDER);
 		{
 			GridData data = new GridData();
 			data.horizontalAlignment = GridData.FILL;
 			data.grabExcessHorizontalSpace = true;
 			uriFld.setLayoutData(data);
 		}
-		loadBtn = new Button(plate, SWT.PUSH);
+		loadBtn = createButton(plate, SWT.PUSH);
 		loadBtn.setText(Messages.ModelSelectionPageLoad);
 		{
 			GridData data = new GridData();

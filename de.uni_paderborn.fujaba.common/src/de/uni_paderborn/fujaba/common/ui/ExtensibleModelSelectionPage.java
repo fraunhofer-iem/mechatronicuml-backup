@@ -21,6 +21,7 @@ import org.eclipse.swt.widgets.Composite;
  * @author dstadnik
  */
 public class ExtensibleModelSelectionPage extends ModelSelectionPage {
+	boolean initialized = false; 
 
 	private Map<String, ModelSelectionPageExtension> extensions; // id -> extension
 
@@ -31,7 +32,13 @@ public class ExtensibleModelSelectionPage extends ModelSelectionPage {
 	public ExtensibleModelSelectionPage(String pageId, ResourceLocationProvider rloc, ResourceSet resourceSet, String modelFileExtension) {
 		super(pageId, rloc, resourceSet, modelFileExtension);
 		extensions = new LinkedHashMap<String, ModelSelectionPageExtension>();
-		addExtensions();
+	}
+	
+	public void initialize() {
+		if (!initialized) {
+			initialized = true;
+			addExtensions();
+		}
 	}
 
 	protected void addExtensions() {
@@ -45,11 +52,13 @@ public class ExtensibleModelSelectionPage extends ModelSelectionPage {
 	}
 
 	public ModelSelectionPageExtension getExtension(String id) {
+		initialize();
 		return extensions.get(id);
 	}
 
 	@Override
 	public void createAdditionalControls(Composite parent) {
+		initialize();
 		for (ModelSelectionPageExtension extension : extensions.values()) {
 			extension.createControl(parent);
 		}
@@ -57,6 +66,7 @@ public class ExtensibleModelSelectionPage extends ModelSelectionPage {
 
 	@Override
 	protected void resourceChanged() {
+		initialize();
 		for (ModelSelectionPageExtension extension : extensions.values()) {
 			extension.setResource(getResource());
 		}

@@ -213,6 +213,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 
 		DiagramModelSelectionPage domainModelSelectionPage = new DiagramModelSelectionPage(
 				"domain", rloc, editingDomain.getResourceSet(), "fujaba", diagramInformation); //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelSelectionPage.initialize();
 
 		domainModelSelectionPage.setTitle("Select Domain Model");
 		domainModelSelectionPage.setDescription("Load domain model.");
