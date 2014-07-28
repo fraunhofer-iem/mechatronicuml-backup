@@ -1,10 +1,9 @@
-package de.uni_paderborn.fujaba.export.pages;
+package de.uni_paderborn.fujaba.export.providers;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.swt.graphics.Color;
 
-public class GreyedAdapterFactoryLabelProvider extends AdapterFactoryLabelProvider {
+public class GreyedAdapterFactoryLabelProvider extends ColoredAdapterFactoryLabelProvider {
 
 	private static final Color COLOR_UNSUPPORTED_ITEM_FOREGROUND = new Color(null, 128, 128, 128);
 	private static final Color COLOR_UNSUPPORTED_ITEM_BACKGROUND = new Color(null, 200, 200, 200);

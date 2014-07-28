@@ -18,7 +18,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -34,6 +33,7 @@ import org.eclipse.ui.forms.widgets.Section;
 import de.uni_paderborn.fujaba.common.ui.ExtensibleModelSelectionPage;
 import de.uni_paderborn.fujaba.common.ui.ModelSelectionPageExtension;
 import de.uni_paderborn.fujaba.common.ui.ResourceLocationProvider;
+import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
 
 public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSelectionPage implements IFujabaExportSourcePage {
 
@@ -188,11 +188,6 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 			validatePage();
 		}		
 		
-		private class ColoredAdapterFactoryLabelProvider extends AdapterFactoryLabelProvider implements IColorProvider {
-			public ColoredAdapterFactoryLabelProvider(AdapterFactory adapterFactory) {
-				super(adapterFactory);
-			}
-		}
 
 		public Object[] getCheckedElements() {
 			return treeViewer.getCheckedElements();

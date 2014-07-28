@@ -2,10 +2,8 @@ package de.uni_paderborn.fujaba.export.pages;
 
 import java.io.File;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -33,7 +31,7 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 import de.uni_paderborn.fujaba.common.Messages;
 
 
-public class FujabaExportTargetPage extends WizardDataTransferPage {
+public class FujabaExportTargetPage extends WizardDataTransferPage implements IFujabaExportTargetPage {
 
 	protected FormToolkit toolkit;
 	protected TreeViewer treeViewer;
@@ -281,22 +279,23 @@ public class FujabaExportTargetPage extends WizardDataTransferPage {
 			}
         });
         
-        // Options
-		sectionStyle = Section.TITLE_BAR
-				| Section.CLIENT_INDENT | Section.EXPANDED | Section.TWISTIE;
-		Section optionsSection= toolkit.createSection(composite, sectionStyle);
-		optionsSection.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-                | GridData.HORIZONTAL_ALIGN_FILL));
-		optionsSection.setText("Options");
-		Composite optionsComposite = toolkit.createComposite(optionsSection); 
-		optionsSection.setClient(optionsComposite);
-
-		optionsComposite.setLayout(new GridLayout());
-		optionsComposite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-                | GridData.HORIZONTAL_ALIGN_FILL));
-		optionsComposite.setFont(parent.getFont());
-		toolkit.createButton(optionsComposite, "Overwrite existing resources", SWT.CHECK);
-
+        if (shouldDisplayOptions()) {
+	        // Options
+			sectionStyle = Section.TITLE_BAR
+					| Section.CLIENT_INDENT | Section.EXPANDED | Section.TWISTIE;
+			Section optionsSection= toolkit.createSection(composite, sectionStyle);
+			optionsSection.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
+	                | GridData.HORIZONTAL_ALIGN_FILL));
+			optionsSection.setText("Options");
+			Composite optionsComposite = toolkit.createComposite(optionsSection); 
+			optionsSection.setClient(optionsComposite);
+	
+			optionsComposite.setLayout(new GridLayout());
+			optionsComposite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
+	                | GridData.HORIZONTAL_ALIGN_FILL));
+			optionsComposite.setFont(parent.getFont());
+			toolkit.createButton(optionsComposite, "Overwrite existing resources", SWT.CHECK);
+        }
         
 	        
 //        restoreResourceSpecificationWidgetValues(); // ie.- local
@@ -310,7 +309,12 @@ public class FujabaExportTargetPage extends WizardDataTransferPage {
         setErrorMessage(null);	// should not initially have error message
         
         setControl(section);
-       }
+    }
+
+	protected boolean shouldDisplayOptions() {
+		return wizardPageSupportsOverwriteOption();
+	}
+
 
 	@Override
 	protected boolean allowNewContainerName() {
@@ -319,6 +323,11 @@ public class FujabaExportTargetPage extends WizardDataTransferPage {
 
 	@Override
 	public void handleEvent(Event event) {
+	}
+
+	@Override
+	public boolean wizardPageSupportsOverwriteOption() {
+		return true;
 	}
 
 }

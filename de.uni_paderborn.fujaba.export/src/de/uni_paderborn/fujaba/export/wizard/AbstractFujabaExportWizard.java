@@ -22,7 +22,6 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.ide.IDE;
 
 import de.uni_paderborn.fujaba.export.ExportPlugin;
-import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 
 public abstract class AbstractFujabaExportWizard extends Wizard implements IFujabaExportWizard {
