@@ -326,7 +326,7 @@ public class MtctlModelElementProvider {
 		for (EObject instance : instances) {
 			if (getInstanceType(instance) == objInstanceType) {
 				if (!(instance instanceof DiscreteInteractionEndpointInstance))
-					throw new RuntimeException("Unexpected instance type in getAllInstancesFor("+obj+")");
+					result.add(instance);
 				else if ((instance instanceof DiscreteSingleInteractionEndpointInstance) && belongsToDiscreteSingleInteractionEndpointInstance) 
 					result.add(instance);
 				else if ((instance instanceof DiscreteMultiInteractionEndpointInstance) && !belongsToDiscreteSingleInteractionEndpointInstance) 
