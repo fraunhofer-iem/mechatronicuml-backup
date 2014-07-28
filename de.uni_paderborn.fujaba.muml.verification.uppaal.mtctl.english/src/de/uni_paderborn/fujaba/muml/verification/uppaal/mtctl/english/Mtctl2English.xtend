@@ -42,6 +42,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlQualifiedNameProvider
 import java.util.concurrent.TimeUnit
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr
 
 class Mtctl2English {
 	def serializeProperty(Property it) '''«expr(it.expression, true).toString().toFirstUpper».'''
@@ -194,8 +195,10 @@ class Mtctl2English {
 			TransitionSetExpr case !singular: '''transitions «expr.name»'''
 			BufferSetExpr case singular: '''a buffer «expr.name»'''
 			BufferSetExpr case !singular: '''buffers «expr.name»'''
-			InstanceSetExpr case singular: '''a instance «expr.name» of type «(expr.set as InstanceSetExpr).type»'''
-			InstanceSetExpr case !singular: '''instances «expr.name» of type «(expr.set as InstanceSetExpr).type»'''
+			InstanceSetExpr case singular: '''an instance «expr.name» of «(expr.set as InstanceSetExpr).type»'''
+			InstanceSetExpr case !singular: '''instances «expr.name» of «(expr.set as InstanceSetExpr).type»'''
+			SubinstanceSetExpr case singular: '''a subinstance «expr.name» of «(expr.set as SubinstanceSetExpr).type»'''
+			SubinstanceSetExpr case !singular: '''subinstances «expr.name» of «(expr.set as SubinstanceSetExpr).type»'''
 		}
 	}
 

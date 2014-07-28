@@ -43,6 +43,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetEx
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlQualifiedNameProvider;
 import java.util.Arrays;
@@ -677,10 +678,10 @@ public class Mtctl2English {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
-          _builder.append("a instance ");
+          _builder.append("an instance ");
           String _name = expr.getName();
           _builder.append(_name, "");
-          _builder.append(" of type ");
+          _builder.append(" of ");
           SetExpr _set_1 = expr.getSet();
           MumlElemExpr _type = ((InstanceSetExpr) _set_1).getType();
           _builder.append(_type, "");
@@ -698,9 +699,44 @@ public class Mtctl2English {
           _builder.append("instances ");
           String _name = expr.getName();
           _builder.append(_name, "");
-          _builder.append(" of type ");
+          _builder.append(" of ");
           SetExpr _set_1 = expr.getSet();
           MumlElemExpr _type = ((InstanceSetExpr) _set_1).getType();
+          _builder.append(_type, "");
+          _switchResult = _builder;
+        }
+      }
+    }
+    if (!_matched) {
+      if (_switchValue instanceof SubinstanceSetExpr) {
+        final SubinstanceSetExpr _subinstanceSetExpr = (SubinstanceSetExpr)_switchValue;
+        if (singular) {
+          _matched=true;
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("a subinstance ");
+          String _name = expr.getName();
+          _builder.append(_name, "");
+          _builder.append(" of ");
+          SetExpr _set_1 = expr.getSet();
+          MumlElemExpr _type = ((SubinstanceSetExpr) _set_1).getType();
+          _builder.append(_type, "");
+          _switchResult = _builder;
+        }
+      }
+    }
+    if (!_matched) {
+      if (_switchValue instanceof SubinstanceSetExpr) {
+        final SubinstanceSetExpr _subinstanceSetExpr = (SubinstanceSetExpr)_switchValue;
+        boolean _not = (!singular);
+        if (_not) {
+          _matched=true;
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("subinstances ");
+          String _name = expr.getName();
+          _builder.append(_name, "");
+          _builder.append(" of ");
+          SetExpr _set_1 = expr.getSet();
+          MumlElemExpr _type = ((SubinstanceSetExpr) _set_1).getType();
           _builder.append(_type, "");
           _switchResult = _builder;
         }
