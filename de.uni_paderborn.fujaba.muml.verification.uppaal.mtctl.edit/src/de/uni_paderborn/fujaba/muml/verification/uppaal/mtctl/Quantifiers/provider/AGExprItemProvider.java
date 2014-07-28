@@ -186,11 +186,6 @@ public class AGExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.AG_EXPR__EXPR,
-				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(QuantifiersPackage.Literals.AG_EXPR__EXPR,
 				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
 
 		newChildDescriptors.add
@@ -282,6 +277,11 @@ public class AGExprItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.AG_EXPR__EXPR,
 				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.AG_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createSubinstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

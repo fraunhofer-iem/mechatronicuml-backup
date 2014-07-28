@@ -2,14 +2,6 @@
 
 <templates>
 
-<template autoinsert="false" 
-context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_timeInterval"
-deleted="false" 
-description="between first_expression and second_expression lowerBound to upperBound time units should pass" 
-id="timeInterval"
-enabled="true" 
-name="timeInterval">timeInterval ${first_expression} [${lowerBound},${upperBound}] ${second_expression}</template>
-
 <!--<template autoinsert="true" 
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_leadsTo"
 deleted="false" 
@@ -33,6 +25,14 @@ description="set of instances of a type"
 id="Instances"
 enabled="true" 
 name="Instances">Instances&lt;${Type}&gt;</template>
+
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_Subinstances"
+deleted="false" 
+description="set of subinstances of a multi discrete interaction endpoint" 
+id="Subinstances"
+enabled="true" 
+name="Subinstances">Subinstances&lt;${Type}&gt;</template>
 
 <template autoinsert="true" 
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_exists"

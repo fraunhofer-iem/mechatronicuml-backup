@@ -85,6 +85,15 @@ public interface SetsFactory extends EFactory {
 	InstanceSetExpr createInstanceSetExpr();
 
 	/**
+	 * Returns a new object of class '<em>Subinstance Set Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Subinstance Set Expr</em>'.
+	 * @generated
+	 */
+	SubinstanceSetExpr createSubinstanceSetExpr();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

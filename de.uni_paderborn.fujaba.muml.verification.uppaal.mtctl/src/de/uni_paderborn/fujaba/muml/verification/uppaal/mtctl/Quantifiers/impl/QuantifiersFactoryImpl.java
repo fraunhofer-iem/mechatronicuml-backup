@@ -64,7 +64,6 @@ public class QuantifiersFactoryImpl extends EFactoryImpl implements QuantifiersF
 			case QuantifiersPackage.BOUND_VARIABLE: return createBoundVariable();
 			case QuantifiersPackage.UNIVERSAL_QUANT_EXPR: return createUniversalQuantExpr();
 			case QuantifiersPackage.LEADS_TO_EXPR: return createLeadsToExpr();
-			case QuantifiersPackage.TIME_INTERVAL_EXPR: return createTimeIntervalExpr();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -148,16 +147,6 @@ public class QuantifiersFactoryImpl extends EFactoryImpl implements QuantifiersF
 	public LeadsToExpr createLeadsToExpr() {
 		LeadsToExprImpl leadsToExpr = new LeadsToExprImpl();
 		return leadsToExpr;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TimeIntervalExpr createTimeIntervalExpr() {
-		TimeIntervalExprImpl timeIntervalExpr = new TimeIntervalExprImpl();
-		return timeIntervalExpr;
 	}
 
 	/**

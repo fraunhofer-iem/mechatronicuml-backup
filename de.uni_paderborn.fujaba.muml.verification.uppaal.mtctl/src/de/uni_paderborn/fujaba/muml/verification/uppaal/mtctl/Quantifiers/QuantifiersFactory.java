@@ -94,15 +94,6 @@ public interface QuantifiersFactory extends EFactory {
 	LeadsToExpr createLeadsToExpr();
 
 	/**
-	 * Returns a new object of class '<em>Time Interval Expr</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Time Interval Expr</em>'.
-	 * @generated
-	 */
-	TimeIntervalExpr createTimeIntervalExpr();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

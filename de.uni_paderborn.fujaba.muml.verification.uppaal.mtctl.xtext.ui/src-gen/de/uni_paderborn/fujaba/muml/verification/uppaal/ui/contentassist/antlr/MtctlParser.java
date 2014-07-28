@@ -89,13 +89,14 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMumlElemExprAccess().getGroup(), "rule__MumlElemExpr__Group__0");
 					put(grammarAccess.getMumlElemExprAccess().getGroup_1(), "rule__MumlElemExpr__Group_1__0");
 					put(grammarAccess.getConstExprAccess().getGroup(), "rule__ConstExpr__Group__0");
-					put(grammarAccess.getSetExprAccess().getGroup_2(), "rule__SetExpr__Group_2__0");
 					put(grammarAccess.getSetExprAccess().getGroup_3(), "rule__SetExpr__Group_3__0");
 					put(grammarAccess.getSetExprAccess().getGroup_4(), "rule__SetExpr__Group_4__0");
 					put(grammarAccess.getSetExprAccess().getGroup_5(), "rule__SetExpr__Group_5__0");
 					put(grammarAccess.getSetExprAccess().getGroup_6(), "rule__SetExpr__Group_6__0");
+					put(grammarAccess.getSetExprAccess().getGroup_7(), "rule__SetExpr__Group_7__0");
 					put(grammarAccess.getIntervalSetExprAccess().getGroup(), "rule__IntervalSetExpr__Group__0");
 					put(grammarAccess.getInstanceSetExprAccess().getGroup(), "rule__InstanceSetExpr__Group__0");
+					put(grammarAccess.getSubinstanceSetExprAccess().getGroup(), "rule__SubinstanceSetExpr__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
@@ -139,6 +140,7 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIntervalSetExprAccess().getLowerValAssignment_2(), "rule__IntervalSetExpr__LowerValAssignment_2");
 					put(grammarAccess.getIntervalSetExprAccess().getUpperValAssignment_4(), "rule__IntervalSetExpr__UpperValAssignment_4");
 					put(grammarAccess.getInstanceSetExprAccess().getTypeAssignment_3(), "rule__InstanceSetExpr__TypeAssignment_3");
+					put(grammarAccess.getSubinstanceSetExprAccess().getTypeAssignment_3(), "rule__SubinstanceSetExpr__TypeAssignment_3");
 				}
 			};
 		}

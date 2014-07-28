@@ -180,11 +180,6 @@ public class QuantifierExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA,
-				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA,
 				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
 
 		newChildDescriptors.add
@@ -276,6 +271,11 @@ public class QuantifierExprItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA,
 				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA,
+				 SetsFactory.eINSTANCE.createSubinstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

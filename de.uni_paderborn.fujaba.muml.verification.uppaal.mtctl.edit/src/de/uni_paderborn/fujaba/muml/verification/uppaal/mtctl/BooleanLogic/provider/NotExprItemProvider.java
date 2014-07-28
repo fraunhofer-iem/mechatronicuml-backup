@@ -209,11 +209,6 @@ public class NotExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.NOT_EXPR__OPD,
-				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BooleanLogicPackage.Literals.NOT_EXPR__OPD,
 				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
 
 		newChildDescriptors.add
@@ -305,6 +300,11 @@ public class NotExprItemProvider
 			(createChildParameter
 				(BooleanLogicPackage.Literals.NOT_EXPR__OPD,
 				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BooleanLogicPackage.Literals.NOT_EXPR__OPD,
+				 SetsFactory.eINSTANCE.createSubinstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

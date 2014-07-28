@@ -207,6 +207,11 @@ public class BoundVariableItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.BOUND_VARIABLE__SET,
 				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.BOUND_VARIABLE__SET,
+				 SetsFactory.eINSTANCE.createSubinstanceSetExpr()));
 	}
 
 	/**

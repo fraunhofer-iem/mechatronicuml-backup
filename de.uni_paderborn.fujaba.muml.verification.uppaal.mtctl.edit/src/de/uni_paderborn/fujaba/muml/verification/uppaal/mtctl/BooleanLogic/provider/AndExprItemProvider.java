@@ -211,11 +211,6 @@ public class AndExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.AND_EXPR__LEFT_OPD,
-				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BooleanLogicPackage.Literals.AND_EXPR__LEFT_OPD,
 				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
 
 		newChildDescriptors.add
@@ -307,6 +302,11 @@ public class AndExprItemProvider
 			(createChildParameter
 				(BooleanLogicPackage.Literals.AND_EXPR__LEFT_OPD,
 				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BooleanLogicPackage.Literals.AND_EXPR__LEFT_OPD,
+				 SetsFactory.eINSTANCE.createSubinstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -396,11 +396,6 @@ public class AndExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.AND_EXPR__RIGHT_OPD,
-				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BooleanLogicPackage.Literals.AND_EXPR__RIGHT_OPD,
 				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
 
 		newChildDescriptors.add
@@ -492,6 +487,11 @@ public class AndExprItemProvider
 			(createChildParameter
 				(BooleanLogicPackage.Literals.AND_EXPR__RIGHT_OPD,
 				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BooleanLogicPackage.Literals.AND_EXPR__RIGHT_OPD,
+				 SetsFactory.eINSTANCE.createSubinstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

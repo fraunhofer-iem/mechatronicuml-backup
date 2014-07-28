@@ -3,39 +3,22 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.impl;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
-
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
-
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.impl.BooleanLogicPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.ComparablesPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.AFExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.AGExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
@@ -47,20 +30,14 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.Quanti
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TimeIntervalExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.UniversalQuantExpr;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SetsPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -139,13 +116,6 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 	 * @generated
 	 */
 	private EClass leadsToExprEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass timeIntervalExprEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -422,51 +392,6 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTimeIntervalExpr() {
-		return timeIntervalExprEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTimeIntervalExpr_Lhs() {
-		return (EReference)timeIntervalExprEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTimeIntervalExpr_Lower() {
-		return (EAttribute)timeIntervalExprEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTimeIntervalExpr_Upper() {
-		return (EAttribute)timeIntervalExprEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTimeIntervalExpr_Rhs() {
-		return (EReference)timeIntervalExprEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public QuantifiersFactory getQuantifiersFactory() {
 		return (QuantifiersFactory)getEFactoryInstance();
 	}
@@ -519,12 +444,6 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 		leadsToExprEClass = createEClass(LEADS_TO_EXPR);
 		createEReference(leadsToExprEClass, LEADS_TO_EXPR__LEFT_OPD);
 		createEReference(leadsToExprEClass, LEADS_TO_EXPR__RIGHT_OPD);
-
-		timeIntervalExprEClass = createEClass(TIME_INTERVAL_EXPR);
-		createEReference(timeIntervalExprEClass, TIME_INTERVAL_EXPR__LHS);
-		createEAttribute(timeIntervalExprEClass, TIME_INTERVAL_EXPR__LOWER);
-		createEAttribute(timeIntervalExprEClass, TIME_INTERVAL_EXPR__UPPER);
-		createEReference(timeIntervalExprEClass, TIME_INTERVAL_EXPR__RHS);
 	}
 
 	/**
@@ -569,7 +488,6 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 		temporalQuantifierExprEClass.getESuperTypes().add(theMtctlPackage.getExpression());
 		universalQuantExprEClass.getESuperTypes().add(this.getQuantifierExpr());
 		leadsToExprEClass.getESuperTypes().add(this.getTemporalQuantifierExpr());
-		timeIntervalExprEClass.getESuperTypes().add(this.getTemporalQuantifierExpr());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(afExprEClass, AFExpr.class, "AFExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -601,12 +519,6 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 		initEClass(leadsToExprEClass, LeadsToExpr.class, "LeadsToExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLeadsToExpr_LeftOpd(), theMtctlPackage.getExpression(), null, "leftOpd", null, 0, 1, LeadsToExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLeadsToExpr_RightOpd(), theMtctlPackage.getExpression(), null, "rightOpd", null, 0, 1, LeadsToExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(timeIntervalExprEClass, TimeIntervalExpr.class, "TimeIntervalExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTimeIntervalExpr_Lhs(), theMtctlPackage.getExpression(), null, "lhs", null, 0, 1, TimeIntervalExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeIntervalExpr_Lower(), ecorePackage.getEInt(), "lower", null, 0, 1, TimeIntervalExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTimeIntervalExpr_Upper(), ecorePackage.getEInt(), "upper", null, 0, 1, TimeIntervalExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTimeIntervalExpr_Rhs(), theMtctlPackage.getExpression(), null, "rhs", null, 0, 1, TimeIntervalExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //QuantifiersPackageImpl

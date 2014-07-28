@@ -38,7 +38,7 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.8">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr"/>
-      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+      <properties tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr/op"/>
       </properties>
     </classes>
@@ -110,15 +110,6 @@
     </classes>
     <classes superClasses="//@packages.2/@classes.7">
       <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/LeadsToExpr"/>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.7">
-      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/TimeIntervalExpr"/>
-      <properties tab="//@tabs.0" reconcile="false">
-        <genFeature href="Mtctl.genmodel#//mtctl/Quantifiers/TimeIntervalExpr/lower"/>
-      </properties>
-      <properties tab="//@tabs.0" tooltip="" reconcile="false">
-        <genFeature href="Mtctl.genmodel#//mtctl/Quantifiers/TimeIntervalExpr/upper"/>
-      </properties>
     </classes>
   </packages>
   <packages>
@@ -206,6 +197,9 @@
     </classes>
     <classes superClasses="//@packages.5/@classes.0">
       <genClass href="Mtctl.genmodel#//mtctl/Sets/InstanceSetExpr"/>
+    </classes>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/Sets/SubinstanceSetExpr"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

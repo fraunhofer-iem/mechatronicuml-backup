@@ -106,10 +106,6 @@ public class QuantifiersAdapterFactory extends AdapterFactoryImpl {
 				return createLeadsToExprAdapter();
 			}
 			@Override
-			public Adapter caseTimeIntervalExpr(TimeIntervalExpr object) {
-				return createTimeIntervalExprAdapter();
-			}
-			@Override
 			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
 			}
@@ -270,20 +266,6 @@ public class QuantifiersAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLeadsToExprAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TimeIntervalExpr <em>Time Interval Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TimeIntervalExpr
-	 * @generated
-	 */
-	public Adapter createTimeIntervalExprAdapter() {
 		return null;
 	}
 

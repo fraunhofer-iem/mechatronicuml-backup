@@ -233,6 +233,29 @@ public class SetsItemProviderAdapterFactory extends SetsAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SubinstanceSetExprItemProvider subinstanceSetExprItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSubinstanceSetExprAdapter() {
+		if (subinstanceSetExprItemProvider == null) {
+			subinstanceSetExprItemProvider = new SubinstanceSetExprItemProvider(this);
+		}
+
+		return subinstanceSetExprItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,6 +361,7 @@ public class SetsItemProviderAdapterFactory extends SetsAdapterFactory implement
 		if (transitionSetExprItemProvider != null) transitionSetExprItemProvider.dispose();
 		if (bufferSetExprItemProvider != null) bufferSetExprItemProvider.dispose();
 		if (instanceSetExprItemProvider != null) instanceSetExprItemProvider.dispose();
+		if (subinstanceSetExprItemProvider != null) subinstanceSetExprItemProvider.dispose();
 	}
 
 }

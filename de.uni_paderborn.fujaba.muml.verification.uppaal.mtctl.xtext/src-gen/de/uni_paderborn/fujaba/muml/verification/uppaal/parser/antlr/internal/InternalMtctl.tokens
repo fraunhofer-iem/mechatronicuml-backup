@@ -1,5 +1,6 @@
 RULE_ID=5
 T__66=66
+T__67=67
 T__64=64
 T__29=29
 T__65=65
@@ -62,8 +63,8 @@ T__38=38
 T__39=39
 RULE_WS=9
 'leadsTo'=12
-'>='=64
-'=='=63
+'>='=65
+'=='=64
 'Instances'=58
 '>'=60
 'exists'=20
@@ -77,11 +78,12 @@ RULE_WS=9
 'forall'=17
 'MessageTypes'=55
 'E[]'=27
-'.'=61
+'.'=62
 'AG'=28
 'stateInStatechart'=37
 'true'=32
 'and'=14
+'Subinstances'=61
 'msecs'=50
 'stateActive'=34
 'A[]'=29
@@ -90,7 +92,7 @@ RULE_WS=9
 'not'=16
 '('=18
 ':'=21
-'-'=62
+'-'=63
 ','=36
 'AF'=24
 ']'=45
@@ -109,8 +111,8 @@ RULE_WS=9
 'secs'=49
 'hrs'=47
 'EG'=26
-'<='=65
-'!='=66
+'<='=66
+'!='=67
 'false'=33
 '<'=59
 'sourceState'=42

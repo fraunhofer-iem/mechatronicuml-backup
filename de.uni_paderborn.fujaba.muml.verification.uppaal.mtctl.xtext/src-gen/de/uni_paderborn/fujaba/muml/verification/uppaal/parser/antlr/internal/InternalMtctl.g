@@ -2493,67 +2493,77 @@ ruleSetExpr returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getSetExprAccess().getIntervalSetExprParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getSetExprAccess().getSubinstanceSetExprParserRuleCall_1()); 
     }
-    this_IntervalSetExpr_1=ruleIntervalSetExpr
+    this_SubinstanceSetExpr_1=ruleSubinstanceSetExpr
     { 
-        $current = $this_IntervalSetExpr_1.current; 
+        $current = $this_SubinstanceSetExpr_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getSetExprAccess().getIntervalSetExprParserRuleCall_2()); 
+    }
+    this_IntervalSetExpr_2=ruleIntervalSetExpr
+    { 
+        $current = $this_IntervalSetExpr_2.current; 
         afterParserOrEnumRuleCall();
     }
 
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getSetExprAccess().getStateSetExprAction_2_0(),
+            grammarAccess.getSetExprAccess().getStateSetExprAction_3_0(),
             $current);
     }
-)	otherlv_3='States' 
+)	otherlv_4='States' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getSetExprAccess().getStatesKeyword_2_1());
+    	newLeafNode(otherlv_4, grammarAccess.getSetExprAccess().getStatesKeyword_3_1());
     }
 )
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getSetExprAccess().getTransitionSetExprAction_3_0(),
+            grammarAccess.getSetExprAccess().getTransitionSetExprAction_4_0(),
             $current);
     }
-)	otherlv_5='Transitions' 
+)	otherlv_6='Transitions' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getSetExprAccess().getTransitionsKeyword_3_1());
+    	newLeafNode(otherlv_6, grammarAccess.getSetExprAccess().getTransitionsKeyword_4_1());
     }
 )
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getSetExprAccess().getMessageSetExprAction_4_0(),
+            grammarAccess.getSetExprAccess().getMessageSetExprAction_5_0(),
             $current);
     }
-)	otherlv_7='MessageTypes' 
+)	otherlv_8='MessageTypes' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getSetExprAccess().getMessageTypesKeyword_4_1());
+    	newLeafNode(otherlv_8, grammarAccess.getSetExprAccess().getMessageTypesKeyword_5_1());
     }
 )
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getSetExprAccess().getClockSetExprAction_5_0(),
+            grammarAccess.getSetExprAccess().getClockSetExprAction_6_0(),
             $current);
     }
-)	otherlv_9='Clocks' 
+)	otherlv_10='Clocks' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getSetExprAccess().getClocksKeyword_5_1());
+    	newLeafNode(otherlv_10, grammarAccess.getSetExprAccess().getClocksKeyword_6_1());
     }
 )
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getSetExprAccess().getBufferSetExprAction_6_0(),
+            grammarAccess.getSetExprAccess().getBufferSetExprAction_7_0(),
             $current);
     }
-)	otherlv_11='Buffers' 
+)	otherlv_12='Buffers' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getSetExprAccess().getBuffersKeyword_6_1());
+    	newLeafNode(otherlv_12, grammarAccess.getSetExprAccess().getBuffersKeyword_7_1());
     }
 ))
 ;
@@ -2686,6 +2696,63 @@ ruleInstanceSetExpr returns [EObject current=null]
 )	otherlv_4='>' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getInstanceSetExprAccess().getGreaterThanSignKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleSubinstanceSetExpr
+entryRuleSubinstanceSetExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSubinstanceSetExprRule()); }
+	 iv_ruleSubinstanceSetExpr=ruleSubinstanceSetExpr 
+	 { $current=$iv_ruleSubinstanceSetExpr.current; } 
+	 EOF 
+;
+
+// Rule SubinstanceSetExpr
+ruleSubinstanceSetExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getSubinstanceSetExprAccess().getSubinstanceSetExprAction_0(),
+            $current);
+    }
+)	otherlv_1='Subinstances' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getSubinstanceSetExprAccess().getSubinstancesKeyword_1());
+    }
+	otherlv_2='<' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getSubinstanceSetExprAccess().getLessThanSignKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSubinstanceSetExprAccess().getTypeMumlElemExprParserRuleCall_3_0()); 
+	    }
+		lv_type_3_0=ruleMumlElemExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSubinstanceSetExprRule());
+	        }
+       		set(
+       			$current, 
+       			"type",
+        		lv_type_3_0, 
+        		"MumlElemExpr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4='>' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getSubinstanceSetExprAccess().getGreaterThanSignKeyword_4());
     }
 )
 ;

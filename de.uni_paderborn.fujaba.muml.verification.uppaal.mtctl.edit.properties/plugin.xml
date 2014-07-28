@@ -178,11 +178,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.TimeIntervalExprEditor$Factory"
-             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#TimeIntervalExpr">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.mtctl.editor.PropertyRepositoryEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl#PropertyRepository">
        </propertyEditor>
@@ -250,6 +245,11 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.InstanceSetExprEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#InstanceSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.SubinstanceSetExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#SubinstanceSetExpr">
        </propertyEditor>
     
     </propertyEditors>

@@ -186,11 +186,6 @@ public class EFExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.EF_EXPR__EXPR,
-				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(QuantifiersPackage.Literals.EF_EXPR__EXPR,
 				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
 
 		newChildDescriptors.add
@@ -282,6 +277,11 @@ public class EFExprItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.EF_EXPR__EXPR,
 				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.EF_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createSubinstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -1391,6 +1391,178 @@ public interface SetsPackage extends EPackage {
 	int INSTANCE_SET_EXPR_OPERATION_COUNT = SET_EXPR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SubinstanceSetExprImpl <em>Subinstance Set Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SubinstanceSetExprImpl
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SetsPackageImpl#getSubinstanceSetExpr()
+	 * @generated
+	 */
+	int SUBINSTANCE_SET_EXPR = 8;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR__TYPE = SET_EXPR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Subinstance Set Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR_FEATURE_COUNT = SET_EXPR_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___ECLASS = SET_EXPR___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___EIS_PROXY = SET_EXPR___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___ERESOURCE = SET_EXPR___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___ECONTAINER = SET_EXPR___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___ECONTAINING_FEATURE = SET_EXPR___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___ECONTAINMENT_FEATURE = SET_EXPR___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___ECONTENTS = SET_EXPR___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___EALL_CONTENTS = SET_EXPR___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___ECROSS_REFERENCES = SET_EXPR___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___EGET__ESTRUCTURALFEATURE = SET_EXPR___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = SET_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = SET_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___EIS_SET__ESTRUCTURALFEATURE = SET_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___EUNSET__ESTRUCTURALFEATURE = SET_EXPR___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR___EINVOKE__EOPERATION_ELIST = SET_EXPR___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The number of operations of the '<em>Subinstance Set Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBINSTANCE_SET_EXPR_OPERATION_COUNT = SET_EXPR_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr <em>Set Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1502,6 +1674,27 @@ public interface SetsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInstanceSetExpr_Type();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr <em>Subinstance Set Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Subinstance Set Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr
+	 * @generated
+	 */
+	EClass getSubinstanceSetExpr();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr#getType()
+	 * @see #getSubinstanceSetExpr()
+	 * @generated
+	 */
+	EReference getSubinstanceSetExpr_Type();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1629,6 +1822,24 @@ public interface SetsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INSTANCE_SET_EXPR__TYPE = eINSTANCE.getInstanceSetExpr_Type();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SubinstanceSetExprImpl <em>Subinstance Set Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SubinstanceSetExprImpl
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SetsPackageImpl#getSubinstanceSetExpr()
+		 * @generated
+		 */
+		EClass SUBINSTANCE_SET_EXPR = eINSTANCE.getSubinstanceSetExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBINSTANCE_SET_EXPR__TYPE = eINSTANCE.getSubinstanceSetExpr_Type();
 
 	}
 

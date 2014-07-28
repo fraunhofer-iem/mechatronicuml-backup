@@ -27,10 +27,6 @@ LeadsToExpr returns mtctl::Expression:
 	ImplyExpr ({mtctl::LeadsToExpr.leftOpd=current} 'leadsTo' rightOpd=ImplyExpr)*
 ;
 
-/*TimeIntervalExpr returns mtctl::Expression:
-	'timeInterval' {mtctl::TimeIntervalExpr} lhs=ImplyExpr '[' lower=INT ',' upper=INT ']' rhs=ImplyExpr | ImplyExpr //TODO use units from action lang
-;*/
-
 ImplyExpr returns mtctl::Expression:
 	AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
 ;
@@ -210,7 +206,7 @@ TimeUnitExpr returns valuetype::TimeUnit:
 
 //Sets
 SetExpr returns mtctl::SetExpr:
-	InstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr} 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr} 'Buffers'
+	InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr} 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr} 'Buffers'
 ;
 
 IntervalSetExpr returns mtctl::SetExpr:
@@ -219,6 +215,10 @@ IntervalSetExpr returns mtctl::SetExpr:
 
 InstanceSetExpr returns mtctl::SetExpr:
 	{mtctl::InstanceSetExpr} 'Instances' '<' type=MumlElemExpr '>'
+;
+
+SubinstanceSetExpr returns mtctl::SetExpr:
+	{mtctl::SubinstanceSetExpr} 'Subinstances' '<' type=MumlElemExpr '>'
 ;
 
 //Other necessary definitions

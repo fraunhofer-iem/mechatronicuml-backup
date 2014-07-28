@@ -256,29 +256,6 @@ public class QuantifiersItemProviderAdapterFactory extends QuantifiersAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TimeIntervalExpr} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TimeIntervalExprItemProvider timeIntervalExprItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TimeIntervalExpr}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTimeIntervalExprAdapter() {
-		if (timeIntervalExprItemProvider == null) {
-			timeIntervalExprItemProvider = new TimeIntervalExprItemProvider(this);
-		}
-
-		return timeIntervalExprItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -385,7 +362,6 @@ public class QuantifiersItemProviderAdapterFactory extends QuantifiersAdapterFac
 		if (boundVariableItemProvider != null) boundVariableItemProvider.dispose();
 		if (universalQuantExprItemProvider != null) universalQuantExprItemProvider.dispose();
 		if (leadsToExprItemProvider != null) leadsToExprItemProvider.dispose();
-		if (timeIntervalExprItemProvider != null) timeIntervalExprItemProvider.dispose();
 	}
 
 }

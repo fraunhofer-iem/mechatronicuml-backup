@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
@@ -100,6 +101,13 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * @generated
 	 */
 	private EClass instanceSetExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass subinstanceSetExprEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -295,6 +303,24 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSubinstanceSetExpr() {
+		return subinstanceSetExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSubinstanceSetExpr_Type() {
+		return (EReference)subinstanceSetExprEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SetsFactory getSetsFactory() {
 		return (SetsFactory)getEFactoryInstance();
 	}
@@ -336,6 +362,9 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 
 		instanceSetExprEClass = createEClass(INSTANCE_SET_EXPR);
 		createEReference(instanceSetExprEClass, INSTANCE_SET_EXPR__TYPE);
+
+		subinstanceSetExprEClass = createEClass(SUBINSTANCE_SET_EXPR);
+		createEReference(subinstanceSetExprEClass, SUBINSTANCE_SET_EXPR__TYPE);
 	}
 
 	/**
@@ -378,6 +407,7 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 		transitionSetExprEClass.getESuperTypes().add(this.getSetExpr());
 		bufferSetExprEClass.getESuperTypes().add(this.getSetExpr());
 		instanceSetExprEClass.getESuperTypes().add(this.getSetExpr());
+		subinstanceSetExprEClass.getESuperTypes().add(this.getSetExpr());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(setExprEClass, SetExpr.class, "SetExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -398,6 +428,9 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 
 		initEClass(instanceSetExprEClass, InstanceSetExpr.class, "InstanceSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstanceSetExpr_Type(), theComparablesPackage.getMumlElemExpr(), null, "type", null, 0, 1, InstanceSetExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(subinstanceSetExprEClass, SubinstanceSetExpr.class, "SubinstanceSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSubinstanceSetExpr_Type(), theComparablesPackage.getMumlElemExpr(), null, "type", null, 0, 1, SubinstanceSetExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //SetsPackageImpl

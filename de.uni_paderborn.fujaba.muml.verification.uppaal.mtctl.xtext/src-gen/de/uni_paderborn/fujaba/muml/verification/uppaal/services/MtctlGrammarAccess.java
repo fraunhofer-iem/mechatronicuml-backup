@@ -125,9 +125,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightOpdAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightOpdAndExprParserRuleCall_1_2_0 = (RuleCall)cRightOpdAssignment_1_2.eContents().get(0);
 		
-		/// *TimeIntervalExpr returns mtctl::Expression:
-		//	'timeInterval' {mtctl::TimeIntervalExpr} lhs=ImplyExpr '[' lower=INT ',' upper=INT ']' rhs=ImplyExpr | ImplyExpr //TODO use units from action lang
-		//;* / ImplyExpr returns mtctl::Expression:
+		//ImplyExpr returns mtctl::Expression:
 		//	AndExpr ({mtctl::ImplyExpr.leftOpd=current} "implies" rightOpd=AndExpr)*;
 		public ParserRule getRule() { return rule; }
 
@@ -1410,83 +1408,89 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SetExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cInstanceSetExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cIntervalSetExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cStateSetExprAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Keyword cStatesKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final RuleCall cSubinstanceSetExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cIntervalSetExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cTransitionSetExprAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Keyword cTransitionsKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Action cStateSetExprAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cStatesKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Action cMessageSetExprAction_4_0 = (Action)cGroup_4.eContents().get(0);
-		private final Keyword cMessageTypesKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Action cTransitionSetExprAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Keyword cTransitionsKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Action cClockSetExprAction_5_0 = (Action)cGroup_5.eContents().get(0);
-		private final Keyword cClocksKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Action cMessageSetExprAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Keyword cMessageTypesKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Action cBufferSetExprAction_6_0 = (Action)cGroup_6.eContents().get(0);
-		private final Keyword cBuffersKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Action cClockSetExprAction_6_0 = (Action)cGroup_6.eContents().get(0);
+		private final Keyword cClocksKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
+		private final Action cBufferSetExprAction_7_0 = (Action)cGroup_7.eContents().get(0);
+		private final Keyword cBuffersKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		
 		////Sets
 		//SetExpr returns mtctl::SetExpr:
-		//	InstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" |
-		//	{mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers";
+		//	InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr}
+		//	"Transitions" | {mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr}
+		//	"Buffers";
 		public ParserRule getRule() { return rule; }
 
-		//InstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" |
-		//{mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers"
+		//InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr}
+		//"Transitions" | {mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr}
+		//"Buffers"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//InstanceSetExpr
 		public RuleCall getInstanceSetExprParserRuleCall_0() { return cInstanceSetExprParserRuleCall_0; }
 
+		//SubinstanceSetExpr
+		public RuleCall getSubinstanceSetExprParserRuleCall_1() { return cSubinstanceSetExprParserRuleCall_1; }
+
 		//IntervalSetExpr
-		public RuleCall getIntervalSetExprParserRuleCall_1() { return cIntervalSetExprParserRuleCall_1; }
+		public RuleCall getIntervalSetExprParserRuleCall_2() { return cIntervalSetExprParserRuleCall_2; }
 
 		//{mtctl::StateSetExpr} "States"
-		public Group getGroup_2() { return cGroup_2; }
-
-		//{mtctl::StateSetExpr}
-		public Action getStateSetExprAction_2_0() { return cStateSetExprAction_2_0; }
-
-		//"States"
-		public Keyword getStatesKeyword_2_1() { return cStatesKeyword_2_1; }
-
-		//{mtctl::TransitionSetExpr} "Transitions"
 		public Group getGroup_3() { return cGroup_3; }
 
-		//{mtctl::TransitionSetExpr}
-		public Action getTransitionSetExprAction_3_0() { return cTransitionSetExprAction_3_0; }
+		//{mtctl::StateSetExpr}
+		public Action getStateSetExprAction_3_0() { return cStateSetExprAction_3_0; }
 
-		//"Transitions"
-		public Keyword getTransitionsKeyword_3_1() { return cTransitionsKeyword_3_1; }
+		//"States"
+		public Keyword getStatesKeyword_3_1() { return cStatesKeyword_3_1; }
 
-		//{mtctl::MessageSetExpr} "MessageTypes"
+		//{mtctl::TransitionSetExpr} "Transitions"
 		public Group getGroup_4() { return cGroup_4; }
 
-		//{mtctl::MessageSetExpr}
-		public Action getMessageSetExprAction_4_0() { return cMessageSetExprAction_4_0; }
+		//{mtctl::TransitionSetExpr}
+		public Action getTransitionSetExprAction_4_0() { return cTransitionSetExprAction_4_0; }
 
-		//"MessageTypes"
-		public Keyword getMessageTypesKeyword_4_1() { return cMessageTypesKeyword_4_1; }
+		//"Transitions"
+		public Keyword getTransitionsKeyword_4_1() { return cTransitionsKeyword_4_1; }
 
-		//{mtctl::ClockSetExpr} "Clocks"
+		//{mtctl::MessageSetExpr} "MessageTypes"
 		public Group getGroup_5() { return cGroup_5; }
 
-		//{mtctl::ClockSetExpr}
-		public Action getClockSetExprAction_5_0() { return cClockSetExprAction_5_0; }
+		//{mtctl::MessageSetExpr}
+		public Action getMessageSetExprAction_5_0() { return cMessageSetExprAction_5_0; }
 
-		//"Clocks"
-		public Keyword getClocksKeyword_5_1() { return cClocksKeyword_5_1; }
+		//"MessageTypes"
+		public Keyword getMessageTypesKeyword_5_1() { return cMessageTypesKeyword_5_1; }
 
-		//{mtctl::BufferSetExpr} "Buffers"
+		//{mtctl::ClockSetExpr} "Clocks"
 		public Group getGroup_6() { return cGroup_6; }
 
+		//{mtctl::ClockSetExpr}
+		public Action getClockSetExprAction_6_0() { return cClockSetExprAction_6_0; }
+
+		//"Clocks"
+		public Keyword getClocksKeyword_6_1() { return cClocksKeyword_6_1; }
+
+		//{mtctl::BufferSetExpr} "Buffers"
+		public Group getGroup_7() { return cGroup_7; }
+
 		//{mtctl::BufferSetExpr}
-		public Action getBufferSetExprAction_6_0() { return cBufferSetExprAction_6_0; }
+		public Action getBufferSetExprAction_7_0() { return cBufferSetExprAction_7_0; }
 
 		//"Buffers"
-		public Keyword getBuffersKeyword_6_1() { return cBuffersKeyword_6_1; }
+		public Keyword getBuffersKeyword_7_1() { return cBuffersKeyword_7_1; }
 	}
 
 	public class IntervalSetExprElements extends AbstractParserRuleElementFinder {
@@ -1555,6 +1559,42 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"Instances"
 		public Keyword getInstancesKeyword_1() { return cInstancesKeyword_1; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
+
+		//type=MumlElemExpr
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
+
+		//MumlElemExpr
+		public RuleCall getTypeMumlElemExprParserRuleCall_3_0() { return cTypeMumlElemExprParserRuleCall_3_0; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
+	}
+
+	public class SubinstanceSetExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubinstanceSetExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSubinstanceSetExprAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cSubinstancesKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeMumlElemExprParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//SubinstanceSetExpr returns mtctl::SetExpr:
+		//	{mtctl::SubinstanceSetExpr} "Subinstances" "<" type=MumlElemExpr ">";
+		public ParserRule getRule() { return rule; }
+
+		//{mtctl::SubinstanceSetExpr} "Subinstances" "<" type=MumlElemExpr ">"
+		public Group getGroup() { return cGroup; }
+
+		//{mtctl::SubinstanceSetExpr}
+		public Action getSubinstanceSetExprAction_0() { return cSubinstanceSetExprAction_0; }
+
+		//"Subinstances"
+		public Keyword getSubinstancesKeyword_1() { return cSubinstancesKeyword_1; }
 
 		//"<"
 		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
@@ -1729,6 +1769,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private SetExprElements pSetExpr;
 	private IntervalSetExprElements pIntervalSetExpr;
 	private InstanceSetExprElements pInstanceSetExpr;
+	private SubinstanceSetExprElements pSubinstanceSetExpr;
 	private QualifiedNameElements pQualifiedName;
 	private EIntElements pEInt;
 	
@@ -1811,9 +1852,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getLeadsToExprAccess().getRule();
 	}
 
-	/// *TimeIntervalExpr returns mtctl::Expression:
-	//	'timeInterval' {mtctl::TimeIntervalExpr} lhs=ImplyExpr '[' lower=INT ',' upper=INT ']' rhs=ImplyExpr | ImplyExpr //TODO use units from action lang
-	//;* / ImplyExpr returns mtctl::Expression:
+	//ImplyExpr returns mtctl::Expression:
 	//	AndExpr ({mtctl::ImplyExpr.leftOpd=current} "implies" rightOpd=AndExpr)*;
 	public ImplyExprElements getImplyExprAccess() {
 		return (pImplyExpr != null) ? pImplyExpr : (pImplyExpr = new ImplyExprElements());
@@ -2250,8 +2289,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Sets
 	//SetExpr returns mtctl::SetExpr:
-	//	InstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" |
-	//	{mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers";
+	//	InstanceSetExpr | SubinstanceSetExpr | IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr}
+	//	"Transitions" | {mtctl::MessageSetExpr} "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr}
+	//	"Buffers";
 	public SetExprElements getSetExprAccess() {
 		return (pSetExpr != null) ? pSetExpr : (pSetExpr = new SetExprElements());
 	}
@@ -2278,6 +2318,16 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getInstanceSetExprRule() {
 		return getInstanceSetExprAccess().getRule();
+	}
+
+	//SubinstanceSetExpr returns mtctl::SetExpr:
+	//	{mtctl::SubinstanceSetExpr} "Subinstances" "<" type=MumlElemExpr ">";
+	public SubinstanceSetExprElements getSubinstanceSetExprAccess() {
+		return (pSubinstanceSetExpr != null) ? pSubinstanceSetExpr : (pSubinstanceSetExpr = new SubinstanceSetExprElements());
+	}
+	
+	public ParserRule getSubinstanceSetExprRule() {
+		return getSubinstanceSetExprAccess().getRule();
 	}
 
 	////Other necessary definitions

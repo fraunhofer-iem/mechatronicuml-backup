@@ -98,6 +98,10 @@ public class SetsAdapterFactory extends AdapterFactoryImpl {
 				return createInstanceSetExprAdapter();
 			}
 			@Override
+			public Adapter caseSubinstanceSetExpr(SubinstanceSetExpr object) {
+				return createSubinstanceSetExprAdapter();
+			}
+			@Override
 			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
 			}
@@ -230,6 +234,20 @@ public class SetsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInstanceSetExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr <em>Subinstance Set Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr
+	 * @generated
+	 */
+	public Adapter createSubinstanceSetExprAdapter() {
 		return null;
 	}
 

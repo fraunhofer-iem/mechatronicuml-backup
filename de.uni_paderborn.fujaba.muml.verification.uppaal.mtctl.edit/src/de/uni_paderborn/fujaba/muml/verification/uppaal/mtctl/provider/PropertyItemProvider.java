@@ -191,11 +191,6 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
-				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
 				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
 
 		newChildDescriptors.add
@@ -287,6 +282,11 @@ public class PropertyItemProvider
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
 				 SetsFactory.eINSTANCE.createInstanceSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 SetsFactory.eINSTANCE.createSubinstanceSetExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

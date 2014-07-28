@@ -45,12 +45,6 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/LeadsToExpr/leftOpd"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/LeadsToExpr/rightOpd"/>
       </genClasses>
-      <genClasses ecoreClass="Mtctl.ecore#//Quantifiers/TimeIntervalExpr">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/TimeIntervalExpr/lhs"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Quantifiers/TimeIntervalExpr/lower"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Quantifiers/TimeIntervalExpr/upper"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/TimeIntervalExpr/rhs"/>
-      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Predicates" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
         disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Predicates">
@@ -110,6 +104,9 @@
       <genClasses ecoreClass="Mtctl.ecore#//Sets/BufferSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/InstanceSetExpr">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Sets/InstanceSetExpr/type"/>
+      </genClasses>
+      <genClasses ecoreClass="Mtctl.ecore#//Sets/SubinstanceSetExpr">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Sets/SubinstanceSetExpr/type"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="BooleanLogic" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
