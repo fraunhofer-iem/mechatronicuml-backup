@@ -4,7 +4,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.jface.dialogs.ErrorDialog;
@@ -25,10 +29,9 @@ import de.uni_paderborn.fujaba.export.ExportPlugin;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 
 public abstract class AbstractFujabaExportWizard extends Wizard implements IFujabaExportWizard {
-    protected IStructuredSelection selection;
-    protected FormToolkit toolkit;
-	protected EditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
-
+    protected FormToolkit toolkit = new FormToolkit(Display.getDefault());
+	protected EditingDomain editingDomain;
+	protected IStructuredSelection initialSelection;
 
     /**
      * Creates a wizard for exporting workspace resources to a zip file.
@@ -49,25 +52,41 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IFuja
 		super.dispose();
 	}
 
-	protected FormToolkit getToolkit() {
-		if (toolkit == null) {
-			toolkit = new FormToolkit(Display.getDefault());
-		}
-		return toolkit;
-	}
-
 	/* (non-Javadoc)
      * Method declared on IWorkbenchWizard.
      */
     public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
-    	this.selection = currentSelection;
+    	initialSelection = currentSelection;
         List<?> selectedResources = IDE.computeSelectedResources(currentSelection);
         if (!selectedResources.isEmpty()) {
-            this.selection = new StructuredSelection(selectedResources);
+            initialSelection = new StructuredSelection(selectedResources);
         }
         setNeedsProgressMonitor(true);
+        
+        // try to infer editing domain from initial selection
+        for (Object element : initialSelection.toArray()) {
+        	EObject eObject = null;
+        	if (element instanceof EObject) {
+        		eObject = (EObject) element;
+        	}
+        	if (element instanceof IAdaptable) {
+        		IAdaptable adaptable = (IAdaptable) element;
+        		eObject = (EObject) adaptable.getAdapter(EObject.class);
+        	}
+        	if (eObject != null) {
+        		editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);
+        		if (editingDomain != null) {
+        			break;
+        		}
+        	}
+        }
+        
+        // create default editing domain, if none was found
+        if (editingDomain == null) {
+        	editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
+        }
     }
-
+    
     
 
 //    private static IStructuredSelection getSelectedResources(IStructuredSelection selection) {
@@ -172,11 +191,9 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IFuja
         displayErrorDialog(message);
     }
 
-
-	public IStructuredSelection getSelection() {
-		return selection;
+	public ResourceSet getResourceSet() {
+		return editingDomain.getResourceSet();
 	}
-
 
 }
 

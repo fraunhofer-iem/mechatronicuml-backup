@@ -3,20 +3,22 @@ package de.uni_paderborn.fujaba.export.example;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 
-import de.uni_paderborn.fujaba.common.ui.ResourceLocationProvider;
 import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.pages.FujabaExportTargetPage;
+import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
+import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportTargetPage;
+import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
 
 public class ExampleFujabaExportWizard extends AbstractFujabaExportWizard {
 
-	private ExampleFujabaExportSourcePage sourcePage;
-	private FujabaExportTargetPage targetPage;
+	private AbstractFujabaExportSourcePage sourcePage;
+	private AbstractFujabaExportTargetPage targetPage;
 
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
@@ -33,15 +35,41 @@ public class ExampleFujabaExportWizard extends AbstractFujabaExportWizard {
 
 	public void addPages() {
 
-		// Create pages
-		sourcePage = new ExampleFujabaExportSourcePage("source", getToolkit(),
-				new ResourceLocationProvider(getSelection()),
-				editingDomain.getResourceSet());
+		// Source page
+		sourcePage = new AbstractFujabaExportSourcePage("source", toolkit, getResourceSet(), initialSelection) {
 
-		targetPage = new FujabaExportTargetPage("target", getToolkit());
+			@Override
+			public String wizardPageGetSourceFileExtension() {
+				return "fujaba";
+			}
 
-		// Add pages
+			@Override
+			public boolean wizardPageSupportsSourceModelElement(EObject element) {
+				return element.getClass().getName().contains("Component");
+			}
+
+			@Override
+			public ElementSelectionMode wizardPageGetSupportedSelectionMode() {
+				return ElementSelectionMode.ELEMENT_SELECTION_MODE_SINGLE;
+			}
+			
+		};
 		addPage(sourcePage);
+
+		// Target page
+		targetPage = new AbstractFujabaExportTargetPage("target", toolkit) {
+
+			@Override
+			public boolean wizardPageSupportsOverwriteOption() {
+				return true;
+			}
+
+			@Override
+			public boolean wizardPageDirectoryDestination() {
+				return true;
+			}
+			
+		};
 		addPage(targetPage);
 	}
 

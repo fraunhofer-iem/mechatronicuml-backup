@@ -2,6 +2,8 @@ package de.uni_paderborn.fujaba.export.pages;
 
 import java.io.File;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
@@ -9,6 +11,8 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -31,17 +35,13 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 import de.uni_paderborn.fujaba.common.Messages;
 
 
-public class FujabaExportTargetPage extends WizardDataTransferPage implements IFujabaExportTargetPage {
+public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferPage implements IFujabaExportTargetPage {
 
 	protected FormToolkit toolkit;
 	protected TreeViewer treeViewer;
 	protected Text destinationText;
 	
-    /**
-     *	Create an instance of this class
-     * @param formToolkit 
-     */
-    public FujabaExportTargetPage(String name, FormToolkit toolkit) {
+    public AbstractFujabaExportTargetPage(String name, FormToolkit toolkit) {
     	super(name); 
     	this.toolkit = toolkit;
     	setTitle("Select Transformation Target");
@@ -195,7 +195,7 @@ public class FujabaExportTargetPage extends WizardDataTransferPage implements IF
     	// Display error in case destination is invalid.
     	String error = null;
     	if (!validDestination) {
-    		error = "File / Directory that was entered does not exist.";
+    		error = "Specified destination does not exist.";
     	}
     	setErrorMessage(error);
     	setPageComplete(error == null);
@@ -227,6 +227,32 @@ public class FujabaExportTargetPage extends WizardDataTransferPage implements IF
         treeViewer.setLabelProvider(new WorkbenchLabelProvider());
         treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
         treeViewer.expandAll();
+        
+        // Hide files if destination must be a directory
+        if (wizardPageDirectoryDestination()) {
+	        treeViewer.addFilter(new ViewerFilter() {
+				@Override
+				public boolean select(Viewer viewer, Object parentElement,
+						Object element) {
+					return !(element instanceof IFile);
+				}
+	        });
+        }
+        
+        // Hide dot files and closed resources
+        treeViewer.addFilter(new ViewerFilter() {
+			@Override
+			public boolean select(Viewer viewer, Object parentElement,
+					Object element) {
+				if (element instanceof IProject && !((IProject) element).isOpen()) {
+					return false;
+				}
+				if (((IResource) element).getName().startsWith(".")) {
+					return false;
+				}
+				return true;
+			}
+        });
         treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			@Override
@@ -323,11 +349,6 @@ public class FujabaExportTargetPage extends WizardDataTransferPage implements IF
 
 	@Override
 	public void handleEvent(Event event) {
-	}
-
-	@Override
-	public boolean wizardPageSupportsOverwriteOption() {
-		return true;
 	}
 
 }

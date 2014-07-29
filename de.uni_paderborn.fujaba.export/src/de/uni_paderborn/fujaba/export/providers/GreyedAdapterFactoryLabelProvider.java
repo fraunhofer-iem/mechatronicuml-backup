@@ -6,7 +6,7 @@ import org.eclipse.swt.graphics.Color;
 public class GreyedAdapterFactoryLabelProvider extends ColoredAdapterFactoryLabelProvider {
 
 	private static final Color COLOR_UNSUPPORTED_ITEM_FOREGROUND = new Color(null, 128, 128, 128);
-	private static final Color COLOR_UNSUPPORTED_ITEM_BACKGROUND = new Color(null, 200, 200, 200);
+	private static final Color COLOR_UNSUPPORTED_ITEM_BACKGROUND = new Color(null, 210, 210, 210);
 
 	public GreyedAdapterFactoryLabelProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);

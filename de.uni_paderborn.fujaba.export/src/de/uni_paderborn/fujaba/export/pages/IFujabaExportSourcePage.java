@@ -10,6 +10,5 @@ public interface IFujabaExportSourcePage extends IWizardPage {
     public ElementSelectionMode wizardPageGetSupportedSelectionMode();
     public boolean wizardPageSupportsSourceModelElement(EObject element);
     public ISelection wizardPageGetDefaultSelection(Resource resource);
-    
-
+	public Object[] getSourceElements();
 }

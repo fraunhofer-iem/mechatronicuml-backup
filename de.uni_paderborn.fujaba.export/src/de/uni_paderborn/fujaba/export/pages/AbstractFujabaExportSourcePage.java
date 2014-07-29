@@ -1,6 +1,10 @@
 package de.uni_paderborn.fujaba.export.pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -9,11 +13,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ICheckStateListener;
-import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -43,12 +45,23 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 	private DomainElementPageExtension domainElementExtension;
 
 	private FormToolkit toolkit;
+	
+	private ISelection selection;
 
-	public AbstractFujabaExportSourcePage(String pageId, FormToolkit toolkit,
-			ResourceLocationProvider resourceLocationProvider, ResourceSet resourceSet) {
-		super(pageId, resourceLocationProvider, resourceSet);
+	/**
+	 * Creates a fujaba-export source page.
+	 * 
+	 * @param pageId
+	 * @param toolkit
+	 * @param resourceSet
+	 * @param selection The default selection. If null it indicates that nothing is selected.
+	 */
+	public AbstractFujabaExportSourcePage(String pageId, FormToolkit toolkit, ResourceSet resourceSet, ISelection selection) {
+		super(pageId, new ResourceLocationProvider(selection), resourceSet);
+		setUnloadAllowed(false);
 		this.toolkit = toolkit;
-
+		this.selection = selection;
+		
 	  	setTitle("Select Transformation Source");
         setDescription("Select the Fujaba domain element that should be transformed.");
 
@@ -71,6 +84,39 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 		setControl(section);
 		
 		validatePage();
+	}
+
+
+	protected void initControls() {
+		super.initControls();		
+		applyInitialSelection(filterSelection(selection));
+	}
+
+	protected void applyInitialSelection(ISelection selection) {
+		if (!selection.isEmpty()) {
+			domainElementExtension.setCheckedElements(selection);
+		}
+	}
+
+	protected IStructuredSelection filterSelection(ISelection selection) {
+		List<EObject> validElements = new ArrayList<EObject>();
+		if (selection instanceof IStructuredSelection) {
+			for (Object element : ((IStructuredSelection) selection).toArray()) {
+				EObject eObject = null;
+				if (element instanceof IAdaptable) {
+					eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class); 
+				}
+				if (element instanceof EObject) {
+					eObject = (EObject) element;
+				}
+				if (eObject != null && eObject.eResource() != null
+						&& eObject.eResource() == this.getResource()
+						&& wizardPageSupportsSourceModelElement(eObject)) {
+					validElements.add(eObject);
+				}
+			}
+		}
+		return new StructuredSelection(validElements);
 	}
 
 	@Override
@@ -156,6 +202,7 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 			
 		}
 		
+
 		@Override
 		public void setResource(Resource resource) {
 			ISelection selection = null;
@@ -179,15 +226,22 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 					selection = wizardPageGetDefaultSelection(resource);
 				}
 			}
+			setCheckedElements(selection);
+		}		
+
+		public void setCheckedElements(ISelection selection) {
 			treeViewer.setSelection(selection);
 			if (selection instanceof IStructuredSelection) {
 				treeViewer.setCheckedElements(((IStructuredSelection) selection).toArray());
+				for (Object element : ((IStructuredSelection) selection).toArray()) {
+					treeViewer.reveal(element);
+				}
 			} else {
 				treeViewer.setCheckedElements(new Object[] { });
 			}
+			
 			validatePage();
-		}		
-		
+		}
 
 		public Object[] getCheckedElements() {
 			return treeViewer.getCheckedElements();
@@ -199,13 +253,14 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 		ElementSelectionMode elementSelectionMode = wizardPageGetSupportedSelectionMode();
         Assert.isNotNull(elementSelectionMode, "Please implement 'wizardGetSupportedSelectionMode()' to provide a non-null selection mode that your fujaba export wizard supports.");
 
+        String errorMessage = null;
 		if (elementSelectionMode != ElementSelectionMode.ELEMENT_SELECTION_MODE_NONE && getSourceElements().length == 0) {
-			setPageComplete(false);
-			setErrorMessage("Please select a domain element.");
-		} else {
-			setErrorMessage(null);
-			setPageComplete(true);
+			errorMessage = "Please select a domain element.";
+		} else if (elementSelectionMode != ElementSelectionMode.ELEMENT_SELECTION_MODE_MULTI && getSourceElements().length > 1) {
+			errorMessage = "Multiple source elements are not supported.";
 		}
+		setErrorMessage(errorMessage);
+		setPageComplete(errorMessage == null);
 	}
 
 	public Object[] getSourceElements() {
