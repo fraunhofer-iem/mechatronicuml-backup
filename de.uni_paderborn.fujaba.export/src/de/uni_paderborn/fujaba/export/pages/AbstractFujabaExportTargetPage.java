@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -295,12 +296,15 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				FileDialog fd = new FileDialog(getShell(), SWT.OPEN);
-				fd.setText(Messages.ModelSelectionPageSelectModel);
+				fd.setText("Select target");
 				String fileName = fd.open();
 				if (fileName == null) {
 					return;
 				}
+				treeViewer.setSelection(new StructuredSelection());
 				destinationText.setText(URI.createFileURI(fileName).toString());
+				destinationText.setFocus();
+				destinationText.setSelection(destinationText.getText().length());
 				validatePage();
 			}
         });
