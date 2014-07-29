@@ -195,10 +195,10 @@ class Mtctl2English {
 			TransitionSetExpr case !singular: '''transitions «expr.name»'''
 			BufferSetExpr case singular: '''a buffer «expr.name»'''
 			BufferSetExpr case !singular: '''buffers «expr.name»'''
-			InstanceSetExpr case singular: '''an instance «expr.name» of «(expr.set as InstanceSetExpr).type»'''
-			InstanceSetExpr case !singular: '''instances «expr.name» of «(expr.set as InstanceSetExpr).type»'''
-			SubinstanceSetExpr case singular: '''a subinstance «expr.name» of «(expr.set as SubinstanceSetExpr).type»'''
-			SubinstanceSetExpr case !singular: '''subinstances «expr.name» of «(expr.set as SubinstanceSetExpr).type»'''
+			InstanceSetExpr case singular: '''an instance «expr.name» of «expr((expr.set as InstanceSetExpr).type, true)»'''
+			InstanceSetExpr case !singular: '''instances «expr.name» of «expr((expr.set as InstanceSetExpr).type, true)»'''
+			SubinstanceSetExpr case singular: '''a subinstance «expr.name» of «expr((expr.set as SubinstanceSetExpr).type, true)»'''
+			SubinstanceSetExpr case !singular: '''subinstances «expr.name» of «expr((expr.set as SubinstanceSetExpr).type, true)»'''
 		}
 	}
 

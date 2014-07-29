@@ -98,7 +98,7 @@ public class Mtctl2English {
         _builder_1.append(_itHoldsThat_1, "");
         _xifexpression = _builder_1;
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
@@ -260,45 +260,31 @@ public class Mtctl2English {
       {
         ComparisonOp op = null;
         ComparisonOp _op_1 = expr.getOp();
-        final ComparisonOp _switchValue = _op_1;
-        boolean _matched = false;
-        if (!_matched) {
-          if (Objects.equal(_switchValue,ComparisonOp.EQUALS)) {
-            _matched=true;
-            op = ComparisonOp.NOT_EQUAL;
+        if (_op_1 != null) {
+          switch (_op_1) {
+            case EQUALS:
+              op = ComparisonOp.NOT_EQUAL;
+              break;
+            case NOT_EQUAL:
+              op = ComparisonOp.EQUALS;
+              break;
+            case GREATER:
+              op = ComparisonOp.LESS_OR_EQUAL;
+              break;
+            case GREATER_OR_EQUAL:
+              op = ComparisonOp.LESS;
+              break;
+            case LESS:
+              op = ComparisonOp.GREATER_OR_EQUAL;
+              break;
+            case LESS_OR_EQUAL:
+              op = ComparisonOp.GREATER;
+              break;
+            default:
+              op = null;
+              break;
           }
-        }
-        if (!_matched) {
-          if (Objects.equal(_switchValue,ComparisonOp.NOT_EQUAL)) {
-            _matched=true;
-            op = ComparisonOp.EQUALS;
-          }
-        }
-        if (!_matched) {
-          if (Objects.equal(_switchValue,ComparisonOp.GREATER)) {
-            _matched=true;
-            op = ComparisonOp.LESS_OR_EQUAL;
-          }
-        }
-        if (!_matched) {
-          if (Objects.equal(_switchValue,ComparisonOp.GREATER_OR_EQUAL)) {
-            _matched=true;
-            op = ComparisonOp.LESS;
-          }
-        }
-        if (!_matched) {
-          if (Objects.equal(_switchValue,ComparisonOp.LESS)) {
-            _matched=true;
-            op = ComparisonOp.GREATER_OR_EQUAL;
-          }
-        }
-        if (!_matched) {
-          if (Objects.equal(_switchValue,ComparisonOp.LESS_OR_EQUAL)) {
-            _matched=true;
-            op = ComparisonOp.GREATER;
-          }
-        }
-        if (!_matched) {
+        } else {
           op = null;
         }
         StringConcatenation _builder_1 = new StringConcatenation();
@@ -312,7 +298,7 @@ public class Mtctl2English {
         MapExpr _rhs_1 = expr.getRhs();
         Object _expr_3 = this.expr(_rhs_1, true);
         _builder_1.append(_expr_3, "");
-        _xblockexpression = (_builder_1);
+        _xblockexpression = _builder_1;
       }
       _xifexpression = _xblockexpression;
     }
@@ -492,11 +478,9 @@ public class Mtctl2English {
   public CharSequence boundVariable(final BoundVariable expr, final boolean singular) {
     CharSequence _switchResult = null;
     SetExpr _set = expr.getSet();
-    final SetExpr _switchValue = _set;
     boolean _matched = false;
     if (!_matched) {
-      if (_switchValue instanceof ClockSetExpr) {
-        final ClockSetExpr _clockSetExpr = (ClockSetExpr)_switchValue;
+      if (_set instanceof ClockSetExpr) {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
@@ -508,10 +492,8 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof ClockSetExpr) {
-        final ClockSetExpr _clockSetExpr = (ClockSetExpr)_switchValue;
-        boolean _not = (!singular);
-        if (_not) {
+      if (_set instanceof ClockSetExpr) {
+        if ((!singular)) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("clocks ");
@@ -522,8 +504,7 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof IntervalSetExpr) {
-        final IntervalSetExpr _intervalSetExpr = (IntervalSetExpr)_switchValue;
+      if (_set instanceof IntervalSetExpr) {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
@@ -543,10 +524,8 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof IntervalSetExpr) {
-        final IntervalSetExpr _intervalSetExpr = (IntervalSetExpr)_switchValue;
-        boolean _not = (!singular);
-        if (_not) {
+      if (_set instanceof IntervalSetExpr) {
+        if ((!singular)) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("numbers ");
@@ -565,8 +544,7 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof MessageSetExpr) {
-        final MessageSetExpr _messageSetExpr = (MessageSetExpr)_switchValue;
+      if (_set instanceof MessageSetExpr) {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
@@ -578,10 +556,8 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof MessageSetExpr) {
-        final MessageSetExpr _messageSetExpr = (MessageSetExpr)_switchValue;
-        boolean _not = (!singular);
-        if (_not) {
+      if (_set instanceof MessageSetExpr) {
+        if ((!singular)) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("messages ");
@@ -592,8 +568,7 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof StateSetExpr) {
-        final StateSetExpr _stateSetExpr = (StateSetExpr)_switchValue;
+      if (_set instanceof StateSetExpr) {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
@@ -605,10 +580,8 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof StateSetExpr) {
-        final StateSetExpr _stateSetExpr = (StateSetExpr)_switchValue;
-        boolean _not = (!singular);
-        if (_not) {
+      if (_set instanceof StateSetExpr) {
+        if ((!singular)) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("states ");
@@ -619,8 +592,7 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof TransitionSetExpr) {
-        final TransitionSetExpr _transitionSetExpr = (TransitionSetExpr)_switchValue;
+      if (_set instanceof TransitionSetExpr) {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
@@ -632,10 +604,8 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof TransitionSetExpr) {
-        final TransitionSetExpr _transitionSetExpr = (TransitionSetExpr)_switchValue;
-        boolean _not = (!singular);
-        if (_not) {
+      if (_set instanceof TransitionSetExpr) {
+        if ((!singular)) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("transitions ");
@@ -646,8 +616,7 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof BufferSetExpr) {
-        final BufferSetExpr _bufferSetExpr = (BufferSetExpr)_switchValue;
+      if (_set instanceof BufferSetExpr) {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
@@ -659,10 +628,8 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof BufferSetExpr) {
-        final BufferSetExpr _bufferSetExpr = (BufferSetExpr)_switchValue;
-        boolean _not = (!singular);
-        if (_not) {
+      if (_set instanceof BufferSetExpr) {
+        if ((!singular)) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("buffers ");
@@ -673,8 +640,7 @@ public class Mtctl2English {
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof InstanceSetExpr) {
-        final InstanceSetExpr _instanceSetExpr = (InstanceSetExpr)_switchValue;
+      if (_set instanceof InstanceSetExpr) {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
@@ -684,16 +650,15 @@ public class Mtctl2English {
           _builder.append(" of ");
           SetExpr _set_1 = expr.getSet();
           MumlElemExpr _type = ((InstanceSetExpr) _set_1).getType();
-          _builder.append(_type, "");
+          Object _expr = this.expr(_type, true);
+          _builder.append(_expr, "");
           _switchResult = _builder;
         }
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof InstanceSetExpr) {
-        final InstanceSetExpr _instanceSetExpr = (InstanceSetExpr)_switchValue;
-        boolean _not = (!singular);
-        if (_not) {
+      if (_set instanceof InstanceSetExpr) {
+        if ((!singular)) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("instances ");
@@ -702,14 +667,14 @@ public class Mtctl2English {
           _builder.append(" of ");
           SetExpr _set_1 = expr.getSet();
           MumlElemExpr _type = ((InstanceSetExpr) _set_1).getType();
-          _builder.append(_type, "");
+          Object _expr = this.expr(_type, true);
+          _builder.append(_expr, "");
           _switchResult = _builder;
         }
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof SubinstanceSetExpr) {
-        final SubinstanceSetExpr _subinstanceSetExpr = (SubinstanceSetExpr)_switchValue;
+      if (_set instanceof SubinstanceSetExpr) {
         if (singular) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
@@ -719,16 +684,15 @@ public class Mtctl2English {
           _builder.append(" of ");
           SetExpr _set_1 = expr.getSet();
           MumlElemExpr _type = ((SubinstanceSetExpr) _set_1).getType();
-          _builder.append(_type, "");
+          Object _expr = this.expr(_type, true);
+          _builder.append(_expr, "");
           _switchResult = _builder;
         }
       }
     }
     if (!_matched) {
-      if (_switchValue instanceof SubinstanceSetExpr) {
-        final SubinstanceSetExpr _subinstanceSetExpr = (SubinstanceSetExpr)_switchValue;
-        boolean _not = (!singular);
-        if (_not) {
+      if (_set instanceof SubinstanceSetExpr) {
+        if ((!singular)) {
           _matched=true;
           StringConcatenation _builder = new StringConcatenation();
           _builder.append("subinstances ");
@@ -737,7 +701,8 @@ public class Mtctl2English {
           _builder.append(" of ");
           SetExpr _set_1 = expr.getSet();
           MumlElemExpr _type = ((SubinstanceSetExpr) _set_1).getType();
-          _builder.append(_type, "");
+          Object _expr = this.expr(_type, true);
+          _builder.append(_expr, "");
           _switchResult = _builder;
         }
       }
@@ -861,8 +826,7 @@ public class Mtctl2English {
     if (_notEquals) {
       TimeUnit _timeUnit_1 = expr.getTimeUnit();
       String _timeUnit_2 = this.timeUnit(_timeUnit_1);
-      String _plus = (" " + _timeUnit_2);
-      _xifexpression = _plus;
+      _xifexpression = (" " + _timeUnit_2);
     }
     _builder.append(_xifexpression, "");
     return _builder;
@@ -871,13 +835,12 @@ public class Mtctl2English {
   protected CharSequence _expr(final MumlElemExpr expr, final boolean positive) {
     CharSequence _xblockexpression = null;
     {
-      MtctlQualifiedNameProvider _mtctlQualifiedNameProvider = new MtctlQualifiedNameProvider();
-      MtctlQualifiedNameProvider provider = _mtctlQualifiedNameProvider;
+      MtctlQualifiedNameProvider provider = new MtctlQualifiedNameProvider();
       StringConcatenation _builder = new StringConcatenation();
       EObject _elem = expr.getElem();
       QualifiedName _qualifiedName = provider.getQualifiedName(_elem, null);
       _builder.append(_qualifiedName, "");
-      _xblockexpression = (_builder);
+      _xblockexpression = _builder;
     }
     return _xblockexpression;
   }
@@ -902,44 +865,31 @@ public class Mtctl2English {
   
   public String comparisonOp(final ComparisonOp op) {
     String _switchResult = null;
-    boolean _matched = false;
-    if (!_matched) {
-      if (Objects.equal(op,ComparisonOp.EQUALS)) {
-        _matched=true;
-        _switchResult = "is";
+    if (op != null) {
+      switch (op) {
+        case EQUALS:
+          _switchResult = "is";
+          break;
+        case NOT_EQUAL:
+          _switchResult = "is not";
+          break;
+        case GREATER:
+          _switchResult = "is more than";
+          break;
+        case GREATER_OR_EQUAL:
+          _switchResult = "is at least";
+          break;
+        case LESS:
+          _switchResult = "is less than";
+          break;
+        case LESS_OR_EQUAL:
+          _switchResult = "is at most";
+          break;
+        default:
+          _switchResult = "";
+          break;
       }
-    }
-    if (!_matched) {
-      if (Objects.equal(op,ComparisonOp.NOT_EQUAL)) {
-        _matched=true;
-        _switchResult = "is not";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(op,ComparisonOp.GREATER)) {
-        _matched=true;
-        _switchResult = "is more than";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(op,ComparisonOp.GREATER_OR_EQUAL)) {
-        _matched=true;
-        _switchResult = "is at least";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(op,ComparisonOp.LESS)) {
-        _matched=true;
-        _switchResult = "is less than";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(op,ComparisonOp.LESS_OR_EQUAL)) {
-        _matched=true;
-        _switchResult = "is at most";
-      }
-    }
-    if (!_matched) {
+    } else {
       _switchResult = "";
     }
     return _switchResult;
@@ -947,50 +897,34 @@ public class Mtctl2English {
   
   public String timeUnit(final TimeUnit unit) {
     String _switchResult = null;
-    boolean _matched = false;
-    if (!_matched) {
-      if (Objects.equal(unit,TimeUnit.DAYS)) {
-        _matched=true;
-        _switchResult = "days";
+    if (unit != null) {
+      switch (unit) {
+        case DAYS:
+          _switchResult = "days";
+          break;
+        case HOURS:
+          _switchResult = "hours";
+          break;
+        case MINUTES:
+          _switchResult = "minutes";
+          break;
+        case SECONDS:
+          _switchResult = "seconds";
+          break;
+        case MILLISECONDS:
+          _switchResult = "milliseconds";
+          break;
+        case MICROSECONDS:
+          _switchResult = "microseconds";
+          break;
+        case NANOSECONDS:
+          _switchResult = "nanoseconds";
+          break;
+        default:
+          _switchResult = "";
+          break;
       }
-    }
-    if (!_matched) {
-      if (Objects.equal(unit,TimeUnit.HOURS)) {
-        _matched=true;
-        _switchResult = "hours";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(unit,TimeUnit.MINUTES)) {
-        _matched=true;
-        _switchResult = "minutes";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(unit,TimeUnit.SECONDS)) {
-        _matched=true;
-        _switchResult = "seconds";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(unit,TimeUnit.MILLISECONDS)) {
-        _matched=true;
-        _switchResult = "milliseconds";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(unit,TimeUnit.MICROSECONDS)) {
-        _matched=true;
-        _switchResult = "microseconds";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(unit,TimeUnit.NANOSECONDS)) {
-        _matched=true;
-        _switchResult = "nanoseconds";
-      }
-    }
-    if (!_matched) {
+    } else {
       _switchResult = "";
     }
     return _switchResult;
@@ -998,71 +932,46 @@ public class Mtctl2English {
   
   protected CharSequence _specialCase(final QuantifierExpr expr, final boolean positive) {
     CharSequence _xifexpression = null;
-    boolean _or = false;
-    boolean _and = false;
-    Expression _formula = expr.getFormula();
-    if (!(_formula instanceof ImplyExpr)) {
-      _and = false;
-    } else {
-      _and = ((_formula instanceof ImplyExpr) && (expr instanceof UniversalQuantExpr));
-    }
-    if (_and) {
-      _or = true;
-    } else {
-      boolean _and_1 = false;
-      Expression _formula_1 = expr.getFormula();
-      if (!(_formula_1 instanceof AndExpr)) {
-        _and_1 = false;
-      } else {
-        _and_1 = ((_formula_1 instanceof AndExpr) && (expr instanceof ExistenceQuantExpr));
-      }
-      _or = (_and || _and_1);
-    }
-    if (_or) {
+    if ((((expr.getFormula() instanceof ImplyExpr) && (expr instanceof UniversalQuantExpr)) || ((expr.getFormula() instanceof AndExpr) && (expr instanceof ExistenceQuantExpr)))) {
       CharSequence _xblockexpression = null;
       {
         boolean thereIs = (positive == (expr instanceof ExistenceQuantExpr));
         Expression _xifexpression_1 = null;
-        Expression _formula_2 = expr.getFormula();
-        if ((_formula_2 instanceof ImplyExpr)) {
-          Expression _formula_3 = expr.getFormula();
-          Expression _leftOpd = ((ImplyExpr) _formula_3).getLeftOpd();
-          _xifexpression_1 = _leftOpd;
+        Expression _formula = expr.getFormula();
+        if ((_formula instanceof ImplyExpr)) {
+          Expression _formula_1 = expr.getFormula();
+          _xifexpression_1 = ((ImplyExpr) _formula_1).getLeftOpd();
         } else {
-          Expression _formula_4 = expr.getFormula();
-          Expression _leftOpd_1 = ((AndExpr) _formula_4).getLeftOpd();
-          _xifexpression_1 = _leftOpd_1;
+          Expression _formula_2 = expr.getFormula();
+          _xifexpression_1 = ((AndExpr) _formula_2).getLeftOpd();
         }
         Expression leftOpd = _xifexpression_1;
         Expression _xifexpression_2 = null;
-        Expression _formula_5 = expr.getFormula();
-        if ((_formula_5 instanceof ImplyExpr)) {
-          Expression _formula_6 = expr.getFormula();
-          Expression _rightOpd = ((ImplyExpr) _formula_6).getRightOpd();
-          _xifexpression_2 = _rightOpd;
+        Expression _formula_3 = expr.getFormula();
+        if ((_formula_3 instanceof ImplyExpr)) {
+          Expression _formula_4 = expr.getFormula();
+          _xifexpression_2 = ((ImplyExpr) _formula_4).getRightOpd();
         } else {
-          Expression _formula_7 = expr.getFormula();
-          Expression _rightOpd_1 = ((AndExpr) _formula_7).getRightOpd();
-          _xifexpression_2 = _rightOpd_1;
+          Expression _formula_5 = expr.getFormula();
+          _xifexpression_2 = ((AndExpr) _formula_5).getRightOpd();
         }
         Expression rightOpd = _xifexpression_2;
         CharSequence _switchResult = null;
         boolean _matched = false;
         if (!_matched) {
           if (leftOpd instanceof SubstateOfExpr) {
-            final SubstateOfExpr _substateOfExpr = (SubstateOfExpr)leftOpd;
-            boolean _and_2 = false;
-            MapExpr _state = _substateOfExpr.getState();
+            boolean _and = false;
+            MapExpr _state = ((SubstateOfExpr)leftOpd).getState();
             if (!(_state instanceof MumlElemExpr)) {
-              _and_2 = false;
+              _and = false;
             } else {
-              MapExpr _state_1 = _substateOfExpr.getState();
+              MapExpr _state_1 = ((SubstateOfExpr)leftOpd).getState();
               EObject _elem = ((MumlElemExpr) _state_1).getElem();
               BoundVariable _var = expr.getVar();
               boolean _equals = Objects.equal(_elem, _var);
-              _and_2 = ((_state instanceof MumlElemExpr) && _equals);
+              _and = _equals;
             }
-            if (_and_2) {
+            if (_and) {
               _matched=true;
               StringConcatenation _builder = new StringConcatenation();
               {
@@ -1077,7 +986,7 @@ public class Mtctl2English {
               String _name = _var_1.getName();
               _builder.append(_name, "");
               _builder.append(" of ");
-              MapExpr _superstate = _substateOfExpr.getSuperstate();
+              MapExpr _superstate = ((SubstateOfExpr)leftOpd).getSuperstate();
               Object _expr = this.expr(_superstate, true);
               _builder.append(_expr, "");
               {
@@ -1094,19 +1003,18 @@ public class Mtctl2English {
         }
         if (!_matched) {
           if (leftOpd instanceof SubstateOfExpr) {
-            final SubstateOfExpr _substateOfExpr = (SubstateOfExpr)leftOpd;
-            boolean _and_2 = false;
-            MapExpr _superstate = _substateOfExpr.getSuperstate();
+            boolean _and = false;
+            MapExpr _superstate = ((SubstateOfExpr)leftOpd).getSuperstate();
             if (!(_superstate instanceof MumlElemExpr)) {
-              _and_2 = false;
+              _and = false;
             } else {
-              MapExpr _superstate_1 = _substateOfExpr.getSuperstate();
+              MapExpr _superstate_1 = ((SubstateOfExpr)leftOpd).getSuperstate();
               EObject _elem = ((MumlElemExpr) _superstate_1).getElem();
               BoundVariable _var = expr.getVar();
               boolean _equals = Objects.equal(_elem, _var);
-              _and_2 = ((_superstate instanceof MumlElemExpr) && _equals);
+              _and = _equals;
             }
-            if (_and_2) {
+            if (_and) {
               _matched=true;
               StringConcatenation _builder = new StringConcatenation();
               {
@@ -1121,7 +1029,7 @@ public class Mtctl2English {
               String _name = _var_1.getName();
               _builder.append(_name, "");
               _builder.append(" of ");
-              MapExpr _state = _substateOfExpr.getState();
+              MapExpr _state = ((SubstateOfExpr)leftOpd).getState();
               Object _expr = this.expr(_state, true);
               _builder.append(_expr, "");
               {
@@ -1138,19 +1046,18 @@ public class Mtctl2English {
         }
         if (!_matched) {
           if (leftOpd instanceof StateInStatechartExpr) {
-            final StateInStatechartExpr _stateInStatechartExpr = (StateInStatechartExpr)leftOpd;
-            boolean _and_2 = false;
-            MapExpr _state = _stateInStatechartExpr.getState();
+            boolean _and = false;
+            MapExpr _state = ((StateInStatechartExpr)leftOpd).getState();
             if (!(_state instanceof MumlElemExpr)) {
-              _and_2 = false;
+              _and = false;
             } else {
-              MapExpr _state_1 = _stateInStatechartExpr.getState();
+              MapExpr _state_1 = ((StateInStatechartExpr)leftOpd).getState();
               EObject _elem = ((MumlElemExpr) _state_1).getElem();
               BoundVariable _var = expr.getVar();
               boolean _equals = Objects.equal(_elem, _var);
-              _and_2 = ((_state instanceof MumlElemExpr) && _equals);
+              _and = _equals;
             }
-            if (_and_2) {
+            if (_and) {
               _matched=true;
               StringConcatenation _builder = new StringConcatenation();
               {
@@ -1165,7 +1072,7 @@ public class Mtctl2English {
               String _name = _var_1.getName();
               _builder.append(_name, "");
               _builder.append(" in ");
-              MapExpr _statechart = _stateInStatechartExpr.getStatechart();
+              MapExpr _statechart = ((StateInStatechartExpr)leftOpd).getStatechart();
               Object _expr = this.expr(_statechart, true);
               _builder.append(_expr, "");
               {
@@ -1183,7 +1090,7 @@ public class Mtctl2English {
         if (!_matched) {
           return null;
         }
-        _xblockexpression = (_switchResult);
+        _xblockexpression = _switchResult;
       }
       _xifexpression = _xblockexpression;
     } else {
@@ -1195,23 +1102,10 @@ public class Mtctl2English {
   public CharSequence itHoldsThat(final Expression expr, final boolean positive) {
     CharSequence _xifexpression = null;
     boolean _or = false;
-    boolean _or_1 = false;
-    boolean _or_2 = false;
-    if ((expr instanceof TemporalQuantifierExpr)) {
-      _or_2 = true;
-    } else {
-      EObject _eContainer = expr.eContainer();
-      _or_2 = ((expr instanceof TemporalQuantifierExpr) || (_eContainer instanceof TemporalQuantifierExpr));
-    }
-    if (_or_2) {
-      _or_1 = true;
-    } else {
-      _or_1 = (_or_2 || (expr instanceof QuantifierExpr));
-    }
-    if (_or_1) {
+    if ((((expr instanceof TemporalQuantifierExpr) || (expr.eContainer() instanceof TemporalQuantifierExpr)) || (expr instanceof QuantifierExpr))) {
       _or = true;
     } else {
-      _or = (_or_1 || (expr instanceof NotExpr));
+      _or = (expr instanceof NotExpr);
     }
     if (_or) {
       StringConcatenation _builder = new StringConcatenation();
@@ -1288,8 +1182,6 @@ public class Mtctl2English {
   }
   
   public CharSequence specialCase(final QuantifierExpr expr, final boolean positive) {
-    {
-      return _specialCase(expr, positive);
-    }
+    return _specialCase(expr, positive);
   }
 }
