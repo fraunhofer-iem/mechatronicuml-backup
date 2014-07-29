@@ -18,7 +18,6 @@ import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.ContentHandler;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -46,6 +45,8 @@ import de.uni_paderborn.fujaba.common.Messages;
  */
 public class ModelSelectionPage extends WizardPage {
 
+	private boolean unloadAllowed = true;
+	
 	protected final ResourceLocationProvider rloc;
 
 	protected Text uriFld;
@@ -354,7 +355,7 @@ public class ModelSelectionPage extends WizardPage {
 	}
 
 	protected void unloadResource() {
-		if (this.resource != null) {
+		if (this.resource != null && unloadAllowed) {
 			if (this.resource.isLoaded()) {
 				this.resource.unload();
 			}
@@ -366,7 +367,7 @@ public class ModelSelectionPage extends WizardPage {
 	protected Resource loadResource() {
 		unloadResource();
 		assert uri != null;
-		Resource resource = getResourceSet().createResource(uri, ContentHandler.UNSPECIFIED_CONTENT_TYPE);
+		Resource resource = getResourceSet().getResource(uri, true);
 		if (resource == null) {
 			setErrorMessage(Messages.ModelSelectionPageModelNA);
 			return null;
@@ -416,5 +417,9 @@ public class ModelSelectionPage extends WizardPage {
 	public void setModelRequired(boolean modelRequired) {
 		this.modelRequired = modelRequired;
 		validatePage();
+	}
+	
+	public void setUnloadAllowed(boolean unloadAllowed) {
+		this.unloadAllowed = unloadAllowed;
 	}
 }

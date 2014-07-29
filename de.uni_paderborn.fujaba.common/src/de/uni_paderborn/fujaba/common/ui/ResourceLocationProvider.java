@@ -19,7 +19,9 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 
@@ -39,6 +41,16 @@ public class ResourceLocationProvider {
 		selectedURIs = new ArrayList<URI>();
 		if (selection instanceof IStructuredSelection) {
 			for (Object element : ((IStructuredSelection) selection).toList()) {
+	        	if (element instanceof IAdaptable) {
+	        		IAdaptable adaptable = (IAdaptable) element;
+	        		EObject eObject = (EObject) adaptable.getAdapter(EObject.class);
+	        		if (eObject != null) {
+	        			element = eObject;
+	        		}
+	        	}
+				if (element instanceof EObject) {
+					element = ((EObject) element).eResource().getURI();
+				}
 				if (element instanceof IResource) {
 					selectedResources.add((IResource) element);
 				} else if (element instanceof URI) {
