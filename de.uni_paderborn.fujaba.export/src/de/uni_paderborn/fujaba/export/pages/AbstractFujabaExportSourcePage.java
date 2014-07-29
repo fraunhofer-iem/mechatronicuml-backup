@@ -110,8 +110,7 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 					eObject = (EObject) element;
 				}
 				if (eObject != null && eObject.eResource() != null
-						&& eObject.eResource() == this.getResource()
-						&& wizardPageSupportsSourceModelElement(eObject)) {
+						&& eObject.eResource() == this.getResource()) {
 					validElements.add(eObject);
 				}
 			}
@@ -256,8 +255,16 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
         String errorMessage = null;
 		if (elementSelectionMode != ElementSelectionMode.ELEMENT_SELECTION_MODE_NONE && getSourceElements().length == 0) {
 			errorMessage = "Please select a domain element.";
-		} else if (elementSelectionMode != ElementSelectionMode.ELEMENT_SELECTION_MODE_MULTI && getSourceElements().length > 1) {
-			errorMessage = "Multiple source elements are not supported.";
+		} else {
+			for (Object element : domainElementExtension.getCheckedElements()) {
+				if (!wizardPageSupportsSourceModelElement((EObject) element) ) {
+					errorMessage = "Selection contains unsupported elements.";
+					break;
+				}
+			}
+			if (errorMessage == null && elementSelectionMode != ElementSelectionMode.ELEMENT_SELECTION_MODE_MULTI && getSourceElements().length > 1) {
+				errorMessage = "Multiple source elements are not supported.";			
+			}
 		}
 		setErrorMessage(errorMessage);
 		setPageComplete(errorMessage == null);
