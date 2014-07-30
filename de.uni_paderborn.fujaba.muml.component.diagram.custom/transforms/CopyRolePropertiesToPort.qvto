@@ -11,12 +11,22 @@ modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0")
 modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 
 transformation CopyRolePropertiesToPort(inout input : ModelInstancePackage);
+configuration property replacePortRTSC : Boolean;
+configuration property createComponentRTSC : Boolean;
+	
 
 main() {
 
 	-- parse input parameters
 	var thePort : DiscretePort := input.rootObjects()[DiscretePort] -> any(true);
 	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
+	if(replacePortRTSC)then {
+		var	statechart :RealtimeStatechart := thePort.oclAsType(DiscretePort).behavior.oclAsType(RealtimeStatechart);
+		var region : Region := statechart.parentRegion;
+		thePort.oclAsType(DiscretePort).behavior := null;
+		input.removeElement(statechart);
+		input.removeElement(region);
+	}endif;
 
 	-- copy the role properties
 	copyRolePropertiesToPort(thePort, theRootNode);

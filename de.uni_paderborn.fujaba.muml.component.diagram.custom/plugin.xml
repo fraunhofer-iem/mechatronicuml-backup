@@ -75,6 +75,25 @@
                </and>
             </visibleWhen>
          </command>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
+               id="CreateComponentRTSCandCopyRolePropertiesToPort"
+               label="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart">
+                        </instanceof>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
    <extension
@@ -99,6 +118,13 @@
             description="Embeds the behavior of all DiscretePorts into the Behavior of this Atomic Component"
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAllPortBehavior"
             name="Embed All Port Behaviors">
+      </command>
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers.CreateCompRTSCCopyRolePropertiesHandler"
+            description="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports"
+            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.CreateComponentRTSCandCopyRolePropertiesToPortCommand"
+            name="Create Component-RTSC (incl. Diagram) And Copy All Role Properties to Ports">
       </command>
    </extension>
    
