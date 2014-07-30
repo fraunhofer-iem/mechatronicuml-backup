@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.common.ui.ExtensibleModelSelectionPage;
 import de.uni_paderborn.fujaba.common.ui.ModelSelectionPageExtension;
 import de.uni_paderborn.fujaba.common.ui.ResourceLocationProvider;
 import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
+import de.uni_paderborn.fujaba.export.providers.NullContentProvider;
 
 public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSelectionPage implements IFujabaExportSourcePage {
 
@@ -205,25 +206,27 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 		@Override
 		public void setResource(Resource resource) {
 			ISelection selection = null;
-			
+			AdapterFactory adapterFactory = null;							
 			if (resource != null && !resource.getContents().isEmpty()) {
 				EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(resource
 						.getContents().get(0));
-				AdapterFactory adapterFactory = null;				
 				if (editingDomain instanceof AdapterFactoryEditingDomain) {
 					adapterFactory = ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
 				}
-				if (adapterFactory != null) {
-					treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
-					treeViewer.setLabelProvider(new GreyedAdapterFactoryLabelProvider(adapterFactory) {
-						@Override
-						public boolean isEnabled(Object object) {							
-							return object instanceof EObject && wizardPageSupportsSourceModelElement((EObject) object);
-						}
-					});
-					treeViewer.setInput(resource);
-					selection = wizardPageGetDefaultSelection(resource);
-				}
+			}
+			if (adapterFactory != null) {
+				treeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+				treeViewer.setLabelProvider(new GreyedAdapterFactoryLabelProvider(adapterFactory) {
+					@Override
+					public boolean isEnabled(Object object) {							
+						return object instanceof EObject && wizardPageSupportsSourceModelElement((EObject) object);
+					}
+				});
+				treeViewer.setInput(resource);
+				selection = wizardPageGetDefaultSelection(resource);
+			} else {
+				treeViewer.setContentProvider(NullContentProvider.DEFAULT);
+				treeViewer.setInput(null);
 			}
 			setCheckedElements(selection);
 		}		
