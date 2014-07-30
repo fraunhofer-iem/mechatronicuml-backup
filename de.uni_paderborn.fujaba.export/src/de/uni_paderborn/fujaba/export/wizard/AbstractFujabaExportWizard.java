@@ -20,6 +20,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IExportWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -28,7 +29,7 @@ import org.eclipse.ui.ide.IDE;
 import de.uni_paderborn.fujaba.export.ExportPlugin;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
 
-public abstract class AbstractFujabaExportWizard extends Wizard implements IFujabaExportWizard {
+public abstract class AbstractFujabaExportWizard extends Wizard implements IExportWizard {
     protected FormToolkit toolkit = new FormToolkit(Display.getDefault());
 	protected EditingDomain editingDomain;
 	protected IStructuredSelection initialSelection;
@@ -194,6 +195,14 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IFuja
 	public ResourceSet getResourceSet() {
 		return editingDomain.getResourceSet();
 	}
+	
+    public abstract String wizardGetId();
+    public abstract IFujabaExportOperation wizardCreateExportOperation();
+	
+	public EditingDomain getEditingDomain() {
+		return editingDomain;
+	}
+	
 
 }
 

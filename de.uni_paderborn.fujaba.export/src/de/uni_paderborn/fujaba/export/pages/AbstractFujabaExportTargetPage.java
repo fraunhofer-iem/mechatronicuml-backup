@@ -323,7 +323,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 			optionsComposite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
 	                | GridData.HORIZONTAL_ALIGN_FILL));
 			optionsComposite.setFont(parent.getFont());
-			toolkit.createButton(optionsComposite, "Overwrite existing resources", SWT.CHECK);
+			createOptions(optionsComposite);
         }
         
 	        
@@ -340,6 +340,10 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
         setControl(section);
     }
 
+	public void createOptions(Composite parent) {
+		toolkit.createButton(parent, "Overwrite existing resources", SWT.CHECK);
+	}
+	
 	protected boolean shouldDisplayOptions() {
 		return wizardPageSupportsOverwriteOption();
 	}

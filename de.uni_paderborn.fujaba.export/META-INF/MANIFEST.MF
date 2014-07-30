@@ -17,3 +17,6 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Export-Package: de.uni_paderborn.fujaba.export.operation,
+ de.uni_paderborn.fujaba.export.pages,
+ de.uni_paderborn.fujaba.export.wizard
