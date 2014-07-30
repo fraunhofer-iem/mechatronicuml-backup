@@ -19,6 +19,7 @@ import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -38,7 +39,7 @@ import de.uni_paderborn.fujaba.common.ui.ResourceLocationProvider;
 import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
 import de.uni_paderborn.fujaba.export.providers.NullContentProvider;
 
-public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSelectionPage implements IFujabaExportSourcePage {
+public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSelectionPage implements IWizardPage {
 
 	/**
 	 * Page Extension that allows the user to select the domain element
@@ -282,7 +283,6 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 	
 
     // default implementation
-	@Override
 	public ISelection wizardPageGetDefaultSelection(Resource resource) {
 		TreeIterator<EObject> it = resource.getAllContents();
 		while (it.hasNext()) {
@@ -293,5 +293,9 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 		}
 		return null;
 	}
+
+	public abstract String wizardPageGetSourceFileExtension();
+    public abstract ElementSelectionMode wizardPageGetSupportedSelectionMode();
+    public abstract boolean wizardPageSupportsSourceModelElement(EObject element);
 		
 }

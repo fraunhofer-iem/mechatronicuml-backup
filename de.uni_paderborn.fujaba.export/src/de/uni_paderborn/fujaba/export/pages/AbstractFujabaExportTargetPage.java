@@ -14,6 +14,7 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -33,10 +34,8 @@ import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
-import de.uni_paderborn.fujaba.common.Messages;
 
-
-public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferPage implements IFujabaExportTargetPage {
+public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferPage implements IWizardPage {
 
 	protected FormToolkit toolkit;
 	protected TreeViewer treeViewer;
@@ -355,4 +354,6 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 	public void handleEvent(Event event) {
 	}
 
+	public abstract boolean wizardPageSupportsOverwriteOption();
+	public abstract boolean wizardPageDirectoryDestination();
 }
