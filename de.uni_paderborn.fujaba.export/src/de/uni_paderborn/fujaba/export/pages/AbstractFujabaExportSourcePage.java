@@ -275,10 +275,15 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 	}
 
 	public EObject[] getSourceElements() {
+		EObject[] array = new EObject[] { };
 		if (domainElementExtension != null) {
-			return (EObject[]) domainElementExtension.getCheckedElements();
+			List<EObject> elements = new ArrayList<EObject>();
+			for (Object element : domainElementExtension.getCheckedElements()) { 
+				elements.add((EObject) element);
+			}
+			array = elements.toArray(array);
 		}
-		return new EObject[] { };
+		return array;
 	}
 	
 
