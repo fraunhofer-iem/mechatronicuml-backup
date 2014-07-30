@@ -18,6 +18,7 @@ import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.ui.dialogs.WorkspaceResourceDialog;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -360,22 +361,30 @@ public class ModelSelectionPage extends WizardPage {
 				this.resource.unload();
 			}
 			getResourceSet().getResources().remove(this.resource);
-			this.resource = null;
 		}
+		this.resource = null;
 	}
 
 	protected Resource loadResource() {
 		unloadResource();
 		assert uri != null;
-		Resource resource = getResourceSet().getResource(uri, true);
-		if (resource == null) {
-			setErrorMessage(Messages.ModelSelectionPageModelNA);
-			return null;
-		}
+		Resource resource = null;
 		try {
+			resource = getResourceSet().getResource(uri, true);
+			if (resource == null) {
+				setErrorMessage(Messages.ModelSelectionPageModelNA);
+				return null;
+			}
 			resource.load(Collections.EMPTY_MAP);
 		} catch (IOException ioe) {
 			setErrorMessage(NLS.bind(Messages.ModelSelectionPageErrorLoadingModel, ioe.getLocalizedMessage()));
+			return null;
+		} catch (WrappedException e) {
+			setErrorMessage("Errors occurred while loading the selected file.");
+			return null;
+		}
+		if (resource != null && !resource.getErrors().isEmpty()) {
+			setErrorMessage("Errors occurred while loading the selected file.");
 			return null;
 		}
 		setErrorMessage(null);
