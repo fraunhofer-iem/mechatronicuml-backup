@@ -174,7 +174,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 //    }
 
     public void validatePage() {
-    	URI uri = URI.createURI(getDestinationValue());
+    	URI uri = getDestinationURI();
 
     	// Decide if the destination is valid...
     	// We support file system and platform URIs.
@@ -360,4 +360,8 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 
 	public abstract boolean wizardPageSupportsOverwriteOption();
 	public abstract boolean wizardPageDirectoryDestination();
+	
+	public URI getDestinationURI() {
+		return URI.createURI(getDestinationValue()); 
+	}
 }
