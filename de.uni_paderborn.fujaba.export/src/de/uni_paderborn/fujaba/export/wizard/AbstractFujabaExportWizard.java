@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -204,5 +205,14 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IExpo
 	}
 	
 
+	
+	public AdapterFactory getAdapterFactory() {
+		EditingDomain editingDomain = getEditingDomain();
+		if (editingDomain instanceof AdapterFactoryEditingDomain) {
+			return ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
+		}
+		return null;
+	}
 }
+
 
