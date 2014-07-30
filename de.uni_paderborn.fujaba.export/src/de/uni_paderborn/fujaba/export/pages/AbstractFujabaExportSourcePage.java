@@ -274,11 +274,11 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 		setPageComplete(errorMessage == null);
 	}
 
-	public Object[] getSourceElements() {
+	public EObject[] getSourceElements() {
 		if (domainElementExtension != null) {
-			return domainElementExtension.getCheckedElements();
+			return (EObject[]) domainElementExtension.getCheckedElements();
 		}
-		return new Object[] { };
+		return new EObject[] { };
 	}
 	
 

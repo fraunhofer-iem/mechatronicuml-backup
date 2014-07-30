@@ -75,7 +75,7 @@ public class ExampleFujabaExportWizard extends AbstractFujabaExportWizard {
 
 	@Override
 	public IFujabaExportOperation wizardCreateExportOperation() {
-		final Object[] sourceElements = sourcePage.getSourceElements();
+		final EObject[] sourceElements = sourcePage.getSourceElements();
 		
 		return new AbstractFujabaExportOperation() {
 			@Override
