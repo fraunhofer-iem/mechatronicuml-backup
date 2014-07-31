@@ -46,6 +46,8 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSe
 
 class Mtctl2English {
 	def serializeProperty(Property it) '''«expr(it.expression, true).toString().toFirstUpper».'''
+	def serializeProperty(Property it, boolean fulfilled) '''«expr(it.expression, fulfilled).toString().toFirstUpper».'''
+	
 	
 	def dispatch expr(QuantifierExpr expr, boolean positive) {
 		var thereIs = (expr instanceof ExistenceQuantExpr == positive);

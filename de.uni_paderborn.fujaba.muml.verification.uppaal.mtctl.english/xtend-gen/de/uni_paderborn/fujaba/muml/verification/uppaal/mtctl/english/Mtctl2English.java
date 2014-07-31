@@ -65,6 +65,17 @@ public class Mtctl2English {
     return _builder;
   }
   
+  public CharSequence serializeProperty(final Property it, final boolean fulfilled) {
+    StringConcatenation _builder = new StringConcatenation();
+    Expression _expression = it.getExpression();
+    CharSequence _expr = this.expr(_expression, fulfilled);
+    String _string = _expr.toString();
+    String _firstUpper = StringExtensions.toFirstUpper(_string);
+    _builder.append(_firstUpper, "");
+    _builder.append(".");
+    return _builder;
+  }
+  
   protected CharSequence _expr(final QuantifierExpr expr, final boolean positive) {
     CharSequence _xblockexpression = null;
     {
