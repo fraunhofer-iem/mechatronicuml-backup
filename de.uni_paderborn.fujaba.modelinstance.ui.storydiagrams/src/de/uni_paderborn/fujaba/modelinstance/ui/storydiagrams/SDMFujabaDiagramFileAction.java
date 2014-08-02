@@ -6,13 +6,11 @@ import org.eclipse.core.runtime.IPath;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditor;
 import org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorUtil;
 
-import de.uni_paderborn.fujaba.modelinstance.ui.ui.commands.AbstractCreateDiagramFileCommand;
-
 /**
  * @generated
  */
 public class SDMFujabaDiagramFileAction extends
-		AbstractCreateDiagramFileCommand {
+		de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
 
 	@Override
 	public void setCharset(IFile diagramFile) {
