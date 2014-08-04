@@ -65,13 +65,13 @@ public class Mtctl2English {
     return _builder;
   }
   
-  public CharSequence serializeProperty(final Property it, final boolean fulfilled) {
+  public CharSequence propertyWithResult(final Property it, final boolean fulfilled) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("The verification result is that ");
     Expression _expression = it.getExpression();
     CharSequence _expr = this.expr(_expression, fulfilled);
     String _string = _expr.toString();
-    String _firstUpper = StringExtensions.toFirstUpper(_string);
-    _builder.append(_firstUpper, "");
+    _builder.append(_string, "");
     _builder.append(".");
     return _builder;
   }
