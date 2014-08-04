@@ -37,12 +37,11 @@
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext"/>
-      <import plugin="org.storydriven.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.storydriven.core.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
-      <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.3.1" match="greaterOrEqual"/>
@@ -53,6 +52,8 @@
       <import plugin="de.uni_paderborn.fujaba.modelinstance.edit.properties" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="de.uni_paderborn.fujaba.common" version="0.4.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
