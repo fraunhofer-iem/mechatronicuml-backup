@@ -18,8 +18,8 @@
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?|^de\.upb\.swt(\..+)?)" searchPathRef="storydriven" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>
   <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse_luna"/>
-  <rm:locator pattern="^org\.eclipse\.xtext(\..+)?" searchPathRef="eclipse_kepler"/>
-  <rm:locator pattern="^org\.eclipse\.xtend(\..+)?" searchPathRef="eclipse_kepler"/>
+  <rm:locator pattern="^org\.eclipse\.xtext(\..+)?" searchPathRef="eclipse_luna"/>
+  <rm:locator pattern="^org\.eclipse\.xtend(\..+)?" searchPathRef="eclipse_luna"/>
   <rm:locator pattern="^org\.eclipse\.emf\.edapt(\..+)?" searchPathRef="edapt"/>
   <rm:locator pattern="^org\.eclipse\.emf(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.apache(\..+)?" searchPathRef="eclipse"/>
