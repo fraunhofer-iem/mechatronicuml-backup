@@ -89,6 +89,7 @@
       <import plugin="de.uni_paderborn.fujaba.properties"/>
       <import feature="de.uni_paderborn.fujaba.properties.feature" version="0.4.0.qualifier"/>
       <import feature="de.uni_paderborn.fujaba.core.feature" version="1.0.0.qualifier"/>
+      <import plugin="de.uni_paderborn.fujaba.export"/>
    </requires>
 
    <plugin
