@@ -139,6 +139,9 @@ public class WrappingLabel8EditPart extends LabelEditPart implements
 				new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
 				new DefaultLinkLabelDragPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.WRAPPING_LABEL_MULTI_LINE_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.WrappingLabelMultiLineEditPolicy());
 	}
 
 	/**

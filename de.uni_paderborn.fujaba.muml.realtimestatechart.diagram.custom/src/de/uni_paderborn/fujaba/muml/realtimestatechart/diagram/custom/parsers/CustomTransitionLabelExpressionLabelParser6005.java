@@ -26,6 +26,8 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.Transitio
 
 public class CustomTransitionLabelExpressionLabelParser6005 extends
 		TransitionLabelExpressionLabelParser6005 implements ISemanticParser {
+	
+	static final int MAX_LINELENGTH = 50;
 
 	public String getPrintString(IAdaptable element, int flags) {
 		String printString = super.getPrintString(element, flags);
@@ -50,9 +52,42 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		printString = printString.replaceAll(
 				"\\{synchronizationExpression\\}",
 				getSynchronizationExpression(synchronization, expression));
-
-		return printString;
+		
+		// #1001: Add manual linebreaks to prevent too long lines
+		return printString;//addManualLinebreaks(printString, MAX_LINELENGTH);
 	}
+//
+//	private static String addManualLinebreaks(String str, int maxLineLength) {
+//		StringBuffer result = new StringBuffer();
+//		for (String line : str.split("\n")) {
+//			while (line.length() > MAX_LINELENGTH) {
+//				int split = findLastWhitespace(line);
+//				if (split == -1) {
+//					split = MAX_LINELENGTH - 1;
+//				}
+//				result.append(line.substring(0, split + 1));
+//				line = line.substring(split + 1);
+//				if (!line.isEmpty()) {
+//					result.append('\n');
+//				}
+//			}
+//			result.append(line);
+//			result.append('\n');
+//		}
+//		
+//		return result.toString();
+//
+//	}
+//
+//	private static int findLastWhitespace(String line) {
+//		for (int p = line.length() - 1; p >= 0; p--) {
+//			char c = line.charAt(p);
+//			if (Character.isWhitespace(c)) {
+//				return p;
+//			}
+//		}
+//		return -1;
+//	}
 
 	private String getSynchronizationExpression(Synchronization context, Expression expression) {
 		String serialization = null;
