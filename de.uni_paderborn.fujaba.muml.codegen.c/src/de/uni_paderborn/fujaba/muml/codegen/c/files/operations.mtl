@@ -20,8 +20,8 @@
  * @param anAbsoluteDeadline
  */]
 [template public generateOperationFiles(cic : ComponentInstanceConfiguration, path : String)]
-[let atomics : Sequence(AtomicComponentInstance) = cic.eAllContents(AtomicComponentInstance)]
-[let allOperations : Sequence(Operation) = atomics.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)]
+[let atomics : Sequence(AtomicComponent) = (cic.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
+[let allOperations : Sequence(Operation) = atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)]
 	[generateOperationHeader(allOperations, path)/]
 	[generateOperationClass(allOperations, path)/]
 [/let]
