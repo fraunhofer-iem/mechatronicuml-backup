@@ -20,17 +20,13 @@
  * @param anAbsoluteDeadline
  */]
 [template public generateOperationFiles(cic : ComponentInstanceConfiguration, path : String)]
-
-[for (comp : Component | cic.eAllContents(AtomicComponentInstance).componentType)]
-	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
-	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
-	[let allOperations : Set(Operation) = aComp.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
+[let atomics : Sequence(AtomicComponentInstance) = cic.eAllContents(AtomicComponentInstance)]
+[let allOperations : Sequence(Operation) = atomics.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)]
 	[generateOperationHeader(allOperations, path)/]
 	[generateOperationClass(allOperations, path)/]
 [/let]
-	[/let]
-	[/if]
-	[/for]
+[/let]
+
 [/template]
 
 
@@ -38,7 +34,7 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationHeader(allOperations : Set(Operation), path : String)]
+[template public generateOperationHeader(allOperations : Sequence(Operation), path : String)]
 
 [file (path+'operations/operations.h', false, 'UTF-8')]
 #ifndef OPERATIONS_H_
@@ -63,7 +59,7 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationClass(allOperations : Set(Operation), path : String)]
+[template public generateOperationClass(allOperations : Sequence(Operation), path : String)]
 
 [file (path+'operations/operations.c', false, 'UTF-8')]
 #include "operations.h"
