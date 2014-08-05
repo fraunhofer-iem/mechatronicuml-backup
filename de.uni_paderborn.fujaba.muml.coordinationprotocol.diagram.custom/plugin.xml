@@ -22,6 +22,47 @@
       </metamodel>
    </extension>
    
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <separator
+               name="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPortde.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSC"
+               label="Create Role RTSC (incl. Diagram)"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart">
+                        </instanceof>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.handlers.CreateRoleRTSCHandler2"
+            description="Create the Role&apos;s RTSC and it&apos;s Diagram"
+            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
+            name="Create Role RTSC">
+      </command>
+   </extension>
+   
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <binding context="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"/>

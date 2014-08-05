@@ -80,10 +80,12 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 	}
 
 	public static void copyRolePropertiesToPort(final DiscretePort port,
-			final Shell shell, EditingDomain editingDomain) {
+			final Shell shell, final EditingDomain editingDomain) {
 
 		boolean shallComponentRTSCbeCreated = false;
 		boolean shallPortRTSCbeReplaced = false;
+		String finalReportMessage = "";
+
 		Role role = port.getRefinedRole();
 		final Resource resource = port.eResource();
 		boolean hadReceiverMessageBuffer = !port.getReceiverMessageBuffer()
@@ -99,6 +101,7 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 			MessageDialog
 					.openInformation(shell, "Role not specified",
 							"Refined Role must be set for this Port, to copy the Role properties.");
+			return;
 		} else if (role.getCardinality() != null
 				&& role.getCardinality().getUpperBound().getValue() > 1
 				&& role.getAdaptationBehavior() == null
@@ -109,6 +112,7 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 							"SubroleBehavior or AdaptationBehavior not set",
 							"The multi role needs to specify a \"SubroleBehavior\" and a \"AdaptationBehavior\".");
 
+			return;
 		}
 
 		else if (FujabaCommonPlugin.showValidationResults(
@@ -142,16 +146,20 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 
 			}
 
-			updatePort(editingDomain, port, shallPortRTSCbeReplaced,
-					shallComponentRTSCbeCreated);
+			
 
 			if (hadReceiverMessageBuffer) {
-				MessageDialog
-						.openInformation(
-								shell,
-								"Transformation Report",
-								"Role properties have been successfully copied to the Port. Existing MessageBuffer specification was overwritten.");
+				finalReportMessage += "Role properties have been successfully copied to the Port. Existing MessageBuffer specification was overwritten.";
+
 			}
+			if (shallComponentRTSCbeCreated) {
+				finalReportMessage += "\n"
+						+ "A new RTSC has been created for the Component:"
+						+ atomicComponent.getName() + ".";
+			}
+			
+			updatePort(editingDomain, port, true,
+					true);
 			/**
 			 * Create the Component RTSC Diagram
 			 */
@@ -167,14 +175,14 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 						public void run(IProgressMonitor monitor)
 								throws InvocationTargetException,
 								InterruptedException {
+							
 							BatchDiagramCreationWizard wizard = new BatchDiagramCreationWizard();
 							IFile file = getFile(resource);
-
 							IStructuredSelection selection = new StructuredSelection(
 									file);
 
-							wizard.init(null, selection);
-							wizard.createDiagrams(elements, monitor);
+						wizard.init(null, selection);
+						wizard.createDiagrams(elements, monitor);
 
 						}
 					});
@@ -187,12 +195,12 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 				}
 
 				MessageDialog.openInformation(shell, "Transformation Report",
-						"A new RTSC has been created for the Component:"
-								+ atomicComponent.getName() + ".");
+						finalReportMessage);
 			}
 		}
 
 	}
+	
 
 	private static void updatePort(EditingDomain editingDomain,
 			DiscretePort port, final boolean replacePortRTSC,

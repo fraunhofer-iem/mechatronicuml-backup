@@ -7,7 +7,11 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.0",
  org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
  de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0",
+ org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
+ org.eclipse.ui.workbench
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Import-Package: de.uni_paderborn.fujaba.muml.utilities.batch
+Bundle-Activator: de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.part.Activator
