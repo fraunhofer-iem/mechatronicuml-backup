@@ -14,17 +14,23 @@
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
 [**
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
 [template public generateOperationFiles(cic : ComponentInstanceConfiguration, path : String)]
 
-[let allOperations : Set(Operation) = cic.eAllContents(Operation)->asSet()]
-[generateOperationHeader(allOperations, path)/]
-[generateOperationClass(allOperations, path)/]
+[for (comp : Component | cic.eAllContents(AtomicComponentInstance).componentType)]
+	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+	[let allOperations : Set(Operation) = aComp.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
+	[generateOperationHeader(allOperations, path)/]
+	[generateOperationClass(allOperations, path)/]
 [/let]
-
+	[/let]
+	[/if]
+	[/for]
 [/template]
 
 
@@ -66,16 +72,22 @@
 /**[/protected]**/
 [for (operation : Operation | allOperations)]
 
-
 [operation.returnType.getTypeName()/] [operation.name/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]){
+
+[if (operation.implementations->at(1).oclIsUndefined())]
 /** [protected (operation.getName()+' **/')] 
 //add your implementation here
-
-[if not (operation.returnType.name = 'VOID')]
-//default return value
-return [getDefaultReturn(operation)/];
-[/if]
+	[if not (operation.returnType.name = 'VOID')]
+		//default return value
+		return [getDefaultReturn(operation)/];
+	[/if]
 /**[/protected]**/
+[else]
+	[operation.returnType.getTypeName()/] ret;
+	[generateExpression(operation.implementations->at(1), false, '')/]
+	return ret;
+[/if]
+
 }
 
 
