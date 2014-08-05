@@ -23,4 +23,5 @@ public interface EditPolicyRoles {
 	
 	public static final String ENLARGE_COMPARTMENT_ROLE = "EnlargeCompartmentRole";
 
+	public static final String WRAPPING_LABEL_MULTI_LINE_ROLE = "WrappingLabelMultiLineEditPolicy";
 }
