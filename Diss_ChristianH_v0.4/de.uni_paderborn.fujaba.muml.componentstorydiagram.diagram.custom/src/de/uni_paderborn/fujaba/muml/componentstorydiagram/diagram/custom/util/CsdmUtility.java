@@ -48,14 +48,14 @@ public class CsdmUtility {
 		}
 		}
 	}
-	
+
 	public static void adaptColor(IGraphicalEditPart editPart) {
 		adaptColor((View) editPart.getModel());
 	}
 
-
 	public static void adaptColor(View view) {
-		ComponentStoryPatternVariable cspVar = (ComponentStoryPatternVariable) view.getElement();
+		ComponentStoryPatternVariable cspVar = (ComponentStoryPatternVariable) view
+				.getElement();
 		org.eclipse.swt.graphics.RGB lineRGB;
 
 		switch (cspVar.getBindingOperator()) {
@@ -80,24 +80,28 @@ public class CsdmUtility {
 								.RGBToInteger(lineRGB));
 
 	}
-	
+
 	public static void adaptColor(IFigure figure, BindingOperator spMod) {
 		switch (spMod) {
 		case CREATE:
-			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CREATE));
+			figure.setForegroundColor(DiagramColorRegistry.getInstance()
+					.getColor(RGB_CREATE));
 			break;
 		case DESTROY:
-			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_DESTROY));
+			figure.setForegroundColor(DiagramColorRegistry.getInstance()
+					.getColor(RGB_DESTROY));
 			break;
 		case CHECK_ONLY:
-			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
+			figure.setForegroundColor(DiagramColorRegistry.getInstance()
+					.getColor(RGB_CHECK));
 			break;
 		default:
-			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
+			figure.setForegroundColor(DiagramColorRegistry.getInstance()
+					.getColor(RGB_CHECK));
 			break;
 		}
 	}
-	
+
 	public static String getText(ActivityEdge activityEdge) {
 		EdgeGuard edgeGuard = activityEdge.getGuard();
 		if (edgeGuard != null && !EdgeGuard.NONE.equals(edgeGuard)) {
@@ -125,7 +129,7 @@ public class CsdmUtility {
 	public static String getSignature(ComponentStoryRule componentStoryRule) {
 
 		Component component = componentStoryRule.getReconfiguredComponent();
-		
+
 		String type = "";
 		String name = "";
 		String parameters = "";
@@ -136,15 +140,16 @@ public class CsdmUtility {
 		Component tmpComponent = null;
 
 		// build list of Return Parameters and build String to Display
-		if (componentStoryRule.getSignature() == null){
+		if (componentStoryRule.getSignature() == null) {
 			resultParameters = "";
 		} else {
 			for (Parameter returnParameter : componentStoryRule.getSignature()
 					.getReturnParameters()) {
 				if (returnParameter.getDataType() instanceof Port) {
 					tmpPort = ((Port) returnParameter.getDataType());
-					resultParameters = resultParameters.concat(tmpPort.getName()
-							+ " " + returnParameter.getName() + ", ");
+					resultParameters = resultParameters
+							.concat(tmpPort.getName() + " "
+									+ returnParameter.getName() + ", ");
 				} else if (returnParameter.getDataType() instanceof ComponentPart) {
 					tmpPart = ((ComponentPart) returnParameter.getDataType());
 					tmpComponent = ((Component) tmpPart.getComponentType());
@@ -154,6 +159,11 @@ public class CsdmUtility {
 							+ tmpPart.getName()
 							+ " : "
 							+ tmpComponent.getName() + ", ");
+				} else {
+					resultParameters = resultParameters.concat(returnParameter
+							.getDataType().getName()
+							+ " "
+							+ returnParameter.getName() + ", ");
 				}
 			}
 		}
@@ -163,22 +173,29 @@ public class CsdmUtility {
 					resultParameters.length() - 2);
 		}
 
-		// build list of Return Parameters and build String to Display
-		if (componentStoryRule.getSignature() == null){
+		// build list of Input Parameters and build String to Display
+		if (componentStoryRule.getSignature() == null) {
 			parameters = "";
 		} else {
-			for (Parameter parameter : componentStoryRule.getSignature().getParameters()) {
+			for (Parameter parameter : componentStoryRule.getSignature()
+					.getParameters()) {
 				if (parameter.getDataType() instanceof Port) {
 					tmpPort = ((Port) parameter.getDataType());
 					parameters = parameters.concat(parameter.getName() + " / "
-							+ tmpPort.getName() /* + " : " + tmpPortType.getName() */
+							+ tmpPort.getName() /*
+												 * + " : " +
+												 * tmpPortType.getName()
+												 */
 							+ ", ");
 				} else if (parameter.getDataType() instanceof ComponentPart) {
 					tmpPart = ((ComponentPart) parameter.getDataType());
 					tmpComponent = ((Component) tmpPart.getComponentType());
 					parameters = parameters.concat(parameter.getName() + " / "
-							+ tmpPart.getName() + " : " + tmpComponent.getName()
-							+ ", ");
+							+ tmpPart.getName() + " : "
+							+ tmpComponent.getName() + ", ");
+				} else {
+					parameters = parameters.concat(parameter.getDataType()
+							.getName() + " " + parameter.getName() + ", ");
 				}
 			}
 		}
@@ -191,7 +208,7 @@ public class CsdmUtility {
 			name = componentStoryRule.getName();
 		}
 
-		if (component != null){
+		if (component != null) {
 			if (component.getName() != null) {
 				type = component.getName();
 			}
