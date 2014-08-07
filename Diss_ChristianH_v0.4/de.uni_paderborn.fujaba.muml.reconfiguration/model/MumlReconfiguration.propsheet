@@ -141,9 +141,21 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.9">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase/timeForExecution"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.9">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForFading"/>
+      </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForSetup"/>
+      </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForTeardown"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/InternalReconfigurationCommunicationPort"/>
