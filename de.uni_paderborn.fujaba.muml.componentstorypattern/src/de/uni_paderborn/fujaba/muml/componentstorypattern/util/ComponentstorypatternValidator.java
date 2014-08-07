@@ -513,54 +513,31 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ExistingConnectorBetweenPortVariableTypes constraint of '<em>Connector Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONNECTOR_VARIABLE__EXISTING_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION = "if self.oclIsKindOf(AssemblyVariable) then\r\n" +
-		"\tif not self.oclAsType(AssemblyVariable).type.oclIsUndefined() then\r\n" +
-		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->first() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
-		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->last()= self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type) or\r\n" +
-		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->last() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
-		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->first() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type)\r\n" +
-		"\telse\r\n" +
-		"\t\tfalse\r\n" +
-		"\tendif\r\n" +
-		"else\r\n" +
-		"\tif self.oclIsKindOf(DelegationVariable) then\r\n" +
-		"\t\tif not self.oclAsType(DelegationVariable).type.oclIsUndefined() then\r\n" +
-		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->first() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
-		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->last() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type) or\r\n" +
-		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->last() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
-		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->first() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type)\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tfalse\r\n" +
-		"\t\tendif\t\r\n" +
-		"\telse\r\n" +
-		"\t\tfalse\r\n" +
-		"\tendif\r\n" +
-		"endif";
-
-	/**
 	 * Validates the ExistingConnectorBetweenPortVariableTypes constraint of '<em>Connector Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateConnectorVariable_ExistingConnectorBetweenPortVariableTypes(ConnectorVariable connectorVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentstorypatternPackage.Literals.CONNECTOR_VARIABLE,
-				 connectorVariable,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ExistingConnectorBetweenPortVariableTypes",
-				 CONNECTOR_VARIABLE__EXISTING_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ExistingConnectorBetweenPortVariableTypes", getObjectLabel(connectorVariable, context) },
+						 new Object[] { connectorVariable },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
