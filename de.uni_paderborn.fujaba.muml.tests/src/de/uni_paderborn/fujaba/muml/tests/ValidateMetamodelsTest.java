@@ -56,10 +56,10 @@ public class ValidateMetamodelsTest {
 		// be loaded first, else proxies are not resolved correctly...)
 		List<String[]> projects = new ArrayList<String[]>();
 		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.tests", "/model/Ecore.ecore" });
-		projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
-		projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
-		projects.add(new String[] { "org.storydriven.storydiagrams",
-				"/model/storydiagrams.ecore" });
+		//projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
+		//projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
+		//projects.add(new String[] { "org.storydriven.storydiagrams",
+		//		"/model/storydiagrams.ecore" });
 		projects.add(new String[] { "de.uni_paderborn.fujaba.muml", "/model/muml.ecore" });
 		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.actionlanguage",
 				"/model/actionlanguage.ecore" });

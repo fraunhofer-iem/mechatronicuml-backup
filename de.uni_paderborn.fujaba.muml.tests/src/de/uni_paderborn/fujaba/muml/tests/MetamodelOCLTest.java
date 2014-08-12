@@ -114,8 +114,8 @@ public class MetamodelOCLTest extends TraverseTest {
 
 		// Load resource and add model package
 
-		Resource coreModel = TestUtilities.loadResource(resourceSet,
-				"org.storydriven.core", "/model/core.ecore");
+		//Resource coreModel = TestUtilities.loadResource(resourceSet,
+		//		"org.storydriven.core", "/model/core.ecore");
 
 		
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
