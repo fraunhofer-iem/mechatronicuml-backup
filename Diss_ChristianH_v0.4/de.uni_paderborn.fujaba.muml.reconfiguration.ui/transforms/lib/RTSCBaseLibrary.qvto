@@ -75,6 +75,7 @@ helper createCompareGuardExpression(in variable : Variable, in variable2 : Varia
 	return new ComparisonExpression(lhs, ComparingOperator::EQUAL, rhs);
 }
 
+
 -- creates a block containing one assignment expression where a literal is assigned to a variable
 helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newValue : String) : Block{
 	var block : Block := new Block();
@@ -221,7 +222,7 @@ constructor Clock::Clock(in newName : String){
 constructor Transition::Transition(in srcState : Vertex, in tgtState : Vertex, in prio : Integer){
 	source := srcState;
 	target := tgtState;
-	priority := prio;
+	priority := source.getUniqueTransitionPriority(prio);
 }
 
 constructor SynchronizationChannel::SynchronizationChannel(in newName : String, in type : DataType){

@@ -130,6 +130,11 @@ property genSyncChanExecutorEmbeddedCISendSetup : String = 'sendSetup';
 property genSyncChanExecutorEmbeddedCISendFading : String = 'sendFading';
 property genSyncChanExecutorEmbeddedCISendTeardown : String = 'sendTeardown';
 
+property genSyncChanExecutorLocalFinish : String = 'localFinish';
+property genSyncChanExecutorLocalSetup : String = 'localSetup';
+property genSyncChanExecutorLocalFading : String = 'localFading';
+property genSyncChanExecutorLocalTeardown : String = 'localTeardown';
+
 -- names of the executor synchronization channels that are depending on user-defined messages
 property genSyncChanExecutorCheckPrefix : String = 'check';
 
@@ -158,6 +163,7 @@ property genVarExecutor_EmbeddedCI_SubRole_TimeForExec : String = 'timeForExecut
 property genVarExecutor_EmbeddedCI_SubRole_TimeForSetup : String = 'timeForSetup';
 property genVarExecutor_EmbeddedCI_SubRole_TimeForFading : String = 'timeForFading';
 property genVarExecutor_EmbeddedCI_SubRole_TimeForTeardown : String = 'timeForTeardown';
+property genVarExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_finished = 'finished';
 
 -- names of executor internal clocks
 property genClockExecutor_Parent_c2 : String = 'c2';
@@ -206,6 +212,14 @@ property genStateExecutor_InternalBehavior_Wait : String = 'Wait';
 property genStateExecutor_InternalBehavior_Execute : String = 'Execute';
 property genStateExecutor_InternalBehavior_Report : String = 'Report';
 
+property genStateExecutor_InternalBehavior_LocalExecuteY2Prefix = 'LocalExecute';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_Setup = 'Setup';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_WaitFading = 'WaitFading';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_Fading = 'Fading';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_WaitTeardown = 'WaitTeardown';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_Teardown = 'Teardown';
+property genStateExecutor_InternalBehavior_LocalExecuteY2_Finish = 'Finish';
+
 property genStateExecutor_embeddedCI_Main : String = 'embeddedCI_Main';
 
 property genStateExecutor_embeddedCI_Adaptation_Idle : String = 'Idle';
@@ -225,6 +239,21 @@ property genStateExecutor_embeddedCI_Adaptation_Abort_SendAbort : String = 'Send
 property genStateExecutor_embeddedCI_Adaptation_PrepareY_Start : String = 'Start';
 property genStateExecutor_embeddedCI_Adaptation_PrepareY_Finished : String = 'Finished';
 
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendSetup : String = 'SendSetup';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait1 : String = 'Wait1';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalSetup : String = 'ExecuteLocalSetup';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_FinishedSetup : String = 'FinishedSetup';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitFading : String = 'WaitFading';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalFading : String = 'ExecuteLocalFading';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendFading : String = 'SendFading';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait2 : String = 'Wait2';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_FinishedFading : String = 'FinishedFading';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitTeardown : String = 'WaitTeardown';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalTeardown : String = 'ExecuteLocalTeardown';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitLocal : String = 'WaitLocal';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendTeardown : String = 'SendTeardown';
+property genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait3 : String = 'Wait3';
+
 property genStateExecutor_embeddedCI_Subrole_Idle : String = 'Idle';
 property genStateExecutor_embeddedCI_Subrole_WaitForResponse : String = 'WaitForResponse';
 property genStateExecutor_embeddedCI_Subrole_VotedCommit : String = 'VotedCommit';
@@ -238,6 +267,7 @@ property genStateExecutor_embeddedCI_Subrole_ExecuteFading : String = 'ExecuteFa
 property genStateExecutor_embeddedCI_Subrole_WaitTeardown : String = 'WaitTeardown';
 property genStateExecutor_embeddedCI_Subrole_ExecuteTeardown : String = 'ExecuteTeardown';
 
+
 -- names of executor internal operations
 property genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction : String = 'getNextPortInstanceForAction';
 property genOpExecutor_EmbeddedCI_Adaptation_allActionsPerformed : String = 'allActionsPerformed';
@@ -250,8 +280,20 @@ property genOpExecutor_EmbeddedCI_Adaptation_Vote_canCommit : String = 'canCommi
 property genOpExecutor_EmbeddedCI_Adaptation_Execute_allEmbeddedFinished : String = 'allEmbeddedFinished';
 property genOpExecutor_EmbeddedCI_Adaptation_Execute_setFinished : String = 'setFinished';
 
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedStup : String = 'setFinishedSetup';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedSetup : String = 'allEmbeddedFinishedSetup';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedFading : String = 'setFinishedFading';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedFading : String = 'allEmbeddedFinishedFading';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedTeardown : String = 'setFinishedTeardown';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedTeardown : String = 'allEmbeddedFinishedTeardown';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_resetActionPerformed : String = 'resetActionPerformed';
+
+
 -- names of operation parameters
 property genParamExecutor_EmbeddedCI_Adaptation_AC : String = 'ac';
 property genParamExecutor_EmbeddedCI_Adaptation_Vote_commitTime : String = 'commitTime';
 property genParamExecutor_EmbeddedCI_Adaptation_Vote_commit : String = 'commit';
 property genParamExecutor_EmbeddedCI_Adaptation_Vote_port : String = 'port';
+
+property genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac = 'ac';
+property genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port = 'port';
