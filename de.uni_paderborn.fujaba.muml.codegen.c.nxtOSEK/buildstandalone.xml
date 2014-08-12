@@ -13,6 +13,7 @@
 
     <!-- The classpath with only the dependencies used by the project (a dependency with the parser is required) -->
     <path id="de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c"/>
         <pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c/bin"/>
         <pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK/bin"/>
         <pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c.beautifier/bin"/>
