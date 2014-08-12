@@ -56,7 +56,7 @@ public class ValidateMetamodelsTest {
 		// be loaded first, else proxies are not resolved correctly...)
 		List<String[]> projects = new ArrayList<String[]>();
 		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.tests", "/model/Ecore.ecore" });
-		//projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
+		projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
 		//projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
 		//projects.add(new String[] { "org.storydriven.storydiagrams",
 		//		"/model/storydiagrams.ecore" });
@@ -65,13 +65,13 @@ public class ValidateMetamodelsTest {
 				"/model/actionlanguage.ecore" });
 
 		for (String[] path : projects) {
-			try {
+			//try {
 				TestUtilities.loadResource(resourceSet, path[0], path[1]);
 
-			} catch (Exception e) {
-				TestUtilities.loadResource(resourceSet, "sdm", "/" + path[0] + path[1]);
+			//} catch (Exception e) {
+				//TestUtilities.loadResource(resourceSet, "sdm", "/" + path[0] + path[1]);
 
-			}
+			//}
 		}
 
 		EcoreUtil.resolveAll(resourceSet);
