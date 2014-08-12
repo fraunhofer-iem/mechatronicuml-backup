@@ -66,7 +66,7 @@ public class TestUtilities {
 		
 		// adapt path to match workspace structure on continuous integration server (new)
 		if (!new File(projectPath.toOSString()).exists()) {
-			projectPath = projectPath.append("..").append("..").append("FujabaCore").append("workspace").append("plugins").append(projectName);
+			projectPath = projectPath.removeLastSegments(2).append("FujabaCore").append("workspace").append("plugins").append(projectName);
 			triedPaths.add(projectPath);
 		}
 		
@@ -75,9 +75,9 @@ public class TestUtilities {
 			StringBuffer message = new StringBuffer();
 			message.append("registerWorkspaceProject() could not find project ");
 			message.append(projectName);
-			message.append(". Tried paths:\n");
+			message.append(". Tried paths:");
 			for (IPath path : triedPaths) {
-				message.append("\t*");
+				message.append("\n\t*");
 				message.append(path.toOSString());
 			}
 			Assert.isTrue(false, message.toString());
