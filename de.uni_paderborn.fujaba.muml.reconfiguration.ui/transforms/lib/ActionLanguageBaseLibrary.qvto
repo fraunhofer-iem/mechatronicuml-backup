@@ -26,6 +26,13 @@ helper createNotExpression(in exp : Expression) : UnaryExpression{
 	return new UnaryExpression(exp, UnaryOperator::NOT);
 }
 
+helper Expression :: appendToLogicalExpression(op : LogicOperator, appendix : Expression): LogicalExpression{
+	return new LogicalExpression(self, op, appendix);
+}
+
+helper Expression :: appendToLogicalExpression(op : LogicOperator, appendix : String): LogicalExpression{
+	return new LogicalExpression(self, op, new LiteralExpression(appendix));
+}
 
 -- queries
 
