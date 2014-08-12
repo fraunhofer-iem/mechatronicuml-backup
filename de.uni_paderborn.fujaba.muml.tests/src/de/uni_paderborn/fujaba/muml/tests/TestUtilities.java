@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.tests;
 
 import java.io.File;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
@@ -52,11 +53,19 @@ public class TestUtilities {
 		
 		IPath projectPath = workspacePath.append(projectName);
 		
-		// insert "sdm" path to match workspace structure on continuous integration server
+	
+		// insert "sdm" path to match workspace structure on continuous integration server (old)
 		if (!new File(projectPath.toOSString()).exists()) {
-			projectPath = workspacePath.append("sdm").append(projectName);
+			projectPath = projectPath.append("sdm").append(projectName);
 		}
 		
+		// adapt path to match workspace structure on continuous integration server (new)
+		if (!new File(projectPath.toOSString()).exists()) {
+			projectPath = projectPath.append("..").append("..").append("FujabaCore").append("workspace").append("plugins").append(projectName);
+		}
+		
+		Assert.isTrue(new File(projectPath.toOSString()).exists(), "registerWorkspaceProject() could not find project " + projectName + ".");
+
 		// add a trailing separator to avoid cutting off the project name in URI$Hierarchical.mergePath
 		URI uri = URI.createFileURI(projectPath.addTrailingSeparator().toPortableString());
 				
