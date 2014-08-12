@@ -64,7 +64,7 @@ public class TestUtilities {
 		
 		// adapt path to match workspace structure on continuous integration server (new)
 		if (!new File(projectPath.toOSString()).exists()) {
-			projectPath = new Path(workspaceRoot + "../../").append("FujabaCore").append("workspace").append("plugins").append(projectName);
+			projectPath = new Path(workspaceRoot + "../../../").append("FujabaCore").append("workspace").append("plugins").append(projectName);
 			triedPaths.add(projectPath);
 		}
 		
@@ -75,7 +75,7 @@ public class TestUtilities {
 			message.append(projectName);
 			message.append(". Tried paths:");
 			for (IPath path : triedPaths) {
-				message.append("\n\t*");
+				message.append("\n  *");
 				message.append(path.toOSString());
 			}
 			Assert.isTrue(false, message.toString());
