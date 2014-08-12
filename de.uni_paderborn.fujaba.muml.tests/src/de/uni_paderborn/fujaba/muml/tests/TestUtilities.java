@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IPath;
@@ -53,18 +55,33 @@ public class TestUtilities {
 		
 		IPath projectPath = workspacePath.append(projectName);
 		
-	
+		List<IPath> triedPaths = new ArrayList<IPath>();
+		triedPaths.add(projectPath);
+
 		// insert "sdm" path to match workspace structure on continuous integration server (old)
 		if (!new File(projectPath.toOSString()).exists()) {
 			projectPath = projectPath.append("sdm").append(projectName);
+			triedPaths.add(projectPath);
 		}
 		
 		// adapt path to match workspace structure on continuous integration server (new)
 		if (!new File(projectPath.toOSString()).exists()) {
 			projectPath = projectPath.append("..").append("..").append("FujabaCore").append("workspace").append("plugins").append(projectName);
+			triedPaths.add(projectPath);
 		}
 		
-		Assert.isTrue(new File(projectPath.toOSString()).exists(), "registerWorkspaceProject() could not find project " + projectName + ".");
+		// If file could not be found ultimately, display error message!
+		if (!new File(projectPath.toOSString()).exists()) {
+			StringBuffer message = new StringBuffer();
+			message.append("registerWorkspaceProject() could not find project ");
+			message.append(projectName);
+			message.append(". Tried paths:\n");
+			for (IPath path : triedPaths) {
+				message.append("\t*");
+				message.append(path.toOSString());
+			}
+			Assert.isTrue(false, message.toString());
+		}
 
 		// add a trailing separator to avoid cutting off the project name in URI$Hierarchical.mergePath
 		URI uri = URI.createFileURI(projectPath.addTrailingSeparator().toPortableString());
