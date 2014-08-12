@@ -50,23 +50,21 @@ public class TestUtilities {
 		// the lines below assume that this working directory is always a project folder (de.uni_paderborn.fujaba.muml.tests) under the workspace root
 		// however, the working directory can be changed in the JUnit launch configuration and might differ from this project folder
 		String workspaceRoot = new File("").getAbsoluteFile().getParentFile().getAbsolutePath();
-		
-		IPath workspacePath = new Path(workspaceRoot);
-		
-		IPath projectPath = workspacePath.append(projectName);
+	
+		IPath projectPath = new Path(workspaceRoot).append(projectName);
 		
 		List<IPath> triedPaths = new ArrayList<IPath>();
 		triedPaths.add(projectPath);
 
 		// insert "sdm" path to match workspace structure on continuous integration server (old)
 		if (!new File(projectPath.toOSString()).exists()) {
-			projectPath = projectPath.append("sdm").append(projectName);
+			projectPath = new Path(workspaceRoot).append("sdm").append(projectName);
 			triedPaths.add(projectPath);
 		}
 		
 		// adapt path to match workspace structure on continuous integration server (new)
 		if (!new File(projectPath.toOSString()).exists()) {
-			projectPath = projectPath.removeLastSegments(2).append("FujabaCore").append("workspace").append("plugins").append(projectName);
+			projectPath = new Path(workspaceRoot + "../../").append("FujabaCore").append("workspace").append("plugins").append(projectName);
 			triedPaths.add(projectPath);
 		}
 		
