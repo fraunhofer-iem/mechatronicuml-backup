@@ -18,9 +18,9 @@
  * The documentation of the template generateHybridPortFiles.
  * @param aHybridPort
  */]
-[template public generateContinuousPortFiles(cic : ComponentInstanceConfiguration, path : String)]
-	[generateContinuousPortHeaderFile(cic, path)/]
-	[generateContinuousPortClassFile(cic, path)/]
+[template public generateContinuousPortFiles(CIs : OrderedSet(ComponentInstance), path : String)]
+	[generateContinuousPortHeaderFile(CIs, path)/]
+	[generateContinuousPortClassFile(CIs, path)/]
 
 [/template]
 
@@ -30,12 +30,11 @@
 #include "../lib/types.h"
 [/template]
 
-[template public generateContinuousPortHeaderFile(cic : ComponentInstanceConfiguration, path : String)]
+[template public generateContinuousPortHeaderFile(CIs : OrderedSet(ComponentInstance), path : String)]
 [file (path +'continuousComponents/ContImplementations.h',false, 'UTF-8')]
-[includes(cic)/]
 
-[for (ci: ComponentInstance | cic.componentInstances) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
 
+[for (ci: ComponentInstance | CIs) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
 [for (port : PortInstance | ci.portInstances) ? (oclIsKindOf(ContinuousPortInstance))]
 	[let cpi  :ContinuousPortInstance = port.oclAsType(ContinuousPortInstance)]
 	[if (cpi.portType.oclAsType(ContinuousPort).inPort)]
@@ -50,14 +49,14 @@
 [/file]
 [/template]
 
-[template public generateContinuousPortClassFile(cic : ComponentInstanceConfiguration, path : String)]
+[template public generateContinuousPortClassFile(CIs : OrderedSet(ComponentInstance), path : String)]
 
 [file (path+'continuousComponents/ContImplementations.c',false, 'UTF-8')]
 #include "ContImplementations.h"
 /** [protected ('user includes **/')]
 
 /**[/protected]**/
-[for (ci: ComponentInstance | cic.componentInstances) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
+[for (ci: ComponentInstance | CIs) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
 [for (port : PortInstance | ci.portInstances) ? (oclIsKindOf(ContinuousPortInstance))]
 	[let cpi  :ContinuousPortInstance = port.oclAsType(ContinuousPortInstance)]
 	[if (cpi.portType.oclAsType(ContinuousPort).inPort)]

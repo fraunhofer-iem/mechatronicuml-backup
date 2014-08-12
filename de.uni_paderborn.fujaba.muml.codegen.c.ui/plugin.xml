@@ -14,8 +14,8 @@
                class="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.AcceleoGenerateCAction"
                enablesFor="+"
                id="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.acceleoGenerateCAction"
-               icon="icons/default.gif"
-               label="Generate C"
+               icon="icons/GenC99.png"
+               label="Export ANSI C99"
                menubarPath="de.uni_paderborn.fujaba/generation"/>
       </objectContribution>
             <objectContribution
@@ -30,8 +30,41 @@
                class="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.AcceleoGenerateCAction"
                enablesFor="+"
                id="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.acceleoGenerateCAction"
-               icon="icons/default.gif"
-               label="Generate C"
+               icon="icons/GenC99.png"
+               label="Export ANSI C99"
+               menubarPath="de.uni_paderborn.fujaba/generation"/>
+      </objectContribution>
+      
+            <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.componentinstanceconfiguration_diagram"
+            id="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.contribution.IFile">
+         <menu id="de.uni_paderborn.fujaba" label="Fujaba" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.AcceleoGeneratenxtOSEKAction"
+               enablesFor="+"
+               id="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.acceleoGeneratenxtOSEKAction"
+               icon="icons/GenNXT.png"
+               label="Export to nxtOSEK"
+               menubarPath="de.uni_paderborn.fujaba/generation"/>
+      </objectContribution>
+            <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.fujaba"
+            id="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.contribution.IFile">
+         <menu id="de.uni_paderborn.fujaba" label="Fujaba" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.AcceleoGeneratenxtOSEKAction"
+               enablesFor="+"
+               id="de.uni_paderborn.fujaba.muml.codegen.c.ui.popupMenus.acceleoGeneratenxtOSEKAction"
+               icon="icons/GenNXT.png"
+               label="Export to nxtOSEK"
                menubarPath="de.uni_paderborn.fujaba/generation"/>
       </objectContribution>
    </extension>

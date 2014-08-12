@@ -1,3 +1,5 @@
+
+
 [comment encoding = UTF-8 /]
 [**
  * The documentation of the module main.
@@ -14,33 +16,95 @@
 
 
 
-[import de::uni_paderborn::fujaba::muml::codegen::c::main::main_nxtOSEK]
-[import de::uni_paderborn::fujaba::muml::codegen::c::main::main_C]
+
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::RealtimeStatechart]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::RealtimeStatechartHeader]
+[import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::componentHeader]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::component]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::Message]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::operations]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::ContinuousPorts]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::make]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::main_C]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::LocalMiddleware]
+
+[template public generate(cic: ComponentInstanceConfiguration)]
+[comment @main/]
+[comment only generate, if CIC is a root-CIC/]
+[if cic.eContainer().oclIsKindOf(ModelElementCategory)]	
+	[comment generate software parts/]
+	 [generateANSIC(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/')/]
+	
+	[comment generate mini version for middleware/]
+	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/Middleware/')/]
+[/if]
+[/template]
+
 
 [**
  * Generates a main file. This file contains code to create, initialize
  * and execute a given MUML model on nxtOSEK.
  * @param aModelElementCategory
  */]
-[template public generate(cic : ComponentInstanceConfiguration)]
-[comment @main/]
+[template public generateANSIC( CIs : OrderedSet(ComponentInstance), path : String )]
 
-[comment]
-possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
-[/comment]
-[let targetPlatform : String = 'C']
+[comment create files for every component type/]
+[generateTypeFiles(CIs, path)/]
+[generateContinuousPortFiles(CIs, path)/]
 
-[if cic.eContainer().oclIsKindOf(ModelElementCategory)]
-		[if (targetPlatform = 'nxtOSEK')]
-				[generateNXTOSEK(cic)/]
-		[elseif (targetPlatform = 'C')]
-				[generateANSIC(cic)/]
-		[else]
-				not defined
-		[/if]
-[/if]
-[/let]
+
+[comment create message file/]
+[generateMessageFiles(CIs, path)/]
+
+[comment craeate files for RTSCs/]
+[generateRTSCFiles(CIs, path)/]
+
+[comment create makefile for gcc/]
+[generateMakeFile(CIs, path)/]
+
+
+[comment create Operation files/]
+[generateOperationFiles(CIs, path)/]
+
+[comment create main file/]
+[generateANSICMainFile(CIs, path)/]
+
+
 [/template]
 
 
 
+[**
+ * Creates a header and an implementation file for every component (type) of the model
+ * (if modelElementCategory is 'components'
+ * @param modelElementCategory
+ */]
+[template public generateTypeFiles(CIs : OrderedSet(ComponentInstance), path : String)]
+[for (component : Component | CIs.componentType)]
+[if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
+[generate_ComponentHeader(component, path)/]
+[generate_ComponentClass(component, path)/]
+[/if]
+[/for]
+[/template]
+
+
+[**
+ * Creates a header and an implementation file for every realtime statechart, which is the behavior of
+ * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
+ * @param modelElementCategory
+ */]
+[template public generateRTSCFiles(CIs : OrderedSet(ComponentInstance), path: String) ]
+
+	[for (comp : Component | CIs.componentType) ? (oclIsKindOf(AtomicComponent))]
+	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+		[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+		[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+	[/let]
+	[/if]
+	[/for]
+
+[/template]

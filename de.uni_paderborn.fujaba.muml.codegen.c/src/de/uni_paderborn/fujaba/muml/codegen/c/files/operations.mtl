@@ -19,8 +19,8 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationFiles(cic : ComponentInstanceConfiguration, path : String)]
-[let atomics : Sequence(AtomicComponent) = (cic.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
+[template public generateOperationFiles(CIs : OrderedSet(ComponentInstance), path : String)]
+[let atomics : Sequence(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
 [let allOperations : Sequence(Operation) = atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)]
 	[generateOperationHeader(allOperations, path)/]
 	[generateOperationClass(allOperations, path)/]

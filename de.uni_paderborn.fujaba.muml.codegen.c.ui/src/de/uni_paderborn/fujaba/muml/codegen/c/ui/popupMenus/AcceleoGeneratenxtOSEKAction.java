@@ -39,6 +39,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import de.uni_paderborn.fujaba.muml.codegen.c.ui.Activator;
 import de.uni_paderborn.fujaba.muml.codegen.c.ui.common.GenerateAll;
+import de.uni_paderborn.fujaba.muml.codegen.c.ui.common.GenerateAllnxtOSEK;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionDelegate;
@@ -47,7 +48,7 @@ import org.osgi.framework.Bundle;
 /**
  * C code generation.
  */
-public class AcceleoGenerateCAction extends ActionDelegate implements IActionDelegate {
+public class AcceleoGeneratenxtOSEKAction extends ActionDelegate implements IActionDelegate {
 	
 	/**
 	 * Selected model files.
@@ -81,8 +82,8 @@ public class AcceleoGenerateCAction extends ActionDelegate implements IActionDel
 							IFile model = (IFile)filesIt.next();
 							URI modelURI = URI.createPlatformResourceURI(model.getFullPath().toString(), true);
 							try {
-								IContainer target = model.getProject().getFolder("src-gen/C99");
-								GenerateAll generator = new GenerateAll(modelURI, target, getArguments());
+								IContainer target = model.getProject().getFolder("src-gen/nxtOSEK");
+								GenerateAllnxtOSEK generator = new GenerateAllnxtOSEK(modelURI, target, getArguments());
 								generator.doGenerate(monitor);
 							} catch (IOException e) {
 								IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
