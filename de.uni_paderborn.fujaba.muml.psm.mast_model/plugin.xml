@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+  Copyright (c) Universidad de Cantabria, SPAIN URL: http://mast.unican.es/  
+
+ This program is free software; you can redistribute it and/or     
+ modify it under the terms of the GNU General Public               
+ License as published by the Free Software Foundation; either      
+ version 2 of the License, or (at your option) any later version.  
+                                                                   
+ This program is distributed in the hope that it will be useful,   
+ but WITHOUT ANY WARRANTY; without even the implied warranty of    
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  
+ General Public License for more details.                          
+                                                                   
+ You should have received a copy of the GNU General Public         
+ License along with this program; if not, write to the             
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,      
+ Boston, MA 02111-1307, USA.         
+ 
+ Contributors:
+  		Universidad de Cantabria, SPAIN  - Modeling and Analysis Suite for Real-Time Applications  xsd schema
+     	 Software Engineering Group, Heinz Nixdorf Institute - ecore import
+ </copyright>
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mast_Model -->
+      <package
+            uri="http://mast.unican.es/xmlmast/model"
+            class="es.unican.mast.xmlmast.model.ModelPackage"
+            genModel="model/Mast_Model.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated Mast_Model -->
+      <parser
+            type="model"
+            class="es.unican.mast.xmlmast.model.util.ModelResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

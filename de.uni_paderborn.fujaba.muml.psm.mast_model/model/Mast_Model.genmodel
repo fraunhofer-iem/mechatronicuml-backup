@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.psm.mast_model/src"
+    modelPluginID="de.uni_paderborn.fujaba.muml.psm.mast_model" modelName="Mast_Model"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>file:/C:/Users/pmn/Downloads/mast-src-1-5-0-0/mast_xml/Mast_Model.xsd</foreignModel>
+  <genPackages prefix="Model" basePackage="es.unican.mast.xmlmast" resource="XML"
+      disposableProviderFactory="true" ecorePackage="mast_model.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//AffirmativeAssertion">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//AffirmativeAssertion/YES"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//Assertion">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//Assertion/YES"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//Assertion/NO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//DeliveryPolicy">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//DeliveryPolicy/SCAN"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//DeliveryPolicy/RANDOM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//DistributionType">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//DistributionType/UNIFORM"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//DistributionType/POISSON"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//NegativeAssertion">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//NegativeAssertion/NO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//OverheadType">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//OverheadType/COUPLED"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//OverheadType/DECOUPLED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//PriorityInheritanceProtocol">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//PriorityInheritanceProtocol/STRICT"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//PriorityInheritanceProtocol/POSIX"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//RequestPolicy">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//RequestPolicy/PRIORITY"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//RequestPolicy/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//RequestPolicy/LIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//RequestPolicy/SCAN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mast_model.ecore#//TransmissionType">
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//TransmissionType/SIMPLEX"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//TransmissionType/HALFDUPLEX"/>
+      <genEnumLiterals ecoreEnumLiteral="mast_model.ecore#//TransmissionType/FULLDUPLEX"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="mast_model.ecore#//AbsoluteTime"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//AbsoluteTimeObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//AffirmativeAssertionObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//AnyPriority"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//AssertionObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//BitCount"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//BitCountObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//DateTime"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//DeliveryPolicyObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//DistributionTypeObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Float"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//FloatObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Identifier"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//IdentifierRef"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//IdentifierRefList"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//InterruptPriority"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Natural"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//NegativeAssertionObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//NormalizedExecutionTime"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//NormalizedExecutionTimeObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//OverheadTypeObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Pathname"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Percentage"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//PercentageObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Positive"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//PreemptionLevel"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Priority"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//PriorityInheritanceProtocolObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//RequestPolicyObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Throughput"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//ThroughputObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//Time"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//TimeObject"/>
+    <genDataTypes ecoreDataType="mast_model.ecore#//TransmissionTypeObject"/>
+    <genClasses ecoreClass="mast_model.ecore#//Activity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Activity/activityOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Activity/activityServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Activity/inputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Activity/outputEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//AlarmClockSystemTimer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//AlarmClockSystemTimer/avgOverhead"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//AlarmClockSystemTimer/bestOverhead"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//AlarmClockSystemTimer/worstOverhead"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//Barrier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Barrier/inputEventsList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Barrier/outputEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//BurstyExternalEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//BurstyExternalEvent/avgInterarrival"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//BurstyExternalEvent/boundInterval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//BurstyExternalEvent/distribution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//BurstyExternalEvent/maxArrivals"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//BurstyExternalEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//CharacterPacketDriver">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/characterReceiveOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/characterSendOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/characterServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/characterTransmissionTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/messagePartitioning"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/packetReceiveOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/packetSendOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/packetServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CharacterPacketDriver/rTAOverheadModel"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//CompositeOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeOperation/overriddenFixedPriority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeOperation/overriddenPermanentFP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CompositeOperation/operationList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//CompositeOperation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//CompositeTimingRequirement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute mast_model.ecore#//CompositeTimingRequirement/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeTimingRequirement/maxOutputJitterReq"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeTimingRequirement/hardGlobalDeadline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeTimingRequirement/softGlobalDeadline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeTimingRequirement/globalMaxMissRatio"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeTimingRequirement/hardLocalDeadline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeTimingRequirement/softLocalDeadline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//CompositeTimingRequirement/localMaxMissRatio"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//Concentrator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Concentrator/inputEventsList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Concentrator/outputEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//Delay">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Delay/delayMaxInterval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Delay/delayMinInterval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Delay/inputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Delay/outputEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//DeliveryServer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//DeliveryServer/deliveryPolicy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//DeliveryServer/inputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//DeliveryServer/outputEventsList"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//DocumentRoot/mASTMODEL"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//EDFPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EDFPolicy/deadline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EDFPolicy/preassigned"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//EDFScheduler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EDFScheduler/avgContextSwitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EDFScheduler/bestContextSwitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EDFScheduler/worstContextSwitch"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//EnclosingOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//EnclosingOperation/overriddenFixedPriority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//EnclosingOperation/overriddenPermanentFP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EnclosingOperation/operationList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EnclosingOperation/averageCaseExecutionTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EnclosingOperation/bestCaseExecutionTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EnclosingOperation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//EnclosingOperation/worstCaseExecutionTime"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//FixedPriorityPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FixedPriorityPolicy/preassigned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FixedPriorityPolicy/thePriority"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//FixedPriorityScheduler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FixedPriorityScheduler/avgContextSwitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FixedPriorityScheduler/bestContextSwitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FixedPriorityScheduler/maxPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FixedPriorityScheduler/minPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FixedPriorityScheduler/worstContextSwitch"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//FPPacketBasedScheduler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FPPacketBasedScheduler/maxPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FPPacketBasedScheduler/minPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FPPacketBasedScheduler/packetOverheadAvgSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FPPacketBasedScheduler/packetOverheadMaxSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//FPPacketBasedScheduler/packetOverheadMinSize"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//GlobalMaxMissRatio">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//GlobalMaxMissRatio/deadline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//GlobalMaxMissRatio/ratio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//GlobalMaxMissRatio/referencedEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//HardGlobalDeadline">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//HardGlobalDeadline/deadline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//HardGlobalDeadline/referencedEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//HardLocalDeadline">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//HardLocalDeadline/deadline"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//ImmediateCeilingResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//ImmediateCeilingResource/ceiling"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//ImmediateCeilingResource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//ImmediateCeilingResource/preassigned"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//InterruptFPPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//InterruptFPPolicy/preassigned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//InterruptFPPolicy/thePriority"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//ListOfDrivers">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute mast_model.ecore#//ListOfDrivers/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//ListOfDrivers/packetDriver"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//ListOfDrivers/characterPacketDriver"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//ListOfDrivers/rTEPPacketDriver"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//LocalMaxMissRatio">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//LocalMaxMissRatio/deadline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//LocalMaxMissRatio/ratio"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//MASTMODELType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute mast_model.ecore#//MASTMODELType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/regularProcessor"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/packetBasedNetwork"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/regularSchedulingServer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/immediateCeilingResource"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/priorityInheritanceResource"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/sRPResource"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/simpleOperation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/messageTransmission"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/compositeOperation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/enclosingOperation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/regularTransaction"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/primaryScheduler"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//MASTMODELType/secondaryScheduler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MASTMODELType/modelDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MASTMODELType/modelName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MASTMODELType/systemPiPBehaviour"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//MaxOutputJitterReq">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MaxOutputJitterReq/maxOutputJitter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MaxOutputJitterReq/referencedEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//MessageTransmission">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//MessageTransmission/overriddenFixedPriority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//MessageTransmission/overriddenPermanentFP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MessageTransmission/avgMessageSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MessageTransmission/maxMessageSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MessageTransmission/minMessageSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//MessageTransmission/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//Multicast">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Multicast/inputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Multicast/outputEventsList"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//NonPreemptibleFPPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//NonPreemptibleFPPolicy/preassigned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//NonPreemptibleFPPolicy/thePriority"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//Offset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Offset/delayMaxInterval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Offset/delayMinInterval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Offset/inputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Offset/outputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//Offset/referencedEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//OverriddenFixedPriority">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//OverriddenFixedPriority/thePriority"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//OverriddenPermanentFP">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//OverriddenPermanentFP/thePriority"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//PacketBasedNetwork">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//PacketBasedNetwork/listOfDrivers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketBasedNetwork/maxBlocking"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketBasedNetwork/maxPacketSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketBasedNetwork/minPacketSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketBasedNetwork/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketBasedNetwork/speedFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketBasedNetwork/throughput"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketBasedNetwork/transmission"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//PacketDriver">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketDriver/messagePartitioning"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketDriver/packetReceiveOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketDriver/packetSendOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketDriver/packetServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PacketDriver/rTAOverheadModel"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//PeriodicExternalEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PeriodicExternalEvent/maxJitter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PeriodicExternalEvent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PeriodicExternalEvent/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PeriodicExternalEvent/phase"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//PollingPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PollingPolicy/pollingAvgOverhead"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PollingPolicy/pollingBestOverhead"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PollingPolicy/pollingPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PollingPolicy/pollingWorstOverhead"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PollingPolicy/preassigned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PollingPolicy/thePriority"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//PrimaryScheduler">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//PrimaryScheduler/fixedPriorityScheduler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//PrimaryScheduler/eDFScheduler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//PrimaryScheduler/fPPacketBasedScheduler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PrimaryScheduler/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PrimaryScheduler/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//PriorityInheritanceResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//PriorityInheritanceResource/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//QueryServer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//QueryServer/inputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//QueryServer/outputEventsList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//QueryServer/requestPolicy"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//RateDivisor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RateDivisor/inputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RateDivisor/outputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RateDivisor/rateFactor"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//RegularEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularEvent/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularEvent/maxOutputJitterReq"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularEvent/hardGlobalDeadline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularEvent/softGlobalDeadline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularEvent/globalMaxMissRatio"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularEvent/hardLocalDeadline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularEvent/softLocalDeadline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularEvent/localMaxMissRatio"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularEvent/compositeTimingRequirement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularEvent/event"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//RegularProcessor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularProcessor/tickerSystemTimer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularProcessor/alarmClockSystemTimer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularProcessor/avgISRSwitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularProcessor/bestISRSwitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularProcessor/maxInterruptPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularProcessor/minInterruptPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularProcessor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularProcessor/speedFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularProcessor/worstISRSwitch"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//RegularSchedulingServer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularSchedulingServer/nonPreemptibleFPPolicy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularSchedulingServer/fixedPriorityPolicy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularSchedulingServer/interruptFPPolicy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularSchedulingServer/pollingPolicy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularSchedulingServer/sporadicServerPolicy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularSchedulingServer/eDFPolicy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//RegularSchedulingServer/sRPParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularSchedulingServer/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularSchedulingServer/scheduler"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//RegularTransaction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularTransaction/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/periodicExternalEvent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/sporadicExternalEvent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/unboundedExternalEvent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/burstyExternalEvent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/singularExternalEvent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/regularEvent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/activity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/systemTimedActivity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/concentrator"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/barrier"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/deliveryServer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/queryServer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/multicast"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/rateDivisor"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/delay"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_model.ecore#//RegularTransaction/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RegularTransaction/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//RTEPPacketDriver">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/failureTimeout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/messagePartitioning"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/numberOfStations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/packetDiscardOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/packetInterruptServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/packetISROperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/packetReceiveOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/packetRetransmissionOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/packetSendOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/packetServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/packetTransmissionRetries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/rTAOverheadModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/tokenCheckOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/tokenDelay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/tokenManageOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/tokenRetransmissionOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//RTEPPacketDriver/tokenTransmissionRetries"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SecondaryScheduler">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//SecondaryScheduler/fixedPriorityScheduler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//SecondaryScheduler/eDFScheduler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//SecondaryScheduler/fPPacketBasedScheduler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SecondaryScheduler/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SecondaryScheduler/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SimpleOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//SimpleOperation/overriddenFixedPriority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_model.ecore#//SimpleOperation/overriddenPermanentFP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SimpleOperation/sharedResourcesList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SimpleOperation/sharedResourcesToLock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SimpleOperation/sharedResourcesToUnlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SimpleOperation/averageCaseExecutionTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SimpleOperation/bestCaseExecutionTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SimpleOperation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SimpleOperation/worstCaseExecutionTime"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SingularExternalEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SingularExternalEvent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SingularExternalEvent/phase"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SoftGlobalDeadline">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SoftGlobalDeadline/deadline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SoftGlobalDeadline/referencedEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SoftLocalDeadline">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SoftLocalDeadline/deadline"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SporadicExternalEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicExternalEvent/avgInterarrival"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicExternalEvent/distribution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicExternalEvent/minInterarrival"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicExternalEvent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SporadicServerPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicServerPolicy/backgroundPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicServerPolicy/initialCapacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicServerPolicy/maxPendingReplenishments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicServerPolicy/normalPriority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicServerPolicy/preassigned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SporadicServerPolicy/replenishmentPeriod"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SRPParameters">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SRPParameters/preassigned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SRPParameters/preemptionLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SRPResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SRPResource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SRPResource/preassigned"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SRPResource/preemptionLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//SystemTimedActivity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SystemTimedActivity/activityOperation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SystemTimedActivity/activityServer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SystemTimedActivity/inputEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//SystemTimedActivity/outputEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//TickerSystemTimer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//TickerSystemTimer/avgOverhead"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//TickerSystemTimer/bestOverhead"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//TickerSystemTimer/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//TickerSystemTimer/worstOverhead"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_model.ecore#//UnboundedExternalEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//UnboundedExternalEvent/avgInterarrival"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//UnboundedExternalEvent/distribution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_model.ecore#//UnboundedExternalEvent/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
