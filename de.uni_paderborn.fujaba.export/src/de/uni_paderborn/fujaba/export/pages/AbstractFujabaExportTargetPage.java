@@ -287,26 +287,28 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 			}
         	
         });
-        Button browse = toolkit.createButton(destinationComposite, "Filesystem...", SWT.FLAT);
-        browse.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
-	        
-        browse.addSelectionListener(new SelectionAdapter() {
-
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				FileDialog fd = new FileDialog(getShell(), SWT.OPEN);
-				fd.setText("Select target");
-				String fileName = fd.open();
-				if (fileName == null) {
-					return;
+        
+        if (wizardPageSupportsFilesystem()) {
+	        Button browse = toolkit.createButton(destinationComposite, "Filesystem...", SWT.FLAT);
+	        browse.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
+	        browse.addSelectionListener(new SelectionAdapter() {
+	
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					FileDialog fd = new FileDialog(getShell(), SWT.OPEN);
+					fd.setText("Select target");
+					String fileName = fd.open();
+					if (fileName == null) {
+						return;
+					}
+					treeViewer.setSelection(new StructuredSelection());
+					destinationText.setText(URI.createFileURI(fileName).toString());
+					destinationText.setFocus();
+					destinationText.setSelection(destinationText.getText().length());
+					validatePage();
 				}
-				treeViewer.setSelection(new StructuredSelection());
-				destinationText.setText(URI.createFileURI(fileName).toString());
-				destinationText.setFocus();
-				destinationText.setSelection(destinationText.getText().length());
-				validatePage();
-			}
-        });
+	        });
+        }
         
         if (shouldDisplayOptions()) {
 	        // Options
@@ -360,6 +362,10 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 
 	public abstract boolean wizardPageSupportsOverwriteOption();
 	public abstract boolean wizardPageDirectoryDestination();
+	
+	public boolean wizardPageSupportsFilesystem() {
+		return true;
+	}
 	
 	public URI getDestinationURI() {
 		return URI.createURI(getDestinationValue()); 
