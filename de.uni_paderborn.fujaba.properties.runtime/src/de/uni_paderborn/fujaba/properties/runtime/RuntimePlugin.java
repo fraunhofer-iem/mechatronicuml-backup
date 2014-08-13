@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -559,6 +560,21 @@ public class RuntimePlugin extends AbstractUIPlugin {
 					}
 				}
 			}
+			
+			// Make sure we add no children of already added edit parts
+			Iterator<Object> it = selectedElements.iterator();
+			while (it.hasNext()) {
+				Object part = it.next();
+				EditPart parent = (EditPart) part;
+				while (parent != null) {
+					parent = parent.getParent();
+					if (parent != null && selectedElements.contains(parent)) {
+						it.remove();
+						break;
+					}
+				}
+			}
+			
 			if (!selectedElements.isEmpty() || allowEmpty) {
 				selectionProvider.setSelection(new StructuredSelection(selectedElements));
 			}
