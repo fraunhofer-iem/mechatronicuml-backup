@@ -116,14 +116,8 @@ public class GenerateAll {
 				Diagram diagImpl = (Diagram) modelResource.getContents().get(0);
 
 				ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)diagImpl.getElement();
-				System.out.println(cic.getName());
-
-				monitor.subTask("generating "+cic.getName()+"...");
-				de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
-				String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
-				gen0.setGenerationID(generationID);
-				gen0.doGenerate(BasicMonitor.toMonitor(monitor));
-				monitor.worked(monitorCounter);
+				generateCIC(monitor, cic);
+				
 				/*
 				monitor.subTask("Copying library to target folders...");
 
@@ -166,6 +160,18 @@ public class GenerateAll {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public void generateCIC(IProgressMonitor monitor,
+			ComponentInstanceConfiguration cic) throws IOException {
+		System.out.println(cic.getName());
+
+		monitor.subTask("generating "+cic.getName()+"...");
+		de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		gen0.setGenerationID(generationID);
+		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+		monitor.worked(1);
 	}
 	
 	/**

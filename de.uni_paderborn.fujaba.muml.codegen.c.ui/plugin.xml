@@ -68,4 +68,22 @@
                menubarPath="de.uni_paderborn.fujaba/generation"/>
       </objectContribution>
    </extension>
+    <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="de.uni_paderborn.fujaba.export"
+            class="de.uni_paderborn.fujaba.muml.codegen.c.ui.export.C99FujabaExportWizard"
+            id="de.uni_paderborn.fujaba.codegen.c.export"
+            name="ANSI C99">
+      </wizard>
+   </extension>
+       <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="de.uni_paderborn.fujaba.export"
+            class="de.uni_paderborn.fujaba.muml.codegen.c.ui.export.nxtOSEKFujabaExportWizard"
+            id="de.uni_paderborn.fujaba.codegen.c.nxtOSEK.export"
+            name="nxtOSEK">
+      </wizard>
+   </extension>
 </plugin>
