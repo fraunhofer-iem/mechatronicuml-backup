@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." default="compile" name="de.uni_paderborn.fujaba.codegen.c.nxtOSEK">
+<project basedir="." default="compile" name="de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK">
 
 	<property name="ECLIPSE_HOME"  value="/data/jenkins/custom_config/eclipse" />
 	<property name="ECLIPSE_WORKSPACE" value="../" />
@@ -16,7 +16,7 @@
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c/bin" />
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK/bin" />
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c.beautifier/bin" />
-		<pathelement location="${ECLIPSE_WORKSPACE}/sdm/org.storydriven.core/target/classes" />
+		<pathelement location="${ECLIPSE_WORKSPACE}/org.storydriven.core/target/classes" />
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml/bin" />
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.modelinstance/bin" />
 		<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.actionlanguage/bin" />
