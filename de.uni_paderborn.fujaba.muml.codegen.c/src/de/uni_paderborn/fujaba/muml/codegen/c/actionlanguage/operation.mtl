@@ -1,7 +1,13 @@
-[module operation('http://www.fujaba.de/muml/actionlanguage/0.4.0',
-				  'http://www.fujaba.de/muml/behavior/0.4.0',
-				  'http://www.fujaba.de/muml/types/0.4.0',
-				  'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+[module operation('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.storydriven.org/core/expressions/0.3.1',
+				'http://www.storydriven.org/core/expressions/common/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
 
