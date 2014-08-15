@@ -52,7 +52,9 @@
 
 [comment create files for every component type/]
 [generateTypeFiles(CIs, path)/]
+[if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
 [generateContinuousPortFiles(CIs, path)/]
+[/if]
 
 
 [comment create message file/]
