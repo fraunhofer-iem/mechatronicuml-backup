@@ -13,7 +13,8 @@ import de.uni_paderborn.fujaba.muml.tests.packages.ModelPluginXmlPackageTest;
 @SuiteClasses({ MetamodelOCLTest.class, MetamodelURITest.class, GenmodelTest.class,
 		ModelPluginXmlPackageTest.class, EditPluginXmlPackageTest.class,
 		ValidateMetamodelsTest.class,
-		DiagramPluginXmlTest.class, GMFMapLinkConstraintTest.class, GMFMapExpressionLabelTest.class })
+		DiagramPluginXmlTest.class, GMFMapLinkConstraintTest.class, GMFMapExpressionLabelTest.class,
+		MetamodelEOperationTest.class})
 public class MumlTestSuite {
 	// empty
 }

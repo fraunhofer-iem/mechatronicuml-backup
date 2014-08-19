@@ -74,19 +74,13 @@ public abstract class GMFUtils {
 		// be loaded first, else proxies are not resolved correctly...)
 
 		for (String[] path : projects) {
+			
 			try {
 				TestUtilities.loadResource(resourceSet, path[0], path[1]);
-
 			} catch (Exception e) {
-				try {
-					TestUtilities.loadResource(resourceSet, "sdm", "/"
-							+ path[0] + path[1]);
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-
+				e.printStackTrace();
 			}
+
 		}
 		EcoreUtil.resolveAll(resourceSet);
 	}
