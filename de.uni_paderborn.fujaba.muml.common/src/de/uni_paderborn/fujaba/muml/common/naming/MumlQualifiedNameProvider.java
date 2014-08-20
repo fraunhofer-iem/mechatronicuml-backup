@@ -149,6 +149,31 @@ public final class MumlQualifiedNameProvider extends QualifiedNameProvider {
 		String image(EObject object);
 	}
 	
+	
+	//Java 8 implementation of getNameForTransition. 
+	//If this is used, you can also remove the method "filter" and the interface "NameMap" from this class.
+	/*protected String getNameForTransition(Transition transition) {
+		final ArrayList<Function<Transition, String>> nameMaps = new ArrayList<>();
+		nameMaps.add(t -> t.getSource().getName() + "_to_"+t.getTarget().getName());
+		nameMaps.add(t -> t.getTriggerMessageEvent() == null ? "" : "_inc" + firstToUpper(t.getTriggerMessageEvent().getMessage().getInstanceOf().getName()));
+		nameMaps.add(t -> t.getRaiseMessageEvent() == null ? "" : "_out" + firstToUpper(t.getRaiseMessageEvent().getMessage().getInstanceOf().getName()));
+		nameMaps.add(t -> "_P" + t.getPriority());
+		nameMaps.add(t -> "_" + t.getStatechart().getTransitions().indexOf(t));
+
+		Set<Transition> conflictSet = new HashSet<>(((RealtimeStatechart) transition.eContainer()).getTransitions());
+		conflictSet.remove(transition);
+		String transitionName = "";
+		// iterates over all name maps and adds segments until the transition's name is unique
+		for (Function<Transition, String> nameMap : nameMaps) {
+			String nextSegment = nameMap.apply(transition);
+			transitionName += nextSegment;
+			conflictSet.removeIf(t -> !nameMap.apply(t).equals(nextSegment));
+			if (conflictSet.isEmpty())
+				break;
+		}
+		return transitionName;
+	}*/
+	
 	/**
 	 * Filters all elements from conflictSet where nameMap.image() != nameMap.image(referenceObject).
 	 * @return true iff the conflict set is trivial now
