@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-
+ 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Behavioral Element</b></em>'.
