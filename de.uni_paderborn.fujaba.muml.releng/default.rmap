@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+<rm:locator searchPathRef="default" failOnError="false"/>
+<rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
+<rm:locator searchPathRef="ape-properties" failOnError="false"/>
+<rm:locator searchPathRef="fujaba-core" failOnError="false"/>
+<rm:locator searchPathRef="muml-pim" failOnError="false"/>
+<rm:locator searchPathRef="muml-uppaal" failOnError="false"/>
+<rm:locator searchPathRef="muml-verification" failOnError="false"/>
+<rm:locator searchPathRef="muml-psm" failOnError="false"/>
+<rm:locator searchPathRef="muml-modelica" failOnError="false"/>
+<rm:locator searchPathRef="ape-ecore" failOnError="false"/>
+<rm:locator searchPathRef="muml-simulink" failOnError="false"/>
+
+<rm:searchPath name="default">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="true" source="true">
+      <rm:uri format="file:///{0}/{1}/">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+
+
+<rm:searchPath name="eclipse_luna">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+  	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="http://download.eclipse.org/releases/luna?importType=binary" />
+    </rm:provider>
+</rm:searchPath>
+<rm:searchPath name="fujaba-core">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/FujabaCore/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+<rm:searchPath name="ape-properties">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+<rm:searchPath name="ape-ecore">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/APE Ecore Editor/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+<rm:searchPath name="muml-pim">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/MUML-PIM/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+<rm:searchPath name="muml-verification">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/MUML-Verification/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+<rm:searchPath name="muml-uppaal">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/MUML-Uppaal/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+<rm:searchPath name="muml-psm">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/MUML-PSM/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+<rm:searchPath name="muml-modelica">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/MUML-Modelica/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+<rm:searchPath name="muml-simulink">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+        <rm:property key="buckminster.source" value="false"/>
+         <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/MUML-Simulink/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+</rm:rmap>
