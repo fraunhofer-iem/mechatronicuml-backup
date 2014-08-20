@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo C Module IDE Plug-in
+Bundle-Name: MechatronicUML C Codegenerator UI
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.codegen.c.ui;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.codegen.c.ui.Activator
-Bundle-Vendor: Eclipse Modeling Project
+Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,

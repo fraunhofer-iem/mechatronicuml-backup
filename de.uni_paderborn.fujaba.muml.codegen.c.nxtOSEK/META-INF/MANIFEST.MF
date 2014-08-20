@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo NxtOSEK Module Runtime Plug-in
+Bundle-Name: MechatronicUML nxtOSEK code generator
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.Activator
-Bundle-Vendor: Eclipse Modeling Project
+Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.properties,
  de.uni_paderborn.fujaba.modelinstance,
