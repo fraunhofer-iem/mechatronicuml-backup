@@ -4,14 +4,28 @@ modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 main() {
-	input.rootObjects()[StructuredComponent]->forEach(component) {
+ 
+	var components := input.rootObjects()[StructuredComponent];	
+	if (components->isEmpty()) then {
+		components := input.rootObjects()[RootNode].categories.modelElements[StructuredComponent]->asSet();
+	} endif;
+	
+	components->forEach(component) {
 	
 		-- Disconnect invalid PortParts
-		component.embeddedComponentParts.portParts->select(p | not p.isValid())->forEach(pp) {
+		component.embeddedComponentParts.portParts->select(p |
+			 // XXX: Workaround for #731; Essentially we are removing all PortPart->CoordinationProtocolParts connections and
+			 // 	 which leads to all CoordinationProtocolParts also being removed afterwards as they have no connections
+			 // 	 and then we recreate everything.
+			 //      If you remove the "true" and use "not p.isValid()" again, please retest #731.
+			 true
+			 -- not p.isValid()
+		)->forEach(pp) {
 			pp.coordinationProtocolPart := null;
 		};
 		
@@ -62,15 +76,15 @@ main() {
 }
 
 query PortPart::isValid() : Boolean {
-	return not self.connectors[AssemblyConnector]->isEmpty() and self.refinedRole != null and self.allReachablePortParts().coordinationProtocolPart->asSet()->excluding(self.coordinationProtocolPart)->isEmpty();
+	return self.connectors[AssemblyConnector]->notEmpty() and self.refinedRole != null and self.allReachablePortParts().coordinationProtocolPart->asSet()->excluding(self.coordinationProtocolPart)->isEmpty();
 }
 
 query CoordinationProtocolPart::isReachable(p : CoordinationProtocolPart) : Boolean {
-	return not self.portParts->select(pp | p.isReachable(pp))->isEmpty();
+	return self.portParts->select(pp | p.isReachable(pp))->notEmpty();
 }
 
 query CoordinationProtocolPart::isReachable(portPart : PortPart) : Boolean {
-	return not self.portParts.allReachablePortParts()->includes(portPart);
+	return self.portParts.allReachablePortParts()->excludes(portPart);
 }
 
 query PortPart::allReachablePortParts() : OrderedSet(PortPart) {
