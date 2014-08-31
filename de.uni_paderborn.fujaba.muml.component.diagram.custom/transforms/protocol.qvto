@@ -76,7 +76,9 @@ main() {
 }
 
 query PortPart::isValid() : Boolean {
-	return self.connectors[AssemblyConnector]->notEmpty() and self.refinedRole != null and self.allReachablePortParts().coordinationProtocolPart->asSet()->excluding(self.coordinationProtocolPart)->isEmpty();
+	return self.connectors[AssemblyConnector]->notEmpty() and self.refinedRole != null 
+	--XXX: maybe remove the following line? seems to make the workaround r4009 unnecessary!  
+	and self.allReachablePortParts().coordinationProtocolPart->asSet()->excluding(self.coordinationProtocolPart)->isEmpty();
 }
 
 query CoordinationProtocolPart::isReachable(p : CoordinationProtocolPart) : Boolean {
