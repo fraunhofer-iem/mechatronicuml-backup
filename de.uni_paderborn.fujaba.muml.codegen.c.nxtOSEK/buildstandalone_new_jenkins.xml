@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." default="compile" name="de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK">
 
-	<property name="ECLIPSE_HOME"  value="/data/jenkins/custom_config/eclipse" />
+	<property name="ECLIPSE_HOME"  value="/data/jenkins/jobs/Eclipse Target Platform/lastSuccessful/archive/targetPlatform" />
 	<property name="ECLIPSE_WORKSPACE" value="../" />
 
 	<property name="SOURCE_FOLDER" value="${basedir}/src/" />
