@@ -16,6 +16,7 @@ import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
@@ -88,18 +89,23 @@ import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
+import org.eclipse.swt.custom.ViewForm;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.ui.IActionBars;
@@ -107,6 +113,7 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IPartListener;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -1010,7 +1017,7 @@ public class ModelinstanceEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
+					new SearchableViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1044,7 +1051,7 @@ public class ModelinstanceEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
+					new SearchableViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1073,7 +1080,7 @@ public class ModelinstanceEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
+					new SearchableViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new ListViewer(composite);
@@ -1098,7 +1105,7 @@ public class ModelinstanceEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
+					new SearchableViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1125,7 +1132,7 @@ public class ModelinstanceEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
+					new SearchableViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TableViewer(composite);
@@ -1168,7 +1175,7 @@ public class ModelinstanceEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
+					new SearchableViewerPane(getSite().getPage(), ModelinstanceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
