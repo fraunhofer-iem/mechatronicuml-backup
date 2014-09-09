@@ -158,7 +158,6 @@ public class GenmodelTest extends TraverseTest {
 	 */
 	@Test
 	public void notEmptyGenmodel() {
-		fail("Just testing if the tests are executed by making them fail on purpose...");
 		EList<EObject> contents = genmodel.getContents();
 		if (contents.isEmpty()) {
 			fail("Genmodel is empty.");
