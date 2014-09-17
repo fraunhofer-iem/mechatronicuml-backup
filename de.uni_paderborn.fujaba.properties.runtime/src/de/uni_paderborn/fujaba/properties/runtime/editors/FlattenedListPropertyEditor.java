@@ -39,7 +39,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 
 	public FlattenedListPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
 		super(adapterFactory, feature);
-		categoryPropertyEditor = new CategoryPropertyEditor(adapterFactory, SWT.VERTICAL, getTitle(), false, false);
+		categoryPropertyEditor = new CategoryPropertyEditor(adapterFactory, SWT.VERTICAL, getTitle(), true, false);
 	}
 	
 	@Override
