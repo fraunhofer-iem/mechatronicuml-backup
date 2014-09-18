@@ -5,6 +5,9 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
+import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
+import org.eclipse.xtext.ui.editor.hover.IEObjectHoverProvider;
+import org.eclipse.xtext.ui.editor.hover.html.IEObjectHoverDocumentationProvider;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.MtctlLastSegmentFinder;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.MtctlTemplateProposalProvider;
@@ -33,4 +36,19 @@ public class MtctlUiModule extends de.uni_paderborn.fujaba.muml.verification.upp
 	public Class<? extends ITemplateProposalProvider> bindITemplateProposalProvider() {
 		return MtctlTemplateProposalProvider.class;
 	}
+	
+	public Class<? extends IEObjectHoverDocumentationProvider> bindIEObjectHoverDocumentationProviderr() {
+        return Mtctl2EnglishEObjectDocumentationProvider.class;
+    }
+	
+	public Class<? extends IEObjectHoverProvider> bindIEObjectHoverProvider() {
+        return Mtctl2EnglishEObjectHoverProvider.class;
+    }
+	
+	@Override
+	public Class<? extends IEObjectHover> bindIEObjectHover() {
+		return Mtctl2EnglishEObjectHover.class;
+	}
+	
+	
 }
