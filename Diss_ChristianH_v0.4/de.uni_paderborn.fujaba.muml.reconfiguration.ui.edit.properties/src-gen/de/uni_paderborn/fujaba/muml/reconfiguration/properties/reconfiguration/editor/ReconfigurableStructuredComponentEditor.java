@@ -24,12 +24,11 @@ public class ReconfigurableStructuredComponentEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurableStructuredComponentInitialConfiguration_GeneralTab_Editor(
-					null, true);
+			addInitialConfiguration_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStructuredComponentConnectors_GeneralTab_Editor(
+			addConnectors_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -38,22 +37,20 @@ public class ReconfigurableStructuredComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurableStructuredComponentInitialConfiguration_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurableStructuredComponentInitialConfiguration_GeneralTab_Editor(),
-				front);
+	protected void addInitialConfiguration_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createInitialConfiguration_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurableStructuredComponentInitialConfiguration_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurableStructuredComponent_InitialConfiguration());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInitialConfiguration_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurableStructuredComponent_InitialConfiguration();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The initial configurations that are supported by this component. If a component\nis instantiated, it takes of its initial configurations.");
 
@@ -64,20 +61,20 @@ public class ReconfigurableStructuredComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addStructuredComponentConnectors_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createStructuredComponentConnectors_GeneralTab_Editor(), front);
+	protected void addConnectors_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createConnectors_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentConnectors_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getStructuredComponent_Connectors());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectors_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getStructuredComponent_Connectors();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The connectors this structured component contains. These can either be delegations or assemblies.");
 
@@ -118,10 +115,9 @@ public class ReconfigurableStructuredComponentEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions",
 							"property.tab.documentation",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.extensions", "property.tab.general",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

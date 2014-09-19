@@ -24,13 +24,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommu
  * @generated
  */
 public class InternalReconfigurationCommunicationPortItemProvider
-	extends ReconfigurationPortItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ReconfigurationPortItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

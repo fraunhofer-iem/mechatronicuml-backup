@@ -24,13 +24,11 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationMessagePortInterfaceEntryReconfigurationMessageType_GeneralTab_Editor(
-					null, true);
+			addReconfigurationMessageType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationMessagePortInterfaceEntryExpectedResponseTime_GeneralTab_Editor(
-					null, false);
+			addExpectedResponseTime_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -38,22 +36,20 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationMessagePortInterfaceEntryReconfigurationMessageType_GeneralTab_Editor(
+	protected void addReconfigurationMessageType_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationMessagePortInterfaceEntryReconfigurationMessageType_GeneralTab_Editor(),
-				front);
+		addEditorToCategory(category,
+				createReconfigurationMessageType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessagePortInterfaceEntryReconfigurationMessageType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationMessagePortInterfaceEntry_ReconfigurationMessageType());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessageType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationMessagePortInterfaceEntry_ReconfigurationMessageType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("Defines whether the message is an info message or a request. A request needs\nto be answered by the parent within the expected response time.");
 
@@ -64,22 +60,20 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationMessagePortInterfaceEntryExpectedResponseTime_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationMessagePortInterfaceEntryExpectedResponseTime_GeneralTab_Editor(),
-				front);
+	protected void addExpectedResponseTime_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createExpectedResponseTime_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessagePortInterfaceEntryExpectedResponseTime_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationMessagePortInterfaceEntry_ExpectedResponseTime());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExpectedResponseTime_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationMessagePortInterfaceEntry_ExpectedResponseTime();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("If the message is a request, then the expected response time denotes how long \nthe parent has time to answer the request. For an info message, no answer of\nthe parent is sent and, consequently, no expected response time is specified.");
 

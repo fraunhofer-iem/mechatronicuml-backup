@@ -24,18 +24,15 @@ public class ExecutionTimingSpecificationThreePhaseEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExecutionTimingSpecificationThreePhaseTimeForFading_GeneralTab_Editor(
-					null, false);
+			addTimeForFading_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExecutionTimingSpecificationThreePhaseTimeForSetup_GeneralTab_Editor(
-					null, false);
+			addTimeForSetup_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExecutionTimingSpecificationThreePhaseTimeForTeardown_GeneralTab_Editor(
-					null, false);
+			addTimeForTeardown_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -43,22 +40,20 @@ public class ExecutionTimingSpecificationThreePhaseEditor
 	/**
 	 * @generated
 	 */
-	protected void addExecutionTimingSpecificationThreePhaseTimeForFading_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createExecutionTimingSpecificationThreePhaseTimeForFading_GeneralTab_Editor(),
+	protected void addTimeForFading_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createTimeForFading_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutionTimingSpecificationThreePhaseTimeForFading_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getExecutionTimingSpecificationThreePhase_TimeForFading());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForFading_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getExecutionTimingSpecificationThreePhase_TimeForFading();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The time needed for executing the fading function.");
 
@@ -69,22 +64,20 @@ public class ExecutionTimingSpecificationThreePhaseEditor
 	/**
 	 * @generated
 	 */
-	protected void addExecutionTimingSpecificationThreePhaseTimeForSetup_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createExecutionTimingSpecificationThreePhaseTimeForSetup_GeneralTab_Editor(),
+	protected void addTimeForSetup_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createTimeForSetup_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutionTimingSpecificationThreePhaseTimeForSetup_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getExecutionTimingSpecificationThreePhase_TimeForSetup());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForSetup_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getExecutionTimingSpecificationThreePhase_TimeForSetup();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The time needed for executing the setup phase.");
 
@@ -95,22 +88,20 @@ public class ExecutionTimingSpecificationThreePhaseEditor
 	/**
 	 * @generated
 	 */
-	protected void addExecutionTimingSpecificationThreePhaseTimeForTeardown_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createExecutionTimingSpecificationThreePhaseTimeForTeardown_GeneralTab_Editor(),
-				front);
+	protected void addTimeForTeardown_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createTimeForTeardown_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutionTimingSpecificationThreePhaseTimeForTeardown_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getExecutionTimingSpecificationThreePhase_TimeForTeardown());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForTeardown_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getExecutionTimingSpecificationThreePhase_TimeForTeardown();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The time needed for executing the teardown phase.");
 

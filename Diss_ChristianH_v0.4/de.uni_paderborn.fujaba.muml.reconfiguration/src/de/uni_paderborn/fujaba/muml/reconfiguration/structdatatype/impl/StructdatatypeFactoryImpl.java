@@ -34,7 +34,7 @@ public class StructdatatypeFactoryImpl extends EFactoryImpl implements Structdat
 	 */
 	public static StructdatatypeFactory init() {
 		try {
-			StructdatatypeFactory theStructdatatypeFactory = (StructdatatypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"); 
+			StructdatatypeFactory theStructdatatypeFactory = (StructdatatypeFactory)EPackage.Registry.INSTANCE.getEFactory(StructdatatypePackage.eNS_URI);
 			if (theStructdatatypeFactory != null) {
 				return theStructdatatypeFactory;
 			}

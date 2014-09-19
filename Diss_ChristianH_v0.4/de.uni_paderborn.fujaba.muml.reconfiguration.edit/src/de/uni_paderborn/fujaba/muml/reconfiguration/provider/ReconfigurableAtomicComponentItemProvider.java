@@ -32,13 +32,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.Protoc
  * @generated
  */
 public class ReconfigurableAtomicComponentItemProvider
-	extends AtomicComponentItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends AtomicComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

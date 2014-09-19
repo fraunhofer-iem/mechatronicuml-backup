@@ -24,8 +24,7 @@ public class ReconfigurationExecutionPortEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationExecutionPortInterfaceEntries_GeneralTab_Editor(
-					null, true);
+			addInterfaceEntries_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -33,22 +32,20 @@ public class ReconfigurationExecutionPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationExecutionPortInterfaceEntries_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationExecutionPortInterfaceEntries_GeneralTab_Editor(),
-				front);
+	protected void addInterfaceEntries_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createInterfaceEntries_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationExecutionPortInterfaceEntries_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationExecutionPort_InterfaceEntries());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInterfaceEntries_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationExecutionPort_InterfaceEntries();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The interface entries of this reconfiguration execution port. Each interface entry\nspecifies one reconfiguration message that is offered to the parent.");
 
@@ -94,8 +91,7 @@ public class ReconfigurationExecutionPortEditor
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

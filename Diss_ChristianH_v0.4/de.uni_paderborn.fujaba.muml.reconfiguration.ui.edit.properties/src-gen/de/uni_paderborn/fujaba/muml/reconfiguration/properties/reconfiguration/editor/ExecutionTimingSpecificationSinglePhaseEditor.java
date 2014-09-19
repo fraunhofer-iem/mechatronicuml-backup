@@ -24,8 +24,7 @@ public class ExecutionTimingSpecificationSinglePhaseEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExecutionTimingSpecificationSinglePhaseTimeForExecution_GeneralTab_Editor(
-					null, false);
+			addTimeForExecution_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -33,22 +32,20 @@ public class ExecutionTimingSpecificationSinglePhaseEditor
 	/**
 	 * @generated
 	 */
-	protected void addExecutionTimingSpecificationSinglePhaseTimeForExecution_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createExecutionTimingSpecificationSinglePhaseTimeForExecution_GeneralTab_Editor(),
-				front);
+	protected void addTimeForExecution_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createTimeForExecution_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExecutionTimingSpecificationSinglePhaseTimeForExecution_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getExecutionTimingSpecificationSinglePhase_TimeForExecution());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForExecution_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getExecutionTimingSpecificationSinglePhase_TimeForExecution();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The time necessary for executing a reconfiguration.");
 

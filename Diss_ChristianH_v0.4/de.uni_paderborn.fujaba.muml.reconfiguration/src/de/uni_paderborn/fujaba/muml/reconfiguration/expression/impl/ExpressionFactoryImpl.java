@@ -33,7 +33,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 */
 	public static ExpressionFactory init() {
 		try {
-			ExpressionFactory theExpressionFactory = (ExpressionFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"); 
+			ExpressionFactory theExpressionFactory = (ExpressionFactory)EPackage.Registry.INSTANCE.getEFactory(ExpressionPackage.eNS_URI);
 			if (theExpressionFactory != null) {
 				return theExpressionFactory;
 			}
