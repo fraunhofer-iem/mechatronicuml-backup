@@ -232,7 +232,7 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 */
 	public Manager getManager() {
 		if (eContainerFeatureID() != ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MANAGER) return null;
-		return (Manager)eContainer();
+		return (Manager)eInternalContainer();
 	}
 
 	/**

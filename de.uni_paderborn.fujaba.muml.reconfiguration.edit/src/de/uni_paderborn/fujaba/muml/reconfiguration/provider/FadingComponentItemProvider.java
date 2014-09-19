@@ -44,13 +44,7 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
  * @generated
  */
 public class FadingComponentItemProvider
-	extends AtomicComponentItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends AtomicComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -1702,54 +1702,54 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="--'activity'"/>
+          body="'activity'"/>
       <expressions
-          body="--'componentStoryPattern'"/>
+          body="'componentStoryPattern'"/>
       <expressions
-          body="--'this'"/>
+          body="'this'"/>
       <expressions
-          body="--storydiagrams::patterns::BindingState::BOUND"/>
+          body="storydiagrams::patterns::BindingState::BOUND"/>
       <expressions
-          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
       <expressions
-          body="--'componentStoryNode'"/>
+          body="'componentStoryNode'"/>
       <expressions
-          body="--':'.concat(self.type.name)"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="--self.multiPortVariable.oclIsUndefined()"/>
-      <expressions
-          body="--':'.concat(self.type.name)"/>
-      <expressions
-          body="--let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;--let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;--let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;--selfName&#xD;&#xA;--else&#xD;&#xA;--selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;--endif"/>
-      <expressions
-          body="--'componentStoryPattern'"/>
-      <expressions
-          body="--'this'"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingState::BOUND"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingOperator::DESTROY"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingOperator::CREATE"/>
-      <expressions
-          body="--'controllerExchangeNode'"/>
-      <expressions
-          body="--let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;--let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;--let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;--selfName&#xD;&#xA;--else&#xD;&#xA;--selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;--endif"/>
+          body="':'.concat(self.type.name)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;--not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+          body="self.multiPortVariable.oclIsUndefined()"/>
+      <expressions
+          body="':'.concat(self.type.name)"/>
+      <expressions
+          body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+      <expressions
+          body="'componentStoryPattern'"/>
+      <expressions
+          body="'this'"/>
+      <expressions
+          body="storydiagrams::patterns::BindingState::BOUND"/>
+      <expressions
+          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+      <expressions
+          body="storydiagrams::patterns::BindingOperator::DESTROY"/>
+      <expressions
+          body="storydiagrams::patterns::BindingOperator::CREATE"/>
+      <expressions
+          body="'controllerExchangeNode'"/>
+      <expressions
+          body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
+          body="--Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+          body="--Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
+          body="--Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1763,7 +1763,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.2/@modelFacet"
-        className="MultiPortVariableLabelExpressionLabelParser5056"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
@@ -1771,7 +1770,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
-        className="SinglePortVariableLabelExpressionLabelParser5057"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
@@ -1779,7 +1777,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"
-        className="ComponentPartVariableLabelExpressionLabelParser5018"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
@@ -1787,7 +1784,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.2/@modelFacet"
-        className="MultiPortVariableLabelExpressionLabelParser5058"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
@@ -1795,7 +1791,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.2/@modelFacet"
-        className="SinglePortVariableLabelExpressionLabelParser5059"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
@@ -1803,7 +1798,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.15/@labels.0/@modelFacet"
-        className="FadingComponentPartVariableLabelExpressionLabelParser5054"
         viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>

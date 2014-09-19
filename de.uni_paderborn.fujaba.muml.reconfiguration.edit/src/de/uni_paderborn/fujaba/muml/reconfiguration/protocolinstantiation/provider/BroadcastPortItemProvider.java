@@ -51,13 +51,7 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
  * @generated
  */
 public class BroadcastPortItemProvider
-	extends PortItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends PortItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -83,7 +77,7 @@ public class BroadcastPortItemProvider
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
-			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
+			addSubroleBehaviorPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addReceiverMessageBufferPropertyDescriptor(object);
 			addMultiPropertyDescriptor(object);
@@ -181,19 +175,19 @@ public class BroadcastPortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Role And Adaptation Behavior feature.
+	 * This adds a property descriptor for the Subrole Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRoleAndAdaptationBehaviorPropertyDescriptor(Object object) {
+	protected void addSubroleBehaviorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscreteInteractionEndpoint_roleAndAdaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_roleAndAdaptationBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
-				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR,
+				 getString("_UI_DiscreteInteractionEndpoint_subroleBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_subroleBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR,
 				 true,
 				 false,
 				 true,

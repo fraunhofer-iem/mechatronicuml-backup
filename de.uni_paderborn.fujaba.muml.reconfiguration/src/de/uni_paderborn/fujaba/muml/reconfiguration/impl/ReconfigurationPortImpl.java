@@ -42,7 +42,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getSubroleBehavior <em>Subrole Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#isMulti <em>Multi</em>}</li>
@@ -89,14 +89,14 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 	 */
 	protected Behavior adaptationBehavior;
 	/**
-	 * The cached value of the '{@link #getRoleAndAdaptationBehavior() <em>Role And Adaptation Behavior</em>}' reference.
+	 * The cached value of the '{@link #getSubroleBehavior() <em>Subrole Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoleAndAdaptationBehavior()
+	 * @see #getSubroleBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected Behavior roleAndAdaptationBehavior;
+	protected Behavior subroleBehavior;
 	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -270,16 +270,16 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Behavior getRoleAndAdaptationBehavior() {
-		if (roleAndAdaptationBehavior != null && roleAndAdaptationBehavior.eIsProxy()) {
-			InternalEObject oldRoleAndAdaptationBehavior = (InternalEObject)roleAndAdaptationBehavior;
-			roleAndAdaptationBehavior = (Behavior)eResolveProxy(oldRoleAndAdaptationBehavior);
-			if (roleAndAdaptationBehavior != oldRoleAndAdaptationBehavior) {
+	public Behavior getSubroleBehavior() {
+		if (subroleBehavior != null && subroleBehavior.eIsProxy()) {
+			InternalEObject oldSubroleBehavior = (InternalEObject)subroleBehavior;
+			subroleBehavior = (Behavior)eResolveProxy(oldSubroleBehavior);
+			if (subroleBehavior != oldSubroleBehavior) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURATION_PORT__SUBROLE_BEHAVIOR, oldSubroleBehavior, subroleBehavior));
 			}
 		}
-		return roleAndAdaptationBehavior;
+		return subroleBehavior;
 	}
 
 	/**
@@ -287,8 +287,8 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Behavior basicGetRoleAndAdaptationBehavior() {
-		return roleAndAdaptationBehavior;
+	public Behavior basicGetSubroleBehavior() {
+		return subroleBehavior;
 	}
 
 	/**
@@ -296,11 +296,11 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRoleAndAdaptationBehavior(Behavior newRoleAndAdaptationBehavior) {
-		Behavior oldRoleAndAdaptationBehavior = roleAndAdaptationBehavior;
-		roleAndAdaptationBehavior = newRoleAndAdaptationBehavior;
+	public void setSubroleBehavior(Behavior newSubroleBehavior) {
+		Behavior oldSubroleBehavior = subroleBehavior;
+		subroleBehavior = newSubroleBehavior;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__SUBROLE_BEHAVIOR, oldSubroleBehavior, subroleBehavior));
 	}
 
 	/**
@@ -422,9 +422,9 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 			case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR:
 				if (resolve) return getAdaptationBehavior();
 				return basicGetAdaptationBehavior();
-			case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
-				if (resolve) return getRoleAndAdaptationBehavior();
-				return basicGetRoleAndAdaptationBehavior();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__SUBROLE_BEHAVIOR:
+				if (resolve) return getSubroleBehavior();
+				return basicGetSubroleBehavior();
 			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
 				return getCardinality();
 			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER:
@@ -458,8 +458,8 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 			case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)newValue);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
-				setRoleAndAdaptationBehavior((Behavior)newValue);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__SUBROLE_BEHAVIOR:
+				setSubroleBehavior((Behavior)newValue);
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
 				setCardinality((Cardinality)newValue);
@@ -492,8 +492,8 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 			case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)null);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
-				setRoleAndAdaptationBehavior((Behavior)null);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__SUBROLE_BEHAVIOR:
+				setSubroleBehavior((Behavior)null);
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
 				setCardinality((Cardinality)null);
@@ -521,8 +521,8 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
 			case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR:
 				return adaptationBehavior != null;
-			case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
-				return roleAndAdaptationBehavior != null;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__SUBROLE_BEHAVIOR:
+				return subroleBehavior != null;
 			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
 				return cardinality != null;
 			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER:
@@ -551,7 +551,7 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 				case ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES;
 				case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
 				case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
-				case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR;
+				case ReconfigurationPackage.RECONFIGURATION_PORT__SUBROLE_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR;
 				case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY;
 				case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER;
 				case ReconfigurationPackage.RECONFIGURATION_PORT__MULTI: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI;
@@ -579,7 +579,7 @@ public abstract class ReconfigurationPortImpl extends PortImpl implements Reconf
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES: return ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES: return ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR: return ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR;
-				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR: return ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR: return ReconfigurationPackage.RECONFIGURATION_PORT__SUBROLE_BEHAVIOR;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY: return ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER: return ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI: return ReconfigurationPackage.RECONFIGURATION_PORT__MULTI;

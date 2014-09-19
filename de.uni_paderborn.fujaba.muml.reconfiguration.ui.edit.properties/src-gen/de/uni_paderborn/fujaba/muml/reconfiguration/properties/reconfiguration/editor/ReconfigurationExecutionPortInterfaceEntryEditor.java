@@ -24,18 +24,15 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationExecutionPortInterfaceEntryMinimumCommitTime_GeneralTab_Editor(
-					null, false);
+			addMinimumCommitTime_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationExecutionPortInterfaceEntryTimeForDecision_GeneralTab_Editor(
-					null, false);
+			addTimeForDecision_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationExecutionPortInterfaceEntryTimeForExecutionPhase_GeneralTab_Editor(
-					null, false);
+			addTimeForExecutionPhase_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -43,22 +40,20 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationExecutionPortInterfaceEntryMinimumCommitTime_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationExecutionPortInterfaceEntryMinimumCommitTime_GeneralTab_Editor(),
-				front);
+	protected void addMinimumCommitTime_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createMinimumCommitTime_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationExecutionPortInterfaceEntryMinimumCommitTime_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMinimumCommitTime_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("If the component confirmed to the parent that it can execute the requested\nreconfiguration, the commit time denotes how long the component may stick\nto that confirmation. The minimum commit time sets a lower bound to this value.\nIt is required for analyzing the reconfiguration behavior.");
 
@@ -69,22 +64,20 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationExecutionPortInterfaceEntryTimeForDecision_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationExecutionPortInterfaceEntryTimeForDecision_GeneralTab_Editor(),
-				front);
+	protected void addTimeForDecision_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createTimeForDecision_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationExecutionPortInterfaceEntryTimeForDecision_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationExecutionPortInterfaceEntry_TimeForDecision());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForDecision_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationExecutionPortInterfaceEntry_TimeForDecision();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The time that is needed by the component for deciding whether the reconfiguration\nthat is offered by this interface entry can be executed.");
 
@@ -95,22 +88,20 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationExecutionPortInterfaceEntryTimeForExecutionPhase_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationExecutionPortInterfaceEntryTimeForExecutionPhase_GeneralTab_Editor(),
-				front);
+	protected void addTimeForExecutionPhase_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createTimeForExecutionPhase_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationExecutionPortInterfaceEntryTimeForExecutionPhase_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForExecutionPhase_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The time that is needed by the component for executing the reconfiguration\nthat is offered by this interface entry. The time for execution is specified an\nExecutionTimeSpecification because it depends on the particular execution\nprocedure. Currently, we support single-phase and three-phase execution.");
 

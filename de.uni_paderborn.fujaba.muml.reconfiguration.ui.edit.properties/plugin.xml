@@ -201,4 +201,20 @@
     </propertyEditors>
  </extension>
 
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+    <metamodel
+          contributor="de.uni_paderborn.fujaba.muml.reconfiguration.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+    <constraint
+          contributor="de.uni_paderborn.fujaba.muml.reconfiguration.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
 </plugin>

@@ -24,13 +24,11 @@ public class ReconfigurationPortInterfaceEntryEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationPortInterfaceEntryDescription_GeneralTab_Editor(
-					null, true);
+			addDescription_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationPortInterfaceEntryMessageType_GeneralTab_Editor(
-					null, true);
+			addMessageType_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -38,23 +36,20 @@ public class ReconfigurationPortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationPortInterfaceEntryDescription_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationPortInterfaceEntryDescription_GeneralTab_Editor(),
+	protected void addDescription_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createDescription_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationPortInterfaceEntryDescription_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationPortInterfaceEntry_Description(),
-				false);
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDescription_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationPortInterfaceEntry_Description();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory, feature, false);
 
 		editor.setTooltipMessage("A human readable description of this reconfiguration port interface entry. \nThis description is to be used by a developer.");
 
@@ -65,22 +60,20 @@ public class ReconfigurationPortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationPortInterfaceEntryMessageType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationPortInterfaceEntryMessageType_GeneralTab_Editor(),
+	protected void addMessageType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createMessageType_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationPortInterfaceEntryMessageType_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationPortInterfaceEntry_MessageType());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationPortInterfaceEntry_MessageType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The reconfiguration message type that is specified by the reconfiguration \nport interface entry.");
 

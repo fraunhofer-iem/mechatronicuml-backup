@@ -32,7 +32,7 @@ public class ProtocolinstantiationFactoryImpl extends EFactoryImpl implements Pr
 	 */
 	public static ProtocolinstantiationFactory init() {
 		try {
-			ProtocolinstantiationFactory theProtocolinstantiationFactory = (ProtocolinstantiationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0"); 
+			ProtocolinstantiationFactory theProtocolinstantiationFactory = (ProtocolinstantiationFactory)EPackage.Registry.INSTANCE.getEFactory(ProtocolinstantiationPackage.eNS_URI);
 			if (theProtocolinstantiationFactory != null) {
 				return theProtocolinstantiationFactory;
 			}

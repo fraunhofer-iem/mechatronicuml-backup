@@ -112,15 +112,6 @@ public interface ProtocolinstantiationPackage extends EPackage {
 	int BROADCAST_PORT__CONNECTORS = ComponentPackage.PORT__CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BROADCAST_PORT__CONSTRAINT = ComponentPackage.PORT__CONSTRAINT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,13 +175,13 @@ public interface ProtocolinstantiationPackage extends EPackage {
 	int BROADCAST_PORT__ADAPTATION_BEHAVIOR = ComponentPackage.PORT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BROADCAST_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = ComponentPackage.PORT_FEATURE_COUNT + 4;
+	int BROADCAST_PORT__SUBROLE_BEHAVIOR = ComponentPackage.PORT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
