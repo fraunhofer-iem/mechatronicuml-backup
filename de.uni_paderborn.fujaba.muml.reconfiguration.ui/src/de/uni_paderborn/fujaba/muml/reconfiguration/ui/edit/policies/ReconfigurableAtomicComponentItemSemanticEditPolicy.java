@@ -65,6 +65,12 @@ public class ReconfigurableAtomicComponentItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.ReconfigurationExecutionPortCreateCommand(
 					req));
 		}
+		
+		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.BroadcastPort_3078== req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.BroadcastPortCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 
@@ -150,6 +156,7 @@ public class ReconfigurableAtomicComponentItemSemanticEditPolicy
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
+				
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
 						.hasNext();) {
@@ -202,6 +209,7 @@ public class ReconfigurableAtomicComponentItemSemanticEditPolicy
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 
 				break;
+				
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
 						.hasNext();) {
@@ -247,6 +255,12 @@ public class ReconfigurableAtomicComponentItemSemanticEditPolicy
 						continue;
 					}
 				}
+				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
+						getEditingDomain(), node.getElement(), false)));
+				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
+				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
+				break;
 				
 			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
@@ -293,6 +307,12 @@ public class ReconfigurableAtomicComponentItemSemanticEditPolicy
 						continue;
 					}
 				}
+				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
+						getEditingDomain(), node.getElement(), false)));
+				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
+				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
+				break;
 				
 			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
@@ -339,6 +359,58 @@ public class ReconfigurableAtomicComponentItemSemanticEditPolicy
 						continue;
 					}
 				}
+				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
+						getEditingDomain(), node.getElement(), false)));
+				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
+				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
+				break;
+				
+			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID:
+				for (Iterator<?> it = node.getTargetEdges().iterator(); it
+						.hasNext();) {
+					Edge incomingLink = (Edge) it.next();
+					if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								incomingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
+					if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								incomingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
+				}
+				for (Iterator<?> it = node.getSourceEdges().iterator(); it
+						.hasNext();) {
+					Edge outgoingLink = (Edge) it.next();
+					if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								outgoingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								outgoingLink));
+						continue;
+					}
+					if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								outgoingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								outgoingLink));
+						continue;
+					}
+				}
 
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
 						getEditingDomain(), node.getElement(), false)));
@@ -348,6 +420,8 @@ public class ReconfigurableAtomicComponentItemSemanticEditPolicy
 				break;
 			}
 		}
+		
 	}
+	
 
 }

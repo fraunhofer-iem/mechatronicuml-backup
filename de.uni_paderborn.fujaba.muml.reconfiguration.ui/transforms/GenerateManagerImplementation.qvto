@@ -58,7 +58,7 @@ helper createManagerImplementation(inout theComponent : ReconfigurableStructured
 	theComponent.manager.behavior := rtsc;
 	
 	-- add statechart to category
-	rootNode.getRTSCCategory().modelElements += rtsc;
+	getOrCreateRTSCCategory(rootNode).modelElements += rtsc;
 	
 	--generate static statechart frame (black parts in the generation template)
 	generateStaticStatechartFrame(rootNode, theComponent.manager);
@@ -174,8 +174,8 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout manager : 
 	
 	var embeddedCISubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_EmbeddedCI, initialState, 4);
 	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
-	manager.ports -> any(name = 'embeddedCI').roleAndAdaptationBehavior := embeddedCISubRTSC;
-	manager.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
+	manager.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC;
+	manager.ports -> any(name = 'embeddedCI').subroleBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
 	manager.ports -> any(name = 'embeddedCI').adaptationBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_adapt);
 	
 	-- configure message types of ports

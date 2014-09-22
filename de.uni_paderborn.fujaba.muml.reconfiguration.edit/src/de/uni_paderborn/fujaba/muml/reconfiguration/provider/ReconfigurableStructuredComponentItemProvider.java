@@ -40,13 +40,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.Protoc
  * @generated
  */
 public class ReconfigurableStructuredComponentItemProvider
-	extends StructuredComponentItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends StructuredComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

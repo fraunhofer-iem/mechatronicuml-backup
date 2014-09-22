@@ -2,25 +2,25 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.util;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+
+import de.uni_paderborn.fujaba.muml.component.Port;
+
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.*;
+
+import de.uni_paderborn.fujaba.muml.types.DataType;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
+
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.*;
-import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPort;
-import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPortSpecification;
-import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.DiscoveryPortSpecification;
-import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolInstantiationPortSpecification;
-import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,7 +85,6 @@ public class ProtocolinstantiationSwitch<T> extends Switch<T> {
 				if (result == null) result = casePort(broadcastPort);
 				if (result == null) result = caseDiscreteInteractionEndpoint(broadcastPort);
 				if (result == null) result = caseConnectorEndpoint(broadcastPort);
-				if (result == null) result = caseConstrainableElement(broadcastPort);
 				if (result == null) result = caseDataType(broadcastPort);
 				if (result == null) result = caseBehavioralElement(broadcastPort);
 				if (result == null) result = caseCommentableElement(broadcastPort);
@@ -223,21 +222,6 @@ public class ProtocolinstantiationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnectorEndpoint(ConnectorEndpoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConstrainableElement(ConstrainableElement object) {
 		return null;
 	}
 

@@ -63,8 +63,7 @@ public class InternalReconfigurationCommunicationPortEditor
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

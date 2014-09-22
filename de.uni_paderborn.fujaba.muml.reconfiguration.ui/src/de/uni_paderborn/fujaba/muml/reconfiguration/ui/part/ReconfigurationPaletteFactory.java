@@ -32,6 +32,10 @@ public class ReconfigurationPaletteFactory extends PaletteFactory.Adapter {
             return new CreationTool(ReconfigurationElementTypes.FadingComponent_2079);
 
         }
+        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.BroadcastPortTool")){
+            return new CreationTool(ReconfigurationElementTypes.BroadcastPort_3078);
+
+        }
         return null;
 	}
 	

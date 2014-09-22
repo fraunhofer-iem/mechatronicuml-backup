@@ -32,13 +32,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationCont
  * @generated
  */
 public class RuleBasedReconfigurationControllerItemProvider
-	extends ReconfigurationControllerItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ReconfigurationControllerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

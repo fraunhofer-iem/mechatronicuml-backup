@@ -1,0 +1,83 @@
+library ComponentLibrary;
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
+
+------------ helper functions --------------
+
+/* TODO remove
+-- traverses to the parents of rtsc until an RTSC is reached whole BehavioralElement is the Executor
+helper getExecutor(in rtsc : RealtimeStatechart) : Executor{
+
+	var curRTSC : RealtimeStatechart := rtsc;
+	
+	while(not (curRTSC.oclIsUndefined() or curRTSC.behavioralElement.oclIsTypeOf(Executor))){
+		if(not curRTSC.parentRegion.oclIsUndefined()) then {
+			curRTSC := curRTSC.parentRegion.parentState.parentStatechart;
+		} else {
+			curRTSC := null;
+		} endif;
+	};
+	
+	if(curRTSC.oclIsUndefined()) then{
+		return null;
+	} endif;
+
+	return curRTSC.behavioralElement.oclAsType(Executor);
+}
+
+-- returns the manager of the reconfiguration controller containing the executor that is generated here
+helper getManager(in executor : Executor) : Manager{
+	if(executor.oclIsUndefined()) then {
+		return null;
+	} endif;
+	
+	return executor.reconfigurationController.manager;
+}
+*/
+
+-- returns the reconfiguration rule associated with the MessageType by ManagerSpecification
+helper MessageType :: getReconfigurationRule(theManager : Manager) : ReconfigurationRule{
+	//TODO we assume a 1:1 mapping from message type to reconfiguration rule, adapt this when 1:n is supported
+	var entry : ManagerSpecificationEntry :=  theManager.specificationEntries->select(messageType = self) -> any(true);
+	if(entry.oclIsUndefined()){
+		assert warning(false) with log("Could not find a ManagerSpecificationEntry for MessageType "+self.toString());
+		return null;
+	};
+	return entry.reconfigurationRule;
+}
+
+-- returns the id defined in the executor specification entries for the ReconfigurationRule
+helper ReconfigurationRule :: getID(theExecutor : Executor) : Integer{
+	var entry : ExecutorSpecificationEntry := theExecutor.specificationEntries->select(reconfigurationRule = self) -> any(true);
+	if(entry.oclIsUndefined()){
+		assert warning(false) with log("Could not find an ExecutorSpecificationEntry for ReconfigurationRule "+self.toString());
+		return null;
+	};
+	return entry.id;
+}
+
+/* TODO remove
+helper ReconfigurationRule :: getReconfigurationExecutionPortInterfaceEntry(manager : Manager, executor : Executor) : ReconfigurationExecutionPortInterfaceEntry{
+	//TODO we assume a 1:1 mapping from message type to reconfiguration rule, adapt this when 1:n is supported
+	var managerEntry := manager.specificationEntries->select(reconfigurationRule = self)->any(true);
+	var theMessageType := managerEntry.messageType;
+	
+	return executor.reconfigurationExecutionPorts->any(name = 'parent').interfaceEntries->any(messageType = theMessageType);
+}*/

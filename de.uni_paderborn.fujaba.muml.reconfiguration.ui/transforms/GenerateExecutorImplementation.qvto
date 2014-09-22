@@ -3,6 +3,7 @@ import transforms.lib.ActionLanguageBaseLibrary;
 import transforms.lib.TypeAndBehaviorLibrary;
 import transforms.lib.MessageTypeLibrary;
 import transforms.lib.ProjectSpecificConstants;
+import transforms.lib.ComponentLibrary;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
@@ -35,8 +36,13 @@ modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.fujab
 -- specification in terms of real-time statecharts for it
 transformation GenerateExecutorImplementation(inout inputComponent : component, inout category : modelinst);
 
+property manager : Manager;
+property executor : Executor;
+
 main() {
 	var theComponent : ReconfigurableStructuredComponent := inputComponent.rootObjects()[ReconfigurableStructuredComponent] -> any(true);
+	manager := theComponent.manager;
+	executor := theComponent.executor;
 	var rootNode : RootNode := category.rootObjects()[RootNode] -> any(true);
 	
 	createExecutorImplementation(theComponent, rootNode);
@@ -56,7 +62,7 @@ helper createExecutorImplementation(inout theComponent : ReconfigurableStructure
 	theComponent.executor.behavior := rtsc;
 	
 	-- add statechart to category
-	rootNode.getRTSCCategory().modelElements += rtsc;
+	getOrCreateRTSCCategory(rootNode).modelElements += rtsc;
 	
 	-- generate static statechart frame (black parts in the generation template)
 	generateStaticStatechartFrame(rootNode, theComponent.executor);
@@ -92,6 +98,9 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup);
+	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading);
+	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown);
 	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	buffer := new MessageBuffer(1);
@@ -103,6 +112,9 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
 	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup);
+	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading);
+	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown);
 	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	buffer := new MessageBuffer(1);
@@ -125,8 +137,13 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
 	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup);
+	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading);
+	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown);
 	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+
+
 	buffer := new MessageBuffer(1);
 	buffer.messageType := executorEmbeddedCIPort.receiverMessageTypes;
 	executorEmbeddedCIPort.receiverMessageBuffer := buffer;
@@ -139,6 +156,7 @@ mapping ReconfigurationExecutionPortInterfaceEntry::mapREInterfaceEntries() : Re
 	messageType := self.messageType;
 	timeForDecision := self.timeForDecision.map mapTimeValue();
 	timeForExecutionPhase := self.timeForExecutionPhase.map mapExecutionTimingEntry();
+	minimumCommitTime := self.minimumCommitTime.map mapTimeValue();
 	description := self.description;
 }
 
@@ -172,6 +190,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	executorRTSC.states += initialState;
 	
 	-- add variables
+	executorRTSC.variables += new Variable(genVarExecutor_SinglePhase, rootNode.getPrimitiveType(boolType));
 	executorRTSC.variables += new Variable(genVarExecutor_Reconfiguration, rootNode.getPrimitiveType(intType));
 	executorRTSC.variables += new Variable(genVarExecutor_TwoPCResult, rootNode.getPrimitiveType(boolType));
 	executorRTSC.variables += new Variable(genVarExecutor_TmpCommitTime, rootNode.getPrimitiveType(intType));
@@ -186,7 +205,14 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformReconf, null);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinish, rootNode.getPrimitiveType(boolType));
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinished2PC, null);
-
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformSetup, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinishPhase, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformFading, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformTeardown, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorLocalFinish, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorLocalSetup, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorLocalFading, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorLocalTeardown, null);
 	
 	-- generate embedded statecharts
 	var parentSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_Parent, initialState, 2);
@@ -202,8 +228,8 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	
 	var embeddedCISubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_EmbeddedCI, initialState, 4);
 	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
-	executor.ports -> any(name = 'embeddedCI').roleAndAdaptationBehavior := embeddedCISubRTSC;
-	executor.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_subrole);
+	executor.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC;
+	executor.ports -> any(name = 'embeddedCI').subroleBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_subrole);
 	executor.ports -> any(name = 'embeddedCI').adaptationBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_adapt);
 	
 	return;
@@ -246,6 +272,21 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 	
 	var executionState : State := new State(genStateExecutor_Parent_Execution);
 	rtsc.states += executionState;
+	
+	var executeSetupState : State := new State(genStateExecutor_Parent_ExecuteSetup);
+	rtsc.states += executeSetupState;
+	
+	var waitFadingState : State := new State(genStateExecutor_Parent_WaitFading);
+	rtsc.states += waitFadingState;
+	
+	var executeFadingState : State := new State(genStateExecutor_Parent_ExecuteFading);
+	rtsc.states += executeFadingState;
+	
+	var waitTeardownState : State := new State(genStateExecutor_Parent_WaitTeardown);
+	rtsc.states += waitTeardownState;
+	
+	var executeTeardownState : State := new State(genStateExecutor_Parent_ExecuteTeardown);
+	rtsc.states += executeTeardownState;
 	
 	-- create transitions
 	var currentTrans : Transition = null;
@@ -323,6 +364,48 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);
 	rtsc.transitions += currentTrans;
 	
+	-- WaitForParent -> ExecuteSetup
+	currentTrans := new Transition(waitForParentState, executeSetupState, 3);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformSetup), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteSetup -> WaitFading
+	currentTrans := new Transition(executeSetupState, waitFadingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinishPhase), SynchronizationKind::RECEIVE, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- WaitFading -> ExecuteFading
+	currentTrans := new Transition(waitFadingState, executeFadingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformFading), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteFading -> WaitTeardown
+	currentTrans := new Transition(executeFadingState, waitTeardownState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinishPhase), SynchronizationKind::RECEIVE, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- WaitTeardown -> ExecuteTeardown
+	currentTrans := new Transition(waitTeardownState, executeTeardownState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformTeardown), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteTeardown -> Idle
+	currentTrans := new Transition(executeTeardownState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinished), SynchronizationKind::RECEIVE, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
 	return;
 }
 
@@ -380,6 +463,22 @@ helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc
 	
 	var answerReceivedState : State := new State(genStateExecutor_Events_AnswerReceived);
 	rtsc.states += answerReceivedState;
+	
+	var doSetupState : State := new State(genStateExecutor_Events_DoSetup);
+	rtsc.states += doSetupState;
+	
+	var busySetupState : State := new State(genStateExecutor_Events_BusySetup);
+	rtsc.states += busySetupState;
+	
+	var doFadingState : State := new State(genStateExecutor_Events_DoFading);
+	rtsc.states += doFadingState;
+	
+	var busyFadingState : State := new State(genStateExecutor_Events_BusyFading);
+	rtsc.states += busyFadingState;
+	
+	var doTeardownState : State := new State(genStateExecutor_Events_DoTeardown);
+	rtsc.states += doTeardownState;
+	
 	
 	-- create transitions
 	var currentTrans : Transition = null;
@@ -456,6 +555,7 @@ helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc
 	currentTrans := new Transition(awaitVotingState, doExecuteState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorVotingComplete), SynchronizationKind::RECEIVE, 
 			new LiteralExpression('true'));
+	currentTrans.guard := createSimpleGuardExpression(rtsc.getVariableByName(genVarExecutor_SinglePhase), true);
 	rtsc.transitions += currentTrans;
 	
 	-- AwaitVoting -> DoAbort
@@ -531,6 +631,43 @@ helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc
 		LogicOperator::AND, createSimpleCompareGuardExpression(abortedReqWaitingVar, 'false'));
 	rtsc.transitions += currentTrans;
 	
+	-- AwaitVoting -> DoSetup
+	currentTrans := new Transition(awaitVotingState, doSetupState, 3);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorVotingComplete), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	currentTrans.guard := createSimpleGuardExpression(rtsc.getVariableByName(genVarExecutor_SinglePhase), false);
+	rtsc.transitions += currentTrans;
+	
+	-- DoSetup -> BusySetup
+	currentTrans := new Transition(doSetupState, busySetupState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformSetup), SynchronizationKind::SEND, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- BusySetup -> DoFading
+	currentTrans := new Transition(busySetupState, doFadingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinishPhase), SynchronizationKind::RECEIVE, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- DoFading -> BusyFading
+	currentTrans := new Transition(doFadingState, busyFadingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformFading), SynchronizationKind::SEND, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- BusyFading -> DoTeardown
+	currentTrans := new Transition(busyFadingState, doTeardownState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinishPhase), SynchronizationKind::RECEIVE, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- DoTeardown -> Busy
+	currentTrans := new Transition(doTeardownState, busyState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformTeardown), SynchronizationKind::SEND, 
+			null);
+	rtsc.transitions += currentTrans;
+	
 	return;
 }
 
@@ -560,10 +697,21 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 	-- create transitions
 	var currentTrans : Transition = null;
 	
-	-- Idle -> Start
-	currentTrans := new Transition(idleState, startState, 1);
+	-- Idle -> Start  created mapping because we have to distinguish between 2 transitions from Idle 2 Start, when creating variable parts
+	currentTrans := map getOrCreateInternalBehaviorIdle2StartTransition4SinglePhase();
+	currentTrans.source := idleState;
+	currentTrans.target := startState;
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorStartExecution), SynchronizationKind::RECEIVE, 
 			null);
+	rtsc.transitions += currentTrans;
+	
+	-- Idle -> Start 
+	currentTrans := map getOrCreateInternalBehaviorIdle2StartTransition4ThreePhase();
+	currentTrans.source := idleState;
+	currentTrans.target := startState;
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorStartExecution), SynchronizationKind::RECEIVE, 
+			null);
+	--currentTrans.action := new Action('singlePhase := false', createSimpleAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_SinglePhase), 'false'));
 	rtsc.transitions += currentTrans;
 	
 	-- Start -> Wait
@@ -585,6 +733,11 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 	currentTrans.guard := createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_TwoPCResult), 'false');
 	rtsc.transitions += currentTrans;
 	
+	-- Execute -> Report
+	currentTrans := new Transition(executeState, reportState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_SinglePhase), 'false');
+	rtsc.transitions += currentTrans;
+	
 	-- Report -> Idle
 	currentTrans := new Transition(reportState, idleState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinish), SynchronizationKind::SEND, 
@@ -598,7 +751,7 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
 	-- create variables
-	var subPortVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubPort, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	var subPortVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubPort, executor.ports -> any(name = 'embeddedCI'));
 	rtsc.variables += subPortVar;
 	
 	var tmpMsgVar : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpMsg, rootNode.getPrimitiveType(intType));
@@ -616,11 +769,14 @@ helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout 
 	rtsc.states += initialState;
 	
 	-- create sync channels
-	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendReq, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendReq, executor.ports -> any(name = 'embeddedCI'));
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCIReplyRecv, null);
-	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendC, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
-	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendA, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendC, executor.ports -> any(name = 'embeddedCI'));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendA, executor.ports -> any(name = 'embeddedCI'));
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCIReconfFinished, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendSetup, executor.ports -> any(name = 'embeddedCI'));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendFading, executor.ports -> any(name = 'embeddedCI'));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendTeardown, executor.ports -> any(name = 'embeddedCI'));
 	
 	-- generate adaptation RTSC
 	var adaptationRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_EmbeddedCI_adapt, initialState, 2);
@@ -646,11 +802,11 @@ helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNo
 	var minCommitTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_MinCommitTime, rootNode.getPrimitiveType(intType));
 	rtsc.variables += minCommitTimeVar;
 	
-	var curPortVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_CurPort, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	var curPortVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_CurPort, executor.ports -> any(name = 'embeddedCI'));
 	rtsc.variables += curPortVar;
 	
 	-- create operations
-	var getNextPiActionOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	var getNextPiActionOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction, executor.ports -> any(name = 'embeddedCI'));
 	getNextPiActionOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC, rootNode.getOrCreateAffectedComponentsType());
 	rtsc.operations += getNextPiActionOp;
 	
@@ -674,9 +830,13 @@ helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNo
 	var waitForParentState : State := new State(genStateExecutor_embeddedCI_Adaptation_WaitForParent);
 	rtsc.states += waitForParentState;
 	
-	var executeState : State := new State(genStateExecutor_embeddedCI_Adaptation_Execute);
-	rtsc.states += executeState;
-	generateEmbeddedCIAdaptationExecuteState(rootNode, executeState);
+	var executeSinglePhaseState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteSinglePhase);
+	rtsc.states += executeSinglePhaseState;
+	generateEmbeddedCIAdaptationExecuteSinglePhaseState(rootNode, executeSinglePhaseState);
+	
+	var executeThreePhaseState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase);
+	rtsc.states += executeThreePhaseState;
+	generateEmbeddedCIAdaptationExecuteThreePhaseState(rootNode, executeThreePhaseState);
 	
 	var abortState : State := new State(genStateExecutor_embeddedCI_Adaptation_Abort);
 	rtsc.states += abortState;
@@ -697,21 +857,33 @@ helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNo
 			createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_TmpCommitTime),	new TypedNamedElementExpression(minCommitTimeVar)));
 	rtsc.transitions += currentTrans;
 	
-	-- WaitForParent -> Execute (EntryPoint)
-	currentTrans := new Transition(waitForParentState, executeState.connectionPoints -> any(oclIsTypeOf(EntryPoint)), 1);
+	-- WaitForParent -> Execute_SinglePhase (EntryPoint)
+	currentTrans := new Transition(waitForParentState, executeSinglePhaseState.connectionPoints -> any(oclIsTypeOf(EntryPoint)), 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformReconf), SynchronizationKind::RECEIVE, 
 			null);
+	currentTrans.guard := createSimpleGuardExpression(rtsc.getVariableByName(genVarExecutor_SinglePhase), true);
 	rtsc.transitions += currentTrans;
 	
+	-- WaitForParent -> Execute_ThreePhase (EntryPoint)
+	currentTrans := new Transition(waitForParentState, executeThreePhaseState.connectionPoints -> any(oclIsTypeOf(EntryPoint)), 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformSetup), SynchronizationKind::RECEIVE, 
+			null);
+	currentTrans.guard := createSimpleGuardExpression(rtsc.getVariableByName(genVarExecutor_SinglePhase), false);
+	rtsc.transitions += currentTrans; 
+	
 	-- WaitForParent -> Abort
-	currentTrans := new Transition(waitForParentState, abortState.connectionPoints -> any(oclIsTypeOf(EntryPoint)), 2);
+	currentTrans := new Transition(waitForParentState, abortState.connectionPoints -> any(oclIsTypeOf(EntryPoint)), 3);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorDoAbort), SynchronizationKind::RECEIVE, 
 			null);
 	rtsc.transitions += currentTrans;
 	
-	-- Execute (ExitPoint) -> Idle
-	currentTrans := new Transition(executeState.connectionPoints -> any(oclIsTypeOf(ExitPoint)), idleState, 1);
+	-- Execute_SinglePhase (ExitPoint) -> Idle
+	currentTrans := new Transition(executeSinglePhaseState.connectionPoints -> any(oclIsTypeOf(ExitPoint)), idleState, 1);
 	rtsc.transitions += currentTrans;
+	
+	-- Execute_ThreePhase (ExitPoint) -> Idle
+	currentTrans := new Transition(executeThreePhaseState.connectionPoints -> any(oclIsTypeOf(ExitPoint)), idleState, 1);
+	rtsc.transitions += currentTrans; 
 	
 	-- Abort (ExitPoint) -> Idle
 	currentTrans := new Transition(abortState.connectionPoints -> any(oclIsTypeOf(ExitPoint)), idleState, 1);
@@ -736,13 +908,13 @@ helper generateEmbeddedCIAdaptationVoteState(inout rootNode : RootNode, inout vo
 	storeMinCommitTimeOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_commitTime, rootNode.getPrimitiveType(intType));
 	rtsc.operations += storeMinCommitTimeOp;
 	
-	var getNextPIForReqOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_getNextPIRequest, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	var getNextPIForReqOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_getNextPIRequest, executor.ports -> any(name = 'embeddedCI'));
 	getNextPIForReqOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
 	rtsc.operations += getNextPIForReqOp;
 	
 	var getMessageNameOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_getMessageName, rootNode.getPrimitiveType(intType));
 	getMessageNameOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
-	getMessageNameOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	getMessageNameOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, executor.ports -> any(name = 'embeddedCI'));
 	rtsc.operations += getMessageNameOp;
 	
 	var allRepliesReceivedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_allRepliesReceived, rootNode.getPrimitiveType(boolType));
@@ -751,7 +923,7 @@ helper generateEmbeddedCIAdaptationVoteState(inout rootNode : RootNode, inout vo
 	
 	var setReplyOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_setReply, rootNode.getPrimitiveType(voidType));
 	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
-	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, executor.ports -> any(name = 'embeddedCI'));
 	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_commit, rootNode.getPrimitiveType(boolType));
 	rtsc.operations += setReplyOp;
 	
@@ -839,8 +1011,8 @@ helper generateEmbeddedCIAdaptationVoteState(inout rootNode : RootNode, inout vo
 	return;
 }
 
---  generates the contents of the embeddedCI.Adaptation.Execute state
-helper generateEmbeddedCIAdaptationExecuteState(inout rootNode : RootNode, inout executeState : State){
+--  generates the contents of the embeddedCI.Adaptation.Execute_SinglePhase state
+helper generateEmbeddedCIAdaptationExecuteSinglePhaseState(inout rootNode : RootNode, inout executeState : State){
 	
 	-- create embedded statechart
 	var rtsc : RealtimeStatechart := createEmbeddedRTSC(executeState.name, executeState, 1);
@@ -857,7 +1029,7 @@ helper generateEmbeddedCIAdaptationExecuteState(inout rootNode : RootNode, inout
 	
 	var setFinishedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Execute_setFinished, rootNode.getPrimitiveType(voidType));
 	setFinishedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
-	setFinishedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	setFinishedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, executor.ports -> any(name = 'embeddedCI'));
 	rtsc.operations += setFinishedOp;
 	
 	var getPIForActionOp : Operation := rtsc.getOperationByName(genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction);
@@ -933,6 +1105,293 @@ helper generateEmbeddedCIAdaptationExecuteState(inout rootNode : RootNode, inout
 	return;
 }
 
+--  generates the contents of the embeddedCI.Adaptation.Execute_ThreePhase state
+helper generateEmbeddedCIAdaptationExecuteThreePhaseState(inout rootNode : RootNode, inout executeState : State){
+
+	var statechart := createEmbeddedRTSC(executeState.name, executeState, 1);
+	
+	-- variables
+	var finishedVar := new Variable(genVarExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_finished, rootNode.getPrimitiveType(boolType));
+	finishedVar.initializeExpression := new LiteralExpression('false');
+	statechart.variables += finishedVar;
+	
+	-- operations
+	var setFinishedSetupOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedStup, rootNode.getPrimitiveType(voidType));
+	setFinishedSetupOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
+	setFinishedSetupOp.parameters += new Parameter(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port, executor.ports->any(name = 'embeddedCI'));
+	statechart.operations += setFinishedSetupOp;
+	
+	var allEmbeddedFinishedSetupOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedSetup, rootNode.getPrimitiveType(boolType));
+	allEmbeddedFinishedSetupOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
+	statechart.operations += allEmbeddedFinishedSetupOp;
+	
+	var setFinishedFadingOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedFading, rootNode.getPrimitiveType(voidType));
+	setFinishedFadingOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
+	setFinishedFadingOp.parameters += new Parameter(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port, executor.ports->any(name = 'embeddedCI'));
+	statechart.operations += setFinishedFadingOp;
+	
+	var allEmbeddedFinishedFadingOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedFading, rootNode.getPrimitiveType(boolType));
+	allEmbeddedFinishedFadingOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
+	statechart.operations += allEmbeddedFinishedFadingOp;
+	
+	var setFinishedTeardownOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_setFinishedTeardown, rootNode.getPrimitiveType(voidType));
+	setFinishedTeardownOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
+	setFinishedTeardownOp.parameters += new Parameter(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port, executor.ports->any(name = 'embeddedCI'));
+	statechart.operations += setFinishedTeardownOp;
+	
+	var allEmbeddedFinishedTeardownOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_allEmbeddedFinishedTeardown, rootNode.getPrimitiveType(boolType));
+	allEmbeddedFinishedTeardownOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
+	statechart.operations += allEmbeddedFinishedTeardownOp;
+	
+	var resetActionPerformedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_resetActionPerformed, rootNode.getPrimitiveType(voidType));
+	resetActionPerformedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac, rootNode.getOrCreateAffectedComponentsType());
+	statechart.operations += resetActionPerformedOp;
+	
+	-- entry and exit points
+	var entryPoint : EntryPoint := new EntryPoint('entry'); 
+	executeState.connectionPoints += entryPoint;
+	
+	var exitPoint : ExitPoint := new ExitPoint('exit');
+	executeState.connectionPoints += exitPoint;
+	
+	-- states
+
+	var sendSetupState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendSetup);
+	sendSetupState.initial := true;
+	sendSetupState.urgent := true;
+	var getNextPortInstanceForActionOp := statechart.getOperationByName(genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction);
+	var opCall : OperationCall := new OperationCall(getNextPortInstanceForActionOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(getNextPortInstanceForActionOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	var block : Block := createAssignmentExpressioninBlock(statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_CurPort), opCall);
+	var allActionsPerformedOp := statechart.getOperationByName(genOpExecutor_EmbeddedCI_Adaptation_allActionsPerformed);
+	opCall := new OperationCall(allActionsPerformedOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(allActionsPerformedOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block.expressions += createAssignmentExpression(finishedVar, opCall);
+	sendSetupState.entryEvent := new EntryEvent(block, null);
+	statechart.states += sendSetupState;
+	
+	
+	var wait1State : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait1);
+	opCall := new OperationCall(allEmbeddedFinishedSetupOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(allEmbeddedFinishedSetupOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block  := createAssignmentExpressioninBlock(finishedVar, opCall);
+	wait1State.entryEvent := new EntryEvent(block, null);
+	statechart.states += wait1State;
+	
+	var executeLocalSetupState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalSetup);
+	statechart.states += executeLocalSetupState;
+	
+	var finishedSetupState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_FinishedSetup);
+	finishedSetupState.urgent := true;
+	statechart.states += finishedSetupState;
+	
+	var waitFadingState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitFading);
+	statechart.states += waitFadingState;
+	
+	var executeLocalFadingState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalFading);
+	executeLocalFadingState.urgent := true;
+	statechart.states += executeLocalFadingState;
+	
+	var sendFadingState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendFading);
+	sendFadingState.urgent := true;
+	opCall := new OperationCall(getNextPortInstanceForActionOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(getNextPortInstanceForActionOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block := createAssignmentExpressioninBlock(statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_CurPort), opCall);
+	opCall := new OperationCall(allActionsPerformedOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(allActionsPerformedOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block.expressions += createAssignmentExpression(finishedVar, opCall);
+	sendFadingState.entryEvent := new EntryEvent(block, null);
+	statechart.states += sendFadingState;
+	
+	var wait2State : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait2);
+	opCall := new OperationCall(allEmbeddedFinishedFadingOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(allEmbeddedFinishedFadingOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block  := createAssignmentExpressioninBlock(finishedVar, opCall);
+	wait2State.entryEvent := new EntryEvent(block, null);
+	statechart.states += wait2State;
+	
+	var finishedFadingState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_FinishedFading);
+	finishedFadingState.urgent := true;
+	statechart.states += finishedFadingState;
+	
+	var waitTeardownState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitTeardown);
+	statechart.states += waitTeardownState;
+	
+	var executeLocalTeardownState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_ExecuteLocalTeardown);
+	executeLocalTeardownState.urgent := true;
+	statechart.states += executeLocalTeardownState;
+	
+	var waitLocalState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_WaitLocal);
+	statechart.states += waitLocalState;
+	
+	var sendTeardownState : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_SendTeardown);
+	sendTeardownState.urgent := true;
+	opCall := new OperationCall(getNextPortInstanceForActionOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(getNextPortInstanceForActionOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block := createAssignmentExpressioninBlock(statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_CurPort), opCall);
+	opCall := new OperationCall(allActionsPerformedOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(allActionsPerformedOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block.expressions += createAssignmentExpression(finishedVar, opCall);
+	sendTeardownState.entryEvent := new EntryEvent(block, null);
+	statechart.states += sendTeardownState;
+	
+	var wait3State : State := new State(genStateExecutor_embeddedCI_Adaptation_ExecuteThreePhase_Wait3);
+	opCall := new OperationCall(allEmbeddedFinishedTeardownOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(allEmbeddedFinishedTeardownOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block  := createAssignmentExpressioninBlock(finishedVar, opCall);
+	wait3State.entryEvent := new EntryEvent(block, null);
+	statechart.states += wait3State;
+	
+	-- transitions
+	var curTransition : Transition;
+	
+	-- Entry -> SendSetup
+	curTransition := new Transition(entryPoint, sendSetupState, 1);
+	statechart.transitions += curTransition;
+	
+	-- SendSetup -> SendSetup
+	curTransition := new Transition(sendSetupState, sendSetupState, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'false');
+	var curPortExpression := new TypedNamedElementExpression(statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_CurPort));
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorEmbeddedCISendSetup), SynchronizationKind::SEND, curPortExpression.deepclone().oclAsType(Expression));
+	
+	-- SendSetup -> Wait1
+	curTransition := new Transition(sendSetupState, wait1State, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'true');
+	curTransition.action := new Action('finished := false',createAssignmentExpressioninBlock(finishedVar, new LiteralExpression('false')));
+	
+	-- Wait1 -> Wait1
+	curTransition := new Transition(wait1State, wait1State, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'false');
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorEmbeddedCIReconfFinished), SynchronizationKind::RECEIVE, null);
+	opCall := new OperationCall(setFinishedSetupOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(setFinishedSetupOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(setFinishedSetupOp.getParameterByName(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port), statechart.getVariableByName(genVarExecutor_EmbeddedCI_SubPort));
+	block := new Block();
+	block.expressions += opCall;
+	curTransition.action := new Action('setFinishedSetup(ac, subPort)', block);
+	
+	-- Wait1 -> ExecuteLocalSetup
+	curTransition := new Transition(wait1State, executeLocalSetupState, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'true');
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorLocalSetup), SynchronizationKind::SEND, null);
+	
+	-- ExecuteLocalSetup -> FinishedSetup
+	curTransition := new Transition(executeLocalSetupState, finishedSetupState, 1);
+	statechart.transitions += curTransition;
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorLocalFinish), SynchronizationKind::RECEIVE, null);
+	
+	-- FinishedSetup -> WaitFading
+	curTransition := new Transition(finishedSetupState, waitFadingState, 1);
+	statechart.transitions += curTransition;
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorFinishPhase), SynchronizationKind::SEND, null);
+	opCall := new OperationCall(resetActionPerformedOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(resetActionPerformedOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block := createSimpleAssignmentExpressioninBlock(finishedVar, 'false');
+	block.expressions += opCall;
+	curTransition.action := new Action('finished := false; resetActionPerformed(ac);', block);
+	
+	-- WaitFading -> ExecuteLocalFading
+	curTransition := new Transition(waitFadingState, executeLocalFadingState, 1);
+	statechart.transitions += curTransition;
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorPerformFading), SynchronizationKind::RECEIVE, null);
+	
+	-- ExecuteLocalFading -> SendFading
+	curTransition := new Transition(executeLocalFadingState, sendFadingState, 1);
+	statechart.transitions += curTransition;
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorLocalFading), SynchronizationKind::SEND, null);
+	
+	-- SendFading -> SendFading
+	curTransition := new Transition(sendFadingState, sendFadingState, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'false');
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorEmbeddedCISendFading), SynchronizationKind::SEND, curPortExpression.deepclone().oclAsType(Expression));
+	
+	-- SendFading -> Wait2
+	curTransition := new Transition(sendFadingState, wait2State, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'true');
+	curTransition.action := new Action('finished := false',createAssignmentExpressioninBlock(finishedVar, new LiteralExpression('false')));
+	
+	-- Wait2 -> Wait2
+	curTransition := new Transition(wait2State, wait2State, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'false');
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorEmbeddedCIReconfFinished), SynchronizationKind::RECEIVE, null);
+	opCall := new OperationCall(setFinishedFadingOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(setFinishedFadingOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(setFinishedFadingOp.getParameterByName(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port), statechart.getVariableByName(genVarExecutor_EmbeddedCI_SubPort));
+	block := new Block();
+	block.expressions += opCall;
+	curTransition.action := new Action('setFinishedFading(ac, subPort)', block);
+	
+	-- Wait2 -> FinishedFading
+	curTransition := new Transition(wait2State, finishedFadingState, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'true');
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorLocalFinish), SynchronizationKind::RECEIVE, null);
+	
+	-- FinishedFading -> WaitTeardown
+	curTransition := new Transition(finishedFadingState, waitTeardownState, 1);
+	statechart.transitions += curTransition;
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorFinishPhase), SynchronizationKind::SEND, null);
+	opCall := new OperationCall(resetActionPerformedOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(resetActionPerformedOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	block := createSimpleAssignmentExpressioninBlock(finishedVar, 'false');
+	block.expressions += opCall;
+	curTransition.action := new Action('finished := false; resetActionPerformed(ac);', block);
+	
+	-- WaitTeardown -> ExecuteLocalTeardown
+	curTransition := new Transition(waitTeardownState, executeLocalTeardownState, 1);
+	statechart.transitions += curTransition;
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorPerformTeardown), SynchronizationKind::RECEIVE, null);
+	
+	-- ExecuteLocalTeardown -> WaitLocal
+	curTransition := new Transition(executeLocalTeardownState, waitLocalState, 1);
+	statechart.transitions += curTransition;
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorLocalTeardown), SynchronizationKind::SEND, null);
+	
+	-- WaitLocal -> SendTeardown
+	curTransition := new Transition(waitLocalState, sendTeardownState, 1);
+	statechart.transitions += curTransition;
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorLocalFinish), SynchronizationKind::RECEIVE, null);
+	
+	-- SendTeardown -> SendTeardown
+	curTransition := new Transition(sendTeardownState, sendTeardownState, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'false');
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorEmbeddedCISendTeardown), SynchronizationKind::SEND, curPortExpression.deepclone().oclAsType(Expression));
+	
+	-- SendTeardown -> Wait3
+	curTransition := new Transition(sendTeardownState, wait3State, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'true');
+	curTransition.action := new Action('finished := false',createAssignmentExpressioninBlock(finishedVar, new LiteralExpression('false')));
+	
+	-- Wait3 -> Wait3
+	curTransition := new Transition(wait3State, wait3State, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'false');
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorEmbeddedCIReconfFinished), SynchronizationKind::RECEIVE, null);
+	opCall := new OperationCall(setFinishedTeardownOp); 
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(setFinishedTeardownOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_ac), statechart.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(setFinishedTeardownOp.getParameterByName(genOpExecutor_EmbeddedCI_Adaptation_ExecuteThreePhase_port), statechart.getVariableByName(genVarExecutor_EmbeddedCI_SubPort));
+	block := new Block();
+	block.expressions += opCall;
+	curTransition.action := new Action('setFinishedTeardown(ac, subPort)', block);
+	
+	-- Wait3 -> Exit
+	curTransition := new Transition(wait3State, exitPoint, 1);
+	statechart.transitions += curTransition;
+	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'true');
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorFinished2PC), SynchronizationKind::SEND, null);
+	
+}
+
 --  generates the contents of the embeddedCI.Adaptation.Abort state
 helper generateEmbeddedCIAdaptationAbortState(inout rootNode : RootNode, inout abortState : State){
 	
@@ -1006,6 +1465,15 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	var timeForExecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForExec, rootNode.getPrimitiveType(intType));
 	rtsc.variables += timeForExecVar;
 	
+	var timeForSetupVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForSetup, rootNode.getPrimitiveType(intType));
+	rtsc.variables += timeForSetupVar;
+	
+	var timeForFadingVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForFading, rootNode.getPrimitiveType(intType));
+	rtsc.variables += timeForFadingVar;
+	
+	var timeForTeardownVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForTeardown, rootNode.getPrimitiveType(intType));
+	rtsc.variables += timeForTeardownVar;
+	
 	-- create clocks
 	var c2Clock : Clock := new Clock(genClockExecutor_embeddedCI_c2);
 	rtsc.clocks += c2Clock;
@@ -1035,7 +1503,25 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	rtsc.states += executeState;
 	
 	var awaitFinishState : State := new State(genStateExecutor_embeddedCI_Subrole_AwaitFinish);
-	rtsc.states += awaitFinishState;
+	rtsc.states += awaitFinishState;	
+	
+	var executeSetupState : State := new State(genStateExecutor_embeddedCI_Subrole_ExecuteSetup);
+	rtsc.states += executeSetupState;
+	executeSetupState.invariants += new ClockConstraint(c2Clock, ComparingOperator::LESS_OR_EQUAL, new TypedNamedElementExpression(timeForSetupVar), null);
+	
+	var waitFadingState : State := new State(genStateExecutor_embeddedCI_Subrole_WaitFading);
+	rtsc.states += waitFadingState;
+	
+	var executeFadingState : State := new State(genStateExecutor_embeddedCI_Subrole_ExecuteFading);
+	rtsc.states += executeFadingState;
+	executeFadingState.invariants += new ClockConstraint(c2Clock, ComparingOperator::LESS_OR_EQUAL, new TypedNamedElementExpression(timeForFadingVar), null);
+	
+	var waitTeardownState : State := new State(genStateExecutor_embeddedCI_Subrole_WaitTeardown);
+	rtsc.states += waitTeardownState;
+	
+	var executeTeardownState : State := new State(genStateExecutor_embeddedCI_Subrole_ExecuteTeardown);
+	rtsc.states += executeTeardownState;
+	executeTeardownState.invariants += new ClockConstraint(c2Clock, ComparingOperator::LESS_OR_EQUAL, new TypedNamedElementExpression(timeForTeardownVar), null);
 	
 	-- create transitions
 	var currentTrans : Transition = null;
@@ -1102,6 +1588,14 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	currentTrans.clockResets += c2Clock;
 	rtsc.transitions += currentTrans;
 	
+	-- ReplyReceived -> ExecuteSetup
+	currentTrans := new Transition(replyReceivedState, executeSetupState, 3);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendSetup), SynchronizationKind::RECEIVE, 
+			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSetup), EventKind::RAISE);
+	currentTrans.clockResets += c2Clock;
+	rtsc.transitions += currentTrans; 
+	
 	-- Execute -> Idle
 	currentTrans := new Transition(executeState, idleState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCIReconfFinished), SynchronizationKind::SEND, 
@@ -1111,39 +1605,52 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 								new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null)));
 	rtsc.transitions += currentTrans;
 	
+	
+	
+	-- ExecuteSetup -> WaitFading
+	currentTrans := new Transition(executeSetupState, waitFadingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCIReconfFinished), SynchronizationKind::SEND, null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::TRIGGER);
+	currentTrans.action := new Action('subPort := SELF', createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_SubPort), 
+								new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null)));
+	rtsc.transitions += currentTrans;
+	
+	-- WaitFading -> ExecuteFading
+	currentTrans := new Transition(waitFadingState, executeFadingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendFading), SynchronizationKind::RECEIVE, 
+			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFading), EventKind::RAISE);
+	currentTrans.clockResets += c2Clock;
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteFading -> WaitTeardown
+	currentTrans := new Transition(executeFadingState, waitTeardownState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCIReconfFinished), SynchronizationKind::SEND, null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::TRIGGER);
+	currentTrans.action := new Action('subPort := SELF', createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_SubPort), 
+								new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null)));
+	rtsc.transitions += currentTrans;
+	
+	-- WaitTeardown -> ExecuteTeardown
+	currentTrans := new Transition(waitTeardownState, executeTeardownState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendTeardown), SynchronizationKind::RECEIVE, 
+			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeTeardown), EventKind::RAISE);
+	currentTrans.clockResets += c2Clock;
+	rtsc.transitions += currentTrans;
+	
+	-- ExecuteTeardown -> Idle
+	currentTrans := new Transition(executeTeardownState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCIReconfFinished), SynchronizationKind::SEND, null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::TRIGGER);
+	currentTrans.action := new Action('subPort := SELF', createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_SubPort), 
+								new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null)));
+	rtsc.transitions += currentTrans; 
+	
 	return;
 }
 
--- traverses to the parents of rtsc until an RTSC is reached whole BehavioralElement is the Executor
-helper getExecutor(in rtsc : RealtimeStatechart) : Executor{
 
-	var curRTSC : RealtimeStatechart := rtsc;
-	
-	while(not (curRTSC.oclIsUndefined() or curRTSC.behavioralElement.oclIsTypeOf(Executor))){
-		if(not curRTSC.parentRegion.oclIsUndefined()) then {
-			curRTSC := curRTSC.parentRegion.parentState.parentStatechart;
-		} else {
-			curRTSC := null;
-		} endif;
-	};
-	
-	if(curRTSC.oclIsUndefined()) then{
-		return null;
-	} endif;
-
-	return curRTSC.behavioralElement.oclAsType(Executor);
-}
-
--- returns the manager of the reconfiguration controller containing the executor that is generated here
-helper getManager(in rtsc : RealtimeStatechart) : Manager{
-	var executor : Executor := getExecutor(rtsc);
-	
-	if(executor.oclIsUndefined()) then {
-		return null;
-	} endif;
-	
-	return executor.reconfigurationController.manager;
-}
 
 helper generateVariableStatechartParts(inout rootNode : RootNode, inout executor : Executor, inout rtsc : RealtimeStatechart){
 	
@@ -1153,29 +1660,21 @@ helper generateVariableStatechartParts(inout rootNode : RootNode, inout executor
 	-- generate blue parts for each interface entry in parent port
 	executor.reconfigurationExecutionPorts -> any(name = 'parent').interfaceEntries -> map generateParentPortInterfaceEntry(rootNode, rtsc);
 	
-	-- generate brown parts for each interface entry in embeddedCI port
+	-- generate brown (green/yellow for subrole) parts for each interface entry in embeddedCI port
 	executor.reconfigurationExecutionPorts -> any(name = 'embeddedCI').interfaceEntries -> map generateEmbeddedCIPortInterfaceEntry(rootNode, rtsc);
+	
+	-- generate green parts for each reconfiguration rule that is executed using single-phase execution
+	executor.reconfigurationExecutionPorts -> any(name = 'parent').interfaceEntries -> map generateParentPortInterfaceEntrySinglePhaseExecution(rootNode, rtsc);
+	
+	-- generate yellow parts for each reconfiguration rule that is executed using three-phase execution
+	executor.reconfigurationExecutionPorts -> any(name = 'parent').interfaceEntries -> map generateParentPortInterfaceEntryThreePhaseExecution(rootNode, rtsc);
 	
 	return;
 }
 
+
 -- generates the purple parts of the generation template for each ExecutorSpecificationEntry
 mapping ExecutorSpecificationEntry::generateExecutorSpecificationEntry(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
-	
-	-- retrieve internal behavior statechart and the necessary states
-	var internalRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_Internal);
-	var executeState : State := internalRTSC.getStateByName(genStateExecutor_InternalBehavior_Execute);
-	var reportState : State := internalRTSC.getStateByName(genStateExecutor_InternalBehavior_Report);
-	
-	-- create transition in the internal behavior RTSC
-	var currentTrans : Transition := null;
-	
-	currentTrans := new Transition(executeState, reportState, self.id + 1);
-	currentTrans.guard := new LogicalExpression(createSimpleCompareGuardExpression(internalRTSC.getVariableByName(genVarExecutor_TwoPCResult), 'true'), 
-							LogicOperator::AND,
-							createSimpleCompareGuardExpression(internalRTSC.getVariableByName(genVarExecutor_Reconfiguration), self.id.toString()));
-	currentTrans.action := new Action('Call Reconfiguration', createReconfigurationRuleCallExpressionInBlock(self.reconfigurationRule));
-	internalRTSC.transitions += currentTrans;
 	
 	-- retrieve embeddedCI.adaptation RTSC including the states
 	var adaptRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI).getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_adapt);
@@ -1188,6 +1687,7 @@ mapping ExecutorSpecificationEntry::generateExecutorSpecificationEntry(inout roo
 	generateEmbeddedCIAdaptationPrepareState(rootNode, prepareState, self);
 	
 	-- create transitions from/to Prepare state in the adaptation RTSC
+	var currentTrans : Transition;
 	currentTrans := new Transition(idleState, prepareState.connectionPoints -> any(oclIsTypeOf(EntryPoint)), self.id);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(adaptRTSC, genSyncChanExecutorInit2PC), SynchronizationKind::RECEIVE, 
 			new LiteralExpression(self.id.toString()));
@@ -1260,7 +1760,7 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 	
 	-- query the manager spec to obtain the time for planning
 	var timeForPlanning : Integer := 0;
-	var manager : Manager := getManager(rtsc);
+
 	if(not manager.oclIsUndefined()) then{
 		var entry : ManagerSpecificationEntry := manager.specificationEntries -> any(messageType.name = self.messageType.name);
 		if(not entry.oclIsUndefined() and entry.invokePlanner) then{
@@ -1321,7 +1821,7 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 	parentRTSC.transitions += currentTrans;
 	
 	---------------------------------------------------------------------------------------
-	-- Perform modification of parent RTSC
+	-- Perform modification of events RTSC
 	---------------------------------------------------------------------------------------
 	
 	-- obtain clock
@@ -1348,8 +1848,9 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 property embeddedCIInterfaceEntryNumber : Integer = 1;
 
 -- generates the brown parts of the generation template for each interface entry of the embeddedCI port
+
 mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart)
-when {self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationSinglePhase)}{
+{
 	
 	-- obtain embeddedCI and subrole RTSCs
 	var embeddedCIRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI);
@@ -1371,8 +1872,21 @@ when {self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationSingleP
 			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
 	var block : Block := createSimpleAssignmentExpressioninBlock(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForDec), 
 									self.timeForDecision.value.oclAsType(LiteralExpression).value);
-	block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForExec), 
+	
+	//generate green AssignmentExpression
+	if(self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationSinglePhase))
+		block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForExec), 
 									self.timeForExecutionPhase.oclAsType(ExecutionTimingSpecificationSinglePhase).timeForExecution.value.oclAsType(LiteralExpression).value);
+	//generate yellow AssignmentExpressions
+	if(self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationThreePhase)){
+		block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForSetup), 
+									self.timeForExecutionPhase.oclAsType(ExecutionTimingSpecificationThreePhase).timeForSetup.value.oclAsType(LiteralExpression).value);
+		block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForFading), 
+									self.timeForExecutionPhase.oclAsType(ExecutionTimingSpecificationThreePhase).timeForFading.value.oclAsType(LiteralExpression).value);
+		block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForTeardown), 
+									self.timeForExecutionPhase.oclAsType(ExecutionTimingSpecificationThreePhase).timeForTeardown.value.oclAsType(LiteralExpression).value);
+	};
+	
 	currentTrans.events := new AsynchronousMessageEvent(self.messageType, EventKind::RAISE);
 	currentTrans.action := new Action('Assign Vars', block);
 	currentTrans.clockResets += subroleRTSC.clocks -> any(name = genClockExecutor_embeddedCI_c2);
@@ -1380,4 +1894,204 @@ when {self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationSingleP
 	
 	-- increase interface entry number
 	embeddedCIInterfaceEntryNumber := embeddedCIInterfaceEntryNumber + 1;
+}
+
+-- generate green parts for each reconfiguration rule that is executed using single-phase execution
+mapping ReconfigurationExecutionPortInterfaceEntry :: generateParentPortInterfaceEntrySinglePhaseExecution(inout rootNode : RootNode, inout rtsc: RealtimeStatechart)
+when{self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationSinglePhase)}{
+	var theReconfigurationRule := self.messageType.getReconfigurationRule(manager);
+	
+	-- internal behavior
+	var internalBehaviorRtsc := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Internal);
+	
+	//TODO add implementation
+	var y1Operation := new Operation(theReconfigurationRule.name, rootNode.getPrimitiveType('VOID'));
+	internalBehaviorRtsc.operations += y1Operation;
+	
+		-- Idle -> Start
+	var transition := map getOrCreateInternalBehaviorIdle2StartTransition4SinglePhase();
+	
+	if(transition.action.oclIsUndefined())
+		transition.action := new Action('singlePhase := true', createSimpleAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_SinglePhase), 'true'));
+	
+	if(transition.guard.oclIsUndefined())	
+	then{
+		transition.guard := createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_Reconfiguration), theReconfigurationRule.getID(executor).toString());
+	}
+		
+	else{
+		transition.guard := transition.guard.appendToLogicalExpression(LogicOperator::OR, theReconfigurationRule.getID(executor).toString());
+	}
+	endif;
+		
+		-- Execute -> Report
+	var executeState := internalBehaviorRtsc.getStateByName(genStateExecutor_InternalBehavior_Execute);
+	var reportState := internalBehaviorRtsc.getStateByName(genStateExecutor_InternalBehavior_Report);
+	
+	transition := new Transition(executeState, reportState, 1);
+	//singlePhase
+	var guard : Expression := new TypedNamedElementExpression(rtsc.getVariableByName(genVarExecutor_SinglePhase));
+	//singlePhase && twoPCResult == true
+	guard := guard.appendToLogicalExpression(LogicOperator::AND, createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_TwoPCResult), 'true')); 
+	// singlePhase && twoPCResult == true && reconfiguration == Y1.id
+	guard := guard.appendToLogicalExpression(LogicOperator::AND, createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_Reconfiguration), theReconfigurationRule.getID(executor).toString()));
+	
+	transition.guard := guard;
+	
+	var block := new Block();
+	block.expressions+= new OperationCall(y1Operation);
+	transition.action := new Action(y1Operation.name+'()', block); 
+	internalBehaviorRtsc.transitions += transition;
+}
+
+mapping ReconfigurationExecutionPortInterfaceEntry :: generateParentPortInterfaceEntryThreePhaseExecution(inout rootNode : RootNode, inout rtsc: RealtimeStatechart)
+when{self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationThreePhase)}{
+	
+	var theReconfigurationRule := self.messageType.getReconfigurationRule(manager);
+	
+	-- internal behavior
+	var internalBehaviorRtsc := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Internal);
+
+		-- Idle -> Start
+	var transition := map getOrCreateInternalBehaviorIdle2StartTransition4ThreePhase();
+	
+	if(transition.action.oclIsUndefined())
+		transition.action := new Action('singlePhase := false', createSimpleAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_SinglePhase), 'false'));
+	
+	if(transition.guard.oclIsUndefined())	
+	then{
+		transition.guard := createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_Reconfiguration), theReconfigurationRule.getID(executor).toString());
+	}
+		
+	else{
+		transition.guard := transition.guard.appendToLogicalExpression(LogicOperator::OR, theReconfigurationRule.getID(executor).toString());
+	}
+	endif;
+	
+		-- LocalExecuteY2
+	var localExecuteY2State := self.map generateInternalBehaviorVariableLocalExecuteY2State(rootNode, internalBehaviorRtsc);
+	internalBehaviorRtsc.states += localExecuteY2State;
+	
+	
+			-- Wait -> EntryPoint
+	var curTransition : Transition;
+	
+	var waitState : State := internalBehaviorRtsc.getStateByName(genStateExecutor_InternalBehavior_Wait);
+	var entryPoint := localExecuteY2State.connectionPoints[EntryPoint]->any(true);
+	
+	curTransition := new Transition(waitState, entryPoint, 1);
+	curTransition.guard := createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_Reconfiguration), theReconfigurationRule.getID(executor).toString());
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(internalBehaviorRtsc, genSyncChanExecutorLocalSetup), SynchronizationKind::RECEIVE, null);
+	internalBehaviorRtsc.transitions += curTransition;
+	
+			-- ExitPoint -> Execute
+	var exitPoint := localExecuteY2State.connectionPoints[ExitPoint]->any(true);
+	var executeState : State := internalBehaviorRtsc.getStateByName(genStateExecutor_InternalBehavior_Execute);
+	curTransition := new Transition(exitPoint, executeState, 1);
+	
+	internalBehaviorRtsc.transitions += curTransition;
+}
+
+mapping ReconfigurationExecutionPortInterfaceEntry :: generateInternalBehaviorVariableLocalExecuteY2State(inout rootNode : RootNode, inout rtsc: RealtimeStatechart) : State
+when{self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationThreePhase)}{
+	var theReconfigurationRule := self.messageType.getReconfigurationRule(manager);
+
+	name := genStateExecutor_InternalBehavior_LocalExecuteY2Prefix+theReconfigurationRule.name;
+	
+	var region := new Region();
+	region.priority := 1;
+	embeddedRegions += region;
+	
+	var statechart := new RealtimeStatechart(name+'EmbeddedStatechart');
+	region.embeddedStatechart := statechart;
+	
+	-- Operations
+	var y2_Setup := new Operation(theReconfigurationRule.name+'_setup', rootNode.getPrimitiveType('VOID'));
+	statechart.operations += y2_Setup;
+	
+	var y2_Fading := new Operation(theReconfigurationRule.name+'_fading', rootNode.getPrimitiveType('VOID'));
+	statechart.operations += y2_Fading;
+	
+	var y2_Teardown := new Operation(theReconfigurationRule.name+'_teardown', rootNode.getPrimitiveType('VOID'));
+	statechart.operations += y2_Teardown;
+	
+	-- Entry/Exit Points
+	var entryPoint := new EntryPoint('entry'+name);
+	connectionPoints += entryPoint;
+	
+	var exitPoint := new ExitPoint('exit'+name);
+	connectionPoints += exitPoint;
+	
+	-- States
+	var setupState := new State(genStateExecutor_InternalBehavior_LocalExecuteY2_Setup);
+	setupState.initial := true;
+	statechart.states += setupState;
+	
+	var waitFadingState := new State(genStateExecutor_InternalBehavior_LocalExecuteY2_WaitFading);
+	statechart.states += waitFadingState;
+	
+	var fadingState := new State(genStateExecutor_InternalBehavior_LocalExecuteY2_Fading);
+	statechart.states += fadingState;
+	
+	var waitTeardownState := new State(genStateExecutor_InternalBehavior_LocalExecuteY2_WaitTeardown);
+	statechart.states += waitTeardownState;
+	
+	var teardownState := new State(genStateExecutor_InternalBehavior_LocalExecuteY2_Teardown);
+	statechart.states += teardownState;
+	
+	var finishState := new State(genStateExecutor_InternalBehavior_LocalExecuteY2_Finish);
+	statechart.states += finishState;
+	
+	-- transitions
+	
+	-- Entry -> Setup
+	var curTransition := new Transition(entryPoint , setupState, 1);
+	var block := new Block();
+	block.expressions+= new OperationCall(y2_Setup);
+	curTransition.action := new Action(y2_Setup.name+'()', block); 
+	statechart.transitions += curTransition;
+	
+	-- Setup -> WaitFading
+	curTransition := new Transition(setupState , waitFadingState, 1);
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorLocalFinish), SynchronizationKind::SEND, null);
+	statechart.transitions += curTransition;
+		
+	-- WaitFading -> Fading
+	curTransition := new Transition(waitFadingState, fadingState, 1);
+	block := new Block();
+	block.expressions+= new OperationCall(y2_Fading);
+	curTransition.action := new Action(y2_Fading.name+'()', block); 
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorLocalFading), SynchronizationKind::RECEIVE, null);
+	statechart.transitions += curTransition;	
+	
+	-- Fading -> WaitTeardown
+	curTransition := new Transition(fadingState, waitTeardownState, 1);
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorLocalFinish), SynchronizationKind::SEND, null);
+	statechart.transitions += curTransition;
+	
+	-- WaitTeardown -> Teardown
+	curTransition := new Transition(waitTeardownState, teardownState, 1);
+	block := new Block();
+	block.expressions+= new OperationCall(y2_Teardown);
+	curTransition.action := new Action(y2_Teardown.name+'()', block);
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorLocalTeardown), SynchronizationKind::RECEIVE, null); 
+	statechart.transitions += curTransition;
+	
+	-- Teardown -> Finish
+	curTransition := new Transition(teardownState, finishState, 1);
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorLocalFinish), SynchronizationKind::SEND, null);
+	statechart.transitions += curTransition;	
+	
+	-- Finish -> Exit
+	curTransition := new Transition(finishState, exitPoint, 1);
+	curTransition.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinished2PC), SynchronizationKind::RECEIVE, null);
+	statechart.transitions += curTransition;
+}
+
+mapping getOrCreateInternalBehaviorIdle2StartTransition4SinglePhase() : Transition{
+	priority := 1;
+}
+
+mapping getOrCreateInternalBehaviorIdle2StartTransition4ThreePhase() : Transition{
+	priority := 2;
 }

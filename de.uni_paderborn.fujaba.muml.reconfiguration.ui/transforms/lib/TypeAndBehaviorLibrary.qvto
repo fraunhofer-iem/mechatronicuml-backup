@@ -27,6 +27,7 @@ property intType : String = PrimitiveTypes::INT.repr();
 property longType : String = PrimitiveTypes::LONG.repr();
 property doubleType : String = PrimitiveTypes::DOUBLE.repr();
 
+
 ------------ helper functions --------------
 
 -- return the affected component type used in the executor for storing the affected children of 
@@ -173,4 +174,9 @@ constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
 	} else {
 		upperBound := new NaturalNumber(uBound, false);
 	} endif;
+}
+
+constructor ModelElementCategory::ModelElementCategory(theKey : String, theName : String){
+	name := theName;
+	key := theKey;
 }

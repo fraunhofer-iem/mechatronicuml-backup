@@ -36,13 +36,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Structdatatyp
  * @generated
  */
 public class AttributeItemProvider
-	extends NamedElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

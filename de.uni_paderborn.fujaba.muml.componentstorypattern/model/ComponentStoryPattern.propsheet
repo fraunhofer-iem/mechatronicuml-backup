@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="ComponentStoryPattern.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties" name="ComponentStoryPattern Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorypattern</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorypattern.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+  <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
+  <packages>
+    <genPackage href="ComponentStoryPattern.genmodel#//componentstorypattern"/>
+    <classes>
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes>
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.1">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
+    </classes>
+    <classes>
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/PortVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/PortVariable/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.0"/>
+      <superClasses href="#//@packages.0/@classes.1"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.1">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ConnectorVariable"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.1"/>
+      <superClasses href="#//@packages.0/@classes.1"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.5">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.5">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.3">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable/multiPortVariable"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.3">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+      <properties category="//@packages.0/@classes.9/@propertyCategories.0">
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/subPortVariables"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.9/@properties.0"/>
+    </classes>
+    <classes>
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/TriggerEmbeddedComponentExpression"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.1/@classes.0"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.4">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable/appliedFadingFunction"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.4">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>

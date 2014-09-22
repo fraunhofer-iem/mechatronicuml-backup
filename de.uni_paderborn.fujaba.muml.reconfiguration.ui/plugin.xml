@@ -24,6 +24,13 @@
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
             name="Generate RuleBasedReconfigurationController">
       </command>
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.handlers.ComputePossibleConfigurationsHandler"
+            description="Computes possible Configurations for a ReconfigurableStructuredComponent"
+            id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
+            name="Compute Possible Configurations">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -81,6 +88,29 @@
                icon="icons/MakeReconfigurable.gif"
                id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
                label="Generate RuleBasedReconfigurationController"
+               style="push">
+            <visibleWhen>
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false">
+                     <or>
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
+                        </instanceof>
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
+                        </instanceof>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
+               icon="icons/MakeReconfigurable.gif"
+               id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.ComputePossibleConfigurationsCommand"
+               label="Compute Possible Configurations"
                style="push">
             <visibleWhen>
                <with
@@ -182,6 +212,15 @@
                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.FadingComponentTool"
                   kind="tool"
                   label="Fading Component"
+                  path="/reconfDrawer/"
+                  permission="Full">
+            </entry>
+            <entry
+                  defineOnly="false"
+                  description="Creates a broadcast port."
+                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.BroadcastPortTool"
+                  kind="tool"
+                  label="Broadcast Port"
                   path="/reconfDrawer/"
                   permission="Full">
             </entry>
@@ -321,6 +360,20 @@
                 <param
                       name="semanticHint"
                       value="2079">
+                </param>
+             </metamodelType>
+          </metamodel>
+          <metamodel
+                nsURI="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0">
+             <metamodelType
+                   eclass="BroadcastPort"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.BroadcastPortEditHelper"
+                   id="de.uni_paderborn.fujaba.muml.reconfiguration.BroadcastPort_3078"
+                   kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+                   name="BroadcastPort">
+                <param
+                      name="semanticHint"
+                      value="3078">
                 </param>
              </metamodelType>
           </metamodel>

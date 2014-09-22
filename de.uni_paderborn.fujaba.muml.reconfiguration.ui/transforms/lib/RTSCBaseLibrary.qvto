@@ -25,6 +25,16 @@ library RTSCBaseLibrary;
 
 ------------ helper functions --------------
 
+-- returns the model element category for real-time statecharts.
+helper getOrCreateRTSCCategory(inout rootNode : RootNode) : ModelElementCategory {
+	var rtscCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+	if(rtscCategory.oclIsUndefined()){
+		rtscCategory := new ModelElementCategory('de.uni_paderborn.fujaba.muml.realtimestatechart.category', 'realtimestatechart');
+		rootNode.categories += rtscCategory;
+	};
+	return rtscCategory;
+}
+
 -- adds a region including an embedded RTSC with the specified name to the specified state
 helper createEmbeddedRTSC(in name : String, inout state : State, in priority : Integer) : RealtimeStatechart{
 	var rtsc : RealtimeStatechart := new RealtimeStatechart(name);
@@ -35,6 +45,16 @@ helper createEmbeddedRTSC(in name : String, inout state : State, in priority : I
 	state.embeddedRegions += region;
 	
 	return rtsc;
+}
+
+-- creates a TypedNamedElementExpression or the negation (UnaryExpression with embedded TypedNamedElementExpression) depending on the bool parameter
+helper createSimpleGuardExpression(in variable : Variable, in bool : Boolean) : Expression{
+	var tNE : TypedNamedElementExpression := new TypedNamedElementExpression(variable);
+	
+	if(not bool)
+		return new UnaryExpression(UnaryOperator::NOT, tNE);
+	
+	return tNE;
 }
 
 -- creates a comparison expression where a variable is compared to a literal
@@ -54,6 +74,7 @@ helper createCompareGuardExpression(in variable : Variable, in variable2 : Varia
 	
 	return new ComparisonExpression(lhs, ComparingOperator::EQUAL, rhs);
 }
+
 
 -- creates a block containing one assignment expression where a literal is assigned to a variable
 helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newValue : String) : Block{
@@ -145,11 +166,6 @@ helper getSynchronizationChannel(in rtsc : RealtimeStatechart, in channelName : 
 
 ------------ helper queries ---------------
 
--- returns the model element category for real-time statecharts.
-query RootNode::getRTSCCategory() : ModelElementCategory {
-	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
-}
-
 -- returns the variable with the given name that is accessible from within the realtime statechart
 query RealtimeStatechart::getVariableByName(in theName : String) : Variable{
 	return (self.allAvailableVariables -> any(name = theName));
@@ -206,7 +222,7 @@ constructor Clock::Clock(in newName : String){
 constructor Transition::Transition(in srcState : Vertex, in tgtState : Vertex, in prio : Integer){
 	source := srcState;
 	target := tgtState;
-	priority := prio;
+	priority := source.getUniqueTransitionPriority(prio);
 }
 
 constructor SynchronizationChannel::SynchronizationChannel(in newName : String, in type : DataType){
@@ -269,4 +285,9 @@ constructor ClockConstraint::ClockConstraint(in newClock : Clock, in op : Compar
 	clock := newClock;
 	operator := op;
 	bound := new TimeValue(newValue, newUnit);
+}
+
+constructor UnaryExpression::UnaryExpression(in theOperator : UnaryOperator, in theEnclosedExpression : Expression){
+	operator := theOperator;
+	enclosedExpression := theEnclosedExpression;
 }

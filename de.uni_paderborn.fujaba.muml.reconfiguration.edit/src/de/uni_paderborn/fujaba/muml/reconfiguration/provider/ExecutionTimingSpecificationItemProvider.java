@@ -27,13 +27,7 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
  * @generated
  */
 public class ExecutionTimingSpecificationItemProvider
-	extends ExtendableElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExtendableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -111,9 +111,29 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPort"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPort/interfaceEntries"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.4">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/minimumCommitTime"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/timeForDecision"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/timeForExecutionPhase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecification"/>
@@ -121,9 +141,21 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.9">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase/timeForExecution"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.9">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForFading"/>
+      </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForSetup"/>
+      </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForTeardown"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/InternalReconfigurationCommunicationPort"/>
@@ -142,6 +174,11 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Manager"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Manager/specificationEntries"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.0"/>
     </classes>
@@ -187,6 +224,11 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Executor"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Executor/specificationEntries"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.0"/>
     </classes>

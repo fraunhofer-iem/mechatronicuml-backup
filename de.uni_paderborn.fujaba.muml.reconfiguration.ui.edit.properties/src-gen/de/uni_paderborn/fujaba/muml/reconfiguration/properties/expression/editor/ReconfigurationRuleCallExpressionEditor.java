@@ -24,8 +24,7 @@ public class ReconfigurationRuleCallExpressionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationRuleCallExpressionReconfigurationRuleEditor(null,
-					true);
+			addReconfigurationRule_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -33,22 +32,20 @@ public class ReconfigurationRuleCallExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationRuleCallExpressionReconfigurationRuleEditor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createReconfigurationRuleCallExpressionReconfigurationRuleEditor(),
-				front);
+	protected void addReconfigurationRule_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createReconfigurationRule_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationRuleCallExpressionReconfigurationRuleEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE
-						.getReconfigurationRuleCallExpression_ReconfigurationRule());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationRule_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE
+				.getReconfigurationRuleCallExpression_ReconfigurationRule();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The reconfiguration rule that is called by this expression.");
 

@@ -48,7 +48,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/ComponentStoryDiagramFile.gif"
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     category="org.eclipse.ui.Examples"
   	     class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -242,7 +242,7 @@
             <method name="getType()" value="4001,4004,4005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5011,5001,5019,5020,5017,5018,5021,5022,5023,5024,5025,5026,5027,5028,5010,5041,5052,5053,5054,5055"/>
+            <method name="getType()" value="5011,5001,5019,5020,5017,5018,5021,5022,5056,5023,5024,5057,5025,5026,5058,5027,5028,5059,5010,5041,5052,5053,5054,5055"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7005,7006,7007,7008,7009,7012,7013"/>
@@ -253,28 +253,97 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryRuleEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart" id="ComponentStoryRule_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEditPart" id="Activity_2003"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart" id="ComponentStoryNode_3001"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternEditPart" id="ComponentStoryPattern_3011"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart" id="ComponentVariable_3012"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.PartVariableEditPart" id="ComponentPartVariable_3014"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart" id="MultiPortVariable_3016"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart" id="SinglePortVariable_3017"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart" id="SinglePortVariable_3018"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart" id="MultiPortVariable_3019"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart" id="SinglePortVariable_3020"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_3007"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_3008"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_3010"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart" id="ControllerExchangeNode_3021"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart" id="ComponentStoryPattern_3022"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart" id="ComponentVariable_3023"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart" id="FadingComponentPartVariable_3024"/>
-         <context elements="ComponentStoryRule_1000,Activity_2003,ComponentStoryNode_3001,ComponentStoryPattern_3011,ComponentVariable_3012,ComponentPartVariable_3014,MultiPortVariable_3016,SinglePortVariable_3017,SinglePortVariable_3018,MultiPortVariable_3019,SinglePortVariable_3020,InitialNode_3007,JunctionNode_3008,ActivityFinalNode_3010,ControllerExchangeNode_3021,ComponentStoryPattern_3022,ComponentVariable_3023,FadingComponentPartVariable_3024"/>
+         <context elements="ComponentStoryRule_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfActivityEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEditPart" id="Activity_2003"/>
+         <context elements="Activity_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart" id="ComponentStoryNode_3001"/>
+         <context elements="ComponentStoryNode_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryPatternEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternEditPart" id="ComponentStoryPattern_3011"/>
+         <context elements="ComponentStoryPattern_3011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentVariableEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart" id="ComponentVariable_3012"/>
+         <context elements="ComponentVariable_3012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfPartVariableEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.PartVariableEditPart" id="ComponentPartVariable_3014"/>
+         <context elements="ComponentPartVariable_3014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariableEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart" id="MultiPortVariable_3016"/>
+         <context elements="MultiPortVariable_3016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariableEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart" id="SinglePortVariable_3017"/>
+         <context elements="SinglePortVariable_3017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariable2EditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart" id="SinglePortVariable_3018"/>
+         <context elements="SinglePortVariable_3018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfMultiPortVariable2EditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart" id="MultiPortVariable_3019"/>
+         <context elements="MultiPortVariable_3019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfSinglePortVariable3EditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart" id="SinglePortVariable_3020"/>
+         <context elements="SinglePortVariable_3020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfInitialNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_3007"/>
+         <context elements="InitialNode_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfJunctionNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_3008"/>
+         <context elements="JunctionNode_3008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfActivityFinalNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_3010"/>
+         <context elements="ActivityFinalNode_3010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfControllerExchangeNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart" id="ControllerExchangeNode_3021"/>
+         <context elements="ControllerExchangeNode_3021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentStoryPattern2EditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart" id="ComponentStoryPattern_3022"/>
+         <context elements="ComponentStoryPattern_3022"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfComponentVariable2EditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart" id="ComponentVariable_3023"/>
+         <context elements="ComponentVariable_3023"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants.ComponentStoryDiagramModelingAssistantProviderOfFadingComponentPartVariableEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart" id="FadingComponentPartVariable_3024"/>
+         <context elements="FadingComponentPartVariable_3024"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">

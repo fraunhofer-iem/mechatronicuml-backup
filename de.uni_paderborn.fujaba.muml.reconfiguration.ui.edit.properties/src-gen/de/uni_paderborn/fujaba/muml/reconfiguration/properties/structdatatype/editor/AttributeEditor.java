@@ -24,7 +24,7 @@ public class AttributeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addAttributeTypeEditor(null, true);
+			addType_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,18 +32,18 @@ public class AttributeEditor
 	/**
 	 * @generated
 	 */
-	protected void addAttributeTypeEditor(String category, boolean front) {
-		addEditorToCategory(category, createAttributeTypeEditor(), front);
+	protected void addType_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAttributeTypeEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage.eINSTANCE
-						.getAttribute_Type());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createType_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage.eINSTANCE
+				.getAttribute_Type();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The data type of this attribute. The data type needs to be a primitive data type\nor an array data type, where the array only contains primitives.");
 

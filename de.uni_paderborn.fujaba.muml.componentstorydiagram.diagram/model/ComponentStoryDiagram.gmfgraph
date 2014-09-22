@@ -534,4 +534,7 @@
   <labels name="ControllerExchangeNodeIconLabel" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.3"/>
   <labels name="ControllerExchangeNodeIconDeadline" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.4"/>
   <labels name="FadingComponentVariableNameLabel" figure="FadingComponentVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.17/@accessors.0"/>
+  <labels name="PortVariableTypeLabel" elementIcon="false">
+    <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
+  </labels>
 </gmfgraph:Canvas>

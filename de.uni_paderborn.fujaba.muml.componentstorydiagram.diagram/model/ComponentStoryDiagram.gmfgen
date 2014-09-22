@@ -289,7 +289,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.2"/>
+            parser="//@labelParsers/@implementations.4"/>
       </labels>
     </childNodes>
     <childNodes
@@ -375,6 +375,22 @@
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5056"
+          editPartClassName="UnderlinedLabelEditPart"
+          itemSemanticEditPolicyClassName="UnderlinedLabelItemSemanticEditPolicy"
+          notationViewFactoryClassName="MultiPortVariableLabelViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="UnderlinedLabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.2"/>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3017"
@@ -446,7 +462,7 @@
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.6">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
@@ -498,6 +514,22 @@
           <editableMetaFeatures
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5057"
+          editPartClassName="UnderlinedLabel2EditPart"
+          itemSemanticEditPolicyClassName="UnderlinedLabel2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="SinglePortVariableLabelViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="UnderlinedLabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"/>
       </labels>
     </childNodes>
     <childNodes
@@ -583,6 +615,22 @@
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5058"
+          editPartClassName="UnderlinedLabel3EditPart"
+          itemSemanticEditPolicyClassName="UnderlinedLabel3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="MultiPortVariableLabelViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="UnderlinedLabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.5"/>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -616,7 +664,7 @@
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.6">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
@@ -668,6 +716,22 @@
           <editableMetaFeatures
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5059"
+          editPartClassName="UnderlinedLabel4EditPart"
+          itemSemanticEditPolicyClassName="UnderlinedLabel4ItemSemanticEditPolicy"
+          notationViewFactoryClassName="SinglePortVariableLabelViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="UnderlinedLabelFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.6"/>
       </labels>
     </childNodes>
     <childNodes
@@ -809,7 +873,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.8">
+                  value="//@expressionProviders/@providers.0/@expressions.10">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -820,19 +884,19 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.9">
+                      value="//@expressionProviders/@providers.0/@expressions.11">
                     <feature
                         href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.10">
+                      value="//@expressionProviders/@providers.0/@expressions.12">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.11">
+                      value="//@expressionProviders/@providers.0/@expressions.13">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
                   </initializers>
@@ -843,7 +907,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.12">
+                          value="//@expressionProviders/@providers.0/@expressions.14">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
                       </initializers>
@@ -853,7 +917,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.13">
+                          value="//@expressionProviders/@providers.0/@expressions.15">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
                       </initializers>
@@ -867,7 +931,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.14">
+              value="//@expressionProviders/@providers.0/@expressions.16">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1035,7 +1099,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.3"/>
+            parser="//@labelParsers/@implementations.7"/>
       </labels>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -1206,8 +1270,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.16"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.17"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.18"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.19"/>
     </links>
     <links
         visualID="4005"
@@ -1263,8 +1327,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.18"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.19"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.20"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.21"/>
     </links>
     <compartments
         visualID="7001"
@@ -1638,50 +1702,54 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="--'activity'"/>
+          body="'activity'"/>
       <expressions
-          body="--'componentStoryPattern'"/>
+          body="'componentStoryPattern'"/>
       <expressions
-          body="--'this'"/>
+          body="'this'"/>
       <expressions
-          body="--storydiagrams::patterns::BindingState::BOUND"/>
+          body="storydiagrams::patterns::BindingState::BOUND"/>
       <expressions
-          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
       <expressions
-          body="--'componentStoryNode'"/>
+          body="'componentStoryNode'"/>
       <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="--self.multiPortVariable.oclIsUndefined()"/>
-      <expressions
-          body="--let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;--let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;--let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;--selfName&#xD;&#xA;--else&#xD;&#xA;--selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;--endif"/>
-      <expressions
-          body="--'componentStoryPattern'"/>
-      <expressions
-          body="--'this'"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingState::BOUND"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingOperator::DESTROY"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingOperator::CREATE"/>
-      <expressions
-          body="--'controllerExchangeNode'"/>
-      <expressions
-          body="--let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;--let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;--let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;--selfName&#xD;&#xA;--else&#xD;&#xA;--selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;--endif"/>
+          body="':'.concat(self.type.name)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;--not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+          body="self.multiPortVariable.oclIsUndefined()"/>
+      <expressions
+          body="':'.concat(self.type.name)"/>
+      <expressions
+          body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+      <expressions
+          body="'componentStoryPattern'"/>
+      <expressions
+          body="'this'"/>
+      <expressions
+          body="storydiagrams::patterns::BindingState::BOUND"/>
+      <expressions
+          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+      <expressions
+          body="storydiagrams::patterns::BindingOperator::DESTROY"/>
+      <expressions
+          body="storydiagrams::patterns::BindingOperator::CREATE"/>
+      <expressions
+          body="'controllerExchangeNode'"/>
+      <expressions
+          body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
+          body="--Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+          body="--Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
+          body="--Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1694,17 +1762,43 @@
         uses="//@diagram/@childNodes.4/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.4/@labels.2/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.6">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.8">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"
-        className="ComponentPartVariableLabelExpressionLabelParser5018"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.7">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.7/@labels.2/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.6">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.8/@labels.2/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.8">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.15/@labels.0/@modelFacet"
-        className="FadingComponentPartVariableLabelExpressionLabelParser5054"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>

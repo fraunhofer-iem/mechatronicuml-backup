@@ -23,6 +23,8 @@ import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPar
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
@@ -105,6 +107,19 @@ public class CustomPortTypeEditPolicy extends PortTypeEditPolicy {
 				EditPart editPart = getHost();
 				if (editPart instanceof ReconfigurationExecutionPortEditPart) {
 					((ReconfigurationExecutionPortEditPart) editPart)
+							.getPrimaryShape().add(label);
+				} else if (editPart instanceof PortPartEditPart) {
+					((PortPartEditPart) editPart).getPrimaryShape().add(label);
+				}
+
+			}
+			else if (ProtocolinstantiationPackage.Literals.BROADCAST_PORT
+					.isSuperTypeOf(port.eClass())) {
+				org.eclipse.draw2d.Label label = new Label();
+				label.setText("B");
+				EditPart editPart = getHost();
+				if (editPart instanceof BroadcastPortEditPart) {
+					((BroadcastPortEditPart) editPart)
 							.getPrimaryShape().add(label);
 				} else if (editPart instanceof PortPartEditPart) {
 					((PortPartEditPart) editPart).getPrimaryShape().add(label);

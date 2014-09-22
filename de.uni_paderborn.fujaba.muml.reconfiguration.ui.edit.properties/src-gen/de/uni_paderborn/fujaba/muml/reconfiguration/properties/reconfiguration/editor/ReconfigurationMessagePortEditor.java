@@ -24,7 +24,7 @@ public class ReconfigurationMessagePortEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationMessagePortInterfaceEntriesEditor(null, true);
+			addInterfaceEntries_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,20 +32,20 @@ public class ReconfigurationMessagePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addReconfigurationMessagePortInterfaceEntriesEditor(
-			String category, boolean front) {
+	protected void addInterfaceEntries_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createReconfigurationMessagePortInterfaceEntriesEditor(), front);
+				createInterfaceEntries_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessagePortInterfaceEntriesEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getReconfigurationMessagePort_InterfaceEntries());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInterfaceEntries_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationMessagePort_InterfaceEntries();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The interface entries of this reconfiguration message port. The interface entries\ndefine which messages the port may send and what kind of message is sent.");
 
@@ -91,8 +91,7 @@ public class ReconfigurationMessagePortEditor
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

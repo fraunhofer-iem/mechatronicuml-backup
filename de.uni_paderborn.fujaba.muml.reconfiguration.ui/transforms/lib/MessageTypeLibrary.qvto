@@ -20,7 +20,7 @@ library MessageTypeLibrary;
 -- communication of manager and executor and that are NOT user defined 
 helper getOrCreateReconfigurationMessageTypeRepositoy(inout rootNode : RootNode) : MessageTypeRepository{
 	
-	var category : ModelElementCategory := rootNode.getMessageTypeCategory();
+	var category : ModelElementCategory := getOrCreateMessageTypeCategory(rootNode);
 	
 	-- try to obtain message type repository
 	var repo : MessageTypeRepository := (category.modelElements -> select(t : ExtendableElement | t.oclIsKindOf(MessageTypeRepository) 
@@ -34,6 +34,16 @@ helper getOrCreateReconfigurationMessageTypeRepositoy(inout rootNode : RootNode)
 	}endif;
 	
 	return repo;
+}
+
+-- returns the model element category for message types.
+helper getOrCreateMessageTypeCategory(inout rootNode : RootNode) : ModelElementCategory {
+	var messageTypeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.messagetype.category') -> any(true);
+	if(messageTypeCategory.oclIsUndefined()){
+		messageTypeCategory := new ModelElementCategory('de.uni_paderborn.fujaba.muml.messagetype.category', 'msgtype');
+		rootNode.categories += messageTypeCategory;
+	};
+	return messageTypeCategory;
 }
 
 -- creates the message type repositoy which contains all message types that are needed for the
@@ -53,6 +63,9 @@ helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : M
 	repo.messageTypes += new MessageType(genMsgTypeExecute);
 	repo.messageTypes += new MessageType(genMsgTypeAbort);
 	repo.messageTypes += new MessageType(genMsgTypeFinished);
+	repo.messageTypes += new MessageType(genMsgTypeSetup);
+	repo.messageTypes += new MessageType(genMsgTypeFading);
+	repo.messageTypes += new MessageType(genMsgTypeTeardown);
 	
 	msgType := new MessageType(genMsgTypeExecuteReconf);
 	msgType.parameters += new Parameter(genParamExecute_Reconf, rootNode.getPrimitiveType(intType));
@@ -71,11 +84,6 @@ helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : M
 
 ------------ helper queries ---------------
 
--- returns the model element category for real-time statecharts.
-query RootNode::getMessageTypeCategory() : ModelElementCategory {
-	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.messagetype.category') -> any(true);
-}
-
 -- return the parameter with the given name of the message type
 query MessageType::getParameterByName(in theName : String) : Parameter{
 	return (self.parameters -> any(name = theName));
@@ -89,7 +97,6 @@ query RootNode::getGeneratedReconfigurationMessageType(in theName : String) : Me
 }
 
 ------------- constructors -----------------
-
 constructor MessageType::MessageType(in newName : String){
 	name := newName;
 }
