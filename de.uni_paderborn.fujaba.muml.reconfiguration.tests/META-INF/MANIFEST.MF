@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Reconfiguration Tests
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reconfiguration.tests
+Bundle-Version: 0.4.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml.tests;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.componentstorydiagram;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0"
+Bundle-ActivationPolicy: lazy
