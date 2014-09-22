@@ -1,0 +1,174 @@
+import CSD2SDUtil;
+import Queries;
+
+library Patterns;
+
+modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
+modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
+
+modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
+modeltype sdActivities uses storydiagrams::activities('http://www.storydriven.org/storydiagrams/0.2.1');
+modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+
+modeltype componentInstanceConfiguration uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+
+modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+
+
+mapping componentstorypattern::ComponentStoryPattern :: ComponentStoryPattern2StoryPattern() : StoryPattern{
+    	_comment := self._comment;
+//TODO check if bindingSemantics are correctly mapped
+    	_bindingSemantics := BindingSemantics::MANDATORY;
+    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    	_extension := self._extension.deepclone().oclAsType(Extension);
+    	var initialCIC : ObjectVariable := self.map createInitialCIC();
+    	_variable := initialCIC;
+    	
+    	self.thisVariable.map createThisVariableEquivalences(self, result);
+
+   		 }
+
+   		 
+mapping ComponentVariable :: createThisVariableEquivalences(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern){
+		var componentInstance := self.map createComponentInstance();
+    	container._variable += componentInstance;
+    	container._linkVariable += map createLinkVaribale(compStoryPattern.map createInitialCIC(), componentInstance, getComponentInstancesReference());
+    	
+    	var componentType := self.type.map createComponentType(compStoryPattern);
+    	container._variable += componentType;
+    	container._linkVariable += map createLinkVaribale(componentInstance, componentType, getComponentTypeReference(componentInstance.classifier));
+    	
+    	var embeddedCIC := self.map createEmbeddedCIC();
+		container._variable += embeddedCIC;
+		container._linkVariable += map createLinkVaribale(componentInstance, embeddedCIC, getEmbeddedCICReference());
+		self.portVariables->forEach(pV){
+			pV.map createPortVariableEquivalence(compStoryPattern, container, false);
+		};
+		
+		self.partVariables->forEach(pV){
+			pV.map createPartVariableEquivalence(compStoryPattern, container);
+		};
+}
+
+mapping PartVariable:: createPartVariableEquivalence(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern){
+	var componentInstance : ObjectVariable := self.map createComponentInstance();
+	self.map setOclConstraint(container);
+	container._variable += componentInstance;
+	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.map createEmbeddedCIC(), componentInstance, getComponentInstancesReference());
+	
+	var componentType := self.type.componentType.map createComponentType(compStoryPattern);
+	container._variable += componentType;
+	container._linkVariable += map createLinkVaribale(componentInstance, componentType, getComponentTypeReference(ComponentInstance.oclAsType(EClass)));
+	
+	var componentPart := self.type.map createComponentPart(compStoryPattern);
+	container._variable += componentPart;
+	container._linkVariable += map createLinkVaribale(componentInstance, componentPart, getComponentPartReference());
+	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.type.map createComponentType(compStoryPattern), componentPart, getEmbeddedComponentPartsReference());
+	container._linkVariable += map createLinkVaribale(componentPart, componentType, getComponentTypeReference(componentPart.classifier));
+
+	//make sure to not create a portPart for these ports
+	self.portVariables->forEach(pV){
+		pV.map createPortVariableEquivalence(compStoryPattern, container, true);
+	};
+	
+	
+}
+
+
+mapping PortVariable :: createPortVariableEquivalence(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern, createPortPart : Boolean) disjuncts MultiPortVariable::createMultiPortVariableEquivalence, SinglePortVariable :: createSinglePortVariableEquivalence;
+
+mapping MultiPortVariable :: createMultiPortVariableEquivalence(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern, createPortPart : Boolean){
+	var portInstance : ObjectVariable := self.map createPortInstance();
+	container.variable+= portInstance;
+	var componentInstance := self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance();
+	container.linkVariable += map createLinkVaribale(componentInstance, portInstance, getPortInstancesReference(componentInstance.classifier));
+	
+	var portType : ObjectVariable := self.type.map createPortType(compStoryPattern);
+	container.variable += portType;
+	container.linkVariable += map createLinkVaribale(portInstance, portType, getPortTypeReference(portInstance.classifier));
+	container.linkVariable += map createLinkVaribale(portType, self.type.component.map createComponentType(compStoryPattern), getComponentReference(self.type.map createPortType(compStoryPattern).classifier));
+	
+	//Don't create parts for multiports. Parts for the embedded singleport should be sufficient, because MultiPortInstances are never created or destroyed and don't have connectors
+	
+	//call mappings for subports and create corresponding link variables
+	self.subPortVariables->forEach(sPV){
+		sPV.map createPortVariableEquivalence(compStoryPattern, container, createPortPart);
+		var subPortInstance := sPV.map createPortInstance();
+		container.linkVariable += map createLinkVaribale(portInstance, subPortInstance, getSubInteractionEndpointInstancesReference(portInstance.classifier));	
+	}
+}
+
+mapping SinglePortVariable :: createSinglePortVariableEquivalence(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern, createPortPart : Boolean){
+	var portInstance : ObjectVariable := self.map createPortInstance();
+	self.map setOclConstraint(container);
+	container.variable += portInstance;
+	var componentInstance := self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance();
+	container.linkVariable += map createLinkVaribale(componentInstance, portInstance, getPortInstancesReference(componentInstance.classifier));
+	
+	var portType : ObjectVariable := self.type.map createPortType(compStoryPattern);
+	container.variable += portType;
+	container.linkVariable += map createLinkVaribale(portInstance, portType, getPortTypeReference(portInstance.classifier));
+	container.linkVariable += map createLinkVaribale(portType, self.type.component.map createComponentType(compStoryPattern), getComponentReference(self.type.map createPortType(compStoryPattern).classifier));
+	
+	if(createPortPart){
+		var portPart : ObjectVariable := self.type.map createPortPart(compStoryPattern);
+		container.variable += portPart;
+		container.linkVariable += map createLinkVaribale(portInstance, portPart, getPortPartReference(portInstance.classifier));
+		container.linkVariable += map createLinkVaribale(portPart, portType, getPortTypeReference(portPart.classifier));
+		container.linkVariable += map createLinkVaribale(portPart, self.type.component.map createComponentType(compStoryPattern), getComponentPartReference(portPart.classifier));
+	};
+	
+	self.connectorVariables->forEach(c){
+		c.map createConnectorVariableEquivalences(compStoryPattern, container);
+	};
+
+}   		 
+
+
+mapping ConnectorVariable :: createConnectorVariableEquivalences(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern){
+	var connectorInstance : ObjectVariable := self.map createConnectorInstance();
+	container.variable += connectorInstance;
+	self.portVariables->forEach(pV){
+		container.linkVariable += map createLinkVaribale(connectorInstance, pV.map createPortInstance(), getPortInstancesReference(connectorInstance.classifier));
+	};
+	
+	var connectorType : ObjectVariable;
+	switch {	case (self.oclIsTypeOf(AssemblyVariable)) {connectorType := self.oclAsType(AssemblyVariable).type.map createConnectorType(compStoryPattern)}
+				case (self.oclIsTypeOf(DelegationVariable)) {connectorType := self.oclAsType(DelegationVariable).type.map createConnectorType(compStoryPattern)}
+				 else {assert fatal (false) with log("Unsupported subtype of ConnectorVariable found: "+self.eClass().toString())} };
+	container.variable += connectorType;												 
+	container.linkVariable += map createLinkVaribale(connectorInstance, connectorType, getTypeReference(connectorInstance.classifier));
+	
+	switch {	
+		case (self.oclIsTypeOf(AssemblyVariable)) {
+			self.portVariables->forEach(pV){
+				var portPart := pV.type.map createPortPart(compStoryPattern);
+				container.variable += portPart;
+				container.linkVariable += map createLinkVaribale(connectorType, portPart, getConnectorEndpointsReference(connectorType.classifier));
+			};	
+		}
+		case (self.oclIsTypeOf(DelegationVariable)) {
+		//there is only a 1 ref to port and a 1 ref to port part. so we have to search the equivalent target variables. Try to late resolve if non part was ever created create link to the portType representing the port ref
+			var portTypeVariable := compStoryPattern.thisVariable.portVariables->select(pV | self.oclAsType(DelegationVariable).connectorEndpoints->includes(pV))->first();
+			var portType := portTypeVariable.type.map createPortType(compStoryPattern);
+			container.variable += portType;
+			
+			container.linkVariable += map createLinkVaribale(connectorType, portType, getPortReference(connectorType.classifier));
+			//we know that there are only two connector endpoints
+			var portPartVariable := self.oclAsType(DelegationVariable).portVariables->excluding(portTypeVariable)->any(true);
+			var portPart := portPartVariable.type.map createPortPart(compStoryPattern);
+			container.variable += portPart;
+			container.linkVariable += map createLinkVaribale(connectorType, portPart, getPortPartReference(connectorType.classifier));
+			}
+		else {assert fatal (false) with log("Unsupported subtype of ConnectorVariable found: "+self.eClass().toString())}
+		 };
+								
+	
+}   		 
+//mapping storydiagrams::patterns::AbstractVariable :: AbstractVariable2AbstractVariable() : storydiagrams::patterns::AbstractVariable disjuncts storydiagrams::patterns::CollectionVariable::CollectionVariable2CollectionVariable, storydiagrams::patterns::ObjectVariable::ObjectVariable2ObjectVariable, storydiagrams::patterns::PrimitiveVariable::PrimitiveVariable2PrimitiveVariable;

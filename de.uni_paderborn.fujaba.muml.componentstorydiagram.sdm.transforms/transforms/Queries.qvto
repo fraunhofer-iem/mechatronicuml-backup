@@ -1,0 +1,116 @@
+library Queries;
+
+modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+
+modeltype componentInstanceConfiguration uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+modeltype reconfiguration uses 'http://www.fujaba.de/muml/reconfiguration/0.3.18';
+
+modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
+
+modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+
+query getComponentInstancesReference() : EReference{
+	return ComponentInstanceConfiguration.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentInstances')->first();
+}
+
+query getComponentInstanceReference() : EReference{
+	return PortInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentInstance')->first();
+}
+
+query getConnectorEndpointsReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'connectorEndpoints')->first();
+}
+
+query getTypeReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'type')->first();
+}
+
+query getComponentTypeReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'componentType')->first();
+}
+
+query getEmbeddedCICReference() : EReference{
+	return StructuredComponentInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'embeddedCIC')->first();
+}
+
+query getComponentPartReference() : EReference{
+	return ComponentInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentPart')->first();
+}
+
+query getEmbeddedComponentPartsReference() : EReference{
+	return StructuredComponent.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'embeddedComponentParts')->first();
+}
+
+query getComponentPartReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'componentPart')->first();
+}
+
+
+query getComponentReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'component')->first();
+}
+
+query getPortPartReference(containerClass : EClass) : EReference{
+	return containerClass.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'portPart')->first();
+}
+
+query getPortInstancesReference(containerClass : EClass) : EReference{
+	return containerClass.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'portInstances')->first();
+}
+
+query getPortReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'port')->first();
+}
+
+query getPortTypeReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'portType')->first();
+}
+
+query getSubInteractionEndpointInstancesReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'subInteractionEndpointInstances')->first();
+}
+
+
+query PartVariable :: equalyManyPartVariablesWithOppositeBindingOperatorExist() : Boolean{
+	var container : ComponentVariable = self.container().oclAsType(ComponentVariable);
+	var create := container.partVariables->select(pV | pV.oclAsType(PartVariable).bindingOperator = BindingOperator::CREATE and pV.oclAsType(PartVariable).type=self.type);
+	var destroy := container.partVariables->select(pV | pV.oclAsType(PartVariable).bindingOperator = BindingOperator::DESTROY and pV.oclAsType(PartVariable).type=self.type);
+	return create->size() = destroy->size();
+}
+
+query PortVariable :: equalyManyPortVariablesWithOppositeBindingOperatorExist() : Boolean{
+	assert fatal(self.container().oclIsKindOf(ComponentVariable) or self.container().oclIsKindOf(PartVariable)) with log(""+self.toString()+" is whether contained by a ComponentVariable nor by a PartVariable");
+	var create : Set(ComponentStoryPatternVariable);
+	var destroy : Set(ComponentStoryPatternVariable);
+	
+	if(self.container().oclIsKindOf(ComponentVariable)){
+		var container : ComponentVariable = self.container().oclAsType(ComponentVariable);
+		create := container.portVariables->select(pV | pV.oclAsType(PortVariable).bindingOperator = BindingOperator::CREATE and pV.oclAsType(PortVariable).type=self.type);
+		destroy := container.portVariables->select(pV | pV.oclAsType(PortVariable).bindingOperator = BindingOperator::DESTROY and pV.oclAsType(PortVariable).type=self.type);
+	};
+	if(self.container().oclIsKindOf(PartVariable)){
+		var container : PartVariable = self.container().oclAsType(PartVariable);
+		create := container.portVariables->select(pV | pV.oclAsType(PortVariable).bindingOperator = BindingOperator::CREATE and pV.oclAsType(PortVariable).type=self.type);
+		destroy := container.portVariables->select(pV | pV.oclAsType(PortVariable).bindingOperator = BindingOperator::DESTROY and pV.oclAsType(PortVariable).type=self.type);
+	};
+	
+	return create->size() = destroy->size();
+}

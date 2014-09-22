@@ -1,0 +1,303 @@
+import Queries;
+
+library CSD2SDUtil;
+
+modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+
+modeltype componentInstanceConfiguration uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+modeltype reconfiguration uses 'http://www.fujaba.de/muml/reconfiguration/0.3.18';
+
+modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
+
+modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+
+modeltype core uses 'http://www.storydriven.org/core/0.3.1';
+
+modeltype sd_expressions uses core::expressions ('http://www.storydriven.org/core/0.3.1');
+
+
+mapping componentstorypattern::ComponentStoryPattern :: createInitialCIC() : ObjectVariable{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := 'rootCIC';
+	classifier:=ComponentInstanceConfiguration.oclAsType(EClass);
+}
+
+mapping componentstorypattern::ComponentVariable:: createEmbeddedCIC() : ObjectVariable{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := 'embeddedCIC';
+	classifier:=ComponentInstanceConfiguration.oclAsType(EClass);
+}
+
+mapping componentstorypattern::ComponentStoryPatternVariable ::createComponentInstance() : ObjectVariable disjuncts componentstorypattern::ComponentVariable :: createStructuredComponentInstance,
+ componentstorypattern::ComponentVariable :: createAtomicComponentInstance,
+  componentstorypattern::PartVariable ::createStructuredComponentInstance,
+   componentstorypattern::PartVariable ::createAtomicComponentInstance;
+
+mapping componentstorypattern::ComponentVariable :: createStructuredComponentInstance() : ObjectVariable
+ when{self.type.eClass() = ReconfigurableStructuredComponent.oclAsType(EClass) or self.type.eClass() = StaticStructuredComponent.oclAsType(EClass)}{
+ 	annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name;
+	classifier := StructuredComponentInstance.oclAsType(EClass);
+	bindingState := self._bindingState;
+    bindingSemantics := self._bindingSemantics;
+    bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::ComponentVariable :: createAtomicComponentInstance() : ObjectVariable 
+when {self.type.eClass() = AtomicComponent.oclAsType(EClass) or self.type.eClass() = ReconfigurableAtomicComponent.oclAsType(EClass)}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name;
+	classifier := AtomicComponentInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PartVariable ::createStructuredComponentInstance() : ObjectVariable
+when {self.type.componentType.eClass() = StaticStructuredComponent.oclAsType(EClass) or self.type.componentType.eClass() = ReconfigurableStructuredComponent.oclAsType(EClass)}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name;
+	classifier := StructuredComponentInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PartVariable ::createAtomicComponentInstance() : ObjectVariable 
+when {self.type.componentType.eClass() = StaticAtomicComponent.oclAsType(EClass) or self.type.componentType.eClass() = ReconfigurableAtomicComponent.oclAsType(EClass)}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);	
+	name := self.name;
+	classifier := AtomicComponentInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PortVariable :: createPortInstance() : ObjectVariable disjuncts componentstorypattern::SinglePortVariable :: createDiscreteSinglePortInstance,
+ componentstorypattern::MultiPortVariable :: createDiscreteMultiPortInstance,
+  componentstorypattern::PortVariable :: createContinousPortInstance,
+   componentstorypattern::PortVariable :: createHybridPortInstance;
+
+mapping componentstorypattern::SinglePortVariable :: createDiscreteSinglePortInstance() : ObjectVariable
+ when{self.type.eClass() = DiscretePort.oclAsType(EClass)}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name;
+	classifier := DiscreteSinglePortInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
+}
+
+
+mapping componentstorypattern::MultiPortVariable:: createDiscreteMultiPortInstance() : ObjectVariable
+when{self.type.eClass() = DiscretePort.oclAsType(EClass)}
+{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name;
+	classifier := DiscreteMultiPortInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PortVariable :: createContinousPortInstance() : ObjectVariable
+ when{self.type.eClass() = ContinuousPort.oclAsType(EClass)}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name;
+	classifier := ContinuousPortInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PortVariable :: createHybridPortInstance() : ObjectVariable
+ when{self.type.eClass() = HybridPort.oclAsType(EClass)}{
+	name := self.name;
+	classifier := HybridPortInstance.oclAsType(EClass);
+   	_bindingState := self._bindingState;
+   	_bindingSemantics := self._bindingSemantics;
+   	_bindingOperator := self._bindingOperator;
+   	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+}
+
+
+mapping Port :: createPortType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name;
+	classifier := self.eClass();
+	constraint := createNameConstraint(self.name);
+}
+
+
+mapping Port :: createPortPart(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name.concat('Part');
+	classifier := PortPart.oclAsType(EClass);
+}
+
+
+-- we need the parameter to create every "component type variable" anew for each story pattern
+mapping muml::component::Component ::createComponentType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	name := self.name;
+	classifier := self.eClass();
+	constraint := createNameConstraint(self.name);
+}
+
+
+mapping muml::component::ComponentPart :: createComponentPart(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	name := self.name;
+	classifier := self.eClass();
+	constraint := createNameConstraint(self.name);
+}
+
+
+mapping ConnectorVariable :: createConnectorInstance() : ObjectVariable disjuncts AssemblyVariable::createAssemblyConnectorInstance, DelegationVariable::createDelegationConnectorInstance;
+
+mapping AssemblyVariable :: createAssemblyConnectorInstance() : ObjectVariable {
+	classifier := AssemblyConnectorInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+   	_bindingSemantics := self._bindingSemantics;
+   	_bindingOperator := self._bindingOperator;
+   	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	
+}
+
+mapping DelegationVariable :: createDelegationConnectorInstance() : ObjectVariable{
+	classifier := DelegationConnectorInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+   	_bindingSemantics := self._bindingSemantics;
+   	_bindingOperator := self._bindingOperator;
+   	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+}
+
+mapping PortConnector :: createConnectorType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable disjuncts AssemblyConnector::createAssemblyConnectorType, DelegationConnector::createDelegationConnectorType;
+
+mapping AssemblyConnector :: createAssemblyConnectorType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	classifier := self.eClass();
+}
+
+mapping DelegationConnector :: createDelegationConnectorType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	classifier := self.eClass();
+}
+
+mapping createLinkVaribale(sourceVariable : ObjectVariable, targetVariable : ObjectVariable, targetEndReference : EReference) : LinkVariable{
+//	_name := self._name;
+//    _bindingSemantics := self._bindingSemantics;
+//    _bindingOperator := self._bindingOperator;
+//    _annotation := self._annotation.map EAnnotation2EAnnotation();
+//    _extension := self._extension.map Extension2Extension();
+    _source := sourceVariable;
+//    _secondLinkConstraint := self._secondLinkConstraint.map LinkConstraint2LinkConstraint();
+//    _firstLinkConstraint := self._firstLinkConstraint.map LinkConstraint2LinkConstraint();
+//    _pattern := self._pattern.map StoryPattern2StoryPattern();
+    _target := targetVariable;
+    
+    _targetEnd := targetEndReference;
+//    _qualifierExpression := self._qualifierExpression.map Expression2Expression();
+}
+
+query createNameConstraint(name : String) : Constraint{
+	return object Constraint{
+		constraintExpression := object TextualExpression{
+			language := 'OCL';
+			expressionText := "name = \'".concat(name).concat("\'");
+			languageVersion := '1.0';
+		}
+	}
+}
+
+mapping ComponentStoryPatternVariable :: setOclConstraint(inout container : StoryPattern){
+	container.constraint += self.map createOclConstraint();
+}
+
+mapping ComponentStoryPatternVariable :: createOclConstraint() : Constraint disjuncts PartVariable::createOclConstraint, PortVariable::createOclConstraint;
+
+
+mapping PartVariable :: createOclConstraint() : Constraint when {(self.bindingOperator = BindingOperator::CREATE or self.bindingOperator = BindingOperator::DESTROY) and not self.equalyManyPartVariablesWithOppositeBindingOperatorExist()}{
+		constraintExpression := self.map createTextualExpression();
+}
+
+mapping PortVariable :: createOclConstraint() : Constraint  when {self.bindingOperator = BindingOperator::CREATE or self.bindingOperator = BindingOperator::DESTROY and not self.equalyManyPortVariablesWithOppositeBindingOperatorExist()}{
+		constraintExpression := self.map createTextualExpression();
+}
+
+
+
+mapping ComponentStoryPatternVariable :: createTextualExpression() : TextualExpression disjuncts 
+PartVariable::createCreateTextualExpression,
+ PartVariable::createDestroyTextualExpression,
+  PortVariable :: createCreateTextualExpression,
+   PortVariable :: createDestroyTextualExpression;
+ 
+mapping PartVariable :: createCreateTextualExpression() : TextualExpression merges ComponentStoryPatternVariable::setToOcl when{self.bindingOperator = BindingOperator::CREATE}{
+	var embeddedCIC := self.container().oclAsType(ComponentVariable).map createEmbeddedCIC();
+	
+	var containingCompStoryPattern :=self->closure(c | c.container())[ComponentStoryPattern]->any(true);
+	
+	var componentType := self.type.componentType.map createComponentType(containingCompStoryPattern);
+	
+	var componentPart := self.type.map createComponentPart(containingCompStoryPattern);
+
+	expressionText := ""+embeddedCIC.name+".componentInstances->select{cI | cI.componentPart ="+componentPart.name+"}->size() < "+self.type.cardinality.upperBound.value.toString();
+}
+
+
+mapping PartVariable :: createDestroyTextualExpression() : TextualExpression merges ComponentStoryPatternVariable::setToOcl when{self.bindingOperator = BindingOperator::DESTROY}{
+	var embeddedCIC := self.container().oclAsType(ComponentVariable).map createEmbeddedCIC();
+	var containingCompStoryPattern :=self->closure(c | c.container())[ComponentStoryPattern]->any(true);
+	
+	var componentType := self.type.componentType.map createComponentType(containingCompStoryPattern);
+	
+	var componentPart := self.type.map createComponentPart(containingCompStoryPattern);
+	
+	expressionText := ""+embeddedCIC.name+".componentInstances->select{cI | cI.componentPart ="+componentPart.name+"}->size() > "+self.type.cardinality.lowerBound.value.toString();
+}
+
+
+mapping PortVariable :: createCreateTextualExpression() : TextualExpression merges ComponentStoryPatternVariable::setToOcl when{self.bindingOperator = BindingOperator::CREATE}{
+    assert fatal (self.type.oclIsKindOf(DiscretePort)) with log ("Non-discrete Ports cannot be created/destroyed.");
+	
+	var containingCompStoryPattern :=self->closure(c | c.container())[ComponentStoryPattern]->any(true);
+	var componentInstance := self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance();
+	var portType := self.type.map createPortType(containingCompStoryPattern);
+
+	//number of Port Instances that have portType as portType < portType.upperBound
+	expressionText := ""+componentInstance.name+".portInstances->select{pI | pI.portType = "+portType.name+"}->size() < "+self.type.oclAsType(DiscretePort).cardinality.upperBound.value.toString();
+}
+
+
+mapping PortVariable :: createDestroyTextualExpression() : TextualExpression merges ComponentStoryPatternVariable::setToOcl when{self.bindingOperator = BindingOperator::DESTROY}{
+	assert fatal (self.type.oclIsKindOf(DiscretePort)) with log ("Non-discrete Ports cannot be created/destroyed.");
+	
+	var containingCompStoryPattern :=self->closure(c | c.container())[ComponentStoryPattern]->any(true);
+	var componentInstance := self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance();
+	var portType := self.type.map createPortType(containingCompStoryPattern);
+
+	//number of Port Instances that have portType as portType > portType.lowerBound
+	expressionText := ""+componentInstance.name+".portInstances->select{pI | pI.portType = "+portType.name+"}->size() > "+self.type.oclAsType(DiscretePort).cardinality.lowerBound.value.toString();
+	
+}
+
+
+mapping ComponentStoryPatternVariable :: setToOcl() : TextualExpression{
+	language := 'OCL';
+	languageVersion := '1.0';
+}
+
