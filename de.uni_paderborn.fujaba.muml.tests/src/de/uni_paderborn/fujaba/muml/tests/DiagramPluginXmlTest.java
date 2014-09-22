@@ -19,17 +19,7 @@ import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 
 public class DiagramPluginXmlTest {
-	public static final String EDITOR_PLUGINS[] = {
-			"de.uni_paderborn.fujaba.muml.component.diagram",
-			"de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram",
-			// "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram",
-			// "de.uni_paderborn.fujaba.muml.deployment.diagram",
-			"de.uni_paderborn.fujaba.muml.messagetype.diagram",
-			"de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram",
-			"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram" };
-
-	public static final String ADD_PLUGINS[] = { "de.uni_paderborn.fujaba.muml.common" };
-
+	
 	@BeforeClass
 	public static void setUpBeforeClass() {
 		// Initialize all packages
@@ -42,17 +32,10 @@ public class DiagramPluginXmlTest {
 	public void validMetamodelNsUris() throws Exception {
 
 		final ProblemCollector problems = new ProblemCollector();
-		List<String> pluginsToCheck = new ArrayList<String>();
-		for (String basePlugin : EDITOR_PLUGINS) {
-			for (String suffix : new String[] { "", ".custom" }) {
-				String pluginName = basePlugin + suffix;
-				pluginsToCheck.add(pluginName);
-			}
-		}
-		pluginsToCheck.addAll(Arrays.asList(ADD_PLUGINS));
+		
 		final List<String> allowedMetamodelTypes = new ArrayList<String>();
 		final List<String> usedMetamodelTypes = new ArrayList<String>();
-		for (final String pluginName : pluginsToCheck) {
+		for (final String pluginName : getPluginsToCheck()) {
 
 			XMLReader xmlReader = XMLReaderFactory.createXMLReader();
 			FileReader reader = new FileReader("../" + pluginName
@@ -103,5 +86,28 @@ public class DiagramPluginXmlTest {
 		}
 		problems.fail();
 
+	}
+	
+	public List<String> getPluginsToCheck(){
+		String EDITOR_PLUGINS[] = {
+			"de.uni_paderborn.fujaba.muml.component.diagram",
+			"de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram",
+			// "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram",
+			// "de.uni_paderborn.fujaba.muml.deployment.diagram",
+			"de.uni_paderborn.fujaba.muml.messagetype.diagram",
+			"de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram",
+			"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram" };
+
+ 
+	List<String> pluginsToCheck = new ArrayList<String>();
+	for (String basePlugin : EDITOR_PLUGINS) {
+		for (String suffix : new String[] { "", ".custom" }) {
+			String pluginName = basePlugin + suffix;
+			pluginsToCheck.add(pluginName);
+		}
+	}
+	String ADD_PLUGINS[] = { "de.uni_paderborn.fujaba.muml.common" };
+	pluginsToCheck.addAll(Arrays.asList(ADD_PLUGINS));
+	return pluginsToCheck;
 	}
 }
