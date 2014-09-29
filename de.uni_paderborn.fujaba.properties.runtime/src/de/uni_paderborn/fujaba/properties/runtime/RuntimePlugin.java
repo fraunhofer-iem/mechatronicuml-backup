@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -400,10 +399,16 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	
 	// TODO: Unify the following dialog creation methods
 	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element) {
+		showEditElementDialog(adapterFactory, element, null);
+	}
+	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element, String title) {
 		PropertiesWizard wizard = new PropertiesWizard();
 		ObjectPropertyEditor editor = new ObjectPropertyEditor(null, adapterFactory, "Object properties", true);
 		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
-		page.setTitle(String.format("Modify ", element.eClass().getName()));
+		if (title == null) {
+			title = String.format("Modify ", element.eClass().getName());
+		}
+		page.setTitle(title);
 		page.setDescription(String.format("Changes properties of the existing %s", element.eClass().getName()));
 		wizard.addPage(page);
 		page.setInput(element);
@@ -560,21 +565,6 @@ public class RuntimePlugin extends AbstractUIPlugin {
 					}
 				}
 			}
-			
-			// Make sure we add no children of already added edit parts
-			Iterator<Object> it = selectedElements.iterator();
-			while (it.hasNext()) {
-				Object part = it.next();
-				EditPart parent = (EditPart) part;
-				while (parent != null) {
-					parent = parent.getParent();
-					if (parent != null && selectedElements.contains(parent)) {
-						it.remove();
-						break;
-					}
-				}
-			}
-			
 			if (!selectedElements.isEmpty() || allowEmpty) {
 				selectionProvider.setSelection(new StructuredSelection(selectedElements));
 			}
