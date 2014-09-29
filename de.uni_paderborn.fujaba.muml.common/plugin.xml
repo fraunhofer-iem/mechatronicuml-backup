@@ -15,10 +15,31 @@
 	            	<visibleWhen checkEnabled="true">
           			</visibleWhen>
 	      </command>
+	      <command
+	      		commandId="org.eclipse.ui.file.export" id="export"
+	      		style="push" label="Export...">
+	      			<visibleWhen checkEnabled="true"/>
+	      		
+	      </command>
+	   </menuContribution>
+	   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=types">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.common.commands.Export"
+	            id="de.uni_paderborn.fujaba.muml.common.commands.ExportCommand"
+	            label="Export"
+	            style="push">
+	            	<visibleWhen checkEnabled="true">
+          			</visibleWhen>
+	      </command>
 	   </menuContribution>
 	</extension>
 	
-	<extension
+	
+	
+  <extension
         point="org.eclipse.ui.commands">
      <category
            id="de.uni_paderborn.fujaba"
@@ -31,7 +52,16 @@
            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
            name="Open Type Dialog">
      </command>
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.ExportCommand"
+           description="Export..."
+           id="de.uni_paderborn.fujaba.muml.common.commands.ExportCommand"
+           name="Export...">
+     </command>
   </extension>
+  
+  
 
   <!-- make sure that the "types" modelelementcategory is accepted as valid -->
   <extension
