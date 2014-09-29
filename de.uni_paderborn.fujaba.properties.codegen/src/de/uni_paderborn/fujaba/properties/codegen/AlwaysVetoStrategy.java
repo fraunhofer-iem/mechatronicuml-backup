@@ -10,5 +10,6 @@ public class AlwaysVetoStrategy implements VetoStrategy {
 		return true;
 	}
 
+	
 }
 
