@@ -18,6 +18,9 @@
       <genOperations ecoreOperation="modelinstance.ecore#//ModelElementCategory/isValidElement">
         <genParameters ecoreParameter="modelinstance.ecore#//ModelElementCategory/isValidElement/object"/>
       </genOperations>
+      <genOperations ecoreOperation="modelinstance.ecore#//ModelElementCategory/isValidEClass">
+        <genParameters ecoreParameter="modelinstance.ecore#//ModelElementCategory/isValidEClass/eClass"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -118,25 +118,25 @@ public class ModelElementCategoryRegistry {
 	}
 
 	/**
-	 * Auxiliary method that checks, if the given object is of the type
-	 * specified by packageName and className.
+	 * Auxiliary method that checks, if the given type is the same type or a
+	 * subtype or the one specified by packageName and className.
 	 * 
-	 * @param object
-	 *            The object, which type should be checked.
+	 * @param type
+	 *            The type which should be checked.
 	 * @param packageNsURI
 	 *            The package name to compare with.
 	 * @param className
 	 *            The className to compare with.
 	 * @return true, if object is of type "className".
 	 */
-	private boolean hasType(EObject object,
+	private boolean hasType(EClass type,
 			QualifiedClassName qualifiedClassName) {
 		EPackage ePackage = EPackage.Registry.INSTANCE
 				.getEPackage(qualifiedClassName.packageNsURI);
 		EClassifier classifier = ePackage
 				.getEClassifier(qualifiedClassName.className);
 		if (classifier instanceof EClass) {
-			return ((EClass) classifier).isSuperTypeOf(object.eClass());
+			return ((EClass) classifier).isSuperTypeOf(type);
 		}
 		return false;
 	}
@@ -153,14 +153,29 @@ public class ModelElementCategoryRegistry {
 	 *         into a ModelElementCategory identified by categoryKey.
 	 */
 	public boolean isValidCategory(String categoryKey, EObject modelElement) {
-		if (categoryKey == null || modelElement == null) {
+		return isValidEClass(categoryKey, modelElement.eClass());
+	}
+	
+	/**
+	 * Finds out, if a ModelElementCategory specified by its categoryKey is
+	 * allowed to contain objects of the given EClass type.
+	 * 
+	 * @param categoryKey
+	 *            The key that identifies the ModelElementCategory.
+	 * @param type
+	 *            The EClass type to test.
+	 * @return <code>true</code>, if objects of the EClass is allowed to be placed
+	 *         into a ModelElementCategory identified by categoryKey.
+	 */
+	public boolean isValidEClass(String categoryKey, EClass type) {
+		if (categoryKey == null || type == null) {
 			return false;
 		}
 		Collection<QualifiedClassName> qualifiedClassNames = getAllowedClasses()
 				.get(categoryKey);
 		if (qualifiedClassNames != null) {
 			for (QualifiedClassName qualifiedClassName : qualifiedClassNames) {
-				if (hasType(modelElement, qualifiedClassName)) {
+				if (hasType(type, qualifiedClassName)) {
 					return true;
 				}
 			}

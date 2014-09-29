@@ -53,6 +53,28 @@ public class ModelElementCategoryEditor
 
 		editor.setTooltipMessage("The ModelElements which are contained in this category. All model elements\nmust be of the same type.");
 
+		{
+			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+					.createOCLExpression("isValidEClass(eclass)", feature,
+							getEClass());
+			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+					.createQuery(expression);
+			query.getEvaluationEnvironment().add("eclass", null);
+			de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
+
+				@Override
+				public boolean select(Object object,
+						org.eclipse.emf.ecore.EClass eClass) {
+					query.getEvaluationEnvironment().replace("eclass", eClass);
+					return object == null || Boolean.TRUE.equals(query.evaluate(object));
+				}
+
+			};
+			if (filter != null) {
+				editor.addCreationFilter(filter);
+			}
+		}
+
 		return editor;
 
 	}

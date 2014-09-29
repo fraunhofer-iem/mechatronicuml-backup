@@ -37,6 +37,9 @@
         <genFeature href="modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+        <creationConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="isValidEClass(eclass)"/>
+        </creationConstraint>
       </properties>
       <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.0"/>
     </classes>

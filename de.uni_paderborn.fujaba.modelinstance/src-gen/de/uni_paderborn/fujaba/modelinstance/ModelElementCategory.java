@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.modelinstance;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.ExtendableElement;
 
@@ -122,9 +123,20 @@ public interface ModelElementCategory extends EObject {
 	 * Evaluates for the passed object whether it is a valid model element for this 
 	 * ModelElementCategory.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean valid = false;\r\n\r\nModelInstancePlugin plugin = ModelInstancePlugin.getInstance();\r\nif (plugin != null) {\r\n\tModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();\r\n\tvalid = registry.isValidCategory(key, object);\r\n}\r\nreturn valid;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='isValidEClass(object.oclAsType(ecore::EObject).eClass())'"
 	 * @generated
 	 */
 	boolean isValidElement(EObject object);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Evaluates for the passed ecore class whether it is a valid type for model element for this ModelElementCategory.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='ModelInstancePlugin plugin = ModelInstancePlugin.getInstance();\r\nif (plugin != null) {\r\n\tModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();\r\n\treturn registry.isValidEClass(key, eClass);\r\n}\r\nreturn false;'"
+	 * @generated
+	 */
+	boolean isValidEClass(EClass eClass);
 
 } // ModelElementCategory

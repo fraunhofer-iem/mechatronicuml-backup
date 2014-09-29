@@ -10,9 +10,12 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -24,6 +27,7 @@ import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -165,19 +169,41 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #isValidElement(org.eclipse.emf.ecore.EObject) <em>Is Valid Element</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isValidElement(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate IS_VALID_ELEMENT_EOBJECT__EINVOCATION_DELEGATE = ((EOperation.Internal)ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY.getEOperations().get(0)).getInvocationDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isValidElement(final EObject object) {
-		boolean valid = false;
-		
+	public boolean isValidElement(EObject object) {
+		try {
+			return (Boolean)IS_VALID_ELEMENT_EOBJECT__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{object}));
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isValidEClass(final EClass eClass) {
 		ModelInstancePlugin plugin = ModelInstancePlugin.getInstance();
 		if (plugin != null) {
 			ModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();
-			valid = registry.isValidCategory(key, object);
+			return registry.isValidEClass(key, eClass);
 		}
-		return valid;
+		return false;
 	}
 
 	/**

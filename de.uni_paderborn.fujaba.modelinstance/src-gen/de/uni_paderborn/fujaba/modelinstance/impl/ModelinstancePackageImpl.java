@@ -262,6 +262,9 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		EOperation op = addEOperation(modelElementCategoryEClass, ecorePackage.getEBoolean(), "isValidElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(modelElementCategoryEClass, ecorePackage.getEBoolean(), "isValidEClass", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEClass(), "eClass", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -279,7 +282,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -287,13 +290,13 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });	
 		addAnnotation
 		  (modelElementCategoryEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ExclusivelyContainsValidElements"
-		   });						
+		   });
 	}
 
 	
@@ -305,13 +308,19 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";							
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (modelElementCategoryEClass, 
 		   source, 
 		   new String[] {
 			 "ExclusivelyContainsValidElements", "self.modelElements->select (e | not isValidElement(e))->isEmpty()"
-		   });					
+		   });	
+		addAnnotation
+		  (modelElementCategoryEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+			 "body", "isValidEClass(object.oclAsType(ecore::EObject).eClass())"
+		   });
 	}
 
 } //ModelinstancePackageImpl
