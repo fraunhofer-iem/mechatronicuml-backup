@@ -47,6 +47,8 @@ import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
+import org.eclipse.ocl.expressions.ExpressionsFactory;
+import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.options.ParsingOptions;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
@@ -581,6 +583,16 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		try {
 			Helper helper = RuntimePlugin.OCL_ECORE.createOCLHelper();
 			helper.setAttributeContext(context, feature);
+
+			// create a variable declaring our global application context object
+			Variable<EClassifier, ?> appContextVar =
+			        ExpressionsFactory.eINSTANCE.createVariable();
+			appContextVar.setName("eclass");
+			appContextVar.setType(EcorePackage.Literals.ECLASS);
+
+			// add it to the global OCL environment
+			helper.getEnvironment().addElement(appContextVar.getName(), (Variable) appContextVar, true);
+			
 			ParsingOptions.setOption(helper.getEnvironment(),
 				    ParsingOptions.implicitRootClass(helper.getEnvironment()),
 				    EcorePackage.Literals.EOBJECT);

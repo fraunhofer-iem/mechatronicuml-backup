@@ -232,11 +232,13 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 	{
 		final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
 		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
+		query.getEvaluationEnvironment().add("eclass", null);
 		de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter filter = new de.uni_paderborn.fujaba.properties.runtime.filter.ICreationFilter() {
 
 			@Override
 			public boolean select(Object object, org.eclipse.emf.ecore.EClass eClass) {
-				return Boolean.TRUE.equals(query.evaluate(eClass));
+				query.getEvaluationEnvironment().replace("eclass", eClass);
+				return Boolean.TRUE.equals(query.evaluate(object));
 			}
 
 				
