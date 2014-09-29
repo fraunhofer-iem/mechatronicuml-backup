@@ -206,10 +206,11 @@ public class NavigationFeaturePropertyEditor extends
 
 		if (classViewer != null) {
 			classViewer.setInput(eClasses);
-			if (!eClasses.isEmpty()) {
+			if (!eClasses.isEmpty() && selectedClass != null) {
 				classViewer.setSelection(new StructuredSelection(selectedClass));
+			} else {
+				classViewer.setSelection(new StructuredSelection());
 			}
-			
 			classViewer.getCombo().setVisible(shouldShowClassesCombo());
 		}
 	}
