@@ -29,6 +29,19 @@ public class ComponentStoryNodeFigureEditPolicy extends NotifyingGraphicalEditPo
 		setForEachVisuals(iconFigure, semanticModelElement.isForEach());
 	}
 	
+	@Override
+	public void activate() {
+		ComponentStoryNodeRoundedFigureForEach iconFigure = ((ComponentStoryNodeEditPart) getHost())
+				.getPrimaryShape();
+
+		Shape view = (Shape) ((ComponentStoryNodeEditPart) getHost())
+				.getModel();
+		ComponentStoryNode semanticModelElement = (ComponentStoryNode) view.getElement();
+
+		setForEachVisuals(iconFigure, semanticModelElement.isForEach());
+		super.activate();
+	}
+	
 	public static void setForEachVisuals(ComponentStoryNodeRoundedFigureForEach figure, boolean isForEach) {
 		// Calculate new Margin for top and right.
 		int marginTop = 0;
