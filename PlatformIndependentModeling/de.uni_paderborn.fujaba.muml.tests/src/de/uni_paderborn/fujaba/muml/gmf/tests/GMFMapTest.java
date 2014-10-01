@@ -86,12 +86,6 @@ public abstract class GMFMapTest {
 		ecore_projects.add(new String[] {
 				"de.uni_paderborn.fujaba.muml.actionlanguage",
 				"/model/actionlanguage.ecore" });
-		ecore_projects.add(new String[] {
-				"de.uni_paderborn.fujaba.muml.reconfiguration",
-				"/model/MumlReconfiguration.ecore" });
-		ecore_projects.add(new String[] {
-				"de.uni_paderborn.fujaba.muml.componentstorydiagram",
-				"/model/ComponentStoryDiagram.ecore" });
 	}
 
 
