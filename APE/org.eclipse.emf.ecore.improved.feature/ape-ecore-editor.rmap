@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
   <rm:locator pattern="^org\.eclipse\.emf\.ecore\.improved(\..+)?" searchPathRef="muml"/>
-  <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
+  <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
 
   <rm:searchPath name="muml">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="true" source="true">
