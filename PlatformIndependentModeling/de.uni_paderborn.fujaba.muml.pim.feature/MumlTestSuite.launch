@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.junit.launchconfig">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/data/jenkins/jobs/MUML-PIM/workspace/MUML/de.uni_paderborn.fujaba.muml.tests/src/de/uni_paderborn/fujaba/muml/tests/MumlTestSuite.java"/>
+<listEntry value="/data/jenkins/jobs/MUML-PIM/workspace/de.uni_paderborn.fujaba.muml.tests/src/de/uni_paderborn/fujaba/muml/tests/MumlTestSuite.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
