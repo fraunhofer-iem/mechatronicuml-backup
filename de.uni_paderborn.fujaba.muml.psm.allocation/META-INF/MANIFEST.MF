@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.psm.allocation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.psm;uses:=org.eclipse.emf.ecore,
+ de.uni_paderborn.fujaba.muml.psm.deployment;uses:="org.eclipse.emf.ecore,  de.uni_paderborn.fujaba.muml.valuetype,  org.eclipse.emf.common.util,  org.storydriven.core,  de.uni_paderborn.fujaba.muml.connector,  de.uni_paderborn.fujaba.muml.instance",
+ de.uni_paderborn.fujaba.muml.psm.deployment.impl;uses:="org.eclipse.emf.ecore,  de.uni_paderborn.fujaba.muml.valuetype,  de.uni_paderborn.fujaba.muml.psm.deployment,  org.eclipse.emf.common.util,  org.storydriven.core.impl,  org.eclipse.emf.ecore.impl,  org.eclipse.emf.common.notify,  de.uni_paderborn.fujaba.muml.instance",
+ de.uni_paderborn.fujaba.muml.psm.deployment.util;uses:="org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  de.uni_paderborn.fujaba.muml.psm.deployment,  org.eclipse.emf.common.util,  org.eclipse.emf.common.notify.impl,  org.storydriven.core,  de.uni_paderborn.fujaba.common.validator,  de.uni_paderborn.fujaba.muml.connector,  org.eclipse.emf.common.notify",
+ de.uni_paderborn.fujaba.muml.psm.impl;uses:="org.eclipse.emf.ecore,de.uni_paderborn.fujaba.muml.psm,org.eclipse.emf.ecore.impl",
+ de.uni_paderborn.fujaba.muml.psm.util;uses:="org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.eclipse.emf.common.notify.impl,  de.uni_paderborn.fujaba.muml.psm,  org.eclipse.emf.common.notify"
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.storydriven.core;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml;visibility:=reexport,
+ de.uni_paderborn.fujaba.common
+Bundle-ActivationPolicy: lazy

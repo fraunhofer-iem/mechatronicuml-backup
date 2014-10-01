@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.psm.mast_trace/src"
+    modelPluginID="de.uni_paderborn.fujaba.muml.psm.mast_trace" modelName="Mast_Trace"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>file:/C:/Users/pmn/Downloads/mast-src-1-5-0-0/mast_xml/Mast_Trace.xsd</foreignModel>
+  <genPackages prefix="Trace" basePackage="es.unican.mast.xmlmast" resource="XML"
+      disposableProviderFactory="true" ecorePackage="mast_trace.ecore#/">
+    <genDataTypes ecoreDataType="mast_trace.ecore#//DateTime"/>
+    <genDataTypes ecoreDataType="mast_trace.ecore#//ExternalReference"/>
+    <genDataTypes ecoreDataType="mast_trace.ecore#//Identifier"/>
+    <genDataTypes ecoreDataType="mast_trace.ecore#//MessageIdentifier"/>
+    <genDataTypes ecoreDataType="mast_trace.ecore#//SourceIdentifier"/>
+    <genDataTypes ecoreDataType="mast_trace.ecore#//SourceIdentifierObject"/>
+    <genDataTypes ecoreDataType="mast_trace.ecore#//Time"/>
+    <genDataTypes ecoreDataType="mast_trace.ecore#//TimeObject"/>
+    <genClasses ecoreClass="mast_trace.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_trace.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mast_trace.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_trace.ecore#//DocumentRoot/tRACEFILE"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_trace.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//Message/m"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//Message/s"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//Message/t"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_trace.ecore#//MessageType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//MessageType/mid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//MessageType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_trace.ecore#//MsgList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_trace.ecore#//MsgList/msg"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_trace.ecore#//MsgTypeList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_trace.ecore#//MsgTypeList/msgType"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_trace.ecore#//Source">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//Source/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//Source/sid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//Source/type"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_trace.ecore#//SrcList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_trace.ecore#//SrcList/src"/>
+    </genClasses>
+    <genClasses ecoreClass="mast_trace.ecore#//TRACEFILEType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_trace.ecore#//TRACEFILEType/msgTypeList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_trace.ecore#//TRACEFILEType/srcList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mast_trace.ecore#//TRACEFILEType/msgList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//TRACEFILEType/endTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//TRACEFILEType/generationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//TRACEFILEType/generationProfile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//TRACEFILEType/generationTool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//TRACEFILEType/modelDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//TRACEFILEType/modelName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mast_trace.ecore#//TRACEFILEType/startTime"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
