@@ -7,7 +7,7 @@
 <rm:locator searchPathRef="muml-pim" failOnError="false"/>
 <rm:locator searchPathRef="muml-uppaal" failOnError="false"/>
 <rm:locator searchPathRef="muml-verification" failOnError="false"/>
-<rm:locator searchPathRef="muml-psm" failOnError="false"/>
+<rm:locator searchPathRef="muml-pm" failOnError="false"/>
 <rm:locator searchPathRef="muml-modelica" failOnError="false"/>
 <rm:locator searchPathRef="ape-ecore" failOnError="false"/>
 <rm:locator searchPathRef="muml-simulink" failOnError="false"/>
@@ -77,11 +77,11 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-<rm:searchPath name="muml-psm">
+<rm:searchPath name="muml-pm">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="file:///data/jenkins/jobs/MUML-PSM/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/MUML-PM/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
