@@ -11,5 +11,5 @@
 <stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
 <stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.uni_paderborn.fujaba.muml.tests.MumlTestSuite"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="de.uni_paderborn.fujaba.muml.tests"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="../de.uni_paderborn.fujaba.muml.tests"/>
 </launchConfiguration>
