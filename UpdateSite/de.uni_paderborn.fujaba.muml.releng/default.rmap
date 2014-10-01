@@ -3,7 +3,7 @@
 <rm:locator searchPathRef="default" failOnError="false"/>
 <rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
 <rm:locator searchPathRef="ape-properties" failOnError="false"/>
-<rm:locator searchPathRef="fujaba-core" failOnError="false"/>
+<rm:locator searchPathRef="muml-core" failOnError="false"/>
 <rm:locator searchPathRef="muml-pim" failOnError="false"/>
 <rm:locator searchPathRef="muml-uppaal" failOnError="false"/>
 <rm:locator searchPathRef="muml-verification" failOnError="false"/>
@@ -29,11 +29,11 @@
       <rm:uri format="http://download.eclipse.org/releases/luna?importType=binary" />
     </rm:provider>
 </rm:searchPath>
-<rm:searchPath name="fujaba-core">
+<rm:searchPath name="muml-core">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="file:///data/jenkins/jobs/FujabaCore/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/MUML-Core/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
