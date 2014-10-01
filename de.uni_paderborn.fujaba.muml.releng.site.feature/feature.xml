@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.uni_paderborn.fujaba.muml.releng.site.feature"
+      label="%featureName"
+      version="0.4.0.qualifier"
+      provider-name="%providerName">
+
+   <description url="https://trac.cs.upb.de/mechatronicuml">
+      This feature provides the Fujaba Real-Time Tool Suite.
+It is a tool suite for modeling and formally verifying the software of networked mechatronic systems using the DSL ​MechatronicUML.
+The Fujaba Real-Time Tool Suite is implemented as a plug-in to the Eclipse framework.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.verification.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.pim.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.simulink.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.sectionEntry.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.blindOvertaking.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.properties.feature"
+         version="0.0.0"
+         name=""/>
+
+   <includes
+         id="de.uni_paderborn.uppaal.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.example.coordinatingBebots.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.ecore.improved.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.psm.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.codegen.c.feature"
+         version="0.0.0"/>
+
+</feature>
