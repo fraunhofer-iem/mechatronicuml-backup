@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.uni_paderborn.fujaba.udbm;singleton:=true
+Bundle-Version: 0.3.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: %providerName
+Export-Package: de.uni_paderborn.fujaba.udbm,
+ de.uni_paderborn.fujaba.udbm.clockconstraint
