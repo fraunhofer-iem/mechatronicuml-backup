@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.uni_paderborn.fujaba.muml.verification.fotctl.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.fotctl.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
+ org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ de.uni_paderborn.fujaba.muml.verification.fotctl,
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.storydriven.core;bundle-version="1.0.0"
+Import-Package: org.apache.log4j,
+ org.apache.commons.logging
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: de.uni_paderborn.fujaba.muml.verification,
+ de.uni_paderborn.fujaba.muml.verification.services,
+ de.uni_paderborn.fujaba.muml.verification.parseTreeConstruction,
+ de.uni_paderborn.fujaba.muml.verification.parser.antlr,
+ de.uni_paderborn.fujaba.muml.verification.parser.antlr.internal,
+ de.uni_paderborn.fujaba.muml.verification.validation,
+ de.uni_paderborn.fujaba.muml.verification.scoping,
+ de.uni_paderborn.fujaba.muml.verification.formatting

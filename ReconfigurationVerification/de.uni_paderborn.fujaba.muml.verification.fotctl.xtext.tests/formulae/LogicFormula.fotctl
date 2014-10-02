@@ -1,0 +1,10 @@
+Declaration
+NodeLabelPredicates {Nlp1,Nlp2,Nlp3}
+Constants {X}
+Formulas
+(Nlp1(X) => Nlp2(X));
+(Nlp2(X) <=> Nlp1(X));
+(Nlp1(X) & Nlp3(X));
+(Nlp3(X) ^ Nlp1(X));
+(Nlp3(X) | Nlp2(X));
+NOT Nlp2(X);

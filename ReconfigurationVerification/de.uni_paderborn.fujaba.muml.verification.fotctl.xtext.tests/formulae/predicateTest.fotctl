@@ -1,0 +1,8 @@
+Declaration
+NodeLabelPredicates {Nlp1,Nlp2}
+EdgeLabelPredicates {Elp1,Elp2}
+Constants {X,Y}
+
+Formulas
+Nlp1(X);
+Elp1(X,Y);
