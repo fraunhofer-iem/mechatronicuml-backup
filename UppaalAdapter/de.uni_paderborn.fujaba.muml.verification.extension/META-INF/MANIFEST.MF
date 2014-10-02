@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Verification Commited State Extension
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.extension;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ University of Paderborn
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.verification.verificationExtension,
+ de.uni_paderborn.fujaba.muml.verification.verificationExtension.impl,
+ de.uni_paderborn.fujaba.muml.verification.verificationExtension.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.storydriven.core;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml;visibility:=reexport
+Bundle-ActivationPolicy: lazy
