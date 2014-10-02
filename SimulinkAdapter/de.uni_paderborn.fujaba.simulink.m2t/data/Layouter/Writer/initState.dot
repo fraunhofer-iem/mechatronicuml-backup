@@ -1,0 +1,5 @@
+digraph "Chart" {
+"__init" [shape=box,label=""];
+"0" [shape=box,label="State"];
+"__init" -> "0";
+}

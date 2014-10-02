@@ -1,0 +1,14 @@
+digraph "Chart" {
+"__init" [shape=box,label=""];
+subgraph "cluster0" {
+label = "State";
+subgraph "cluster0/0" {
+label = "SubStateA";
+"0/0/0" [shape=box,label="SubSubStateA"];
+}
+subgraph "cluster0/1" {
+label = "SubStateB";
+"0/1/0" [shape=box,label="SubSubStateB"];
+}
+}
+}
