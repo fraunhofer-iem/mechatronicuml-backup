@@ -13,7 +13,7 @@
 <rm:locator searchPathRef="muml-simulink" failOnError="false"/>
 
 <rm:searchPath name="default">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="true" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="local" mutable="true" source="true">
       <rm:uri format="file:///{0}/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
