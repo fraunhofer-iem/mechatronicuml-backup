@@ -1,0 +1,102 @@
+\BOOKMARK [1][-]{section.1}{Package uppaal}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Class NTA}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{Package uppaal::core}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Abstract Class CommentableElement}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Abstract Class NamedElement}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Package uppaal::declarations}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Class ArrayInitializer}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Enumeration CallType}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Class ChannelVariableDeclaration}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{Class ClockVariableDeclaration}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.5}{Class DataVariableDeclaration}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.6}{Enumeration DataVariablePrefix}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.7}{Abstract Class Declaration}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.8}{Abstract Class Declarations}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.9}{Class ExpressionInitializer}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.10}{Class Function}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.11}{Class FunctionDeclaration}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.12}{Class GlobalDeclarations}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.13}{Abstract Class Index}{section.3}% 19
+\BOOKMARK [2][-]{subsection.3.14}{Abstract Class Initializer}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.15}{Class LocalDeclarations}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.16}{Class Parameter}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.17}{Class SystemDeclarations}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.18}{Class TypeDeclaration}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.19}{Class TypeIndex}{section.3}% 25
+\BOOKMARK [2][-]{subsection.3.20}{Class ValueIndex}{section.3}% 26
+\BOOKMARK [2][-]{subsection.3.21}{Class Variable}{section.3}% 27
+\BOOKMARK [2][-]{subsection.3.22}{Abstract Class VariableContainer}{section.3}% 28
+\BOOKMARK [2][-]{subsection.3.23}{Abstract Class VariableDeclaration}{section.3}% 29
+\BOOKMARK [1][-]{section.4}{Package uppaal::declarations::global}{}% 30
+\BOOKMARK [2][-]{subsection.4.1}{Class ChannelList}{section.4}% 31
+\BOOKMARK [2][-]{subsection.4.2}{Class ChannelPriority}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.3}{Abstract Class ChannelPriorityItem}{section.4}% 33
+\BOOKMARK [2][-]{subsection.4.4}{Class DefaultChannelPriority}{section.4}% 34
+\BOOKMARK [1][-]{section.5}{Package uppaal::declarations::system}{}% 35
+\BOOKMARK [2][-]{subsection.5.1}{Class InstantiationList}{section.5}% 36
+\BOOKMARK [2][-]{subsection.5.2}{Class ProgressMeasure}{section.5}% 37
+\BOOKMARK [2][-]{subsection.5.3}{Class System}{section.5}% 38
+\BOOKMARK [2][-]{subsection.5.4}{Class TemplateDeclaration}{section.5}% 39
+\BOOKMARK [1][-]{section.6}{Package uppaal::expressions}{}% 40
+\BOOKMARK [2][-]{subsection.6.1}{Class ArithmeticExpression}{section.6}% 41
+\BOOKMARK [2][-]{subsection.6.2}{Enumeration ArithmeticOperator}{section.6}% 42
+\BOOKMARK [2][-]{subsection.6.3}{Class AssignmentExpression}{section.6}% 43
+\BOOKMARK [2][-]{subsection.6.4}{Enumeration AssignmentOperator}{section.6}% 44
+\BOOKMARK [2][-]{subsection.6.5}{Abstract Class BinaryExpression}{section.6}% 45
+\BOOKMARK [2][-]{subsection.6.6}{Class CompareExpression}{section.6}% 46
+\BOOKMARK [2][-]{subsection.6.7}{Enumeration CompareOperator}{section.6}% 47
+\BOOKMARK [2][-]{subsection.6.8}{Class ConditionExpression}{section.6}% 48
+\BOOKMARK [2][-]{subsection.6.9}{Class ConjunctionExpression}{section.6}% 49
+\BOOKMARK [2][-]{subsection.6.10}{Class DisjunctionExpression}{section.6}% 50
+\BOOKMARK [2][-]{subsection.6.11}{Abstract Class Expression}{section.6}% 51
+\BOOKMARK [2][-]{subsection.6.12}{Class FieldAccessExpression}{section.6}% 52
+\BOOKMARK [2][-]{subsection.6.13}{Class FunctionCallExpression}{section.6}% 53
+\BOOKMARK [2][-]{subsection.6.14}{Class ImplicationExpression}{section.6}% 54
+\BOOKMARK [2][-]{subsection.6.15}{Class IncrementDecrementExpression}{section.6}% 55
+\BOOKMARK [2][-]{subsection.6.16}{Enumeration IncrementDecrementOperator}{section.6}% 56
+\BOOKMARK [2][-]{subsection.6.17}{Enumeration IncrementDecrementPosition}{section.6}% 57
+\BOOKMARK [2][-]{subsection.6.18}{Class LiteralExpression}{section.6}% 58
+\BOOKMARK [2][-]{subsection.6.19}{Class MinusExpression}{section.6}% 59
+\BOOKMARK [2][-]{subsection.6.20}{Class NegationExpression}{section.6}% 60
+\BOOKMARK [2][-]{subsection.6.21}{Class PlusExpression}{section.6}% 61
+\BOOKMARK [2][-]{subsection.6.22}{Class QuantificationExpression}{section.6}% 62
+\BOOKMARK [2][-]{subsection.6.23}{Enumeration Quantifier}{section.6}% 63
+\BOOKMARK [2][-]{subsection.6.24}{Class VariableExpression}{section.6}% 64
+\BOOKMARK [1][-]{section.7}{Package uppaal::statements}{}% 65
+\BOOKMARK [2][-]{subsection.7.1}{Class Block}{section.7}% 66
+\BOOKMARK [2][-]{subsection.7.2}{Class DoWhileLoop}{section.7}% 67
+\BOOKMARK [2][-]{subsection.7.3}{Class EmptyStatement}{section.7}% 68
+\BOOKMARK [2][-]{subsection.7.4}{Class ExpressionStatement}{section.7}% 69
+\BOOKMARK [2][-]{subsection.7.5}{Class ForLoop}{section.7}% 70
+\BOOKMARK [2][-]{subsection.7.6}{Class IfStatement}{section.7}% 71
+\BOOKMARK [2][-]{subsection.7.7}{Class Iteration}{section.7}% 72
+\BOOKMARK [2][-]{subsection.7.8}{Class ReturnStatement}{section.7}% 73
+\BOOKMARK [2][-]{subsection.7.9}{Abstract Class Statement}{section.7}% 74
+\BOOKMARK [2][-]{subsection.7.10}{Class WhileLoop}{section.7}% 75
+\BOOKMARK [1][-]{section.8}{Package uppaal::templates}{}% 76
+\BOOKMARK [2][-]{subsection.8.1}{Abstract Class AbstractTemplate}{section.8}% 77
+\BOOKMARK [2][-]{subsection.8.2}{Class Edge}{section.8}% 78
+\BOOKMARK [2][-]{subsection.8.3}{Class Location}{section.8}% 79
+\BOOKMARK [2][-]{subsection.8.4}{Enumeration LocationKind}{section.8}% 80
+\BOOKMARK [2][-]{subsection.8.5}{Class RedefinedTemplate}{section.8}% 81
+\BOOKMARK [2][-]{subsection.8.6}{Class Selection}{section.8}% 82
+\BOOKMARK [2][-]{subsection.8.7}{Class Synchronization}{section.8}% 83
+\BOOKMARK [2][-]{subsection.8.8}{Enumeration SynchronizationKind}{section.8}% 84
+\BOOKMARK [2][-]{subsection.8.9}{Class Template}{section.8}% 85
+\BOOKMARK [1][-]{section.9}{Package uppaal::types}{}% 86
+\BOOKMARK [2][-]{subsection.9.1}{Enumeration BuiltInType}{section.9}% 87
+\BOOKMARK [2][-]{subsection.9.2}{Class DeclaredType}{section.9}% 88
+\BOOKMARK [2][-]{subsection.9.3}{Class IntegerBounds}{section.9}% 89
+\BOOKMARK [2][-]{subsection.9.4}{Class PredefinedType}{section.9}% 90
+\BOOKMARK [2][-]{subsection.9.5}{Class RangeTypeSpecification}{section.9}% 91
+\BOOKMARK [2][-]{subsection.9.6}{Class ScalarTypeSpecification}{section.9}% 92
+\BOOKMARK [2][-]{subsection.9.7}{Class StructTypeSpecification}{section.9}% 93
+\BOOKMARK [2][-]{subsection.9.8}{Abstract Class Type}{section.9}% 94
+\BOOKMARK [2][-]{subsection.9.9}{Abstract Class TypeDefinition}{section.9}% 95
+\BOOKMARK [2][-]{subsection.9.10}{Class TypeReference}{section.9}% 96
+\BOOKMARK [2][-]{subsection.9.11}{Abstract Class TypeSpecification}{section.9}% 97
+\BOOKMARK [1][-]{section.10}{Package uppaal::visuals}{}% 98
+\BOOKMARK [2][-]{subsection.10.1}{Abstract Class ColoredElement}{section.10}% 99
+\BOOKMARK [2][-]{subsection.10.2}{Abstract Class LinearElement}{section.10}% 100
+\BOOKMARK [2][-]{subsection.10.3}{Abstract Class PlanarElement}{section.10}% 101
+\BOOKMARK [2][-]{subsection.10.4}{Class Point}{section.10}% 102
