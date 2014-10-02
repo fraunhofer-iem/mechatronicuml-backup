@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Verify Refinement Plugin
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.refinement.testautomata;singleton:=true
+Bundle-Version: 0.3.1.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml;bundle-version="0.3.2",
+ de.uni_paderborn.fujaba.muml.realtimestatechart.diagram;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.component.diagram;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.reachanalysis.core;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.runtime;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.reachanalysis.rtsc;bundle-version="0.3.1",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.6.0",
+ de.uni_paderborn.fujaba.muml.actionlanguage.interpreter;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.common
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.verification.refinement.testautomata,
+ de.uni_paderborn.fujaba.muml.verification.refinement.testautomata.commands
+Import-Package: org.eclipse.gmf.runtime.diagram.ui.parts,
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts,
+ org.eclipse.m2m.qvt.oml,
+ org.eclipse.ui.views.properties.tabbed
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

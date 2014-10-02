@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="de.uni_paderborn.fujaba.preferences"
+            class="de.uni_paderborn.fujaba.muml.verification.preferences.VerificationPreferencePage"
+            id="de.uni_paderborn.fujaba.muml.verification.preferences"
+            name="Verification">
+      </page>
+   </extension>
+
+</plugin>
