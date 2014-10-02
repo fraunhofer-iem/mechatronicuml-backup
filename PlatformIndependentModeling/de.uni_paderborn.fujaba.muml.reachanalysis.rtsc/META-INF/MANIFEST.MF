@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RTSC Reachanalysis Plugin
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reachanalysis.rtsc;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.Activator
+Require-Bundle: org.eclipse.ui,
+ de.uni_paderborn.fujaba.muml.reachanalysis.core;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;bundle-version="0.4.0",
+ org.eclipse.gmf.runtime.notation;bundle-version="1.4.1",
+ de.uni_paderborn.fujaba.muml.runtime;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.realtimestatechart.diagram;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.actionlanguage.interpreter;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.udbm;bundle-version="0.3.0",
+ de.uni_paderborn.fujaba.udbm.java;bundle-version="0.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.rtsc,
+ de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.actions,
+ de.uni_paderborn.fujaba.muml.reachanalysis.rtsc.export
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
