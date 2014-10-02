@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:locator searchPathRef="workspace"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.example(\..+)?" searchPathRef="examples"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification\.uppaal\.mtctl(\..+)?" searchPathRef="muml"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
@@ -18,8 +19,15 @@
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?|^de\.upb\.swt(\..+)?)" searchPathRef="storydriven" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>
   <rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
-  <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
+  <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
   
+  <rm:searchPath name="workspace">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="true" source="true">
+      <rm:uri format="file:///{0}/{1}/">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
   
   <rm:searchPath name="eclipse_luna">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
