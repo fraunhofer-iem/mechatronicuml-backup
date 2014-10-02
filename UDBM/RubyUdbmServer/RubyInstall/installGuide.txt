@@ -1,0 +1,41 @@
+####################################
+#								   #
+# Ruby Installation including UDBM #
+#								   #
+####################################
+
+Windows:
+
+Run the installers in this folder in the following order (these versions have been tested to work):
+1. ruby185-22.exe 				
+
+2. ruby-gnome2-0.16.0-1-i386-mswin32.exe
+
+3. gtk-win32-2.8.6-rc2.exe
+
+For installing UDBM perform the following steps:
+4. Extract ruby-udbm-0.10-win.zip
+
+5. Copy all *.so and *.rb Files to .../ruby/lib/ruby/1.8/i386-mswin32/
+   where ... is your ruby installation path.
+
+
+Linux (Ubuntu):
+
+1. Ruby comes with the standard Ubuntu installation as well as the GTK libraries.
+   This procedure has been tested using ruby 1.8 and Ubuntu 10.04 LTS
+
+For installing UDBM perform the following steps:
+2. Extract ruby-udbm-0.10.tgz
+   
+3. Copy all *.rb and *.so files to /usr/lib/ruby/1.8/
+
+
+Eclipse editor environment:
+
+1. Ruby Eclipse Editor
+   -> Create new Update Site:
+        http://download.aptana.com/tools/radrails/plugin/install/radrails-bundle
+   -> Select from category "Uncategorized":
+		* Ruby Development Tools
+2. Install the selected plugins.
