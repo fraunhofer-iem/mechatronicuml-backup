@@ -1,0 +1,59 @@
+import transforms.naming;
+import transforms.util;
+
+modeltype DOT uses dot("http://www.fujaba.de/graphviz/dot/0.1.0");
+modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
+modeltype MSGTYPE uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype TRANSFORM uses transform('http://www.fujaba.de/modelica/m2t/transform/0.4.0');
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+// provides general mappings and helpers for graph creation
+
+library GraphvizBase;
+
+constructor DotEdge::DotEdge(source : DotNode, target : DotNode) {
+	result.source := source;
+	result.target := target;
+}
+
+// using OclAny instead of EObject does not work
+mapping EObject::initialGraphSettings() : DotGraph {
+	graphSettings := createInitialGraphSettings();
+}
+
+mapping EObject::initialNodeSettings() : DotGraph {
+	nodeSettings := createInitialNodeSettings();
+}
+
+mapping EObject::initialEdgeSettings() : DotGraph {
+	edgeSettings := createInitialEdgeSettings();
+}
+
+helper createInitialGraphSettings() : Set(Setting) {
+	return  Set{
+		//new Setting('size', '4!'),
+		new Setting('margin', '0'),
+		new Setting('pad', '0'),
+		new Setting('splines', 'polyline')
+	}
+}
+
+helper createInitialNodeSettings() : Set(Setting) {
+	return Set{
+		new Setting('shape', 'rect'),
+		new Setting('width', '"1!"'),
+		new Setting('fixedsize', 'true')
+	}
+}
+
+helper createInitialEdgeSettings() : Set(Setting) {
+	return Set{
+		new Setting('headport', 'n'),
+		new Setting('tailport', 's')
+	};
+}
+
+constructor Setting::Setting(attribute : String, value : String) {
+	result.attribute := attribute;
+	result.value := value;
+}

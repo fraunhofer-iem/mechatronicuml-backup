@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.modelica.m2t.ui.handler.GenerateModelicaCodeHandler"
+            id="de.uni_paderborn.fujaba.modelica.m2t.ui.GenerateModelicaCodeCommand"
+            name="Generate Modelica Code">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba?before=beforeMumlUtilities">
+         <separator
+               name="beforeMUMLCodegen"
+               visible="true">
+         </separator>
+         <command
+               commandId="de.uni_paderborn.fujaba.modelica.m2t.ui.GenerateModelicaCodeCommand"
+               label="Generate Modelica Code"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="de.uni_paderborn.fujaba.expression.fujabafile">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+</plugin>
