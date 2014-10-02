@@ -1,0 +1,8 @@
+Declaration
+NodeLabelPredicates {Railcab,Vehicle}
+EdgeLabelPredicates {Member}
+Constants {A,B}
+Formulas
+forall x { Railcab(x) => Vehicle(A)} ;
+exists y { Railcab(B) => Vehicle(y)} ;
+forall z { Railcab(z) => exists g { Railcab(g) => Member(z,g)} } ;

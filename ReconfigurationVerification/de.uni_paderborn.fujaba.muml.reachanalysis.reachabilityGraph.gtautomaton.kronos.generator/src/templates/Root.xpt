@@ -1,0 +1,51 @@
+«IMPORT gtautomaton»
+«IMPORT labeling»
+«IMPORT core»
+
+
+«DEFINE Automaton(String filename) FOR GtAutomaton»
+«FILE filename-»
+#locs «this.states.size»
+#trans «this.transitions.size»
+#clocks «this.clockInstanceIdentifiers.size»
+«FOREACH this.clockInstanceIdentifiers AS cIID SEPARATOR ' '»«cIID»«ENDFOREACH»
+«EXPAND States FOR (List[GtStepGraph])states-»
+«ENDFILE»
+«ENDDEFINE»
+
+
+«DEFINE States FOR List[GtStepGraph]»
+«FOREACH this AS state»
+loc: «this.indexOf(state)» 
+prop: loc«this.indexOf(state)» «IF state.reachabilityGraph.startState == state»init «ENDIF-» 
+«EXPAND AtomicProps FOREACH state.extension»
+invar: «EXPAND ClockConstraint FOREACH state.invariant SEPARATOR ' and '»
+trans: «FOREACH (List[GtAutomatonTransition])state.outgoingTransitions AS transition-»
+«EXPAND Transition(this.indexOf(transition.target)) FOR transition-»
+«ENDFOREACH»
+«ENDFOREACH»
+«ENDDEFINE»
+
+«DEFINE Transition(Integer targetId) FOR GtAutomatonTransition-»
+«EXPAND ClockConstraint FOREACH this.timeGuards SEPARATOR ' and '» => ; RESET{«FOREACH this.clockResets AS reset SEPARATOR ', '»«reset»«ENDFOREACH»} ; goto «targetId -» 
+«ENDDEFINE»
+
+«DEFINE ClockConstraint FOR GtAutomatonClockConstraint-»
+«this.clockInstanceIdentifier»«EXPAND ComparingOperator FOR this.operator»«this.value -»
+«ENDDEFINE»
+
+«DEFINE ComparingOperator FOR expressions::common::ComparingOperator-»
+«IF this.toString() == 'EQUAL'-»
+=«ELSEIF this.toString() == 'GREATER'-»
+>«ELSEIF this.toString() == 'GREATER_OR_EQUAL'-»
+>=«ELSEIF this.toString() == 'LESS'-»
+<«ELSEIF this.toString() == 'LESS_OR_EQUAL'-»
+<=«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE AtomicProps FOR core::Extension-»
+«FOREACH ((AtomicPropositionMapping)this).propositions AS prop SEPARATOR ' '-»
+«prop-»
+«ENDFOREACH-»
+«ENDDEFINE»
+

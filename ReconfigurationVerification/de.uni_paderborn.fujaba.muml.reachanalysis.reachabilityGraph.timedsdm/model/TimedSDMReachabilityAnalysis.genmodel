@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm/src"
+    editDirectory="/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.edit/src"
+    editorDirectory="/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.editor/src"
+    modelPluginID="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm"
+    modelName="TimedSDMReachabilityAnalysis" editPluginClass="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.provider.TimedSDMReachabilityAnalysisEditPlugin"
+    editorPluginClass="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.presentation.TimedSDMReachabilityAnalysisEditorPlugin"
+    testSuiteClass="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.tests.TimedSDMReachabilityAnalysisAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    editPluginID="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.edit"
+    editorPluginID="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.timedsdm.editor"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm/model/SDMReachabilityAnalysis.genmodel#//sdm ../../de.uni_paderborn.fujaba.muml.timedstorydiagram/model/TimedStoryDiagrams.genmodel#//timedstorydiagram ../../org.storydriven.core/model/core.uml.genmodel#//core ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.genmodel#//reachabilityGraph">
+  <foreignModel>TimedSDMReachabilityAnalysis.ecore</foreignModel>
+  <genPackages prefix="Timedsdm" basePackage="de.uni_paderborn.fujaba.umlrt.reachanalysis.time"
+      disposableProviderFactory="true" ecorePackage="TimedSDMReachabilityAnalysis.ecore#/">
+    <nestedGenPackages prefix="ReachabilityGraph" basePackage="de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm"
+        disposableProviderFactory="true" ecorePackage="TimedSDMReachabilityAnalysis.ecore#//reachabilityGraph">
+      <genDataTypes ecoreDataType="TimedSDMReachabilityAnalysis.ecore#//reachabilityGraph/FederationObject"/>
+      <genClasses ecoreClass="TimedSDMReachabilityAnalysis.ecore#//reachabilityGraph/TimedStepGraph">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference TimedSDMReachabilityAnalysis.ecore#//reachabilityGraph/TimedStepGraph/clockInstances"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EAttribute TimedSDMReachabilityAnalysis.ecore#//reachabilityGraph/TimedStepGraph/federation"/>
+      </genClasses>
+      <genClasses ecoreClass="TimedSDMReachabilityAnalysis.ecore#//reachabilityGraph/TimedGTSDelayTransition"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

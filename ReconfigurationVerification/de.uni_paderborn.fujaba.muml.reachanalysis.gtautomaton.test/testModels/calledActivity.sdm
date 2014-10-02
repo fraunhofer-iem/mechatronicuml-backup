@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdma:Activity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdma="http://ns.storydriven.org/sdm/activities/0.1.0">
+  <outParameter href="../testclassmodels/testClassmodel.ecore#//Class/operation2/%http:%2F%2Fns.storydriven.org%2Fextension%/@contents.0/@containedParameters.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.2" source="//@ownedActivityNode.0"/>
+  <ownedActivityEdge target="//@ownedActivityNode.1" source="//@ownedActivityNode.2"/>
+  <ownedActivityNode xsi:type="sdma:StartNode" outgoing="//@ownedActivityEdge.0"/>
+  <ownedActivityNode xsi:type="sdma:StopNode" incoming="//@ownedActivityEdge.1"/>
+  <ownedActivityNode xsi:type="sdma:ModifyingStoryNode" name="dummy" outgoing="//@ownedActivityEdge.1" incoming="//@ownedActivityEdge.0">
+    <ownedRule comment="dummy"/>
+  </ownedActivityNode>
+</sdma:Activity>

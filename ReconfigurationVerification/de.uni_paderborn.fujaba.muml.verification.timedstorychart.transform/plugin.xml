@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+--><plugin>
+<extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage" genModel="model/TSCTransformationHelper.genmodel" uri="http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <package class="de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage" genModel="model/TSCTransformationHelper.genmodel" uri="http://www.fujaba.de/verification/timedstorychart/transform/helper/0.1.0"/>
+   </extension>
+
+</plugin>
