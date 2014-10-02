@@ -28,6 +28,7 @@
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
+ </rm:searchPath>
   
   <rm:searchPath name="eclipse_luna">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
