@@ -1,0 +1,51 @@
+/**
+ */
+package de.uni_paderborn.fujaba.muml.verification.uppaal.results;
+
+import org.eclipse.emf.ecore.EFactory;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Factory</b> for the model.
+ * It provides a create method for each non-abstract class of the model.
+ * <!-- end-user-doc -->
+ * @see de.uni_paderborn.fujaba.muml.verification.uppaal.results.ResultsPackage
+ * @generated
+ */
+public interface ResultsFactory extends EFactory {
+	/**
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	ResultsFactory eINSTANCE = de.uni_paderborn.fujaba.muml.verification.uppaal.results.impl.ResultsFactoryImpl.init();
+
+	/**
+	 * Returns a new object of class '<em>Property Result Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Property Result Repository</em>'.
+	 * @generated
+	 */
+	PropertyResultRepository createPropertyResultRepository();
+
+	/**
+	 * Returns a new object of class '<em>Property Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Property Result</em>'.
+	 * @generated
+	 */
+	PropertyResult createPropertyResult();
+
+	/**
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
+	ResultsPackage getResultsPackage();
+
+} //ResultsFactory

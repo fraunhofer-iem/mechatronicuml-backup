@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated results -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.results.ResultsPackage"
+            genModel="model/results.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,315 @@
+import transforms.lib.RTSCUtil;
+import transforms.lib.MUML2MUML;
+import transforms.lib.MultiMappingUtil;
+
+/* Normalizes transitions with deadlines by adding an intermediate state.
+*  MTCTL properties with transitionFiring expressions (with transitions with deadlines) 
+*  are normalized into stateActive expressions.
+*/
+transformation RTSCDeadlineTransitionNormalization(in input:muml_rtsc, out output:muml_rtsc);
+
+modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_constraint uses muml::constraint('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype muml_msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype storydriven_core_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlPredicates uses mtctl::Predicates('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlSets uses mtctl::Sets('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlComparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+
+main() {
+
+	input.objects()[RootNode]->map RootNode2RootNode();
+
+}
+
+property intermediateStateNamePrefix : String = 'INTERMEDIATE';
+
+mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : RealtimeStatechart {
+				
+	name := self.name;
+	
+	behavioralElement := self.behavioralElement.map BehavioralElement2BehavioralElement();
+			
+	clocks += self.clocks->map Clock2Clock();
+	clocks += self.map RTSC2RelativeDeadlineClock();
+	
+	variables += self.variables->map Variable2Variable();
+	operations += self.operations->map Operation2Operation();
+		
+	states += self.states->map State2State();
+	states += self.transitions->map Transition2IntermediateState();
+	
+	-- map all transitions between vertices of this statechart	
+	transitions += self.getTransitions()->map Transition2Transition();
+	transitions += self.getTransitions()->map Transition2InitialTransition();
+	transitions += self.getTransitions()->map Transition2FinalTransition();
+							
+}
+
+mapping Variable :: Variable2InitializeAssignment() : Assignment when {self.initializeExpression != null} {
+	
+	lhs_typedNamedElementExpression := object TypedNamedElementExpression {
+		typedNamedElement := self.map TypedNamedElement2TypedNamedElement();
+	};
+	
+	assignOperator := AssignOperator::ASSIGN;
+	
+	rhs_assignExpression := self.map Variable2InitializeExpression();
+	
+}
+
+mapping Variable :: Variable2InitializeExpression() : Expression
+	disjuncts Variable::Variable2ExplicitInitializeExpression, Variable::Variable2ImplicitInitializeExpression;
+	
+mapping Variable :: Variable2ExplicitInitializeExpression() : Expression when {self.initializeExpression != null} {
+	
+	init {
+		result := self.initializeExpression.map Expression2Expression();
+	}
+	
+}
+
+mapping Variable :: Variable2ImplicitInitializeExpression() : Expression when {self.initializeExpression = null} {
+	
+	init {
+		result := self.dataType.map DataType2Initializer();
+	}
+
+}
+
+mapping DataType :: DataType2Initializer() : Expression
+	disjuncts PrimitiveDataType::PrimitiveDataType2Initializer, ArrayDataType::ArrayDataType2Initializer;
+
+mapping ArrayDataType :: ArrayDataType2Initializer() : ArrayInitializeExpression {
+	
+	Set{0..self.cardinality.value}->forEach(index) {
+		expressions += self.type.map DataType2Initializer();
+	}
+	
+}
+
+mapping PrimitiveDataType :: PrimitiveDataType2Initializer() : LiteralExpression {
+	
+	value := self.primitiveType.getDefaultValue();
+	
+}
+
+query PrimitiveTypes :: getDefaultValue() : String {
+	
+	return switch {
+		case (self = PrimitiveTypes::BOOLEAN) 'false';
+		case (self = PrimitiveTypes::BYTE) ''; // FIXME
+		case (self = PrimitiveTypes::SHORT) '0';
+		case (self = PrimitiveTypes::INT) '0';
+		case (self = PrimitiveTypes::LONG) '0L';
+		case (self = PrimitiveTypes::DOUBLE) '0.0d';
+		else assert fatal (false) with log("Illegal enum value");
+	}
+	
+}
+
+mapping State :: State2State() : State {
+		
+	name := self.name;
+	
+	initial := self.initial;	
+	urgent := self.urgent;
+	final := self.final;
+	
+	channels += self.channels->map SynchronizationChannel2SynchronizationChannel();	
+	
+	invariants += self.invariants->map ClockConstraint2ClockConstraint();
+	
+	connectionPoints += self.connectionPoints->map StateConnectionPoint2StateConnectionPoint();
+		
+	embeddedRegions += self.embeddedRegions->map Region2Region();
+	
+	/*
+	if (self.doEvent != null) 
+	then {
+		embeddedRegions += self.map State2DoRegion();
+	}
+	endif;
+	*/
+	
+	entryEvent := self.entryEvent.map EntryEvent2EntryEvent();
+	doEvent := self.doEvent.map DoEvent2DoEvent();
+	exitEvent := self.exitEvent.map ExitEvent2ExitEvent();
+			
+}
+
+/*
+mapping Assignment :: Assignment2Initialzer() : Expression {
+	
+	init {
+		result := self.rhs_assignExpression.map Expression2Expression();
+	}
+	
+}
+*/
+
+mapping Transition :: Transition2Transition() : Transition when {not self.hasDeadline()} {
+		
+	source := self.source.map Vertex2Vertex();
+	
+	target := self.target.map Vertex2Vertex();
+	
+	guard := self.guard.map Expression2Expression();
+
+	clockConstraints += self.clockConstraints->map ClockConstraint2ClockConstraint();
+	
+	synchronization := self.synchronization.map Synchronization2Synchronization();
+	
+	events += self.triggerMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent();
+	
+	action := self.action.map Action2Action();			
+		
+	events += self.raiseMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent();
+	
+	clockResets += self.clockResets->map Clock2Clock();
+		
+	priority := self.priority;
+	
+	urgent := self.urgent;
+		
+	
+	end {
+		assert fatal (result.source != null) with log('Source state must be specified.');
+		assert fatal (result.target != null) with log('Target state must be specified.');
+	}
+				
+}
+
+
+mapping AbsoluteDeadline :: AbsoluteDeadline2Invariant() : ClockConstraint when {self.hasUpperBound()} {
+	
+	bound := self.upperBound.map TimeValue2TimeValue();
+	
+	operator := ComparingOperator::LESS_OR_EQUAL;
+	
+	clock := self.clock.map Clock2Clock();
+}
+
+mapping RelativeDeadline :: RelativeDeadline2Invariant(rtsc : RealtimeStatechart) : ClockConstraint when {self.hasUpperBound()} {
+	
+	bound := self.upperBound.map TimeValue2TimeValue();
+	
+	operator := ComparingOperator::LESS_OR_EQUAL;
+	
+	clock := rtsc.map RTSC2RelativeDeadlineClock();
+}
+
+mapping AbsoluteDeadline :: AbsoluteDeadline2TimeGuard() : ClockConstraint when {self.hasLowerBound()} {
+	
+	bound := self.lowerBound.map TimeValue2TimeValue();
+	
+	operator := ComparingOperator::GREATER_OR_EQUAL;
+	
+	clock := self.clock.map Clock2Clock();
+}
+
+mapping RelativeDeadline :: RelativeDeadline2TimeGuard(rtsc : RealtimeStatechart) : ClockConstraint	when {self.hasLowerBound()} {
+	
+	bound := self.lowerBound.map TimeValue2TimeValue();
+	
+	operator := ComparingOperator::GREATER_OR_EQUAL;
+	
+	clock := rtsc.map RTSC2RelativeDeadlineClock();
+}
+
+
+
+property relativeDeadlineClockNamePrefix : String = 'RELATIVE';
+
+mapping RealtimeStatechart :: RTSC2RelativeDeadlineClock() : Clock when {self.getTransitions()->exists(not relativeDeadline.oclIsUndefined())} {
+	name := relativeDeadlineClockNamePrefix.addSuffixNumber();
+}
+
+
+query Deadline :: hasLowerBound() : Boolean {
+	return not self.lowerBound.oclIsUndefined()
+}
+
+query Deadline :: hasUpperBound() : Boolean {
+	return not self.upperBound.oclIsUndefined()
+}
+
+query Transition :: hasDeadline() : Boolean {
+	return self.absoluteDeadlines->notEmpty() or self.relativeDeadline != null
+}
+
+// override DynamicPredicate to introduce TransitionFiringExpr2StateActiveExpr
+mapping mtctl::Predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::Predicates::DynamicPredicateExpr
+disjuncts mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2StateActiveExpr,
+mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr, mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr, mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr, mtctl::Predicates::BufferOverflowExpr::BufferOverflowExpr2BufferOverflowExpr, mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr, mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+
+// a transition with a deadline is firing iff the intermediate state is active
+mapping TransitionFiringExpr :: TransitionFiringExpr2StateActiveExpr() : StateActiveExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).hasDeadline()}{
+	state := object MumlElemExpr {
+		elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2IntermediateState();
+		instance := self.transition.oclAsType(MumlElemExpr).instance.map EObject2EObject();
+	};
+}
+
+mapping Transition :: Transition2InitialTransition() : Transition when {self.hasDeadline()} {
+	
+	source := self.source.map Vertex2Vertex();
+	target := self.map Transition2IntermediateState(); 
+	
+	guard := self.guard.map Expression2Expression();
+	clockConstraints += self.clockConstraints->map ClockConstraint2ClockConstraint();
+	events += self.triggerMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent();
+	synchronization := self.synchronization.map Synchronization2Synchronization();
+		
+	if (self.relativeDeadline != null)
+	then {
+		clockResets += self.getStatechart().map RTSC2RelativeDeadlineClock();
+	}
+	endif;
+	
+	priority := self.priority;
+	urgent := self.urgent;
+	
+}
+
+mapping Transition :: Transition2IntermediateState() : State when {self.hasDeadline()} {
+	
+	name := intermediateStateNamePrefix.addSuffixNumber();
+	invariants += self.absoluteDeadlines->map AbsoluteDeadline2Invariant();
+	invariants += self.relativeDeadline.map RelativeDeadline2Invariant(self.getStatechart());
+}
+
+mapping Transition :: Transition2FinalTransition() : Transition when {self.hasDeadline()} {
+
+	source := self.map Transition2IntermediateState();
+	target := self.target.map Vertex2Vertex();
+	
+	clockConstraints += self.absoluteDeadlines->map AbsoluteDeadline2TimeGuard();
+	clockConstraints += self.relativeDeadline.map RelativeDeadline2TimeGuard(self.getStatechart());
+	
+	events += self.raiseMessageEvent.map AsynchronousMessageEvent2AsynchronousMessageEvent();
+	
+	action := self.action.map Action2Action();
+		
+	clockResets += self.clockResets->map Clock2Clock();
+	
+	priority := 1;
+	
+	-- set urgency to false in order to consider the entire deadline interval
+	urgent := false;
+	
+}

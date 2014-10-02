@@ -1,0 +1,683 @@
+import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ValueUnit;
+import transforms.lib.ExternalizedStrings;
+import transforms.lib.MUML2UPPAAL.Async.Variables;
+import transforms.lib.MUML2UPPAAL.Async;
+import transforms.lib.MUML2UPPAAL.Expressions;
+import transforms.MUML2UPPAAL;
+import transforms.lib.MUML2MUML;
+import transforms.rtsc.RTSCHierarchyNormalization;
+
+library TraceQueriesAndHelpers;
+
+modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
+modeltype reachability uses 'http://www.fujaba.de/reachabilityGraph/0.4.0';
+modeltype reachability_rtsc uses 'http://www.fujaba.de/reachabilityGraph/rtsc/0.4.0';
+modeltype muml_runtime uses 'http://www.fujaba.de/muml/runtime/0.4.0';
+modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_proto uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_component uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_declarations_system uses uppaal::declarations::system('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype reachability_cic uses 'http://www.fujaba.de/reachabilityGraph/cic/0.4.0';
+modeltype verification_extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+
+property inputVertices : OrderedSet(muml_rtsc::Vertex);
+property inputTransitions : OrderedSet(muml_rtsc::Transition);
+property uppaalVariables : OrderedSet(uppaal::declarations::Variable);
+property inputPortInstances : OrderedSet(DiscretePortInstance);
+property inputComponentInstances : OrderedSet(ComponentInstance);
+
+////////////////////////////////////
+///// Parse Uppaal (Trace) Model
+////////////////////////////////////
+
+query ProcessIdentifier :: getConcreteTemplateArgumentsAndParameters() : Tuple(template : Template, arguments : Sequence(Integer), parameters : Sequence(uppaal::declarations::Parameter)) {
+	return getConcreteTemplateAndArguments(self.template);
+}
+
+//TODO to support Template Declarations of the form:
+// Q1(v) = Q(v , 2)
+// Q2 = Q1(3)
+// get return all involved parameters and arguments in the correct order
+// The current implementation only supports declarations like
+// Q1 = Q(3, 2)
+// which is feasible, since the Migration does not use the more complex construct above
+query getConcreteTemplateAndArguments(t : AbstractTemplate) : template : Template, arguments : Sequence(Integer), parameters : Sequence(uppaal::declarations::Parameter) {
+	
+	var tmp : AbstractTemplate = t;
+	
+	while (tmp.oclIsKindOf(RedefinedTemplate)) {
+		
+		arguments := tmp.oclAsType(RedefinedTemplate).declaration.argument.toInteger();
+		tmp := tmp.oclAsType(RedefinedTemplate).referredTemplate;
+		parameters := tmp.parameter->asSequence();
+		
+	};
+	
+	template := tmp.oclAsType(Template);
+}
+
+
+query TemplateDeclaration :: getInstanceID() : Integer{
+	
+	var templateTuple : Tuple(template : Template, arguments : Sequence(Integer), parameters : Sequence(uppaal::declarations::Parameter)) := getConcreteTemplateAndArguments(self.declaredTemplate);
+	
+	//Get the Parameter expressing the instance id
+	var idParameter : uppaal::declarations::Parameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = discreteSubPortInstanceID)->first();
+	if(idParameter.oclIsUndefined())
+		idParameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = discretePortInstanceID)->first();
+	if(idParameter.oclIsUndefined())
+		idParameter := templateTuple.parameters->select(p | p.variableDeclaration.variable->first().name = componentInstanceID)->first();
+	assert (not idParameter.oclIsUndefined()) with log ("Could not find discretePortInstanceID or componentInstanceID Parameter in Template "+self.declaredTemplate.toString());
+	
+	//Get the index of the paramter in the parameter list
+	var indexOfParameter : Integer :=self.declaredTemplate.oclAsType(RedefinedTemplate).referredTemplate.parameter->indexOf(idParameter);
+	
+	//Get the argument passed as instance parameter in the template declaration
+	var argument : Integer := templateTuple.arguments->at(indexOfParameter);
+	return argument;
+
+}
+
+
+//Parent Variables have to be passed in correct order
+//indexes referce to first parent variable (self if there are no parent variables)
+query uppaal::declarations::Variable :: getVariableValue(diagState : diagnosticTrace::State, indexes : Sequence(Integer), parentVariables : OrderedSet(uppaal::declarations::Variable)) : OrderedSet(VariableValue){
+	
+	var variables : OrderedSet(uppaal::declarations::Variable):= parentVariables;
+	variables += self;
+	
+	//select by correct instanceID
+	var fittingValues : OrderedSet(VariableValue) := diagState.variableValues;
+	var tmpFittingValues : OrderedSet(VariableValue);
+	var curVariableIndex := 0;
+
+	variables->forEach(variable){
+	
+		//Get all VariableValues where the corresponding NamedElement is mapped to the Variable(self)
+		fittingValues->forEach(varValue){
+		
+			if(varValue.getNamedElementAtPosition(curVariableIndex) = variable)
+				tmpFittingValues += varValue;
+		};
+		
+		curVariableIndex := curVariableIndex+1;
+		fittingValues := tmpFittingValues;
+		tmpFittingValues := tmpFittingValues->reject(true);
+	};
+	
+	if(indexes = null)
+		return fittingValues;
+	
+	return fittingValues -> select(firstNamedElementReference.singleNamedElementReference.indexes = indexes);
+}
+
+
+
+query VariableValue :: getNamedElementAtPosition(position : Integer) : uppaal::core::NamedElement{
+	//The named element reference at position 0
+	var curNamedElementReference : NamedElementReference := self.firstNamedElementReference;
+
+	var i : Integer := 1;
+	while(i <= position){
+		curNamedElementReference := curNamedElementReference.namedElementReference;
+		i := i+1;
+	};
+	
+	return curNamedElementReference.singleNamedElementReference.namedElement;
+}
+
+
+////////////////////////////////////
+///// Get Muml Elements for Trace Model Elements/References
+////////////////////////////////////
+query Location :: getRTSCVertex() : Vertex {
+
+	var resolvedStates : OrderedSet(muml_rtsc::Vertex) = self.invresolve(muml_rtsc::Vertex)->asOrderedSet();	
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : resolvedStates := resolvedStates->union(resolvedStates->closure(s | s.invresolve(muml_rtsc::State)))->asOrderedSet();
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := resolvedStates->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		resolvedStates += resolvedStates->invresolve(muml_rtsc::Vertex);
+		oldSize := newSize;
+		newSize := resolvedStates->size();
+	};
+	
+	var state := resolvedStates->intersection(inputVertices)->any(true);
+	
+	return state;	
+}
+
+query Location :: getRTSCTransition() : muml_rtsc::Transition {
+
+	var resolvedElements = self.invresolve()->asOrderedSet();
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : resolvedElements := resolvedElements->union(resolvedElements->closure(s | s.invresolve()))->asOrderedSet();
+	//When QVTO supports more efficient closure computation
+/*	var oldSize : Integer := resolvedElements->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		resolvedElements += resolvedElements->invresolve();
+		oldSize := newSize;
+		newSize := resolvedElements->size();
+	};*/
+	resolvedElements := resolvedElements->union(resolvedElements->closure(s | s.invresolve()))->asOrderedSet();
+	
+	var transition := resolvedElements->intersection(inputTransitions)->any(true).oclAsType(muml_rtsc::Transition);	
+	return transition;	
+}
+
+query LocationActivity :: getPortInstance() : DiscretePortInstance{
+	var templateDeclaration := self.process.template.oclAsType(RedefinedTemplate).declaration;
+	
+	var resolvedElements = templateDeclaration.invresolve()->asOrderedSet();
+	
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : resolvedElements := resolvedElements->union(resolvedElements->closure(invresolve()))->asOrderedSet();
+	//When QVTO supports more efficient closure computation
+	var oldSize : Integer := resolvedElements->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		resolvedElements += resolvedElements->invresolve();
+		oldSize := newSize;
+		newSize := resolvedElements->size();
+	};
+	
+	var instance := resolvedElements->intersection(inputPortInstances)->any(true).oclAsType(muml::instance::DiscretePortInstance);	
+	return instance;	
+}
+
+
+//TODO at the moment this always returns null, because a ComponentInstance is never mapped to a TemplateDeclaration
+query LocationActivity :: getComponentInstance() : ComponentInstance{
+	var templateDeclaration := self.process.template.oclAsType(RedefinedTemplate).declaration;
+	
+	var resolvedElements = templateDeclaration.invresolve()->asOrderedSet();
+	
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : resolvedElements := resolvedElements->union(resolvedElements->closure(invresolve()))->asOrderedSet();
+	//When QVTO supports more efficient closure computation
+
+	var oldSize : Integer := resolvedElements->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		resolvedElements += resolvedElements->invresolve();
+		oldSize := newSize;
+		newSize := resolvedElements->size();
+	};
+	
+	var instance := resolvedElements->intersection(inputComponentInstances)->any(true).oclAsType(muml::instance::ComponentInstance);	
+	return instance;	
+}
+
+
+////////////////////////////////////
+///// Get Uppaal Elements for Muml Elements
+////////////////////////////////////
+
+query NamedElement :: getUppaalVariable() : uppaal::declarations::Variable{
+	var resolvedVariables := self.resolve()->asOrderedSet();
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : resolvedVariables := resolvedVariables->union(resolvedVariables->closure(resolve()))->asOrderedSet();
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := resolvedVariables->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		resolvedVariables += resolvedVariables->resolve();
+		oldSize := newSize;
+		newSize := resolvedVariables->size();
+	};
+	
+	
+	var uppaalVariable := resolvedVariables -> select(oclIsTypeOf(uppaal::declarations::Variable))->any(true).oclAsType(uppaal::declarations::Variable);
+	return uppaalVariable;
+}
+
+query DiscretePortInstance :: getID() : Integer{
+	var mumlResolves := self.resolve(DiscretePortInstance)->asOrderedSet();
+
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(DiscretePortInstance)).oclAsSet());
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := mumlResolves->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		mumlResolves += mumlResolves->resolve(DiscretePortInstance);
+		oldSize := newSize;
+		newSize := mumlResolves->size();
+	};
+	
+	//Get corresponding Template
+	var theTemplate : Template;
+	
+	if(self.type.oclAsType(DiscretePort).multi and self.oclIsTypeOf(DiscreteSinglePortInstance))
+	then{
+		theTemplate := self.type.oclAsType(muml::component::DiscretePort).subroleBehavior.oclAsType(RealtimeStatechart).getTemplate();
+	}
+	else{
+		theTemplate := self.type.oclAsType(muml::component::DiscretePort).behavior.oclAsType(RealtimeStatechart).getTemplate();
+	}
+	endif;
+	
+	var templateDeclaration := mumlResolves->resolve(TemplateDeclaration);
+	templateDeclaration := templateDeclaration->select(td | td.oclAsType(TemplateDeclaration).declaredTemplate.referredTemplate = theTemplate);
+	
+	
+	assert fatal (templateDeclaration->size() = 1) with log 
+		("Found multiple or none TemplateDeclaration for combination of DiscretePortInstance "+self.toString()+" and Template "+theTemplate.toString());
+	
+	var id := templateDeclaration->any(true).getInstanceID();
+	return id;
+}
+
+query RealtimeStatechart :: getTemplate() : Template{
+	var mumlResolves : Set(RealtimeStatechart) := self.resolve(RealtimeStatechart)->oclAsSet()->flatten();
+	
+	while(mumlResolves->resolveIn(RealtimeStatechart::RTSC2EmbeddedRTSC)->size()=0){
+		mumlResolves += mumlResolves->resolve(RealtimeStatechart)->oclAsSet()->flatten();
+	};
+	
+	//Get Correct RTSC after Hirachy Normalization
+	mumlResolves := mumlResolves->resolveIn(RealtimeStatechart::RTSC2EmbeddedRTSC)->oclAsSet()->flatten();
+	
+	//Resolve to Migration
+	while(mumlResolves->resolveIn(RealtimeStatechart::RTSC2Templates)->size()=0){
+		mumlResolves += mumlResolves->resolve(RealtimeStatechart)->oclAsSet()->flatten();
+	};
+
+	//Get the correct Template
+	var template := mumlResolves->resolveIn(RealtimeStatechart::RTSC2Templates, OrderedSet(Template))->any(true);
+	
+	assert fatal (template->size()= 1) with log ("Found multiple Templates for RTSC "+self.toString());
+	
+	return template->any(true);
+}
+
+query MessageType :: getMessageKindConstant() : uppaal::declarations::Variable{
+	var mumlResolves := self.resolve(MessageType)->asOrderedSet();
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(MessageType)).oclAsSet());
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := mumlResolves->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		mumlResolves += mumlResolves->resolve(MessageType);
+		oldSize := newSize;
+		newSize := mumlResolves->size();
+	};
+	
+	var parameterTypeBufferFieldVariable := mumlResolves->resolveIn(MessageType::createMessageKindConstant, uppaal::declarations::Variable)->any(true);
+	return parameterTypeBufferFieldVariable;
+}
+
+query MessageType :: getParameterTypeBufferFieldVariable() : uppaal::declarations::Variable{
+	var mumlResolves := self.resolve(MessageType)->asOrderedSet();
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(MessageType)).oclAsSet());
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := mumlResolves->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		mumlResolves += mumlResolves->resolve(MessageType)->asOrderedSet();
+		oldSize := newSize;
+		newSize := mumlResolves->size();
+	};
+	
+	var parameterTypeBufferFieldVariable := mumlResolves->resolveIn(MessageType::createParameterTypeBufferFieldVariable, uppaal::declarations::Variable)->any(true);
+	return parameterTypeBufferFieldVariable;
+}
+	
+query MessageType :: getParameterTypeMessageIdVariable() : uppaal::declarations::Variable{
+	var mumlResolves := self.resolve(MessageType)->asOrderedSet();
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(MessageType)).oclAsSet());
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := mumlResolves->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		mumlResolves += mumlResolves->resolve(MessageType)->asOrderedSet();
+		oldSize := newSize;
+		newSize := mumlResolves->size();
+	};
+	
+	var parameterTypeBufferFieldVariable := mumlResolves->resolveIn(MessageType::createParameterTypeMessageIdVariable, uppaal::declarations::Variable)->any(true);
+	return parameterTypeBufferFieldVariable;
+}
+
+
+query Parameter :: getVariable() : uppaal::declarations::Variable{
+	var mumlResolves := self.resolve(Parameter)->asOrderedSet();
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : mumlResolves := mumlResolves := mumlResolves->union(mumlResolves->closure(resolve(Parameter)).oclAsSet());
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := mumlResolves->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		mumlResolves += mumlResolves->resolve(Parameter)->asOrderedSet();
+		oldSize := newSize;
+		newSize := mumlResolves->size();
+	};
+	
+	var variable := mumlResolves->resolveIn(Parameter::Parameter2Variable, uppaal::declarations::Variable)->any(true);
+	return variable;
+}
+
+
+query RealtimeStatechartInstance::  getTemplateDeclaration() : TemplateDeclaration{
+	var resolvedElements : OrderedSet(OclAny) = self.invresolve()->asOrderedSet();	
+	
+	//TODO closure implementation is very slow, because it does not consider duplicates when computing the closure.
+	//Replace implementation below with : resolvedStates := resolvedStates->union(resolvedStates->closure(s | s.invresolve(muml_rtsc::State)))->asOrderedSet();
+	//When QVTO supports more efficient closure computation
+	
+	var oldSize : Integer := resolvedElements->size();
+	var newSize : Integer := 0;
+	while(not (oldSize = newSize)){
+		resolvedElements += resolvedElements->invresolve();
+		oldSize := newSize;
+		newSize := resolvedElements->size();
+	};
+	
+	var declaration : TemplateDeclaration := resolvedElements->any(oclIsTypeOf(LocationActivity)).oclAsType(LocationActivity).process.template.oclAsType(RedefinedTemplate).declaration;
+	return declaration;
+}
+////////////////////////////////////
+///// Create RuntimeElements for Muml Elements
+////////////////////////////////////
+
+helper RuntimeDiscretePortInstance :: createMessagesOnConnectorForSender(diagState : diagnosticTrace::State, instance : DiscretePortInstance, receiver :RuntimeDiscretePortInstance) : OrderedSet(MessageOnConnector){
+	var messagesOnConnector : OrderedSet(MessageOnConnector);
+		
+	var parentVariables : OrderedSet(uppaal::declarations::Variable);
+	parentVariables += map createConnectorsVariable();
+	parentVariables += map createMessagesFieldVariable();
+	
+	var mIDVariable := map createMessageTypeMessageIdVariable();
+	
+	var mKindVariable := map createMessageKindVariable(); 
+	
+		
+	var id := instance.getID();
+	var parentIndexes : Sequence(Integer);
+	parentIndexes += id;
+		
+	//collect all variable variable values of the form connectors[endpointInstanceID].messages[x].mID = someValue
+	var mIDValues : OrderedSet(VariableValue) := mIDVariable.getVariableValue(diagState, parentIndexes, parentVariables);
+		
+	//collect all variable variable values of the form connectors[endpointInstanceID].messages[x].mType = someValue
+	var mKindValues : OrderedSet(VariableValue) :=  mKindVariable.getVariableValue(diagState, parentIndexes, parentVariables);
+			
+		
+	instance.type.oclAsType(DiscretePort).senderMessageTypes->forEach(mT){
+		var messageKindConstant := mT.getMessageKindConstant();
+		var messageKindID := messageKindConstant.getIntegerInitilizerValue();
+		
+		//check whether there is a message of this kind on the connector
+		mKindValues->forEach(mKindValue){
+			if(mKindValue.value = messageKindID){
+				//get the corresponding mID of this instances and create a MessageOnConnector
+				var fittingMIDs := mKindValue.getMessageIdValuesForMessageTypeValue(mIDValues);
+			
+				fittingMIDs->forEach(mID){
+					messagesOnConnector += new MessageOnConnector(mT, receiver, mT.createRuntimeMessageParameter(mID.value, diagState));
+				}	
+			}
+		}
+		
+	};
+	return messagesOnConnector;
+}
+
+
+helper MessageBuffer :: createRuntimeMessages(diagState : diagnosticTrace::State, instance : DiscretePortInstance) : OrderedSet(RuntimeMessage){
+	var runtimeMessages : OrderedSet(RuntimeMessage);
+//Uppaal Trace Example:
+	// buffers[0][0].messages[0].mId=1 buffers[0][0].messages[0].mType=1 buffers[0][0].messages[0].mArgsPosition=0
+//buffers description:
+	// buffers[<<instanceID>>][<<bufferID>>]
+	
+	var instanceID := instance.getID();
+	
+	//getBufferIndex uses the position of the MessageBuffer in its containing feature.
+	//To avoid problems that occure when this position is changed during the Muml2Muml transformations, we call getLastMappedMessageBuffer().
+	//The returned MessageBuffer is the same object as the one, the migration calls getBufferIndex() on.
+	var bufferID := self.getLastMappedMessageBuffer().getBufferIndex();
+	
+	var bufferIndexes : Sequence(Integer);
+	bufferIndexes += instanceID;
+	bufferIndexes += bufferID;
+	
+	var buffersVariable := map createBuffersVariable(); -- buffers
+	var messagesVariable := map createMessagesFieldVariable(); --messages
+	
+	var parentVariables : OrderedSet(uppaal::declarations::Variable);
+	parentVariables += buffersVariable;
+	parentVariables += messagesVariable;
+	
+	var mIDVariable := map createMessageTypeMessageIdVariable(); --mID
+	
+	var mKindVariable := map createMessageKindVariable(); --mType
+	
+	//collect all variable variable values of the form buffers[<<instanceID>>][<<bufferID>>].messages[x].mType = someValue
+	var mKindValues : OrderedSet(VariableValue) :=  mKindVariable.getVariableValue(diagState, bufferIndexes, parentVariables);
+	
+	//collect all variable variable values of the form buffers[<<instanceID>>][<<bufferID>>].messages[x].mID = someValue
+	var mIDValues : OrderedSet(VariableValue) := mIDVariable.getVariableValue(diagState, bufferIndexes, parentVariables);
+		
+			
+		
+	self.messageType->forEach(mT){
+		var messageKindConstant := mT.getMessageKindConstant();
+		var messageKindID := messageKindConstant.getIntegerInitilizerValue();
+		
+		//check whether there is a message of this kind on the connector
+		mKindValues->forEach(mKindValue){
+			if(mKindValue.value = messageKindID){
+				//get the corresponding mID of this instances and create a MessageOnConnector
+				var fittingMIDs := mKindValue.getMessageIdValuesForMessageTypeValue(mIDValues);
+			
+				fittingMIDs->forEach(mID){
+					runtimeMessages += new RuntimeMessage(mT, mT.createRuntimeMessageParameter(mID.value, diagState));
+				}	
+			}
+		}
+		
+	};
+	
+	return runtimeMessages;
+}
+
+////////////////////////////////////
+///// Constructors
+////////////////////////////////////
+
+constructor MessageOnConnector :: MessageOnConnector(msgType : MessageType, theReceiver : RuntimeBehavioralElement, theParameters : OrderedSet(RuntimeParameter)){
+	message := new RuntimeMessage(msgType, theParameters);
+	receiver := theReceiver;
+}
+
+constructor RuntimeMessage :: RuntimeMessage(msgType : MessageType, theParameters : OrderedSet(RuntimeParameter)){
+	name := msgType.name;
+	type := msgType;
+	parameters := theParameters;
+}
+
+constructor RuntimeParameter :: RuntimeParameter(theParameter : Parameter, theValue : Integer){
+	name := theParameter.name;
+	parameter := theParameter;
+	value := theValue;
+}
+
+////////////////////////////////////
+///// Misc
+////////////////////////////////////
+
+helper RealtimeStatechartInstance :: setBehavioralElement(inout runtimePortInstancesOfDiagState : OrderedSet(RuntimeDiscretePortInstance), inout runtimeComponentInstancesOfDiagState : OrderedSet(RuntimeComponentInstance)){
+	var locationActivity := self.invresolve(LocationActivity)->any(true);
+	
+	if(not locationActivity.getPortInstance().oclIsUndefined()){
+		var portType : DiscretePort := locationActivity.getPortInstance().resolve()->asOrderedSet()->
+		intersection(runtimePortInstancesOfDiagState) ->any(true).oclAsType(RuntimeDiscretePortInstance).portType.oclAsType(DiscretePort);
+		var runtimePortInstance : RuntimeDiscretePortInstance;
+		
+		runtimePortInstance := locationActivity.getPortInstance().resolve()->asOrderedSet()->
+				intersection(runtimePortInstancesOfDiagState)->any(portType.behavior = self.instanceOf).oclAsType(RuntimeDiscretePortInstance);
+		//In the case of multi ports the statechart can be the one of behavior reference of subroleBehavior Reference
+		if(portType.multi and runtimePortInstance.oclIsUndefined()){
+			runtimePortInstance := locationActivity.getPortInstance().resolve()->asOrderedSet()->
+				intersection(runtimePortInstancesOfDiagState)->any(portType.subroleBehavior = self.instanceOf).oclAsType(RuntimeDiscretePortInstance);
+			};
+		runtimePortInstance.statechartInstance := self;
+	};
+	
+	if(not locationActivity.getComponentInstance().oclIsUndefined()){
+		var runtimeComponentInstance : RuntimeComponentInstance := locationActivity.getComponentInstance().resolve()->asOrderedSet()
+		->intersection(runtimeComponentInstancesOfDiagState)->any(oclAsType(RuntimeComponentInstance).componentType.oclAsType(BehavioralElement).behavior = self.instanceOf).oclAsType(RuntimeComponentInstance);
+		
+		runtimeComponentInstance.statechartInstance := self;
+	};
+		
+		
+	/*if(instanceOf.oclAsType(RealtimeStatechart).behavioralElement.oclIsKindOf(muml::component::Component))
+		runtimeBehavioralElement := self.getComponentInstance().map ComponentInstance2RuntimeComponentInstance(diagState);*/
+}
+
+helper MessageType :: createRuntimeMessageParameter(mID : Integer, diagState : diagnosticTrace::State) : OrderedSet(RuntimeParameter){
+//Example for Trace: MumlElement_exampleMessageMessageArguments[0].MumlElement_exampleMessageMessageID=2 MumlElement_exampleMessageMessageArguments[0].MumlElement_a=1
+	var runtimeParameters : OrderedSet(RuntimeParameter);
+
+	var argumentsVariable := self.getParameterTypeBufferFieldVariable(); //MumlElement_exampleMessageMessageArguments
+	var mIDVariable := self.getParameterTypeMessageIdVariable(); //MumlElement_exampleMessageMessageID
+	
+	var parentVariables : OrderedSet(uppaal::declarations::Variable);
+	parentVariables += argumentsVariable;
+	
+	var variableValueWithCorrectMID := mIDVariable.getVariableValue(diagState, null, parentVariables)->select(value = mID); //MumlElement_exampleMessageMessageArguments[0].MumlElement_exampleMessageMessageID=mID=2
+	
+	assert warning (variableValueWithCorrectMID->size() <= 1) with log("Found multiple Parameter Values for "+self.toString()+ " with id "+mID.toString());
+	
+	var indexOfCorrectMID := variableValueWithCorrectMID->any(true).firstNamedElementReference.singleNamedElementReference.indexes -> first(); //0
+	var parentIndexes : Sequence(Integer);
+	parentIndexes += indexOfCorrectMID;
+		
+	self.parameters->forEach(p){
+		var param := p.oclAsType(Parameter).getVariable(); //MumlElement_a
+		var paramVariableValue := param.getVariableValue(diagState, parentIndexes, parentVariables); //MumlElement_exampleMessageMessageArguments[0].MumlElement_a=1
+		
+		assert warning (paramVariableValue -> size() <=1) with log("Found multiple values for Parameter "+p.toString()+" of Message "+self.toString()+" with mID "+mID.toString());
+		
+		var paramValue := paramVariableValue ->any(true).value;
+		
+		runtimeParameters += new RuntimeParameter(p, paramValue);
+	};
+	
+	return runtimeParameters;
+}
+
+//Returns the MessageBuffer of the last Muml-Model (last model before execution of Migration) that results from self
+query MessageBuffer :: getLastMappedMessageBuffer() : MessageBuffer{
+	var resolved : MessageBuffer := self;
+	while(not resolved.resolveone(MessageBuffer).oclIsUndefined()){
+		resolved := resolved.resolveone(MessageBuffer);
+	};
+	
+	return resolved;
+}
+
+query VariableValue :: getMessageIdValuesForMessageTypeValue(mIDValues : OrderedSet(VariableValue)) : VariableValue{
+	mIDValues->forEach(mIDValue){
+		//compare connectors/buffers index
+		if(self.firstNamedElementReference.singleNamedElementReference.indexes 
+				= mIDValue.firstNamedElementReference.singleNamedElementReference.indexes)
+			//compare messages index
+			if(self.firstNamedElementReference.namedElementReference.singleNamedElementReference.indexes 
+					= mIDValue.firstNamedElementReference.namedElementReference.singleNamedElementReference.indexes)
+				return mIDValue;
+	};
+	return null
+}
+
+
+query RealtimeStatechartInstance :: isParentInstanceOf(rtscInstance : RealtimeStatechartInstance) : Boolean {
+	
+	if(rtscInstance.instanceOf.parentRegion.parentState.oclIsUndefined() or rtscInstance.activeVertex.oclIsUndefined())
+		return false;
+		
+	if(self.activeVertex = rtscInstance.instanceOf.parentRegion.parentState){
+		var parentID := self.getTemplateDeclaration().getInstanceID();
+		var embeddedID := rtscInstance.getTemplateDeclaration().getInstanceID();
+		if(parentID = embeddedID)
+			return true;
+	};
+	return false;
+	
+}
+
+
+// TODO evaluate other expression types such as ArithmeticExpression .. See uppaal::expressions
+// Currently this is only called for Arguments of TemplateDeclarations. Since the current Migration (MUML2UPPAAL) only uses LiteralExpressions in this context,
+// we do not need further evaluations. Adapt when Migration is changed.
+query Expression :: toInteger() : Integer {
+
+	return assert fatal (false) with log ("Cannot evaluate this expression.")
+
+}
+
+query LiteralExpression :: toInteger() : Integer {
+
+	return self.text.asInteger()
+
+}
+
+query uppaal::declarations::Variable :: getIntegerInitilizerValue() : Integer{
+	assert warning (self.initializer.oclIsKindOf(uppaal::declarations::ExpressionInitializer))
+					 	 with log ("Unexpected init of Variable" +self.toString());
+	return self.initializer.oclAsType(uppaal::declarations::ExpressionInitializer).expression.toInteger();
+}
+
+helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagState : diagnosticTrace::State, instanceID : Integer){
+	
+	var parentIndexes : Sequence(Integer);
+	parentIndexes += instanceID;
+
+	var variableValues := self.getUppaalVariable().getVariableValue(diagState, parentIndexes, null);
+	
+	if(variableValues -> size() = 0)
+		assert(false) with log ('Could not find value for variable '+self.name.toString());
+	if(variableValues -> size() = 1)
+		varBinding.value := variableValues->first().value;
+	if(variableValues ->size()>1){
+			assert fatal(self.dataType.oclIsKindOf(ArrayDataType)) with log('Found several values for variable '+self.toString()+', which is not of kind ArrayDataType');
+			setArrayValue(varBinding, variableValues);
+		};
+}
+

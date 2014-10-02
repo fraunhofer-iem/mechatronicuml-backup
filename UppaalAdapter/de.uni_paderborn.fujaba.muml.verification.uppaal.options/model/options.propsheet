@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="">
+  <reconciler/>
+  <genModel href="options.genmodel#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.verification.uppaal.options.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.options.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.options</requiredBundles>
+  </plugin>
+  <tabs id="options" name="Options" afterTab=""/>
+  <packages>
+    <genPackage href="options.genmodel#//options"/>
+    <classes>
+      <genClass href="options.genmodel#//options/Options"/>
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="options.genmodel#//options/Options/connectorOutBufferSize"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'connectorOutBufferSize')"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="options.genmodel#//options/Options/hashTableSize"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'hashTableSize')"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="options.genmodel#//options/Options/stateSpaceReduction"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'stateSpaceReduction')"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="options.genmodel#//options/Options/traceOptions"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'traceOptions')"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.0">
+      <genClass href="options.genmodel#//options/CoordinationProtocolOptions"/>
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="options.genmodel#//options/CoordinationProtocolOptions/roleMultiplicity"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not self.extension->exists(ext | ext.oclAsType(HideOptionExtension).option = 'roleMultiplicity')"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="options.genmodel#//options/HideOptionExtension"/>
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="options.genmodel#//options/HideOptionExtension/option"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>

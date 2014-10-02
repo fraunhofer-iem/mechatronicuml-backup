@@ -1,0 +1,339 @@
+import transforms.lib.RTSCUtil;
+import transforms.lib.MUML2MUML;
+import transforms.lib.MultiMappingUtil;
+
+
+/**
+* Normalize composite transitions, adding the implied transitions towards an exit point / from an entry point to initial states  
+*/
+transformation RTSCCompositeTransitionNormalization(in input:muml_rtsc, out output:muml_rtsc);
+
+modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype muml_msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven_core_expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype storydriven_core_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
+modeltype mtctl_comparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+main() {
+
+	--input.objects()[BehavioralElement].behavior->sortedByName().oclAsType(RealtimeStatechart)->map RTSC2RTSC();
+	input.objects()[RootNode]->map RootNode2RootNode();
+	
+}
+
+mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
+	if (self.elem.oclIsKindOf(Transition))
+		elem := self.elem.late resolveoneIn(muml::realtimestatechart::Transition::Transition2Transition)
+	else if (self.elem.oclIsKindOf(State))
+		elem := self.elem.oclAsType(State).map State2State()
+	else
+		elem := self.elem.late resolveone(EObject);
+	instance := self.instance.map EObject2EObject();
+}
+
+mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : RealtimeStatechart {
+			
+	name := self.name;
+	
+	behavioralElement := self.behavioralElement.map BehavioralElement2BehavioralElement();
+		
+	clocks += self.clocks->map Clock2Clock();
+	variables += self.variables->map Variable2Variable();
+	operations += self.operations->map Operation2Operation();
+	
+	-- in-depth normalization first (ensure highest-level transitions to be mapped last)
+	states += self.states->map State2State();
+	
+	transitions += self.getTransitions()->map Transition2Transition();
+		
+	-- expand high-level transitions
+	self.getTransitions()[isHighLevel()]->sortedBy(priority)->forEach(highLevelTransition) {
+		
+		-- expand outgoing high-level transitions (source state is composite)					
+		if(highLevelTransition.source.isCompositeState())
+		then {
+		
+			var sourceComposite : State = highLevelTransition.source.oclAsType(State);
+			
+			-- add exiting transition for all sub-states of the source composite state
+			sourceComposite.getAllStatesPrefix()->excluding(sourceComposite)->forEach(subState) {
+				
+				-- new exiting transition connects the sub-state to its parent
+				var source : Vertex = subState;
+				var target : Vertex = subState.getParentState();
+				
+				var priority : Integer;
+				
+				if (source.isSimpleState())
+				then {
+					-- set highest priority (ensures highest priority for topmost transitions since we are mapping the lowest level transitions first)
+					priority := source.map Vertex2Vertex().getHighestTransitionPriority();
+				}
+				else {
+					-- set 1 since 'source' is a composite state, i.e. the new transition will originate from an exit-point with only 1 outgoing transition
+					priority := 1;
+				}
+				endif;
+				
+				-- map transition properties only for the highest priority region of the parent state
+				var mapProperties : Boolean = subState.isContainedInHighestPriorityRegion(sourceComposite);
+				
+				transitions += highLevelTransition.map Transition2TransitionParam(source,target,priority,mapProperties);
+														
+			}
+			
+		}
+		endif;
+		
+		-- expand incoming high-level transitions (target state is composite)		
+		if(highLevelTransition.target.isCompositeState())
+		then {
+		
+			var targetComposite : State = highLevelTransition.target.oclAsType(State);
+			
+			-- add entering transition for all initially active sub-states of the target composite state
+			targetComposite.getAllInitiallyActiveStates()->excluding(targetComposite)->forEach(subState) {
+				
+				-- new entering transition connects the parent to its sub-state
+				var source : Vertex = subState.getParentState();
+				var target : Vertex = subState;
+				
+				-- apply region priority of target state
+				var priority : Integer = subState.parentStatechart.parentRegion.priority;
+				
+				-- map transition properties only for the highest priority region of the parent state
+				var mapProperties : Boolean = subState.isContainedInHighestPriorityRegion(targetComposite);
+				
+				transitions += highLevelTransition.map Transition2TransitionParam(source,target,priority,mapProperties);
+								
+			}
+			
+		}
+		endif;
+		
+		
+	}
+	
+	end {
+		assert fatal (
+			result.getTransitions()->forAll(t | not t.isHighLevel())
+		) with log('No highlevel transitions after normalization.');
+		
+	}
+		
+}
+
+mapping State :: State2State() : State {
+		
+	-- this mapping overrides the default behavior such that it does not reproduce incoming/outgoing transitions 
+	-- the default behavior connects every reproduced state to its incoming/outgoing transitions (this is exactly what we want to avoid for composite states)
+			
+	name := self.name;
+					
+	embeddedRegions += self.embeddedRegions->map Region2Region();
+	
+	entryEvent := self.entryEvent.map EntryEvent2EntryEvent();
+	doEvent := self.doEvent.map DoEvent2DoEvent();
+	exitEvent := self.exitEvent.map ExitEvent2ExitEvent();
+	
+	invariants += self.invariants->map ClockConstraint2ClockConstraint();
+	
+	initial := self.initial;
+	
+	final := self.final;
+	
+	urgent := self.urgent;
+	
+	channels := self.channels->map SynchronizationChannel2SynchronizationChannel();
+	
+	connectionPoints := self.connectionPoints->map StateConnectionPoint2StateConnectionPoint();
+	
+	parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
+	
+}
+
+mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::realtimestatechart::EntryPoint{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+//    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
+//    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
+    	_state := self._state.map State2State();
+   		 }
+   		 
+mapping muml::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : muml::realtimestatechart::ExitPoint{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+//    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
+//    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
+    	_state := self._state.map State2State();
+   		 }
+
+query Vertex :: getHighestTransitionPriority() : Integer {
+	var max : Integer = 0;
+	
+	if(self.outgoingTransitions->notEmpty())
+	then max := self.outgoingTransitions->sortedBy(priority)->last().priority
+	endif;
+	
+	return max + 1
+}
+
+query State :: isContainedInHighestPriorityRegion(composite : State) : Boolean {
+		
+	var allStatesInHighestPriorityRegion : OrderedSet(State) = composite.allStatesInHighestPriorityRegions();
+	
+	return allStatesInHighestPriorityRegion->includes(self)
+	 
+}
+
+query State :: allStatesInHighestPriorityRegions() : OrderedSet(State) {
+	
+	var highestPriorityRegionStates : OrderedSet(State);
+	
+	if (self.simple)
+	then {
+		highestPriorityRegionStates := object OrderedSet(State) {};
+	}
+	else {
+		highestPriorityRegionStates := self.embeddedRegions->sortedBy(priority)->last().embeddedStatechart.states;
+	}
+	endif;
+	
+	return highestPriorityRegionStates->union(highestPriorityRegionStates->allStatesInHighestPriorityRegions()->flatten()->asOrderedSet())->asOrderedSet();
+	
+}
+
+mapping Transition :: Transition2Transition() : Transition {
+	
+	init {
+		result := self.map Transition2TransitionParam(self.source,self.target,self.priority,true);
+	}
+	
+	end {
+		assert fatal (not result.source.isCompositeState() and not result.target.isCompositeState()) with log('No high-level transition expected.');
+	}
+	
+}
+
+mapping Transition :: Transition2TransitionParam(sourceVertex : Vertex, targetVertex : Vertex, p : Integer, mapProperties : Boolean) : Transition {
+		 
+	if sourceVertex != targetVertex and sourceVertex.oclIsKindOf(State) and targetVertex.oclIsKindOf(State) and sourceVertex.isSuperVertexOf(targetVertex)
+	then {
+		source := sourceVertex.oclAsType(State).map CompositeState2DefaultEntry(self);
+	}
+	else {
+		if sourceVertex.isCompositeState()
+		then {
+			source := sourceVertex.oclAsType(State).map CompositeState2AuxExit(self);
+		}
+		else {
+			source := sourceVertex.map Vertex2Vertex();
+		}
+		endif	
+	}
+	endif;
+	
+		
+	if sourceVertex != targetVertex and sourceVertex.oclIsKindOf(State) and targetVertex.oclIsKindOf(State) and targetVertex.isSuperVertexOf(sourceVertex)
+	then {
+		target := targetVertex.oclAsType(State).map CompositeState2AuxExit(self);
+	}
+	else {
+		if (targetVertex.isCompositeState())
+		then {
+			target := targetVertex.oclAsType(State).map CompositeState2DefaultEntry(self);
+		}
+		else {
+			target := targetVertex.map Vertex2Vertex();
+		}
+		endif
+	}
+	endif;
+		
+	priority := p;
+	
+	-- set urgent if a) original transition is also urgent, or b) if source is connection point
+	urgent := self.urgent or source.oclIsKindOf(StateConnectionPoint);
+		
+	if(mapProperties and sourceVertex.isSimpleState()) 
+	then {
+	
+		-- map conditions to lowest-level transition at the beginning of the tree
+	
+		guard := self.guard.mapExpression();
+	
+		clockConstraints += self.clockConstraints->mapClockConstraint();
+		
+		synchronization := self.synchronization.mapSynchronization();
+		
+		events += self.triggerMessageEvent.mapAsynchronousMessageEvent();
+					
+	}
+	endif;
+	
+	if(mapProperties and targetVertex.isSimpleState()) 
+	then {
+	
+		-- map effects and deadlines to a lowest-level transition at the end of the tree
+					
+		clockResets += self.clockResets->mapClock();
+		
+		action := self.action.mapAction();
+	
+		events += self.raiseMessageEvent.mapAsynchronousMessageEvent();
+		
+		absoluteDeadlines += self.absoluteDeadlines->mapAbsoluteDeadline();
+		
+		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();
+			
+	}
+	endif;
+	
+	
+	end {
+		assert fatal (not result.source.oclIsUndefined()) with log('Source state must be specified.');
+		assert fatal (not result.target.oclIsUndefined()) with log('Target state must be specified.');
+		
+		assert fatal (not result.source.isCompositeState() and not result.target.isCompositeState()) with log('No high-level transition expected.');
+	}			
+			
+}
+
+
+property auxEntryNamePrefix : String = 'ENTRY';
+
+mapping State :: CompositeState2DefaultEntry(highLevelTransition : Transition) : EntryPoint when {self.isCompositeState()} {	
+	name := self.name + '_' + auxEntryNamePrefix.addSuffixNumber();
+	state := self.map State2State();
+}
+
+
+property auxExitNamePrefix : String = 'EXIT';
+
+mapping State :: CompositeState2AuxExit(highLevelTransition : Transition) : ExitPoint when {self.isCompositeState()} {	
+	name := self.name + '_' + auxExitNamePrefix.addSuffixNumber();
+	state := self.map State2State();
+}
+
+
+
+
+
+
+
+
+

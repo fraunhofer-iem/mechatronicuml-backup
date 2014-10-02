@@ -1,0 +1,40 @@
+library Util;
+
+modeltype muml_valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype core_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype core_expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');		
+modeltype muml_connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');		
+					
+	query NaturalNumber :: getInteger() : Integer {
+		
+		assert fatal (not self.infinity) with log ("Can't map infinity to integer.");
+		
+		return self.value
+		
+	}
+	
+	helper Collection(uppaal_expressions::Expression) :: constructConjunction() : uppaal_expressions::Expression {
+		
+		var filteredExpressions : Collection(uppaal_expressions::Expression) = self->reject(e | e.oclIsUndefined());
+		
+		if filteredExpressions->isEmpty() then return null endif;
+		
+		var expression : Expression = filteredExpressions->any(true);
+		
+		if filteredExpressions->size() = 1 then return expression endif;
+		
+					
+		return object LogicalExpression {
+			
+			operator := LogicalOperator::AND;
+						
+			firstExpr := expression;
+			
+			secondExpr := filteredExpressions->reject(e | e = expression)->constructConjunction();
+		}
+		
+	}

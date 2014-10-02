@@ -1,0 +1,1206 @@
+library MUML2MUML;
+modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype behaviorModel uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype expressionsModel uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype instanceModel uses'http://www.fujaba.de/muml/instance/0.4.0';
+modeltype constraintModel uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
+modeltype mtctlQuantifiers uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers';
+modeltype mtctlPredicates uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates';
+modeltype mtctlSets uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets';
+modeltype mtctlBooleanLogic uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic';
+modeltype mtctlComparables uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables';
+
+modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+mapping Extension :: Extension2Extension() : Extension disjuncts CommittedExtension::CommittedExtension2CommittedExtension, ElementToVerifyExtension::ElementToVerifyExtension2ElementToVerifyExtension;
+
+mapping CommittedExtension :: CommittedExtension2CommittedExtension() : CommittedExtension{
+	
+}
+
+mapping ElementToVerifyExtension :: ElementToVerifyExtension2ElementToVerifyExtension() : ElementToVerifyExtension {
+	
+}
+
+mapping actionlanguage::Block :: Block2Block() : actionlanguage::Block disjuncts actionlanguage::Loop::Loop2Loop, actionlanguage::Block::normalBlock2Block;
+ 	 			
+ mapping actionlanguage::Block :: normalBlock2Block() : actionlanguage::Block{
+ _comment := self._comment;
+ _annotation := self._annotation.map EAnnotation2EAnnotation();
+ _extension := self._extension.map Extension2Extension();
+ _expressions := self._expressions.map Expression2Expression();
+ }
+ 	 			
+mapping actionlanguage::Loop :: Loop2Loop() : actionlanguage::Loop disjuncts actionlanguage::DoWhileLoop::DoWhileLoop2DoWhileLoop, actionlanguage::ForLoop::ForLoop2ForLoop, actionlanguage::WhileLoop::WhileLoop2WhileLoop;
+      	
+mapping actionlanguage::WhileLoop :: WhileLoop2WhileLoop() : actionlanguage::WhileLoop{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_expressions := self._expressions.map Expression2Expression();
+    	_block := self._block.map Block2Block();
+    	_loopTest := self._loopTest.map Expression2Expression();
+   		 }
+   		 
+mapping actionlanguage::DoWhileLoop :: DoWhileLoop2DoWhileLoop() : actionlanguage::DoWhileLoop{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_expressions := self._expressions.map Expression2Expression();
+    	_block := self._block.map Block2Block();
+    	_loopTest := self._loopTest.map Expression2Expression();
+   		 }
+   		 
+mapping actionlanguage::Assignment :: Assignment2Assignment() : actionlanguage::Assignment{
+    	_comment := self._comment;
+    	_assignOperator := self._assignOperator;
+    	_incrementDecrementOperator := self._incrementDecrementOperator;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_rhs_assignExpression := self._rhs_assignExpression.map Expression2Expression();
+    	_lhs_typedNamedElementExpression := self._lhs_typedNamedElementExpression.map TypedNamedElementExpression2TypedNamedElementExpression();
+   		 }
+   		 
+mapping actionlanguage::ForLoop :: ForLoop2ForLoop() : actionlanguage::ForLoop{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_expressions := self._expressions.map Expression2Expression();
+    	_block := self._block.map Block2Block();
+    	_loopTest := self._loopTest.map Expression2Expression();
+    	_initializeExpression := self._initializeExpression.map Assignment2Assignment();
+    	_countingExpression := self._countingExpression.map Assignment2Assignment();
+   		 }
+   		 
+mapping actionlanguage::IfStatement :: IfStatement2IfStatement() : actionlanguage::IfStatement{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_ifCondition := self._ifCondition.map Expression2Expression();
+    	_ifBlock := self._ifBlock.map Block2Block();
+    	_elseIfConditions := self._elseIfConditions.map Expression2Expression();
+    	_elseIfBlocks := self._elseIfBlocks.map Block2Block();
+    	_elseBlock := self._elseBlock.map Block2Block();
+   		 }
+   		 
+mapping actionlanguage::OperationCall :: OperationCall2OperationCall() : actionlanguage::OperationCall{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_operation := self._operation.map Operation2Operation();
+    	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding();
+   		 }
+   		 
+mapping actionlanguage::ReturnStatement :: ReturnStatement2ReturnStatement() : actionlanguage::ReturnStatement{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_expression := self._expression.map Expression2Expression();
+   		 }
+   		 
+mapping actionlanguage::TriggerMessageExpression :: TriggerMessageExpression2TriggerMessageExpression() : actionlanguage::TriggerMessageExpression{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_messageType := self._messageType.map MessageType2MessageType();
+    	_parameter := self._parameter.map Parameter2Parameter();
+   		 }
+   		 
+mapping actionlanguage::DiscreteInteractionEndpointReference :: DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference() : actionlanguage::DiscreteInteractionEndpointReference{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_typedNamedElementExpression := self._typedNamedElementExpression.map TypedNamedElementExpression2TypedNamedElementExpression();
+    	_position := self._position.map PositionSelector2PositionSelector();
+   		 }
+   		 
+mapping actionlanguage::PositionSelector :: PositionSelector2PositionSelector() : actionlanguage::PositionSelector{
+    	_comment := self._comment;
+    	_kind := self._kind;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_successor := self._successor.map PositionSelector2PositionSelector();
+   		 }
+   		 
+mapping actionlanguage::LocalVariableDeclarationStatement :: LocalVariableDeclarationStatement2LocalVariableDeclarationStatement() : actionlanguage::LocalVariableDeclarationStatement{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_variable := self._variable.map Variable2Variable();
+   		 }
+   		 
+mapping actionlanguage::TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression() : actionlanguage::TypedNamedElementExpression{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
+    	_indices := self._indices.map Expression2Expression();
+   		 }
+   		 
+mapping actionlanguage::ArrayInitializeExpression :: ArrayInitializeExpression2ArrayInitializeExpression() : actionlanguage::ArrayInitializeExpression{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_expressions := self._expressions.map Expression2Expression();
+   		 }
+   		 
+mapping actionlanguage::NondeterministicChoiceExpression :: NondeterministicChoiceExpression2NondeterministicChoiceExpression() : actionlanguage::NondeterministicChoiceExpression{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_range := self._range.map Range2Range();
+    	_dataType := self._dataType.map PrimitiveDataType2PrimitiveDataType();
+   		 }
+   		 
+mapping muml::valuetype::Cardinality :: Cardinality2Cardinality() : muml::valuetype::Cardinality{
+    	_lowerBound := self._lowerBound.map NaturalNumber2NaturalNumber();
+    	_upperBound := self._upperBound.map NaturalNumber2NaturalNumber();
+   		 }
+   		 
+mapping muml::valuetype::TimeValue :: TimeValue2TimeValue() : muml::valuetype::TimeValue{
+    	_unit := self._unit;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_value := self._value.map Expression2Expression();
+   		 }
+   		 
+mapping muml::valuetype::NaturalNumber :: NaturalNumber2NaturalNumber() : muml::valuetype::NaturalNumber{
+    	_value := self._value;
+    	_infinity := self._infinity;
+   		 }
+   		 
+mapping muml::valuetype::Range :: Range2Range() : muml::valuetype::Range{
+    	_lowerBound := self._lowerBound;
+    	_upperBound := self._upperBound;
+   		 }
+   		 
+mapping core::CommentableElement :: CommentableElement2CommentableElement() : core::CommentableElement disjuncts muml::connector::MessageBuffer::MessageBuffer2MessageBuffer, muml::behavior::Variable::Variable2Variable, muml::protocol::ConnectorQualityOfServiceAssumptions::ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions, muml::behavior::Parameter::Parameter2Parameter, muml::realtimestatechart::Vertex::Vertex2Vertex, muml::msgtype::MessageType::MessageType2MessageType, muml::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, core::expressions::Expression::Expression2Expression, muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, muml::component::ComponentPart::ComponentPart2ComponentPart, muml::connector::Connector::Connector2Connector, muml::connector::ConnectorEndpoint::ConnectorEndpoint2ConnectorEndpoint, muml::types::DataType::DataType2DataType, muml::component::Component::Component2Component, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, muml::connector::ConnectorInstance::ConnectorInstance2ConnectorInstance, muml::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, mtctl::Property::Property2Property, muml::component::CoordinationProtocolPart::CoordinationProtocolPart2CoordinationProtocolPart, muml::realtimestatechart::Region::Region2Region, muml::realtimestatechart::Transition::Transition2Transition, muml::behavior::Operation::Operation2Operation, muml::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+      	
+mapping core::ExtendableElement :: ExtendableElement2ExtendableElement() : core::ExtendableElement disjuncts core::CommentableElement::CommentableElement2CommentableElement, muml::behavior::ParameterBinding::ParameterBinding2ParameterBinding, core::NamedElement::NamedElement2NamedElement, muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository2VerificationConstraintRepository, muml::realtimestatechart::Message::Message2Message, muml::realtimestatechart::ClockConstraint::ClockConstraint2ClockConstraint, muml::realtimestatechart::Synchronization::Synchronization2Synchronization, muml::valuetype::TimeValue::TimeValue2TimeValue;
+      	
+mapping core::NamedElement :: NamedElement2NamedElement() : core::NamedElement disjuncts muml::connector::MessageBuffer::MessageBuffer2MessageBuffer, muml::msgtype::MessageType::MessageType2MessageType, muml::realtimestatechart::Vertex::Vertex2Vertex, muml::realtimestatechart::SynchronizationChannel::SynchronizationChannel2SynchronizationChannel, muml::instance::ComponentInstance::ComponentInstance2ComponentInstance, muml::msgtype::MessageTypeRepository::MessageTypeRepository2MessageTypeRepository, muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, muml::component::ComponentPart::ComponentPart2ComponentPart, muml::realtimestatechart::Action::Action2Action, muml::types::DataType::DataType2DataType, muml::instance::CoordinationProtocolInstance::CoordinationProtocolInstance2CoordinationProtocolInstance, muml::component::Component::Component2Component, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration, muml::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, muml::realtimestatechart::Clock::Clock2Clock, muml::connector::ConnectorEndpointInstance::ConnectorEndpointInstance2ConnectorEndpointInstance, muml::behavior::Operation::Operation2Operation, muml::behavior::TypedNamedElement::TypedNamedElement2TypedNamedElement, muml::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+      	
+mapping ecore::EAttribute :: EAttribute2EAttribute() : ecore::EAttribute{
+    	_name := self._name;
+    	_ordered := self._ordered;
+    	_unique := self._unique;
+    	_lowerBound := self._lowerBound;
+    	_upperBound := self._upperBound;
+    	_changeable := self._changeable;
+    	_volatile := self._volatile;
+    	_transient := self._transient;
+    	_defaultValueLiteral := self._defaultValueLiteral;
+    	_unsettable := self._unsettable;
+    	_derived := self._derived;
+    	_iD := self._iD;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_eType := self._eType.map EClassifier2EClassifier();
+    	_eGenericType := self._eGenericType.map EGenericType2EGenericType();
+   		 }
+   		 
+mapping ecore::EAnnotation :: EAnnotation2EAnnotation() : ecore::EAnnotation{
+    	_source := self._source;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_details := self._details.map EStringToStringMapEntry2EStringToStringMapEntry();
+    	_eModelElement := self._eModelElement.map EModelElement2EModelElement();
+    	_contents := self._contents.map EObject2EObject();
+    	_references := self._references.map EObject2EObject();
+   		 }
+   		 
+mapping ecore::EClass :: EClass2EClass() : ecore::EClass{
+    	_name := self._name;
+    	_instanceClassName := self._instanceClassName;
+    	_instanceTypeName := self._instanceTypeName;
+    	_abstract := self._abstract;
+    	_interface := self._interface;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_eTypeParameters := self._eTypeParameters.map ETypeParameter2ETypeParameter();
+    	_eSuperTypes := self._eSuperTypes.map EClass2EClass();
+    	_eOperations := self._eOperations.map EOperation2EOperation();
+    	_eStructuralFeatures := self._eStructuralFeatures.map EStructuralFeature2EStructuralFeature();
+    	_eGenericSuperTypes := self._eGenericSuperTypes.map EGenericType2EGenericType();
+   		 }
+   		 
+mapping ecore::EClassifier :: EClassifier2EClassifier() : ecore::EClassifier disjuncts ecore::EClass::EClass2EClass, ecore::EDataType::EDataType2EDataType;
+      	
+mapping ecore::EDataType :: EDataType2EDataType() : ecore::EDataType disjuncts ecore::EEnum::EEnum2EEnum, ecore::EDataType::normalEDataType2EDataType;
+ 	 			
+ mapping ecore::EDataType :: normalEDataType2EDataType() : ecore::EDataType{
+ _name := self._name;
+ _instanceClassName := self._instanceClassName;
+ _instanceTypeName := self._instanceTypeName;
+ _serializable := self._serializable;
+ _eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+ _eTypeParameters := self._eTypeParameters.map ETypeParameter2ETypeParameter();
+ }
+ 	 			
+mapping ecore::EEnum :: EEnum2EEnum() : ecore::EEnum{
+    	_name := self._name;
+    	_instanceClassName := self._instanceClassName;
+    	_instanceTypeName := self._instanceTypeName;
+    	_serializable := self._serializable;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_eTypeParameters := self._eTypeParameters.map ETypeParameter2ETypeParameter();
+    	_eLiterals := self._eLiterals.map EEnumLiteral2EEnumLiteral();
+   		 }
+   		 
+mapping ecore::EEnumLiteral :: EEnumLiteral2EEnumLiteral() : ecore::EEnumLiteral{
+    	_name := self._name;
+    	_value := self._value;
+    	_instance := self._instance;
+    	_literal := self._literal;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+   		 }
+   		 
+mapping ecore::EFactory :: EFactory2EFactory() : ecore::EFactory{
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_ePackage := self._ePackage.map EPackage2EPackage();
+   		 }
+   		 
+mapping ecore::EModelElement :: EModelElement2EModelElement() : ecore::EModelElement disjuncts ecore::EAnnotation::EAnnotation2EAnnotation, ecore::ENamedElement::ENamedElement2ENamedElement, ecore::EFactory::EFactory2EFactory;
+      	
+mapping ecore::ENamedElement :: ENamedElement2ENamedElement() : ecore::ENamedElement disjuncts ecore::EPackage::EPackage2EPackage, ecore::ETypeParameter::ETypeParameter2ETypeParameter, ecore::ETypedElement::ETypedElement2ETypedElement, ecore::EEnumLiteral::EEnumLiteral2EEnumLiteral, ecore::EClassifier::EClassifier2EClassifier;
+      	
+mapping ecore::EObject :: EObject2EObject() : ecore::EObject disjuncts mtctl::Expression::Expression2Expression, core::ExtendableElement::ExtendableElement2ExtendableElement, ecore::EObject::normalEObject2EObject;
+ 	 			
+ mapping ecore::EObject :: normalEObject2EObject() : ecore::EObject{
+ }
+ 	 			
+mapping ecore::EOperation :: EOperation2EOperation() : ecore::EOperation{
+    	_name := self._name;
+    	_ordered := self._ordered;
+    	_unique := self._unique;
+    	_lowerBound := self._lowerBound;
+    	_upperBound := self._upperBound;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_eType := self._eType.map EClassifier2EClassifier();
+    	_eGenericType := self._eGenericType.map EGenericType2EGenericType();
+    	_eTypeParameters := self._eTypeParameters.map ETypeParameter2ETypeParameter();
+    	_eParameters := self._eParameters.map EParameter2EParameter();
+    	_eExceptions := self._eExceptions.map EClassifier2EClassifier();
+    	_eGenericExceptions := self._eGenericExceptions.map EGenericType2EGenericType();
+   		 }
+   		 
+mapping ecore::EPackage :: EPackage2EPackage() : ecore::EPackage{
+    	_name := self._name;
+    	_nsURI := self._nsURI;
+    	_nsPrefix := self._nsPrefix;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_eFactoryInstance := self._eFactoryInstance.map EFactory2EFactory();
+    	_eClassifiers := self._eClassifiers.map EClassifier2EClassifier();
+    	_eSubpackages := self._eSubpackages.map EPackage2EPackage();
+   		 }
+   		 
+mapping ecore::EParameter :: EParameter2EParameter() : ecore::EParameter{
+    	_name := self._name;
+    	_ordered := self._ordered;
+    	_unique := self._unique;
+    	_lowerBound := self._lowerBound;
+    	_upperBound := self._upperBound;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_eType := self._eType.map EClassifier2EClassifier();
+    	_eGenericType := self._eGenericType.map EGenericType2EGenericType();
+   		 }
+   		 
+mapping ecore::EReference :: EReference2EReference() : ecore::EReference{
+    	_name := self._name;
+    	_ordered := self._ordered;
+    	_unique := self._unique;
+    	_lowerBound := self._lowerBound;
+    	_upperBound := self._upperBound;
+    	_changeable := self._changeable;
+    	_volatile := self._volatile;
+    	_transient := self._transient;
+    	_defaultValueLiteral := self._defaultValueLiteral;
+    	_unsettable := self._unsettable;
+    	_derived := self._derived;
+    	_containment := self._containment;
+    	_resolveProxies := self._resolveProxies;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_eType := self._eType.map EClassifier2EClassifier();
+    	_eGenericType := self._eGenericType.map EGenericType2EGenericType();
+    	_eOpposite := self._eOpposite.map EReference2EReference();
+    	_eKeys := self._eKeys.map EAttribute2EAttribute();
+   		 }
+   		 
+mapping ecore::EStructuralFeature :: EStructuralFeature2EStructuralFeature() : ecore::EStructuralFeature disjuncts ecore::EAttribute::EAttribute2EAttribute, ecore::EReference::EReference2EReference;
+      	
+mapping ecore::ETypedElement :: ETypedElement2ETypedElement() : ecore::ETypedElement disjuncts ecore::EOperation::EOperation2EOperation, ecore::EStructuralFeature::EStructuralFeature2EStructuralFeature, ecore::EParameter::EParameter2EParameter;
+      	
+mapping ecore::EStringToStringMapEntry :: EStringToStringMapEntry2EStringToStringMapEntry() : ecore::EStringToStringMapEntry{
+    	_key := self._key;
+    	_value := self._value;
+   		 }
+   		 
+mapping ecore::EGenericType :: EGenericType2EGenericType() : ecore::EGenericType{
+    	_eUpperBound := self._eUpperBound.map EGenericType2EGenericType();
+    	_eTypeArguments := self._eTypeArguments.map EGenericType2EGenericType();
+    	_eLowerBound := self._eLowerBound.map EGenericType2EGenericType();
+    	_eTypeParameter := self._eTypeParameter.map ETypeParameter2ETypeParameter();
+    	_eClassifier := self._eClassifier.map EClassifier2EClassifier();
+   		 }
+   		 
+mapping ecore::ETypeParameter :: ETypeParameter2ETypeParameter() : ecore::ETypeParameter{
+    	_name := self._name;
+    	_eAnnotations := self._eAnnotations.map EAnnotation2EAnnotation();
+    	_eBounds := self._eBounds.map EGenericType2EGenericType();
+   		 }
+   		 
+mapping mtctl::PropertyRepository :: PropertyRepository2PropertyRepository() : mtctl::PropertyRepository{
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_properties := self._properties.map Property2Property();
+   		 }
+   		 
+mapping mtctl::Property :: Property2Property() : mtctl::Property{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_expression := self._expression.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::Expression :: Expression2Expression() : mtctl::Expression disjuncts mtctl::Predicates::PredicateExpr::PredicateExpr2PredicateExpr, mtctl::BooleanLogic::NotExpr::NotExpr2NotExpr, mtctl::BooleanLogic::AndExpr::AndExpr2AndExpr, mtctl::Comparables::MapExpr::MapExpr2MapExpr, mtctl::Quantifiers::BoundVariable::BoundVariable2BoundVariable, mtctl::Quantifiers::TemporalQuantifierExpr::TemporalQuantifierExpr2TemporalQuantifierExpr, mtctl::BooleanLogic::ImplyExpr::ImplyExpr2ImplyExpr, mtctl::Quantifiers::QuantifierExpr::QuantifierExpr2QuantifierExpr, mtctl::Sets::SetExpr::SetExpr2SetExpr, mtctl::BooleanLogic::OrExpr::OrExpr2OrExpr;
+      	
+mapping muml::types::ArrayDataType :: ArrayDataType2ArrayDataType() : muml::types::ArrayDataType{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_type := self._type.map DataType2DataType();
+    	_cardinality := self._cardinality.map NaturalNumber2NaturalNumber();
+   		 }
+   		 
+mapping muml::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType() : muml::types::PrimitiveDataType{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_primitiveType := self._primitiveType;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+   		 }
+   		 
+mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts muml::component::ComponentPart::ComponentPart2ComponentPart, muml::protocol::Role::Role2Role, muml::component::Component::Component2Component, muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType, muml::types::ArrayDataType::ArrayDataType2ArrayDataType, muml::component::Port::Port2Port, muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType;
+      	
+mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType() : muml::types::RangedPrimitiveDataType{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_rangedType := self._rangedType.map PrimitiveDataType2PrimitiveDataType();
+    	_range := self._range.map Range2Range();
+   		 }
+   		 
+mapping muml::instance::ComponentInstance :: ComponentInstance2ComponentInstance() : muml::instance::ComponentInstance disjuncts muml::instance::StructuredComponentInstance::StructuredComponentInstance2StructuredComponentInstance, muml::instance::AtomicComponentInstance::AtomicComponentInstance2AtomicComponentInstance;
+      	
+mapping muml::instance::PortConnectorInstance :: PortConnectorInstance2PortConnectorInstance() : muml::instance::PortConnectorInstance disjuncts muml::instance::AssemblyConnectorInstance::AssemblyConnectorInstance2AssemblyConnectorInstance, muml::instance::DelegationConnectorInstance::DelegationConnectorInstance2DelegationConnectorInstance;
+      	
+mapping muml::instance::PortInstance :: PortInstance2PortInstance() : muml::instance::PortInstance disjuncts muml::instance::HybridPortInstance::HybridPortInstance2HybridPortInstance, muml::instance::ContinuousPortInstance::ContinuousPortInstance2ContinuousPortInstance, muml::instance::DiscretePortInstance::DiscretePortInstance2DiscretePortInstance;
+      	
+mapping muml::instance::AssemblyConnectorInstance :: AssemblyConnectorInstance2AssemblyConnectorInstance() : muml::instance::AssemblyConnectorInstance{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_type := self._type.map Connector2Connector();
+    	_connectorEndpointInstances := self._connectorEndpointInstances.map ConnectorEndpointInstance2ConnectorEndpointInstance();
+   		 }
+   		 
+mapping muml::instance::DelegationConnectorInstance :: DelegationConnectorInstance2DelegationConnectorInstance() : muml::instance::DelegationConnectorInstance{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_type := self._type.map Connector2Connector();
+    	_connectorEndpointInstances := self._connectorEndpointInstances.map ConnectorEndpointInstance2ConnectorEndpointInstance();
+   		 }
+   		 
+mapping muml::instance::ComponentInstanceConfiguration :: ComponentInstanceConfiguration2ComponentInstanceConfiguration() : muml::instance::ComponentInstanceConfiguration{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
+    	_componentInstances := self._componentInstances.map ComponentInstance2ComponentInstance();
+    	_portConnectorInstances := self._portConnectorInstances.map PortConnectorInstance2PortConnectorInstance();
+    	_parentStructuredComponentInstance := self._parentStructuredComponentInstance.map StructuredComponentInstance2StructuredComponentInstance();
+   		 }
+   		 
+mapping muml::instance::ContinuousPortInstance :: ContinuousPortInstance2ContinuousPortInstance() : muml::instance::ContinuousPortInstance{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectorInstances += self.connectorInstances.map ConnectorInstance2ConnectorInstance();     				
+    	    			
+    	    			
+    	_type := self._type.map ConnectorEndpoint2ConnectorEndpoint();
+    	_componentInstance := self._componentInstance.map ComponentInstance2ComponentInstance();
+   		 }
+   		 
+mapping muml::instance::HybridPortInstance :: HybridPortInstance2HybridPortInstance() : muml::instance::HybridPortInstance{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectorInstances += self.connectorInstances.map ConnectorInstance2ConnectorInstance();     				
+    	    			
+    	    			
+    	_type := self._type.map ConnectorEndpoint2ConnectorEndpoint();
+    	_componentInstance := self._componentInstance.map ComponentInstance2ComponentInstance();
+   		 }
+   		 
+mapping muml::instance::DiscretePortInstance :: DiscretePortInstance2DiscretePortInstance() : muml::instance::DiscretePortInstance disjuncts muml::instance::DiscreteMultiPortInstance::DiscreteMultiPortInstance2DiscreteMultiPortInstance, muml::instance::DiscreteSinglePortInstance::DiscreteSinglePortInstance2DiscreteSinglePortInstance;
+      	
+mapping muml::instance::DiscreteSinglePortInstance :: DiscreteSinglePortInstance2DiscreteSinglePortInstance() : muml::instance::DiscreteSinglePortInstance{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectorInstances += self.connectorInstances.map ConnectorInstance2ConnectorInstance();     				
+    	    			
+    	    			
+    	_type := self._type.map ConnectorEndpoint2ConnectorEndpoint();
+    	_componentInstance := self._componentInstance.map ComponentInstance2ComponentInstance();
+    	_multiInteractionEndpointInstance := self._multiInteractionEndpointInstance.map DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance();
+    	_next := self._next.map DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance();
+    	_previous := self._previous.map DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance();
+   		 }
+   		 
+mapping muml::instance::DiscreteMultiPortInstance :: DiscreteMultiPortInstance2DiscreteMultiPortInstance() : muml::instance::DiscreteMultiPortInstance{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectorInstances += self.connectorInstances.map ConnectorInstance2ConnectorInstance();     				
+    	    			
+    	    			
+    	_type := self._type.map ConnectorEndpoint2ConnectorEndpoint();
+    	_componentInstance := self._componentInstance.map ComponentInstance2ComponentInstance();
+    	_subInteractionEndpointInstances := self._subInteractionEndpointInstances.map DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance();
+    	_first := self._first.map DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance();
+    	_last := self._last.map DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance();
+   		 }
+   		 
+mapping muml::instance::CoordinationProtocolInstance :: CoordinationProtocolInstance2CoordinationProtocolInstance() : muml::instance::CoordinationProtocolInstance{
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_portInstances := self._portInstances.map PortInstance2PortInstance();
+    	_coordinationProtocolPart := self._coordinationProtocolPart.map CoordinationProtocolPart2CoordinationProtocolPart();
+   		 }
+   		 
+mapping muml::instance::StructuredComponentInstance :: StructuredComponentInstance2StructuredComponentInstance() : muml::instance::StructuredComponentInstance{
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_componentType := self._componentType.map Component2Component();
+    	_portInstances := self._portInstances.map PortInstance2PortInstance();
+    	_componentPart := self._componentPart.map ComponentPart2ComponentPart();
+    	_parentCIC := self._parentCIC.map ComponentInstanceConfiguration2ComponentInstanceConfiguration();
+    	_embeddedCIC := self._embeddedCIC.map ComponentInstanceConfiguration2ComponentInstanceConfiguration();
+   		 }
+   		 
+mapping muml::instance::AtomicComponentInstance :: AtomicComponentInstance2AtomicComponentInstance() : muml::instance::AtomicComponentInstance{
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_componentType := self._componentType.map Component2Component();
+    	_portInstances := self._portInstances.map PortInstance2PortInstance();
+    	_componentPart := self._componentPart.map ComponentPart2ComponentPart();
+    	_parentCIC := self._parentCIC.map ComponentInstanceConfiguration2ComponentInstanceConfiguration();
+   		 }
+   		 
+mapping mtctl::Predicates::DeadlockExpr :: DeadlockExpr2DeadlockExpr() : mtctl::Predicates::DeadlockExpr{
+   		 }
+   		 
+mapping mtctl::Predicates::BufferOverflowExpr :: BufferOverflowExpr2BufferOverflowExpr() : mtctl::Predicates::BufferOverflowExpr{
+   		 }
+   		 
+mapping mtctl::Predicates::ComparisonExpr :: ComparisonExpr2ComparisonExpr() : mtctl::Predicates::ComparisonExpr{
+    	_op := self._op;
+    	_lhs := self._lhs.map MapExpr2MapExpr();
+    	_rhs := self._rhs.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Predicates::MessageInBufferExpr :: MessageInBufferExpr2MessageInBufferExpr() : mtctl::Predicates::MessageInBufferExpr{
+    	_buffer := self._buffer.map MapExpr2MapExpr();
+    	_message := self._message.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Predicates::MessageInTransitExpr :: MessageInTransitExpr2MessageInTransitExpr() : mtctl::Predicates::MessageInTransitExpr{
+    	_message := self._message.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Predicates::StateActiveExpr :: StateActiveExpr2StateActiveExpr() : mtctl::Predicates::StateActiveExpr{
+    	_state := self._state.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Predicates::SubstateOfExpr :: SubstateOfExpr2SubstateOfExpr() : mtctl::Predicates::SubstateOfExpr{
+    	_superstate := self._superstate.map MapExpr2MapExpr();
+    	_state := self._state.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Predicates::TransitionFiringExpr :: TransitionFiringExpr2TransitionFiringExpr() : mtctl::Predicates::TransitionFiringExpr{
+    	_transition := self._transition.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Predicates::PredicateExpr :: PredicateExpr2PredicateExpr() : mtctl::Predicates::PredicateExpr disjuncts mtctl::Predicates::ComparisonExpr::ComparisonExpr2ComparisonExpr, mtctl::Predicates::StaticPredicateExpr::StaticPredicateExpr2StaticPredicateExpr, mtctl::Predicates::DynamicPredicateExpr::DynamicPredicateExpr2DynamicPredicateExpr, mtctl::Predicates::PredicateExpr::normalPredicateExpr2PredicateExpr;
+ 	 			
+ mapping mtctl::Predicates::PredicateExpr :: normalPredicateExpr2PredicateExpr() : mtctl::Predicates::PredicateExpr{
+ }
+ 	 			
+mapping mtctl::Predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::Predicates::DynamicPredicateExpr disjuncts mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr, mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr, mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr, mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr, mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr, mtctl::Predicates::BufferOverflowExpr::BufferOverflowExpr2BufferOverflowExpr;
+      	
+mapping mtctl::Predicates::StaticPredicateExpr :: StaticPredicateExpr2StaticPredicateExpr() : mtctl::Predicates::StaticPredicateExpr disjuncts mtctl::Predicates::FalseExpr::FalseExpr2FalseExpr, mtctl::Predicates::TrueExpr::TrueExpr2TrueExpr, mtctl::Predicates::StateInStatechartExpr::StateInStatechartExpr2StateInStatechartExpr, mtctl::Predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr;
+      	
+mapping mtctl::Predicates::TrueExpr :: TrueExpr2TrueExpr() : mtctl::Predicates::TrueExpr{
+   		 }
+   		 
+mapping mtctl::Predicates::FalseExpr :: FalseExpr2FalseExpr() : mtctl::Predicates::FalseExpr{
+   		 }
+   		 
+mapping mtctl::Predicates::StateInStatechartExpr :: StateInStatechartExpr2StateInStatechartExpr() : mtctl::Predicates::StateInStatechartExpr{
+    	_state := self._state.map MapExpr2MapExpr();
+    	_statechart := self._statechart.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping muml::constraint::VerificationConstraintRepository :: VerificationConstraintRepository2VerificationConstraintRepository() : muml::constraint::VerificationConstraintRepository disjuncts mtctl::PropertyRepository::PropertyRepository2PropertyRepository;
+      	
+mapping muml::constraint::VerifiableElement :: VerifiableElement2VerifiableElement() : muml::constraint::VerifiableElement disjuncts muml::protocol::AbstractCoordinationSpecification::AbstractCoordinationSpecification2AbstractCoordinationSpecification, muml::component::AtomicComponent::AtomicComponent2AtomicComponent, muml::instance::ComponentInstanceConfiguration::ComponentInstanceConfiguration2ComponentInstanceConfiguration;
+      	
+mapping mtctl::Comparables::BufferMsgCountExpr :: BufferMsgCountExpr2BufferMsgCountExpr() : mtctl::Comparables::BufferMsgCountExpr{
+    	_buffer := self._buffer.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Comparables::ConstExpr :: ConstExpr2ConstExpr() : mtctl::Comparables::ConstExpr{
+    	_val := self._val;
+    	_timeUnit := self._timeUnit;
+   		 }
+   		 
+mapping mtctl::Comparables::MapExpr :: MapExpr2MapExpr() : mtctl::Comparables::MapExpr disjuncts mtctl::Comparables::ConstExpr::ConstExpr2ConstExpr, mtctl::Comparables::BufferMsgCountExpr::BufferMsgCountExpr2BufferMsgCountExpr, mtctl::Comparables::MumlElemExpr::MumlElemExpr2MumlElemExpr, mtctl::Comparables::TransitionMap::TransitionMap2TransitionMap;
+      	
+mapping mtctl::Comparables::MumlElemExpr :: MumlElemExpr2MumlElemExpr() : mtctl::Comparables::MumlElemExpr{
+    	_elem := self._elem.map EObject2EObject();
+    	_instance := self._instance.map EObject2EObject();
+   		 }
+   		 
+mapping mtctl::Comparables::TransitionMap :: TransitionMap2TransitionMap() : mtctl::Comparables::TransitionMap disjuncts mtctl::Comparables::SourceStateExpr::SourceStateExpr2SourceStateExpr, mtctl::Comparables::TargetStateExpr::TargetStateExpr2TargetStateExpr;
+      	
+mapping mtctl::Comparables::SourceStateExpr :: SourceStateExpr2SourceStateExpr() : mtctl::Comparables::SourceStateExpr{
+    	_transition := self._transition.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Comparables::TargetStateExpr :: TargetStateExpr2TargetStateExpr() : mtctl::Comparables::TargetStateExpr{
+    	_transition := self._transition.map MapExpr2MapExpr();
+   		 }
+   		 
+mapping mtctl::Quantifiers::AFExpr :: AFExpr2AFExpr() : mtctl::Quantifiers::AFExpr{
+    	_expr := self._expr.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::Quantifiers::AGExpr :: AGExpr2AGExpr() : mtctl::Quantifiers::AGExpr{
+    	_expr := self._expr.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::Quantifiers::EFExpr :: EFExpr2EFExpr() : mtctl::Quantifiers::EFExpr{
+    	_expr := self._expr.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::Quantifiers::EGExpr :: EGExpr2EGExpr() : mtctl::Quantifiers::EGExpr{
+    	_expr := self._expr.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::Quantifiers::ExistenceQuantExpr :: ExistenceQuantExpr2ExistenceQuantExpr() : mtctl::Quantifiers::ExistenceQuantExpr{
+    	_formula := self._formula.map Expression2Expression();
+    	_var := self._var.map BoundVariable2BoundVariable();
+   		 }
+   		 
+mapping mtctl::Quantifiers::QuantifierExpr :: QuantifierExpr2QuantifierExpr() : mtctl::Quantifiers::QuantifierExpr disjuncts mtctl::Quantifiers::ExistenceQuantExpr::ExistenceQuantExpr2ExistenceQuantExpr, mtctl::Quantifiers::UniversalQuantExpr::UniversalQuantExpr2UniversalQuantExpr;
+      	
+mapping mtctl::Quantifiers::BoundVariable :: BoundVariable2BoundVariable() : mtctl::Quantifiers::BoundVariable{
+    	_name := self._name;
+    	_set := self._set.map SetExpr2SetExpr();
+   		 }
+   		 
+mapping mtctl::Quantifiers::TemporalQuantifierExpr :: TemporalQuantifierExpr2TemporalQuantifierExpr() : mtctl::Quantifiers::TemporalQuantifierExpr disjuncts mtctl::Quantifiers::LeadsToExpr::LeadsToExpr2LeadsToExpr, mtctl::Quantifiers::AGExpr::AGExpr2AGExpr, mtctl::Quantifiers::AFExpr::AFExpr2AFExpr, mtctl::Quantifiers::EGExpr::EGExpr2EGExpr, mtctl::Quantifiers::EFExpr::EFExpr2EFExpr;
+      	
+mapping mtctl::Quantifiers::UniversalQuantExpr :: UniversalQuantExpr2UniversalQuantExpr() : mtctl::Quantifiers::UniversalQuantExpr{
+    	_formula := self._formula.map Expression2Expression();
+    	_var := self._var.map BoundVariable2BoundVariable();
+   		 }
+   		 
+mapping mtctl::Quantifiers::LeadsToExpr :: LeadsToExpr2LeadsToExpr() : mtctl::Quantifiers::LeadsToExpr{
+    	_leftOpd := self._leftOpd.map Expression2Expression();
+    	_rightOpd := self._rightOpd.map Expression2Expression();
+   		 }
+   		 
+mapping muml::component::Component :: Component2Component() : muml::component::Component disjuncts muml::component::AtomicComponent::AtomicComponent2AtomicComponent, muml::component::StaticComponent::StaticComponent2StaticComponent, muml::component::StructuredComponent::StructuredComponent2StructuredComponent;
+      	
+mapping muml::component::Port :: Port2Port() : muml::component::Port disjuncts muml::component::DiscretePort::DiscretePort2DiscretePort, muml::component::DirectedTypedPort::DirectedTypedPort2DirectedTypedPort;
+      	
+mapping muml::component::ContinuousPort :: ContinuousPort2ContinuousPort() : muml::component::ContinuousPort{
+    	_comment := self._comment;
+    	_name := self._name;
+    	_kind := self._kind;
+    	_optional := self._optional;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectors += self.connectors.map Connector2Connector();     				
+    	    			
+    	    			
+    	_component := self._component.map Component2Component();
+    	_dataType := self._dataType.map DataType2DataType();
+    	_initializeExpression := self._initializeExpression.map Expression2Expression();
+   		 }
+   		 
+mapping muml::component::DiscretePort :: DiscretePort2DiscretePort() : muml::component::DiscretePort{
+    	_comment := self._comment;
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectors += self.connectors.map Connector2Connector();     				
+    	    			
+    	    			
+    	_component := self._component.map Component2Component();
+    	_behavior := self._behavior.map Behavior2Behavior();
+    	_senderMessageTypes := self._senderMessageTypes.map MessageType2MessageType();
+    	_receiverMessageTypes := self._receiverMessageTypes.map MessageType2MessageType();
+    	_adaptationBehavior := self._adaptationBehavior.map Behavior2Behavior();
+    
+    	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
+    	
+    	
+    	_cardinality := self._cardinality.map Cardinality2Cardinality();
+    	_receiverMessageBuffer := self._receiverMessageBuffer.map MessageBuffer2MessageBuffer();
+    	_refinedRole := self._refinedRole.map Role2Role();
+   		 }
+   		 
+mapping muml::component::ComponentPart :: ComponentPart2ComponentPart() : muml::component::ComponentPart{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_componentType := self._componentType.map Component2Component();
+    	_parentComponent := self._parentComponent.map StructuredComponent2StructuredComponent();
+    	_cardinality := self._cardinality.map Cardinality2Cardinality();
+    	_portParts := self._portParts.map PortPart2PortPart();
+   		 }
+   		 
+mapping muml::component::StaticStructuredComponent :: StaticStructuredComponent2StaticStructuredComponent() : muml::component::StaticStructuredComponent{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_componentKind := self._componentKind;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_ports := self._ports.map Port2Port();
+    	_embeddedComponentParts := self._embeddedComponentParts.map ComponentPart2ComponentPart();
+    	_connectors := self._connectors.map PortConnector2PortConnector();
+    	_coordinationProtocolParts := self._coordinationProtocolParts.map CoordinationProtocolPart2CoordinationProtocolPart();
+   		 }
+   		 
+mapping muml::component::AtomicComponent :: AtomicComponent2AtomicComponent() : muml::component::AtomicComponent disjuncts muml::component::StaticAtomicComponent::StaticAtomicComponent2StaticAtomicComponent;
+      	
+mapping muml::component::AssemblyConnector :: AssemblyConnector2AssemblyConnector() : muml::component::AssemblyConnector{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint();
+    	_parentComponent := self._parentComponent.map StructuredComponent2StructuredComponent();
+   		 }
+   		 
+mapping muml::component::DelegationConnector :: DelegationConnector2DelegationConnector() : muml::component::DelegationConnector{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint();
+    	_parentComponent := self._parentComponent.map StructuredComponent2StructuredComponent();
+   		 }
+   		 
+mapping muml::component::PortConnector :: PortConnector2PortConnector() : muml::component::PortConnector disjuncts muml::component::AssemblyConnector::AssemblyConnector2AssemblyConnector, muml::component::DelegationConnector::DelegationConnector2DelegationConnector;
+      	
+mapping muml::component::HybridPort :: HybridPort2HybridPort() : muml::component::HybridPort{
+    	_comment := self._comment;
+    	_name := self._name;
+    	_kind := self._kind;
+    	_optional := self._optional;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectors += self.connectors.map Connector2Connector();     				
+    	    			
+    	    			
+    	_component := self._component.map Component2Component();
+    	_dataType := self._dataType.map DataType2DataType();
+    	_initializeExpression := self._initializeExpression.map Expression2Expression();
+    	_samplingInterval := self._samplingInterval.map TimeValue2TimeValue();
+   		 }
+   		 
+mapping muml::component::StructuredComponent :: StructuredComponent2StructuredComponent() : muml::component::StructuredComponent disjuncts muml::component::StaticStructuredComponent::StaticStructuredComponent2StaticStructuredComponent;
+      	
+mapping muml::component::CoordinationProtocolPart :: CoordinationProtocolPart2CoordinationProtocolPart() : muml::component::CoordinationProtocolPart{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_coordinationProtocol := self._coordinationProtocol.map CoordinationProtocol2CoordinationProtocol();
+    	_portParts := self._portParts.map PortPart2PortPart();
+   		 }
+   		 
+mapping muml::component::DirectedTypedPort :: DirectedTypedPort2DirectedTypedPort() : muml::component::DirectedTypedPort disjuncts muml::component::ContinuousPort::ContinuousPort2ContinuousPort, muml::component::HybridPort::HybridPort2HybridPort;
+      	
+mapping muml::component::PortPart :: PortPart2PortPart() : muml::component::PortPart{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectors += self.connectors.map Connector2Connector();     				
+    	    			
+    	    			
+    	_portType := self._portType.map Port2Port();
+    	_componentPart := self._componentPart.map ComponentPart2ComponentPart();
+    	_coordinationProtocolPart := self._coordinationProtocolPart.map CoordinationProtocolPart2CoordinationProtocolPart();
+   		 }
+   		 
+mapping muml::component::StaticAtomicComponent :: StaticAtomicComponent2StaticAtomicComponent() : muml::component::StaticAtomicComponent{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_componentKind := self._componentKind;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_ports := self._ports.map Port2Port();
+    	_behavior := self._behavior.map Behavior2Behavior();
+    	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
+   		 }
+   		 
+mapping muml::component::StaticComponent :: StaticComponent2StaticComponent() : muml::component::StaticComponent disjuncts muml::component::StaticAtomicComponent::StaticAtomicComponent2StaticAtomicComponent, muml::component::StaticStructuredComponent::StaticStructuredComponent2StaticStructuredComponent;
+      	
+mapping mtctl::BooleanLogic::AndExpr :: AndExpr2AndExpr() : mtctl::BooleanLogic::AndExpr{
+    	_leftOpd := self._leftOpd.map Expression2Expression();
+    	_rightOpd := self._rightOpd.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::BooleanLogic::ImplyExpr :: ImplyExpr2ImplyExpr() : mtctl::BooleanLogic::ImplyExpr{
+    	_leftOpd := self._leftOpd.map Expression2Expression();
+    	_rightOpd := self._rightOpd.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::BooleanLogic::NotExpr :: NotExpr2NotExpr() : mtctl::BooleanLogic::NotExpr{
+    	_opd := self._opd.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::BooleanLogic::OrExpr :: OrExpr2OrExpr() : mtctl::BooleanLogic::OrExpr{
+    	_leftOpd := self._leftOpd.map Expression2Expression();
+    	_rightOpd := self._rightOpd.map Expression2Expression();
+   		 }
+   		 
+mapping mtctl::Sets::SetExpr :: SetExpr2SetExpr() : mtctl::Sets::SetExpr disjuncts mtctl::Sets::IntervalSetExpr::IntervalSetExpr2IntervalSetExpr, mtctl::Sets::ClockSetExpr::ClockSetExpr2ClockSetExpr, mtctl::Sets::MessageSetExpr::MessageSetExpr2MessageSetExpr, mtctl::Sets::BufferSetExpr::BufferSetExpr2BufferSetExpr, mtctl::Sets::TransitionSetExpr::TransitionSetExpr2TransitionSetExpr, mtctl::Sets::StateSetExpr::StateSetExpr2StateSetExpr, mtctl::Sets::InstanceSetExpr::InstanceSetExpr2InstanceSetExpr, mtctl::Sets::SubinstanceSetExpr::SubinstanceSetExpr2SubinstanceSetExpr;
+      	
+mapping mtctl::Sets::ClockSetExpr :: ClockSetExpr2ClockSetExpr() : mtctl::Sets::ClockSetExpr{
+   		 }
+   		 
+mapping mtctl::Sets::IntervalSetExpr :: IntervalSetExpr2IntervalSetExpr() : mtctl::Sets::IntervalSetExpr{
+    	_lowerVal := self._lowerVal;
+    	_upperVal := self._upperVal;
+   		 }
+   		 
+mapping mtctl::Sets::MessageSetExpr :: MessageSetExpr2MessageSetExpr() : mtctl::Sets::MessageSetExpr{
+   		 }
+   		 
+mapping mtctl::Sets::StateSetExpr :: StateSetExpr2StateSetExpr() : mtctl::Sets::StateSetExpr{
+   		 }
+   		 
+mapping mtctl::Sets::TransitionSetExpr :: TransitionSetExpr2TransitionSetExpr() : mtctl::Sets::TransitionSetExpr{
+   		 }
+   		 
+mapping mtctl::Sets::BufferSetExpr :: BufferSetExpr2BufferSetExpr() : mtctl::Sets::BufferSetExpr{
+   		 }
+   		 
+mapping mtctl::Sets::InstanceSetExpr :: InstanceSetExpr2InstanceSetExpr() : mtctl::Sets::InstanceSetExpr{
+    	_type := self._type.map MumlElemExpr2MumlElemExpr();
+   		 }
+   		 
+mapping mtctl::Sets::SubinstanceSetExpr :: SubinstanceSetExpr2SubinstanceSetExpr() : mtctl::Sets::SubinstanceSetExpr {
+    	_type := self._type.map MumlElemExpr2MumlElemExpr();
+   		 }
+   		 
+mapping modelinstance::RootNode :: RootNode2RootNode() : modelinstance::RootNode{
+    	_categories := self._categories.map ModelElementCategory2ModelElementCategory();
+    	_ecoreDataTypes := self._ecoreDataTypes.map EDataType2EDataType();
+   		 }
+   		 
+mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElementCategory() : modelinstance::ModelElementCategory{
+    	_key := self._key;
+    	_name := self._name;
+    	_modelElements := self._modelElements.map ExtendableElement2ExtendableElement();
+   		 }
+   		 
+mapping muml::msgtype::MessageType :: MessageType2MessageType() : muml::msgtype::MessageType{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_parameters := self._parameters.map Parameter2Parameter();
+    	_repository := self._repository.map MessageTypeRepository2MessageTypeRepository();
+   		 }
+   		 
+mapping muml::msgtype::MessageTypeRepository :: MessageTypeRepository2MessageTypeRepository() : muml::msgtype::MessageTypeRepository{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_messageTypes := self._messageTypes.map MessageType2MessageType();
+   		 }
+   		 
+mapping muml::behavior::Behavior :: Behavior2Behavior() : muml::behavior::Behavior disjuncts muml::realtimestatechart::RealtimeStatechart::RealtimeStatechart2RealtimeStatechart;
+      	
+mapping muml::behavior::BehavioralElement :: BehavioralElement2BehavioralElement() : muml::behavior::BehavioralElement disjuncts muml::component::AtomicComponent::AtomicComponent2AtomicComponent, muml::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint;
+      	
+mapping muml::behavior::Operation :: Operation2Operation() : muml::behavior::Operation{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_implementations := self._implementations.map Expression2Expression();
+    	_parameters := self._parameters.map Parameter2Parameter();
+    	_returnType := self._returnType.map DataType2DataType();
+   		 }
+   		 
+mapping muml::behavior::Parameter :: Parameter2Parameter() : muml::behavior::Parameter{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_dataType := self._dataType.map DataType2DataType();
+   		 }
+   		 
+mapping muml::behavior::ParameterBinding :: ParameterBinding2ParameterBinding() : muml::behavior::ParameterBinding{
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_parameter := self._parameter.map Parameter2Parameter();
+    	_value := self._value.map Expression2Expression();
+   		 }
+   		 
+mapping muml::behavior::TypedNamedElement :: TypedNamedElement2TypedNamedElement() : muml::behavior::TypedNamedElement disjuncts muml::behavior::Variable::Variable2Variable, muml::behavior::Parameter::Parameter2Parameter, muml::component::DirectedTypedPort::DirectedTypedPort2DirectedTypedPort;
+      	
+mapping muml::behavior::Variable :: Variable2Variable() : muml::behavior::Variable{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_constant := self._constant;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_dataType := self._dataType.map DataType2DataType();
+    	_initializeExpression := self._initializeExpression.map Expression2Expression();
+   		 }
+   		 
+mapping muml::realtimestatechart::Deadline :: Deadline2Deadline() : muml::realtimestatechart::Deadline disjuncts muml::realtimestatechart::AbsoluteDeadline::AbsoluteDeadline2AbsoluteDeadline, muml::realtimestatechart::RelativeDeadline::RelativeDeadline2RelativeDeadline;
+      	
+mapping muml::realtimestatechart::AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline() : muml::realtimestatechart::AbsoluteDeadline{
+    	_upperBound := self._upperBound.map TimeValue2TimeValue();
+    	_lowerBound := self._lowerBound.map TimeValue2TimeValue();
+    	_clock := self._clock.map Clock2Clock();
+   		 }
+   		 
+mapping muml::realtimestatechart::RelativeDeadline :: RelativeDeadline2RelativeDeadline() : muml::realtimestatechart::RelativeDeadline{
+    	_upperBound := self._upperBound.map TimeValue2TimeValue();
+    	_lowerBound := self._lowerBound.map TimeValue2TimeValue();
+   		 }
+   		 
+mapping muml::realtimestatechart::Clock :: Clock2Clock() : muml::realtimestatechart::Clock{
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_statechart := self._statechart.map RealtimeStatechart2RealtimeStatechart();
+   		 }
+   		 
+mapping muml::realtimestatechart::Region :: Region2Region() : muml::realtimestatechart::Region{
+    	_comment := self._comment;
+    	_priority := self._priority;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_embeddedStatechart := self._embeddedStatechart.map RealtimeStatechart2RealtimeStatechart();
+    	_parentState := self._parentState.map State2State();
+   		 }
+   		 
+mapping muml::realtimestatechart::State :: State2State() : muml::realtimestatechart::State{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_initial := self._initial;
+    	_final := self._final;
+    	_urgent := self._urgent;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
+    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
+    	_embeddedRegions := self._embeddedRegions.map Region2Region();
+    	_doEvent := self._doEvent.map DoEvent2DoEvent();
+    	_exitEvent := self._exitEvent.map ExitEvent2ExitEvent();
+    	_entryEvent := self._entryEvent.map EntryEvent2EntryEvent();
+    	_invariants := self._invariants.map ClockConstraint2ClockConstraint();
+    	_channels := self._channels.map SynchronizationChannel2SynchronizationChannel();
+    	_connectionPoints := self._connectionPoints.map StateConnectionPoint2StateConnectionPoint();
+    	_parentStatechart := self._parentStatechart.map RealtimeStatechart2RealtimeStatechart();
+   		 }
+   		 
+mapping muml::realtimestatechart::Vertex :: Vertex2Vertex() : muml::realtimestatechart::Vertex disjuncts muml::realtimestatechart::StateConnectionPoint::StateConnectionPoint2StateConnectionPoint, muml::realtimestatechart::State::State2State;
+      	
+mapping muml::realtimestatechart::Transition :: Transition2Transition() : muml::realtimestatechart::Transition{
+    	_priority := self._priority;
+    	_comment := self._comment;
+    	_blockable := self._blockable;
+    	_urgent := self._urgent;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_synchronization := self._synchronization.map Synchronization2Synchronization();
+    	_target := self._target.map Vertex2Vertex();
+    	_source := self._source.map Vertex2Vertex();
+    	_clockResets := self._clockResets.map Clock2Clock();
+    	_clockConstraints := self._clockConstraints.map ClockConstraint2ClockConstraint();
+    	_absoluteDeadlines := self._absoluteDeadlines.map AbsoluteDeadline2AbsoluteDeadline();
+    	_relativeDeadline := self._relativeDeadline.map RelativeDeadline2RelativeDeadline();
+    	_guard := self._guard.map Expression2Expression();
+    	_events := self._events.map TransitionEvent2TransitionEvent();
+    	_action := self._action.map Action2Action();
+   		 }
+   		 
+mapping muml::realtimestatechart::ClockConstraint :: ClockConstraint2ClockConstraint() : muml::realtimestatechart::ClockConstraint{
+    	_operator := self._operator;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_bound := self._bound.map TimeValue2TimeValue();
+    	_clock := self._clock.map Clock2Clock();
+   		 }
+   		 
+mapping muml::realtimestatechart::Action :: Action2Action() : muml::realtimestatechart::Action{
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_expressions := self._expressions.map Expression2Expression();
+   		 }
+   		 
+mapping muml::realtimestatechart::AsynchronousMessageEvent :: AsynchronousMessageEvent2AsynchronousMessageEvent() : muml::realtimestatechart::AsynchronousMessageEvent{
+    	_kind := self._kind;
+    	_message := self._message.map Message2Message();
+   		 }
+   		 
+mapping muml::realtimestatechart::DoEvent :: DoEvent2DoEvent() : muml::realtimestatechart::DoEvent{
+    	_kind := self._kind;
+    	_action := self._action.map Action2Action();
+    	_period := self._period.map TimeValue2TimeValue();
+   		 }
+   		 
+mapping muml::realtimestatechart::EntryOrExitEvent :: EntryOrExitEvent2EntryOrExitEvent() : muml::realtimestatechart::EntryOrExitEvent disjuncts muml::realtimestatechart::ExitEvent::ExitEvent2ExitEvent, muml::realtimestatechart::EntryEvent::EntryEvent2EntryEvent;
+      	
+mapping muml::realtimestatechart::SynchronizationChannel :: SynchronizationChannel2SynchronizationChannel() : muml::realtimestatechart::SynchronizationChannel{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_state := self._state.map State2State();
+    	_selectorType := self._selectorType.map DataType2DataType();
+   		 }
+   		 
+mapping muml::realtimestatechart::Synchronization :: Synchronization2Synchronization() : muml::realtimestatechart::Synchronization{
+    	_kind := self._kind;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_syncChannel := self._syncChannel.map SynchronizationChannel2SynchronizationChannel();
+    	_selectorExpression := self._selectorExpression.map Expression2Expression();
+   		 }
+   		 
+mapping muml::realtimestatechart::PrioritizedElement :: PrioritizedElement2PrioritizedElement() : muml::realtimestatechart::PrioritizedElement disjuncts muml::realtimestatechart::Region::Region2Region, muml::realtimestatechart::Transition::Transition2Transition;
+      	
+mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
+    	_operations := self._operations.map Operation2Operation();
+    	_variables := self._variables.map Variable2Variable();
+    	_parentRegion := self._parentRegion.map Region2Region();
+    	_transitions := self._transitions.map Transition2Transition();
+    	_states := self._states.map State2State();
+    	_clocks := self._clocks.map Clock2Clock();
+   		 }
+   		 
+mapping muml::realtimestatechart::Event :: Event2Event() : muml::realtimestatechart::Event disjuncts muml::realtimestatechart::TransitionEvent::TransitionEvent2TransitionEvent, muml::realtimestatechart::StateEvent::StateEvent2StateEvent;
+      	
+mapping muml::realtimestatechart::TransitionEvent :: TransitionEvent2TransitionEvent() : muml::realtimestatechart::TransitionEvent disjuncts muml::realtimestatechart::AsynchronousMessageEvent::AsynchronousMessageEvent2AsynchronousMessageEvent;
+      	
+mapping muml::realtimestatechart::StateEvent :: StateEvent2StateEvent() : muml::realtimestatechart::StateEvent disjuncts muml::realtimestatechart::DoEvent::DoEvent2DoEvent, muml::realtimestatechart::EntryOrExitEvent::EntryOrExitEvent2EntryOrExitEvent;
+      	
+mapping muml::realtimestatechart::Message :: Message2Message() : muml::realtimestatechart::Message{
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_instanceOf := self._instanceOf.map MessageType2MessageType();
+    	_parameterBinding := self._parameterBinding.map ParameterBinding2ParameterBinding();
+   		 }
+   		 
+mapping muml::realtimestatechart::EntryEvent :: EntryEvent2EntryEvent() : muml::realtimestatechart::EntryEvent{
+    	_kind := self._kind;
+    	_clockResets := self._clockResets.map Clock2Clock();
+    	_action := self._action.map Action2Action();
+   		 }
+   		 
+mapping muml::realtimestatechart::ExitEvent :: ExitEvent2ExitEvent() : muml::realtimestatechart::ExitEvent{
+    	_kind := self._kind;
+    	_clockResets := self._clockResets.map Clock2Clock();
+    	_action := self._action.map Action2Action();
+   		 }
+   		 
+mapping muml::realtimestatechart::StateConnectionPoint :: StateConnectionPoint2StateConnectionPoint() : muml::realtimestatechart::StateConnectionPoint disjuncts muml::realtimestatechart::EntryPoint::EntryPoint2EntryPoint, muml::realtimestatechart::ExitPoint::ExitPoint2ExitPoint;
+      	
+mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::realtimestatechart::EntryPoint{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
+    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
+    	_state := self._state.map State2State();
+   		 }
+   		 
+mapping muml::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : muml::realtimestatechart::ExitPoint{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_outgoingTransitions := self._outgoingTransitions.map Transition2Transition();
+    	_incomingTransitions := self._incomingTransitions.map Transition2Transition();
+    	_state := self._state.map State2State();
+   		 }
+   		 
+mapping core::expressions::common::UnaryExpression :: UnaryExpression2UnaryExpression() : core::expressions::common::UnaryExpression{
+    	_comment := self._comment;
+    	_operator := self._operator;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_enclosedExpression := self._enclosedExpression.map Expression2Expression();
+   		 }
+   		 
+mapping core::expressions::common::BinaryExpression :: BinaryExpression2BinaryExpression() : core::expressions::common::BinaryExpression disjuncts core::expressions::common::ComparisonExpression::ComparisonExpression2ComparisonExpression, core::expressions::common::LogicalExpression::LogicalExpression2LogicalExpression, core::expressions::common::ArithmeticExpression::ArithmeticExpression2ArithmeticExpression;
+      	
+mapping core::expressions::common::ComparisonExpression :: ComparisonExpression2ComparisonExpression() : core::expressions::common::ComparisonExpression{
+    	_comment := self._comment;
+    	_operator := self._operator;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_leftExpression := self._leftExpression.map Expression2Expression();
+    	_rightExpression := self._rightExpression.map Expression2Expression();
+   		 }
+   		 
+mapping core::expressions::common::ArithmeticExpression :: ArithmeticExpression2ArithmeticExpression() : core::expressions::common::ArithmeticExpression{
+    	_comment := self._comment;
+    	_operator := self._operator;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_leftExpression := self._leftExpression.map Expression2Expression();
+    	_rightExpression := self._rightExpression.map Expression2Expression();
+   		 }
+   		 
+mapping core::expressions::common::LogicalExpression :: LogicalExpression2LogicalExpression() : core::expressions::common::LogicalExpression{
+    	_comment := self._comment;
+    	_operator := self._operator;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_leftExpression := self._leftExpression.map Expression2Expression();
+    	_rightExpression := self._rightExpression.map Expression2Expression();
+   		 }
+   		 
+mapping core::expressions::common::LiteralExpression :: LiteralExpression2LiteralExpression() : core::expressions::common::LiteralExpression{
+    	_comment := self._comment;
+    	_value := self._value;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+   		 }
+   		 
+mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall;
+      	
+mapping core::expressions::TextualExpression :: TextualExpression2TextualExpression() : core::expressions::TextualExpression{
+    	_comment := self._comment;
+    	_expressionText := self._expressionText;
+    	_language := self._language;
+    	_languageVersion := self._languageVersion;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+   		 }
+   		 
+mapping muml::protocol::AbstractCoordinationSpecification :: AbstractCoordinationSpecification2AbstractCoordinationSpecification() : muml::protocol::AbstractCoordinationSpecification disjuncts muml::protocol::CoordinationProtocol::CoordinationProtocol2CoordinationProtocol;
+      	
+mapping muml::protocol::CoordinationProtocol :: CoordinationProtocol2CoordinationProtocol() : muml::protocol::CoordinationProtocol{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
+    	_roles := self._roles.map Role2Role();
+    	_roleConnector := self._roleConnector.map RoleConnector2RoleConnector();
+   		 }
+   		 
+mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
+    	_comment := self._comment;
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectors += self.connectors.map Connector2Connector();     				
+    	_behavior := self._behavior.map Behavior2Behavior();
+    	_senderMessageTypes := self._senderMessageTypes.map MessageType2MessageType();
+    	_receiverMessageTypes := self._receiverMessageTypes.map MessageType2MessageType();
+    	_adaptationBehavior := self._adaptationBehavior.map Behavior2Behavior();
+    	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
+    	_cardinality := self._cardinality.map Cardinality2Cardinality();
+    	_receiverMessageBuffer := self._receiverMessageBuffer.map MessageBuffer2MessageBuffer();
+    	_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
+   		 }
+   		 
+mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::protocol::RoleConnector{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint();
+    	_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
+    	_connectorQualityOfServiceAssumptions := self._connectorQualityOfServiceAssumptions.map ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions();
+   		 }
+   		 
+mapping muml::protocol::ConnectorQualityOfServiceAssumptions :: ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions() : muml::protocol::ConnectorQualityOfServiceAssumptions{
+    	_comment := self._comment;
+    	_messageLossPossible := self._messageLossPossible;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_minMessageDelay := self._minMessageDelay.map TimeValue2TimeValue();
+    	_maxMessageDelay := self._maxMessageDelay.map TimeValue2TimeValue();
+   		 }
+   		 
+mapping muml::connector::ConnectorEndpoint :: ConnectorEndpoint2ConnectorEndpoint() : muml::connector::ConnectorEndpoint disjuncts muml::component::PortPart::PortPart2PortPart, muml::connector::DiscreteInteractionEndpoint::DiscreteInteractionEndpoint2DiscreteInteractionEndpoint, muml::component::Port::Port2Port;
+      	
+mapping muml::connector::Connector :: Connector2Connector() : muml::connector::Connector disjuncts muml::component::PortConnector::PortConnector2PortConnector, muml::protocol::RoleConnector::RoleConnector2RoleConnector;
+      	
+mapping muml::connector::ConnectorEndpointInstance :: ConnectorEndpointInstance2ConnectorEndpointInstance() : muml::connector::ConnectorEndpointInstance disjuncts muml::connector::DiscreteInteractionEndpointInstance::DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance, muml::instance::PortInstance::PortInstance2PortInstance;
+      	
+mapping muml::connector::ConnectorInstance :: ConnectorInstance2ConnectorInstance() : muml::connector::ConnectorInstance disjuncts muml::instance::PortConnectorInstance::PortConnectorInstance2PortConnectorInstance;
+      	
+mapping muml::connector::DiscreteInteractionEndpoint :: DiscreteInteractionEndpoint2DiscreteInteractionEndpoint() : muml::connector::DiscreteInteractionEndpoint disjuncts muml::component::DiscretePort::DiscretePort2DiscretePort, muml::protocol::Role::Role2Role;
+      	
+mapping muml::connector::DiscreteInteractionEndpointInstance :: DiscreteInteractionEndpointInstance2DiscreteInteractionEndpointInstance() : muml::connector::DiscreteInteractionEndpointInstance disjuncts muml::connector::DiscreteSingleInteractionEndpointInstance::DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance, muml::connector::DiscreteMultiInteractionEndpointInstance::DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance, muml::instance::DiscretePortInstance::DiscretePortInstance2DiscretePortInstance;
+      	
+mapping muml::connector::DiscreteSingleInteractionEndpointInstance :: DiscreteSingleInteractionEndpointInstance2DiscreteSingleInteractionEndpointInstance() : muml::connector::DiscreteSingleInteractionEndpointInstance disjuncts muml::instance::DiscreteSinglePortInstance::DiscreteSinglePortInstance2DiscreteSinglePortInstance;
+      	
+mapping muml::connector::DiscreteMultiInteractionEndpointInstance :: DiscreteMultiInteractionEndpointInstance2DiscreteMultiInteractionEndpointInstance() : muml::connector::DiscreteMultiInteractionEndpointInstance disjuncts muml::instance::DiscreteMultiPortInstance::DiscreteMultiPortInstance2DiscreteMultiPortInstance;
+      	
+mapping muml::connector::MessageBuffer :: MessageBuffer2MessageBuffer() : muml::connector::MessageBuffer{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_bufferOverflowAvoidanceStrategy := self._bufferOverflowAvoidanceStrategy;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_bufferSize := self._bufferSize.map NaturalNumber2NaturalNumber();
+    	_messageType := self._messageType.map MessageType2MessageType();
+    	_discreteInteractionEndpoint := self._discreteInteractionEndpoint.map DiscreteInteractionEndpoint2DiscreteInteractionEndpoint();
+   		 }
+   		 

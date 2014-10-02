@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.transformation;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-Vendor: 
+ %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ de.uni_paderborn.uppaal;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml;bundle-version="0.3.2",
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.blackbox;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;bundle-version="0.4.0",
+ org.eclipse.m2m.qvt.oml;bundle-version="3.4.0.v20140506-0739",
+ org.eclipse.m2m.qvt.oml.project;bundle-version="3.2.0",
+ de.uni_paderborn.fujaba.muml.verification.extension;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;bundle-version="0.4.0"

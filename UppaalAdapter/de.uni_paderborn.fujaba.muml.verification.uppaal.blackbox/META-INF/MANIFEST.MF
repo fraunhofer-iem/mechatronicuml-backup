@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Verification Uppaal Blackbox
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.blackbox;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.uni_paderborn.uppaal;bundle-version="0.4.0",
+ org.eclipse.core.resources;bundle-version="3.8.0",
+ org.eclipse.core.runtime;bundle-version="3.8.0",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.job;bundle-version="0.4.0",
+ de.uni_paderborn.uppaal.trace;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
+ org.eclipse.m2m.qvt.oml,
+ de.uni_paderborn.uppaal.requirements,
+ de.uni_paderborn.fujaba.muml.runtime;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.udbm.java;bundle-version="0.1.0",
+ de.uni_paderborn.fujaba.udbm;bundle-version="0.3.0",
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;bundle-version="0.4.0",
+ org.eclipse.emf.ecore,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.options
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Localization: plugin
+Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox

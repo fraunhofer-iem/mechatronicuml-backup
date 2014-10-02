@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.cmd;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml.verification.preferences;bundle-version="0.4.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.cmd,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.cmd,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.misc,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.trace,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.cmd.options.tuning
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin

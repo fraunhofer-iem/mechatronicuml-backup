@@ -1,0 +1,81 @@
+import transforms.mtctl.MTCTLStaticNormalization; 
+import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
+
+modeltype muml_model uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+modeltype result_model uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results';
+modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
+
+modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
+modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlPredicates uses mtctl::Predicates('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlSets uses mtctl::Sets('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlComparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+
+transformation MTCTLEvaluateResultTransformation(in original: muml_model, in statically_normalized_model : muml_model, in split_model: muml_model, in trace: uppaal_trace, out output: result_model) access MTCTLStaticNormalization;
+
+main() {
+	reportProgress("Evaluating Uppaal Results");
+	assert(split_model.objects()[VerificationConstraintRepository]->size() <= 1) with log ("Multiple verification repositories found");
+	var resultRepository := object PropertyResultRepository {};
+	
+	trace.objects()[TraceRepository].traces->forEach(trace) {
+		// call mapping to create a property result in the output model
+		split_model.objects()[PropertyRepository]->any(true).properties->at(trace._property).map SplitPropertyToPropertyResult(trace._result = Result::SUCCESS);
+		
+		// Insert the result into the statically normalized model (destroys the property in the statically normalized model)
+		var expressionInStaticallyNormalizedModel := split_model.objects()[PropertyRepository]->any(true).properties->at(trace._property).invresolveone(mtctl::Expression);
+		var resultExpr : Expression;
+		if (trace._result = Result::SUCCESS) {
+			resultExpr := object TrueExpr{};
+		} else {
+			resultExpr := object FalseExpr{};
+		};
+		expressionInStaticallyNormalizedModel.replaceWith(resultExpr);
+		statically_normalized_model.removeElement(expressionInStaticallyNormalizedModel);
+		output.removeElement(resultExpr);		
+	};
+	
+	// Evaluate the composite result
+	var staticallyNormalizedEvaluatedModel := muml_model.createEmptyModel().oclAsType(muml_model);
+	var staticNormalization := new MTCTLStaticNormalization(statically_normalized_model.copy().oclAsType(muml_model), staticallyNormalizedEvaluatedModel); //working on a copy to allow MUML2MUML to work (not only resolve) in its mappings
+	var retcode := staticNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('MTCTL Static Normalization failed: ' + retcode.raisedException().repr());
+	
+	// Add results of composite Properties to their PropertyResults
+	staticallyNormalizedEvaluatedModel.objects()[Property]->forEach(prop) {
+		var staticVerifiableElement := statically_normalized_model.objects()[VerifiableElement]->any(ve : VerifiableElement | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension))).oclAsType(VerifiableElement);
+		var staticRepository := staticVerifiableElement.oclAsType(VerifiableElement).verificationConstraintRepositories->at(prop.eContainer().eContainer().oclAsType(VerifiableElement).verificationConstraintRepositories->indexOf(prop.eContainer().oclAsType(VerificationConstraintRepository))); //sorry... :/
+		var originalProperty := staticRepository.oclAsType(PropertyRepository).properties->at(prop.eContainer().oclAsType(PropertyRepository).properties->indexOf(prop)).getOriginalProperty();
+		//sorry, but the originalProperty cannot be simply resolved :( - we had to clone the statically_normalized_model above so that the MTCTLStaticNormalization (based on MUML2MUML) works.
+		originalProperty.map OriginalPropertyToPropertyResult().fulfilled := prop.expression.oclIsKindOf(TrueExpr);
+	}
+}
+
+mapping Property::SplitPropertyToPropertyResult(propertyFulfilled: Boolean) : PropertyResult {
+	fulfilled := propertyFulfilled;
+	_property := self;
+	var originalPropertyInStaticallyNormalizedModel := self.invresolve(Expression)->closure(p | if p.oclIsKindOf(Property) then p else p.eContainer() endif)->any(oclIsKindOf(Property));
+	var originalPropertyInOriginalModel := originalPropertyInStaticallyNormalizedModel.oclAsType(Property).getOriginalProperty();
+	originalPropertyInOriginalModel.map OriginalPropertyToPropertyResult().subPropertyResults += result;
+}
+
+mapping Property::OriginalPropertyToPropertyResult() : PropertyResult {
+	 _property := self;
+	output.objects()->any(oclIsKindOf(PropertyResultRepository)).oclAsType(PropertyResultRepository).results += result;
+}
+
+// Returns the corresponding property from "original" extent
+query Property::getOriginalProperty() : Property {
+	return self->closure(p | p.invresolve(Property))->intersection(original.objects()[Property])->any(true);
+}
+
+//Modifies the model containing self such that self is replaced with a deep clone of newExpr //TODO put this into some shared file between MTCTLNormalization and MTCTLQuantifierNormalization
+helper Expression::replaceWith(newExpr : Expression) {
+	var containingFeature := self.oclAsType(EObject).eContainingFeature();
+	self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
+}

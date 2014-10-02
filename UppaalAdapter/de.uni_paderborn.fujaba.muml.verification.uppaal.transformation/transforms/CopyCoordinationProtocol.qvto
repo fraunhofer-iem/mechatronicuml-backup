@@ -1,0 +1,11 @@
+import transforms.lib.MUML2MUML;
+
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+
+transformation CopyCoordinationProtocol(in input:muml_protocol, out output:muml_protocol) extends MUML2MUML;
+
+main() {
+	input.objects()[RootNode]->map RootNode2RootNode();
+}

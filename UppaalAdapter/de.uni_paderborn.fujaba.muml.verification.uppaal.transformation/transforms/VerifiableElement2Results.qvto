@@ -1,0 +1,50 @@
+import transforms.VerifiableElement2UPPAAL;
+import transforms.UPPAAL2Trace;
+import transforms.UPPAALTrace2MUMLTrace;
+import transforms.lib.ExternalizedStrings;
+import transforms.mtctl.MTCTLEvaluateResultTransformation;
+
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+
+modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype muml_constraint uses muml::constraint('http://www.fujaba.de/muml/0.4.0');
+
+modeltype result_model uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results';
+modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
+modeltype verification_extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+
+modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';
+modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
+
+/*
+* Transforms a Verifiable Element model into a property result model
+*/
+transformation VerifiableElement2Results(in verifiableElementModel:muml, in options:verification_options, out output:result_model) access VerifiableElement2UPPAAL, UPPAAL2Trace, MTCTLEvaluateResultTransformation;
+
+main() {
+	
+	//Forward Translation
+	var uppaalModel : uppaal = uppaal.createEmptyModel().oclAsType(uppaal);
+	var uppaalReq : uppaal_requirements = uppaal_requirements.createEmptyModel().oclAsType(uppaal_requirements);
+	var originalCIC : muml = muml.createEmptyModel().oclAsType(muml);
+	var staticallyNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var verifiableCIC : muml = muml.createEmptyModel().oclAsType(muml);
+	
+	var uppaalTransformation : VerifiableElement2UPPAAL = new VerifiableElement2UPPAAL(verifiableElementModel, options, uppaalModel, uppaalReq, originalCIC, staticallyNormalizedModel, verifiableCIC);
+	
+	var retcode : Status = uppaalTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('UPPAAL translation failed: ' + retcode.raisedException().repr());
+	
+	//Verification by Uppaal
+	var uppaalTrace : uppaal_trace = uppaal_trace.createEmptyModel().oclAsType(uppaal_trace);
+	var verifyta : UPPAAL2Trace = new UPPAAL2Trace(uppaalModel,uppaalReq,options,uppaalTrace);
+	verifyta.generateTrace := false;
+	retcode := verifyta.transform();
+	assert fatal (retcode.succeeded()) with log('UPPAAL model checking + trace parsing failed: ' + retcode.raisedException().repr());
+	
+	//Results translation
+	var evalResultTransformation := new MTCTLEvaluateResultTransformation(originalCIC, staticallyNormalizedModel, verifiableCIC, uppaalTrace, output);
+	retcode := evalResultTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('Evaluation of verification results failed: ' + retcode.raisedException().repr());
+}

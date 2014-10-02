@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://www.fujaba.de/muml/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore"/>
+  <mapping sourceURI="http://www.storydriven.org/core/0.3.1" targetURI="platform:/resource/org.storydriven.core/model/core.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/muml/actionlanguage/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/muml/verification/extension/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.extension/model/verificationExtension.ecore"/>
+  <mapping sourceURI="http://www.uni-paderborn.de/uppaal/0.4.0" targetURI="platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore"/>
+  <mapping sourceURI="http://www.uni-paderborn.de/uppaal/trace/0.4.0" targetURI="platform:/resource/de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/DiagnosticTrace.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/muml/runtime/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.runtime/model/RuntimeModel.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/reachabilityGraph/rtsc/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc/model/RTSCReachabilityGraph.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/reachabilityGraph/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph/model/ReachabilityAnalysisCore.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/modelinstance/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore"/>
+  <mapping sourceURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
+  <mapping sourceURI="http://www.uni-paderborn.de/requirements/0.4.0" targetURI="platform:/resource/de.uni_paderborn.uppaal.requirements/model/requirements.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/reachabilityGraph/cic/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic/model/CICReachabilityGraph.ecore"/>
+</uriMap:MappingContainer>
