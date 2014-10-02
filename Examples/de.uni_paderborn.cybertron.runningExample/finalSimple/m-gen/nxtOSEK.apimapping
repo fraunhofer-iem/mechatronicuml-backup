@@ -1,0 +1,39 @@
+import "platform:/resource/de.uni_paderborn.cybertron.runningExample/finalSimple/model-gen/runningExample.fujaba"
+
+
+import "platform:/resource/de.uni_paderborn.cybertron.runningExample/finalSimple/nxtOSEK.osdsl"
+
+
+MappingRepository:nxtOSEKMapping{
+	PortInstance:overtakee_pLight {
+		execCommand:API_Call:ecrobot_get_light_sensor(port_idLSget:=2)
+		initCommand:API_Call:ecrobot_set_light_sensor_active(port_idLSactive:=2)
+	},
+	PortInstance:overtakee_pVelocityL {
+		execCommand:{}
+		initCommand:{}
+	},
+	PortInstance:overtakee_pVelocityR {
+		execCommand:{}
+		initCommand:{}
+	},
+	
+	PortInstance:overtaker_pLight{
+		execCommand:API_Call:ecrobot_get_light_sensor(port_idLSget:=2)
+		initCommand:API_Call:ecrobot_set_light_sensor_active(port_idLSactive:=2)
+	},
+	PortInstance:overtaker_pVelocityL {
+		execCommand:{}
+		initCommand:{}
+	},
+	PortInstance:overtaker_pVelocityR {
+		execCommand:{}
+		initCommand:{}
+	},
+	PortInstance:overtaker_pDistance {
+		execCommand:API_Call:ecrobot_get_sonar_sensor(port_idUSget:=3)
+		initCommand:API_Call:ecrobot_init_sonar_sensor(port_idUSinit:=3)
+	}
+}
+
+

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:platform="http://www.fujaba.de/muml/hardware/platform/1.0/" xmi:id="_uzKgUKr6EeO4TtKifqniAw" type="Platform" name="Vehicle.platform_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_5sJcEKr6EeO4TtKifqniAw" type="2007" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5sJcEqr6EeO4TtKifqniAw" type="5036"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_5sJcE6r6EeO4TtKifqniAw" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_5sOUkKr6EeO4TtKifqniAw" type="3012" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sOUkqr6EeO4TtKifqniAw" type="5030"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sOUk6r6EeO4TtKifqniAw" type="5031"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sOUlKr6EeO4TtKifqniAw" type="5032"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sOUlar6EeO4TtKifqniAw" type="5033"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sOUlqr6EeO4TtKifqniAw" type="5034"/>
+        <children xmi:type="notation:Shape" xmi:id="_heK_IK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_heLmMK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_heLmMa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_6NCMII_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_heK_Ia9uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_heLmMq9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_heMNQK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_heMNQa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_6NCMIY_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_heLmM69uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_heMNQq9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_heMNRK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_heMNRa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_6NCMIo_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_heMNQ69uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_heM0UK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_heM0Uq9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_heM0U69uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_6NCzMI_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_heM0Ua9uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_heM0VK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_heNbYK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_heNbYa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_6NCzMY_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_heM0Va9uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_heNbYq9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_heNbZK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_heNbZa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_6NDaQI_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_heNbY69uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_heNbZq9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_heOCcK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_heOCca9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_6NDaQY_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_heNbZ69uEeOM47bvnTcFXw"/>
+        </children>
+        <element xmi:type="platform:ResourceInstancePart" href="../VehicleExample.fujaba#_0fnWUI_eEeOYR-WFM5vRTQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5sOUkar6EeO4TtKifqniAw"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_5sOUl6r6EeO4TtKifqniAw" type="3012" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7oKr6EeO4TtKifqniAw" type="5030"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7oar6EeO4TtKifqniAw" type="5031"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7oqr6EeO4TtKifqniAw" type="5032"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7o6r6EeO4TtKifqniAw" type="5033"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7pKr6EeO4TtKifqniAw" type="5034"/>
+        <children xmi:type="notation:Shape" xmi:id="_hgaa0K9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hgeFMK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hgeFMa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_-q6FoI_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hgaa0a9uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hgeFMq9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hgeFNK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hgeFNa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_-q6FoY_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hgeFM69uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hgesQK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hgesQq9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hgesQ69uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_-q6ssI_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hgesQa9uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hgesRK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hgfTUK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hgfTUa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_-q6ssY_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hgesRa9uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hgfTUq9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hgfTVK9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hgfTVa9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_-q6sso_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hgfTU69uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hgf6YK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hgf6Yq9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hgf6Y69uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_-q7TwI_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hgf6Ya9uEeOM47bvnTcFXw"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_hgf6ZK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hgf6Zq9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hgghcK9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_-q7TwY_eEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hgf6Za9uEeOM47bvnTcFXw"/>
+        </children>
+        <element xmi:type="platform:ResourceInstancePart" href="../VehicleExample.fujaba#_7FlkwI_eEeOYR-WFM5vRTQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5sOUmKr6EeO4TtKifqniAw" x="656" y="39"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_5sO7par6EeO4TtKifqniAw" type="3012" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7p6r6EeO4TtKifqniAw" type="5030"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7qKr6EeO4TtKifqniAw" type="5031"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7qar6EeO4TtKifqniAw" type="5032"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7qqr6EeO4TtKifqniAw" type="5033"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sO7q6r6EeO4TtKifqniAw" type="5034"/>
+        <children xmi:type="notation:Shape" xmi:id="_hhq_EK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hhq_Eq9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hhq_E69uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_lVSEsI_fEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hhq_Ea9uEeOM47bvnTcFXw"/>
+        </children>
+        <element xmi:type="platform:ResourceInstancePart" href="../VehicleExample.fujaba#_jZvlEI_fEeOYR-WFM5vRTQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5sO7pqr6EeO4TtKifqniAw" x="449" y="489"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_5sPisKr6EeO4TtKifqniAw" type="3012" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPisqr6EeO4TtKifqniAw" type="5030"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPis6r6EeO4TtKifqniAw" type="5031"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPitKr6EeO4TtKifqniAw" type="5032"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPitar6EeO4TtKifqniAw" type="5033"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPitqr6EeO4TtKifqniAw" type="5034"/>
+        <children xmi:type="notation:Shape" xmi:id="_hh7dwK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hh8E0K9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hiA9UK9uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_vMFxwI_fEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hh7dwa9uEeOM47bvnTcFXw"/>
+        </children>
+        <element xmi:type="platform:ResourceInstancePart" href="../VehicleExample.fujaba#_tzzJII_fEeOYR-WFM5vRTQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5sPisar6EeO4TtKifqniAw" x="8" y="300"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_5sPit6r6EeO4TtKifqniAw" type="3012" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPiuar6EeO4TtKifqniAw" type="5030"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPiuqr6EeO4TtKifqniAw" type="5031"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPiu6r6EeO4TtKifqniAw" type="5032"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPivKr6EeO4TtKifqniAw" type="5033"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_5sPivar6EeO4TtKifqniAw" type="5034"/>
+        <children xmi:type="notation:Shape" xmi:id="_hiKuUK9uEeOM47bvnTcFXw" type="3005" fontName="Cantarell" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_hiKuUq9uEeOM47bvnTcFXw" type="5019">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hiKuU69uEeOM47bvnTcFXw" y="5"/>
+          </children>
+          <element xmi:type="platform:HWPortPart" href="../VehicleExample.fujaba#_DnHrgI_gEeOYR-WFM5vRTQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hiKuUa9uEeOM47bvnTcFXw"/>
+        </children>
+        <element xmi:type="platform:ResourceInstancePart" href="../VehicleExample.fujaba#_AadiQI_gEeOYR-WFM5vRTQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5sPiuKr6EeO4TtKifqniAw" x="272" y="300"/>
+      </children>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_hicbIK9uEeOM47bvnTcFXw" type="3013" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_hicbIq9uEeOM47bvnTcFXw" type="5035">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_hicbI69uEeOM47bvnTcFXw" y="5"/>
+      </children>
+      <element xmi:type="platform:LinkPortInstance" href="../VehicleExample.fujaba#_YU7-YI_gEeOYR-WFM5vRTQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hicbIa9uEeOM47bvnTcFXw"/>
+    </children>
+    <element xmi:type="platform:HWPlatform" href="../VehicleExample.fujaba#_adyzMI_eEeOYR-WFM5vRTQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5sJcEar6EeO4TtKifqniAw" x="-309" width="1042" height="1427"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_uzKgUar6EeO4TtKifqniAw"/>
+  <element xmi:type="platform:HWPlatform" href="../VehicleExample.fujaba#_adyzMI_eEeOYR-WFM5vRTQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_hjQ6gK9uEeOM47bvnTcFXw" type="4001" source="_heM0UK9uEeOM47bvnTcFXw" target="_hicbIK9uEeOM47bvnTcFXw" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_hjQ6ga9uEeOM47bvnTcFXw" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="platform:Delegation" href="../VehicleExample.fujaba#_edcNsI_gEeOYR-WFM5vRTQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hjQ6gq9uEeOM47bvnTcFXw" points="[12, -12, 0, 0]$[0, 0, -12, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_hju0kK9uEeOM47bvnTcFXw" type="4002" source="_hgeFMq9uEeOM47bvnTcFXw" target="_hhq_EK9uEeOM47bvnTcFXw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hju0k69uEeOM47bvnTcFXw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hjvboK9uEeOM47bvnTcFXw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hju0ka9uEeOM47bvnTcFXw" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="platform:Link" href="../VehicleExample.fujaba#_wYGR4I_fEeOYR-WFM5vRTQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hju0kq9uEeOM47bvnTcFXw" points="[-12, 12, 0, 0]$[0, 0, 12, -12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_hkK5cK9uEeOM47bvnTcFXw" type="4002" source="_hgesQK9uEeOM47bvnTcFXw" target="_hh7dwK9uEeOM47bvnTcFXw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hkK5c69uEeOM47bvnTcFXw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hkK5dK9uEeOM47bvnTcFXw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hkK5ca9uEeOM47bvnTcFXw" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="platform:Link" href="../VehicleExample.fujaba#_zVX7UI_fEeOYR-WFM5vRTQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hkK5cq9uEeOM47bvnTcFXw" points="[12, -12, 0, 0]$[0, 0, -12, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_hkQZAK9uEeOM47bvnTcFXw" type="4002" source="_hgaa0K9uEeOM47bvnTcFXw" target="_heK_IK9uEeOM47bvnTcFXw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hkRAEK9uEeOM47bvnTcFXw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hkRAEa9uEeOM47bvnTcFXw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hkQZAa9uEeOM47bvnTcFXw" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="platform:Link" href="../VehicleExample.fujaba#_4OPuwI_fEeOYR-WFM5vRTQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hkQZAq9uEeOM47bvnTcFXw" points="[-12, 1, 644, 40]$[-579, 89, 77, 128]$[-649, -27, 7, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_hkWfoK9uEeOM47bvnTcFXw" type="4002" source="_hgesRK9uEeOM47bvnTcFXw" target="_hiKuUK9uEeOM47bvnTcFXw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_hkWfo69uEeOM47bvnTcFXw" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_hkWfpK9uEeOM47bvnTcFXw" x="5" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_hkWfoa9uEeOM47bvnTcFXw" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="platform:Link" href="../VehicleExample.fujaba#_EWQpcI_gEeOYR-WFM5vRTQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hkWfoq9uEeOM47bvnTcFXw" points="[12, -12, 0, 0]$[0, 0, -12, 12]"/>
+  </edges>
+</notation:Diagram>

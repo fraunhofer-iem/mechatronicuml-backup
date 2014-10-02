@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codegen:CodGen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:codegen="http://www.fujaba.de/muml/psm/codegen/0.1.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0">
+  <allResourceInstances allocatedAtomicComponentInstances="//@cic/@componentInstances.3 //@cic/@componentInstances.4">
+    <allocatedStructuredResourceInstance href="VehicleExample.fujaba#_ugurIY_gEeOYR-WFM5vRTQ"/>
+  </allResourceInstances>
+  <allResourceInstances allocatedAtomicComponentInstances="//@cic/@componentInstances.5">
+    <allocatedStructuredResourceInstance href="VehicleExample.fujaba#_ugurMo_gEeOYR-WFM5vRTQ"/>
+  </allResourceInstances>
+  <cic>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="Left">
+      <componentType xsi:type="component:StaticAtomicComponent" href="VehicleExample.fujaba#_yqGugJMFEeOIDchXYj7RNg"/>
+      <portInstances xsi:type="instance:ContinuousPortInstance" name="motor" connectorInstances="//@cic/@portConnectorInstances.1">
+        <type xsi:type="component:ContinuousPort" href="VehicleExample.fujaba#_VbbYYJMGEeOwbPp1FwM8PA"/>
+      </portInstances>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="Right">
+      <componentType xsi:type="component:StaticAtomicComponent" href="VehicleExample.fujaba#_yqGugJMFEeOIDchXYj7RNg"/>
+      <portInstances xsi:type="instance:ContinuousPortInstance" name="motor" connectorInstances="//@cic/@portConnectorInstances.0">
+        <type xsi:type="component:ContinuousPort" href="VehicleExample.fujaba#_VbbYYJMGEeOwbPp1FwM8PA"/>
+      </portInstances>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="LEGOLightSensor">
+      <componentType xsi:type="component:StaticAtomicComponent" href="VehicleExample.fujaba#_uiDUAJMFEeOIDchXYj7RNg"/>
+      <portInstances xsi:type="instance:ContinuousPortInstance" name="sensor" connectorInstances="//@cic/@portConnectorInstances.2">
+        <type xsi:type="component:ContinuousPort" href="VehicleExample.fujaba#_U81X4JMGEeOwbPp1FwM8PA"/>
+      </portInstances>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="m" allocatedResourceInstance="//@allResourceInstances.0">
+      <componentType xsi:type="component:StaticAtomicComponent" href="VehicleExample.fujaba#_gEh-wJI6EeOKvL3T9kRl_w"/>
+      <portInstances xsi:type="instance:HybridPortInstance" name="motorRight" connectorInstances="//@cic/@portConnectorInstances.0">
+        <type xsi:type="component:HybridPort" href="VehicleExample.fujaba#_0T3l0JL-EeOSHsl3APwt-w"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="controller1" connectorInstances="//@cic/@portConnectorInstances.4">
+        <type xsi:type="component:DiscretePort" href="VehicleExample.fujaba#_br9KAJMAEeOKvdQCsRkL-g"/>
+      </portInstances>
+      <portInstances xsi:type="instance:HybridPortInstance" name="motorLeft" connectorInstances="//@cic/@portConnectorInstances.1">
+        <type xsi:type="component:HybridPort" href="VehicleExample.fujaba#_1ARY0JL-EeOSHsl3APwt-w"/>
+      </portInstances>
+      <componentPart href="VehicleExample.fujaba#_mhMjYJI-EeO1frWp6pXzVg"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="s" allocatedResourceInstance="//@allResourceInstances.0">
+      <componentType xsi:type="component:StaticAtomicComponent" href="VehicleExample.fujaba#_jG2gQJI6EeOKvL3T9kRl_w"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="controllerPort1" connectorInstances="//@cic/@portConnectorInstances.3">
+        <type xsi:type="component:DiscretePort" href="VehicleExample.fujaba#_54MUkJL_EeOgn_iPPWiMxQ"/>
+      </portInstances>
+      <portInstances xsi:type="instance:HybridPortInstance" name="light" connectorInstances="//@cic/@portConnectorInstances.2">
+        <type xsi:type="component:HybridPort" href="VehicleExample.fujaba#_eh5cYJMAEeOKvdQCsRkL-g"/>
+      </portInstances>
+      <componentPart href="VehicleExample.fujaba#_1jtgUJI-EeOY4Y2LFYlN-w"/>
+    </componentInstances>
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="Controller" allocatedResourceInstance="//@allResourceInstances.1">
+      <componentType xsi:type="component:StaticAtomicComponent" href="VehicleExample.fujaba#_WA1PsJL_EeOgn_iPPWiMxQ"/>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="sensors1" connectorInstances="//@cic/@portConnectorInstances.3">
+        <type xsi:type="component:DiscretePort" href="VehicleExample.fujaba#_fpJNwJL_EeOgn_iPPWiMxQ"/>
+      </portInstances>
+      <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="motors1" connectorInstances="//@cic/@portConnectorInstances.4">
+        <type xsi:type="component:DiscretePort" href="VehicleExample.fujaba#_fA3FwJL_EeOgn_iPPWiMxQ"/>
+      </portInstances>
+      <componentPart href="VehicleExample.fujaba#_gzeoAJMBEeOowcKXwKHTCg"/>
+    </componentInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.1/@portInstances.0 //@cic/@componentInstances.3/@portInstances.0"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.0/@portInstances.0 //@cic/@componentInstances.3/@portInstances.2"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.2/@portInstances.0 //@cic/@componentInstances.4/@portInstances.1"/>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.4/@portInstances.0 //@cic/@componentInstances.5/@portInstances.0">
+      <type xsi:type="component:AssemblyConnector" href="VehicleExample.fujaba#_XXjjUJMFEeOIDchXYj7RNg"/>
+    </portConnectorInstances>
+    <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" connectorEndpointInstances="//@cic/@componentInstances.5/@portInstances.1 //@cic/@componentInstances.3/@portInstances.1">
+      <type xsi:type="component:AssemblyConnector" href="VehicleExample.fujaba#_YHImIJMFEeOIDchXYj7RNg"/>
+    </portConnectorInstances>
+  </cic>
+</codegen:CodGen>

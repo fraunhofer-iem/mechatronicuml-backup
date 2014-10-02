@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_uyo74Kr6EeO4TtKifqniAw" type="Component" name="HWController.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_uyo74qr6EeO4TtKifqniAw" type="2005" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_uypi8Kr6EeO4TtKifqniAw" type="5021"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_uypi8ar6EeO4TtKifqniAw" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_CbvpcKr7EeO4TtKifqniAw" type="3012" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_CbwQgKr7EeO4TtKifqniAw" type="5017"/>
+        <children xmi:type="notation:Shape" xmi:id="_Cb72sKr7EeO4TtKifqniAw" type="3022" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Cb72sqr7EeO4TtKifqniAw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Cb72s6r7EeO4TtKifqniAw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../VehicleExample.fujaba#_8t4kwJL-EeOSHsl3APwt-w"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cb72sar7EeO4TtKifqniAw" x="39" y="-12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Cb72tKr7EeO4TtKifqniAw" type="3022" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Cb72tqr7EeO4TtKifqniAw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Cb72t6r7EeO4TtKifqniAw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../VehicleExample.fujaba#_8t6Z8JL-EeOSHsl3APwt-w"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cb72tar7EeO4TtKifqniAw" x="12" y="-12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Cb72uKr7EeO4TtKifqniAw" type="3022" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Cb8dwKr7EeO4TtKifqniAw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Cb8dwar7EeO4TtKifqniAw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../VehicleExample.fujaba#_ILaGEJMBEeOTreLsSKWNBA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cb72uar7EeO4TtKifqniAw" x="12" y="-12"/>
+        </children>
+        <element xmi:type="component:ComponentPart" href="../VehicleExample.fujaba#_mhMjYJI-EeO1frWp6pXzVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cbvpcar7EeO4TtKifqniAw" x="41" y="4"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_CbwQgar7EeO4TtKifqniAw" type="3012" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_CbwQg6r7EeO4TtKifqniAw" type="5017"/>
+        <children xmi:type="notation:Shape" xmi:id="_CcZJsKr7EeO4TtKifqniAw" type="3022" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_CcZJsqr7EeO4TtKifqniAw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CcZJs6r7EeO4TtKifqniAw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../VehicleExample.fujaba#_IMCYMJMBEeOTreLsSKWNBA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CcZJsar7EeO4TtKifqniAw" x="84" y="-12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_CcZJtKr7EeO4TtKifqniAw" type="3022" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_CcZJtqr7EeO4TtKifqniAw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CcZJt6r7EeO4TtKifqniAw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../VehicleExample.fujaba#_IMC_QJMBEeOTreLsSKWNBA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CcZJtar7EeO4TtKifqniAw" x="39" y="36"/>
+        </children>
+        <element xmi:type="component:ComponentPart" href="../VehicleExample.fujaba#_1jtgUJI-EeOY4Y2LFYlN-w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CbwQgqr7EeO4TtKifqniAw" x="401" y="229"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_CbwQhKr7EeO4TtKifqniAw" type="3012" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_CbwQhqr7EeO4TtKifqniAw" type="5017"/>
+        <children xmi:type="notation:Shape" xmi:id="_Cc0AcKr7EeO4TtKifqniAw" type="3022" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Cc0ngKr7EeO4TtKifqniAw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Cc0ngar7EeO4TtKifqniAw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../VehicleExample.fujaba#_i9u5EJMBEeOowcKXwKHTCg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cc0Acar7EeO4TtKifqniAw" x="12" y="-12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Cc0ngqr7EeO4TtKifqniAw" type="3022" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_Cc0nhKr7EeO4TtKifqniAw" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Cc0nhar7EeO4TtKifqniAw" y="5"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../VehicleExample.fujaba#_i9vgIJMBEeOowcKXwKHTCg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cc0ng6r7EeO4TtKifqniAw" x="83" y="36"/>
+        </children>
+        <element xmi:type="component:ComponentPart" href="../VehicleExample.fujaba#_gzeoAJMBEeOowcKXwKHTCg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CbwQhar7EeO4TtKifqniAw" x="402"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_CbwQh6r7EeO4TtKifqniAw" type="3016" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_CbwQiar7EeO4TtKifqniAw" type="5026"/>
+        <element xmi:type="component:CoordinationProtocolPart" href="../VehicleExample.fujaba#_XX0CAJMFEeOIDchXYj7RNg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CbwQiKr7EeO4TtKifqniAw" x="593" y="112"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_CbwQiqr7EeO4TtKifqniAw" type="3016" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Cbw3kKr7EeO4TtKifqniAw" type="5026"/>
+        <element xmi:type="component:CoordinationProtocolPart" href="../VehicleExample.fujaba#_YHXPoJMFEeOIDchXYj7RNg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CbwQi6r7EeO4TtKifqniAw" x="134" y="238"/>
+      </children>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_CeBhYKr7EeO4TtKifqniAw" type="3011" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_CeBhYqr7EeO4TtKifqniAw" type="5013">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CeBhY6r7EeO4TtKifqniAw" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../VehicleExample.fujaba#_AJkBcJL_EeOSHsl3APwt-w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CeBhYar7EeO4TtKifqniAw" x="54" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_CeBhZKr7EeO4TtKifqniAw" type="3011" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_CeBhZqr7EeO4TtKifqniAw" type="5013">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CeBhZ6r7EeO4TtKifqniAw" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../VehicleExample.fujaba#_D_iNcJL_EeOSHsl3APwt-w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CeBhZar7EeO4TtKifqniAw" x="90" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_CeCIcKr7EeO4TtKifqniAw" type="3011" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_CeCIcqr7EeO4TtKifqniAw" type="5013">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CeCIc6r7EeO4TtKifqniAw" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../VehicleExample.fujaba#_kil-EJMBEeOowcKXwKHTCg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CeCIcar7EeO4TtKifqniAw" x="450" y="538"/>
+    </children>
+    <element xmi:type="component:StaticStructuredComponent" href="../VehicleExample.fujaba#_DoJBMJI7EeOKvL3T9kRl_w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uyo746r6EeO4TtKifqniAw" height="550"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_uyo74ar6EeO4TtKifqniAw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VehicleExample.fujaba#_eqWfwJI6EeOKvL3T9kRl_w"/>
+</notation:Diagram>

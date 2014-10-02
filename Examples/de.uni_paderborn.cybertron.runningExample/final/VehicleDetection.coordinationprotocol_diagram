@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_a938gLjSEeOgoclg3sd5rg" type="Coordination Protocol" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_iUY3ELjSEeOgoclg3sd5rg" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_iUZeILjSEeOgoclg3sd5rg" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_iUe9sLjSEeOgoclg3sd5rg" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_iUfkwLjSEeOgoclg3sd5rg" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="runningExample.fujaba#_iTzoQLjSEeOgoclg3sd5rg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iUe9sbjSEeOgoclg3sd5rg" x="158" y="44"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_iUgL0LjSEeOgoclg3sd5rg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_iUgy4LjSEeOgoclg3sd5rg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_iUgy4bjSEeOgoclg3sd5rg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="runningExample.fujaba#_iT4gwLjSEeOgoclg3sd5rg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iUgL0bjSEeOgoclg3sd5rg" x="86" y="128"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_iUhZ8LjSEeOgoclg3sd5rg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_iUiBALjSEeOgoclg3sd5rg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_iUioELjSEeOgoclg3sd5rg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="runningExample.fujaba#_iT5H0bjSEeOgoclg3sd5rg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iUhZ8bjSEeOgoclg3sd5rg" x="326" y="128"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="runningExample.fujaba#_iTzoQLjSEeOgoclg3sd5rg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iUY3EbjSEeOgoclg3sd5rg" x="269" y="154" width="464" height="279"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_a938gbjSEeOgoclg3sd5rg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="runningExample.fujaba#_coSMsLjOEeOgoclg3sd5rg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_iU6bgLjSEeOgoclg3sd5rg" type="4007" source="_iUe9sLjSEeOgoclg3sd5rg" target="_iUgL0LjSEeOgoclg3sd5rg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_iU6bgbjSEeOgoclg3sd5rg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iU6bgrjSEeOgoclg3sd5rg" points="[13, 13, 13, 13]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_iU-F4LjSEeOgoclg3sd5rg" type="4007" source="_iUe9sLjSEeOgoclg3sd5rg" target="_iUhZ8LjSEeOgoclg3sd5rg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_iU-F4bjSEeOgoclg3sd5rg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iU-F4rjSEeOgoclg3sd5rg" points="[13, 13, 3, 3]$[0, 0, -10, -10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_iVBwQLjSEeOgoclg3sd5rg" type="4006" source="_iUgL0LjSEeOgoclg3sd5rg" target="_iUhZ8LjSEeOgoclg3sd5rg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_iVBwQbjSEeOgoclg3sd5rg" fontName="Segoe UI"/>
+    <element xmi:type="protocol:RoleConnector" href="runningExample.fujaba#_iT5u47jSEeOgoclg3sd5rg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iVBwQrjSEeOgoclg3sd5rg" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_GGyUIMSfEeOotJx3tcQ7eg" type="Component" name="SWovertaker.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_GGziQMSfEeOotJx3tcQ7eg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GG0JUMSfEeOotJx3tcQ7eg" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../verification.fujaba#_1CzfQLW3EeOA3pcbZVjaPQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GGziQcSfEeOotJx3tcQ7eg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_GGyUIcSfEeOotJx3tcQ7eg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../verification.fujaba#_Y8gFoJ_vEeOm5bsbv7yNAw"/>
+</notation:Diagram>
