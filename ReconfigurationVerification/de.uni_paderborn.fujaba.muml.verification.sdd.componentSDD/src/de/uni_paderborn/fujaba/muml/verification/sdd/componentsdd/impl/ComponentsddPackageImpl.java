@@ -1,0 +1,249 @@
+/**
+ */
+package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl;
+
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+
+import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;
+
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryPatternNode;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddFactory;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.EvaluateComponentSDDExpression;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Package</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class ComponentsddPackageImpl extends EPackageImpl implements ComponentsddPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentStoryDecisionDiagramEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentStoryPatternNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass evaluateComponentSDDExpressionEClass = null;
+
+	/**
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private ComponentsddPackageImpl() {
+		super(eNS_URI, ComponentsddFactory.eINSTANCE);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static boolean isInited = false;
+
+	/**
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link ComponentsddPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static ComponentsddPackage init() {
+		if (isInited) return (ComponentsddPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentsddPackage.eNS_URI);
+
+		// Obtain or create and register package
+		ComponentsddPackageImpl theComponentsddPackage = (ComponentsddPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentsddPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentsddPackageImpl());
+
+		isInited = true;
+
+		// Initialize simple dependencies
+		ComponentstorypatternPackage.eINSTANCE.eClass();
+		SDDPackage.eINSTANCE.eClass();
+
+		// Create package meta-data objects
+		theComponentsddPackage.createPackageContents();
+
+		// Initialize created meta-data
+		theComponentsddPackage.initializePackageContents();
+
+		// Mark meta-data to indicate it can't be changed
+		theComponentsddPackage.freeze();
+
+  
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(ComponentsddPackage.eNS_URI, theComponentsddPackage);
+		return theComponentsddPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getComponentStoryDecisionDiagram() {
+		return componentStoryDecisionDiagramEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getComponentStoryPatternNode() {
+		return componentStoryPatternNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentStoryPatternNode_Pattern() {
+		return (EReference)componentStoryPatternNodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEvaluateComponentSDDExpression() {
+		return evaluateComponentSDDExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEvaluateComponentSDDExpression_ComponentSDD() {
+		return (EReference)evaluateComponentSDDExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentsddFactory getComponentsddFactory() {
+		return (ComponentsddFactory)getEFactoryInstance();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isCreated = false;
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
+
+		// Create classes and their features
+		componentStoryDecisionDiagramEClass = createEClass(COMPONENT_STORY_DECISION_DIAGRAM);
+
+		componentStoryPatternNodeEClass = createEClass(COMPONENT_STORY_PATTERN_NODE);
+		createEReference(componentStoryPatternNodeEClass, COMPONENT_STORY_PATTERN_NODE__PATTERN);
+
+		evaluateComponentSDDExpressionEClass = createEClass(EVALUATE_COMPONENT_SDD_EXPRESSION);
+		createEReference(evaluateComponentSDDExpressionEClass, EVALUATE_COMPONENT_SDD_EXPRESSION__COMPONENT_SDD);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isInitialized = false;
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void initializePackageContents() {
+		if (isInitialized) return;
+		isInitialized = true;
+
+		// Initialize package
+		setName(eNAME);
+		setNsPrefix(eNS_PREFIX);
+		setNsURI(eNS_URI);
+
+		// Obtain other dependent packages
+		SDDPackage theSDDPackage = (SDDPackage)EPackage.Registry.INSTANCE.getEPackage(SDDPackage.eNS_URI);
+		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
+		ComponentstorypatternPackage theComponentstorypatternPackage = (ComponentstorypatternPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI);
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+		componentStoryDecisionDiagramEClass.getESuperTypes().add(theSDDPackage.getAbstractStoryDecisionDiagram());
+		componentStoryDecisionDiagramEClass.getESuperTypes().add(theReconfigurationPackage.getStructuralCondition());
+		componentStoryPatternNodeEClass.getESuperTypes().add(theSDDPackage.getPatternNode());
+		evaluateComponentSDDExpressionEClass.getESuperTypes().add(theComponentstorypatternPackage.getTriggerEmbeddedComponentExpression());
+
+		// Initialize classes and features; add operations and parameters
+		initEClass(componentStoryDecisionDiagramEClass, ComponentStoryDecisionDiagram.class, "ComponentStoryDecisionDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(componentStoryPatternNodeEClass, ComponentStoryPatternNode.class, "ComponentStoryPatternNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentStoryPatternNode_Pattern(), theComponentstorypatternPackage.getComponentStoryPattern(), null, "pattern", null, 1, 1, ComponentStoryPatternNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(evaluateComponentSDDExpressionEClass, EvaluateComponentSDDExpression.class, "EvaluateComponentSDDExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEvaluateComponentSDDExpression_ComponentSDD(), this.getComponentStoryDecisionDiagram(), null, "componentSDD", null, 1, 1, EvaluateComponentSDDExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Create resource
+		createResource(eNS_URI);
+	}
+
+} //ComponentsddPackageImpl
