@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reachanalysis.sdm.transform
+Bundle-Version: 0.4.0.qualifier
+Bundle-Vendor: 
+ %providerName
