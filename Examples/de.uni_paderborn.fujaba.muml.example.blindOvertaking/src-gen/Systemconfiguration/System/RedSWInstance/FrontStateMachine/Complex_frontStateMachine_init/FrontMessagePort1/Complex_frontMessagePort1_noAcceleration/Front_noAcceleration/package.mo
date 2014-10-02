@@ -1,0 +1,3 @@
+within Systemconfiguration.System.RedSWInstance.FrontStateMachine.Complex_frontStateMachine_init.FrontMessagePort1.Complex_frontMessagePort1_noAcceleration;
+package Front_noAcceleration
+end Front_noAcceleration;

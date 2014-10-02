@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" type="Storydiagrams" measurementUnit="Pixel">
+  <children xsi:type="notation:Shape" type="2005" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5013"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_WT4hgMwgEeK3Lq4j1h1LZw"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="285" y="15"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001">
+      <children xsi:type="notation:Shape" type="3001" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="7002">
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_2DLIUMwhEeK3Lq4j1h1LZw"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="100" y="19"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_dHvJAMwiEeK3Lq4j1h1LZw"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="135" y="204"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_MyT9QMwjEeK3Lq4j1h1LZw"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="520" y="54"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_W_HvgMwjEeK3Lq4j1h1LZw"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="568" y="252"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_gPYZ8MwjEeK3Lq4j1h1LZw"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="960" y="239"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_SsTkkMwlEeK3Lq4j1h1LZw"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="830" y="44"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_fhbIoCzXEeOsS43Sp3gYWA"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="65" y="326"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_nVxOsCzXEeOsS43Sp3gYWA"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="825" y="345"/>
+          </children>
+        </children>
+        <children xsi:type="notation:DecorationNode" type="7003">
+          <styles xsi:type="notation:SortingStyle"/>
+          <styles xsi:type="notation:FilteringStyle"/>
+        </children>
+        <element href="../ConvoyCoordinationProtocol.fujaba#_YrFCYcwgEeK3Lq4j1h1LZw"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+    </children>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_YrFCYMwgEeK3Lq4j1h1LZw"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="15" y="980" width="1116" height="476"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2008" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5014"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_aIYG0MwgEeK3Lq4j1h1LZw"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="440" y="1555"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001">
+      <children xsi:type="notation:Shape" type="3001" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="7002">
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_BpQ_UBoOEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="40" y="163" width="176" height="89"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_IJ_hYBoOEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="369" y="33" width="196" height="96"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_MLOiMBoOEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="474" y="193" width="249" height="96"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_So03wBoOEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="914" y="213" width="196" height="104"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_XPQQUBoOEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="840" y="33" width="220" height="92"/>
+          </children>
+        </children>
+        <children xsi:type="notation:DecorationNode" type="7003">
+          <styles xsi:type="notation:SortingStyle"/>
+          <styles xsi:type="notation:FilteringStyle"/>
+        </children>
+        <element href="../ConvoyCoordinationProtocol.fujaba#_2ma88RoNEeOEHbkWB6GdpQ"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+    </children>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_2ma88BoNEeOEHbkWB6GdpQ"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="-40" y="125" width="1136" height="397"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001">
+      <children xsi:type="notation:Shape" type="3001" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="7002">
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_7P83YBoOEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="85" y="18" width="180" height="96"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#__18yIBoOEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="134" y="193" width="220" height="109"/>
+          </children>
+        </children>
+        <children xsi:type="notation:DecorationNode" type="7003">
+          <styles xsi:type="notation:SortingStyle"/>
+          <styles xsi:type="notation:FilteringStyle"/>
+        </children>
+        <element href="../ConvoyCoordinationProtocol.fujaba#_5IjtEBoOEeOEHbkWB6GdpQ"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+    </children>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_5IQyIBoOEeOEHbkWB6GdpQ"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="35" y="560" width="440" height="391"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001">
+      <children xsi:type="notation:Shape" type="3001" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="7002">
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_t2kmABoPEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="5" y="8" width="176" height="104"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../ConvoyCoordinationProtocol.fujaba#_xkBvMBoPEeOEHbkWB6GdpQ"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="200" y="164" width="189" height="100"/>
+          </children>
+        </children>
+        <children xsi:type="notation:DecorationNode" type="7003">
+          <styles xsi:type="notation:SortingStyle"/>
+          <styles xsi:type="notation:FilteringStyle"/>
+        </children>
+        <element href="../ConvoyCoordinationProtocol.fujaba#_XjwrQBoPEeOEHbkWB6GdpQ"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+    </children>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_XjnhUBoPEeOEHbkWB6GdpQ"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="604" y="580" width="460" height="368"/>
+  </children>
+  <styles xsi:type="notation:DiagramStyle"/>
+  <element href="../ConvoyCoordinationProtocol.fujaba#_UefGIMwgEeK3Lq4j1h1LZw"/>
+  <edges type="4001" source="//@children.0" target="//@children.3">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_bRSPoMwgEeK3Lq4j1h1LZw"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[5, 23, -23, -92]$[40, 102, 12, -13]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.6338028169014085,0.06801007556675064)"/>
+  </edges>
+  <edges type="4001" source="//@children.1" target="//@children.2">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_bpR44MwgEeK3Lq4j1h1LZw"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[34, 56, -56, -84]$[90, 160, 0, 20]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.42,0.2112676056338028)"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.1" target="//@children.1/@children.1/@children.0/@children.0/@children.0">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="33" y="-86"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="-28" y="86"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_0NVLkMwiEeK3Lq4j1h1LZw"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[-27, -16, 222, 129]$[-248, -182, 1, -37]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.768,0.21621621621621623)"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.2" target="//@children.1/@children.1/@children.0/@children.0/@children.1">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="-42" y="-31"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_VlGBgMwjEeK3Lq4j1h1LZw"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[-87, 38, 275, -104]$[-365, 187, -3, 45]"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.1" target="//@children.1/@children.1/@children.0/@children.0/@children.3">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="31" y="24"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_bbemEMwjEeK3Lq4j1h1LZw"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[63, 4, -406, -37]$[371, 16, -98, -25]"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.3" target="//@children.1/@children.1/@children.0/@children.0/@children.4">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_kY_6sMwjEeK3Lq4j1h1LZw"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[22, -9, -254, 92]$[294, -106, 18, -5]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.8883248730964467,0.3595505617977528)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.856,0.35135135135135137)"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.5" target="//@children.1/@children.1/@children.0/@children.0/@children.4">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="13" y="-46"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="13" y="-21"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_X60Q0MwlEeK3Lq4j1h1LZw"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[-3, 37, 0, -78]$[-18, 100, -15, -15]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.272,0.16853932584269662)"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.0" target="//@children.1/@children.1/@children.0/@children.0/@children.1">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_8pwkYA_FEeOfjKpZwKN9mQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[3, 18, -24, -134]$[10, 143, -17, -9]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.20833333333333334,0.7567567567567568)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.136,0.25842696629213485)"/>
+  </edges>
+  <edges type="4002" source="//@children.3/@children.1/@children.0/@children.0/@children.0" target="//@children.3/@children.1/@children.0/@children.0/@children.1">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_oC5MoBoOEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[30, -10, -188, 67]$[225, -113, 7, -36]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.7727272727272727,0.23595505617977527)"/>
+  </edges>
+  <edges type="4002" source="//@children.3/@children.1/@children.0/@children.0/@children.0" target="//@children.3/@children.1/@children.0/@children.0/@children.2">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_pvDzgBoOEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[24, 2, -286, -29]$[311, -5, 1, -36]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.8181818181818182,0.4157303370786517)"/>
+  </edges>
+  <edges type="4002" source="//@children.3/@children.1/@children.0/@children.0/@children.2" target="//@children.3/@children.1/@children.0/@children.0/@children.3">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_q_ij8BoOEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[32, 3, -182, -18]$[215, 4, 1, -17]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.8273092369477911,0.14583333333333334)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.2653061224489796,0.22115384615384615)"/>
+  </edges>
+  <edges type="4002" source="//@children.3/@children.1/@children.0/@children.0/@children.3" target="//@children.3/@children.1/@children.0/@children.0/@children.4">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_uHWCYBoOEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[-4, -17, 27, 126]$[-30, -152, 1, -9]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5102040816326531,0.21153846153846154)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.6045454545454545,0.13043478260869565)"/>
+  </edges>
+  <edges type="4002" source="//@children.4/@children.1/@children.0/@children.0/@children.0" target="//@children.4/@children.1/@children.0/@children.0/@children.1">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_CxkOsBoPEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[32, 55, -51, -100]$[85, 114, 2, -41]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.26666666666666666,0.22916666666666666)"/>
+  </edges>
+  <edges type="4001" source="//@children.4" target="//@children.4">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" x="46" y="-39"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_crh2UBoPEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[9, 12, 9, 127]$[68, 95, 68, 210]$[68, 175, 68, 290]$[-6, 184, -6, 299]$[-6, 166, -6, 281]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.9795454545454545,0.5754475703324808)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.9795454545454545,0.2813299232736573)"/>
+  </edges>
+  <edges type="4001" source="//@children.4" target="//@children.5">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_hKO2QBoPEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[47, 3, -124, -9]$[171, 0, 0, -12]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.8568181818181818,0.05115089514066496)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.0782608695652174,0.04619565217391304)"/>
+  </edges>
+  <edges type="4001" source="//@children.5" target="//@children.5">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_iEs6cBoPEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[40, 9, 2, -143]$[145, 36, 107, -116]$[151, 152, 113, 0]$[40, 152, 2, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.9130434782608695,0.035326086956521736)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.9956521739130435,0.4483695652173913)"/>
+  </edges>
+  <edges type="4001" source="//@children.5" target="//@children.1">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" x="12" y="-24"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_nzb-4BoPEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[96, 267, -13, -36]$[124, 291, 15, -12]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.19130434782608696,0.035326086956521736)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.7374551971326165,0.03361344537815126)"/>
+  </edges>
+  <edges type="4001" source="//@children.3" target="//@children.4">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_sHuekBoPEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[31, 285, -3, -36]$[35, 314, 1, -7]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.2746478873239437,0.042821158690176324)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.6431818181818182,0.02557544757033248)"/>
+  </edges>
+  <edges type="4002" source="//@children.5/@children.1/@children.0/@children.0/@children.0" target="//@children.5/@children.1/@children.0/@children.0/@children.1">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_0BJ48BoPEeOEHbkWB6GdpQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[46, 55, -48, -59]$[95, 102, 1, -12]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.6534090909090909,0.19230769230769232)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.23809523809523808,0.17)"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.1" target="//@children.1/@children.1/@children.0/@children.0/@children.6">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_koJx4CzXEeOsS43Sp3gYWA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[-2, 45, 0, -68]$[20, 109, 22, -4]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.8552631578947368,0.39325842696629215)"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.4" target="//@children.1/@children.1/@children.0/@children.0/@children.7">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="1" y="-2"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" x="-16" y="-11"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="-9" y="-9"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../ConvoyCoordinationProtocol.fujaba#_qob5UCzXEeOsS43Sp3gYWA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[5, 45, 116, -23]$[13, 105, 124, 37]$[-27, 105, 84, 37]$[-45, 97, 66, 29]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.9868421052631579,0.48314606741573035)"/>
+  </edges>
+</notation:Diagram>

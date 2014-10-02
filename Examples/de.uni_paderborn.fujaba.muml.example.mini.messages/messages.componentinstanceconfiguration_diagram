@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_r5ncoRyCEeSKP_lLzmbIVg" type="Component Instance Configuration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_sVfgUByCEeSKP_lLzmbIVg" type="2015" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_sVfgUhyCEeSKP_lLzmbIVg" type="5026"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_sVfgUxyCEeSKP_lLzmbIVg" type="7012">
+      <children xmi:type="notation:Shape" xmi:id="_49dtcByCEeSKP_lLzmbIVg" type="3023" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_49dtchyCEeSKP_lLzmbIVg" type="7013">
+          <children xmi:type="notation:Shape" xmi:id="_49e7kByCEeSKP_lLzmbIVg" type="3024" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_49e7khyCEeSKP_lLzmbIVg" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_49x2gByCEeSKP_lLzmbIVg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_49x2ghyCEeSKP_lLzmbIVg" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_49x2gxyCEeSKP_lLzmbIVg" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="messages.fujaba#_482pchyCEeSKP_lLzmbIVg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_49x2gRyCEeSKP_lLzmbIVg" x="160" y="21"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="messages.fujaba#_482pcRyCEeSKP_lLzmbIVg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_49e7kRyCEeSKP_lLzmbIVg" x="21" y="111" width="172" height="67"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_49e7kxyCEeSKP_lLzmbIVg" type="3024" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_49e7lRyCEeSKP_lLzmbIVg" type="5028"/>
+            <children xmi:type="notation:Shape" xmi:id="_4-FYgByCEeSKP_lLzmbIVg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4-FYghyCEeSKP_lLzmbIVg" type="5044">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_4-FYgxyCEeSKP_lLzmbIVg" y="5"/>
+              </children>
+              <element xmi:type="instance:DiscreteSinglePortInstance" href="messages.fujaba#_482pdByCEeSKP_lLzmbIVg"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4-FYgRyCEeSKP_lLzmbIVg" x="-12" y="27"/>
+            </children>
+            <element xmi:type="instance:AtomicComponentInstance" href="messages.fujaba#_482pcxyCEeSKP_lLzmbIVg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_49e7lByCEeSKP_lLzmbIVg" x="345" y="105" width="172" height="73"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_49fioByCEeSKP_lLzmbIVg" type="3035" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_49fiohyCEeSKP_lLzmbIVg" type="5047"/>
+            <element xmi:type="instance:CoordinationProtocolInstance" href="messages.fujaba#_49ZcAByCEeSKP_lLzmbIVg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_49fioRyCEeSKP_lLzmbIVg" x="246" y="15"/>
+          </children>
+        </children>
+        <element xmi:type="instance:ComponentInstanceConfiguration" href="messages.fujaba#_482pcByCEeSKP_lLzmbIVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_49dtcRyCEeSKP_lLzmbIVg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_sVfgVByCEeSKP_lLzmbIVg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_sVfgVRyCEeSKP_lLzmbIVg"/>
+    </children>
+    <element xmi:type="instance:StructuredComponentInstance" href="messages.fujaba#_sVZZsByCEeSKP_lLzmbIVg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sVfgURyCEeSKP_lLzmbIVg" x="306" y="252" width="712" height="406"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_r5ncohyCEeSKP_lLzmbIVg"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="messages.fujaba#_r5ncoByCEeSKP_lLzmbIVg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_4-iEcByCEeSKP_lLzmbIVg" type="4001" source="_4-FYgByCEeSKP_lLzmbIVg" target="_49x2gByCEeSKP_lLzmbIVg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_4-iEcRyCEeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="messages.fujaba#_482pdRyCEeSKP_lLzmbIVg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4-iEchyCEeSKP_lLzmbIVg" points="[-12, -12, -2, -2]$[2, 2, 12, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_4-jSkByCEeSKP_lLzmbIVg" type="4003" source="_49fioByCEeSKP_lLzmbIVg" target="_49x2gByCEeSKP_lLzmbIVg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_4-jSkRyCEeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4-jSkhyCEeSKP_lLzmbIVg" points="[18, -20, -19, 20]$[25, -28, -12, 12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_4-kgsByCEeSKP_lLzmbIVg" type="4003" source="_49fioByCEeSKP_lLzmbIVg" target="_4-FYgByCEeSKP_lLzmbIVg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_4-kgsRyCEeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4-kgshyCEeSKP_lLzmbIVg" points="[20, -13, -27, 17]$[35, -23, -12, 7]"/>
+  </edges>
+</notation:Diagram>

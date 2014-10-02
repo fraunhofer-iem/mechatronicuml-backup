@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_rRX0wAJREeKsot-FPTx42A" type="Atomiccomponent" name="VKM.atomiccomponent_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_rRYb0AJREeKsot-FPTx42A" type="2005" fontName="Bitstream Vera Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_rRYb0gJREeKsot-FPTx42A" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_sqgcoCHnEeKh6b7eZrN1wQ" type="3006" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_sqhDsCHnEeKh6b7eZrN1wQ" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_sqhqwCHnEeKh6b7eZrN1wQ" x="-230" y="29"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_kTGG8HcbEeGRUKIGGCEvBg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sqgcoSHnEeKh6b7eZrN1wQ"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="../VernetzterPruefstand.fujaba#_izlcAHcbEeGRUKIGGCEvBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rRYb0QJREeKsot-FPTx42A" x="348" y="168"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_rRX0wQJREeKsot-FPTx42A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VernetzterPruefstand.fujaba#_7tAlcG6QEeGwzsm_EpbUyg"/>
+</notation:Diagram>

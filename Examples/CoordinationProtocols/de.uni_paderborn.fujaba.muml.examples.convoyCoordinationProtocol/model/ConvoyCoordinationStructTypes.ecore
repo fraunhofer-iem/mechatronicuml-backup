@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="profiles" nsURI="http://www.fujaba.de/muml/examples/profiles/0.3.2"
+    nsPrefix="profiles">
+  <eClassifiers xsi:type="ecore:EClass" name="Profile"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfileList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profiles" upperBound="-1"
+        eType="#//Profile" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfileIterator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profilesToDo" upperBound="-1"
+        eType="#//Profile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfileStore">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roleProfiles" eType="#//RoleProfiles"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleProfiles">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allProfiles" upperBound="-1"
+        eType="#//Profile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentProfile" eType="#//Profile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roleInstance" eType="ecore:EClass platform:/plugin/de.uni_paderborn.fujaba.muml.runtime/model/RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
+  </eClassifiers>
+</ecore:EPackage>

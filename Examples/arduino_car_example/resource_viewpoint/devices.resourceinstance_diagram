@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_HZiFcAmrEeSjFLbPlFg-cQ" type="ResourceInstance" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_NmqWEAmrEeSjFLbPlFg-cQ" type="2004" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Nmq9IAmrEeSjFLbPlFg-cQ" type="5036"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Nmq9IQmrEeSjFLbPlFg-cQ" type="5037"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Nmq9IgmrEeSjFLbPlFg-cQ" type="5038"/>
+    <children xmi:type="notation:Shape" xmi:id="_Odc0IAmrEeSjFLbPlFg-cQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Odc0IgmrEeSjFLbPlFg-cQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Odc0IwmrEeSjFLbPlFg-cQ" x="33" y="-4"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_OdaX4AmrEeSjFLbPlFg-cQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Odc0IQmrEeSjFLbPlFg-cQ"/>
+    </children>
+    <element xmi:type="hwresourceinstance:SensorInstance" href="../arduino_car_example.fujaba#_NmpvAAmrEeSjFLbPlFg-cQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NmqWEQmrEeSjFLbPlFg-cQ" x="552" y="86" width="267"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_PPkNkAmrEeSjFLbPlFg-cQ" type="2005" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_PPkNkgmrEeSjFLbPlFg-cQ" type="5039"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_PPk0oAmrEeSjFLbPlFg-cQ" type="5040"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_PPk0oQmrEeSjFLbPlFg-cQ" type="5041"/>
+    <children xmi:type="notation:Shape" xmi:id="_PkoeoAmrEeSjFLbPlFg-cQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_PkpFsAmrEeSjFLbPlFg-cQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_PkpFsQmrEeSjFLbPlFg-cQ" x="47" y="6"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_PkmCYAmrEeSjFLbPlFg-cQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PkoeoQmrEeSjFLbPlFg-cQ"/>
+    </children>
+    <element xmi:type="hwresourceinstance:ActuatorInstance" href="../arduino_car_example.fujaba#_PPU9AAmrEeSjFLbPlFg-cQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PPkNkQmrEeSjFLbPlFg-cQ" x="48" y="84" width="242" height="86"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_HZiFcQmrEeSjFLbPlFg-cQ"/>
+  <element xmi:type="hwresourceinstance:ResourceInstanceRepository" href="../arduino_car_example.fujaba#_HZheYAmrEeSjFLbPlFg-cQ"/>
+</notation:Diagram>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_QP8scPR2EeOKmIQk3FL8KA" type="Coordination Protocol" name="EnterSection.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_QP8scvR2EeOKmIQk3FL8KA" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_QP8sdPR2EeOKmIQk3FL8KA" type="7005"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_EDhPcOo8EeO-8csd75FEHw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QP8sc_R2EeOKmIQk3FL8KA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_QP8scfR2EeOKmIQk3FL8KA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.fujaba#_gSpDkHasEeOh__JNCv2_1A"/>
+</notation:Diagram>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_Aj0NEKm_EeOm7bbPSJmxhg" type="Real-Time Statechart" name="slave.realtimestatechart_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Aj0NEam_EeOm7bbPSJmxhg"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../PathFinder.fujaba#_cNfdsH9gEeOl-LRN5Q0gXA"/>
+</notation:Diagram>

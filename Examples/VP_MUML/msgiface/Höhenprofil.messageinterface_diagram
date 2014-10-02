@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:msgiface="http://www.fujaba.de/muml/model/msgiface/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_42Xq0AJREeKsot-FPTx42A" type="Messageinterface" name="Höhenprofil.messageinterface_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_42YR4AJREeKsot-FPTx42A" type="2006" fontName="Bitstream Vera Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_42YR4gJREeKsot-FPTx42A" type="5012"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_42YR4wJREeKsot-FPTx42A" type="7007">
+      <children xmi:type="notation:Shape" xmi:id="_COX2MCJ2EeKh6b7eZrN1wQ" type="3005" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_COZEUCJ2EeKh6b7eZrN1wQ" type="5008"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_COZEUSJ2EeKh6b7eZrN1wQ" type="7006">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_COZEUiJ2EeKh6b7eZrN1wQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_COZEUyJ2EeKh6b7eZrN1wQ"/>
+        </children>
+        <element xmi:type="msgiface:MessageType" href="../VernetzterPruefstand.fujaba#_he6r4HpMEeGB3c_CrLx2_A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_COX2MSJ2EeKh6b7eZrN1wQ"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Z9xjYCJ5EeKh6b7eZrN1wQ" type="3005" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Z9yKcCJ5EeKh6b7eZrN1wQ" type="5008"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_Z9yKcSJ5EeKh6b7eZrN1wQ" type="7006">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_Z9yKciJ5EeKh6b7eZrN1wQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_Z9yKcyJ5EeKh6b7eZrN1wQ"/>
+        </children>
+        <element xmi:type="msgiface:MessageType" href="../VernetzterPruefstand.fujaba#_Z9sD0CJ5EeKh6b7eZrN1wQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z9xjYSJ5EeKh6b7eZrN1wQ"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_42YR5AJREeKsot-FPTx42A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_42YR5QJREeKsot-FPTx42A"/>
+    </children>
+    <element xmi:type="msgiface:MessageInterface" href="../VernetzterPruefstand.fujaba#_gZSgkHpMEeGB3c_CrLx2_A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_42YR4QJREeKsot-FPTx42A"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_42Xq0QJREeKsot-FPTx42A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VernetzterPruefstand.fujaba#_pPaCIXpLEeGB3c_CrLx2_A"/>
+</notation:Diagram>

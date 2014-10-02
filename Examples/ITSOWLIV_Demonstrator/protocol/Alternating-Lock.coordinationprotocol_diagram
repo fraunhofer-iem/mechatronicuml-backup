@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_S1k7UGNBEeOY3OClxpdOXw" type="Coordination Protocol" name="Alternating-Lock.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_S1liYGNBEeOY3OClxpdOXw" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_S1liYmNBEeOY3OClxpdOXw" type="7005"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../ITSOWLIV_Demonstrator.fujaba#_Mo_5wGNAEeOY3OClxpdOXw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S1liYWNBEeOY3OClxpdOXw" x="228" y="84" width="409" height="241"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_S1k7UWNBEeOY3OClxpdOXw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../ITSOWLIV_Demonstrator.fujaba#_OVeAsCprEeOJnb1xCalP4w"/>
+</notation:Diagram>

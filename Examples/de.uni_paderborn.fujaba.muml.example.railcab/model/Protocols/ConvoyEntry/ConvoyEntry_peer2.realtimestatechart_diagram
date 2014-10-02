@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_cZzCYnavEeOh__JNCv2_1A" type="Real-Time Statechart" name="LeaderElection_peer2.realtimestatechart_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_caY4QnavEeOh__JNCv2_1A" type="2007" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_caY4RHavEeOh__JNCv2_1A" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_caY4RXavEeOh__JNCv2_1A" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_caipQHavEeOh__JNCv2_1A" type="7030"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../RailCab.fujaba#_cZzCYHavEeOh__JNCv2_1A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_caY4Q3avEeOh__JNCv2_1A" x="24" y="24" width="1369" height="769"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_cZzCY3avEeOh__JNCv2_1A"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../RailCab.fujaba#_cZzCYHavEeOh__JNCv2_1A"/>
+</notation:Diagram>

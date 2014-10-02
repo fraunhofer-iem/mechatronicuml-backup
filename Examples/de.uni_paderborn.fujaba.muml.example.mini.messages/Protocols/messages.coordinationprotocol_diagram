@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_P6fUwByBEeSKP_lLzmbIVg" type="Coordination Protocol" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Q7yZsByBEeSKP_lLzmbIVg" type="2005" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Q7zAwByBEeSKP_lLzmbIVg" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_Q7_OAByBEeSKP_lLzmbIVg" type="3005" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Q7_OAhyBEeSKP_lLzmbIVg" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="messages.fujaba#_Q7gs4ByBEeSKP_lLzmbIVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q7_OARyBEeSKP_lLzmbIVg" x="63" y="3"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Q7_OAxyBEeSKP_lLzmbIVg" type="3006" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Q7_1EByBEeSKP_lLzmbIVg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Q7_1ERyBEeSKP_lLzmbIVg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="messages.fujaba#_Q7jJIByBEeSKP_lLzmbIVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q7_OBByBEeSKP_lLzmbIVg" y="93"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Q7_1EhyBEeSKP_lLzmbIVg" type="3006" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Q7_1FByBEeSKP_lLzmbIVg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Q8AcIByBEeSKP_lLzmbIVg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="messages.fujaba#_Q7oBoByBEeSKP_lLzmbIVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q7_1ExyBEeSKP_lLzmbIVg" x="126" y="93"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="messages.fujaba#_Q7gs4ByBEeSKP_lLzmbIVg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q7yZsRyBEeSKP_lLzmbIVg" x="324" y="162" width="604" height="379"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_P6fUwRyBEeSKP_lLzmbIVg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="messages.fujaba#_onxjWxyAEeSKP_lLzmbIVg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_Q8kc0ByBEeSKP_lLzmbIVg" type="4007" source="_Q7_OAByBEeSKP_lLzmbIVg" target="_Q7_OAxyBEeSKP_lLzmbIVg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Q8kc0RyBEeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Q8kc0hyBEeSKP_lLzmbIVg" points="[13, 13, 13, 13]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Q8mSAByBEeSKP_lLzmbIVg" type="4007" source="_Q7_OAByBEeSKP_lLzmbIVg" target="_Q7_1EhyBEeSKP_lLzmbIVg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Q8mSARyBEeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Q8mSAhyBEeSKP_lLzmbIVg" points="[13, 13, 3, 3]$[0, 0, -10, -10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_Q8oHMByBEeSKP_lLzmbIVg" type="4006" source="_Q7_OAxyBEeSKP_lLzmbIVg" target="_Q7_1EhyBEeSKP_lLzmbIVg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Q8oHMRyBEeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xmi:type="protocol:RoleConnector" href="messages.fujaba#_Q7oosByBEeSKP_lLzmbIVg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Q8oHMhyBEeSKP_lLzmbIVg" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+  </edges>
+</notation:Diagram>

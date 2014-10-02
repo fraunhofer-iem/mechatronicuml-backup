@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.2.7" xmi:id="_JDoRQPkKEeGjB_xmyMZyng" type="Realtimestatechart" name="Pattern_EventListener_Master.realtimestatechart_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_JmJvgPkKEeGjB_xmyMZyng" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JmJvgvkKEeGjB_xmyMZyng" type="5045"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JmJvg_kKEeGjB_xmyMZyng" type="5046"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JmJvhPkKEeGjB_xmyMZyng" type="7019"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../demonstrator.fujaba#_BJrScPkKEeGjB_xmyMZyng"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JmJvgfkKEeGjB_xmyMZyng" width="356" height="316"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_JDoRQfkKEeGjB_xmyMZyng"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../demonstrator.fujaba#_BJrScPkKEeGjB_xmyMZyng"/>
+</notation:Diagram>

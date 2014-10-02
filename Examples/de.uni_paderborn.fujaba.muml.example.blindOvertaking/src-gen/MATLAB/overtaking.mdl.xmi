@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="ASCII"?>
+<model:SimulinkContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buffer="de.uni_paderborn.fujaba.simulink.model.msglib.buffer" xmlns:model="de.uni_paderborn.fujaba.simulink" xmlns:msglib="de.uni_paderborn.fujaba.simulink.model.msglib" xmlns:stateflow="de.uni_paderborn.fujaba.simulink.model.stateflow" id="_7wKToPUnEeOqvInL61-gjw">
+  <models id="_74phQPUnEeOqvInL61-gjw" name="LibraryReference">
+    <blocks xsi:type="model:LibraryReference" id="_748cMPUnEeOqvInL61-gjw" name="_system" sourceBlock="_75GNMfUnEeOqvInL61-gjw">
+      <parameters name="Position" value="[200, 100, 450, 450]"/>
+    </blocks>
+  </models>
+  <libraries id="_7wwJgPUnEeOqvInL61-gjw" name="AtomicLibrary">
+    <blocks xsi:type="model:SubSystem" id="_73wJYPUnEeOqvInL61-gjw" name="RedSw">
+      <parameters name="Position" value="[20, 20, 270, 370]"/>
+      <outPorts id="_77VB0vUnEeOqvInL61-gjw" name="velocity" incomingLines="_77VB0fUnEeOqvInL61-gjw" type="double">
+        <parameters name="Position" value="[860, 30, 890, 60]"/>
+        <inPorts id="_77VB1PUnEeOqvInL61-gjw"/>
+      </outPorts>
+      <outPorts id="_780PkPUnEeOqvInL61-gjw" name="overtaker_send" incomingLines="_78qekPUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[860, 300, 890, 330]"/>
+        <inPorts id="_780Pl_UnEeOqvInL61-gjw"/>
+      </outPorts>
+      <inPorts id="_7356YvUnEeOqvInL61-gjw" name="clockSignal" outgoingLines="_7356YfUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[190, 30, 220, 60]"/>
+        <outPorts id="_74DEUPUnEeOqvInL61-gjw"/>
+      </inPorts>
+      <inPorts id="_77xGsPUnEeOqvInL61-gjw" name="distance" outgoingLines="_7763sfUnEeOqvInL61-gjw" type="double">
+        <parameters name="Position" value="[60, 90, 90, 120]"/>
+        <outPorts id="_78EosfUnEeOqvInL61-gjw"/>
+      </inPorts>
+      <inPorts id="_780PkfUnEeOqvInL61-gjw" name="overtaker_recv" outgoingLines="_78qekfUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[190, 300, 220, 330]"/>
+        <outPorts id="_780PmPUnEeOqvInL61-gjw"/>
+      </inPorts>
+      <inPorts id="_780Pk_UnEeOqvInL61-gjw" name="overtaker_net_address" outgoingLines="_780PlfUnEeOqvInL61-gjw" type="uint8">
+        <parameters name="Position" value="[190, 360, 220, 390]"/>
+        <outPorts id="_780PnfUnEeOqvInL61-gjw" type="uint8"/>
+      </inPorts>
+      <inPorts id="_780PlPUnEeOqvInL61-gjw" name="overtaker_receiver_net_address" outgoingLines="_780PlvUnEeOqvInL61-gjw" type="uint8">
+        <parameters name="Position" value="[190, 420, 220, 450]"/>
+        <outPorts id="_780PnvUnEeOqvInL61-gjw" type="uint8"/>
+      </inPorts>
+      <lines id="_7356YfUnEeOqvInL61-gjw" sourcePort="_74DEUPUnEeOqvInL61-gjw" targetPort="_7356YPUnEeOqvInL61-gjw" sourceBlock="_7356YvUnEeOqvInL61-gjw" targetBlock="_73m_cPUnEeOqvInL61-gjw"/>
+      <lines id="_77VB0fUnEeOqvInL61-gjw" sourcePort="_77VB0PUnEeOqvInL61-gjw" targetPort="_77VB1PUnEeOqvInL61-gjw" sourceBlock="_73m_cPUnEeOqvInL61-gjw" targetBlock="_77VB0vUnEeOqvInL61-gjw"/>
+      <lines id="_7763sfUnEeOqvInL61-gjw" sourcePort="_78EosfUnEeOqvInL61-gjw" targetPort="_78EosvUnEeOqvInL61-gjw" sourceBlock="_77xGsPUnEeOqvInL61-gjw" targetBlock="_7763sPUnEeOqvInL61-gjw"/>
+      <lines id="_7763svUnEeOqvInL61-gjw" sourcePort="_78Eos_UnEeOqvInL61-gjw" targetPort="_78EosPUnEeOqvInL61-gjw" sourceBlock="_7763sPUnEeOqvInL61-gjw" targetBlock="_73m_cPUnEeOqvInL61-gjw"/>
+      <lines id="_78qekPUnEeOqvInL61-gjw" sourcePort="_780PmfUnEeOqvInL61-gjw" targetPort="_780Pl_UnEeOqvInL61-gjw" sourceBlock="_780PkvUnEeOqvInL61-gjw" targetBlock="_780PkPUnEeOqvInL61-gjw" bus="_7wmYgPUnEeOqvInL61-gjw"/>
+      <lines id="_78qekfUnEeOqvInL61-gjw" sourcePort="_780PmPUnEeOqvInL61-gjw" targetPort="_780PmvUnEeOqvInL61-gjw" sourceBlock="_780PkfUnEeOqvInL61-gjw" targetBlock="_780PkvUnEeOqvInL61-gjw" bus="_7wmYgPUnEeOqvInL61-gjw"/>
+      <lines id="_780PlfUnEeOqvInL61-gjw" sourcePort="_780PnfUnEeOqvInL61-gjw" targetPort="_780Pm_UnEeOqvInL61-gjw" sourceBlock="_780Pk_UnEeOqvInL61-gjw" targetBlock="_780PkvUnEeOqvInL61-gjw"/>
+      <lines id="_780PlvUnEeOqvInL61-gjw" sourcePort="_780PnvUnEeOqvInL61-gjw" targetPort="_780PnPUnEeOqvInL61-gjw" sourceBlock="_780PlPUnEeOqvInL61-gjw" targetBlock="_780PkvUnEeOqvInL61-gjw"/>
+      <lines id="_7-cnQPUnEeOqvInL61-gjw" sourcePort="_7-cnRPUnEeOqvInL61-gjw" targetPort="_7-cnSPUnEeOqvInL61-gjw" sourceBlock="_73m_cPUnEeOqvInL61-gjw" targetBlock="_780PkvUnEeOqvInL61-gjw"/>
+      <lines id="_7-cnQfUnEeOqvInL61-gjw" sourcePort="_7-cnRfUnEeOqvInL61-gjw" targetPort="_7-cnSfUnEeOqvInL61-gjw" sourceBlock="_73m_cPUnEeOqvInL61-gjw" targetBlock="_780PkvUnEeOqvInL61-gjw"/>
+      <lines id="_7-cnQvUnEeOqvInL61-gjw" sourcePort="_7-cnRvUnEeOqvInL61-gjw" targetPort="_7-cnSvUnEeOqvInL61-gjw" sourceBlock="_73m_cPUnEeOqvInL61-gjw" targetBlock="_780PkvUnEeOqvInL61-gjw"/>
+      <lines id="_7-cnQ_UnEeOqvInL61-gjw" sourcePort="_7-cnR_UnEeOqvInL61-gjw" targetPort="_7-cnS_UnEeOqvInL61-gjw" sourceBlock="_73m_cPUnEeOqvInL61-gjw" targetBlock="_780PkvUnEeOqvInL61-gjw"/>
+      <lines id="_7_yrEvUnEeOqvInL61-gjw" sourcePort="_7_yrFvUnEeOqvInL61-gjw" targetPort="_7_71A_UnEeOqvInL61-gjw" sourceBlock="_780PkvUnEeOqvInL61-gjw" targetBlock="_73m_cPUnEeOqvInL61-gjw"/>
+      <lines id="_7_yrE_UnEeOqvInL61-gjw" sourcePort="_7_71APUnEeOqvInL61-gjw" targetPort="_7_71BPUnEeOqvInL61-gjw" sourceBlock="_780PkvUnEeOqvInL61-gjw" targetBlock="_73m_cPUnEeOqvInL61-gjw"/>
+      <lines id="_7_yrFPUnEeOqvInL61-gjw" sourcePort="_7_71AfUnEeOqvInL61-gjw" targetPort="_7_71BfUnEeOqvInL61-gjw" sourceBlock="_780PkvUnEeOqvInL61-gjw" targetBlock="_73m_cPUnEeOqvInL61-gjw"/>
+      <lines id="_7_yrFfUnEeOqvInL61-gjw" sourcePort="_7_71AvUnEeOqvInL61-gjw" targetPort="_7_71BvUnEeOqvInL61-gjw" sourceBlock="_780PkvUnEeOqvInL61-gjw" targetBlock="_73m_cPUnEeOqvInL61-gjw"/>
+      <blocks xsi:type="model:ChartBlock" id="_73m_cPUnEeOqvInL61-gjw" name="RedSw_Statechart" incomingLines="_7356YfUnEeOqvInL61-gjw _7763svUnEeOqvInL61-gjw _7_yrEvUnEeOqvInL61-gjw _7_yrE_UnEeOqvInL61-gjw _7_yrFPUnEeOqvInL61-gjw _7_yrFfUnEeOqvInL61-gjw" outgoingLines="_77VB0fUnEeOqvInL61-gjw _7-cnQPUnEeOqvInL61-gjw _7-cnQfUnEeOqvInL61-gjw _7-cnQvUnEeOqvInL61-gjw _7-cnQ_UnEeOqvInL61-gjw" chart="_7ysDMPUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[250, 30, 800, 240]"/>
+        <outPorts id="_77VB0PUnEeOqvInL61-gjw" name="velocity" type="double">
+          <inPorts id="_77VB1fUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <outPorts id="_7-cnRPUnEeOqvInL61-gjw" name="overtakerReadOut">
+          <inPorts id="_7-cnTPUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <outPorts id="_7-cnRfUnEeOqvInL61-gjw" name="overtakerParamReadOut">
+          <inPorts id="_7-cnTfUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <outPorts id="_7-cnRvUnEeOqvInL61-gjw" name="overtakerWriteOut">
+          <inPorts id="_7-cnTvUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <outPorts id="_7-cnR_UnEeOqvInL61-gjw" name="overtakerParamWriteOut">
+          <inPorts id="_7-cnT_UnEeOqvInL61-gjw"/>
+        </outPorts>
+        <inPorts id="_7356YPUnEeOqvInL61-gjw" name="clockSignal">
+          <outPorts id="_7356Y_UnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_78EosPUnEeOqvInL61-gjw" name="distance" type="double">
+          <outPorts id="_78EotPUnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_7_71A_UnEeOqvInL61-gjw" name="overtakerReadIn" type="uint8">
+          <outPorts id="_7_71B_UnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_7_71BPUnEeOqvInL61-gjw" name="overtakerParamReadIn" type="double">
+          <outPorts id="_7_71CPUnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_7_71BfUnEeOqvInL61-gjw" name="overtakerWriteIn" type="uint8">
+          <outPorts id="_7_71CfUnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_7_71BvUnEeOqvInL61-gjw" name="overtakerParamWriteIn" type="double">
+          <outPorts id="_7_71CvUnEeOqvInL61-gjw"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="model:ZeroOrderHold" id="_7763sPUnEeOqvInL61-gjw" name="distance_ZeroOrderHold" incomingLines="_7763sfUnEeOqvInL61-gjw" outgoingLines="_7763svUnEeOqvInL61-gjw" sampleTime="30*0.001*1">
+        <parameters name="Position" value="[160, 90, 190, 120]"/>
+        <outPorts id="_78Eos_UnEeOqvInL61-gjw">
+          <inPorts id="_78EotvUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <inPorts id="_78EosvUnEeOqvInL61-gjw">
+          <outPorts id="_78EotfUnEeOqvInL61-gjw"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="msglib:LinkLayer" id="_780PkvUnEeOqvInL61-gjw" name="Link Layer overtaker" incomingLines="_78qekfUnEeOqvInL61-gjw _780PlfUnEeOqvInL61-gjw _780PlvUnEeOqvInL61-gjw _7-cnQPUnEeOqvInL61-gjw _7-cnQfUnEeOqvInL61-gjw _7-cnQvUnEeOqvInL61-gjw _7-cnQ_UnEeOqvInL61-gjw" outgoingLines="_78qekPUnEeOqvInL61-gjw _7_yrEvUnEeOqvInL61-gjw _7_yrE_UnEeOqvInL61-gjw _7_yrFPUnEeOqvInL61-gjw _7_yrFfUnEeOqvInL61-gjw" delayMin="1*1000" delayMax="1*1000" bufferSize="5" sourceBufferSize="5" messageMapping="[1 1; 2 1; 3 1; 4 1; 5 1]">
+        <parameters name="Position" value="[250, 300, 800, 700]"/>
+        <outPorts id="_780PmfUnEeOqvInL61-gjw"/>
+        <outPorts id="_7_yrFvUnEeOqvInL61-gjw" dimensions="[5]"/>
+        <outPorts id="_7_71APUnEeOqvInL61-gjw" dimensions="5"/>
+        <outPorts id="_7_71AfUnEeOqvInL61-gjw" dimensions="[5]"/>
+        <outPorts id="_7_71AvUnEeOqvInL61-gjw" dimensions="5"/>
+        <inPorts id="_780PmvUnEeOqvInL61-gjw"/>
+        <inPorts id="_780Pm_UnEeOqvInL61-gjw"/>
+        <inPorts id="_780PnPUnEeOqvInL61-gjw"/>
+        <inPorts id="_7-cnSPUnEeOqvInL61-gjw" dimensions="[5]"/>
+        <inPorts id="_7-cnSfUnEeOqvInL61-gjw" dimensions="5"/>
+        <inPorts id="_7-cnSvUnEeOqvInL61-gjw" dimensions="[5]"/>
+        <inPorts id="_7-cnS_UnEeOqvInL61-gjw" dimensions="5"/>
+      </blocks>
+    </blocks>
+    <blocks xsi:type="model:SubSystem" id="_74DEU_UnEeOqvInL61-gjw" name="YellowSw">
+      <parameters name="Position" value="[330, 20, 580, 370]"/>
+      <outPorts id="_77Bf0vUnEeOqvInL61-gjw" name="velocity" incomingLines="_77Bf0fUnEeOqvInL61-gjw" type="double">
+        <parameters name="Position" value="[860, 30, 890, 60]"/>
+        <inPorts id="_77LQ0fUnEeOqvInL61-gjw"/>
+      </outPorts>
+      <outPorts id="_78gtlfUnEeOqvInL61-gjw" name="overtakee_send" incomingLines="_78XjoPUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[860, 300, 890, 330]"/>
+        <inPorts id="_78gtnPUnEeOqvInL61-gjw"/>
+      </outPorts>
+      <inPorts id="_74DEVvUnEeOqvInL61-gjw" name="clockSignal" outgoingLines="_74DEVfUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[190, 30, 220, 60]"/>
+        <outPorts id="_74DEWPUnEeOqvInL61-gjw"/>
+      </inPorts>
+      <inPorts id="_78gtlvUnEeOqvInL61-gjw" name="overtakee_recv" outgoingLines="_78XjofUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[190, 300, 220, 330]"/>
+        <outPorts id="_78gtnfUnEeOqvInL61-gjw"/>
+      </inPorts>
+      <inPorts id="_78gtmPUnEeOqvInL61-gjw" name="overtakee_net_address" outgoingLines="_78gtmvUnEeOqvInL61-gjw" type="uint8">
+        <parameters name="Position" value="[190, 360, 220, 390]"/>
+        <outPorts id="_78gtovUnEeOqvInL61-gjw" type="uint8"/>
+      </inPorts>
+      <inPorts id="_78gtmfUnEeOqvInL61-gjw" name="overtakee_receiver_net_address" outgoingLines="_78gtm_UnEeOqvInL61-gjw" type="uint8">
+        <parameters name="Position" value="[190, 420, 220, 450]"/>
+        <outPorts id="_78gto_UnEeOqvInL61-gjw" type="uint8"/>
+      </inPorts>
+      <lines id="_74DEVfUnEeOqvInL61-gjw" sourcePort="_74DEWPUnEeOqvInL61-gjw" targetPort="_74DEVPUnEeOqvInL61-gjw" sourceBlock="_74DEVvUnEeOqvInL61-gjw" targetBlock="_74DEUfUnEeOqvInL61-gjw"/>
+      <lines id="_77Bf0fUnEeOqvInL61-gjw" sourcePort="_77Bf0PUnEeOqvInL61-gjw" targetPort="_77LQ0fUnEeOqvInL61-gjw" sourceBlock="_74DEUfUnEeOqvInL61-gjw" targetBlock="_77Bf0vUnEeOqvInL61-gjw"/>
+      <lines id="_78XjoPUnEeOqvInL61-gjw" sourcePort="_78gtnvUnEeOqvInL61-gjw" targetPort="_78gtnPUnEeOqvInL61-gjw" sourceBlock="_78gtl_UnEeOqvInL61-gjw" targetBlock="_78gtlfUnEeOqvInL61-gjw" bus="_7wmYgPUnEeOqvInL61-gjw"/>
+      <lines id="_78XjofUnEeOqvInL61-gjw" sourcePort="_78gtnfUnEeOqvInL61-gjw" targetPort="_78gtn_UnEeOqvInL61-gjw" sourceBlock="_78gtlvUnEeOqvInL61-gjw" targetBlock="_78gtl_UnEeOqvInL61-gjw" bus="_7wmYgPUnEeOqvInL61-gjw"/>
+      <lines id="_78gtmvUnEeOqvInL61-gjw" sourcePort="_78gtovUnEeOqvInL61-gjw" targetPort="_78gtoPUnEeOqvInL61-gjw" sourceBlock="_78gtmPUnEeOqvInL61-gjw" targetBlock="_78gtl_UnEeOqvInL61-gjw"/>
+      <lines id="_78gtm_UnEeOqvInL61-gjw" sourcePort="_78gto_UnEeOqvInL61-gjw" targetPort="_78gtofUnEeOqvInL61-gjw" sourceBlock="_78gtmfUnEeOqvInL61-gjw" targetBlock="_78gtl_UnEeOqvInL61-gjw"/>
+      <lines id="_7-JsUPUnEeOqvInL61-gjw" sourcePort="_7-JsVPUnEeOqvInL61-gjw" targetPort="_7-JsWPUnEeOqvInL61-gjw" sourceBlock="_74DEUfUnEeOqvInL61-gjw" targetBlock="_78gtl_UnEeOqvInL61-gjw"/>
+      <lines id="_7-JsUfUnEeOqvInL61-gjw" sourcePort="_7-JsVfUnEeOqvInL61-gjw" targetPort="_7-JsWfUnEeOqvInL61-gjw" sourceBlock="_74DEUfUnEeOqvInL61-gjw" targetBlock="_78gtl_UnEeOqvInL61-gjw"/>
+      <lines id="_7-JsUvUnEeOqvInL61-gjw" sourcePort="_7-JsVvUnEeOqvInL61-gjw" targetPort="_7-JsWvUnEeOqvInL61-gjw" sourceBlock="_74DEUfUnEeOqvInL61-gjw" targetBlock="_78gtl_UnEeOqvInL61-gjw"/>
+      <lines id="_7-JsU_UnEeOqvInL61-gjw" sourcePort="_7-JsV_UnEeOqvInL61-gjw" targetPort="_7-JsW_UnEeOqvInL61-gjw" sourceBlock="_74DEUfUnEeOqvInL61-gjw" targetBlock="_78gtl_UnEeOqvInL61-gjw"/>
+      <lines id="_7_o6EPUnEeOqvInL61-gjw" sourcePort="_7_o6FPUnEeOqvInL61-gjw" targetPort="_7_o6GPUnEeOqvInL61-gjw" sourceBlock="_78gtl_UnEeOqvInL61-gjw" targetBlock="_74DEUfUnEeOqvInL61-gjw"/>
+      <lines id="_7_o6EfUnEeOqvInL61-gjw" sourcePort="_7_o6FfUnEeOqvInL61-gjw" targetPort="_7_o6GfUnEeOqvInL61-gjw" sourceBlock="_78gtl_UnEeOqvInL61-gjw" targetBlock="_74DEUfUnEeOqvInL61-gjw"/>
+      <lines id="_7_o6EvUnEeOqvInL61-gjw" sourcePort="_7_o6FvUnEeOqvInL61-gjw" targetPort="_7_o6GvUnEeOqvInL61-gjw" sourceBlock="_78gtl_UnEeOqvInL61-gjw" targetBlock="_74DEUfUnEeOqvInL61-gjw"/>
+      <lines id="_7_o6E_UnEeOqvInL61-gjw" sourcePort="_7_o6F_UnEeOqvInL61-gjw" targetPort="_7_o6G_UnEeOqvInL61-gjw" sourceBlock="_78gtl_UnEeOqvInL61-gjw" targetBlock="_74DEUfUnEeOqvInL61-gjw"/>
+      <blocks xsi:type="model:ChartBlock" id="_74DEUfUnEeOqvInL61-gjw" name="YellowSw_Statechart" incomingLines="_74DEVfUnEeOqvInL61-gjw _7_o6EPUnEeOqvInL61-gjw _7_o6EfUnEeOqvInL61-gjw _7_o6EvUnEeOqvInL61-gjw _7_o6E_UnEeOqvInL61-gjw" outgoingLines="_77Bf0fUnEeOqvInL61-gjw _7-JsUPUnEeOqvInL61-gjw _7-JsUfUnEeOqvInL61-gjw _7-JsUvUnEeOqvInL61-gjw _7-JsU_UnEeOqvInL61-gjw" chart="_7yFmQPUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[250, 30, 800, 240]"/>
+        <outPorts id="_77Bf0PUnEeOqvInL61-gjw" name="velocity" type="double">
+          <inPorts id="_77LQ0vUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <outPorts id="_7-JsVPUnEeOqvInL61-gjw" name="overtakeeReadOut">
+          <inPorts id="_7-TdUPUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <outPorts id="_7-JsVfUnEeOqvInL61-gjw" name="overtakeeParamReadOut">
+          <inPorts id="_7-TdUfUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <outPorts id="_7-JsVvUnEeOqvInL61-gjw" name="overtakeeWriteOut">
+          <inPorts id="_7-TdUvUnEeOqvInL61-gjw"/>
+        </outPorts>
+        <outPorts id="_7-JsV_UnEeOqvInL61-gjw" name="overtakeeParamWriteOut">
+          <inPorts id="_7-TdU_UnEeOqvInL61-gjw"/>
+        </outPorts>
+        <inPorts id="_74DEVPUnEeOqvInL61-gjw" name="clockSignal">
+          <outPorts id="_74DEV_UnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_7_o6GPUnEeOqvInL61-gjw" name="overtakeeReadIn" type="uint8">
+          <outPorts id="_7_o6HPUnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_7_o6GfUnEeOqvInL61-gjw" name="overtakeeParamReadIn" type="double">
+          <outPorts id="_7_o6HfUnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_7_o6GvUnEeOqvInL61-gjw" name="overtakeeWriteIn" type="uint8">
+          <outPorts id="_7_yrEPUnEeOqvInL61-gjw"/>
+        </inPorts>
+        <inPorts id="_7_o6G_UnEeOqvInL61-gjw" name="overtakeeParamWriteIn" type="double">
+          <outPorts id="_7_yrEfUnEeOqvInL61-gjw"/>
+        </inPorts>
+      </blocks>
+      <blocks xsi:type="msglib:LinkLayer" id="_78gtl_UnEeOqvInL61-gjw" name="Link Layer overtakee" incomingLines="_78XjofUnEeOqvInL61-gjw _78gtmvUnEeOqvInL61-gjw _78gtm_UnEeOqvInL61-gjw _7-JsUPUnEeOqvInL61-gjw _7-JsUfUnEeOqvInL61-gjw _7-JsUvUnEeOqvInL61-gjw _7-JsU_UnEeOqvInL61-gjw" outgoingLines="_78XjoPUnEeOqvInL61-gjw _7_o6EPUnEeOqvInL61-gjw _7_o6EfUnEeOqvInL61-gjw _7_o6EvUnEeOqvInL61-gjw _7_o6E_UnEeOqvInL61-gjw" delayMin="1*1000" delayMax="1*1000" bufferSize="5" sourceBufferSize="5" messageMapping="[1 1; 2 1; 3 1; 4 1; 5 1]">
+        <parameters name="Position" value="[250, 300, 800, 700]"/>
+        <outPorts id="_78gtnvUnEeOqvInL61-gjw"/>
+        <outPorts id="_7_o6FPUnEeOqvInL61-gjw" dimensions="[5]"/>
+        <outPorts id="_7_o6FfUnEeOqvInL61-gjw" dimensions="5"/>
+        <outPorts id="_7_o6FvUnEeOqvInL61-gjw" dimensions="[5]"/>
+        <outPorts id="_7_o6F_UnEeOqvInL61-gjw" dimensions="5"/>
+        <inPorts id="_78gtn_UnEeOqvInL61-gjw"/>
+        <inPorts id="_78gtoPUnEeOqvInL61-gjw"/>
+        <inPorts id="_78gtofUnEeOqvInL61-gjw"/>
+        <inPorts id="_7-JsWPUnEeOqvInL61-gjw" dimensions="[5]"/>
+        <inPorts id="_7-JsWfUnEeOqvInL61-gjw" dimensions="5"/>
+        <inPorts id="_7-JsWvUnEeOqvInL61-gjw" dimensions="[5]"/>
+        <inPorts id="_7-JsW_UnEeOqvInL61-gjw" dimensions="5"/>
+      </blocks>
+    </blocks>
+    <blocks xsi:type="model:SubSystem" id="_74WmUPUnEeOqvInL61-gjw" name="CarHw">
+      <parameters name="Position" value="[640, 20, 890, 370]"/>
+      <inPorts id="_76bp8PUnEeOqvInL61-gjw" name="omegaR_des" type="double">
+        <parameters name="Position" value="[50, 40, 80, 70]"/>
+        <outPorts id="_76bp8fUnEeOqvInL61-gjw"/>
+      </inPorts>
+      <inPorts id="_76la8PUnEeOqvInL61-gjw" name="omegaL_des" type="double">
+        <parameters name="Position" value="[50, 150, 80, 180]"/>
+        <outPorts id="_76la8fUnEeOqvInL61-gjw"/>
+      </inPorts>
+    </blocks>
+    <blocks xsi:type="model:SubSystem" id="_74WmUfUnEeOqvInL61-gjw" name="DistanceSensor">
+      <parameters name="Position" value="[950, 20, 1200, 370]"/>
+      <outPorts id="_764V4PUnEeOqvInL61-gjw" name="y" type="double">
+        <parameters name="Position" value="[700, 40, 730, 70]"/>
+        <inPorts id="_764V4fUnEeOqvInL61-gjw"/>
+      </outPorts>
+    </blocks>
+    <stateflowMachine id="_7xM1cPUnEeOqvInL61-gjw">
+      <charts id="_7yFmQPUnEeOqvInL61-gjw" name="yellowSW_Component" block="_74DEUfUnEeOqvInL61-gjw">
+        <nodes xsi:type="stateflow:State" id="_7yFmQfUnEeOqvInL61-gjw" subStateType="PARALLEL" name="chart" initial="true">
+          <nodes xsi:type="stateflow:State" id="_7yFmQvUnEeOqvInL61-gjw" name="chartRegion" priority="2">
+            <nodes xsi:type="stateflow:State" id="_8F5TEPUnEeOqvInL61-gjw" name="yellowSW_Component_Main" initial="true">
+              <nodes xsi:type="stateflow:State" id="_8GV_APUnEeOqvInL61-gjw" name="overtakee" priority="1">
+                <nodes xsi:type="stateflow:State" id="_8GfwAPUnEeOqvInL61-gjw" outgoing="_8G704PUnEeOqvInL61-gjw" name="noAcceleration">
+                  <nodes xsi:type="stateflow:State" id="_8amXwPUnEeOqvInL61-gjw" name="overtakee_noAcceleration" priority="1">
+                    <nodes xsi:type="stateflow:State" id="_8bo5kPUnEeOqvInL61-gjw" outgoing="_8byDgPUnEeOqvInL61-gjw" name="noBraking" initial="true"/>
+                    <nodes xsi:type="stateflow:State" id="_8bo5kfUnEeOqvInL61-gjw" incoming="_8byDgPUnEeOqvInL61-gjw" name="brakingAllowed"/>
+                    <transitions id="_8byDgPUnEeOqvInL61-gjw" source="_8bo5kPUnEeOqvInL61-gjw" target="_8bo5kfUnEeOqvInL61-gjw" priority="1">
+                      <guard id="_8i70YPUnEeOqvInL61-gjw" expression="overtakee_checkQueue(EVT_LANECHANGED, overtakeeReadOut)"/>
+                      <action id="_8zxFsPUnEeOqvInL61-gjw" expression="[overtakeeReadOut, overtakeeParamReadOut] = overtakee_dequeue(EVT_LANECHANGED, overtakeeReadOut, overtakeeParamReadOut)"/>
+                    </transitions>
+                  </nodes>
+                </nodes>
+                <nodes xsi:type="stateflow:State" id="_8GfwAfUnEeOqvInL61-gjw" incoming="_8G704PUnEeOqvInL61-gjw" name="noOvertaking" initial="true">
+                  <nodes xsi:type="stateflow:State" id="_8amXwfUnEeOqvInL61-gjw" name="overtakee_noOvertaking" priority="1">
+                    <nodes xsi:type="stateflow:State" id="_8bCcoPUnEeOqvInL61-gjw" incoming="_8cYgcPUnEeOqvInL61-gjw" outgoing="_8cFlgPUnEeOqvInL61-gjw" name="init" initial="true"/>
+                    <nodes xsi:type="stateflow:State" id="_8bMNoPUnEeOqvInL61-gjw" incoming="_8cFlgPUnEeOqvInL61-gjw" outgoing="_8cYgcPUnEeOqvInL61-gjw _8sBe8fUnEeOqvInL61-gjw" name="received">
+                      <entryAction id="_8vcmYfUnEeOqvInL61-gjw" expression="c2=reset()"/>
+                    </nodes>
+                    <nodes xsi:type="stateflow:State" id="_8sBe8PUnEeOqvInL61-gjw" incoming="_8sBe8fUnEeOqvInL61-gjw" name="Inv_Error">
+                      <entryAction id="_8sBe8_UnEeOqvInL61-gjw" expression="invariant()"/>
+                    </nodes>
+                    <transitions id="_8cFlgPUnEeOqvInL61-gjw" source="_8bCcoPUnEeOqvInL61-gjw" target="_8bMNoPUnEeOqvInL61-gjw" priority="1">
+                      <guard id="_8jOvUPUnEeOqvInL61-gjw" expression="overtakee_checkQueue(EVT_REQUEST, overtakeeReadOut)"/>
+                      <action id="_8z62sPUnEeOqvInL61-gjw" expression="[overtakeeReadOut, overtakeeParamReadOut] = overtakee_dequeue(EVT_REQUEST, overtakeeReadOut, overtakeeParamReadOut)"/>
+                    </transitions>
+                    <transitions id="_8cYgcPUnEeOqvInL61-gjw" source="_8bMNoPUnEeOqvInL61-gjw" target="_8bCcoPUnEeOqvInL61-gjw" priority="2">
+                      <action id="_8g_6sPUnEeOqvInL61-gjw" expression="[overtakeeWriteOut, overtakeeParamWriteOut] = overtakee_enqueue(EVT_DECLINE_FRONTVELOCITY, overtakeeWriteOut, double(localVelocity), overtakeeParamWriteOut)&#xA;"/>
+                    </transitions>
+                    <transitions id="_8sBe8fUnEeOqvInL61-gjw" source="_8bMNoPUnEeOqvInL61-gjw" target="_8sBe8PUnEeOqvInL61-gjw" priority="3">
+                      <guard id="_8sBe8vUnEeOqvInL61-gjw" expression="time(c2) > 3*1000"/>
+                    </transitions>
+                    <local id="_8mNK0PUnEeOqvInL61-gjw" name="c2" type="double" value="0.0"/>
+                  </nodes>
+                  <entryAction id="_8a5SsPUnEeOqvInL61-gjw" expression="localVelocity = 2 ;  velocity = localVelocity"/>
+                </nodes>
+                <transitions id="_8G704PUnEeOqvInL61-gjw" source="_8GfwAPUnEeOqvInL61-gjw" target="_8GfwAfUnEeOqvInL61-gjw" priority="2">
+                  <guard id="_8IkzoPUnEeOqvInL61-gjw" expression="overtakee_checkQueue(EVT_FINISH, overtakeeReadOut)"/>
+                  <action id="_8XLQUPUnEeOqvInL61-gjw" expression="[overtakeeReadOut, overtakeeParamReadOut] = overtakee_dequeue(EVT_FINISH, overtakeeReadOut, overtakeeParamReadOut)"/>
+                </transitions>
+                <local id="_8YqeEPUnEeOqvInL61-gjw" name="localVelocity" type="int32" value="0"/>
+              </nodes>
+            </nodes>
+          </nodes>
+          <nodes xsi:type="stateflow:State" id="_7yFmQ_UnEeOqvInL61-gjw" incoming="_7yFmRPUnEeOqvInL61-gjw" outgoing="_7yFmRPUnEeOqvInL61-gjw" name="DataInit" priority="1"/>
+          <transitions id="_7yFmRPUnEeOqvInL61-gjw" source="_7yFmQ_UnEeOqvInL61-gjw" target="_7yFmQ_UnEeOqvInL61-gjw">
+            <action id="_7yZIQPUnEeOqvInL61-gjw" expression="overtakeeWriteOut = overtakeeWriteIn;&#xA;overtakeeParamWriteOut = overtakeeParamWriteIn;&#xA;overtakeeReadOut = overtakeeReadIn;&#xA;overtakeeParamReadOut = overtakeeParamReadIn;&#xA;"/>
+          </transitions>
+        </nodes>
+        <embeddedFunctions id="_7yPXQPUnEeOqvInL61-gjw" name="time" code="function logicalTime = time(clock) \n&#xD;&#xA; sample = 0.001;  % the sample time of the system clock \n&#xD;&#xA; %convert to pass units of time after last reset \n&#xD;&#xA; logicalTime = uint32((clockSignal - clock)/sample);">
+          <input id="_7yZIQvUnEeOqvInL61-gjw" name="clock" type="double"/>
+          <output id="_7yZIQfUnEeOqvInL61-gjw" name="logicalTime" type="uint32"/>
+        </embeddedFunctions>
+        <embeddedFunctions id="_7yPXQfUnEeOqvInL61-gjw" name="reset" code="function clock = reset() \n&#xD;&#xA; %set clock variable to current time \n&#xD;&#xA; clock = clockSignal;">
+          <output id="_7yZIQ_UnEeOqvInL61-gjw" name="clock" type="double"/>
+        </embeddedFunctions>
+        <embeddedFunctions id="_7yPXQvUnEeOqvInL61-gjw" name="invariant" code="function invariant() &#xA; error('Simulation stopped in Error State. An invariant is violated');"/>
+        <embeddedFunctions xsi:type="buffer:Enqueue" id="_72j2kPUnEeOqvInL61-gjw" name="overtakee_enqueue" bufferSize="5"/>
+        <embeddedFunctions xsi:type="buffer:Dequeue" id="_72j2kfUnEeOqvInL61-gjw" name="overtakee_dequeue" bufferSize="5"/>
+        <embeddedFunctions xsi:type="buffer:CheckQueue" id="_72tnkPUnEeOqvInL61-gjw" name="overtakee_checkQueue" bufferSize="5"/>
+        <constant id="_8NV-4PUnEeOqvInL61-gjw" name="EVT_DECLINE_FRONTVELOCITY" type="uint32" value="3"/>
+        <constant id="_8PIHkPUnEeOqvInL61-gjw" name="EVT_ACCEPT" type="uint32" value="2"/>
+        <constant id="_8TS14PUnEeOqvInL61-gjw" name="EVT_REQUEST" type="uint32" value="1"/>
+        <constant id="_8TwI4PUnEeOqvInL61-gjw" name="EVT_FINISH" type="uint32" value="4"/>
+        <constant id="_8UDD0PUnEeOqvInL61-gjw" name="EVT_LANECHANGED" type="uint32" value="5"/>
+        <output id="_77LQ0PUnEeOqvInL61-gjw" name="velocity" type="double" value=" 0"/>
+        <output id="_78XjpPUnEeOqvInL61-gjw" name="overtakeeReadOut" type="uint8" size="[5]"/>
+        <output id="_78gtkPUnEeOqvInL61-gjw" name="overtakeeParamReadOut" type="double" size="5"/>
+        <output id="_78gtk_UnEeOqvInL61-gjw" name="overtakeeWriteOut" type="uint8" size="[5]"/>
+        <output id="_78gtlPUnEeOqvInL61-gjw" name="overtakeeParamWriteOut" type="double" size="5"/>
+        <input id="_74DEUvUnEeOqvInL61-gjw" name="clockSignal" type="double"/>
+        <input id="_78XjovUnEeOqvInL61-gjw" name="overtakeeReadIn" type="uint8" size="[5]"/>
+        <input id="_78Xjo_UnEeOqvInL61-gjw" name="overtakeeParamReadIn" type="double" size="5"/>
+        <input id="_78gtkfUnEeOqvInL61-gjw" name="overtakeeWriteIn" type="uint8" size="[5]"/>
+        <input id="_78gtkvUnEeOqvInL61-gjw" name="overtakeeParamWriteIn" type="double" size="5"/>
+      </charts>
+      <charts id="_7ysDMPUnEeOqvInL61-gjw" name="redSW_Component" block="_73m_cPUnEeOqvInL61-gjw">
+        <nodes xsi:type="stateflow:State" id="_7ysDMfUnEeOqvInL61-gjw" subStateType="PARALLEL" name="chart" initial="true">
+          <nodes xsi:type="stateflow:State" id="_7ysDMvUnEeOqvInL61-gjw" name="chartRegion" priority="2">
+            <nodes xsi:type="stateflow:State" id="_8GDEEPUnEeOqvInL61-gjw" name="redSW_Component_Main" initial="true">
+              <nodes xsi:type="stateflow:State" id="_8GMOAPUnEeOqvInL61-gjw" name="overtaker" priority="1">
+                <nodes xsi:type="stateflow:State" id="_8Go58PUnEeOqvInL61-gjw" outgoing="_8KOZcfUnEeOqvInL61-gjw" name="overtaking">
+                  <nodes xsi:type="stateflow:State" id="_8amXwvUnEeOqvInL61-gjw" name="overtaker_overtaking" priority="1">
+                    <nodes xsi:type="stateflow:State" id="_8bMNofUnEeOqvInL61-gjw" outgoing="_8c1MYPUnEeOqvInL61-gjw" name="init" initial="true"/>
+                    <nodes xsi:type="stateflow:State" id="_8bV-oPUnEeOqvInL61-gjw" incoming="_8c1MYPUnEeOqvInL61-gjw" name="changed"/>
+                    <transitions id="_8c1MYPUnEeOqvInL61-gjw" source="_8bMNofUnEeOqvInL61-gjw" target="_8bV-oPUnEeOqvInL61-gjw" priority="1">
+                      <action id="_8hJrsPUnEeOqvInL61-gjw" expression="[overtakerWriteOut, overtakerParamWriteOut] = overtaker_enqueue(EVT_LANECHANGED, overtakerWriteOut, 0, overtakerParamWriteOut)"/>
+                    </transitions>
+                  </nodes>
+                  <entryAction id="_8K0PUPUnEeOqvInL61-gjw" expression="c1=reset()"/>
+                </nodes>
+                <nodes xsi:type="stateflow:State" id="_8Go58fUnEeOqvInL61-gjw" name="noOvertaking" initial="true">
+                  <nodes xsi:type="stateflow:State" id="_8amXw_UnEeOqvInL61-gjw" name="overtaker_noOvertaking" priority="1">
+                    <nodes xsi:type="stateflow:State" id="_8bV-ofUnEeOqvInL61-gjw" incoming="_8dIHUfUnEeOqvInL61-gjw _8dbCQPUnEeOqvInL61-gjw" outgoing="_8dIHUPUnEeOqvInL61-gjw" name="init" initial="true"/>
+                    <nodes xsi:type="stateflow:State" id="_8bV-ovUnEeOqvInL61-gjw" incoming="_8dIHUPUnEeOqvInL61-gjw" outgoing="_8dIHUfUnEeOqvInL61-gjw _8dRRQPUnEeOqvInL61-gjw _8sKo4fUnEeOqvInL61-gjw" name="requested">
+                      <entryAction id="_8vcmYPUnEeOqvInL61-gjw" expression="c1=reset()"/>
+                    </nodes>
+                    <nodes xsi:type="stateflow:State" id="_8bfIkPUnEeOqvInL61-gjw" incoming="_8dRRQPUnEeOqvInL61-gjw" outgoing="_8dbCQPUnEeOqvInL61-gjw" name="Wait"/>
+                    <nodes xsi:type="stateflow:State" id="_8sKo4PUnEeOqvInL61-gjw" incoming="_8sKo4fUnEeOqvInL61-gjw" name="Inv_Error">
+                      <entryAction id="_8sKo4_UnEeOqvInL61-gjw" expression="invariant()"/>
+                    </nodes>
+                    <transitions id="_8dIHUPUnEeOqvInL61-gjw" source="_8bV-ofUnEeOqvInL61-gjw" target="_8bV-ovUnEeOqvInL61-gjw" priority="1">
+                      <guard id="_8snU0PUnEeOqvInL61-gjw" expression="distance &lt; 0.1"/>
+                      <action id="_8gs_wPUnEeOqvInL61-gjw" expression="[overtakerWriteOut, overtakerParamWriteOut] = overtaker_enqueue(EVT_REQUEST, overtakerWriteOut, 0, overtakerParamWriteOut)"/>
+                    </transitions>
+                    <transitions id="_8dIHUfUnEeOqvInL61-gjw" source="_8bV-ovUnEeOqvInL61-gjw" target="_8bV-ofUnEeOqvInL61-gjw" priority="2">
+                      <guard id="_8mgs0PUnEeOqvInL61-gjw" expression="time(c1) >= 6*1000"/>
+                    </transitions>
+                    <transitions id="_8dRRQPUnEeOqvInL61-gjw" source="_8bV-ovUnEeOqvInL61-gjw" target="_8bfIkPUnEeOqvInL61-gjw" priority="3">
+                      <guard id="_8j1MQPUnEeOqvInL61-gjw" expression="overtaker_checkQueue(EVT_DECLINE_FRONTVELOCITY, overtakerReadOut)"/>
+                      <action id="_8rukAPUnEeOqvInL61-gjw" expression="c2=reset()"/>
+                      <action id="_8uGikPUnEeOqvInL61-gjw" expression="velocity = tmp_var_1"/>
+                      <action id="_8zUZwPUnEeOqvInL61-gjw" expression="[overtakerReadOut, overtakerParamReadOut, tmp_var_1] = overtaker_dequeue(EVT_DECLINE_FRONTVELOCITY, overtakerReadOut, overtakerParamReadOut)"/>
+                    </transitions>
+                    <transitions id="_8dbCQPUnEeOqvInL61-gjw" source="_8bfIkPUnEeOqvInL61-gjw" target="_8bV-ofUnEeOqvInL61-gjw" priority="1">
+                      <guard id="_8nQTsPUnEeOqvInL61-gjw" expression="time(c2) > 2*1000"/>
+                    </transitions>
+                    <transitions id="_8sKo4fUnEeOqvInL61-gjw" source="_8bV-ovUnEeOqvInL61-gjw" target="_8sKo4PUnEeOqvInL61-gjw" priority="4">
+                      <guard id="_8sKo4vUnEeOqvInL61-gjw" expression="time(c1) > 7*1000"/>
+                    </transitions>
+                  </nodes>
+                  <entryAction id="_8avhsPUnEeOqvInL61-gjw" expression="velocity = 8"/>
+                </nodes>
+                <nodes xsi:type="stateflow:State" id="_8KOZcPUnEeOqvInL61-gjw" incoming="_8KOZcfUnEeOqvInL61-gjw" name="Inv_Error">
+                  <entryAction id="_8KOZc_UnEeOqvInL61-gjw" expression="invariant()"/>
+                </nodes>
+                <transitions id="_8KOZcfUnEeOqvInL61-gjw" source="_8Go58PUnEeOqvInL61-gjw" target="_8KOZcPUnEeOqvInL61-gjw" priority="1">
+                  <guard id="_8KOZcvUnEeOqvInL61-gjw" expression="time(c1) > 10*1000"/>
+                </transitions>
+                <local id="_8KEocPUnEeOqvInL61-gjw" name="c1" type="double" value="0.0"/>
+                <local id="_8KEocfUnEeOqvInL61-gjw" name="c2" type="double" value="0.0"/>
+              </nodes>
+            </nodes>
+          </nodes>
+          <nodes xsi:type="stateflow:State" id="_7ysDM_UnEeOqvInL61-gjw" incoming="_7ysDNPUnEeOqvInL61-gjw" outgoing="_7ysDNPUnEeOqvInL61-gjw" name="DataInit" priority="1"/>
+          <transitions id="_7ysDNPUnEeOqvInL61-gjw" source="_7ysDM_UnEeOqvInL61-gjw" target="_7ysDM_UnEeOqvInL61-gjw">
+            <action id="_7ysDOPUnEeOqvInL61-gjw" expression="overtakerWriteOut = overtakerWriteIn;&#xA;overtakerParamWriteOut = overtakerParamWriteIn;&#xA;overtakerReadOut = overtakerReadIn;&#xA;overtakerParamReadOut = overtakerParamReadIn;&#xA;"/>
+          </transitions>
+        </nodes>
+        <embeddedFunctions id="_7ysDNfUnEeOqvInL61-gjw" name="time" code="function logicalTime = time(clock) \n&#xD;&#xA; sample = 0.001;  % the sample time of the system clock \n&#xD;&#xA; %convert to pass units of time after last reset \n&#xD;&#xA; logicalTime = uint32((clockSignal - clock)/sample);">
+          <input id="_7ysDOvUnEeOqvInL61-gjw" name="clock" type="double"/>
+          <output id="_7ysDOfUnEeOqvInL61-gjw" name="logicalTime" type="uint32"/>
+        </embeddedFunctions>
+        <embeddedFunctions id="_7ysDNvUnEeOqvInL61-gjw" name="reset" code="function clock = reset() \n&#xD;&#xA; %set clock variable to current time \n&#xD;&#xA; clock = clockSignal;">
+          <output id="_7ysDO_UnEeOqvInL61-gjw" name="clock" type="double"/>
+        </embeddedFunctions>
+        <embeddedFunctions id="_7ysDN_UnEeOqvInL61-gjw" name="invariant" code="function invariant() &#xA; error('Simulation stopped in Error State. An invariant is violated');"/>
+        <embeddedFunctions xsi:type="buffer:Enqueue" id="_72tnkfUnEeOqvInL61-gjw" name="overtaker_enqueue" bufferSize="5"/>
+        <embeddedFunctions xsi:type="buffer:Dequeue" id="_72tnkvUnEeOqvInL61-gjw" name="overtaker_dequeue" bufferSize="5"/>
+        <embeddedFunctions xsi:type="buffer:CheckQueue" id="_72tnk_UnEeOqvInL61-gjw" name="overtaker_checkQueue" bufferSize="5"/>
+        <local id="_73KTgPUnEeOqvInL61-gjw" name="tmp_var_1" type="double"/>
+        <constant id="_8LtnMPUnEeOqvInL61-gjw" name="EVT_DECLINE_FRONTVELOCITY" type="uint32" value="3"/>
+        <constant id="_8PukgPUnEeOqvInL61-gjw" name="EVT_REQUEST" type="uint32" value="1"/>
+        <constant id="_8P3ucPUnEeOqvInL61-gjw" name="EVT_FINISH" type="uint32" value="4"/>
+        <constant id="_8QBfcPUnEeOqvInL61-gjw" name="EVT_LANECHANGED" type="uint32" value="5"/>
+        <constant id="_8S2J8PUnEeOqvInL61-gjw" name="EVT_ACCEPT" type="uint32" value="2"/>
+        <output id="_77VB0_UnEeOqvInL61-gjw" name="velocity" type="double" value=""/>
+        <output id="_78qelPUnEeOqvInL61-gjw" name="overtakerReadOut" type="uint8" size="[5]"/>
+        <output id="_78qelfUnEeOqvInL61-gjw" name="overtakerParamReadOut" type="double" size="5"/>
+        <output id="_78qemPUnEeOqvInL61-gjw" name="overtakerWriteOut" type="uint8" size="[5]"/>
+        <output id="_78qemfUnEeOqvInL61-gjw" name="overtakerParamWriteOut" type="double" size="5"/>
+        <input id="_73m_cfUnEeOqvInL61-gjw" name="clockSignal" type="double"/>
+        <input id="_7763s_UnEeOqvInL61-gjw" name="distance" type="double"/>
+        <input id="_78qekvUnEeOqvInL61-gjw" name="overtakerReadIn" type="uint8" size="[5]"/>
+        <input id="_78qek_UnEeOqvInL61-gjw" name="overtakerParamReadIn" type="double" size="5"/>
+        <input id="_78qelvUnEeOqvInL61-gjw" name="overtakerWriteIn" type="uint8" size="[5]"/>
+        <input id="_78qel_UnEeOqvInL61-gjw" name="overtakerParamWriteIn" type="double" size="5"/>
+      </charts>
+    </stateflowMachine>
+    <buses id="_7wmYgPUnEeOqvInL61-gjw" name="PacketBus">
+      <elements name="from" dimensions="1" type="uint8"/>
+      <elements name="to" dimensions="1" type="uint8"/>
+      <elements name="msg" dimensions="1" type="uint16"/>
+      <elements name="param" dimensions="1" type="double"/>
+      <elements name="pkgid" dimensions="1" type="uint32"/>
+      <elements name="time" dimensions="1" type="double"/>
+    </buses>
+  </libraries>
+  <libraries id="_75GNMPUnEeOqvInL61-gjw" name="_system">
+    <blocks xsi:type="model:SubSystem" id="_75GNMfUnEeOqvInL61-gjw" name="_system">
+      <parameters name="Position" value="[20, 20, 270, 370]"/>
+      <lines id="_75iSEvUnEeOqvInL61-gjw" sourcePort="_75iSE_UnEeOqvInL61-gjw" targetPort="_74DEVvUnEeOqvInL61-gjw" sourceBlock="_75iSEfUnEeOqvInL61-gjw" targetBlock="_75iSEPUnEeOqvInL61-gjw"/>
+      <lines id="_75sDEvUnEeOqvInL61-gjw" sourcePort="_75sDE_UnEeOqvInL61-gjw" targetPort="_7356YvUnEeOqvInL61-gjw" sourceBlock="_75sDEfUnEeOqvInL61-gjw" targetBlock="_75sDEPUnEeOqvInL61-gjw"/>
+      <lines id="_8DqecfUnEeOqvInL61-gjw" sourcePort="_8DqecvUnEeOqvInL61-gjw" targetPort="_78gtmPUnEeOqvInL61-gjw" sourceBlock="_8DqecPUnEeOqvInL61-gjw" targetBlock="_75iSEPUnEeOqvInL61-gjw"/>
+      <lines id="_8D0PcfUnEeOqvInL61-gjw" sourcePort="_8D0PcvUnEeOqvInL61-gjw" targetPort="_780Pk_UnEeOqvInL61-gjw" sourceBlock="_8D0PcPUnEeOqvInL61-gjw" targetBlock="_75sDEPUnEeOqvInL61-gjw"/>
+      <lines id="_8EaFUPUnEeOqvInL61-gjw" sourcePort="_77Bf0vUnEeOqvInL61-gjw" targetPort="_76bp8PUnEeOqvInL61-gjw" sourceBlock="_75iSEPUnEeOqvInL61-gjw" targetBlock="_75--APUnEeOqvInL61-gjw"/>
+      <lines id="_8Ej2UPUnEeOqvInL61-gjw" sourcePort="_77Bf0vUnEeOqvInL61-gjw" targetPort="_76la8PUnEeOqvInL61-gjw" sourceBlock="_75iSEPUnEeOqvInL61-gjw" targetBlock="_75--APUnEeOqvInL61-gjw"/>
+      <lines id="_8E2xQPUnEeOqvInL61-gjw" sourcePort="_77VB0vUnEeOqvInL61-gjw" targetPort="_76bp8PUnEeOqvInL61-gjw" sourceBlock="_75sDEPUnEeOqvInL61-gjw" targetBlock="_75--AfUnEeOqvInL61-gjw"/>
+      <lines id="_8FJsMPUnEeOqvInL61-gjw" sourcePort="_77VB0vUnEeOqvInL61-gjw" targetPort="_76la8PUnEeOqvInL61-gjw" sourceBlock="_75sDEPUnEeOqvInL61-gjw" targetBlock="_75--AfUnEeOqvInL61-gjw"/>
+      <lines id="_8FcnIPUnEeOqvInL61-gjw" sourcePort="_764V4PUnEeOqvInL61-gjw" targetPort="_77xGsPUnEeOqvInL61-gjw" sourceBlock="_76IvAPUnEeOqvInL61-gjw" targetBlock="_75sDEPUnEeOqvInL61-gjw"/>
+      <lines id="_8FmYI_UnEeOqvInL61-gjw" sourcePort="_780PkPUnEeOqvInL61-gjw" targetPort="_8FwJIvUnEeOqvInL61-gjw" sourceBlock="_75sDEPUnEeOqvInL61-gjw" targetBlock="_75PXIPUnEeOqvInL61-gjw" bus="_7wmYgPUnEeOqvInL61-gjw"/>
+      <lines id="_8FmYIfUnEeOqvInL61-gjw" sourcePort="_78gtlfUnEeOqvInL61-gjw" targetPort="_8FwJJPUnEeOqvInL61-gjw" sourceBlock="_75iSEPUnEeOqvInL61-gjw" targetBlock="_75PXIPUnEeOqvInL61-gjw" bus="_7wmYgPUnEeOqvInL61-gjw"/>
+      <lines id="_8FmYIPUnEeOqvInL61-gjw" sourcePort="_8FwJJfUnEeOqvInL61-gjw" targetPort="_78gtlvUnEeOqvInL61-gjw" sourceBlock="_75PXIPUnEeOqvInL61-gjw" targetBlock="_75iSEPUnEeOqvInL61-gjw" bus="_7wmYgPUnEeOqvInL61-gjw"/>
+      <lines id="_8FmYJPUnEeOqvInL61-gjw" sourcePort="_8FwJI_UnEeOqvInL61-gjw" targetPort="_780PkfUnEeOqvInL61-gjw" sourceBlock="_75PXIPUnEeOqvInL61-gjw" targetBlock="_75sDEPUnEeOqvInL61-gjw" bus="_7wmYgPUnEeOqvInL61-gjw"/>
+      <lines id="_8FwJIPUnEeOqvInL61-gjw" sourcePort="_8FwJJ_UnEeOqvInL61-gjw" targetPort="_780PlPUnEeOqvInL61-gjw" sourceBlock="_8FmYJfUnEeOqvInL61-gjw" targetBlock="_75sDEPUnEeOqvInL61-gjw"/>
+      <lines id="_8FmYIvUnEeOqvInL61-gjw" sourcePort="_8FwJJvUnEeOqvInL61-gjw" targetPort="_78gtmfUnEeOqvInL61-gjw" sourceBlock="_8FwJIfUnEeOqvInL61-gjw" targetBlock="_75iSEPUnEeOqvInL61-gjw"/>
+      <blocks xsi:type="msglib:CommunicationSwitch" id="_75PXIPUnEeOqvInL61-gjw" incomingLines="_8FmYI_UnEeOqvInL61-gjw _8FmYIfUnEeOqvInL61-gjw" outgoingLines="_8FmYIPUnEeOqvInL61-gjw _8FmYJPUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[980, 500, 1080, 620]"/>
+        <outPorts id="_8FwJI_UnEeOqvInL61-gjw"/>
+        <outPorts id="_8FwJJfUnEeOqvInL61-gjw"/>
+        <inPorts id="_8FwJIvUnEeOqvInL61-gjw"/>
+        <inPorts id="_8FwJJPUnEeOqvInL61-gjw"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_75iSEPUnEeOqvInL61-gjw" name="yellowSw1" incomingLines="_75iSEvUnEeOqvInL61-gjw _8DqecfUnEeOqvInL61-gjw _8FmYIPUnEeOqvInL61-gjw _8FmYIvUnEeOqvInL61-gjw" outgoingLines="_8EaFUPUnEeOqvInL61-gjw _8Ej2UPUnEeOqvInL61-gjw _8FmYIfUnEeOqvInL61-gjw" sourceBlock="_74DEU_UnEeOqvInL61-gjw">
+        <parameters name="Position" value="[200, 100, 450, 450]"/>
+      </blocks>
+      <blocks xsi:type="model:DigitalClock" id="_75iSEfUnEeOqvInL61-gjw" outgoingLines="_75iSEvUnEeOqvInL61-gjw" sampleTime="0.001">
+        <parameters name="Position" value="[100, 110, 130, 140]"/>
+        <outPorts id="_75iSE_UnEeOqvInL61-gjw"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_75sDEPUnEeOqvInL61-gjw" name="redSWInstance" incomingLines="_75sDEvUnEeOqvInL61-gjw _8D0PcfUnEeOqvInL61-gjw _8FcnIPUnEeOqvInL61-gjw _8FmYJPUnEeOqvInL61-gjw _8FwJIPUnEeOqvInL61-gjw" outgoingLines="_8E2xQPUnEeOqvInL61-gjw _8FJsMPUnEeOqvInL61-gjw _8FmYI_UnEeOqvInL61-gjw" sourceBlock="_73wJYPUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[1500, 100, 1750, 450]"/>
+      </blocks>
+      <blocks xsi:type="model:DigitalClock" id="_75sDEfUnEeOqvInL61-gjw" outgoingLines="_75sDEvUnEeOqvInL61-gjw" sampleTime="0.001">
+        <parameters name="Position" value="[1400, 110, 1430, 140]"/>
+        <outPorts id="_75sDE_UnEeOqvInL61-gjw"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_75--APUnEeOqvInL61-gjw" name="redHW1" incomingLines="_8EaFUPUnEeOqvInL61-gjw _8Ej2UPUnEeOqvInL61-gjw" sourceBlock="_74WmUPUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[200, 510, 450, 860]"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_75--AfUnEeOqvInL61-gjw" name="yellowHw1" incomingLines="_8E2xQPUnEeOqvInL61-gjw _8FJsMPUnEeOqvInL61-gjw" sourceBlock="_74WmUPUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[1500, 510, 1750, 860]"/>
+      </blocks>
+      <blocks xsi:type="model:LibraryReference" id="_76IvAPUnEeOqvInL61-gjw" name="distance1" outgoingLines="_8FcnIPUnEeOqvInL61-gjw" sourceBlock="_74WmUfUnEeOqvInL61-gjw">
+        <parameters name="Position" value="[200, 920, 450, 1270]"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_8DqecPUnEeOqvInL61-gjw" name="yellowSw1_overtakee_Port_Instance_net_address" outgoingLines="_8DqecfUnEeOqvInL61-gjw" type="uint8">
+        <parameters name="Position" value="[100, 160, 130, 190]"/>
+        <outPorts id="_8DqecvUnEeOqvInL61-gjw" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_8D0PcPUnEeOqvInL61-gjw" name="redSWInstance_overtaker_Port_Instance_net_address" outgoingLines="_8D0PcfUnEeOqvInL61-gjw" value="2" type="uint8">
+        <parameters name="Position" value="[1400, 170, 1430, 200]"/>
+        <outPorts id="_8D0PcvUnEeOqvInL61-gjw" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_8FmYJfUnEeOqvInL61-gjw" name="redSWInstance_overtaker_Port_Instance_receiver_net_address" outgoingLines="_8FwJIPUnEeOqvInL61-gjw" type="uint8">
+        <parameters name="Position" value="[1400, 220, 1430, 250]"/>
+        <outPorts id="_8FwJJ_UnEeOqvInL61-gjw" type="uint8"/>
+      </blocks>
+      <blocks xsi:type="model:Constant" id="_8FwJIfUnEeOqvInL61-gjw" name="yellowSw1_overtakee_Port_Instance_receiver_net_address" outgoingLines="_8FmYIvUnEeOqvInL61-gjw" value="2" type="uint8">
+        <parameters name="Position" value="[100, 210, 130, 240]"/>
+        <outPorts id="_8FwJJvUnEeOqvInL61-gjw" type="uint8"/>
+      </blocks>
+    </blocks>
+  </libraries>
+</model:SimulinkContainer>

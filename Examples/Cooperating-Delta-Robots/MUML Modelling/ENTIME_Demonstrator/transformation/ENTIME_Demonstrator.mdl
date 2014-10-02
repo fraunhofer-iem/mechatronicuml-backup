@@ -1,0 +1,841 @@
+Model {
+  Name			  "LibraryReference"
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  
+  BlockDefaults {
+  }
+  AnnotationDefaults {
+  }
+  LineDefaults {
+  }
+  BlockParameterDefaults {
+  }
+  System {
+    Name		    "LibraryReference"    
+	
+  Block {
+    BlockType SubSystem
+    Name "communicationSwitch"
+    SID				1
+    Ports [1, 1, 0, 0]
+    Tag		"id=_8tZlgZMGEeKkUdL0M2Clrg"
+  Position "[980, 500, 1080, 620]"
+	  System {
+	  	Name  "communicationSwitch"
+	  	Open			off 	  	
+	  	Location "[559, 228, 1057, 528]"
+	  	ModelBrowserWidth "200"
+	  	
+  Block {
+    BlockType Inport
+    Name "In"
+    SID				2
+    Tag		"id=_8taMkJMGEeKkUdL0M2Clrg"
+    Port "1"
+	PortDimensions "-1"
+
+
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+
+    UseBusObject 	"on"
+    BusObject		"MainBus"	
+  Position "[100, 118, 130, 132]"
+  }
+	  	
+  Block {
+    BlockType Outport
+    Name "Out"
+    SID				3
+    Tag		"id=_8tco0JMGEeKkUdL0M2Clrg"
+    Port "1"
+	PortDimensions "-1"
+
+
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+
+    UseBusObject 	"on"
+    BusObject		"MainBus"	
+  Position "[425, 118, 455, 132]"
+  }
+	  	
+
+  Block {
+    BlockType 			UnitDelay
+    Name 				"Unit Delay"
+    Tag					"id=_8tazoJMGEeKkUdL0M2Clrg"
+    SampleTime	      	"-1"
+  Position "[350, 108, 385, 142]"
+  }
+
+
+Block {
+      BlockType		      SubSystem
+      Name		      	"Embedded\nMATLAB Function"  
+      SID				4 
+      Tag				"id=_8tazoZMGEeKkUdL0M2Clrg"   
+      MaskHideContents	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Embedded MATLAB block"
+      MaskDisplay	      "disp('fcn');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+	  Position		[200, 89, 310, 161]
+      System {
+		Name			"Embedded\nMATLAB Function"		
+		SIDHighWatermark 4
+		Block {
+	  		BlockType		  Demux
+	  		Name			  " Demux "
+	  		Outputs		  "1"
+		}
+
+  Block {
+    BlockType Inport
+    Name "inBus"
+    SID				5
+    Tag		"id=_8teeAJMGEeKkUdL0M2Clrg"
+    Port "1"
+	PortDimensions "-1"
+
+
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+
+    UseBusObject 	"on"
+    BusObject		"MainBus"	
+  Position "[20, 101, 40, 119]"
+  }
+		Block {
+	  		BlockType		  "S-Function"
+	  		Name			  " SFunction "
+	  		Tag			  "Stateflow S-Function LibraryReference 1"
+	  		Ports			  [1, 2]
+	  		FunctionName		  "sf_sfun"
+	  		PortCounts		  "[1 2]"
+			Port {
+				PortNumber		    2
+				Name		  	  	"outBus"
+				RTWStorageClass	    "Auto"
+	    		DataLoggingNameMode	    "SignalName"
+			}
+		}
+		Block {
+	  		BlockType		  Terminator
+	  		Name			  " Terminator "
+		}
+
+  Block {
+    BlockType Outport
+    Name "outBus"
+    SID				6
+    Tag		"id=_8tcBwJMGEeKkUdL0M2Clrg"
+    Port "1"
+	PortDimensions "-1"
+
+
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+
+    UseBusObject 	"on"
+    BusObject		"MainBus"	
+  Position "[460, 101, 480, 119]"
+  }
+		Line {
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  1
+	  		DstBlock		  " Demux "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "inBus"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  1
+		}
+		Line {
+			Name		  	  "outBus"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	2
+	  		DstBlock		  "outBus"
+	  		DstPort		  		1
+		}
+		Line {
+	  		SrcBlock		  " Demux "
+	  		SrcPort		  1
+	  		DstBlock		  " Terminator "
+	  		DstPort		  1
+		}
+	}
+}
+  Line {
+    SrcBlock "Embedded\nMATLAB Function"
+    SrcPort 1
+    Tag				"id=_8tXwUJMGEeKkUdL0M2Clrg"
+    DstBlock "Unit Delay"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "Unit Delay"
+    SrcPort 1
+    Tag				"id=_8tXwUZMGEeKkUdL0M2Clrg"
+    DstBlock "Out"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "In"
+    SrcPort 1
+    Tag				"id=_8tXwU5MGEeKkUdL0M2Clrg"
+    DstBlock "Embedded\nMATLAB Function"
+    DstPort 1
+  }
+	  }
+  }
+	
+
+  Block {
+    BlockType BusCreator
+    Name 			"BusCreator1"
+    SID				7
+    Ports			[2, 1]
+    Inputs			"2"
+    UseBusObject 	"on"
+    BusObject		"MainBus"
+    Tag		"id=_8tXwVJMGEeKkUdL0M2Clrg"
+  Position "[900, 500, 920, 620]"
+
+  }
+
+
+  Block {
+    BlockType BusSelector
+    Name 			"BusSelector1"
+    SID				8
+    Ports			[1, 2]
+    OutputSignals	"rc1,rc2"
+    Tag				"id=_8tXwVZMGEeKkUdL0M2Clrg"
+  Position "[1160, 500, 1180, 620]"
+	Port {
+		PortNumber			1
+		Name				"<rc1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	}
+	Port {
+		PortNumber			2
+		Name				"<rc2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	}
+  }
+
+
+  Block {
+    BlockType Reference
+    Name 			"robot1"
+    SID				9
+    Tag		"id=_8vDLUJMGEeKkUdL0M2Clrg"
+    SourceBlock	      "robot1/robot1"
+    SourceType	      "SubSystem"
+    Ports             [10, 1]
+  Position "[200, 100, 450, 800]"
+  }
+
+
+  Block {
+    BlockType Reference
+    Name 			"robot2"
+    SID				10
+    Tag		"id=_8vaXsJMGEeKkUdL0M2Clrg"
+    SourceBlock	      "robot2/robot2"
+    SourceType	      "SubSystem"
+    Ports             [10, 1]
+  Position "[1500, 100, 1750, 800]"
+  }
+
+
+  Block {
+    BlockType Reference
+    Name 			"instance"
+    SID				11
+    Tag		"id=_8wofsJMGEeKkUdL0M2Clrg"
+    SourceBlock	      "AtomicLibrary/Environment1"
+    SourceType	      "SubSystem"
+    Ports             [0, 7]
+  Position "[200, 860, 450, 1560]"
+  }
+
+
+  Block {
+    BlockType Reference
+    Name 			"instance2"
+    SID				12
+    Tag		"id=_8wsKEJMGEeKkUdL0M2Clrg"
+    SourceBlock	      "AtomicLibrary/Environment2"
+    SourceType	      "SubSystem"
+    Ports             [0, 7]
+  Position "[1500, 860, 1750, 1560]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"robot1_BAT_Information_Other_Robot_net_address"
+    Tag					"id=_9_DaoZMGEeKkUdL0M2Clrg"
+    SID				    13 
+    Value				"1"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[100, 170, 130, 200]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"robot2_BAT_Information_Other_Robot_net_address"
+    Tag					"id=_9_PA0JMGEeKkUdL0M2Clrg"
+    SID				    14 
+    Value				"2"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[1400, 170, 1430, 200]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"robot1_BAT_Information_Other_Robot_send_receiver_net_address"
+    Tag					"id=_GLkJFJMHEeKkUdL0M2Clrg"
+    SID				    15 
+    Value				"2"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[100, 220, 130, 250]"
+  }
+
+
+  Block {
+    BlockType 			Constant
+    Name 				"robot2_BAT_Information_Other_Robot_send_receiver_net_address"
+    Tag					"id=_GLkwIZMHEeKkUdL0M2Clrg"
+    SID				    16 
+    Value				"1"
+    
+
+      OutDataTypeMode     "uint8"
+      OutDataTypeStr	      "uint8"
+
+  Position "[1400, 220, 1430, 250]"
+  }
+  Line {
+	Name	"Outport1"
+    SrcBlock "BusCreator1"
+    SrcPort 1
+    Tag				"id=_8tXJQZMGEeKkUdL0M2Clrg"
+    DstBlock "communicationSwitch"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "communicationSwitch"
+    SrcPort 1
+    Tag				"id=_8tXwUpMGEeKkUdL0M2Clrg"
+    DstBlock "BusSelector1"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "robot1_BAT_Information_Other_Robot_net_address"
+    SrcPort 1
+    Tag				"id=_9_EBsJMGEeKkUdL0M2Clrg"
+    DstBlock "robot1"
+    DstPort 9
+  }
+  Line {
+    SrcBlock "robot2_BAT_Information_Other_Robot_net_address"
+    SrcPort 1
+    Tag				"id=_9_Pn4JMGEeKkUdL0M2Clrg"
+    DstBlock "robot2"
+    DstPort 9
+  }
+  Line {
+    SrcBlock "instance"
+    SrcPort 1
+    Tag				"id=_-EDPYJMGEeKkUdL0M2Clrg"
+    Points    [0, 0]
+    Branch {
+      DstBlock "robot1"
+      DstPort 1    
+    }
+    Branch {
+      DstBlock "robot1"
+      DstPort 4    
+    }
+  }
+  Line {
+    SrcBlock "instance"
+    SrcPort 3
+    Tag				"id=_-EIu8JMGEeKkUdL0M2Clrg"
+    DstBlock "robot1"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "instance"
+    SrcPort 6
+    Tag				"id=_-EOOgJMGEeKkUdL0M2Clrg"
+    DstBlock "robot1"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "instance"
+    SrcPort 4
+    Tag				"id=_-EQqwJMGEeKkUdL0M2Clrg"
+    DstBlock "robot1"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "instance"
+    SrcPort 7
+    Tag				"id=_-ETHAJMGEeKkUdL0M2Clrg"
+    DstBlock "robot1"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "instance2"
+    SrcPort 1
+    Tag				"id=_-TfZkJMGEeKkUdL0M2Clrg"
+    Points    [0, 0]
+    Branch {
+      DstBlock "robot2"
+      DstPort 1    
+    }
+    Branch {
+      DstBlock "robot2"
+      DstPort 4    
+    }
+  }
+  Line {
+    SrcBlock "instance2"
+    SrcPort 4
+    Tag				"id=_-w3SEJMGEeKkUdL0M2Clrg"
+    DstBlock "robot2"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "instance2"
+    SrcPort 5
+    Tag				"id=__73soJMGEeKkUdL0M2Clrg"
+    DstBlock "robot2"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "instance2"
+    SrcPort 3
+    Tag				"id=_ArCfwJMHEeKkUdL0M2Clrg"
+    DstBlock "robot2"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "instance2"
+    SrcPort 7
+    Tag				"id=_BlvNcJMHEeKkUdL0M2Clrg"
+    DstBlock "robot2"
+    DstPort 7
+  }
+  Line {
+
+	Name	"rc1"
+    SrcBlock "robot1"
+    SrcPort 1
+    Tag				"id=_GLkJEZMHEeKkUdL0M2Clrg"
+    DstBlock "BusCreator1"
+    DstPort 1
+  }
+  Line {
+
+	Name	"rc2"
+    SrcBlock "robot2"
+    SrcPort 1
+    Tag				"id=_GLkJEJMHEeKkUdL0M2Clrg"
+    DstBlock "BusCreator1"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "BusSelector1"
+    SrcPort 2
+    Tag				"id=_GLkJE5MHEeKkUdL0M2Clrg"
+    DstBlock "robot2"
+    DstPort 8
+  }
+  Line {
+    SrcBlock "BusSelector1"
+    SrcPort 1
+    Tag				"id=_GLkJEpMHEeKkUdL0M2Clrg"
+    DstBlock "robot1"
+    DstPort 8
+  }
+  Line {
+    SrcBlock "robot1_BAT_Information_Other_Robot_send_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_GLkwIJMHEeKkUdL0M2Clrg"
+    DstBlock "robot1"
+    DstPort 10
+  }
+  Line {
+    SrcBlock "robot2_BAT_Information_Other_Robot_send_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_GLlXMJMHEeKkUdL0M2Clrg"
+    DstBlock "robot2"
+    DstPort 10
+  }
+  }
+}
+
+
+
+Stateflow {
+	machine {
+		id		2
+		name    "LibraryReference"
+		tag			"id=_IEOT15MHEeKkUdL0M2Clrg"
+		firstTarget 	1
+		sfVersion		    71014000.00001
+
+		isLibrary		0
+	}
+	chart {
+		id			3
+		name		"communicationSwitch/Embedded\nMATLAB Function"
+		tag			"id=_IEOT0JMHEeKkUdL0M2Clrg"
+		machine		2
+		chartFileNumber		1
+		viewObj		3    
+		decomposition	    CLUSTER_CHART
+		firstData		4
+		firstJunction	5
+		firstTransition		6
+		disableImplicitCasting  1
+  disableImplicitCasting 1
+  type EML_CHART
+	}
+  junction {
+    id			    5
+    chart		    3
+    tag				"id=_IEOT0ZMHEeKkUdL0M2Clrg"
+    linkNode		    [3 0 0]
+    type		    CONNECTIVE_JUNCTION
+  }
+
+	state {
+		id				7
+		chart			3
+		tag				"id=_IEOT1JMHEeKkUdL0M2Clrg"
+		treeNode		[3 0 0 0]
+		labelString		"eML_blk_kernel()"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+
+		eml {
+			isEML	1
+			script	"function outBus = BusImpl(inBus)
+%#eml
+eml.extrinsic('fieldnames','disp','setfield','fprintf');
+
+busSize = 1;
+queueSize = 10*busSize; %length of queue
+numShuttles = 0; %Define data type
+numShuttles = numel(fieldnames(inBus)); %Shuttles connected to the bus
+assert(numShuttles <= 20) %Defines an upper bound for number of shuttles. 
+%Important for static memory allocation. 
+lookupTableSize = 200;
+
+
+
+NOT_ASSIGNED = -1;
+
+%We need persistent queues
+persistent queue;
+persistent lookupTable;
+
+%Initialize the queues
+if isempty(queue)
+    queue = repmat(emptyPacket(), numShuttles, queueSize);
+end
+
+if isempty(lookupTable)
+    lookupTable = repmat(NOT_ASSIGNED, lookupTableSize,1);
+end
+
+%Clean outbus
+outBus = inBus;
+for i = 1:numShuttles
+    outBus = setfield(outBus, createRailCabName(i), emptyBus(busSize));
+end
+
+%Retrieve packets
+for i = 1:numShuttles
+    %Get current bus
+    currentBus = getBusFromIndex(inBus, busSize, i);
+    for j = 1:busSize
+        %Read packet
+        packet = getPacketFromBus(currentBus, j);
+        
+        %Check if new packet
+        if isValid(packet, numShuttles)
+             %Save sender bus element to lookup table
+            if lookupTable(packet.from) == NOT_ASSIGNED
+                lookupTable(packet.from) = i;
+            end
+            
+            %Save packet in queue
+            target = lookupTable(packet.to);
+            %Destination unkown. Send to all unassigned.
+            if target == NOT_ASSIGNED
+                for k = 1:numShuttles
+                    if(lookupTable(packet.from) ~= k)
+                        queue(k,:) = enqueue(queue(k,:), packet); 
+                    end
+                end                
+            %Destination known
+            else 
+                queue(target,:) = enqueue(queue(target,:), packet);
+            end            
+        end
+    end
+
+end
+
+%Send packet from queue
+for i = 1:numShuttles    
+    currentBus = getBusFromIndex(outBus, busSize, i);
+    for j = 1:busSize
+        if ~isEmpty(queue(i,:))
+            
+            
+            %Read last packet
+            packet = front(queue(i,:));
+            queue(i,:) = dequeue(queue(i,:)); 
+            
+%            if packet.msg ~= 255 %No ACK
+%                fprintf('Sending on port %u[%u/%u]: %s', i, j, busSize, toString(packet));
+%            end            
+            
+            %Save packet to bus
+            currentBus = setPacketToBus(currentBus, j, packet);
+            
+        else
+            break;
+        end
+    end 
+    %Save bus
+    outBus = setBusToIndex(outBus, i, currentBus);
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BUS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function name = createRailCabName(index) %#eml
+%Create name for the railcab used on the bus
+eml.extrinsic('sprintf');
+name = sprintf('rc%d', index);
+
+function bus = getBusFromIndex(inBus, busSize, index) %eml
+%Retrieve a PacketBus from the RailCaBbus
+eml.extrinsic('getfield');
+busName = createRailCabName(index);
+bus = emptyBus(busSize);
+bus = getfield(inBus, busName);
+
+function rcBus = setBusToIndex(rcBus, index, packetBus) %eml
+%Save a PacketBus to RailCabBus
+eml.extrinsic('setfield');
+busName = createRailCabName(index);
+rcBus = setfield(rcBus, busName, packetBus);
+
+function packet = getPacketFromBus(packetBus, index) %eml
+%Retrieve a packet from the bus
+packet = emptyPacket();
+packet.from = packetBus.from(index);
+packet.to = packetBus.to(index);
+packet.msg = packetBus.msg(index);
+packet.param = packetBus.param (index);
+packet.pkgid = packetBus.pkgid(index);
+packet.time = packetBus.time(index);
+
+function packetBus = setPacketToBus(packetBus, index, packet) %eml
+%Save a packet to the bus
+packetBus.from(index) = packet.from;
+packetBus.to(index) = packet.to;
+packetBus.msg(index) = packet.msg;
+packetBus.param (index) = packet.param;
+packetBus.pkgid(index) = packet.pkgid;
+packetBus.time(index) = packet.time;
+
+function bus = emptyBus(size) %emp
+%Create an empty bus
+bus = struct('from', zeros(size,1,'uint8'),'to', zeros(size,1,'uint8'),'msg', zeros(size,1,'uint16'),'param', zeros(size,1,'double'),'pkgid', zeros(size,1,'uint32'), 'time', zeros(size,1,'double'));
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PACKET
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function packet = emptyPacket() %#eml
+%Creates an empty packet
+packet = struct('from', uint8(0),'to', uint8(0),'msg', uint16(0),'param', double(0.0),'pkgid', uint32(0), 'time', double(0));
+
+function valid = isValid(packet, numShuttles) %#eml
+%Checks wether the given packet is valid and transported by the bus
+eml.extrinsic('getfield');
+valid = false;
+if packet.to > 0 && packet.to <= numShuttles 
+    if packet.from > 0 && packet.from <= numShuttles
+        valid = true;
+    end
+end
+
+function packetString = toString(packet) %#eml
+eml.extrinsic('sprintf');
+packetString = sprintf('%3u: %u->%u :%3u (%.1f) @%.2f', packet.pkgid, packet.from, packet.to, packet.msg, packet.param, packet.time);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% QUEUE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function queue = enqueue(queue, packet) %#eml
+%Insert the packet at the end of the queue
+eml.extrinsic('warning');
+for i=1:length(queue)
+    if queue(i).to == 0
+        queue(i) = packet;
+        return;
+    end
+end
+%No empty entry found
+warning('RailCab:Bus','Bus: buffer overflow for outgoing queue to %d', queue(1).to);
+
+function queue = dequeue(queue) %#eml
+%Removes the first packet of the queue
+for i = 1:length(queue)-1
+    queue(i) = queue(i+1);
+    if queue(i).to == 0
+        %end reached
+        return;
+    end
+end
+queue(length(queue)) = emptyPacket();
+
+function packet = front(queue) %#eml
+%Returns the first element from the queue
+packet = queue(1);
+
+function empty = isEmpty(queue) %#eml
+%Checks whether the queue is empty or not
+packet = queue(1);
+if packet.to == 0
+    empty = true;
+else
+    empty = false;
+end"		
+		}	
+	}
+  transition {
+  	id			6
+    chart		3
+    tag			"id=_IEOT0pMHEeKkUdL0M2Clrg"
+    labelString "{eML_blk_kernel(); }"
+    linkNode 	[3 0 0]
+    executionOrder 0
+  	src {
+  	  intersection	[0 0 0 0 0 0 0 0]
+  	    	  
+  	}
+  	dst {
+  	  id		5
+  	  intersection	[0 0 0 0 0 0 0 0]
+  	    	  
+  	}
+  	slide {
+  	}
+  }
+	data {
+		id				4
+		name		    "inBus"
+		tag				"id=_IEOT1ZMHEeKkUdL0M2Clrg"
+		linkNode		    [3 0 8]
+		machine		    2
+		dataType		"Bus: MainBus"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"-1"
+      		}
+            type {
+	            method			SF_SIMULINK_OBJECT_TYPE
+	            expression		"Bus: MainBus"
+	            busObject		"MainBus"
+            }
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				8
+		name		    "outBus"
+		tag				"id=_IEOT1pMHEeKkUdL0M2Clrg"
+		linkNode		    [3 4 0]
+		machine		    2
+		dataType		"Bus: MainBus"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"-1"
+      		}
+            type {
+	            method			SF_SIMULINK_OBJECT_TYPE
+	            expression		"Bus: MainBus"
+	            busObject		"MainBus"
+            }
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	instance {
+		id			9
+		name		"communicationSwitch/Embedded\nMATLAB Function"
+		machine		2
+		chart		3
+	}
+	target {
+		id			1
+    	name		    "sfun"
+    	description		    "Default Simulink S-Function Target."		
+		machine		2
+		linkNode		    [2 0 0]	
+	}
+}
+
+

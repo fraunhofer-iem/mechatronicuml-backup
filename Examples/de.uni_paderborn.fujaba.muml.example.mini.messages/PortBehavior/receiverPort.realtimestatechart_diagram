@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_LWqkQhyBEeSKP_lLzmbIVg" type="Real-Time Statechart" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_VE49EByBEeSKP_lLzmbIVg" type="2007" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_VE49EhyBEeSKP_lLzmbIVg" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_VE49ExyBEeSKP_lLzmbIVg" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_VE49FByBEeSKP_lLzmbIVg" type="7030">
+      <children xmi:type="notation:Shape" xmi:id="_NGa1MByCEeSKP_lLzmbIVg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_NGa1MhyCEeSKP_lLzmbIVg" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_NGa1MxyCEeSKP_lLzmbIVg" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_NGa1NByCEeSKP_lLzmbIVg" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_NGa1NRyCEeSKP_lLzmbIVg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_NGa1NhyCEeSKP_lLzmbIVg" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_NGa1NxyCEeSKP_lLzmbIVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_NGa1OByCEeSKP_lLzmbIVg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_NGa1ORyCEeSKP_lLzmbIVg" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_NGa1OhyCEeSKP_lLzmbIVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_NGa1OxyCEeSKP_lLzmbIVg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_NGa1PByCEeSKP_lLzmbIVg" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_NGa1PRyCEeSKP_lLzmbIVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_NGa1PhyCEeSKP_lLzmbIVg"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../messages.fujaba#_LWqkQRyBEeSKP_lLzmbIVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NGa1MRyCEeSKP_lLzmbIVg" width="288" height="205"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_OPFtcByCEeSKP_lLzmbIVg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_OPGUgByCEeSKP_lLzmbIVg" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_OPGUgRyCEeSKP_lLzmbIVg" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_OPGUghyCEeSKP_lLzmbIVg" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_OPGUgxyCEeSKP_lLzmbIVg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_OPGUhByCEeSKP_lLzmbIVg" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_OPGUhRyCEeSKP_lLzmbIVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_OPGUhhyCEeSKP_lLzmbIVg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_OPGUhxyCEeSKP_lLzmbIVg" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_OPGUiByCEeSKP_lLzmbIVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_OPGUiRyCEeSKP_lLzmbIVg"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_OPGUihyCEeSKP_lLzmbIVg" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_OPGUixyCEeSKP_lLzmbIVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_OPGUjByCEeSKP_lLzmbIVg"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../messages.fujaba#_OPDRMByCEeSKP_lLzmbIVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OPFtcRyCEeSKP_lLzmbIVg" x="503" y="15" width="253" height="199"/>
+      </children>
+    </children>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.fujaba#_LWqkQByBEeSKP_lLzmbIVg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VE49ERyBEeSKP_lLzmbIVg" width="865" height="532"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_LWqkQxyBEeSKP_lLzmbIVg"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.fujaba#_LWqkQByBEeSKP_lLzmbIVg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_Pi-XMByCEeSKP_lLzmbIVg" type="4003" source="_NGa1MByCEeSKP_lLzmbIVg" target="_OPFtcByCEeSKP_lLzmbIVg" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Pi--QByCEeSKP_lLzmbIVg" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Pi--QRyCEeSKP_lLzmbIVg" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Pi--QhyCEeSKP_lLzmbIVg" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Pi--QxyCEeSKP_lLzmbIVg" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Pi-XMRyCEeSKP_lLzmbIVg" fontName="Lucida Grande" fontHeight="11"/>
+    <element xmi:type="realtimestatechart:Transition" href="../messages.fujaba#_Pi6s0ByCEeSKP_lLzmbIVg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Pi-XMhyCEeSKP_lLzmbIVg" points="[46, -3, -341, -14]$[261, -34, -126, -45]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PjSgQByCEeSKP_lLzmbIVg" id="(0.8402777777777778,0.5024390243902439)"/>
+  </edges>
+</notation:Diagram>

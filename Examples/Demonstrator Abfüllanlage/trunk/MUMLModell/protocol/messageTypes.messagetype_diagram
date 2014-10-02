@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_sMJ7sA5sEeSQcpjEX4X4YA" type="Message Type" name="messageTypes.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_s3jCEA5sEeSQcpjEX4X4YA" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_s3jCEg5sEeSQcpjEX4X4YA" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_s3jCEw5sEeSQcpjEX4X4YA" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_w8kWsA5sEeSQcpjEX4X4YA" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_w8kWsg5sEeSQcpjEX4X4YA" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_w8kWsw5sEeSQcpjEX4X4YA" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_w8kWtA5sEeSQcpjEX4X4YA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_w8kWtQ5sEeSQcpjEX4X4YA"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../demonstratorAbfuellanlage.fujaba#_w8YJcA5sEeSQcpjEX4X4YA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w8kWsQ5sEeSQcpjEX4X4YA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_xl3LUQ5sEeSQcpjEX4X4YA" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_xl3LUw5sEeSQcpjEX4X4YA" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_xl3LVA5sEeSQcpjEX4X4YA" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_xl3LVQ5sEeSQcpjEX4X4YA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_xl3LVg5sEeSQcpjEX4X4YA"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../demonstratorAbfuellanlage.fujaba#_xl3LUA5sEeSQcpjEX4X4YA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xl3LUg5sEeSQcpjEX4X4YA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_yEF_cQ5sEeSQcpjEX4X4YA" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_yEF_cw5sEeSQcpjEX4X4YA" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_yEF_dA5sEeSQcpjEX4X4YA" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_yEF_dQ5sEeSQcpjEX4X4YA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_yEF_dg5sEeSQcpjEX4X4YA"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../demonstratorAbfuellanlage.fujaba#_yEF_cA5sEeSQcpjEX4X4YA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yEF_cg5sEeSQcpjEX4X4YA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_zYUAYQ5sEeSQcpjEX4X4YA" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_zYUAYw5sEeSQcpjEX4X4YA" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_zYUAZA5sEeSQcpjEX4X4YA" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_zYUAZQ5sEeSQcpjEX4X4YA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_zYUAZg5sEeSQcpjEX4X4YA"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../demonstratorAbfuellanlage.fujaba#_zYUAYA5sEeSQcpjEX4X4YA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zYUAYg5sEeSQcpjEX4X4YA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_s3jCFA5sEeSQcpjEX4X4YA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_s3jCFQ5sEeSQcpjEX4X4YA"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../demonstratorAbfuellanlage.fujaba#_s3QuMA5sEeSQcpjEX4X4YA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s3jCEQ5sEeSQcpjEX4X4YA" x="624" y="240" width="325" height="229"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_uVe_sA5sEeSQcpjEX4X4YA" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_uVe_sg5sEeSQcpjEX4X4YA" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_uVe_sw5sEeSQcpjEX4X4YA" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_j5TF8A5yEeSQcpjEX4X4YA" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_j5TF8g5yEeSQcpjEX4X4YA" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_j5TF8w5yEeSQcpjEX4X4YA" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_j5TF9A5yEeSQcpjEX4X4YA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_j5TF9Q5yEeSQcpjEX4X4YA"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../demonstratorAbfuellanlage.fujaba#_j5AyEA5yEeSQcpjEX4X4YA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j5TF8Q5yEeSQcpjEX4X4YA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_lM1xcQ5yEeSQcpjEX4X4YA" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_lM1xcw5yEeSQcpjEX4X4YA" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_lM1xdA5yEeSQcpjEX4X4YA" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_lM1xdQ5yEeSQcpjEX4X4YA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_lM1xdg5yEeSQcpjEX4X4YA"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../demonstratorAbfuellanlage.fujaba#_lM1xcA5yEeSQcpjEX4X4YA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lM1xcg5yEeSQcpjEX4X4YA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_uVe_tA5sEeSQcpjEX4X4YA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_uVe_tQ5sEeSQcpjEX4X4YA"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../demonstratorAbfuellanlage.fujaba#_uVY5EA5sEeSQcpjEX4X4YA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uVe_sQ5sEeSQcpjEX4X4YA" x="499" y="146"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_viovUQ5sEeSQcpjEX4X4YA" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_viovUw5sEeSQcpjEX4X4YA" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_viovVA5sEeSQcpjEX4X4YA" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_HVLL4A53EeSQcpjEX4X4YA" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_HVLL4g53EeSQcpjEX4X4YA" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_HVLL4w53EeSQcpjEX4X4YA" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_HVLL5A53EeSQcpjEX4X4YA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_HVLL5Q53EeSQcpjEX4X4YA"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../demonstratorAbfuellanlage.fujaba#_HU44AA53EeSQcpjEX4X4YA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HVLL4Q53EeSQcpjEX4X4YA"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_viovVQ5sEeSQcpjEX4X4YA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_viovVg5sEeSQcpjEX4X4YA"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../demonstratorAbfuellanlage.fujaba#_viovUA5sEeSQcpjEX4X4YA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_viovUg5sEeSQcpjEX4X4YA" x="288" y="168"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_sMJ7sQ5sEeSQcpjEX4X4YA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../demonstratorAbfuellanlage.fujaba#_E9_mUAgaEeS0nP202czsNg"/>
+</notation:Diagram>

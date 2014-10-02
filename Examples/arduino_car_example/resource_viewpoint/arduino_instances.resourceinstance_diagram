@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Pyj9AAmXEeS8psHeDisM0A" type="ResourceInstance" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_RLahIAmpEeSYkvxGH3e-MQ" type="2006" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_RLbIMAmpEeSYkvxGH3e-MQ" type="5065"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_RLbIMQmpEeSYkvxGH3e-MQ" type="5066"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_RLbIMgmpEeSYkvxGH3e-MQ" type="5067"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_RLbIMwmpEeSYkvxGH3e-MQ" type="7002">
+      <children xmi:type="notation:Shape" xmi:id="_SToGYAmpEeSYkvxGH3e-MQ" type="3013" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_SToGYgmpEeSYkvxGH3e-MQ" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_SToGYwmpEeSYkvxGH3e-MQ" type="5061"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STotcAmpEeSYkvxGH3e-MQ" type="5062"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STotcQmpEeSYkvxGH3e-MQ" type="5063"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STotcgmpEeSYkvxGH3e-MQ" type="5064"/>
+        <element xmi:type="hwresourceinstance:StorageMemoryInstance" href="../arduino_car_example.fujaba#_STgKkAmpEeSYkvxGH3e-MQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SToGYQmpEeSYkvxGH3e-MQ" x="8" y="10"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_STotcwmpEeSYkvxGH3e-MQ" type="3012" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_STpUgAmpEeSYkvxGH3e-MQ" type="5055"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STpUgQmpEeSYkvxGH3e-MQ" type="5056"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STpUggmpEeSYkvxGH3e-MQ" type="5057"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STpUgwmpEeSYkvxGH3e-MQ" type="5058"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STpUhAmpEeSYkvxGH3e-MQ" type="5059"/>
+        <element xmi:type="hwresourceinstance:ProcessingMemoryInstance" href="../arduino_car_example.fujaba#_STgKkgmpEeSYkvxGH3e-MQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_STotdAmpEeSYkvxGH3e-MQ" x="236" y="10"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_STqioAmpEeSYkvxGH3e-MQ" type="3011" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_STrJsAmpEeSYkvxGH3e-MQ" type="5050"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STrJsQmpEeSYkvxGH3e-MQ" type="5051"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STrJsgmpEeSYkvxGH3e-MQ" type="5052"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STrJswmpEeSYkvxGH3e-MQ" type="5053"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_STrJtAmpEeSYkvxGH3e-MQ" type="5054"/>
+        <element xmi:type="hwresourceinstance:ProcessorInstance" href="../arduino_car_example.fujaba#_STgKlAmpEeSYkvxGH3e-MQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_STqioQmpEeSYkvxGH3e-MQ" x="146" y="165"/>
+      </children>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_SaSIAAmpEeSYkvxGH3e-MQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_SaSIAgmpEeSYkvxGH3e-MQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SaSIAwmpEeSYkvxGH3e-MQ" x="35" y="-12"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_SThYsAmpEeSYkvxGH3e-MQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaSIAQmpEeSYkvxGH3e-MQ" x="467" y="336"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_SaSvEAmpEeSYkvxGH3e-MQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_SaSvEgmpEeSYkvxGH3e-MQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SaSvEwmpEeSYkvxGH3e-MQ" x="35" y="-12"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_STh_wAmpEeSYkvxGH3e-MQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaSvEQmpEeSYkvxGH3e-MQ" x="467" y="252"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_SaTWIAmpEeSYkvxGH3e-MQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_SaTWIgmpEeSYkvxGH3e-MQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SaTWIwmpEeSYkvxGH3e-MQ" x="37" y="1"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_STh_xAmpEeSYkvxGH3e-MQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaTWIQmpEeSYkvxGH3e-MQ" x="467" y="168"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_SaT9MAmpEeSYkvxGH3e-MQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_SaT9MgmpEeSYkvxGH3e-MQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SaT9MwmpEeSYkvxGH3e-MQ" x="37" y="-12"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_STh_yAmpEeSYkvxGH3e-MQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SaT9MQmpEeSYkvxGH3e-MQ" x="467" y="84"/>
+    </children>
+    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../arduino_car_example.fujaba#_RKukoAmpEeSYkvxGH3e-MQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RLahIQmpEeSYkvxGH3e-MQ" x="12" y="24" width="493"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_v5uzIAmqEeSjFLbPlFg-cQ" type="2006" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_v5ydgAmqEeSjFLbPlFg-cQ" type="5065"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_v5ydgQmqEeSjFLbPlFg-cQ" type="5066"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_v5ydggmqEeSjFLbPlFg-cQ" type="5067"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_v5ydgwmqEeSjFLbPlFg-cQ" type="7002">
+      <children xmi:type="notation:Shape" xmi:id="_wsoPsAmqEeSjFLbPlFg-cQ" type="3013" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_wsoPsgmqEeSjFLbPlFg-cQ" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wsoPswmqEeSjFLbPlFg-cQ" type="5061"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wso2wAmqEeSjFLbPlFg-cQ" type="5062"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wso2wQmqEeSjFLbPlFg-cQ" type="5063"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wso2wgmqEeSjFLbPlFg-cQ" type="5064"/>
+        <element xmi:type="hwresourceinstance:StorageMemoryInstance" href="../arduino_car_example.fujaba#_wsYYEAmqEeSjFLbPlFg-cQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wsoPsQmqEeSjFLbPlFg-cQ" x="230" y="9"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_wso2wwmqEeSjFLbPlFg-cQ" type="3012" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_wspd0AmqEeSjFLbPlFg-cQ" type="5055"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wspd0QmqEeSjFLbPlFg-cQ" type="5056"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wspd0gmqEeSjFLbPlFg-cQ" type="5057"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wspd0wmqEeSjFLbPlFg-cQ" type="5058"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wspd1AmqEeSjFLbPlFg-cQ" type="5059"/>
+        <element xmi:type="hwresourceinstance:ProcessingMemoryInstance" href="../arduino_car_example.fujaba#_wsY_IAmqEeSjFLbPlFg-cQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wso2xAmqEeSjFLbPlFg-cQ" x="2" y="9"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_wspd1QmqEeSjFLbPlFg-cQ" type="3011" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_wsqE4AmqEeSjFLbPlFg-cQ" type="5050"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wsqE4QmqEeSjFLbPlFg-cQ" type="5051"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wsqE4gmqEeSjFLbPlFg-cQ" type="5052"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wsqE4wmqEeSjFLbPlFg-cQ" type="5053"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_wsqE5AmqEeSjFLbPlFg-cQ" type="5054"/>
+        <element xmi:type="hwresourceinstance:ProcessorInstance" href="../arduino_car_example.fujaba#_wsY_IgmqEeSjFLbPlFg-cQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wspd1gmqEeSjFLbPlFg-cQ" x="122" y="165"/>
+      </children>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_wx6YUAmqEeSjFLbPlFg-cQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wx6YUgmqEeSjFLbPlFg-cQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wx6YUwmqEeSjFLbPlFg-cQ" x="47" y="-12"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_wsaNQAmqEeSjFLbPlFg-cQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wx6YUQmqEeSjFLbPlFg-cQ" x="505" y="252"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_wx6_YAmqEeSjFLbPlFg-cQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wx6_YgmqEeSjFLbPlFg-cQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wx7mcAmqEeSjFLbPlFg-cQ" x="35" y="-12"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_wsaNRAmqEeSjFLbPlFg-cQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wx6_YQmqEeSjFLbPlFg-cQ" x="505" y="168"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_wyAe8AmqEeSjFLbPlFg-cQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyBGAAmqEeSjFLbPlFg-cQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wyBGAQmqEeSjFLbPlFg-cQ" x="35" y="-12"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_wsaNSAmqEeSjFLbPlFg-cQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyAe8QmqEeSjFLbPlFg-cQ" x="505" y="324"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_wyBGAgmqEeSjFLbPlFg-cQ" type="3014" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wyBtEAmqEeSjFLbPlFg-cQ" type="5068">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wyBtEQmqEeSjFLbPlFg-cQ" x="47" y="-24"/>
+      </children>
+      <element xmi:type="hwresource:CommunicationResource" href="../arduino_car_example.fujaba#_wsa0UAmqEeSjFLbPlFg-cQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wyBGAwmqEeSjFLbPlFg-cQ" x="505" y="96"/>
+    </children>
+    <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../arduino_car_example.fujaba#_v4FNUAmqEeSjFLbPlFg-cQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v5xPYAmqEeSjFLbPlFg-cQ" x="636" y="24" width="481" height="409"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Pyj9AQmXEeS8psHeDisM0A"/>
+  <element xmi:type="hwresourceinstance:ResourceInstanceRepository" href="../arduino_car_example.fujaba#_PyVTgAmXEeS8psHeDisM0A"/>
+</notation:Diagram>

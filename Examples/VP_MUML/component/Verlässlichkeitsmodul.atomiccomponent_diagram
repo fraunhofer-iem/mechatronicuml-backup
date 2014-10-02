@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_rSBVAAJREeKsot-FPTx42A" type="Atomiccomponent" name="Verlässlichkeitsmodul.atomiccomponent_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_rSBVAgJREeKsot-FPTx42A" type="2005" fontName="Bitstream Vera Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_rSB8EAJREeKsot-FPTx42A" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_sTsfICHnEeKh6b7eZrN1wQ" type="3006" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_sTtGMCHnEeKh6b7eZrN1wQ" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_sTttQCHnEeKh6b7eZrN1wQ" x="44" y="-20"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_ye6kkG6YEeGwzsm_EpbUyg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sTsfISHnEeKh6b7eZrN1wQ" x="72" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_sTttQSHnEeKh6b7eZrN1wQ" type="3006" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_sTuUUCHnEeKh6b7eZrN1wQ" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_sTuUUSHnEeKh6b7eZrN1wQ" x="44" y="29"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_6nLsMG6YEeGwzsm_EpbUyg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sTttQiHnEeKh6b7eZrN1wQ" x="72" y="35"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="../VernetzterPruefstand.fujaba#_xEUO0G6YEeGwzsm_EpbUyg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rSBVAwJREeKsot-FPTx42A" x="300" y="168" width="193"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_rSBVAQJREeKsot-FPTx42A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VernetzterPruefstand.fujaba#_7tAlcG6QEeGwzsm_EpbUyg"/>
+</notation:Diagram>

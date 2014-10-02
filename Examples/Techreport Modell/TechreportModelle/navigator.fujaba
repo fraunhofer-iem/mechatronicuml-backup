@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_anjhMFObEeOolJcjfhTtwA">
+  <categories xmi:id="_anjhMVObEeOolJcjfhTtwA" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_ankIQFObEeOolJcjfhTtwA" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_ankIQVObEeOolJcjfhTtwA" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_ankIQlObEeOolJcjfhTtwA" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_ankIQ1ObEeOolJcjfhTtwA" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_ankIRFObEeOolJcjfhTtwA" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_ankIRVObEeOolJcjfhTtwA" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_ankIRlObEeOolJcjfhTtwA" name="DOUBLE" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="types:ArrayDataType" xmi:id="_XE5WcF6WEeOU6dzb6wKMjg" name="IntArray" type="_ankIRFObEeOolJcjfhTtwA">
+      <cardinality xmi:id="_vuFSsF6WEeOU6dzb6wKMjg" value="2"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_VrQD8F6LEeOogaHLhp186w" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Z9xpEF6LEeOogaHLhp186w" name="Navigation">
+      <roles xmi:id="_Z_SsAF6LEeOogaHLhp186w" connectors="_Z_mOAF6LEeOogaHLhp186w" behavior="_I8yBsF6VEeOU6dzb6wKMjg" name="navigator" senderMessageTypes="_FRe_MF6WEeOU6dzb6wKMjg" receiverMessageTypes="_HyrJkF6WEeOU6dzb6wKMjg">
+        <cardinality xmi:id="_Z_YyoF6LEeOogaHLhp186w">
+          <lowerBound xmi:id="_eY0IoF6ZEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_eY_HwF6ZEeOU6dzb6wKMjg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_I7cBEF6ZEeOU6dzb6wKMjg" messageType="_HyrJkF6WEeOU6dzb6wKMjg">
+          <bufferSize xmi:id="_KZ3G4F6ZEeOU6dzb6wKMjg" value="10"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_Z_k_4F6LEeOogaHLhp186w" connectors="_Z_mOAF6LEeOogaHLhp186w" behavior="_aMjV0V6UEeOU6dzb6wKMjg" name="provider" senderMessageTypes="_HyrJkF6WEeOU6dzb6wKMjg" receiverMessageTypes="_FRe_MF6WEeOU6dzb6wKMjg" roleAndAdaptationBehavior="_aMjV0V6UEeOU6dzb6wKMjg">
+        <cardinality xmi:id="_Z_lm8F6LEeOogaHLhp186w">
+          <lowerBound xmi:id="_CW5WAF6ZEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_CXUMwF6ZEeOU6dzb6wKMjg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_mytoQF6YEeOU6dzb6wKMjg" messageType="_FRe_MF6WEeOU6dzb6wKMjg">
+          <bufferSize xmi:id="_qCbskF6YEeOU6dzb6wKMjg" value="10"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_Z_mOAF6LEeOogaHLhp186w" connectorEndpoints="_Z_SsAF6LEeOogaHLhp186w _Z_k_4F6LEeOogaHLhp186w">
+        <connectorQualityOfServiceAssumptions xmi:id="_Z_qfcF6LEeOogaHLhp186w" comment="">
+          <minMessageDelay xmi:id="_O_sCgF6ZEeOU6dzb6wKMjg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_TFO7kF6ZEeOU6dzb6wKMjg" value="10"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_RyaBwF6ZEeOU6dzb6wKMjg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_SzjVsF6ZEeOU6dzb6wKMjg" value="30"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Lt9XkF6PEeOU6dzb6wKMjg" name="Delegation">
+      <roles xmi:id="_LuCQEF6PEeOU6dzb6wKMjg" connectors="_LuF6cV6PEeOU6dzb6wKMjg" name="master">
+        <cardinality xmi:id="_LuC3IF6PEeOU6dzb6wKMjg">
+          <lowerBound xmi:id="_XS5rUF6YEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_XTNNUF6YEeOU6dzb6wKMjg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_LuEsUF6PEeOU6dzb6wKMjg" connectors="_LuF6cV6PEeOU6dzb6wKMjg" name="slave">
+        <cardinality xmi:id="_LuFTYF6PEeOU6dzb6wKMjg">
+          <lowerBound xmi:id="_TT9foF6PEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_TUC_MF6PEeOU6dzb6wKMjg"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_LuF6cV6PEeOU6dzb6wKMjg" connectorEndpoints="_LuCQEF6PEeOU6dzb6wKMjg _LuEsUF6PEeOU6dzb6wKMjg">
+        <connectorQualityOfServiceAssumptions xmi:id="_LuHvoF6PEeOU6dzb6wKMjg" comment="">
+          <minMessageDelay xmi:id="_z5YnwF6REeOU6dzb6wKMjg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_pXYzMF6SEeOU6dzb6wKMjg" value="2"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_pbnL4F6SEeOU6dzb6wKMjg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_p9wPoF6SEeOU6dzb6wKMjg" value="2"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Txr9cF6PEeOU6dzb6wKMjg" name="Position Transmission">
+      <roles xmi:id="_TxtyoF6PEeOU6dzb6wKMjg" connectors="_TxvAwV6PEeOU6dzb6wKMjg" name="sender">
+        <cardinality xmi:id="_TxuZsF6PEeOU6dzb6wKMjg">
+          <lowerBound xmi:id="_aPQd0F6PEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_aPYZoF6PEeOU6dzb6wKMjg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_TxuZs16PEeOU6dzb6wKMjg" connectors="_TxvAwV6PEeOU6dzb6wKMjg" name="receiver">
+        <cardinality xmi:id="_TxuZtF6PEeOU6dzb6wKMjg">
+          <lowerBound xmi:id="_XpQr8F6PEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_XpU9YF6PEeOU6dzb6wKMjg"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_TxvAwV6PEeOU6dzb6wKMjg" connectorEndpoints="_TxtyoF6PEeOU6dzb6wKMjg _TxuZs16PEeOU6dzb6wKMjg">
+        <connectorQualityOfServiceAssumptions xmi:id="_Txvn0F6PEeOU6dzb6wKMjg" comment=""/>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_bjqsAF6PEeOU6dzb6wKMjg" name="Distances Transmission">
+      <roles xmi:id="_bjqsAV6PEeOU6dzb6wKMjg" connectors="_bjshMF6PEeOU6dzb6wKMjg" name="sender">
+        <cardinality xmi:id="_bjrTEF6PEeOU6dzb6wKMjg">
+          <lowerBound xmi:id="_eCZ_UF6PEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_eCcbkF6PEeOU6dzb6wKMjg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_bjr6IF6PEeOU6dzb6wKMjg" connectors="_bjshMF6PEeOU6dzb6wKMjg" name="receiver">
+        <cardinality xmi:id="_bjr6IV6PEeOU6dzb6wKMjg">
+          <lowerBound xmi:id="_vE8TQF6PEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_vFBy0F6PEeOU6dzb6wKMjg"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_bjshMF6PEeOU6dzb6wKMjg" connectorEndpoints="_bjqsAV6PEeOU6dzb6wKMjg _bjr6IF6PEeOU6dzb6wKMjg">
+        <connectorQualityOfServiceAssumptions xmi:id="_bjtIQF6PEeOU6dzb6wKMjg" comment=""/>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_mO6twF6PEeOU6dzb6wKMjg" name="Distribution">
+      <roles xmi:id="_mO9KAF6PEeOU6dzb6wKMjg" connectors="_mO-YI16PEeOU6dzb6wKMjg" name="distributor">
+        <cardinality xmi:id="_mO9xEF6PEeOU6dzb6wKMjg">
+          <lowerBound xmi:id="_mO9xEV6PEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_mO9xEl6PEeOU6dzb6wKMjg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_mO9xE16PEeOU6dzb6wKMjg" connectors="_mO-YI16PEeOU6dzb6wKMjg" name="client">
+        <cardinality xmi:id="_mO-YIF6PEeOU6dzb6wKMjg">
+          <lowerBound xmi:id="_s3VMMF6PEeOU6dzb6wKMjg"/>
+          <upperBound xmi:id="_s3aEsF6PEeOU6dzb6wKMjg"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_mO-YI16PEeOU6dzb6wKMjg" connectorEndpoints="_mO9KAF6PEeOU6dzb6wKMjg _mO9xE16PEeOU6dzb6wKMjg">
+        <connectorQualityOfServiceAssumptions xmi:id="_mO-_MF6PEeOU6dzb6wKMjg" comment=""/>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_aMjV0F6UEeOU6dzb6wKMjg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_aMjV0V6UEeOU6dzb6wKMjg" name="Navigation Provider" behavioralElement="_Z_k_4F6LEeOogaHLhp186w">
+      <states xmi:id="_aMjV0l6UEeOU6dzb6wKMjg" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_I8yBsF6VEeOU6dzb6wKMjg" name="Navigation Navigator" behavioralElement="_Z_SsAF6LEeOogaHLhp186w">
+      <variables xmi:id="_nxPlsF6bEeOU6dzb6wKMjg" name="target" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
+      <transitions xmi:id="_UvBgsF6VEeOU6dzb6wKMjg" priority="1" target="_NfLO0F6VEeOU6dzb6wKMjg" source="_I8yBsV6VEeOU6dzb6wKMjg">
+        <synchronization xmi:id="_GrJEUF6XEeOU6dzb6wKMjg"/>
+        <relativeDeadline xmi:id="_EjdmIF6XEeOU6dzb6wKMjg">
+          <upperBound xmi:id="_VK2PIF6XEeOU6dzb6wKMjg"/>
+        </relativeDeadline>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_ZpL7UF6aEeOU6dzb6wKMjg">
+          <message xmi:id="_aBSSQF6aEeOU6dzb6wKMjg" instanceOf="_FRe_MF6WEeOU6dzb6wKMjg">
+            <parameterBinding xmi:id="_4xBgkF6bEeOU6dzb6wKMjg" parameter="_hbBcwF6WEeOU6dzb6wKMjg"/>
+          </message>
+        </events>
+        <action xmi:id="_FjITYF6XEeOU6dzb6wKMjg" name=""/>
+      </transitions>
+      <transitions xmi:id="_VY3H4F6VEeOU6dzb6wKMjg" priority="1" target="_I8yBsV6VEeOU6dzb6wKMjg" source="_NfLO0F6VEeOU6dzb6wKMjg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_eJVFsF6aEeOU6dzb6wKMjg" kind="TRIGGER">
+          <message xmi:id="_en20wF6aEeOU6dzb6wKMjg" instanceOf="_HyrJkF6WEeOU6dzb6wKMjg"/>
+        </events>
+      </transitions>
+      <states xmi:id="_I8yBsV6VEeOU6dzb6wKMjg" name="Stop" outgoingTransitions="_UvBgsF6VEeOU6dzb6wKMjg" incomingTransitions="_VY3H4F6VEeOU6dzb6wKMjg" initial="true"/>
+      <states xmi:id="_NfLO0F6VEeOU6dzb6wKMjg" name="GO" outgoingTransitions="_VY3H4F6VEeOU6dzb6wKMjg" incomingTransitions="_UvBgsF6VEeOU6dzb6wKMjg"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_A8nQsF6WEeOU6dzb6wKMjg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_C2KzUF6WEeOU6dzb6wKMjg" name="Navigation">
+      <messageTypes xmi:id="_FRe_MF6WEeOU6dzb6wKMjg" name="moveTo">
+        <parameters xmi:id="_hbBcwF6WEeOU6dzb6wKMjg" name="target" dataType="_XE5WcF6WEeOU6dzb6wKMjg"/>
+      </messageTypes>
+      <messageTypes xmi:id="_HyrJkF6WEeOU6dzb6wKMjg" name="targetReached"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:componentstorydiagram="http://www.fujaba.de/muml/componentstorydiagram/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xsi:schemaLocation="http://www.storydriven.org/storydiagrams/activities/0.2.1 http://www.storydriven.org/storydiagrams/0.2.1#//activities" xmi:id="_nl0IMB4OEeS0kNziySkVDQ" type="Component Story" name="RailCab.componentstorydiagram_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_olMhkB4OEeS0kNziySkVDQ" type="2003" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_olMhkh4OEeS0kNziySkVDQ" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_olMhkx4OEeS0kNziySkVDQ" type="7001"/>
+    <element xmi:type="sda:Activity" href="../RailCab.fujaba#_olCwkB4OEeS0kNziySkVDQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_olMhkR4OEeS0kNziySkVDQ" x="180" y="108"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_nl0IMR4OEeS0kNziySkVDQ"/>
+  <element xmi:type="componentstorydiagram:ComponentStoryRule" href="../RailCab.fujaba#_nlq-QB4OEeS0kNziySkVDQ"/>
+</notation:Diagram>
