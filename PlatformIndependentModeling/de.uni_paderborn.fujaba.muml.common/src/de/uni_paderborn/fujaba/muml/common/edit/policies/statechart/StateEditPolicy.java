@@ -19,7 +19,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -139,7 +139,7 @@ public class StateEditPolicy extends NotifyingGraphicalEditPolicy {
 		for (Object child : getHost().getChildren()) {
 			EditPart childEp = (EditPart) child;
 			ConnectionPointEditPolicy connectionPointEditPolicy = (ConnectionPointEditPolicy) childEp
-					.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.CONNECTION_POINT_VISUALIZATION_ROLE);
+					.getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_POINT_VISUALIZATION_ROLE);
 			if (connectionPointEditPolicy != null) {
 				connectionPointEditPolicy.updateBorderItemLocator();
 			}

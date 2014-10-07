@@ -83,9 +83,9 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.instance.PortInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance)) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
@@ -96,7 +96,7 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends
 					.getErrorCoordinationProtocolInstancePortInstances_4003(
 							getNewSource(), getOldTarget(), sourceView,
 							targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}
@@ -110,9 +110,9 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.instance.PortInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.instance.PortInstance)) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
@@ -123,7 +123,7 @@ public class CoordinationProtocolInstancePortInstancesReorientCommand extends
 					.getErrorCoordinationProtocolInstancePortInstances_4003(
 							getOldSource(), getNewTarget(), sourceView,
 							targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView, errorMessage);
 			return false;
 		}

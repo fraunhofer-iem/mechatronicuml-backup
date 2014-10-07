@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 
 /**
  * This class contains all the behavior for rotated border items.

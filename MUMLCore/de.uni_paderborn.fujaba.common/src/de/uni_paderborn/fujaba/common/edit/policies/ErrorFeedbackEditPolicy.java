@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies;
+package de.uni_paderborn.fujaba.common.edit.policies;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;

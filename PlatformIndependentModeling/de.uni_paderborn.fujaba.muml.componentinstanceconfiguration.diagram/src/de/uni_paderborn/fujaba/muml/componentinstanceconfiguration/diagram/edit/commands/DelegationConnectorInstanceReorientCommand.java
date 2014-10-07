@@ -78,9 +78,9 @@ public class DelegationConnectorInstanceReorientCommand extends
 		}
 		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDelegationConnectorInstance_4002(
@@ -90,7 +90,7 @@ public class DelegationConnectorInstanceReorientCommand extends
 					.getLinkConstraints()
 					.getErrorDelegationConnectorInstance_4002(container,
 							getNewSource(), target, sourceView, targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}
@@ -117,9 +117,9 @@ public class DelegationConnectorInstanceReorientCommand extends
 		}
 		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDelegationConnectorInstance_4002(
@@ -129,7 +129,7 @@ public class DelegationConnectorInstanceReorientCommand extends
 					.getLinkConstraints()
 					.getErrorDelegationConnectorInstance_4002(container,
 							source, getNewTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
 		}

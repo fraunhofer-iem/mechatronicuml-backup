@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies;
+package de.uni_paderborn.fujaba.common.edit.policies;
 
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.gmf.runtime.notation.LineType;

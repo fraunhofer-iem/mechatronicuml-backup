@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies;
+package de.uni_paderborn.fujaba.common.edit.policies;
 
 /**
  * Edit policy roles for registering our edit policies in parts.

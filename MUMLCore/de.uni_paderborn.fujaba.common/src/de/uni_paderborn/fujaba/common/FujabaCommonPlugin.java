@@ -35,6 +35,9 @@ public class FujabaCommonPlugin implements BundleActivator {
 	
 	private static final String ELEMENT_INITIALIZER_EXTENSION_POINT = "de.uni_paderborn.fujaba.common.elementInitializer";
 
+	public static final String ID = "de.uni_paderborn.fujaba.common";
+
+
 	private static FujabaCommonPlugin instance;
 
 	private static BundleContext context;

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies;
+package de.uni_paderborn.fujaba.common.edit.policies;
 
 /**
  * Adapted BorderItemSelectionEditPolicy to fix Muml-Bug #58.

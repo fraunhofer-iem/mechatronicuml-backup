@@ -46,9 +46,9 @@ public class DelegationConnectorInstanceCreateCommand extends
 		container = deduceContainer(source, target);
 
 		if (container == null) {
-			View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+			View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 					.getSourceView(getRequest());
-			View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+			View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 					.getTargetView(getRequest());
 			container = deduceContainerUsingViews(sourceView, targetView);
 		}
@@ -77,9 +77,9 @@ public class DelegationConnectorInstanceCreateCommand extends
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
@@ -89,7 +89,7 @@ public class DelegationConnectorInstanceCreateCommand extends
 					.getLinkConstraints()
 					.getErrorDelegationConnectorInstance_4002(getContainer(),
 							getSource(), getTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView,
 							errorMessage);
 			return false;

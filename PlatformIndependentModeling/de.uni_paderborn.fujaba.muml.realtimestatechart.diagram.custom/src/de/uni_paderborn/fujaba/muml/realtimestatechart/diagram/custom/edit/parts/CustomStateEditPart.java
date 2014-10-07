@@ -33,7 +33,7 @@ public class CustomStateEditPart extends StateEditPart {
 		DefaultSizeNodeFigure plate = new DefaultSizeNodeFigure(40, 40) {
 
 			public PointList getPolygonPoints() {
-				StateEditPolicy stateEditPolicy = (StateEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE);
+				StateEditPolicy stateEditPolicy = (StateEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE);
 				if (stateEditPolicy != null) {
 					return stateEditPolicy.getPolygonPoints(this);
 				}

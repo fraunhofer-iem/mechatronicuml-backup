@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.common.edit.policies.opendiagram.AbstractOpenDiagramEditPolicy;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 
 public class OpenBehaviorDiagramEditPolicy extends

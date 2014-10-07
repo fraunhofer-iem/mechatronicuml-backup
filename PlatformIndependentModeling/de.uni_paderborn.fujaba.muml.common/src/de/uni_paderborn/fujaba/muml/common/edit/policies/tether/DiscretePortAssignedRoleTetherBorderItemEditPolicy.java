@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 
 public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.common.edit.policies.tether.TetherConnectionEditPolicy
+		de.uni_paderborn.fujaba.common.edit.policies.tether.TetherConnectionEditPolicy
 		implements NotificationListener {
 
 	@SuppressWarnings("unchecked")

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram;
+package de.uni_paderborn.fujaba.common.edit.policies.opendiagram;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -57,8 +57,8 @@ import org.eclipse.ui.dialogs.ISelectionStatusValidator;
 import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
+import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 
 public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 
@@ -139,7 +139,7 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 			dialog.setValidator(new ISelectionStatusValidator() {
 
 				public final IStatus errorNoFileSelected = new Status(
-						IStatus.ERROR, MumlCommonPlugin.ID,
+						IStatus.ERROR, FujabaCommonPlugin.ID,
 						"No diagram file selected.");
 
 				@Override

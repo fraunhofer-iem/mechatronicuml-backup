@@ -10,7 +10,11 @@ Require-Bundle: org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0"
  org.eclipse.m2m.qvt.oml;bundle-version="3.2.0",
  org.eclipse.xtext,
  org.eclipse.ui.workbench,
- org.eclipse.ui.ide
+ org.eclipse.ui.ide,
+ org.eclipse.draw2d,
+ org.eclipse.gef,
+ org.eclipse.gmf.runtime.diagram.ui,
+ de.uni_paderborn.fujaba.modelinstance
 Bundle-Activator: de.uni_paderborn.fujaba.common.FujabaCommonPlugin
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
@@ -19,6 +23,11 @@ Export-Package: de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.common.algorithm,
  de.uni_paderborn.fujaba.common.descriptor,
  de.uni_paderborn.fujaba.common.edit.commands,
+ de.uni_paderborn.fujaba.common.edit.policies,
+ de.uni_paderborn.fujaba.common.edit.policies.compartment,
+ de.uni_paderborn.fujaba.common.edit.policies.node,
+ de.uni_paderborn.fujaba.common.edit.policies.opendiagram,
+ de.uni_paderborn.fujaba.common.edit.policies.tether,
  de.uni_paderborn.fujaba.common.emf.edit.ui,
  de.uni_paderborn.fujaba.common.emf.edit.ui.elementinitializer,
  de.uni_paderborn.fujaba.common.emf.edit.ui.extensions,
@@ -26,3 +35,4 @@ Export-Package: de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.common.utils,
  de.uni_paderborn.fujaba.common.validator,
  de.uni_paderborn.fujaba.common.xtext
+Import-Package: org.eclipse.gef.editpolicies
