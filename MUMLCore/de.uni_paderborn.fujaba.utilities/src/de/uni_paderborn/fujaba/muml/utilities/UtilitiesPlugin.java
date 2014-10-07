@@ -10,8 +10,6 @@ import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
-
 /**
  * The activator class controls the plug-in life cycle
  */
@@ -81,9 +79,6 @@ public class UtilitiesPlugin extends AbstractUIPlugin {
 
 		// Custom Factories with positive priority
 		factories.addAll(positivePriorityFactories);
-
-		// Default Factories
-		MumlCommonPlugin.fillDefaultItemProviderFactories(factories);
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);
