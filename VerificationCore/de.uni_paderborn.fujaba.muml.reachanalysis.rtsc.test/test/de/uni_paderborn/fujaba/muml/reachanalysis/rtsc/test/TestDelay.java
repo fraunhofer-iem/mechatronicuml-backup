@@ -129,10 +129,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 		// set up federations
 		fed1 = fedFactory.createZeroFederation(udbmClocks);
@@ -160,10 +160,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 
 		// set up federations
@@ -201,10 +201,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 
 		// set up federations
@@ -244,10 +244,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 
 		// set up federations
@@ -285,10 +285,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 		// set up federations
 		fed1 = fedFactory.createZeroFederation(udbmClocks);
@@ -328,10 +328,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 
 		// set up federations
@@ -380,10 +380,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 
 		// set up federations
@@ -432,10 +432,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 
 		// set up federations
@@ -467,10 +467,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 		// set up federations
 		fed1 = fedFactory.createZeroFederation(udbmClocks);
@@ -504,10 +504,10 @@ public class TestDelay {
 
 		// set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 
 		// set up federations
 		fed1 = fedFactory.createZeroFederation(udbmClocks);

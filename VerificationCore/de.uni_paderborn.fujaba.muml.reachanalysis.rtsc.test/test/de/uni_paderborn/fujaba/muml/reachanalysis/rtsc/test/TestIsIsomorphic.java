@@ -112,10 +112,10 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 		
 		
 		//set up reach objects
@@ -135,10 +135,10 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state2);
+		rtscInstance2.setActiveVertex(state2);
 		
 		
 		//set up reach objects
@@ -158,10 +158,10 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 		
 		//set up hash sets with udbm clocks
 		udbmClocks1.add(cu1);
@@ -192,10 +192,10 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 		
 		//set up hash sets with udbm clocks
 		udbmClocks1.add(cu1);
@@ -225,10 +225,10 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 		
 		//set up hash sets with udbm clocks
 		udbmClocks1.add(cu1);
@@ -259,10 +259,10 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 		
 		//set up hash sets with udbm clocks
 		udbmClocks1.add(cu1);
@@ -293,12 +293,12 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		state2.setParentStatechart(rtsc1);
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state2);
+		rtscInstance2.setActiveVertex(state2);
 		
 		//set up hash sets with udbm clocks
 		udbmClocks1.add(cu1);
@@ -325,7 +325,7 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		state1.setName("state");
 		
@@ -333,7 +333,7 @@ public class TestIsIsomorphic {
 		state2.setName("state");
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state2);
+		rtscInstance2.setActiveVertex(state2);
 		
 		//set up hash sets with udbm clocks
 		udbmClocks1.add(cu1);
@@ -363,7 +363,7 @@ public class TestIsIsomorphic {
 		
 		//set up runtime objects
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		
 		state1.setName("state");
 		
@@ -371,7 +371,7 @@ public class TestIsIsomorphic {
 		state2.setName("state");
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state2);
+		rtscInstance2.setActiveVertex(state2);
 		
 		//set up hash sets with udbm clocks
 		udbmClocks1.add(cu1);

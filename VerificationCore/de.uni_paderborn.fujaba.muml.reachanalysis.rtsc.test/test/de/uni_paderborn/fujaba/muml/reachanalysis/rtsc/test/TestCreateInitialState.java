@@ -128,10 +128,10 @@ public class TestCreateInitialState {
 					|| rtscInst.getInstanceOf().equals(rtsc2)
 					|| rtscInst.getInstanceOf().equals(parentRtsc));
 			if (rtscInst.getInstanceOf().equals(rtsc1)) {
-				assertTrue(rtscInst.getActive().equals(state1));
+				assertTrue(rtscInst.getActiveVertex().equals(state1));
 			}
 			if (rtscInst.getInstanceOf().equals(rtsc2)) {
-				assertTrue(rtscInst.getActive().equals(state3));
+				assertTrue(rtscInst.getActiveVertex().equals(state3));
 			}
 		}
 	}
@@ -160,7 +160,7 @@ public class TestCreateInitialState {
 				embeddedInst = rtscInst;
 		}
 
-		assertTrue(embeddedInst.getActive().equals(subState));
+		assertTrue(embeddedInst.getActiveVertex().equals(subState));
 	}
 
 	@Test
@@ -174,10 +174,10 @@ public class TestCreateInitialState {
 			assertTrue(rtscInst.getInstanceOf().equals(rtsc1)
 					|| rtscInst.getInstanceOf().equals(rtsc2) || rtscInst.getInstanceOf().equals(parentRtsc));
 			if (rtscInst.getInstanceOf().equals(rtsc1)) {
-				assertTrue(rtscInst.getActive().equals(state1));
+				assertTrue(rtscInst.getActiveVertex().equals(state1));
 			}
 			if (rtscInst.getInstanceOf().equals(rtsc2)) {
-				assertTrue(rtscInst.getActive().equals(state3));
+				assertTrue(rtscInst.getActiveVertex().equals(state3));
 			}
 		}
 

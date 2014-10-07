@@ -174,7 +174,7 @@ public class TestComputeSuccessors {
 					.getLocations()) {
 
 				if (rtscInstance.getInstanceOf().equals(rtsc1)
-						&& rtscInstance.getActive().equals(state2)) {
+						&& rtscInstance.getActiveVertex().equals(state2)) {
 					rtsc1Fired = true;
 				}
 
@@ -207,9 +207,9 @@ public class TestComputeSuccessors {
 			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
 					.getLocations()) {
 				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActive().equals(state2))
+						.getActiveVertex().equals(state2))
 						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActive().equals(state4))
+								.getActiveVertex().equals(state4))
 						|| rtscInstance.getInstanceOf().equals(root));
 			}
 		}
@@ -241,9 +241,9 @@ public class TestComputeSuccessors {
 			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
 					.getLocations()) {
 				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActive().equals(state2))
+						.getActiveVertex().equals(state2))
 						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActive().equals(state4))
+								.getActiveVertex().equals(state4))
 						|| rtscInstance.getInstanceOf().equals(root));
 			}
 		}
@@ -296,9 +296,9 @@ public class TestComputeSuccessors {
 			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
 					.getLocations()) {
 				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActive().equals(state2))
+						.getActiveVertex().equals(state2))
 						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActive().equals(state4))
+								.getActiveVertex().equals(state4))
 						|| rtscInstance.getInstanceOf().equals(root));
 			}
 		}
@@ -311,9 +311,9 @@ public class TestComputeSuccessors {
 			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
 					.getLocations()) {
 				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActive().equals(state2))
+						.getActiveVertex().equals(state2))
 						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActive().equals(state3))
+								.getActiveVertex().equals(state3))
 						|| rtscInstance.getInstanceOf().equals(root));
 			}
 		}
@@ -334,11 +334,11 @@ public class TestComputeSuccessors {
 
 				if (!rtsc1Fired && !rtsc2Fired) {
 					if (rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActive().equals(state2)) {
+							&& rtscInstance.getActiveVertex().equals(state2)) {
 						rtsc1Fired = true;
 					}
 					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-							.getActive().equals(state4))) {
+							.getActiveVertex().equals(state4))) {
 						rtsc2Fired = true;
 					}
 					continue;
@@ -346,12 +346,12 @@ public class TestComputeSuccessors {
 
 				if (rtsc1Fired && !(rtscInstance.getInstanceOf().equals(root))) {
 					assertTrue(rtscInstance.getInstanceOf().equals(rtsc2)
-							&& rtscInstance.getActive().equals(state3));
+							&& rtscInstance.getActiveVertex().equals(state3));
 				}
 
 				if (rtsc2Fired && !(rtscInstance.getInstanceOf().equals(root))) {
 					assertTrue(rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActive().equals(state1));
+							&& rtscInstance.getActiveVertex().equals(state1));
 				}
 
 			}
@@ -374,11 +374,11 @@ public class TestComputeSuccessors {
 
 				if (!rtsc1Fired && !rtsc2Fired) {
 					if (rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActive().equals(state2)) {
+							&& rtscInstance.getActiveVertex().equals(state2)) {
 						rtsc1Fired = true;
 					}
 					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-							.getActive().equals(state4))) {
+							.getActiveVertex().equals(state4))) {
 						rtsc2Fired = true;
 					}
 					continue;
@@ -386,12 +386,12 @@ public class TestComputeSuccessors {
 
 				if (rtsc1Fired && !(rtscInstance.getInstanceOf().equals(root))) {
 					assertTrue(rtscInstance.getInstanceOf().equals(rtsc2)
-							&& rtscInstance.getActive().equals(state3));
+							&& rtscInstance.getActiveVertex().equals(state3));
 				}
 
 				if (rtsc2Fired && !(rtscInstance.getInstanceOf().equals(root))) {
 					assertTrue(rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActive().equals(state1));
+							&& rtscInstance.getActiveVertex().equals(state1));
 				}
 
 			}
@@ -439,11 +439,11 @@ public class TestComputeSuccessors {
 			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) successor)
 					.getLocations()) {
 				assertTrue((rtscInstance.getInstanceOf().equals(rtsc1) && rtscInstance
-						.getActive().equals(state2))
+						.getActiveVertex().equals(state2))
 						|| (rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-								.getActive().equals(state4))
+								.getActiveVertex().equals(state4))
 						|| rtscInstance.getInstanceOf().equals(root)
-						&& rtscInstance.getActive().equals(parentState)
+						&& rtscInstance.getActiveVertex().equals(parentState)
 						|| successor.getIncomingTransitions().get(0) instanceof DelayTransition);
 			}
 		}
@@ -543,11 +543,11 @@ public class TestComputeSuccessors {
 
 				if (!rtsc1Fired && !rtsc2Fired) {
 					if (rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActive().equals(state2)) {
+							&& rtscInstance.getActiveVertex().equals(state2)) {
 						rtsc1Fired = true;
 					}
 					if ((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-							.getActive().equals(state4))) {
+							.getActiveVertex().equals(state4))) {
 						rtsc2Fired = true;
 					}
 					continue;
@@ -555,12 +555,12 @@ public class TestComputeSuccessors {
 
 				if (rtsc1Fired && !(rtscInstance.getInstanceOf().equals(root))) {
 					assertTrue(rtscInstance.getInstanceOf().equals(rtsc2)
-							&& rtscInstance.getActive().equals(state3));
+							&& rtscInstance.getActiveVertex().equals(state3));
 				}
 
 				if (rtsc2Fired && !(rtscInstance.getInstanceOf().equals(root))) {
 					assertTrue(rtscInstance.getInstanceOf().equals(rtsc1)
-							&& rtscInstance.getActive().equals(state1));
+							&& rtscInstance.getActiveVertex().equals(state1));
 				}
 
 			}
@@ -618,7 +618,7 @@ public class TestComputeSuccessors {
 					.getLocations()) {
 
 				assertFalse((rtscInstance.getInstanceOf().equals(rtsc2) && rtscInstance
-						.getActive().equals(state4)));
+						.getActiveVertex().equals(state4)));
 
 			}
 		}
@@ -664,7 +664,7 @@ public class TestComputeSuccessors {
 			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
 					.getLocations()) {
 				if (location.getInstanceOf().equals(rtsc1))
-					assertTrue(location.getActive().equals(state2));
+					assertTrue(location.getActiveVertex().equals(state2));
 			}
 		}
 	}
@@ -721,9 +721,9 @@ public class TestComputeSuccessors {
 			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
 					.getLocations()) {
 				if (location.getInstanceOf().equals(rtsc1))
-					assertTrue(location.getActive().equals(state2));
+					assertTrue(location.getActiveVertex().equals(state2));
 				if (location.getInstanceOf().equals(rtsc2))
-					assertTrue(location.getActive().equals(state4));
+					assertTrue(location.getActiveVertex().equals(state4));
 			}
 		}
 	}
@@ -782,13 +782,13 @@ public class TestComputeSuccessors {
 			for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
 					.getLocations()) {
 				if (location.getInstanceOf().equals(rtsc1)
-						&& location.getActive().equals(state2))
+						&& location.getActiveVertex().equals(state2))
 					state2Entered = true;
 				if (location.getInstanceOf().equals(rtsc1)
-						&& location.getActive().equals(state5))
+						&& location.getActiveVertex().equals(state5))
 					state5Entered = true;
 				if (location.getInstanceOf().equals(rtsc2)
-						&& location.getActive().equals(state4))
+						&& location.getActiveVertex().equals(state4))
 					state4Entered = true;
 			}
 		}
@@ -910,7 +910,7 @@ public class TestComputeSuccessors {
 				for (RealtimeStatechartInstance location : ((ZoneGraphState) zone)
 						.getLocations()) {
 					if (location.getInstanceOf().equals(rtsc1))
-						assertTrue(location.getActive().equals(state5));
+						assertTrue(location.getActiveVertex().equals(state5));
 				}
 			}
 

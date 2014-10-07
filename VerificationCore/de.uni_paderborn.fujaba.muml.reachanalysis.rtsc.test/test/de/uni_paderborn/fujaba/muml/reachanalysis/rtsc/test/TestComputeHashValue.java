@@ -137,13 +137,13 @@ public class TestComputeHashValue {
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		zone1.getLocations().add(rtscInstance1);
 		zone1.setFederation(fed1);
 		reachComputation.computeHashValue(zone1);
 
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 		zone2.getLocations().add(rtscInstance2);
 		zone2.setFederation(fed2);
 		reachComputation.computeHashValue(zone2);
@@ -157,12 +157,12 @@ public class TestComputeHashValue {
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		zone1.getLocations().add(rtscInstance1);
 		reachComputation.computeHashValue(zone1);
 
 		rtscInstance2.setInstanceOf(rtsc2);
-		rtscInstance2.setActive(state3);
+		rtscInstance2.setActiveVertex(state3);
 		zone2.getLocations().add(rtscInstance2);
 		reachComputation.computeHashValue(zone2);
 
@@ -175,14 +175,14 @@ public class TestComputeHashValue {
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		zone1.getLocations().add(rtscInstance1);
 		zone1.setFederation(fed1);
 		reachComputation.computeHashValue(zone1);
 
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 		zone2.getLocations().add(rtscInstance2);
 		zone2.setFederation(fed2);
 		fed2.up();
@@ -197,13 +197,13 @@ public class TestComputeHashValue {
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		zone1.getLocations().add(rtscInstance1);
 		reachComputation.computeHashValue(zone1);
 
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state1);
+		rtscInstance2.setActiveVertex(state1);
 		zone2.getLocations().add(rtscInstance2);
 		reachComputation.computeHashValue(zone2);
 
@@ -216,14 +216,14 @@ public class TestComputeHashValue {
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 
 		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActive(state1);
+		rtscInstance1.setActiveVertex(state1);
 		zone1.getLocations().add(rtscInstance1);
 		zone1.setFederation(fed1);
 		reachComputation.computeHashValue(zone1);
 
 		
 		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActive(state2);
+		rtscInstance2.setActiveVertex(state2);
 		zone2.getLocations().add(rtscInstance2);
 		zone2.setFederation(fed2);
 		reachComputation.computeHashValue(zone2);
