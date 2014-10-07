@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.verification.core"
+      id="de.uni_paderborn.fujaba.muml.verification.core.feature"
       label="Core"
       version="0.4.0.qualifier">
 
