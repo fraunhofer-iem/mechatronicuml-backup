@@ -64,7 +64,7 @@ public class TestUtilities {
 		
 		// adapt path to match workspace structure on continuous integration server (new)
 		if (!new File(projectPath.toOSString()).exists()) {
-			projectPath = new Path(workspaceRoot + "../../../").append("MUML-Core").append("workspace").append(projectName);
+			projectPath = new Path(workspaceRoot + "../../../").append("MUMLCore").append("workspace").append(projectName);
 			triedPaths.add(projectPath);
 		}
 		
