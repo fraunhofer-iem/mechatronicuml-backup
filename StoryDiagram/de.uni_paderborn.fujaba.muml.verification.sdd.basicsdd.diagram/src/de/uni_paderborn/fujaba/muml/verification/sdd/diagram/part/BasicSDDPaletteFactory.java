@@ -12,6 +12,8 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
+import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 /**
  * @generated
@@ -64,7 +66,7 @@ public class BasicSDDPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createEdge1CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.Edge1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.Edge1CreationTool_desc,
 				Collections
@@ -81,7 +83,7 @@ public class BasicSDDPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createLeafNode2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.LeafNode2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.LeafNode2CreationTool_desc,
 				Collections
@@ -98,7 +100,7 @@ public class BasicSDDPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPatternNode3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.PatternNode3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.PatternNode3CreationTool_desc,
 				Collections
@@ -115,7 +117,7 @@ public class BasicSDDPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCollectionVariable1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.CollectionVariable1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.CollectionVariable1CreationTool_desc,
 				Collections
@@ -131,7 +133,7 @@ public class BasicSDDPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAttributeAssignment2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.AttributeAssignment2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.AttributeAssignment2CreationTool_desc,
 				Collections
@@ -150,7 +152,7 @@ public class BasicSDDPaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDElementTypes.Constraint_3008);
 		types.add(de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDElementTypes.Constraint_3010);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.Constraint3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.Constraint3CreationTool_desc,
 				types);
@@ -165,7 +167,7 @@ public class BasicSDDPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createObjectVariable4CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.ObjectVariable4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.ObjectVariable4CreationTool_desc,
 				Collections
@@ -181,7 +183,7 @@ public class BasicSDDPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createLinkVariable5CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.LinkVariable5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.verification.sdd.diagram.part.Messages.LinkVariable5CreationTool_desc,
 				Collections
@@ -191,63 +193,5 @@ public class BasicSDDPaletteFactory {
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.verification.sdd.diagram.providers.BasicSDDElementTypes.LinkVariable_4003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class NodeToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> elementTypes;
-
-		/**
-		 * @generated
-		 */
-		private NodeToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LinkToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> relationshipTypes;
-
-		/**
-		 * @generated
-		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> relationshipTypes) {
-			super(title, description, null, null);
-			this.relationshipTypes = relationshipTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
 	}
 }

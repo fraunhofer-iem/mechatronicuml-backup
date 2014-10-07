@@ -12,21 +12,21 @@
 		return false;
 	}
 «ENDIF-»
-	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
-	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 	if(!«EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canCreateCall(link, 'getContainer()', 'getSource()', 'getTarget(), sourceView, targetView')») {
 		String errorMessage = «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::getErrorCall(link, 'getContainer()', 'getSource()', 'getTarget(), sourceView, targetView')»;
-		de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+		de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 		return false;
 	}
 	return true;
 «ENDAROUND»
 «AROUND canCreateElement(link : gmfgen::GenLink) FOR gmfgen::FeatureLinkModelFacet-»
-	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
-	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 	if (!«EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canCreateCall(link, 'getSource()', 'getTarget(), sourceView, targetView')») {
 		String errorMessage = «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::getErrorCall(link, 'getSource()', 'getTarget(), sourceView, targetView')»;
-		de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
+		de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 		return false;
 	}
 	return true;
@@ -39,8 +39,8 @@
 «targetDef.proceed()»
 «IF hasContainerOtherThanSource(self)-»
 	if (container == null) {
-		org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
-		org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+		org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+		org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
 		container = deduceContainerUsingViews(sourceView, targetView);
 	}
 «ENDIF-»
