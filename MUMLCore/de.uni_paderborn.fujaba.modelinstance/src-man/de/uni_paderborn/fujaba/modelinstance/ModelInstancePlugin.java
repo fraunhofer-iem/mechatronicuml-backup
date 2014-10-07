@@ -1,7 +1,19 @@
 package de.uni_paderborn.fujaba.modelinstance;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -97,5 +109,47 @@ public class ModelInstancePlugin implements BundleActivator {
 		}
 		return str.trim();
 	}
+	
+	// Copied from APE runtime plugin:
+	private static Map<EReference, List<EClass>> foundEClasses = new HashMap<EReference, List<EClass>>();
+	public static List<EClass> getEClasses(EReference feature) {
+		List<EClass> eClasses = foundEClasses.get(feature);
+		if (eClasses == null) {
+			eClasses = new ArrayList<EClass>();
+
+			// New implementation considering the whole package registry.
+			org.eclipse.emf.ecore.EPackage.Registry registry = EPackage.Registry.INSTANCE;
+			for (String key : new HashSet<String>(registry.keySet())) {
+			    EPackage ePackage = registry.getEPackage(key);
+			   for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+				   if (eClassifier instanceof EClass) {
+					   EClass eClass = (EClass) eClassifier;
+					   if (eClass != null && !eClass.isAbstract() && feature.getEReferenceType().isSuperTypeOf(eClass)) {
+							eClasses.add(eClass);
+					   }
+				   }
+			   }
+			}
+			
+			Collections.sort(eClasses, new Comparator<EClass>() {
+
+				@Override
+				public int compare(EClass o1, EClass o2) {
+					if (o1 == null || o2 == null) {
+						return 0;
+					}
+					if (o1.getName() == null || o2.getName() == null) {
+						return 0;
+					}
+					return o1.getName().compareTo(o2.getName());
+				}
+
+			} );
+			foundEClasses.put(feature, eClasses);
+		}
+		return new ArrayList<EClass>(eClasses); 
+	}
+
+	
 
 }
