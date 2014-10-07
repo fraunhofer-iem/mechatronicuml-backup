@@ -1,4 +1,3 @@
---import de.uni_paderborn.fujaba.muml.common._blackbox.LoadResourceBlackbox.LoadResourceLibUnit;
 
 modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
 modeltype propsheet uses properties('http://de.uni_paderborn.fujaba.properties/0.4.0');
@@ -27,7 +26,7 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     -- Add dependant plugins
     var model = gmfgenModel.rootObjects()![GenEditorGenerator];
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.common";
-    model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.common";
+  --  model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.common";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.modelinstance.ui";
     model.plugin.requiredPlugins += "org.storydriven.core.edit.properties";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.edit.properties";

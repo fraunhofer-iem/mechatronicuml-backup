@@ -1,17 +1,15 @@
---import de.uni_paderborn.fujaba.muml.sdk._blackbox.UtilsBlackbox.UtilsLibUnit;
 
 library PostReconcileLibrary;
 modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
 modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
 
 modeltype propsheet uses properties('http://de.uni_paderborn.fujaba.properties/0.4.0');
---modeltype gmfext uses gmfext('http://gmfext/0.1');
 
 
 mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginName:String) {
 	
 	self.dynamicTemplates :=true;
-	self.templateDirectory := "/de.uni_paderborn.fujaba.muml.common/gmf-templates";
+	self.templateDirectory := "/de.uni_paderborn.fujaba.common/gmf-templates";
 	self.sameFileForDiagramAndModel := false;
 	
 	self.domainFileExtension := "fujaba"; 
@@ -89,7 +87,7 @@ mapping inout GenChildNode::addEnlargeCompartmentEditPolicy(){
 	if(self.behaviour[CustomBehaviour]->select(behavior|behavior.key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE")->isEmpty()) then{
 		enlargeCompartmentBehavior:=new CustomBehaviour();
 		enlargeCompartmentBehavior.key:="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE";
-		enlargeCompartmentBehavior.editPolicyQualifiedClassName:="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy";
+		enlargeCompartmentBehavior.editPolicyQualifiedClassName:="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy";
 		self.behaviour+=enlargeCompartmentBehavior;
 	}endif;
 }
