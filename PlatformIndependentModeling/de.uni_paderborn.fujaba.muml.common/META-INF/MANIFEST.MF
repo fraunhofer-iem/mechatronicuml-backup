@@ -15,11 +15,11 @@ Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.muml.common.edit.policies.component,
+ de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram,
  de.uni_paderborn.fujaba.muml.common.edit.policies.ports,
+ de.uni_paderborn.fujaba.muml.common.edit.policies.ports.layout,
  de.uni_paderborn.fujaba.muml.common.edit.policies.statechart,
- de.uni_paderborn.fujaba.muml.common.emf.edit.provider,
- de.uni_paderborn.fujaba.muml.common.figures,
- de.uni_paderborn.fujaba.muml.common.naming
+ de.uni_paderborn.fujaba.muml.common.edit.policies.tether
 Bundle-Activator: de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin
 Import-Package: org.eclipse.ltk.core.refactoring,
  org.eclipse.ltk.core.refactoring.participants
