@@ -62,12 +62,9 @@ public class BusConnectorReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
 			return false;
 		}
-		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
-		/*
 		if (getLink().getConnectorEndpoints().size() != 1) {
-		  return false;
+			return false;
 		}
-		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform)) {
@@ -75,22 +72,9 @@ public class BusConnectorReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) getLink()
 				.eContainer();
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistBusConnector_4030(container,
-						getLink(), getNewSource(), target, sourceView,
-						targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorBusConnector_4030(container,
-							getNewSource(), target, sourceView, targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
-			return false;
-		}
-		return true;
+						getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -100,12 +84,9 @@ public class BusConnectorReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
 			return false;
 		}
-		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
-		/*
 		if (getLink().getConnectorEndpoints().size() != 1) {
-		  return false;
+			return false;
 		}
-		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform)) {
@@ -113,22 +94,9 @@ public class BusConnectorReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) getLink()
 				.eContainer();
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistBusConnector_4030(container,
-						getLink(), source, getNewTarget(), sourceView,
-						targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorBusConnector_4030(container,
-							source, getNewTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
-			return false;
-		}
-		return true;
+						getLink(), source, getNewTarget());
 	}
 
 	/**
@@ -153,13 +121,8 @@ public class BusConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-
-		// Enhancement for MUML-BUG #446
-		if (getLink().getConnectorEndpoints().size() > 1) {
-			getLink().getConnectorEndpoints().remove(getOldSource());
-		}
+		getLink().getConnectorEndpoints().remove(getOldSource());
 		getLink().getConnectorEndpoints().add(getNewSource());
-
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -167,13 +130,8 @@ public class BusConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-
-		// Enhancement for MUML-BUG #446
-		if (getLink().getConnectorEndpoints().size() > 1) {
-			getLink().getConnectorEndpoints().remove(getOldTarget());
-		}
+		getLink().getConnectorEndpoints().remove(getOldTarget());
 		getLink().getConnectorEndpoints().add(getNewTarget());
-
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -210,12 +168,5 @@ public class BusConnectorReorientCommand extends EditElementCommand {
 	 */
 	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) newEnd;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected int getReorientDirection() {
-		return reorientDirection;
 	}
 }

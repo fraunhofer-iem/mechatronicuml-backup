@@ -21,30 +21,6 @@ public class HardwarePropertySection extends DefaultPropertySection implements
 		IPropertySourceProvider {
 
 	/**
-	 * @generated
-	 */
-	public IPropertySource getPropertySource(Object object) {
-		if (object instanceof IPropertySource) {
-			return (IPropertySource) object;
-		}
-		AdapterFactory af = getAdapterFactory(object);
-		if (af != null) {
-			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
-					IItemPropertySource.class);
-			if (ips != null) {
-				EditingDomain ed = getEditingDomainFor(object);
-				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
-						object, ips, af, ed, this);
-			}
-		}
-		if (object instanceof IAdaptable) {
-			return (IPropertySource) ((IAdaptable) object)
-					.getAdapter(IPropertySource.class);
-		}
-		return null;
-	}
-
-	/**
 	 * Modify/unwrap selection.
 	 * @generated
 	 */
@@ -52,45 +28,6 @@ public class HardwarePropertySection extends DefaultPropertySection implements
 	protected Object transformSelection(Object selected) {
 		selected = /*super.*/transformSelectionToDomain(selected);
 		return selected;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected AdapterFactory getAdapterFactory(Object object) {
-		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
-		if (editingDomain != null) {
-			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
-			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.ID,
-							true);
-			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-					.getInstance()
-					.getCustomItemProviderAdapterFactories(
-							de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin.ID,
-							false);
-
-			// Put all factories into one composed adapter factory.
-			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-			factories.addAll(positivePriorityFactories);
-			factories.add(defaultFactory);
-			factories.addAll(negativePriorityFactories);
-			return new ComposedAdapterFactory(factories);
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected AdapterFactoryEditingDomain getEditingDomainFor(Object object) {
-		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
-			return (AdapterFactoryEditingDomain) getEditingDomain();
-		}
-		return (AdapterFactoryEditingDomain) TransactionUtil
-				.getEditingDomain(object);
 	}
 
 }

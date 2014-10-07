@@ -41,7 +41,7 @@
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
-   	</extension>
+   </extension>
 
    	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
       <?gmfgen generated="true"?>
@@ -53,7 +53,7 @@
   	     id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
-   	</extension>
+   </extension>
 	
 	
 	
@@ -77,57 +77,20 @@
 	</extension>
 
 	
-	<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-
-	
-	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
-            name="hwplatform">
-         
-         <child
-               class="HWPlatformInstanceConfiguration"
-               packageNsUri="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
-         </child>
-         
-      </category>
-   </extension>
-
-	
-	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+	<extension point="org.eclipse.ui.commands" id="update-cmd">
       <?gmfgen generated="true"?>
-      <editor
-            preferencesHint="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"
-            editorName="PlatformInstance Editor"
-            fileExtension="platforminstance_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
-            modelId="PlatformInstance">
-         <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/"
-               className="HWPlatformInstanceConfiguration">
-         </diagramElement>
-         
-         <topLevelNode
-               domainElement="HWPlatformInstance"
-               semanticHint="2004">
-         </topLevelNode>
-         
-      </editor>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.updateDiagram"
+         name="%update.diagram.name"/>
    </extension>
 
+	
+	
+	
+	
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
@@ -259,16 +222,15 @@
              id="property.tab.DiagramPropertySection"
              label="%tab.diagram"/>
           <propertyTab
-                       category="extra"
+             category="domain"
              id="property.tab.domain"
              label="%tab.domain"/>
           <propertyTab
-                       category="domain"
+             category="extra"
              id="property.tab.general"
              label="%tab.general"/>
           <propertyTab
-          			 category="domain"
-             afterTab="property.tab.general"
+             category="extra"
              id="property.tab.documentation"
              label="%tab.documentation"/>
       </propertyTabs>
@@ -792,14 +754,13 @@
          </selectionEnablement>
       </linkHelper>
    </extension>
-   <extension point="org.eclipse.ui.commands" id="update-cmd">
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <command
-         categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdateCommand"
-         description="%update.diagram.description"
-         id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.updateDiagram"
-         name="%update.diagram.name"/>
+      <category id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.LoadResourceAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
@@ -831,18 +792,26 @@
       </menuContribution>
    </extension>
 
-   <extension point="org.eclipse.ui.commands" id="menu-commands">
-      <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.LoadResourceAction"
-         name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.LoadResourceAction"/>
-   </extension>
-
+   
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.InitDiagram"
+            nameFilter="*.fujaba"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>

@@ -294,26 +294,6 @@ public class HardwareDiagramEditor extends DiagramDocumentEditor implements
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
 				provider, getDiagramGraphicalViewer());
-
-		// Begin added to bind delete keyboard shortcut to "Delete From Model" action, not Delete From Diagram (default)
-		KeyHandler keyHandler = getDiagramGraphicalViewer().getKeyHandler();
-		keyHandler.put(
-				KeyStroke.getPressed(SWT.DEL, 127, 0),
-				getActionRegistry().getAction(
-						ActionIds.ACTION_DELETE_FROM_MODEL));
-		keyHandler.put(KeyStroke.getPressed(SWT.BS, 8, 0), getActionRegistry()
-				.getAction(ActionIds.ACTION_DELETE_FROM_MODEL));
-		// End added
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public void doSave(IProgressMonitor progressMonitor) {
-		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
-				.getDiagramView());
-		super.doSave(progressMonitor);
 	}
 
 }

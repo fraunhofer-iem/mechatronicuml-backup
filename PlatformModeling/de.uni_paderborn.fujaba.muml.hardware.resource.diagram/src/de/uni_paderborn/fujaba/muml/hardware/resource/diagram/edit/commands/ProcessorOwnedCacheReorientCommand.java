@@ -70,22 +70,9 @@ public class ProcessorOwnedCacheReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor)) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistProcessorOwnedCache_4001(
-						getNewSource(), getOldTarget(), sourceView, targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorProcessorOwnedCache_4001(
-							getNewSource(), getOldTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
-			return false;
-		}
-		return true;
+						getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -95,22 +82,9 @@ public class ProcessorOwnedCacheReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache)) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistProcessorOwnedCache_4001(
-						getOldSource(), getNewTarget(), sourceView, targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorProcessorOwnedCache_4001(
-							getOldSource(), getNewTarget(), sourceView,
-							targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView, errorMessage);
-			return false;
-		}
-		return true;
+						getOldSource(), getNewTarget());
 	}
 
 	/**
@@ -135,10 +109,8 @@ public class ProcessorOwnedCacheReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-
 		getOldSource().setOwnedCache(null);
 		getNewSource().setOwnedCache(getOldTarget());
-
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -146,9 +118,7 @@ public class ProcessorOwnedCacheReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-
 		getOldSource().setOwnedCache(getNewTarget());
-
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -178,12 +148,5 @@ public class ProcessorOwnedCacheReorientCommand extends EditElementCommand {
 	 */
 	protected de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache) newEnd;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected int getReorientDirection() {
-		return reorientDirection;
 	}
 }

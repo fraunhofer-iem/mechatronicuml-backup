@@ -39,19 +39,9 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	public DelegationInstanceCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
-
-		if (container == null) {
-			View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
-			container = deduceContainerUsingViews(sourceView, targetView);
-		}
-		this.container = container;
 	}
 
 	/**
@@ -76,24 +66,9 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateDelegationInstance_4008(
-						getContainer(), getSource(), getTarget(), sourceView,
-						targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorDelegationInstance_4008(
-							getContainer(), getSource(), getTarget(),
-							sourceView, targetView);
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
-			return false;
-		}
-		return true;
+						getContainer(), getSource(), getTarget());
 	}
 
 	/**
@@ -184,23 +159,6 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 				.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
 				return (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) element;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Traverse the notation view hierarchy.
-	 * 
-	 * @generated
-	 */
-	private static de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration deduceContainerUsingViews(
-			View sourceView, View targetView) {
-		for (View view = sourceView; view != null; view = (View) view
-				.eContainer()) {
-			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
-				return (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
-						.getElement();
 			}
 		}
 		return null;

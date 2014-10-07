@@ -24,28 +24,28 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getHWPlatformLabel_5050Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPlatformLabelExpressionLabelParser5050();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPlatformLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getBusPartLabel_5037Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BusPartLabelExpressionLabelParser5037();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BusPartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getBusPartLabel_5038Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BusPartLabelExpressionLabelParser5038();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BusPartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getBridgePartLabel_5039Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BridgePartLabelExpressionLabelParser5039();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BridgePartLabelExpressionLabelParser();
 	}
 
 	/**
@@ -73,28 +73,28 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getHWPlatformPartLabel_5042Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPlatformPartLabelExpressionLabelParser5042();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPlatformPartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getHWPlatformPartLabel_5043Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPlatformPartLabelExpressionLabelParser5043();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPlatformPartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getHWPortPartLabel_5053Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPortPartLabelExpressionLabelParser5053();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.HWPortPartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDelegationHWPortLabel_5044Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.DelegationHWPortLabelExpressionLabelParser5044();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.DelegationHWPortLabelExpressionLabelParser();
 	}
 
 	/**
@@ -122,35 +122,35 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getResourcePartLabel_5046Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser5046();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getResourcePartLabel_5047Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser5047();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getResourcePartLabel_5048Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser5048();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getResourcePartLabel_5049Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser5049();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.ResourcePartLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getLinkPartLabel_6003Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.LinkPartLabelExpressionLabelParser6003();
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.LinkPartLabelExpressionLabelParser();
 	}
 
 	/**

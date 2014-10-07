@@ -48,7 +48,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="HWPInstanceConfigurationFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPInstanceConfigurationFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPInstanceConfigurationContentsCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPInstanceConfigurationFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureHWPInstanceConfigurationContentsCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPInstanceConfigurationContentsCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fFigureHWPInstanceConfigurationContentsCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPInstanceConfigurationContentsCompartmentFigure() {&#xA;&#x9;&#x9;return fFigureHWPInstanceConfigurationContentsCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPInstanceConfigurationFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPInstanceConfigurationContentsCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPInstanceConfigurationFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureHWPInstanceConfigurationContentsCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPInstanceConfigurationContentsCompartmentFigure.setOutline(false);&#xA;&#xA;this.add(fFigureHWPInstanceConfigurationContentsCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPInstanceConfigurationContentsCompartmentFigure() {&#xA;&#x9;&#x9;return fFigureHWPInstanceConfigurationContentsCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="600"
@@ -82,7 +82,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="HWPlatform"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPlatform extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHWPlatformNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPlatformCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPlatform() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure hWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;hWPlatformTitleAreaFigure0.setFill(false);&#xA;hWPlatformTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintHWPlatformTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.numColumns = 1;&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureHWPlatformNameLabel.setText(&quot;Platform&quot;);&#xA;&#xA;hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPlatformCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHWPlatformCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHWPlatformCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalIndent = 0;&#xA;constraintFFigureHWPlatformCompartment.horizontalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.verticalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHWPlatformNameLabel() {&#xA;&#x9;&#x9;return fFigureHWPlatformNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPlatformCompartment() {&#xA;&#x9;&#x9;return fFigureHWPlatformCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPlatform extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHWPlatformNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPlatformCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPlatform() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure hWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;hWPlatformTitleAreaFigure0.setFill(false);&#xA;hWPlatformTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintHWPlatformTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.numColumns = 1;&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureHWPlatformNameLabel.setText(&quot;Platform&quot;);&#xA;&#xA;hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPlatformCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHWPlatformCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHWPlatformCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalIndent = 0;&#xA;constraintFFigureHWPlatformCompartment.horizontalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.verticalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHWPlatformNameLabel() {&#xA;&#x9;&#x9;return fFigureHWPlatformNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPlatformCompartment() {&#xA;&#x9;&#x9;return fFigureHWPlatformCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="400"
@@ -159,7 +159,7 @@
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="HWPortLabelFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPortLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPortLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&lt;...>&quot;);this.setTextUnderline(true);&#xA;this.setTextWrap(true);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPortLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPortLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&lt;...>&quot;);this.setTextUnderline(true);&#xA;this.setTextWrap(true);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.0"/>
@@ -184,7 +184,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StructuredResourceFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StructuredResourceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureEmbeddedAtomicResources; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceCardinalityFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceKindFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure fFigureCustomStructuredIconFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StructuredResourceFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure structuredContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;structuredContainer0.setFill(false);&#xA;structuredContainer0.setOutline(false);&#xA;structuredContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStructuredContainer0 = new org.eclipse.draw2d.GridData();&#xA;constraintStructuredContainer0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStructuredContainer0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredContainer0.horizontalIndent = 0;&#xA;constraintStructuredContainer0.horizontalSpan = 1;&#xA;constraintStructuredContainer0.verticalSpan = 1;&#xA;constraintStructuredContainer0.grabExcessHorizontalSpace = true;&#xA;constraintStructuredContainer0.grabExcessVerticalSpace = false;&#xA;this.add(structuredContainer0, constraintStructuredContainer0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStructuredContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStructuredContainer0.numColumns = 2;&#xA;&#x9;layoutStructuredContainer0.makeColumnsEqualWidth = false;&#xA;&#x9;structuredContainer0.setLayoutManager(layoutStructuredContainer0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure structuredName1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;structuredName1.setFill(false);&#xA;structuredName1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStructuredName1 = new org.eclipse.draw2d.GridData();&#xA;constraintStructuredName1.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredName1.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredName1.horizontalIndent = 0;&#xA;constraintStructuredName1.horizontalSpan = 1;&#xA;constraintStructuredName1.verticalSpan = 1;&#xA;constraintStructuredName1.grabExcessHorizontalSpace = true;&#xA;constraintStructuredName1.grabExcessVerticalSpace = true;&#xA;structuredContainer0.add(structuredName1, constraintStructuredName1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStructuredName1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStructuredName1.numColumns = 3;&#xA;&#x9;layoutStructuredName1.makeColumnsEqualWidth = false;&#xA;&#x9;structuredName1.setLayoutManager(layoutStructuredName1);&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceNameFigure.setFont(FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceNameFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceNameFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceNameFigure, constraintFFigureStructuredResourceNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceKindFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceKindFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceKindFigure.setFont(FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceKindFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceKindFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceKindFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceKindFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceKindFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceKindFigure, constraintFFigureStructuredResourceKindFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceCardinalityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceCardinalityFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceCardinalityFigure.setFont(FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceCardinalityFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceCardinalityFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceCardinalityFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceCardinalityFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceCardinalityFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceCardinalityFigure, constraintFFigureStructuredResourceCardinalityFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureCustomStructuredIconFigure = new de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCustomStructuredIconFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCustomStructuredIconFigure.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureCustomStructuredIconFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureCustomStructuredIconFigure.horizontalIndent = 0;&#xA;constraintFFigureCustomStructuredIconFigure.horizontalSpan = 1;&#xA;constraintFFigureCustomStructuredIconFigure.verticalSpan = 1;&#xA;constraintFFigureCustomStructuredIconFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCustomStructuredIconFigure.grabExcessVerticalSpace = true;&#xA;structuredContainer0.add(fFigureCustomStructuredIconFigure, constraintFFigureCustomStructuredIconFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureEmbeddedAtomicResources = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEmbeddedAtomicResources = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEmbeddedAtomicResources.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalIndent = 0;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalSpan = 1;&#xA;constraintFFigureEmbeddedAtomicResources.verticalSpan = 1;&#xA;constraintFFigureEmbeddedAtomicResources.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEmbeddedAtomicResources.grabExcessVerticalSpace = true;&#xA;this.add(fFigureEmbeddedAtomicResources, constraintFFigureEmbeddedAtomicResources);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureEmbeddedAtomicResources() {&#xA;&#x9;&#x9;return fFigureEmbeddedAtomicResources;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceCardinalityFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceCardinalityFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceNameFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceKindFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceKindFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure getFigureCustomStructuredIconFigure() {&#xA;&#x9;&#x9;return fFigureCustomStructuredIconFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StructuredResourceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureEmbeddedAtomicResources; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceCardinalityFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceKindFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure fFigureCustomStructuredIconFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure myCustomStructuredIconFigure;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StructuredResourceFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure structuredContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;structuredContainer0.setFill(false);&#xA;structuredContainer0.setOutline(false);&#xA;structuredContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStructuredContainer0 = new org.eclipse.draw2d.GridData();&#xA;constraintStructuredContainer0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStructuredContainer0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredContainer0.horizontalIndent = 0;&#xA;constraintStructuredContainer0.horizontalSpan = 1;&#xA;constraintStructuredContainer0.verticalSpan = 1;&#xA;constraintStructuredContainer0.grabExcessHorizontalSpace = true;&#xA;constraintStructuredContainer0.grabExcessVerticalSpace = false;&#xA;this.add(structuredContainer0, constraintStructuredContainer0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStructuredContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStructuredContainer0.numColumns = 2;&#xA;&#x9;layoutStructuredContainer0.makeColumnsEqualWidth = false;&#xA;&#x9;structuredContainer0.setLayoutManager(layoutStructuredContainer0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure structuredName1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;structuredName1.setFill(false);&#xA;structuredName1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStructuredName1 = new org.eclipse.draw2d.GridData();&#xA;constraintStructuredName1.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredName1.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredName1.horizontalIndent = 0;&#xA;constraintStructuredName1.horizontalSpan = 1;&#xA;constraintStructuredName1.verticalSpan = 1;&#xA;constraintStructuredName1.grabExcessHorizontalSpace = true;&#xA;constraintStructuredName1.grabExcessVerticalSpace = true;&#xA;structuredContainer0.add(structuredName1, constraintStructuredName1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStructuredName1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStructuredName1.numColumns = 3;&#xA;&#x9;layoutStructuredName1.makeColumnsEqualWidth = false;&#xA;&#x9;structuredName1.setLayoutManager(layoutStructuredName1);&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceNameFigure.setFont(FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceNameFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceNameFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceNameFigure, constraintFFigureStructuredResourceNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceKindFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceKindFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceKindFigure.setFont(FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceKindFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceKindFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceKindFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceKindFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceKindFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceKindFigure, constraintFFigureStructuredResourceKindFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceCardinalityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceCardinalityFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceCardinalityFigure.setFont(FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceCardinalityFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceCardinalityFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceCardinalityFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceCardinalityFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceCardinalityFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceCardinalityFigure, constraintFFigureStructuredResourceCardinalityFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;myCustomStructuredIconFigure = new de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMyCustomStructuredIconFigure = new org.eclipse.draw2d.GridData();&#xA;constraintMyCustomStructuredIconFigure.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintMyCustomStructuredIconFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintMyCustomStructuredIconFigure.horizontalIndent = 0;&#xA;constraintMyCustomStructuredIconFigure.horizontalSpan = 1;&#xA;constraintMyCustomStructuredIconFigure.verticalSpan = 1;&#xA;constraintMyCustomStructuredIconFigure.grabExcessHorizontalSpace = true;&#xA;constraintMyCustomStructuredIconFigure.grabExcessVerticalSpace = true;&#xA;structuredContainer0.add(myCustomStructuredIconFigure, constraintMyCustomStructuredIconFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureEmbeddedAtomicResources = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEmbeddedAtomicResources = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEmbeddedAtomicResources.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalIndent = 0;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalSpan = 1;&#xA;constraintFFigureEmbeddedAtomicResources.verticalSpan = 1;&#xA;constraintFFigureEmbeddedAtomicResources.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEmbeddedAtomicResources.grabExcessVerticalSpace = true;&#xA;this.add(fFigureEmbeddedAtomicResources, constraintFFigureEmbeddedAtomicResources);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureEmbeddedAtomicResources() {&#xA;&#x9;&#x9;return fFigureEmbeddedAtomicResources;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceCardinalityFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceCardinalityFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceNameFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceKindFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceKindFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure getFigureCustomStructuredIconFigure() {&#xA;&#x9;&#x9;return fFigureCustomStructuredIconFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="130"
@@ -288,8 +288,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
@@ -391,8 +391,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
@@ -494,8 +494,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
@@ -612,8 +612,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
@@ -747,8 +747,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
@@ -901,7 +901,7 @@
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
             className="HWPortLabelFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPortLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPortLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&lt;...>&quot;);this.setTextUnderline(true);&#xA;this.setTextWrap(true);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPortLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPortLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&lt;...>&quot;);this.setTextUnderline(true);&#xA;this.setTextWrap(true);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.21"/>
@@ -936,8 +936,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ActuatorInstance"/>
@@ -1026,8 +1026,8 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
+          key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/SensorInstance"/>
@@ -1105,7 +1105,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="BusFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class BusFigure extends org.eclipse.draw2d.ScalablePolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureBusProtocolFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureBusBandwidthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public BusFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure busContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;busContainer0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintBusContainer0 = new org.eclipse.draw2d.GridData();&#xA;constraintBusContainer0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintBusContainer0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintBusContainer0.horizontalIndent = 0;&#xA;constraintBusContainer0.horizontalSpan = 1;&#xA;constraintBusContainer0.verticalSpan = 1;&#xA;constraintBusContainer0.grabExcessHorizontalSpace = true;&#xA;constraintBusContainer0.grabExcessVerticalSpace = true;&#xA;this.add(busContainer0, constraintBusContainer0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutBusContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutBusContainer0.numColumns = 1;&#xA;&#x9;layoutBusContainer0.makeColumnsEqualWidth = false;&#xA;&#x9;busContainer0.setLayoutManager(layoutBusContainer0);&#xA;&#xA;&#xA;&#xA;fFigureBusProtocolFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureBusProtocolFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureBusProtocolFigure.setFont(FFIGUREBUSPROTOCOLFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureBusProtocolFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureBusProtocolFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureBusProtocolFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBusProtocolFigure.horizontalIndent = 0;&#xA;constraintFFigureBusProtocolFigure.horizontalSpan = 1;&#xA;constraintFFigureBusProtocolFigure.verticalSpan = 0;&#xA;constraintFFigureBusProtocolFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureBusProtocolFigure.grabExcessVerticalSpace = true;&#xA;busContainer0.add(fFigureBusProtocolFigure, constraintFFigureBusProtocolFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureBusBandwidthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureBusBandwidthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureBusBandwidthFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureBusBandwidthFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureBusBandwidthFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBusBandwidthFigure.horizontalIndent = 0;&#xA;constraintFFigureBusBandwidthFigure.horizontalSpan = 1;&#xA;constraintFFigureBusBandwidthFigure.verticalSpan = 1;&#xA;constraintFFigureBusBandwidthFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureBusBandwidthFigure.grabExcessVerticalSpace = true;&#xA;busContainer0.add(fFigureBusBandwidthFigure, constraintFFigureBusBandwidthFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureBusProtocolFigure() {&#xA;&#x9;&#x9;return fFigureBusProtocolFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureBusBandwidthFigure() {&#xA;&#x9;&#x9;return fFigureBusBandwidthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREBUSPROTOCOLFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), &quot;BOLD&quot;, 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class BusFigure extends org.eclipse.draw2d.ScalablePolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureBusProtocolFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureBusBandwidthFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public BusFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure busContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;busContainer0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintBusContainer0 = new org.eclipse.draw2d.GridData();&#xA;constraintBusContainer0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintBusContainer0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintBusContainer0.horizontalIndent = 0;&#xA;constraintBusContainer0.horizontalSpan = 1;&#xA;constraintBusContainer0.verticalSpan = 1;&#xA;constraintBusContainer0.grabExcessHorizontalSpace = true;&#xA;constraintBusContainer0.grabExcessVerticalSpace = true;&#xA;this.add(busContainer0, constraintBusContainer0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutBusContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutBusContainer0.numColumns = 1;&#xA;&#x9;layoutBusContainer0.makeColumnsEqualWidth = false;&#xA;&#x9;busContainer0.setLayoutManager(layoutBusContainer0);&#xA;&#xA;&#xA;&#xA;fFigureBusProtocolFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureBusProtocolFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureBusProtocolFigure.setFont(FFIGUREBUSPROTOCOLFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureBusProtocolFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureBusProtocolFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureBusProtocolFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBusProtocolFigure.horizontalIndent = 0;&#xA;constraintFFigureBusProtocolFigure.horizontalSpan = 1;&#xA;constraintFFigureBusProtocolFigure.verticalSpan = 0;&#xA;constraintFFigureBusProtocolFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureBusProtocolFigure.grabExcessVerticalSpace = true;&#xA;busContainer0.add(fFigureBusProtocolFigure, constraintFFigureBusProtocolFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureBusBandwidthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureBusBandwidthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureBusBandwidthFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureBusBandwidthFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureBusBandwidthFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBusBandwidthFigure.horizontalIndent = 0;&#xA;constraintFFigureBusBandwidthFigure.horizontalSpan = 1;&#xA;constraintFFigureBusBandwidthFigure.verticalSpan = 1;&#xA;constraintFFigureBusBandwidthFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureBusBandwidthFigure.grabExcessVerticalSpace = true;&#xA;busContainer0.add(fFigureBusBandwidthFigure, constraintFFigureBusBandwidthFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureBusProtocolFigure() {&#xA;&#x9;&#x9;return fFigureBusProtocolFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureBusBandwidthFigure() {&#xA;&#x9;&#x9;return fFigureBusBandwidthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREBUSPROTOCOLFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), &quot;BOLD&quot;, 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="130"
@@ -1173,7 +1173,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="BridgeFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class BridgeFigure extends org.eclipse.draw2d.ScalablePolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureBridgeCommentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public BridgeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.setFill(true);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureBridgeCommentFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureBridgeCommentFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureBridgeCommentFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureBridgeCommentFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBridgeCommentFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBridgeCommentFigure.horizontalIndent = 0;&#xA;constraintFFigureBridgeCommentFigure.horizontalSpan = 1;&#xA;constraintFFigureBridgeCommentFigure.verticalSpan = 1;&#xA;constraintFFigureBridgeCommentFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureBridgeCommentFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureBridgeCommentFigure, constraintFFigureBridgeCommentFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureBridgeCommentFigure() {&#xA;&#x9;&#x9;return fFigureBridgeCommentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class BridgeFigure extends org.eclipse.draw2d.ScalablePolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureBridgeCommentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public BridgeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.setFill(true);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureBridgeCommentFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureBridgeCommentFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureBridgeCommentFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureBridgeCommentFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBridgeCommentFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBridgeCommentFigure.horizontalIndent = 0;&#xA;constraintFFigureBridgeCommentFigure.horizontalSpan = 1;&#xA;constraintFFigureBridgeCommentFigure.verticalSpan = 1;&#xA;constraintFFigureBridgeCommentFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureBridgeCommentFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureBridgeCommentFigure, constraintFFigureBridgeCommentFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureBridgeCommentFigure() {&#xA;&#x9;&#x9;return fFigureBridgeCommentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             height="40"/>
@@ -1221,7 +1221,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="HWPlatform"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPlatform extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHWPlatformNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPlatformCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPlatform() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure hWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;hWPlatformTitleAreaFigure0.setFill(false);&#xA;hWPlatformTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintHWPlatformTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.numColumns = 1;&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureHWPlatformNameLabel.setText(&quot;Platform&quot;);&#xA;&#xA;hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPlatformCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHWPlatformCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHWPlatformCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalIndent = 0;&#xA;constraintFFigureHWPlatformCompartment.horizontalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.verticalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHWPlatformNameLabel() {&#xA;&#x9;&#x9;return fFigureHWPlatformNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPlatformCompartment() {&#xA;&#x9;&#x9;return fFigureHWPlatformCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPlatform extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHWPlatformNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureHWPlatformCompartment; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPlatform() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure hWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;hWPlatformTitleAreaFigure0.setFill(false);&#xA;hWPlatformTitleAreaFigure0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridData();&#xA;constraintHWPlatformTitleAreaFigure0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalIndent = 0;&#xA;constraintHWPlatformTitleAreaFigure0.horizontalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.verticalSpan = 1;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessHorizontalSpace = true;&#xA;constraintHWPlatformTitleAreaFigure0.grabExcessVerticalSpace = false;&#xA;this.add(hWPlatformTitleAreaFigure0, constraintHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutHWPlatformTitleAreaFigure0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.numColumns = 1;&#xA;&#x9;layoutHWPlatformTitleAreaFigure0.makeColumnsEqualWidth = false;&#xA;&#x9;hWPlatformTitleAreaFigure0.setLayoutManager(layoutHWPlatformTitleAreaFigure0);&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureHWPlatformNameLabel.setText(&quot;Platform&quot;);&#xA;&#xA;hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHWPlatformCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureHWPlatformCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureHWPlatformCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureHWPlatformCompartment.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureHWPlatformCompartment.horizontalIndent = 0;&#xA;constraintFFigureHWPlatformCompartment.horizontalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.verticalSpan = 1;&#xA;constraintFFigureHWPlatformCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureHWPlatformCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureHWPlatformCompartment, constraintFFigureHWPlatformCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHWPlatformNameLabel() {&#xA;&#x9;&#x9;return fFigureHWPlatformNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureHWPlatformCompartment() {&#xA;&#x9;&#x9;return fFigureHWPlatformCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="400"
@@ -1266,7 +1266,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="DelegationFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DelegationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DelegationFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DOT);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DelegationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DelegationFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DOT);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
@@ -1299,7 +1299,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="LinkFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LinkFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureLinkCommentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LinkFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureLinkCommentFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureLinkCommentFigure.setText(&quot;&lt;...>&quot;);fFigureLinkCommentFigure.setTextWrap(true);&#xA;&#xA;&#xA;this.add(fFigureLinkCommentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureLinkCommentFigure() {&#xA;&#x9;&#x9;return fFigureLinkCommentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LinkFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureLinkCommentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LinkFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureLinkCommentFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureLinkCommentFigure.setText(&quot;&lt;...>&quot;);fFigureLinkCommentFigure.setTextWrap(true);&#xA;&#xA;&#xA;this.add(fFigureLinkCommentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureLinkCommentFigure() {&#xA;&#x9;&#x9;return fFigureLinkCommentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
@@ -1352,7 +1352,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ToBusFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ToBusFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ToBusFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASHDOT);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ToBusFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ToBusFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASHDOT);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
@@ -1558,7 +1558,6 @@
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
@@ -1976,101 +1975,101 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="--self.name"/>
+          body="self.name"/>
       <expressions
-          body="--let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then &#xA;--&#x9;self.name.toString() +' :'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name.toString()&#xA;--else &#xA;--&#x9;self.name.toString()&#xA;--endif &#xA;-- in&#xA;--nameToShow"/>
+          body="let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then &#xA;&#x9;self.name.toString() +' :'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name.toString()&#xA;else &#xA;&#x9;self.name.toString()&#xA;endif &#xA; in&#xA;nameToShow"/>
       <expressions
-          body="--' '"/>
+          body="' '"/>
       <expressions
-          body="--': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
+          body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="--'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
+          body="'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
       <expressions
-          body="--'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
+          body="'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
       <expressions
-          body="--' '"/>
+          body="' '"/>
       <expressions
-          body="--': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
+          body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="--if self.frequency.oclIsUndefined() then 'null' else self.frequency.toString() endif"/>
+          body="if self.frequency.oclIsUndefined() then 'null' else self.frequency.toString() endif"/>
       <expressions
-          body="--'Enter frequency in form of:  Value Hz/MHz/GHz'"/>
+          body="'Enter frequency in form of:  Value Hz/MHz/GHz'"/>
       <expressions
-          body="--' '"/>
+          body="' '"/>
       <expressions
-          body="--': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
+          body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="--if self.frequency.oclIsUndefined() then 'null' else self.frequency.toString() endif"/>
+          body="if self.frequency.oclIsUndefined() then 'null' else self.frequency.toString() endif"/>
       <expressions
-          body="--'Enter frequency in form of:  Value Hz/MHz/GHz'"/>
+          body="'Enter frequency in form of:  Value Hz/MHz/GHz'"/>
       <expressions
-          body="--let mips : String = if self.MIPS.oclIsUndefined() then 'null' else self.MIPS.toString() endif in&#xA;--let cpi : String = if self.CPI.oclIsUndefined() then 'null' else self.CPI.toString() endif in&#xA;--'MIPS: '+mips + ' / CPI: '+cpi"/>
+          body="let mips : String = if self.MIPS.oclIsUndefined() then 'null' else self.MIPS.toString() endif in&#xA;let cpi : String = if self.CPI.oclIsUndefined() then 'null' else self.CPI.toString() endif in&#xA;'MIPS: '+mips + ' / CPI: '+cpi"/>
       <expressions
-          body="--0"/>
+          body="0"/>
       <expressions
-          body="--' '"/>
+          body="' '"/>
       <expressions
-          body="--': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
+          body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="--'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
+          body="'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
       <expressions
-          body="--'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
+          body="'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
       <expressions
-          body="--'Kind: ' + if self.memoryType.oclIsUndefined() then 'null' else self.memoryType.toString() endif"/>
+          body="'Kind: ' + if self.memoryType.oclIsUndefined() then 'null' else self.memoryType.toString() endif"/>
       <expressions
-          body="--0"/>
+          body="0"/>
       <expressions
-          body="--' '"/>
+          body="' '"/>
       <expressions
-          body="--': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
+          body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="--'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
+          body="'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
       <expressions
-          body="--'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
+          body="'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
       <expressions
-          body="--'Kind: ' + if self.memoryType.oclIsUndefined() then 'null' else self.memoryType.toString() endif"/>
+          body="'Kind: ' + if self.memoryType.oclIsUndefined() then 'null' else self.memoryType.toString() endif"/>
       <expressions
-          body="--let portName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;--portName +': ' +  '\n' + protocolName"/>
+          body="let portName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;portName +': ' +  '\n' + protocolName"/>
       <expressions
-          body="--': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
+          body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="--' '"/>
+          body="' '"/>
       <expressions
-          body="--': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
+          body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="--' '"/>
+          body="' '"/>
       <expressions
-          body="--': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
+          body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
-          body="--' '"/>
+          body="' '"/>
       <expressions
-          body="--let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;--bdwidth"/>
+          body="let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;bdwidth"/>
       <expressions
-          body="--let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;--proto"/>
+          body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;proto"/>
       <expressions
-          body="--'Bridge'"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="--self.oclIsKindOf(hwplatforminstance::HWPortInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance)"/>
+          body="'Bridge'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
-      <expressions
-          body="--let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;--let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;--proto + '\n' + bdwidth"/>
-      <expressions
-          body="--'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
+          body="self.oclIsKindOf(hwplatforminstance::HWPortInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
+          body="self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
+      <expressions
+          body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;proto + '\n' + bdwidth"/>
+      <expressions
+          body="'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)  or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
+          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::BUS)"/>
+          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)  or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance) "/>
+          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::BUS)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance) "/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -2078,7 +2077,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
-        className="DelegationHWPortInstanceLabelExpressionLabelParser5078"
         viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/DelegationHWPortInstance"/>
@@ -2086,7 +2084,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
-        className="HWPlatformInstanceLabelExpressionLabelParser5095"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance"/>
@@ -2097,7 +2094,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.1/@modelFacet"
-        className="CacheInstanceLabelExpressionLabelParser5043"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
@@ -2105,7 +2101,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.2/@modelFacet"
-        className="CacheInstanceLabelExpressionLabelParser5044"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
@@ -2113,7 +2108,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.3/@modelFacet"
-        className="CacheInstanceLabelExpressionLabelParser5045"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4"
         editExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
@@ -2122,7 +2116,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.1/@modelFacet"
-        className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5047"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
@@ -2130,7 +2123,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.2/@modelFacet"
-        className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5048"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
@@ -2138,7 +2130,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.3/@modelFacet"
-        className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5049"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8"
         editExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
@@ -2147,7 +2138,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.1/@modelFacet"
-        className="ProcessorInstanceLabelExpressionLabelParser5051"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
@@ -2155,7 +2145,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
-        className="ProcessorInstanceLabelExpressionLabelParser5052"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
@@ -2163,7 +2152,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.3/@modelFacet"
-        className="ProcessorInstanceLabelExpressionLabelParser5053"
         viewExpression="//@expressionProviders/@providers.0/@expressions.12"
         editExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
@@ -2172,7 +2160,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.4/@modelFacet"
-        className="ProcessorInstanceLabelExpressionLabelParser5054"
         viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
@@ -2180,7 +2167,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.1/@modelFacet"
-        className="ProcessingMemoryInstanceLabelExpressionLabelParser5056"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
@@ -2188,7 +2174,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.2/@modelFacet"
-        className="ProcessingMemoryInstanceLabelExpressionLabelParser5057"
         viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
@@ -2196,7 +2181,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.3/@modelFacet"
-        className="ProcessingMemoryInstanceLabelExpressionLabelParser5058"
         viewExpression="//@expressionProviders/@providers.0/@expressions.18"
         editExpression="//@expressionProviders/@providers.0/@expressions.19">
       <expressionContext
@@ -2205,7 +2189,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.4/@modelFacet"
-        className="ProcessingMemoryInstanceLabelExpressionLabelParser5059"
         viewExpression="//@expressionProviders/@providers.0/@expressions.20">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
@@ -2213,7 +2196,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.1/@modelFacet"
-        className="StorageMemoryInstanceLabelExpressionLabelParser5061"
         viewExpression="//@expressionProviders/@providers.0/@expressions.22">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
@@ -2221,7 +2203,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.2/@modelFacet"
-        className="StorageMemoryInstanceLabelExpressionLabelParser5062"
         viewExpression="//@expressionProviders/@providers.0/@expressions.23">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
@@ -2229,7 +2210,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.3/@modelFacet"
-        className="StorageMemoryInstanceLabelExpressionLabelParser5063"
         viewExpression="//@expressionProviders/@providers.0/@expressions.24"
         editExpression="//@expressionProviders/@providers.0/@expressions.25">
       <expressionContext
@@ -2238,7 +2218,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.4/@modelFacet"
-        className="StorageMemoryInstanceLabelExpressionLabelParser5064"
         viewExpression="//@expressionProviders/@providers.0/@expressions.26">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
@@ -2246,7 +2225,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.9/@labels.0/@modelFacet"
-        className="HWPortInstanceLabelExpressionLabelParser5082"
         viewExpression="//@expressionProviders/@providers.0/@expressions.27">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/HWPortInstance"/>
@@ -2254,7 +2232,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"
-        className="StructuredResourceInstanceLabelExpressionLabelParser5084"
         viewExpression="//@expressionProviders/@providers.0/@expressions.28">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance"/>
@@ -2262,7 +2239,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.2/@modelFacet"
-        className="StructuredResourceInstanceLabelExpressionLabelParser5085"
         viewExpression="//@expressionProviders/@providers.0/@expressions.29">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance"/>
@@ -2270,7 +2246,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.10/@labels.1/@modelFacet"
-        className="ActuatorInstanceLabelExpressionLabelParser5087"
         viewExpression="//@expressionProviders/@providers.0/@expressions.30">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ActuatorInstance"/>
@@ -2278,7 +2253,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.10/@labels.2/@modelFacet"
-        className="ActuatorInstanceLabelExpressionLabelParser5088"
         viewExpression="//@expressionProviders/@providers.0/@expressions.31">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ActuatorInstance"/>
@@ -2286,7 +2260,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.11/@labels.1/@modelFacet"
-        className="SensorInstanceLabelExpressionLabelParser5090"
         viewExpression="//@expressionProviders/@providers.0/@expressions.32">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/SensorInstance"/>
@@ -2294,7 +2267,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.11/@labels.2/@modelFacet"
-        className="SensorInstanceLabelExpressionLabelParser5091"
         viewExpression="//@expressionProviders/@providers.0/@expressions.33">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/SensorInstance"/>
@@ -2302,7 +2274,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.12/@labels.0/@modelFacet"
-        className="BusInstanceLabelExpressionLabelParser5092"
         viewExpression="//@expressionProviders/@providers.0/@expressions.34">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/BusInstance"/>
@@ -2310,7 +2281,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.12/@labels.1/@modelFacet"
-        className="BusInstanceLabelExpressionLabelParser5093"
         viewExpression="//@expressionProviders/@providers.0/@expressions.35">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/BusInstance"/>
@@ -2318,7 +2288,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.13/@labels.0/@modelFacet"
-        className="BridgeInstanceLabelExpressionLabelParser5094"
         viewExpression="//@expressionProviders/@providers.0/@expressions.36">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/BridgeInstance"/>
@@ -2326,7 +2295,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
-        className="HWPlatformInstanceLabelExpressionLabelParser5096"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstance"/>
@@ -2334,7 +2302,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.1/@labels.0/@modelFacet"
-        className="LinkInstanceLabelExpressionLabelParser6003"
         viewExpression="//@expressionProviders/@providers.0/@expressions.39"
         editExpression="//@expressionProviders/@providers.0/@expressions.40">
       <expressionContext

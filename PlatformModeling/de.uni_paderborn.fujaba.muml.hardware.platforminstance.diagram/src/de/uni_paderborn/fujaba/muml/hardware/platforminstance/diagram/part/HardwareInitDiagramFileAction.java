@@ -2,39 +2,98 @@ package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
+import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.IWorkbenchPart;
 
 /**
  * @generated
  */
-public class HardwareInitDiagramFileAction
-		extends
-		de.uni_paderborn.fujaba.modelinstance.ui.handlers.AbstractCreateDiagramFileCommand {
+public class HardwareInitDiagramFileAction implements IObjectActionDelegate {
 
 	/**
 	 * @generated
 	 */
-	@Override
-	public void setCharset(IFile diagramFile) {
+	private IWorkbenchPart targetPart;
+	/**
+	 * @generated
+	 */
+	private URI domainModelURI;
+
+	/**
+	 * @generated
+	 */
+	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+		this.targetPart = targetPart;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void selectionChanged(IAction action, ISelection selection) {
+		domainModelURI = null;
+		action.setEnabled(false);
+		if (selection instanceof IStructuredSelection == false
+				|| selection.isEmpty()) {
+			return;
+		}
+		IFile file = (IFile) ((IStructuredSelection) selection)
+				.getFirstElement();
+		domainModelURI = URI.createPlatformResourceURI(file.getFullPath()
+				.toString(), true);
+		action.setEnabled(true);
+	}
+
+	/**
+	 * @generated
+	 */
+	private Shell getShell() {
+		return targetPart.getSite().getShell();
+	}
+
+	/**
+	 * @generated
+	 */
+	public void run(IAction action) {
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
+				.createEditingDomain();
+		ResourceSet resourceSet = editingDomain.getResourceSet();
+		EObject diagramRoot = null;
+		try {
+			Resource resource = resourceSet.getResource(domainModelURI, true);
+			diagramRoot = (EObject) resource.getContents().get(0);
+		} catch (WrappedException ex) {
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+					.getInstance().logError(
+							"Unable to load resource: " + domainModelURI, ex); //$NON-NLS-1$
+		}
+		if (diagramRoot == null) {
+			MessageDialog
+					.openError(
+							getShell(),
+							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.InitDiagramFile_ResourceErrorDialogTitle,
+							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.InitDiagramFile_ResourceErrorDialogMessage);
+			return;
+		}
+		Wizard wizard = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareNewDiagramFileWizard(
+				domainModelURI, diagramRoot, editingDomain);
+		wizard.setWindowTitle(NLS
+				.bind(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.InitDiagramFile_WizardTitle,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID));
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorUtil
-				.setCharset(diagramFile);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public String getUniqueFilename(String hint, String extension,
-			IPath filePath) {
-		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorUtil
-				.getUniqueFileName(filePath, hint, extension);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor.ID;
-
+				.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
 	}
 }

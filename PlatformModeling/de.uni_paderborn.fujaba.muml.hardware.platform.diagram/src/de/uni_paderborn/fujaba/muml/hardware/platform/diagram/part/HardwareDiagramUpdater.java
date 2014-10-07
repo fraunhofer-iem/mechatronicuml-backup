@@ -51,14 +51,21 @@ public class HardwareDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor>();
-
-		if (de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
-				.getNodeVisualID(view, modelElement) == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID) {
-			result.add(new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor(
-					modelElement,
-					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID));
+		Resource resource = modelElement.eResource();
+		for (Iterator<EObject> it = getPhantomNodesIterator(resource); it
+				.hasNext();) {
+			EObject childElement = it.next();
+			if (childElement == modelElement) {
+				continue;
+			}
+			if (de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
+					.getNodeVisualID(view, childElement) == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor(
+						childElement,
+						de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID));
+				continue;
+			}
 		}
-
 		return result;
 	}
 
@@ -85,7 +92,6 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
-
 		return result;
 	}
 
@@ -112,7 +118,6 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
-
 		return result;
 	}
 
@@ -139,7 +144,6 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
-
 		return result;
 	}
 
@@ -192,7 +196,6 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
-
 		return result;
 	}
 
@@ -644,14 +647,13 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List targets = link.getConnectorEndpoints();
-			Object theTarget = !targets.isEmpty() ? targets
-					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -684,14 +686,13 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List targets = link.getConnectorEndpoints();
-			Object theTarget = !targets.isEmpty() ? targets
-					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -724,14 +725,13 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List targets = link.getConnectorEndpoints();
-			Object theTarget = !targets.isEmpty() ? targets
-					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -768,7 +768,7 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -805,7 +805,7 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -842,7 +842,7 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -888,14 +888,13 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List targets = link.getConnectorEndpoints();
-			Object theTarget = !targets.isEmpty() ? targets
-					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -944,14 +943,13 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List targets = link.getConnectorEndpoints();
-			Object theTarget = !targets.isEmpty() ? targets
-					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -1000,14 +998,13 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 			List targets = link.getConnectorEndpoints();
-			Object theTarget = !targets.isEmpty() ? targets
-					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
 			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			Object theSource = sources.size() == 1 ? sources.get(0) : null;
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}

@@ -9,15 +9,13 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.ICustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Device;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 
 /**
  * Base edit policy for all {@link ResourceType}s that uses the

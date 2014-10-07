@@ -64,29 +64,6 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	public static final int VISUAL_ID = 5001;
 
 	/**
-	 * MUML FIX, see code comments.
-	 *
-	 * @generated
-	 */
-	@Override
-	protected Collection<?> disableCanonicalFor(Request request) {
-
-		@SuppressWarnings("unchecked")
-		Collection<Object> hosts = super.disableCanonicalFor(request);
-
-		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
-		// because GMF supports adding additional commands using Edit Helpers concept,
-		// which could trigger refresh of any canonical edit policy.
-		// So it should be the cleanest solution to disable all canonical edit policies. 
-		EditPart part = this;
-		while (part != null) {
-			hosts.add(part);
-			part = part.getParent();
-		}
-		return hosts;
-	}
-
-	/**
 	 * @generated
 	 */
 	private DirectEditManager manager;
@@ -381,7 +358,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager2(
+			setManager(new TextDirectEditManager(
 					this,
 					null,
 					de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HardwareEditPartFactory
@@ -408,8 +385,8 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager2.class) {
-			((TextDirectEditManager2) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager.class) {
+			((TextDirectEditManager) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}
@@ -420,9 +397,6 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
-		} else // 
-		if (getManager() instanceof TextDirectEditManager2) {
-			((TextDirectEditManager2) getManager()).show(initialCharacter);
 		} else //
 		{
 			performDirectEdit();
@@ -486,15 +460,11 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void refreshUnderline() {
-		// Deactivated this method because of Muml bug #461.
-		// TextUnderline is determined statically, not dynamically.
-
-		// org.eclipse.gmf.runtime.notation.FontStyle style =
-		//	(org.eclipse.gmf.runtime.notation.FontStyle) getFontStyleOwnerView().getStyle(
-		//		org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFontStyle());
-		//if (style != null && getFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
-		//	((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getFigure()).setTextUnderline(style.isUnderline());
-		//}
+		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(
+				NotationPackage.eINSTANCE.getFontStyle());
+		if (style != null && getFigure() instanceof WrappingLabel) {
+			((WrappingLabel) getFigure()).setTextUnderline(style.isUnderline());
+		}
 	}
 
 	/**

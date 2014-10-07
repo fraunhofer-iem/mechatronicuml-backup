@@ -30,8 +30,81 @@ public class HardwareOCLFactory {
 	/**
 	 * @generated
 	 */
+	private final String[] expressionBodies;
+
+	/**
+	 * @generated
+	 */
 	protected HardwareOCLFactory() {
 		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression[45];
+		this.expressionBodies = new String[] {
+				"self.name", //$NON-NLS-1$
+				"let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then \n\tself.name.toString() +\' :\'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name.toString()\nelse \n\tself.name.toString()\nendif \n in\nnameToShow", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
+				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif", //$NON-NLS-1$
+				"\'Enter frequency in form of:  Value Hz/MHz/GHz\'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif", //$NON-NLS-1$
+				"\'Enter frequency in form of:  Value Hz/MHz/GHz\'", //$NON-NLS-1$
+				"let mips : String = if self.MIPS.oclIsUndefined() then \'null\' else self.MIPS.toString() endif in\nlet cpi : String = if self.CPI.oclIsUndefined() then \'null\' else self.CPI.toString() endif in\n\'MIPS: \'+mips + \' / CPI: \'+cpi", //$NON-NLS-1$
+				"0", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
+				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
+				"\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif", //$NON-NLS-1$
+				"0", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
+				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
+				"\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif", //$NON-NLS-1$
+				"let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\nportName +\': \' +  \'\\n\' + protocolName", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\nbdwidth", //$NON-NLS-1$
+				"let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\nproto", //$NON-NLS-1$
+				"\'Bridge\'", //$NON-NLS-1$
+				"self.oclIsKindOf(hwplatforminstance::HWPortInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance)", //$NON-NLS-1$
+				"self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)", //$NON-NLS-1$
+				"let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\nlet bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\nproto + \'\\n\' + bdwidth", //$NON-NLS-1$
+				"\'Enter bandwidth in form of: Value bs/kbs/mbs\'", //$NON-NLS-1$
+				"self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)", //$NON-NLS-1$
+				"self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)  or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)", //$NON-NLS-1$
+				"self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::BUS)", //$NON-NLS-1$
+				"self.oclIsKindOf(hwplatforminstance::BridgeInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance) ", //$NON-NLS-1$
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	private static HardwareOCLFactory getInstance() {
+		HardwareOCLFactory instance = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+				.getInstance().getHardwareOCLFactory();
+		if (instance == null) {
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+					.getInstance().setHardwareOCLFactory(
+							instance = new HardwareOCLFactory());
+		}
+		return instance;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static String getExpressionBody(int index) {
+		return getInstance().expressionBodies[index];
 	}
 
 	/**
@@ -39,66 +112,13 @@ public class HardwareOCLFactory {
 	 */
 	public static de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression getExpression(
 			int index, EClassifier context, Map<String, EClassifier> environment) {
-		HardwareOCLFactory cached = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-				.getInstance().getHardwareOCLFactory();
-		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
-					.getInstance().setHardwareOCLFactory(
-							cached = new HardwareOCLFactory());
-		}
+		HardwareOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] {
-					"--self.name".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then \n--\tself.name.toString() +\' :\'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name.toString()\n--else \n--\tself.name.toString()\n--endif \n-- in\n--nameToShow".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter frequency in form of:  Value Hz/MHz/GHz\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter frequency in form of:  Value Hz/MHz/GHz\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let mips : String = if self.MIPS.oclIsUndefined() then \'null\' else self.MIPS.toString() endif in\n--let cpi : String = if self.CPI.oclIsUndefined() then \'null\' else self.CPI.toString() endif in\n--\'MIPS: \'+mips + \' / CPI: \'+cpi".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\n--let protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\n--portName +\': \' +  \'\\n\' + protocolName".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--proto".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Bridge\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsKindOf(hwplatforminstance::HWPortInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--proto + \'\\n\' + bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)  or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::BUS)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsKindOf(hwplatforminstance::BridgeInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance) ".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-			};
 			cached.expressions[index] = getExpression(
-					exprBodies[index],
+					cached.expressionBodies[index],
 					context,
 					environment == null ? Collections
 							.<String, EClassifier> emptyMap() : environment);

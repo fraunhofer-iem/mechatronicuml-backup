@@ -87,55 +87,14 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
+		List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
+				.getResourceRepository_1000SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-
-	@SuppressWarnings("rawtypes")
-	protected List getSemanticChildrenViewDescriptors() {
-		// Begin added to switch off toplevel canonical behavior:
-		if (!canonicalNodes) {
-			View containerView = (View) getHost().getModel();
-			List<View> childViews = containerView.getChildren();
-			List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor>();
-
-			for (View childView : childViews) {
-				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] {
-								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID });
-
-				// Note: childElement can be null, for diagram annotations!
-				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor(
-							childElement, visualID));
-					continue;
-				}
-			}
-			return result;
-		}
-		// End added
-
-		View viewObject = (View) getHost().getModel();
-		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
-				.getResourceRepository_1000SemanticChildren(viewObject);
-
 	}
 
 	/**
@@ -172,7 +131,9 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
+				.getResourceRepository_1000SemanticChildren((View) getHost()
+						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -195,10 +156,7 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
-
-				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (next.getModelElement().equals(semanticElement)) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -280,28 +238,22 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 				}
 				continue;
 			}
-			if (nextDiagramLink.getSource() != null
-					&& nextDiagramLink.getTarget() != null) {
-				EObject diagramLinkObject = nextDiagramLink.getElement();
-				EObject diagramLinkSrc = nextDiagramLink.getSource()
-						.getElement();
-				EObject diagramLinkDst = nextDiagramLink.getTarget()
-						.getElement();
-				for (Iterator<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> linkDescriptorsIterator = linkDescriptors
-						.iterator(); linkDescriptorsIterator.hasNext();) {
-					de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
-							.next();
-					if (diagramLinkObject == nextLinkDescriptor
-							.getModelElement()
-							&& diagramLinkSrc == nextLinkDescriptor.getSource()
-							&& diagramLinkDst == nextLinkDescriptor
-									.getDestination()
-							&& diagramLinkVisualID == nextLinkDescriptor
-									.getVisualID()) {
-						linksIterator.remove();
-						linkDescriptorsIterator.remove();
-						break;
-					}
+			EObject diagramLinkObject = nextDiagramLink.getElement();
+			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+			for (Iterator<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+					.iterator(); linkDescriptorsIterator.hasNext();) {
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
+						.next();
+				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
+						&& diagramLinkSrc == nextLinkDescriptor.getSource()
+						&& diagramLinkDst == nextLinkDescriptor
+								.getDestination()
+						&& diagramLinkVisualID == nextLinkDescriptor
+								.getVisualID()) {
+					linksIterator.remove();
+					linkDescriptorsIterator.remove();
+					break;
 				}
 			}
 		}
@@ -510,7 +462,7 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
 			Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
@@ -518,7 +470,7 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
 			Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}

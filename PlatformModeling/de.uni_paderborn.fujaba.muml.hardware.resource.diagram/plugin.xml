@@ -145,7 +145,7 @@
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
-   	</extension>
+   </extension>
 
 <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
       <?gmfgen generated="true"?>
@@ -157,7 +157,7 @@
   	     id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
-   	</extension>
+   </extension>
 
 <extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="true"?>
@@ -753,74 +753,8 @@
 	   </menuContribution>
 	</extension>
 
-<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
 
-<extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.hardware.resource.category"
-            name="resource">
-         
-         <child
-               class="ResourceRepository"
-               packageNsUri="http://www.fujaba.de/muml/hardware/hwresource/1.0/">
-         </child>
-         
-      </category>
-   </extension>
 
-<extension
-         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
-      <?gmfgen generated="true"?>
-      <editor
-            preferencesHint="de.uni_paderborn.fujaba.muml.hardware.resource.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorID"
-            editorName="Hardware Editor"
-            fileExtension="resource_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.resource.category"
-            modelId="Hardware">
-         <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/hardware/hwresource/1.0/"
-               className="ResourceRepository">
-         </diagramElement>
-         
-         <topLevelNode
-               domainElement="Device"
-               semanticHint="2001">
-         </topLevelNode>
-         
-         <topLevelNode
-               domainElement="StructuredResource"
-               semanticHint="2002">
-         </topLevelNode>
-         
-         <topLevelNode
-               domainElement="Bus"
-               semanticHint="2003">
-         </topLevelNode>
-         
-         <topLevelNode
-               domainElement="Link"
-               semanticHint="2004">
-         </topLevelNode>
-         
-         <topLevelNode
-               domainElement="CommunicationProtocolRepository"
-               semanticHint="2005">
-         </topLevelNode>
-         
-      </editor>
-   </extension>
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
       <?gmfgen generated="true"?>
       <propertyContributor
@@ -844,21 +778,19 @@
              id="property.tab.DiagramPropertySection"
              label="%tab.diagram"/>
           <propertyTab
-                       category="extra"
+             category="domain"
              id="property.tab.domain"
              label="%tab.domain"/>
           <propertyTab
-                       category="domain"
+             category="extra"
              id="property.tab.general"
              label="%tab.general"/>
           <propertyTab
-          			 category="domain"
-             afterTab="property.tab.general"
+             category="extra"
              id="property.tab.documentation"
              label="%tab.documentation"/>
           <propertyTab
-          			 category="domain"
-             afterTab="property.tab.general"
+             category="extra"
              id="property.tab.extensions"
              label="%tab.extensions"/>
       </propertyTabs>
@@ -915,6 +847,22 @@
          </propertySection>
       </propertySections>
    </extension>
+<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.InitDiagram"
+            nameFilter="*.fujaba"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+
 
 
 

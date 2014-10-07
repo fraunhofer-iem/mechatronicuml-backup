@@ -128,25 +128,18 @@ public class HardwareValidationDecoratorProvider extends AbstractProvider
 
 			public void run() {
 				try {
-					// BEGIN Added null checks
-					TransactionalEditingDomain editingDomain = TransactionUtil
-							.getEditingDomain(fdiagram);
-					if (editingDomain != null) {
-						editingDomain.runExclusive(new Runnable() {
+					TransactionUtil.getEditingDomain(fdiagram).runExclusive(
+							new Runnable() {
 
-							public void run() {
-								for (Iterator it = decorators.iterator(); it
-										.hasNext();) {
-									IDecorator decorator = (IDecorator) it
-											.next();
-									if (decorator != null) {
+								public void run() {
+									for (Iterator it = decorators.iterator(); it
+											.hasNext();) {
+										IDecorator decorator = (IDecorator) it
+												.next();
 										decorator.refresh();
 									}
 								}
-							}
-						});
-					}
-					// END Added null checks
+							});
 				} catch (Exception e) {
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 							.getInstance().logError(

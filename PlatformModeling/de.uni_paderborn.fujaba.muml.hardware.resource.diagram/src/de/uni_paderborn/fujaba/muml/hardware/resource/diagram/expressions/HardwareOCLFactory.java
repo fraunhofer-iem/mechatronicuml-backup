@@ -29,8 +29,83 @@ public class HardwareOCLFactory {
 	/**
 	 * @generated
 	 */
+	private final String[] expressionBodies;
+
+	/**
+	 * @generated
+	 */
 	protected HardwareOCLFactory() {
 		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression[47];
+		this.expressionBodies = new String[] {
+				"\'device\'", //$NON-NLS-1$
+				"\'hw-port\'", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\nportName.concat(\' : \').concat(protocolName)", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + self.deviceType.toString()", //$NON-NLS-1$
+				"\'StructuredResource\'", //$NON-NLS-1$
+				"\'Com.Resource\'", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif", //$NON-NLS-1$
+				"let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\nlet upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\n\'[\' + lowerBound + \'..\' + upperBound + \']\'", //$NON-NLS-1$
+				"\'cache\'", //$NON-NLS-1$
+				"\' : Cache\'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"let nbSet : String = if self.nbSets.oclIsUndefined() then \'null\' else self.nbSets.toString() endif in\n\'#Sets:\' + nbSet", //$NON-NLS-1$
+				"let associa : String =  if self.associativity.oclIsUndefined() then \'null\' else self.associativity.toString() endif in\n\'Associativity:\' + associa", //$NON-NLS-1$
+				"\'processor\'", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"\' : Processor\'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\'#Cores: \' + self. nbCores.toString()", //$NON-NLS-1$
+				"let arch: String = if self.architecture.oclIsUndefined() then \'null\' else self.architecture.toString() endif in\nlet fam: String =  if self.family.oclIsUndefined() then \'null\' else self.family.toString() endif in\n\'Architecture: \' + arch + \' Family: \' + fam", //$NON-NLS-1$
+				"\'PLD\'", //$NON-NLS-1$
+				"\' : PLD\'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\'memory\'", //$NON-NLS-1$
+				"if self.memoryType.oclIsUndefined() then \':\' else \': \'.concat(self.memoryType.toString()) endif", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"let access: String = if self.memoryAccess.oclIsUndefined() then \'null\' else self.memoryAccess.toString() endif in\n\'Access: \' + access", //$NON-NLS-1$
+				"let volatile: String = if self.isVolatile.oclIsUndefined() then \'null\' else self.isVolatile.toString() endif in\n\'Volatile: \' + volatile", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"0", //$NON-NLS-1$
+				"let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\nbdwidth", //$NON-NLS-1$
+				"\'Enter bandwidth in form of: Value bs/kbs/mbs\'", //$NON-NLS-1$
+				"let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\nproto", //$NON-NLS-1$
+				"0", //$NON-NLS-1$
+				"let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\nbdwidth", //$NON-NLS-1$
+				"\'Enter: bs/kbs/mbs\'", //$NON-NLS-1$
+				"let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\nproto", //$NON-NLS-1$
+				"\'ProtocolRepository\'", //$NON-NLS-1$
+				"\'BusProtocol\'", //$NON-NLS-1$
+				"\'LinkProtocol\'", //$NON-NLS-1$
+				"self.oclIsTypeOf(hwresource::Processor) implies self.oclAsType(hwresource::Processor).ownedCache.oclIsUndefined()", //$NON-NLS-1$
+				"self.oclAsType(ecore::EObject).eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer()\nand self.oclIsTypeOf(hwresource::Cache)\n", //$NON-NLS-1$
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	private static HardwareOCLFactory getInstance() {
+		HardwareOCLFactory instance = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+				.getInstance().getHardwareOCLFactory();
+		if (instance == null) {
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+					.getInstance().setHardwareOCLFactory(
+							instance = new HardwareOCLFactory());
+		}
+		return instance;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static String getExpressionBody(int index) {
+		return getInstance().expressionBodies[index];
 	}
 
 	/**
@@ -38,68 +113,13 @@ public class HardwareOCLFactory {
 	 */
 	public static de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression getExpression(
 			int index, EClassifier context, Map<String, EClassifier> environment) {
-		HardwareOCLFactory cached = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.getInstance().getHardwareOCLFactory();
-		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-					.getInstance().setHardwareOCLFactory(
-							cached = new HardwareOCLFactory());
-		}
+		HardwareOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] {
-					"--\'device\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'hw-port\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\n--let protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\n--portName.concat(\' : \').concat(protocolName)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + self.deviceType.toString()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'StructuredResource\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Com.Resource\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\n--let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\n--\'[\' + lowerBound + \'..\' + upperBound + \']\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'cache\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' : Cache\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let nbSet : String = if self.nbSets.oclIsUndefined() then \'null\' else self.nbSets.toString() endif in\n--\'#Sets:\' + nbSet".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let associa : String =  if self.associativity.oclIsUndefined() then \'null\' else self.associativity.toString() endif in\n--\'Associativity:\' + associa".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'processor\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' : Processor\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'#Cores: \' + self. nbCores.toString()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let arch: String = if self.architecture.oclIsUndefined() then \'null\' else self.architecture.toString() endif in\n--let fam: String =  if self.family.oclIsUndefined() then \'null\' else self.family.toString() endif in\n--\'Architecture: \' + arch + \' Family: \' + fam".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'PLD\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' : PLD\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'memory\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--if self.memoryType.oclIsUndefined() then \':\' else \': \'.concat(self.memoryType.toString()) endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let access: String = if self.memoryAccess.oclIsUndefined() then \'null\' else self.memoryAccess.toString() endif in\n--\'Access: \' + access".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let volatile: String = if self.isVolatile.oclIsUndefined() then \'null\' else self.isVolatile.toString() endif in\n--\'Volatile: \' + volatile".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--proto".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter: bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--proto".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'ProtocolRepository\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'BusProtocol\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'LinkProtocol\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(hwresource::Processor) implies self.oclAsType(hwresource::Processor).ownedCache.oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclAsType(ecore::EObject).eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer()\n--and self.oclIsTypeOf(hwresource::Cache)\n--".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-			};
 			cached.expressions[index] = getExpression(
-					exprBodies[index],
+					cached.expressionBodies[index],
 					context,
 					environment == null ? Collections
 							.<String, EClassifier> emptyMap() : environment);

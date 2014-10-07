@@ -42,8 +42,7 @@ public class HWPlatformCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		// This command must not be used. No elements are allowed to be created, because this is a phantom node, which derives the container node.
-		return false;
+		return true;
 	}
 
 	/**

@@ -60,50 +60,14 @@ public class ActuatorInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
+		List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
+				.getActuatorInstance_2005SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-
-	@SuppressWarnings("rawtypes")
-	protected List getSemanticChildrenViewDescriptors() {
-		// Begin added to switch off toplevel canonical behavior:
-		if (!canonicalNodes) {
-			View containerView = (View) getHost().getModel();
-			List<View> childViews = containerView.getChildren();
-			List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor>();
-
-			for (View childView : childViews) {
-				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID });
-
-				// Note: childElement can be null, for diagram annotations!
-				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor(
-							childElement, visualID));
-					continue;
-				}
-			}
-			return result;
-		}
-		// End added
-
-		View viewObject = (View) getHost().getModel();
-		return de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
-				.getActuatorInstance_2005SemanticChildren(viewObject);
-
 	}
 
 	/**
@@ -131,7 +95,9 @@ public class ActuatorInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
+				.getActuatorInstance_2005SemanticChildren((View) getHost()
+						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -154,10 +120,7 @@ public class ActuatorInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
-
-				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (next.getModelElement().equals(semanticElement)) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but

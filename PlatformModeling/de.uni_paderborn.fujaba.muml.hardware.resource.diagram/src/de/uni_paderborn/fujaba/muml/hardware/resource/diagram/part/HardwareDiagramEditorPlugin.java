@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.tooling.runtime.LogHelper;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -32,6 +33,11 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public static final String ID = "de.uni_paderborn.fujaba.muml.hardware.resource.diagram"; //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	private LogHelper myLogHelper;
 
 	/**
 	 * @generated
@@ -81,6 +87,7 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
+		myLogHelper = new LogHelper(this);
 		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
 				getPreferenceStore());
 		adapterFactory = createAdapterFactory();
@@ -119,15 +126,6 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
-		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
-		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
-				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
-
-		// Custom Factories with positive priority
-		factories.addAll(positivePriorityFactories);
-
-		// Default Factories
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
 		factories
@@ -161,9 +159,6 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
-
-		// Custom Factories with negative priority
-		factories.addAll(negativePriorityFactories);
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
@@ -304,54 +299,34 @@ public class HardwareDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void logError(String error) {
-		logError(error, null);
+		getLogHelper().logError(error, null);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logError(String error, Throwable throwable) {
-		if (error == null && throwable != null) {
-			error = throwable.getMessage();
-		}
-		getLog().log(
-				new Status(IStatus.ERROR, HardwareDiagramEditorPlugin.ID,
-						IStatus.OK, error, throwable));
-		debug(error, throwable);
+		getLogHelper().logError(error, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message) {
-		logInfo(message, null);
+		getLogHelper().logInfo(message, null);
 	}
 
 	/**
 	 * @generated
 	 */
 	public void logInfo(String message, Throwable throwable) {
-		if (message == null && throwable != null) {
-			message = throwable.getMessage();
-		}
-		getLog().log(
-				new Status(IStatus.INFO, HardwareDiagramEditorPlugin.ID,
-						IStatus.OK, message, throwable));
-		debug(message, throwable);
+		getLogHelper().logInfo(message, throwable);
 	}
 
 	/**
 	 * @generated
 	 */
-	private void debug(String message, Throwable throwable) {
-		if (!isDebugging()) {
-			return;
-		}
-		if (message != null) {
-			System.err.println(message);
-		}
-		if (throwable != null) {
-			throwable.printStackTrace();
-		}
+	public LogHelper getLogHelper() {
+		return myLogHelper;
 	}
 }

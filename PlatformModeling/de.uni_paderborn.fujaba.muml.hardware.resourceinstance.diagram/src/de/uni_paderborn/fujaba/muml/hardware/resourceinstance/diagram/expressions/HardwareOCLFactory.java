@@ -29,8 +29,68 @@ public class HardwareOCLFactory {
 	/**
 	 * @generated
 	 */
+	private final String[] expressionBodies;
+
+	/**
+	 * @generated
+	 */
 	protected HardwareOCLFactory() {
 		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression[32];
+		this.expressionBodies = new String[] {
+				"let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\nportName +\': \' +  \'\\n\' + protocolName", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
+				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif", //$NON-NLS-1$
+				"\'Enter frequency in form of:  Value Hz/MHz/GHz\'", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif", //$NON-NLS-1$
+				"\'Enter frequency in form of:  Value Hz/MHz/GHz\'", //$NON-NLS-1$
+				"let mips : String = if self.MIPS.oclIsUndefined() then \'null\' else self.MIPS.toString() endif in\nlet cpi : String = if self.CPI.oclIsUndefined() then \'null\' else self.CPI.toString() endif in\n\'MIPS: \'+mips + \' / CPI: \'+cpi", //$NON-NLS-1$
+				"0", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
+				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
+				"\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif", //$NON-NLS-1$
+				"0", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
+				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
+				"\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif", //$NON-NLS-1$
+				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
+				"\' \'", //$NON-NLS-1$
+		};
+	}
+
+	/**
+	 * @generated
+	 */
+	private static HardwareOCLFactory getInstance() {
+		HardwareOCLFactory instance = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
+				.getInstance().getHardwareOCLFactory();
+		if (instance == null) {
+			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
+					.getInstance().setHardwareOCLFactory(
+							instance = new HardwareOCLFactory());
+		}
+		return instance;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static String getExpressionBody(int index) {
+		return getInstance().expressionBodies[index];
 	}
 
 	/**
@@ -38,53 +98,13 @@ public class HardwareOCLFactory {
 	 */
 	public static de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareAbstractExpression getExpression(
 			int index, EClassifier context, Map<String, EClassifier> environment) {
-		HardwareOCLFactory cached = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-				.getInstance().getHardwareOCLFactory();
-		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-					.getInstance().setHardwareOCLFactory(
-							cached = new HardwareOCLFactory());
-		}
+		HardwareOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] {
-					"--let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\n--let protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\n--portName +\': \' +  \'\\n\' + protocolName".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter frequency in form of:  Value Hz/MHz/GHz\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter frequency in form of:  Value Hz/MHz/GHz\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let mips : String = if self.MIPS.oclIsUndefined() then \'null\' else self.MIPS.toString() endif in\n--let cpi : String = if self.CPI.oclIsUndefined() then \'null\' else self.CPI.toString() endif in\n--\'MIPS: \'+mips + \' / CPI: \'+cpi".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-			};
 			cached.expressions[index] = getExpression(
-					exprBodies[index],
+					cached.expressionBodies[index],
 					context,
 					environment == null ? Collections
 							.<String, EClassifier> emptyMap() : environment);

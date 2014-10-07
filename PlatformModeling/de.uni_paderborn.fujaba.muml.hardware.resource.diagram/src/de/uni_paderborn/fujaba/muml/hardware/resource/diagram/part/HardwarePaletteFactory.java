@@ -13,6 +13,8 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
+import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 /**
  * @generated
@@ -91,7 +93,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDevice1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.Device1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.Device1CreationTool_desc,
 				Collections
@@ -111,7 +113,7 @@ public class HardwarePaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3001);
 		types.add(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3008);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationResource2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationResource2CreationTool_desc,
 				types);
@@ -127,7 +129,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createStructuredResource1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.StructuredResource1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.StructuredResource1CreationTool_desc,
 				Collections
@@ -144,7 +146,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createMemoryResource2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.MemoryResource2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.MemoryResource2CreationTool_desc,
 				Collections
@@ -161,7 +163,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCache3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.Cache3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.Cache3CreationTool_desc,
 				Collections
@@ -178,7 +180,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProgrammableLogicDevice4CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.ProgrammableLogicDevice4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.ProgrammableLogicDevice4CreationTool_desc,
 				Collections
@@ -195,7 +197,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProcessor5CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.Processor5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.Processor5CreationTool_desc,
 				Collections
@@ -212,7 +214,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProcessorOwnedCache6CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.ProcessorOwnedCache6CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.ProcessorOwnedCache6CreationTool_desc,
 				Collections
@@ -228,7 +230,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createBusResource1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.BusResource1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.BusResource1CreationTool_desc,
 				Collections
@@ -245,7 +247,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createLinkResource2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.LinkResource2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.LinkResource2CreationTool_desc,
 				Collections
@@ -262,7 +264,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProtocolRepository1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.ProtocolRepository1CreationTool_title,
 				null,
 				Collections
@@ -278,7 +280,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPointPointProtocol2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.PointPointProtocol2CreationTool_title,
 				null,
 				Collections
@@ -294,7 +296,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createBusProtocol3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.BusProtocol3CreationTool_title,
 				null,
 				Collections
@@ -304,63 +306,5 @@ public class HardwarePaletteFactory {
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class NodeToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> elementTypes;
-
-		/**
-		 * @generated
-		 */
-		private NodeToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LinkToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> relationshipTypes;
-
-		/**
-		 * @generated
-		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> relationshipTypes) {
-			super(title, description, null, null);
-			this.relationshipTypes = relationshipTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
 	}
 }
