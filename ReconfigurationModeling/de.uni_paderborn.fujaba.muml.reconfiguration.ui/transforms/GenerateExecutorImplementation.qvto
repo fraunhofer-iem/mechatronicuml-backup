@@ -1390,6 +1390,7 @@ helper generateEmbeddedCIAdaptationExecuteThreePhaseState(inout rootNode : RootN
 	curTransition.guard := createSimpleCompareGuardExpression(finishedVar, 'true');
 	curTransition.synchronization := new Synchronization(getSynchronizationChannel(statechart, genSyncChanExecutorFinished2PC), SynchronizationKind::SEND, null);
 	
+	return;
 }
 
 --  generates the contents of the embeddedCI.Adaptation.Abort state
