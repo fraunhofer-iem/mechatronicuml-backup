@@ -86,8 +86,7 @@ public interface ComponentVariable extends ComponentStoryPatternVariable {
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(ReconfigurableComponent)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getComponentVariable_Type()
-	 * @model required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.eContainer().eContainer().eContainer().eContainer().oclAsType(reconfiguration::ReconfigurationRule).reconfiguredComponent'"
+	 * @model required="true"
 	 * @generated
 	 */
 	ReconfigurableComponent getType();

@@ -32,12 +32,7 @@
         eType="#//PartVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
         eType="#//ConnectorVariable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurableComponent"
-        volatile="true" transient="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.eContainer().eContainer().eContainer().eContainer().oclAsType(reconfiguration::ReconfigurationRule).reconfiguredComponent"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurableComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortVariable" abstract="true" eSuperTypes="#//ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">

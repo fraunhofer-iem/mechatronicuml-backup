@@ -4,11 +4,12 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -67,14 +68,14 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 	protected EList<ConnectorVariable> connectorVariables;
 
 	/**
-	 * The cached setting delegate for the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentstorypatternPackage.Literals.COMPONENT_VARIABLE__TYPE).getSettingDelegate();
+	protected ReconfigurableComponent type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,7 +138,15 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 	 * @generated
 	 */
 	public ReconfigurableComponent getType() {
-		return (ReconfigurableComponent)TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (ReconfigurableComponent)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.COMPONENT_VARIABLE__TYPE, oldType, type));
+			}
+		}
+		return type;
 	}
 
 	/**
@@ -146,7 +155,7 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 	 * @generated
 	 */
 	public ReconfigurableComponent basicGetType() {
-		return (ReconfigurableComponent)TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+		return type;
 	}
 
 	/**
@@ -155,7 +164,10 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 	 * @generated
 	 */
 	public void setType(ReconfigurableComponent newType) {
-		TYPE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newType);
+		ReconfigurableComponent oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.COMPONENT_VARIABLE__TYPE, oldType, type));
 	}
 
 	/**
@@ -264,7 +276,7 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 			case ComponentstorypatternPackage.COMPONENT_VARIABLE__CONNECTOR_VARIABLES:
 				return connectorVariables != null && !connectorVariables.isEmpty();
 			case ComponentstorypatternPackage.COMPONENT_VARIABLE__TYPE:
-				return TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -3,26 +3,18 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable} object.
@@ -31,13 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class MultiPortVariableItemProvider
-	extends PortVariableItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends PortVariableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -140,6 +126,11 @@ public class MultiPortVariableItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentstorypatternPackage.Literals.MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES,
+				 ComponentstorypatternFactory.eINSTANCE.createSinglePortVariable()));
 	}
 
 }
