@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cic" nsURI="http://www.fujaba.de/reachabilityGraph/cic/0.4.0"
+    nsPrefix="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic">
+  <eClassifiers xsi:type="ecore:EClass" name="CICZoneGraphState" eSuperTypes="../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc/model/RTSCReachabilityGraph.ecore#//ZoneGraphState">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cic" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

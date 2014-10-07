@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML ReachabilityAnalysis ReachabilityGraph RTCP
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ University of Paderborn
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic,
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.impl,
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.storydriven.core;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.runtime;visibility:=reexport,
+ de.uni_paderborn.fujaba.udbm;bundle-version="0.3.0"
+Bundle-ActivationPolicy: lazy
