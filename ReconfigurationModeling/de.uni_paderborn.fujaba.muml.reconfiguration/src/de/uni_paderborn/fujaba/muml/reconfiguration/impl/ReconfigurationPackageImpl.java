@@ -925,6 +925,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getStructuralCondition_ReconfigurableComponent() {
+		return (EReference)structuralConditionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReconfigurableComponent() {
 		return reconfigurableComponentEClass;
 	}
@@ -1214,6 +1223,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		structuralConditionEClass = createEClass(STRUCTURAL_CONDITION);
 		createEReference(structuralConditionEClass, STRUCTURAL_CONDITION__PARAMETERS);
+		createEReference(structuralConditionEClass, STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT);
 
 		reconfigurationPortAssemblyConnectorEClass = createEClass(RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR);
 
@@ -1397,7 +1407,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEAttribute(getExecutorSpecificationEntry_Id(), ecorePackage.getEInt(), "id", "0", 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationRuleEClass, ReconfigurationRule.class, "ReconfigurationRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReconfigurationRule_ReconfiguredComponent(), this.getReconfigurableComponent(), null, "reconfiguredComponent", null, 0, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationRule_ReconfiguredComponent(), this.getReconfigurableComponent(), null, "reconfiguredComponent", null, 1, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRule_Wcet(), theValuetypePackage.getTimeValue(), null, "wcet", null, 0, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRule_Signature(), this.getSignature(), this.getSignature_ReconfigurationRule(), "signature", null, 1, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReconfigurationRule_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ReconfigurationRule.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1409,6 +1419,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		initEClass(structuralConditionEClass, StructuralCondition.class, "StructuralCondition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructuralCondition_Parameters(), theBehaviorPackage.getParameter(), null, "parameters", null, 0, -1, StructuralCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructuralCondition_ReconfigurableComponent(), this.getReconfigurableComponent(), null, "reconfigurableComponent", null, 1, 1, StructuralCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationPortAssemblyConnectorEClass, ReconfigurationPortAssemblyConnector.class, "ReconfigurationPortAssemblyConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

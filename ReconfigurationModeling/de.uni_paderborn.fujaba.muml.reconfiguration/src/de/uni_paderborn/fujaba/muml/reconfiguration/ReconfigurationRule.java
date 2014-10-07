@@ -50,7 +50,7 @@ public interface ReconfigurationRule extends CommentableElement {
 	 * @return the value of the '<em>Reconfigured Component</em>' reference.
 	 * @see #setReconfiguredComponent(ReconfigurableComponent)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_ReconfiguredComponent()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	ReconfigurableComponent getReconfiguredComponent();

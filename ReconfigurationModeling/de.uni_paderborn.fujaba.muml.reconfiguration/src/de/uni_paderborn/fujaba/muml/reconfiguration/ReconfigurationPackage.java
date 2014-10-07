@@ -2215,13 +2215,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int STRUCTURAL_CONDITION__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Reconfigurable Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Structural Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURAL_CONDITION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int STRUCTURAL_CONDITION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortAssemblyConnectorImpl <em>Port Assembly Connector</em>}' class.
@@ -3212,6 +3221,17 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getStructuralCondition_Parameters();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition#getReconfigurableComponent <em>Reconfigurable Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reconfigurable Component</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition#getReconfigurableComponent()
+	 * @see #getStructuralCondition()
+	 * @generated
+	 */
+	EReference getStructuralCondition_ReconfigurableComponent();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3978,6 +3998,14 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRUCTURAL_CONDITION__PARAMETERS = eINSTANCE.getStructuralCondition_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconfigurable Component</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT = eINSTANCE.getStructuralCondition_ReconfigurableComponent();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableComponentImpl <em>Reconfigurable Component</em>}' class.

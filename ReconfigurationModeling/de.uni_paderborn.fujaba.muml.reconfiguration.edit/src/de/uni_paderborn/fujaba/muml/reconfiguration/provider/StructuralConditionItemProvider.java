@@ -15,12 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
@@ -62,6 +57,7 @@ public class StructuralConditionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addReconfigurableComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,6 +80,28 @@ public class StructuralConditionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Reconfigurable Component feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReconfigurableComponentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StructuralCondition_reconfigurableComponent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StructuralCondition_reconfigurableComponent_feature", "_UI_StructuralCondition_type"),
+				 ReconfigurationPackage.Literals.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

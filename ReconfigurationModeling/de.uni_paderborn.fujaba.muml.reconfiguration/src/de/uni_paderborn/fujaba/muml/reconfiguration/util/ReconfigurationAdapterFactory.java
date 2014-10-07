@@ -2,34 +2,53 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.util;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
-
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.*;
-
+import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
+import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationController;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
+import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
 import de.uni_paderborn.fujaba.muml.types.DataType;
-
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notifier;
-
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

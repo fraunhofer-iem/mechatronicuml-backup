@@ -21,6 +21,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
 
@@ -33,6 +34,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl#getReconfigurableComponent <em>Reconfigurable Component</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,6 +70,16 @@ public abstract class StructuralConditionImpl extends NamedElementImpl implement
 	 * @ordered
 	 */
 	protected EList<Parameter> parameters;
+
+	/**
+	 * The cached value of the '{@link #getReconfigurableComponent() <em>Reconfigurable Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReconfigurableComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReconfigurableComponent reconfigurableComponent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +138,44 @@ public abstract class StructuralConditionImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ReconfigurableComponent getReconfigurableComponent() {
+		if (reconfigurableComponent != null && reconfigurableComponent.eIsProxy()) {
+			InternalEObject oldReconfigurableComponent = (InternalEObject)reconfigurableComponent;
+			reconfigurableComponent = (ReconfigurableComponent)eResolveProxy(oldReconfigurableComponent);
+			if (reconfigurableComponent != oldReconfigurableComponent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT, oldReconfigurableComponent, reconfigurableComponent));
+			}
+		}
+		return reconfigurableComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurableComponent basicGetReconfigurableComponent() {
+		return reconfigurableComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReconfigurableComponent(ReconfigurableComponent newReconfigurableComponent) {
+		ReconfigurableComponent oldReconfigurableComponent = reconfigurableComponent;
+		reconfigurableComponent = newReconfigurableComponent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT, oldReconfigurableComponent, reconfigurableComponent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -147,6 +197,9 @@ public abstract class StructuralConditionImpl extends NamedElementImpl implement
 				return getComment();
 			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				return getParameters();
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT:
+				if (resolve) return getReconfigurableComponent();
+				return basicGetReconfigurableComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +220,9 @@ public abstract class StructuralConditionImpl extends NamedElementImpl implement
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT:
+				setReconfigurableComponent((ReconfigurableComponent)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -185,6 +241,9 @@ public abstract class StructuralConditionImpl extends NamedElementImpl implement
 			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				getParameters().clear();
 				return;
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT:
+				setReconfigurableComponent((ReconfigurableComponent)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,6 +260,8 @@ public abstract class StructuralConditionImpl extends NamedElementImpl implement
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT:
+				return reconfigurableComponent != null;
 		}
 		return super.eIsSet(featureID);
 	}

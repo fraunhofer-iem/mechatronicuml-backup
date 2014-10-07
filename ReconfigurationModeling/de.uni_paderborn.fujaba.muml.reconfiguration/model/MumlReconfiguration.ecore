@@ -431,7 +431,7 @@
       <details key="documentation" value="A reconfiguration rule describes a modification of the internal structure of a &#xD;&#xA;reconfigurable component. It has a Signature that defines the name of the &#xD;&#xA;reconfiguration rule as well as its input and output parameters."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfiguredComponent"
-        eType="#//ReconfigurableComponent">
+        lowerBound="1" eType="#//ReconfigurableComponent">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The component on which the reconfiguration rule is to be applied."/>
       </eAnnotations>
@@ -495,6 +495,8 @@
         <details key="documentation" value="Input parameters provided to the structural condition."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurableComponent"
+        lowerBound="1" eType="#//ReconfigurableComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortAssemblyConnector"
       eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortConnector">
