@@ -11,6 +11,7 @@
 <rm:locator searchPathRef="ModelicaAdapter" failOnError="false"/>
 <rm:locator searchPathRef="ape-ecore" failOnError="false"/>
 <rm:locator searchPathRef="SimulinkAdapter" failOnError="false"/>
+<rm:locator searchPathRef="UDBM" failOnError="false"/>
 
 <rm:searchPath name="default">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="local" mutable="true" source="true">
@@ -110,4 +111,13 @@
     </rm:provider>
 </rm:searchPath>
   
+<rm:searchPath name="UDBM">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+        <rm:property key="buckminster.source" value="false"/>
+         <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/UDBM/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+</rm:searchPath>  
+ 
 </rm:rmap>
