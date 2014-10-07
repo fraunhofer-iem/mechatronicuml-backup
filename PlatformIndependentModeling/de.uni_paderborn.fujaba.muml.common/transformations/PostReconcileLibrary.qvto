@@ -86,9 +86,9 @@ mapping inout GenCompartment::addEnlargeCompoartmentEditPolicy(){
 
 mapping inout GenChildNode::addEnlargeCompartmentEditPolicy(){
 	var enlargeCompartmentBehavior : CustomBehaviour;
-	if(self.behaviour[CustomBehaviour]->select(behavior|behavior.key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE")->isEmpty()) then{
+	if(self.behaviour[CustomBehaviour]->select(behavior|behavior.key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE")->isEmpty()) then{
 		enlargeCompartmentBehavior:=new CustomBehaviour();
-		enlargeCompartmentBehavior.key:="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE";
+		enlargeCompartmentBehavior.key:="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE";
 		enlargeCompartmentBehavior.editPolicyQualifiedClassName:="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.EnlargeCompartmentEditPolicy";
 		self.behaviour+=enlargeCompartmentBehavior;
 	}endif;

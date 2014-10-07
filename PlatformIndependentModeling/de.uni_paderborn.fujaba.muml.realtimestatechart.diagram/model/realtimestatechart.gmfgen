@@ -303,7 +303,7 @@
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureTransitionLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="-20"/>
         </viewmap>
-        <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.WRAPPING_LABEL_MULTI_LINE_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.WrappingLabelMultiLineEditPolicy"/>
+        <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.WRAPPING_LABEL_MULTI_LINE_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.WrappingLabelMultiLineEditPolicy"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.9"/>
       </labels>
       <labels visualID="6006" editPartClassName="WrappingLabel9EditPart" itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy" notationViewFactoryClassName="TransitionLabelViewFactory" readOnly="true" alignment="SOURCE">

@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 
-import de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles;
+import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomBorderItemLocator;
 

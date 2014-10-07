@@ -52,7 +52,7 @@ new de.uni_paderborn.fujaba.muml.common.edit.policies.BorderItemSelectionEditPol
 	Muml bug #468: LinkConstraints: Create an explanation Tooltip why a link is forbidden.
 «ENDREM»
 «DEFINE errorFeedbackEditPolicy FOR gmfgen::GenNode-»
-	installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+	installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 		new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
 «ENDDEFINE»
 

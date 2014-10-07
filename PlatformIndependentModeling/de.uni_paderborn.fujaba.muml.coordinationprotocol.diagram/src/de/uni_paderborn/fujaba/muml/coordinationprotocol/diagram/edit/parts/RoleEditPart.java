@@ -83,7 +83,7 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.RoleItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.OPEN_ROLE,

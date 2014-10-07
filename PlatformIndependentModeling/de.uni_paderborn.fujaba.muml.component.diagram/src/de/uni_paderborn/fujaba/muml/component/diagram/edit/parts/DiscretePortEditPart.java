@@ -84,7 +84,7 @@ public class DiscretePortEditPart extends BorderedBorderItemEditPart {
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.DiscretePortItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.OPEN_ROLE,
