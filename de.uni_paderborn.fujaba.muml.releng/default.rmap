@@ -21,7 +21,6 @@
     </rm:provider>
   </rm:searchPath>
 
-
 <rm:searchPath name="eclipse_luna">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
   	<rm:property key="buckminster.source" value="false"/>
@@ -29,6 +28,7 @@
       <rm:uri format="http://download.eclipse.org/releases/luna?importType=binary" />
     </rm:provider>
 </rm:searchPath>
+
 <rm:searchPath name="MUMLCore">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
@@ -36,7 +36,8 @@
       <rm:uri format="file:///data/jenkins/jobs/MUMLCore/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+</rm:searchPath>
+ 
 <rm:searchPath name="ape-properties">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
@@ -44,7 +45,8 @@
       <rm:uri format="file:///data/jenkins/jobs/APE/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+</rm:searchPath>
+  
 <rm:searchPath name="ape-ecore">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
@@ -52,7 +54,8 @@
       <rm:uri format="file:///data/jenkins/jobs/APE Ecore Editor/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+</rm:searchPath>
+
 <rm:searchPath name="PlatformIndependentModeling">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
@@ -60,7 +63,8 @@
       <rm:uri format="file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+ </rm:searchPath>
+ 
 <rm:searchPath name="Uppaal">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
@@ -68,15 +72,17 @@
       <rm:uri format="file:///data/jenkins/jobs/Uppaal/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="UppaalAdapter">
+</rm:searchPath>
+
+<rm:searchPath name="UppaalAdapter">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="file:///data/jenkins/jobs/UppaalAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+</rm:searchPath>
+
 <rm:searchPath name="PlatformModeling">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
@@ -84,7 +90,8 @@
       <rm:uri format="file:///data/jenkins/jobs/PlatformModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+</rm:searchPath>
+
 <rm:searchPath name="ModelicaAdapter">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
@@ -92,7 +99,8 @@
       <rm:uri format="file:///data/jenkins/jobs/MUML-ModelicaAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+</rm:searchPath>
+
 <rm:searchPath name="SimulinkAdapter">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
         <rm:property key="buckminster.source" value="false"/>
@@ -100,5 +108,6 @@
       <rm:uri format="file:///data/jenkins/jobs/SimulinkAdapter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+</rm:searchPath>
+  
 </rm:rmap>
