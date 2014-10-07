@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_6rb6wM0PEeKgKa329oIpmg" type="Coordination Protocol" name="NextSectionFree.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_7NgGAM0PEeKgKa329oIpmg" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_7NgGAs0PEeKgKa329oIpmg" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_7NgGA80PEeKgKa329oIpmg" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_7NgGBc0PEeKgKa329oIpmg" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../SectionEntry.fujaba#_7M6QIM0PEeKgKa329oIpmg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7NgGBM0PEeKgKa329oIpmg" x="68" y="16"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_7NgGBs0PEeKgKa329oIpmg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_7NgGCM0PEeKgKa329oIpmg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_7NgGCc0PEeKgKa329oIpmg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../SectionEntry.fujaba#_7NW8EM0PEeKgKa329oIpmg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7NgGB80PEeKgKa329oIpmg" x="56" y="88"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_7NgGCs0PEeKgKa329oIpmg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_7NgGDM0PEeKgKa329oIpmg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_7NgGDc0PEeKgKa329oIpmg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../SectionEntry.fujaba#_7NW8FM0PEeKgKa329oIpmg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7NgGC80PEeKgKa329oIpmg" x="164" y="88"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../SectionEntry.fujaba#_7M6QIM0PEeKgKa329oIpmg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7NgGAc0PEeKgKa329oIpmg" x="203" y="62" width="266" height="179"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_6rb6wc0PEeKgKa329oIpmg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../SectionEntry.fujaba#_HgnqkMOmEeKt4K__LJLJ8w"/>
+  <edges xmi:type="notation:Connector" xmi:id="_7N8x8M0PEeKgKa329oIpmg" type="4006" source="_7NgGBs0PEeKgKa329oIpmg" target="_7NgGCs0PEeKgKa329oIpmg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_7N8x8c0PEeKgKa329oIpmg" fontName="Segoe UI"/>
+    <element xmi:type="protocol:RoleConnector" href="../SectionEntry.fujaba#_7NW8GM0PEeKgKa329oIpmg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7N8x8s0PEeKgKa329oIpmg" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+  </edges>
+</notation:Diagram>
