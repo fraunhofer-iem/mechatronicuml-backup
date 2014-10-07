@@ -3,9 +3,5 @@
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
     <cq:property key="target.ws" value="*"/>
-<<<<<<< .mine
 	<cq:advisorNode namePatter=".*" useMaterialization="false" useTargetPlatform="true"/>
-=======
-    <cq:advisorNode useMaterialization="false" useTargetPlatform="true"/>
->>>>>>> .r13036
 </cq:componentQuery>
