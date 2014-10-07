@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.figures;
+package de.uni_paderborn.fujaba.common.figures;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;

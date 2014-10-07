@@ -27,7 +27,7 @@
 
 «REM» FIX: Muml-Bug #58 «ENDREM»
 «AROUND borderItemSelectionEP FOR gmfgen::GenNode-»
-new de.uni_paderborn.fujaba.muml.common.edit.policies.BorderItemSelectionEditPolicy()
+new de.uni_paderborn.fujaba.common.edit.policies.BorderItemSelectionEditPolicy()
 «ENDAROUND»
 
 
@@ -44,7 +44,7 @@ new de.uni_paderborn.fujaba.muml.common.edit.policies.BorderItemSelectionEditPol
 «ENDREM»
 «DEFINE connectionConfigureHelperGraphicalNodeEditPolicy FOR gmfgen::GenNode-»
 	installEditPolicy(org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE,
-		new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 «ENDDEFINE»
 
 
@@ -53,7 +53,7 @@ new de.uni_paderborn.fujaba.muml.common.edit.policies.BorderItemSelectionEditPol
 «ENDREM»
 «DEFINE errorFeedbackEditPolicy FOR gmfgen::GenNode-»
 	installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-		new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
+		new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 «ENDDEFINE»
 
 «REM»

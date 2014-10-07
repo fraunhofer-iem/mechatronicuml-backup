@@ -32,7 +32,7 @@
 	}
 «ENDAROUND»
 
-
+«REM»
 «AROUND getPropertySourceMethod FOR gmfgen::GenCustomPropertyTab-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public org.eclipse.ui.views.properties.IPropertySource getPropertySource(Object object) {
@@ -52,33 +52,5 @@
 		}
 		return null;
 	}
-«ENDAROUND»
-
-«REM»
-«AROUND additions FOR gmfgen::GenCustomPropertyTab-»
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	private int refreshProhibitions = 0;
-	
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	public void refresh() {
-		if (refreshProhibitions <= 0) {
-			super.refresh();
-		}
-	}
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	public synchronized void pushRefreshProhibition() {
-		this.refreshProhibitions++;
-	}
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	@Override
-	public synchronized void popRefreshProhibition() {
-		this.refreshProhibitions--;
-	}
-	
 «ENDAROUND»
 «ENDREM»
