@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Utilities
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.utilities;singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.utilities;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.utilities.UtilitiesPlugin
 Require-Bundle: org.eclipse.ui,

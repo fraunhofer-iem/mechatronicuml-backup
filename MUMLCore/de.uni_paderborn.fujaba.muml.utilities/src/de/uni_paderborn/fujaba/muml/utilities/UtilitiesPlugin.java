@@ -20,7 +20,7 @@ public class UtilitiesPlugin extends AbstractUIPlugin {
 	private AdapterFactory adapterFactory;
 
 	// The plug-in ID
-	public static final String ID = "de.uni_paderborn.fujaba.muml.utilities"; //$NON-NLS-1$
+	public static final String ID = "de.uni_paderborn.fujaba.utilities"; //$NON-NLS-1$
 
 	// The shared instance
 	private static UtilitiesPlugin plugin;
