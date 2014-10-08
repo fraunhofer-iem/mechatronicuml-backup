@@ -2,33 +2,26 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
-import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.impl.AbstractStoryDecisionDiagramImpl;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
+
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
+import de.uni_paderborn.fujaba.muml.verification.sdd.impl.AbstractStoryDecisionDiagramImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,6 +32,8 @@ import org.storydriven.core.CorePackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.ComponentStoryDecisionDiagramImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.ComponentStoryDecisionDiagramImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.ComponentStoryDecisionDiagramImpl#getReconfigurableComponent <em>Reconfigurable Component</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.ComponentStoryDecisionDiagramImpl#isInvariantSDD <em>Invariant SDD</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +69,36 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 	 * @ordered
 	 */
 	protected EList<Parameter> parameters;
+
+	/**
+	 * The cached value of the '{@link #getReconfigurableComponent() <em>Reconfigurable Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReconfigurableComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReconfigurableComponent reconfigurableComponent;
+
+	/**
+	 * The default value of the '{@link #isInvariantSDD() <em>Invariant SDD</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInvariantSDD()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean INVARIANT_SDD_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isInvariantSDD() <em>Invariant SDD</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInvariantSDD()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean invariantSDD = INVARIANT_SDD_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,6 +157,65 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ReconfigurableComponent getReconfigurableComponent() {
+		if (reconfigurableComponent != null && reconfigurableComponent.eIsProxy()) {
+			InternalEObject oldReconfigurableComponent = (InternalEObject)reconfigurableComponent;
+			reconfigurableComponent = (ReconfigurableComponent)eResolveProxy(oldReconfigurableComponent);
+			if (reconfigurableComponent != oldReconfigurableComponent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT, oldReconfigurableComponent, reconfigurableComponent));
+			}
+		}
+		return reconfigurableComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurableComponent basicGetReconfigurableComponent() {
+		return reconfigurableComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReconfigurableComponent(ReconfigurableComponent newReconfigurableComponent) {
+		ReconfigurableComponent oldReconfigurableComponent = reconfigurableComponent;
+		reconfigurableComponent = newReconfigurableComponent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT, oldReconfigurableComponent, reconfigurableComponent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isInvariantSDD() {
+		return invariantSDD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInvariantSDD(boolean newInvariantSDD) {
+		boolean oldInvariantSDD = invariantSDD;
+		invariantSDD = newInvariantSDD;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__INVARIANT_SDD, oldInvariantSDD, invariantSDD));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -153,6 +237,11 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 				return getComment();
 			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__PARAMETERS:
 				return getParameters();
+			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT:
+				if (resolve) return getReconfigurableComponent();
+				return basicGetReconfigurableComponent();
+			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__INVARIANT_SDD:
+				return isInvariantSDD();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,6 +262,12 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
+			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT:
+				setReconfigurableComponent((ReconfigurableComponent)newValue);
+				return;
+			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__INVARIANT_SDD:
+				setInvariantSDD((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -191,6 +286,12 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__PARAMETERS:
 				getParameters().clear();
 				return;
+			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT:
+				setReconfigurableComponent((ReconfigurableComponent)null);
+				return;
+			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__INVARIANT_SDD:
+				setInvariantSDD(INVARIANT_SDD_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -207,6 +308,10 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT:
+				return reconfigurableComponent != null;
+			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__INVARIANT_SDD:
+				return invariantSDD != INVARIANT_SDD_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -227,6 +332,7 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 		if (baseClass == StructuralCondition.class) {
 			switch (derivedFeatureID) {
 				case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__PARAMETERS: return ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS;
+				case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT: return ReconfigurationPackage.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT;
 				default: return -1;
 			}
 		}
@@ -249,6 +355,7 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 		if (baseClass == StructuralCondition.class) {
 			switch (baseFeatureID) {
 				case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS: return ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__PARAMETERS;
+				case ReconfigurationPackage.STRUCTURAL_CONDITION__RECONFIGURABLE_COMPONENT: return ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT;
 				default: return -1;
 			}
 		}
@@ -267,6 +374,8 @@ public class ComponentStoryDecisionDiagramImpl extends AbstractStoryDecisionDiag
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
+		result.append(", invariantSDD: ");
+		result.append(invariantSDD);
 		result.append(')');
 		return result.toString();
 	}

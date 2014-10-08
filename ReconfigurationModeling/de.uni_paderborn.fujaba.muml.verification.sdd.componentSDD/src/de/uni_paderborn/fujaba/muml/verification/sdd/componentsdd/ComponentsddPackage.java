@@ -2,13 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd;
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;
-
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -132,13 +132,31 @@ public interface ComponentsddPackage extends EPackage {
 	int COMPONENT_STORY_DECISION_DIAGRAM__PARAMETERS = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Reconfigurable Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STORY_DECISION_DIAGRAM__RECONFIGURABLE_COMPONENT = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Invariant SDD</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STORY_DECISION_DIAGRAM__INVARIANT_SDD = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Component Story Decision Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_DECISION_DIAGRAM_FEATURE_COUNT = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT + 2;
+	int COMPONENT_STORY_DECISION_DIAGRAM_FEATURE_COUNT = SDDPackage.ABSTRACT_STORY_DECISION_DIAGRAM_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.ComponentStoryPatternNodeImpl <em>Component Story Pattern Node</em>}' class.
@@ -289,6 +307,17 @@ public interface ComponentsddPackage extends EPackage {
 	EClass getComponentStoryDecisionDiagram();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram#isInvariantSDD <em>Invariant SDD</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Invariant SDD</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram#isInvariantSDD()
+	 * @see #getComponentStoryDecisionDiagram()
+	 * @generated
+	 */
+	EAttribute getComponentStoryDecisionDiagram_InvariantSDD();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryPatternNode <em>Component Story Pattern Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -361,6 +390,14 @@ public interface ComponentsddPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT_STORY_DECISION_DIAGRAM = eINSTANCE.getComponentStoryDecisionDiagram();
+
+		/**
+		 * The meta object literal for the '<em><b>Invariant SDD</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_STORY_DECISION_DIAGRAM__INVARIANT_SDD = eINSTANCE.getComponentStoryDecisionDiagram_InvariantSDD();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.ComponentStoryPatternNodeImpl <em>Component Story Pattern Node</em>}' class.

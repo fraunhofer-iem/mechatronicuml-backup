@@ -2,23 +2,16 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.provider;
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.componentstorypattern.provider.ComponentStoryPatternEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.provider.SDDEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.storydriven.core.provider.CoreEditPlugin;
-
 import org.storydriven.storydiagrams.provider.StorydiagramsEditPlugin;
+
+import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.provider.ComponentStoryPatternEditPlugin;
+import de.uni_paderborn.fujaba.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
+import de.uni_paderborn.fujaba.muml.verification.sdd.provider.SDDEditPlugin;
 
 /**
  * This is the central singleton for the ComponentSDD edit plugin.

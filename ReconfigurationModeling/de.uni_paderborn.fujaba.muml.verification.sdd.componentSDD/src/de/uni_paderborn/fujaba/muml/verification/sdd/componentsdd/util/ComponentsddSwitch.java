@@ -2,26 +2,23 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.util;
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram;
-import de.uni_paderborn.fujaba.muml.verification.sdd.Node;
-import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
-
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
+import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
+import de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram;
+import de.uni_paderborn.fujaba.muml.verification.sdd.Node;
+import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryPatternNode;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.EvaluateComponentSDDExpression;
 
 /**
  * <!-- begin-user-doc -->

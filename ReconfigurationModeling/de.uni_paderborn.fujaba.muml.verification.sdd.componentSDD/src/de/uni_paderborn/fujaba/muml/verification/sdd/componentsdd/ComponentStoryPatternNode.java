@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
-
 import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
 
 /**

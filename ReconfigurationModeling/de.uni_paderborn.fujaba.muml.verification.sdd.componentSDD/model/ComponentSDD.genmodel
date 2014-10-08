@@ -8,7 +8,9 @@
   <foreignModel>ComponentSDD.ecore</foreignModel>
   <genPackages prefix="Componentsdd" basePackage="de.uni_paderborn.fujaba.muml.verification.sdd"
       disposableProviderFactory="true" ecorePackage="ComponentSDD.ecore#/">
-    <genClasses ecoreClass="ComponentSDD.ecore#//ComponentStoryDecisionDiagram"/>
+    <genClasses ecoreClass="ComponentSDD.ecore#//ComponentStoryDecisionDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentSDD.ecore#//ComponentStoryDecisionDiagram/invariantSDD"/>
+    </genClasses>
     <genClasses ecoreClass="ComponentSDD.ecore#//ComponentStoryPatternNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentSDD.ecore#//ComponentStoryPatternNode/pattern"/>
     </genClasses>

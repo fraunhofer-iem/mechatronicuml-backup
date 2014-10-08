@@ -2,23 +2,21 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
-
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryPatternNode;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddFactory;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.EvaluateComponentSDDExpression;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,6 +125,15 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentStoryDecisionDiagram_InvariantSDD() {
+		return (EAttribute)componentStoryDecisionDiagramEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComponentStoryPatternNode() {
 		return componentStoryPatternNodeEClass;
 	}
@@ -187,6 +194,7 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 
 		// Create classes and their features
 		componentStoryDecisionDiagramEClass = createEClass(COMPONENT_STORY_DECISION_DIAGRAM);
+		createEAttribute(componentStoryDecisionDiagramEClass, COMPONENT_STORY_DECISION_DIAGRAM__INVARIANT_SDD);
 
 		componentStoryPatternNodeEClass = createEClass(COMPONENT_STORY_PATTERN_NODE);
 		createEReference(componentStoryPatternNodeEClass, COMPONENT_STORY_PATTERN_NODE__PATTERN);
@@ -221,6 +229,7 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 		// Obtain other dependent packages
 		SDDPackage theSDDPackage = (SDDPackage)EPackage.Registry.INSTANCE.getEPackage(SDDPackage.eNS_URI);
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ComponentstorypatternPackage theComponentstorypatternPackage = (ComponentstorypatternPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI);
 
 		// Create type parameters
@@ -235,6 +244,7 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentStoryDecisionDiagramEClass, ComponentStoryDecisionDiagram.class, "ComponentStoryDecisionDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponentStoryDecisionDiagram_InvariantSDD(), theEcorePackage.getEBoolean(), "invariantSDD", null, 0, 1, ComponentStoryDecisionDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentStoryPatternNodeEClass, ComponentStoryPatternNode.class, "ComponentStoryPatternNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentStoryPatternNode_Pattern(), theComponentstorypatternPackage.getComponentStoryPattern(), null, "pattern", null, 1, 1, ComponentStoryPatternNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -2,20 +2,16 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl;
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryPatternNode;
-import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.impl.PatternNodeImpl;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryPatternNode;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
+import de.uni_paderborn.fujaba.muml.verification.sdd.impl.PatternNodeImpl;
 
 /**
  * <!-- begin-user-doc -->
