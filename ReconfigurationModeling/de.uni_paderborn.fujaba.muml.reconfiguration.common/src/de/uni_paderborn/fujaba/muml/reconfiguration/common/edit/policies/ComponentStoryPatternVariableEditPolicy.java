@@ -15,8 +15,8 @@ import org.eclipse.swt.graphics.RGB;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyUtils;
-import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
+import de.uni_paderborn.fujaba.common.edit.policies.EditPolicyUtils;
+import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 
