@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<org.codefirst.SimpleThemeDecorator plugin="simple-theme-plugin@0.3">
-  <cssUrl>https://trac.cs.upb.de/mechatronicuml/raw-attachment/ticket/1003/theme.css</cssUrl>
-  <jsUrl>https://trac.cs.upb.de/mechatronicuml/raw-attachment/ticket/1003/theme.js</jsUrl>
-</org.codefirst.SimpleThemeDecorator>

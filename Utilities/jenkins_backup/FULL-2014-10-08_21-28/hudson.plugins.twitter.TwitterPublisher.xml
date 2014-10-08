@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<hudson.plugins.twitter.TwitterPublisher_-DescriptorImpl plugin="twitter@0.7">
-  <token></token>
-  <tokenSecret></tokenSecret>
-  <hudsonUrl>http://muml-build.cs.upb.de/</hudsonUrl>
-  <onlyOnFailureOrRecovery>false</onlyOnFailureOrRecovery>
-  <includeUrl>false</includeUrl>
-</hudson.plugins.twitter.TwitterPublisher_-DescriptorImpl>
