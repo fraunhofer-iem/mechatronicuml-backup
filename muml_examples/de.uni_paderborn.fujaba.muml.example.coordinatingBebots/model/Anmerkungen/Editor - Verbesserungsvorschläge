@@ -1,0 +1,69 @@
+Komfortfunktion/Usability:
+Bei angezeigten Fehlern könnten in den Properties die betreffenden Stellen markiert sein. Wenn also ein Fehler an der Transition auftritt, wäre es gut, wenn in den Properties genau markiert ist, an welcher Stelle ein Eintrag fehlt.
+
+Der Reiter Appearance sollte eventuell aus den Properties genommen werden.
+
+Bei den einzelnen Punkten noch die erwarteten Datentypen angeben! Und dies auch bei der Fehlermeldung berücksichtigen.
+Beispiel:
+minDelay bei einem Connector: Das Feld lässt sich auch mit Text füllen. Dieser wird zwar rot unterstrichen. Eine Rückmeldung warum der eingetragene Wert falsch ist wird aber nicht 
+gegeben. Auch die Fehlermeldung an dem Connector im Diagramm besagt lediglich, dass die Angabe des minDelay fehlt.
+
+
+
+Funktion, dass man mit Rechtsklick auf einen Port direkt eine neue Statechart anlegen kann und diese im Port als Behavior gesetzt wird.
+
+An Stellen, wo man Parameter neu erstellen kann, sollte es auch möglich sein, dass falls es einen gewissen Datentyp noch nicht gibt, diesen an der Stelle noch zu erstellen. Es ist völlig undurchsichtig, wie man neue Datentypen anlegt!
+
+Schlechte Benennung der Portnamen an Atomic Components. M. m. n. sollte auch das Protokoll mit angegeben werden, und nicht nur der Rollenname, denn die Rolle Sender kommt zigmal vor.
+
+
+
+Größe von Regionen nur schwer veränderbar.
+
+Schwerwiegende Usability:
+
+Das Erstellen von neuen Diagrammen ist absolut umständlich.
+
+Es gibt zum Teil nicht nachvollziehbare Fehlermeldungen! Beispiel an Transition: "The required feature 'value of' must be set". Was soll das heißen? Wo ist hier genau der Fehler zu beheben?
+
+
+Ein Slash sollte bei Transitionen immer angezeigt werden, sobald an ihnen auch nur ein MessageEvent ist, da sonst nicht klar ist, ob dieses konsumiert oder produziert wird!!
+
+Beim Aufklappen von Reitern sollte nicht automatisch Modelländerungen vorgenommen werden. Wenn man bspw. auf Synchronization klickt, wird automatisch ein Synchronisationskanal angelegt. Das erwartet man hier nicht, 
+die Bedeutung des "+" Zeichens dann missverstanden wird. 
+
+Daraus ergab  sich mein erster Bug in den Properties:
+Es werden bei der Bearbeitung von den Properties "null" Werte gesetzt, nur weil man Reiter öffnet. Beispiel: Ich öffne den Channel Reiter an einer 
+Transition. Dadurch wird ein channel "null!" an die Transition geschrieben. Das liegt ja genau an dem oberen Us. Problem.
+
+
+Selten tritt ein Nullpointer beim Erstellen von Ports auf Komponenten auf. Danach muss der Editor neu gestartet werden, ansonsten lassen sich keine Ports mehr erstellen..
+
+Man sollte sich nicht in einer structured_component sich selbst als component_part angeben.
+
+
+
+
+Lästige Bugs:
+
+
+Bei  Message Events in Statecharts wird immer noch Fehler angezeigt, auch wenn schon ein Port für die Statechart mit den entsprechenden events erstellt wurde.
+
+Role Connector wird gelöscht beim Erstellen von Ports und Zuweisung des Connectors von Role auf Port? --> vermutlich kein Fehler
+
+Nullpointer exceptions im Coordinationprotocol Editor beim Zuweisen von Receiver/ Sender Message Types für Roles.
+
+
+Fehlende Funktionalität: 
+
+Bei der Erstelleung eines ArrayTypes wird die Größe des Arrays festgelegt. Die Größe sollte aber erst beim Erstellen einer Variable dieses Typs erstellt werden. Ansonsten würde man für 
+ein Array unendlich viele Arraytypen anlegen müssen, für jede Größe eins.
+
+
+Es ist nicht möglich, Message Types in einem Messagetype Diagramm zu löschen.
+
+Im Komponentendiagrammen ist das Hinzufügen von Ports zu Atomic Components über die Menüleiste rechts nicht möglich.
+
+Falsche Funktionalität
+
+Entry Events sollten nicht auf triggered gesetzt werden können.

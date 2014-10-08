@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_tE-nEMRGEeKovq4g5K7Xxw" type="Message Type" name="Member.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_tE-nEsRGEeKovq4g5K7Xxw" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_tE-nFMRGEeKovq4g5K7Xxw" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_tE-nFcRGEeKovq4g5K7Xxw" type="7010">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_tE-nFsRGEeKovq4g5K7Xxw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_tE-nF8RGEeKovq4g5K7Xxw"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../ConvoyCoordinationProtocol.fujaba#_JUj8cGCVEeK08IWBu_4Dfg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tE-nE8RGEeKovq4g5K7Xxw" x="72" y="84" height="145"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_tE-nEcRGEeKovq4g5K7Xxw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../ConvoyCoordinationProtocol.fujaba#_IpHLsGCVEeK08IWBu_4Dfg"/>
+</notation:Diagram>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r2996)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:platform="http://www.fujaba.de/muml/hardware/platform/1.0/" xmlns:platforminstance="http://www.fujaba.de/muml/hardware/platforminstance/1.0/" xmlns:resourcetype="http://www.fujaba.de/muml/hardware/resourcetype/1.0/" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_0cnksIZyEeOoU-03Rq9qXQ">
+  <categories xmi:id="_0cnksYZyEeOoU-03Rq9qXQ" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0cnksoZyEeOoU-03Rq9qXQ" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0cnks4ZyEeOoU-03Rq9qXQ" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0cnktIZyEeOoU-03Rq9qXQ" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0cnktYZyEeOoU-03Rq9qXQ" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0cnktoZyEeOoU-03Rq9qXQ" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0cnkt4ZyEeOoU-03Rq9qXQ" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_0cnkuIZyEeOoU-03Rq9qXQ" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_10k2IIZyEeOoU-03Rq9qXQ" key="de.uni_paderborn.fujaba.muml.hardware.resource.category" name="resource">
+    <modelElements xsi:type="resourcetype:ResourceTypeRepository" xmi:id="_10nSYIZyEeOoU-03Rq9qXQ">
+      <resourceTypes xsi:type="resourcetype:StructuredResource" xmi:id="_4Y2wwIZyEeOoU-03Rq9qXQ" name="Arduino Due">
+        <hwports xmi:id="_SyLGgIZ2EeOoU-03Rq9qXQ" name="CAN_Port" protocol="_Q5yokIZ2EeOoU-03Rq9qXQ">
+          <cardinality xmi:id="_SyLtkIZ2EeOoU-03Rq9qXQ">
+            <lowerBound xmi:id="_SyLtkYZ2EeOoU-03Rq9qXQ"/>
+            <upperBound xmi:id="_SyMUoIZ2EeOoU-03Rq9qXQ"/>
+          </cardinality>
+        </hwports>
+        <hwports xmi:id="_nGH3IIaSEeOoU-03Rq9qXQ" name="wirelessPort" portType="LINK" protocol="_AZPhMIaTEeOoU-03Rq9qXQ">
+          <cardinality xmi:id="_nGH3IYaSEeOoU-03Rq9qXQ">
+            <lowerBound xmi:id="_o_w5UIaSEeOoU-03Rq9qXQ" value="0"/>
+            <upperBound xmi:id="_o_yHcIaSEeOoU-03Rq9qXQ"/>
+          </cardinality>
+        </hwports>
+        <hwports xmi:id="_JECRoIaUEeOoU-03Rq9qXQ" name="sensorPort" portType="LINK" protocol="_N7koUIaUEeOoU-03Rq9qXQ">
+          <cardinality xmi:id="_JEDfwIaUEeOoU-03Rq9qXQ">
+            <lowerBound xmi:id="_PfJ7gI5WEeO8ctMX5xOxyw" value="0"/>
+            <upperBound xmi:id="_PfLJoI5WEeO8ctMX5xOxyw" value="5"/>
+          </cardinality>
+        </hwports>
+        <hwports xmi:id="_NIYRYI5WEeO8ctMX5xOxyw" name="motorPort" portType="LINK" protocol="_Qd5bsI5WEeO8ctMX5xOxyw">
+          <cardinality xmi:id="_NIeYAI5WEeO8ctMX5xOxyw">
+            <lowerBound xmi:id="_OPtF0I5WEeO8ctMX5xOxyw" value="0"/>
+            <upperBound xmi:id="_OPuT8I5WEeO8ctMX5xOxyw" value="2"/>
+          </cardinality>
+        </hwports>
+        <embeddedAtomicResources xsi:type="resourcetype:MemoryResource" xmi:id="_sZqTgIZ1EeOoU-03Rq9qXQ" name="flash" memoryType="FLASH"/>
+        <embeddedAtomicResources xsi:type="resourcetype:MemoryResource" xmi:id="_0_dEoIZ1EeOoU-03Rq9qXQ" name="sRam" isVolatile="true"/>
+        <embeddedAtomicResources xsi:type="resourcetype:Processor" xmi:id="_-bTUAIZ1EeOoU-03Rq9qXQ" name="cpu" family="ARM Cortex-M3">
+          <nbCores xmi:id="_-bWXUIZ1EeOoU-03Rq9qXQ"/>
+        </embeddedAtomicResources>
+      </resourceTypes>
+      <resourceTypes xsi:type="resourcetype:Device" xmi:id="_J2S4AIZzEeOoU-03Rq9qXQ" name="motor" deviceType="ACTUATOR">
+        <hwports xmi:id="_V024wIaUEeOoU-03Rq9qXQ" name="motor_port" portType="LINK" protocol="_Qd5bsI5WEeO8ctMX5xOxyw">
+          <cardinality xmi:id="_V06jIIaUEeOoU-03Rq9qXQ">
+            <lowerBound xmi:id="_V06jIYaUEeOoU-03Rq9qXQ"/>
+            <upperBound xmi:id="_V07KMIaUEeOoU-03Rq9qXQ"/>
+          </cardinality>
+        </hwports>
+      </resourceTypes>
+      <resourceTypes xsi:type="resourcetype:Device" xmi:id="_bpj98IZ2EeOoU-03Rq9qXQ" name="sensor">
+        <hwports xmi:id="_YUrKIIaUEeOoU-03Rq9qXQ" name="sensorPort" portType="LINK" protocol="_N7koUIaUEeOoU-03Rq9qXQ">
+          <cardinality xmi:id="_YUsYQIaUEeOoU-03Rq9qXQ">
+            <lowerBound xmi:id="_YUsYQYaUEeOoU-03Rq9qXQ"/>
+            <upperBound xmi:id="_YUs_UIaUEeOoU-03Rq9qXQ"/>
+          </cardinality>
+        </hwports>
+      </resourceTypes>
+      <protocols xsi:type="resourcetype:BusProtocol" xmi:id="_Q5yokIZ2EeOoU-03Rq9qXQ" name="CAN" isEventTriggered="true" furtherInformation=""/>
+      <protocols xsi:type="resourcetype:LinkProtocol" xmi:id="_AZPhMIaTEeOoU-03Rq9qXQ" name="WiFi" isTimeTriggered="true" furtherInformation=""/>
+      <protocols xsi:type="resourcetype:LinkProtocol" xmi:id="_N7koUIaUEeOoU-03Rq9qXQ" name="Digital" isEventTriggered="true" linkProtocol="OTHER"/>
+      <protocols xsi:type="resourcetype:LinkProtocol" xmi:id="_Qd5bsI5WEeO8ctMX5xOxyw" name="Analog" isEventTriggered="true" furtherInformation="" linkProtocol="ANALOG"/>
+    </modelElements>
+    <modelElements xsi:type="platform:ResourceInstanceRepository" xmi:id="_M-cX4IZ3EeOoU-03Rq9qXQ">
+      <resourceInstances xsi:type="platform:StructuredResourceInstance" xmi:id="_NsH9QIZ3EeOoU-03Rq9qXQ" name="Arduino Due" resourceType="_4Y2wwIZyEeOoU-03Rq9qXQ">
+        <hwportInstances xsi:type="platform:BusPortInstance" xmi:id="_aowsoIaUEeOoU-03Rq9qXQ" name="CAN_Port 1" hwportType="_SyLGgIZ2EeOoU-03Rq9qXQ"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_g1LyoIaUEeOoU-03Rq9qXQ" name="wlan" hwportType="_nGH3IIaSEeOoU-03Rq9qXQ"/>
+        <embeddedAtomicResourceInstances xsi:type="platform:ProcessingMemoryInstance" xmi:id="_aoiqMIaUEeOoU-03Rq9qXQ" name="SRAM" resourceType="_0_dEoIZ1EeOoU-03Rq9qXQ">
+          <memorySize xmi:id="_yHr1MIaUEeOoU-03Rq9qXQ" value="96.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_aojRQIaUEeOoU-03Rq9qXQ" name="flash" resourceType="_sZqTgIZ1EeOoU-03Rq9qXQ">
+          <memorySize xmi:id="_vot4YIaUEeOoU-03Rq9qXQ" value="512.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="platform:ProcessorInstance" xmi:id="_aojRQoaUEeOoU-03Rq9qXQ" name="processor" resourceType="_-bTUAIZ1EeOoU-03Rq9qXQ">
+          <frequency xmi:id="_6D8hIIaUEeOoU-03Rq9qXQ" value="84.0" unit="MHz"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="platform:StructuredResourceInstance" xmi:id="_QI8lAIZ3EeOoU-03Rq9qXQ" name="Arduino Due" resourceType="_4Y2wwIZyEeOoU-03Rq9qXQ">
+        <hwportInstances xsi:type="platform:BusPortInstance" xmi:id="_XWuUsI5WEeO8ctMX5xOxyw" name="CAN_Port 1" hwportType="_SyLGgIZ2EeOoU-03Rq9qXQ"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_8ab38I5WEeO8ctMX5xOxyw" name="sensor_port" hwportType="_JECRoIaUEeOoU-03Rq9qXQ"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="__tsYcI5WEeO8ctMX5xOxyw" name="motor_port_right" hwportType="_NIYRYI5WEeO8ctMX5xOxyw"/>
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_G9NGcJTWEeOdvtTDMPzExw" name="motor_port_left" hwportType="_NIYRYI5WEeO8ctMX5xOxyw"/>
+        <embeddedAtomicResourceInstances xsi:type="platform:ProcessorInstance" xmi:id="_XWtGkI5WEeO8ctMX5xOxyw" name="processor" resourceType="_-bTUAIZ1EeOoU-03Rq9qXQ">
+          <frequency xmi:id="_XWtGkY5WEeO8ctMX5xOxyw"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_XWtGko5WEeO8ctMX5xOxyw" name="flash" resourceType="_sZqTgIZ1EeOoU-03Rq9qXQ">
+          <memorySize xmi:id="_9H8W0I5ZEeO86oWkeFJwZA" value="512.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="platform:ProcessingMemoryInstance" xmi:id="_XWtGlI5WEeO8ctMX5xOxyw" name="SRAM" resourceType="_0_dEoIZ1EeOoU-03Rq9qXQ">
+          <memorySize xmi:id="_-A70UI5ZEeO86oWkeFJwZA" value="96.0" unit="KByte"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="platform:SensorInstance" xmi:id="_fD3oMIajEeOoU-03Rq9qXQ" name="sensor" resourceType="_bpj98IZ2EeOoU-03Rq9qXQ">
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_fO6akIajEeOoU-03Rq9qXQ" name="hw-port 1" hwportType="_YUrKIIaUEeOoU-03Rq9qXQ"/>
+      </resourceInstances>
+      <resourceInstances xsi:type="platform:ActuatorInstance" xmi:id="_x-y4II5ZEeO86oWkeFJwZA" name="motor" resourceType="_J2S4AIZzEeOoU-03Rq9qXQ">
+        <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_yWniQI5ZEeO86oWkeFJwZA" name="motor_port 1" hwportType="_V024wIaUEeOoU-03Rq9qXQ"/>
+      </resourceInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_NC4vAIajEeOoU-03Rq9qXQ" key="de.uni_paderborn.fujaba.muml.hardware.platform.category" name="platform">
+    <modelElements xsi:type="platform:HWPlatform" xmi:id="_NC4vAYajEeOoU-03Rq9qXQ" name="Cooperative">
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_QgWUYIajEeOoU-03Rq9qXQ" name="widi_board" resourceInstanceType="_NsH9QIZ3EeOoU-03Rq9qXQ">
+        <cardinality xmi:id="_QgwkEIajEeOoU-03Rq9qXQ">
+          <lowerBound xmi:id="_eS1D0I5ZEeO86oWkeFJwZA"/>
+          <upperBound xmi:id="_eTBREI5ZEeO86oWkeFJwZA"/>
+        </cardinality>
+        <hwportParts xmi:id="_Rhj5wIajEeOoU-03Rq9qXQ" name="CAN_Port 1" hwPortInstance="_aowsoIaUEeOoU-03Rq9qXQ"/>
+        <hwportParts xmi:id="_Rhkg0IajEeOoU-03Rq9qXQ" name="wlan" hwPortInstance="_g1LyoIaUEeOoU-03Rq9qXQ"/>
+      </embeddedPlatformParts>
+      <delegationPorts xsi:type="platform:BusPortInstance" xmi:id="_rkHcsIajEeOoU-03Rq9qXQ" name="can" hwportType="_SyLGgIZ2EeOoU-03Rq9qXQ" delegation="_y7ZMQIajEeOoU-03Rq9qXQ"/>
+      <delegationPorts xsi:type="platform:LinkPortInstance" xmi:id="_t6feMIajEeOoU-03Rq9qXQ" name="wifi" hwportType="_nGH3IIaSEeOoU-03Rq9qXQ" delegation="_zaTV0IajEeOoU-03Rq9qXQ"/>
+      <delegations xmi:id="_y7ZMQIajEeOoU-03Rq9qXQ" hwPortInstance="_rkHcsIajEeOoU-03Rq9qXQ" hwPortPart="_Rhj5wIajEeOoU-03Rq9qXQ"/>
+      <delegations xmi:id="_zaTV0IajEeOoU-03Rq9qXQ" hwPortInstance="_t6feMIajEeOoU-03Rq9qXQ" hwPortPart="_Rhkg0IajEeOoU-03Rq9qXQ"/>
+    </modelElements>
+    <modelElements xsi:type="platform:HWPlatform" xmi:id="_i3zD0I5ZEeO86oWkeFJwZA" name="ACC">
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_4OacEI5ZEeO86oWkeFJwZA" name="arduino_motor" resourceInstanceType="_QI8lAIZ3EeOoU-03Rq9qXQ">
+        <cardinality xmi:id="_4OfUkI5ZEeO86oWkeFJwZA">
+          <lowerBound xmi:id="_hSo6gI5yEeOSxLJvYquPQg"/>
+          <upperBound xmi:id="_hSvoMI5yEeOSxLJvYquPQg"/>
+        </cardinality>
+        <hwportParts xmi:id="_45n8QI5ZEeO86oWkeFJwZA" name="CAN_Port 1" hwPortInstance="_XWuUsI5WEeO8ctMX5xOxyw"/>
+        <hwportParts xmi:id="_45n8QY5ZEeO86oWkeFJwZA" name="sensor_port" hwPortInstance="_8ab38I5WEeO8ctMX5xOxyw" connectedMedia="_-sDIkJTVEeOdvtTDMPzExw"/>
+        <hwportParts xmi:id="_45n8Qo5ZEeO86oWkeFJwZA" name="motor_port" hwPortInstance="__tsYcI5WEeO8ctMX5xOxyw" connectedMedia="_FzcuYI5aEeO86oWkeFJwZA"/>
+        <hwportParts xmi:id="_Kkwb8JTWEeOdvtTDMPzExw" name="motor_port_left" hwPortInstance="_G9NGcJTWEeOdvtTDMPzExw" connectedMedia="_MbLLAJTWEeOdvtTDMPzExw"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_BeJiEI5aEeO86oWkeFJwZA" name="dc_motor" resourceInstanceType="_x-y4II5ZEeO86oWkeFJwZA">
+        <cardinality xmi:id="_BeL-UI5aEeO86oWkeFJwZA">
+          <lowerBound xmi:id="_gl6-cI5yEeOSxLJvYquPQg" value="2"/>
+          <upperBound xmi:id="_gmF9kI5yEeOSxLJvYquPQg" value="2"/>
+        </cardinality>
+        <hwportParts xmi:id="_B52moI5aEeO86oWkeFJwZA" name="motor_port 1" hwPortInstance="_yWniQI5ZEeO86oWkeFJwZA" connectedMedia="_FzcuYI5aEeO86oWkeFJwZA _MbLLAJTWEeOdvtTDMPzExw"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="platform:ResourceInstancePart" xmi:id="_HMUYwJSPEeO4yt2hdLd5ig" name="sensor" resourceInstanceType="_YQG50JSjEeOPr6PWGas_Lg">
+        <cardinality xmi:id="_HMVm4JSPEeO4yt2hdLd5ig">
+          <lowerBound xmi:id="_HMWN8JSPEeO4yt2hdLd5ig" value="0"/>
+          <upperBound xmi:id="_HMW1AJSPEeO4yt2hdLd5ig"/>
+        </cardinality>
+        <hwportParts xmi:id="_7ma0YJTVEeOdvtTDMPzExw" name="port" hwPortInstance="_nuVs8JSkEeOSk7i8qk0oZA" connectedMedia="_-sDIkJTVEeOdvtTDMPzExw"/>
+      </embeddedPlatformParts>
+      <embeddedCommunicationResources xsi:type="platform:Link" xmi:id="_FzcuYI5aEeO86oWkeFJwZA" protocol="_Qd5bsI5WEeO8ctMX5xOxyw" connectedHWPortParts="_B52moI5aEeO86oWkeFJwZA _45n8Qo5ZEeO86oWkeFJwZA">
+        <bandwidth xmi:id="_FzgYwI5aEeO86oWkeFJwZA"/>
+      </embeddedCommunicationResources>
+      <embeddedCommunicationResources xsi:type="platform:Link" xmi:id="_-sDIkJTVEeOdvtTDMPzExw" protocol="_N7koUIaUEeOoU-03Rq9qXQ" connectedHWPortParts="_45n8QY5ZEeO86oWkeFJwZA _7ma0YJTVEeOdvtTDMPzExw">
+        <bandwidth xmi:id="_-sE9wJTVEeOdvtTDMPzExw"/>
+      </embeddedCommunicationResources>
+      <embeddedCommunicationResources xsi:type="platform:Link" xmi:id="_MbLLAJTWEeOdvtTDMPzExw" protocol="_Qd5bsI5WEeO8ctMX5xOxyw" connectedHWPortParts="_Kkwb8JTWEeOdvtTDMPzExw _B52moI5aEeO86oWkeFJwZA">
+        <bandwidth xmi:id="_MbNnQJTWEeOdvtTDMPzExw"/>
+      </embeddedCommunicationResources>
+      <delegationPorts xsi:type="platform:BusPortInstance" xmi:id="_IRBkEI5aEeO86oWkeFJwZA" name="can" hwportType="_SyLGgIZ2EeOoU-03Rq9qXQ" delegation="_LRVTYI5aEeO86oWkeFJwZA"/>
+      <delegations xmi:id="_LRVTYI5aEeO86oWkeFJwZA" hwPortInstance="_IRBkEI5aEeO86oWkeFJwZA" hwPortPart="_45n8QI5ZEeO86oWkeFJwZA"/>
+    </modelElements>
+    <modelElements xsi:type="platform:HWPlatform" xmi:id="_NdY7QI5aEeO86oWkeFJwZA" name="Arduino Car">
+      <embeddedPlatformParts xsi:type="platform:HWPlatformPart" xmi:id="_RWUUoI5aEeO86oWkeFJwZA" name="communication" hwplatformType="_NC4vAYajEeOoU-03Rq9qXQ">
+        <cardinality xmi:id="_RWXX8I5aEeO86oWkeFJwZA">
+          <lowerBound xmi:id="_RWXX8Y5aEeO86oWkeFJwZA" value="0"/>
+          <upperBound xmi:id="_RWZNII5aEeO86oWkeFJwZA"/>
+        </cardinality>
+        <delegationPorts xmi:id="_SF1tEI5aEeO86oWkeFJwZA" name="can" hwPortInstance="_rkHcsIajEeOoU-03Rq9qXQ" connectedMedia="_YJyzkI5aEeO86oWkeFJwZA"/>
+        <delegationPorts xmi:id="_SF2UII5aEeO86oWkeFJwZA" name="wifi" hwPortInstance="_t6feMIajEeOoU-03Rq9qXQ"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="platform:HWPlatformPart" xmi:id="_V1aWII5aEeO86oWkeFJwZA" name="control" hwplatformType="_i3zD0I5ZEeO86oWkeFJwZA">
+        <cardinality xmi:id="_V1aWIY5aEeO86oWkeFJwZA">
+          <lowerBound xmi:id="_2vmfQI5aEeO86oWkeFJwZA"/>
+          <upperBound xmi:id="_2vtM8I5aEeO86oWkeFJwZA"/>
+        </cardinality>
+        <delegationPorts xmi:id="_WRa8sI5aEeO86oWkeFJwZA" name="can" hwPortInstance="_IRBkEI5aEeO86oWkeFJwZA" connectedMedia="_YJyzkI5aEeO86oWkeFJwZA"/>
+      </embeddedPlatformParts>
+      <embeddedCommunicationResources xsi:type="platform:Bus" xmi:id="_YJyzkI5aEeO86oWkeFJwZA" protocol="_Q5yokIZ2EeOoU-03Rq9qXQ" connectedHWPortParts="_SF1tEI5aEeO86oWkeFJwZA _WRa8sI5aEeO86oWkeFJwZA">
+        <bandwidth xmi:id="_YJzaoI5aEeO86oWkeFJwZA"/>
+      </embeddedCommunicationResources>
+      <delegationPorts xsi:type="platform:LinkPortInstance" xmi:id="_bk62oI5aEeO86oWkeFJwZA" name="wifi" hwportType="_nGH3IIaSEeOoU-03Rq9qXQ" delegation="_e2sJYI5aEeO86oWkeFJwZA"/>
+      <delegations xmi:id="_e2sJYI5aEeO86oWkeFJwZA" hwPortInstance="_bk62oI5aEeO86oWkeFJwZA" hwPortPart="_SF2UII5aEeO86oWkeFJwZA"/>
+    </modelElements>
+    <modelElements xsi:type="platforminstance:HWPlatformInstanceConfiguration" xmi:id="_Ma2YgJSiEeOi4-qmp0eB2w" name="Arduino">
+      <hwplatformInstances xmi:id="_NYAH0JSjEeOPr6PWGas_Lg" name="Arduino Car.0" hwplatformType="_NdY7QI5aEeO86oWkeFJwZA">
+        <communicationResources xsi:type="platform:Bus" xmi:id="_NYAH0ZSjEeOPr6PWGas_Lg" comment="&quot;no comment provided&quot;.0" protocol="_Q5yokIZ2EeOoU-03Rq9qXQ" connectedHWPortParts="_xOQkAJSkEeOSk7i8qk0oZA _f3dFsJSjEeOPr6PWGas_Lg">
+          <bandwidth xmi:id="_NYAH0pSjEeOPr6PWGas_Lg"/>
+        </communicationResources>
+        <hwplatformInstances xmi:id="_NYAH05SjEeOPr6PWGas_Lg" name="Cooperative.0.1" hwplatformType="_NC4vAYajEeOoU-03Rq9qXQ">
+          <resourceInstances xsi:type="platform:StructuredResourceInstance" xmi:id="_NYAH1JSjEeOPr6PWGas_Lg" name="widi_board.0.1.1" resourceType="_4Y2wwIZyEeOoU-03Rq9qXQ">
+            <hwportInstances xsi:type="platform:BusPortInstance" xmi:id="_NYAH1ZSjEeOPr6PWGas_Lg" name="CAN_Port 1.0.1.1" hwportType="_SyLGgIZ2EeOoU-03Rq9qXQ" delegation="_D9wkgJSvEeO2gL1i4_mjxQ"/>
+            <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_NYAH1pSjEeOPr6PWGas_Lg" name="wlan.0.1.1" hwportType="_nGH3IIaSEeOoU-03Rq9qXQ" delegation="_M9Yx8JSvEeO2gL1i4_mjxQ"/>
+            <embeddedAtomicResourceInstances xsi:type="platform:ProcessingMemoryInstance" xmi:id="_NYAH15SjEeOPr6PWGas_Lg" name="SRAM" resourceType="_0_dEoIZ1EeOoU-03Rq9qXQ">
+              <memorySize xmi:id="_NYAH2JSjEeOPr6PWGas_Lg" value="96.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_NYAH2ZSjEeOPr6PWGas_Lg" name="flash" resourceType="_sZqTgIZ1EeOoU-03Rq9qXQ">
+              <memorySize xmi:id="_NYAH2pSjEeOPr6PWGas_Lg" value="512.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="platform:ProcessorInstance" xmi:id="_NYAH25SjEeOPr6PWGas_Lg" name="processor" resourceType="_-bTUAIZ1EeOoU-03Rq9qXQ">
+              <frequency xmi:id="_NYAH3JSjEeOPr6PWGas_Lg" value="84.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+          </resourceInstances>
+          <delegationPorts xmi:id="_xOQkAJSkEeOSk7i8qk0oZA" name="CAN" hwPortInstance="_aowsoIaUEeOoU-03Rq9qXQ" connectedMedia="_NYAH0ZSjEeOPr6PWGas_Lg"/>
+          <delegationPorts xmi:id="_JjQNYJSvEeO2gL1i4_mjxQ" name="wifi" hwPortInstance="_t6feMIajEeOoU-03Rq9qXQ"/>
+          <delegations xmi:id="_D9wkgJSvEeO2gL1i4_mjxQ" hwPortInstance="_NYAH1ZSjEeOPr6PWGas_Lg" hwPortPart="_xOQkAJSkEeOSk7i8qk0oZA"/>
+          <delegations xmi:id="_M9Yx8JSvEeO2gL1i4_mjxQ" hwPortInstance="_NYAH1pSjEeOPr6PWGas_Lg" hwPortPart="_JjQNYJSvEeO2gL1i4_mjxQ"/>
+        </hwplatformInstances>
+        <hwplatformInstances xmi:id="_NYAH3ZSjEeOPr6PWGas_Lg" name="ACC.0.1" hwplatformType="_i3zD0I5ZEeO86oWkeFJwZA">
+          <resourceInstances xsi:type="platform:ActuatorInstance" xmi:id="_NYAH3pSjEeOPr6PWGas_Lg" name="dc_motor.0.1.2" resourceType="_J2S4AIZzEeOoU-03Rq9qXQ">
+            <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_NYAH35SjEeOPr6PWGas_Lg" name="motor_port 1.0.1.2" hwportType="_V024wIaUEeOoU-03Rq9qXQ" connectedMedia="_WM52gJSkEeOSk7i8qk0oZA"/>
+          </resourceInstances>
+          <resourceInstances xsi:type="platform:StructuredResourceInstance" xmi:id="_NYAH4JSjEeOPr6PWGas_Lg" name="arduino_motor.0.1.1" resourceType="_4Y2wwIZyEeOoU-03Rq9qXQ">
+            <hwportInstances xsi:type="platform:BusPortInstance" xmi:id="_NYAH4ZSjEeOPr6PWGas_Lg" name="CAN_Port 1.0.1.1" hwportType="_SyLGgIZ2EeOoU-03Rq9qXQ" delegation="_DIaQ4JSvEeO2gL1i4_mjxQ"/>
+            <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_NYAH4pSjEeOPr6PWGas_Lg" name="sensor_port.0.1.1" hwportType="_JECRoIaUEeOoU-03Rq9qXQ" connectedMedia="_qR4nwJSkEeOSk7i8qk0oZA"/>
+            <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_NYAH45SjEeOPr6PWGas_Lg" name="motor_port.0.1.1" hwportType="_NIYRYI5WEeO8ctMX5xOxyw" connectedMedia="_WM52gJSkEeOSk7i8qk0oZA"/>
+            <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_eoBBoJSkEeOSk7i8qk0oZA" name="motor_port" hwportType="_NIYRYI5WEeO8ctMX5xOxyw" connectedMedia="_k8YisJSkEeOSk7i8qk0oZA"/>
+            <embeddedAtomicResourceInstances xsi:type="platform:ProcessorInstance" xmi:id="_NYAH5JSjEeOPr6PWGas_Lg" name="processor" resourceType="_-bTUAIZ1EeOoU-03Rq9qXQ">
+              <frequency xmi:id="_NYAH5ZSjEeOPr6PWGas_Lg"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="platform:StorageMemoryInstance" xmi:id="_NYAu4JSjEeOPr6PWGas_Lg" name="flash" resourceType="_sZqTgIZ1EeOoU-03Rq9qXQ">
+              <memorySize xmi:id="_NYAu4ZSjEeOPr6PWGas_Lg" value="512.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="platform:ProcessingMemoryInstance" xmi:id="_NYAu4pSjEeOPr6PWGas_Lg" name="SRAM" resourceType="_0_dEoIZ1EeOoU-03Rq9qXQ">
+              <memorySize xmi:id="_NYAu45SjEeOPr6PWGas_Lg" value="96.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+          </resourceInstances>
+          <resourceInstances xsi:type="platform:ActuatorInstance" xmi:id="_NYAu5JSjEeOPr6PWGas_Lg" name="dc_motor.0.1.1" resourceType="_J2S4AIZzEeOoU-03Rq9qXQ">
+            <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_NYAu5ZSjEeOPr6PWGas_Lg" name="motor_port 1.0.1.1" hwportType="_V024wIaUEeOoU-03Rq9qXQ" connectedMedia="_k8YisJSkEeOSk7i8qk0oZA"/>
+          </resourceInstances>
+          <resourceInstances xsi:type="platform:SensorInstance" xmi:id="_YQG50JSjEeOPr6PWGas_Lg" name="distance_sensor" resourceType="_bpj98IZ2EeOoU-03Rq9qXQ">
+            <hwportInstances xsi:type="platform:LinkPortInstance" xmi:id="_nuVs8JSkEeOSk7i8qk0oZA" name="port" hwportType="_YUrKIIaUEeOoU-03Rq9qXQ" connectedMedia="_qR4nwJSkEeOSk7i8qk0oZA"/>
+          </resourceInstances>
+          <communicationResources xsi:type="platform:Link" xmi:id="_NYAu5pSjEeOPr6PWGas_Lg" comment="&quot;no comment provided&quot;.0.1" protocol="_Qd5bsI5WEeO8ctMX5xOxyw">
+            <bandwidth xmi:id="_NYAu55SjEeOPr6PWGas_Lg"/>
+          </communicationResources>
+          <communicationResources xsi:type="platform:Link" xmi:id="_WM52gJSkEeOSk7i8qk0oZA" protocol="_Qd5bsI5WEeO8ctMX5xOxyw" connectedHWPortInstances="_NYAH45SjEeOPr6PWGas_Lg _NYAH35SjEeOPr6PWGas_Lg">
+            <bandwidth xmi:id="_WM52gZSkEeOSk7i8qk0oZA"/>
+          </communicationResources>
+          <communicationResources xsi:type="platform:Link" xmi:id="_k8YisJSkEeOSk7i8qk0oZA" protocol="_Qd5bsI5WEeO8ctMX5xOxyw" connectedHWPortInstances="_NYAu5ZSjEeOPr6PWGas_Lg _eoBBoJSkEeOSk7i8qk0oZA">
+            <bandwidth xmi:id="_k8Zw0JSkEeOSk7i8qk0oZA"/>
+          </communicationResources>
+          <communicationResources xsi:type="platform:Link" xmi:id="_qR4nwJSkEeOSk7i8qk0oZA" protocol="_N7koUIaUEeOoU-03Rq9qXQ" connectedHWPortInstances="_nuVs8JSkEeOSk7i8qk0oZA _NYAH4pSjEeOPr6PWGas_Lg">
+            <bandwidth xmi:id="_qR5O0JSkEeOSk7i8qk0oZA"/>
+          </communicationResources>
+          <delegationPorts xmi:id="_f3dFsJSjEeOPr6PWGas_Lg" name="CAN" hwPortInstance="_rkHcsIajEeOoU-03Rq9qXQ" connectedMedia="_NYAH0ZSjEeOPr6PWGas_Lg"/>
+          <delegations xmi:id="_DIaQ4JSvEeO2gL1i4_mjxQ" hwPortInstance="_NYAH4ZSjEeOPr6PWGas_Lg" hwPortPart="_f3dFsJSjEeOPr6PWGas_Lg"/>
+        </hwplatformInstances>
+      </hwplatformInstances>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

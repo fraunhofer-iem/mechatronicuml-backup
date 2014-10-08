@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_tgzZMNiuEeG759EkCRn9IQ" type="Atomiccomponent" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_v7oc4NiuEeG759EkCRn9IQ" type="2005" fontName="Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_v7prANiuEeG759EkCRn9IQ" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_yPhLENiuEeG759EkCRn9IQ" type="3006" fontName="Sans" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_yPhyINiuEeG759EkCRn9IQ" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_yPiZMNiuEeG759EkCRn9IQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="Railcab.fujaba#_yPZ2UNiuEeG759EkCRn9IQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yPhLEdiuEeG759EkCRn9IQ" x="519" y="50"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="Railcab.fujaba#_v7jkYNiuEeG759EkCRn9IQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v7oc4diuEeG759EkCRn9IQ" x="40" y="50" width="496" height="251"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_tgzZMdiuEeG759EkCRn9IQ"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="Railcab.fujaba#_B5tSgdcvEeG4XKjrX38Blg"/>
+</notation:Diagram>

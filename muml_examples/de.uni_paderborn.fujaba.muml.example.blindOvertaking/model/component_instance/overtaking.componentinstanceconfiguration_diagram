@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_CDbogEfREeOKy6HrV27eJQ" type="Component Instance Configuration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_CvrqgEfREeOKy6HrV27eJQ" type="2016" fontName="Sans" fontHeight="10" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CvsRkEfREeOKy6HrV27eJQ" type="5027"/>
+    <children xmi:type="notation:Shape" xmi:id="_DuqbQEfREeOKy6HrV27eJQ" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_DurCUEfREeOKy6HrV27eJQ" type="5044">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DurCUUfREeOKy6HrV27eJQ" y="5"/>
+      </children>
+      <element xmi:type="instance:DiscreteSinglePortInstance" href="../overtaking.fujaba#_DunX8EfREeOKy6HrV27eJQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DuqbQUfREeOKy6HrV27eJQ" x="118" y="11"/>
+    </children>
+    <element xmi:type="instance:AtomicComponentInstance" href="../overtaking.fujaba#_Cvlj4EfREeOKy6HrV27eJQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CvrqgUfREeOKy6HrV27eJQ" x="345" y="184"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ELhWYEfREeOKy6HrV27eJQ" type="2016" fontName="Sans" fontHeight="10" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ELhWYkfREeOKy6HrV27eJQ" type="5027"/>
+    <children xmi:type="notation:Shape" xmi:id="_FJv5MEfREeOKy6HrV27eJQ" type="3032" fontName="Sans" fontHeight="10" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_FJwgQEfREeOKy6HrV27eJQ" type="5044">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FJwgQUfREeOKy6HrV27eJQ" y="5"/>
+      </children>
+      <element xmi:type="instance:DiscreteSinglePortInstance" href="../overtaking.fujaba#_FJuEAEfREeOKy6HrV27eJQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FJv5MUfREeOKy6HrV27eJQ" x="-12" y="7"/>
+    </children>
+    <element xmi:type="instance:AtomicComponentInstance" href="../overtaking.fujaba#_ELgIQEfREeOKy6HrV27eJQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ELhWYUfREeOKy6HrV27eJQ" x="675" y="185"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_CDbogUfREeOKy6HrV27eJQ"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="../overtaking.fujaba#_CDbBcUfREeOKy6HrV27eJQ"/>
+  <edges xmi:type="notation:Connector" xmi:id="_GHmBgEfREeOKy6HrV27eJQ" type="4001" source="_DuqbQEfREeOKy6HrV27eJQ" target="_FJv5MEfREeOKy6HrV27eJQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_GHmBgUfREeOKy6HrV27eJQ" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="instance:AssemblyConnectorInstance" href="../overtaking.fujaba#_GHeswEfREeOKy6HrV27eJQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GHmBgkfREeOKy6HrV27eJQ" points="[12, -2, -318, -3]$[324, -11, -6, -12]"/>
+  </edges>
+</notation:Diagram>

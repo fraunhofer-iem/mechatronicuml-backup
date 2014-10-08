@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//model/Components/RailCab.component_diagram=UTF-8
+encoding//model/Protocols/LeaderElection/LeaderElection.coordinationprotocol_diagram=UTF-8
+encoding//model/Protocols/LeaderElection/LeaderElectionMessageTypes.messagetype_diagram=UTF-8
+encoding//model/Protocols/LeaderElection/LeaderElection_peer.realtimestatechart_diagram=UTF-8
+encoding//model/Protocols/LeaderElection/LeaderElection_peer2.realtimestatechart_diagram=UTF-8
+encoding//model/Protocols/ProtocolInstantiation/ProtocolInstantiation.coordinationprotocol_diagram=UTF-8
+encoding//model/Protocols/ProtocolInstantiation/ProtocolInstantiation.messagetype_diagram=UTF-8
+encoding//model/Protocols/ProtocolInstantiation/ProtocolInstantiation_Requestee.realtimestatechart_diagram=UTF-8
+encoding//model/Protocols/ProtocolInstantiation/ProtocolInstantiation_Requestor.realtimestatechart_diagram=UTF-8
+encoding//model/RailCab.fujaba=UTF-8
