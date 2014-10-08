@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
 <rm:locator searchPathRef="default" failOnError="false"/>
-<rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
 <rm:locator searchPathRef="ape-properties" failOnError="false"/>
 <rm:locator searchPathRef="MUMLCore" failOnError="false"/>
 <rm:locator searchPathRef="PlatformIndependentModeling" failOnError="false"/>
@@ -14,6 +13,7 @@
 <rm:locator searchPathRef="SimulinkAdapter" failOnError="false"/>
 <rm:locator searchPathRef="UDBM" failOnError="false"/>
 <rm:locator searchPathRef="C_Codegen" failOnError="false"/>
+<rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
 
 
 <rm:searchPath name="default">
