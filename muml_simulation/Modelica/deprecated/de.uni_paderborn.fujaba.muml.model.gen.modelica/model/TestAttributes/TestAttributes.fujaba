@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:instance="http://www.fujaba.de/muml/model/instance/0.2.2" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.2.4" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.2.3" xmi:id="_NX8d8XpJEeGiFbR4vC8NUQ">
+  <categories xmi:id="_O2I6QHpJEeGiFbR4vC8NUQ" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
+  <categories xmi:id="_P4l1wHpJEeGiFbR4vC8NUQ" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_P4mc0HpJEeGiFbR4vC8NUQ"/>
+  </categories>
+  <categories xmi:id="_RUqyMHpJEeGiFbR4vC8NUQ" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_RUqyMXpJEeGiFbR4vC8NUQ"/>
+  </categories>
+</modelinstance:RootNode>

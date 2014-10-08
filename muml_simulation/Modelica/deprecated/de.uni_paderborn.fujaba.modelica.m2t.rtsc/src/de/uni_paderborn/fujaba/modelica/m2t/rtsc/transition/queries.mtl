@@ -1,0 +1,146 @@
+[module queries('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/muml/modelica/adapter/transform/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::annotation]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc]
+
+[**
+ * Creates an annotation for a transition declaration
+ * @param transition the transition
+*/]
+[query public createTransitionDeclAnnotation(transition : Transition) : String =
+	transition.createNodeDeclAnnotation()
+/]
+
+[**
+ * Creates an annotation for a connect statement which connects two
+ * steps.
+ * @param transition the transition
+ * @param isPseudoSource if true it indicates that a transition from the pseudo node to the transition's target should be made
+ */]
+[query public createTransitionConnectAnnotation(transition : Transition, isPseudoSource : Boolean) : String =
+	let points : String =
+		if isPseudoSource then
+			transition.getAnnotationDetail('MODELICA_CODEGEN', 'source_points')
+		else
+			transition.getAnnotationDetail('MODELICA_CODEGEN', 'target_points')
+		endif
+	in
+	'annotation (Line(points={' + points + '}, color={0,0,0}, smooth=Smooth.None))'
+/]
+
+[**
+ * Returns a set of all transitions which RECEIVE the passed syncChannel
+ * @param ch the synchronization channel
+*/]
+[query public getSyncReceivingTransitions(ch : SynchronizationChannel) : OrderedSet(Transition) =
+	ch.state.embeddedRegions->collect(
+		OrderedSet{embeddedStatechart}->union(embeddedStatechart.allSubstatecharts())
+	)->collect(transitions)->select(
+		not synchronization.oclIsUndefined() and synchronization.syncChannel.name = ch.name and synchronization.kind = SynchronizationKind::RECEIVE
+	)->asOrderedSet()
+/]
+
+[**
+ * Returns a set of all transitions which SEND the passed syncChannel
+ * @param ch the synchronization channel
+*/]
+[query public getSyncSendingTransitions(ch : SynchronizationChannel) : OrderedSet(Transition) =
+	ch.state.embeddedRegions->collect(
+		OrderedSet{embeddedStatechart}->union(embeddedStatechart.allSubstatecharts())
+	)->collect(transitions)->select(
+		not synchronization.oclIsUndefined() and synchronization.syncChannel.name = ch.name and synchronization.kind = SynchronizationKind::SEND
+	)->asOrderedSet()
+/]
+
+[**
+ * Returns the name of the state's outport.
+ * @param state the state
+*/]
+[query public getOutPort(vertex : Vertex) : String =
+	if vertex.oclIsKindOf(State) and vertex.oclAsType(State).simple then
+		'outPort'
+	else
+		'suspend'
+	endif
+/]
+
+[**
+ * Returns all states from the statechart (and substatecharts).
+ * The states are ordered by name.
+ * @param rtsc the rtsc
+*/]
+[query private allStates(rtsc : RealtimeStatechart) : OrderedSet(State) =
+	rtsc.states->union(rtsc.allSubstatecharts()->collect(states)->asSet())->sortedBy(name)
+/]
+
+[**
+ * Returns all complex states from the statechart (and substatecharts).
+ * @param rtsc the rtsc
+*/]
+[query private allComplexStates(rtsc : RealtimeStatechart) : OrderedSet(State) =
+	rtsc.allStates()->select(not simple)
+/]
+
+[**
+ * Returns all states which have synchronization channels
+ * (this also includes states from "substatecharts").
+ * @param rtsc the realtimestatechart
+*/]
+[query public allStatesWithSynchronizationChannels(rtsc : RealtimeStatechart) : OrderedSet(State) =
+	rtsc.allComplexStates()->select(channels->notEmpty())
+/]
+
+[**
+ * Returns the name of the transition's target node which
+ * should be used for a connect equation.
+ * @param transition the transition
+*/]
+[query public getTargetName(transition : Transition) : String =
+	if transition.target.oclIsKindOf(EntryPoint) then
+		transition.target.oclAsType(EntryPoint).state.name
+	else
+		transition.target.name
+	endif
+/]
+
+[**
+ * Returns the index of the transition's target state inPort.
+ * @param transition the transition
+*/]
+[query public getInPortIndex(transition : Transition) : Integer =
+	if transition.target.oclIsKindOf(EntryPoint) then
+		let target : EntryPoint = transition.target.oclAsType(EntryPoint)
+		in
+		let entryPointSet : OrderedSet(EntryPoint) = target.state.getEntryPoints()->sortedBy(name)
+		in
+		target.state.incomingTransitions->size() + entryPointSet->collect(incomingTransitions)->indexOf(transition)
+	else
+		transition.target.incomingTransitions->indexOf(transition)
+	endif
+/]
+
+[**
+ * Returns the index of the transition's source state outPort.
+ * @param transition the transition
+*/]
+[query public getOutPortIndex(transition : Transition) : Integer =
+	if transition.source.oclIsKindOf(EntryPoint) then
+		(if transition.target.oclIsKindOf(EntryPoint) then
+			transition.target.oclAsType(EntryPoint).state.parentStatechart
+		 else
+			transition.target.oclAsType(State).parentStatechart
+		 endif
+		).getRelevantEntryPointTransitions()->indexOf(transition)
+	else
+		transition.source.outgoingTransitions->size() - transition.priority + 1
+	endif
+/]

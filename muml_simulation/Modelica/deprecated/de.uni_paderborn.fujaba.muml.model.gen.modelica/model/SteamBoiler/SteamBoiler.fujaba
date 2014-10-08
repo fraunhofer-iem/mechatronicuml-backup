@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/model/component/0.2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:instance="http://www.fujaba.de/muml/model/instance/0.2.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.2.1" xmlns:msgiface="http://www.fujaba.de/muml/model/msgiface/0.2.1" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.2.1" xmlns:sdme="http://ns.storydriven.org/sdm/expressions/0.1.0" xmi:id="_gBsycFiLEeGPcfGLnM8rXg">
+  <categories xmi:id="_h7PuAFiLEeGPcfGLnM8rXg" key="de.uni_paderborn.fujaba.muml.messageinterface.category" name="msgiface">
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_0BL_sFiLEeGPcfGLnM8rXg" name="Error">
+      <messageTypes xmi:id="_1-qZAFiLEeGPcfGLnM8rXg" name="error"/>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_8RV4AFiLEeGPcfGLnM8rXg" name="Master" superType="_0BL_sFiLEeGPcfGLnM8rXg">
+      <messageTypes xmi:id="_-MpHEFiLEeGPcfGLnM8rXg" inParameter="_A3mRcFiMEeGPcfGLnM8rXg" name="on">
+        <containedParameters xmi:id="_A3mRcFiMEeGPcfGLnM8rXg" name="value">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+        </containedParameters>
+      </messageTypes>
+      <messageTypes xmi:id="_-8KfgFiLEeGPcfGLnM8rXg" name="off"/>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_9UBdAFiLEeGPcfGLnM8rXg" name="Slave">
+      <messageTypes xmi:id="__hKqAFiLEeGPcfGLnM8rXg" inParameter="_GiXb4FiMEeGPcfGLnM8rXg" name="sensorWS">
+        <containedParameters xmi:id="_GiXb4FiMEeGPcfGLnM8rXg" name="value">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+        </containedParameters>
+      </messageTypes>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_ivEXoFiLEeGPcfGLnM8rXg" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_icr8QFiNEeGPcfGLnM8rXg" name="Steam_Boiler_Control" referencingComponentParts="_9gMl4FiNEeGPcfGLnM8rXg" behavior="_aFwjAFiMEeGPcfGLnM8rXg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_md7kIFiNEeGPcfGLnM8rXg" name="Master" outgoingConnectors="_BbNp8FiOEeGPcfGLnM8rXg" behavior="_Bh7rEFiQEeGPcfGLnM8rXg" senderMessageInterface="_8RV4AFiLEeGPcfGLnM8rXg" receiverMessageInterface="_9UBdAFiLEeGPcfGLnM8rXg" adaptationBehavior="_35eqcFiMEeGPcfGLnM8rXg" roleAndAdaptationBehavior="_35eqcFiMEeGPcfGLnM8rXg">
+        <cardinality xmi:id="_md8yQFiNEeGPcfGLnM8rXg">
+          <lowerBound xmi:id="_md-AYFiNEeGPcfGLnM8rXg"/>
+          <upperBound xmi:id="_md-ncFiNEeGPcfGLnM8rXg"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_kL5QEFiNEeGPcfGLnM8rXg" name="Environmental_Simulation" referencingComponentParts="__XnagFiNEeGPcfGLnM8rXg" behavior="_G9ZVkFiNEeGPcfGLnM8rXg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_o3HCAFiNEeGPcfGLnM8rXg" name="Slave" incomingConnectors="_BbNp8FiOEeGPcfGLnM8rXg" senderMessageInterface="_9UBdAFiLEeGPcfGLnM8rXg" receiverMessageInterface="_8RV4AFiLEeGPcfGLnM8rXg" adaptationBehavior="_apOnAFiNEeGPcfGLnM8rXg">
+        <cardinality xmi:id="_o3HCAViNEeGPcfGLnM8rXg">
+          <lowerBound xmi:id="_o3HCAliNEeGPcfGLnM8rXg"/>
+          <upperBound xmi:id="_o3HCA1iNEeGPcfGLnM8rXg"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StructuredComponent" xmi:id="_6wdCIFiNEeGPcfGLnM8rXg" name="Steam_Boiler">
+      <embeddedParts xmi:id="_9gMl4FiNEeGPcfGLnM8rXg" componentType="_icr8QFiNEeGPcfGLnM8rXg" fromRev="_BbNp8FiOEeGPcfGLnM8rXg">
+        <cardinality xmi:id="_9gObEFiNEeGPcfGLnM8rXg">
+          <lowerBound xmi:id="_9gObEViNEeGPcfGLnM8rXg"/>
+          <upperBound xmi:id="_9gSFcFiNEeGPcfGLnM8rXg"/>
+        </cardinality>
+      </embeddedParts>
+      <embeddedParts xmi:id="__XnagFiNEeGPcfGLnM8rXg" componentType="_kL5QEFiNEeGPcfGLnM8rXg" toRev="_BbNp8FiOEeGPcfGLnM8rXg">
+        <cardinality xmi:id="__XnagViNEeGPcfGLnM8rXg">
+          <lowerBound xmi:id="__XoBkFiNEeGPcfGLnM8rXg"/>
+          <upperBound xmi:id="__XoBkViNEeGPcfGLnM8rXg"/>
+        </cardinality>
+      </embeddedParts>
+      <connectors xsi:type="component:Assembly" xmi:id="_BbNp8FiOEeGPcfGLnM8rXg" fromPort="_md7kIFiNEeGPcfGLnM8rXg" toPort="_o3HCAFiNEeGPcfGLnM8rXg" to="__XnagFiNEeGPcfGLnM8rXg" from="_9gMl4FiNEeGPcfGLnM8rXg"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_kav2UFiLEeGPcfGLnM8rXg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_kav2UViLEeGPcfGLnM8rXg">
+      <componentInstances xmi:id="_OE4gMFiOEeGPcfGLnM8rXg" name="sb" componentType="_6wdCIFiNEeGPcfGLnM8rXg">
+        <embeddedCIC xmi:id="_B_I5MGR9EeGfjOzqCQjNiA">
+          <componentInstances xmi:id="_B_JgQGR9EeGfjOzqCQjNiA" name="sb1" componentType="_icr8QFiNEeGPcfGLnM8rXg">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_B_JgQWR9EeGfjOzqCQjNiA" name="Master1" portType="_md7kIFiNEeGPcfGLnM8rXg" outgoingConnectorInstances="_B_KHUGR9EeGfjOzqCQjNiA"/>
+          </componentInstances>
+          <componentInstances xmi:id="_B_JgQmR9EeGfjOzqCQjNiA" name="sb2" componentType="_kL5QEFiNEeGPcfGLnM8rXg">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_B_JgQ2R9EeGfjOzqCQjNiA" name="Slave1" portType="_o3HCAFiNEeGPcfGLnM8rXg" incomingConnectorInstances="_B_KHUGR9EeGfjOzqCQjNiA"/>
+          </componentInstances>
+          <connectorInstances xsi:type="instance:AssemblyInstance" xmi:id="_B_KHUGR9EeGfjOzqCQjNiA" source="_B_JgQWR9EeGfjOzqCQjNiA" target="_B_JgQ2R9EeGfjOzqCQjNiA" connectorType="_BbNp8FiOEeGPcfGLnM8rXg"/>
+        </embeddedCIC>
+      </componentInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_Y4WUsFiMEeGPcfGLnM8rXg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_aFwjAFiMEeGPcfGLnM8rXg" name="Steam_Boiler_Control" behavioralElement="_icr8QFiNEeGPcfGLnM8rXg">
+      <attributes xmi:id="_dkEc8FiMEeGPcfGLnM8rXg" name="ws">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+      </attributes>
+      <attributes xmi:id="_i6xb4FiMEeGPcfGLnM8rXg" name="N1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </attributes>
+      <attributes xmi:id="_mNkpYFiMEeGPcfGLnM8rXg" name="N2">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </attributes>
+      <attributes xmi:id="_oBO_YFiMEeGPcfGLnM8rXg" name="M1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </attributes>
+      <attributes xmi:id="_HnyFsGj8EeGsyqoB-UBYEg" name="M2">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </attributes>
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_uT20AFiMEeGPcfGLnM8rXg" name="Steam_Boiler_Control_Main" initial="true">
+        <regions xmi:id="_xUXXoFiMEeGPcfGLnM8rXg" name="Synchronization" priority="1">
+          <statechart xmi:id="_2zsHEFiMEeGPcfGLnM8rXg" name="Synchronization">
+            <attributes xmi:id="_QG6M4FiPEeGPcfGLnM8rXg" name="wm">
+              <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+            </attributes>
+            <transitions xmi:id="__QNVgFiOEeGPcfGLnM8rXg" priority="1" target="_7keDkFiOEeGPcfGLnM8rXg" source="_yXjBAFiOEeGPcfGLnM8rXg"/>
+            <transitions xmi:id="__qePoFiOEeGPcfGLnM8rXg" priority="1" target="_9So1kFiOEeGPcfGLnM8rXg" source="_7keDkFiOEeGPcfGLnM8rXg">
+              <synchronization xmi:id="_u1G_kFiPEeGPcfGLnM8rXg" callee="_v5rQYFiOEeGPcfGLnM8rXg"/>
+              <guard xsi:type="sdme:TextualExpression" xmi:id="_sUom4FiPEeGPcfGLnM8rXg" expressionText="ws > M2 or ws &lt; M1" language="Modelica"/>
+            </transitions>
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_yXjBAFiOEeGPcfGLnM8rXg" name="Start" outgoingTransitions="__QNVgFiOEeGPcfGLnM8rXg" initial="true">
+              <entryEvent xmi:id="_z2nAAFiOEeGPcfGLnM8rXg">
+                <action xmi:id="_2DEQgFiOEeGPcfGLnM8rXg" name="ws := 35;">
+                  <expressions xsi:type="sdme:TextualExpression" xmi:id="_277LIFiOEeGPcfGLnM8rXg" expressionText="ws := 35;" language="Modelica"/>
+                </action>
+              </entryEvent>
+            </vertices>
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_7keDkFiOEeGPcfGLnM8rXg" name="Control_Active" outgoingTransitions="__qePoFiOEeGPcfGLnM8rXg" incomingTransitions="__QNVgFiOEeGPcfGLnM8rXg">
+              <regions xmi:id="_AUbLkFiPEeGPcfGLnM8rXg" name="Control_Active" priority="1">
+                <statechart xmi:id="_CCvukFiPEeGPcfGLnM8rXg" name="Control_Active">
+                  <transitions xmi:id="_FbqLIFiPEeGPcfGLnM8rXg" priority="1" target="_EGgWEFiPEeGPcfGLnM8rXg" source="_DInxgFiPEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_jRH_AFiPEeGPcfGLnM8rXg" callee="_pFdKkFiOEeGPcfGLnM8rXg"/>
+                    <guard xsi:type="sdme:TextualExpression" xmi:id="_dKW1EFiPEeGPcfGLnM8rXg" expressionText="ws &lt; N1" language="Modelica"/>
+                  </transitions>
+                  <transitions xmi:id="_F4kwoFiPEeGPcfGLnM8rXg" priority="1" target="_DInxgFiPEeGPcfGLnM8rXg" source="_EGgWEFiPEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_nknNcFiPEeGPcfGLnM8rXg" callee="_ui_xUFiOEeGPcfGLnM8rXg"/>
+                    <guard xsi:type="sdme:TextualExpression" xmi:id="_ghgXEFiPEeGPcfGLnM8rXg" expressionText="ws >= N1" language="Modelica"/>
+                  </transitions>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_DInxgFiPEeGPcfGLnM8rXg" name="Stop" outgoingTransitions="_FbqLIFiPEeGPcfGLnM8rXg" incomingTransitions="_F4kwoFiPEeGPcfGLnM8rXg" initial="true">
+                    <exitEvent xmi:id="_JZ47QFiPEeGPcfGLnM8rXg">
+                      <action xmi:id="_L-bUkFiPEeGPcfGLnM8rXg" name="wm := N1-ws;">
+                        <expressions xsi:type="sdme:TextualExpression" xmi:id="_NC8FkFiPEeGPcfGLnM8rXg" expressionText="wm := N1-ws;" language="Modelica"/>
+                      </action>
+                    </exitEvent>
+                  </vertices>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_EGgWEFiPEeGPcfGLnM8rXg" name="Pump" outgoingTransitions="_F4kwoFiPEeGPcfGLnM8rXg" incomingTransitions="_FbqLIFiPEeGPcfGLnM8rXg"/>
+                </statechart>
+              </regions>
+            </vertices>
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_9So1kFiOEeGPcfGLnM8rXg" name="Error" incomingTransitions="__qePoFiOEeGPcfGLnM8rXg" final="true"/>
+          </statechart>
+        </regions>
+        <regions xmi:id="_zzRDAFiMEeGPcfGLnM8rXg" name="Master">
+          <statechart xmi:id="_35eqcFiMEeGPcfGLnM8rXg" name="Master">
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_78LjgFiPEeGPcfGLnM8rXg" name="Master_Main" initial="true">
+              <regions xmi:id="_-qIXgFiPEeGPcfGLnM8rXg" name="Send" priority="1">
+                <statechart xmi:id="_Bh7rEFiQEeGPcfGLnM8rXg" name="Send" behavioralElement="_md7kIFiNEeGPcfGLnM8rXg">
+                  <transitions xmi:id="_HetykFiQEeGPcfGLnM8rXg" priority="1" target="_E4iagFiQEeGPcfGLnM8rXg" source="_DyRWAFiQEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_x6cjYFiQEeGPcfGLnM8rXg" callee="_pFdKkFiOEeGPcfGLnM8rXg" kind="RECEIVE"/>
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_uH3CkFiQEeGPcfGLnM8rXg">
+                      <message xmi:id="_uH-XUFiQEeGPcfGLnM8rXg" callee="_-MpHEFiLEeGPcfGLnM8rXg">
+                        <ownedParameterBindings xmi:id="_x5nc8FiQEeGPcfGLnM8rXg" parameter="_A3mRcFiMEeGPcfGLnM8rXg">
+                          <valueExpression xsi:type="sdme:LiteralExpression" xmi:id="_x5orEFiQEeGPcfGLnM8rXg" value="pumpOn.value"/>
+                        </ownedParameterBindings>
+                      </message>
+                    </events>
+                  </transitions>
+                  <transitions xmi:id="_IFxLgFiQEeGPcfGLnM8rXg" priority="1" target="_DyRWAFiQEeGPcfGLnM8rXg" source="_E4iagFiQEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_NP54oFiREeGPcfGLnM8rXg" callee="_ui_xUFiOEeGPcfGLnM8rXg" kind="RECEIVE"/>
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_QZ5vcFiREeGPcfGLnM8rXg">
+                      <message xmi:id="_QZ6WgFiREeGPcfGLnM8rXg" callee="_-8KfgFiLEeGPcfGLnM8rXg"/>
+                    </events>
+                  </transitions>
+                  <transitions xmi:id="_I1FvoFiQEeGPcfGLnM8rXg" priority="2" target="_DyRWAFiQEeGPcfGLnM8rXg" source="_E4iagFiQEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_SwJ1IFiREeGPcfGLnM8rXg" callee="_v5rQYFiOEeGPcfGLnM8rXg" kind="RECEIVE"/>
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_SX_MwFiREeGPcfGLnM8rXg">
+                      <message xmi:id="_SX_MwViREeGPcfGLnM8rXg" callee="_1-qZAFiLEeGPcfGLnM8rXg"/>
+                    </events>
+                  </transitions>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_DyRWAFiQEeGPcfGLnM8rXg" name="Pump_Off" outgoingTransitions="_HetykFiQEeGPcfGLnM8rXg" incomingTransitions="_IFxLgFiQEeGPcfGLnM8rXg _I1FvoFiQEeGPcfGLnM8rXg" initial="true"/>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_E4iagFiQEeGPcfGLnM8rXg" name="Pump_On" outgoingTransitions="_IFxLgFiQEeGPcfGLnM8rXg _I1FvoFiQEeGPcfGLnM8rXg" incomingTransitions="_HetykFiQEeGPcfGLnM8rXg"/>
+                </statechart>
+              </regions>
+              <regions xmi:id="__TBjgFiPEeGPcfGLnM8rXg" name="Receive">
+                <statechart xmi:id="_CGZDAFiQEeGPcfGLnM8rXg" name="Receive">
+                  <transitions xmi:id="_OqAUkFiQEeGPcfGLnM8rXg" priority="1" target="_M5A4EFiQEeGPcfGLnM8rXg" source="_M5A4EFiQEeGPcfGLnM8rXg">
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_6i6OAFiQEeGPcfGLnM8rXg" kind="TRIGGER">
+                      <message xmi:id="_6i8qQFiQEeGPcfGLnM8rXg" callee="__hKqAFiLEeGPcfGLnM8rXg"/>
+                    </events>
+                    <action xmi:id="_BFl34FiREeGPcfGLnM8rXg" name="ws := Slave.sensorWS.value ;">
+                      <expressions xsi:type="sdme:TextualExpression" xmi:id="_BFntEFiREeGPcfGLnM8rXg" expressionText="ws := Slave.sensorWS.value ;" language="Modelica"/>
+                    </action>
+                  </transitions>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_M5A4EFiQEeGPcfGLnM8rXg" name="Receive" outgoingTransitions="_OqAUkFiQEeGPcfGLnM8rXg" incomingTransitions="_OqAUkFiQEeGPcfGLnM8rXg" initial="true"/>
+                </statechart>
+              </regions>
+            </vertices>
+          </statechart>
+        </regions>
+        <entryEvent xmi:id="_awURAFiOEeGPcfGLnM8rXg">
+          <action xmi:id="_dCGtcFiOEeGPcfGLnM8rXg" name="N1 :=30; N2 := 50; M1 :=12; M2 :=70;">
+            <expressions xsi:type="sdme:TextualExpression" xmi:id="_dCSToFiOEeGPcfGLnM8rXg" expressionText="N1 :=30; N2 := 50; M1 :=12; M2 :=70;" language="Modelica"/>
+          </action>
+        </entryEvent>
+        <channels xmi:id="_pFdKkFiOEeGPcfGLnM8rXg" inParameter="_sGNl0FiOEeGPcfGLnM8rXg" name="pumpOn">
+          <containedParameters xmi:id="_sGNl0FiOEeGPcfGLnM8rXg" name="value">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+          </containedParameters>
+        </channels>
+        <channels xmi:id="_ui_xUFiOEeGPcfGLnM8rXg" name="pumpOff"/>
+        <channels xmi:id="_v5rQYFiOEeGPcfGLnM8rXg" name="pumpError"/>
+      </vertices>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_G9ZVkFiNEeGPcfGLnM8rXg" name="Environmental_Simulation" behavioralElement="_kL5QEFiNEeGPcfGLnM8rXg">
+      <attributes xmi:id="_OjXBYFiNEeGPcfGLnM8rXg" name="N1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </attributes>
+      <attributes xmi:id="_RPoaYFiNEeGPcfGLnM8rXg" name="N2">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </attributes>
+      <attributes xmi:id="_R5Ni4FiNEeGPcfGLnM8rXg" name="M1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </attributes>
+      <attributes xmi:id="_Soqp4FiNEeGPcfGLnM8rXg" name="M2">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </attributes>
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_I_PRgFiNEeGPcfGLnM8rXg" name="Environmental_Simulation_Main" initial="true">
+        <regions xmi:id="_WvhKgFiNEeGPcfGLnM8rXg" name="Synchronization" priority="1">
+          <statechart xmi:id="_ZhlpgFiNEeGPcfGLnM8rXg" name="Synchronization">
+            <attributes xmi:id="_ANR6YFiSEeGPcfGLnM8rXg" name="wm">
+              <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+            </attributes>
+            <attributes xmi:id="_G_AF0FiSEeGPcfGLnM8rXg" name="wm_s">
+              <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+            </attributes>
+            <attributes xmi:id="_I4CrEFiSEeGPcfGLnM8rXg" name="wm_n">
+              <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+            </attributes>
+            <transitions xmi:id="_ZDHykFiSEeGPcfGLnM8rXg" priority="1" target="_X4zUgFiSEeGPcfGLnM8rXg" source="_OzNpAFiSEeGPcfGLnM8rXg"/>
+            <transitions xmi:id="_Z9CdIFiSEeGPcfGLnM8rXg" priority="1" target="_X4zUgFiSEeGPcfGLnM8rXg" source="_X4zUgFiSEeGPcfGLnM8rXg">
+              <synchronization xmi:id="_n-ipAFiSEeGPcfGLnM8rXg" callee="_79ECYFiREeGPcfGLnM8rXg"/>
+              <clockConstraints xmi:id="_hXrCsFiSEeGPcfGLnM8rXg" clock="_L5m-oFiSEeGPcfGLnM8rXg" operator="GREATER_OR_EQUAL">
+                <bound xmi:id="_h-tNgFiSEeGPcfGLnM8rXg" value="5"/>
+              </clockConstraints>
+            </transitions>
+            <transitions xmi:id="_aWv9oFiSEeGPcfGLnM8rXg" priority="2" target="_WNTcAFiSEeGPcfGLnM8rXg" source="_X4zUgFiSEeGPcfGLnM8rXg">
+              <synchronization xmi:id="_bsbXIFiSEeGPcfGLnM8rXg" callee="_1GAD8FiREeGPcfGLnM8rXg" kind="RECEIVE"/>
+            </transitions>
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_OzNpAFiSEeGPcfGLnM8rXg" name="Off" outgoingTransitions="_ZDHykFiSEeGPcfGLnM8rXg" initial="true">
+              <entryEvent xmi:id="_QVU8AFiSEeGPcfGLnM8rXg">
+                <action xmi:id="_RXXn0FiSEeGPcfGLnM8rXg" name="wm := 35;">
+                  <expressions xsi:type="sdme:TextualExpression" xmi:id="_RXY18FiSEeGPcfGLnM8rXg" expressionText="wm :=35;" language="Modelica"/>
+                </action>
+              </entryEvent>
+            </vertices>
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_WNTcAFiSEeGPcfGLnM8rXg" name="Error" incomingTransitions="_aWv9oFiSEeGPcfGLnM8rXg" final="true"/>
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_X4zUgFiSEeGPcfGLnM8rXg" name="Simulation_On" outgoingTransitions="_Z9CdIFiSEeGPcfGLnM8rXg _aWv9oFiSEeGPcfGLnM8rXg" incomingTransitions="_ZDHykFiSEeGPcfGLnM8rXg _Z9CdIFiSEeGPcfGLnM8rXg">
+              <regions xmi:id="_dBVUkFiSEeGPcfGLnM8rXg" name="Simulation" priority="1">
+                <statechart xmi:id="_d67PAFiSEeGPcfGLnM8rXg" name="Simulation">
+                  <transitions xmi:id="_rSlzsFiSEeGPcfGLnM8rXg" priority="1" target="_fNVSEFiSEeGPcfGLnM8rXg" source="_emy2gFiSEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_uiZ-oFiSEeGPcfGLnM8rXg" callee="_2qi_4FiREeGPcfGLnM8rXg" kind="RECEIVE"/>
+                    <action xmi:id="_zeVGEFiSEeGPcfGLnM8rXg" name="wm_s := pumpOn.value+wm;">
+                      <expressions xsi:type="sdme:TextualExpression" xmi:id="_0Qx2sFiSEeGPcfGLnM8rXg" expressionText="wm_s := pumpOn.value+wm;" language="Modelica"/>
+                    </action>
+                  </transitions>
+                  <transitions xmi:id="_r3vIIFiSEeGPcfGLnM8rXg" priority="1" target="_emy2gFiSEeGPcfGLnM8rXg" source="_fNVSEFiSEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_2rCSoFiSEeGPcfGLnM8rXg" callee="_6CJN0FiREeGPcfGLnM8rXg" kind="RECEIVE"/>
+                    <absoluteDeadlines xmi:id="_9BHD4FiSEeGPcfGLnM8rXg" clock="_5bFYYFiSEeGPcfGLnM8rXg">
+                      <upperBound xmi:id="_-TvJYFiSEeGPcfGLnM8rXg" value="16"/>
+                      <lowerBound xmi:id="_-C7GMFiSEeGPcfGLnM8rXg"/>
+                    </absoluteDeadlines>
+                  </transitions>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_emy2gFiSEeGPcfGLnM8rXg" name="Boil" outgoingTransitions="_rSlzsFiSEeGPcfGLnM8rXg" incomingTransitions="_r3vIIFiSEeGPcfGLnM8rXg" initial="true">
+                    <doEvent xmi:id="_DEN10FiTEeGPcfGLnM8rXg" periodLower="1" periodUpper="2">
+                      <action xmi:id="_DEN10ViTEeGPcfGLnM8rXg" name="wm := wm-1;">
+                        <expressions xsi:type="sdme:TextualExpression" xmi:id="_GYIdoFiTEeGPcfGLnM8rXg" expressionText="wm := wm-1;" language="Modelica"/>
+                      </action>
+                    </doEvent>
+                    <exitEvent xmi:id="_H-CrgFiTEeGPcfGLnM8rXg">
+                      <action xmi:id="_KI5ZgFiTEeGPcfGLnM8rXg" name="wm_n:=N1-wm;">
+                        <expressions xsi:type="sdme:TextualExpression" xmi:id="_K6t4AFiTEeGPcfGLnM8rXg" expressionText="wm_n:=N1-wm;" language="Modelica"/>
+                      </action>
+                    </exitEvent>
+                  </vertices>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_fNVSEFiSEeGPcfGLnM8rXg" name="Refill" outgoingTransitions="_r3vIIFiSEeGPcfGLnM8rXg" incomingTransitions="_rSlzsFiSEeGPcfGLnM8rXg">
+                    <doEvent xmi:id="_RBH1kFiTEeGPcfGLnM8rXg" periodLower="1" periodUpper="2">
+                      <action xmi:id="_RBH1kViTEeGPcfGLnM8rXg" name="wm := wm + 2;">
+                        <expressions xsi:type="sdme:TextualExpression" xmi:id="_TCFAsFiTEeGPcfGLnM8rXg" expressionText="wm := wm + 2;" language="Modelica"/>
+                      </action>
+                    </doEvent>
+                    <entryEvent xmi:id="_M-xKwGj3EeGHdbjaVe5VZg" clockResets="_5bFYYFiSEeGPcfGLnM8rXg"/>
+                    <invariants xmi:id="_ArttYFiTEeGPcfGLnM8rXg" clock="_5bFYYFiSEeGPcfGLnM8rXg" operator="LESS_OR_EQUAL">
+                      <bound xmi:id="_BUin8FiTEeGPcfGLnM8rXg" value="16"/>
+                    </invariants>
+                  </vertices>
+                  <clocks xmi:id="_5bFYYFiSEeGPcfGLnM8rXg" name="c1"/>
+                </statechart>
+              </regions>
+              <entryEvent xmi:id="_HmAWUGj3EeGHdbjaVe5VZg" clockResets="_L5m-oFiSEeGPcfGLnM8rXg"/>
+            </vertices>
+            <clocks xmi:id="_L5m-oFiSEeGPcfGLnM8rXg" name="c0"/>
+          </statechart>
+        </regions>
+        <regions xmi:id="_YN5NAFiNEeGPcfGLnM8rXg" name="Slave">
+          <statechart xmi:id="_apOnAFiNEeGPcfGLnM8rXg" name="Slave">
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_rnYigFiTEeGPcfGLnM8rXg" name="Slave_Main" initial="true">
+              <regions xmi:id="_xDDhAFiTEeGPcfGLnM8rXg" name="Receive" priority="1">
+                <statechart xmi:id="_zfr7gFiTEeGPcfGLnM8rXg" name="Receive_Slave">
+                  <transitions xmi:id="_-liOkFiTEeGPcfGLnM8rXg" priority="1" target="_5nwtAFiTEeGPcfGLnM8rXg" source="_4jo9kFiTEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_wrQ2oFiUEeGPcfGLnM8rXg" callee="_2qi_4FiREeGPcfGLnM8rXg"/>
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_wRaMMFiUEeGPcfGLnM8rXg" kind="TRIGGER">
+                      <message xmi:id="_wRdPgFiUEeGPcfGLnM8rXg" callee="_-MpHEFiLEeGPcfGLnM8rXg"/>
+                    </events>
+                  </transitions>
+                  <transitions xmi:id="__uVCoFiTEeGPcfGLnM8rXg" priority="1" target="_4jo9kFiTEeGPcfGLnM8rXg" source="_5nwtAFiTEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_5L7QIFiUEeGPcfGLnM8rXg" callee="_6CJN0FiREeGPcfGLnM8rXg"/>
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_4pw-QFiUEeGPcfGLnM8rXg" kind="TRIGGER">
+                      <message xmi:id="_4pw-QViUEeGPcfGLnM8rXg" callee="_-8KfgFiLEeGPcfGLnM8rXg"/>
+                    </events>
+                  </transitions>
+                  <transitions xmi:id="_ARgBIFiUEeGPcfGLnM8rXg" priority="2" target="_4jo9kFiTEeGPcfGLnM8rXg" source="_5nwtAFiTEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="__dxBoFiUEeGPcfGLnM8rXg" callee="_1GAD8FiREeGPcfGLnM8rXg"/>
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="__JLRsFiUEeGPcfGLnM8rXg" kind="TRIGGER">
+                      <message xmi:id="__JL4wFiUEeGPcfGLnM8rXg" callee="_1-qZAFiLEeGPcfGLnM8rXg"/>
+                    </events>
+                  </transitions>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_4jo9kFiTEeGPcfGLnM8rXg" name="Pump_Off" outgoingTransitions="_-liOkFiTEeGPcfGLnM8rXg" incomingTransitions="__uVCoFiTEeGPcfGLnM8rXg _ARgBIFiUEeGPcfGLnM8rXg" initial="true"/>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_5nwtAFiTEeGPcfGLnM8rXg" name="Pump_On" outgoingTransitions="__uVCoFiTEeGPcfGLnM8rXg _ARgBIFiUEeGPcfGLnM8rXg" incomingTransitions="_-liOkFiTEeGPcfGLnM8rXg"/>
+                </statechart>
+              </regions>
+              <regions xmi:id="_yoOvEFiTEeGPcfGLnM8rXg" name="Send" priority="2">
+                <statechart xmi:id="_1CWBEFiTEeGPcfGLnM8rXg" name="Send_Slave">
+                  <transitions xmi:id="_CgdzEFiUEeGPcfGLnM8rXg" priority="1" target="_8fLmEFiTEeGPcfGLnM8rXg" source="_8fLmEFiTEeGPcfGLnM8rXg">
+                    <synchronization xmi:id="_eDlJ0FiUEeGPcfGLnM8rXg" callee="_79ECYFiREeGPcfGLnM8rXg" kind="RECEIVE"/>
+                    <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_ckptsFiUEeGPcfGLnM8rXg">
+                      <message xmi:id="_cksJ8FiUEeGPcfGLnM8rXg" callee="__hKqAFiLEeGPcfGLnM8rXg">
+                        <ownedParameterBindings xmi:id="_eCb6UFiUEeGPcfGLnM8rXg" parameter="_GiXb4FiMEeGPcfGLnM8rXg">
+                          <valueExpression xsi:type="sdme:LiteralExpression" xmi:id="_iwuOYFiUEeGPcfGLnM8rXg" value="send.value"/>
+                        </ownedParameterBindings>
+                      </message>
+                    </events>
+                  </transitions>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_8fLmEFiTEeGPcfGLnM8rXg" name="Send" outgoingTransitions="_CgdzEFiUEeGPcfGLnM8rXg" incomingTransitions="_CgdzEFiUEeGPcfGLnM8rXg" initial="true"/>
+                </statechart>
+              </regions>
+            </vertices>
+          </statechart>
+        </regions>
+        <entryEvent xmi:id="_OmFWgFiTEeGPcfGLnM8rXg">
+          <action xmi:id="_R6YwMGj3EeGHdbjaVe5VZg" name="N1 :=30; N2 := 50; M1 :=12; M2 :=70;">
+            <expressions xsi:type="sdme:TextualExpression" xmi:id="_Vr4E0Gj3EeGHdbjaVe5VZg" expressionText="N1 :=30; N2 := 50; M1 :=12; M2 :=70;" language="Modelica"/>
+          </action>
+        </entryEvent>
+        <channels xmi:id="_1GAD8FiREeGPcfGLnM8rXg" name="pumpError"/>
+        <channels xmi:id="_2qi_4FiREeGPcfGLnM8rXg" inParameter="_3__v4FiREeGPcfGLnM8rXg" name="pumpOn">
+          <containedParameters xmi:id="_3__v4FiREeGPcfGLnM8rXg" name="value">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+          </containedParameters>
+        </channels>
+        <channels xmi:id="_6CJN0FiREeGPcfGLnM8rXg" name="pumpOff"/>
+        <channels xmi:id="_79ECYFiREeGPcfGLnM8rXg" inParameter="_9BWJ4FiREeGPcfGLnM8rXg" name="send">
+          <containedParameters xmi:id="_9BWJ4FiREeGPcfGLnM8rXg" name="value">
+            <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+          </containedParameters>
+        </channels>
+      </vertices>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

@@ -1,0 +1,129 @@
+import transforms.naming;
+import transforms.util;
+import transforms.GraphvizBase;
+
+modeltype DOT uses dot("http://www.fujaba.de/graphviz/dot/0.1.0");
+modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
+modeltype MSGTYPE uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype TRANSFORM uses transform('http://www.fujaba.de/modelica/m2t/transform/0.4.0');
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+transformation rtsc2graphviz(in rtscModel : RTSC, out dotModel : DOT)
+	access Naming, Util extends GraphvizBase; // extends is only used due to a qvto bug, which is fixed in luna
+
+main() {
+    log("transformation started");
+    log("extend objects: " + rtscModel.objects()[RealtimeStatechart]->size().toString());
+    log(rtscModel.rootObjects()[RealtimeStatechart]->size().toString());
+    rtscModel.rootObjects()->forEach(r) {
+    	log(r.toString());
+    };
+    //rtscModel.objects()[RealtimeStatechart]->select(embedded)->map createContainer();
+    rtscModel.rootObjects()[RealtimeStatechart]->map rtsc2graphviz();
+    //rtscModel.rootObjects()[RealtimeStatechart]->map createContainer();
+    log("transformation finished");
+}
+
+mapping RealtimeStatechart::rtsc2graphviz() : DotGraph
+	inherits EObject::initialGraphSettings, EObject::initialNodeSettings, EObject::initialEdgeSettings
+{
+	var nodeList : Sequence(DotNode) := self.states->map state2node();
+	self.transitions->map transition2edge();
+	if (self.isPortRtsc()) then {
+		self.addPortNodes(result);
+		subgraphs += object DotGraph {
+			id := self.name;
+			nodes := nodeList;
+		};
+		self.transitions->fixupContainments(subgraphs->any(true));
+	} else {
+		// FIXME: hack
+		if (self.states->size() = 1) then {
+			result.nodes += self.states->any(true).resolve(DotNode);
+		} else {
+			self.transitions->fixupContainments(result);
+		} endif;
+	} endif;
+	//graphSettings := createGraphSettings();
+	//nodeSettings := createNodeSettings();
+	//edgeSettings := createEdgeSettings();
+	//edges := self.transitions->map transition2edge()->flatten();
+}
+
+helper Transition::fixupContainments(inout graph : DotGraph) {
+	log("call: " + self.source.name);
+	var edges : Sequence(DotEdge) := self.resolve(DotEdge);
+	var nodes : Sequence(DotNode) := self.resolve(DotNode);
+	assert fatal (edges->notEmpty()) with log("err");
+	assert fatal (nodes->notEmpty()) with log("err");
+	graph.edges += self.resolve(DotEdge);
+	graph.nodes += self.resolve(DotNode);
+	//log(self.resolve(Edge)->size().toString());
+	return;
+}
+
+mapping State::state2node() : DotNode {
+	name := self.name;
+}
+
+mapping Transition::transition2edge() : e1:DotEdge, e2:DotEdge, n:DotNode {
+	// include prio in the name in order to handle multiple transitions
+	// from node to another
+	n.name := self.getName();
+	//n.name := 'transitionNode_' + self.source.name + '_' + self.target.name;
+	e1.source := self.source.resolveone(DotNode);
+	e1.target := n;
+	e2.source := n;
+	e2.target := self.target.resolveone(DotNode);
+}
+
+helper RealtimeStatechart::addPortNodes(inout graph : DotGraph) {
+	self.allTriggerMessageEvents()->forEach(ev) {
+		var port : DotNode := ev.map toDelegationPort(true);
+		var mbox : DotNode := ev.map toMailbox();
+		graph.nodes += Set{port, mbox};
+		graph.edges += new DotEdge(port, mbox);
+	};
+	self.allRaiseMessageEvents()->forEach(ev) {
+		var port : DotNode := ev.map toDelegationPort(false);
+		var msg : DotNode := ev.map toMessage();
+		graph.nodes += Set{port, msg};
+		graph.edges += new DotEdge(port, msg);
+	};
+}
+
+mapping AsynchronousMessageEvent::toDelegationPort(inPort : Boolean) : DotNode {
+	name := self.getPortName(inPort);
+}
+
+mapping AsynchronousMessageEvent::toMailbox() : DotNode {
+	name := self.getMailboxName();
+}
+
+mapping AsynchronousMessageEvent::toMessage() : DotNode {
+	name := self.getMessageName();
+}
+
+query RealtimeStatechart::allTriggerMessageEvents() : Set(AsynchronousMessageEvent) {
+	return self.embeddedStatecharts()->collect(transitions)[not triggerMessageEvent.oclIsUndefined()]
+		->collect(triggerMessageEvent)->removeTypeDuplicates();
+}
+
+query RealtimeStatechart::allRaiseMessageEvents() : Set(AsynchronousMessageEvent) {
+	return self.embeddedStatecharts()->collect(transitions)[not raiseMessageEvent.oclIsUndefined()]
+		->collect(raiseMessageEvent)->removeTypeDuplicates();
+}
+
+query Bag(AsynchronousMessageEvent)::removeTypeDuplicates() : Set(AsynchronousMessageEvent) {
+	return self->iterate(ev; acc : Set(AsynchronousMessageEvent) = Set{} |
+		if acc->collect(message.instanceOf)->includes(ev.message.instanceOf) then
+			acc
+		else
+			acc->including(ev) 
+		endif
+	);
+}
+
+query RealtimeStatechart::isPortRtsc() : Boolean {
+	return self.embedded and self.parentRegion.oclAsType(RegionInstance).embedsSinglePortStatechart;
+}

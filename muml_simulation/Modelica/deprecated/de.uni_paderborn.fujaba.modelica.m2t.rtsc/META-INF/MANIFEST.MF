@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Rtsc Module Runtime Plug-in
+Bundle-SymbolicName: de.uni_paderborn.fujaba.modelica.m2t.rtsc
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.modelica.m2t.rtsc.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common;bundle-version="3.2.2",
+ org.eclipse.acceleo.model;bundle-version="3.2.2",
+ org.eclipse.acceleo.profiler;bundle-version="3.2.2",
+ org.eclipse.acceleo.engine;bundle-version="3.2.2",
+ com.google.guava,
+ de.uni_paderborn.fujaba.muml.model.gen.graphviz;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.model.gen.modelica.instance.transform;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Export-Package: de.uni_paderborn.fujaba.modelica.m2t.rtsc,
+ de.uni_paderborn.fujaba.modelica.m2t.rtsc.layout,
+ de.uni_paderborn.fujaba.modelica.m2t.rtsc.main
+

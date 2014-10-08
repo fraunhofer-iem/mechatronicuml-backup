@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[module transform_ComplexState('http://www.fujaba.de/muml/model/realtimestatechart/0.2.3')/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+
+
+[template public init_ComplexState(s : State)]
+[s.name.toUpperFirst()/]_h.[if (s.regions->size() = 1)][s.regions->first().statechart.name.toUpperFirst()/][else][s.name.toUpperFirst()/][/if]	[s.name.toLowerFirst()/](
+  nIn=[if (hasEmbeddedHistoryStatechart(s))]0[elseif (s.initial)] [s.incomingTransitions->size()+1/][else][s.incomingTransitions->size()/][/if],
+  use_inPort=[if (s.regions->size() >= 1 and not s.regions->any(statechart.history).oclIsUndefined())]false[else]true[/if],
+  use_outPort=false,
+  			[if (s.stateEntryPoints->notEmpty() or s.stateExitPoints->notEmpty() or s.outgoingTransitions->notEmpty() or hasEmbeddedHistoryStatechart(s))]
+  use_suspend=true,
+  			[else]
+  use_suspend=false,
+  			[/if]
+  nSuspend=[s.outgoingTransitions->size()+getAllExitPoints(s)->asSet().outgoingTransitions->size()/],
+  	[let entryPoints : Set(StateEntryPoint) = getAllEntryPoints(s)]
+  nResume=[if (hasEmbeddedHistoryStatechart(s))][if (s.initial)][s.incomingTransitions->size()+entryPoints.incomingTransitions->size()+1/][else][s.incomingTransitions->size()+entryPoints.incomingTransitions->size()/][/if][elseif (entryPoints->notEmpty()) ][if (s.initial)][entryPoints.incomingTransitions->size()+1/][else][entryPoints.incomingTransitions->size()/][/if][else]0[/if]);
+	[/let]
+[/template]

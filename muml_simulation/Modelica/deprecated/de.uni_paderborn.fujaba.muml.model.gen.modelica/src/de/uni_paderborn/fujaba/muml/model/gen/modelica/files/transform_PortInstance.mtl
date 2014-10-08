@@ -1,0 +1,256 @@
+[comment encoding = UTF-8 /]
+[module transform_PortInstance('http://www.fujaba.de/muml/model/component/0.2.3',
+								'http://www.eclipse.org/emf/2002/Ecore',
+								'http://www.fujaba.de/muml/model/msgiface/0.2.2',
+								'http://www.storydriven.org/core/0.2.0', 
+								'http://www.fujaba.de/muml/model/instance/0.2.2',
+								'http://www.fujaba.de/muml/model/realtimestatechart/0.2.3',
+								'http://www.fujaba.de/muml/model/core/0.2.4')/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_DiscreteSinglePortInstance/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Port/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Variable/]
+
+
+[**
+ * %{generate}
+ * Generates the connector of a PortInstance of type DiscretePortInstance.
+ * @param portInstance is a PortInstance.
+ */]
+[template public generate(portInstance : PortInstance) ? (portInstance.oclIsTypeOf(DiscretePortInstance))]
+	//discrete port [portInstance.name/]
+[portInstance.portType.oclAsType(DiscretePort).generate()/]	
+[/template]
+
+[**
+ * %{generate}
+ * Generates the connector of a PortInstance of type ContinuousPortInstance.
+ * @param portInstance is a PortInstance.
+ */]
+[template public generate(portInstance : PortInstance) ? (portInstance.oclIsTypeOf(ContinuousPortInstance))]
+	//continuous port [portInstance.name/]
+[portInstance.portType.oclAsType(ContinuousPort).generate()/]
+[/template]
+
+[**
+ * %{generate}
+ * Generates the connector of a PortInstance of type HybridPortInstance.
+ * @param portInstance is a PortInstance.
+ */]
+[template public generate(portInstance : PortInstance) ? (portInstance.oclIsTypeOf(HybridPortInstance))]
+	//hybrid port [portInstance.name/]
+[portInstance.portType.oclAsType(HybridPort).generate()/]
+[/template]
+
+
+[**
+ * %{init_PortInstance}
+ * Initialisation of a modelica connector corresponding of the tranformed PortInstance.
+ * @param portInstance is a PortInstance of type ContinuousPortInstance with an assigned DatyType of type PrimitiveDataType.
+ */]
+[template public init_PortInstance(portInstance : PortInstance) ? (portInstance.oclIsTypeOf(ContinuousPortInstance) and portInstance.portType.oclAsType(ContinuousPort).type.oclIsKindOf(PrimitiveDataType))]
+	[let dataType : PrimitiveTypes = portInstance.portType.oclAsType(ContinuousPort).type.oclAsType(PrimitiveDataType).primitiveType]
+		[if (not (dataType = PrimitiveTypes::STRING  or dataType = PrimitiveTypes::VOID))]
+[getModelicaInterfacePath()/].[dataType.transform()/][if (portInstance.portType.oclAsType(ContinuousPort).isContinuousInPort)]Output[else]Input[/if] [getContinuousPortName(portInstance,true)/];
+		[/if]
+	[/let]
+[/template]
+
+[**
+ * Connects the component instances within a component instance configuration.
+ * @param aComponentInstanceConfiguration is a component instance configuration.
+ */]
+[template public connect_ComponentInstancePorts(aComponentInstanceConfiguration : ComponentInstanceConfiguration)]
+// connect_ComponentInstancePorts
+	[for (componentInstance : ComponentInstance | aComponentInstanceConfiguration.componentInstances)]	
+// = [componentInstance.name/]	
+		[let comp_sender : Set(ComponentInstance) = getSenderComponents_h(componentInstance.portInstances->asSet(),componentInstance->asSet(),Set{})->asSet() ] 
+	// foo
+			[for (it : ComponentInstance | comp_sender)]
+	// comp_sender sc = [it.name/]		
+			[/for]		
+	// bar
+			[let sendTransitions : Set(Transition) = getSenderTransitions_h(comp_sender.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)->asSet(), Set{})]			
+	// sendTransitions.size = [sendTransitions->size()/]
+				[for (it : Transition | sendTransitions)]
+	// sendTransitions = ([it.source.name/], [it.target.name/], [it.priority/])
+				[/for]
+[connect_PortInstances(aComponentInstanceConfiguration, componentInstance,sendTransitions)/]			
+			[/let]
+		[/let]
+	[/for]
+[/template]
+
+[**
+ * ${connect_ComponentInstancePorts}
+ * @param aComponentInstanceConfiguration 
+ * @param componentInstance 
+ * @param sendTransitions 
+ */]
+[template public connect_ComponentInstancePorts(aComponentInstanceConfiguration : ComponentInstanceConfiguration, componentInstance : ComponentInstance, sendTransitions : Set(Transition))]
+// connect_ComponentInstancePorts
+	[for (it : Transition | sendTransitions)]
+		// transition target [it.target.name/]
+	[/for]
+[connect_PortInstances(aComponentInstanceConfiguration, componentInstance,sendTransitions)/]				
+[/template]
+
+[comment TODO: only for structured components?! /]
+[**
+ * Connects the port instances a connector instance.
+ * ${connect_PortInstances}
+ * @param aComponentInstanceConfiguration is a component instance configuration
+ * @param componentInstance is a component instance.
+ * @param sendTransitions is a set of transitions with the attribute of a raiseMessageEvent.
+ */]
+[template private connect_PortInstances(aComponentInstanceConfiguration : ComponentInstanceConfiguration, componentInstance : ComponentInstance, sendTransitions : Set(Transition))
+{raiseMessageInterfaces : Set(MessageInterface) = sendTransitions->select(hasRaiseMessageEvent()).getRaiseMessageType().messageInterface->asSet();
+}]	
+	// connect_PortInstances ci = [componentInstance.name/]
+	[for (it : MessageInterface | getMessageInterfaces_h(raiseMessageInterfaces))]
+		// mi_h = [it.name/]
+	[/for]
+	[if (aComponentInstanceConfiguration.componentInstances->includes(componentInstance))]
+		// if includes
+		[for (pi : PortInstance | componentInstance.portInstances->select(pi : PortInstance | pi.portType.oclIsTypeOf(DiscretePort)))]
+		// pi = [pi.name/]
+		//incomming
+			[for (ci : ConnectorInstance | pi.incomingConnectorInstances->select(ci : ConnectorInstance | ci.oclIsKindOf(AssemblyInstance)))]
+				
+				// source = [ci.source.name/] ; target =  [ci.target.name/]
+				// s = t mi [ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface 
+					= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface/]
+				// s mi = [ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()/]
+				// t mi = [ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()/]
+				[if (ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface 
+					= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface
+					and ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()
+					and ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty())]
+					[for (mt : MessageType | getMessageInterfaces_h(ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface->asSet())->select(mi : MessageInterface | mi.messageTypes->notEmpty()).messageTypes)]
+					// mt = [mt.name/]
+[connect_SenderAndReceiverComponentInstances(ci.source.componentInstance, ci.target.componentInstance, sendTransitions, mt, 'input', 'output')/]					
+					[/for]
+				[/if]
+				[if (ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface 
+					= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface
+					and ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()
+					and ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty())]
+				// else
+					[for (mt : MessageType | getMessageInterfaces_h(ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface->asSet())->select(mi : MessageInterface | mi.messageTypes->notEmpty()).messageTypes)]
+					// mt = [mt.name/]
+					// source = [ci.source.name/] ; target =  [ci.target.name/]
+					// s = t mi [ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface 
+						= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface/]
+					// s mi = [ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()/]
+					// t mi = [ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()/]
+[connect_SenderAndReceiverComponentInstances(ci.source.componentInstance, ci.target.componentInstance, sendTransitions, mt, 'output', 'input')/]					
+					[/for]
+				[/if]
+			[/for]
+		//outgoing
+			[for (ci : ConnectorInstance | pi.outgoingConnectorInstances->select(ci : ConnectorInstance | ci.oclIsKindOf(AssemblyInstance)))]
+				// source = [ci.source.name/] ; target =  [ci.target.name/]
+				// s = t mi [ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface 
+					= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface/]
+				// s mi = [ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()/]
+				// t mi = [ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()/]
+				[if (ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface 
+					= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface
+					and ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()
+					and ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty())]
+					[for (mt : MessageType | getMessageInterfaces_h(ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface->asSet())->select(mi : MessageInterface | mi.messageTypes->notEmpty()).messageTypes)]
+					// mt = [mt.name/]
+[connect_SenderAndReceiverComponentInstances(ci.source.componentInstance, ci.target.componentInstance, sendTransitions, mt, 'input', 'output')/]					
+					[/for]
+				[/if]
+				[if (ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface 
+					= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface
+					and ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()
+					and ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty())]
+				// else
+					[for (mt : MessageType | getMessageInterfaces_h(ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface->asSet())->select(mi : MessageInterface | mi.messageTypes->notEmpty()).messageTypes)]
+					// mt = [mt.name/]
+					// source = [ci.source.name/] ; target =  [ci.target.name/]
+					// s = t mi [ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface 
+						= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface/]
+					// s mi = [ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()/]
+					// t mi = [ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()/]
+[connect_SenderAndReceiverComponentInstances(ci.source.componentInstance, ci.target.componentInstance, sendTransitions, mt, 'output', 'input')/]					
+					[/for]
+				[/if]
+			[/for]
+		[/for]
+		[for (pi : PortInstance | componentInstance.portInstances->select(pi : PortInstance | pi.portType.oclIsKindOf(ContinuousPort)))]
+			block_expression
+		[/for]
+	[else]
+		// else
+		[for (pi : PortInstance | componentInstance.portInstances->select(pi : PortInstance | pi.portType.oclIsTypeOf(DiscretePort)))]
+			// for 
+			[for (ci : ConnectorInstance | pi.outgoingConnectorInstances->select(ci : ConnectorInstance | ci.oclIsKindOf(DelegationInstance)))]
+				[if (ci.source.oclAsType(DiscretePortInstance).senderMessageInterface 
+		  			= ci.target.oclAsType(DiscretePortInstance).senderMessageInterface 
+		  			and ci.source.oclAsType(DiscretePortInstance)->select(not senderMessageInterface.oclIsUndefined())->notEmpty() 
+		  			and ci.target.oclAsType(DiscretePortInstance)->select(not senderMessageInterface.oclIsUndefined())->notEmpty())]
+					// s = s
+					[for (mt : MessageType | getMessageInterfaces_h(ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface->asSet())->select(mi : MessageInterface | mi.messageTypes->notEmpty()).messageTypes)]
+					// mt = [mt.name/]
+[connect_ComponentInstances(ci.source.componentInstance, ci.target.componentInstance, sendTransitions, mt)/]						
+					[/for]
+				[/if]	
+				[if (ci.source.oclAsType(DiscretePortInstance).receiverMessageInterface 
+		  		= ci.target.oclAsType(DiscretePortInstance).receiverMessageInterface 
+		  		and ci.source.oclAsType(DiscretePortInstance)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty() 
+		  		and ci.target.oclAsType(DiscretePortInstance)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty())]
+				// r = r
+					[for (mt : MessageType | getMessageInterfaces_h(ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface->asSet())->select(mi : MessageInterface | mi.messageTypes->notEmpty()).messageTypes)]
+							// mt = [mt.name/]
+							// connect?
+							// source [ci.source.componentInstance.name/] target [ci.target.componentInstance.name/]
+							// mt = [mt.name/]
+							[for (it : Transition | sendTransitions)]
+							// transition [it.target.name/]
+							[/for]
+[connect_ComponentInstances(ci.source.componentInstance, ci.target.componentInstance, sendTransitions, mt)/]					
+					[/for]
+				[/if]
+			[/for]
+		[/for]
+	[/if]
+
+[/template]
+
+[**
+ * %{connect_SenderAndReceiverComponentInstances}
+ * @param c1 
+ * @param c2 
+ * @param sendTransitions 
+ * @param mt 
+ * @param portType1 
+ * @param portType2 
+ */]
+[template private connect_SenderAndReceiverComponentInstances(c1 : ComponentInstance, c2 : ComponentInstance,sendTransitions : Set(Transition),mt : MessageType, portType1 : String, portType2 : String)]
+	//connect [sendTransitions->size()/]
+	[for (t : Transition | sendTransitions->select(t1 : Transition | t1.getRaiseMessageType() = mt))]
+connect([c1.name.toLowerFirst()/].[getPortName(mt, t, null, true)/], [c2.name.toLowerFirst()/].[getPortName(mt, t, null, true)/]);		
+	[/for]
+[/template]
+[comment TODO : source nicht nötig? /]
+[**
+ * Connects two component instances according to a sending transition and it's message type.
+ * %{connect_ComponentInstances}
+ * @param source is the source ComponentInstance.
+ * @param target is the target ComponentInstance.
+ * @param sendTransitions is the sending Transition with the attribute of a raiseMessageEvent.
+ * @param mt is the MessageType of sent message.w
+ */]
+[template private connect_ComponentInstances(source : ComponentInstance, target : ComponentInstance, sendTransitions : Set(Transition),mt : MessageType)]
+	[for (t : Transition | sendTransitions->select(t1 : Transition | t1.getRaiseMessageType() = mt))]
+connect([getPortName(mt, t, null , true)/], [target.name.toLowerFirst()/].[getPortName(mt, t,null, true)/]);		
+	[/for]
+[/template]
+
+
+
+
+

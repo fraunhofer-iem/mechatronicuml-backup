@@ -1,0 +1,184 @@
+[comment encoding = UTF-8 /]
+[module transform_Port('http://www.fujaba.de/muml/model/component/0.2.3',
+						'http://www.fujaba.de/muml/model/realtimestatechart/0.2.3',
+						'http://www.fujaba.de/muml/model/msgiface/0.2.2',
+						'http://www.fujaba.de/muml/model/instance/0.2.2')/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+
+[**
+ * %{generate}
+ * Generates the connector of a Port of type DiscretePort.
+ * @param p 
+ */]
+[template public generate(p : DiscretePort)]
+	[for (mt : MessageType | getMessageInterfaces_h(p.oclAsType(DiscretePort).receiverMessageInterface->asSet())->select(messageTypes->notEmpty()).messageTypes->select(parameters->excluding(null)->notEmpty()))]
+connector [getPortName(mt,null, 'input', false)/] = Utilities.PortInterfaces.input_port(redeclare 
+      MessageInterfaces.Messages.[getMessageName(mt, null, true)/]  message);
+	[/for]
+	[for (mt : MessageType | getMessageInterfaces_h(p.oclAsType(DiscretePort).senderMessageInterface->asSet())->select(messageTypes->notEmpty()).messageTypes->select(parameters->excluding(null)->notEmpty()))]
+connector [getPortName(mt,null, 'output', false)/] = Utilities.PortInterfaces.output_port(redeclare 
+      MessageInterfaces.Messages.[getMessageName(mt, null, true)/] message);
+connector [getPortName(mt,null, null, false)/] = Utilities.PortInterfaces.port(redeclare 
+        MessageInterfaces.Messages.[getMessageName(mt, null, true)/] message);
+	[/for]
+[/template]
+
+[template public generate(p : ContinuousPort)]
+[comment: wird aktuell nicht benötigt, die konnektoren werden von der modelica standartbibliothek verwendet/]
+[/template]
+
+[template public generate(p : HybridPort)]
+[comment: wird aktuell nicht benötigt, die konnektoren werden von der modelica standartbibliothek verwendet/]
+[/template]
+
+
+[**
+ * 
+ * @param states 
+ * @param syncChannels 
+ */]
+[template public init_SyncPorts(states : Set(State), syncChannels : Set(SynchronizationChannel) )]
+	//init_SyncPorts
+	[for (it : SynchronizationChannel | syncChannels->select(not oclIsUndefined()))]
+		// syncChan = [it.name/]
+	[/for]
+	[for (s : State | states->select(not oclIsUndefined()))]
+		[for (sync : SynchronizationChannel | syncChannels->select(not oclIsUndefined()) )]
+			[let regions_send : Set(Region) = getRegionsOfSendSyncChannel(sync, s.regions)]
+			[let transitions_send : Set(Transition) = findSyncSenderTransitions_h(sync, getStates(regions_send.statechart.vertices->asOrderedSet()))->asSet()->union(s.outgoingTransitions->select(t : Transition | getSyncChannel(t) = sync and t.synchronization.kind = SynchronizationKind::SEND)->asSet())]
+				[for (t_send : Transition | transitions_send)]
+[initSyncPort(t_send,getSyncCount_h(getSyncChannel(t_send), t_send.statechart.embeddingRegion.parentState, SynchronizationKind::SEND))/]				
+				[/for]
+			[/let]
+			[/let]
+			[let regions_receive : Set(Region) = getRegionsOfReceiveSyncChannel(sync, s.regions)]
+			[let transitions_receive : Set(Transition) = findSyncReceiverTransitions_h(sync, getStates(regions_receive.statechart.vertices->asOrderedSet()))->asSet()->union(s.outgoingTransitions->select(t : Transition | getSyncChannel(t) = sync and t.synchronization.kind = SynchronizationKind::RECEIVE)->asSet())]
+				[for (t_receive : Transition | transitions_receive)]
+[initSyncPort(t_receive,getSyncCount_h(getSyncChannel(t_receive), t_receive.statechart->select(embeddingRegion->notEmpty()).embeddingRegion.parentState->asOrderedSet()->first(), SynchronizationKind::RECEIVE))/]				
+				[/for]
+			[/let]
+			[/let]
+		[/for]
+	[/for]
+[/template]
+
+[**
+ * ${init_SenderMessagePorts}
+ * Initialisation of the modelica input connectors corresponding to the MessageType of the sending Transitions.
+ * @param compHierarchy is the actual hierarchy level of the embedded ComponentInstance.
+ * @param sendTransitions is a Set of Transitions which have an assigned attribute of raiseMessageEvent.
+ */]
+[template public init_SenderMessagePorts( compHierarchy : String, sendTransitions : Set(Transition))]
+	//init_SenderMessagePorts
+	[for (t : Transition | sendTransitions->select(hasRaiseMessageEvent()))]
+	// t = ([t.source.name/], [t.target.name/])
+[initMessagePort(t.getRaiseMessageType(),t, compPackagePraefix(), null)/]					
+	[/for]	
+[/template]
+
+[**
+ * ${init_SenderMessagePorts}
+ * Initialisation of the modelica output connectors corresponding to the MessageType of the sending Transitions.
+ * @param compHierarchy is the actual hierarchy level of the embedded ComponentInstance.
+ * @param receiveTransitions is a Set of Transitions which have an assigned attribute of raiseMessageEvent.
+ */]
+[template public init_ReceiverMessagePorts( compHierarchy : String, receiveTransitions : Set(Transition) )]
+	//init_ReceiverMessagePorts
+	[for (t : Transition | receiveTransitions)]
+[initMessagePort(t.getTriggerMessageType(), t, compPackagePraefix(), 'output')/]					
+	[/for]	
+[/template]
+
+[**
+ * TODO: warum hier die bezeichnung receiveTransitions?
+ * @param compHierarchy 
+ * @param receiveTransitions 
+ */]
+[template public init_CompReceiverMessagePorts( compHierarchy : String, receiveTransitions : Set(Transition) )]
+//init_CompReceiverMessagePorts
+	[for (t : Transition | receiveTransitions)]
+[initMessagePort(t.getRaiseMessageType(),t, compPackagePraefix(), null)/]					
+	[/for]	
+[/template]
+
+
+
+[**
+ * 
+ * @param aRealtimeStatechart 
+ * @param syncChannels 
+ * @param transitions 
+ */]
+[template public connect_Ports(aRealtimeStatechart : RealtimeStatechart,syncChannels : Set(SynchronizationChannel),transitions : Set(Transition))]
+	[for (s : State | getStates(aRealtimeStatechart.vertices))]
+		[if (s.regions->notEmpty())]	
+[aRealtimeStatechart.connect_HierarchacalSyncPorts(s,syncChannels)/]
+[aRealtimeStatechart.connect_MessagePorts(s, transitions)/]
+		[/if]	
+	[/for]	
+[/template]
+
+
+[**
+ * 
+ * @param aRealtimeStatechart 
+ * @param s 
+ * @param syncChannels 
+ */]
+[template public connect_HierarchacalSyncPorts(aRealtimeStatechart : RealtimeStatechart,s : State ,syncChannels : Set(SynchronizationChannel))]
+		[for (sync : SynchronizationChannel | syncChannels )]
+			[let regions_send : Set(Region) = getRegionsOfSendSyncChannel(sync, s.regions)]
+			[for (it : Region | regions_send)]
+				// regions_send = [it.name/]
+			[/for]
+			[let transitions_send : Set(Transition) = findSyncSenderTransitions_h(sync, getStates(regions_send.statechart.vertices->asOrderedSet()))->asSet()]
+			[for (it : Transition | transitions_send)]
+				// transitions_send = [it.target.name/]
+			[/for]	
+				[for (t_send : Transition | transitions_send)]
+					[for (it : Integer | Sequence{1..getSyncCount_h(getSyncChannel(t_send), t_send.statechart.embeddingRegion.parentState, SynchronizationKind::SEND)})]
+connect([s.name.toLowerFirst()/].[getSyncPortName(t_send, true)/][array(it)/] , [getSyncPortName(t_send, true)/][array(it)/] );
+					[/for]
+				[/for]
+			[/let]
+			[/let]
+			[let regions_receive : Set(Region) = getRegionsOfReceiveSyncChannel(sync, s.regions)]
+			[for (it : Region | regions_receive)]
+				// regions_receive = [it.name/]
+			[/for]
+			[let transitions_receive : Set(Transition) = findSyncReceiverTransitions_h(sync, getStates(regions_receive.statechart.vertices->asOrderedSet()))->asSet()]
+			[for (it : Transition | transitions_receive)]
+				// transitions_receive = [it.target.name/]
+			[/for]	
+				[for (t_receive : Transition | transitions_receive)]
+					[for (it : Integer | Sequence{1..getSyncCount_h(getSyncChannel(t_receive), t_receive.statechart.embeddingRegion.parentState, SynchronizationKind::RECEIVE)})]
+connect([s.name.toLowerFirst()/].[getSyncPortName(t_receive, true)/][array(it)/] , [getSyncPortName(t_receive, true)/][array(it)/] );
+					[/for]			
+				[/for]
+			[/let]
+			[/let]
+		[/for]
+[/template]
+
+[**
+ * 
+ * @param aRealtimeStatechart 
+ * @param s2 
+ * @param transitions 
+ */]
+[template public connect_MessagePorts(aRealtimeStatechart : RealtimeStatechart, s2: State,transitions : Set(Transition))]
+	[for (t : Transition | transitions->select(hasTriggerMessageEvent()))]			
+connect([if (s2.regions->size() = 1)][s2.regions->first().statechart.name.toLowerFirst()/][else][s2.name.toLowerFirst()/][/if].[getPortName(t.getTriggerMessageType(),t, 'output', true)/], [getPortName(t.getTriggerMessageType(), t,'output', true)/]);										
+	[/for]	
+	[for (t : Transition | transitions->select(hasRaiseMessageEvent() ) )]
+		[if ( not aRealtimeStatechart.transitions->includes(t))]
+connect([if (s2.regions->size() = 1)][s2.regions->first().statechart.name.toLowerFirst()/][else][s2.name.toLowerFirst()/][/if].[getPortName(t.getRaiseMessageType(), t,null, true)/], [getPortName(t.getRaiseMessageType(), t,null, true)/]);												
+		[/if]
+	[/for]
+[/template]
+
+
+
+
+
+

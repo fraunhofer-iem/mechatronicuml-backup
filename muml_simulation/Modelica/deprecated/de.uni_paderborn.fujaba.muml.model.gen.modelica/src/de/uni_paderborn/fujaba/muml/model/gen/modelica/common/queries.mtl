@@ -1,0 +1,1101 @@
+[comment encoding = UTF-8 /]
+[module queries('http://www.fujaba.de/muml/model/realtimestatechart/0.2.3',
+				'http://www.storydriven.org/core/expressions/0.2.0',
+				'http://www.fujaba.de/muml/model/instance/0.2.2',
+				'http://www.fujaba.de/muml/model/msgiface/0.2.2',
+				'http://www.fujaba.de/muml/model/component/0.2.3',
+				'http://www.eclipse.org/emf/2002/Ecore',
+				'http://www.fujaba.de/muml/model/core/0.2.4')/]
+
+[**
+ * %{getAtomicComponents_h}
+ * Query: A recursive query which returns a Set of ComponentInstances including all AtomicComponents in the hierarchy of the ComponentInstanceConfiguration.
+ * @param cic is a Set of ComponentInstanceConfiguration in which AtomicComponents will be searched.
+ */] 
+[query public getAtomicComponents_h(cic : Set(ComponentInstanceConfiguration)) : Set(ComponentInstance)= 
+	if cic->notEmpty() then
+		cic->select(componentInstances->notEmpty()).componentInstances->select(ci : ComponentInstance| ci.componentType.oclIsKindOf(AtomicComponent))->asSet()
+		   ->union(getAtomicComponents_h(cic.componentInstances->select(not embeddedCIC.oclIsUndefined()).embeddedCIC->asSet()))->asSet()
+	else
+		Set{}
+	endif
+ /]
+
+
+[**
+ * %{getSyncChannels_h}
+ * Query: A recursive query which returns a Set of SynchronizationChannel in all embedded RealtimeStatechart of the Set of RealtimeStatechart.
+ * @param statecharts is a Set of RealtimeStatecharts.
+ */] 
+[query public getSyncChannels_h(statecharts : Set(RealtimeStatechart))  : Set(SynchronizationChannel) =
+ 	if statecharts->notEmpty() then
+ 		statecharts->select(not oclIsUndefined()).vertices->select(v : Vertex | v.oclIsKindOf(State)).oclAsType(State)->select(s : State | s.channels->notEmpty()).channels->select(sync : SynchronizationChannel | sync.parameters->notEmpty())
+ 				   ->union(getSyncChannels_h(statecharts->select(not oclIsUndefined()).vertices->select(v : Vertex | v.oclIsKindOf(State)).oclAsType(State).regions->select(r : Region | r->notEmpty()).statechart->asSet()))->asSet()
+ 	else
+ 		Set{}
+ 	endif
+ /]
+
+
+[**
+ * %{getMessageInterfaces_h}
+ * Query: A recursive query which returns a Set of MessageInterfaces including its supertypes in the heritage hierarchy.
+ * @param messageInterface is a Set of MessageInterfaces.
+ */] 
+[query public getMessageInterfaces_h(messageInterface : Set(MessageInterface)) : Set(MessageInterface) = 
+ 	if  messageInterface->notEmpty() then
+ 		messageInterface->union(getMessageInterfaces_h(messageInterface.superType->asSet()))
+ 	else
+ 		Set{}
+ 	endif
+ /]
+
+
+
+
+[**
+ * %{getSenderComponents_h}
+ * Query: A recursive query which returns a Set of ComponentInstances which are reachable from the Set of PortInstances (port) and have a sender MessageInterface.
+ * @param portInstances is a Set of PortInstances
+ * @param visited_comp is a Set of ComponentInstances which already have been visited during the recursion.
+ * @param comp is an accumulating parameters for the recursion
+ */]
+[query public getSenderComponents_h(portInstances : Set(PortInstance),  visited_comp : Set(ComponentInstance), comp : Set(ComponentInstance)) : Set(ComponentInstance)= 
+	if portInstances->notEmpty() then
+		let sender_ports : Set(PortInstance) =  getSenderPortsOfIncommingConnectorInstance(portInstances.incomingConnectorInstances->asSet())->union(getSenderPortsOfOutgoingConnectorInstance(portInstances.outgoingConnectorInstances->asSet())->asSet())
+		in
+			comp->union(sender_ports.componentInstance->reject(ci : ComponentInstance| visited_comp->includes(ci))->select(componentType.oclIsKindOf(AtomicComponent)))
+				->union(getSenderComponents_h(sender_ports->reject(pi : PortInstance| visited_comp->includes(pi.componentInstance)), visited_comp->union(sender_ports.componentInstance)->asSet(), comp))
+	else
+		comp
+	endif
+ /]
+
+
+[**
+ * TODO an hybride und kontinuierliche ports anpassen
+ * %{getSenderPortsOfIncommingConnectorInstance}
+ * Query: Returns a Set of PortInstances which are identified as sender Ports.
+ * @param connectorInstances is a Set of ConnectorInstances.
+ */]
+[query public getSenderPortsOfIncommingConnectorInstance(connectorInstances : Set(ConnectorInstance)) : Set(PortInstance) = 
+	connectorInstances->select(ci : ConnectorInstance | 
+		ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface 
+				= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface
+				and ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()
+				and ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()
+				or (ci.source.oclAsType(DiscretePortInstance).receiverMessageInterface 
+		  			= ci.target.oclAsType(DiscretePortInstance).receiverMessageInterface 
+		  			and ci.source.oclAsType(DiscretePortInstance)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty() 
+		  			and ci.target.oclAsType(DiscretePortInstance)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty())).source->asSet()
+		->union(connectorInstances->select(ci : ConnectorInstance |
+			ci.source.oclAsType(DiscretePortInstance).senderMessageInterface 
+		  		= ci.target.oclAsType(DiscretePortInstance).senderMessageInterface 
+		  		and ci.source.oclAsType(DiscretePortInstance)->select(not senderMessageInterface.oclIsUndefined())->notEmpty() 
+		  		and ci.target.oclAsType(DiscretePortInstance)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()).target->asSet() )
+ /]
+
+
+[**
+ * TODO an hybride und kontinuierliche ports anpassen
+ * %{getSenderPortsOfOutgoingConnectorInstance}
+ * Query: Returns a Set of PortInstances which are identified as sender Ports.
+ * @param connectorInstances is a Set of ConnectorInstances.
+ */] [query public getSenderPortsOfOutgoingConnectorInstance(connectorInstances : Set(ConnectorInstance)) : Set(PortInstance) = 
+	connectorInstances->select(ci : ConnectorInstance |  
+		ci.source.oclAsType(DiscretePortInstance).senderMessageInterface 
+		  		= ci.target.oclAsType(DiscretePortInstance).senderMessageInterface 
+		  		and ci.source.oclAsType(DiscretePortInstance)->select(not senderMessageInterface.oclIsUndefined())->notEmpty() 
+		  		and ci.target.oclAsType(DiscretePortInstance)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()
+		  		or (ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface
+					= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface 
+					and ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()
+					and ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface .oclIsUndefined())->notEmpty()
+				) ).target->asSet()
+		->union(connectorInstances->select(ci : ConnectorInstance | 
+			ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface 
+				= ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface
+				and ci.source.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty()
+				and ci.target.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined())->notEmpty()
+				).source->asSet())->asSet()
+ /]
+
+
+[**
+ * %{getSenderTransitions_h}
+ * Query: A recursive query which returns a Set of Transitions wich have a raiseMessageEvent as Attribute.
+ * @param statecharts is a Set of StateCharts in which the Transitions are searched.
+ * @param transitions is an accumulating parameters for the recursion.
+ */]
+[query public getSenderTransitions_h(statecharts : Set(RealtimeStatechart), transitions : Set(Transition)) : Set(Transition) = 
+	if statecharts->notEmpty() then
+		transitions->union(statecharts.transitions->select(hasRaiseMessageEvent())->asSet())
+			->union(getSenderTransitions_h(statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->select(regions->notEmpty()).regions->select(not statechart.oclIsUndefined()).statechart->asSet(), transitions))
+	else
+		transitions
+	endif
+/]
+
+
+
+[**
+ * %{getRecieverTransitions_h}
+ * Query: A recursive query which returns a Set of Transitions wich have a  triggerMessageEvent as Attribute.
+ * @param statecharts is a Set of StateCharts in which the Transitions are searched.
+ * @param transitions is an accumulating parameter for the recursion.
+ */]
+[query public getRecieverTransitions_h(statecharts : Set(RealtimeStatechart), transitions : Set(Transition)) : Set(Transition) = 
+	if statecharts->notEmpty() then
+		transitions->union(statecharts->select(transitions->notEmpty()).transitions->select(hasTriggerMessageEvent())->asSet())
+			->union(getRecieverTransitions_h(statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->select(regions->notEmpty()).regions->select(not statechart.oclIsUndefined()).statechart->asSet(),transitions))
+	else
+		transitions
+	endif
+/]
+
+
+[**
+ * %{getSyncCount_h}
+ * Query: A recursive query which returns an Integer as number of Transitions using the syncChannel with the specific kind. The counting starts after the definition state of the specific syncChannel is found.
+ * @param syncChannel is a SynchronizationChannel.
+ * @param s is a State.
+ * @param kind is a SynchronizationKind.
+ */] 
+[query public getSyncCount_h(syncChannel : SynchronizationChannel, s : State, kind : SynchronizationKind) : Integer =
+ 	if not s.channels->any(sync : SynchronizationChannel | sync = syncChannel).oclIsUndefined() then
+ 		countSync_h(syncChannel, state->asSet(), 0, kind)
+ 	else
+ 	   	getSyncCount_h(syncChannel, s.statechart->select(not embeddingRegion.oclIsUndefined()).embeddingRegion.parentState->asOrderedSet()->first(), kind)
+ 	endif
+ /]
+
+
+[**
+ * %{}
+ * Query: A recursive query which returns an Integer as number of Transitions using the syncChannel with the specific kind.
+ * @param syncChannel 
+ * @param states is a Set of State.
+ * @param count is an accumulating parameter for the recursion.
+ * @param kind is a SynchronizationKind.
+ */]
+[query private countSync_h(syncChannel : SynchronizationChannel, states : Set(State), count : Integer, kind : SynchronizationKind) : Integer =
+	if states.regions->notEmpty() then
+	  count+states->select(regions->notEmpty()).regions->select(not statechart.oclIsUndefined()).statechart->select(transitions->notEmpty()).transitions->select(not synchronization.oclIsUndefined() and not synchronization.syncChannel.oclIsUndefined()).synchronization->select(sync : Synchronization | getSyncChannel(sync) = syncChannel and  sync.kind = kind)->size()
+		   +countSync_h(syncChannel, getStates(states->select(regions->notEmpty()).regions->select(not statechart.oclIsUndefined()).statechart.vertices->asOrderedSet()), count , kind)
+	else
+	  count
+	endif
+/]
+
+
+[**
+ * %{getStates}
+ * Query: Returns a Set of States which are included in the Set of vertices.
+ * @param vertices is a Set of Vertex. 
+ */]
+[query public getStates(vertices : Set(Vertex)) : Set(State) =
+	vertices->select(oclIsKindOf(State))->asSet()
+/]
+
+
+[**
+ * %{array}
+ * Query: Returns a String wich specifies the definition of an array with its specific braces
+ * @param size is an Integer of the array size.
+ */]
+[query public array(size : Integer) : String = if size > 0 then '['+size+']'  else '' endif /]
+
+
+[**
+ * %{findSyncReceiverTransitions_h}
+ * Query:  A recursive query which returns all Transitions of kind RECEIVE and are equal to syncChannel in the hierachy of statecharts beginning in the Set of states.
+ * @param syncChannel is a SynchronizationChannel, which specifies the search parameter.
+ * @param states is a Set of States.
+ */]
+[query public findSyncReceiverTransitions_h(syncChannel : SynchronizationChannel, states : Set(State)) : Set(Transition) = 
+ 	if states.regions->notEmpty() then
+ 		states.statechart.transitions->select(t : Transition | getSyncChannel(t) = syncChannel and t.synchronization.kind = SynchronizationKind::RECEIVE)->asSet()
+				->union(states.regions->sortedBy(-priority).statechart.transitions->select(t : Transition | getSyncChannel(t) = syncChannel and t.synchronization.kind = SynchronizationKind::RECEIVE)->asSet())
+				->union(findSyncReceiverTransitions_h(syncChannel , getStates(states.regions->sortedBy(-priority).statechart.vertices->asSet()) )->asSet())
+ 	else
+ 		states.statechart.transitions->select(t : Transition | getSyncChannel(t) = syncChannel and t.synchronization.kind = SynchronizationKind::RECEIVE)->asSet()
+ 	endif
+ /]
+
+
+[**
+ * %{findSyncSenderTransitions_h}
+ * Query:  A recursive query which returns all Transitions of kind SEND and are equal to syncChannel in the hierachy of statecharts beginning in the Set of states.
+ * @param syncChannel is a SynchronizationChannel, which specifies the search parameter.
+ * @param states is a Set of States.
+ */] 
+[query public findSyncSenderTransitions_h(syncChannel : SynchronizationChannel, states : Set(State)) : Set(Transition) = 
+ 	if states.regions->notEmpty() then
+		states.statechart.transitions->select(t : Transition | t.getSyncChannel() = syncChannel and t.synchronization.kind = SynchronizationKind::SEND)->asSet()
+ 				->union(states.regions->sortedBy(-priority).statechart.transitions->select(t : Transition | t.getSyncChannel() = syncChannel and t.synchronization.kind = SynchronizationKind::SEND)->asSet())
+				->union(findSyncSenderTransitions_h(syncChannel , getStates(states.regions->sortedBy(-priority)->select(not statechart.oclIsUndefined()).statechart->select(vertices->notEmpty()).vertices->asSet()))->asSet())
+ 	else
+ 		states.statechart.transitions->select(t : Transition | t.getSyncChannel() = syncChannel and t.synchronization.kind = SynchronizationKind::SEND)->asSet()
+ 	endif
+ /]
+
+
+[**
+ * %{getRegionsOfReceiveSyncChannel}
+ * Query: Returns all Regions as a Set which includes transitions with a SynchronizationChannel of kind RECEIVE.
+ * @param sync is a SynchronizationChannel.
+ * @param regions is a Set of regions which are searched.
+ */]
+[query public getRegionsOfReceiveSyncChannel(sync : SynchronizationChannel, regions : Set(Region)) : Set(Region) = 
+	if regions->notEmpty() then
+		regions->sortedBy(-priority)->select(r : Region |  hasSyncChannelInRegion(sync,SynchronizationKind::RECEIVE, r->asSet()))
+	else
+		Set{}
+	endif
+ /]
+ 
+
+[**
+ * %{getRegionsOfSendSyncChannel}
+ * Query: Returns all Regions as a Set which includes transitions with a SynchronizationChannel of kind SEND.
+ * @param sync is a SynchronizationChannel.
+ * @param regions is a Set of regions which are searched.
+ */] 
+[query public getRegionsOfSendSyncChannel(sync : SynchronizationChannel, regions : Set(Region)) : Set(Region) = 
+	if regions->notEmpty() then
+		regions->sortedBy(-priority)->select(r : Region |  hasSyncChannelInRegion(sync,SynchronizationKind::SEND, r->asSet()))
+	else
+		Set{}
+	endif
+ /]
+ 
+ 
+[**
+ * %{}
+ * Query: Returns true, if in the Set of Regions or it's hierarchy a Transition with SynchronizationChannel of specific kind is found. 
+ * @param sync is a SynchronizationChannel.
+ * @param kind is the specific SynchronizationKind.
+ * @param regions is a Set of regions which are searched.
+ */] 
+[query private hasSyncChannelInRegion(sync : SynchronizationChannel,kind : SynchronizationKind, regions : Set(Region)) : Boolean = 
+ 	if regions->select(not statechart.oclIsUndefined()).statechart->select(transitions->notEmpty()).transitions->any(not synchronization.oclIsUndefined() and getSyncChannel(synchronization) = sync and synchronization.kind = kind)->notEmpty() then
+ 		true
+ 	else
+ 		if getStates(regions.statechart.vertices->asOrderedSet()).regions->notEmpty() then
+ 			hasSyncChannelInRegion(sync,kind, getStates(regions.statechart.vertices->asOrderedSet()).regions->asSet())
+ 		else
+ 			false
+ 		endif
+ 	endif
+  /]
+
+
+[**
+ * %{}
+ * Query: Returns a String which declares a Modelica connector for a SychronizationChannel of a Transition.
+ * @param t is a Transition with the SynchronizationChannel
+ * @param sizeArray is a number of connectors, which need to be declared.
+ */]
+[query public initSyncPort(t : Transition, sizeArray : Integer) : String =  
+	if getSyncChannel(t).parameters->notEmpty() then
+'Component_Utilities.SyncChannels.'+getSyncPortName(t,false)+' '+getSyncPortName(t,true) +array(sizeArray)+';' 
+	else 
+'Utilities.SyncChannels.'+syncPortPostfix(t)+' '+getSyncPortName(t,true)+array(sizeArray)+';'
+	endif
+/]
+
+
+[**
+ * ${initMessagePort}
+ * Query: A String is generated to initialize a connector for a MessageType depending of the parameters.
+ * @param messageType is a MessageType.
+ * @param t is a Transition.
+ * @param compHierarchy is the actual hierarchy level of the embedded ComponentInstance.
+ * @param portType is the kind of port of type String: "input", "output" or ""
+ * @return String is the result string to initialize the connector in modelica.
+ */]
+[query public initMessagePort(messageType : MessageType, t : Transition,  compHierarchy : String, portType : String) : String =
+	if messageType.parameters->notEmpty() then
+		if portType <> null then
+compHierarchy+'Ports.'+getPortName(messageType,t,portType,false)+' '+getMessageName(messageType, t, true)+'_'+portType+'_port;'		
+		else
+compHierarchy+'Ports.'+getPortName(messageType,t,portType,false)+' '+getMessageName(messageType, t, true)+'_port;'		
+		endif
+	else
+		if portType <> null then
+messageportInterfacesLocation()+portType+'_port '+getMessageName(messageType, t, true)+'_'+portType+'_port;'
+		else
+messageportInterfacesLocation()+'port '+getMessageName(messageType, t, true)+'_port;'		
+		endif
+	endif
+ /]
+
+[**
+ * %{getAllSubStatecharts_h}
+ * Query: A recursive query which returns all RealtimeStatecharts including in the hierachy of a Set of Statecharts.
+ * @param statecharts is the Set of Statecharts which are searched.
+ * @param substatecharts is a Set of RealtimeStatecharts used as accumulating parameter.
+ */]
+[query public getAllSubStatecharts_h(statecharts : Set(RealtimeStatechart), substatecharts : Set(RealtimeStatechart)) : Set(RealtimeStatechart) =
+ 	if statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->select(regions->notEmpty()).regions->notEmpty() then
+ 		substatecharts->union(statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->select(regions->notEmpty()).regions->select(statechart->notEmpty())->sortedBy(-priority).statechart->asSet())
+ 					  ->union(getAllSubStatecharts_h(statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->select(regions->notEmpty()).regions->sortedBy(-priority)->select(statechart->notEmpty()).statechart->asSet(),substatecharts))
+ 	else
+ 		substatecharts
+ 	endif 
+ /]
+
+[**
+ * %{usingClocks}
+ * Query: Returns a Set of Clocks which are really used in the Set of Statecharts.
+ * @param rtscs is a Set of RealtimeStatecharts.
+ * @param clocks is a Set of Clocks.
+ */]
+[query public usingClocks(statecharts : Set(RealtimeStatechart), clocks : Set(Clock)) : Set(Clock) =
+ 	let states : Set(State) = statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->asSet()
+ 	in
+ 	clocks->intersection(states->select(invariants->notEmpty()).invariants->select(clock->notEmpty()).clock->asSet()
+ 								->union(statecharts->select(transitions->notEmpty()).transitions->select(absoluteDeadlines->notEmpty()).absoluteDeadlines->select(clock->notEmpty()).clock->asSet())
+ 								->union(statecharts->select(transitions->notEmpty()).transitions->select(clockConstraints->notEmpty()).clockConstraints->select(clock->notEmpty()).clock->asSet()))
+
+/]
+
+[**
+ * %{resettingClocks}
+ * Query: Returns a Set of Clocks which are resetted in the Set of Statecharts.
+ * @param rtscs is a Set of RealtimeStatecharts.
+ * @param clocks is a Set of Clocks. 
+ */]
+[query public resettingClocks(statecharts : Set(RealtimeStatechart), clocks : Set(Clock)) : Set(Clock) = 
+ 	let states : Set(State) = statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->asSet()
+ 	in
+	clocks->intersection(states->select(entryEvent->notEmpty()).entryEvent->select(clockResets->notEmpty()).clockResets->asSet()
+ 								->union(states->select(exitEvent->notEmpty()).exitEvent->select(clockResets->notEmpty()).clockResets->asSet())
+ 								->union(statecharts->select(transitions->notEmpty()).transitions->select(clockResets->notEmpty()).clockResets->asSet()))
+/]
+
+[**
+ * %{getEventTransitions_h}
+ * Query: A recursive query which returns a Set of Transitions have a defined Event as an Attribute. 
+ * @param statecharts is a Set of Statecharts. 
+ */]
+[query public getEventTransitions_h(statecharts : Set(RealtimeStatechart)) : Set(Transition) = 
+	if statecharts->notEmpty() then
+		statecharts.transitions->select(hasTriggerMessageEvent() or hasSyncChannel() or hasRaiseMessageEvent())->asSet()
+				   ->union(getEventTransitions_h(statecharts.vertices->select(oclIsKindOf(State)).oclAsType(State)->select(regions->notEmpty()).regions->select(statechart->notEmpty()).statechart->asSet())->asSet())
+	else
+		Set{}
+	endif
+/]
+
+
+[**
+ * %{getAssignAttributeStatecharts_h}
+ * Query:  A recursive query which returns a Set of RealtimeStatecharts in which the Attribute attr  is assigned.
+ * @param statecharts a Set of RealtimeStatecharts
+ * @param attr an Attribute.
+ */]
+[query public getAssignAttributeStatecharts_h(statecharts : Set(RealtimeStatechart), attr : Attribute): Set(RealtimeStatechart) =
+	if statecharts->notEmpty() then
+		if getAllActionExpression(statecharts->asSequence()->first()->asSet())->collect(t : TextualExpression | getAssignAttributes(t.expressionText,attr->asOrderedSet()))->notEmpty() then
+			statecharts->asSequence()->first()->asSet()->union(getAssignAttributeStatecharts_h(statecharts->excluding(statecharts->asSequence()->first())->asSet(), attr))
+		else
+			getAssignAttributeStatecharts_h(statecharts->excluding(statecharts->asSequence()->first())->asSet(), attr)
+		endif
+	else
+		Set{}
+	endif
+/]
+
+[**
+ * %{getAllAssignAttributes}
+ * Query: Returs all Attributes from the OrderedSet attr, which are assigned in at least one action in the Set of statecharts.
+ * @param statecharts a Set of RealtimeStatecharts.
+ * @param attr a OrderedSet of Attributes.
+ */]
+[query public getAllAssignAttributes(statecharts : Set(RealtimeStatechart), attr : OrderedSet(Attribute)): OrderedSet(Attribute) =
+	let textualExpressions  : Set(TextualExpression) = getAllActionExpression(statecharts)
+	in
+	textualExpressions->collect(t : TextualExpression | getAssignAttributes(t.expressionText,attr))->asOrderedSet()
+/]
+
+[**
+ * %{getAssignAttribute}
+ * Query: Return an OrderedSet of Attributes which are assined in an action expression.
+ * @param textualExpression is a String.
+ * @param attr  is a Set of Attributes.
+ */]
+[query public getAssignAttributes(textualExpression : EString, attr : Set(Attribute)) : OrderedSet(Attribute) = 
+	attr->select(a : Attribute | textualExpression.replaceAll(' ', '').contains(a.name+':='))->asOrderedSet()
+/]
+
+
+[**
+ * %{assignGlobalAttribute}
+ * Query: Returns a String which replaces in the action expression the Attribute name with the global name of the Attribute using the suffix of the Statechart the action expression is defined. 
+ * @param textualExpression is a String with the action expression.
+ * @param attr is a Attribute.
+ * @param rtsc is a RealtimeStatechart.
+ */]
+[query public assignGlobalAttribute(textualExpression : String, attr : Attribute, statechart : RealtimeStatechart) : String = 
+	textualExpression.replaceAll(' ', '').replace(attr.name, attr.name+'_'+statechart.name.toUpperFirst())
+/]
+[**
+ * %{getAllActionExpression}
+ * Query: Returns a Set of TextualExpressions of all actions in a Set of RealtimeStatecharts.
+ * @param statecharts is a Set of RealtimeStatecharts.
+ */]
+[query public getAllActionExpression(statecharts : Set(RealtimeStatechart)) : Set(TextualExpression) = 
+	getEntryActionExpression(statecharts)
+		->union(getExitActionExpression(statecharts))
+		->union(getDoActionExpression(statecharts))
+		->union(getTransitionActionExpression(statecharts))
+ /]
+
+[**
+ * %{getEntryActionExpression}
+ * Query: Returns a Set of TextualExpressions of all entry actions in a Set of RealtimeStatecharts.
+ * @param statecharts is a Set of RealtimeStatecharts.
+ */]
+[query public getEntryActionExpression(statecharts : Set(RealtimeStatechart)): Set(TextualExpression) =
+	statecharts.vertices->select(oclIsKindOf(State)).oclAsType(State)->select(not entryEvent.oclIsUndefined()).entryEvent->select(not action.oclIsUndefined()).action.expressions->select(oclIsKindOf(TextualExpression)).oclAsType(TextualExpression)->asSet()
+/]  
+
+[**
+ * %{getExitActionExpression}
+ * Query: Returns a Set of TextualExpressions of all exit actions in a Set of RealtimeStatecharts.
+ * @param statecharts is a Set of RealtimeStatecharts.
+ */]
+[query public getExitActionExpression(statecharts : Set(RealtimeStatechart)): Set(TextualExpression) =
+	statecharts.vertices->select(oclIsKindOf(State)).oclAsType(State)->select(not exitEvent.oclIsUndefined()).exitEvent->select(not action.oclIsUndefined()).action.expressions->select(oclIsKindOf(TextualExpression)).oclAsType(TextualExpression)->asSet()
+/]
+
+[**
+ * %{getDoActionExpression}
+ * Query: Returns a Set of TextualExpressions of all do actions in a Set of RealtimeStatecharts.
+ * @param statecharts is a Set of RealtimeStatecharts.
+ */]
+[query public getDoActionExpression(statecharts : Set(RealtimeStatechart)): Set(TextualExpression) =
+	statecharts.vertices->select(oclIsKindOf(State)).oclAsType(State)->select(not doEvent.oclIsUndefined()).doEvent->select(not action.oclIsUndefined()).action.expressions->select(oclIsKindOf(TextualExpression)).oclAsType(TextualExpression)->asSet()
+/]
+
+[**
+ * %{getTransitionActionExpression}
+ * Query: Returns a Set of TextualExpressions of all transition actions in a Set of RealtimeStatecharts.
+ * @param statecharts is a Set of RealtimeStatecharts.
+ */]
+[query public getTransitionActionExpression(statecharts : Set(RealtimeStatechart)): Set(TextualExpression) =
+	statecharts.transitions->select(not action.oclIsUndefined()).action.expressions->select(oclIsKindOf(TextualExpression)).oclAsType(TextualExpression)->asSet()
+/]
+
+
+
+[**
+ * %{getActions}
+ * Query: Returns a Sequence of Strings; Each String includes an action expression. (The textualExpression can include a variable set of action expressions separated by a ";".)
+ * @param textualExpression is a String of the action expressions.
+ */]
+[query public getActions(textualExpression : String) : Sequence(String) = 
+	textualExpression.tokenize(';')
+ /]
+[**
+ * %{needStateChartClock}
+ * Query: Returns true if relative deadline is defined by a Transition. The statechartClock is used to specify the realative deadline in Modelica.
+ * @param transitions is a Set of Transitions.
+ */]
+[query public needStateChartClock(transitions : Set(Transition)) : Boolean =
+	transitions->select(not relativeDeadline.oclIsUndefined())->notEmpty()
+/]
+ 
+
+[**
+ * %{isModelicaTextualExpression}
+ * Query: Returns true if the kind of language of the text is 'Modelica'. This is used in action expressions to define the Modelica actions.
+ * @param text is a TextualExpression.
+ */]
+[query public isModelicaTextualExpression(text : TextualExpression) : Boolean = 
+	text->select(language->notEmpty()).language.matches('Modelica')->notEmpty()
+/]
+
+
+
+[**
+ * %{praefixSyncParameter}
+ * Query: Returns a String with the praefix of a synchronization parameter.
+ * @param s is a SynchronizationChannel.
+ */] [query public praefixSyncParameter(s : SynchronizationChannel) : String = 
+ s.name+'_'
+  /]
+ 
+[**
+ * %{praefixMessageParameter }
+ * Query: Returns a String with the praefix of a message parameter.
+ * @param mt is a MessageType.
+ */] [query public praefixMessageParameter(mt : MessageType) : String = 
+ mt.messageInterface.name+'_'+mt.name+'_'
+  /]
+
+
+[**
+ * %{getAllEntryPoints}
+ * Query: Returns a Set of all StateEntryPoints of a State
+ * @param s is a State.
+ */]
+[query public getAllEntryPoints(s : State) : Set(StateEntryPoint) = 
+ 	s.stateEntryPoints->asSet()
+/]
+
+[**
+ * %{getAllExitPoints}
+ * Query: Returns a Set of all StateExitPoints of a State.
+ * @param s is a State.
+ */]
+[query public getAllExitPoints(s : State) : Set(StateExitPoint) = 
+ 	s.stateExitPoints->asSet()
+/]
+
+[**
+ * 
+ * %{sortedOutgoingTransitions}
+ * Query: Returns a Set of sorted outgoing Transitions of a Vertex. This query is used to get a determinist order of the outgoing transitions.
+ * @param v is a Vertex.
+ */]
+[query public sortedOutgoingTransitions(v : Vertex) : OrderedSet(Transition) = v.outgoingTransitions->sortedBy(-priority) /]
+
+[comment Selbstransitionen haben immer eine speudoTransiont!/]
+[**
+ * %{}
+ * Query: Returns true, if the Transition needs a pseudo transition. This is in the case of:
+ * - the Transition has a relative deadline. And additional Step is needed to map the correct semantics of a relative deadline.
+ * - the source Step has an exit expression/clock reset; And additional Step is needed because the exit expression/clock reset will be executed _after_ the transition has fired!
+ * - if the Transition defines a cycle; And additional Step is to create a pseudo delay in SG2.
+ * @param t 
+ */]
+[query public needPseudoTransition(t : Transition) : Boolean =
+	if t.absoluteDeadlines->notEmpty() 
+		or not t.relativeDeadline.oclIsUndefined()
+		or t.source->select(oclIsKindOf(State)).oclAsType(State)->select(not exitEvent.oclIsUndefined()).exitEvent->select(clockResets->notEmpty() or (not action.oclIsUndefined() and action->select(expressions->notEmpty()).expressions.oclAsType(TextualExpression)->any(t : TextualExpression | isModelicaTextualExpression(t))->notEmpty()))->notEmpty()  
+		or isCycleTransition(t)
+		or t.source = t.target then
+		true
+	else 
+		false
+	endif
+/]
+
+
+[**
+ * TODO
+ * %{}
+ * Query:
+ * @param transition 
+ */]
+[query public isDelayedTransition(t : Transition) : Boolean = 
+	if 	(t.guard.oclIsUndefined()
+		 or (not t.guard.oclIsUndefined() 
+			 and not isModelicaTextualExpression(t->select(not guard.oclIsUndefined()).guard->any(oclIsKindOf(TextualExpression)).oclAsType(TextualExpression)))) 
+		and (t.source <> t.target)
+		and t.clockConstraints->notEmpty() 
+		and t.source->select(oclIsKindOf(State)).oclAsType(State)->select(not entryEvent.oclIsUndefined())->notEmpty() then
+		if  t.clockConstraints->sortedBy(bound.toString())->last().operator = ComparingOperator::GREATER_OR_EQUAL
+			and t.source->select(oclIsKindOf(State)).oclAsType(State)->select(not entryEvent.oclIsUndefined()).entryEvent->select(clockResets->notEmpty()).clockResets->select(c : Clock | c = t.clockConstraints->sortedBy(bound.toString())->last().clock)->notEmpty() then
+			true
+		else
+			false
+		endif
+	else
+		false
+	endif
+/]
+
+[**
+ * NOT IN USE
+ * @param startTransition 
+ * @param emptyTransitionSet 
+ */]
+[query public isCycleTransition2(startTransition : Transition, emptyTransitionSet : Set(Transition)) : Boolean =
+	invoke('de.uni_paderborn.fujaba.muml.model.gen.modelica.services.MUMLServices',
+		   'isCycleTransition(de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition)', 
+			Sequence{startTransition}) 
+/]
+
+[**
+ * %{isCycleTransition}
+ * Query: Returns true, if the Transition defines a cycle.
+ * @param startTransition is a Transition
+ */]
+[query public isCycleTransition(startTransition : Transition) : Boolean =
+	if startTransition.statechart.transitions->excluding(null)->select(t : Transition | not t.oclIsUndefined())->size() > 1  then
+		startTransition.source = startTransition.target or getCycleTransition(startTransition)->includes(startTransition)
+	else
+		startTransition.source = startTransition.target
+	endif
+/]
+
+[**
+ * %{getCycleTransition}
+ * Query: Returns a set of Transitions which define a cycle (depending on the startTransition).
+ * @param startTransition is a Transition
+ */]
+[query public getCycleTransition(startTransition : Transition) : Set(Transition) = 
+	let cycleTransition : Set(Transition) = startTransition.statechart->select(transitions->notEmpty()).transitions->reject(t : Transition | isDelayedTransition(t))->sortedBy(t : Transition | t.target.name)->asSet()
+	in
+	removedCycleTransition(startTransition, cycleTransition,null, Set{})
+/]
+
+[**
+ * %{removedCycleTransition}
+ * Query: Returns a set of Transitions which define a cycle (depending on the startTransition). Breadth-first search is used to determine cyclic Transitions.
+ * @param startTransition is a Transition which is used as start point for the breadth-first search.
+ * @param cycleTransitions is a Set of Transitions which are potential cyclic Transitions (define a cycle).
+ * @param removedTransition is a Transitions which has been removed in a step before. This is used to test, whether the transitions cause a cycle or not.
+ * @param result is a Set of Transitions, which are determined to be cyclic transitions.
+ */]
+[query public removedCycleTransition(startTransition : Transition,cycleTransitions : Set(Transition),  removedTransition : Transition, result : Set(Transition)) : Set(Transition) = 
+	if cycleTransitions->notEmpty() and hasCycle(startTransition, startTransition.target->select(outgoingTransitions->notEmpty()).outgoingTransitions->intersection(cycleTransitions)->asSet(), cycleTransitions, Set{}) then
+		let lastCycleTransition : Transition = cycleTransitions->asSequence()->last()
+		in
+		if lastCycleTransition.oclIsUndefined() then
+			result
+		else
+			if cycleTransitions->excluding(lastCycleTransition)->isEmpty() then
+				result->union(removedTransition.source->select(outgoingTransitions->notEmpty()).outgoingTransitions->select(t : Transition | removedTransition.target = t.target)->asSet())
+			else
+				result->union(removedCycleTransition(startTransition, cycleTransitions->excluding(lastCycleTransition)->asSet(), lastCycleTransition, result))
+			endif
+		endif
+	else
+		if removedTransition <> null then
+			result->union(removedTransition.source->select(outgoingTransitions->notEmpty()).outgoingTransitions->select(t : Transition | removedTransition.target = t.target)->asSet())
+		else
+			result
+		endif
+	endif
+/]
+
+[**
+ * %{hasCycle}
+ * Query: Returns true, if the breadth-first search determines a cycle.
+ * @param startTransition is a Transition which is used as start point for the breadth-first search.
+ * @param transitions is a Set of Transitions which is used start the breadth-first search.
+ * @param cycleTransitions is a Set of Transitions which are potential cyclic Transitions (define a cycle).
+ * @param visitedVertex is a Set of Transitions wich have been visited by the breadth-first search.
+ */]
+[query public hasCycle(startTransition : Transition, transitions : Set(Transition), cycleTransitions : Set(Transition), visitedVertex : Set(Vertex) ) : Boolean = 
+	if transitions->notEmpty() then
+		if transitions.target->includes(startTransition.source) then
+			true
+		else
+			if cycleTransitions->notEmpty() then
+				let notVisitedVertex : Set(Vertex) = transitions->select(not target.oclIsUndefined()).target->reject(v : Vertex | visitedVertex->includes(v))->excluding(null)->asSet()
+				in
+				if notVisitedVertex->notEmpty() then
+				hasCycle(startTransition,
+					 notVisitedVertex->select(outgoingTransitions->notEmpty()).outgoingTransitions->asSet()->intersection(cycleTransitions)->asSet(),
+					 cycleTransitions,
+					 notVisitedVertex)
+				else 
+					false
+				endif
+			else
+				false
+			endif
+		endif
+	else
+		false
+	endif
+/]
+
+
+[**
+ * %{hasEmbeddedHistoryStatechart}
+ * Query: Returns true if the embedded RealtimeStatechart of a State is declared as history.
+ * @param s is a State
+ */]
+[query public hasEmbeddedHistoryStatechart(s : State) : Boolean = 
+	s->select(regions->notEmpty()).regions->select(statechart->notEmpty()).statechart->select(history)->notEmpty()
+ /]
+
+[**
+ * %{}
+ * Query: Returns true, if an additional action state is needed.
+ * @param t is a Transition.
+ */]
+[query public needActionState(t : Transition) : Boolean =
+	if t.absoluteDeadlines->notEmpty() 
+		or t.relativeDeadline->notEmpty() then
+		true
+	else 
+		false
+	endif
+/]
+
+[**
+ * %{getRHSAttributeAction}
+ * Query: Returns a Set of Strings which include all actions having the attr as right hand side assignment.
+ * @param statechart is a RealtimeStatechart.
+ * @param attr is a Attribute.
+ */]
+[query public getRHSAttributeAction(statechart : RealtimeStatechart, attr : Attribute) : Set(String) =
+	let textualExpressions  : Set(TextualExpression) = getAllActionExpression(statechart->asSet())
+	in
+	textualExpressions->collect(t : TextualExpression | getActions(t.expressionText)->select(strg : String | getRHSAttribute(strg,attr)->notEmpty()))->asSet()
+/]
+
+[**
+ * %{getRHSAttribute}
+ * Query: Returns a Set of Attributes which include all actions having the attr as right hand side assignment.
+ * @param textualExpression is a String.
+ * @param attr is a Attribute.
+ */]
+[query public getRHSAttribute(textualExpression : String, attr : Attribute) : OrderedSet(Attribute) = 
+	attr->select(a : Attribute | textualExpression.substring(textualExpression.index('=')+1).replaceAll(' ', '').tokenize('+-*/;')->select(s : String | s.matches(a.name) or s.contains('pre('+a.name+')'))->notEmpty())->asOrderedSet()
+/]
+
+
+[**
+ * %{getQueueSize}
+ * Query: Returns the Queue size of a RealtimeStatechart
+ * TODO: calc real number of queue size
+ * @param statechart is a RealtimeStatechart
+ */]
+[query public getQueueSize(statechart : RealtimeStatechart): Integer =
+	20
+/]
+
+[**
+ * %{getSyncChannel}
+ * Query: Returns the SynchronizationChannel of a Transition.
+ * @param t is a Transition.
+ */]
+[query public getSyncChannel(t : Transition) : SynchronizationChannel =
+	if t.synchronization.oclIsUndefined() or t.synchronization.syncChannel.oclIsUndefined() then
+		null
+	else 
+		t->select(not synchronization.oclIsUndefined()).synchronization->select(not syncChannel.oclIsUndefined()).syncChannel->select(oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)->excluding(null)->asSequence()->first() 
+	endif
+/]
+
+[**
+ * %{getSyncChannel}
+ * Query: SynchronizationChannel of a Synchronization.
+ * @param sync is a Synchronization.
+ */]
+[query public getSyncChannel(sync : Synchronization) : SynchronizationChannel = 
+	if sync->select(not syncChannel.oclIsUndefined()).syncChannel->select(oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)->notEmpty() then
+		sync->select(not syncChannel.oclIsUndefined()).syncChannel->select(oclIsKindOf(SynchronizationChannel)).oclAsType(SynchronizationChannel)->excluding(null)->asSequence()->first() 
+	else
+		null
+	endif
+/]
+
+[**
+ * %{hasSyncChannel}
+ * Query: Returns true, if the Transition has a SynchronizationChannel.
+ * @param t is a Transition
+ */]
+[query public hasSyncChannel(t : Transition) : Boolean = 
+	not t.synchronization.oclIsUndefined() and not t.synchronization.syncChannel.oclIsUndefined()
+/]
+
+[**
+ * %{getTriggerMessageEvent}
+ * Query: Returns an AsynchronousMessageEvent of a Transition
+ * @param t is a Transition
+ */]
+[query public getTriggerMessageEvent(t : Transition) : AsynchronousMessageEvent =
+	if t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->notEmpty() then
+		t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->asSequence()->first()
+	else
+		null
+	endif	
+/]
+
+[**
+ * %{getTriggerMessage}
+ * Query: Returns a Message of a Transition.
+ * @param t is a Transition.
+ */]
+[query public getTriggerMessage(t : Transition) : Message =
+	if t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->select(not message.oclIsUndefined())->notEmpty() then
+		t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->select(not message.oclIsUndefined()).message->asSequence()->first()	
+	else
+		null
+	endif
+/]
+
+[**
+ * %{getTriggerMessageType}
+ * Query: Returns a MessageType of a Transition
+ * @param t is a Transition
+ */]
+[query public getTriggerMessageType(t : Transition) : MessageType =
+	if t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->select(not message.oclIsUndefined()).message.instanceOf->notEmpty() then
+		t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->select(not message.oclIsUndefined()).message.instanceOf->asSequence()->first()
+	else 
+		null
+	endif	
+/]
+
+[**
+ * %{hasTriggerMessageEvent}
+ * Query: Returns true if the Transition has a triggerMessageEvent
+ * @param t 
+ */]
+[query public hasTriggerMessageEvent(t : Transition) : Boolean = 
+	t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->notEmpty()
+/]
+
+[**
+ * %{getRaiseMessageEvent}
+ * Query: Returns the AsynchronousMessageEvent of a Transition.
+ * @param t is a Transition.
+ */]
+[query public getRaiseMessageEvent(t : Transition) : AsynchronousMessageEvent =
+	if t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->notEmpty() then
+		t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->asSequence()->first()
+	else
+		null
+	endif	
+/]
+
+[**
+ * %{getRaiseMessage}
+ * Query: Returns the Message of a Transition.
+ * @param t 
+ */]
+[query public getRaiseMessage(t : Transition) : Message =
+	if t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->select(not message.oclIsUndefined())->notEmpty() then
+		t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->select(not message.oclIsUndefined()).message->asSequence()->first()	
+	else
+		null
+	endif
+/]
+
+[**
+ * %{getRaiseMessageType}
+ * Query: Returns the MessageType of the Transition.
+ * @param t is a Transition.
+ */]
+[query public getRaiseMessageType(t : Transition) : MessageType =
+	if t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->select(not message.oclIsUndefined()).message.instanceOf->notEmpty() then
+		t.events->select(oclIsKindOf(AsynchronousMessageEvent) and kind = EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->select(not message.oclIsUndefined()).message.instanceOf->asSequence()->first()
+	else 
+		null
+	endif	
+/]
+
+[**
+ * %{hasRaiseMessageEvent}
+ * Query: Returns true if the Transitions has a raiseMessageEvent.
+ * @param t is a Transition.
+ */]
+[query public hasRaiseMessageEvent(t : Transition) : Boolean = 
+	t.events->select(oclIsKindOf(AsynchronousMessageEvent) and  kind = EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->notEmpty()
+/]
+
+[**
+ * %{hasEntryEvent}
+ * Query: Returns true if the State has an entry event.
+ * @param s 
+ */]
+[query public hasEntryEvent(s : State) : Boolean = not s.entryEvent.oclIsUndefined()/]
+
+[**
+ * %{hasDoEvent}
+ * Query: Returns true if the State has an do event.
+ * @param s 
+ */]
+[query public hasDoEvent(s : State) : Boolean = not s.doEvent.oclIsUndefined()/]
+
+[**
+ * %{}
+ * Query:  Returns true if the State has an exit event.
+ * @param s 
+ */]
+[query public hasExitEvent(s : State) : Boolean = not s.exitEvent.oclIsUndefined()/]
+
+[**
+ * %{}
+ * Query:  
+ * @param s 
+ */]
+[query public transformActionValue(s : String) : String =
+	s.replaceAll('\\.', '_')
+/]
+
+
+
+
+[** 
+* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+* Some queries for names of the generated model elements.
+*
+* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/]
+
+[**
+ * %{}
+ * Query:
+ * @param portInstance 
+ * @param instance 
+ */]
+[query public getContinuousPortName(portInstance : PortInstance, instance : Boolean) : String = 
+	if instance then 
+		portInstance.name.toLowerFirst()
+	else
+		portInstance.name.toUpperFirst()
+	endif
+/]
+
+[**
+ * %{}
+ * Query:
+ * @param traceabilityContext 
+ */]
+[query public compPackagePraefix(traceabilityContext : OclAny) : String = 'Components.' /]
+
+
+[**
+ * %{}
+ * Query:
+ * @param messageType 
+ * @param t 
+ * @param portType 
+ * @param instance 
+ */]
+[query public getPortName( messageType : MessageType,t : Transition, portType : String,  instance :  Boolean ) : String =
+	if portType <> null then
+		getMessageName(messageType, t, instance)+'_'+portType+'_port'
+	else
+		getMessageName(messageType, t, instance)+'_port'
+	endif
+/]
+
+
+[**
+ * %{}
+ * Query:
+ * @param messageType 
+ * @param t 
+ * @param instance 
+ */]
+[query public getMessageName(messageType : MessageType, t : Transition,  instance :  Boolean) : String = 
+	if instance and t <> null then  
+'message_'+messageType.messageInterface.name.toUpperFirst()+'_'+messageType.name.toUpperFirst()+'_'+getTransitionName(t, false)
+	else
+'Message_'+messageType.messageInterface.name.toUpperFirst()+'_'+messageType.name.toUpperFirst()
+	endif
+/]
+
+
+[**
+ * %{}
+ * Query:
+ * @param t 
+ * @param pseudoTransition 
+ */]
+[query public getTransitionName(t : Transition, pseudoTransition : Boolean) : String = 
+	if pseudoTransition then
+'pseudoTransition_Out_'+t.source.name.toUpperFirst()+'_to_'+t.target.name.toUpperFirst()+'_'+t.priority
+	else
+t.source.name.toLowerFirst()+'_to_'+t.target.name.toUpperFirst()+'_'.concat(t.source.outgoingTransitions->sortedBy(-priority)->asOrderedSet()->indexOf(t).toString())
+	endif
+/]
+
+
+[**
+ * %{}
+ * Query:
+ * @param messageType 
+ * @param instance 
+ */]
+[query public getMailBoxName(messageType : MessageType, instance : Boolean) : String = 
+	if instance then
+'mailbox_'+messageType.messageInterface.name.toUpperFirst()+'_'+messageType.name.toUpperFirst()
+	else
+'Mailbox_'+messageType.messageInterface.name.toUpperFirst()+'_'+messageType.name.toUpperFirst()
+ 	endif
+ /]
+ 
+
+[**
+ * %{}
+ * Query:
+ * @param messageType 
+ * @param instance 
+ */]
+[query public getQueueName(messageType : MessageType, instance : Boolean) : String = 
+	if instance then
+'queue_'+messageType.messageInterface.name.toUpperFirst()+'_'+messageType.name.toUpperFirst()
+	else
+'Queue_'+messageType.messageInterface.name.toUpperFirst()+'_'+messageType.name.toUpperFirst()
+ 	endif
+ /]
+ 
+
+ 
+
+[**
+ * 
+ * @param messageType 
+ * @param instance 
+ */]
+[query public getMailMessageName(messageType : MessageType, instance : Boolean) : String = 
+	if instance then
+'mailMessage_'+messageType.messageInterface.name.toUpperFirst()+'_'+messageType.name.toUpperFirst()
+	else
+'MailMessage_'+messageType.messageInterface.name.toUpperFirst()+'_'+messageType.name.toUpperFirst()
+ 	endif
+ /]
+
+
+[**
+ * 
+ * @param t 
+ * @param instance 
+ */]
+[query public getSyncPortName(t : Transition, instance : Boolean) : String =
+	if instance then
+t.statechart.name.toLowerFirst()+'_'+getSyncChannel(t).name.toUpperFirst()+'_'+syncPortPostfix(t)
+	else
+t.getSyncChannel().name.toUpperFirst()+'_'+syncPortPostfix(t)	
+	endif
+/]
+
+
+[**
+ * 
+ * @param t 
+ */]
+[query public syncPortPostfix(t : Transition) : String =  
+	if t.synchronization.kind = SynchronizationKind::SEND then 
+	'sender' 
+	else 
+	'receiver' 
+	endif
+/]
+
+
+[**
+ * 
+ * @param attr 
+ * @param rtsc 
+ */]
+[query public getSemaphorePortName(attr : Attribute, statechart : RealtimeStatechart) : String =
+'p_'+attr.name+'_'+statechart.name.toUpperFirst() 
+/]
+
+[**
+ * 
+ * @param any 
+ */]
+[query public messageportInterfacesLocation(any : OclAny) : String = 'Utilities.PortInterfaces.' /]
+
+[**
+ * 
+ * @param any 
+ */]
+[query public getModelicaInterfacePath(any : OclAny) : String = 'Modelica.Blocks.Interfaces'/]
+

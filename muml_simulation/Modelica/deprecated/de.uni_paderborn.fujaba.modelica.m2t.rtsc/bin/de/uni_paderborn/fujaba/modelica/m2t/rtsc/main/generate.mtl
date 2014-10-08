@@ -1,0 +1,130 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				 'http://www.fujaba.de/modelinstance/0.4.0',
+				 'http://www.fujaba.de/muml/instance/0.4.0',
+				 'http://www.fujaba.de/muml/modelica/adapter/transform/0.4.0')]
+
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::variable]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::operation]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::state::state]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::transition::transition]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::clock::clock]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::async]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::hybrid::hybrid]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::pkg]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::annotation]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::state::queries]
+
+[**
+ * This is the main template for generating a RTSC
+ * @param aRealtimeStatechart the RealtimeStatechart which will be translated
+ * @param hybridPortInstanceSet the set of hybrid port instances
+ * @param parentPackage the name of the parent package
+ */]
+[template public generateRTSC(aRealtimeStatechart : RealtimeStatechart, hybridPortInstanceSet : Set(HybridPortInstance), parentPackage : String)]
+[aRealtimeStatechart.createLayoutAnnotations() /]
+[createPackage(aRealtimeStatechart.getModelName(), parentPackage)/]
+[file (aRealtimeStatechart.getPath(parentPackage), false, 'UTF-8')]
+[within(aRealtimeStatechart.getModelName(), parentPackage)/]
+model [aRealtimeStatechart.getModelName()/][if not aRealtimeStatechart.isComponentRTSC()] extends Modelica_StateGraph2.PartialParallel(nEntry=1);[/if]
+	[createDiagramAnnotation(aRealtimeStatechart) /];
+	[createVariableDeclarations(aRealtimeStatechart)/]
+	[createHybridPortDeclarations(hybridPortInstanceSet, aRealtimeStatechart.isComponentRTSC())/]
+	[createLocalVariableDeclarations(aRealtimeStatechart)/]
+	[createStateDeclarations(aRealtimeStatechart)/]
+	[if aRealtimeStatechart.isComponentRTSC()][createDoEventVariableDeclarations(aRealtimeStatechart)/][/if]
+	[createDelegationStateDeclaration(aRealtimeStatechart)/]
+	[if aRealtimeStatechart.isEnterable()][createEntryPointInputDeclarations(aRealtimeStatechart.getEntryPoints()->collect(state)->asSet())/][/if]
+	[createTransitionDeclarations(aRealtimeStatechart.transitions)/]
+	[createDelegationTransitionDeclarations(aRealtimeStatechart)/]
+	[createClockDeclarations(aRealtimeStatechart)/]
+	[createClockConstraintDeclarations(aRealtimeStatechart.transitions)/]
+	[if aRealtimeStatechart.isPortRTSC()]
+	[createRaiseMessageEventDeclarations(aRealtimeStatechart)/]
+	[createTriggerMessageEventDeclarations(aRealtimeStatechart)/]
+	[elseif aRealtimeStatechart.isComponentRTSC() or aRealtimeStatechart.isMultiPortRTSC()]
+	[createPortDeclarations(aRealtimeStatechart)/]
+	[/if]
+	equation
+		[if not aRealtimeStatechart.isComponentRTSC()][connectInitialStep(aRealtimeStatechart)/][/if]
+		[connectSteps(aRealtimeStatechart.transitions)/]
+		[connectDelegationTransitions(aRealtimeStatechart)/]
+		[connectEntryPointInputs(aRealtimeStatechart)/]
+		[createClockConstraints(aRealtimeStatechart.transitions)/]
+		[createStateInvariants(aRealtimeStatechart.states)/]
+		[if aRealtimeStatechart.isPortRTSC()]
+		[createRaiseMessageEvents(aRealtimeStatechart)/]
+		[createTriggerMessageEvents(aRealtimeStatechart)/]
+		[elseif aRealtimeStatechart.isComponentRTSC()]
+		[connectClockResets(aRealtimeStatechart)/]
+		[connectSynchronizationChannels(aRealtimeStatechart)/]
+		[createHybridPortEquations(hybridPortInstanceSet)/]
+		[/if]
+		[if aRealtimeStatechart.isComponentRTSC() or aRealtimeStatechart.isMultiPortRTSC()]
+		[connectPorts(aRealtimeStatechart)/]
+		[/if]
+	[if aRealtimeStatechart.isComponentRTSC()]
+	[rwHybridPortSampledValueVariable(hybridPortInstanceSet)/]
+	algorithm
+		[generateEntryActions(aRealtimeStatechart)/]
+		[generateDoEventActions(aRealtimeStatechart)/]
+		[triggerMessageEventsAssignParameterVariables(aRealtimeStatechart)/]
+		[generateTransitionAction(aRealtimeStatechart) /]
+		[raiseMessageEventsAssignPBVariables(aRealtimeStatechart)/]
+		[generateExitActions(aRealtimeStatechart)/]
+	[/if]
+end [aRealtimeStatechart.getModelName()/];
+
+[/file]
+[comment generate region statecharts /]
+[generateRegionStatecharts(aRealtimeStatechart, hybridPortInstanceSet, aRealtimeStatechart.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
+[generateOperations(aRealtimeStatechart, aRealtimeStatechart.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
+[/template]
+
+[**
+ * Generate a complex state and its corresponding region statecharts
+ * for each state which contains one or more regions.
+ * @param rtsc the realtimestatechart
+ * @param hybridPortInstanceSet the set of hybrid port instances
+ * @param parentPackage the name of the parent package
+*/]
+[template public generateRegionStatecharts(rtsc : RealtimeStatechart, hybridPortInstanceSet : Set(HybridPortInstance), parentPackage : String)]
+[for (state : State | rtsc.states->select(embeddedRegions->notEmpty()))]
+	[let pkg : String = state.getComplexStateModelName().getFullyQualifiedSubpackageName(parentPackage)]
+	[generateComplexState(state, parentPackage)/]
+	[for (region : Region | state.embeddedRegions)]
+		[generateRTSC(region.embeddedStatechart, hybridPortInstanceSet, pkg) /]
+	[/for]
+	[/let]
+[/for]
+[/template]
+
+[**
+ * Create an annotation for the diagram
+ * @param rtsc the realtimestatechart
+*/]
+[query public createDiagramAnnotation(rtsc : RealtimeStatechart) : String =
+	'annotation (Diagram(coordinateSystem(extent = {{0, 0}, {' + rtsc.getAnnotationDetail('MODELICA_CODEGEN', 'width') + ', ' + rtsc.getAnnotationDetail('MODELICA_CODEGEN', 'height') + '}})))'
+/]
+
+[query public createLayoutAnnotations(rtsc : RealtimeStatechart) : OclAny =
+	invoke('de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc.layout.RealtimeStatechartLayouter',
+		'layout(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)',
+		Sequence{rtsc}) 
+/]
+
+[template public main(aRootNode : RootNode)] 
+	[comment @main/]
+	[comment be sure that the properties file is given as an argument in the run configuration !!!  /]
+
+	[comment  get component instance configuration and start transformation/]
+	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)] 
+			[comment: search for model instance category/]
+			[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.realtimestatechart.category'))]
+				[modelElementCategory.modelElements->first().oclAsType(RealtimeStatechart).generateRTSC(Set{}, 'test')/]
+			[/if]
+	[/for] 
+[/template]

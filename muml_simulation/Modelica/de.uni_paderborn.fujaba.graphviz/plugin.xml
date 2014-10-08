@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphviz -->
+      <package
+            uri="http://www.fujaba.de/graphviz/0.1.0"
+            class="de.uni_paderborn.fujaba.graphviz.GraphvizPackage"
+            genModel="model/graphviz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphviz -->
+      <package
+            uri="http://www.fujaba.de/graphviz/dot/0.1.0"
+            class="de.uni_paderborn.fujaba.graphviz.dot.DotPackage"
+            genModel="model/graphviz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphviz -->
+      <package
+            uri="http://www.fujaba.de/graphviz/plain/0.1.0"
+            class="de.uni_paderborn.fujaba.graphviz.plain.PlainPackage"
+            genModel="model/graphviz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphviz -->
+      <package
+            uri="http://www.fujaba.de/graphviz/common/0.1.0"
+            class="de.uni_paderborn.fujaba.graphviz.common.CommonPackage"
+            genModel="model/graphviz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphviz -->
+      <package
+            uri="http://www.fujaba.de/graphviz/util/0.1.0"
+            class="de.uni_paderborn.fujaba.graphviz.util.UtilPackage"
+            genModel="model/graphviz.genmodel"/>
+   </extension>
+</plugin>

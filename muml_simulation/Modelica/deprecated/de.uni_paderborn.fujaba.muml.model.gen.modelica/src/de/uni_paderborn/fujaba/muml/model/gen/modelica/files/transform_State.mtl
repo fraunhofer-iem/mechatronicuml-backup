@@ -1,0 +1,373 @@
+[comment encoding = UTF-8 /]
+[module transform_State('http://www.fujaba.de/muml/model/realtimestatechart/0.2.3',
+						'http://www.storydriven.org/core/expressions/0.2.0',
+						'http://www.eclipse.org/emf/2002/Ecore',
+						'http://www.fujaba.de/muml/model/core/0.2.4')/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_ComplexState/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_SimpleState /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Variable /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+
+
+
+[**
+ * 
+ * @param s 
+ */]
+[template public init_State(s : State)]
+	[if (s.regions->isEmpty())]
+ [comment Instantiation of an simple state /]
+[s.init_SimpleState()/]
+  	[elseif (s.regions->notEmpty())]
+  [comment Instantiation of an complex state /]
+[s.init_ComplexState()/]
+  [comment TODO entry/exit /]
+	[/if] 
+[/template]
+
+[**
+ * 
+ * @param s 
+ * @param global_variables 
+ * @param global_clocks 
+ */]
+[template public tranform_StateActions(s : State,global_variables :  OrderedSet(Attribute), global_clocks :  Set(Clock))]
+[transform_StateEntryAction(s,global_variables,global_clocks)/]
+[transform_StateDoAction(s, global_variables)/]
+[transform_exitAction(s, global_variables, global_clocks)/]
+[/template]
+
+[**
+ * 
+ * @param s 
+ * @param global_variables 
+ * @param global_clocks 
+ */]
+[template private transform_StateEntryAction(s : State,global_variables :  OrderedSet(Attribute),global_clocks :  Set(Clock))]
+	[if (not s.entryEvent.oclIsUndefined() or not s.doEvent.oclIsUndefined() or s.initial)]
+  //entry-action of state [s.name/] and it's first do-action
+  when [s.name.toLowerFirst()/].active and not [s.name.toLowerFirst()/]_entry_action_done then
+    	[comment todo: uhren! /]
+    [s.transform_entryAction(global_variables, global_clocks)/]
+  end when;  		
+  	[/if]
+  	[if (not s.entryEvent.oclIsUndefined())]
+  		[for (expr : Expression | s.entryEvent->select(action->notEmpty()).action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    				[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables)->asOrderedSet()]
+    					[if (attributes->notEmpty())]
+  when pre([getSemaphorePortName(attributes->first(), s.statechart)/].okp) and [s.name.toLowerFirst()/]_entry_action then
+  	[assignGlobalAttribute(expressionText, attributes->first(), s.statechart)/];
+  	[freeEntryActionSemaphore(attributes->first(), s.statechart, s)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_entry_action : [assignGlobalAttribute(expressionText, attributes->first(), s.statechart)/] [attributes->first().name/] = " + String([attributes->first().name/]));
+    end if;
+  end when;
+  						[/if]
+  					[/let]
+  				[/for]
+  			[/if]
+  		[/for]
+  	[/if]	
+[/template]
+
+[**
+ * 
+ * @param s 
+ * @param global_variables 
+ */]
+[template private transform_StateDoAction(s : State,global_variables :  OrderedSet(Attribute))]
+	[if (not s.doEvent.oclIsUndefined())]
+  //do-action of state [s.name.toLowerFirst()/]
+  when [s.name.toLowerFirst()/].active and intervall_clock >= intervall_[s.name.toUpperFirst()/]_do_action_min and intervall_[s.name.toUpperFirst()/]_do_action_max >= intervall_clock [if (s.invariants->excluding(null)->notEmpty())][for (constraint : ClockConstraint | s.invariants)]and [constraint.clock.name/] [constraint.operator.transform()/] [constraint.bound/][/for][/if] then
+    	[for (expr : Expression | s.doEvent->select(not action.oclIsUndefined()).action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    				[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables)->asOrderedSet()]
+    					[if (attributes->notEmpty())]
+    [getDoActionSemaphore(attributes->first(), s.statechart, s)/]
+    if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_do_action get sync.");
+    end if;
+    					[else]
+    [expressionText/];
+    if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - do-action : [expressionText/] [attributes->first().name/] = " + String([attributes->first().name/]));
+    end if;				
+    					[/if]
+    				[/let]
+    			[/for]		
+    		[/if]
+    	[/for]
+    intervall_diff_clock:=0 - time;
+  end when; 
+  		[for (expr : Expression | s.doEvent->select(not action.oclIsUndefined()).action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    				[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables)->asOrderedSet()]
+    					[if (attributes->notEmpty())]
+  when pre([getSemaphorePortName(attributes->first(), s.statechart)/].okp) and [s.name.toLowerFirst()/]_do_action then
+  	[assignGlobalAttribute(expressionText, attributes->first(), s.statechart)/];
+  	[freeDoActionSemaphore(attributes->first(), s.statechart, s)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_do_action : [assignGlobalAttribute(expressionText, attributes->first(), s.statechart)/] [attributes->first().name/] = " + String([attributes->first().name/]));
+    end if;
+  end when;
+  						[/if]
+  					[/let]
+  				[/for]
+  			[/if]
+  		[/for]
+  	[/if]
+[/template]
+
+
+[**
+ * 
+ * @param s 
+ * @param global_variables 
+ * @param global_clocks 
+ */]
+[template private transform_entryAction(s : State,global_variables :  OrderedSet(Attribute),global_clocks :  Set(Clock))]
+	[if (s.initial)]
+  		[for (c : Clock | s.statechart.clocks)]
+    diff_clock_[c.name/] := 0 - time;			
+  		[/for]
+  	[/if]
+	[if (hasEntryEvent(s) or hasDoEvent(s) or s.initial)]
+[s.name.toLowerFirst()/]_entry_action_done:=true;
+	[/if]
+	[if (hasEntryEvent(s))]
+    	[if (not s.entryEvent.action.oclIsUndefined())]
+    		[for (expr : Expression | s.entryEvent->select(not action.oclIsUndefined()).action.expressions)]
+    			[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    				[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    					[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables)->asOrderedSet()]
+    						[if (attributes->notEmpty())]
+    [getEntryActionSemaphore(attributes->first(), s.statechart, s)/]
+	 if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - entry-action : [expressionText/] [attributes->first().name/] = " + String([attributes->first().name/]));
+    end if;	
+    if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_entry_action get sync");
+    end if;
+    						[else]
+    [expressionText/];
+   	if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - entry-action : [expressionText/]  " );
+    end if;			
+    						[/if]
+    					[/let]
+    				[/for]		
+    			[/if]
+    		[/for]
+    	[/if]
+    	[if (s.entryEvent.clockResets->notEmpty())]
+    		[for (c : Clock | s.entryEvent.clockResets)]
+    			[if (global_clocks->includes(c))]
+  [s.statechart.name.toLowerFirst()/]_reset_clock_[c.name/] := not [s.statechart.name.toLowerFirst()/]_reset_clock_[c.name/];
+    			[else]
+  diff_clock_[c.name/] := 0 - time;
+    			[/if]
+    		[/for]
+    	[/if]    	
+    [/if]
+    [if (hasDoEvent(s))]
+    intervall_diff_clock:=0 - time;
+    	[for (expr : Expression | s.doEvent->select(not action.oclIsUndefined()).action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    				[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables)->asOrderedSet()]
+    					[if (attributes->notEmpty())]
+    [getDoActionSemaphore(attributes->first(), s.statechart, s)/]
+    if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_do_action get sync.");
+    end if;
+    					[else]
+    [expressionText/];
+    if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - do-action : [expressionText/] [attributes->first().name/] = " + String([attributes->first().name/]));
+    end if;				
+    					[/if]
+    				[/let]
+    			[/for]		
+    		[/if]
+    	[/for]
+    [/if]
+[/template]
+
+[**
+ * 
+ * @param s 
+ */]
+[template public transform_Invariant(s : State)]
+	[if s.invariants->excluding(null)->notEmpty()]
+  		[for (invariant : ClockConstraint | s.invariants)]
+when [s.name.toLowerFirst()/].active and [invariant.clock.name/] [invariant.operator.invert()/] [invariant.bound.toString()/] then
+  Modelica.Utilities.Streams.error( "Invariant '[invariant.clock.name/] [invariant.operator.transform()/] [invariant.bound.toString()/]' in State S1 is not maintained!");
+end when;					
+  		[/for]
+	[/if]
+[/template]
+
+[**
+ * 
+ * @param s 
+ * @param global_variables 
+ * @param global_clocks 
+ */]
+[template private transform_exitAction(s : State,global_variables :  OrderedSet(Attribute),global_clocks :  Set(Clock) )]
+	[if (hasEntryEvent(s) or hasDoEvent(s) or hasExitEvent(s) or s.stateEntryPoints->notEmpty())]
+  			[comment Transforma a state change and execute the depended actions /]
+  when not [s.name.toLowerFirst()/].active and pre([s.name.toLowerFirst()/].active) then
+  		[if (hasEntryEvent(s) or hasDoEvent(s))]
+    [s.name.toLowerFirst()/]_entry_action_done:=false;
+    	[/if]
+    	[if (hasExitEvent(s))]
+    		[if (s.exitEvent.action->notEmpty())]
+    			[for (expr : Expression | s.exitEvent->select(not action.oclIsUndefined()).action.expressions)]
+    				[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    					[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    						[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables)->asOrderedSet()]
+    							[if (attributes->notEmpty())]
+    [getExitActionSemaphore(attributes->first(), s.statechart, s)/]
+    if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_exit_action get sync");
+    end if;
+    							[else]
+    [expressionText/];
+     if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - exit-action : [expressionText/] [attributes->first().name/] = " + String([attributes->first().name/]));
+    end if;					
+    							[/if]
+    						[/let]
+    					[/for]		
+    				[/if]
+    			[/for]
+    		[/if]
+    		[if (s.exitEvent.clockResets->excluding(null)->notEmpty())]
+    			[for (c : Clock | s.exitEvent.clockResets)]
+    				[if (global_clocks->includes(c))]
+  [s.statechart.name.toLowerFirst()/]_reset_clock_[c.name/] := not [s.statechart.name.toLowerFirst()/]_reset_clock_[c.name/];
+    				[else]
+  diff_clock_[c.name/] := 0 - time;
+    				[/if]
+    			[/for]
+    		[/if] 
+    	[/if] 
+    	[if (s.stateEntryPoints->notEmpty())]
+    		[for (t : Transition | s.stateEntryPoints.outgoingTransitions)]
+    [getTransitionName(t, false)/]_fire := false;		
+			[/for]	
+		[/if] 
+  end when;
+  		[for (expr : Expression | s->select(not exitEvent.oclIsUndefined()).exitEvent.action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    				[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables)->asOrderedSet()]
+    					[if (attributes->notEmpty())]
+  when pre([getSemaphorePortName(attributes->first(), s.statechart)/].okp) and [s.name.toLowerFirst()/]_exit_action then
+  	[assignGlobalAttribute(expressionText, attributes->first(), s.statechart)/];
+  	[freeExitActionSemaphore(attributes->first(), s.statechart, s)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_exit_action : [assignGlobalAttribute(expressionText, attributes->first(), s.statechart)/] [attributes->first().name/] = " + String([attributes->first().name/]));
+    end if;
+  end when;
+  						[/if]
+  					[/let]
+  				[/for]
+  			[/if]
+  		[/for]
+  	[/if]
+[/template]
+
+
+[**
+ * 
+ * @param attr 
+ * @param statechart 
+ */]
+[template public getSemaphore(attr : Attribute, statechart : RealtimeStatechart)]
+//getSemaphore
+p_[attr.name/]_[statechart.name.toUpperFirst()/].p := 1;
+p_[attr.name/]_[statechart.name.toUpperFirst()/].v := 0;
+[/template]
+
+[**
+ * 
+ * @param attr 
+ * @param statechart 
+ */]
+[template public freeSemaphore(attr : Attribute, statechart : RealtimeStatechart)]
+//freeSemaphore
+p_[attr.name/]_[statechart.name.toUpperFirst()/].p := 0;
+p_[attr.name/]_[statechart.name.toUpperFirst()/].v := 1;
+[/template]
+
+[**
+ * 
+ * @param attr 
+ * @param statechart 
+ * @param s 
+ */]
+[template public getDoActionSemaphore(attr : Attribute, statechart : RealtimeStatechart, s : State)]
+//getDoActionSemaphore
+[s.name.toLowerFirst()/]_do_action := true;
+[getSemaphore(attr,statechart)/] 
+[/template]
+
+[**
+ * 
+ * @param attr 
+ * @param statechart 
+ * @param s 
+ */]
+[template public freeDoActionSemaphore(attr : Attribute, statechart : RealtimeStatechart, s : State)]
+//freeDoActionSemaphore
+[s.name.toLowerFirst()/]_do_action := false;
+[freeSemaphore(attr,statechart)/] 
+[/template]
+
+[**
+ * 
+ * @param attr 
+ * @param statechart 
+ * @param s 
+ */]
+[template public getEntryActionSemaphore(attr : Attribute, statechart : RealtimeStatechart, s : State)]
+//getEntryActionSemaphore
+[s.name.toLowerFirst()/]_entry_action := true;
+[getSemaphore(attr,statechart)/] 
+[/template]
+
+[**
+ * 
+ * @param attr 
+ * @param statechart 
+ * @param s 
+ */]
+[template public freeEntryActionSemaphore(attr : Attribute, statechart : RealtimeStatechart, s : State)]
+//freeEntryActionSemaphore
+[s.name.toLowerFirst()/]_entry_action := false;
+[freeSemaphore(attr,statechart)/] 
+[/template]
+
+[template public getExitActionSemaphore(attr : Attribute, statechart : RealtimeStatechart, s : State)]
+//getExitActionSemaphore
+[s.name.toLowerFirst()/]_exit_action := true;
+[getSemaphore(attr,statechart)/] 
+[/template]
+
+[**
+ * 
+ * @param attr 
+ * @param statechart 
+ * @param s 
+ */]
+[template public freeExitActionSemaphore(attr : Attribute, statechart : RealtimeStatechart, s : State)]
+//freeExitActionSemaphore
+[s.name.toLowerFirst()/]_exit_action := false;
+[freeSemaphore(attr,statechart)/] 
+[/template]

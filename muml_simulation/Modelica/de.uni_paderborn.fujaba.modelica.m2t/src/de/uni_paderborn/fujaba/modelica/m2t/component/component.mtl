@@ -1,0 +1,164 @@
+[module component('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::component::naming]
+[import de::uni_paderborn::fujaba::modelica::m2t::component::component_queries]
+[import de::uni_paderborn::fujaba::modelica::m2t::component::connector]
+[import de::uni_paderborn::fujaba::modelica::m2t::component::port]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::rtsc]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::pkg]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::keyword]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::naming]
+
+[**
+ * Generates the root component instance configuration.
+ * @param componentInstanceConfiguration the component instance configuration
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc
+*/]
+[template public generateRootCIC(componentInstanceConfiguration : ComponentInstanceConfiguration, map : Map) {
+	root : String = componentInstanceConfiguration.getModelName();
+}]
+[componentInstanceConfiguration.checkModelicaKeywords()/]
+[createRootPackage(root)/]
+[file (componentInstanceConfiguration.getPath(''), false, 'UTF-8')]
+model [componentInstanceConfiguration.getModelName()/]
+	[generatePartDeclarations(componentInstanceConfiguration)/]
+	equation
+		[createAssemblies(componentInstanceConfiguration)/]
+end [componentInstanceConfiguration.getModelName()/];
+[/file]
+[for (componentInstance : ComponentInstance | componentInstanceConfiguration.componentInstances)]
+	[generateComponentInstance(componentInstance, componentInstanceConfiguration.getModelName().getFullyQualifiedSubpackageName(''), map)/]
+[/for]
+[/template]
+
+[**
+ * Generates all component instances which are contained in the passed component
+ * instance configuration. No model element/file is created for the component instance
+ * configuration.
+ * @param componentInstanceConfiguration the component instance configuration
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc
+*/]
+[template private generateCIC(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String, map : Map)]
+[componentInstanceConfiguration.checkModelicaKeywords()/]
+[for (componentInstance : ComponentInstance | componentInstanceConfiguration.componentInstances)]
+	[generateComponentInstance(componentInstance, parentPackage, map)/]
+[/for]
+[/template]
+
+[template private generateComponentInstance(componentInstance : ComponentInstance, parentPackage : String, map : Map)]
+ERROR: expected AtomicComponentInstance or StructuredComponentInstance
+[/template]
+
+[**
+ * Generates a model for a (software) atomic component instance.
+ * @param componentInstance the atomic component instance
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc
+*/]
+[template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String, map : Map) ?
+	(componentInstance.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) {
+     behavior : RealtimeStatechart = map.get(componentInstance);
+     hybridPortInstanceSet : Set(HybridPortInstance) = componentInstance.portInstances->select(oclIsKindOf(HybridPortInstance))
+		->collect(oclAsType(HybridPortInstance))->asSet();
+}]
+[behavior.normalizeRtscTransitionPriorities()/]
+[generateRTSC(behavior, hybridPortInstanceSet, componentInstance.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
+[createPackage(componentInstance.getModelName(), parentPackage)/]
+[file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
+[within(componentInstance.getModelName(), parentPackage)/]
+model [componentInstance.getModelName()/]
+	[generatePorts(componentInstance.portInstances)/]
+		// the behavior of the atomic component
+		[behavior.getName().toUpperFirst()/].[behavior.getName().toUpperFirst()/] [componentInstance.getBehaviorVariableName()/]
+			[createBehaviorDeclAnnotation(behavior)/];
+		equation
+			[connectPorts(componentInstance.portInstances)/]
+end [componentInstance.getModelName()/];
+[/file]
+[/template]
+
+[**
+ * Generates a model for a continuous atomic component instance.
+ * @param componentInstance the atomic component instance
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc (unsed here)
+*/]
+[template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String, map : Map) ?
+	(componentInstance.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)
+]
+[createPackage(componentInstance.getModelName(), parentPackage)/]
+[file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
+[within(componentInstance.getModelName(), parentPackage)/]
+model [componentInstance.getModelName()/]
+	//ComponentKind::CONTINUOUS_COMPONENT 
+	//[protected ('CONTINUOUS_Declarations')]
+	
+
+
+   //[/protected]
+	[generatePorts(componentInstance.portInstances)/]
+	//[protected ('CONTINUOUS_Behavior')]
+	
+ 
+   //[/protected]
+	[generateInitialContinuousPortEquations(componentInstance.portInstances->select(oclIsKindOf(ContinuousPortInstance))->collect(oclAsType(ContinuousPortInstance))->asSet())/]
+end [componentInstance.getModelName()/];
+[/file]
+[/template]
+
+[**
+ * Generates a model for a structured component instance.
+ * @param componentInstance the structured component instance
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc
+*/]
+[template private generateComponentInstance(componentInstance : StructuredComponentInstance, parentPackage : String, map : Map)]
+[generateCIC(componentInstance.embeddedCIC, componentInstance.getModelName().getFullyQualifiedSubpackageName(parentPackage), map)/]
+[createPackage(componentInstance.getModelName(), parentPackage)/]
+[file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
+[within(componentInstance.getModelName(), parentPackage)/]
+model [componentInstance.getModelName()/]
+	[generatePartDeclarations(componentInstance.embeddedCIC)/]
+	[generatePorts(componentInstance.portInstances)/]
+	equation
+		[createAssemblies(componentInstance.embeddedCIC)/]
+		[createDelegations(componentInstance)/]
+end [componentInstance.getModelName()/];
+[/file]
+[/template]
+
+[**
+ * Generate declarations for the parts of a structured component instance.
+ * @param cic the embedded ComponentInstanceConfiguration
+*/]
+[template private generatePartDeclarations(cic : ComponentInstanceConfiguration)]
+	// part declarations
+[for (componentInstance : ComponentInstance | cic.componentInstances)]
+	[componentInstance.getModelName()/].[componentInstance.getModelName()/] [componentInstance.getName()/]
+[createComponentDeclAnnotation(componentInstance)/];
+[/for]
+	//[protected ('CONTINUOUS_Part_Declarations')]
+
+
+
+   //[/protected]
+	// end part declarations
+[/template]
+
+[query public normalizeRtscTransitionPriorities(rtsc : RealtimeStatechart) : OclAny =
+	invoke('de.uni_paderborn.fujaba.modelica.m2t.rtsc.transformation.TransitionPriorityNormalization',
+		'normalize(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)',
+		Sequence{rtsc})
+/]

@@ -1,0 +1,15 @@
+modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
+
+transformation plain2rtscAnnotation(inout rtscModel : RTSC);
+
+main() {
+	rtscModel.objects()[Transition]->map normalizePriority();
+}
+
+mapping inout Transition::normalizePriority() {
+	self.priority := self.getNormalizedPriority();
+}
+
+query Transition::getNormalizedPriority() : Integer {
+	return self.source.outgoingTransitions->sortedBy(priority)->indexOf(self);
+}

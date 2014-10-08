@@ -1,0 +1,560 @@
+
+[comment encoding = UTF-8 /]
+[module transform_RealtimeStatechart('http://www.fujaba.de/muml/model/realtimestatechart/0.2.3',
+									 'http://www.fujaba.de/muml/model/msgiface/0.2.2',
+									 'http://www.fujaba.de/muml/model/component/0.2.3',
+									 'http://www.fujaba.de/muml/model/core/0.2.4',
+									 'http://www.storydriven.org/core/0.2.0', 
+									 'http://www.storydriven.org/core/expressions/0.2.0',
+									 'http://www.eclipse.org/emf/2002/Ecore',
+									 'http://www.fujaba.de/muml/model/instance/0.2.2')/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::generate_Utilities /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Variable /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_SimpleState /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_State /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Transition /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Port /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_ComplexOrthogonalState /]
+
+
+
+[template public test_rtsc(statechart : RealtimeStatechart)]
+	// test_rtsc
+	// statechart = [statechart.name/]
+	[for (t : Transition | statechart.transitions)]
+		// t = ([t.source.name/], [t.target.name/], [t.priority/])
+		// transition.statechart = [t.statechart/]
+		// t.isCycleTransition =  [t.isCycleTransition()/]
+		[comment t.test_isCycleTransition()/]
+		// t.isDelayedTransition2 = [comment t.isDelayedTransition2()/]
+		// t.needPseudoTransition = [comment t.needPseudoTransition()/]
+	[/for]
+	// vertex = [statechart->select(vertices->notEmpty()).vertices/]
+	// states = [statechart->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)/]
+	// regions = [statechart->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State).regions->select(r : Region | not r.oclIsUndefined())/]
+	// statecharts = [statechart->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State).regions->select(r : Region | not r.oclIsUndefined())->select(not statechart.oclIsUndefined()).statechart/]
+	[for (it : RealtimeStatechart | statechart->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State).regions->select(r : Region | not r.oclIsUndefined())->select(not statechart.oclIsUndefined()).statechart)]
+		[test_rtsc(it)/]
+	[/for]
+[/template]
+
+
+
+[comment /]
+[template public transform_RealtimeStatechart(aRealtimeStatechart : RealtimeStatechart, global_variables :  OrderedSet(Attribute),global_clocks :  Set(Clock), syncChannels : Set(SynchronizationChannel), compHierarchy : String)
+{
+sub_statecharts : Set(RealtimeStatechart) = getAllSubStatecharts_h(aRealtimeStatechart->asSet(),Set{});
+usingClocks_h : Set(Clock) = usingClocks(aRealtimeStatechart->union(sub_statecharts)->asSet(), aRealtimeStatechart.clocks->asSet());
+resettingClocks_h : Set(Clock) = resettingClocks(aRealtimeStatechart->union(sub_statecharts)->asSet(), global_clocks);
+eventTransitions : Set(Transition) =  getEventTransitions_h(aRealtimeStatechart->asSet())->asSet();
+sendTransitions : Set(Transition) = eventTransitions->select(hasRaiseMessageEvent())->asSet();
+receiveTransitions : Set(Transition) = eventTransitions->select(hasTriggerMessageEvent())->asSet();
+}]
+//statechart ...
+[comment aRealtimeStatechart.test_rtsc()/]
+[if (not aRealtimeStatechart.oclIsUndefined())]
+[generate_ExtendedTransitions(aRealtimeStatechart)/]
+	
+[for (it : Transition | aRealtimeStatechart.transitions)]
+  	//rtsc-tran [it.source.name/], [it.target.name/], [it.priority/], [it.events->select(oclIsKindOf(AsynchronousMessageEvent)).oclAsType(AsynchronousMessageEvent)/]
+[/for]
+
+model [aRealtimeStatechart.name.toUpperFirst()/]
+  extends Utilities.PartialParallel(use_inPort, use_outPort,
+    nEntry=1); [comment TODO nEntry = 1 immer???/]
+  [comment declare variables /]
+  outer constant Real eps;
+  outer Boolean debug;
+	[for (it : Attribute | aRealtimeStatechart.attributes)]
+		//attribute = [it.name/]
+	[/for]
+  	[for (attr : Attribute | getAllAssignAttributes(aRealtimeStatechart->union(sub_statecharts)->asSet(), aRealtimeStatechart.attributes)->asSet())]
+	// [attr.name/]	
+  inner [attr.init_Attribute('')/]
+  		[let assign_rtscs : Set(RealtimeStatechart) = getAssignAttributeStatecharts_h(sub_statecharts, attr)]
+  			[if (assign_rtscs->notEmpty())]
+  Utilities.Semaphores.Sem sem_[attr.name/](n=[assign_rtscs->size()/],initValue = 1);
+  				[for (rtsc : RealtimeStatechart | assign_rtscs)]
+  inner [attr.init_Attribute('_'.concat(rtsc.name.toUpperFirst()))/]
+  inner Utilities.Semaphores.SemPort [getSemaphorePortName(attr, rtsc)/];  					
+  				[/for]
+  			[/if]
+  		[/let]
+  	[/for]
+  	[for (attr : Attribute | global_variables)]
+  outer [attr.init_Attribute('')/]
+  		[for (rtsc : RealtimeStatechart | getAssignAttributeStatecharts_h(aRealtimeStatechart->asSet(), attr))]
+  outer [attr.init_Attribute('_'.concat(rtsc.name.toUpperFirst()))/]
+  outer Utilities.Semaphores.SemPort [getSemaphorePortName(attr, rtsc)/];		
+  		[/for]
+  	[/for]
+  	
+  	[for (c : Clock | usingClocks_h)]
+  	[comment declare clocks /]
+  inner Modelica.SIunits.Time [c.name/];
+  Modelica.SIunits.Time diff_clock_[c.name/](start=0);
+  	[/for]
+  	[for (c : Clock | usingClocks(aRealtimeStatechart->asSet(), global_clocks))]
+  outer Modelica.SIunits.Time [c.name/];		
+  	[/for]
+  	[for (c : Clock | resettingClocks_h)]
+  outer Boolean [aRealtimeStatechart.name.toLowerFirst()/]_reset_clock_[c.name/];
+  	[/for]
+  	
+  	
+  	[for (c : Clock | resettingClocks_h)]
+  inner Boolean [statechart.name.toLowerFirst()/]_reset_clock_[c.name/];
+  	[/for]
+  	[if (needStateChartClock(aRealtimeStatechart.transitions))]
+  Modelica.SIunits.Time statechart_clock(start = 0);
+  Real diff_statechart_clock(start = 0);
+  	[/if]
+ 
+  	// 
+  	[if (getStates(aRealtimeStatechart.vertices->asSet())->select(not doEvent.oclIsUndefined())->notEmpty())]
+  Modelica.SIunits.Time intervall_clock(start=0);	
+  Modelica.SIunits.Time intervall_diff_clock(start=0);	
+  	[/if]
+	[for (s : State | getStates(aRealtimeStatechart.vertices->asSet()))]
+		[comment TODO: s.initial hier unnötig?!/]
+		[comment TODO: als query einheitlich und an einer stelle auslagern die bedingung/]
+  		[if (not s.entryEvent.oclIsUndefined() or not s.doEvent.oclIsUndefined() or s.initial)]
+  			[comment Declare additional constants for an entry-action /]
+  Boolean [s.name.toLowerFirst()/]_entry_action_done;
+  		[/if]
+  		[if (not s.doEvent.oclIsUndefined())]
+  			[comment Declare additional constants for a do-action /]
+  constant Real intervall_[s.name.toUpperFirst()/]_do_action_min = [s.doEvent.periodLower/];
+  constant Real intervall_[s.name.toUpperFirst()/]_do_action_max = [s.doEvent.periodUpper/];	
+  		[/if]
+  	[/for]
+  	[for (s : State | getStates(aRealtimeStatechart.vertices->asSet())->select(not doEvent.oclIsUndefined()))]
+  		[for (expr : Expression | s.doEvent->select(not action.oclIsUndefined()).action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[let attributes : OrderedSet(Attribute) = getAssignAttributes(expr.oclAsType(TextualExpression).expressionText,global_variables->asSet())->asOrderedSet()]
+    				[if (attributes->notEmpty())]
+  Boolean [s.name.toLowerFirst()/]_do_action(start = false);
+  					[/if]
+  				[/let]
+  			[/if]
+  		[/for]
+  	[/for]
+  	[for (s : State | getStates(aRealtimeStatechart.vertices->asSet())->select(not entryEvent.oclIsUndefined()))]
+  		[for (expr : Expression | s.entryEvent->select(not action.oclIsUndefined()).action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[let attributes : OrderedSet(Attribute) = getAssignAttributes(expr.oclAsType(TextualExpression).expressionText,global_variables->asSet())->asOrderedSet()]
+    				[if (attributes->notEmpty())]
+  Boolean [s.name.toLowerFirst()/]_entry_action(start = false);
+  					[/if]
+  				[/let]
+  			[/if]
+  		[/for]
+  	[/for]
+  	[for (s : State | getStates(aRealtimeStatechart.vertices->asSet())->select(not exitEvent.oclIsUndefined()))]
+  		[for (expr : Expression | s.exitEvent->select(not action.oclIsUndefined()).action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[let attributes : OrderedSet(Attribute) = getAssignAttributes(expr.oclAsType(TextualExpression).expressionText,global_variables->asSet())->asOrderedSet()]
+    				[if (attributes->notEmpty())]
+  Boolean [s.name.toLowerFirst()/]_exit_action(start = false);
+  					[/if]
+  				[/let]
+  			[/if]
+  		[/for]
+  	[/for]
+  	[for (t : Transition | aRealtimeStatechart.transitions->select(not action.oclIsUndefined()))]
+  		[for (expr : Expression | t.action.expressions)]
+    		[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[let attributes : OrderedSet(Attribute) = getAssignAttributes(expr.oclAsType(TextualExpression).expressionText,global_variables->asSet())->asOrderedSet()]
+    				[if (attributes->notEmpty())]
+  Boolean [getTransitionName(t, false)/]_transition_action(start = false);
+  					[/if]
+  				[/let]
+  			[/if]
+  		[/for]
+  	[/for]
+  	[comment receive parameter of synch channels/]
+  	[for (syncChannel : SynchronizationChannel | aRealtimeStatechart.transitions->collect(getSyncChannel())->excluding(null)->select(parameters->notEmpty()))]
+		[for (p : Parameter | syncChannel.parameters)]
+  	[p.init_Parameter(praefixSyncParameter(syncChannel))/]   	 			
+ 		[/for]
+  	[/for]
+  	[comment parameter of message receive transitions channels/]
+	[if (aRealtimeStatechart.transitions->select(hasTriggerMessageEvent())->notEmpty())]
+  		[for (mt : MessageType | aRealtimeStatechart.transitions->collect(t : Transition | t.getTriggerMessageType())->select(parameters->notEmpty()))]
+  			[for (p : Parameter | mt.parameters)]
+  	[p.init_Parameter(praefixMessageParameter(mt))/]   	 			
+ 			[/for]
+  		[/for]
+	[/if]
+
+  	
+	
+	[comment init entry points foo/]
+	[if (not aRealtimeStatechart.embeddingRegion.oclIsUndefined())]
+		[let entryPoints : Set(StateEntryPoint) = getAllEntryPoints(aRealtimeStatechart.embeddingRegion.parentState)]
+  			[if (entryPoints->notEmpty())]
+  [init_PseudoEntryStep(aRealtimeStatechart.embeddingRegion.parentState)/]
+  				[for (entryPoint : StateEntryPoint | entryPoints)]
+  					[for (t : Transition | entryPoint.outgoingTransitions)]
+  outer Boolean [getTransitionName(t, false)/]_fire;					
+  					[/for]
+  				[/for]
+  			[/if]
+  		[/let]
+  	[/if]
+  	[for (s : State | getStates(aRealtimeStatechart.vertices->asSet()))]
+  		[for (entryPoint : StateEntryPoint | getAllEntryPoints(s))]
+  			[for (t : Transition | entryPoint.outgoingTransitions)]
+  inner Boolean [getTransitionName(t, false)/]_fire;					
+  			[/for]
+  		[/for]
+  	[/for]
+  	[comment Instantiation of  MUML states /]
+  	[for (s : State | getStates(aRealtimeStatechart.vertices->asSet()))]
+		// state.name = [s.name/]
+  [s.init_State()/]
+  [comment Instantiation of MUML transitions/] 	
+ 		[for (t : Transition | sortedOutgoingTransitions(s))]
+			// muml trans
+			// fooooooooo? = [t.statechart/]
+  [init_Transtion(t,s)/]
+  		[/for]
+  		[comment exit point outgoing transtions/]
+  		[for (exitPoint : StateExitPoint | getAllExitPoints(s))]
+  			[for (t : Transition | sortedOutgoingTransitions(exitPoint))]
+  [init_Transtion(t,s)/]					
+  			[/for]
+  		[/for]
+  		[comment entry point outgoing transtions/]
+  		[for (t : Transition | s.incomingTransitions->select(t : Transition | t.source.oclIsKindOf(StateEntryPoint)))]
+  [init_Transtion(t,s)/]			
+  		[/for]
+  	[/for]
+  [init_MailMessage(aRealtimeStatechart)/]
+  [comment generate_Ports(aRealtimeStatechart, syncChannels, raisedMessages , triggeredMessages )/]
+	[for (it : SynchronizationChannel | eventTransitions->select(t : Transition | hasSyncChannel(t))->collect(t: Transition | getSyncChannel(t)))]
+		// sync tran = [it.name/]
+	[/for]
+	// init_SyncPorts
+	// getStates = [getStates(aRealtimeStatechart.vertices->asSet())/]
+	// eventTransitions = [eventTransitions->select(t : Transition | hasSyncChannel(t))->collect(t: Transition | getSyncChannel(t))->asSet()->intersection(syncChannels)->asSet()/]
+	[let states : Set(State)= getStates(aRealtimeStatechart.vertices->asSet())]
+	[let syncs : Set(SynchronizationChannel) = eventTransitions->select(t : Transition | hasSyncChannel(t))->collect(t: Transition | getSyncChannel(t))->asSet()->intersection(syncChannels)->asSet()]
+		[init_SyncPorts(states, syncs)/]
+	[/let]
+	[/let]
+	[for (it : Transition | aRealtimeStatechart.transitions)]
+		// [it.source.name/] [it.target.name/] [it.priority/]
+		// hasTriggerMessageEvent [it.hasTriggerMessageEvent()/]
+		// getTriggerMessageEvent [it.getTriggerMessageEvent()/]
+		// message [getTriggerMessage(it)/]
+		// instance [getTriggerMessageType(it)/]
+		// hasRaiseMessageEvent [it.hasRaiseMessageEvent()/]
+		// getRaiseMessageEvent [it.getRaiseMessageEvent()/]
+		// message [getRaiseMessage(it)/]
+		// instance [getRaiseMessageType(it)/]
+	[/for]
+  [init_SenderMessagePorts(compHierarchy ,sendTransitions)/]
+  [init_ReceiverMessagePorts(compHierarchy ,receiveTransitions)/]
+algorithm
+
+  [assign_globalHierachicalAttributes(aRealtimeStatechart,global_variables)/]
+  
+  [assign_localHierachicalAttributes(aRealtimeStatechart, sub_statecharts)/]
+	[for (s : State | getStates(aRealtimeStatechart.vertices->asSet()))]
+		// s.name = [s.name/]
+	[/for]
+	[for (s : State | getStates(aRealtimeStatechart.vertices->asSet()))]
+  when [s.name.toLowerFirst()/].active then
+    if debug then
+       Modelica.Utilities.Streams.print("time = "+String(time) + " [aRealtimeStatechart.name/] - [s.name.toLowerFirst()/].active = "+String([s.name.toLowerFirst()/].active));
+    end if;
+  end when;
+  [s.tranform_StateActions(global_variables, global_clocks)/]
+  
+  [s.transform_outgoingTransitionAction(global_variables, global_clocks)/]
+  
+  [s.transform_Invariant()/] 
+  
+  	[/for]
+  	
+  	
+  [comment global clock reset/]
+  [for (c : Clock | resettingClocks_h)]
+  when change([statechart.name.toLowerFirst()/]_reset_clock_[c.name/]) then
+  	diff_clock_[c.name/] := 0 - time;
+  end when;
+  [/for]
+equation
+[comment use diff_clock to restet the clocks/]
+  	[for (c : Clock | usingClocks_h)]
+  [c.name/] = pre(diff_clock_[c.name/]) + time;
+  	[/for]
+	[for (it : State | getStates(aRealtimeStatechart.vertices->asSet()))]
+		// states = [it.name/]
+	[/for]
+	// states = [getStates(aRealtimeStatechart.vertices->asSet())/]
+	// states->select(not doEvent.oclIsUndefined()) = [getStates(aRealtimeStatechart.vertices->asSet())->select(not doEvent.oclIsUndefined())/]
+  	[if (getStates(aRealtimeStatechart.vertices->asSet())->select(not doEvent.oclIsUndefined())->notEmpty())]
+  intervall_clock=pre(intervall_diff_clock) + time;
+  	[/if]
+  	[if (needStateChartClock(aRealtimeStatechart.transitions))]
+  statechart_clock = pre(diff_statechart_clock) + time;
+  	[/if]
+  
+  [init_connections(aRealtimeStatechart, sub_statecharts)/]
+	[let temp_eventTransitions : Set(Transition) = eventTransitions->reject(t : Transition | aRealtimeStatechart.transitions->includes(t))->asSet()]
+  [connect_Ports(aRealtimeStatechart, syncChannels,temp_eventTransitions)/]
+	[/let]	
+end [aRealtimeStatechart.name.toUpperFirst()/];
+  
+  [comment Synchronisations-Transitionen/]
+
+
+  
+  [comment hierarchie /]
+  	[for (s : State | getStates(aRealtimeStatechart.vertices))]
+  		[if (s.regions->excluding(null)->notEmpty())]
+package [s.name.toUpperFirst()/]_h
+			[if (s.regions->size() > 1)]
+			// transform_OrthogonalState
+				[let temp_eventTransitions : Set(Transition) = eventTransitions->reject(t : Transition | aRealtimeStatechart.transitions->includes(t))->asSet()]
+  [transform_OrthogonalState(aRealtimeStatechart,s,syncChannels,temp_eventTransitions,compHierarchy)/]
+  				[/let]
+			[/if]
+  			[for (r : Region | s.regions->select(r : Region | not r.oclIsUndefined() and not r.statechart.oclIsUndefined()))]
+  [transform_RealtimeStatechart(r.statechart,
+  								(global_variables->asSet()->union(aRealtimeStatechart.attributes->asSet()))->asOrderedSet(),
+  								global_clocks->union(aRealtimeStatechart.clocks->asSet()),
+  								syncChannels->union(s.channels->asSet())->asOrderedSet(),
+								compHierarchy)/]				
+			[/for]
+end [s.name.toUpperFirst()/]_h;
+  		[/if]
+  	[/for]
+
+[/if]
+[/template]
+
+[comment TODO: queries! /]
+[template public init_connections(aRealtimeStatechart : RealtimeStatechart, sub_statecharts : Set(RealtimeStatechart))]
+  	// init_connections
+	[for (s : State | getStates(aRealtimeStatechart.vertices))]
+  		[for (t : Transition | s.outgoingTransitions->sortedBy(-priority.oclAsType(Integer)))]
+  			[comment TODO was ist, wenn source Entry/exit point ist? /]
+  			[if (needPseudoTransition(t))]
+connect([t.source.name.toLowerFirst()/][if (t.source.oclAsType(State).regions->notEmpty())].suspend[else].outPort[/if]['['/][i/][']'/], [getTransitionName(t, false)/].inPort);															
+connect(pseudoStep_[t.source.name.toUpperFirst()/]_[t.target.oclAsType(State).name.toUpperFirst()/]_[t.priority/].outPort['['/]1[']'/], [getTransitionName(t, true)/].inPort);		  				
+connect([getTransitionName(t, true)/].outPort, [t.target.name.toLowerFirst()/][if (hasEmbeddedHistoryStatechart(t.target.oclAsType(State)))].resume[else].inPort[/if]['['/][t.target.incomingTransitions->indexOf(t)/][']'/] );			
+connect([getTransitionName(t, false)/].outPort, pseudoStep_[t.source.name.toUpperFirst()/]_[t.target.oclAsType(State).name.toUpperFirst()/]_[t.priority/].inPort['['/]1[']'/]);												
+ 			[elseif (t.target.oclIsKindOf(StateEntryPoint))]
+ 			// t.target.oclIsKindOf(StateEntryPoint)
+ 				[for (t1 : Transition | t.target.oclAsType(StateEntryPoint).outgoingTransitions)]
+ 					// t.target [t1.target.name/]
+ 					// target rtsc = [t1.target.oclAsType(State).statechart.name/]
+ 					// region = [t1.target.oclAsType(State).statechart.embeddingRegion.name/]
+ 					// parentstate = [t1.target.oclAsType(State).statechart.embeddingRegion.parentState.name/]
+ 				[/for]
+ 				[for (s1 : Transition | getAllEntryPoints(t.target.oclAsType(StateEntryPoint).outgoingTransitions.target.oclAsType(State).statechart.embeddingRegion.parentState->first()).outgoingTransitions)]
+ 					// parentstate 2 = [s1.target.name/]
+ 				[/for]
+ 				[let entryPointOutgoingTransitions : OrderedSet(Transition)  = getAllEntryPoints(t.target.oclAsType(StateEntryPoint).outgoingTransitions.target.oclAsType(State).statechart.embeddingRegion.parentState->first()).outgoingTransitions->asOrderedSet()]
+					[for (t1 : Transition | entryPointOutgoingTransitions)]
+						// [t1.target.outgoingTransitions.target.name/]
+connect([getTransitionName(t1, false)/].outPort, [t1.target.oclAsType(State).statechart.embeddingRegion.parentState.name.toLowerFirst()/].inPort['['/][t1.target.oclAsType(State).statechart.embeddingRegion.parentState.incomingTransitions->size()+entryPointOutgoingTransitions->indexOf(t1)/][']'/] );			 			 										
+					[/for]
+ 				[/let]
+ 			[else]
+[comment Connect outgoing Transitions /]
+connect([t.source.name.toLowerFirst()/][if (t.source.oclAsType(State).regions->notEmpty())].suspend[else].outPort[/if]['['/][i/][']'/], [getTransitionName(t, false)/].inPort);
+[comment Connect incomming Transitions /]
+connect([getTransitionName(t, false)/].outPort, [t.target.name.toLowerFirst()/][if (hasEmbeddedHistoryStatechart(t.target.oclAsType(State)))].resume[else].inPort[/if]['['/][t.target.incomingTransitions->indexOf(t)/][']'/] );			 			
+   			[/if]
+[comment Connect additional sync ports of the transitions/]
+			[if (hasSyncChannel(t))]
+				[for (Sequence{1..getSyncCount_h(getSyncChannel(t), s.statechart.embeddingRegion.parentState,t.synchronization.kind)})]
+connect([getTransitionName(t, false)/].[if (t.synchronization.kind = SynchronizationKind::SEND)]sender[else]receiver[/if][array(i)/] , [getSyncPortName(t, true)/][array(i)/]);							
+				[/for]
+			[/if]
+			[if (t.hasRaiseMessageEvent())]
+connect([getPortName(t.getRaiseMessageType(t),t, null, true)/], [getMailMessageName(t.getRaiseMessageType(), true)/].message_input_port);				
+connect([getTransitionName(t, false)/].firePort, [getMailMessageName(t.getRaiseMessageType(), true)/].conditionPort);			
+			[/if]
+			[if (t.hasTriggerMessageEvent())]
+			// t.triggerMessageEvent [t.getTriggerMessageEvent()/]
+			// t.triggerMessageEvent.message [t.getTriggerMessage()/]
+			// t.triggerMessageEvent.message.instanceOf = [t.getTriggerMessageType()/]
+connect([getTransitionName(t, false)/].message_output_port, [getPortName(t.getTriggerMessageType(),t, 'output', true)/]);			
+			[/if]
+		[/for]
+
+		[if (s.initial)]
+			[if (not aRealtimeStatechart.embeddingRegion.oclIsUndefined() and aRealtimeStatechart.embeddingRegion.parentState.stateEntryPoints->notEmpty())]
+				[let entryPoints : Set(StateEntryPoint) = getAllEntryPoints(aRealtimeStatechart.embeddingRegion.parentState)->asSet()]
+					[for (t : Transition | entryPoints->select(outgoingTransitions->notEmpty()).outgoingTransitions)]
+connect(pseudoEntryStep_[s.name.toLowerFirst()/].outPort['['/][1/][']'/], [getTransitionName(t, true)/].inPort);
+connect([getTransitionName(t, true)/].outPort, [t.target.name.toLowerFirst()/].inPort['['/][t.target.incomingTransitions->size()+1/][']'/] );									
+					[/for]	
+connect(entry['['/]1[']'/], pseudoEntryStep_[s.name.toUpperFirst()/].inPort);
+connect(pseudoEntryStep_[s.name.toLowerFirst()/].outPort['['/][1/][']'/], [s.name.toLowerFirst()/].inPort['['/][s.incomingTransitions->size()+1/][']'/]);			
+				[/let]
+			[else]
+connect(entry['['/]1[']'/], [s.name.toLowerFirst()/][if (hasEmbeddedHistoryStatechart(s))].resume[else].inPort[/if]['['/][s.incomingTransitions->size()+1/][']'/]);
+			[/if]			
+  		[/if]
+	[/for]
+	[for (attr : Attribute | getAllAssignAttributes(aRealtimeStatechart->union(sub_statecharts), aRealtimeStatechart.attributes->asOrderedSet())->asSet())]
+  		[let assign_rtscs : Set(RealtimeStatechart) = getAssignAttributeStatecharts_h(sub_statecharts, attr)]
+  			[if (assign_rtscs->notEmpty())]
+  				[for (sc : RealtimeStatechart | assign_rtscs)]
+connect(sem_[attr.name/].port[array(i)/],p_[attr.name+'_'+sc.name.toUpperFirst()/]);					
+  				[/for]
+  			[/if]
+  		[/let]
+  	[/for]
+[/template]
+
+
+
+
+
+[template private transform_globalHierachicalAttributes(aRealtimeStatechart : RealtimeStatechart, sub_statecharts : Set(RealtimeStatechart))]
+	[comment global attributes /]
+	[for (rtscs : RealtimeStatechart | sub_statecharts)]
+		[for (attr : Attribute | aRealtimeStatechart.attributes)]
+inner [attr.init_Attribute('_'+rtscs.name.toUpperFirst())/]
+inner Utilities.Semaphores.SemPort [getSemaphorePortName(attr, rtscs)/];  					
+		[/for]
+	[/for]  	
+[/template]
+
+[template private assign_globalHierachicalAttributes(aRealtimeStatechart : RealtimeStatechart, global_variables :  OrderedSet(Attribute))]
+	[if (global_variables->notEmpty()) ]
+when active then
+  		[for (attr : Attribute | global_variables)]
+  			[for (rtsc : RealtimeStatechart | getAssignAttributeStatecharts_h(aRealtimeStatechart->asSet(), attr))]
+  [attr.name+'_'.concat(rtsc.name.toUpperFirst())/] := [attr.name/];		
+  			[/for]
+  		[/for]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [aRealtimeStatechart.name/] - active = " + String(active));
+    end if;
+end when;
+
+when not active and pre(active) then
+	[for (s : State | getStates(aRealtimeStatechart.vertices->asOrderedSet()))]
+  			[for (expr : Expression | s.doEvent->select(not action.oclIsUndefined()).action.expressions)]
+    			[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    				[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    					[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables->asSet())->asOrderedSet()]
+    						[if (attributes->notEmpty())]
+  	[freeDoActionSemaphore(attributes->first(), s.statechart, s)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_do_action free semaphore, because parent step is deactivated ");
+    end if;
+  							[/if]
+  						[/let]
+  					[/for]
+  				[/if]
+  			[/for]
+  			[if (not s.entryEvent.oclIsUndefined())]
+  				[for (expr : Expression | s.entryEvent->select(not action.oclIsUndefined()).action.expressions)]
+    				[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    					[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    						[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables->asSet())->asOrderedSet()]
+    							[if (attributes->notEmpty())]
+  	[freeEntryActionSemaphore(attributes->first(), s.statechart, s)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_entry_action free semaphore, because parent step is deactivated ");
+    end if;
+  								[/if]
+  							[/let]
+  						[/for]
+  					[/if]
+  				[/for]
+  			[/if]
+  			[if (not s.exitEvent.oclIsUndefined())]
+  			[for (expr : Expression | s->select(not exitEvent.oclIsUndefined()).exitEvent.action.expressions)]
+    			[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    				[for (expressionText : String | getActions(expr.oclAsType(TextualExpression).expressionText))]
+    					[let attributes : OrderedSet(Attribute) = getAssignAttributes(expressionText,global_variables->asSet())->asOrderedSet()]
+    						[if (attributes->notEmpty())]
+  	[freeExitActionSemaphore(attributes->first(), s.statechart, s)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " + String(time) + " [s.name/] - [s.name.toLowerFirst()/]_exit_action free semaphore, because parent step is deactivated ");
+    end if;
+  							[/if]
+  						[/let]
+  					[/for]
+  				[/if]
+  			[/for]
+  			[/if]	
+  		[/for]
+  		[for (t : Transition | aRealtimeStatechart.transitions)]
+  			[if (not t.action.oclIsUndefined())]
+			[for (expr : Expression | t->select(not action.oclIsUndefined()).action.expressions)]
+    			[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    				[let attributes : OrderedSet(Attribute) = getAssignAttributes(expr.oclAsType(TextualExpression).expressionText,global_variables->asSet())->asOrderedSet()]
+    					[if (attributes->notEmpty())]
+  	[freeTransitionActionSemaphore(attributes->first(), t.statechart, t)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " +String(time) + " [t.statechart.name/] - Transition:[getTransitionName(t, false)/] transition-action  free semaphore, because parent step is deactivated ");
+    end if;
+  						[/if]
+  					[/let]
+  				[/if]
+  			[/for]
+		[/if]
+  		[/for]
+end when;
+  	[/if]
+[/template]
+
+[template private assign_localHierachicalAttributes(aRealtimeStatechart : RealtimeStatechart,  sub_statecharts : Set(RealtimeStatechart))]
+	//assign_localHierachicalAttributes
+	[for (attr : Attribute | getAllAssignAttributes(aRealtimeStatechart->union(sub_statecharts), aRealtimeStatechart.attributes->asOrderedSet())->asSet())]
+  		// attr = [attr.name/]; pre([attr.name/])
+  		[let assign_rtscs : Set(RealtimeStatechart) = getAssignAttributeStatecharts_h(sub_statecharts, attr)->asSet()]
+  			[if (assign_rtscs->notEmpty())]
+[for (it : TextualExpression | getAllActionExpression(assign_rtscs))]
+					// TextualExpression = [it.expressionText/]
+				
+				[/for]
+  				[for (sc : RealtimeStatechart | assign_rtscs)]
+  				// sc = [sc.name/]
+			  	[for (it : String | getRHSAttributeAction(sc, attr))]
+  					// text = [it/]
+				[/for]	
+  				[let rhs : Boolean = getRHSAttributeAction(sc, attr)->notEmpty()][comment weil modelica so toll ist/]
+[if (rhs)]if[else]when[/if] abs(pre([attr.name.concat('_'.concat(sc.name.toUpperFirst()))/])- [attr.name.concat('_'.concat(sc.name.toUpperFirst()))/])	> eps then
+	[attr.name/] := [attr.name.concat('_'.concat(sc.name.toUpperFirst()))/];
+	if debug then
+      Modelica.Utilities.Streams.print("time = "+String(time) + " [aRealtimeStatechart.name/] - sync [attr.name.concat('_'.concat(sc.name.toUpperFirst()))/]  [attr.name/] =  "+String([attr.name/]));
+    end if;
+end [if (rhs)]if[else]when[/if]; 		
+				[/let]			
+  				[/for]
+  			[/if]
+  		[/let]
+  	[/for]
+[/template]
+
+
+[template public init_MailMessage(aRealtimeStatechart : RealtimeStatechart)]
+	[for (t : Transition | getStates(aRealtimeStatechart.vertices).oclAsType(State).outgoingTransitions->select(hasRaiseMessageEvent()))]
+		[if (t.getRaiseMessageType().parameters->notEmpty())]
+MessageInterfaces.[getMailMessageName(t.getRaiseMessageType(), false)/] [getMailMessageName(t.getRaiseMessageType(), true)/];										
+		[else]
+MessageInterfaces.MailMessage [getMailMessageName(t.getRaiseMessageType(), true)/];				
+		[/if]
+	[/for]
+[/template]
+
+
+
+
+
+
+

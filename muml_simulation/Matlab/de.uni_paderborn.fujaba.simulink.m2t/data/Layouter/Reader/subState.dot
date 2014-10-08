@@ -1,0 +1,10 @@
+digraph Chart {
+	node [label="\N"];
+	graph [bb="0,94,168,0"];
+	subgraph cluster0 {
+		graph [label=State,
+			bb="64,86,160,8"];
+		"0/0" [label=SubState, shape=box, pos="112,60", width="1.1111", height="0.5"];
+	}
+	__init [label="", shape=box, pos="27,60", width="0.75", height="0.5"];
+}

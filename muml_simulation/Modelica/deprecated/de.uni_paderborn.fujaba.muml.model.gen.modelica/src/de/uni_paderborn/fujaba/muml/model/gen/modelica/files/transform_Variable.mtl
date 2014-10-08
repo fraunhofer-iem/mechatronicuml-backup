@@ -1,0 +1,99 @@
+[comment encoding = UTF-8 /]
+[module transform_Variable('http://www.eclipse.org/emf/2002/Ecore',
+						   'http://www.storydriven.org/core/expressions/0.2.0',
+						   'http://www.fujaba.de/muml/model/core/0.2.4')/]
+
+
+[template public transform(primitiveType : PrimitiveTypes) ? (primitiveType = PrimitiveTypes::INT)] 
+Integer
+[/template]
+
+[template public transform(primitiveType : PrimitiveTypes) ? (primitiveType = PrimitiveTypes::BOOLEAN)] 
+Boolean
+[/template]
+
+[template public transform(primitiveType : PrimitiveTypes) ? (primitiveType = PrimitiveTypes::BYTE)] 
+Integer
+[/template]
+
+[template public transform(primitiveType : PrimitiveTypes) ? (primitiveType = PrimitiveTypes::SHORT)] 
+Integer
+[/template]
+
+[template public transform(primitiveType : PrimitiveTypes) ? (primitiveType = PrimitiveTypes::LONG)] 
+Integer
+[/template]
+
+[template public transform(primitiveType : PrimitiveTypes) ? (primitiveType = PrimitiveTypes::DOUBLE)] 
+Real
+[/template]
+
+[template public transform(primitiveType : PrimitiveTypes) ? (primitiveType = PrimitiveTypes::STRING)] 
+String
+[/template]
+
+[template public transform(primitiveType : PrimitiveTypes) ? (primitiveType = PrimitiveTypes::VOID)] 
+	//Void not in use so far!
+[/template]
+
+[template public init_DataType(dataType : PrimitiveDataType, name : String)]
+[primitiveType.transform()/] [name/]
+[/template]
+
+[template public init_DataType(dataType : CompositeDataType, name : String)]
+[comment gibts noch nicht/]
+[/template]
+
+[template public init_DataType(dataType : ArrayDataType, name : String) ? (innerDeclaration.oclIsKindOf(PrimitiveDataType))]
+[innerDeclaration.type.oclAsType(PrimitiveDataType).init_DataType(name)/]['['/][cardinality/][']'/]
+[/template]
+
+[template public init_DataType(dataType : DataType, name : String) ? (dataType.oclIsKindOf(PrimitiveDataType))]
+[dataType.oclAsType(PrimitiveDataType).init_DataType(name)/]
+[/template]
+
+[template public init_DataType(dataType : DataType, name : String) ? (dataType.oclIsKindOf(CompositeDataType))]
+[dataType.oclAsType(CompositeDataType).init_DataType(name)/]
+[/template]
+
+[template public init_DataType(dataType : DataType, name : String) ? (dataType.oclIsKindOf(ArrayDataType))]
+[dataType.oclAsType(ArrayDataType).init_DataType(name)/]
+[/template]
+
+[**
+ * 
+ * @param aAttribute 
+ * @param suffix 
+ */]
+[template public init_Attribute(aAttribute: Attribute, suffix : String)] 
+	[aAttribute.type.init_DataType(name+suffix)/];
+[/template]
+
+[template public init_Parameter(aParameter: Parameter, praefix : String)] 
+	[aParameter.type.init_DataType(praefix+name)/];
+[/template]
+
+
+[**
+ * 
+ * @param aComparingOperator 
+ */]
+[template public transform(aComparingOperator : ComparingOperator)]
+[if (aComparingOperator= ComparingOperator::LESS)]<
+[elseif (aComparingOperator= ComparingOperator::LESS_OR_EQUAL)]<=
+[elseif (aComparingOperator= ComparingOperator::EQUAL)]=
+[elseif (aComparingOperator= ComparingOperator::GREATER_OR_EQUAL)]>=
+[elseif (aComparingOperator= ComparingOperator::GREATER)]>
+[elseif (aComparingOperator= ComparingOperator::UNEQUAL )]<>
+[/if]
+[/template]
+
+[**
+ * 
+ * @param aComparingOperator 
+ */]
+[template public invert(aComparingOperator : ComparingOperator)]
+[if (aComparingOperator= ComparingOperator::LESS)]>=
+[elseif (aComparingOperator= ComparingOperator::LESS_OR_EQUAL)]>
+[/if]
+[/template]

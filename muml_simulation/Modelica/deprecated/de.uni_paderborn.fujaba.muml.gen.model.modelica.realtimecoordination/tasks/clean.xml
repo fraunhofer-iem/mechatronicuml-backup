@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="main" name="de.uni_paderborn.fujaba.muml.gen.model.modelica.realtimecoordination">
+    <property name="ECLIPSE_HOME" value="../../../../Eclipse/IndigoModeling/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../.."/>
+
+   
+ 
+
+    <!-- The default task with the jars used by this project -->
+    <target name="main">
+    	<delete dir="D:/eclipseWorkspaces/runtime-New_configuration(1)/dtz/Main_package"/>
+    </target>
+
+   
+</project>

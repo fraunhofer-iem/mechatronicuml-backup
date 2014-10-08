@@ -1,0 +1,46 @@
+[module connector_queries('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::component::naming]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::hybrid::queries]
+
+[**
+ * Returns true if the assembly/delegation connector instance connects discrete ports
+ * @param portConnectorInstance the PortConnectorInstance
+*/]
+[query public isDiscretePortConnectorInstance(portConnectorInstance : PortConnectorInstance) : Boolean =
+	portConnectorInstance.portInstances->at(1).oclIsKindOf(DiscretePortInstance)
+	and portConnectorInstance.portInstances->at(2).oclIsKindOf(DiscretePortInstance)
+/]
+
+[**
+ * Returns the fully qualified name of the continuous or hybrid port instance
+ * (do not use this query for a discrete port instance)..
+ * @param portInstance the PortInstance
+ * @param messageType the MessageType
+ * @param ref the structured component instance
+*/]
+[query public getFullyQualifiedPortName(portInstance : PortInstance, ref : StructuredComponentInstance) : String =
+	if portInstance.componentInstance = ref then 
+		''
+	else
+		portInstance.componentInstance.getName() + '.'
+	endif + portInstance.getPortName()
+/]
+
+[**
+ * Create assembly connect annotation.
+ * @TODO: implement me!
+ * @param portInstance a portInstance
+]
+[query public createAssemblyConnectAnnotation(portInstance : PortInstance) : String =
+	'annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None))'
+/]

@@ -1,0 +1,25 @@
+[comment encoding = UTF-8 /]
+[module main('http://www.fujaba.de/modelinstance/0.2.4',
+			 'http://www.fujaba.de/muml/model/instance/0.2.2')]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_ComponentInstanceConfiguration /]
+
+
+[**
+ * This template is the main entry point for the transformation.
+ * @param aRootNode is the rood node of the MUML-model.
+ */]
+[template public main(aRootNode : RootNode)] 
+	[comment @main/]
+	[comment TODO: dateinamen festlegen!/]
+	[file ('Test.mo', false, 'UTF-8')]
+	[for (node : ModelElementCategory | aRootNode.categories)]
+			[if (node.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+				[if (node.modelElements->first().oclIsTypeOf(ComponentInstanceConfiguration))]
+[node.modelElements->first().oclAsType(ComponentInstanceConfiguration).transform()/]
+				[/if]
+			[/if]
+		[/for] 
+	[/file] 
+	
+[/template]

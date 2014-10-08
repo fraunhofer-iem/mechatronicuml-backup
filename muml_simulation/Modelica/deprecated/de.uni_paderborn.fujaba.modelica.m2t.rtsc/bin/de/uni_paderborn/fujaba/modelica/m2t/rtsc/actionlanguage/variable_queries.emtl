@@ -1,0 +1,1956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="variable_queries" nsURI="de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::variable_queries" endHeaderPosition="228">
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Query" name="getFullyQualifiedName" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="235" endPosition="509" value="&#xD;&#xA;Returns the fully qualified name of the typed named element. The name&#xD;&#xA;of the typed named element is prefixed with the fqname and a dot (if fqname &lt;> '').&#xD;&#xA;@param typedNamedElement the typed named element&#xD;&#xA;@param fqname a fully qualified name or the empty string&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="typedNamedElement">
+          <body value=" the typed named element"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="fqname">
+          <body value=" a fully qualified name or the empty string"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="typedNamedElement">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+      </parameter>
+      <parameter name="fqname">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="fqname" referredVariable="/0/getFullyQualifiedName/fqname">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+        </condition>
+        <thenExpression xsi:type="mtl:QueryInvocation" definition="/0/getTypedNamedElementName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="typedNamedElement" referredVariable="/0/getFullyQualifiedName/typedNamedElement">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+          </argument>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="fqname" referredVariable="/0/getFullyQualifiedName/fqname">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </source>
+          <argument xsi:type="mtl:QueryInvocation" definition="/0/getTypedNamedElementName">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="typedNamedElement" referredVariable="/0/getFullyQualifiedName/typedNamedElement">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+            </argument>
+          </argument>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getTypedNamedElementName" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="765" endPosition="862" value="&#xD;&#xA;Returns the name of the TypedNamedElement&#xD;&#xA;@param typedNamedElement the TypedNamedElement&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="typedNamedElement">
+          <body value=" the TypedNamedElement"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="typedNamedElement">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="typedNamedElement" referredVariable="/0/getTypedNamedElementName/typedNamedElement">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainer"/>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="/8/LocalVariableDeclarationStatement">
+            <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+        </condition>
+        <thenExpression xsi:type="mtl:QueryInvocation" definition="/0/getUniqueLocalVariableName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="typedNamedElement" referredVariable="/0/getTypedNamedElementName/typedNamedElement">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainer"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/8/LocalVariableDeclarationStatement">
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </argument>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="typedNamedElement" referredVariable="/0/getTypedNamedElementName/typedNamedElement">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getUniqueLocalVariableName">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1192" endPosition="1300" value="&#xD;&#xA;Returns a unique name for a local variable&#xD;&#xA;@param lVarDecl the local variable declaration statement&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="lVarDecl">
+          <body value=" the local variable declaration statement"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="lVarDecl">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:LetExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <in xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="lVarNames" eType="/3/Set(String)" referredVariable="/0/getUniqueLocalVariableName/%.1/lVarNames"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/getUniqueLocalVariableName/lVarDecl">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/includes"/>
+          </condition>
+          <thenExpression xsi:type="mtl:QueryInvocation" definition="/0/getUniqueLocalVariableNameRec">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/getUniqueLocalVariableName/lVarDecl">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/getUniqueLocalVariableName/lVarDecl">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              </argument>
+            </argument>
+            <argument xsi:type="ocl.ecore:VariableExp" name="lVarNames" eType="/3/Set(String)" referredVariable="/0/getUniqueLocalVariableName/%.1/lVarNames"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/getUniqueLocalVariableName/lVarDecl">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+          </elseExpression>
+        </in>
+        <variable xsi:type="ocl.ecore:Variable" name="lVarNames" eType="/3/Set(String)">
+          <initExpression xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(String)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Bag(String)">
+              <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Set(LocalVariableDeclarationStatement)">
+                <source xsi:type="mtl:QueryInvocation" eType="/3/Set(LocalVariableDeclarationStatement)" definition="/0/getAllLocalVariableDeclarationStatements.1">
+                  <argument xsi:type="mtl:QueryInvocation" definition="/0/getEnclosingRTSC">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                    <argument xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/getUniqueLocalVariableName/lVarDecl">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                    </argument>
+                  </argument>
+                </source>
+                <body xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="i" referredVariable="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/i">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/getUniqueLocalVariableName/lVarDecl">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/%3C%3E"/>
+                </body>
+                <iterator xsi:type="ocl.ecore:Variable" name="i">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                </iterator>
+              </source>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/temp1">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+              </iterator>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Bag(T)_Class/asSet"/>
+          </initExpression>
+        </variable>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getUniqueLocalVariableNameRec">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1842" endPosition="2002" value="&#xD;&#xA;Returns a unique by recursively adding a &quot;_local&quot; suffix to the name&#xD;&#xA;@param name the current name&#xD;&#xA;@param lVarNames the existing local Variable names&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="name">
+          <body value=" the current name"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="lVarNames">
+          <body value=" the existing local Variable names"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="name">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="lVarNames" eType="/3/Set(String)"/>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="lVarNames" eType="/3/Set(String)" referredVariable="/0/getUniqueLocalVariableNameRec/lVarNames"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="name" referredVariable="/0/getUniqueLocalVariableNameRec/name">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/includes"/>
+        </condition>
+        <thenExpression xsi:type="mtl:QueryInvocation" definition="/0/getUniqueLocalVariableNameRec">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="name" referredVariable="/0/getUniqueLocalVariableNameRec/name">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_local">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </argument>
+          <argument xsi:type="ocl.ecore:VariableExp" name="lVarNames" eType="/3/Set(String)" referredVariable="/0/getUniqueLocalVariableNameRec/lVarNames"/>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:VariableExp" name="name" referredVariable="/0/getUniqueLocalVariableNameRec/name">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getEnclosingRTSC">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2223" endPosition="2330" value="&#xD;&#xA;Returns the enclosing realtime statechart&#xD;&#xA;@param lVarDecl the local variable declaration statement&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="lVarDecl">
+          <body value=" the local variable declaration statement"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="lVarDecl">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(EObject)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Set(EObject)">
+              <source xsi:type="ocl.ecore:IteratorExp" name="closure" eType="/3/Set(EObject)">
+                <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(EObject)">
+                  <source xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(EObject)">
+                    <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL/Annotations">
+                      <details key="IMPLICIT_SET_CONVERSION" value="true"/>
+                    </eAnnotations>
+                    <part xsi:type="ocl.ecore:CollectionItem">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                      <item xsi:type="ocl.ecore:OperationCallExp">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/getEnclosingRTSC/lVarDecl">
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                        </source>
+                        <argument xsi:type="ocl.ecore:TypeExp" eType="/8/EObject">
+                          <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                        </argument>
+                        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                      </item>
+                    </part>
+                  </source>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asSet"/>
+                </source>
+                <body xsi:type="ocl.ecore:IfExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                  <condition xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="v" referredVariable="/0/getEnclosingRTSC/%.1/%/%/select/closure/v">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/8/RealtimeStatechart">
+                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+                  </condition>
+                  <thenExpression xsi:type="ocl.ecore:VariableExp" name="v" referredVariable="/0/getEnclosingRTSC/%.1/%/%/select/closure/v">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                  </thenExpression>
+                  <elseExpression xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="v" referredVariable="/0/getEnclosingRTSC/%.1/%/%/select/closure/v">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                    </source>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContainer"/>
+                  </elseExpression>
+                </body>
+                <iterator xsi:type="ocl.ecore:Variable" name="v">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                </iterator>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getEnclosingRTSC/%.1/%/%/select/temp2">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/8/RealtimeStatechart">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+              </iterator>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/last"/>
+        </source>
+        <argument xsi:type="ocl.ecore:TypeExp" eType="/8/RealtimeStatechart">
+          <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+      </expression>
+      <type xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getAllLocalVariableDeclarationStatements" visibility="Public" type="/3/Set(LocalVariableDeclarationStatement)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2698" endPosition="2783" value="&#xD;&#xA;Returns all local variable declaration statements&#xD;&#xA;@param expr the expression&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="expr">
+          <body value=" the expression"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="expr">
+        <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(EObject)">
+        <source xsi:type="ocl.ecore:IteratorExp" name="closure" eType="/3/OrderedSet(EObject)">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(EObject)">
+            <source xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(EObject)">
+              <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL/Annotations">
+                <details key="IMPLICIT_SET_CONVERSION" value="true"/>
+              </eAnnotations>
+              <part xsi:type="ocl.ecore:CollectionItem">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                <item xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="expr" referredVariable="/0/getAllLocalVariableDeclarationStatements/expr">
+                    <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/8/EObject">
+                    <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </item>
+              </part>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asSet"/>
+          </source>
+          <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(EObject)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="select">
+              <eType xsi:type="ocl.ecore:SequenceType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:SequenceType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="v" referredVariable="/0/getAllLocalVariableDeclarationStatements/select/closure/v">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eContents"/>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/temp3">
+                  <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/T"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/8/EObject">
+                  <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp3">
+                <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/T"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/temp4">
+                <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/T"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/8/EObject">
+                <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp4">
+              <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/T"/>
+            </iterator>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="v">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          </iterator>
+        </source>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="temp3" referredVariable="/0/getAllLocalVariableDeclarationStatements/select/temp5">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="/8/LocalVariableDeclarationStatement">
+            <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="temp5">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        </iterator>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getAllLocalVariableDeclarationStatements" visibility="Public" type="/3/Set(LocalVariableDeclarationStatement)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="3134" endPosition="3274" value="&#xD;&#xA;Returns all local variable declaration statements which are used&#xD;&#xA;inside a transition action.&#xD;&#xA;@param rtsc the realtime statechart&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the realtime statechart"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(LocalVariableDeclarationStatement)">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(LocalVariableDeclarationStatement)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(Transition)">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Transition)">
+              <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getAllLocalVariableDeclarationStatements.1/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/transitions"/>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Action"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/temp6">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/action"/>
+                  </source>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+              </source>
+              <argument xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Expression)">
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Action"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/temp6">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/action"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Action/expressions"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/notEmpty"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp6">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+            </iterator>
+          </source>
+          <body xsi:type="mtl:QueryInvocation" eType="/3/Set(LocalVariableDeclarationStatement)" definition="/0/getAllLocalVariableDeclarationStatements">
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Expression)">
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Action"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/temp7">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/action"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Action/expressions"/>
+              </source>
+              <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/at"/>
+            </argument>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp7">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+          </iterator>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asSet"/>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getLocalVariableDeclarationStatementRepr" visibility="Public" type="/3/Set(LocalVariableDeclarationStatement)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="3597" endPosition="3755" value="&#xD;&#xA;Returns a set containing a representant for each LocalVariableDeclarationStatement&#xD;&#xA;@param lVarDecls the set of local variable declaration statements&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="lVarDecls">
+          <body value=" the set of local variable declaration statements"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="lVarDecls" eType="/3/Set(LocalVariableDeclarationStatement)"/>
+      <expression xsi:type="ocl.ecore:IterateExp" name="iterate" eType="/3/Set(LocalVariableDeclarationStatement)">
+        <source xsi:type="ocl.ecore:VariableExp" name="lVarDecls" eType="/3/Set(LocalVariableDeclarationStatement)" referredVariable="/0/getLocalVariableDeclarationStatementRepr/lVarDecls"/>
+        <body xsi:type="ocl.ecore:IfExp" eType="/3/Set(LocalVariableDeclarationStatement)">
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:IteratorExp" name="any">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="r" eType="/3/Set(LocalVariableDeclarationStatement)" referredVariable="/0/getLocalVariableDeclarationStatementRepr/iterate/r"/>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/temp8">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="l" referredVariable="/0/getLocalVariableDeclarationStatementRepr/iterate/l">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+                </source>
+                <argument xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/temp8">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="l" referredVariable="/0/getLocalVariableDeclarationStatementRepr/iterate/l">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement/variable"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/="/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp8">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+              </iterator>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(LocalVariableDeclarationStatement)">
+            <source xsi:type="ocl.ecore:VariableExp" name="r" eType="/3/Set(LocalVariableDeclarationStatement)" referredVariable="/0/getLocalVariableDeclarationStatementRepr/iterate/r"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="l" referredVariable="/0/getLocalVariableDeclarationStatementRepr/iterate/l">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/including"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:VariableExp" name="r" eType="/3/Set(LocalVariableDeclarationStatement)" referredVariable="/0/getLocalVariableDeclarationStatementRepr/iterate/r"/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="l">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+        </iterator>
+        <result xsi:type="ocl.ecore:Variable" name="r" eType="/3/Set(LocalVariableDeclarationStatement)">
+          <initExpression xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(OclVoid)"/>
+        </result>
+      </expression>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="getFullyQualifiedName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getFullyQualifiedName"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="typedNamedElement">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+        </eParameters>
+        <eParameters name="fqname">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getTypedNamedElementName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getTypedNamedElementName"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="typedNamedElement">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getUniqueLocalVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getUniqueLocalVariableName"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="lVarDecl">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getUniqueLocalVariableNameRec">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getUniqueLocalVariableNameRec"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="name">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="lVarNames" eType="/3/Set(String)"/>
+      </eOperations>
+      <eOperations name="getEnclosingRTSC">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getEnclosingRTSC"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        <eParameters name="lVarDecl">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getAllLocalVariableDeclarationStatements" eType="/3/Set(LocalVariableDeclarationStatement)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getAllLocalVariableDeclarationStatements"/>
+        <eParameters name="expr">
+          <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getAllLocalVariableDeclarationStatements" eType="/3/Set(LocalVariableDeclarationStatement)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getAllLocalVariableDeclarationStatements.1"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getLocalVariableDeclarationStatementRepr" eType="/3/Set(LocalVariableDeclarationStatement)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getLocalVariableDeclarationStatementRepr"/>
+        <eParameters name="lVarDecls" eType="/3/Set(LocalVariableDeclarationStatement)"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypedNamedElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LocalVariableDeclarationStatement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Expression_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Set(LocalVariableDeclarationStatement)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL" references="/3/Set(LocalVariableDeclarationStatement)"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(String)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(LocalVariableDeclarationStatement)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(String)" instanceClassName="org.eclipse.ocl.util.Bag">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(EObject)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(EObject)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(EObject)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Transition)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Expression)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Expression)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(LocalVariableDeclarationStatement)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(OclVoid)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="LocalVariableDeclarationStatement">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="EObject">
+      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="RealtimeStatechart">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//LocalVariableDeclarationStatement"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(LocalVariableDeclarationStatement)"/>
+  <ocl.ecore:Variable name="self" eType="/3/Set(LocalVariableDeclarationStatement)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/getFullyQualifiedName">
+      <details key="start" value="512"/>
+      <details key="end" value="760"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/getFullyQualifiedName/%">
+      <details key="start" value="232"/>
+      <details key="end" value="511"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/getFullyQualifiedName/%/typedNamedElement">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/getFullyQualifiedName/%/fqname">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/getFullyQualifiedName/typedNamedElement">
+      <details key="start" value="548"/>
+      <details key="end" value="585"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/getFullyQualifiedName/fqname">
+      <details key="start" value="587"/>
+      <details key="end" value="602"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/getFullyQualifiedName/%.1">
+      <details key="start" value="616"/>
+      <details key="end" value="757"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/getFullyQualifiedName/%.1/%">
+      <details key="start" value="619"/>
+      <details key="end" value="630"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/getFullyQualifiedName/%.1/%/fqname">
+      <details key="start" value="619"/>
+      <details key="end" value="625"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/getFullyQualifiedName/%.1/%/%">
+      <details key="start" value="628"/>
+      <details key="end" value="630"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/getFullyQualifiedName/%.1/%.1">
+      <details key="start" value="638"/>
+      <details key="end" value="682"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/getFullyQualifiedName/%.1/%.1/typedNamedElement">
+      <details key="start" value="638"/>
+      <details key="end" value="655"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/getFullyQualifiedName/%.1/%.2">
+      <details key="start" value="691"/>
+      <details key="end" value="750"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/getFullyQualifiedName/%.1/%.2/%">
+      <details key="start" value="691"/>
+      <details key="end" value="703"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/getFullyQualifiedName/%.1/%.2/%/fqname">
+      <details key="start" value="691"/>
+      <details key="end" value="697"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/getFullyQualifiedName/%.1/%.2/%/%">
+      <details key="start" value="700"/>
+      <details key="end" value="703"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/getFullyQualifiedName/%.1/%.2/%.1">
+      <details key="start" value="706"/>
+      <details key="end" value="750"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/getFullyQualifiedName/%.1/%.2/%.1/typedNamedElement">
+      <details key="start" value="706"/>
+      <details key="end" value="723"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/getTypedNamedElementName">
+      <details key="start" value="865"/>
+      <details key="end" value="1187"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/getTypedNamedElementName/%">
+      <details key="start" value="762"/>
+      <details key="end" value="864"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/getTypedNamedElementName/%/typedNamedElement">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/getTypedNamedElementName/typedNamedElement">
+      <details key="start" value="904"/>
+      <details key="end" value="941"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/getTypedNamedElementName/%.1">
+      <details key="start" value="955"/>
+      <details key="end" value="1184"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/getTypedNamedElementName/%.1/%">
+      <details key="start" value="958"/>
+      <details key="end" value="1035"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/getTypedNamedElementName/%.1/%/%">
+      <details key="start" value="958"/>
+      <details key="end" value="988"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/getTypedNamedElementName/%.1/%/%/typedNamedElement">
+      <details key="start" value="958"/>
+      <details key="end" value="975"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/getTypedNamedElementName/%.1/%/%.1">
+      <details key="start" value="1001"/>
+      <details key="end" value="1034"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/getTypedNamedElementName/%.1/%.1">
+      <details key="start" value="1043"/>
+      <details key="end" value="1146"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/getTypedNamedElementName/%.1/%.1/%">
+      <details key="start" value="1070"/>
+      <details key="end" value="1145"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/getTypedNamedElementName/%.1/%.1/%/%">
+      <details key="start" value="1070"/>
+      <details key="end" value="1100"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/getTypedNamedElementName/%.1/%.1/%/%/typedNamedElement">
+      <details key="start" value="1070"/>
+      <details key="end" value="1087"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/getTypedNamedElementName/%.1/%.1/%/%.1">
+      <details key="start" value="1111"/>
+      <details key="end" value="1144"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/getTypedNamedElementName/%.1/%.2">
+      <details key="start" value="1155"/>
+      <details key="end" value="1177"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/getTypedNamedElementName/%.1/%.2/typedNamedElement">
+      <details key="start" value="1155"/>
+      <details key="end" value="1172"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/getUniqueLocalVariableName">
+      <details key="start" value="1303"/>
+      <details key="end" value="1837"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/getUniqueLocalVariableName/%">
+      <details key="start" value="1189"/>
+      <details key="end" value="1302"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/getUniqueLocalVariableName/%/lVarDecl">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/getUniqueLocalVariableName/lVarDecl">
+      <details key="start" value="1345"/>
+      <details key="end" value="1389"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/getUniqueLocalVariableName/%.1">
+      <details key="start" value="1431"/>
+      <details key="end" value="1832"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/getUniqueLocalVariableName/%.1/%">
+      <details key="start" value="1636"/>
+      <details key="end" value="1832"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/getUniqueLocalVariableName/%.1/%/%">
+      <details key="start" value="1639"/>
+      <details key="end" value="1682"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/getUniqueLocalVariableName/%.1/%/%/lVarNames">
+      <details key="start" value="1639"/>
+      <details key="end" value="1648"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/getUniqueLocalVariableName/%.1/%/%/%">
+      <details key="start" value="1659"/>
+      <details key="end" value="1681"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/getUniqueLocalVariableName/%.1/%/%/%/%">
+      <details key="start" value="1659"/>
+      <details key="end" value="1676"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/getUniqueLocalVariableName/%.1/%/%/%/%/lVarDecl">
+      <details key="start" value="1659"/>
+      <details key="end" value="1667"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/getUniqueLocalVariableName/%.1/%/%.1">
+      <details key="start" value="1690"/>
+      <details key="end" value="1794"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%">
+      <details key="start" value="1720"/>
+      <details key="end" value="1782"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%">
+      <details key="start" value="1720"/>
+      <details key="end" value="1748"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%/%">
+      <details key="start" value="1720"/>
+      <details key="end" value="1742"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%/%/%">
+      <details key="start" value="1720"/>
+      <details key="end" value="1737"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%/%/%/lVarDecl">
+      <details key="start" value="1720"/>
+      <details key="end" value="1728"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%/%.1">
+      <details key="start" value="1745"/>
+      <details key="end" value="1748"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%.1">
+      <details key="start" value="1751"/>
+      <details key="end" value="1782"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%.1/%">
+      <details key="start" value="1751"/>
+      <details key="end" value="1777"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%.1/%/%">
+      <details key="start" value="1751"/>
+      <details key="end" value="1768"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%.1/%/%/lVarDecl">
+      <details key="start" value="1751"/>
+      <details key="end" value="1759"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/getUniqueLocalVariableName/%.1/%/%.1/lVarNames">
+      <details key="start" value="1784"/>
+      <details key="end" value="1793"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/getUniqueLocalVariableName/%.1/%/%.2">
+      <details key="start" value="1803"/>
+      <details key="end" value="1825"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/getUniqueLocalVariableName/%.1/%/%.2/%">
+      <details key="start" value="1803"/>
+      <details key="end" value="1820"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/getUniqueLocalVariableName/%.1/%/%.2/%/lVarDecl">
+      <details key="start" value="1803"/>
+      <details key="end" value="1811"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/getUniqueLocalVariableName/%.1/lVarNames">
+      <details key="start" value="1435"/>
+      <details key="end" value="1630"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%">
+      <details key="start" value="1461"/>
+      <details key="end" value="1630"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect">
+      <details key="start" value="1461"/>
+      <details key="end" value="1621"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select">
+      <details key="start" value="1461"/>
+      <details key="end" value="1597"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%">
+      <details key="start" value="1461"/>
+      <details key="end" value="1531"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%/%">
+      <details key="start" value="1461"/>
+      <details key="end" value="1488"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%/%/lVarDecl">
+      <details key="start" value="1461"/>
+      <details key="end" value="1469"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%.1">
+      <details key="start" value="1583"/>
+      <details key="end" value="1596"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%.1/i">
+      <details key="start" value="1583"/>
+      <details key="end" value="1584"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%.1/lVarDecl">
+      <details key="start" value="1588"/>
+      <details key="end" value="1596"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/i">
+      <details key="start" value="1543"/>
+      <details key="end" value="1580"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/%">
+      <details key="start" value="1607"/>
+      <details key="end" value="1620"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/%/%">
+      <details key="start" value="1607"/>
+      <details key="end" value="1615"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/%/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/getUniqueLocalVariableNameRec">
+      <details key="start" value="2005"/>
+      <details key="end" value="2218"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/getUniqueLocalVariableNameRec/%">
+      <details key="start" value="1839"/>
+      <details key="end" value="2004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/getUniqueLocalVariableNameRec/%/name">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/getUniqueLocalVariableNameRec/%/lVarNames">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/getUniqueLocalVariableNameRec/name">
+      <details key="start" value="2050"/>
+      <details key="end" value="2063"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/getUniqueLocalVariableNameRec/lVarNames">
+      <details key="start" value="2065"/>
+      <details key="end" value="2088"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/getUniqueLocalVariableNameRec/%.1">
+      <details key="start" value="2102"/>
+      <details key="end" value="2215"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/getUniqueLocalVariableNameRec/%.1/%">
+      <details key="start" value="2105"/>
+      <details key="end" value="2130"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/getUniqueLocalVariableNameRec/%.1/%/lVarNames">
+      <details key="start" value="2105"/>
+      <details key="end" value="2114"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/getUniqueLocalVariableNameRec/%.1/%/name">
+      <details key="start" value="2125"/>
+      <details key="end" value="2129"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/getUniqueLocalVariableNameRec/%.1/%.1">
+      <details key="start" value="2138"/>
+      <details key="end" value="2195"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/getUniqueLocalVariableNameRec/%.1/%.1/%">
+      <details key="start" value="2168"/>
+      <details key="end" value="2183"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/getUniqueLocalVariableNameRec/%.1/%.1/%/name">
+      <details key="start" value="2168"/>
+      <details key="end" value="2172"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/getUniqueLocalVariableNameRec/%.1/%.1/%/%">
+      <details key="start" value="2175"/>
+      <details key="end" value="2183"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/getUniqueLocalVariableNameRec/%.1/%.1/lVarNames">
+      <details key="start" value="2185"/>
+      <details key="end" value="2194"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/getUniqueLocalVariableNameRec/%.1/name">
+      <details key="start" value="2204"/>
+      <details key="end" value="2208"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/getEnclosingRTSC">
+      <details key="start" value="2333"/>
+      <details key="end" value="2693"/>
+      <details key="line" value="65"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/getEnclosingRTSC/%">
+      <details key="start" value="2220"/>
+      <details key="end" value="2332"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/getEnclosingRTSC/%/lVarDecl">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/getEnclosingRTSC/lVarDecl">
+      <details key="start" value="2365"/>
+      <details key="end" value="2409"/>
+      <details key="line" value="65"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/getEnclosingRTSC/%.1">
+      <details key="start" value="2435"/>
+      <details key="end" value="2690"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/getEnclosingRTSC/%.1/%">
+      <details key="start" value="2435"/>
+      <details key="end" value="2660"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/getEnclosingRTSC/%.1/%/%">
+      <details key="start" value="2435"/>
+      <details key="end" value="2652"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/getEnclosingRTSC/%.1/%/%/select">
+      <details key="start" value="2435"/>
+      <details key="end" value="2636"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/getEnclosingRTSC/%.1/%/%/select/closure">
+      <details key="start" value="2435"/>
+      <details key="end" value="2595"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%">
+      <details key="start" value="2435"/>
+      <details key="end" value="2478"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%/%/%/%">
+      <details key="start" value="2435"/>
+      <details key="end" value="2469"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%/%/%/%/lVarDecl">
+      <details key="start" value="2435"/>
+      <details key="end" value="2443"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%/%/%/%/%">
+      <details key="start" value="2454"/>
+      <details key="end" value="2468"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1">
+      <details key="start" value="2511"/>
+      <details key="end" value="2592"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%">
+      <details key="start" value="2514"/>
+      <details key="end" value="2547"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%/v">
+      <details key="start" value="2514"/>
+      <details key="end" value="2515"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%/%">
+      <details key="start" value="2528"/>
+      <details key="end" value="2546"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/v">
+      <details key="start" value="2556"/>
+      <details key="end" value="2557"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%.1">
+      <details key="start" value="2569"/>
+      <details key="end" value="2583"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%.1/v">
+      <details key="start" value="2569"/>
+      <details key="end" value="2570"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/v">
+      <details key="start" value="2488"/>
+      <details key="end" value="2506"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/getEnclosingRTSC/%.1/%/%/select/%">
+      <details key="start" value="2604"/>
+      <details key="end" value="2635"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/getEnclosingRTSC/%.1/%/%/select/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/getEnclosingRTSC/%.1/%/%/select/%/%">
+      <details key="start" value="2616"/>
+      <details key="end" value="2634"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/getEnclosingRTSC/%.1/%/%/select/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/getEnclosingRTSC/%.1/%.1">
+      <details key="start" value="2671"/>
+      <details key="end" value="2689"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/getAllLocalVariableDeclarationStatements">
+      <details key="start" value="2786"/>
+      <details key="end" value="3129"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/getAllLocalVariableDeclarationStatements/%">
+      <details key="start" value="2695"/>
+      <details key="end" value="2785"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/getAllLocalVariableDeclarationStatements/%/expr">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/getAllLocalVariableDeclarationStatements/expr">
+      <details key="start" value="2841"/>
+      <details key="end" value="2858"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/getAllLocalVariableDeclarationStatements/select">
+      <details key="start" value="2904"/>
+      <details key="end" value="3126"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/getAllLocalVariableDeclarationStatements/select/closure">
+      <details key="start" value="2904"/>
+      <details key="end" value="3070"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%">
+      <details key="start" value="2904"/>
+      <details key="end" value="2948"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%/%/%/%">
+      <details key="start" value="2904"/>
+      <details key="end" value="2939"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%/%/%/%/expr">
+      <details key="start" value="2904"/>
+      <details key="end" value="2908"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%/%/%/%/%">
+      <details key="start" value="2922"/>
+      <details key="end" value="2936"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect">
+      <details key="start" value="2981"/>
+      <details key="end" value="3067"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select">
+      <details key="start" value="2981"/>
+      <details key="end" value="3031"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%">
+      <details key="start" value="2981"/>
+      <details key="end" value="2994"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%/v">
+      <details key="start" value="2981"/>
+      <details key="end" value="2982"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%.1">
+      <details key="start" value="3003"/>
+      <details key="end" value="3030"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%.1/%">
+      <details key="start" value="3015"/>
+      <details key="end" value="3029"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/%">
+      <details key="start" value="3041"/>
+      <details key="end" value="3066"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/%/%">
+      <details key="start" value="3051"/>
+      <details key="end" value="3065"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/temp4">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/getAllLocalVariableDeclarationStatements/select/closure/v">
+      <details key="start" value="2958"/>
+      <details key="end" value="2976"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/getAllLocalVariableDeclarationStatements/select/%">
+      <details key="start" value="3079"/>
+      <details key="end" value="3125"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/getAllLocalVariableDeclarationStatements/select/%/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/getAllLocalVariableDeclarationStatements/select/%/%">
+      <details key="start" value="3091"/>
+      <details key="end" value="3124"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/getAllLocalVariableDeclarationStatements/select/temp5">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/getAllLocalVariableDeclarationStatements.1">
+      <details key="start" value="3277"/>
+      <details key="end" value="3592"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/getAllLocalVariableDeclarationStatements.1/%">
+      <details key="start" value="3131"/>
+      <details key="end" value="3276"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/getAllLocalVariableDeclarationStatements.1/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/getAllLocalVariableDeclarationStatements.1/rtsc">
+      <details key="start" value="3332"/>
+      <details key="end" value="3357"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/getAllLocalVariableDeclarationStatements.1/%.1">
+      <details key="start" value="3403"/>
+      <details key="end" value="3589"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect">
+      <details key="start" value="3403"/>
+      <details key="end" value="3580"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select">
+      <details key="start" value="3403"/>
+      <details key="end" value="3496"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%">
+      <details key="start" value="3403"/>
+      <details key="end" value="3419"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%/rtsc">
+      <details key="start" value="3403"/>
+      <details key="end" value="3407"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1">
+      <details key="start" value="3431"/>
+      <details key="end" value="3493"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%">
+      <details key="start" value="3431"/>
+      <details key="end" value="3458"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%/%">
+      <details key="start" value="3435"/>
+      <details key="end" value="3458"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%/%/%">
+      <details key="start" value="3435"/>
+      <details key="end" value="3441"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%/%/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%.1">
+      <details key="start" value="3463"/>
+      <details key="end" value="3493"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%.1/%">
+      <details key="start" value="3463"/>
+      <details key="end" value="3481"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%.1/%/%">
+      <details key="start" value="3463"/>
+      <details key="end" value="3469"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%.1/%/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/temp6">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%">
+      <details key="start" value="3509"/>
+      <details key="end" value="3577"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%">
+      <details key="start" value="3509"/>
+      <details key="end" value="3534"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%/%">
+      <details key="start" value="3509"/>
+      <details key="end" value="3527"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%/%/%">
+      <details key="start" value="3509"/>
+      <details key="end" value="3515"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%/%/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%/%.1">
+      <details key="start" value="3532"/>
+      <details key="end" value="3533"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/temp7">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/getLocalVariableDeclarationStatementRepr">
+      <details key="start" value="3758"/>
+      <details key="end" value="4175"/>
+      <details key="line" value="104"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/getLocalVariableDeclarationStatementRepr/%">
+      <details key="start" value="3594"/>
+      <details key="end" value="3757"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/getLocalVariableDeclarationStatementRepr/%/lVarDecls">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/getLocalVariableDeclarationStatementRepr/lVarDecls">
+      <details key="start" value="3813"/>
+      <details key="end" value="3863"/>
+      <details key="line" value="104"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/getLocalVariableDeclarationStatementRepr/iterate">
+      <details key="start" value="3909"/>
+      <details key="end" value="4172"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/getLocalVariableDeclarationStatementRepr/iterate/lVarDecls">
+      <details key="start" value="3909"/>
+      <details key="end" value="3918"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%">
+      <details key="start" value="4022"/>
+      <details key="end" value="4169"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%">
+      <details key="start" value="4025"/>
+      <details key="end" value="4125"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any">
+      <details key="start" value="4025"/>
+      <details key="end" value="4108"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/r">
+      <details key="start" value="4025"/>
+      <details key="end" value="4026"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%">
+      <details key="start" value="4032"/>
+      <details key="end" value="4107"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%">
+      <details key="start" value="4032"/>
+      <details key="end" value="4063"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%">
+      <details key="start" value="4032"/>
+      <details key="end" value="4045"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%/%">
+      <details key="start" value="4032"/>
+      <details key="end" value="4040"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%.1">
+      <details key="start" value="4048"/>
+      <details key="end" value="4063"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%.1/%">
+      <details key="start" value="4048"/>
+      <details key="end" value="4058"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%.1/%/l">
+      <details key="start" value="4048"/>
+      <details key="end" value="4049"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1">
+      <details key="start" value="4068"/>
+      <details key="end" value="4107"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.191" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%">
+      <details key="start" value="4068"/>
+      <details key="end" value="4085"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.192" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%/%">
+      <details key="start" value="4068"/>
+      <details key="end" value="4076"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.193" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.194" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%.1">
+      <details key="start" value="4088"/>
+      <details key="end" value="4107"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.195" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%.1/%">
+      <details key="start" value="4088"/>
+      <details key="end" value="4098"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.196" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%.1/%/l">
+      <details key="start" value="4088"/>
+      <details key="end" value="4089"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.197" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/temp8">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.198" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%.1">
+      <details key="start" value="4134"/>
+      <details key="end" value="4149"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.199" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%.1/r">
+      <details key="start" value="4134"/>
+      <details key="end" value="4135"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.200" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%.1/l">
+      <details key="start" value="4147"/>
+      <details key="end" value="4148"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/r">
+      <details key="start" value="4160"/>
+      <details key="end" value="4161"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/getLocalVariableDeclarationStatementRepr/iterate/l">
+      <details key="start" value="3928"/>
+      <details key="end" value="3965"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/getLocalVariableDeclarationStatementRepr/iterate/r">
+      <details key="start" value="3967"/>
+      <details key="end" value="4017"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/getLocalVariableDeclarationStatementRepr/iterate/r/%">
+      <details key="start" value="4012"/>
+      <details key="end" value="4017"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

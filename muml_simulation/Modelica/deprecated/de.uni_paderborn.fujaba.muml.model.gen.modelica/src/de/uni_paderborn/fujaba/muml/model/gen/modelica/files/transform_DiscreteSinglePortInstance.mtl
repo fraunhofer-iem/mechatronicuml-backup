@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module transform_DiscreteSinglePortInstance('http://www.fujaba.de/muml/model/msgiface/0.2.2',
+											 'http://www.fujaba.de/muml/model/component/0.2.3',  
+											 'http://www.fujaba.de/muml/model/instance/0.2.2')/]
+
+
+[**
+ * 
+ * @param aDiscreteSinglePortInstance 
+ */]
+[template public init_DiscreteSinglePortInstance(aDiscreteSinglePortInstance : DiscreteSinglePortInstance)]
+	[if (not aDiscreteSinglePortInstance.portType.oclAsType(DiscretePort).receiverMessageInterface.oclIsUndefined())]
+		[for (msgType : MessageType | aDiscreteSinglePortInstance.portType.oclAsType(DiscretePort).receiverMessageInterface.messageTypes)]
+			[if (msgType.parameters->notEmpty())]
+Ports.[msgType.name.toUpperFirst()/]_input_port [msgType.name.toLowerFirst()/]_input_port;
+			[else]
+Ports.input_port [msgType.name.toLowerFirst()/]_input_port;			
+			[/if]
+		[/for]
+	[/if]
+	[if (not aDiscreteSinglePortInstance.portType.oclAsType(DiscretePort).senderMessageInterface.oclIsUndefined())]
+		[for (msgType : MessageType | aDiscreteSinglePortInstance.portType.oclAsType(DiscretePort).senderMessageInterface.messageTypes)]
+			[if (msgType.parameters->notEmpty())]
+Ports.[msgType.name.toUpperFirst()/]_output_port [msgType.name.toLowerFirst()/]_output_port;
+			[else]
+Ports.output_port [msgType.name.toLowerFirst()/]_output_port;			
+			[/if]
+		[/for]
+	[/if]
+[/template]
+

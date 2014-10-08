@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo M2t Module Runtime Plug-in
+Bundle-SymbolicName: de.uni_paderborn.fujaba.graphviz.m2t;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.graphviz.m2t.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.graphviz,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common,
+ org.eclipse.acceleo.model,
+ org.eclipse.acceleo.profiler,
+ org.eclipse.acceleo.engine,
+ org.storydriven.core;bundle-version="1.0.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Export-Package: de.uni_paderborn.fujaba.graphviz.m2t.main
+

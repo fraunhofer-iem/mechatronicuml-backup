@@ -1,0 +1,21 @@
+[module port_queries('http://www.fujaba.de/muml/instance/0.4.0',
+					 'http://www.fujaba.de/muml/msgtype/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::naming]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::async::helper::queries]
+
+[**
+ * Returns the of the rtsc input port for the passed message type.
+ * @param messageType the MessageType
+*/]
+[query public getRTSCInputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+	portInstance.getBehaviorVariableName() + '.' + portInstance.getInputPortName(messageType)
+/]
+
+[**
+ * Returns the name of the rtsc output port for the passed message type.
+ * @param messageType the MessageType
+*/]
+[query public getRTSCOutputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+	portInstance.getBehaviorVariableName() + '.' + portInstance.getOutputPortName(messageType)
+/]

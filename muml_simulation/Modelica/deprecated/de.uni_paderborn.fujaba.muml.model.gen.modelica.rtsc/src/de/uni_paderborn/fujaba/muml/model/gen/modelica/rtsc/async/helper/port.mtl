@@ -1,0 +1,25 @@
+[module port('http://www.fujaba.de/muml/msgtype/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::async::helper::queries]
+
+[**
+ * Create a declaration for an output delegation port
+ * @param messageType the messageType
+*/]
+[template public createOutputDelegationPortDecl(messageType : MessageType, portName : String)]
+RealTimeCoordinationLibrary.MessageInterface.OutputDelegationPort [portName/](
+	redeclare Integer integers['[' + (messageType.getIntegerParameters()->size()) + ']'/],
+	redeclare Boolean booleans['[' + messageType.getBooleanParameters()->size() + ']'/],
+	redeclare Real reals['[' + messageType.getRealParameters()->size() + ']'/])
+[/template]
+
+[**
+ * Create a declaration for an output delegation port
+ * @param messageType the messageType
+*/]
+[template public createInputDelegationPortDecl(messageType : MessageType, portName : String)]
+RealTimeCoordinationLibrary.MessageInterface.InputDelegationPort [portName/](
+	redeclare Integer integers['[' + (messageType.getIntegerParameters()->size()) + ']'/],
+	redeclare Boolean booleans['[' + messageType.getBooleanParameters()->size() + ']'/],
+	redeclare Real reals['[' + messageType.getRealParameters()->size() + ']'/])
+[/template]

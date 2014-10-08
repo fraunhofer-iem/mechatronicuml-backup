@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_UGBc4PMHEeOrJ-kJy7BMJA" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_UHNIoPMHEeOrJ-kJy7BMJA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_UHgqoPMHEeOrJ-kJy7BMJA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_UHgqofMHEeOrJ-kJy7BMJA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UHgqovMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UHgqo_MHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UHgqpPMHEeOrJ-kJy7BMJA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_UHgqpfMHEeOrJ-kJy7BMJA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UHgqpvMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UHgqp_MHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UHgqqPMHEeOrJ-kJy7BMJA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_UHNIofMHEeOrJ-kJy7BMJA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Simulink.ecore#//reconfiguration/MultiTargetControl"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UHNIovMHEeOrJ-kJy7BMJA" x="25" y="60"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_UH8vgPMHEeOrJ-kJy7BMJA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_UH8vg_MHEeOrJ-kJy7BMJA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_UH8vhPMHEeOrJ-kJy7BMJA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UH8vhfMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UH8vhvMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UH8vh_MHEeOrJ-kJy7BMJA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_UH8viPMHEeOrJ-kJy7BMJA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UH8vifMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UH8vivMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UH8vi_MHEeOrJ-kJy7BMJA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_UH8vgfMHEeOrJ-kJy7BMJA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Simulink.ecore#//reconfiguration/MultiSourceControl"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UH8vgvMHEeOrJ-kJy7BMJA" x="195" y="60"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_UH8vjPMHEeOrJ-kJy7BMJA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_UH8vj_MHEeOrJ-kJy7BMJA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_UH8vkPMHEeOrJ-kJy7BMJA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_UH8vmPMHEeOrJ-kJy7BMJA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="Simulink.ecore#//reconfiguration/FadingComponent/time"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_UH8vmfMHEeOrJ-kJy7BMJA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UH8vkfMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UH8vkvMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UH8vk_MHEeOrJ-kJy7BMJA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_UH8vlPMHEeOrJ-kJy7BMJA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_UH8vlfMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UH8vlvMHEeOrJ-kJy7BMJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UH8vl_MHEeOrJ-kJy7BMJA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_UH8vjfMHEeOrJ-kJy7BMJA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="Simulink.ecore#//reconfiguration/FadingComponent"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UH8vjvMHEeOrJ-kJy7BMJA" x="380" y="55"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_UGBc4fMHEeOrJ-kJy7BMJA"/>
+  <element xmi:type="ecore:EPackage" href="Simulink.ecore#//reconfiguration"/>
+</notation:Diagram>

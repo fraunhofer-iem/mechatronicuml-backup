@@ -1,0 +1,39 @@
+[module annotation('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/muml/modelica/adapter/transform/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[**
+ * Returns the value of the key mkey in the annotation called source.
+ * If no such value exists an error string is returned.
+ * @param element the annotated model element
+ * @param source the name of the annotation
+ * @param mkey the name of the annotation entry
+*/]
+[query public getAnnotationDetail(element : ExtendableElement, source : String, mkey : String) : String =
+	let l : OrderedSet(String) = element.getAnnotation(source).details->select(key = mkey)->collect(value)->asOrderedSet()
+	in
+	if l->isEmpty() then
+		'ERROR (empty list)'
+	else
+		l->at(1)
+	endif
+/]
+
+[**
+ * Creates a modelica annotation for a "node" declaration. A node is most
+ * likely a state or a transition.
+ * @param element the "node" for which an annotation should be created.
+*/]
+[query public createNodeDeclAnnotation(element : ExtendableElement) : String =
+	'annotation (Placement(transformation(extent={{' +
+	element.getAnnotationDetail('MODELICA_CODEGEN', 'xleft') + ', ' +
+	element.getAnnotationDetail('MODELICA_CODEGEN', 'yleft') + '},{' +
+	element.getAnnotationDetail('MODELICA_CODEGEN', 'xright') + ', ' +
+	element.getAnnotationDetail('MODELICA_CODEGEN', 'yright') + '}})))'
+/]

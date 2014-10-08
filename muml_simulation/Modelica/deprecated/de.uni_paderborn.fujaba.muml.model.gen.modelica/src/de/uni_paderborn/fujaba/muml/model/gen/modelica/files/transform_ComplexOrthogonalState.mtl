@@ -1,0 +1,154 @@
+[comment encoding = UTF-8 /]
+[module transform_ComplexOrthogonalState('http://www.fujaba.de/muml/model/instance/0.2.2', 'http://www.fujaba.de/muml/model/msgiface/0.2.2', 'http://www.eclipse.org/emf/2002/Ecore','http://www.fujaba.de/muml/model/realtimestatechart/0.2.3')/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Port /]
+
+
+
+[template public transform_OrthogonalState(aRealtimeStatechart : RealtimeStatechart, s : State, syncChannels : Set(SynchronizationChannel),eventTransitions : Set(Transition), compHierarchy : String)
+{sorted_region : OrderedSet(Region) = s.regions->sortedBy(-priority);
+sendTransitions : Set(Transition) = eventTransitions->select(hasRaiseMessageEvent())->asSet();
+receiveTransitions : Set(Transition) = eventTransitions->select(hasTriggerMessageEvent())->asSet();
+}]
+model [s.name.toUpperFirst()/]
+	extends Utilities.PartialParallel(use_inPort, use_outPort,
+    nEntry=[s.regions->size()/]);
+    
+ // foo
+	[comment TODO sync + nachrichten ports + verbindnugen /]
+	// regions
+  		[for (region : Region | sorted_region)]
+			[let statechart_history : Boolean = if not region.statechart.history.oclIsUndefined() then region.statechart.history else false endif]
+	// statechart_history [statechart_history/] [region.statechart.history/]
+	// region : [region.name/]; statechart : [if (region.statechart.oclIsUndefined())] doof [else] [region.statechart.name/][/if]
+  [region.statechart.name.toUpperFirst()/] [region.statechart.name.toLowerFirst()/](
+  	nIn=[if (statechart_history)]0[elseif (s.initial)] [s.incomingTransitions->size()+1/][else][s.incomingTransitions->size()/][/if],
+  	use_inPort=[not statechart_history/],
+  	use_outPort=false,
+			[comment TODO: hier evtl auch or s.outgoingTransitions->notEmpty() mit rein?!/]
+  				[if (s.stateEntryPoints->notEmpty() or s.stateExitPoints->notEmpty()  or statechart_history)]
+  	use_suspend=true,
+  				[else]
+  	use_suspend=false,
+  				[/if]
+			[comment TODO: wenn oben mit or s.outgoingTransitions->notEmpty() dann hier zusätzlich s.outgoingTransitions->size()+ ?!/]
+  	nSuspend=[s.getAllExitPoints()->asSet().outgoingTransitions->size()/],
+  				[let entryPoints : Set(StateEntryPoint) = s.getAllEntryPoints()]
+			[comment TODO: s. comment drüber, dann hier zusätzlich: s.incomingTransitions->size()+ /]
+  	nResume=[if (statechart_history)][if (s.initial) ][entryPoints.incomingTransitions->size()+1/][else][entryPoints.incomingTransitions->size()/][/if][elseif (entryPoints->notEmpty()) ][if (s.initial)][entryPoints.incomingTransitions->size()+1/][else][entryPoints.incomingTransitions->size()/][/if][else]0[/if]);
+				[/let]
+			[/let]
+  		[/for]
+  [init_SyncPorts(getStates(aRealtimeStatechart.vertices),syncChannels)/]
+  [init_SenderMessagePorts(compHierarchy, sendTransitions )/]
+  [init_ReceiverMessagePorts(compHierarchy, receiveTransitions )/]  		
+
+equation
+
+  [connect_Ports2(s)/]
+
+  [connect_SyncPorts(s,syncChannels)/]	
+	[for (region : Region | s.regions->sortedBy(-priority))]
+		[let statechart_history : Boolean = if not region.statechart.history.oclIsUndefined() then region.statechart.history else false endif]
+connect(entry['['/][i/][']'/], [region.statechart.name.toLowerFirst()/][if (statechart_history)].resume[else].inPort[/if]['['/]1[']'/]);
+		[/let]				
+	[/for]
+	[comment TODO portverbindungen/]
+end [s.name.toUpperFirst()/];
+[/template]
+
+[template public  test_getRegionsOfReceiveSyncChannel(sync : SynchronizationChannel, regions : Set(Region), result : Set(Region))] 
+	[if (regions->notEmpty())]
+		regions->sortedBy(-priority)->select(r : Region |  hasSyncChannelInRegion(sync,SynchronizationKind::RECEIVE, r->asSet()))
+	[else]
+		result
+	[/if]
+[/template]
+
+
+[template public connect_SyncPorts(s : State,syncChannels : Set(SynchronizationChannel))]
+	// connect_SyncPorts
+	[for (sync : SynchronizationChannel | syncChannels )]
+		// sync1 = [sync.name/]
+			[for (region_send : Region | getRegionsOfSendSyncChannel(sync, s.regions))]
+				// regions_send = [region_send.name/]    
+				[comment let transitions_send : Set(Transition) = findSyncSenderTransitions(sync, getStates(region_send.statechart.vertices->asOrderedSet()), Set{})->asSet()/]
+				[for (t_send : Transition | findSyncSenderTransitions_h(sync, getStates(region_send->select(not statechart.oclIsUndefined()).statechart.vertices->asSet())))]
+					// transitions_send = [t_send.target.name/]
+					// getSyncCount = [getSyncCount_h(t_send.getSyncChannel(), t_send.statechart.embeddingRegion.parentState, SynchronizationKind::SEND)/]
+					[for (it : Integer | Sequence{1..getSyncCount_h(t_send.getSyncChannel(), t_send.statechart.embeddingRegion.parentState, SynchronizationKind::SEND)})]
+connect([region_send.statechart.name.toLowerFirst()/].[getSyncPortName(t_send, true)/][array(it)/] , [getSyncPortName(t_send, true)/][array(it)/] );
+					[/for]
+				[/for]
+
+			[/for]
+			[for (region_receive : Region | getRegionsOfReceiveSyncChannel(sync, s.regions))]
+				// regions_receive = [region_receive.name/]
+				[comment let transitions_receive : Set(Transition) = findSyncReceiverTransitions(sync, getStates(region_receive.statechart.vertices->asOrderedSet()), region_receive.statechart.transitions->select(t : Transition | getSyncChannel(t) = sync and t.synchronization.kind = SynchronizationKind::RECEIVE)->asSet())->asSet()/]
+				[for (t_receive : Transition | findSyncReceiverTransitions_h(sync, getStates(region_receive->select(not statechart.oclIsUndefined()).statechart.vertices->asSet())))]
+					// transitions_receive = [t_receive.target.name/]
+					// getSyncCount = [getSyncCount_h(t_receive.getSyncChannel(), t_receive.statechart.embeddingRegion.parentState, SynchronizationKind::RECEIVE)/]
+					[for (it : Integer | Sequence{1..getSyncCount_h(t_receive.getSyncChannel(), t_receive.statechart.embeddingRegion.parentState, SynchronizationKind::RECEIVE)})]
+connect([region_receive.statechart.name.toLowerFirst()/].[getSyncPortName(t_receive, true)/][array(it)/] , [getSyncPortName(t_receive, true)/][array(it)/] );
+					[/for]			
+				[/for]
+			[/for]
+	[/for]
+		
+	[for (it : SynchronizationChannel | syncChannels)]
+	// syncChannels = [it.name/]
+	[/for]
+	[for (sync : SynchronizationChannel | s->select(s : State | s.channels->notEmpty()).channels )]
+	// sync = [sync.name/]
+		[let regions_recieve : Set(Region) = getRegionsOfReceiveSyncChannel(sync, s.regions)->asSet()]
+		[for (it : Region | regions_recieve)]
+		// regions_recieve = [it.name/]
+		[/for]
+		[let regions_send :  Set(Region) = getRegionsOfSendSyncChannel(sync, s.regions)]
+		[for (it : Region | regions_send)]
+		// regions_send = [it.name/]
+		[/for]
+			[for (r_send : Region | regions_send)]
+		// r_send = [r_send.name/]
+		// [r_send->select(not statechart.oclIsUndefined()).statechart.transitions/]
+		// [r_send->select(not statechart.oclIsUndefined()).statechart.transitions->select(t : Transition |  t.getSyncChannel() = sync and t.synchronization.kind = SynchronizationKind::SEND )->asSet()/]
+			[for (it : Transition | r_send->select(not statechart.oclIsUndefined()).statechart.transitions)]
+			// t = ([it.source.name/], [it.target.name/])
+			// sync = [it.getSyncChannel()/]
+			// sync.is = [it.getSyncChannel().oclIsKindOf(SynchronizationChannel)/]
+			// if? = [it.getSyncChannel() = sync and it.synchronization.kind = SynchronizationKind::SEND /]
+			// kind = [it.synchronization.kind/]
+			// channel = [it.getSyncChannel()/]
+			[/for]
+			// find = [findSyncSenderTransitions_h(sync, getStates(r_send.statechart.vertices->asSet()))/]
+			[for (t_send : Transition | findSyncSenderTransitions_h(sync, getStates(r_send.statechart.vertices->asSet())))]
+				// transitions_send = ([t_send.source.name/],[t_send.target.name/])
+				[for (r_receive : Region | regions_recieve)]
+					// r_receive = ([r_receive.name/],[r_receive.name/])
+					[for (t_recieve : Transition | findSyncReceiverTransitions_h(sync, getStates(r_receive->select(not statechart.oclIsUndefined()).statechart->select(vertices->notEmpty()).vertices->asSet()))->asSet())]
+					// t_recieve = ([t_recieve.source.name/],[t_recieve.target.name/])
+connect([r_send.statechart.name.toLowerFirst()/].[getSyncPortName(t_send, true)/][array(regions_recieve->asOrderedSet()->indexOf(r_receive))/],[r_receive.statechart.name.toLowerFirst()/].[getSyncPortName(t_recieve, true)/][array(regions_send->asOrderedSet()->indexOf(r_send))/]);													
+					[/for]
+				[/for]
+			[/for]	
+		[/for]
+	[/let]
+	[/let]
+	[/for]
+[/template]
+
+[template public connect_Ports2(s : State)]
+	[for (r : Region | s.regions)]
+		[let eventTransitions : Set(Transition) =  getEventTransitions_h(r.statechart->asSet())->asSet()]
+			[for (t : Transition | eventTransitions->select(hasRaiseMessageEvent()))]
+connect([r.statechart.name.toLowerFirst()/].[getPortName(t.getRaiseMessageType(), t,null, true)/], [getPortName(t.getRaiseMessageType(),t, null, true)/]);														
+			[/for]
+			[for (t : Transition | eventTransitions->select(hasTriggerMessageEvent()))]
+connect([r.statechart.name.toLowerFirst()/].[getPortName(t.getTriggerMessageType(), t,'output', true)/], [getPortName(t.getTriggerMessageType(),t, 'output', true)/]);														
+			[/for]
+		[/let]
+	[/for]
+[/template]
+
+
+

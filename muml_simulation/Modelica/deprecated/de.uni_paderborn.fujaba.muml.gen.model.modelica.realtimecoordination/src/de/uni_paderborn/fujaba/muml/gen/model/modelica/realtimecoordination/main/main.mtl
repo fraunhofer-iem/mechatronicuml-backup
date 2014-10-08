@@ -1,0 +1,32 @@
+[comment encoding = UTF-8 /]
+[module main('http://www.fujaba.de/modelinstance/0.2.6',
+			 'http://www.fujaba.de/muml/model/instance/0.2.2')]
+
+[import de::uni_paderborn::fujaba::muml::gen::model::modelica::realtimecoordination::componentInstanceConfiguration::componentInstanceConfiguration /]
+
+[**
+ * This template is the main entry point for the transformation.
+ * @param aRootNode is the rood node of the fujaba file.
+ */]
+[template public main(aRootNode : RootNode)] 
+	[comment @main/]
+	[comment be sure that the properties file is given as an argument in the run configuration !!!  /]
+
+	[comment  get component instance configuration and start transformation/]
+	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)] 
+			[comment: search for model instance category/]
+			[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+				[transform_modelInstanceCategory(modelElementCategory)/]
+			[/if]
+	[/for] 
+[/template]
+
+[**
+ * This template transforms the first component instance configuration of the modelElementCategory
+ * @param modelElementCategory is the de.uni_paderborn.fujaba.muml.instance.category.
+ */]
+[template public transform_modelInstanceCategory(modelElementCategory : ModelElementCategory)] 
+	[if (modelElementCategory.modelElements->first().oclIsTypeOf(ComponentInstanceConfiguration))]
+			[modelElementCategory.modelElements->first().oclAsType(ComponentInstanceConfiguration).transformComponentInstanceConfiguration()/]
+	[/if]
+[/template]

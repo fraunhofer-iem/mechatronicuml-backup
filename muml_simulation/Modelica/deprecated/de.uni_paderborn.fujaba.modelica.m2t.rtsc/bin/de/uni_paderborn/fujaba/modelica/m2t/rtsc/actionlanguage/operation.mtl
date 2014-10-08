@@ -1,0 +1,46 @@
+[module operation('http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				  'http://www.fujaba.de/muml/behavior/0.4.0',
+				  'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::expression]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::operation_queries]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::variable_queries]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::type]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::pkg]
+
+[**
+ * Generates the operations for a realtimestatechart
+ * @param rtsc the rtsc
+ * @param parentPackage the name of the parent package
+*/]
+[template public generateOperations(rtsc : RealtimeStatechart, parentPackage : String) ? (rtsc.operations->notEmpty())]
+[file (rtsc.getPath(parentPackage), false, 'UTF-8')]
+[within(parentPackage)/]
+[packageHeader(rtsc.getOperationsPackageName())/]
+[for (operation : Operation | rtsc.operations)]
+	[generateOperation(operation)/]
+[/for]
+[packageTrailer(rtsc.getOperationsPackageName())/];
+[/file]
+[/template]
+
+[**
+ * Generates an operation
+ * @param operation the operation
+*/]
+[template public generateOperation(operation : Operation)]
+function [operation.name/]
+[for (parameter : Parameter | operation.parameters)]
+	input [parameter.dataType.getType() /] [parameter.name/];
+[/for]
+	[comment assume that we have no void operations /]
+	output [operation.returnType.getType() /] [operation.getOperationOutputVariableName() /];
+protected
+[for (varDecl : LocalVariableDeclarationStatement | operation.implementations->at(1).getAllLocalVariableDeclarationStatements())]
+	[varDecl.variable.dataType.getType() /] [varDecl.variable.name/];
+[/for]
+algorithm
+	[generateExpression(operation.implementations->at(1), false, '')/]
+end [operation.name/];
+[/template]

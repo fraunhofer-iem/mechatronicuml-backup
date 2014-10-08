@@ -1,0 +1,51 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module annotations.
+ */]
+[module annotations('http://www.fujaba.de/muml/model/instance/0.2.2')]
+
+
+[**
+ * generate an annotation which looks like a uml component. arg must not be set and is useless
+ * @param arg
+ */]
+[template public generateComponentAnnotation(arg : OclAny)]
+annotation (Icon(graphics={Rectangle(extent={{-100,80},{100,-64}}, lineColor={
+              0,0,0}, lineThickness = 0.5),
+        Rectangle(extent={{34,62},{66,32}}, lineColor={0,0,0}, lineThickness = 0.5),
+        Rectangle(extent={{28,56},{42,50}}, lineColor={0,0,0}, lineThickness = 0.5,
+            fillPattern = FillPattern.Solid, fillColor= {255,255,255}),
+        Rectangle(extent={{28,46},{42,40}}, lineColor={0,0,0}, lineThickness = 0.5,
+            fillPattern = FillPattern.Solid, fillColor= {255,255,255}),
+        Text(
+          extent={{-100,22},{100,-28}},
+          lineColor={0,0,255},
+          textString="%name")}
+        ));
+[/template]
+
+
+[**
+ * generate placement annotation for input delegation ports
+ * @param messageNumber
+ */]
+[template public generateInputPortAnnotation(messageNumber : Integer)]	
+ annotation (Placement(transformation(extent={{-110,[-200+messageNumber*20/]},{-90,[-180+messageNumber*20/]}})))
+[/template]
+
+[**
+ *  generate placement annotation for output delegation ports
+ * @param messageNumber
+ */]
+[template public generateOutputPortAnnotation(messageNumber : Integer)]	
+ annotation (Placement(transformation(extent={{90,[-200+messageNumber*20/]},{110,[-180+messageNumber*20/]}})))
+[/template]
+
+
+[**
+ *generate placement annotation for MailBoxes
+ * @param messageNumber
+ */]
+[template public generateMailBoxAnnotation(messageNumber : Integer)]	
+ annotation (Placement(transformation(extent={{-80,[-200+messageNumber*20/]},{-60,[-180+messageNumber*20/]}})))
+[/template]

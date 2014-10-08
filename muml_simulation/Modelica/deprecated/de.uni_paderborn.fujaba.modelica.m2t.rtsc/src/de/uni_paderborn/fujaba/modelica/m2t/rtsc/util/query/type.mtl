@@ -1,0 +1,28 @@
+[module type('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/muml/modelica/adapter/transform/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[**
+ * Returns the corresponding modelica type
+ * @param type the data type
+*/]
+[query public getType(type : DataType) : String =
+	if type.name = 'INT' then
+		'Integer'
+	else if type.name = 'DOUBLE' then
+		'Real'
+	else if type.name = 'BOOLEAN' then
+		'Boolean'
+	else
+		-- this might be incorrect
+		type.name.toLower().toUpperFirst()
+	endif
+	endif
+	endif
+/]

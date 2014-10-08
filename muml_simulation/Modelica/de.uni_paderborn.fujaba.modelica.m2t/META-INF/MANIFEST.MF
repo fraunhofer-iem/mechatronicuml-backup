@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Modelica Adapter
+Bundle-SymbolicName: de.uni_paderborn.fujaba.modelica.m2t
+Bundle-Version: 0.4.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.modelica.m2t.Activator
+Bundle-Vendor: Fraunhofer IPT-EM, Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Require-Bundle: org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml,
+ de.uni_paderborn.fujaba.muml.actionlanguage,
+ org.storydriven.core,
+ de.uni_paderborn.fujaba.muml.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common;bundle-version="3.2.2",
+ org.eclipse.acceleo.model;bundle-version="3.2.2",
+ org.eclipse.acceleo.profiler;bundle-version="3.2.2",
+ org.eclipse.acceleo.engine;bundle-version="3.2.2",
+ de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
+ org.eclipse.acceleo.parser;bundle-version="3.2.2",
+ de.uni_paderborn.fujaba.modelica.graphviz;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.modelica.m2t.transform;bundle-version="0.4.0",
+ org.eclipse.m2m.qvt.oml.runtime,
+ org.eclipse.m2m.qvt.oml.project,
+ de.uni_paderborn.fujaba.graphviz.blackbox;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Export-Package: de.uni_paderborn.fujaba.modelica.m2t,
+ de.uni_paderborn.fujaba.modelica.m2t.instantiator,
+ de.uni_paderborn.fujaba.modelica.m2t.main,
+ de.uni_paderborn.fujaba.modelica.m2t.rtsc.layout,
+ de.uni_paderborn.fujaba.modelica.m2t.rtsc.transformation,
+ de.uni_paderborn.fujaba.modelica.m2t.rtsc.util.query,
+ de.uni_paderborn.fujaba.modelica.m2t.transformation
+Import-Package: org.eclipse.m2m.internal.qvt.oml,
+ org.eclipse.m2m.qvt.oml
+

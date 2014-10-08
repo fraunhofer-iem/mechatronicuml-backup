@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.uni_paderborn.fujaba.graphviz.plain.xtext.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.uni_paderborn.fujaba.graphviz.plain.xtext.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.uni_paderborn.fujaba.graphviz.plain.xtext,
+ de.uni_paderborn.fujaba.graphviz.plain.xtext.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext.junit4,
+ org.eclipse.ui.workbench;resolution:=optional,
+ de.uni_paderborn.fujaba.graphviz;bundle-version="0.1.0",
+ org.storydriven.core;bundle-version="1.0.1"
+Import-Package: org.apache.log4j,
+ org.junit;version="4.5.0",
+ org.junit.runner;version="4.5.0",
+ org.junit.runner.manipulation;version="4.5.0",
+ org.junit.runner.notification;version="4.5.0",
+ org.junit.runners;version="4.5.0",
+ org.junit.runners.model;version="4.5.0",
+ org.hamcrest.core
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: de.uni_paderborn.fujaba.graphviz.plain.xtext

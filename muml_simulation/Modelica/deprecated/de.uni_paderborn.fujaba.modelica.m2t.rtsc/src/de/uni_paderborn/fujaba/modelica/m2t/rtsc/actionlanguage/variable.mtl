@@ -1,0 +1,40 @@
+[module variable('http://www.fujaba.de/muml/behavior/0.4.0',
+				 'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				 'http://www.fujaba.de/muml/types/0.4.0',
+				 'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::expression]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::variable_queries]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::type]
+
+[**
+ * Create variable declarations
+ * @param attributeSet the set of attributes
+*/]
+[template public createVariableDeclarations(rtsc : RealtimeStatechart)]
+	// attribute declarations
+[for (variable : Variable | rtsc.allAvailableVariables)]
+	[if rtsc.variables->includes(variable)]
+	inner [variable.dataType.getType() /] [variable.name/][if not variable.initializeExpression.oclIsUndefined()](start=[generateExpression(variable.initializeExpression, false, '') /])[/if];
+	[else]
+	outer [variable.dataType.getType() /] [variable.name/];
+	[/if]
+[/for]
+	// end attribute declarations
+[/template]
+
+[**
+ * Create local variable declarations
+ * @param rtsc the rtsc
+*/]
+[template public createLocalVariableDeclarations(rtsc : RealtimeStatechart) {
+	lVarDecls : Set(LocalVariableDeclarationStatement) = rtsc.getAllLocalVariableDeclarationStatements()->getLocalVariableDeclarationStatementRepr(); 
+}]
+	// local variable declarations
+[for (lVarDecl : LocalVariableDeclarationStatement | lVarDecls)]
+	[comment ignore initialize expression (the variable "initialized" in the action where it is used)/]
+	[lVarDecl.variable.dataType.getType()/] [lVarDecl.variable.getTypedNamedElementName()/];
+[/for]
+	// end local variable declarations
+[/template]

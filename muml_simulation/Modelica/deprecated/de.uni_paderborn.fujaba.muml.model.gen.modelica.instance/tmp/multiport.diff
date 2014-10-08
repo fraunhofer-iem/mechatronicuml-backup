@@ -1,0 +1,867 @@
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/state/state.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/state/state.mtl	(Revision 1041)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/state/state.mtl	(Arbeitskopie)
+@@ -42,7 +42,11 @@
+ */]
+ [template public createStateDeclaration(state : State) ? (state.embeddedRegions->notEmpty())]
+ 	[state.getComplexStateModelName()/].[state.getComplexStateModelName()/] [state.name/](
++		[if state.parentStatechart.embedded]
++		nIn=[state.incomingTransitions->size() + 1/],
++		[else]
+ 		nIn=[state.incomingTransitions->size()/],
++		[/if]
+ 		[comment for now hardcode use_outPort=false /]
+ 		use_outPort=false,
+ 		nSuspend=[state.outgoingTransitions->size()/][if state.initial and not state.parentStatechart.embedded],
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/variable.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/variable.mtl	(Revision 971)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/variable.mtl	(Arbeitskopie)
+@@ -1,5 +1,5 @@
+ [module variable('http://www.fujaba.de/muml/behavior/0.3.17',
+-				 'http://www.fujaba.de/muml/actionlanguage/0.3.16',
++				 'http://www.fujaba.de/muml/actionlanguage/0.3.19',
+ 				 'http://www.fujaba.de/muml/realtimestatechart/0.3.18')/]
+ 
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::actionlanguage::expression]
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/expression_queries.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/expression_queries.mtl	(Revision 952)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/expression_queries.mtl	(Arbeitskopie)
+@@ -1,5 +1,10 @@
+-[module expression_queries('http://www.storydriven.org/core/0.3.1')/]
++[module expression_queries('http://www.storydriven.org/core/0.3.1',
++						   'http://www.fujaba.de/muml/realtimestatechart/0.3.18',
++						   'http://www.fujaba.de/muml/actionlanguage/0.3.19')/]
+ 
++[import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::util::query::naming]
++[import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::util::query::rtsc]
++
+ [**
+  * Returns the operator of a comparing operator
+  * @param comparingOperator the comparing operator
+@@ -79,4 +84,22 @@
+ 	endif
+ 	endif
+ 	endif
++/]
++
++[query public getTriggerMessageEventPBVariableFullyQualifiedName(expression : TriggerMessageExpression) : String =
++	let rtsc : RealtimeStatechart = expression.oclAsType(ecore::EObject)->asSet()->closure(e : ecore::EObject |
++		if not e.oclIsKindOf(Transition) then
++			e.eContainer()
++		else
++			e
++		endif
++	)->any(oclIsKindOf(Transition)).oclAsType(Transition).statechart
++	in
++	let name : String = rtsc.getParentPortStatechart().getFullyQualifiedName(rtsc.getParentPortStatechart().parentRegion.parentState.parentStatechart)
++	in
++	if name <> '' then
++		name + '.'
++	else
++		''
++	endif + messageType.getMailboxName() + '_' + expression.parameter.name
+ /]
+\ No newline at end of file
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/operation_queries.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/operation_queries.mtl	(Revision 991)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/operation_queries.mtl	(Arbeitskopie)
+@@ -1,4 +1,4 @@
+-[module operation_queries('http://www.fujaba.de/muml/actionlanguage/0.3.16',
++[module operation_queries('http://www.fujaba.de/muml/actionlanguage/0.3.19',
+ 				  'http://www.fujaba.de/muml/behavior/0.3.17',
+ 				  'http://www.fujaba.de/muml/realtimestatechart/0.3.18',
+ 				  'http://www.storydriven.org/core/0.3.1')/]
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/expression.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/expression.mtl	(Revision 1041)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/expression.mtl	(Arbeitskopie)
+@@ -1,4 +1,5 @@
+-[module expression('http://www.storydriven.org/core/0.3.1', 'http://www.fujaba.de/muml/actionlanguage/0.3.16',
++[module expression('http://www.storydriven.org/core/0.3.1',
++				   'http://www.fujaba.de/muml/actionlanguage/0.3.19',
+ 				   'http://www.fujaba.de/muml/behavior/0.3.17')]
+ 
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::actionlanguage::expression_queries]
+@@ -318,12 +319,13 @@
+ 
+ [**
+  * Generates a TriggerMessageExpression
++ * expression.parameter.getTriggerMessageEventPBVariableName(expression.messageType)
+  * @param expression the expression
+  * @param usePre use pre construct for rhs variables (and for guards)
+  * @param fqname a fully qualified name or the empty string
+ */]
+ [template public generateExpression(expression : TriggerMessageExpression, usePre : Boolean, fqname : String)]
+-[expression.parameter.getTriggerMessageEventPBVariableName(expression.messageType) /]
++[expression.getTriggerMessageEventPBVariableFullyQualifiedName() /]
+ [/template]
+ 
+ [**
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/operation.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/operation.mtl	(Revision 991)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/operation.mtl	(Arbeitskopie)
+@@ -1,4 +1,4 @@
+-[module operation('http://www.fujaba.de/muml/actionlanguage/0.3.16',
++[module operation('http://www.fujaba.de/muml/actionlanguage/0.3.19',
+ 				  'http://www.fujaba.de/muml/behavior/0.3.17',
+ 				  'http://www.fujaba.de/muml/realtimestatechart/0.3.18')/]
+ 
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/variable_queries.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/variable_queries.mtl	(Revision 971)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/actionlanguage/variable_queries.mtl	(Arbeitskopie)
+@@ -1,5 +1,5 @@
+ [module variable_queries('http://www.fujaba.de/muml/behavior/0.3.17',
+-				 'http://www.fujaba.de/muml/actionlanguage/0.3.16',
++				 'http://www.fujaba.de/muml/actionlanguage/0.3.19',
+ 				 'http://www.fujaba.de/muml/realtimestatechart/0.3.18',
+ 				 'http://www.storydriven.org/core/0.3.1')/]
+ 
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/main/generate.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/main/generate.mtl	(Revision 991)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/main/generate.mtl	(Arbeitskopie)
+@@ -1,8 +1,10 @@
+ [comment encoding = UTF-8 /]
+ [module generate('http://www.fujaba.de/muml/realtimestatechart/0.3.18',
+ 				 'http://www.fujaba.de/modelinstance/0.3.15',
+-				 'http://www.fujaba.de/muml/instance/0.3.18')]
++				 'http://www.fujaba.de/muml/instance/0.3.18',
++				 'http://transform/1.0')]
+ 
++
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::actionlanguage::variable]
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::actionlanguage::operation]
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::state::state]
+@@ -22,37 +24,41 @@
+  * @param hybridPortInstanceSet the set of hybrid port instances
+  * @param parentPackage the name of the parent package
+  */]
+-[template public generateRTSC(aRealtimeStatechart : RealtimeStatechart, hybridPortInstanceSet : Set(HybridPortInstance), parentPackage : String) {
+-	isRoot : Boolean = not aRealtimeStatechart.embedded;
+-}]
++[template public generateRTSC(aRealtimeStatechart : RealtimeStatechart, hybridPortInstanceSet : Set(HybridPortInstance), parentPackage : String)]
+ [aRealtimeStatechart.createLayoutAnnotations() /]
+ [createPackage(aRealtimeStatechart.getModelName(), parentPackage)/]
+ [file (aRealtimeStatechart.getPath(parentPackage), false, 'UTF-8')]
+ [within(aRealtimeStatechart.getModelName(), parentPackage)/]
+-model [aRealtimeStatechart.getModelName()/][if not isRoot] extends Modelica_StateGraph2.PartialParallel(nEntry=1);[/if]
++model [aRealtimeStatechart.getModelName()/][if not aRealtimeStatechart.isComponentRTSC()] extends Modelica_StateGraph2.PartialParallel(nEntry=1);[/if]
+ 	[createDiagramAnnotation(aRealtimeStatechart) /];
+ 	[createVariableDeclarations(aRealtimeStatechart)/]
+-	[createHybridPortDeclarations(hybridPortInstanceSet, isRoot)/]
++	[createHybridPortDeclarations(hybridPortInstanceSet, aRealtimeStatechart.isComponentRTSC())/]
+ 	[createLocalVariableDeclarations(aRealtimeStatechart)/]
+ 	[createStateDeclarations(aRealtimeStatechart)/]
+ 	[createTransitionDeclarations(aRealtimeStatechart.transitions)/]
+ 	[createClockDeclarations(aRealtimeStatechart)/]
+ 	[createClockConstraintDeclarations(aRealtimeStatechart.transitions)/]
+-	[if isRoot]
++	[if aRealtimeStatechart.isPortRTSC()]
+ 	[createRaiseMessageEventDeclarations(aRealtimeStatechart)/]
+ 	[createTriggerMessageEventDeclarations(aRealtimeStatechart)/]
++	[elseif aRealtimeStatechart.isComponentRTSC() or aRealtimeStatechart.isMultiPortRTSC()]
++	[createPortDeclarations(aRealtimeStatechart)/]
+ 	[/if]
+ 	equation
+-		[if not isRoot][connectInitialStep(aRealtimeStatechart)/][/if]
++		[if not aRealtimeStatechart.isComponentRTSC()][connectInitialStep(aRealtimeStatechart)/][/if]
+ 		[connectSteps(aRealtimeStatechart.transitions)/]
+ 		[createClockConstraints(aRealtimeStatechart.transitions)/]
+-		[if isRoot]
++		[if aRealtimeStatechart.isPortRTSC()]
+ 		[createRaiseMessageEvents(aRealtimeStatechart)/]
+ 		[createTriggerMessageEvents(aRealtimeStatechart)/]
++		[elseif aRealtimeStatechart.isComponentRTSC()]
+ 		[connectSynchronizationChannels(aRealtimeStatechart)/]
+ 		[createHybridPortEquations(hybridPortInstanceSet)/]
+ 		[/if]
+-	[if isRoot]
++		[if aRealtimeStatechart.isComponentRTSC() or aRealtimeStatechart.isMultiPortRTSC()]
++		[connectPorts(aRealtimeStatechart)/]
++		[/if]
++	[if aRealtimeStatechart.isComponentRTSC()]
+ 	[rwHybridPortSampledValueVariable(hybridPortInstanceSet)/]
+ 	algorithm
+ 		[triggerMessageEventsAssignPBVariables(aRealtimeStatechart)/]
+@@ -60,6 +66,7 @@
+ 		[raiseMessageEventsAssignPBVariables(aRealtimeStatechart)/]
+ 	[/if]
+ end [aRealtimeStatechart.getModelName()/];
++
+ [/file]
+ [comment generate region statecharts /]
+ [generateRegionStatecharts(aRealtimeStatechart, hybridPortInstanceSet, aRealtimeStatechart.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/main/Generate.java
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/main/Generate.java	(Revision 964)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/main/Generate.java	(Arbeitskopie)
+@@ -349,6 +349,9 @@
+         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.instance.InstancePackage.class)) {
+             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE);
+         }
++        if (!isInWorkspace(transform.TransformPackage.class)) {
++            resourceSet.getPackageRegistry().put(transform.TransformPackage.eINSTANCE.getNsURI(), transform.TransformPackage.eINSTANCE);
++        }
+         
+         /*
+          * If you want to change the content of this method, do NOT forget to change the "@generated"
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/transition/transition.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/transition/transition.mtl	(Revision 971)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/transition/transition.mtl	(Arbeitskopie)
+@@ -1,6 +1,6 @@
+ [module transition('http://www.fujaba.de/muml/realtimestatechart/0.3.18',
+ 				   'http://www.storydriven.org/core/0.3.1',
+-				   'http://www.fujaba.de/muml/actionlanguage/0.3.16')/]
++				   'http://www.fujaba.de/muml/actionlanguage/0.3.19')/]
+ 
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::actionlanguage::expression]
+ 
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/layout/ModelicaGraphDataProvider.java
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/layout/ModelicaGraphDataProvider.java	(Revision 971)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/layout/ModelicaGraphDataProvider.java	(Arbeitskopie)
+@@ -2,6 +2,9 @@
+ 
+ import java.util.HashMap;
+ 
++import transform.RegionInstance;
++
++
+ import de.uni_paderborn.fujaba.muml.model.gen.graphviz.layout.AbstractGraphData;
+ import de.uni_paderborn.fujaba.muml.model.gen.graphviz.layout.EdgePort;
+ import de.uni_paderborn.fujaba.muml.model.gen.graphviz.layout.IGraphData;
+@@ -21,6 +24,11 @@
+ 		graphData = new ModelicaGraphData(rtsc);
+ 	}
+ 	
++	private static boolean isPortRTSC(RealtimeStatechart rtsc) {
++		return rtsc.isEmbedded()
++				&& ((RegionInstance) rtsc.getParentRegion()).isEmbedsSinglePortStatechart();
++	}
++	
+ 	class ModelicaGraphData extends AbstractGraphData<Node, Edge> {
+ 		private RealtimeStatechart rtsc;
+ 		private HashMap<String, Boolean> mapRaiseSeen = new HashMap<String, Boolean>();
+@@ -34,8 +42,13 @@
+ 			for (Transition transition : rtsc.getTransitions()) {
+ 				addTransition(transition);
+ 			}
+-			if (!rtsc.isEmbedded()) {
++			if (isPortRTSC(rtsc)) {
++				System.out.println("port rtsc: " + rtsc.getName());
+ 				addAsyncMessageEvents(rtsc);
++			} else if (rtsc.isEmbedded()) {
++				System.out.println(((RegionInstance) rtsc.getParentRegion()).isEmbedsSinglePortStatechart());
++				System.out.println(((RegionInstance) rtsc.getParentRegion()).isEmbedsMultiPortStatechart());
++				System.out.println("NO port rtsc: " + rtsc.getName() + " " + ((RegionInstance) rtsc.getParentRegion()).getInstanceOf().getEmbeddedStatechart().getBehavioralElement());
+ 			}
+ 			// XXX: add pseudo edge for rtsc with exactly one state and no transitions
+ 			if (rtsc.getStates().size() == 1 && rtsc.getTransitions().isEmpty()) {
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/util/query/naming.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/util/query/naming.mtl	(Revision 971)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/util/query/naming.mtl	(Arbeitskopie)
+@@ -2,13 +2,15 @@
+ 			   'http://www.fujaba.de/muml/msgtype/0.3.6',
+ 			   'http://www.fujaba.de/muml/behavior/0.3.17')/]
+ 
++[import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::util::query::rtsc]
++
+ [**
+  * Returns the fully qualified name of the rtsc
+  * @param rtsc the realtimestatechart
+ */]
+-[query public getFullyQualifiedName(rtsc : RealtimeStatechart) : String =
+-	if rtsc.embedded then
+-		rtsc.parentRegion.parentState.parentStatechart.getFullyQualifiedName() + 
++[query private getFullyQualifiedName(rtsc : RealtimeStatechart, ref : RealtimeStatechart) : String =
++	if rtsc.embedded and rtsc <> ref then
++		rtsc.parentRegion.parentState.parentStatechart.getFullyQualifiedName(ref) + 
+ 		(if rtsc.parentRegion.parentState.parentStatechart.embedded then
+ 			'.'
+ 		 else
+@@ -19,6 +21,10 @@
+ 	endif
+ /]
+ 
++[query public getFullyQualifiedName(rtsc : RealtimeStatechart) : String =
++	rtsc.getFullyQualifiedName(null)
++/]
++
+ [**
+  * Returns the name for a region's statechart
+  * @param region the region
+@@ -49,6 +55,25 @@
+ /]
+ 
+ [**
++ * Returns the fully qualified transition name. If the transition belongs
++ * to the root statechart the plain transition name is returned.
++ * @param transition the transition
++*/]
++[query public getFullyQualifiedName(transition : Transition, ref : RealtimeStatechart) : String =
++	if transition.statechart.embedded then
++		let name : String = transition.statechart.getFullyQualifiedName(ref)
++		in
++		if name <> '' then
++			name + '.' + transition.getName()
++		else
++			transition.getName()
++		endif
++	else
++		transition.getName()
++	endif
++/]
++
++[**
+  * Get the name of a trigger message event parameterbinding variable.
+  * @param pb the parameterbinding
+  * @param ev the asynchronous message event which owns the pb
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/util/query/rtsc.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/util/query/rtsc.mtl	(Revision 991)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/util/query/rtsc.mtl	(Arbeitskopie)
+@@ -1,4 +1,5 @@
+-[module rtsc('http://www.fujaba.de/muml/realtimestatechart/0.3.18')/]
++[module rtsc('http://www.fujaba.de/muml/realtimestatechart/0.3.18',
++			 'http://transform/1.0')/]
+ 
+ [**
+  * Returns a set of all substatecharts
+@@ -32,4 +33,41 @@
+ */]
+ [query private getPath(modelName : String, parentPackage : String) : String =
+ 	parentPackage.replaceAll('\\.', '/') + '/' + modelName + '/' + modelName + '.mo'
++/]
++
++[**
++ * Returns true if the rtsc is a port rtsc
++ * @param rtsc the rtsc
++*/]
++[query public isPortRTSC(rtsc : RealtimeStatechart) : Boolean =
++	not rtsc.parentRegion.oclIsUndefined()
++	and rtsc.parentRegion.oclAsType(RegionInstance).embedsSinglePortStatechart
++/]
++
++[**
++ * Returns true if the rtsc is a multiport rtsc
++ * @param rtsc the rtsc
++*/]
++[query public isMultiPortRTSC(rtsc : RealtimeStatechart) : Boolean =
++	not rtsc.parentRegion.oclIsUndefined()
++	and rtsc.parentRegion.oclAsType(RegionInstance).embedsMultiPortStatechart
++/]
++
++[**
++ * Returns true if the rtsc is a component rtsc
++ * @param rtsc the rtsc
++*/]
++[query public isComponentRTSC(rtsc : RealtimeStatechart) : Boolean =
++	not rtsc.embedded
++/]
++
++[query public getParentPortStatechart(rtsc : RealtimeStatechart) : RealtimeStatechart =
++	-- isPortRTSC() should be true for exactly one rtsc
++	rtsc->asSet()->closure(r : RealtimeStatechart |
++		if r.embedded then
++			r.parentRegion.parentState.parentStatechart
++		else
++			r
++		endif
++	)->union(Set(RealtimeStatechart){rtsc})->any(isPortRTSC())
+ /]
+\ No newline at end of file
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/async/async.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/async/async.mtl	(Revision 971)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/async/async.mtl	(Arbeitskopie)
+@@ -1,5 +1,7 @@
+-[module async('http://www.fujaba.de/muml/realtimestatechart/0.3.18', 'http://www.fujaba.de/muml/behavior/0.3.17',
+-			  'http://www.fujaba.de/muml/msgtype/0.3.6')]
++[module async('http://www.fujaba.de/muml/realtimestatechart/0.3.18',
++			  'http://www.fujaba.de/muml/behavior/0.3.17',
++			  'http://www.fujaba.de/muml/msgtype/0.3.6',
++			  'http://transform/1.0')]
+ 
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::actionlanguage::expression]
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::async::helper::port]
+@@ -72,7 +74,8 @@
+ 	[let eq_class : OrderedSet(AsynchronousMessageEvent) = ev.getAsyncMessageEventEquivalenceClass(events)->asOrderedSet()]
+ 	[for (event : AsynchronousMessageEvent | eq_class)]
+ 	[comment do we have to order the events in order to reflect some transition priorities? /]
+-	connect([event.getTransition().getFullyQualifiedName()/].firePort,
++	[comment: this should be the correct fqn/]
++	connect([event.getTransition().getFullyQualifiedName(event.getParentPortStatechart())/].firePort,
+ 		[event.getMessageName()/].conditionPort['[' + eq_class->indexOf(event) + ']'/]);
+ 		[comment event.createRaiseMessageEventMessageConnectAnnotation() /]
+ 	[/for]
+@@ -92,7 +95,7 @@
+ [for (ev : AsynchronousMessageEvent | events)]
+ 	when [ev.getTransition().getFullyQualifiedName()/].fire then
+ 	[for (pb : ParameterBinding | ev.message.parameterBinding)]
+-		[pb.getRaiseMessageEventPBVariableName(ev)/] := [pb.value.generateExpression(false, ev.getTransition().statechart.getFullyQualifiedName())/];
++		[ev.getTransition().statechart.getFullyQualifiedName() + '.' + pb.getRaiseMessageEventPBVariableName(ev)/] := [pb.value.generateExpression(false, ev.getTransition().statechart.getFullyQualifiedName())/];
+ 	[/for]
+ 	end when;
+ [/for]
+@@ -148,8 +151,9 @@
+ 		[ev.createInputDelegationPortConnectAnnotation(rtsc)/];
+ 	[let eq_class : OrderedSet(AsynchronousMessageEvent) = ev.getAsyncMessageEventEquivalenceClass(events)->asOrderedSet()]
+ 	[for (event : AsynchronousMessageEvent | eq_class)]
++	[comment: FIXME: this should be the correct fqn/]
+ 	connect([event.getMailboxName()/].mailbox_output_port['[' + eq_class->indexOf(event) + ']'/],
+-		[event.getTransition().getFullyQualifiedName()/].transition_input_port['[1]'/]);
++		[event.getTransition().getFullyQualifiedName(event.getParentPortStatechart())/].transition_input_port['[1]'/]);
+ 	[/for]
+ 	[/let]
+ [/for]
+@@ -168,17 +172,96 @@
+ 	when [ev.getTransition().getFullyQualifiedName()/].fire then
+ 	[let integerParameters : OrderedSet(Parameter) = ev.getIntegerParameters()]
+ 	[for (param : Parameter | integerParameters)]
+-		[param.getTriggerMessageEventPBVariableName(ev.message.instanceOf)/] := [ev.getTransition().getFullyQualifiedName()/].transition_input_port['[1]'/].integers['[' + integerParameters->indexOf(param) + ']'/];
++		[ev.getTransition().statechart.getFullyQualifiedName(ev.getParentPortStatechart()) + '.' + param.getTriggerMessageEventPBVariableName(ev.message.instanceOf)/] := [ev.getTransition().getFullyQualifiedName()/].transition_input_port['[1]'/].integers['[' + integerParameters->indexOf(param) + ']'/];
+ 	[/for][/let]
+ 	[let realParameters : OrderedSet(Parameter) = ev.getRealParameters()]
+ 	[for (param : Parameter | realParameters)]
+-		[param.getTriggerMessageEventPBVariableName(ev.message.instanceOf)/] := [ev.getTransition().getFullyQualifiedName()/].transition_input_port['[1]'/].reals['[' + realParameters->indexOf(param) + ']'/];
++		[ev.getTransition().statechart.getFullyQualifiedName(ev.getParentPortStatechart()) + '.' + param.getTriggerMessageEventPBVariableName(ev.message.instanceOf)/] := [ev.getTransition().getFullyQualifiedName()/].transition_input_port['[1]'/].reals['[' + realParameters->indexOf(param) + ']'/];
+ 	[/for][/let]
+ 	[let booleanParameters : OrderedSet(Parameter) = ev.getBooleanParameters()]
+ 	[for (param : Parameter | booleanParameters)]
+-		[param.getTriggerMessageEventPBVariableName(ev.message.instanceOf)/] := [ev.getTransition().getFullyQualifiedName()/].transition_input_port['[1]'/].booleans['[' + booleanParameters->indexOf(param) + ']'/];
++		[ev.getTransition().statechart.getFullyQualifiedName(ev.getParentPortStatechart()) + '.' + param.getTriggerMessageEventPBVariableName(ev.message.instanceOf)/] := [ev.getTransition().getFullyQualifiedName()/].transition_input_port['[1]'/].booleans['[' + booleanParameters->indexOf(param) + ']'/];
+ 	[/for][/let]
+ 	end when;
+ [/for]
+ 	// end trigger message parameter bindings to the corresponding parameter binding variables
++[/template]
++
++[**
++ * Create delegation port declarations for a multiport rtsc
++ * @param rtsc the multiport rtsc
++*/]
++[template private createSingleOutputPortDeclaration(regionInstance : RegionInstance) ? (
++	regionInstance.embeddedStatechart.getAllRaiseMessageEvents()->getAsyncMessageEventRepr()->notEmpty()
++)]
++[for (ev : AsynchronousMessageEvent | regionInstance.embeddedStatechart.getAllRaiseMessageEvents()->getAsyncMessageEventRepr())]
++	[createOutputDelegationPortDecl(ev.message.instanceOf, ev.getOutputDelegationPortName(regionInstance))/];[/for]
++[/template]
++
++[template private createSingleInputPortDeclaration(regionInstance : RegionInstance) ? (
++	regionInstance.embeddedStatechart.getAllTriggerMessageEvents()->getAsyncMessageEventRepr()->notEmpty()
++)]
++[for (ev : AsynchronousMessageEvent | regionInstance.embeddedStatechart.getAllTriggerMessageEvents()->getAsyncMessageEventRepr())]
++	[createInputDelegationPortDecl(ev.message.instanceOf, ev.getInputDelegationPortName(regionInstance))/];[/for]
++[/template]
++
++[template public createMultiOutputDelegationPortDeclarations(regionInstanceSet : Set(RegionInstance))]
++[/template]
++
++[**
++ * Create delegation port declarations for a component rtsc
++ * @param rtsc the component rtsc
++*/]
++[template public createPortDeclarations(rtsc : RealtimeStatechart)]
++	// declarations for input and output delegation ports
++[createPortDeclarationsRecursive(rtsc)/]
++	// end declarations for input and output delegation ports
++[/template]
++
++[**
++ * Create delegation port declarations for a component rtsc
++ * (max rec depth: 2)
++ * @param rtsc the component rtsc
++*/]
++[template public createPortDeclarationsRecursive(rtsc : RealtimeStatechart) ? (rtsc.isComponentRTSC() or rtsc.isMultiPortRTSC()) {
++	regionInstanceSet : Set(RegionInstance) = rtsc.states->any(true).embeddedRegions->select(
++		oclAsType(RegionInstance).embedsSinglePortStatechart or oclAsType(RegionInstance).embedsMultiPortStatechart
++	)->collect(oclAsType(RegionInstance))->asSet();
++}]
++[for (regionInstance : RegionInstance | regionInstanceSet)]
++[if regionInstance.embedsSinglePortStatechart]
++[createSingleInputPortDeclaration(regionInstance)/]
++[createSingleOutputPortDeclaration(regionInstance)/][elseif regionInstance.embedsMultiPortStatechart]
++[createPortDeclarationsRecursive(regionInstance.embeddedStatechart)/][/if]
++[/for]
++[/template]
++
++[template private connectPorts(regionInstance : RegionInstance) ? (regionInstance.embedsSinglePortStatechart)]
++[for (ev : AsynchronousMessageEvent | regionInstance.embeddedStatechart.getAllRaiseMessageEvents()->getAsyncMessageEventRepr())]
++	connect([ev.getOutputDelegationPortName(regionInstance)/],
++		[regionInstance.embeddedStatechart.states->any(true).name + '.' + regionInstance.getRegionRealtimeStatechartName() + '.' + ev.getOutputDelegationPortName()/]);
++[/for]
++[for (ev : AsynchronousMessageEvent | regionInstance.embeddedStatechart.getAllTriggerMessageEvents()->getAsyncMessageEventRepr())]
++	connect([regionInstance.embeddedStatechart.states->any(true).name + '.' + regionInstance.getRegionRealtimeStatechartName() + '.' + ev.getInputDelegationPortName()/],
++		[ev.getInputDelegationPortName(regionInstance)/]);
++[/for]
++[/template]
++
++[template private connectPorts(regionInstance : RegionInstance) ? (regionInstance.embedsMultiPortStatechart)]
++[for (r : RegionInstance | regionInstance.embeddedStatechart.states->any(true).embeddedRegions->select(oclAsType(RegionInstance).embedsSinglePortStatechart)->collect(oclAsType(RegionInstance))->asSet())]
++[for (ev : AsynchronousMessageEvent | r.embeddedStatechart.getAllRaiseMessageEvents()->getAsyncMessageEventRepr())]
++	connect([ev.getOutputDelegationPortName(r)/],
++		[regionInstance.embeddedStatechart.states->any(true).name + '.' + regionInstance.getRegionRealtimeStatechartName() + '.' + ev.getOutputDelegationPortName(r)/]);
++[/for]
++[/for]
++[/template]
++
++[template public connectPorts(rtsc : RealtimeStatechart) {
++regionInstanceSet : Set(RegionInstance) = rtsc.states->any(true).embeddedRegions->select(
++		oclAsType(RegionInstance).embedsSinglePortStatechart or oclAsType(RegionInstance).embedsMultiPortStatechart
++	)->collect(oclAsType(RegionInstance))->asSet();
++}]
++[for (regionInstance : RegionInstance | regionInstanceSet)]
++	[connectPorts(regionInstance)/]
++[/for]
+ [/template]
+\ No newline at end of file
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/async/queries.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/async/queries.mtl	(Revision 971)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.rtsc/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/rtsc/async/queries.mtl	(Arbeitskopie)
+@@ -1,5 +1,7 @@
+-[module queries('http://www.fujaba.de/muml/behavior/0.3.17', 'http://www.fujaba.de/muml/realtimestatechart/0.3.18',
+-			  'http://www.fujaba.de/muml/msgtype/0.3.6')]
++[module queries('http://www.fujaba.de/muml/behavior/0.3.17',
++				'http://www.fujaba.de/muml/realtimestatechart/0.3.18',
++				'http://www.fujaba.de/muml/msgtype/0.3.6',
++				'http://transform/1.0')]
+ 
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::async::helper::queries]
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::util::query::annotation]
+@@ -296,4 +298,29 @@
+ 	endif
+ 	endif
+ 	endif
++/]
++
++[**
++ * Returns the name for an output delegation port which is used in a component
++ * or multiport rtsc.
++ * @param ev the asynchronous message event
++ * @param regionInstance the RegionInstance
++*/]
++[query public getOutputDelegationPortName(ev : AsynchronousMessageEvent, regionInstance : RegionInstance) : String =
++	regionInstance.name + '_' + ev.getOutputDelegationPortName()
++/]
++
++[**
++ * Returns the name for an input delegation port which is used in a component
++ * or multiport rtsc.
++ * @param ev the asynchronous message event
++ * @param regionInstance the RegionInstance
++*/]
++[query public getInputDelegationPortName(ev : AsynchronousMessageEvent, regionInstance : RegionInstance) : String =
++	regionInstance.name + '_' + ev.getInputDelegationPortName()
++/]
++
++[query public getParentPortStatechart(ev : AsynchronousMessageEvent) : RealtimeStatechart =
++	-- isPortRTSC() should be true for exactly one rtsc
++	ev.getTransition().statechart.getParentPortStatechart()
+ /]
+\ No newline at end of file
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/port.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/port.mtl	(Revision 972)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/port.mtl	(Arbeitskopie)
+@@ -15,7 +15,7 @@
+ */]
+ [template public generatePorts(portInstanceSet : Set(PortInstance))]
+ 	// port declarations
+-[for (port : PortInstance | portInstanceSet)]
++[for (port : PortInstance | portInstanceSet->select(not oclIsKindOf(DiscreteMultiPortInstance)))]
+ 	[createPortDeclaration(port)/]
+ [/for]
+ 	// end port declarations
+@@ -27,26 +27,38 @@
+ [/template]
+ 
+ [**
+- * Creates a declaration for a discrete input port
+- * @param portInstance the discrete input port instance
++ * Creates a declaration for a discrete single input port
++ * @param portInstance the discrete single input port instance
+ */]
+-[template private createPortDeclaration(portInstance : DiscretePortInstance) ? (portInstance.portType.oclAsType(DiscretePort).isDiscreteInPort)]
++[template private createPortDeclaration(portInstance : DiscreteSinglePortInstance) ? (
++	portInstance.portType.oclAsType(DiscretePort).isDiscreteInPort and portInstance.multiInteractionEndpointInstance.oclIsUndefined()
++)]
+ [for (messageType : MessageType | portInstance.portType.oclAsType(DiscretePort).receiverMessageTypes)]
+ [createInputDelegationPortDecl(messageType, portInstance.getInputPortName(messageType))/];
+ [/for]
+ [/template]
+ 
+ [**
+- * Creates a declaration for a discrete output port
+- * @param portInstance the discrete output port instance
++ * Creates a declaration for a discrete single output port
++ * @param portInstance the discrete single output port instance
+ */]
+-[template private createPortDeclaration(portInstance : DiscretePortInstance) ? (portInstance.portType.oclAsType(DiscretePort).isDiscreteOutPort)]
++[template private createPortDeclaration(portInstance : DiscreteSinglePortInstance) ? (
++	portInstance.portType.oclAsType(DiscretePort).isDiscreteOutPort
++)]
+ [for (messageType : MessageType | portInstance.portType.oclAsType(DiscretePort).senderMessageTypes)]
+ [createOutputDelegationPortDecl(messageType, portInstance.getOutputPortName(messageType))/];
+ [/for]
+ [/template]
+ 
+ [**
++ * Creates a declaration for a discrete multi input port
++ * @param portInstance the discrete multi input port instance
++*/]
++[template private createPortDeclaratikon(portInstance : DiscretePortInstance)]
++[comment do nothing/]
++[/template]
++
++[**
+  * Creates a declaration for a hybrid input or output port.
+  * @param portInstance the hybrid input or output port instance
+ */]
+@@ -67,7 +79,7 @@
+  * @param portInstanceSet the set of port instances
+ */]
+ [template public connectPorts(portInstanceSet : Set(PortInstance)) {
+-	discretePortInstanceSet : Set(DiscretePortInstance) = portInstanceSet->select(portType.oclIsKindOf(DiscretePort))
++	discretePortInstanceSet : Set(DiscretePortInstance) = portInstanceSet->select(p : PortInstance | p.oclIsKindOf(DiscretePortInstance))
+ 		->collect(oclAsType(DiscretePortInstance))->asSet();
+ 	hybridPortInstanceSet : Set(HybridPortInstance) = portInstanceSet->select(portType.oclIsKindOf(HybridPort))
+ 		->collect(oclAsType(HybridPortInstance))->asSet();
+@@ -84,13 +96,13 @@
+ */]
+ [template private connectDiscretePorts(discretePortInstanceSet : Set(DiscretePortInstance))]
+ 	// connect discrete component ports with the corresponding rtsc ports 
+-[for (discretePortInstance : DiscretePortInstance | discretePortInstanceSet)]
++[for (discretePortInstance : DiscretePortInstance | discretePortInstanceSet->select(not oclIsKindOf(DiscreteMultiPortInstance)))]
+ [for (messageType : MessageType | discretePortInstance.receiverMessageTypes)]
+-	connect([messageType.getRTSCInputPortName()/],
++	connect([discretePortInstance.getRTSCInputPortName(messageType)/],
+ 		[discretePortInstance.getInputPortName(messageType)/]);
+ [/for]
+ [for (messageType : MessageType | discretePortInstance.senderMessageTypes)]
+-	connect([messageType.getRTSCOutputPortName()/],
++	connect([discretePortInstance.getRTSCOutputPortName(messageType)/],
+ 		[discretePortInstance.getOutputPortName(messageType)/]);
+ [/for]
+ [/for]
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/naming.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/naming.mtl	(Revision 972)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/naming.mtl	(Arbeitskopie)
+@@ -34,7 +34,7 @@
+  * @param messageType the MessageType
+ */]
+ [query public getInputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+-	portInstance.name + messageType.getInputDelegationPortName()
++	portInstance.name + '_' + messageType.getInputDelegationPortName()
+ /]
+ 
+ [**
+@@ -43,7 +43,7 @@
+  * @param messageType the MessageType
+ */]
+ [query public getOutputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+-	portInstance.name + messageType.getOutputDelegationPortName()
++	portInstance.name + '_' + messageType.getOutputDelegationPortName()
+ /]
+ 
+ [**
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/component_queries.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/component_queries.mtl	(Revision 992)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/component_queries.mtl	(Arbeitskopie)
+@@ -1,4 +1,6 @@
+-[module component_queries('http://www.fujaba.de/muml/instance/0.3.18')/]
++[module component_queries('http://www.fujaba.de/muml/instance/0.3.18',
++						  'http://www.fujaba.de/muml/realtimestatechart/0.3.18',
++						  'http://transform/1.0')/]
+ 
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::naming]
+ 
+@@ -43,4 +45,14 @@
+ */]
+ [query private getPath(modelName : String, parentPackage : String) : String =
+ 	parentPackage.replaceAll('\\.', '/') + '/' + modelName + '/' + modelName + '.mo'
++/]
++
++[query public getBehavior(map : Map, instance : AtomicComponentInstance) : RealtimeStatechart =
++	let res : OrderedSet(RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(RealtimeStatechart))->asOrderedSet()
++	in
++	if res->isEmpty() then
++		null
++	else
++		res->first()
++	endif
+ /]
+\ No newline at end of file
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/port_queries.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/port_queries.mtl	(Revision 972)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/port_queries.mtl	(Arbeitskopie)
+@@ -8,14 +8,14 @@
+  * Returns the of the rtsc input port for the passed message type.
+  * @param messageType the MessageType
+ */]
+-[query public getRTSCInputPortName(messageType : MessageType) : String =
+-	messageType.getBehaviorVariableName() + '.' + messageType.getInputDelegationPortName()
++[query public getRTSCInputPortName(portInstance : PortInstance, messageType : MessageType) : String =
++	portInstance.getBehaviorVariableName() + '.' + portInstance.getInputPortName(messageType)
+ /]
+ 
+ [**
+  * Returns the name of the rtsc output port for the passed message type.
+  * @param messageType the MessageType
+ */]
+-[query public getRTSCOutputPortName(messageType : MessageType) : String =
+-	messageType.getBehaviorVariableName() + '.' + messageType.getOutputDelegationPortName()
++[query public getRTSCOutputPortName(portInstance : PortInstance, messageType : MessageType) : String =
++	portInstance.getBehaviorVariableName() + '.' + portInstance.getOutputPortName(messageType)
+ /]
+\ No newline at end of file
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/component.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/component.mtl	(Revision 992)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/component/component.mtl	(Arbeitskopie)
+@@ -1,6 +1,7 @@
+ [module component('http://www.fujaba.de/muml/instance/0.3.18',
+ 				  'http://www.fujaba.de/muml/realtimestatechart/0.3.18',
+-				  'http://www.fujaba.de/muml/component/0.3.18')/]
++				  'http://www.fujaba.de/muml/component/0.3.18',
++				  'http://transform/1.0')/]
+ 
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::main::generate]
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::util::pkg]
+@@ -15,7 +16,7 @@
+  * @param componentInstanceConfiguration the component instance configuration
+  * @param parentPackage the name of the parent package
+ */]
+-[template public generateRootCIC(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String)]
++[template public generateRootCIC(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String, map : Map)]
+ [createPackage(componentInstanceConfiguration.getModelName(), parentPackage)/]
+ [file (componentInstanceConfiguration.getPath(parentPackage), false, 'UTF-8')]
+ [within(componentInstanceConfiguration.getModelName(), parentPackage)/]
+@@ -26,7 +27,7 @@
+ end [componentInstanceConfiguration.getModelName()/];
+ [/file]
+ [for (componentInstance : ComponentInstance | componentInstanceConfiguration.componentInstances)]
+-	[generateComponentInstance(componentInstance, componentInstanceConfiguration.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
++	[generateComponentInstance(componentInstance, componentInstanceConfiguration.getModelName().getFullyQualifiedSubpackageName(parentPackage), map)/]
+ [/for]
+ [/template]
+ 
+@@ -37,27 +38,30 @@
+  * @param componentInstanceConfiguration the component instance configuration
+  * @param parentPackage the name of the parent package
+ */]
+-[template private generateCIC(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String)]
++[template private generateCIC(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String, map : Map)]
+ [for (componentInstance : ComponentInstance | componentInstanceConfiguration.componentInstances)]
+-	[generateComponentInstance(componentInstance, parentPackage)/]
++	[generateComponentInstance(componentInstance, parentPackage, map)/]
+ [/for]
+ [/template]
+ 
+-[template private generateComponentInstance(componentInstance : ComponentInstance, parentPackage : String)]
+-ERROR: expected AtomicComponentInstance or StructuredComponentInstance
++[template private generateComponentInstance(componentInstance : ComponentInstance, parentPackage : String, map : Map)]
++[file (componentInstance.name, false, 'UTF-8')][componentInstance.name/][/file]
++[file ('error' + componentInstance.name, false, 'UTF-8')]ERROR: expected AtomicComponentInstance or StructuredComponentInstance[/file]
+ [/template]
+ 
+ [**
+  * Generates a model for a (software) atomic component instance.
+  * @param componentInstance the atomic component instance
+  * @param parentPackage the name of the parent package
++ * behavior : RealtimeStatechart = componentInstance.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart);
+ */]
+-[template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String) ?
++[template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String, map : Map) ?
+ 	(componentInstance.componentType.componentType = ComponentKind::SOFTWARE_COMPONENT) {
+-	behavior : RealtimeStatechart = componentInstance.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart);
++	behavior : RealtimeStatechart = map.get(componentInstance);
+ 	hybridPortInstanceSet : Set(HybridPortInstance) = componentInstance.portInstances->select(oclIsKindOf(HybridPortInstance))
+ 		->collect(oclAsType(HybridPortInstance))->asSet();
+ }]
++behavior: [behavior/]
+ [generateRTSC(behavior, hybridPortInstanceSet, componentInstance.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
+ [createPackage(componentInstance.getModelName(), parentPackage)/]
+ [file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
+@@ -77,7 +81,7 @@
+  * @param componentInstance the atomic component instance
+  * @param parentPackage the name of the parent package
+ */]
+-[template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String) ?
++[template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String, map : Map) ?
+ 	(componentInstance.componentType.componentType = ComponentKind::CONTINUOUS_COMPONENT)
+ ]
+ [createPackage(componentInstance.getModelName(), parentPackage)/]
+@@ -95,8 +99,8 @@
+  * @param componentInstance the structured component instance
+  * @param parentPackage the name of the parent package
+ */]
+-[template private generateComponentInstance(componentInstance : StructuredComponentInstance, parentPackage : String)]
+-[generateCIC(componentInstance.embeddedCIC, componentInstance.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
++[template private generateComponentInstance(componentInstance : StructuredComponentInstance, parentPackage : String, map : Map)]
++[generateCIC(componentInstance.embeddedCIC, componentInstance.getModelName().getFullyQualifiedSubpackageName(parentPackage), map)/]
+ [createPackage(componentInstance.getModelName(), parentPackage)/]
+ [file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
+ [within(componentInstance.getModelName(), parentPackage)/]
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/main/main.mtl
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/main/main.mtl	(Revision 992)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/main/main.mtl	(Arbeitskopie)
+@@ -1,7 +1,9 @@
+ [comment encoding = UTF-8 /]
+ [module main('http://www.fujaba.de/muml/instance/0.3.18',
+ 			 'http://www.fujaba.de/modelinstance/0.3.15',
+-			 'http://www.fujaba.de/muml/msgtype/0.3.6')]
++			 'http://www.fujaba.de/muml/msgtype/0.3.6',
++			 'http://www.fujaba.de/muml/realtimestatechart/0.3.18',
++			 'http://transform/1.0')]
+ 
+ [import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::component]
+ 
+@@ -13,7 +15,14 @@
+ [for (modelElementCategory : ModelElementCategory | aRootNode.categories)] 
+ 	[comment: search for model instance category/]
+ 	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+-		[modelElementCategory.modelElements->first().oclAsType(ComponentInstanceConfiguration).generateRootCIC('test')/]
++		[modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).generateRootCIC('test',
++			modelElementCategory.instantiateRealtimeStatecharts())/]
+ 	[/if]
+ [/for]
+-[/template]
+\ No newline at end of file
++[/template]
++
++[query public instantiateRealtimeStatecharts(category : ModelElementCategory) : Map =
++	invoke('de.uni_paderborn.fujaba.muml.model.gen.modelica.instance.instantiator.RealtimeStatechartInstantiator',
++		'instantiate(de.uni_paderborn.fujaba.modelinstance.ModelElementCategory)',
++		Sequence{category}) 
++/]
+\ No newline at end of file
+Index: de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/main/Main.java
+===================================================================
+--- de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/main/Main.java	(Revision 965)
++++ de.uni_paderborn.fujaba.muml.model.gen.modelica.instance/src/de/uni_paderborn/fujaba/muml/model/gen/modelica/instance/main/Main.java	(Arbeitskopie)
+@@ -349,6 +349,12 @@
+         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.class)) {
+             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE);
+         }
++        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.class)) {
++            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE);
++        }
++        if (!isInWorkspace(transform.TransformPackage.class)) {
++            resourceSet.getPackageRegistry().put(transform.TransformPackage.eINSTANCE.getNsURI(), transform.TransformPackage.eINSTANCE);
++        }
+         
+         /*
+          * If you want to change the content of this method, do NOT forget to change the "@generated"

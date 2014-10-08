@@ -1,0 +1,13 @@
+import de.uni_paderborn.fujaba.graphviz._blackbox.GraphvizPlainLayouterUnit;
+
+modeltype DOT uses dot("http://www.fujaba.de/graphviz/dot/0.1.0");
+modeltype PLAIN uses plain("http://www.fujaba.de/graphviz/plain/0.1.0");
+
+// do not use this library directly, use GraphvizLayouter instead
+library GraphvizPlainLayouter;
+
+mapping DotGraph::_layoutPlain() : PlainGraph {
+	init {
+		result := layout(self);
+	}
+}

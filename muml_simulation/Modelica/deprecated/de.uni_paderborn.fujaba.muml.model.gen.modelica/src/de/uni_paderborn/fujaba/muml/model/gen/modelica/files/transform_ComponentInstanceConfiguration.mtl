@@ -1,0 +1,66 @@
+[comment encoding = UTF-8 /]
+[module transform_ComponentInstanceConfiguration('http://www.fujaba.de/muml/model/instance/0.2.2',
+												 'http://www.fujaba.de/muml/model/component/0.2.3')/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Port /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::generate_Utilities /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_AtomicComponent /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_StructuredComponent /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_MessageInterface/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_PortInstance/]
+[**
+ * @comment A component instance configuration is committed and will be transformed including its component instances
+ * @param aComponentInstanceConfiguration 
+ */]
+[template public transform(aComponentInstanceConfiguration : ComponentInstanceConfiguration)
+{
+allAtomicComponentsIntances : Set(ComponentInstance) = getAtomicComponents_h(aComponentInstanceConfiguration->asSet());
+}]
+within ;
+package Test
+  package ComponentInstanceConfiguration
+  	[generate_ComponentInstanceConfiguration(aComponentInstanceConfiguration)/]
+  end ComponentInstanceConfiguration;
+  package Components	
+    package Ports
+	  	[for (p : PortInstance | allAtomicComponentsIntances.portInstances)]
+	  [p.generate()/]
+	  	[/for]
+	end Ports;
+		[for (componentInstance : ComponentInstance | aComponentInstanceConfiguration.componentInstances)]
+		// componentInstance = [componentInstance.name/]
+	  [componentInstance.transform(aComponentInstanceConfiguration,compPackagePraefix())/]
+		[/for]
+  end Components;
+  
+  package MessageInterfaces
+	[for (it : DiscretePort | allAtomicComponentsIntances.portInstances->select(pi : PortInstance | pi.portType.oclIsTypeOf(DiscretePort)).portType.oclAsType(DiscretePort))]
+		// port [it.name/]
+	[/for]
+	[let ports : Set(DiscretePort) = allAtomicComponentsIntances.portInstances.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->asSet()]
+  	[init_MessageInterfaces(ports)/]
+	[/let]
+  end MessageInterfaces;
+  
+  package Utilities
+  	[generate_Utilities()/]
+  end Utilities;
+end Test; 
+[/template]
+
+[**
+ * Generate the main entry point for model simulation in Dymola - Modelica.
+ * @param aComponentInstanceConfiguration is the root component instance configuration.
+ */]
+[template private generate_ComponentInstanceConfiguration(aComponentInstanceConfiguration : ComponentInstanceConfiguration)]
+model TestInstance
+	inner constant Real eps( min = 0) = 0.00001;
+	inner constant Boolean debug = true;
+	[for (componentInstance : ComponentInstance | aComponentInstanceConfiguration.componentInstances)]
+		[componentInstance.init_ComponentInstance('Components')/]
+	[/for]
+equation
+	[aComponentInstanceConfiguration.connect_ComponentInstancePorts()/]
+end TestInstance;
+[/template]

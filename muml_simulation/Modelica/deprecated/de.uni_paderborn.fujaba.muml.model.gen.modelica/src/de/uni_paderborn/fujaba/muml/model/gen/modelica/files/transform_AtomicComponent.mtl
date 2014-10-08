@@ -1,0 +1,196 @@
+[comment encoding = UTF-8 /]
+[module transform_AtomicComponent('http://www.fujaba.de/muml/model/instance/0.2.2',
+								  'http://www.fujaba.de/muml/model/realtimestatechart/0.2.3',
+								  'http://www.fujaba.de/muml/model/msgiface/0.2.2',
+								  'http://www.fujaba.de/muml/model/component/0.2.3',
+								  'http://www.fujaba.de/muml/model/core/0.2.4')/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Port/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_RealtimeStatechart /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::generate_Utilities /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_PortInstance /]
+
+
+[template public test_getSenderTransitions_h(statecharts : Set(RealtimeStatechart))]
+//test_getSenderTransitions_h
+	[for (it : RealtimeStatechart | statecharts)]
+		//Statechart [it.name/]
+	[/for]
+	[if (statecharts->notEmpty())]
+		[for (it : Transition | statecharts->select(transitions->notEmpty()).transitions->select(hasRaiseMessageEvent())->asSet())]
+		// Transition: ([it.source.name/], [it.target.name/])
+		[/for]
+		[test_getSenderTransitions_h(statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->select(regions->notEmpty()).regions->select(not statechart.oclIsUndefined()).statechart->asSet())/]	
+	[else]
+		//Set{}
+	[/if]
+[/template]
+
+[**
+ * 
+ * @param aComponentInstanceConfiguration 
+ * @param aComponentInstance 
+ * @param compHierarchy 
+ */]
+[template public transform(aComponentInstance : ComponentInstance,aComponentInstanceConfiguration : ComponentInstanceConfiguration, compHierarchy : String, receiver_mi : Set(MessageInterface),compSender : Set(ComponentInstance)) ? (aComponentInstance.componentType.oclIsKindOf(AtomicComponent) and aComponentInstance.componentType.oclAsType(AtomicComponent).componentType = ComponentKind::CONTINUOUS_COMPONENT)]
+model [aComponentInstance.name.toUpperFirst()/]
+	[for (portInstance : PortInstance | aComponentInstance.portInstances)]
+		[portInstance.init_PortInstance()/]
+	[/for]	
+end [aComponentInstance.name.toUpperFirst()/];	
+[/template]
+
+[**
+ * %{transform}
+ * This template transforms an AtomicComponent of ComponentKind Software_Component or HybridComponent. 
+ * @param aComponentInstance is the ComponentInstance.
+ * @param aComponentInstanceConfiguration is the ComponentInstanceConfiguration the ComponentInstance is embedded in.
+ * @param compHierarchy is a String which represents the hierarchy of the ComponentInstance in the ComponentInstanceConfiguration-Tree (Including the StructuredComponents).
+ */]
+[template public transform(aComponentInstance : ComponentInstance,aComponentInstanceConfiguration : ComponentInstanceConfiguration, compHierarchy : String) ? (aComponentInstance.componentType.oclIsKindOf(AtomicComponent) and (aComponentInstance.componentType.oclAsType(AtomicComponent).componentType = ComponentKind::SOFTWARE_COMPONENT or aComponentInstance.componentType.oclAsType(AtomicComponent).componentType = ComponentKind::HYBRID_COMPONENT))
+{statecharts : OrderedSet(RealtimeStatechart) = aComponentInstance.componentType.oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart)->asOrderedSet();
+compSender : Set(ComponentInstance) = getSenderComponents_h(aComponentInstance.portInstances->asSet(),aComponentInstance->asSet(), Set{})->asSet();
+sendTransitionsOfOtherComponents : Set(Transition) = if compSender->notEmpty() then  getSenderTransitions_h(compSender.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart)->asSet(), Set{})->asSet() else Set{} endif;
+eventTransitions : Set(Transition) =  getEventTransitions_h(statecharts->asSet())->asSet();
+sendTransitions : Set(Transition) = eventTransitions->select(hasRaiseMessageEvent());
+receiveTransitions : Set(Transition) = eventTransitions->select(hasTriggerMessageEvent())->asSet();
+receiver_mi : Set(MessageInterface) = getMessageInterfaces_h(aComponentInstance.portInstances.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not receiverMessageInterface.oclIsUndefined()).receiverMessageInterface->asSet())->asSet();
+}]
+[for (it : RealtimeStatechart | statecharts)]
+	// statecharts [it.name/]
+[/for]
+[for (it : ComponentInstance| compSender)]
+	// comp_sender [it.name/]
+[/for]
+[for (it : Transition | sendTransitionsOfOtherComponents)]
+	// sendTransitionsOfOtherComponents: ([it.source.name/], [it.target.name/])
+[/for]
+[for (it : Transition | sendTransitions)]
+	// sendTransitions: ([it.source.name/], [it.target.name/])
+[/for]
+[for (it : Transition | receiveTransitions)]
+	// recieveTransitions: ([it.source.name/], [it.target.name/])
+[/for]
+[for (it : MessageInterface | receiver_mi)]
+	// receiver_mi: [it.name/]
+[/for]
+
+//transform_AtomicComponent
+model [aComponentInstance.name.toUpperFirst()/]	
+//1    
+	[comment test_getSenderTransitions_h(comp_sender.componentType->select(c : Component | c.oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined()).oclAsType(RealtimeStatechart)->asSet())/]
+//2	
+//3	
+//4 
+  	[comment let sender_mi : Set(MessageInterface) = getMessageInterfaces_h(aComponentInstance.portInstances.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined()).senderMessageInterface->asSet())->asSet()/]
+  	[for (portInstance : PortInstance | aComponentInstance.portInstances)]
+	// ContinuousPort.type = [portInstance->select(oclIsKindOf(ContinuousPortInstance)).oclAsType(ContinuousPortInstance).portType->select(oclIsKindOf(ContinuousPort)).oclAsType(ContinuousPort).type/]
+  [init_PortInstance(portInstance)/]
+  	[/for]
+  [init_SenderMessagePorts(compHierarchy, sendTransitions)/]
+	[if (sendTransitionsOfOtherComponents->notEmpty() and sendTransitionsOfOtherComponents->select(hasRaiseMessageEvent())->notEmpty())]
+	[let temp_receiveTransitions : Set(Transition) = sendTransitionsOfOtherComponents->select(hasRaiseMessageEvent())->select(t : Transition | receiver_mi->includes(t.getRaiseMessageType().messageInterface))->asSet()]
+	[for (it : Transition | temp_receiveTransitions)]
+// init_CompReceiverMessagePorts Transition: ([it.source.name/], [it.target.name/])
+	[/for]
+  [init_CompReceiverMessagePorts(compHierarchy, temp_receiveTransitions)/]
+	[/let]
+	[/if]
+  [comment TODO: init_ReceiverMessagePorts(compHierarchy ,recieveTransitions)/]
+
+  [comment hier wohl nicht OK so!/]
+	[if (statecharts->notEmpty())]
+  [aComponentInstance.name.toUpperFirst()/]_RealtimeStatechart.[statecharts->first().name.toUpperFirst()/] [statecharts->first().name.toLowerFirst()/](
+      use_outPort=false,
+      use_suspend=false,
+      initialStep=true);
+	[/if]
+	[if (sendTransitionsOfOtherComponents->notEmpty() and sendTransitionsOfOtherComponents->select(hasRaiseMessageEvent())->notEmpty())]
+		[let temp_receiveTransitions : Set(Transition) = sendTransitionsOfOtherComponents->select(hasRaiseMessageEvent())->select(t : Transition | receiver_mi->includes(t.getRaiseMessageType().messageInterface))->asSet()]
+  [init_Mailbox(receiveTransitions, temp_receiveTransitions)/]
+		[/let]
+	[/if]
+  equation
+  	[if (statecharts->notEmpty())]
+		[if (sendTransitionsOfOtherComponents->notEmpty() and sendTransitionsOfOtherComponents->select(hasRaiseMessageEvent())->notEmpty())]
+  			[let temp_receiveTransitions : Set(Transition) = sendTransitionsOfOtherComponents->select(hasRaiseMessageEvent())->select(t : Transition | receiver_mi->includes(t.getRaiseMessageType().messageInterface))->asSet()]
+	[connect_MailBox(receiveTransitions, temp_receiveTransitions, statecharts->first())/]
+			[/let]
+		[/if]
+	[connect_CompPorts(statecharts->asOrderedSet()->first(), sendTransitions)/]
+	[/if]
+end [aComponentInstance.name.toUpperFirst()/];
+
+package [aComponentInstance.name.toUpperFirst()/]_RealtimeStatechart
+	package Component_Utilities
+	[if (statecharts->notEmpty())]
+      [generate_SyncChannels(statecharts->first())/]
+	[/if]
+	end Component_Utilities;
+	// transform_RealtimeStatechart
+	[statecharts->first().transform_RealtimeStatechart(OrderedSet{}, Set{}, Set{}, compHierarchy)/]
+	[comment test_rtsc(statecharts->first())/]
+	// end transform_RealtimeStatechart
+end [aComponentInstance.name.toUpperFirst()/]_RealtimeStatechart;
+
+[/template]
+
+
+
+[**
+ * 
+ * @param aComponentInstance 
+ * @param praefix 
+ */]
+[template public init_ComponentInstance(aComponentInstance : ComponentInstance, praefix : String ) ? (aComponentInstance.componentType.oclIsKindOf(AtomicComponent))]
+	[praefix/].[aComponentInstance.name.toUpperFirst()/] [aComponentInstance.name.toLowerFirst()/];
+[/template]
+
+[**
+ * 
+ * @param aRealtimeStatechart 
+ * @param transitions 
+ */]
+[template private connect_CompPorts(aRealtimeStatechart : RealtimeStatechart,transitions : Set(Transition))]
+	[for (t : Transition | transitions->select(hasRaiseMessageEvent()))]
+connect([aRealtimeStatechart.name.toLowerFirst()/].[getPortName(t.getRaiseMessageType(), t,null, true)/], [getPortName(t.getRaiseMessageType(), t,null, true)/]);												
+	[/for]
+[/template]
+
+[comment TODO hier evtl die prioritaeten beachten? /]
+[comment TODO testen mit mehren ports/]
+
+[**
+ * 
+ * @param recieverTransitions 
+ * @param senderTransitions 
+ * @param aRealtimeStatechart 
+ */]
+[template private connect_MailBox(recieverTransitions : Set(Transition), senderTransitions : Set(Transition), aRealtimeStatechart : RealtimeStatechart)]
+	[for (t : Transition | senderTransitions)]
+connect([getPortName(t.getRaiseMessageType(),t,null,true)/], [getMailBoxName(t.getRaiseMessageType(), true)/].message_output_port['['/][senderTransitions->select(t1 : Transition | t1.getRaiseMessageType() = t.getRaiseMessageType())->asOrderedSet()->indexOf(t)/][']'/]);
+	[/for]
+	[for ( t : Transition | recieverTransitions)]
+connect([getMailBoxName(t.getTriggerMessageType(), true)/].message_input_port['['/][recieverTransitions->select(t1 : Transition | t1.getTriggerMessageType() = t.getTriggerMessageType())->asOrderedSet()->indexOf(t)/][']'/], [aRealtimeStatechart.name.toLowerFirst()/].[getPortName(t.getTriggerMessageType(),t,'output',true)/]);		
+	[/for]
+[/template]
+
+[**
+ * 
+ * @param receiverTransitions 
+ * @param senderTransitions 
+ */]
+[template public init_Mailbox(receiverTransitions : Set(Transition), senderTransitions : Set(Transition))]
+	//init_Mailbox
+	[for (it : Transition | receiverTransitions)]
+		//receiverTransitions = ([it.target.name/], [it.source.name/])
+	[/for]
+	[for (t : Transition | senderTransitions)]
+		[if (t.getRaiseMessageType().parameters->notEmpty())]
+MessageInterfaces.[getMailBoxName(t.getRaiseMessageType(), false)/]  [getMailBoxName(t.getRaiseMessageType(), true)/](nOut=[receiverTransitions->select(hasTriggerMessageEvent() and getTriggerMessageType() = t.getRaiseMessageType())->size()/], nIn=[senderTransitions->select(getRaiseMessageType() = t.getRaiseMessageType())->size()/]);
+		[else]
+MessageInterfaces.Mailbox [getMailBoxName(t.getRaiseMessageType(), true)/](nOut=[receiverTransitions->select(hasTriggerMessageEvent() and getTriggerMessageType() = t.getRaiseMessageType())->size()/], nIn=[senderTransitions->select(getRaiseMessageType() = t.getRaiseMessageType())->size()/]); 
+		[/if]
+	[/for]
+[/template]
+

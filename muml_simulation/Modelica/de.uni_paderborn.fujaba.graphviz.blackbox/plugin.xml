@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            name="GraphvizPlainLayouterUnit"
+            namespace="de.uni_paderborn.fujaba.graphviz._blackbox">
+         <library
+               class="de.uni_paderborn.fujaba.graphviz.blackbox.GraphvizPlainLayouter"
+               name="GraphvizPlainLayouterBlackbox">
+            <metamodel
+                  nsURI="http://www.fujaba.de/graphviz/dot/0.1.0">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.fujaba.de/graphviz/plain/0.1.0">
+            </metamodel>
+         </library>
+      </unit>
+      <unit
+            name="GraphvizDotLayouterUnit"
+            namespace="de.uni_paderborn.fujaba.graphviz._blackbox">
+         <library
+               class="de.uni_paderborn.fujaba.graphviz.blackbox.GraphvizDotLayouter"
+               name="GraphvizDotLayouterBlackbox">
+            <metamodel
+                  nsURI="http://www.fujaba.de/graphviz/dot/0.1.0">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+
+</plugin>
