@@ -1,0 +1,161 @@
+[comment encoding = UTF-8 /]
+[module transform_StructuredComponent('http://www.fujaba.de/muml/model/component/0.2.3',
+									  'http://www.fujaba.de/muml/model/realtimestatechart/0.2.3',
+									  'http://www.fujaba.de/muml/model/instance/0.2.2',
+									  'http://www.fujaba.de/muml/model/msgiface/0.2.2',)/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Port /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_PortInstance/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_AtomicComponent /]
+
+[comment nur zum testen des queries ... kommt raus/] 
+[template public test_getSenderComponents_h(port : Set(PortInstance),  visited_comp : Set(ComponentInstance), comp : Set(ComponentInstance))]
+	//test_getSenderComponents_h
+	[if (port->notEmpty())]
+		// port not empty
+		[let sender_ports : Set(PortInstance) =  getSenderPortsOfIncommingConnectorInstance(port.incomingConnectorInstances->asSet())->union(getSenderPortsOfOutgoingConnectorInstance(port.outgoingConnectorInstances->asSet())->asSet())]
+			// old components:
+			[for (it : ComponentInstance | comp)]
+				// [it.name/]
+			[/for]
+			// new components:
+			[let temp_componentInstances : Set(ComponentInstance) = sender_ports.componentInstance->reject(ci : ComponentInstance| visited_comp->includes(ci))->select(componentType.oclIsKindOf(AtomicComponent))->asSet()]
+				[for (it : ComponentInstance | temp_componentInstances)]
+		 		// [it.name/]
+		 	[/for]
+			
+		 	
+			//rek
+				[test_getSenderComponents_h(temp_componentInstances, comp)/]
+			[/let]
+		[/let]
+	[/if]
+[/template]
+
+
+[comment nur zum testen des queries ... kommt raus/] 
+[template public test_getSenderTransitions_h(statecharts : Set(RealtimeStatechart), transitions : Set(Transition))]
+	//test_getSenderTransitions_h
+	[if (statecharts->notEmpty())]
+		[for (it : RealtimeStatechart | statecharts)]
+			// [it.name/]
+		[/for]
+		[for (it : Transition | transitions)]
+			// Transition: ([it.source.name/], [it.target.name/])
+		[/for]
+		[for (it : Transition | statecharts.transitions->select(hasRaiseMessageEvent()))]
+			// sender Transition: ([it.source.name/], [it.target.name/])
+		[/for]
+		[test_getSenderTransitions_h(statecharts->select(vertices->notEmpty()).vertices->select(oclIsKindOf(State)).oclAsType(State)->select(regions->notEmpty()).regions->select(not statechart.oclIsUndefined()).statechart->asSet(),
+									 transitions->union(statecharts->select(transitions->notEmpty()).transitions->select(hasRaiseMessageEvent())->asSet()))/]
+	[else]
+	//end recursion test_getSenderTransitions_h
+	[/if]
+[/template]
+
+[**
+ * 
+ * @param aComponentInstanceConfiguration 
+ * @param aComponentInstance 
+ * @param compHierarchy 
+ */]
+[template public transform_ComponentInstance(aComponentInstanceConfiguration : ComponentInstanceConfiguration, aComponentInstance : ComponentInstance, compHierarchy : String) ? (aComponentInstance.componentType.oclIsKindOf(StructuredComponent))
+{
+comp_sender : Set(ComponentInstance) = getSenderComponents_h(aComponentInstance->select(portInstances->notEmpty()).portInstances->asSet(),aComponentInstance->asSet(), Set{})->asSet();
+sendTransitions : Set(Transition) = if comp_sender->notEmpty() then getSenderTransitions_h(comp_sender.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart)->asSet(), Set{})->asSet() else Set{} endif;
+sender_mi : Set(MessageInterface) = aComponentInstance.portInstances.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).senderMessageInterface->select(not oclIsUndefined())->asSet();
+receiver_mi : Set(MessageInterface) = aComponentInstance.portInstances.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort).receiverMessageInterface->select(not oclIsUndefined())->asSet();
+}]
+[comment let aStructuredComponent : StructuredComponent = aComponentInstance.oclAsType(StructuredComponent)/]
+//transform_StructuredComponent
+[for (it : AtomicComponent | comp_sender.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent))]
+	// comp_sender ac [it.name/]
+[/for]
+[for (it : Transition | sendTransitions)]
+	// sendTransitions: ([it.source.name/], [it.target.name/])
+[/for]
+	[comment test_getSenderTransitions_h(comp_sender.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart)->asSet(),
+								 Set{})/]
+	
+	[comment test_getSenderTransitions_h(comp_sender.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart)->asSet(),
+								 comp_sender.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart)->select(transitions->notEmpty()).transitions->select(raiseMessageEvent->notEmpty())->asSet())/]
+		//foo
+model [aComponentInstance.name.toUpperFirst()/]
+	
+	[comment test_getSenderComponents_h(aComponentInstance.portInstances->asSet(),aComponentInstance->asSet(),Set{})/]
+	[for (it : ComponentInstance | comp_sender)]
+	//comp_sender name : [it.name/]
+	//comp_sender rtsc name :	[it.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart).name/] 
+	[/for] 
+	// sender behavior:
+	[for (it : RealtimeStatechart | comp_sender.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart))]
+		// rtsc name: [it.name/]
+	[/for]
+//1
+//2 
+//3  
+	[if (sendTransitions->notEmpty())]
+  [init_SenderMessagePorts(compHierarchy, sendTransitions->select(t : Transition | sender_mi->includes(t.getRaiseMessageType().messageInterface)))/]
+  [init_CompReceiverMessagePorts(compHierarchy, sendTransitions->select(t : Transition | receiver_mi->includes(t.getRaiseMessageType().messageInterface)))/]
+	[/if]
+//4  
+	// embeddedCIC [aComponentInstance.embeddedCIC/]
+	// aComponentInstance [aComponentInstance/]
+  	[for (ci : ComponentInstance | aComponentInstance.embeddedCIC.componentInstances)]
+	// ci = [ci.name/]
+  [init_ComponentInstance(ci, aComponentInstance.name.toUpperFirst()+'_embeddedCIC')/]
+	[/for]
+equation
+	[if (not aComponentInstance.embeddedCIC.oclIsUndefined())]
+  [connect_ComponentInstancePorts(aComponentInstance.embeddedCIC,aComponentInstance,sendTransitions)/]
+		[for (ci : ComponentInstance | aComponentInstance.embeddedCIC.componentInstances)]
+		[comment eingebettet komponenten untereinander verbinden/]
+		// ci2 = [ci.name/]
+			[for (it : PortInstance | ci.portInstances->select(pi : PortInstance |  pi.portType->select(oclIsTypeOf(DiscretePort) and not oclAsType(DiscretePort).senderMessageInterface.oclIsUndefined())->notEmpty()))]
+			// port instance [it.name/]
+			[/for]
+			[let comp_sender_e : Set(ComponentInstance) = getSenderComponents_h(ci.portInstances->select(pi : PortInstance | pi.portType->select(oclIsTypeOf(DiscretePort) and not oclAsType(DiscretePort).senderMessageInterface.oclIsUndefined())->notEmpty())->asSet(),ci->asSet(),if ci.componentType->select(c : Component | c.oclIsKindOf(AtomicComponent))->notEmpty() and ci.portInstances.portType->select(oclIsTypeOf(DiscretePort)).oclAsType(DiscretePort)->select(not senderMessageInterface.oclIsUndefined())->notEmpty() then ci->asSet() else Set{} endif)->asSet() ] 
+			[if (comp_sender_e->notEmpty())]
+				[for (it : ComponentInstance | comp_sender_e)]
+				// comp_sender_e = [it.name/] typ = [it.componentType.name/]		
+				[/for]
+				[for (sender : PortInstance | comp_sender_e.portInstances->select(pi : PortInstance | pi.componentInstance.componentType.oclIsKindOf(AtomicComponent)and pi.portType->select(oclIsTypeOf(DiscretePort) and not oclAsType(DiscretePort).senderMessageInterface.oclIsUndefined())->notEmpty() )->asSet())]
+				// a sender pi = [sender.name/]	
+				[/for]
+				[test_getSenderTransitions_h(comp_sender_e.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart)->asSet(),
+								 Set{})/]
+			[let sendTransitions_e : Set(Transition) = getSenderTransitions_h(comp_sender_e.componentType->select(oclIsKindOf(AtomicComponent)).oclAsType(AtomicComponent).behavior->select(not oclIsUndefined() and oclIsKindOf(RealtimeStatechart)).oclAsType(RealtimeStatechart)->asSet(), Set{})->asSet()]			
+				// sendTransitions_e.size = [sendTransitions_e->size()/]
+				[for (it : Transition | sendTransitions_e)]
+			// transition [it.target.name/]
+				[/for]
+  [connect_ComponentInstancePorts(aComponentInstance.embeddedCIC,ci,sendTransitions_e)/]
+			[/let]
+			[/if]	
+			[/let]
+ 		[/for]
+	[else]
+		// hmm kein embedded :/
+	[/if]
+
+end [aComponentInstance.name.toUpperFirst()/];	
+
+	[if (aComponentInstance.embeddedCIC->notEmpty())]
+package [aComponentInstance.name.toUpperFirst()/]_embeddedCIC
+	[for (componentInstance : ComponentInstance | aComponentInstance.embeddedCIC.componentInstances)]
+	  [aComponentInstanceConfiguration.transform_ComponentInstance(aComponentInstanceConfiguration, componentInstance,compHierarchy+aComponentInstance.name.toUpperFirst()+'_embeddedCIC.')/]
+	[/for]
+  [comment transform_ComponentInstances(aComponentInstance.embeddedCIC,compHierarchy+aComponentInstance.name.toUpperFirst()+'_embeddedCIC.')/]
+end [aComponentInstance.name.toUpperFirst()/]_embeddedCIC;
+	[/if]
+[/template]
+
+[**
+ * 
+ * @param aComponentInstance 
+ * @param praefix 
+ */]
+[template public init_ComponentInstance(aComponentInstance : ComponentInstance, praefix : String) ? (aComponentInstance.componentType.oclIsKindOf(StructuredComponent))]
+	[praefix/].[aComponentInstance.name.toUpperFirst()/] [aComponentInstance.name.toLowerFirst()/];
+[/template]

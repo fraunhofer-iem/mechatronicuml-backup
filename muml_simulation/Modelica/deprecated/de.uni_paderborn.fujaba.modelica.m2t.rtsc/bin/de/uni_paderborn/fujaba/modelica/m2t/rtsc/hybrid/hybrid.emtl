@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="hybrid" nsURI="de::uni_paderborn::fujaba::modelica::m2t::rtsc::hybrid::hybrid" endHeaderPosition="109">
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+    </input>
+    <imports href="queries.emtl#/0"/>
+    <imports href="../util/query/type.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="createHybridPortDeclarations" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// hybrid port declarations&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/createHybridPortConnector">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortDeclarations/%.1/hybridPortInstance">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+            </argument>
+          </body>
+          <ifExpr xsi:type="ocl.ecore:VariableExp" name="isRoot" referredVariable="/0/createHybridPortDeclarations/isRoot">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </ifExpr>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/createHybridPortVariableDeclaration">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortDeclarations/%.1/hybridPortInstance">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:VariableExp" name="isRoot" referredVariable="/0/createHybridPortDeclarations/isRoot">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:VariableExp" name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)" referredVariable="/0/createHybridPortDeclarations/hybridPortInstanceSet"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// end hybrid port declarations"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="265" endPosition="477" value="&#xD;&#xA;Creates variable declarations for hybrid ports.&#xD;&#xA;@param hybridPortInstanceSet set of hybrid port instances&#xD;&#xA;@param isRoot specifies whether the current statechart represents the root/toplevel statechart&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="hybridPortInstanceSet">
+          <body value=" set of hybrid port instances"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="isRoot">
+          <body value=" specifies whether the current statechart represents the root/toplevel statechart"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)"/>
+      <parameter name="isRoot">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="createHybridPortConnector" visibility="Public">
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="queries.emtl#/0/getModelicaConnectorType.1"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortConnector/hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="queries.emtl#/0/getPortName"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortConnector/hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="883" endPosition="986" value="&#xD;&#xA;Creates a connector a hybrid port instance.&#xD;&#xA;@param hybridPortInstance the hybrid port instance&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="hybridPortInstance">
+          <body value=" the hybrid port instance"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="hybridPortInstance">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="createHybridPortVariableDeclaration">
+      <init>
+        <variable name="hybridPort">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+          <initExpression xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortVariableDeclaration/hybridPortInstance">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/24/HybridPort">
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </initExpression>
+        </variable>
+      </init>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="inner"/>
+        <ifExpr xsi:type="ocl.ecore:VariableExp" name="isRoot" referredVariable="/0/createHybridPortVariableDeclaration/isRoot">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </ifExpr>
+        <else>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="outer"/>
+        </else>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="../util/query/type.emtl#/0/getType"/>
+        <argument xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="hybridPort" referredVariable="/0/createHybridPortVariableDeclaration/@init/@variable.0">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortVariableDeclaration/hybridPortInstance">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../util/query/type.emtl#/0/getType"/>
+          <argument xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="hybridPort" referredVariable="/0/createHybridPortVariableDeclaration/@init/@variable.0">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="queries.emtl#/0/getSampledValueVariableName"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortVariableDeclaration/hybridPortInstance">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";"/>
+        <ifExpr xsi:type="ocl.ecore:VariableExp" name="isRoot" referredVariable="/0/createHybridPortVariableDeclaration/isRoot">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </ifExpr>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1176" endPosition="1396" value="&#xD;&#xA;Creates the necessary variable declarations for a hybrid port.&#xD;&#xA;@param hybridPortInstance the hybrid port instance&#xD;&#xA;@param isRoot specifies whether the current statechart represents the root/toplevel statechart&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="hybridPortInstance">
+          <body value=" the hybrid port instance"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="isRoot">
+          <body value=" specifies whether the current statechart represents the root/toplevel statechart"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="hybridPortInstance">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+      </parameter>
+      <parameter name="isRoot">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="createHybridPortEquations" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// connect hybrid ports&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/createHybridPortEquation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortEquations/%.1/hybridPortInstance">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:VariableExp" name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)" referredVariable="/0/createHybridPortEquations/hybridPortInstanceSet"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// end connect hybrid ports"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1818" endPosition="1934" value="&#xD;&#xA;Creates equations for hybrid port connectors.&#xD;&#xA;@param hybridPortInstanceSet the set of hybrid port instances&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="hybridPortInstanceSet">
+          <body value=" the set of hybrid port instances"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="createHybridPortEquation">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="queries.emtl#/0/getPortName"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortEquation/hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = "/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="queries.emtl#/0/getSampledValueVariableName"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/createHybridPortEquation/hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2227" endPosition="2333" value="&#xD;&#xA;Creates an equation for hybrid port connector.&#xD;&#xA;@param hybridPortInstance the hybrid port instance&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="hybridPortInstance">
+          <body value=" the hybrid port instance"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="hybridPortInstance">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="rwHybridPortSampledValueVariable" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// hybrid port sample value variable equations&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/rwHybridPortSampledValueVariable.1">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/rwHybridPortSampledValueVariable/%.1/hybridPortInstance">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:VariableExp" name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)" referredVariable="/0/rwHybridPortSampledValueVariable/hybridPortInstanceSet"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// end hybrid port sample value variable equations"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2529" endPosition="2671" value="&#xD;&#xA;Reads or writes the value of a hybrid port instance's sampled&#xD;&#xA;value variable.&#xD;&#xA;@param hybridPortInstanceSet the set of hybrid ports&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="hybridPortInstanceSet">
+          <body value=" the set of hybrid ports"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="rwHybridPortSampledValueVariable">
+      <init>
+        <variable name="hybridPort">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+          <initExpression xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/rwHybridPortSampledValueVariable.1/hybridPortInstance">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance/portType"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/24/HybridPort">
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </initExpression>
+        </variable>
+      </init>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="algorithm&#xA;&#x9;when sample(0, "/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/valuetype/0.4.0#//NaturalNumber"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/valuetype/0.4.0#//TimeValue"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="hybridPort" referredVariable="/0/rwHybridPortSampledValueVariable.1/@init/@variable.0">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort/samplingInterval"/>
+        </source>
+        <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/valuetype/0.4.0#//TimeValue/value"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=") then&#xA;"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="queries.emtl#/0/getName"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/rwHybridPortSampledValueVariable.1/hybridPortInstance">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" := "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="queries.emtl#/0/getSampledValueVariableName"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/rwHybridPortSampledValueVariable.1/hybridPortInstance">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="hybridPort" referredVariable="/0/rwHybridPortSampledValueVariable.1/@init/@variable.0">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/component/0.4.0#//DirectedTypedPort/inPort"/>
+        </ifExpr>
+        <else>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="queries.emtl#/0/getSampledValueVariableName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/rwHybridPortSampledValueVariable.1/hybridPortInstance">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" := "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="queries.emtl#/0/getName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="hybridPortInstance" referredVariable="/0/rwHybridPortSampledValueVariable.1/hybridPortInstance">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+        </else>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;end when;"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="3025" endPosition="3148" value="&#xD;&#xA;Reads or writes the value of a hybrid port instance's sampled&#xD;&#xA;value variable.&#xD;&#xA;@param hybridPort the hybrid port&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="hybridPort">
+          <body value=" the hybrid port"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="hybridPortInstance">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="createHybridPortDeclarations">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/createHybridPortDeclarations"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)"/>
+        <eParameters name="isRoot">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="createHybridPortConnector">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/createHybridPortConnector"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="createHybridPortVariableDeclaration">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/createHybridPortVariableDeclaration"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </eParameters>
+        <eParameters name="isRoot">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="createHybridPortEquations">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/createHybridPortEquations"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)"/>
+      </eOperations>
+      <eOperations name="createHybridPortEquation">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/createHybridPortEquation"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="rwHybridPortSampledValueVariable">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/rwHybridPortSampledValueVariable"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hybridPortInstanceSet" eType="/3/Set(HybridPortInstance)"/>
+      </eOperations>
+      <eOperations name="rwHybridPortSampledValueVariable">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/rwHybridPortSampledValueVariable.1"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="queries.emtl#/0/getName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="portInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getSampledValueVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="queries.emtl#/0/getSampledValueVariableName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hybridPortInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getModelicaConnectorType">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="queries.emtl#/0/getModelicaConnectorType.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="portInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getPortName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="queries.emtl#/0/getPortName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="portInstance">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getType">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../util/query/type.emtl#/0/getType"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Set(HybridPortInstance)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL" references="/3/Set(HybridPortInstance)"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HybridPortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(HybridPortInstance)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="HybridPort">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/component/0.4.0#//HybridPort"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self" eType="/3/Set(HybridPortInstance)"/>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//HybridPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/createHybridPortDeclarations">
+      <details key="start" value="480"/>
+      <details key="end" value="878"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/createHybridPortDeclarations/%">
+      <details key="start" value="594"/>
+      <details key="end" value="623"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/createHybridPortDeclarations/%.1">
+      <details key="start" value="623"/>
+      <details key="end" value="833"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/createHybridPortDeclarations/%.1/%">
+      <details key="start" value="695"/>
+      <details key="end" value="759"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/createHybridPortDeclarations/%.1/%/%">
+      <details key="start" value="707"/>
+      <details key="end" value="752"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/createHybridPortDeclarations/%.1/%/%/hybridPortInstance">
+      <details key="start" value="733"/>
+      <details key="end" value="751"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/createHybridPortDeclarations/%.1/%/isRoot">
+      <details key="start" value="699"/>
+      <details key="end" value="705"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/createHybridPortDeclarations/%.1/%.1">
+      <details key="start" value="759"/>
+      <details key="end" value="760"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/createHybridPortDeclarations/%.1/%.2">
+      <details key="start" value="761"/>
+      <details key="end" value="824"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/createHybridPortDeclarations/%.1/%.2/hybridPortInstance">
+      <details key="start" value="797"/>
+      <details key="end" value="815"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/createHybridPortDeclarations/%.1/%.2/isRoot">
+      <details key="start" value="817"/>
+      <details key="end" value="823"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/createHybridPortDeclarations/%.1/%.3">
+      <details key="start" value="826"/>
+      <details key="end" value="827"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/createHybridPortDeclarations/%.1/hybridPortInstance">
+      <details key="start" value="629"/>
+      <details key="end" value="668"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/createHybridPortDeclarations/%.1/hybridPortInstanceSet">
+      <details key="start" value="671"/>
+      <details key="end" value="692"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/createHybridPortDeclarations/%.2">
+      <details key="start" value="834"/>
+      <details key="end" value="866"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/createHybridPortDeclarations/%.3">
+      <details key="start" value="262"/>
+      <details key="end" value="479"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/createHybridPortDeclarations/%.3/hybridPortInstanceSet">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/createHybridPortDeclarations/%.3/isRoot">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/createHybridPortDeclarations/hybridPortInstanceSet">
+      <details key="start" value="526"/>
+      <details key="end" value="573"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/createHybridPortDeclarations/isRoot">
+      <details key="start" value="575"/>
+      <details key="end" value="591"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/createHybridPortConnector">
+      <details key="start" value="989"/>
+      <details key="end" value="1171"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/createHybridPortConnector/%">
+      <details key="start" value="1075"/>
+      <details key="end" value="1120"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/createHybridPortConnector/%/hybridPortInstance">
+      <details key="start" value="1075"/>
+      <details key="end" value="1093"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/createHybridPortConnector/%.1">
+      <details key="start" value="1122"/>
+      <details key="end" value="1123"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/createHybridPortConnector/%.2">
+      <details key="start" value="1124"/>
+      <details key="end" value="1156"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/createHybridPortConnector/%.2/hybridPortInstance">
+      <details key="start" value="1124"/>
+      <details key="end" value="1142"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/createHybridPortConnector/%.3">
+      <details key="start" value="1158"/>
+      <details key="end" value="1159"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/createHybridPortConnector/%.4">
+      <details key="start" value="880"/>
+      <details key="end" value="988"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/createHybridPortConnector/%.4/hybridPortInstance">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/createHybridPortConnector/hybridPortInstance">
+      <details key="start" value="1032"/>
+      <details key="end" value="1071"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/createHybridPortVariableDeclaration">
+      <details key="start" value="1399"/>
+      <details key="end" value="1813"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/createHybridPortVariableDeclaration/@init">
+      <details key="start" value="1512"/>
+      <details key="end" value="1593"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/createHybridPortVariableDeclaration/@init/@variable.0">
+      <details key="start" value="1515"/>
+      <details key="end" value="1590"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/createHybridPortVariableDeclaration/@init/@variable.0/%">
+      <details key="start" value="1541"/>
+      <details key="end" value="1590"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/createHybridPortVariableDeclaration/@init/@variable.0/%/%">
+      <details key="start" value="1541"/>
+      <details key="end" value="1568"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/createHybridPortVariableDeclaration/@init/@variable.0/%/%/hybridPortInstance">
+      <details key="start" value="1541"/>
+      <details key="end" value="1559"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/createHybridPortVariableDeclaration/@init/@variable.0/%/%.1">
+      <details key="start" value="1579"/>
+      <details key="end" value="1589"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/createHybridPortVariableDeclaration/%">
+      <details key="start" value="1595"/>
+      <details key="end" value="1627"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/createHybridPortVariableDeclaration/%/%">
+      <details key="start" value="1606"/>
+      <details key="end" value="1611"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/createHybridPortVariableDeclaration/%/isRoot">
+      <details key="start" value="1599"/>
+      <details key="end" value="1605"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/createHybridPortVariableDeclaration/%/%.1">
+      <details key="start" value="1611"/>
+      <details key="end" value="1622"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/createHybridPortVariableDeclaration/%/%.1/%">
+      <details key="start" value="1617"/>
+      <details key="end" value="1622"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/createHybridPortVariableDeclaration/%.1">
+      <details key="start" value="1627"/>
+      <details key="end" value="1628"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/createHybridPortVariableDeclaration/%.2">
+      <details key="start" value="1629"/>
+      <details key="end" value="1658"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/createHybridPortVariableDeclaration/%.2/%">
+      <details key="start" value="1629"/>
+      <details key="end" value="1648"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/createHybridPortVariableDeclaration/%.2/%/hybridPort">
+      <details key="start" value="1629"/>
+      <details key="end" value="1639"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/createHybridPortVariableDeclaration/%.3">
+      <details key="start" value="1661"/>
+      <details key="end" value="1662"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/createHybridPortVariableDeclaration/%.4">
+      <details key="start" value="1663"/>
+      <details key="end" value="1695"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/createHybridPortVariableDeclaration/%.4/%">
+      <details key="start" value="1663"/>
+      <details key="end" value="1690"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/createHybridPortVariableDeclaration/%.4/%/hybridPortInstance">
+      <details key="start" value="1663"/>
+      <details key="end" value="1681"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/createHybridPortVariableDeclaration/%.5">
+      <details key="start" value="1697"/>
+      <details key="end" value="1699"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/createHybridPortVariableDeclaration/%.6">
+      <details key="start" value="1699"/>
+      <details key="end" value="1801"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/createHybridPortVariableDeclaration/%.6/%">
+      <details key="start" value="1711"/>
+      <details key="end" value="1740"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/createHybridPortVariableDeclaration/%.6/%/%">
+      <details key="start" value="1711"/>
+      <details key="end" value="1730"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/createHybridPortVariableDeclaration/%.6/%/%/hybridPort">
+      <details key="start" value="1711"/>
+      <details key="end" value="1721"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/createHybridPortVariableDeclaration/%.6/%.1">
+      <details key="start" value="1743"/>
+      <details key="end" value="1744"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/createHybridPortVariableDeclaration/%.6/%.2">
+      <details key="start" value="1745"/>
+      <details key="end" value="1793"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/createHybridPortVariableDeclaration/%.6/%.2/hybridPortInstance">
+      <details key="start" value="1745"/>
+      <details key="end" value="1763"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/createHybridPortVariableDeclaration/%.6/%.3">
+      <details key="start" value="1795"/>
+      <details key="end" value="1796"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/createHybridPortVariableDeclaration/%.6/isRoot">
+      <details key="start" value="1703"/>
+      <details key="end" value="1709"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/createHybridPortVariableDeclaration/%.7">
+      <details key="start" value="1173"/>
+      <details key="end" value="1398"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/createHybridPortVariableDeclaration/%.7/hybridPortInstance">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/createHybridPortVariableDeclaration/%.7/isRoot">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/createHybridPortVariableDeclaration/hybridPortInstance">
+      <details key="start" value="1453"/>
+      <details key="end" value="1492"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/createHybridPortVariableDeclaration/isRoot">
+      <details key="start" value="1494"/>
+      <details key="end" value="1510"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/createHybridPortEquations">
+      <details key="start" value="1937"/>
+      <details key="end" value="2222"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/createHybridPortEquations/%">
+      <details key="start" value="2030"/>
+      <details key="end" value="2055"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/createHybridPortEquations/%.1">
+      <details key="start" value="2055"/>
+      <details key="end" value="2181"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/createHybridPortEquations/%.1/%">
+      <details key="start" value="2128"/>
+      <details key="end" value="2172"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/createHybridPortEquations/%.1/%/hybridPortInstance">
+      <details key="start" value="2153"/>
+      <details key="end" value="2171"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/createHybridPortEquations/%.1/%.1">
+      <details key="start" value="2174"/>
+      <details key="end" value="2175"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/createHybridPortEquations/%.1/hybridPortInstance">
+      <details key="start" value="2061"/>
+      <details key="end" value="2100"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/createHybridPortEquations/%.1/hybridPortInstanceSet">
+      <details key="start" value="2103"/>
+      <details key="end" value="2124"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/createHybridPortEquations/%.2">
+      <details key="start" value="2182"/>
+      <details key="end" value="2210"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/createHybridPortEquations/%.3">
+      <details key="start" value="1815"/>
+      <details key="end" value="1936"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/createHybridPortEquations/%.3/hybridPortInstanceSet">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/createHybridPortEquations/hybridPortInstanceSet">
+      <details key="start" value="1980"/>
+      <details key="end" value="2027"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/createHybridPortEquation">
+      <details key="start" value="2336"/>
+      <details key="end" value="2524"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/createHybridPortEquation/%">
+      <details key="start" value="2421"/>
+      <details key="end" value="2422"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/createHybridPortEquation/%.1">
+      <details key="start" value="2423"/>
+      <details key="end" value="2455"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/createHybridPortEquation/%.1/hybridPortInstance">
+      <details key="start" value="2423"/>
+      <details key="end" value="2441"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/createHybridPortEquation/%.2">
+      <details key="start" value="2457"/>
+      <details key="end" value="2460"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/createHybridPortEquation/%.3">
+      <details key="start" value="2461"/>
+      <details key="end" value="2509"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/createHybridPortEquation/%.3/hybridPortInstance">
+      <details key="start" value="2461"/>
+      <details key="end" value="2479"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/createHybridPortEquation/%.4">
+      <details key="start" value="2511"/>
+      <details key="end" value="2512"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/createHybridPortEquation/%.5">
+      <details key="start" value="2224"/>
+      <details key="end" value="2335"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/createHybridPortEquation/%.5/hybridPortInstance">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/createHybridPortEquation/hybridPortInstance">
+      <details key="start" value="2379"/>
+      <details key="end" value="2418"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/rwHybridPortSampledValueVariable">
+      <details key="start" value="2674"/>
+      <details key="end" value="3020"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/rwHybridPortSampledValueVariable/%">
+      <details key="start" value="2774"/>
+      <details key="end" value="2822"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/rwHybridPortSampledValueVariable/%.1">
+      <details key="start" value="2822"/>
+      <details key="end" value="2956"/>
+      <details key="line" value="68"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/rwHybridPortSampledValueVariable/%.1/%">
+      <details key="start" value="2895"/>
+      <details key="end" value="2947"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/rwHybridPortSampledValueVariable/%.1/%/hybridPortInstance">
+      <details key="start" value="2928"/>
+      <details key="end" value="2946"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/rwHybridPortSampledValueVariable/%.1/%.1">
+      <details key="start" value="2949"/>
+      <details key="end" value="2950"/>
+      <details key="line" value="70"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/rwHybridPortSampledValueVariable/%.1/hybridPortInstance">
+      <details key="start" value="2828"/>
+      <details key="end" value="2867"/>
+      <details key="line" value="68"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/rwHybridPortSampledValueVariable/%.1/hybridPortInstanceSet">
+      <details key="start" value="2870"/>
+      <details key="end" value="2891"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/rwHybridPortSampledValueVariable/%.2">
+      <details key="start" value="2957"/>
+      <details key="end" value="3008"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/rwHybridPortSampledValueVariable/%.3">
+      <details key="start" value="2526"/>
+      <details key="end" value="2673"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/rwHybridPortSampledValueVariable/%.3/hybridPortInstanceSet">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/rwHybridPortSampledValueVariable/hybridPortInstanceSet">
+      <details key="start" value="2724"/>
+      <details key="end" value="2771"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/rwHybridPortSampledValueVariable.1">
+      <details key="start" value="3151"/>
+      <details key="end" value="3636"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/rwHybridPortSampledValueVariable.1/@init">
+      <details key="start" value="3243"/>
+      <details key="end" value="3324"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/rwHybridPortSampledValueVariable.1/@init/@variable.0">
+      <details key="start" value="3246"/>
+      <details key="end" value="3321"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/rwHybridPortSampledValueVariable.1/@init/@variable.0/%">
+      <details key="start" value="3272"/>
+      <details key="end" value="3321"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/rwHybridPortSampledValueVariable.1/@init/@variable.0/%/%">
+      <details key="start" value="3272"/>
+      <details key="end" value="3299"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/rwHybridPortSampledValueVariable.1/@init/@variable.0/%/%/hybridPortInstance">
+      <details key="start" value="3272"/>
+      <details key="end" value="3290"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/rwHybridPortSampledValueVariable.1/@init/@variable.0/%/%.1">
+      <details key="start" value="3310"/>
+      <details key="end" value="3320"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/rwHybridPortSampledValueVariable.1/%">
+      <details key="start" value="3326"/>
+      <details key="end" value="3352"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/rwHybridPortSampledValueVariable.1/%.1">
+      <details key="start" value="3353"/>
+      <details key="end" value="3386"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/rwHybridPortSampledValueVariable.1/%.1/%">
+      <details key="start" value="3353"/>
+      <details key="end" value="3380"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/rwHybridPortSampledValueVariable.1/%.1/%/hybridPort">
+      <details key="start" value="3353"/>
+      <details key="end" value="3363"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/rwHybridPortSampledValueVariable.1/%.2">
+      <details key="start" value="3388"/>
+      <details key="end" value="3395"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/rwHybridPortSampledValueVariable.1/%.3">
+      <details key="start" value="3396"/>
+      <details key="end" value="3613"/>
+      <details key="line" value="84"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/rwHybridPortSampledValueVariable.1/%.3/%">
+      <details key="start" value="3419"/>
+      <details key="end" value="3421"/>
+      <details key="line" value="85"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.1">
+      <details key="start" value="3422"/>
+      <details key="end" value="3450"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.1/hybridPortInstance">
+      <details key="start" value="3422"/>
+      <details key="end" value="3440"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.2">
+      <details key="start" value="3452"/>
+      <details key="end" value="3456"/>
+      <details key="line" value="85"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.3">
+      <details key="start" value="3457"/>
+      <details key="end" value="3505"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.3/hybridPortInstance">
+      <details key="start" value="3457"/>
+      <details key="end" value="3475"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.4">
+      <details key="start" value="3507"/>
+      <details key="end" value="3509"/>
+      <details key="line" value="85"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.5">
+      <details key="start" value="3400"/>
+      <details key="end" value="3417"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.5/hybridPort">
+      <details key="start" value="3400"/>
+      <details key="end" value="3410"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.6">
+      <details key="start" value="3510"/>
+      <details key="end" value="3608"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.6/%">
+      <details key="start" value="3517"/>
+      <details key="end" value="3519"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.6/%.1">
+      <details key="start" value="3520"/>
+      <details key="end" value="3568"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.6/%.1/hybridPortInstance">
+      <details key="start" value="3520"/>
+      <details key="end" value="3538"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.6/%.2">
+      <details key="start" value="3570"/>
+      <details key="end" value="3574"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.6/%.3">
+      <details key="start" value="3575"/>
+      <details key="end" value="3603"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.6/%.3/hybridPortInstance">
+      <details key="start" value="3575"/>
+      <details key="end" value="3593"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/rwHybridPortSampledValueVariable.1/%.3/%.6/%.4">
+      <details key="start" value="3605"/>
+      <details key="end" value="3607"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/rwHybridPortSampledValueVariable.1/%.4">
+      <details key="start" value="3614"/>
+      <details key="end" value="3624"/>
+      <details key="line" value="89"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/rwHybridPortSampledValueVariable.1/%.5">
+      <details key="start" value="3022"/>
+      <details key="end" value="3150"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/rwHybridPortSampledValueVariable.1/%.5/hybridPort">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/rwHybridPortSampledValueVariable.1/hybridPortInstance">
+      <details key="start" value="3202"/>
+      <details key="end" value="3241"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

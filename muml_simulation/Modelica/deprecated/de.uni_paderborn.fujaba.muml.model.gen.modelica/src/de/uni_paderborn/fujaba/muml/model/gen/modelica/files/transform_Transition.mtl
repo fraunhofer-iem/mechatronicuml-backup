@@ -1,0 +1,464 @@
+[comment encoding = UTF-8 /]
+[module transform_Transition('http://www.fujaba.de/muml/model/realtimestatechart/0.2.3',
+ 							 'http://www.storydriven.org/core/expressions/0.2.0',
+							 'http://www.fujaba.de/muml/model/core/0.2.4')/]
+
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_SimpleState/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Variable/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_State/]
+
+
+[template public init_Transtion(transition : Transition, vertex : Vertex)]
+	// cycle ([transition.source.name/]; [transition.target.name/], [transition.priority/]) = [isCycleTransition(transition)/]
+	 [comment test_cycleTranstion(t, t.statechart.transitions->excluding(t)->sortedBy(t1 : Transition | t1.target.name)->asSet(), null)/]
+  	// absoluteDeadlines = [transition.absoluteDeadlines->notEmpty()/]
+  	// relativeDeadline =  [not transition.relativeDeadline.oclIsUndefined()/]
+  	// exitEvent = [transition.source->select(oclIsKindOf(State)).oclAsType(State)->select(not exitEvent.oclIsUndefined()).exitEvent->select(clockResets->notEmpty() or action->select(expressions->notEmpty()).expressions.oclAsType(TextualExpression)->any(t : TextualExpression | isModelicaTextualExpression(t))->notEmpty())->notEmpty() /]
+  	// isDelay = [isDelayedTransition(transition)/]
+	// t.statechart = [transition.statechart/]
+  	// not isDelay and is cycle = [(not isDelayedTransition(transition)) and isCycleTransition(transition)/] [comment test_isCycleTransition(transition)/]
+  	[if (needPseudoTransition(transition))]
+	//init_TransitionPseudoDelayed
+[init_TransitionPseudoDelayed(vertex, transition)/]
+ 	[else]
+ 	// init_Transtion  [transition.target.name/]
+[transform1(getTransitionName(transition,false), transition)/]
+	[/if]
+[/template]
+
+[template public test_cycleTranstion(transition : Transition,cycleTransitions : Set(Transition),  removedTransition : Transition)]
+ 	// cycle transition test:
+ 	// startTransition = [transition.target.name/]; removed =  [if (removedTransition <> null)][removedTransition.target.name/][/if]
+ 		[if (cycleTransitions->notEmpty())]
+ 		// cycleTransitions->notEmpty()
+ 			// hasCycle = [hasCycle(transition, transition.target.outgoingTransitions->intersection(cycleTransitions)->asSet(), cycleTransitions, Set{})/]
+
+ 			
+ 		[else]
+ 		// cycle without transition: [if (removedTransition <> null)][removedTransition.target.name/][/if]
+ 		[/if]
+[/template]
+
+[template public test_hasCycle(startTransition : Transition, transitions : Set(Transition), cycleTransitions : Set(Transition),visitedVertex : Set(Vertex) )]
+	// test_hasCycle - startTransition = ([startTransition.source.name/]; [startTransition.target.name/])
+	[if (transitions->notEmpty())]
+		[for (it : Transition | transitions)]
+				// transition = ([it.source.name/]; [it.target.name/])
+		[/for]
+		[if (transitions.target->includes(startTransition.source) )]
+		//	true
+		[else]
+			[for (it : Transition | transitions->select(not target.oclIsUndefined()).target->select(outgoingTransitions->notEmpty()).outgoingTransitions->asSet()->intersection(cycleTransitions)->asSet())]
+				// selected transition = ([it.source.name/]; [it.target.name/])
+				
+			[/for]
+			[for (it : Transition | cycleTransitions)]
+				// cycleTransitions = ([it.source.name/]; [it.target.name/])
+			[/for]
+			[test_hasCycle(startTransition,
+					 transitions->select(not target.oclIsUndefined()).target->reject(v : Vertex | visitedVertex->includes(v))->select(outgoingTransitions->notEmpty()).outgoingTransitions->asSet()->intersection(cycleTransitions)->asSet(),
+					 cycleTransitions,
+					 transitions->select(not target.oclIsUndefined()).target->reject(v : Vertex | visitedVertex->includes(v))->asSet())/]
+		[/if]
+	[else]
+	//	false
+	[/if]
+[/template]
+
+
+
+[template public transform_outgoingTransitionAction(vertex : Vertex,global_variables :  OrderedSet(Attribute),global_clocks :  Set(Clock))]
+	[comment TODO ueberarbeiten/]
+	[for (t : Transition | vertex.outgoingTransitions)]
+		[if (needActionState(t) and t.target->select(v : Vertex | v.oclIsKindOf(State) and not v.oclAsType(State).entryEvent.oclIsUndefined())->notEmpty())]
+  when pseudoStep_[t.source->select(oclIsKindOf(State)).oclAsType(State).name.toUpperFirst()/]_[t.target->select(oclIsKindOf(State)).oclAsType(State).name.toUpperFirst()/]_[t.priority/].active and not pre([t.target->select(oclIsKindOf(State)).oclAsType(State).name.toLowerFirst()/]_entry_action_done) then
+  			[for (expr : Expression | t.target->select(oclIsKindOf(State)).oclAsType(State).entryEvent->select(not action.oclIsUndefined()).action.expressions)]
+    			[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    [expr.oclAsType(TextualExpression).expressionText/]		
+    			[/if]
+    		[/for]
+    [t.target->select(oclIsKindOf(State)).oclAsType(State).name.toLowerFirst()/]_entry_action_done:=true;
+    [if (needStateChartClock(t->asSet()))]
+    diff_statechart_clock := 0 -time;
+    [/if]  	
+  end when;
+  
+  when [getTransitionName(t, not needActionState(t))/].fire then
+    if debug then
+      Modelica.Utilities.Streams.print("time = " +String(time) + " [t.statechart.name/] -  Transition:[getTransitionName(t, not needActionState(t))/].fire  = "+String([getTransitionName(t, not needActionState(t))/].fire));
+    end if; 
+  			[for (c : Clock | t.target->select(oclIsKindOf(State)).oclAsType(State).entryEvent.clockResets)]
+    			[if (global_clocks->includes(c))]
+  [t.statechart.name.toLowerFirst()/]_reset_clock_[c.name/] := not [t.statechart.name.toLowerFirst()/]_reset_clock_[c.name/];
+    			[else]
+  diff_clock_[c.name/] := 0 - time;
+    			[/if]
+    		[/for]	
+    		[if (hasDoEvent(t.target->any(oclIsKindOf(State)).oclAsType(State)))]
+    intervall_diff_clock:=0 - time;
+    			[for (expr : Expression | t.target->select(oclIsKindOf(State)).oclAsType(State).doEvent.action.expressions)]
+    				[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    			[let attributes : OrderedSet(Attribute) = expr.oclAsType(TextualExpression).expressionText.getAssignAttributes(global_variables->asSet())->asOrderedSet()]
+    				[if (attributes->notEmpty())]
+    [getDoActionSemaphore(attributes->first(), t.target.statechart, t.target.oclAsType(State))/]
+    if debug then
+      Modelica.Utilities.Streams.print("time = " +String(time) + " [t.statechart.name/] -  request Transition:[getTransitionName(t, not needActionState(t))/] do-action of target = [t.target.oclAsType(State).name.toLowerFirst()/]");
+    end if;
+    				[else]
+    [expr.oclAsType(TextualExpression).expressionText/]				
+    				[/if]
+    			[/let]		
+    		[/if]
+    			[/for]
+    		[/if]							
+  end when;
+		[/if]
+		
+		[if (t.target.oclIsKindOf(State) or not t.action.oclIsUndefined() or  t.hasRaiseMessageEvent() or t.hasSyncChannel() or t.target.oclIsKindOf(StateEntryPoint))]
+  when [getTransitionName(t, false)/].fire then 
+  	[t.transform_transitionAction(global_variables, global_clocks)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " +String(time) + " [t.statechart.name/] -  Transition:[getTransitionName(t, false)/].fire  = "+String([getTransitionName(t, false)/].fire));
+    end if; 
+  end when;
+		[/if]
+		[if (not t.action.oclIsUndefined())]
+			[for (expr : Expression | t->select(not action.oclIsUndefined()).action.expressions)]
+    			[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    				[let attributes : OrderedSet(Attribute) = getAssignAttributes(expr.oclAsType(TextualExpression).expressionText,global_variables)->asOrderedSet()]
+    					[if (attributes->notEmpty())]
+  when pre([getSemaphorePortName(attributes->first(), t.statechart)/].okp) and [getTransitionName(t,false)/]_transition_action then
+  	[assignGlobalAttribute(transformActionValue(expr.oclAsType(TextualExpression).expressionText), attributes->first(), t.statechart)/]
+  	[freeTransitionActionSemaphore(attributes->first(), t.statechart, t)/]
+  	if debug then
+      Modelica.Utilities.Streams.print("time = " +String(time) + " [t.statechart.name/] - Transition:[getTransitionName(t, false)/] transition-action  [assignGlobalAttribute(expr.oclAsType(TextualExpression).expressionText, attributes->first(), t.statechart)/] " );
+    end if;
+  end when;
+  						[/if]
+  					[/let]
+  				[/if]
+  			[/for]
+		[/if]
+	[/for]
+[/template]
+
+[template private init_TransitionPseudoDelayed(v: Vertex, t : Transition)]
+// init_PseudoStep
+[init_PseudoStep(v,t.target,t)/]
+// transform1
+[transform1(getTransitionName(t, false), t)/]
+
+[comment TODO:verbessern/]
+	[if (not t.relativeDeadline.oclIsUndefined() and t.absoluteDeadlines->isEmpty())]
+[transform2(getTransitionName(t, true),true,'true', t.relativeDeadline.lowerBound.toString() )/]
+	[else]
+	[let t_c : Boolean = t.isCycleTransition()]
+Modelica_StateGraph2.Transition pseudoTransition_Out_[t.source.name.toUpperFirst()/]_to_[t.target.name.toUpperFirst()/]_[t.priority/](
+  condition=[if (t.source = t.target and not ( t.absoluteDeadlines->notEmpty() or not t.relativeDeadline.oclIsUndefined()))] true [else] [transform_pseudoCondition(t)/][/if],
+  delayedTransition=[if (t_c)] true [else] false [/if],
+  waitTime=[if (t_c)] 0.000001 [else] 0 [/if]);		
+	[/let]
+	[/if]
+	
+[/template]
+
+[template public test_isCycleTransition(startTransition : Transition)]
+	//test_isCycleTransition
+	// isCycleTransition = [startTransition.isCycleTransition()/]
+	//startTransition.statechart = [startTransition.statechart/]
+	[if (startTransition.statechart.transitions->excluding(null)->select(t : Transition | not t.oclIsUndefined())->size() > 1)]
+		// true
+		// startTransition.source = startTransition.target = [startTransition.source = startTransition.target/]  
+		// getCycleTransition = [test_getCycleTransition(startTransition)/]
+		// getCycleTransition incl = [startTransition.getCycleTransition()->includes(startTransition)/]
+		// - [startTransition.source = startTransition.target or startTransition.getCycleTransition() = startTransition/]
+	[else]
+		// false
+		// startTransition.source = startTransition.target = [startTransition.source = startTransition.target/] 
+		[startTransition.source = startTransition.target/]
+	[/if]
+[/template]
+
+[template public  test_getCycleTransition(startTransition : Transition)]
+	// test_getCycleTransition
+	[let cycleTransition : Set(Transition) = startTransition.statechart.transitions->reject(t : Transition | t.isDelayedTransition())->sortedBy(target.name)->asSet()]
+	[for (t : Transition | cycleTransition)]
+		//cycleTransition = // ([t.source.name/], [t.target.name/], [t.priority/])
+	[/for]
+	// startTransition = [startTransition/]
+	// getCycleTransition: [startTransition.getCycleTransition()/]
+	// hasCycle = [hasCycle(startTransition, startTransition.target->select(outgoingTransitions->notEmpty()).outgoingTransitions->intersection(cycleTransition)->asSet(), cycleTransition, Set{})/]
+	// startTransition =  startTransition.getCycleTransition() : [startTransition.getCycleTransition()->includes(startTransition)/] 
+	[for (t : Transition | startTransition.getCycleTransition())]
+		//getCycleTransition = ([t.source.name/], [t.target.name/], [t.priority/])
+	[/for]
+	// startTransition = ([startTransition.source.name/], [startTransition.target.name/], [startTransition.priority/])
+	[for (t : Transition | startTransition.removedCycleTransition(cycleTransition,null,Set{}))]
+		//removedCycleTransition = // ([t.source.name/], [t.target.name/], [t.priority/])
+	[/for]
+   [comment test_removeCycleTransition2(startTransition, cycleTransition, null, Set{})/]
+	[/let]
+[/template]
+
+[template public test_removeCycleTransition2(startTransition : Transition,cycleTransitions : Set(Transition),  removedTransition : Transition, result : Set(Transition))] 
+	//test_removeCycleTransition2
+	// removeCycleTransition:
+	[for (t : Transition | startTransition.removedCycleTransition(cycleTransitions,null, Set{}))]
+	// ([t.source.name/], [t.target.name/], [t.priority/])
+	[/for]
+	// startTransition = ([startTransition.source.name/], [startTransition.target.name/], [startTransition.priority/])
+	// cycleTransitions:
+	[for (t : Transition | cycleTransitions)]
+	// ([t.source.name/], [t.target.name/], [t.priority/])
+	[/for]
+	// removedTransition = ([removedTransition.source.name/], [removedTransition.target.name/], [removedTransition.priority/])
+	// result:
+	[for (t : Transition | result)]
+	// ([t.source.name/], [t.target.name/], [t.priority/])
+	[/for]
+	[if (cycleTransitions->notEmpty())]
+		//cycleTransitions->notEmpty()
+		[for (it : Transition | startTransition.target->select(outgoingTransitions->notEmpty()).outgoingTransitions->intersection(cycleTransitions)->asSet())]
+			// transitions = ([it.source.name/], [it.target.name/], [it.priority/])
+		[/for]
+		[for (it : Transition | cycleTransitions)]
+			// cycleTransitions = ([it.source.name/], [it.target.name/], [it.priority/])
+		[/for]
+		[test_hasCycle2(startTransition, startTransition.target->select(outgoingTransitions->notEmpty()).outgoingTransitions->intersection(cycleTransitions)->asSet(), cycleTransitions, Set{})/]
+		[if (hasCycle(startTransition, startTransition.target->select(outgoingTransitions->notEmpty()).outgoingTransitions->intersection(cycleTransitions)->asSet(), cycleTransitions, Set{}))]
+			// hasCycle
+			// result:
+			[let lastTrans : Transition = cycleTransitions->asSequence()->last()]
+			// lastTrans =  ([lastTrans.source.name/], [lastTrans.target.name/], [lastTrans.priority/])
+			[let t1 : Transition = startTransition.removedCycleTransition(cycleTransitions->excluding(lastTrans)->asSet(),null, Set{})]
+			// ([t1.source.name/], [t1.target.name/], [t1.priority/])
+			[/let]
+			[test_removeCycleTransition2(startTransition, cycleTransitions->excluding(lastTrans)->asSet(), lastTrans, result)/]
+			[/let]
+		[else]
+			// else hasCycle
+			[if (removedTransition <> null)]
+				// removedTransition <> null
+				// result:
+				[for (t : Transition | removedTransition.source->select(outgoingTransitions->notEmpty()).outgoingTransitions->select(t : Transition | removedTransition.target = t.target)->asSet())]
+				// ([t.source.name/], [t.target.name/], [t.priority/])
+				[/for]
+			[else]
+				// else removedTransition <> null
+				// result:
+				[for (t : Transition | result)]
+				// ([t.source.name/], [t.target.name/], [t.priority/])
+				[/for]
+			[/if]
+		[/if]
+	[else]
+		// else cycleTransitions->isEmpty()
+		[if (removedTransition <> null)]
+			// removedTransition <> null
+			// result:
+			[for (t : Transition | result->union(removedTransition.source->select(outgoingTransitions->notEmpty()).outgoingTransitions->select(t : Transition | removedTransition.target = t.target)->asSet()))]
+			// ([t.source.name/], [t.target.name/], [t.priority/])
+			[/for] 
+		[else]
+			// else removedTransition <> null
+			// result:
+			[for (t : Transition | result)]
+				// ([t.source.name/], [t.target.name/], [t.priority/])
+			[/for]
+		[/if]
+	[/if]
+[/template]
+
+[template public test_hasCycle2(startTransition : Transition, transitions : Set(Transition), cycleTransitions : Set(Transition), visitedVertex : Set(Vertex) )]
+	//test_hasCycle
+	// hasCycle = [hasCycle(startTransition, transitions, cycleTransitions, visitedVertex)/]
+	[if (transitions->notEmpty())]
+		[if (transitions.target->includes(startTransition.source))]
+			// true transitions.target->includes(startTransition.source)
+		[else]
+			//transitions = [transitions->select(target->notEmpty()).target->reject(v : Vertex | visitedVertex->includes(v))->select(outgoingTransitions->notEmpty()).outgoingTransitions->asSet()->intersection(cycleTransitions)->asSet()/]
+			//cycleTransitions:
+			[for (t : Transition | cycleTransitions)]
+				// ([t.source.name/], [t.target.name/], [t.priority/])
+			[/for]
+			// visited:
+			[for (v : Vertex | transitions->select(target->notEmpty()).target->reject(v : Vertex | visitedVertex->includes(v))->asSet())]
+				// [v.name/]
+			[/for] 
+			[test_hasCycle2(startTransition,
+					 transitions->select(target->notEmpty()).target->reject(v : Vertex | visitedVertex->includes(v))->select(outgoingTransitions->notEmpty()).outgoingTransitions->asSet()->intersection(cycleTransitions)->asSet(),
+					 cycleTransitions,
+					 transitions->select(target->notEmpty()).target->reject(v : Vertex | visitedVertex->includes(v))->asSet())/]
+		[/if]
+	 [else]
+		// false
+	[/if]
+[/template]
+
+
+[template private transform1(name : String, t : Transition)]
+	// transform1 ([t.source.name/], [t.target.name/], [t.priority/])
+	[if (t.hasRaiseMessageEvent() and not t.hasSyncChannel())]
+Modelica_StateGraph2.Transition [name/](
+	[elseif (hasSyncChannel(t))]
+		[if (t.hasTriggerMessageEvent())]
+			[if (t.getTriggerMessageType().parameters->notEmpty() or t.getSyncChannel().parameters->notEmpty())]
+			[comment TODO/]
+ExtendedTransitions_[t.statechart.name.toUpperFirst()/].SyncTransition_[getSyncChannel(t).name.toUpperFirst()/]_[if (t.synchronization.kind= SynchronizationKind::SEND)]send[else]receive[/if]_[t.getTriggerMessageType().messageInterface.name.toUpperFirst()/]_[t.getTriggerMessageType().name.toUpperFirst()/]_message [name/](
+			[else]
+Utilities.SyncTransition_[if (t.synchronization.kind = SynchronizationKind::SEND)]send[else]receive[/if]_m [name/](
+			[/if]
+		[else]
+			[if (getSyncChannel(t).parameters->notEmpty())]
+ExtendedTransitions_[t.statechart.name.toUpperFirst()/].SyncTransition_[getSyncChannel(t).name.toUpperFirst()/]_[if (t.synchronization.kind= SynchronizationKind::SEND)]send[else]receive[/if] [name/](
+			[else]
+Utilities.SyncTransition_[if (t.synchronization.kind = SynchronizationKind::SEND)]send[else]receive[/if] [name/](
+			[/if]
+		[/if]
+	[elseif (t.hasTriggerMessageEvent())]
+		[if (t.getTriggerMessageType().parameters->notEmpty())]
+ExtendedTransitions_[t.statechart.name.toUpperFirst()/].Transition_[t.getTriggerMessageType().messageInterface.name.toUpperFirst()/]_[t.getTriggerMessageType().name.toUpperFirst()/]_message [name/](
+		[else]
+Utilities.Transition_message [name/](
+		[/if]
+	[else]
+Modelica_StateGraph2.Transition [name/](
+	[/if]
+	
+  condition=[t.transform_Condition()/],
+  delayedTransition=[t.isDelayedTransition()/],
+  waitTime=[transform_waitTime(t)/],
+  use_firePort=[if (t.hasRaiseMessageEvent())]true[else]false[/if][if (t.hasSyncChannel() and t.synchronization.kind = SynchronizationKind::SEND)],
+  SyncIn=[getSyncCount_h(getSyncChannel(t), t.statechart.embeddingRegion.parentState, SynchronizationKind::SEND)/]
+  [elseif (t.hasSyncChannel() and t.synchronization.kind = SynchronizationKind::RECEIVE)],
+  SyncOut=[getSyncCount_h(getSyncChannel(t), t.statechart.embeddingRegion.parentState, SynchronizationKind::RECEIVE)/]
+  [/if]);		
+[/template]
+
+
+[template private transform2(name : String, condition : Boolean, delayedTransition: String, waitTime : String)]
+Modelica_StateGraph2.Transition [name/](
+  condition=[condition/],
+  delayedTransition=[delayedTransition/],
+  waitTime=[waitTime/]);
+[/template]
+
+
+[template public transform_waitTime(t : Transition)]
+	[if (isDelayedTransition(t))][t.clockConstraints->sortedBy(bound.toString())->last().bound.value.toString()/]
+    [else]0
+    [/if]
+[/template]
+
+[template private transform_pseudoCondition(t : Transition)]
+	[if (not t.relativeDeadline.oclIsUndefined())]
+statechart_clock >= [t.relativeDeadline.lowerBound.value/] and  statechart_clock <= [t.relativeDeadline.upperBound.value/]
+  	[/if]
+  	[if (t.absoluteDeadlines->notEmpty() and t.relativeDeadline->notEmpty())]
+and 		
+  	[/if]
+  	[if (t.absoluteDeadlines->notEmpty())]
+  		[for (d : AbsoluteDeadline | t.absoluteDeadlines)]
+[d.clock.name/] >= [d.lowerBound/] and [d.clock.name/] <= [d.upperBound/] and
+  		[/for]
+true
+	[else]
+true
+  	[/if]
+[/template]
+
+
+[template private transform_Condition(t : Transition)]
+	[if (t.guard->notEmpty())]
+    	[for (expression : Expression | t.guard)]
+    		[if (expression.oclAsType(TextualExpression).language->notEmpty())]
+    			[if (isModelicaTextualExpression(expression.oclAsType(TextualExpression)))][expression.oclAsType(TextualExpression).expressionText/]		
+  				[/if]
+  			[/if]
+  		[/for]
+  	[/if]
+  	[if (not (isDelayedTransition(t))
+		and t.clockConstraints->notEmpty())]
+		[if (t.clockConstraints->notEmpty() or t.relativeDeadline->notEmpty())]
+			[if (t.guard->notEmpty())]
+				[if (t.guard.oclAsType(TextualExpression).language->notEmpty())]
+					[if (isModelicaTextualExpression(t.guard.oclAsType(TextualExpression)))]and
+  					[/if]
+  				[/if]
+  			[/if]
+  		[/if]
+  		[for (constraint : ClockConstraint | t.clockConstraints)]
+[constraint.clock.name/] [constraint.operator.transform()/] [constraint.bound.value/] and		
+  		[/for] true
+	[/if]
+	[if (isDelayedTransition(t))]true
+	[/if]
+	[if (t.guard->isEmpty() and t.relativeDeadline->isEmpty() and (not isDelayedTransition(t)) and t.clockConstraints->isEmpty() or (t.relativeDeadline->notEmpty() and t.absoluteDeadlines->isEmpty()))]
+true
+	[/if]
+[/template]
+
+[template private transform_transitionAction(t : Transition,global_variables :  OrderedSet(Attribute),global_clocks :  Set(Clock))]
+   	[if (t.target.oclIsKindOf(StateEntryPoint))]
+  [getTransitionName(t, false)/]_fire := true; 		
+   	[/if]
+   	[if (t.clockResets->notEmpty())]
+   		[for (c : Clock | t.clockResets)]
+    		[if (global_clocks->includes(c))]
+  [c.statechart.name.toLowerFirst()/]_reset_clock_[c.name/] := true;
+    		[else]
+  diff_clock_[c.name/] := 0 - time;
+    		[/if]
+    	[/for]
+   	[/if]
+   	[if (hasSyncChannel(t) and t.synchronization.kind = SynchronizationKind::RECEIVE and getSyncChannel(t).parameters->notEmpty())]
+ 		[for (p : Parameter | getSyncChannel(t).parameters)]
+[praefixSyncParameter(getSyncChannel(t))+p.name.toLowerFirst()/] := [getTransitionName(t, false)/].r.[p.name.toLowerFirst()/];   	 			
+ 		[/for]	
+	[/if]
+    [if (t.hasTriggerMessageEvent())]
+		[for (p : Parameter | t.getTriggerMessageType().parameters)]
+[t.getTriggerMessageType().praefixMessageParameter()+p.name.toLowerFirst()/] := [getTransitionName(t, false)/].message.[p.name.toLowerFirst()/];   	
+    	[/for]
+    [/if]
+    [if (hasSyncChannel(t) and t.synchronization.kind = SynchronizationKind::SEND)]
+    	[for (p : ParameterBinding | t.synchronization.parameterBinding)]
+[getTransitionName(t, false)/].r.[p.parameter.name.toLowerFirst()/] := [transformActionValue(p.value.oclAsType(LiteralExpression).value)/];   	 			 			
+ 		[/for]	
+    [/if]
+    [if (t.hasRaiseMessageEvent())]
+//mailMessage_[t.getRaiseMessageType().messageInterface.name.toUpperFirst()/]_[t.getRaiseMessageType().name.toUpperFirst()/].message.ID := 1;
+[getMailMessageName(t.getRaiseMessageType(), true)/].message.t := time;   	
+    	[for (p : ParameterBinding | t.getRaiseMessage().parameterBinding)]
+[getMailMessageName(t.getRaiseMessageType(), true)/].message.[p.parameter.name.toLowerFirst()/] :=  [transformActionValue(p.value.oclAsType(LiteralExpression).value)/];	
+    	[/for]
+    [/if]
+    [for (expr : Expression | t->select(not action.oclIsUndefined()).action.expressions)]
+    	[if (isModelicaTextualExpression(expr.oclAsType(TextualExpression)))]
+    		[let attributes : OrderedSet(Attribute) = getAssignAttributes(expr.oclAsType(TextualExpression).expressionText,global_variables)->asOrderedSet()]
+    			[if (attributes->notEmpty())]
+    				// not empty
+    [getTransitionActionSemaphore(attributes->first(), t.statechart, t)/]
+    			[else]
+    				//else
+    [expr.oclAsType(TextualExpression).expressionText/]				
+    			[/if]
+    		[/let]		
+    	[/if]
+    [/for]
+[/template]
+
+
+
+[template public getTransitionActionSemaphore(attr : Attribute, statechart : RealtimeStatechart, t : Transition)]
+[getTransitionName(t,false)/]_transition_action := true;
+[getSemaphore(attr,statechart)/] 
+[/template]
+
+[template public freeTransitionActionSemaphore(attr : Attribute, statechart : RealtimeStatechart, t : Transition)]
+[getTransitionName(t,false)/]_transition_action := false;
+[freeSemaphore(attr,statechart)/] 
+[/template]
+

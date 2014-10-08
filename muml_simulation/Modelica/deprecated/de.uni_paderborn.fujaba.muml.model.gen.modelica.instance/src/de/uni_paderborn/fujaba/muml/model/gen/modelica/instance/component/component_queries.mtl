@@ -1,0 +1,58 @@
+[module component_queries('http://www.fujaba.de/muml/instance/0.4.0',
+						  'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+						  'http://www.fujaba.de/muml/modelica/adapter/transform/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::naming]
+
+[**
+ * Returns the model name of a component instance.
+ * @param componentInstance the ComponentInstance
+*/]
+[query public getModelName(componentInstance : ComponentInstance) : String =
+	componentInstance.getName().toUpperFirst()
+/]
+
+[**
+ * Returns the model name of a component instance.
+ * @param componentInstance the ComponentInstance
+*/]
+[query public getModelName(componentInstanceConfiguration : ComponentInstanceConfiguration) : String =
+	componentInstanceConfiguration.name.toUpperFirst()
+/]
+
+[**
+ * Returns the path of the component instance model file.
+ * @param componentInstance the component instance
+ * @param modelName the name of the model element
+*/]
+[query public getPath(componentInstance : ComponentInstance, parentPackage : String) : String =
+	componentInstance.getModelName().getPath(parentPackage)
+/]
+
+[**
+ * Returns the path of the component instance configuration model file.
+ * @param componentInstanceConfiguration the component instance configuration
+ * @param modelName the name of the model element
+*/]
+[query public getPath(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String) : String =
+	componentInstanceConfiguration.getModelName().getPath(parentPackage)
+/]
+
+[**
+ * Returns the path of the model file.
+ * @param modelName the name of the model element
+ * @param parentPackage the name of the parent package
+*/]
+[query private getPath(modelName : String, parentPackage : String) : String =
+	parentPackage.replaceAll('\\.', '/') + '/' + modelName + '/' + modelName + '.mo'
+/]
+
+[query public getBehavior(map : Map, instance : AtomicComponentInstance) : RealtimeStatechart =
+	let res : OrderedSet(RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(RealtimeStatechart))->asOrderedSet()
+	in
+	if res->isEmpty() then
+		null
+	else
+		res->first()
+	endif
+/]

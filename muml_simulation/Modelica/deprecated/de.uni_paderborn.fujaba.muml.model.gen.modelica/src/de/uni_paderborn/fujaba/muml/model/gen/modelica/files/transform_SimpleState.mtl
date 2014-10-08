@@ -1,0 +1,46 @@
+[comment encoding = UTF-8 /]
+[module transform_SimpleState('http://www.fujaba.de/muml/model/realtimestatechart/0.2.3')/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries/]
+
+[**
+ * 
+ * @param aState 
+ */]
+[template public init_SimpleState(aState : State)]
+Modelica_StateGraph2.Step [aState.name.toLowerFirst()/](
+  initialStep=false,
+  nOut=[aState.outgoingTransitions->size()/],
+  	[let incomingSize : Integer = aState.incomingTransitions->size()]
+ 	[if (aState.initial)]
+  nIn=[incomingSize+1/]);
+  	[else]
+  nIn=[incomingSize/]);
+	[/if]
+	[/let]		
+[/template]
+
+[**
+ * 
+ * @param v1 
+ * @param v2 
+ * @param t 
+ */]
+[template public init_PseudoStep(v1 : Vertex, v2 : Vertex, t : Transition)]
+  Modelica_StateGraph2.Step pseudoStep_[v1.name.toUpperFirst()/]_[v2.name.toUpperFirst()/]_[t.priority/](
+   	initialStep=false,
+    nOut=1,
+    nIn=1);		
+[/template]
+
+[**
+ * 
+ * @param s 
+ */]
+[template public init_PseudoEntryStep(s : State)]
+  Modelica_StateGraph2.Step pseudoEntryStep_[s.name.toUpperFirst()/](
+   	initialStep=false,
+    nOut=[getAllEntryPoints(s).outgoingTransitions->size()/],
+    nIn=1);	
+[/template]
+
+

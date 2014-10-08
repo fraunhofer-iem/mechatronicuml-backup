@@ -1,0 +1,8 @@
+digraph Chart {
+	node [label="\N"];
+	graph [bb="0,126,144,0"];
+	__init [label="", shape=box, pos="27,18", width="0.75", height="0.5"];
+	0 [label=StateA, shape=box, pos="104,18", width="0.88889", height="0.5"];
+	1 [label=StateB, shape=box, pos="104,108", width="0.88889", height="0.5"];
+	0 -> 1 [id=0, label="[true]", pos="e,104,89.814 104,36.213 104,48.656 104,65.395 104,79.579", lp="124,63"];
+}

@@ -1,0 +1,157 @@
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+modeltype transform uses transform('http://transform/1.0');
+
+modeltype instance uses muml::instance("http://www.fujaba.de/muml/0.2.2");
+modeltype connector uses muml::connector("http://www.fujaba.de/muml/0.2.2");
+modeltype component uses muml::component("http://www.fujaba.de/muml/0.2.2");
+modeltype rtsctype uses muml::realtimestatechart("http://www.fujaba.de/muml/0.2.2");
+
+transformation RegionInstantiation(in source : instance, out instanceMap : transform);
+
+intermediate property RealtimeStatechart::origRTSC : RealtimeStatechart;
+
+main() {
+	log("start");
+	map start();
+	log("end");
+}
+
+mapping start() : Map {
+	source.objects()[AtomicComponentInstance]->forEach(comp) {
+		var clone : RealtimeStatechart = cloneRTSC(getRTSC(comp));
+		entries += object Entry {
+			key := comp;
+			value := clone;
+		};
+		clone.map transform(comp);
+		clone.map fixupRegions();
+		clone.allSubobjectsOfType(RegionInstance)[RegionInstance]->forEach(ri) {
+			log(ri.name + " single port: " + ri.embedsSinglePortStatechart.toString());
+			log(ri.name + " multi port: " + ri.embedsMultiPortStatechart.toString());
+			log(ri.name + " instanceOf: " + ri.instanceOf.embeddedStatechart.behavioralElement.toString());
+		}
+	}
+}
+
+mapping in RealtimeStatechart::fixupRegions() {
+	self.allSubobjectsOfType(Region)[Region]->forEach(region) {
+		region.map transform();
+	}
+}
+
+mapping inout Region::transform() {
+	var state : State = self.parentState;
+	state.embeddedRegions := state.embeddedRegions->select(r : Region | r <> self);
+	var regionInstance = object RegionInstance {
+		priority := self.priority;
+		parentState := state;
+		// a clone is not really necessary
+		embeddedStatechart := cloneRTSC(self.embeddedStatechart);
+		instanceOf := self;
+	};
+}
+
+mapping in RealtimeStatechart::transform(in componentInstance : AtomicComponentInstance) {
+	log(self.name);
+	var state : State = self.states->first();
+	state.map removePortRegions();
+	state.map addPortRegionInstances(componentInstance);
+}
+
+mapping inout State::removePortRegions() {
+	self.embeddedRegions := getNoPortRegions(self);
+}
+
+mapping inout State::addPortRegionInstances(in componentInstance : ComponentInstance) {
+	// TODO: keep region order
+	componentInstance.portInstances[DiscreteMultiPortInstance]->forEach(p) {
+		var origRTSC : RealtimeStatechart = getRTSC(p);
+		var regionInstance : RegionInstance = new RegionInstance(origRTSC, self, "");
+		self.embeddedRegions += regionInstance;
+		regionInstance.embeddedStatechart.map addSubPortRegionInstances(p.subInteractionEndpointInstances);
+	};
+	componentInstance.portInstances[DiscreteSinglePortInstance]->select(multiInteractionEndpointInstance.oclIsUndefined())->forEach(p) {
+		var origRTSC : RealtimeStatechart = getRTSC(p);
+		var regionInstance : RegionInstance = new RegionInstance(origRTSC, self, p.name);
+		self.embeddedRegions += regionInstance;
+	};
+}
+
+mapping inout RealtimeStatechart::addSubPortRegionInstances(in subInteractionEndpointInstances : OrderedSet(DiscreteSingleInteractionEndpointInstance)) {
+	var state : State = self.states->first();
+	var names : Set(String) = subInteractionEndpointInstances->collect(
+		type.oclAsType(DiscretePort).behavior.oclAsType(RealtimeStatechart).name
+	)->asSet();
+	state.embeddedRegions := state.embeddedRegions->select(not names->includes(name));
+	// this is a ridiculous hack... which might even fail for some models
+	// (implicit assumption: prio(adapt) < prio(port_region))
+	var priority : Integer = state.embeddedRegions->size() + 1;
+	subInteractionEndpointInstances->forEach(sub) {
+		state.embeddedRegions += new RegionInstance(getRTSC(sub), state, sub.name, priority);
+		priority := priority + 1;
+	};
+}
+
+helper cloneRTSC(rtsc : RealtimeStatechart, name : String) : RealtimeStatechart {
+	var nrtsc : RealtimeStatechart = rtsc.deepclone().oclAsType(RealtimeStatechart);
+	//nrtsc.name := name + nrtsc.name;
+	if (name.length() > 0) then {
+		nrtsc.name := name;
+	}
+	endif;
+	nrtsc.origRTSC := rtsc;
+	return nrtsc;
+}
+
+helper cloneRTSC(rtsc : RealtimeStatechart) : RealtimeStatechart {
+	return cloneRTSC(rtsc, "");
+}
+
+query getNoPortRegions(state : State) : OrderedSet(Region) {
+	var origState : State = state.parentStatechart.origRTSC.states->first();
+	return 
+	let noPortRegionNames : Set(String) = origState.embeddedRegions->select(
+		not isPortStatechart(embeddedStatechart)
+	)->collect(name)->asSet()
+	in
+	state.embeddedRegions->select(noPortRegionNames->includes(name));
+}
+
+query isPortStatechart(rtsc : RealtimeStatechart) : Boolean {
+	var state : State = rtsc.states->first();
+	return rtsc.states->size() = 1
+		and state.embeddedRegions->select(
+			not embeddedStatechart.behavioralElement.oclIsUndefined()
+		)->notEmpty() or not rtsc.behavioralElement.oclIsUndefined();
+}
+
+query getRTSC(componentInstance : AtomicComponentInstance) : RealtimeStatechart {
+	return componentInstance.componentType.oclAsType(AtomicComponent)
+		.behavior.oclAsType(RealtimeStatechart);
+}
+
+query getRTSC(discreteSingleInteractionEndpointInstance : DiscreteSingleInteractionEndpointInstance)  : RealtimeStatechart{
+	return discreteSingleInteractionEndpointInstance.type.oclAsType(DiscretePort)
+		.behavior.oclAsType(RealtimeStatechart)
+}
+
+query getRTSC(discreteMultiPortInstance : DiscreteMultiPortInstance) : RealtimeStatechart {
+	return discreteMultiPortInstance.portType.oclAsType(DiscretePort)
+		.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart);
+}
+
+constructor RegionInstance::RegionInstance(origRTSC : RealtimeStatechart, state : State, subPortName : String) {
+	// get rid of this duplicate
+	priority := origRTSC.parentRegion.priority;
+	parentState := state;
+	embeddedStatechart := cloneRTSC(origRTSC, subPortName);	
+	instanceOf := origRTSC.parentRegion;
+}
+
+constructor RegionInstance::RegionInstance(origRTSC : RealtimeStatechart, state : State, subPortName : String, prio : Integer) {
+	priority := prio;
+	parentState := state;
+	embeddedStatechart := cloneRTSC(origRTSC, subPortName);	
+	instanceOf := origRTSC.parentRegion;
+}

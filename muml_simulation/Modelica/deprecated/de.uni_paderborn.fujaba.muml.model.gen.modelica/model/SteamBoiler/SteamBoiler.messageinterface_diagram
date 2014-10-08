@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.2.1" xmlns:msgiface="http://www.fujaba.de/muml/model/msgiface/0.2.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_h7RjMFiLEeGPcfGLnM8rXg" type="Messageinterface" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0BVwsFiLEeGPcfGLnM8rXg" type="2003" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0BW-0FiLEeGPcfGLnM8rXg" type="5005"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_0BW-0ViLEeGPcfGLnM8rXg" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_1-sOMFiLEeGPcfGLnM8rXg" type="3004" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_1-tcUFiLEeGPcfGLnM8rXg" type="5007"/>
+        <element xmi:type="msgiface:MessageType" href="SteamBoiler.fujaba#_1-qZAFiLEeGPcfGLnM8rXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1-sOMViLEeGPcfGLnM8rXg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_0BW-0liLEeGPcfGLnM8rXg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_0BW-01iLEeGPcfGLnM8rXg"/>
+    </children>
+    <element xmi:type="msgiface:MessageInterface" href="SteamBoiler.fujaba#_0BL_sFiLEeGPcfGLnM8rXg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0BVwsViLEeGPcfGLnM8rXg" x="180" y="120" width="193" height="97"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_8RXtMFiLEeGPcfGLnM8rXg" type="2003" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_8RYUQFiLEeGPcfGLnM8rXg" type="5005"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_8RYUQViLEeGPcfGLnM8rXg" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_-MqVMFiLEeGPcfGLnM8rXg" type="3004" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_-Mq8QFiLEeGPcfGLnM8rXg" type="5007"/>
+        <element xmi:type="msgiface:MessageType" href="SteamBoiler.fujaba#_-MpHEFiLEeGPcfGLnM8rXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-MqVMViLEeGPcfGLnM8rXg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_-8LtoFiLEeGPcfGLnM8rXg" type="3004" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_-8MUsFiLEeGPcfGLnM8rXg" type="5007"/>
+        <element xmi:type="msgiface:MessageType" href="SteamBoiler.fujaba#_-8KfgFiLEeGPcfGLnM8rXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-8LtoViLEeGPcfGLnM8rXg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8RYUQliLEeGPcfGLnM8rXg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8RYUQ1iLEeGPcfGLnM8rXg"/>
+    </children>
+    <element xmi:type="msgiface:MessageInterface" href="SteamBoiler.fujaba#_8RV4AFiLEeGPcfGLnM8rXg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8RXtMViLEeGPcfGLnM8rXg" x="180" y="276" width="193" height="109"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_9UCrIFiLEeGPcfGLnM8rXg" type="2003" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_9UD5QFiLEeGPcfGLnM8rXg" type="5005"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_9UD5QViLEeGPcfGLnM8rXg" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="__hL4IFiLEeGPcfGLnM8rXg" type="3004" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="__hMfMFiLEeGPcfGLnM8rXg" type="5007"/>
+        <element xmi:type="msgiface:MessageType" href="SteamBoiler.fujaba#__hKqAFiLEeGPcfGLnM8rXg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__hL4IViLEeGPcfGLnM8rXg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_9UD5QliLEeGPcfGLnM8rXg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_9UD5Q1iLEeGPcfGLnM8rXg"/>
+    </children>
+    <element xmi:type="msgiface:MessageInterface" href="SteamBoiler.fujaba#_9UBdAFiLEeGPcfGLnM8rXg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9UCrIViLEeGPcfGLnM8rXg" x="492" y="276" width="205" height="109"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_h7RjMViLEeGPcfGLnM8rXg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="SteamBoiler.fujaba#_h7PuAFiLEeGPcfGLnM8rXg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_KlR3sFiMEeGPcfGLnM8rXg" type="4003" source="_8RXtMFiLEeGPcfGLnM8rXg" target="_0BVwsFiLEeGPcfGLnM8rXg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_KlR3sViMEeGPcfGLnM8rXg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KlR3sliMEeGPcfGLnM8rXg" points="[-2, -10, 16, 108]$[14, -69, 32, 49]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KlViEFiMEeGPcfGLnM8rXg" id="(0.5906735751295337,0.09174311926605505)"/>
+  </edges>
+</notation:Diagram>

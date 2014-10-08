@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MATLAB/Simulink SimulinkEMF Model
+Bundle-SymbolicName: de.uni_paderborn.fujaba.simulink.model;singleton:=true
+Bundle-Version: 0.4.0
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ University of Paderborn
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.cdo;visibility:=reexport,
+ org.eclipse.ocl.ecore;bundle-version="3.0.2"
+Export-Package: de.uni_paderborn.fujaba.simulink.model;uses:="org.eclipse.emf.cdo,org.eclipse.emf.ecore,org.eclipse.emf.common.util",
+ de.uni_paderborn.fujaba.simulink.model.impl,
+ de.uni_paderborn.fujaba.simulink.model.msglib,
+ de.uni_paderborn.fujaba.simulink.model.msglib.buffer,
+ de.uni_paderborn.fujaba.simulink.model.msglib.buffer.impl,
+ de.uni_paderborn.fujaba.simulink.model.msglib.buffer.util,
+ de.uni_paderborn.fujaba.simulink.model.msglib.impl,
+ de.uni_paderborn.fujaba.simulink.model.msglib.util,
+ de.uni_paderborn.fujaba.simulink.model.stateflow,
+ de.uni_paderborn.fujaba.simulink.model.stateflow.impl,
+ de.uni_paderborn.fujaba.simulink.model.stateflow.util,
+ de.uni_paderborn.fujaba.simulink.model.util,
+ de.uni_paderborn.fujaba.simulink.model.test
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,104 @@
+[module port_queries('http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::modelica::m2t::component::naming]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::queries]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::helper::queries]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::reporter]
+
+[**
+ * Creates an annotation for a port instance declaration.
+ * @TODO: implement me and do not return a hardcoded annotation
+ * @param portInstance the port instance
+*/]
+[query public createPortDeclAnnotation(portInstance : DiscretePortInstance, messageType : MessageType) : String =
+	let i : Integer = portInstance.componentInstance.portInstances->indexOf(portInstance)
+	in
+	let j : Integer = portInstance.receiverMessageTypes->union(portInstance.senderMessageTypes)->asOrderedSet()->indexOf(messageType)
+	in
+	'annotation(Placement(transformation(extent={{' + ((i-1)*35) + ',' + (j*20) + '},{' + ((i-1)*35 + 30) + ',' + ((j+1)*20) + '}})))'
+/]
+
+[**
+ * Returns the of the rtsc input port for the passed message type.
+ * @param messageType the MessageType
+*/]
+[query public getRTSCInputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+	portInstance.getBehaviorVariableName() + '.' + portInstance.getInputPortName(messageType)
+/]
+
+[**
+ * Returns the name of the rtsc output port for the passed message type.
+ * @param messageType the MessageType
+*/]
+[query public getRTSCOutputPortName(portInstance : PortInstance, messageType : MessageType) : String =
+	portInstance.getBehaviorVariableName() + '.' + portInstance.getOutputPortName(messageType)
+/]
+
+[**
+ * Create port connect annotation.
+ * @TODO: implement me!
+ * @param portInstance a portInstance
+]
+[query public createPortConnectAnnotation(portInstance : PortInstance) : String =
+	'annotation(Line(points={{0,0},{2,2}}, color={0,0,0},smooth=Smooth.None))'
+/]
+
+[**
+ * Check that the message types that are defined in the sender message types list of
+ * the discrete port instance's port type are sent by the discrete port instance's
+ * rtsc. If this check is not fulfilled an error is displayed in the error log.
+ * @param portInstance the discrete port instance
+*/]
+[query public checkRaiseMessages(portInstance : DiscretePortInstance) : Boolean =
+	let portType : DiscretePort = portInstance.portType.oclAsType(DiscretePort)
+	in
+	let senderMessageTypeList : Set(MessageType) = portType.behavior.oclAsType(RealtimeStatechart)
+		.getAllRaiseMessageEvents()->getAsyncMessageEventRepr()->collect(message.instanceOf)
+		->asSet()
+	in
+	portType.senderMessageTypes->reject(s | senderMessageTypeList->includes(s))->collect(
+		'The message type "' + name + '" is defined as a sender message type but is not sent'
+		+ '(port type: ' + portType.name + ')'
+	)->displayErrors()
+/]
+
+[**
+ * Check that the message types that are defined in the receiver message types list of
+ * the discrete port instance's port type are received by the discrete port instance's
+ * rtsc. If this check is not fulfilled an error is displayed in the error log.
+ * @param portInstance the discrete port instance
+*/]
+[query public checkTriggerMessages(portInstance : DiscretePortInstance) : Boolean =
+	let portType : DiscretePort = portInstance.portType.oclAsType(DiscretePort)
+	in
+	let receiverMessageTypeList : Set(MessageType) = portType.behavior.oclAsType(RealtimeStatechart)
+		.getAllTriggerMessageEvents()->getAsyncMessageEventRepr()->collect(message.instanceOf)
+		->asSet()
+	in
+	portType.receiverMessageTypes->reject(s | receiverMessageTypeList->includes(s))->collect(
+		'The message type "' + name + '" is defined as a receiver message type but is not sent'
+		+ '(port type: ' + portType.name + ')'
+	)->displayErrors()
+/]
+
+[**
+ * Check if datatypes of the message type's parameters are valid.
+ * For instance array data types cannot be transformed because
+ * the RealtimeCoordinationLibrary does not support them.
+ * @param portInstance the discrete port instance
+*/]
+[query public checkMessageTypesValidParameterDataTypes(messageTypeSet : OrderedSet(MessageType)) : Boolean =
+	messageTypeSet->collect(parameters)->select(dataType.oclIsKindOf(ArrayDataType))->collect(
+		'message type parameter "' + name + '" must not have an array datatype (type: '
+		+ dataType.name + ')' 
+	)->asSequence()->displayErrors()
+/] 

@@ -1,0 +1,129 @@
+[module component('http://www.fujaba.de/muml/instance/0.4.0',
+				  'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				  'http://www.fujaba.de/muml/component/0.4.0',
+				  'http://www.fujaba.de/muml/modelica/adapter/transform/0.4.0')/]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::main::generate]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::rtsc::util::pkg]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::port]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::connector]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::naming]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::component_queries]
+
+[**
+ * Generates the root component instance configuration.
+ * @param componentInstanceConfiguration the component instance configuration
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc
+*/]
+[template public generateRootCIC(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String, map : Map)]
+[createPackage(componentInstanceConfiguration.getModelName(), parentPackage)/]
+[file (componentInstanceConfiguration.getPath(parentPackage), false, 'UTF-8')]
+[within(componentInstanceConfiguration.getModelName(), parentPackage)/]
+model [componentInstanceConfiguration.getModelName()/]
+	[generatePartDeclarations(componentInstanceConfiguration)/]
+	equation
+		[createAssemblies(componentInstanceConfiguration)/]
+end [componentInstanceConfiguration.getModelName()/];
+[/file]
+[for (componentInstance : ComponentInstance | componentInstanceConfiguration.componentInstances)]
+	[generateComponentInstance(componentInstance, componentInstanceConfiguration.getModelName().getFullyQualifiedSubpackageName(parentPackage), map)/]
+[/for]
+[/template]
+
+[**
+ * Generates all component instances which are contained in the passed component
+ * instance configuration. No model element/file is created for the component instance
+ * configuration.
+ * @param componentInstanceConfiguration the component instance configuration
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc
+*/]
+[template private generateCIC(componentInstanceConfiguration : ComponentInstanceConfiguration, parentPackage : String, map : Map)]
+[for (componentInstance : ComponentInstance | componentInstanceConfiguration.componentInstances)]
+	[generateComponentInstance(componentInstance, parentPackage, map)/]
+[/for]
+[/template]
+
+[template private generateComponentInstance(componentInstance : ComponentInstance, parentPackage : String, map : Map)]
+ERROR: expected AtomicComponentInstance or StructuredComponentInstance
+[/template]
+
+[**
+ * Generates a model for a (software) atomic component instance.
+ * @param componentInstance the atomic component instance
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc
+*/]
+[template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String, map : Map) ?
+	(componentInstance.componentType.componentType = ComponentKind::SOFTWARE_COMPONENT) {
+	behavior : RealtimeStatechart = map.getBehavior(componentInstance);
+	hybridPortInstanceSet : Set(HybridPortInstance) = componentInstance.portInstances->select(oclIsKindOf(HybridPortInstance))
+		->collect(oclAsType(HybridPortInstance))->asSet();
+}]
+[generateRTSC(behavior, hybridPortInstanceSet, componentInstance.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
+[createPackage(componentInstance.getModelName(), parentPackage)/]
+[file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
+[within(componentInstance.getModelName(), parentPackage)/]
+model [componentInstance.getModelName()/]
+	[generatePorts(componentInstance.portInstances)/]
+	// the behavior of the atomic component
+	[behavior.name.toUpperFirst()/].[behavior.name.toUpperFirst()/] [componentInstance.getBehaviorVariableName()/];
+	equation
+		[connectPorts(componentInstance.portInstances)/]
+end [componentInstance.getModelName()/];
+[/file]
+[/template]
+
+[**
+ * Generates a model for a continuous atomic component instance.
+ * @param componentInstance the atomic component instance
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc (unsed here)
+*/]
+[template private generateComponentInstance(componentInstance : AtomicComponentInstance, parentPackage : String, map : Map) ?
+	(componentInstance.componentType.componentType = ComponentKind::CONTINUOUS_COMPONENT)
+]
+[createPackage(componentInstance.getModelName(), parentPackage)/]
+[file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
+[within(componentInstance.getModelName(), parentPackage)/]
+model [componentInstance.getModelName()/]
+	[generatePorts(componentInstance.portInstances)/]
+	// implement behavior manually and set output ports accordingly
+end [componentInstance.getModelName()/];
+[/file]
+[/template]
+
+[**
+ * Generates a model for a structured component instance.
+ * @param componentInstance the structured component instance
+ * @param parentPackage the name of the parent package
+ * @param map a map which maps an AtomicComponentInstance to its corresponding rtsc
+*/]
+[template private generateComponentInstance(componentInstance : StructuredComponentInstance, parentPackage : String, map : Map)]
+[generateCIC(componentInstance.embeddedCIC, componentInstance.getModelName().getFullyQualifiedSubpackageName(parentPackage), map)/]
+[createPackage(componentInstance.getModelName(), parentPackage)/]
+[file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
+[within(componentInstance.getModelName(), parentPackage)/]
+model [componentInstance.getModelName()/]
+	[generatePartDeclarations(componentInstance.embeddedCIC)/]
+	[generatePorts(componentInstance.portInstances)/]
+	equation
+		[createAssemblies(componentInstance.embeddedCIC)/]
+		[createDelegations(componentInstance)/]
+end [componentInstance.getModelName()/];
+[/file]
+[/template]
+
+[**
+ * Generate declarations for the parts of a structured component instance.
+ * @param cic the embedded ComponentInstanceConfiguration
+*/]
+[template private generatePartDeclarations(cic : ComponentInstanceConfiguration)]
+	// part declarations
+[for (componentInstance : ComponentInstance | cic.componentInstances)]
+	[componentInstance.getModelName()/].[componentInstance.getModelName()/] [componentInstance.getName()/];
+[/for]
+	// end part declarations
+[/template]

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.fujaba.de/muml/model/instance/0.2.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_kawdYFiLEeGPcfGLnM8rXg" type="Componentinstanceconfiguration" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_OFFUgFiOEeGPcfGLnM8rXg" type="2004" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_OFGioFiOEeGPcfGLnM8rXg" type="5002"/>
+    <element xmi:type="instance:ComponentInstance" href="SteamBoiler.fujaba#_OE4gMFiOEeGPcfGLnM8rXg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OFFUgViOEeGPcfGLnM8rXg" x="264" y="96" width="385" height="145"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_kawdYViLEeGPcfGLnM8rXg"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="SteamBoiler.fujaba#_kav2UViLEeGPcfGLnM8rXg"/>
+</notation:Diagram>

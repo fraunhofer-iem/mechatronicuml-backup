@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.graphviz/src" modelPluginID="de.uni_paderborn.fujaba.graphviz"
+    modelName="Graphviz"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core" operationReflection="true">
+  <foreignModel>graphviz.ecore</foreignModel>
+  <genPackages prefix="Graphviz" basePackage="de.uni_paderborn.fujaba.graphviz" disposableProviderFactory="true"
+      ecorePackage="graphviz.ecore#/">
+    <genClasses ecoreClass="graphviz.ecore#//Test"/>
+    <nestedGenPackages prefix="Input" disposableProviderFactory="true" ecorePackage="graphviz.ecore#//input">
+      <genClasses ecoreClass="graphviz.ecore#//input/Graph">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//input/Graph/directedGraph"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Graph/nodes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Graph/edges"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Graph/subgraphs"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graphviz.ecore#//input/Graph/parentGraph"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Graph/graphSettings"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Graph/nodeSettings"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Graph/edgeSettings"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//input/Graph/id"/>
+      </genClasses>
+      <genClasses ecoreClass="graphviz.ecore#//input/Node">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Node/settings"/>
+      </genClasses>
+      <genClasses ecoreClass="graphviz.ecore#//input/Edge">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graphviz.ecore#//input/Edge/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graphviz.ecore#//input/Edge/target"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Edge/settings"/>
+      </genClasses>
+      <genClasses ecoreClass="graphviz.ecore#//input/Setting">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//input/Setting/attribute"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//input/Setting/value"/>
+      </genClasses>
+      <genClasses ecoreClass="graphviz.ecore#//input/Container">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//input/Container/graph"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Output" disposableProviderFactory="true" ecorePackage="graphviz.ecore#//output">
+      <genClasses ecoreClass="graphviz.ecore#//output/Graph">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//output/Graph/scale"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//output/Graph/width"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//output/Graph/height"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//output/Graph/nodes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//output/Graph/edges"/>
+      </genClasses>
+      <genClasses ecoreClass="graphviz.ecore#//output/Node">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//output/Node/width"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//output/Node/height"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//output/Node/position"/>
+      </genClasses>
+      <genClasses ecoreClass="graphviz.ecore#//output/Edge">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graphviz.ecore#//output/Edge/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graphviz.ecore#//output/Edge/target"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphviz.ecore#//output/Edge/splinePoints"/>
+      </genClasses>
+      <genClasses ecoreClass="graphviz.ecore#//output/Point">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//output/Point/x"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphviz.ecore#//output/Point/y"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

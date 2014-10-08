@@ -1,0 +1,138 @@
+[comment encoding = UTF-8 /]
+[** @TODO add documentation
+ * The documentation of the module atomicComponent.
+ */]
+[module portInstance('http://www.fujaba.de/muml/model/instance/0.2.2',
+						 'http://www.fujaba.de/muml/model/component/0.2.3',
+						 'http://www.fujaba.de/muml/model/msgiface/0.2.2',
+						'http://www.fujaba.de/muml/model/core/0.2.4',
+						'http://www.fujaba.de/muml/model/realtimestatechart/0.2.3')]
+
+[import de::uni_paderborn::fujaba::muml::gen::model::modelica::realtimecoordination::common::componentQueries /]
+[import de::uni_paderborn::fujaba::muml::gen::model::modelica::realtimecoordination::common::annotations /]
+
+[**
+ * @ if a discrete port has a receiver or sender message interface generate delegation ports and mailboxes
+ * @param aDiscretePort
+ * @param portNumber
+ */]
+[template public transformDiscretePort(aDiscretePort : DiscretePort, portNumber: Integer)]	
+// port type name: "[aDiscretePort.name.replaceSpecChar()/]"	
+[if (aDiscretePort.receiverMessageInterface.oclIsUndefined()._not())]
+[transformReceiverMessageInterface(aDiscretePort.receiverMessageInterface, aDiscretePort, portNumber)/]
+[/if]
+[if (aDiscretePort.senderMessageInterface.oclIsUndefined()._not())]
+[transformSenderMessageInterface(aDiscretePort.senderMessageInterface, aDiscretePort.name.replaceSpecChar(), portNumber)/]
+[/if]
+[/template]
+
+[**
+ * Transforms continuous ports to Modelica interface blocks corresponding to their data type. 
+ * portNumber is just required for generate annotations
+ * @param aContinuousPort
+ * @param portNumber
+ */]
+[template public transformContinuousPort(aContinuousPort : ContinuousPort, portNumber: Integer)]	
+// port continuous type name: "[aContinuousPort.name.replaceSpecChar()/]"	
+[if (aContinuousPort.kind = component::ContinuousPortDirectionKind::IN)]
+[if (aContinuousPort.type.isIntType() or aContinuousPort.type.isShortType())]
+	Modelica.Blocks.Interfaces.IntegerInput [aContinuousPort.name.replaceSpecChar().toLowerFirst()/]
+[elseif (aContinuousPort.type.isLongType() or aContinuousPort.type.isDoubleType())]
+	Modelica.Blocks.Interfaces.RealInput [aContinuousPort.name.replaceSpecChar().toLowerFirst()/]
+[elseif (aContinuousPort.type.isBooleanType())]
+	Modelica.Blocks.Interfaces.BooleanInput [aContinuousPort.name.replaceSpecChar().toLowerFirst()/]
+[/if]
+[generateInputPortAnnotation(portNumber)/];
+[/if]
+[if (aContinuousPort.kind = component::ContinuousPortDirectionKind::OUT)]
+[if (aContinuousPort.type.isIntType() or aContinuousPort.type.isShortType())]
+Modelica.Blocks.Interfaces.IntegerOutput [aContinuousPort.name.replaceSpecChar().toLowerFirst()/]
+[elseif (aContinuousPort.type.isLongType() or aContinuousPort.type.isDoubleType())]
+Modelica.Blocks.Interfaces.RealOutput [aContinuousPort.name.replaceSpecChar().toLowerFirst()/]
+[elseif (aContinuousPort.type.isBooleanType())]
+	Modelica.Blocks.Interfaces.BooleanOutput [aContinuousPort.name.replaceSpecChar().toLowerFirst()/]
+[/if]
+[generateOutputPortAnnotation(portNumber)/];
+[/if]
+[/template]
+
+
+[**
+ * @ instantiate input delegation port and mailbox for receiver message interface 
+ * @param aReceiverMessageInterface
+ * @param aPort
+ * @param portNumber
+ */]
+[template public transformReceiverMessageInterface(aReceiverMessageInterface : MessageInterface, aPort : DiscretePort, portNumber: Integer)]
+//receiver message interface name: [aReceiverMessageInterface.name.replaceSpecChar()/]
+[for (aMessageType : MessageType | aReceiverMessageInterface.messageTypes)]
+[let i : Integer =  (i + 1)]
+[getProperty('library_package_name')/].[getProperty('library_interface_package_name')/].[getProperty('input_delegationPort_name')/] [aMessageType.name.replaceSpecChar().toLowerFirst()/]_[aPort.name.replaceSpecChar()/]
+(redeclare Integer integers[ '[' /][aMessageType.parameters.type->select(isIntType() or isShortType())->size()/][ ']' /] "integers[ '[' /][aMessageType.parameters.type->select(isIntType() or isShortType())->size()/][ ']' /]",
+ redeclare Boolean booleans[ '[' /][aMessageType.parameters.type->select(isBooleanType())->size()/][ ']' /] "booleans[ '[' /][aMessageType.parameters.type->select(isBooleanType())->size()/][ ']' /]",
+ redeclare Real reals[ '[' /][aMessageType.parameters.type->select(isLongType() or isDoubleType())->size()/][ ']' /] "reals[ '[' /][aMessageType.parameters.type->select(isLongType() or isDoubleType())->size()/][ ']' /]")
+[generateInputPortAnnotation(i*portNumber)/];
+[if (aPort.component.oclIsTypeOf(AtomicComponent))]
+//instantiate Mailbox
+[getProperty('library_package_name')/].[getProperty('mailBox_name')/] [aMessageType.name.replaceSpecChar().toLowerFirst()/]_[aPort.name.replaceSpecChar()/]_mailBox
+([if(aPort.behavior.oclIsUndefined()._not())][if(aPort.behavior.oclIsTypeOf(RealtimeStatechart))]queueSize = [aPort.behavior.oclAsType(RealtimeStatechart).eventQueueSize/],
+[/if][/if]
+ [getProperty('numberOfMessageIntegers_name')/] = [aMessageType.parameters.type->select(isIntType() or isShortType())->size()/],
+ [getProperty('numberOfMessageBooleans_name')/] = [aMessageType.parameters.type->select(isBooleanType())->size()/],
+ [getProperty('numberOfMessageReals_name')/] = [aMessageType.parameters.type->select(isLongType() or isDoubleType())->size()/])
+[generateMailBoxAnnotation(i*portNumber)/];
+[/if]
+[/let]
+[/for]
+[/template]
+
+
+
+
+[**
+ * @ instantiate output delegation port for sender message interface
+ * @param aSenderMessageInterface
+ * @param aPortName
+ * @param portNumber
+ */]
+[template public transformSenderMessageInterface(aSenderMessageInterface : MessageInterface, aPortName : String, portNumber : Integer)]
+//sender message interface name: [aSenderMessageInterface.name.replaceSpecChar()/]
+[for (aMessageType : MessageType | aSenderMessageInterface.messageTypes)]
+[let i : Integer =  (i + 1)]
+[getProperty('library_package_name')/].[getProperty('library_interface_package_name')/].[getProperty('output_delegationPort_name')/] [aMessageType.name.replaceSpecChar().toLowerFirst()/]_[aPortName/]
+(redeclare Integer integers[ '[' /][aMessageType.parameters.type->select(isIntType() or isShortType())->size()/][ ']' /] "integers[ '[' /][aMessageType.parameters.type->select(isIntType() or isShortType())->size()/][ ']' /]",
+ redeclare Boolean booleans[ '[' /][aMessageType.parameters.type->select(isBooleanType())->size()/][ ']' /] "booleans[ '[' /][aMessageType.parameters.type->select(isBooleanType())->size()/][ ']' /]",
+ redeclare Real reals[ '[' /][aMessageType.parameters.type->select(isLongType() or isDoubleType())->size()/][ ']' /] "reals[ '[' /][aMessageType.parameters.type->select(isLongType() or isDoubleType())->size()/][ ']' /]")
+[generateOutputPortAnnotation(i*portNumber)/];
+[/let]
+[/for]
+[/template]
+
+
+
+
+
+[**
+ * if a discrete port has a receiver message interface connect input delegation port with mailbox
+ * @param aDiscretePort
+ */]
+[template public conncectInputDelegationPortWithMailbox(aDiscretePort : DiscretePort)]
+[if (aDiscretePort.receiverMessageInterface.oclIsUndefined()._not())]
+[connectInputDelegationPortWithMailbox(aDiscretePort.receiverMessageInterface, aDiscretePort)/]
+[/if]
+[/template]
+
+[**
+ * connect input delegation port with mailbox
+ * @param aReceiverMessageInterface
+ * @param aPort
+ */]
+[template public connectInputDelegationPortWithMailbox(aReceiverMessageInterface : MessageInterface, aPort : DiscretePort)]
+[for (aMessageType : MessageType | aReceiverMessageInterface.messageTypes)] 
+connect([aMessageType.name.replaceSpecChar()/]_[aPort.name.replaceSpecChar()/], [aMessageType.name.replaceSpecChar()/]_[aPort.name.replaceSpecChar()/]_mailBox.mailbox_input_port[ '[' /]1[ ']' /]) 
+    annotation (Line(
+      points={{-100,50},{-90,50},{-90,49},{-79,49}},
+      color={0,0,255},
+      smooth=Smooth.None));
+[/for]
+[/template]

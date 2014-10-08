@@ -1,0 +1,27 @@
+import transforms.rtsc2graphviz;
+import transforms.plain2rtscAnnotation;
+import transforms.BlackBoxgraphviz2plain;
+import transforms.util;
+
+modeltype GRAPHVIZ uses input("http://www.fujaba.de/graphviz/input/0.1.0");
+modeltype PLAIN uses output("http://www.fujaba.de/graphviz/output/0.1.0");
+modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
+
+transformation layout(inout rtscModel : RTSC)
+	access rtsc2graphviz, plain2rtscAnnotation, Util;
+
+main() {
+	// prev trans == RegionInstantiation
+   	assert fatal (rtscModel.objects()[StateConnectionPoint]->isEmpty()) with log("prev trans failed");
+    var gModel : GRAPHVIZ := GRAPHVIZ.createEmptyModel().oclAsType(GRAPHVIZ);
+    var ret : Status := new rtsc2graphviz(rtscModel, gModel).transform();
+    assert fatal (ret.succeeded()) with log("ERR");
+    log("nodes: " + gModel.objects()[Node]->size().toString());
+    var plainModel : PLAIN := PLAIN.createEmptyModel().oclAsType(PLAIN);
+  	ret := new BlackBoxgraphviz2plain(gModel, plainModel).transform();
+  	assert fatal (ret.succeeded()) with log("ERR");
+  	log("nodes (plain): " + plainModel.objects()[PLAIN::Node]->size().toString());
+    ret := new plain2rtscAnnotation(rtscModel, gModel, plainModel).transform();
+    assert fatal (ret.succeeded()) with log("ERR");
+    log("transformation " + this.toString() + " finished");
+ }

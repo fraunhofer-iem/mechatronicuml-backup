@@ -1,0 +1,23 @@
+import de.uni_paderborn.fujaba.graphviz._blackbox.GraphvizLayoutUnit;
+
+modeltype GRAPHVIZ uses input("http://www.fujaba.de/graphviz/input/0.1.0");
+modeltype PLAIN uses output("http://www.fujaba.de/graphviz/output/0.1.0");
+
+
+transformation BlackBoxgraphviz2plain(in gModel : GRAPHVIZ, out graphvizModel : PLAIN);
+
+main() {
+    log("bbox transformation started");
+    //var graph : PLAIN := PLAIN.createEmptyModel().oclAsType(PLAIN);
+    //var t : GraphvizLayoutUnit := new GraphvizLayoutUnit(graph);
+    gModel.objects()[Graph]->any(true).map doSth();
+    log("bbox transformation finished");
+}
+
+mapping Graph::doSth() : PLAIN::Graph {
+	init {
+		result := layout(self).deepclone().oclAsType(PLAIN::Graph);
+		//result := layout(self);
+		//log("scale:" + result.scale.toString());
+	}
+}

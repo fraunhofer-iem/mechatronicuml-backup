@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            name="GraphvizLayoutUnit"
+            namespace="de.uni_paderborn.fujaba.graphviz._blackbox">
+         <library
+               class="de.uni_paderborn.fujaba.graphviz.blackbox.GraphvizLayout"
+               name="GraphvizLayoutLib">
+            <metamodel
+                  nsURI="http://www.fujaba.de/graphviz/input/0.1.0">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.fujaba.de/graphviz/output/0.1.0">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+
+</plugin>

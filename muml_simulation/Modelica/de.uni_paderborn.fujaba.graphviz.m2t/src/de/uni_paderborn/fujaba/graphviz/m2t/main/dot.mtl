@@ -1,0 +1,94 @@
+[comment encoding = UTF-8 /]
+[module dot('http://www.fujaba.de/graphviz/input/0.1.0')]
+
+
+[template public generateDot(container : Container)]
+[comment @main/]
+[file ('test.dot', false, 'UTF-8')]
+[generateGraph(container.graph)/]
+[/file]
+[/template]
+
+[query public getGraphKind(graph : Graph) : String =
+	if graph.parentGraph.oclIsUndefined() then
+		if graph.directedGraph then
+			'digraph'
+		else
+			'graph'
+		endif
+	else
+		'subgraph cluster' + if not graph.id.oclIsUndefined() then '_' + graph.id else '' endif
+	endif
+/]
+
+[template public generateGraph(graph : Graph)]
+[graph.getGraphKind()/] {
+[generateGlobalSettings('graph', graph.graphSettings)/]
+[generateGlobalSettings('node', graph.nodeSettings)/]
+[generateGlobalSettings('edge', graph.edgeSettings)/]
+[generateNodes(graph.nodes)/]
+[generateEdges(graph)/]
+[generateSubGraphs(graph.subgraphs)/]
+}
+[/template]
+
+[template public generateGlobalSettings(kind : String, settings : OrderedSet(Setting))
+	? (settings->notEmpty())
+]
+	[kind/] [generateSettings(settings)/]
+[/template]
+
+[template public generateNodes(nodeSet : OrderedSet(Node))
+	? (nodeSet->notEmpty())
+]
+[for (node : Node | nodeSet)]
+[generateNode(node)/]
+[/for]
+[/template]
+
+[template public generateNode(node : Node)]
+	"[node.name/]" [generateSettings(node.settings)/]
+[/template]
+
+[query public getEdgeOp(graph : Graph) : String =
+	if graph.getRootGraph().directedGraph then
+		'->'
+	else
+		'--'
+	endif
+/]
+
+[query private getRootGraph(graph : Graph) : Graph =
+	graph->asSet()->closure(g |
+		if g.parentGraph.oclIsUndefined() then
+			g
+		else
+			g.parentGraph endif
+	)->select(parentGraph.oclIsUndefined())->any(true)
+/]
+
+[template public generateEdges(graph : Graph)
+	? (graph.edges->notEmpty())
+]
+[for (edge : Edge | graph.edges)]
+[generateEdge(edge, graph.getEdgeOp())/]
+[/for]
+[/template]
+
+[template public generateEdge(edge : Edge, edgeOp : String)]
+	"[edge.source.name/]" [edgeOp/] "[edge.target.name/]" [generateSettings(edge.settings)/]
+[/template]
+
+[template public generateSubGraphs(subGraphSet : OrderedSet(Graph))
+	? (subGraphSet->notEmpty())
+]
+[for (graph : Graph | subGraphSet)]
+	[generateGraph(graph)/]
+[/for]
+[/template]
+
+[template public generateSettings(settings : OrderedSet(Setting))
+	? (settings->notEmpty())
+]
+[for (setting : Setting | settings) before('[') separator(', ') after(']')][setting.attribute/]=[setting.value/][/for]
+[/template]

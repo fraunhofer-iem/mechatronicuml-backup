@@ -1,0 +1,157 @@
+[comment encoding = UTF-8 /]
+[**
+ * The module componentInstances contains templates which get as first parameter aComponentInstance.
+ */]
+[module componentInstance('http://www.fujaba.de/muml/model/instance/0.2.2', 'http://www.fujaba.de/muml/model/component/0.2.3')]
+[import de::uni_paderborn::fujaba::muml::gen::model::modelica::realtimecoordination::common::componentQueries /]
+[import de::uni_paderborn::fujaba::muml::gen::model::modelica::realtimecoordination::portInstance::portInstance/] 
+[import de::uni_paderborn::fujaba::muml::gen::model::modelica::realtimecoordination::common::annotations /]
+[**
+ * Instantiate a Component Instance.
+ * @param aComponentInstance 
+ * @param praefix 
+ */]
+[template public init_ComponentInstance(aComponentInstance : ComponentInstance, praefix : String )]
+	[praefix/].[aComponentInstance.name.replaceSpecChar().toUpperFirst()/] [aComponentInstance.name.replaceSpecChar().toLowerFirst()/]
+ annotation (Placement(transformation(extent={{-42,40},{-22,60}})));
+[/template]
+
+[**
+ * @TODO add docu
+ * @param aComponentInstance
+ * @param packageName
+ */]
+[template public createRecursiveComponentInstanceConfigurations(aComponentInstance : ComponentInstance, packageName : String){newPackageName: String = packageName+aComponentInstance.name.replaceSpecChar().toUpperFirst()+'_package/';}]
+[file (packageName+aComponentInstance.name.replaceSpecChar().toLowerFirst()+'.mo', false, 'Cp1252')]
+within [packageName.transformPathStringToWithinString()/];
+
+model [aComponentInstance.name.replaceSpecChar().toUpperFirst()/]
+
+[if (aComponentInstance.embeddedCIC.oclIsUndefined()._not())]
+[if (aComponentInstance.embeddedCIC.componentInstances->notEmpty())]
+//instantiate component parts
+[let aComponentPackageName : String = 
+aComponentInstance.name.replaceSpecChar().toUpperFirst()+'_package']
+[for (aComponentInstance : ComponentInstance | aComponentInstance.embeddedCIC.componentInstances)]
+	[aComponentPackageName/].[aComponentInstance.name.replaceSpecChar().toUpperFirst()/] [aComponentInstance.name.replaceSpecChar().toLowerFirst()/]
+annotation (Placement(transformation(extent={{-42,40},{-22,60}})));
+[/for]
+[/let]
+
+[/if]
+[else]
+	//no embedded Components
+[/if]
+[comment create delegation ports /]
+//ports
+[transformPorts(aComponentInstance)/]
+[comment @TODO add delegation connect statements /]
+[generateComponentAnnotation()/]
+end [aComponentInstance.name.replaceSpecChar().toUpperFirst()/];
+
+[/file]
+[if (aComponentInstance.embeddedCIC.oclIsUndefined()._not())]
+[if (aComponentInstance.embeddedCIC.componentInstances->notEmpty())]
+[file (newPackageName+'package.mo', false, 'Cp1252')]
+	package [aComponentInstance.name.replaceSpecChar().toUpperFirst()/]_package
+annotation(Diagram(coordinateSystem(extent={{-148.5,-105.0},{148.5,105.0}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10})), Icon(coordinateSystem(extent={{-100.0,-100.0},{100.0,100.0}}, preserveAspectRatio=true, initialScale=0.1, grid={10,10}), graphics={Rectangle(visible=true, origin={0.0,-11.4622}, fillColor={190,224,255}, fillPattern=FillPattern.Solid, extent={{-100.0,-58.5379},{100.0,58.5379}}),Rectangle(visible=true, origin={-55.0,63.5379}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, extent={{-45.0,-16.4621},{45.0,16.4621}}),Text(visible=true, origin={0.0,-42.7008}, fillPattern=FillPattern.Solid, extent={{-93.2419,-12.7008},{93.2419,12.7008}}, textString="[aComponentInstance.name.replaceSpecChar().toUpperFirst()/]", fontName="Arial", textStyle={TextStyle.Bold}),Polygon(visible=true, origin={31.1881,0.7502}, fillColor={255,255,255}, fillPattern=FillPattern.Solid, points={{-1.1881,29.2498},{50.7679,-14.6249},{-49.5798,-14.6249}})}));
+end [aComponentInstance.name.replaceSpecChar().toUpperFirst()/]_package;
+[/file]
+[/if]
+[/if]
+[if (aComponentInstance.embeddedCIC.oclIsUndefined()._not())]
+[if (aComponentInstance.embeddedCIC.componentInstances->notEmpty())]
+[for (aComponentInstance : ComponentInstance | aComponentInstance.embeddedCIC.componentInstances)]
+	[createRecursiveComponentInstanceConfigurations(aComponentInstance,newPackageName)/]
+[/for]
+[/if]
+[/if]
+[/template]
+
+[**
+ * @TODO
+ * @param aComponentInstance
+ * @param path
+ */]
+[template public createAtomicComponentInstanceModelClassesForChildrenDEPRECATED(aComponentInstance : ComponentInstance,  path : String)]
+[for (aComponentInstance : ComponentInstance | aComponentInstance.embeddedCIC.componentInstances)]
+[if (aComponentInstance.componentType.oclIsTypeOf(AtomicComponent))]
+[createAtomicComponentInstanceModelClasses(aComponentInstance, path)/]
+[/if]
+[/for]
+[/template]
+
+[**
+ * Create classes for all atomic component instances
+ * @param allAtomicComponentsIntances
+ */]
+[template public transformAllAtomicComponentDEPRECATED(allAtomicComponentsIntances : Set(ComponentInstance))]
+[file ('Main_package/allAtomicComponentInstances.mo', false, 'Cp1252')]
+	within Main_package;
+	package AtomicComponentInstances
+	//AtomicComponents
+	[for (aAtomicComponentInstance : ComponentInstance | allAtomicComponentsIntances)]
+	[transformAtomicComponent(aAtomicComponentInstance)/]
+	[/for]
+	end AtomicComponentInstances;
+[/file]
+[/template]
+
+[**
+ * instantiate discrete, continuous, hybrid port instances if available
+ * @param aAtomicComponentInstance 
+ */]
+[template public transformAtomicComponent(aAtomicComponentInstance : ComponentInstance)]
+	model [aAtomicComponentInstance.name.replaceSpecChar().toUpperFirst()/]	
+	[transformPorts(aAtomicComponentInstance)/]
+	[generateComponentAnnotation()/] 
+	end  [aAtomicComponentInstance.name.replaceSpecChar().toUpperFirst()/];
+[/template]
+
+[template public transformPorts(aComponentInstance : ComponentInstance)]
+	[for (aPortInstance : PortInstance | aComponentInstance.portInstances)]
+	[let i : Integer =  i + 1]
+	[if (aPortInstance.portType.oclIsTypeOf(DiscretePort))]
+	[transformDiscretePort(aPortInstance.portType.oclAsType(DiscretePort),i)/]
+	[/if]	
+	[if (aPortInstance.portType.oclIsTypeOf(ContinuousPort))]
+	[transformContinuousPort(aPortInstance.portType.oclAsType(ContinuousPort),i)/]
+	[/if]	
+	[if (aPortInstance.portType.oclIsTypeOf(HybridPort))]
+	[transformContinuousPort(aPortInstance.portType.oclAsType(ContinuousPort),i)/]
+	[comment @TODO  transformHybridPort /]
+	[/if]	
+	[/let]			
+	[/for]
+	equation
+	 //connect input delegation port with mailboxes
+	[for (aPortInstance : PortInstance | aComponentInstance.portInstances)]
+	[if (aPortInstance.portType.oclIsTypeOf(DiscretePort) and aPortInstance.componentInstance.componentType.oclIsTypeOf(AtomicComponent))]
+[conncectInputDelegationPortWithMailbox(aPortInstance.portType.oclAsType(DiscretePort))/]
+	[/if]	
+	[/for]
+[/template]
+
+[**
+ * @TODO add docu
+ * @param aComponentInstance
+ * @param path
+ */]
+[template public createAtomicComponentInstanceModelClasses(aComponentInstance : ComponentInstance,  path : String)]
+[file (path+aComponentInstance.name.replaceSpecChar().toLowerFirst()+'.mo', false, 'Cp1252')]
+within [path.transformPathStringToWithinString()/];
+[if (aComponentInstance.embeddedCIC.oclIsUndefined()._not())]
+[if (aComponentInstance.embeddedCIC.componentInstances->notEmpty())]
+[let aComponentInstancePackageName : String = 
+	aComponentInstance.name.replaceSpecChar().toUpperFirst()+'_package']
+[for (aComponentInstance : ComponentInstance | aComponentInstance.embeddedCIC.componentInstances)]
+[aComponentInstancePackageName/].[aComponentInstance.name.replaceSpecChar().toUpperFirst()/] [aComponentInstance.name.replaceSpecChar().toLowerFirst()/];
+[/for]
+[/let]
+[/if]
+[/if]
+[transformAtomicComponent(aComponentInstance)/]
+[/file]
+[/template]
+
+

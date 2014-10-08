@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <package class="de.uni_paderborn.fujaba.simulink.model.SimulinkPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <package class="de.uni_paderborn.fujaba.simulink.model.stateflow.StateflowPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.stateflow"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <package class="de.uni_paderborn.fujaba.simulink.model.msglib.MsglibPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.msglib"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <package class="de.uni_paderborn.fujaba.simulink.model.msglib.buffer.BufferPackage" genModel="model/Simulink.genmodel" uri="de.uni_paderborn.fujaba.simulink.model.msglib.buffer"/>
+   </extension>
+
+</plugin>

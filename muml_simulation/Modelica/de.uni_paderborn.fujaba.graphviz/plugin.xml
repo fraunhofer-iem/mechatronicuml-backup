@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphviz -->
+      <package
+            uri="http://www.fujaba.de/graphviz/0.1.0"
+            class="de.uni_paderborn.fujaba.graphviz.graphviz.GraphvizPackage"
+            genModel="model/graphviz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphviz -->
+      <package
+            uri="http://www.fujaba.de/graphviz/input/0.1.0"
+            class="de.uni_paderborn.fujaba.graphviz.graphviz.input.InputPackage"
+            genModel="model/graphviz.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphviz -->
+      <package
+            uri="http://www.fujaba.de/graphviz/output/0.1.0"
+            class="de.uni_paderborn.fujaba.graphviz.graphviz.output.OutputPackage"
+            genModel="model/graphviz.genmodel"/>
+   </extension>
+</plugin>

@@ -1,0 +1,28 @@
+[comment encoding = UTF-8 /]
+[module main('http://www.fujaba.de/muml/instance/0.4.0',
+			 'http://www.fujaba.de/modelinstance/0.4.0',
+			 'http://www.fujaba.de/muml/msgtype/0.4.0',
+			 'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+			 'http://www.fujaba.de/muml/modelica/adapter/transform/0.4.0')]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::instance::component::component]
+
+[template public main(aRootNode : RootNode)] 
+[comment @main/]
+[comment be sure that the properties file is given as an argument in the run configuration !!!  /]
+
+[comment  get component instance configuration and start transformation/]
+[for (modelElementCategory : ModelElementCategory | aRootNode.categories)] 
+	[comment: search for model instance category/]
+	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).generateRootCIC('test',
+			modelElementCategory.createRegionInstances())/]
+	[/if]
+[/for]
+[/template]
+
+[query public createRegionInstances(category : ModelElementCategory) : Map =
+	invoke('de.uni_paderborn.fujaba.muml.model.gen.modelica.instance.instantiator.RegionInstanceInstantiator',
+		'instantiate(de.uni_paderborn.fujaba.modelinstance.ModelElementCategory)',
+		Sequence{category}) 
+/]

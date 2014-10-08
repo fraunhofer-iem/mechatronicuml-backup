@@ -1,0 +1,7 @@
+digraph "Chart" {
+"__init" [shape=box,label=""];
+"0" [shape=box,label="State"];
+"1" [shape=point,height=0.1944,label=""];
+"0" -> "1" [id=0,label=""];
+"1" -> "0" [id=0,label=""];
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
+      label="MechatronicUML Modelica Adapter"
+      version="0.4.0.qualifier"
+      provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany">
+
+   <description>
+      Modelica code generation.
+   </description>
+
+   <copyright>
+      Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="license.html">
+      Fujaba Licence Agreement
+July 21, 2012
+
+This feature is free software; you can redistribute and/or modify it under the terms of the Eclipse Public License (EPL)
+as published by the Eclipse Foundation. You can access the full text of the license agreement under
+http://www.eclipse.org/legal/epl-v10.html
+This feature is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.ocl"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.eclipse.acceleo.common" version="3.2.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.model" version="3.2.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.profiler" version="3.2.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.engine" version="3.2.2" match="greaterOrEqual"/>
+      <import plugin="com.google.guava" version="10.0.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.parser" version="3.2.2" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelica.graphviz" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelica.m2t.transform" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.graphviz.blackbox" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.cdo"/>
+      <import plugin="org.storydriven.core"/>
+      <import plugin="de.uni_paderborn.fujaba.graphviz" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.graphviz.xtext" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.graphviz.m2t" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.storydriven.core.edit"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
+      <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.4.0.qualifier"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.runtime" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.core.variables" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="compatible"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.common" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.emf.util" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.core.resources" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.runtime" version="3.0.0" match="compatible"/>
+      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.common" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.model" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.profiler" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.engine" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+   </requires>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.modelica.m2t"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.modelica.m2t.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.modelica.graphviz"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.modelica.m2t.transform"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.graphviz.blackbox"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.modelica.m2t.transform.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.graphviz"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.graphviz.m2t"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.graphviz.xtext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

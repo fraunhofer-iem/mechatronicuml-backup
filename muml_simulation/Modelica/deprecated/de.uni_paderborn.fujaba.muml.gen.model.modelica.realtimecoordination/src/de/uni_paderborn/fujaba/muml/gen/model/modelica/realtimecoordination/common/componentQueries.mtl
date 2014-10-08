@@ -1,0 +1,96 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module componentQueries.
+ */]
+[module componentQueries('http://www.fujaba.de/muml/model/instance/0.2.2',
+						   'http://www.fujaba.de/muml/model/component/0.2.3',
+							'http://www.fujaba.de/muml/model/core/0.2.4',
+							'http://www.fujaba.de/muml/model/realtimestatechart/0.2.3')]
+
+
+[**
+ * The documentation of the query getAllAtomicComponentInstances.
+ *	Query: A recursive query which returns a Set of all ComponentInstances including all AtomicComponents in the hierarchy of the ComponentInstanceConfiguration.
+ * cic is a Set of ComponentInstanceConfiguration in which AtomicComponents will be searched.
+ * @param cic 
+ */]
+[query public getAllAtomicComponentInstances(cic : Set(ComponentInstanceConfiguration)) : Set(ComponentInstance)= 
+	if cic->notEmpty() then
+		cic->select(componentInstances->notEmpty()).componentInstances->select(ci : ComponentInstance| ci.componentType.oclIsTypeOf(AtomicComponent))->asSet()
+		   ->union(getAllAtomicComponentInstances(cic.componentInstances->select(not embeddedCIC.oclIsUndefined()).embeddedCIC->asSet()))->asSet()
+	else
+		Set{}
+	endif
+ /]
+
+
+
+[**
+ * @TODO add documentation
+ */]
+[query public isIntType(dataType : DataType) : Boolean =
+	if dataType.oclIsTypeOf(PrimitiveDataType) then
+		dataType.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT
+	else 
+		false
+	endif 
+ /]
+
+[**
+ * @TODO add documentation
+ */]
+[query public isShortType(dataType : DataType) : Boolean =
+	if dataType.oclIsTypeOf(PrimitiveDataType) then
+		dataType.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::SHORT
+	else 
+		false
+	endif 
+ /]
+ 
+[**
+ * @TODO add documentation
+ */]
+[query public isLongType(dataType : DataType) : Boolean =
+	if dataType.oclIsTypeOf(PrimitiveDataType) then
+		dataType.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::LONG
+	else 
+		false
+	endif 
+ /]
+
+[**
+ * @TODO add documentation
+ */]
+[query public isDoubleType(dataType : DataType) : Boolean =
+	if dataType.oclIsTypeOf(PrimitiveDataType) then
+		dataType.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::DOUBLE
+	else 
+		false
+	endif 
+ /]
+
+[**
+ * @TODO add documentation
+ */]
+[query public isBooleanType(dataType : DataType) : Boolean =
+	if dataType.oclIsTypeOf(PrimitiveDataType) then
+		dataType.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN
+	else 
+		false
+	endif 
+ /]
+
+[query public transformPathStringToWithinString(aString : String) : String =
+if aString.endsWith('/') then
+	aString.first(aString.lastIndex('/')-1).replaceAll('/', '.')
+else
+	aString.replaceAll('/', '.')
+endif
+ /]
+
+
+
+[query public replaceSpecChar(aString : String) : String = invoke('de.uni_paderborn.fujaba.muml.gen.model.modelica.realtimecoordination.common.StringServices','replaceSpecChar(java.lang.String)', Sequence{aString})/]
+
+[query public printLine(aString : String) : OclAny = invoke('de.uni_paderborn.fujaba.muml.gen.model.modelica.realtimecoordination.common.StringServices','printMe(java.lang.String)', Sequence{aString})/] 
+

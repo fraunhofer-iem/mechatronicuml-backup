@@ -1,0 +1,278 @@
+[comment encoding = UTF-8 /]
+[module transform_MessageInterface('http://www.eclipse.org/emf/2002/Ecore',
+									'http://www.fujaba.de/muml/model/component/0.2.3',
+									'http://www.fujaba.de/muml/model/instance/0.2.2', 
+									'http://www.fujaba.de/muml/model/msgiface/0.2.2',
+									'http://www.fujaba.de/muml/model/core/0.2.4',)/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::files::transform_Variable/]
+[import de::uni_paderborn::fujaba::muml::model::gen::modelica::common::queries /]
+
+
+
+[template public init_MessageInterfaces(ports : Set(DiscretePort))
+{messageInterfaces : Set(MessageInterface) = ports->select(receiverMessageInterface.oclIsUndefined()).receiverMessageInterface->asSet()->union(ports->select(not senderMessageInterface.oclIsUndefined()).senderMessageInterface->asSet())->excluding(null);
+}] 
+[comment TODO nicht getestet!/]
+package Messages
+  record Message
+    Modelica.SIunits.Time t;
+  end Message;
+	[for (messageInterface : MessageInterface |  messageInterfaces->select(m1 : MessageInterface | m1 <> messageInterfaces->select(m2 : MessageInterface | m1 <> m2)))]	
+	// messageInterface [messageInterface.name/]
+  [transform_MessageTypes(messageInterface)/]	
+	[/for]
+end Messages;
+	
+[init_MailMessages()/]
+    
+[init_Mailbox()/]
+	[for (messageInterface : MessageInterface | messageInterfaces)]  		
+[transform_MailMessages(messageInterface)/]
+[transform_Mailbox(messageInterface)/]
+	[/for]
+
+[/template]
+
+
+
+[template private transform_MessageTypes(aMessageInterface : MessageInterface)]
+	[for (mt : MessageType | aMessageInterface.messageTypes)]
+	 	[if (mt.parameters->excluding(null)->notEmpty())]
+record [getMessageName(mt, null, false)/]
+  extends Message;
+        	[for (p : Parameter | mt.parameters)]
+[p.init_Parameter('')/]
+        	[/for]
+end [getMessageName(mt, null, false)/];	
+		[/if]	
+	[/for]	
+	[for (mi : MessageInterface | aMessageInterface.superType)]
+[transform_MessageTypes( mi)/]
+	[/for]	
+[/template]
+
+[template public init_MailMessages(any : OclAny)]
+model MailMessage
+
+  Modelica.Blocks.Interfaces.BooleanInput conditionPort
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+  replaceable [messageportInterfacesLocation()/]port message_input_port
+    annotation (Placement(transformation(extent={{80,-20},{100,0}})));
+  replaceable MessageInterfaces.Messages.Message message;
+equation 
+     message_input_port.message = message;
+     message_input_port.fire = conditionPort;
+
+  annotation (Diagram(graphics));
+end MailMessage;
+[/template]
+
+[template public transform_MailMessages(aMessageInterface : MessageInterface)]
+	[for (mt : MessageType | aMessageInterface.messageTypes)]
+	 	[if (mt.parameters->notEmpty())]
+model [getMailMessageName(mt, false)/] = MailMessage(redeclare Messages.[getMessageName(mt, null, true)/] message, redeclare 
+      Components.Ports.[getPortName(mt, null, null, false)/] message_input_port);
+		[/if]	
+	[/for]
+	[for (mi : MessageInterface | aMessageInterface.superType)]
+[transform_MailMessages(mi)/]
+	[/for]	
+[/template]
+
+[template public init_Mailbox(any : OclAny)]
+model Mailbox
+   import ID = Test.MessageInterfaces.Queue;
+  parameter Integer nOut(min=0)=0 "Number of output connections"
+                                                            annotation(Dialog(__Dymola_connectorSizing=true), HideResult=true);
+  parameter Integer nIn(min=0)=0 "Number of output connections"
+                                                            annotation(Dialog(__Dymola_connectorSizing=true), HideResult=true);
+
+  [messageportInterfacesLocation()/]input_port message_input_port['['/]nOut[']'/]
+    annotation (Placement(transformation(extent={{80,20},{100,40}})));
+
+  [messageportInterfacesLocation()/]port message_output_port['['/]nIn[']'/]
+    annotation (Placement(transformation(extent={{-100,40},{-80,60}})));
+  //ID.Message m;
+  ID.Queue q;
+  MessageInterfaces.Messages.Message dummy_message['['/]nOut[']'/];
+  Boolean fire_in['['/]nOut[']'/];
+  Boolean input_active['['/]nOut[']'/];
+
+algorithm 
+   for i in 1:nOut loop
+      if pre(input_active['['/]i[']'/]) and q.size > 0 then
+       // Modelica.Utilities.Streams.print(String(time) + " Mailbox dequeue message_input_port['['/]"+String(i)+"[']'/].active " + String(message_input_port['['/]i[']'/].active));
+        (dummy_message['['/]i[']'/],q) := ID.dequeue(q);
+        fire_in['['/]i[']'/] := true;
+      else
+        fire_in['['/]i[']'/] := false;
+      end if;
+   end for;
+
+   for i in 1:nIn loop
+      if message_output_port['['/]i[']'/].fire then
+         //Modelica.Utilities.Streams.print(String(time) + " Mailbox enqueue message_input_port['['/]"+String(i)+"[']'/].fire " + String(message_input_port['['/]i[']'/].fire));
+          (q) := ID.enqueue(q,message_output_port['['/]i[']'/].message);
+      end if;
+   end for;
+equation 
+  for i in 1:nOut loop
+      input_active['['/]i[']'/] = message_input_port['['/]i[']'/].active;
+  end for;
+  
+  [comment TODO: queue size! /]
+  when q.size == [getQueueSize(null)/] and Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(message_output_port.fire) then
+    Modelica.Utilities.Streams.error("Cannot add another message into the queue. The queue of class Mailbox_Slave_SensorWS is full.");
+  end when;
+  for i in 1:nOut loop
+    message_input_port['['/]i[']'/].message = pre(dummy_message['['/]i[']'/]);
+    message_input_port['['/]i[']'/].fire =  fire_in['['/]i[']'/];
+    message_input_port['['/]i[']'/].hasMessage = if q.size > 0  then true else false;
+    //Modelica.Utilities.Streams.print(String(time) + " Mailbox message_input_port['['/]"+String(i)+"[']'/].hasMessage " + String(message_input_port['['/]i[']'/].hasMessage));
+  end for; //doof so!
+
+  annotation (Diagram(graphics));
+end Mailbox;
+
+package Queue
+
+  record Queue
+    //parameter Integer maxsize = 3;
+    Integer           size;
+    MessageInterfaces.Messages.Message['['/][getQueueSize(null)/][']'/]  vec;
+  end Queue;
+
+
+function enqueue
+  input Queue    qi;
+  input MessageInterfaces.Messages.Message  e;
+  output Queue   qo;
+algorithm 
+  qo.size := qi.size+1;
+  for i in 1:qi.size loop
+     qo.vec['['/]i+1[']'/] := qi.vec['['/]i[']'/];
+  end for;
+  if qo.size >= 1 then
+    qo.vec['['/]1[']'/] := e;
+  end if;
+end enqueue;
+
+  function dequeue
+    input Queue    qi;
+    output MessageInterfaces.Messages.Message  e;
+    output Queue   qo;
+  algorithm 
+    if qi.size >= 1 then
+      qo.size := qi.size-1;
+      for i in 1:qo.size loop
+         qo.vec['['/]i[']'/] := qi.vec['['/]i[']'/];
+      end for;
+      e := qi.vec['['/]qi.size[']'/];
+    end if;
+  end dequeue;
+  annotation (Diagram(graphics));
+end Queue;
+[/template]
+
+
+[template public transform_Mailbox( aMessageInterface : MessageInterface)]
+	[for (mt : MessageType | aMessageInterface.messageTypes)]
+	 	[if (mt.parameters->notEmpty())]
+	 	
+package [getQueueName(mt, false)/]
+
+  record Queue
+    //parameter Integer maxsize = 3;
+    Integer           size; [comment TODO: queue size!/]
+    MessageInterfaces.Messages.[getMessageName(mt, null, false)/]['['/][getQueueSize(null)/][']'/]  vec;
+  end Queue;
+
+
+function enqueue
+  input Queue    qi;
+  input MessageInterfaces.Messages.[getMessageName(mt, null, false)/]  e;
+  output Queue   qo;
+algorithm 
+  qo.size := qi.size+1;
+  for i in 1:qi.size loop
+     qo.vec['['/]i+1[']'/] := qi.vec['['/]i[']'/];
+  end for;
+  if qo.size >= 1 then
+    qo.vec['['/]1[']'/] := e;
+  end if;
+end enqueue;
+
+  function dequeue
+    input Queue    qi;
+    output MessageInterfaces.Messages.[getMessageName(mt, null, false)/]  e;
+    output Queue   qo;
+  algorithm 
+    if qi.size >= 1 then
+      qo.size := qi.size-1;
+      for i in 1:qo.size loop
+         qo.vec['['/]i[']'/] := qi.vec['['/]i[']'/];
+      end for;
+      e := qi.vec['['/]qi.size[']'/];
+    end if;
+  end dequeue;
+  annotation (Diagram(graphics));
+end [getQueueName(mt, false)/];
+
+model [getMailBoxName(mt, false)/]
+	[comment TODO: Test. muss hier weg, ka, warum dier names look-up sonst nicht klappt :/]
+   import ID = Test.MessageInterfaces.[getQueueName(mt, false)/];
+  parameter Integer nOut(min=0)=0 "Number of output connections"
+                                                            annotation(Dialog(__Dymola_connectorSizing=true), HideResult=true);
+  parameter Integer nIn(min=0)=0 "Number of output connections"
+                                                            annotation(Dialog(__Dymola_connectorSizing=true), HideResult=true);
+
+  Components.Ports.[getPortName(mt, null, 'input', false)/] message_input_port['['/]nOut[']'/]
+    annotation (Placement(transformation(extent={{80,20},{100,40}})));
+
+  Components.Ports.[getPortName(mt, null, null, false)/] message_output_port['['/]nIn[']'/]
+    annotation (Placement(transformation(extent={{-100,40},{-80,60}})));
+  //ID.Message m;
+  ID.Queue q;
+  MessageInterfaces.Messages.[getMessageName(mt, null, true)/] dummy_message['['/]nOut[']'/];
+  Boolean fire_in['['/]nOut[']'/];
+  Boolean input_active['['/]nOut[']'/];
+
+algorithm 
+   for i in 1:nOut loop
+      if pre(input_active['['/]i[']'/]) and q.size > 0 then
+       // Modelica.Utilities.Streams.print(String(time) + " Mailbox dequeue message_input_port['['/]"+String(i)+"[']'/].active " + String(message_input_port['['/]i[']'/].active));
+        (dummy_message['['/]i[']'/],q) := ID.dequeue(q);
+        fire_in['['/]i[']'/] := true;
+      else
+        fire_in['['/]i[']'/] := false;
+      end if;
+   end for;
+
+   for i in 1:nIn loop
+      if message_output_port['['/]i[']'/].fire then
+         //Modelica.Utilities.Streams.print(String(time) + " Mailbox enqueue message_input_port['['/]"+String(i)+"[']'/].fire " + String(message_input_port['['/]i[']'/].fire));
+          (q) := ID.enqueue(q,message_output_port['['/]i[']'/].message);
+      end if;
+   end for;
+equation 
+  for i in 1:nOut loop
+      input_active['['/]i[']'/] = message_input_port['['/]i[']'/].active;
+  end for;
+
+  [comment TODO: queue size! /]
+  when q.size == [getQueueSize(null)/] and Modelica_StateGraph2.Blocks.BooleanFunctions.anyTrue(message_output_port.fire) then
+    Modelica.Utilities.Streams.error("Cannot add another message into the queue. The queue of class Mailbox_Slave_SensorWS is full.");
+  end when;
+  
+  for i in 1:nOut loop
+    message_input_port['['/]i[']'/].message = pre(dummy_message['['/]i[']'/]);
+    message_input_port['['/]i[']'/].fire =  fire_in['['/]i[']'/];
+    message_input_port['['/]i[']'/].hasMessage = if q.size > 0  then true else false;
+    //Modelica.Utilities.Streams.print(String(time) + " Mailbox message_input_port['['/]"+String(i)+"[']'/].hasMessage " + String(message_input_port['['/]i[']'/].hasMessage));
+  end for; //doof so!
+
+  annotation (Diagram(graphics));
+end [getMailBoxName(mt, false)/];
+		[/if]
+	[/for]
+[/template]

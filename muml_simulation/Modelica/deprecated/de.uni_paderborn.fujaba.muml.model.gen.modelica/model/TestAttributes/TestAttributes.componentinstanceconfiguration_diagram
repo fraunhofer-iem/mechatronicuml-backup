@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:instance="http://www.fujaba.de/muml/model/instance/0.2.2" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_RUvDoHpJEeGiFbR4vC8NUQ" type="Componentinstanceconfiguration" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_RUvDoXpJEeGiFbR4vC8NUQ"/>
+  <element xmi:type="instance:ComponentInstanceConfiguration" href="TestAttributes.fujaba#_RUqyMXpJEeGiFbR4vC8NUQ"/>
+</notation:Diagram>

@@ -1,0 +1,20 @@
+[module reporter('http://www.fujaba.de/muml/behavior/0.4.0',
+				 'http://www.storydriven.org/core/0.3.1',
+				 'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				 'http://www.fujaba.de/muml/msgtype/0.4.0',
+				 'http://www.fujaba.de/muml/types/0.4.0',
+				 'http://www.fujaba.de/muml/component/0.4.0',
+				 'http://www.fujaba.de/muml/instance/0.4.0',
+				 'http://www.fujaba.de/modelica/m2t/transform/0.4.0',
+				 'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				 'http://www.eclipse.org/emf/2002/Ecore')/]
+
+[**
+ * Display errors the error log.
+ * @param errorStringList a sequence of error string, which should be displayed
+*/]
+[query public displayErrors(errorStringList : Sequence(String)) : Boolean =
+	invoke('de.uni_paderborn.fujaba.modelica.m2t.rtsc.util.query.ErrorReporter',
+		'displayErrors(java.util.List)',
+		Sequence{errorStringList}) 
+/]
