@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.buckminster.EclipseBuckminsterBuilder_-DescriptorImpl plugin="buckminster@1.1.1">
+  <buckminsterInstallations>
+    <hudson.plugins.buckminster.BuckminsterInstallation>
+      <name>Buckminster 4.3</name>
+      <home></home>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers>
+            <hudson.plugins.buckminster.BuckminsterInstallation_-BuckminsterInstaller>
+              <id>4.3</id>
+              <update>false</update>
+            </hudson.plugins.buckminster.BuckminsterInstallation_-BuckminsterInstaller>
+          </installers>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
+      <params>-Xmx256m</params>
+    </hudson.plugins.buckminster.BuckminsterInstallation>
+  </buckminsterInstallations>
+  <installations/>
+</hudson.plugins.buckminster.EclipseBuckminsterBuilder_-DescriptorImpl>
