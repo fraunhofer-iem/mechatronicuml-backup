@@ -4,6 +4,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
@@ -2426,13 +2427,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE = PORT_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Position Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS = PORT_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Single Port Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_PORT_VARIABLE_FEATURE_COUNT = PORT_VARIABLE_FEATURE_COUNT + 1;
+	int SINGLE_PORT_VARIABLE_FEATURE_COUNT = PORT_VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2733,13 +2743,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES = PORT_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Order Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS = PORT_VARIABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Multi Port Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_PORT_VARIABLE_FEATURE_COUNT = PORT_VARIABLE_FEATURE_COUNT + 2;
+	int MULTI_PORT_VARIABLE_FEATURE_COUNT = PORT_VARIABLE_FEATURE_COUNT + 3;
 
 
 	/**
@@ -3728,6 +3747,173 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int COMPONENT_PART_VARIABLE_OPERATION_COUNT = PART_VARIABLE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortConstraintImpl <em>Multi Port Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortConstraintImpl
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortConstraint()
+	 * @generated
+	 */
+	int MULTI_PORT_CONSTRAINT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Tgt Sub Port Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_CONSTRAINT__TGT_SUB_PORT_VARIABLE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Multi Port Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_CONSTRAINT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Multi Port Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_CONSTRAINT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortOrderConstraintImpl <em>Multi Port Order Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortOrderConstraintImpl
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortOrderConstraint()
+	 * @generated
+	 */
+	int MULTI_PORT_ORDER_CONSTRAINT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Tgt Sub Port Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_ORDER_CONSTRAINT__TGT_SUB_PORT_VARIABLE = MULTI_PORT_CONSTRAINT__TGT_SUB_PORT_VARIABLE;
+
+	/**
+	 * The feature id for the '<em><b>Multi Port Variable</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_ORDER_CONSTRAINT__MULTI_PORT_VARIABLE = MULTI_PORT_CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Src Sub Port Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_ORDER_CONSTRAINT__SRC_SUB_PORT_VARIABLE = MULTI_PORT_CONSTRAINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Order Constraint Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE = MULTI_PORT_CONSTRAINT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Multi Port Order Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_ORDER_CONSTRAINT_FEATURE_COUNT = MULTI_PORT_CONSTRAINT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Multi Port Order Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_ORDER_CONSTRAINT_OPERATION_COUNT = MULTI_PORT_CONSTRAINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortPositionConstraintImpl <em>Multi Port Position Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortPositionConstraintImpl
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortPositionConstraint()
+	 * @generated
+	 */
+	int MULTI_PORT_POSITION_CONSTRAINT = 15;
+
+	/**
+	 * The feature id for the '<em><b>Tgt Sub Port Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_POSITION_CONSTRAINT__TGT_SUB_PORT_VARIABLE = MULTI_PORT_CONSTRAINT__TGT_SUB_PORT_VARIABLE;
+
+	/**
+	 * The feature id for the '<em><b>Position Constraint Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_POSITION_CONSTRAINT__POSITION_CONSTRAINT_TYPE = MULTI_PORT_CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Multi Port Position Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_POSITION_CONSTRAINT_FEATURE_COUNT = MULTI_PORT_CONSTRAINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Multi Port Position Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_POSITION_CONSTRAINT_OPERATION_COUNT = MULTI_PORT_CONSTRAINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType <em>Multi Port Order Constraint Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortOrderConstraintType()
+	 * @generated
+	 */
+	int MULTI_PORT_ORDER_CONSTRAINT_TYPE = 16;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType <em>Multi Port Position Constraint Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortPositionConstraintType()
+	 * @generated
+	 */
+	int MULTI_PORT_POSITION_CONSTRAINT_TYPE = 17;
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern <em>Component Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3994,6 +4180,17 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EReference getSinglePortVariable_MultiPortVariable();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable#getPositionConstraints <em>Position Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Position Constraints</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable#getPositionConstraints()
+	 * @see #getSinglePortVariable()
+	 * @generated
+	 */
+	EReference getSinglePortVariable_PositionConstraints();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable <em>Multi Port Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4024,6 +4221,17 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMultiPortVariable_GmfSubPortVariables();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable#getOrderConstraints <em>Order Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Order Constraints</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable#getOrderConstraints()
+	 * @see #getMultiPortVariable()
+	 * @generated
+	 */
+	EReference getMultiPortVariable_OrderConstraints();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression <em>Trigger Embedded Component Expression</em>}'.
@@ -4076,6 +4284,111 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentPartVariable_TriggerEmbeddedComponentExpressions();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint <em>Multi Port Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Multi Port Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint
+	 * @generated
+	 */
+	EClass getMultiPortConstraint();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint#getTgtSubPortVariable <em>Tgt Sub Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tgt Sub Port Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint#getTgtSubPortVariable()
+	 * @see #getMultiPortConstraint()
+	 * @generated
+	 */
+	EReference getMultiPortConstraint_TgtSubPortVariable();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint <em>Multi Port Order Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Multi Port Order Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint
+	 * @generated
+	 */
+	EClass getMultiPortOrderConstraint();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getMultiPortVariable <em>Multi Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Multi Port Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getMultiPortVariable()
+	 * @see #getMultiPortOrderConstraint()
+	 * @generated
+	 */
+	EReference getMultiPortOrderConstraint_MultiPortVariable();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getSrcSubPortVariable <em>Src Sub Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Src Sub Port Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getSrcSubPortVariable()
+	 * @see #getMultiPortOrderConstraint()
+	 * @generated
+	 */
+	EReference getMultiPortOrderConstraint_SrcSubPortVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getOrderConstraintType <em>Order Constraint Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Order Constraint Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getOrderConstraintType()
+	 * @see #getMultiPortOrderConstraint()
+	 * @generated
+	 */
+	EAttribute getMultiPortOrderConstraint_OrderConstraintType();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint <em>Multi Port Position Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Multi Port Position Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint
+	 * @generated
+	 */
+	EClass getMultiPortPositionConstraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint#getPositionConstraintType <em>Position Constraint Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Position Constraint Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint#getPositionConstraintType()
+	 * @see #getMultiPortPositionConstraint()
+	 * @generated
+	 */
+	EAttribute getMultiPortPositionConstraint_PositionConstraintType();
+
+	/**
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType <em>Multi Port Order Constraint Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Multi Port Order Constraint Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType
+	 * @generated
+	 */
+	EEnum getMultiPortOrderConstraintType();
+
+	/**
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType <em>Multi Port Position Constraint Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Multi Port Position Constraint Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType
+	 * @generated
+	 */
+	EEnum getMultiPortPositionConstraintType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -4318,6 +4631,14 @@ public interface ComponentstorypatternPackage extends EPackage {
 		EReference SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE = eINSTANCE.getSinglePortVariable_MultiPortVariable();
 
 		/**
+		 * The meta object literal for the '<em><b>Position Constraints</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS = eINSTANCE.getSinglePortVariable_PositionConstraints();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortVariableImpl <em>Multi Port Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4342,6 +4663,14 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES = eINSTANCE.getMultiPortVariable_GmfSubPortVariables();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Constraints</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS = eINSTANCE.getMultiPortVariable_OrderConstraints();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.TriggerEmbeddedComponentExpressionImpl <em>Trigger Embedded Component Expression</em>}' class.
@@ -4388,6 +4717,96 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS = eINSTANCE.getComponentPartVariable_TriggerEmbeddedComponentExpressions();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortConstraintImpl <em>Multi Port Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortConstraintImpl
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortConstraint()
+		 * @generated
+		 */
+		EClass MULTI_PORT_CONSTRAINT = eINSTANCE.getMultiPortConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Tgt Sub Port Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_PORT_CONSTRAINT__TGT_SUB_PORT_VARIABLE = eINSTANCE.getMultiPortConstraint_TgtSubPortVariable();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortOrderConstraintImpl <em>Multi Port Order Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortOrderConstraintImpl
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortOrderConstraint()
+		 * @generated
+		 */
+		EClass MULTI_PORT_ORDER_CONSTRAINT = eINSTANCE.getMultiPortOrderConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Multi Port Variable</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_PORT_ORDER_CONSTRAINT__MULTI_PORT_VARIABLE = eINSTANCE.getMultiPortOrderConstraint_MultiPortVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Src Sub Port Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_PORT_ORDER_CONSTRAINT__SRC_SUB_PORT_VARIABLE = eINSTANCE.getMultiPortOrderConstraint_SrcSubPortVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Order Constraint Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE = eINSTANCE.getMultiPortOrderConstraint_OrderConstraintType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortPositionConstraintImpl <em>Multi Port Position Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortPositionConstraintImpl
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortPositionConstraint()
+		 * @generated
+		 */
+		EClass MULTI_PORT_POSITION_CONSTRAINT = eINSTANCE.getMultiPortPositionConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Position Constraint Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MULTI_PORT_POSITION_CONSTRAINT__POSITION_CONSTRAINT_TYPE = eINSTANCE.getMultiPortPositionConstraint_PositionConstraintType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType <em>Multi Port Order Constraint Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortOrderConstraintType()
+		 * @generated
+		 */
+		EEnum MULTI_PORT_ORDER_CONSTRAINT_TYPE = eINSTANCE.getMultiPortOrderConstraintType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType <em>Multi Port Position Constraint Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortPositionConstraintType()
+		 * @generated
+		 */
+		EEnum MULTI_PORT_POSITION_CONSTRAINT_TYPE = eINSTANCE.getMultiPortPositionConstraintType();
 
 	}
 

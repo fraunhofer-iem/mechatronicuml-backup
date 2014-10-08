@@ -8,30 +8,29 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SinglePortVariableItemProvider
-	extends PortVariableItemProvider {
+public class MultiPortOrderConstraintItemProvider extends MultiPortConstraintItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SinglePortVariableItemProvider(AdapterFactory adapterFactory) {
+	public MultiPortOrderConstraintItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,25 +45,26 @@ public class SinglePortVariableItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMultiPortVariablePropertyDescriptor(object);
+			addSrcSubPortVariablePropertyDescriptor(object);
+			addOrderConstraintTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Multi Port Variable feature.
+	 * This adds a property descriptor for the Src Sub Port Variable feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMultiPortVariablePropertyDescriptor(Object object) {
+	protected void addSrcSubPortVariablePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SinglePortVariable_multiPortVariable_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SinglePortVariable_multiPortVariable_feature", "_UI_SinglePortVariable_type"),
-				 ComponentstorypatternPackage.Literals.SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE,
+				 getString("_UI_MultiPortOrderConstraint_srcSubPortVariable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MultiPortOrderConstraint_srcSubPortVariable_feature", "_UI_MultiPortOrderConstraint_type"),
+				 ComponentstorypatternPackage.Literals.MULTI_PORT_ORDER_CONSTRAINT__SRC_SUB_PORT_VARIABLE,
 				 true,
 				 false,
 				 true,
@@ -74,44 +74,36 @@ public class SinglePortVariableItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Order Constraint Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ComponentstorypatternPackage.Literals.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS);
-		}
-		return childrenFeatures;
+	protected void addOrderConstraintTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MultiPortOrderConstraint_orderConstraintType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MultiPortOrderConstraint_orderConstraintType_feature", "_UI_MultiPortOrderConstraint_type"),
+				 ComponentstorypatternPackage.Literals.MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns SinglePortVariable.gif.
+	 * This returns MultiPortOrderConstraint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SinglePortVariable"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MultiPortOrderConstraint"));
 	}
 
 	/**
@@ -122,11 +114,13 @@ public class SinglePortVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SinglePortVariable)object).getName();
+		MultiPortOrderConstraintType labelValue = ((MultiPortOrderConstraint)object).getOrderConstraintType();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SinglePortVariable_type") :
-			getString("_UI_SinglePortVariable_type") + " " + label;
+			getString("_UI_MultiPortOrderConstraint_type") :
+			getString("_UI_MultiPortOrderConstraint_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -139,9 +133,9 @@ public class SinglePortVariableItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SinglePortVariable.class)) {
-			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+		switch (notification.getFeatureID(MultiPortOrderConstraint.class)) {
+			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -157,11 +151,6 @@ public class SinglePortVariableItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentstorypatternPackage.Literals.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS,
-				 ComponentstorypatternFactory.eINSTANCE.createMultiPortPositionConstraint()));
 	}
 
 }

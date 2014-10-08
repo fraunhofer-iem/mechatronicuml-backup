@@ -278,6 +278,75 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MultiPortConstraintItemProvider multiPortConstraintItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMultiPortConstraintAdapter() {
+		if (multiPortConstraintItemProvider == null) {
+			multiPortConstraintItemProvider = new MultiPortConstraintItemProvider(this);
+		}
+
+		return multiPortConstraintItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MultiPortOrderConstraintItemProvider multiPortOrderConstraintItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMultiPortOrderConstraintAdapter() {
+		if (multiPortOrderConstraintItemProvider == null) {
+			multiPortOrderConstraintItemProvider = new MultiPortOrderConstraintItemProvider(this);
+		}
+
+		return multiPortOrderConstraintItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MultiPortPositionConstraintItemProvider multiPortPositionConstraintItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMultiPortPositionConstraintAdapter() {
+		if (multiPortPositionConstraintItemProvider == null) {
+			multiPortPositionConstraintItemProvider = new MultiPortPositionConstraintItemProvider(this);
+		}
+
+		return multiPortPositionConstraintItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -385,6 +454,9 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 		if (multiPortVariableItemProvider != null) multiPortVariableItemProvider.dispose();
 		if (fadingComponentPartVariableItemProvider != null) fadingComponentPartVariableItemProvider.dispose();
 		if (componentPartVariableItemProvider != null) componentPartVariableItemProvider.dispose();
+		if (multiPortConstraintItemProvider != null) multiPortConstraintItemProvider.dispose();
+		if (multiPortOrderConstraintItemProvider != null) multiPortOrderConstraintItemProvider.dispose();
+		if (multiPortPositionConstraintItemProvider != null) multiPortPositionConstraintItemProvider.dispose();
 	}
 
 }

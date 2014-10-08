@@ -4,6 +4,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -23,6 +24,11 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternP
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
@@ -129,6 +135,41 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * @generated
 	 */
 	private EClass componentPartVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass multiPortConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass multiPortOrderConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass multiPortPositionConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum multiPortOrderConstraintTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum multiPortPositionConstraintTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -433,6 +474,15 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSinglePortVariable_PositionConstraints() {
+		return (EReference)singlePortVariableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMultiPortVariable() {
 		return multiPortVariableEClass;
 	}
@@ -453,6 +503,15 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 */
 	public EReference getMultiPortVariable_GmfSubPortVariables() {
 		return (EReference)multiPortVariableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMultiPortVariable_OrderConstraints() {
+		return (EReference)multiPortVariableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -498,6 +557,96 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 */
 	public EReference getComponentPartVariable_TriggerEmbeddedComponentExpressions() {
 		return (EReference)componentPartVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMultiPortConstraint() {
+		return multiPortConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMultiPortConstraint_TgtSubPortVariable() {
+		return (EReference)multiPortConstraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMultiPortOrderConstraint() {
+		return multiPortOrderConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMultiPortOrderConstraint_MultiPortVariable() {
+		return (EReference)multiPortOrderConstraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMultiPortOrderConstraint_SrcSubPortVariable() {
+		return (EReference)multiPortOrderConstraintEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMultiPortOrderConstraint_OrderConstraintType() {
+		return (EAttribute)multiPortOrderConstraintEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMultiPortPositionConstraint() {
+		return multiPortPositionConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMultiPortPositionConstraint_PositionConstraintType() {
+		return (EAttribute)multiPortPositionConstraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getMultiPortOrderConstraintType() {
+		return multiPortOrderConstraintTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getMultiPortPositionConstraintType() {
+		return multiPortPositionConstraintTypeEEnum;
 	}
 
 	/**
@@ -561,10 +710,12 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		singlePortVariableEClass = createEClass(SINGLE_PORT_VARIABLE);
 		createEReference(singlePortVariableEClass, SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE);
+		createEReference(singlePortVariableEClass, SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS);
 
 		multiPortVariableEClass = createEClass(MULTI_PORT_VARIABLE);
 		createEReference(multiPortVariableEClass, MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES);
 		createEReference(multiPortVariableEClass, MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES);
+		createEReference(multiPortVariableEClass, MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS);
 
 		triggerEmbeddedComponentExpressionEClass = createEClass(TRIGGER_EMBEDDED_COMPONENT_EXPRESSION);
 
@@ -573,6 +724,21 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		componentPartVariableEClass = createEClass(COMPONENT_PART_VARIABLE);
 		createEReference(componentPartVariableEClass, COMPONENT_PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS);
+
+		multiPortConstraintEClass = createEClass(MULTI_PORT_CONSTRAINT);
+		createEReference(multiPortConstraintEClass, MULTI_PORT_CONSTRAINT__TGT_SUB_PORT_VARIABLE);
+
+		multiPortOrderConstraintEClass = createEClass(MULTI_PORT_ORDER_CONSTRAINT);
+		createEReference(multiPortOrderConstraintEClass, MULTI_PORT_ORDER_CONSTRAINT__MULTI_PORT_VARIABLE);
+		createEReference(multiPortOrderConstraintEClass, MULTI_PORT_ORDER_CONSTRAINT__SRC_SUB_PORT_VARIABLE);
+		createEAttribute(multiPortOrderConstraintEClass, MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE);
+
+		multiPortPositionConstraintEClass = createEClass(MULTI_PORT_POSITION_CONSTRAINT);
+		createEAttribute(multiPortPositionConstraintEClass, MULTI_PORT_POSITION_CONSTRAINT__POSITION_CONSTRAINT_TYPE);
+
+		// Create enums
+		multiPortOrderConstraintTypeEEnum = createEEnum(MULTI_PORT_ORDER_CONSTRAINT_TYPE);
+		multiPortPositionConstraintTypeEEnum = createEEnum(MULTI_PORT_POSITION_CONSTRAINT_TYPE);
 	}
 
 	/**
@@ -628,6 +794,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		triggerEmbeddedComponentExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		fadingComponentPartVariableEClass.getESuperTypes().add(this.getPartVariable());
 		componentPartVariableEClass.getESuperTypes().add(this.getPartVariable());
+		multiPortOrderConstraintEClass.getESuperTypes().add(this.getMultiPortConstraint());
+		multiPortPositionConstraintEClass.getESuperTypes().add(this.getMultiPortConstraint());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentStoryPatternEClass, ComponentStoryPattern.class, "ComponentStoryPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -663,10 +831,12 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		initEClass(singlePortVariableEClass, SinglePortVariable.class, "SinglePortVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSinglePortVariable_MultiPortVariable(), this.getMultiPortVariable(), this.getMultiPortVariable_SubPortVariables(), "multiPortVariable", null, 0, 1, SinglePortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSinglePortVariable_PositionConstraints(), this.getMultiPortPositionConstraint(), null, "positionConstraints", null, 0, -1, SinglePortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(multiPortVariableEClass, MultiPortVariable.class, "MultiPortVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMultiPortVariable_SubPortVariables(), this.getSinglePortVariable(), this.getSinglePortVariable_MultiPortVariable(), "subPortVariables", null, 0, -1, MultiPortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMultiPortVariable_GmfSubPortVariables(), this.getSinglePortVariable(), null, "gmfSubPortVariables", null, 0, -1, MultiPortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getMultiPortVariable_OrderConstraints(), this.getMultiPortOrderConstraint(), this.getMultiPortOrderConstraint_MultiPortVariable(), "orderConstraints", null, 0, -1, MultiPortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(triggerEmbeddedComponentExpressionEClass, TriggerEmbeddedComponentExpression.class, "TriggerEmbeddedComponentExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -675,6 +845,26 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		initEClass(componentPartVariableEClass, ComponentPartVariable.class, "ComponentPartVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentPartVariable_TriggerEmbeddedComponentExpressions(), this.getTriggerEmbeddedComponentExpression(), null, "triggerEmbeddedComponentExpressions", null, 0, 1, ComponentPartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(multiPortConstraintEClass, MultiPortConstraint.class, "MultiPortConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMultiPortConstraint_TgtSubPortVariable(), this.getSinglePortVariable(), null, "tgtSubPortVariable", null, 1, 1, MultiPortConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(multiPortOrderConstraintEClass, MultiPortOrderConstraint.class, "MultiPortOrderConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMultiPortOrderConstraint_MultiPortVariable(), this.getMultiPortVariable(), this.getMultiPortVariable_OrderConstraints(), "multiPortVariable", null, 1, 1, MultiPortOrderConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMultiPortOrderConstraint_SrcSubPortVariable(), this.getSinglePortVariable(), null, "srcSubPortVariable", null, 1, 1, MultiPortOrderConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMultiPortOrderConstraint_OrderConstraintType(), this.getMultiPortOrderConstraintType(), "orderConstraintType", null, 0, 1, MultiPortOrderConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(multiPortPositionConstraintEClass, MultiPortPositionConstraint.class, "MultiPortPositionConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMultiPortPositionConstraint_PositionConstraintType(), this.getMultiPortPositionConstraintType(), "positionConstraintType", null, 0, 1, MultiPortPositionConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(multiPortOrderConstraintTypeEEnum, MultiPortOrderConstraintType.class, "MultiPortOrderConstraintType");
+		addEEnumLiteral(multiPortOrderConstraintTypeEEnum, MultiPortOrderConstraintType.NEXT);
+		addEEnumLiteral(multiPortOrderConstraintTypeEEnum, MultiPortOrderConstraintType.PREV);
+
+		initEEnum(multiPortPositionConstraintTypeEEnum, MultiPortPositionConstraintType.class, "MultiPortPositionConstraintType");
+		addEEnumLiteral(multiPortPositionConstraintTypeEEnum, MultiPortPositionConstraintType.FIRST);
+		addEEnumLiteral(multiPortPositionConstraintTypeEEnum, MultiPortPositionConstraintType.LAST);
 
 		// Create resource
 		createResource(eNS_URI);

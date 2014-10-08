@@ -9,10 +9,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
@@ -24,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortVariableImpl#getSubPortVariables <em>Sub Port Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortVariableImpl#getGmfSubPortVariables <em>Gmf Sub Port Variables</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortVariableImpl#getOrderConstraints <em>Order Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +54,16 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate GMF_SUB_PORT_VARIABLES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentstorypatternPackage.Literals.MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getOrderConstraints() <em>Order Constraints</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrderConstraints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MultiPortOrderConstraint> orderConstraints;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -94,6 +107,18 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MultiPortOrderConstraint> getOrderConstraints() {
+		if (orderConstraints == null) {
+			orderConstraints = new EObjectContainmentWithInverseEList<MultiPortOrderConstraint>(MultiPortOrderConstraint.class, this, ComponentstorypatternPackage.MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS, ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__MULTI_PORT_VARIABLE);
+		}
+		return orderConstraints;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -104,6 +129,8 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 		switch (featureID) {
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubPortVariables()).basicAdd(otherEnd, msgs);
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOrderConstraints()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -120,6 +147,8 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 				return ((InternalEList<?>)getSubPortVariables()).basicRemove(otherEnd, msgs);
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES:
 				return ((InternalEList<?>)getGmfSubPortVariables()).basicRemove(otherEnd, msgs);
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS:
+				return ((InternalEList<?>)getOrderConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -135,6 +164,8 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 				return getSubPortVariables();
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES:
 				return getGmfSubPortVariables();
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS:
+				return getOrderConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,6 +186,10 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 				getGmfSubPortVariables().clear();
 				getGmfSubPortVariables().addAll((Collection<? extends SinglePortVariable>)newValue);
 				return;
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS:
+				getOrderConstraints().clear();
+				getOrderConstraints().addAll((Collection<? extends MultiPortOrderConstraint>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -172,6 +207,9 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES:
 				getGmfSubPortVariables().clear();
 				return;
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS:
+				getOrderConstraints().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -187,6 +225,8 @@ public class MultiPortVariableImpl extends PortVariableImpl implements
 				return subPortVariables != null && !subPortVariables.isEmpty();
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES:
 				return GMF_SUB_PORT_VARIABLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE__ORDER_CONSTRAINTS:
+				return orderConstraints != null && !orderConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -95,6 +95,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="SinglePortVariable" eSuperTypes="#//PortVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortVariable" eType="#//MultiPortVariable"
         eOpposite="#//MultiPortVariable/subPortVariables"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionConstraints" upperBound="-1"
+        eType="#//MultiPortPositionConstraint" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiPortVariable" eSuperTypes="#//PortVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subPortVariables" upperBound="-1"
@@ -112,6 +114,8 @@
         <details key="derivation" value="self.subPortVariables"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orderConstraints" upperBound="-1"
+        eType="#//MultiPortOrderConstraint" containment="true" eOpposite="#//MultiPortOrderConstraint/multiPortVariable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TriggerEmbeddedComponentExpression"
       abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
@@ -137,5 +141,28 @@
   <eClassifiers xsi:type="ecore:EClass" name="ComponentPartVariable" eSuperTypes="#//PartVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEmbeddedComponentExpressions"
         eType="#//TriggerEmbeddedComponentExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPortConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgtSubPortVariable" lowerBound="1"
+        eType="#//SinglePortVariable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPortOrderConstraint" eSuperTypes="#//MultiPortConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortVariable" lowerBound="1"
+        eType="#//MultiPortVariable" eOpposite="#//MultiPortVariable/orderConstraints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="srcSubPortVariable" lowerBound="1"
+        eType="#//SinglePortVariable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderConstraintType" eType="#//MultiPortOrderConstraintType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPortPositionConstraint" eSuperTypes="#//MultiPortConstraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="positionConstraintType"
+        eType="#//MultiPortPositionConstraintType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MultiPortOrderConstraintType">
+    <eLiterals name="NEXT"/>
+    <eLiterals name="PREV" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MultiPortPositionConstraintType">
+    <eLiterals name="FIRST"/>
+    <eLiterals name="LAST" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

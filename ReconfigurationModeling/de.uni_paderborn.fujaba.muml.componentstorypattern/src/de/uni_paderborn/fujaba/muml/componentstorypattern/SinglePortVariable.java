@@ -2,6 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +14,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable#getMultiPortVariable <em>Multi Port Variable</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable#getPositionConstraints <em>Position Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,5 +50,21 @@ public interface SinglePortVariable extends PortVariable {
 	 * @generated
 	 */
 	void setMultiPortVariable(MultiPortVariable value);
+
+	/**
+	 * Returns the value of the '<em><b>Position Constraints</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Position Constraints</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Position Constraints</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getSinglePortVariable_PositionConstraints()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<MultiPortPositionConstraint> getPositionConstraints();
 
 } // SinglePortVariable

@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
@@ -17,6 +18,11 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternF
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
@@ -73,8 +79,45 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE: return createMultiPortVariable();
 			case ComponentstorypatternPackage.FADING_COMPONENT_PART_VARIABLE: return createFadingComponentPartVariable();
 			case ComponentstorypatternPackage.COMPONENT_PART_VARIABLE: return createComponentPartVariable();
+			case ComponentstorypatternPackage.MULTI_PORT_CONSTRAINT: return createMultiPortConstraint();
+			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT: return createMultiPortOrderConstraint();
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT: return createMultiPortPositionConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT_TYPE:
+				return createMultiPortOrderConstraintTypeFromString(eDataType, initialValue);
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT_TYPE:
+				return createMultiPortPositionConstraintTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT_TYPE:
+				return convertMultiPortOrderConstraintTypeToString(eDataType, instanceValue);
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT_TYPE:
+				return convertMultiPortPositionConstraintTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -166,6 +209,76 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public ComponentPartVariable createComponentPartVariable() {
 		ComponentPartVariableImpl componentPartVariable = new ComponentPartVariableImpl();
 		return componentPartVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MultiPortConstraint createMultiPortConstraint() {
+		MultiPortConstraintImpl multiPortConstraint = new MultiPortConstraintImpl();
+		return multiPortConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MultiPortOrderConstraint createMultiPortOrderConstraint() {
+		MultiPortOrderConstraintImpl multiPortOrderConstraint = new MultiPortOrderConstraintImpl();
+		return multiPortOrderConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MultiPortPositionConstraint createMultiPortPositionConstraint() {
+		MultiPortPositionConstraintImpl multiPortPositionConstraint = new MultiPortPositionConstraintImpl();
+		return multiPortPositionConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MultiPortOrderConstraintType createMultiPortOrderConstraintTypeFromString(EDataType eDataType, String initialValue) {
+		MultiPortOrderConstraintType result = MultiPortOrderConstraintType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMultiPortOrderConstraintTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MultiPortPositionConstraintType createMultiPortPositionConstraintTypeFromString(EDataType eDataType, String initialValue) {
+		MultiPortPositionConstraintType result = MultiPortPositionConstraintType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMultiPortPositionConstraintTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

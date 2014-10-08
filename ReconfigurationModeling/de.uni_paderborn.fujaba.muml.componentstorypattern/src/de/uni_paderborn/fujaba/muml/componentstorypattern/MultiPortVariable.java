@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable#getSubPortVariables <em>Sub Port Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable#getGmfSubPortVariables <em>Gmf Sub Port Variables</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable#getOrderConstraints <em>Order Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,5 +55,23 @@ public interface MultiPortVariable extends PortVariable {
 	 * @generated
 	 */
 	EList<SinglePortVariable> getGmfSubPortVariables();
+
+	/**
+	 * Returns the value of the '<em><b>Order Constraints</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getMultiPortVariable <em>Multi Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Order Constraints</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Order Constraints</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getMultiPortVariable_OrderConstraints()
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getMultiPortVariable
+	 * @model opposite="multiPortVariable" containment="true"
+	 * @generated
+	 */
+	EList<MultiPortOrderConstraint> getOrderConstraints();
 
 } // MultiPortVariable

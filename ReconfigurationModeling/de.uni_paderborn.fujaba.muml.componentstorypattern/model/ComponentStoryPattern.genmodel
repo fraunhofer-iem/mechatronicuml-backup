@@ -8,6 +8,14 @@
   <foreignModel>ComponentStoryPattern.ecore</foreignModel>
   <genPackages prefix="Componentstorypattern" basePackage="de.uni_paderborn.fujaba.muml"
       disposableProviderFactory="true" ecorePackage="ComponentStoryPattern.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ComponentStoryPattern.ecore#//MultiPortOrderConstraintType">
+      <genEnumLiterals ecoreEnumLiteral="ComponentStoryPattern.ecore#//MultiPortOrderConstraintType/NEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="ComponentStoryPattern.ecore#//MultiPortOrderConstraintType/PREV"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ComponentStoryPattern.ecore#//MultiPortPositionConstraintType">
+      <genEnumLiterals ecoreEnumLiteral="ComponentStoryPattern.ecore#//MultiPortPositionConstraintType/FIRST"/>
+      <genEnumLiterals ecoreEnumLiteral="ComponentStoryPattern.ecore#//MultiPortPositionConstraintType/LAST"/>
+    </genEnums>
     <genClasses ecoreClass="ComponentStoryPattern.ecore#//ComponentStoryPattern">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
     </genClasses>
@@ -41,10 +49,12 @@
     </genClasses>
     <genClasses ecoreClass="ComponentStoryPattern.ecore#//SinglePortVariable">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//SinglePortVariable/multiPortVariable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//SinglePortVariable/positionConstraints"/>
     </genClasses>
     <genClasses ecoreClass="ComponentStoryPattern.ecore#//MultiPortVariable">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//MultiPortVariable/subPortVariables"/>
       <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//MultiPortVariable/gmfSubPortVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//MultiPortVariable/orderConstraints"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ComponentStoryPattern.ecore#//TriggerEmbeddedComponentExpression"/>
     <genClasses ecoreClass="ComponentStoryPattern.ecore#//FadingComponentPartVariable">
@@ -52,6 +62,17 @@
     </genClasses>
     <genClasses ecoreClass="ComponentStoryPattern.ecore#//ComponentPartVariable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentStoryPattern.ecore#//MultiPortConstraint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//MultiPortConstraint/tgtSubPortVariable"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentStoryPattern.ecore#//MultiPortOrderConstraint">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//MultiPortOrderConstraint/multiPortVariable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//MultiPortOrderConstraint/srcSubPortVariable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentStoryPattern.ecore#//MultiPortOrderConstraint/orderConstraintType"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentStoryPattern.ecore#//MultiPortPositionConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentStoryPattern.ecore#//MultiPortPositionConstraint/positionConstraintType"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

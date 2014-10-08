@@ -103,6 +103,33 @@ public interface ComponentstorypatternFactory extends EFactory {
 	ComponentPartVariable createComponentPartVariable();
 
 	/**
+	 * Returns a new object of class '<em>Multi Port Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Multi Port Constraint</em>'.
+	 * @generated
+	 */
+	MultiPortConstraint createMultiPortConstraint();
+
+	/**
+	 * Returns a new object of class '<em>Multi Port Order Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Multi Port Order Constraint</em>'.
+	 * @generated
+	 */
+	MultiPortOrderConstraint createMultiPortOrderConstraint();
+
+	/**
+	 * Returns a new object of class '<em>Multi Port Position Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Multi Port Position Constraint</em>'.
+	 * @generated
+	 */
+	MultiPortPositionConstraint createMultiPortPositionConstraint();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

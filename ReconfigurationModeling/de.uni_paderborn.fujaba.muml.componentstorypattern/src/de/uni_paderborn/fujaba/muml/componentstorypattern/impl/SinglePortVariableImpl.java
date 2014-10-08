@@ -2,13 +2,19 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
@@ -20,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.SinglePortVariableImpl#getMultiPortVariable <em>Multi Port Variable</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.SinglePortVariableImpl#getPositionConstraints <em>Position Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +42,16 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 	 * @ordered
 	 */
 	protected MultiPortVariable multiPortVariable;
+
+	/**
+	 * The cached value of the '{@link #getPositionConstraints() <em>Position Constraints</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPositionConstraints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MultiPortPositionConstraint> positionConstraints;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,6 +137,18 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<MultiPortPositionConstraint> getPositionConstraints() {
+		if (positionConstraints == null) {
+			positionConstraints = new EObjectContainmentEList<MultiPortPositionConstraint>(MultiPortPositionConstraint.class, this, ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS);
+		}
+		return positionConstraints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -141,6 +170,8 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 		switch (featureID) {
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE:
 				return basicSetMultiPortVariable(null, msgs);
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS:
+				return ((InternalEList<?>)getPositionConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -156,6 +187,8 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE:
 				if (resolve) return getMultiPortVariable();
 				return basicGetMultiPortVariable();
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS:
+				return getPositionConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,11 +198,16 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE:
 				setMultiPortVariable((MultiPortVariable)newValue);
+				return;
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS:
+				getPositionConstraints().clear();
+				getPositionConstraints().addAll((Collection<? extends MultiPortPositionConstraint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +224,9 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE:
 				setMultiPortVariable((MultiPortVariable)null);
 				return;
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS:
+				getPositionConstraints().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -200,6 +241,8 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 		switch (featureID) {
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE:
 				return multiPortVariable != null;
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS:
+				return positionConstraints != null && !positionConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -20,6 +20,9 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternP
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
@@ -135,6 +138,18 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseComponentPartVariable(ComponentPartVariable object) {
 				return createComponentPartVariableAdapter();
+			}
+			@Override
+			public Adapter caseMultiPortConstraint(MultiPortConstraint object) {
+				return createMultiPortConstraintAdapter();
+			}
+			@Override
+			public Adapter caseMultiPortOrderConstraint(MultiPortOrderConstraint object) {
+				return createMultiPortOrderConstraintAdapter();
+			}
+			@Override
+			public Adapter caseMultiPortPositionConstraint(MultiPortPositionConstraint object) {
+				return createMultiPortPositionConstraintAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -359,6 +374,48 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentPartVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint <em>Multi Port Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint
+	 * @generated
+	 */
+	public Adapter createMultiPortConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint <em>Multi Port Order Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint
+	 * @generated
+	 */
+	public Adapter createMultiPortOrderConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint <em>Multi Port Position Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint
+	 * @generated
+	 */
+	public Adapter createMultiPortPositionConstraintAdapter() {
 		return null;
 	}
 
