@@ -23,6 +23,7 @@ import de.uni_paderborn.uppaal.visuals.PlanarElement;
  *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getParentTemplate <em>Parent Template</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getLocationTimeKind <em>Location Time Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -110,5 +111,32 @@ public interface Location extends NamedElement, CommentableElement, PlanarElemen
 	 * @generated
 	 */
 	void setLocationTimeKind(LocationKind value);
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see de.uni_paderborn.uppaal.templates.TemplatesPackage#getLocation_Id()
+	 * @model id="true" required="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.name.concat(\'_\').concat(self.parentTemplate.name)'"
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.uppaal.templates.Location#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
 
 } // Location

@@ -345,6 +345,15 @@ public class TemplatesPackageImpl extends EPackageImpl implements TemplatesPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLocation_Id() {
+		return (EAttribute)locationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEdge() {
 		return edgeEClass;
 	}
@@ -511,6 +520,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements TemplatesPacka
 		createEReference(locationEClass, LOCATION__PARENT_TEMPLATE);
 		createEReference(locationEClass, LOCATION__INVARIANT);
 		createEAttribute(locationEClass, LOCATION__LOCATION_TIME_KIND);
+		createEAttribute(locationEClass, LOCATION__ID);
 
 		edgeEClass = createEClass(EDGE);
 		createEReference(edgeEClass, EDGE__SOURCE);
@@ -598,6 +608,7 @@ public class TemplatesPackageImpl extends EPackageImpl implements TemplatesPacka
 		initEReference(getLocation_ParentTemplate(), this.getTemplate(), this.getTemplate_Location(), "parentTemplate", null, 1, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocation_Invariant(), theExpressionsPackage.getExpression(), null, "invariant", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocation_LocationTimeKind(), this.getLocationKind(), "locationTimeKind", null, 1, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocation_Id(), ecorePackage.getEString(), "id", null, 1, 1, Location.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEdge_Source(), this.getLocation(), null, "source", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -700,6 +711,12 @@ public class TemplatesPackageImpl extends EPackageImpl implements TemplatesPacka
 		   source, 
 		   new String[] {
 			 "UniqueLocationNames", "self.location->isUnique(name)"
+		   });	
+		addAnnotation
+		  (getLocation_Id(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.name.concat(\'_\').concat(self.parentTemplate.name)"
 		   });	
 		addAnnotation
 		  (edgeEClass, 

@@ -5,6 +5,7 @@ package de.uni_paderborn.uppaal.templates.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -37,6 +38,7 @@ import de.uni_paderborn.uppaal.visuals.VisualsPackage;
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getParentTemplate <em>Parent Template</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getLocationTimeKind <em>Location Time Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -142,6 +144,16 @@ public class LocationImpl extends NamedElementImpl implements Location {
 	 * @ordered
 	 */
 	protected LocationKind locationTimeKind = LOCATION_TIME_KIND_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ID__ESETTING_DELEGATE = ((EStructuralFeature.Internal)TemplatesPackage.Literals.LOCATION__ID).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -378,6 +390,24 @@ public class LocationImpl extends NamedElementImpl implements Location {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return (String)ID__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		ID__ESETTING_DELEGATE.dynamicSet(this, null, 0, newId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -443,6 +473,8 @@ public class LocationImpl extends NamedElementImpl implements Location {
 				return getInvariant();
 			case TemplatesPackage.LOCATION__LOCATION_TIME_KIND:
 				return getLocationTimeKind();
+			case TemplatesPackage.LOCATION__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -475,6 +507,9 @@ public class LocationImpl extends NamedElementImpl implements Location {
 				return;
 			case TemplatesPackage.LOCATION__LOCATION_TIME_KIND:
 				setLocationTimeKind((LocationKind)newValue);
+				return;
+			case TemplatesPackage.LOCATION__ID:
+				setId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -509,6 +544,9 @@ public class LocationImpl extends NamedElementImpl implements Location {
 			case TemplatesPackage.LOCATION__LOCATION_TIME_KIND:
 				setLocationTimeKind(LOCATION_TIME_KIND_EDEFAULT);
 				return;
+			case TemplatesPackage.LOCATION__ID:
+				ID__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -535,6 +573,8 @@ public class LocationImpl extends NamedElementImpl implements Location {
 				return invariant != null;
 			case TemplatesPackage.LOCATION__LOCATION_TIME_KIND:
 				return locationTimeKind != LOCATION_TIME_KIND_EDEFAULT;
+			case TemplatesPackage.LOCATION__ID:
+				return ID__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

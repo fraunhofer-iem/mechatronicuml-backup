@@ -339,13 +339,22 @@ public interface TemplatesPackage extends EPackage {
 	int LOCATION__LOCATION_TIME_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION__ID = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Location</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int LOCATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl <em>Edge</em>}' class.
@@ -711,6 +720,17 @@ public interface TemplatesPackage extends EPackage {
 	EAttribute getLocation_LocationTimeKind();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.uppaal.templates.Location#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see de.uni_paderborn.uppaal.templates.Location#getId()
+	 * @see #getLocation()
+	 * @generated
+	 */
+	EAttribute getLocation_Id();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.templates.Edge <em>Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1000,6 +1020,14 @@ public interface TemplatesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LOCATION__LOCATION_TIME_KIND = eINSTANCE.getLocation_LocationTimeKind();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOCATION__ID = eINSTANCE.getLocation_Id();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl <em>Edge</em>}' class.
