@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers;
 
-import org.eclipse.emf.ecore.EcorePackage;
 
 /**
  * @generated
