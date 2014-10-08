@@ -19,4 +19,5 @@
 	<cq:advisorNode namePatter="^org\.objectweb.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePatter="^org\.sat4j.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePatter="^org\.w3c.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePatter=".*" useMaterialization="false" useTargetPlatform="false"/>
 </cq:componentQuery>
