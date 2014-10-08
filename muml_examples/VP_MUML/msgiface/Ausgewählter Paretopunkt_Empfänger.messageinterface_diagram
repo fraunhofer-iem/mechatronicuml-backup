@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:msgiface="http://www.fujaba.de/muml/model/msgiface/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_43yAEAJREeKsot-FPTx42A" type="Messageinterface" name="Ausgewählter%20Paretopunkt_Empfänger2.messageinterface_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_43yAEgJREeKsot-FPTx42A" type="2006" fontName="Bitstream Vera Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_43yAFAJREeKsot-FPTx42A" type="5012"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_43yAFQJREeKsot-FPTx42A" type="7007">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_43yAFgJREeKsot-FPTx42A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_43yAFwJREeKsot-FPTx42A"/>
+    </children>
+    <element xmi:type="msgiface:MessageInterface" href="../VernetzterPruefstand.fujaba#_cyVfMIl6EeGMgemuusRmqw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_43yAEwJREeKsot-FPTx42A"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_43yAEQJREeKsot-FPTx42A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VernetzterPruefstand.fujaba#_pPaCIXpLEeGB3c_CrLx2_A"/>
+</notation:Diagram>

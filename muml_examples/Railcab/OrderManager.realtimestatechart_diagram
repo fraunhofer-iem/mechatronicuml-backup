@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1" xmi:id="_vBIZIexaEeGf65_dOPS6wA" type="Realtimestatechart" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_vFMZwOxaEeGf65_dOPS6wA" type="2006" fontName="Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vFMZwuxaEeGf65_dOPS6wA" type="5045"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_vFMZw-xaEeGf65_dOPS6wA" type="5046"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_vFMZxOxaEeGf65_dOPS6wA" type="7019">
+      <children xmi:type="notation:Shape" xmi:id="_w_Y1kOxaEeGf65_dOPS6wA" type="3017" fontName="Sans" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_w_Y1kuxaEeGf65_dOPS6wA" type="5044"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_w_Y1k-xaEeGf65_dOPS6wA" type="7020">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_w_Y1lOxaEeGf65_dOPS6wA" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_w_Y1lexaEeGf65_dOPS6wA"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_w_Y1luxaEeGf65_dOPS6wA" type="7021">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_w_Y1l-xaEeGf65_dOPS6wA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_w_Y1mOxaEeGf65_dOPS6wA"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_w_Y1mexaEeGf65_dOPS6wA" type="7022">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_w_Y1muxaEeGf65_dOPS6wA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_w_Y1m-xaEeGf65_dOPS6wA"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_w_ZcoOxaEeGf65_dOPS6wA" type="7023">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_w_ZcoexaEeGf65_dOPS6wA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_w_ZcouxaEeGf65_dOPS6wA"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="Railcab.fujaba#_w_XncOxaEeGf65_dOPS6wA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w_Y1kexaEeGf65_dOPS6wA" x="105" y="48"/>
+      </children>
+    </children>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="Railcab.fujaba#_vBIZIOxaEeGf65_dOPS6wA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vFMZwexaEeGf65_dOPS6wA" width="381" height="241"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_vBIZIuxaEeGf65_dOPS6wA"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="Railcab.fujaba#_vBIZIOxaEeGf65_dOPS6wA"/>
+</notation:Diagram>

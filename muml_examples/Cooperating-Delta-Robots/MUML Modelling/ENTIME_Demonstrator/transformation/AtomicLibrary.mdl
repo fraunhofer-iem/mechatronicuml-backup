@@ -1,0 +1,6987 @@
+Library {
+  Name			  "AtomicLibrary"
+  MaxMDLFileLineLength	  120
+  PostLoadFcn		  "PacketBusGenerator"
+  LibraryType "BlockLibrary"    Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+    }  
+    PropName		    "ConfigurationSets"
+  }
+  
+  BlockDefaults {
+  }
+  AnnotationDefaults {
+  }
+  LineDefaults {
+  }
+  BlockParameterDefaults {
+  }
+  System {
+    Name		    "AtomicLibrary"    
+	
+  Block {
+    BlockType SubSystem
+    Name "MainProcessing"
+    SID				20
+    Ports [12, 3, 0, 0]
+    Tag		"id=_1y794KbHEeKVjd_905naCg"
+  Position "[20, 20, 270, 820]"
+	  System {
+	  	Name  "MainProcessing"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Inport
+    Name "clockSignal"
+    SID				21
+    Tag		"id=_109XIKbHEeKVjd_905naCg"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  Position "[190, 30, 220, 60]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "isMaster"
+    SID				22
+    Tag		"id=_2NcvoKbHEeKVjd_905naCg"
+    Port "2"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[60, 90, 90, 120]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "stopPlaying"
+    SID				23
+    Tag		"id=_2SEJ4KbHEeKVjd_905naCg"
+    Port "3"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[60, 150, 90, 180]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_To_OtherRobot_recv"
+    SID				24
+    Tag		"id=_2Y05MKbHEeKVjd_905naCg"
+    Port "4"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[190, 720, 220, 750]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_To_OtherRobot_net_address"
+    SID				25
+    Tag		"id=_2Y2HUKbHEeKVjd_905naCg"
+    Port "5"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 780, 220, 810]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_To_OtherRobot_receiver_net_address"
+    SID				26
+    Tag		"id=_2Y2uYKbHEeKVjd_905naCg"
+    Port "6"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 840, 220, 870]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_ToStrikeProcessing_recv"
+    SID				27
+    Tag		"id=_2ZaIAKbHEeKVjd_905naCg"
+    Port "7"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[190, 1180, 220, 1210]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_ToStrikeProcessing_net_address"
+    SID				28
+    Tag		"id=_2ZbWIKbHEeKVjd_905naCg"
+    Port "8"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 1240, 220, 1270]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_ToStrikeProcessing_receiver_net_address"
+    SID				29
+    Tag		"id=_2ZckQKbHEeKVjd_905naCg"
+    Port "9"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 1300, 220, 1330]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_From_SensorProcessing_recv"
+    SID				30
+    Tag		"id=_2aQckKbHEeKVjd_905naCg"
+    Port "10"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[190, 1640, 220, 1670]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_From_SensorProcessing_net_address"
+    SID				31
+    Tag		"id=_2aSRwKbHEeKVjd_905naCg"
+    Port "11"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 1700, 220, 1730]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_From_SensorProcessing_receiver_net_address"
+    SID				32
+    Tag		"id=_2aS40KbHEeKVjd_905naCg"
+    Port "12"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 1760, 220, 1790]"
+  }
+	  	
+  Block {
+    BlockType Outport
+    Name "BAT_Info_To_OtherRobot_send"
+    SID				33
+    Tag		"id=_2Y0SIKbHEeKVjd_905naCg"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[860, 720, 890, 750]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_ToStrikeProcessing_send"
+    SID				34
+    Tag		"id=_2ZZg8KbHEeKVjd_905naCg"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[860, 1180, 890, 1210]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_From_SensorProcessing_send"
+    SID				35
+    Tag		"id=_2aP1gKbHEeKVjd_905naCg"
+    Port "3"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[860, 1640, 890, 1670]"
+  }
+	  	
+
+
+Block {
+      BlockType		      SubSystem
+      Name		      	"MainProcessing_Statechart"  
+      SID				36
+      Ports				[15, 12]      
+	  Position		[250, 30, 800, 660]
+      Tag				"id=_1z1VwKbHEeKVjd_905naCg"   
+      MaskHideContents	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"            
+      System {
+		Name			"MainProcessing_Statechart"	
+		SIDHighWatermark	    36
+		Block {
+			BlockType		  Inport
+			Name			  "clockSignal"
+			Port			  "1"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "isMaster"
+			Port			  "2"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "stopPlaying"
+			Port			  "3"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_To_OtherRobotReadIn"
+			Port			  "4"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_To_OtherRobotParamReadIn"
+			Port			  "5"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_To_OtherRobotWriteIn"
+			Port			  "6"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_To_OtherRobotParamWriteIn"
+			Port			  "7"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_ToStrikeProcessingReadIn"
+			Port			  "8"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_ToStrikeProcessingParamReadIn"
+			Port			  "9"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_ToStrikeProcessingWriteIn"
+			Port			  "10"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_ToStrikeProcessingParamWriteIn"
+			Port			  "11"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_From_SensorProcessingReadIn"
+			Port			  "12"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_From_SensorProcessingParamReadIn"
+			Port			  "13"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_From_SensorProcessingWriteIn"
+			Port			  "14"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_Info_From_SensorProcessingParamWriteIn"
+			Port			  "15"
+			IconDisplay		  "Port number"
+		}
+
+			
+		Block {
+	  		BlockType		  Demux
+	  		Name			  " Demux "
+	  		Ports		      [1, 1]
+	  		Outputs		  "1"
+	  		SID               37
+		}
+		Block {
+	  		BlockType		  "S-Function"
+	  		Name			  " SFunction "
+	  		SID               38
+	  		Tag			  "Stateflow S-Function AtomicLibrary 1"
+	  		Ports			  [15, 13]
+	  		FunctionName		  "sf_sfun"
+	  		PortCounts		  "[15 13]"
+			Port {
+				PortNumber		2
+				Name			"BAT_Info_To_OtherRobotReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		3
+				Name			"BAT_Info_To_OtherRobotParamReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		4
+				Name			"BAT_Info_To_OtherRobotWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		5
+				Name			"BAT_Info_To_OtherRobotParamWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		6
+				Name			"BAT_Info_ToStrikeProcessingReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		7
+				Name			"BAT_Info_ToStrikeProcessingParamReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		8
+				Name			"BAT_Info_ToStrikeProcessingWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		9
+				Name			"BAT_Info_ToStrikeProcessingParamWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		10
+				Name			"BAT_Info_From_SensorProcessingReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		11
+				Name			"BAT_Info_From_SensorProcessingParamReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		12
+				Name			"BAT_Info_From_SensorProcessingWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		13
+				Name			"BAT_Info_From_SensorProcessingParamWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+
+		}
+		Block {
+	  		BlockType		  Terminator
+	  		Name			  " Terminator "
+	  		SID               39
+		}
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_To_OtherRobotReadOut"
+    SID				40
+    Tag		"id=_2Yp6EKbHEeKVjd_905naCg"
+    Port "1"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_To_OtherRobotParamReadOut"
+    SID				41
+    Tag		"id=_2YrIMKbHEeKVjd_905naCg"
+    Port "2"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_To_OtherRobotWriteOut"
+    SID				42
+    Tag		"id=_2YrvQKbHEeKVjd_905naCg"
+    Port "3"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_To_OtherRobotParamWriteOut"
+    SID				43
+    Tag		"id=_2YsWUKbHEeKVjd_905naCg"
+    Port "4"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_ToStrikeProcessingReadOut"
+    SID				44
+    Tag		"id=_2ZMFkKbHEeKVjd_905naCg"
+    Port "5"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_ToStrikeProcessingParamReadOut"
+    SID				45
+    Tag		"id=_2ZMsoKbHEeKVjd_905naCg"
+    Port "6"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_ToStrikeProcessingWriteOut"
+    SID				46
+    Tag		"id=_2ZNTsKbHEeKVjd_905naCg"
+    Port "7"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_ToStrikeProcessingParamWriteOut"
+    SID				47
+    Tag		"id=_2ZN6wKbHEeKVjd_905naCg"
+    Port "8"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_From_SensorProcessingReadOut"
+    SID				48
+    Tag		"id=_2aAk8KbHEeKVjd_905naCg"
+    Port "9"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_From_SensorProcessingParamReadOut"
+    SID				49
+    Tag		"id=_2aBMAKbHEeKVjd_905naCg"
+    Port "10"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_From_SensorProcessingWriteOut"
+    SID				50
+    Tag		"id=_2aCaIKbHEeKVjd_905naCg"
+    Port "11"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_Info_From_SensorProcessingParamWriteOut"
+    SID				51
+    Tag		"id=_2aDoQKbHEeKVjd_905naCg"
+    Port "12"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+		Line {
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  1
+	  		DstBlock		  " Demux "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "clockSignal"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "isMaster"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  2
+		}
+		Line {
+	  		SrcBlock		  "stopPlaying"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  3
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_To_OtherRobotReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  4
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_To_OtherRobotParamReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  5
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_To_OtherRobotWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  6
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_To_OtherRobotParamWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  7
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_ToStrikeProcessingReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  8
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_ToStrikeProcessingParamReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  9
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_ToStrikeProcessingWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  10
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_ToStrikeProcessingParamWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  11
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_From_SensorProcessingReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  12
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_From_SensorProcessingParamReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  13
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_From_SensorProcessingWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  14
+		}
+		Line {
+	  		SrcBlock		  "BAT_Info_From_SensorProcessingParamWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  15
+		}
+		Line {
+			Name		  	  "BAT_Info_To_OtherRobotReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	2
+	  		DstBlock		  "BAT_Info_To_OtherRobotReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_To_OtherRobotParamReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	3
+	  		DstBlock		  "BAT_Info_To_OtherRobotParamReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_To_OtherRobotWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	4
+	  		DstBlock		  "BAT_Info_To_OtherRobotWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_To_OtherRobotParamWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	5
+	  		DstBlock		  "BAT_Info_To_OtherRobotParamWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_ToStrikeProcessingReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	6
+	  		DstBlock		  "BAT_Info_ToStrikeProcessingReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_ToStrikeProcessingParamReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	7
+	  		DstBlock		  "BAT_Info_ToStrikeProcessingParamReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_ToStrikeProcessingWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	8
+	  		DstBlock		  "BAT_Info_ToStrikeProcessingWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_ToStrikeProcessingParamWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	9
+	  		DstBlock		  "BAT_Info_ToStrikeProcessingParamWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_From_SensorProcessingReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	10
+	  		DstBlock		  "BAT_Info_From_SensorProcessingReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_From_SensorProcessingParamReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	11
+	  		DstBlock		  "BAT_Info_From_SensorProcessingParamReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_From_SensorProcessingWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	12
+	  		DstBlock		  "BAT_Info_From_SensorProcessingWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_Info_From_SensorProcessingParamWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	13
+	  		DstBlock		  "BAT_Info_From_SensorProcessingParamWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+	  		SrcBlock		  " Demux "
+	  		SrcPort		  1
+	  		DstBlock		  " Terminator "
+	  		DstPort		  1
+		}
+	}
+}
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"isMaster_ZeroOrderHold"
+    Tag					"id=_2RvZwKbHEeKVjd_905naCg"
+    SID				    52 
+    SampleTime			"10.0"
+  Position "[160, 90, 190, 120]"
+  }
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"stopPlaying_ZeroOrderHold"
+    Tag					"id=_2SGmIKbHEeKVjd_905naCg"
+    SID				    53 
+    SampleTime			"10.0"
+  Position "[160, 150, 190, 180]"
+  }
+
+
+
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link Layer BAT_Info_To_OtherRobot"
+	  SID			  54
+	  Ports			  [9, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer/Link Layer UDP"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+  Position "[250, 720, 800, 1120]"
+
+	  DelayMin "2"
+	  DelayMax "100"
+	  MessageLossProbability "0"	  	  
+	}	  	  
+
+
+
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link Layer BAT_Info_ToStrikeProcessing"
+	  SID			  55
+	  Ports			  [9, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer/Link Layer UDP"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+  Position "[250, 1180, 800, 1580]"
+
+	  DelayMin "2"
+	  DelayMax "100"
+	  MessageLossProbability "0"	  	  
+	}	  	  
+
+
+
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link Layer BAT_Info_From_SensorProcessing"
+	  SID			  56
+	  Ports			  [9, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer/Link Layer UDP"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+  Position "[250, 1640, 800, 2040]"
+
+	  DelayMin "2"
+	  DelayMax "100"
+	  MessageLossProbability "0"	  	  
+	}	  	  
+  Line {
+    SrcBlock "clockSignal"
+    SrcPort 1
+    Tag				"id=_11VxoKbHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "isMaster"
+    SrcPort 1
+    Tag				"id=_2Rx2AKbHEeKVjd_905naCg"
+    DstBlock "isMaster_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "isMaster_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_2RydEKbHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "stopPlaying"
+    SrcPort 1
+    Tag				"id=_2SJpcKbHEeKVjd_905naCg"
+    DstBlock "stopPlaying_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "stopPlaying_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_2SJpcabHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_To_OtherRobot"
+    SrcPort 1
+    Tag				"id=_2YtkcabHEeKVjd_905naCg"
+    DstBlock "BAT_Info_To_OtherRobot_send"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "BAT_Info_To_OtherRobot_recv"
+    SrcPort 1
+    Tag				"id=_2YtkcKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_To_OtherRobot"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 1
+    Tag				"id=_2YlBkKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_To_OtherRobot"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_To_OtherRobot"
+    SrcPort 2
+    Tag				"id=_2YlBkabHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_To_OtherRobot"
+    SrcPort 3
+    Tag				"id=_2YlooKbHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 2
+    Tag				"id=_2YlooabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_To_OtherRobot"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 3
+    Tag				"id=_2YlooqbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_To_OtherRobot"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 4
+    Tag				"id=_2Yloo6bHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_To_OtherRobot"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_To_OtherRobot"
+    SrcPort 4
+    Tag				"id=_2YlopKbHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_To_OtherRobot"
+    SrcPort 5
+    Tag				"id=_2YlopabHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "BAT_Info_To_OtherRobot_net_address"
+    SrcPort 1
+    Tag				"id=_2Y3VcKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_To_OtherRobot"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "BAT_Info_To_OtherRobot_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_2Y3VcabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_To_OtherRobot"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    SrcPort 1
+    Tag				"id=_2ZPI4abHEeKVjd_905naCg"
+    DstBlock "BAT_Info_ToStrikeProcessing_send"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "BAT_Info_ToStrikeProcessing_recv"
+    SrcPort 1
+    Tag				"id=_2ZPI4KbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 5
+    Tag				"id=_2ZIbMKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    SrcPort 2
+    Tag				"id=_2ZIbMabHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 8
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    SrcPort 3
+    Tag				"id=_2ZJCQKbHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 9
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 6
+    Tag				"id=_2ZJCQabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 7
+    Tag				"id=_2ZJCQqbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 8
+    Tag				"id=_2ZJCQ6bHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    SrcPort 4
+    Tag				"id=_2ZJCRKbHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 10
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    SrcPort 5
+    Tag				"id=_2ZJCRabHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 11
+  }
+  Line {
+    SrcBlock "BAT_Info_ToStrikeProcessing_net_address"
+    SrcPort 1
+    Tag				"id=_2ZdLUKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "BAT_Info_ToStrikeProcessing_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_2ZdLUabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_ToStrikeProcessing"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_From_SensorProcessing"
+    SrcPort 1
+    Tag				"id=_2aFdcabHEeKVjd_905naCg"
+    DstBlock "BAT_Info_From_SensorProcessing_send"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "BAT_Info_From_SensorProcessing_recv"
+    SrcPort 1
+    Tag				"id=_2aFdcKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_From_SensorProcessing"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 9
+    Tag				"id=_2Z86kKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_From_SensorProcessing"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_From_SensorProcessing"
+    SrcPort 2
+    Tag				"id=_2Z86kabHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 12
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_From_SensorProcessing"
+    SrcPort 3
+    Tag				"id=_2Z86kqbHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 13
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 10
+    Tag				"id=_2Z9hoKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_From_SensorProcessing"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 11
+    Tag				"id=_2Z9hoabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_From_SensorProcessing"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "MainProcessing_Statechart"
+    SrcPort 12
+    Tag				"id=_2Z9hoqbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_From_SensorProcessing"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_From_SensorProcessing"
+    SrcPort 4
+    Tag				"id=_2Z9ho6bHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 14
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info_From_SensorProcessing"
+    SrcPort 5
+    Tag				"id=_2Z9hpKbHEeKVjd_905naCg"
+    DstBlock "MainProcessing_Statechart"
+    DstPort 15
+  }
+  Line {
+    SrcBlock "BAT_Info_From_SensorProcessing_net_address"
+    SrcPort 1
+    Tag				"id=_2aTf4KbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_From_SensorProcessing"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "BAT_Info_From_SensorProcessing_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_2aTf4abHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info_From_SensorProcessing"
+    DstPort 3
+  }
+	  }
+  }
+
+  Block {
+    BlockType SubSystem
+    Name "SensorProcessing"
+    SID				57
+    Ports [10, 1, 0, 0]
+    Tag		"id=_12gPQKbHEeKVjd_905naCg"
+  Position "[330, 20, 580, 820]"
+	  System {
+	  	Name  "SensorProcessing"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Inport
+    Name "clockSignal"
+    SID				58
+    Tag		"id=_12kgsKbHEeKVjd_905naCg"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  Position "[190, 30, 220, 60]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "posX"
+    SID				59
+    Tag		"id=_2Sj5IKbHEeKVjd_905naCg"
+    Port "2"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[60, 90, 90, 120]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "posY"
+    SID				60
+    Tag		"id=_2S4CMKbHEeKVjd_905naCg"
+    Port "3"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[60, 150, 90, 180]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "posZ"
+    SID				61
+    Tag		"id=_2TUuIKbHEeKVjd_905naCg"
+    Port "4"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[60, 210, 90, 240]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "timeOfArrival"
+    SID				62
+    Tag		"id=_2TtvsKbHEeKVjd_905naCg"
+    Port "5"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[60, 270, 90, 300]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "velocity"
+    SID				63
+    Tag		"id=_2ULCsKbHEeKVjd_905naCg"
+    Port "6"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[60, 330, 90, 360]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "ballRecognized"
+    SID				64
+    Tag		"id=_2UtOMKbHEeKVjd_905naCg"
+    Port "7"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[60, 390, 90, 420]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_recv"
+    SID				65
+    Tag		"id=_2axZ8KbHEeKVjd_905naCg"
+    Port "8"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[190, 300, 220, 330]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_net_address"
+    SID				66
+    Tag		"id=_2ayoEKbHEeKVjd_905naCg"
+    Port "9"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 360, 220, 390]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_receiver_net_address"
+    SID				67
+    Tag		"id=_2azPIKbHEeKVjd_905naCg"
+    Port "10"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 420, 220, 450]"
+  }
+	  	
+  Block {
+    BlockType Outport
+    Name "BAT_Info_send"
+    SID				68
+    Tag		"id=_2awy4KbHEeKVjd_905naCg"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[860, 300, 890, 330]"
+  }
+	  	
+
+
+Block {
+      BlockType		      SubSystem
+      Name		      	"SensorProcessing_Statechart"  
+      SID				69
+      Ports				[11, 4]      
+	  Position		[250, 30, 800, 240]
+      Tag				"id=_12hdYKbHEeKVjd_905naCg"   
+      MaskHideContents	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"            
+      System {
+		Name			"SensorProcessing_Statechart"	
+		SIDHighWatermark	    69
+		Block {
+			BlockType		  Inport
+			Name			  "clockSignal"
+			Port			  "1"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "posX"
+			Port			  "2"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "posY"
+			Port			  "3"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "posZ"
+			Port			  "4"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "timeOfArrival"
+			Port			  "5"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "velocity"
+			Port			  "6"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "ballRecognized"
+			Port			  "7"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_InfoReadIn"
+			Port			  "8"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_InfoParamReadIn"
+			Port			  "9"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_InfoWriteIn"
+			Port			  "10"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_InfoParamWriteIn"
+			Port			  "11"
+			IconDisplay		  "Port number"
+		}
+
+			
+		Block {
+	  		BlockType		  Demux
+	  		Name			  " Demux "
+	  		Ports		      [1, 1]
+	  		Outputs		  "1"
+	  		SID               70
+		}
+		Block {
+	  		BlockType		  "S-Function"
+	  		Name			  " SFunction "
+	  		SID               71
+	  		Tag			  "Stateflow S-Function AtomicLibrary 2"
+	  		Ports			  [11, 5]
+	  		FunctionName		  "sf_sfun"
+	  		PortCounts		  "[11 5]"
+			Port {
+				PortNumber		2
+				Name			"BAT_InfoReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		3
+				Name			"BAT_InfoParamReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		4
+				Name			"BAT_InfoWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		5
+				Name			"BAT_InfoParamWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+
+		}
+		Block {
+	  		BlockType		  Terminator
+	  		Name			  " Terminator "
+	  		SID               72
+		}
+
+  Block {
+    BlockType Outport
+    Name "BAT_InfoReadOut"
+    SID				73
+    Tag		"id=_2aoQAKbHEeKVjd_905naCg"
+    Port "1"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_InfoParamReadOut"
+    SID				74
+    Tag		"id=_2ao3EKbHEeKVjd_905naCg"
+    Port "2"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_InfoWriteOut"
+    SID				75
+    Tag		"id=_2apeIKbHEeKVjd_905naCg"
+    Port "3"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_InfoParamWriteOut"
+    SID				76
+    Tag		"id=_2aqFMKbHEeKVjd_905naCg"
+    Port "4"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+		Line {
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  1
+	  		DstBlock		  " Demux "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "clockSignal"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "posX"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  2
+		}
+		Line {
+	  		SrcBlock		  "posY"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  3
+		}
+		Line {
+	  		SrcBlock		  "posZ"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  4
+		}
+		Line {
+	  		SrcBlock		  "timeOfArrival"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  5
+		}
+		Line {
+	  		SrcBlock		  "velocity"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  6
+		}
+		Line {
+	  		SrcBlock		  "ballRecognized"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  7
+		}
+		Line {
+	  		SrcBlock		  "BAT_InfoReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  8
+		}
+		Line {
+	  		SrcBlock		  "BAT_InfoParamReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  9
+		}
+		Line {
+	  		SrcBlock		  "BAT_InfoWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  10
+		}
+		Line {
+	  		SrcBlock		  "BAT_InfoParamWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  11
+		}
+		Line {
+			Name		  	  "BAT_InfoReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	2
+	  		DstBlock		  "BAT_InfoReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_InfoParamReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	3
+	  		DstBlock		  "BAT_InfoParamReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_InfoWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	4
+	  		DstBlock		  "BAT_InfoWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_InfoParamWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	5
+	  		DstBlock		  "BAT_InfoParamWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+	  		SrcBlock		  " Demux "
+	  		SrcPort		  1
+	  		DstBlock		  " Terminator "
+	  		DstPort		  1
+		}
+	}
+}
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"posX_ZeroOrderHold"
+    Tag					"id=_2Sm8cKbHEeKVjd_905naCg"
+    SID				    77 
+    SampleTime			"10.0"
+  Position "[160, 90, 190, 120]"
+  }
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"posY_ZeroOrderHold"
+    Tag					"id=_2S8ToKbHEeKVjd_905naCg"
+    SID				    78 
+    SampleTime			"10.0"
+  Position "[160, 150, 190, 180]"
+  }
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"posZ_ZeroOrderHold"
+    Tag					"id=_2TZmoKbHEeKVjd_905naCg"
+    SID				    79 
+    SampleTime			"10.0"
+  Position "[160, 210, 190, 240]"
+  }
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"timeOfArrival_ZeroOrderHold"
+    Tag					"id=_2TwzAKbHEeKVjd_905naCg"
+    SID				    80 
+    SampleTime			"10.0"
+  Position "[160, 270, 190, 300]"
+  }
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"velocity_ZeroOrderHold"
+    Tag					"id=_2UOGAKbHEeKVjd_905naCg"
+    SID				    81 
+    SampleTime			"10.0"
+  Position "[160, 330, 190, 360]"
+  }
+
+
+  Block {
+    BlockType 			ZeroOrderHold
+    Name 				"ballRecognized_ZeroOrderHold"
+    Tag					"id=_2U3mQKbHEeKVjd_905naCg"
+    SID				    82 
+    SampleTime			"10.0"
+  Position "[160, 390, 190, 420]"
+  }
+
+
+
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link Layer BAT_Info"
+	  SID			  83
+	  Ports			  [9, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer/Link Layer UDP"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+  Position "[250, 300, 800, 700]"
+
+	  DelayMin "2"
+	  DelayMax "100"
+	  MessageLossProbability "0"	  	  
+	}	  	  
+  Line {
+    SrcBlock "clockSignal"
+    SrcPort 1
+    Tag				"id=_12lHwKbHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "posX"
+    SrcPort 1
+    Tag				"id=_2SpYsKbHEeKVjd_905naCg"
+    DstBlock "posX_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "posX_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_2SpYsabHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "posY"
+    SrcPort 1
+    Tag				"id=_2S_W8KbHEeKVjd_905naCg"
+    DstBlock "posY_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "posY_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_2S_W8abHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "posZ"
+    SrcPort 1
+    Tag				"id=_2TcC4KbHEeKVjd_905naCg"
+    DstBlock "posZ_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "posZ_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_2TcC4abHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "timeOfArrival"
+    SrcPort 1
+    Tag				"id=_2Tz2UKbHEeKVjd_905naCg"
+    DstBlock "timeOfArrival_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "timeOfArrival_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_2Tz2UabHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "velocity"
+    SrcPort 1
+    Tag				"id=_2USXcKbHEeKVjd_905naCg"
+    DstBlock "velocity_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "velocity_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_2USXcabHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "ballRecognized"
+    SrcPort 1
+    Tag				"id=_2U7QoKbHEeKVjd_905naCg"
+    DstBlock "ballRecognized_ZeroOrderHold"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "ballRecognized_ZeroOrderHold"
+    SrcPort 1
+    Tag				"id=_2U7QoabHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 1
+    Tag				"id=_2aqsQabHEeKVjd_905naCg"
+    DstBlock "BAT_Info_send"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "BAT_Info_recv"
+    SrcPort 1
+    Tag				"id=_2aqsQKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "SensorProcessing_Statechart"
+    SrcPort 1
+    Tag				"id=_2alMsKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 2
+    Tag				"id=_2alMsabHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 8
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 3
+    Tag				"id=_2alMsqbHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 9
+  }
+  Line {
+    SrcBlock "SensorProcessing_Statechart"
+    SrcPort 2
+    Tag				"id=_2alMs6bHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "SensorProcessing_Statechart"
+    SrcPort 3
+    Tag				"id=_2alMtKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "SensorProcessing_Statechart"
+    SrcPort 4
+    Tag				"id=_2alMtabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 4
+    Tag				"id=_2alzwKbHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 10
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 5
+    Tag				"id=_2alzwabHEeKVjd_905naCg"
+    DstBlock "SensorProcessing_Statechart"
+    DstPort 11
+  }
+  Line {
+    SrcBlock "BAT_Info_net_address"
+    SrcPort 1
+    Tag				"id=_2az2MKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "BAT_Info_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_2az2MabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 3
+  }
+	  }
+  }
+
+  Block {
+    BlockType SubSystem
+    Name "StrikeProcessing"
+    SID				84
+    Ports [4, 1, 0, 0]
+    Tag		"id=_121mcKbHEeKVjd_905naCg"
+  Position "[640, 20, 890, 820]"
+	  System {
+	  	Name  "StrikeProcessing"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Inport
+    Name "clockSignal"
+    SID				85
+    Tag		"id=_124pwKbHEeKVjd_905naCg"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+  Position "[190, 30, 220, 60]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_recv"
+    SID				86
+    Tag		"id=_2VzaYabHEeKVjd_905naCg"
+    Port "2"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[190, 300, 220, 330]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_net_address"
+    SID				87
+    Tag		"id=_2WfW4KbHEeKVjd_905naCg"
+    Port "3"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 360, 220, 390]"
+  }
+
+  Block {
+    BlockType Inport
+    Name "BAT_Info_receiver_net_address"
+    SID				88
+    Tag		"id=_2Wf98KbHEeKVjd_905naCg"
+    Port "4"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  Position "[190, 420, 220, 450]"
+  }
+	  	
+  Block {
+    BlockType Outport
+    Name "BAT_Info_send"
+    SID				89
+    Tag		"id=_2VzaYKbHEeKVjd_905naCg"
+    Port "1"
+
+
+      DataType		      "auto"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: auto"
+
+    UseBusObject 	"on"
+    BusObject		"PacketBus"	
+  Position "[860, 300, 890, 330]"
+  }
+	  	
+
+
+Block {
+      BlockType		      SubSystem
+      Name		      	"StrikeProcessing_Statechart"  
+      SID				90
+      Ports				[5, 4]      
+	  Position		[250, 30, 800, 240]
+      Tag				"id=_1220kKbHEeKVjd_905naCg"   
+      MaskHideContents	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl','Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"            
+      System {
+		Name			"StrikeProcessing_Statechart"	
+		SIDHighWatermark	    90
+		Block {
+			BlockType		  Inport
+			Name			  "clockSignal"
+			Port			  "1"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_InfoReadIn"
+			Port			  "2"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_InfoParamReadIn"
+			Port			  "3"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_InfoWriteIn"
+			Port			  "4"
+			IconDisplay		  "Port number"
+		}
+		Block {
+			BlockType		  Inport
+			Name			  "BAT_InfoParamWriteIn"
+			Port			  "5"
+			IconDisplay		  "Port number"
+		}
+
+			
+		Block {
+	  		BlockType		  Demux
+	  		Name			  " Demux "
+	  		Ports		      [1, 1]
+	  		Outputs		  "1"
+	  		SID               91
+		}
+		Block {
+	  		BlockType		  "S-Function"
+	  		Name			  " SFunction "
+	  		SID               92
+	  		Tag			  "Stateflow S-Function AtomicLibrary 3"
+	  		Ports			  [5, 5]
+	  		FunctionName		  "sf_sfun"
+	  		PortCounts		  "[5 5]"
+			Port {
+				PortNumber		2
+				Name			"BAT_InfoReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		3
+				Name			"BAT_InfoParamReadOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		4
+				Name			"BAT_InfoWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+			Port {
+				PortNumber		5
+				Name			"BAT_InfoParamWriteOut"
+				RTWStorageClass		"Auto"
+				DataLoggingNameMode	"SignalName"			
+			}
+
+		}
+		Block {
+	  		BlockType		  Terminator
+	  		Name			  " Terminator "
+	  		SID               93
+		}
+
+  Block {
+    BlockType Outport
+    Name "BAT_InfoReadOut"
+    SID				94
+    Tag		"id=_2Vl_AKbHEeKVjd_905naCg"
+    Port "1"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_InfoParamReadOut"
+    SID				95
+    Tag		"id=_2VmmEKbHEeKVjd_905naCg"
+    Port "2"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_InfoWriteOut"
+    SID				96
+    Tag		"id=_2VnNIKbHEeKVjd_905naCg"
+    Port "3"
+
+
+
+      DataType		      "uint8"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "uint8"
+
+  }
+
+  Block {
+    BlockType Outport
+    Name "BAT_InfoParamWriteOut"
+    SID				97
+    Tag		"id=_2VobQKbHEeKVjd_905naCg"
+    Port "4"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  }
+		Line {
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  1
+	  		DstBlock		  " Demux "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "clockSignal"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  1
+		}
+		Line {
+	  		SrcBlock		  "BAT_InfoReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  2
+		}
+		Line {
+	  		SrcBlock		  "BAT_InfoParamReadIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  3
+		}
+		Line {
+	  		SrcBlock		  "BAT_InfoWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  4
+		}
+		Line {
+	  		SrcBlock		  "BAT_InfoParamWriteIn"
+	  		SrcPort		  1
+	  		DstBlock		  " SFunction "
+	  		DstPort		  5
+		}
+		Line {
+			Name		  	  "BAT_InfoReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	2
+	  		DstBlock		  "BAT_InfoReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_InfoParamReadOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	3
+	  		DstBlock		  "BAT_InfoParamReadOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_InfoWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	4
+	  		DstBlock		  "BAT_InfoWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+			Name		  	  "BAT_InfoParamWriteOut"
+	  		SrcBlock		  " SFunction "
+	  		SrcPort		  	5
+	  		DstBlock		  "BAT_InfoParamWriteOut"
+	  		DstPort		  		1
+		}
+		Line {
+	  		SrcBlock		  " Demux "
+	  		SrcPort		  1
+	  		DstBlock		  " Terminator "
+	  		DstPort		  1
+		}
+	}
+}
+
+
+
+	Block {
+	  BlockType		  Reference
+	  Name			  "Link Layer BAT_Info"
+	  SID			  98
+	  Ports			  [9, 5]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "LinkLayer/Link Layer UDP"
+	  SourceType		  "SubSystem"
+	  ShowPortLabels	  "FromPortIcon"
+  Position "[250, 300, 800, 700]"
+
+	  DelayMin "2"
+	  DelayMax "100"
+	  MessageLossProbability "0"	  	  
+	}	  	  
+  Line {
+    SrcBlock "clockSignal"
+    SrcPort 1
+    Tag				"id=_125Q0KbHEeKVjd_905naCg"
+    DstBlock "StrikeProcessing_Statechart"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 1
+    Tag				"id=_2VppYKbHEeKVjd_905naCg"
+    DstBlock "BAT_Info_send"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "BAT_Info_recv"
+    SrcPort 1
+    Tag				"id=_2VpCUKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 1
+  }
+  Line {
+    SrcBlock "StrikeProcessing_Statechart"
+    SrcPort 1
+    Tag				"id=_2ViUoKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 2
+    Tag				"id=_2ViUoabHEeKVjd_905naCg"
+    DstBlock "StrikeProcessing_Statechart"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 3
+    Tag				"id=_2ViUoqbHEeKVjd_905naCg"
+    DstBlock "StrikeProcessing_Statechart"
+    DstPort 3
+  }
+  Line {
+    SrcBlock "StrikeProcessing_Statechart"
+    SrcPort 2
+    Tag				"id=_2ViUo6bHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "StrikeProcessing_Statechart"
+    SrcPort 3
+    Tag				"id=_2Vi7sKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 6
+  }
+  Line {
+    SrcBlock "StrikeProcessing_Statechart"
+    SrcPort 4
+    Tag				"id=_2Vi7sabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 7
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 4
+    Tag				"id=_2Vi7sqbHEeKVjd_905naCg"
+    DstBlock "StrikeProcessing_Statechart"
+    DstPort 4
+  }
+  Line {
+    SrcBlock "Link Layer BAT_Info"
+    SrcPort 5
+    Tag				"id=_2Vi7s6bHEeKVjd_905naCg"
+    DstBlock "StrikeProcessing_Statechart"
+    DstPort 5
+  }
+  Line {
+    SrcBlock "BAT_Info_net_address"
+    SrcPort 1
+    Tag				"id=_2WglAKbHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 2
+  }
+  Line {
+    SrcBlock "BAT_Info_receiver_net_address"
+    SrcPort 1
+    Tag				"id=_2WglAabHEeKVjd_905naCg"
+    DstBlock "Link Layer BAT_Info"
+    DstPort 3
+  }
+	  }
+  }
+
+  Block {
+    BlockType SubSystem
+    Name "Environment"
+    SID				99
+    Ports [0, 16, 0, 0]
+    Tag		"id=_13TggKbHEeKVjd_905naCg"
+  Position "[950, 20, 1200, 820]"
+	  System {
+	  	Name  "Environment"
+	  	Open			off 	  	
+	  	
+  Block {
+    BlockType Outport
+    Name "posXR1"
+    SID				100
+    Tag		"id=_2JNv4KbHEeKVjd_905naCg"
+    Port "1"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 40, 730, 70]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "posXR2"
+    SID				101
+    Tag		"id=_2JeOkKbHEeKVjd_905naCg"
+    Port "2"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 150, 730, 180]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "posYR1"
+    SID				102
+    Tag		"id=_2JtfIKbHEeKVjd_905naCg"
+    Port "3"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 260, 730, 290]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "posYR2"
+    SID				103
+    Tag		"id=_2J5sYKbHEeKVjd_905naCg"
+    Port "4"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 370, 730, 400]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "posZR1"
+    SID				104
+    Tag		"id=_2KErgKbHEeKVjd_905naCg"
+    Port "5"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 480, 730, 510]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "posZR2"
+    SID				105
+    Tag		"id=_2KQRsKbHEeKVjd_905naCg"
+    Port "6"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 590, 730, 620]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "timeOfArrivalR1"
+    SID				106
+    Tag		"id=_2Kce8KbHEeKVjd_905naCg"
+    Port "7"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 700, 730, 730]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "timeOfArrivalR2"
+    SID				107
+    Tag		"id=_2KosMKbHEeKVjd_905naCg"
+    Port "8"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 810, 730, 840]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "velocityR1"
+    SID				108
+    Tag		"id=_2K5K4KbHEeKVjd_905naCg"
+    Port "9"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 920, 730, 950]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "velocityR2"
+    SID				109
+    Tag		"id=_2LHNUKbHEeKVjd_905naCg"
+    Port "10"
+
+
+
+      DataType		      "double"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "double"
+
+  Position "[700, 1030, 730, 1060]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "isMasterR1"
+    SID				110
+    Tag		"id=_2LUosKbHEeKVjd_905naCg"
+    Port "11"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[700, 1140, 730, 1170]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "isMasterR2"
+    SID				111
+    Tag		"id=_2Lfn0KbHEeKVjd_905naCg"
+    Port "12"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[700, 1250, 730, 1280]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "ballRecognizedR1"
+    SID				112
+    Tag		"id=_2Lr1EKbHEeKVjd_905naCg"
+    Port "13"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[700, 1360, 730, 1390]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "ballRecognizedR2"
+    SID				113
+    Tag		"id=_2L8TwKbHEeKVjd_905naCg"
+    Port "14"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[700, 1470, 730, 1500]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "stopPlayingR1"
+    SID				114
+    Tag		"id=_2MRq8KbHEeKVjd_905naCg"
+    Port "15"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[700, 1580, 730, 1610]"
+  }
+
+  Block {
+    BlockType Outport
+    Name "stopPlayingR2"
+    SID				115
+    Tag		"id=_2MiJoKbHEeKVjd_905naCg"
+    Port "16"
+
+
+
+      DataType		      "boolean"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "boolean"
+
+  Position "[700, 1690, 730, 1720]"
+  }
+	  }
+  }
+  }
+}
+
+
+
+Stateflow {
+	machine {
+		id		2
+		name    "AtomicLibrary"
+		tag			"id=_1biKgKbHEeKVjd_905naCg"
+		firstTarget 	1
+		sfVersion		    71014000.00001
+		isLibrary		1
+	}
+	chart {
+		id			3
+		name		"MainProcessing/MainProcessing_Statechart"
+		tag			"id=_1gFTUKbHEeKVjd_905naCg"
+		machine		2
+		chartFileNumber		1
+		viewObj		3    
+		decomposition	    CLUSTER_CHART
+		treeNode		[0 4 0 0]
+		firstData		5
+		disableImplicitCasting  1
+		userSpecifiedStateTransitionExecutionOrder 1
+	}
+	state {
+		id			4
+		chart		3
+		tag			"id=_1gHIgKbHEeKVjd_905naCg"
+		treeNode	[3 0 0 0]
+		labelString	"chart"
+
+	decomposition	    SET_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		6
+  position [2046.5 75.247 756.0 715.003]
+	}
+	state {
+		id			7
+		chart		3
+		tag			"id=_1gHvkKbHEeKVjd_905naCg"
+		treeNode	[4 0 0 0]
+		labelString	"chartRegion"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    2
+
+		firstData		8
+  position [2054.6 187.45 700.0 595.0]
+	}
+	state {
+		id			9
+		chart		3
+		tag			"id=_4_A4UKbHEeKVjd_905naCg"
+		treeNode	[7 0 0 0]
+		labelString	"init"
+
+	decomposition	    SET_STATE
+		
+	type		    OR_STATE    	
+  position [2062.8 325.65 602.0 449.00003]
+	}
+	state {
+		id			10
+		chart		3
+		tag			"id=_5AT40KbHEeKVjd_905naCg"
+		treeNode	[9 0 0 0]
+		labelString	"MainProcessingPort_BAT_Info_To_Other_Robot"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    3
+
+		firstData		11
+		firstTransition		12
+  position [2070.9 523.86 302.0 243.0]
+	}
+	state {
+		id			13
+		chart		3
+		tag			"id=_5ArFMKbHEeKVjd_905naCg"
+		treeNode	[10 0 0 0]
+		labelString	"Init"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [2225.4 713.25 54.0 36.0]
+	}
+	transition {
+		id			14
+		chart		3
+		midPoint	[2214.1 734.92]
+		src {
+			intersection	[4 -1 0 0 2202.9 735.990 0]
+		}
+		dst {
+			id	13
+			intersection	[4 -1 0 0 2225.3 733.850 0]
+		}
+		dataLimits			[2202.9 2225.3 733.85 735.99]
+		
+	}
+
+	state {
+		id			15
+		chart		3
+		tag			"id=_5Axy4KbHEeKVjd_905naCg"
+		treeNode	[10 0 0 0]
+		labelString	"YourTurn\nentry: c0=reset(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [2179.7 604.59 72.0 36.0]
+	}
+
+	state {
+		id			16
+		chart		3
+		tag			"id=_5A35gKbHEeKVjd_905naCg"
+		treeNode	[10 0 0 0]
+		labelString	"MyTurn\nentry: c0=reset(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [2272.3 619.76 61.999916 36.0]
+	}
+
+	state {
+		id			17
+		chart		3
+		tag			"id=_5A-nMKbHEeKVjd_905naCg"
+		treeNode	[10 0 0 0]
+		labelString	"Timeout"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [2288.0498 666.1 62.50032 36.0]
+	}
+
+	state {
+		id			18
+		chart		3
+		tag			"id=_5vHfkKbHEeKVjd_905naCg"
+		treeNode	[10 0 0 0]
+		labelString	"Inv_Error"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [2178.0498 554.43 70.500244 36.0]
+	}
+
+  transition {
+  	id			12
+    chart		3
+    tag			"id=_5CPLcKbHEeKVjd_905naCg"
+    labelString "[isMaster == true && BAT_Info_ReceivedBySP == true]\n{[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSX, BAT_Info_To_OtherRobotWriteOut, double(posXReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSY, BAT_Info_To_OtherRobotWriteOut, double(posYReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotWriteOut, double(posZReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotWriteOut, double(timeOfArrivalReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotWriteOut, double(velocityReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+; BAT_Info_ReceivedBySP = false ; }"
+    linkNode 	[10 0 0]
+    executionOrder 2
+  labelPosition [-2420.2 667.88 9360.0 8.0]
+  midPoint [2228.6 676.92]
+  dataLimits [2216.6 2240.6 640.8 713.04]
+  	src {
+  	  id		13
+  	    	  
+      intersection	[1 0 -1 0 2240.6 713.04 0 0]
+  	}
+  	dst {
+  	  id		15
+  	    	  
+      intersection	[3 0 1 0 2216.6 640.8 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			19
+    chart		3
+    tag			"id=_5Ccm0KbHEeKVjd_905naCg"
+    labelString "[BAT_Info_To_OtherRobot_checkQueue(EVT_STOPPLAYING, BAT_Info_To_OtherRobotReadOut)]\n{[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut] = BAT_Info_To_OtherRobot_dequeue(EVT_STOPPLAYING, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); }"
+    linkNode 	[10 0 0]
+    executionOrder 1
+  labelPosition [1160.3 673.96 2120.0 8.0]
+  midPoint [2239.6 676.925]
+  dataLimits [2227.6 2251.6 640.81 713.04]
+  	src {
+  	  id		15
+  	    	  
+      intersection	[3 0 1 0 2227.6 640.81 0 0]
+  	}
+  	dst {
+  	  id		13
+  	    	  
+      intersection	[1 0 -1 0 2251.6 713.04 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			20
+    chart		3
+    tag			"id=_5CwI0KbHEeKVjd_905naCg"
+    labelString "[stopPlaying == true]\n{[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_STOPPLAYING, BAT_Info_To_OtherRobotWriteOut, 0, BAT_Info_To_OtherRobotParamWriteOut); }"
+    linkNode 	[10 0 0]
+    executionOrder 1
+  labelPosition [1429.7 667.3 1680.0 8.0]
+  midPoint [2284.05 684.615]
+  dataLimits [2268.8 2299.3 656.11 713.12]
+  	src {
+  	  id		16
+  	    	  
+      intersection	[3 0 1 0 2299.3 656.11 0 0]
+  	}
+  	dst {
+  	  id		13
+  	    	  
+      intersection	[1 0 -1 0 2268.8 713.12 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			21
+    chart		3
+    tag			"id=_5DAngKbHEeKVjd_905naCg"
+    labelString ""
+    linkNode 	[10 0 0]
+    executionOrder 1
+  midPoint [2286.0 707.58496]
+  dataLimits [2278.4 2293.6 702.2 712.97]
+  	src {
+  	  id		17
+  	    	  
+      intersection	[3 0 1 0 2293.6 702.2 0 0]
+  	}
+  	dst {
+  	  id		13
+  	    	  
+      intersection	[1 0 -1 0 2278.4 712.97 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			22
+    chart		3
+    tag			"id=_5DOp8KbHEeKVjd_905naCg"
+    labelString "[BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSX, BAT_Info_To_OtherRobotReadOut) && BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSY, BAT_Info_To_OtherRobotReadOut) && BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotReadOut) && BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotReadOut) && BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotReadOut)]\n{[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_1] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSX, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); 
+[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_2] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSY, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); 
+[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_3] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); 
+[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_4] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); 
+[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_5] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); posXReceivedByRobot = tmp_var_1 ;  posYReceivedByRobot = tmp_var_2 ;  posZReceivedByRobot = tmp_var_3 ;  timeOfArrivalReceivedByRobot = tmp_var_4 ;  velocityReceivedByRobot = tmp_var_5 ;  BAT_Info_ReceivedByRobot = true ; }"
+    linkNode 	[10 0 0]
+    executionOrder 1
+  labelPosition [-4296.0 669.71 13072.0 8.0]
+  midPoint [2271.7 684.395]
+  dataLimits [2256.5 2286.9 655.89 712.9]
+  	src {
+  	  id		13
+  	    	  
+      intersection	[1 0 -1 0 2256.5 712.9 0 0]
+  	}
+  	dst {
+  	  id		16
+  	    	  
+      intersection	[3 0 1 0 2286.9 655.89 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			23
+    chart		3
+    tag			"id=_5DpgsKbHEeKVjd_905naCg"
+    labelString "[BAT_Info_ReceivedBySP == true]\n{[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSX, BAT_Info_To_OtherRobotWriteOut, double(posXReceivedByRobot), BAT_Info_To_OtherRobotParamWriteOut)
+[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSY, BAT_Info_To_OtherRobotWriteOut, double(posYReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotWriteOut, double(posZReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotWriteOut, double(timeOfArrivalReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+[BAT_Info_To_OtherRobotWriteOut, BAT_Info_To_OtherRobotParamWriteOut] = BAT_Info_To_OtherRobot_enqueue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotWriteOut, double(velocityReceivedBySP), BAT_Info_To_OtherRobotParamWriteOut)
+; BAT_Info_ReceivedBySP = false ; }"
+    linkNode 	[10 0 0]
+    executionOrder 3
+  labelPosition [-2341.1 587.14 9224.0 8.0]
+  midPoint [2261.9502 637.25]
+  dataLimits [2251.8 2272.1 635.61 638.89]
+  	src {
+  	  id		16
+  	    	  
+      intersection	[4 -1 0 0 2272.1 638.89 0 0]
+  	}
+  	dst {
+  	  id		15
+  	    	  
+      intersection	[2 1 0 0 2251.8 635.61 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			24
+    chart		3
+    tag			"id=_5EIB0KbHEeKVjd_905naCg"
+    labelString "[BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSX, BAT_Info_To_OtherRobotReadOut) && BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSY, BAT_Info_To_OtherRobotReadOut) && BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotReadOut) && BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotReadOut) && BAT_Info_To_OtherRobot_checkQueue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotReadOut)]\n{[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_1] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSX, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); 
+[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_2] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSY, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); 
+[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_3] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_POSZ, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); 
+[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_4] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_TIMEOFARRIVAL, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); 
+[BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut, tmp_var_5] = BAT_Info_To_OtherRobot_dequeue(EVT_TURN_VELOCITY, BAT_Info_To_OtherRobotReadOut, BAT_Info_To_OtherRobotParamReadOut); posXReceivedByRobot = tmp_var_1 ;  posYReceivedByRobot = tmp_var_2 ;  posZReceivedByRobot = tmp_var_3 ;  timeOfArrivalReceivedByRobot = tmp_var_4 ;  velocityReceivedByRobot = tmp_var_5 ;  BAT_Info_ReceivedByRobot = true ; }"
+    linkNode 	[10 0 0]
+    executionOrder 3
+  labelPosition [-4281.9 657.96 13072.0 8.0]
+  midPoint [2262.05 623.935]
+  dataLimits [2252.0 2272.1 622.14 625.73]
+  	src {
+  	  id		15
+  	    	  
+      intersection	[2 1 0 0 2252.0 622.14 0 0]
+  	}
+  	dst {
+  	  id		16
+  	    	  
+      intersection	[4 -1 0 0 2272.1 625.73 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			25
+    chart		3
+    tag			"id=_5EeAEKbHEeKVjd_905naCg"
+    labelString "[time(c0) >= 1.0]"
+    linkNode 	[10 0 0]
+    executionOrder 2
+  labelPosition [2211.1 632.71 120.0 8.0]
+  midPoint [2267.5 653.31]
+  dataLimits [2246.3 2288.7 640.72 665.9]
+  	src {
+  	  id		15
+  	    	  
+      intersection	[3 0 1 0 2246.3 640.72 0 0]
+  	}
+  	dst {
+  	  id		17
+  	    	  
+      intersection	[1 0 -1 0 2288.7 665.9 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			26
+    chart		3
+    tag			"id=_5E5d4KbHEeKVjd_905naCg"
+    labelString "[time(c0) >= 1.0]"
+    linkNode 	[10 0 0]
+    executionOrder 2
+  labelPosition [2249.6 660.13 120.0 8.0]
+  midPoint [2311.3 660.92004]
+  dataLimits [2309.5 2313.1 655.81 666.03]
+  	src {
+  	  id		16
+  	    	  
+      intersection	[3 0 1 0 2309.5 655.81 0 0]
+  	}
+  	dst {
+  	  id		17
+  	    	  
+      intersection	[1 0 -1 0 2313.1 666.03 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			27
+    chart		3
+    tag			"id=_5vHfkabHEeKVjd_905naCg"
+    labelString "[time(c0) > 1000]"
+    linkNode 	[10 0 0]
+    executionOrder 4
+  labelPosition [2136.8 598.77 120.0 8.0]
+  midPoint [2214.5498 597.57996]
+  dataLimits [2214.2 2214.9 590.68 604.48]
+  	src {
+  	  id		15
+  	    	  
+      intersection	[1 0 -1 0 2214.9 604.48 0 0]
+  	}
+  	dst {
+  	  id		18
+  	    	  
+      intersection	[3 0 1 0 2214.2 590.68 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			28
+    chart		3
+    tag			"id=_5vMYEKbHEeKVjd_905naCg"
+    labelString "[time(c0) >= 1000]"
+    linkNode 	[10 0 0]
+    executionOrder 4
+  labelPosition [2188.3 618.02 128.0 8.0]
+  midPoint [2258.2 605.04504]
+  dataLimits [2238.2 2278.2 590.53 619.56]
+  	src {
+  	  id		16
+  	    	  
+      intersection	[1 0 -1 0 2278.2 619.56 0 0]
+  	}
+  	dst {
+  	  id		18
+  	    	  
+      intersection	[3 0 1 0 2238.2 590.53 0 0]
+  	}
+  	slide {
+  	}
+  }
+	data {
+		id				11
+		name		    "c0"
+		tag				"id=_5mw00KbHEeKVjd_905naCg"
+		linkNode		    [10 0 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+		
+			initialValue	"0.0"
+
+    	}	    				
+	}  
+
+	state {
+		id			29
+		chart		3
+		tag			"id=_5AW8IKbHEeKVjd_905naCg"
+		treeNode	[9 0 0 0]
+		labelString	"MainProcessingPort_BAT_Info_To_StrikeP"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    2
+
+		firstTransition		30
+  position [2070.4 356.36 267.0 122.0]
+	}
+	state {
+		id			31
+		chart		3
+		tag			"id=_5BEGwKbHEeKVjd_905naCg"
+		treeNode	[29 0 0 0]
+		labelString	"Sending"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [2142.0 433.99 61.999916 36.0]
+	}
+	transition {
+		id			32
+		chart		3
+		midPoint	[2191.5 428.385]
+		src {
+			intersection	[1 0 -1 0 2195.7 423.030 0]
+		}
+		dst {
+			id	31
+			intersection	[1 0 -1 0 2187.3 433.740 0]
+		}
+		dataLimits			[2187.3 2195.7 423.03 433.74]
+		
+	}
+
+  transition {
+  	id			30
+    chart		3
+    tag			"id=_5_dosKbHEeKVjd_905naCg"
+    labelString "[BAT_Info_ReceivedByRobot == true]\n{[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_POSX, BAT_Info_ToStrikeProcessingWriteOut, double(posXReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)
+[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_POSY, BAT_Info_ToStrikeProcessingWriteOut, double(posYReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)
+[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_POSZ, BAT_Info_ToStrikeProcessingWriteOut, double(posZReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)
+[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_Info_ToStrikeProcessingWriteOut, double(timeOfArrivalReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)
+[BAT_Info_ToStrikeProcessingWriteOut, BAT_Info_ToStrikeProcessingParamWriteOut] = BAT_Info_ToStrikeProcessing_enqueue(EVT_TRANSFERBATINFO_VELOCITY, BAT_Info_ToStrikeProcessingWriteOut, double(velocityReceivedByRobot), BAT_Info_ToStrikeProcessingParamWriteOut)
+; BAT_Info_ReceivedByRobot = false ; }"
+    linkNode 	[29 0 0]
+    executionOrder 1
+  labelPosition [-2233.5 447.99 10808.0 8.0]
+  midPoint [2188.5 442.99]
+  dataLimits [2173.0 2204.0 433.99 451.99]
+  	src {
+  	  id		31
+  	    	  
+      intersection	[1 0 1 0 2173.0 433.99 0 0]
+  	}
+  	dst {
+  	  id		31
+  	    	  
+      intersection	[2 -1 0 0 2204.0 451.99 0 0]
+  	}
+  	slide {
+  	}
+  }
+
+	state {
+		id			33
+		chart		3
+		tag			"id=_5AZ_cKbHEeKVjd_905naCg"
+		treeNode	[9 0 0 0]
+		labelString	"MainProcessingPort_BAT_Info_To_SensorP"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    1
+
+		firstTransition		34
+  position [2382.9 356.36 274.0 122.0]
+	}
+	state {
+		id			35
+		chart		3
+		tag			"id=_5BI_QKbHEeKVjd_905naCg"
+		treeNode	[33 0 0 0]
+		labelString	"Receiving"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [2456.25 433.99 70.500244 36.0]
+	}
+	transition {
+		id			36
+		chart		3
+		midPoint	[2510.0 428.385]
+		src {
+			intersection	[1 0 -1 0 2514.2 423.030 0]
+		}
+		dst {
+			id	35
+			intersection	[1 0 -1 0 2505.8 433.740 0]
+		}
+		dataLimits			[2505.8 2514.2 423.03 433.74]
+		
+	}
+
+  transition {
+  	id			34
+    chart		3
+    tag			"id=_5_pO4KbHEeKVjd_905naCg"
+    labelString "[BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_POSX, BAT_Info_From_SensorProcessingReadOut) && BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_POSY, BAT_Info_From_SensorProcessingReadOut) && BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_POSZ, BAT_Info_From_SensorProcessingReadOut) && BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_Info_From_SensorProcessingReadOut) && BAT_Info_From_SensorProcessing_checkQueue(EVT_TRANSFERBATINFO_VELOCITY, BAT_Info_From_SensorProcessingReadOut)]\n{[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_1] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_POSX, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); 
+[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_2] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_POSY, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); 
+[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_3] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_POSZ, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); 
+[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_4] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); 
+[BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut, tmp_var_5] = BAT_Info_From_SensorProcessing_dequeue(EVT_TRANSFERBATINFO_VELOCITY, BAT_Info_From_SensorProcessingReadOut, BAT_Info_From_SensorProcessingParamReadOut); posXReceivedBySP = tmp_var_1 ;  posYReceivedBySP = tmp_var_2 ;  posZReceivedBySP = tmp_var_3 ;  timeOfArrivalReceivedBySP = tmp_var_4 ;  velocityReceivedBySP = tmp_var_5 ;  BAT_Info_ReceivedBySP = true ; }"
+    linkNode 	[33 0 0]
+    executionOrder 1
+  labelPosition [-2598.5 447.99 16048.0 8.0]
+  midPoint [2509.125 442.99]
+  dataLimits [2491.5 2526.7502 433.99 451.99]
+  	src {
+  	  id		35
+  	    	  
+      intersection	[1 0 1 0 2491.5 433.99 0 0]
+  	}
+  	dst {
+  	  id		35
+  	    	  
+      intersection	[2 -1 0 0 2526.7502 451.99 0 0]
+  	}
+  	slide {
+  	}
+  }
+
+	transition {
+		id			37
+		chart		3
+		midPoint	[2527.15 399.71503]
+		src {
+			intersection	[2 1 0 0 2686.9 252.590 0]
+		}
+		dst {
+			id	9
+			intersection	[1 0 -1 0 2367.4 546.840 0]
+		}
+		dataLimits			[2367.4 2686.9 252.59 546.84]
+		
+	}
+
+	data {
+		id				8
+		name		    "BAT_Info_ReceivedBySP"
+		tag				"id=_5RtK0KbHEeKVjd_905naCg"
+		linkNode		    [7 0 38]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				38
+		name		    "BAT_Info_ReceivedByRobot"
+		tag				"id=_5RvAAKbHEeKVjd_905naCg"
+		linkNode		    [7 8 39]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				39
+		name		    "posXReceivedBySP"
+		tag				"id=_5RxcQKbHEeKVjd_905naCg"
+		linkNode		    [7 38 40]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				40
+		name		    "posXReceivedByRobot"
+		tag				"id=_5Rz4gKbHEeKVjd_905naCg"
+		linkNode		    [7 39 41]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				41
+		name		    "posYReceivedBySP"
+		tag				"id=_5R1tsKbHEeKVjd_905naCg"
+		linkNode		    [7 40 42]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				42
+		name		    "posYReceivedByRobot"
+		tag				"id=_5R4J8KbHEeKVjd_905naCg"
+		linkNode		    [7 41 43]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				43
+		name		    "posZReceivedBySP"
+		tag				"id=_5R5_IKbHEeKVjd_905naCg"
+		linkNode		    [7 42 44]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				44
+		name		    "posZReceivedByRobot"
+		tag				"id=_5R8bYKbHEeKVjd_905naCg"
+		linkNode		    [7 43 45]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				45
+		name		    "timeOfArrivalReceivedBySP"
+		tag				"id=_5R-QkKbHEeKVjd_905naCg"
+		linkNode		    [7 44 46]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				46
+		name		    "timeOfArrivalReceivedByRobot"
+		tag				"id=_5SAFwKbHEeKVjd_905naCg"
+		linkNode		    [7 45 47]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				47
+		name		    "velocityReceivedBySP"
+		tag				"id=_5SCiAKbHEeKVjd_905naCg"
+		linkNode		    [7 46 48]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				48
+		name		    "velocityReceivedByRobot"
+		tag				"id=_5SEXMKbHEeKVjd_905naCg"
+		linkNode		    [7 47 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id			49
+		chart		3
+		tag			"id=_1gIWoKbHEeKVjd_905naCg"
+		treeNode	[4 0 0 0]
+		labelString	"DataInit"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    1
+
+  position [2734.6 105.95 59.99976 36.0]
+	}
+
+  transition {
+  	id			6
+    chart		3
+    tag			"id=_1gtlcKbHEeKVjd_905naCg"
+    labelString "{BAT_Info_To_OtherRobotWriteOut = BAT_Info_To_OtherRobotWriteIn;
+BAT_Info_To_OtherRobotParamWriteOut = BAT_Info_To_OtherRobotParamWriteIn;
+BAT_Info_To_OtherRobotReadOut = BAT_Info_To_OtherRobotReadIn;
+BAT_Info_To_OtherRobotParamReadOut = BAT_Info_To_OtherRobotParamReadIn;
+BAT_Info_ToStrikeProcessingWriteOut = BAT_Info_ToStrikeProcessingWriteIn;
+BAT_Info_ToStrikeProcessingParamWriteOut = BAT_Info_ToStrikeProcessingParamWriteIn;
+BAT_Info_ToStrikeProcessingReadOut = BAT_Info_ToStrikeProcessingReadIn;
+BAT_Info_ToStrikeProcessingParamReadOut = BAT_Info_ToStrikeProcessingParamReadIn;
+BAT_Info_From_SensorProcessingWriteOut = BAT_Info_From_SensorProcessingWriteIn;
+BAT_Info_From_SensorProcessingParamWriteOut = BAT_Info_From_SensorProcessingParamWriteIn;
+BAT_Info_From_SensorProcessingReadOut = BAT_Info_From_SensorProcessingReadIn;
+BAT_Info_From_SensorProcessingParamReadOut = BAT_Info_From_SensorProcessingParamReadIn;
+; }"
+    linkNode 	[4 0 0]
+    executionOrder 0
+  labelPosition [-570.3999 119.95 7360.0 8.0]
+  midPoint [2779.6 114.95]
+  dataLimits [2764.6 2794.5999 105.95 123.95]
+  	src {
+  	  id		49
+  	    	  
+      intersection	[1 0 1 0 2764.6 105.95 0 0]
+  	}
+  	dst {
+  	  id		49
+  	    	  
+      intersection	[2 -1 0 0 2794.5999 123.95 0 0]
+  	}
+  	slide {
+  	}
+  }
+	transition {
+		id			50
+		chart		3
+		midPoint	[2570.15 246.83401]
+		src {
+			intersection	[2 1 0 0 2711.8 65.9980 0]
+		}
+		dst {
+			id	4
+			intersection	[1 0 -1 0 2428.5 427.670 0]
+		}
+		dataLimits			[2428.5 2711.8 65.998 427.67]
+		
+	}
+
+
+	state {
+		id				51
+		chart			3
+		tag				"id=_1hCVkKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"logicalTime = time(clock)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       52
+
+  position [2852.5 233.7 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function logicalTime = time(clock) \n\n sample = 0.001;  % the sample time of the system clock \n\n "
+      "%convert to pass units of time after last reset \n\n logicalTime = uint32((clockSignal - clock)/sample);"		
+		}	
+	}
+	data {
+		id				52
+		name		    "clock"
+		tag				"id=_1iK-AKbHEeKVjd_905naCg"
+		linkNode		    [51 0 53]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				53
+		name		    "logicalTime"
+		tag				"id=_1iJv4KbHEeKVjd_905naCg"
+		linkNode		    [51 52 0]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+
+	state {
+		id				54
+		chart			3
+		tag				"id=_1hCVkabHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"clock = reset()"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       55
+
+  position [2852.5 311.7 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function clock = reset() \n
+ %set clock variable to current time \n
+ clock = clockSignal;"		
+		}	
+	}
+	data {
+		id				55
+		name		    "clock"
+		tag				"id=_1iK-AabHEeKVjd_905naCg"
+		linkNode		    [54 0 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				56
+		chart			3
+		tag				"id=_1rSdwKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"[evtQueue, paramQueue] = BAT_Info_To_OtherRobot_enqueue(event, evtQueueIn, param, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       57
+
+  position [2851.9993 467.7 227.0016 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue] = BAT_Info_To_OtherRobot_enqueue(event, evtQueueIn, param, paramQueu"
+      "eIn) %eml \n evtQueue = evtQueueIn; \n paramQueue = paramQueueIn; \n for i = 1:length(evtQueue) \n 	if evtQueue("
+      "i) == uint8(0) \n 		evtQueue(i) = event; \n 		paramQueue(i) = param; \n 		return \n 	end \n end"		
+		}	
+	}
+	data {
+		id				57
+		name		    "event"
+		tag				"id=_-lYD4KbHEeKVjd_905naCg"
+		linkNode		    [56 0 58]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				58
+		name		    "evtQueueIn"
+		tag				"id=_-lYD4abHEeKVjd_905naCg"
+		linkNode		    [56 57 59]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				59
+		name		    "param"
+		tag				"id=_-lYD4qbHEeKVjd_905naCg"
+		linkNode		    [56 58 60]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				60
+		name		    "paramQueueIn"
+		tag				"id=_-lYD46bHEeKVjd_905naCg"
+		linkNode		    [56 59 61]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				61
+		name		    "evtQueue"
+		tag				"id=_-lYq8KbHEeKVjd_905naCg"
+		linkNode		    [56 60 62]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				62
+		name		    "paramQueue"
+		tag				"id=_-lYq8abHEeKVjd_905naCg"
+		linkNode		    [56 61 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+
+	state {
+		id				63
+		chart			3
+		tag				"id=_1sbGMKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"[evtQueue, paramQueue, parameter] = BAT_Info_To_OtherRobot_dequeue(event, evtQueueIn, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       64
+
+  position [2852.4988 545.7 228.0024 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue, parameter] = BAT_Info_To_OtherRobot_dequeue(event, evtQueueIn, param"
+      "QueueIn) %eml \n  evtQueue = evtQueueIn; \n  paramQueue = paramQueueIn; \n  parameter = 0; \n  for i = 1:length("
+      "evtQueue) \n    if evtQueue(i) == event \n         parameter = paramQueue(i); \n         for j = i:length(evtQue"
+      "ue)-1 \n             evtQueue(j) = evtQueue(j+1); \n             %Compatibility \n             evtQueue(j+length"
+      "(evtQueue)) = evtQueue(j+1+length(evtQueue)); \n             paramQueue(j) = paramQueue(j+1); \n         end \n "
+      "        evtQueue(length(evtQueue)) = 0; \n         %Compatibility \n         evtQueue(length(evtQueue)+length(ev"
+      "tQueue)) = 0; \n         paramQueue(length(paramQueue)) = 0; \n         return \n     end \n  end"		
+		}	
+	}
+	data {
+		id				64
+		name		    "event"
+		tag				"id=_-p-QAKbHEeKVjd_905naCg"
+		linkNode		    [63 0 65]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				65
+		name		    "evtQueueIn"
+		tag				"id=_-p-QAabHEeKVjd_905naCg"
+		linkNode		    [63 64 66]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				66
+		name		    "paramQueueIn"
+		tag				"id=_-p-QAqbHEeKVjd_905naCg"
+		linkNode		    [63 65 67]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				67
+		name		    "evtQueue"
+		tag				"id=_-p-QA6bHEeKVjd_905naCg"
+		linkNode		    [63 66 68]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				68
+		name		    "paramQueue"
+		tag				"id=_-p-3EKbHEeKVjd_905naCg"
+		linkNode		    [63 67 69]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				69
+		name		    "parameter"
+		tag				"id=_-p-3EabHEeKVjd_905naCg"
+		linkNode		    [63 68 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				70
+		chart			3
+		tag				"id=_1sq90KbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"available = BAT_Info_To_OtherRobot_checkQueue(event, evtQueue)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       71
+
+  position [2852.0005 701.7 250.99919 36.0]
+		eml {
+			isEML	1
+			script	"function available = BAT_Info_To_OtherRobot_checkQueue(event, evtQueue) %eml \n available = false; "
+      "\n for i = 1:length(evtQueue) \n     if evtQueue(i) == event \n         available = true;    \n         return "
+      "\n     end \n end"		
+		}	
+	}
+	data {
+		id				71
+		name		    "event"
+		tag				"id=_-urJ0KbHEeKVjd_905naCg"
+		linkNode		    [70 0 72]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				72
+		name		    "evtQueue"
+		tag				"id=_-urJ0abHEeKVjd_905naCg"
+		linkNode		    [70 71 73]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				73
+		name		    "available"
+		tag				"id=_-urw4KbHEeKVjd_905naCg"
+		linkNode		    [70 72 0]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				74
+		chart			3
+		tag				"id=_1staEKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"[evtQueue, paramQueue] = BAT_Info_ToStrikeProcessing_enqueue(event, evtQueueIn, param, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       75
+
+  position [2852.4988 623.7 246.0024 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue] = BAT_Info_ToStrikeProcessing_enqueue(event, evtQueueIn, param, para"
+      "mQueueIn) %eml \n evtQueue = evtQueueIn; \n paramQueue = paramQueueIn; \n for i = 1:length(evtQueue) \n 	if evtQ"
+      "ueue(i) == uint8(0) \n 		evtQueue(i) = event; \n 		paramQueue(i) = param; \n 		return \n 	end \n end"		
+		}	
+	}
+	data {
+		id				75
+		name		    "event"
+		tag				"id=_-wpfwKbHEeKVjd_905naCg"
+		linkNode		    [74 0 76]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				76
+		name		    "evtQueueIn"
+		tag				"id=_-wpfwabHEeKVjd_905naCg"
+		linkNode		    [74 75 77]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				77
+		name		    "param"
+		tag				"id=_-wpfwqbHEeKVjd_905naCg"
+		linkNode		    [74 76 78]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				78
+		name		    "paramQueueIn"
+		tag				"id=_-wpfw6bHEeKVjd_905naCg"
+		linkNode		    [74 77 79]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				79
+		name		    "evtQueue"
+		tag				"id=_-wpfxKbHEeKVjd_905naCg"
+		linkNode		    [74 78 80]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				80
+		name		    "paramQueue"
+		tag				"id=_-wpfxabHEeKVjd_905naCg"
+		linkNode		    [74 79 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+
+	state {
+		id				81
+		chart			3
+		tag				"id=_1suBIKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"[evtQueue, paramQueue, parameter] = BAT_Info_ToStrikeProcessing_dequeue(event, evtQueueIn, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       82
+
+  position [2851.9983 389.7 247.00319 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue, parameter] = BAT_Info_ToStrikeProcessing_dequeue(event, evtQueueIn, "
+      "paramQueueIn) %eml \n  evtQueue = evtQueueIn; \n  paramQueue = paramQueueIn; \n  parameter = 0; \n  for i = 1:le"
+      "ngth(evtQueue) \n    if evtQueue(i) == event \n         parameter = paramQueue(i); \n         for j = i:length(e"
+      "vtQueue)-1 \n             evtQueue(j) = evtQueue(j+1); \n             %Compatibility \n             evtQueue(j+l"
+      "ength(evtQueue)) = evtQueue(j+1+length(evtQueue)); \n             paramQueue(j) = paramQueue(j+1); \n         en"
+      "d \n         evtQueue(length(evtQueue)) = 0; \n         %Compatibility \n         evtQueue(length(evtQueue)+leng"
+      "th(evtQueue)) = 0; \n         paramQueue(length(paramQueue)) = 0; \n         return \n     end \n  end"		
+		}	
+	}
+	data {
+		id				82
+		name		    "event"
+		tag				"id=_-0LU4KbHEeKVjd_905naCg"
+		linkNode		    [81 0 83]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				83
+		name		    "evtQueueIn"
+		tag				"id=_-0LU4abHEeKVjd_905naCg"
+		linkNode		    [81 82 84]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				84
+		name		    "paramQueueIn"
+		tag				"id=_-0LU4qbHEeKVjd_905naCg"
+		linkNode		    [81 83 85]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				85
+		name		    "evtQueue"
+		tag				"id=_-0LU46bHEeKVjd_905naCg"
+		linkNode		    [81 84 86]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				86
+		name		    "paramQueue"
+		tag				"id=_-0LU5KbHEeKVjd_905naCg"
+		linkNode		    [81 85 87]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				87
+		name		    "parameter"
+		tag				"id=_-0LU5abHEeKVjd_905naCg"
+		linkNode		    [81 86 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				88
+		chart			3
+		tag				"id=_1svPQKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"available = BAT_Info_ToStrikeProcessing_checkQueue(event, evtQueue)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       89
+
+  position [2384.0005 -0.29599953 268.9992 36.0]
+		eml {
+			isEML	1
+			script	"function available = BAT_Info_ToStrikeProcessing_checkQueue(event, evtQueue) %eml \n available = fal"
+      "se; \n for i = 1:length(evtQueue) \n     if evtQueue(i) == event \n         available = true;    \n         retu"
+      "rn \n     end \n end"		
+		}	
+	}
+	data {
+		id				89
+		name		    "event"
+		tag				"id=_-4JO4KbHEeKVjd_905naCg"
+		linkNode		    [88 0 90]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				90
+		name		    "evtQueue"
+		tag				"id=_-4JO4abHEeKVjd_905naCg"
+		linkNode		    [88 89 91]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				91
+		name		    "available"
+		tag				"id=_-4JO4qbHEeKVjd_905naCg"
+		linkNode		    [88 90 0]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				92
+		chart			3
+		tag				"id=_1sxEcKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"[evtQueue, paramQueue] = BAT_Info_From_SensorProcessing_enqueue(event, evtQueueIn, param, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       93
+
+  position [2852.0017 779.7 274.9968 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue] = BAT_Info_From_SensorProcessing_enqueue(event, evtQueueIn, param, p"
+      "aramQueueIn) %eml \n evtQueue = evtQueueIn; \n paramQueue = paramQueueIn; \n for i = 1:length(evtQueue) \n 	if e"
+      "vtQueue(i) == uint8(0) \n 		evtQueue(i) = event; \n 		paramQueue(i) = param; \n 		return \n 	end \n end"		
+		}	
+	}
+	data {
+		id				93
+		name		    "event"
+		tag				"id=_-7k9YKbHEeKVjd_905naCg"
+		linkNode		    [92 0 94]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				94
+		name		    "evtQueueIn"
+		tag				"id=_-7k9YabHEeKVjd_905naCg"
+		linkNode		    [92 93 95]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				95
+		name		    "param"
+		tag				"id=_-7k9YqbHEeKVjd_905naCg"
+		linkNode		    [92 94 96]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				96
+		name		    "paramQueueIn"
+		tag				"id=_-7k9Y6bHEeKVjd_905naCg"
+		linkNode		    [92 95 97]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				97
+		name		    "evtQueue"
+		tag				"id=_-7k9ZKbHEeKVjd_905naCg"
+		linkNode		    [92 96 98]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				98
+		name		    "paramQueue"
+		tag				"id=_-7k9ZabHEeKVjd_905naCg"
+		linkNode		    [92 97 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+
+	state {
+		id				99
+		chart			3
+		tag				"id=_1sySkKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"[evtQueue, paramQueue, parameter] = BAT_Info_From_SensorProcessing_dequeue(event, evtQueueIn, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       100
+
+  position [2072.0017 -0.29599953 274.9968 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue, parameter] = BAT_Info_From_SensorProcessing_dequeue(event, evtQueueI"
+      "n, paramQueueIn) %eml \n  evtQueue = evtQueueIn; \n  paramQueue = paramQueueIn; \n  parameter = 0; \n  for i = 1"
+      ":length(evtQueue) \n    if evtQueue(i) == event \n         parameter = paramQueue(i); \n         for j = i:lengt"
+      "h(evtQueue)-1 \n             evtQueue(j) = evtQueue(j+1); \n             %Compatibility \n             evtQueue("
+      "j+length(evtQueue)) = evtQueue(j+1+length(evtQueue)); \n             paramQueue(j) = paramQueue(j+1); \n        "
+      " end \n         evtQueue(length(evtQueue)) = 0; \n         %Compatibility \n         evtQueue(length(evtQueue)+l"
+      "ength(evtQueue)) = 0; \n         paramQueue(length(paramQueue)) = 0; \n         return \n     end \n  end"		
+		}	
+	}
+	data {
+		id				100
+		name		    "event"
+		tag				"id=__AddYKbHEeKVjd_905naCg"
+		linkNode		    [99 0 101]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				101
+		name		    "evtQueueIn"
+		tag				"id=__AddYabHEeKVjd_905naCg"
+		linkNode		    [99 100 102]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				102
+		name		    "paramQueueIn"
+		tag				"id=__AddYqbHEeKVjd_905naCg"
+		linkNode		    [99 101 103]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				103
+		name		    "evtQueue"
+		tag				"id=__AddY6bHEeKVjd_905naCg"
+		linkNode		    [99 102 104]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				104
+		name		    "paramQueue"
+		tag				"id=__AddZKbHEeKVjd_905naCg"
+		linkNode		    [99 103 105]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				105
+		name		    "parameter"
+		tag				"id=__AddZabHEeKVjd_905naCg"
+		linkNode		    [99 104 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				106
+		chart			3
+		tag				"id=_1sy5oKbHEeKVjd_905naCg"
+		treeNode		[3 0 0 0]
+		labelString		"available = BAT_Info_From_SensorProcessing_checkQueue(event, evtQueue)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       107
+
+  position [2800.4995 -0.29599953 298.0008 36.0]
+		eml {
+			isEML	1
+			script	"function available = BAT_Info_From_SensorProcessing_checkQueue(event, evtQueue) %eml \n available = "
+      "false; \n for i = 1:length(evtQueue) \n     if evtQueue(i) == event \n         available = true;    \n         r"
+      "eturn \n     end \n end"		
+		}	
+	}
+	data {
+		id				107
+		name		    "event"
+		tag				"id=__D39wKbHEeKVjd_905naCg"
+		linkNode		    [106 0 108]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				108
+		name		    "evtQueue"
+		tag				"id=__D39wabHEeKVjd_905naCg"
+		linkNode		    [106 107 109]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				109
+		name		    "available"
+		tag				"id=__D39wqbHEeKVjd_905naCg"
+		linkNode		    [106 108 0]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	data {
+		id				5
+		name		    "clockSignal"
+		tag				"id=_1z2j4KbHEeKVjd_905naCg"
+		linkNode		    [3 0 110]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				110
+		name		    "isMaster"
+		tag				"id=_2R05UKbHEeKVjd_905naCg"
+		linkNode		    [3 5 111]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				111
+		name		    "stopPlaying"
+		tag				"id=_2SMswKbHEeKVjd_905naCg"
+		linkNode		    [3 110 112]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				112
+		name		    "BAT_Info_To_OtherRobotReadIn"
+		tag				"id=_2YtkcqbHEeKVjd_905naCg"
+		linkNode		    [3 111 113]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				113
+		name		    "BAT_Info_To_OtherRobotParamReadIn"
+		tag				"id=_2YuykKbHEeKVjd_905naCg"
+		linkNode		    [3 112 114]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				114
+		name		    "BAT_Info_To_OtherRobotWriteIn"
+		tag				"id=_2YvZoKbHEeKVjd_905naCg"
+		linkNode		    [3 113 115]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				115
+		name		    "BAT_Info_To_OtherRobotParamWriteIn"
+		tag				"id=_2YwnwKbHEeKVjd_905naCg"
+		linkNode		    [3 114 116]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				116
+		name		    "BAT_Info_ToStrikeProcessingReadIn"
+		tag				"id=_2ZPI4qbHEeKVjd_905naCg"
+		linkNode		    [3 115 117]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				117
+		name		    "BAT_Info_ToStrikeProcessingParamReadIn"
+		tag				"id=_2ZQXAKbHEeKVjd_905naCg"
+		linkNode		    [3 116 118]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				118
+		name		    "BAT_Info_ToStrikeProcessingWriteIn"
+		tag				"id=_2ZQ-EKbHEeKVjd_905naCg"
+		linkNode		    [3 117 119]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				119
+		name		    "BAT_Info_ToStrikeProcessingParamWriteIn"
+		tag				"id=_2ZSMMKbHEeKVjd_905naCg"
+		linkNode		    [3 118 120]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				120
+		name		    "BAT_Info_From_SensorProcessingReadIn"
+		tag				"id=_2aFdcqbHEeKVjd_905naCg"
+		linkNode		    [3 119 121]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				121
+		name		    "BAT_Info_From_SensorProcessingParamReadIn"
+		tag				"id=_2aHSoKbHEeKVjd_905naCg"
+		linkNode		    [3 120 122]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				122
+		name		    "BAT_Info_From_SensorProcessingWriteIn"
+		tag				"id=_2aIgwKbHEeKVjd_905naCg"
+		linkNode		    [3 121 123]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				123
+		name		    "BAT_Info_From_SensorProcessingParamWriteIn"
+		tag				"id=_2aJu4KbHEeKVjd_905naCg"
+		linkNode		    [3 122 124]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				124
+		name		    "BAT_Info_To_OtherRobotReadOut"
+		tag				"id=_2YxO0KbHEeKVjd_905naCg"
+		linkNode		    [3 123 125]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				125
+		name		    "BAT_Info_To_OtherRobotParamReadOut"
+		tag				"id=_2Yx14KbHEeKVjd_905naCg"
+		linkNode		    [3 124 126]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				126
+		name		    "BAT_Info_To_OtherRobotWriteOut"
+		tag				"id=_2Yyc8KbHEeKVjd_905naCg"
+		linkNode		    [3 125 127]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				127
+		name		    "BAT_Info_To_OtherRobotParamWriteOut"
+		tag				"id=_2YzrEKbHEeKVjd_905naCg"
+		linkNode		    [3 126 128]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				128
+		name		    "BAT_Info_ToStrikeProcessingReadOut"
+		tag				"id=_2ZSzQKbHEeKVjd_905naCg"
+		linkNode		    [3 127 129]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				129
+		name		    "BAT_Info_ToStrikeProcessingParamReadOut"
+		tag				"id=_2ZUBYKbHEeKVjd_905naCg"
+		linkNode		    [3 128 130]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				130
+		name		    "BAT_Info_ToStrikeProcessingWriteOut"
+		tag				"id=_2ZVPgKbHEeKVjd_905naCg"
+		linkNode		    [3 129 131]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				131
+		name		    "BAT_Info_ToStrikeProcessingParamWriteOut"
+		tag				"id=_2ZXrwKbHEeKVjd_905naCg"
+		linkNode		    [3 130 132]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				132
+		name		    "BAT_Info_From_SensorProcessingReadOut"
+		tag				"id=_2aK9AKbHEeKVjd_905naCg"
+		linkNode		    [3 131 133]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				133
+		name		    "BAT_Info_From_SensorProcessingParamReadOut"
+		tag				"id=_2aMLIKbHEeKVjd_905naCg"
+		linkNode		    [3 132 134]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				134
+		name		    "BAT_Info_From_SensorProcessingWriteOut"
+		tag				"id=_2aNZQKbHEeKVjd_905naCg"
+		linkNode		    [3 133 135]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				135
+		name		    "BAT_Info_From_SensorProcessingParamWriteOut"
+		tag				"id=_2aOnYKbHEeKVjd_905naCg"
+		linkNode		    [3 134 136]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				136
+		name		    "EVT_TURN_POSX"
+		tag				"id=_6HYOkKbHEeKVjd_905naCg"
+		linkNode		    [3 135 137]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"1"
+
+    	}	    				
+	}  
+	data {
+		id				137
+		name		    "EVT_TURN_POSY"
+		tag				"id=_6HpUUKbHEeKVjd_905naCg"
+		linkNode		    [3 136 138]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"2"
+
+    	}	    				
+	}  
+	data {
+		id				138
+		name		    "EVT_TURN_POSZ"
+		tag				"id=_6H_SkKbHEeKVjd_905naCg"
+		linkNode		    [3 137 139]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"3"
+
+    	}	    				
+	}  
+	data {
+		id				139
+		name		    "EVT_TURN_TIMEOFARRIVAL"
+		tag				"id=_6IQ_YKbHEeKVjd_905naCg"
+		linkNode		    [3 138 140]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"4"
+
+    	}	    				
+	}  
+	data {
+		id				140
+		name		    "EVT_TURN_VELOCITY"
+		tag				"id=_6Ij6UKbHEeKVjd_905naCg"
+		linkNode		    [3 139 141]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"5"
+
+    	}	    				
+	}  
+	data {
+		id				141
+		name		    "EVT_TRANSFERBATINFO_POSX"
+		tag				"id=_6I_YIKbHEeKVjd_905naCg"
+		linkNode		    [3 140 142]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"6"
+
+    	}	    				
+	}  
+	data {
+		id				142
+		name		    "EVT_TRANSFERBATINFO_POSY"
+		tag				"id=_6JbdAKbHEeKVjd_905naCg"
+		linkNode		    [3 141 143]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"7"
+
+    	}	    				
+	}  
+	data {
+		id				143
+		name		    "EVT_TRANSFERBATINFO_POSZ"
+		tag				"id=_6KB58KbHEeKVjd_905naCg"
+		linkNode		    [3 142 144]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"8"
+
+    	}	    				
+	}  
+	data {
+		id				144
+		name		    "EVT_TRANSFERBATINFO_TIMEOFARRIVAL"
+		tag				"id=_6KqzIKbHEeKVjd_905naCg"
+		linkNode		    [3 143 145]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"9"
+
+    	}	    				
+	}  
+	data {
+		id				145
+		name		    "EVT_TRANSFERBATINFO_VELOCITY"
+		tag				"id=_6LUTYKbHEeKVjd_905naCg"
+		linkNode		    [3 144 146]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"10"
+
+    	}	    				
+	}  
+	data {
+		id				146
+		name		    "EVT_STOPPLAYING"
+		tag				"id=_6r0YYKbHEeKVjd_905naCg"
+		linkNode		    [3 145 147]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"13"
+
+    	}	    				
+	}  
+	data {
+		id				147
+		name		    "tmp_var_1"
+		tag				"id=_1wwMkKbHEeKVjd_905naCg"
+		linkNode		    [3 146 148]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				148
+		name		    "tmp_var_2"
+		tag				"id=_1wzP4KbHEeKVjd_905naCg"
+		linkNode		    [3 147 149]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				149
+		name		    "tmp_var_3"
+		tag				"id=_1w59kKbHEeKVjd_905naCg"
+		linkNode		    [3 148 150]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				150
+		name		    "tmp_var_4"
+		tag				"id=_1w9A4KbHEeKVjd_905naCg"
+		linkNode		    [3 149 151]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				151
+		name		    "tmp_var_5"
+		tag				"id=_1xArQKbHEeKVjd_905naCg"
+		linkNode		    [3 150 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	instance {
+		id			152
+		name		"MainProcessing/MainProcessing_Statechart"
+		machine		2
+		chart		3
+	}
+	chart {
+		id			153
+		name		"SensorProcessing/SensorProcessing_Statechart"
+		tag			"id=_1joWkKbHEeKVjd_905naCg"
+		machine		2
+		chartFileNumber		2
+		viewObj		153    
+		decomposition	    CLUSTER_CHART
+		treeNode		[0 154 0 0]
+		firstData		155
+		disableImplicitCasting  1
+		userSpecifiedStateTransitionExecutionOrder 1
+	}
+	state {
+		id			154
+		chart		153
+		tag			"id=_1jpksKbHEeKVjd_905naCg"
+		treeNode	[153 0 0 0]
+		labelString	"chart"
+
+	decomposition	    SET_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		156
+  position [468.48 84.845 363.99997 346.995]
+	}
+	state {
+		id			157
+		chart		153
+		tag			"id=_1jqLwKbHEeKVjd_905naCg"
+		treeNode	[154 0 0 0]
+		labelString	"chartRegion"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    2
+
+  position [476.12 179.55 269.0 243.99998]
+	}
+	state {
+		id			158
+		chart		153
+		tag			"id=_4_nVQKbHEeKVjd_905naCg"
+		treeNode	[157 0 0 0]
+		labelString	"Initial"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		159
+  position [484.27 267.25 156.00003 148.0]
+	}
+	state {
+		id			160
+		chart		153
+		tag			"id=_5F_DAKbHEeKVjd_905naCg"
+		treeNode	[158 0 0 0]
+		labelString	"Reading\nentry: c0=reset(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [497.66 345.88 61.999916 36.0]
+	}
+	transition {
+		id			161
+		chart		153
+		midPoint	[535.11 340.29]
+		src {
+			intersection	[1 0 -1 0 536.63 334.730 0]
+		}
+		dst {
+			id	160
+			intersection	[1 0 -1 0 533.59 345.850 0]
+		}
+		dataLimits			[533.59 536.63 334.73 345.85]
+		
+	}
+
+	state {
+		id			162
+		chart		153
+		tag			"id=_5GD7gKbHEeKVjd_905naCg"
+		treeNode	[158 0 0 0]
+		labelString	"Sending\nentry: c0=reset(); "
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [570.31006 371.67 61.999916 36.0]
+	}
+
+  transition {
+  	id			159
+    chart		153
+    tag			"id=_5ICRcKbHEeKVjd_905naCg"
+    labelString "[ballRecognized == true]\n{[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_POSX, BAT_InfoWriteOut, double(posX), BAT_InfoParamWriteOut)
+[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_POSY, BAT_InfoWriteOut, double(posY), BAT_InfoParamWriteOut)
+[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_POSZ, BAT_InfoWriteOut, double(posZ), BAT_InfoParamWriteOut)
+[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_InfoWriteOut, double(timeOfArrival), BAT_InfoParamWriteOut)
+[BAT_InfoWriteOut, BAT_InfoParamWriteOut] = BAT_Info_enqueue(EVT_TRANSFERBATINFO_VELOCITY, BAT_InfoWriteOut, double(velocity), BAT_InfoParamWriteOut)
+; }"
+    linkNode 	[158 0 0]
+    executionOrder 1
+  labelPosition [-2471.5 410.13 6064.0 8.0]
+  midPoint [565.305 369.8]
+  dataLimits [560.01 570.6 367.97 371.63]
+  	src {
+  	  id		160
+  	    	  
+      intersection	[2 1 0 0 560.01 367.97 0 0]
+  	}
+  	dst {
+  	  id		162
+  	    	  
+      intersection	[1 0 -1 0 570.6 371.63 0 0]
+  	}
+  	slide {
+  	}
+  }
+  transition {
+  	id			163
+    chart		153
+    tag			"id=_5IY2wKbHEeKVjd_905naCg"
+    labelString "[time(c0) >= 0.1]"
+    linkNode 	[158 0 0]
+    executionOrder 1
+  labelPosition [509.46002 389.42 120.0 8.0]
+  midPoint [564.66003 383.745]
+  dataLimits [559.36 569.96 381.91 385.58]
+  	src {
+  	  id		162
+  	    	  
+      intersection	[4 -1 0 0 569.96 385.58 0 0]
+  	}
+  	dst {
+  	  id		160
+  	    	  
+      intersection	[3 0 1 0 559.36 381.91 0 0]
+  	}
+  	slide {
+  	}
+  }
+	transition {
+		id			164
+		chart		153
+		midPoint	[619.92004 292.27002]
+		src {
+			intersection	[2 1 0 0 676.21 244.440 0]
+		}
+		dst {
+			id	158
+			intersection	[1 0 -1 0 563.63 340.10 0]
+		}
+		dataLimits			[563.63 676.21 244.44 340.1]
+		
+	}
+
+
+	state {
+		id			165
+		chart		153
+		tag			"id=_1jqy0KbHEeKVjd_905naCg"
+		treeNode	[154 0 0 0]
+		labelString	"DataInit"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    1
+
+  position [764.6201 115.55 59.99976 36.0]
+	}
+
+  transition {
+  	id			156
+    chart		153
+    tag			"id=_1jqy0abHEeKVjd_905naCg"
+    labelString "{BAT_InfoWriteOut = BAT_InfoWriteIn;
+BAT_InfoParamWriteOut = BAT_InfoParamWriteIn;
+BAT_InfoReadOut = BAT_InfoReadIn;
+BAT_InfoParamReadOut = BAT_InfoParamReadIn;
+; }"
+    linkNode 	[154 0 0]
+    executionOrder 0
+  labelPosition [353.12 129.55 1280.0 8.0]
+  midPoint [809.61993 124.55]
+  dataLimits [794.62 824.6199 115.55 133.55]
+  	src {
+  	  id		165
+  	    	  
+      intersection	[1 0 1 0 794.62 115.55 0 0]
+  	}
+  	dst {
+  	  id		165
+  	    	  
+      intersection	[2 -1 0 0 824.6199 133.55 0 0]
+  	}
+  	slide {
+  	}
+  }
+	transition {
+		id			166
+		chart		153
+		midPoint	[722.81995 165.9985]
+		src {
+			intersection	[2 1 0 0 792.97 76.4570 0]
+		}
+		dst {
+			id	154
+			intersection	[1 0 -1 0 652.67 255.540 0]
+		}
+		dataLimits			[652.67 792.97 76.457 255.54]
+		
+	}
+
+
+	state {
+		id				167
+		chart			153
+		tag				"id=_1jrZ4KbHEeKVjd_905naCg"
+		treeNode		[153 0 0 0]
+		labelString		"logicalTime = time(clock)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       168
+
+  position [864.16 269.7 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function logicalTime = time(clock) \n\n sample = 0.001;  % the sample time of the system clock \n\n "
+      "%convert to pass units of time after last reset \n\n logicalTime = uint32((clockSignal - clock)/sample);"		
+		}	
+	}
+	data {
+		id				168
+		name		    "clock"
+		tag				"id=_1jtPEKbHEeKVjd_905naCg"
+		linkNode		    [167 0 169]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				169
+		name		    "logicalTime"
+		tag				"id=_1jsoAKbHEeKVjd_905naCg"
+		linkNode		    [167 168 0]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+
+	state {
+		id				170
+		chart			153
+		tag				"id=_1jrZ4abHEeKVjd_905naCg"
+		treeNode		[153 0 0 0]
+		labelString		"clock = reset()"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       171
+
+  position [864.16 341.7 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function clock = reset() \n
+ %set clock variable to current time \n
+ clock = clockSignal;"		
+		}	
+	}
+	data {
+		id				171
+		name		    "clock"
+		tag				"id=_1jt2IKbHEeKVjd_905naCg"
+		linkNode		    [170 0 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				172
+		chart			153
+		tag				"id=_1tW6UKbHEeKVjd_905naCg"
+		treeNode		[153 0 0 0]
+		labelString		"[evtQueue, paramQueue] = BAT_Info_enqueue(event, evtQueueIn, param, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       173
+
+  position [450.15918 -0.29599953 128.0016 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue] = BAT_Info_enqueue(event, evtQueueIn, param, paramQueueIn) %eml \n e"
+      "vtQueue = evtQueueIn; \n paramQueue = paramQueueIn; \n for i = 1:length(evtQueue) \n 	if evtQueue(i) == uint8(0)"
+      " \n 		evtQueue(i) = event; \n 		paramQueue(i) = param; \n 		return \n 	end \n end"		
+		}	
+	}
+	data {
+		id				173
+		name		    "event"
+		tag				"id=__moFgKbHEeKVjd_905naCg"
+		linkNode		    [172 0 174]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				174
+		name		    "evtQueueIn"
+		tag				"id=__moFgabHEeKVjd_905naCg"
+		linkNode		    [172 173 175]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				175
+		name		    "param"
+		tag				"id=__moFgqbHEeKVjd_905naCg"
+		linkNode		    [172 174 176]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				176
+		name		    "paramQueueIn"
+		tag				"id=__moFg6bHEeKVjd_905naCg"
+		linkNode		    [172 175 177]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				177
+		name		    "evtQueue"
+		tag				"id=__moFhKbHEeKVjd_905naCg"
+		linkNode		    [172 176 178]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				178
+		name		    "paramQueue"
+		tag				"id=__moFhabHEeKVjd_905naCg"
+		linkNode		    [172 177 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+
+	state {
+		id				179
+		chart			153
+		tag				"id=_1tYIcKbHEeKVjd_905naCg"
+		treeNode		[153 0 0 0]
+		labelString		"[evtQueue, paramQueue, parameter] = BAT_Info_dequeue(event, evtQueueIn, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       180
+
+  position [863.65875 413.7 129.0024 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue, parameter] = BAT_Info_dequeue(event, evtQueueIn, paramQueueIn) %eml "
+      "\n  evtQueue = evtQueueIn; \n  paramQueue = paramQueueIn; \n  parameter = 0; \n  for i = 1:length(evtQueue) \n  "
+      "  if evtQueue(i) == event \n         parameter = paramQueue(i); \n         for j = i:length(evtQueue)-1 \n      "
+      "       evtQueue(j) = evtQueue(j+1); \n             %Compatibility \n             evtQueue(j+length(evtQueue)) = "
+      "evtQueue(j+1+length(evtQueue)); \n             paramQueue(j) = paramQueue(j+1); \n         end \n         evtQue"
+      "ue(length(evtQueue)) = 0; \n         %Compatibility \n         evtQueue(length(evtQueue)+length(evtQueue)) = 0; "
+      "\n         paramQueue(length(paramQueue)) = 0; \n         return \n     end \n  end"		
+		}	
+	}
+	data {
+		id				180
+		name		    "event"
+		tag				"id=__qRPYKbHEeKVjd_905naCg"
+		linkNode		    [179 0 181]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				181
+		name		    "evtQueueIn"
+		tag				"id=__qR2cKbHEeKVjd_905naCg"
+		linkNode		    [179 180 182]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				182
+		name		    "paramQueueIn"
+		tag				"id=__qR2cabHEeKVjd_905naCg"
+		linkNode		    [179 181 183]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				183
+		name		    "evtQueue"
+		tag				"id=__qR2cqbHEeKVjd_905naCg"
+		linkNode		    [179 182 184]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				184
+		name		    "paramQueue"
+		tag				"id=__qR2c6bHEeKVjd_905naCg"
+		linkNode		    [179 183 185]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				185
+		name		    "parameter"
+		tag				"id=__qR2dKbHEeKVjd_905naCg"
+		linkNode		    [179 184 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				186
+		chart			153
+		tag				"id=_1tZWkKbHEeKVjd_905naCg"
+		treeNode		[153 0 0 0]
+		labelString		"available = BAT_Info_checkQueue(event, evtQueue)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       187
+
+  position [612.1604 17.703999 151.99919 36.0]
+		eml {
+			isEML	1
+			script	"function available = BAT_Info_checkQueue(event, evtQueue) %eml \n available = false; \n for i = 1:le"
+      "ngth(evtQueue) \n     if evtQueue(i) == event \n         available = true;    \n         return \n     end \n en"
+      "d"		
+		}	
+	}
+	data {
+		id				187
+		name		    "event"
+		tag				"id=__uMtIKbHEeKVjd_905naCg"
+		linkNode		    [186 0 188]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				188
+		name		    "evtQueue"
+		tag				"id=__uMtIabHEeKVjd_905naCg"
+		linkNode		    [186 187 189]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				189
+		name		    "available"
+		tag				"id=__uMtIqbHEeKVjd_905naCg"
+		linkNode		    [186 188 0]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	data {
+		id				155
+		name		    "clockSignal"
+		tag				"id=_12jSkKbHEeKVjd_905naCg"
+		linkNode		    [153 0 190]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				190
+		name		    "posX"
+		tag				"id=_2Sr08KbHEeKVjd_905naCg"
+		linkNode		    [153 155 191]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				191
+		name		    "posY"
+		tag				"id=_2TDBUKbHEeKVjd_905naCg"
+		linkNode		    [153 190 192]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				192
+		name		    "posZ"
+		tag				"id=_2TfGMKbHEeKVjd_905naCg"
+		linkNode		    [153 191 193]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				193
+		name		    "timeOfArrival"
+		tag				"id=_2T25oKbHEeKVjd_905naCg"
+		linkNode		    [153 192 194]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				194
+		name		    "velocity"
+		tag				"id=_2UX3AKbHEeKVjd_905naCg"
+		linkNode		    [153 193 195]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				195
+		name		    "ballRecognized"
+		tag				"id=_2U-T8KbHEeKVjd_905naCg"
+		linkNode		    [153 194 196]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				196
+		name		    "BAT_InfoReadIn"
+		tag				"id=_2aqsQqbHEeKVjd_905naCg"
+		linkNode		    [153 195 197]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				197
+		name		    "BAT_InfoParamReadIn"
+		tag				"id=_2ar6YKbHEeKVjd_905naCg"
+		linkNode		    [153 196 198]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				198
+		name		    "BAT_InfoWriteIn"
+		tag				"id=_2ashcKbHEeKVjd_905naCg"
+		linkNode		    [153 197 199]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				199
+		name		    "BAT_InfoParamWriteIn"
+		tag				"id=_2atIgKbHEeKVjd_905naCg"
+		linkNode		    [153 198 200]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				200
+		name		    "BAT_InfoReadOut"
+		tag				"id=_2atvkKbHEeKVjd_905naCg"
+		linkNode		    [153 199 201]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				201
+		name		    "BAT_InfoParamReadOut"
+		tag				"id=_2au9sKbHEeKVjd_905naCg"
+		linkNode		    [153 200 202]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				202
+		name		    "BAT_InfoWriteOut"
+		tag				"id=_2avkwKbHEeKVjd_905naCg"
+		linkNode		    [153 201 203]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				203
+		name		    "BAT_InfoParamWriteOut"
+		tag				"id=_2awL0KbHEeKVjd_905naCg"
+		linkNode		    [153 202 204]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				204
+		name		    "EVT_TRANSFERBATINFO_POSX"
+		tag				"id=_6btf0KbHEeKVjd_905naCg"
+		linkNode		    [153 203 205]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"6"
+
+    	}	    				
+	}  
+	data {
+		id				205
+		name		    "EVT_TRANSFERBATINFO_POSY"
+		tag				"id=_6b5GAKbHEeKVjd_905naCg"
+		linkNode		    [153 204 206]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"7"
+
+    	}	    				
+	}  
+	data {
+		id				206
+		name		    "EVT_TRANSFERBATINFO_POSZ"
+		tag				"id=_6cKy0KbHEeKVjd_905naCg"
+		linkNode		    [153 205 207]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"8"
+
+    	}	    				
+	}  
+	data {
+		id				207
+		name		    "EVT_TRANSFERBATINFO_TIMEOFARRIVAL"
+		tag				"id=_6ccfoKbHEeKVjd_905naCg"
+		linkNode		    [153 206 208]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"9"
+
+    	}	    				
+	}  
+	data {
+		id				208
+		name		    "EVT_TRANSFERBATINFO_VELOCITY"
+		tag				"id=_6cwosKbHEeKVjd_905naCg"
+		linkNode		    [153 207 209]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"10"
+
+    	}	    				
+	}  
+	data {
+		id				209
+		name		    "c0"
+		tag				"id=_5mu_oKbHEeKVjd_905naCg"
+		linkNode		    [153 208 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+		
+			initialValue	"0.0"
+
+    	}	    				
+	}  
+	instance {
+		id			210
+		name		"SensorProcessing/SensorProcessing_Statechart"
+		machine		2
+		chart		153
+	}
+	chart {
+		id			211
+		name		"StrikeProcessing/StrikeProcessing_Statechart"
+		tag			"id=_1j9twKbHEeKVjd_905naCg"
+		machine		2
+		chartFileNumber		3
+		viewObj		211    
+		decomposition	    CLUSTER_CHART
+		treeNode		[0 212 0 0]
+		firstData		213
+		disableImplicitCasting  1
+		userSpecifiedStateTransitionExecutionOrder 1
+	}
+	state {
+		id			212
+		chart		211
+		tag			"id=_1j-74KbHEeKVjd_905naCg"
+		treeNode	[211 0 0 0]
+		labelString	"chart"
+
+	decomposition	    SET_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		214
+  position [-0.33324 65.939 310.00327 270.001]
+	}
+	state {
+		id			215
+		chart		211
+		tag			"id=_1kAKAKbHEeKVjd_905naCg"
+		treeNode	[212 0 0 0]
+		labelString	"chartRegion"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    2
+
+		firstData		216
+  position [7.8116 155.64 253.9984 172.00002]
+	}
+	state {
+		id			217
+		chart		211
+		tag			"id=_4_tb4KbHEeKVjd_905naCg"
+		treeNode	[215 0 0 0]
+		labelString	"Init"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+		firstTransition		218
+  position [15.456 186.35 137.00401 122.0]
+	}
+	state {
+		id			219
+		chart		211
+		tag			"id=_5GNsgKbHEeKVjd_905naCg"
+		treeNode	[217 0 0 0]
+		labelString	"Receiving"
+	decomposition	    CLUSTER_STATE
+		
+	type		    OR_STATE    	
+  position [23.770878 263.97 70.500244 36.0]
+	}
+	transition {
+		id			220
+		chart		211
+		midPoint	[77.566 258.3]
+		src {
+			intersection	[1 0 -1 0 81.91 252.750 0]
+		}
+		dst {
+			id	219
+			intersection	[1 0 -1 0 73.222 263.850 0]
+		}
+		dataLimits			[73.222 81.91 252.75 263.85]
+		
+	}
+
+  transition {
+  	id			218
+    chart		211
+    tag			"id=_6Bm9wKbHEeKVjd_905naCg"
+    labelString "[BAT_Info_checkQueue(EVT_TRANSFERBATINFO_POSX, BAT_InfoReadOut) && BAT_Info_checkQueue(EVT_TRANSFERBATINFO_POSY, BAT_InfoReadOut) && BAT_Info_checkQueue(EVT_TRANSFERBATINFO_POSZ, BAT_InfoReadOut) && BAT_Info_checkQueue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_InfoReadOut) && BAT_Info_checkQueue(EVT_TRANSFERBATINFO_VELOCITY, BAT_InfoReadOut)]\n{[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_1] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_POSX, BAT_InfoReadOut, BAT_InfoParamReadOut); 
+[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_2] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_POSY, BAT_InfoReadOut, BAT_InfoParamReadOut); 
+[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_3] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_POSZ, BAT_InfoReadOut, BAT_InfoParamReadOut); 
+[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_4] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_TIMEOFARRIVAL, BAT_InfoReadOut, BAT_InfoParamReadOut); 
+[BAT_InfoReadOut, BAT_InfoParamReadOut, tmp_var_5] = BAT_Info_dequeue(EVT_TRANSFERBATINFO_VELOCITY, BAT_InfoReadOut, BAT_InfoParamReadOut); posX = tmp_var_1 ;  posY = tmp_var_2 ;  posZ = tmp_var_3 ;  timeOfArrival = tmp_var_4 ;  velocity = tmp_var_5 ; }"
+    linkNode 	[217 0 0]
+    executionOrder 1
+  labelPosition [-2680.0 277.97 9152.0 8.0]
+  midPoint [76.64606 272.97]
+  dataLimits [59.021 94.27112 263.97 281.97]
+  	src {
+  	  id		219
+  	    	  
+      intersection	[1 0 1 0 59.021 263.97 0 0]
+  	}
+  	dst {
+  	  id		219
+  	    	  
+      intersection	[2 -1 0 0 94.27112 281.97 0 0]
+  	}
+  	slide {
+  	}
+  }
+	transition {
+		id			221
+		chart		211
+		midPoint	[133.808 268.38]
+		src {
+			intersection	[2 1 0 0 181.62 288.550 0]
+		}
+		dst {
+			id	217
+			intersection	[2 1 0 0 85.996 248.210 0]
+		}
+		dataLimits			[85.996 181.62 248.21 288.55]
+		
+	}
+
+	data {
+		id				216
+		name		    "posX"
+		tag				"id=_5Rg9kKbHEeKVjd_905naCg"
+		linkNode		    [215 0 222]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				222
+		name		    "posY"
+		tag				"id=_5RjZ0KbHEeKVjd_905naCg"
+		linkNode		    [215 216 223]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				223
+		name		    "posZ"
+		tag				"id=_5Rl2EKbHEeKVjd_905naCg"
+		linkNode		    [215 222 224]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				224
+		name		    "timeOfArrival"
+		tag				"id=_5RnrQKbHEeKVjd_905naCg"
+		linkNode		    [215 223 225]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				225
+		name		    "velocity"
+		tag				"id=_5RqHgKbHEeKVjd_905naCg"
+		linkNode		    [215 224 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id			226
+		chart		211
+		tag			"id=_1kAxEKbHEeKVjd_905naCg"
+		treeNode	[212 0 0 0]
+		labelString	"DataInit"
+	decomposition	    CLUSTER_STATE
+		
+	type		AND_STATE	
+
+	executionOrder	    1
+
+  position [241.81012 96.64 59.99976 36.0]
+	}
+
+  transition {
+  	id			214
+    chart		211
+    tag			"id=_1kBYIKbHEeKVjd_905naCg"
+    labelString "{BAT_InfoWriteOut = BAT_InfoWriteIn;
+BAT_InfoParamWriteOut = BAT_InfoParamWriteIn;
+BAT_InfoReadOut = BAT_InfoReadIn;
+BAT_InfoParamReadOut = BAT_InfoParamReadIn;
+; }"
+    linkNode 	[212 0 0]
+    executionOrder 0
+  labelPosition [-169.69 110.64 1280.0 8.0]
+  midPoint [286.80994 105.64]
+  dataLimits [271.81 301.80988 96.64 114.64]
+  	src {
+  	  id		226
+  	    	  
+      intersection	[1 0 1 0 271.81 96.64 0 0]
+  	}
+  	dst {
+  	  id		226
+  	    	  
+      intersection	[2 -1 0 0 301.80988 114.64 0 0]
+  	}
+  	slide {
+  	}
+  }
+	transition {
+		id			227
+		chart		211
+		midPoint	[211.515 128.374]
+		src {
+			intersection	[2 1 0 0 266.69 57.9380 0]
+		}
+		dst {
+			id	212
+			intersection	[1 0 -1 0 156.34 198.810 0]
+		}
+		dataLimits			[156.34 266.69 57.938 198.81]
+		
+	}
+
+
+	state {
+		id				228
+		chart			211
+		tag				"id=_1kB_MKbHEeKVjd_905naCg"
+		treeNode		[211 0 0 0]
+		labelString		"logicalTime = time(clock)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       229
+
+  position [330.14 119.7 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function logicalTime = time(clock) \n\n sample = 0.001;  % the sample time of the system clock \n\n "
+      "%convert to pass units of time after last reset \n\n logicalTime = uint32((clockSignal - clock)/sample);"		
+		}	
+	}
+	data {
+		id				229
+		name		    "clock"
+		tag				"id=_1kEbcKbHEeKVjd_905naCg"
+		linkNode		    [228 0 230]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				230
+		name		    "logicalTime"
+		tag				"id=_1kD0YKbHEeKVjd_905naCg"
+		linkNode		    [228 229 0]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+
+	state {
+		id				231
+		chart			211
+		tag				"id=_1kB_MabHEeKVjd_905naCg"
+		treeNode		[211 0 0 0]
+		labelString		"clock = reset()"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       232
+
+  position [330.14 179.7 54.0 36.0]
+		eml {
+			isEML	1
+			script	"function clock = reset() \n
+ %set clock variable to current time \n
+ clock = clockSignal;"		
+		}	
+	}
+	data {
+		id				232
+		name		    "clock"
+		tag				"id=_1kFCgKbHEeKVjd_905naCg"
+		linkNode		    [231 0 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				233
+		chart			211
+		tag				"id=_1tiggKbHEeKVjd_905naCg"
+		treeNode		[211 0 0 0]
+		labelString		"[evtQueue, paramQueue] = BAT_Info_enqueue(event, evtQueueIn, param, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       234
+
+  position [330.13922 299.7 128.0016 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue] = BAT_Info_enqueue(event, evtQueueIn, param, paramQueueIn) %eml \n e"
+      "vtQueue = evtQueueIn; \n paramQueue = paramQueueIn; \n for i = 1:length(evtQueue) \n 	if evtQueue(i) == uint8(0)"
+      " \n 		evtQueue(i) = event; \n 		paramQueue(i) = param; \n 		return \n 	end \n end"		
+		}	
+	}
+	data {
+		id				234
+		name		    "event"
+		tag				"id=_AIQy8KbIEeKVjd_905naCg"
+		linkNode		    [233 0 235]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				235
+		name		    "evtQueueIn"
+		tag				"id=_AIQy8abIEeKVjd_905naCg"
+		linkNode		    [233 234 236]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				236
+		name		    "param"
+		tag				"id=_AIQy8qbIEeKVjd_905naCg"
+		linkNode		    [233 235 237]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				237
+		name		    "paramQueueIn"
+		tag				"id=_AIQy86bIEeKVjd_905naCg"
+		linkNode		    [233 236 238]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				238
+		name		    "evtQueue"
+		tag				"id=_AIQy9KbIEeKVjd_905naCg"
+		linkNode		    [233 237 239]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				239
+		name		    "paramQueue"
+		tag				"id=_AIQy9abIEeKVjd_905naCg"
+		linkNode		    [233 238 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+
+	state {
+		id				240
+		chart			211
+		tag				"id=_1tjuoKbHEeKVjd_905naCg"
+		treeNode		[211 0 0 0]
+		labelString		"[evtQueue, paramQueue, parameter] = BAT_Info_dequeue(event, evtQueueIn, paramQueueIn)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       241
+
+  position [329.63882 239.70001 129.0024 36.0]
+		eml {
+			isEML	1
+			script	"function [evtQueue, paramQueue, parameter] = BAT_Info_dequeue(event, evtQueueIn, paramQueueIn) %eml "
+      "\n  evtQueue = evtQueueIn; \n  paramQueue = paramQueueIn; \n  parameter = 0; \n  for i = 1:length(evtQueue) \n  "
+      "  if evtQueue(i) == event \n         parameter = paramQueue(i); \n         for j = i:length(evtQueue)-1 \n      "
+      "       evtQueue(j) = evtQueue(j+1); \n             %Compatibility \n             evtQueue(j+length(evtQueue)) = "
+      "evtQueue(j+1+length(evtQueue)); \n             paramQueue(j) = paramQueue(j+1); \n         end \n         evtQue"
+      "ue(length(evtQueue)) = 0; \n         %Compatibility \n         evtQueue(length(evtQueue)+length(evtQueue)) = 0; "
+      "\n         paramQueue(length(paramQueue)) = 0; \n         return \n     end \n  end"		
+		}	
+	}
+	data {
+		id				241
+		name		    "event"
+		tag				"id=_ALzPIKbIEeKVjd_905naCg"
+		linkNode		    [240 0 242]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				242
+		name		    "evtQueueIn"
+		tag				"id=_ALzPIabIEeKVjd_905naCg"
+		linkNode		    [240 241 243]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				243
+		name		    "paramQueueIn"
+		tag				"id=_ALzPIqbIEeKVjd_905naCg"
+		linkNode		    [240 242 244]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				244
+		name		    "evtQueue"
+		tag				"id=_ALz2MKbIEeKVjd_905naCg"
+		linkNode		    [240 243 245]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				245
+		name		    "paramQueue"
+		tag				"id=_ALz2MabIEeKVjd_905naCg"
+		linkNode		    [240 244 246]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				246
+		name		    "parameter"
+		tag				"id=_ALz2MqbIEeKVjd_905naCg"
+		linkNode		    [240 245 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	state {
+		id				247
+		chart			211
+		tag				"id=_1tk8wKbHEeKVjd_905naCg"
+		treeNode		[211 0 0 0]
+		labelString		"available = BAT_Info_checkQueue(event, evtQueue)"
+		type			FUNC_STATE
+		decomposition	CLUSTER_STATE
+		firstData       248
+
+  position [75.1404 -0.29599953 151.99919 36.0]
+		eml {
+			isEML	1
+			script	"function available = BAT_Info_checkQueue(event, evtQueue) %eml \n available = false; \n for i = 1:le"
+      "ngth(evtQueue) \n     if evtQueue(i) == event \n         available = true;    \n         return \n     end \n en"
+      "d"		
+		}	
+	}
+	data {
+		id				248
+		name		    "event"
+		tag				"id=_APpNUKbIEeKVjd_905naCg"
+		linkNode		    [247 0 249]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				249
+		name		    "evtQueue"
+		tag				"id=_APpNUabIEeKVjd_905naCg"
+		linkNode		    [247 248 250]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    FUNCTION_INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+    	}	    				
+	}  
+	data {
+		id				250
+		name		    "available"
+		tag				"id=_APpNUqbIEeKVjd_905naCg"
+		linkNode		    [247 249 0]
+		machine		    2
+		
+		dataType		"boolean"
+		scope		    FUNCTION_OUTPUT_DATA	
+		props {
+
+    	}	    				
+	}  
+
+	data {
+		id				213
+		name		    "clockSignal"
+		tag				"id=_123boKbHEeKVjd_905naCg"
+		linkNode		    [211 0 251]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				251
+		name		    "BAT_InfoReadIn"
+		tag				"id=_2VppYabHEeKVjd_905naCg"
+		linkNode		    [211 213 252]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				252
+		name		    "BAT_InfoParamReadIn"
+		tag				"id=_2Vq3gKbHEeKVjd_905naCg"
+		linkNode		    [211 251 253]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				253
+		name		    "BAT_InfoWriteIn"
+		tag				"id=_2VsFoKbHEeKVjd_905naCg"
+		linkNode		    [211 252 254]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				254
+		name		    "BAT_InfoParamWriteIn"
+		tag				"id=_2VtTwKbHEeKVjd_905naCg"
+		linkNode		    [211 253 255]
+		machine		    2
+		
+		dataType		"double"
+		scope		    INPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				255
+		name		    "BAT_InfoReadOut"
+		tag				"id=_2Vuh4KbHEeKVjd_905naCg"
+		linkNode		    [211 254 256]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				256
+		name		    "BAT_InfoParamReadOut"
+		tag				"id=_2VvwAKbHEeKVjd_905naCg"
+		linkNode		    [211 255 257]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				257
+		name		    "BAT_InfoWriteOut"
+		tag				"id=_2Vw-IKbHEeKVjd_905naCg"
+		linkNode		    [211 256 258]
+		machine		    2
+		
+		dataType		"uint8"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"[10,2]"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				258
+		name		    "BAT_InfoParamWriteOut"
+		tag				"id=_2VyMQKbHEeKVjd_905naCg"
+		linkNode		    [211 257 259]
+		machine		    2
+		
+		dataType		"double"
+		scope		    OUTPUT_DATA	
+		props {
+
+      		array {
+				size			"10"
+      		}
+      		complexity	      SF_COMPLEX_INHERITED
+    	}	    				
+	}  
+	data {
+		id				259
+		name		    "EVT_TRANSFERBATINFO_POSX"
+		tag				"id=_6NUegKbHEeKVjd_905naCg"
+		linkNode		    [211 258 260]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"6"
+
+    	}	    				
+	}  
+	data {
+		id				260
+		name		    "EVT_TRANSFERBATINFO_POSY"
+		tag				"id=_6NkWIKbHEeKVjd_905naCg"
+		linkNode		    [211 259 261]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"7"
+
+    	}	    				
+	}  
+	data {
+		id				261
+		name		    "EVT_TRANSFERBATINFO_POSZ"
+		tag				"id=_6NyYkKbHEeKVjd_905naCg"
+		linkNode		    [211 260 262]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"8"
+
+    	}	    				
+	}  
+	data {
+		id				262
+		name		    "EVT_TRANSFERBATINFO_TIMEOFARRIVAL"
+		tag				"id=_6OF6kKbHEeKVjd_905naCg"
+		linkNode		    [211 261 263]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"9"
+
+    	}	    				
+	}  
+	data {
+		id				263
+		name		    "EVT_TRANSFERBATINFO_VELOCITY"
+		tag				"id=_6OXAUKbHEeKVjd_905naCg"
+		linkNode		    [211 262 264]
+		machine		    2
+		
+		dataType		"uint32"
+		scope		    CONSTANT_DATA	
+		props {
+		
+			initialValue	"10"
+
+    	}	    				
+	}  
+	data {
+		id				264
+		name		    "tmp_var_1"
+		tag				"id=_1vSM8KbHEeKVjd_905naCg"
+		linkNode		    [211 263 265]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				265
+		name		    "tmp_var_2"
+		tag				"id=_1vY6oKbHEeKVjd_905naCg"
+		linkNode		    [211 264 266]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				266
+		name		    "tmp_var_3"
+		tag				"id=_1vb98KbHEeKVjd_905naCg"
+		linkNode		    [211 265 267]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				267
+		name		    "tmp_var_4"
+		tag				"id=_1vfBQKbHEeKVjd_905naCg"
+		linkNode		    [211 266 268]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	data {
+		id				268
+		name		    "tmp_var_5"
+		tag				"id=_1vkg0KbHEeKVjd_905naCg"
+		linkNode		    [211 267 0]
+		machine		    2
+		
+		dataType		"double"
+		scope		    LOCAL_DATA	
+		props {
+
+    	}	    				
+	}  
+	instance {
+		id			269
+		name		"StrikeProcessing/StrikeProcessing_Statechart"
+		machine		2
+		chart		211
+	}
+	target {
+		id			1
+    	name		    "sfun"
+    	description		    "Default Simulink S-Function Target."		
+		machine		2
+		linkNode		    [2 0 0]	
+	}
+}
+
+

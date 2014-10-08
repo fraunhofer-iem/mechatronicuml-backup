@@ -1,0 +1,3 @@
+The RailCab model is currently specified based on the source revision 1470 of the mechatronicuml repository 
+which requires revision 702 from the org.storydriven repository. It can currently not be opened with one of
+the binary releases.

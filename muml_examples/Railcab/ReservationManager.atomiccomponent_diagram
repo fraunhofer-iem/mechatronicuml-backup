@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_F_C70OxaEeGf65_dOPS6wA" type="Atomiccomponent" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_GfD4oOxaEeGf65_dOPS6wA" type="2005" fontName="Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GfD4ouxaEeGf65_dOPS6wA" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_Sp98cDefEeKBf9_4mE7iXw" type="3006" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Sp98cjefEeKBf9_4mE7iXw" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Sp98czefEeKBf9_4mE7iXw" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="Railcab.fujaba#_SoLzwTefEeKBf9_4mE7iXw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Sp98cTefEeKBf9_4mE7iXw"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_J0_GsDfJEeKRdbnwXjm-gQ" type="3006" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_J0_GsjfJEeKRdbnwXjm-gQ" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_J0_GszfJEeKRdbnwXjm-gQ" x="44" y="29"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="Railcab.fujaba#_J018wDfJEeKRdbnwXjm-gQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J0_GsTfJEeKRdbnwXjm-gQ" x="276" y="75"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="Railcab.fujaba#_Geyy4OxaEeGf65_dOPS6wA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GfD4oexaEeGf65_dOPS6wA" x="230" y="85" width="288" height="142"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_F_C70exaEeGf65_dOPS6wA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="Railcab.fujaba#_B5tSgdcvEeG4XKjrX38Blg"/>
+</notation:Diagram>

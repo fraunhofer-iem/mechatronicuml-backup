@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_ymdP0GM9EeOY3OClxpdOXw" type="Coordination Protocol" name="PeriodicTransmission.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_ymd24GM9EeOY3OClxpdOXw" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ymd24mM9EeOY3OClxpdOXw" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_z4ZY0GM9EeOY3OClxpdOXw" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_z4ZY0mM9EeOY3OClxpdOXw" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../ITSOWLIV_Demonstrator.fujaba#_SydpECpuEeOJnb1xCalP4w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z4ZY0WM9EeOY3OClxpdOXw" x="148"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_z4ZY02M9EeOY3OClxpdOXw" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_z4ZY1WM9EeOY3OClxpdOXw" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_z4ZY1mM9EeOY3OClxpdOXw" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../ITSOWLIV_Demonstrator.fujaba#_SydpESpuEeOJnb1xCalP4w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z4ZY1GM9EeOY3OClxpdOXw" y="90"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_z4ZY12M9EeOY3OClxpdOXw" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_z4Z_4GM9EeOY3OClxpdOXw" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_z4Z_4WM9EeOY3OClxpdOXw" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../ITSOWLIV_Demonstrator.fujaba#_SydpFSpuEeOJnb1xCalP4w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z4ZY2GM9EeOY3OClxpdOXw" x="283" y="90"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../ITSOWLIV_Demonstrator.fujaba#_SydpECpuEeOJnb1xCalP4w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ymd24WM9EeOY3OClxpdOXw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ymdP0WM9EeOY3OClxpdOXw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../ITSOWLIV_Demonstrator.fujaba#_OVeAsCprEeOJnb1xCalP4w"/>
+</notation:Diagram>

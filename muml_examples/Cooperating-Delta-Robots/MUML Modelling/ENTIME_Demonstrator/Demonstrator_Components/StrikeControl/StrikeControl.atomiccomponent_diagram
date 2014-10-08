@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_g58ocHtnEeKLftECdm97kg" type="Atomiccomponent" name="StrikeControl.atomiccomponent_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_iII54HtnEeKLftECdm97kg" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_iIKIAHtnEeKLftECdm97kg" type="5011"/>
+    <children xmi:type="notation:Shape" xmi:id="_pxUisHtwEeKLftECdm97kg" type="3006" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_pxVw0HtwEeKLftECdm97kg" type="5007">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pxVw0XtwEeKLftECdm97kg" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../../ENTIME_Demonstrator.fujaba#_pxLYwHtwEeKLftECdm97kg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pxUisXtwEeKLftECdm97kg"/>
+    </children>
+    <element xmi:type="component:AtomicComponent" href="../../ENTIME_Demonstrator.fujaba#_iH2mAHtnEeKLftECdm97kg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iII54XtnEeKLftECdm97kg" x="175" y="80" width="141" height="81"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_g58ocXtnEeKLftECdm97kg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../ENTIME_Demonstrator.fujaba#_bTpMEFZsEeKY3N7GF1dHWw"/>
+</notation:Diagram>

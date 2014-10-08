@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_rSNiQAJREeKsot-FPTx42A" type="Structuredcomponent" name="HES.structuredcomponent_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_rSOJUQJREeKsot-FPTx42A" type="2005" fontName="Bitstream Vera Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_rSOJUwJREeKsot-FPTx42A" type="5021"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_rSOJVAJREeKsot-FPTx42A" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_aXDI0CHmEeKh6b7eZrN1wQ" type="3012" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_aXDv4CHmEeKh6b7eZrN1wQ" type="5017"/>
+        <children xmi:type="notation:Shape" xmi:id="_aXJ2gCHmEeKh6b7eZrN1wQ" type="3014" fontName="Ubuntu" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_aXJ2giHmEeKh6b7eZrN1wQ" type="5015">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_aXJ2gyHmEeKh6b7eZrN1wQ" x="-109" y="-5"/>
+          </children>
+          <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_kTGG8HcbEeGRUKIGGCEvBg"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXJ2gSHmEeKh6b7eZrN1wQ"/>
+        </children>
+        <element xmi:type="component:ComponentPart" href="../VernetzterPruefstand.fujaba#_puL2oHcbEeGRUKIGGCEvBg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXDI0SHmEeKh6b7eZrN1wQ" x="276" y="124"/>
+      </children>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_aXYgACHmEeKh6b7eZrN1wQ" type="3010" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_aXYgAiHmEeKh6b7eZrN1wQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aXYgAyHmEeKh6b7eZrN1wQ" x="44" y="29"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_sGGbIHcZEeGRUKIGGCEvBg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXYgASHmEeKh6b7eZrN1wQ" x="-12" y="204"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_aXZHECHmEeKh6b7eZrN1wQ" type="3010" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_aXbjUCHmEeKh6b7eZrN1wQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aXbjUSHmEeKh6b7eZrN1wQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_ip4i4HcaEeGRUKIGGCEvBg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXZHESHmEeKh6b7eZrN1wQ" x="709" y="96"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_aXcKYCHmEeKh6b7eZrN1wQ" type="3010" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_aXcKYiHmEeKh6b7eZrN1wQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aXcKYyHmEeKh6b7eZrN1wQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_kCZ1AHcaEeGRUKIGGCEvBg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXcKYSHmEeKh6b7eZrN1wQ" x="709" y="156"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_aXcKZCHmEeKh6b7eZrN1wQ" type="3010" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_aXcxcCHmEeKh6b7eZrN1wQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aXcxcSHmEeKh6b7eZrN1wQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_vRarIHcaEeGRUKIGGCEvBg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXcKZSHmEeKh6b7eZrN1wQ" x="709" y="216"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_aXi4ECHmEeKh6b7eZrN1wQ" type="3010" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_aXlUUCHmEeKh6b7eZrN1wQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aXlUUSHmEeKh6b7eZrN1wQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_yAPB0HcaEeGRUKIGGCEvBg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXi4ESHmEeKh6b7eZrN1wQ" x="709" y="276"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_aXl7YCHmEeKh6b7eZrN1wQ" type="3010" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_aXl7YiHmEeKh6b7eZrN1wQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aXl7YyHmEeKh6b7eZrN1wQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_17WzkHcaEeGRUKIGGCEvBg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXl7YSHmEeKh6b7eZrN1wQ" x="709" y="336"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_aXl7ZCHmEeKh6b7eZrN1wQ" type="3010" fontName="Ubuntu" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_aXmicCHmEeKh6b7eZrN1wQ" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aXmicSHmEeKh6b7eZrN1wQ" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../VernetzterPruefstand.fujaba#_5k7iUHcaEeGRUKIGGCEvBg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aXl7ZSHmEeKh6b7eZrN1wQ" x="709" y="396"/>
+    </children>
+    <element xmi:type="component:StaticStructuredComponent" href="../VernetzterPruefstand.fujaba#_pWQJsHcZEeGRUKIGGCEvBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rSOJUgJREeKsot-FPTx42A" y="-12" width="721" height="457"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_rSOJUAJREeKsot-FPTx42A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VernetzterPruefstand.fujaba#_7tAlcG6QEeGwzsm_EpbUyg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_aZcVgCHmEeKh6b7eZrN1wQ" type="4003" source="_aXYgACHmEeKh6b7eZrN1wQ" target="_aXJ2gCHmEeKh6b7eZrN1wQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aZcVgSHmEeKh6b7eZrN1wQ" fontName="Ubuntu"/>
+    <element xmi:type="component:Delegation" href="../VernetzterPruefstand.fujaba#_uqn7cHcbEeGRUKIGGCEvBg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aZcVgiHmEeKh6b7eZrN1wQ" points="[12, 0, -274, 0]$[274, 0, -12, 0]"/>
+  </edges>
+</notation:Diagram>

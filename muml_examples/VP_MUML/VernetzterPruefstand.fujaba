@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.1" xmlns:core="http://www.fujaba.de/muml/model/core/0.3.1" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:msgiface="http://www.fujaba.de/muml/model/msgiface/0.3.1" xmlns:pattern="http://www.fujaba.de/muml/model/pattern/0.3.1" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1" xmi:id="_5WAR0W6QEeGwzsm_EpbUyg">
+  <categories xmi:id="_7tAlcG6QEeGwzsm_EpbUyg" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="__mgmkG6QEeGwzsm_EpbUyg" name="VernPruef">
+      <ports xsi:type="component:DiscretePort" xmi:id="_FmM4IG6REeGwzsm_EpbUyg" name="Streckenprofil Prognose &lt;Statorlage, Gleislage, Höhenprofil>_in" outgoingConnectors="_mH2WsG6XEeGwzsm_EpbUyg" refines="_49CzkHd1EeGRUKIGGCEvBg" receiverMessageInterface="_99iooHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_Fmo9AG6REeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_FmyuAG6REeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_Fp66gG6REeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_VmWiAG6REeGwzsm_EpbUyg" name="&lt;Benutzerwünsche>_in" outgoingConnectors="_nOX54G6XEeGwzsm_EpbUyg" refines="__kjWMHg9EeGRUKIGGCEvBg" receiverMessageInterface="_a1HtYHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_VmWiAW6REeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_VmWiAm6REeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_VmWiA26REeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_bAZv4G6REeGwzsm_EpbUyg" name="&lt;v_max>_in" outgoingConnectors="_no2PYG6XEeGwzsm_EpbUyg" refines="_cCTikXd1EeGRUKIGGCEvBg" receiverMessageInterface="_p4eNQHpLEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_bAZv4W6REeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_bAZv4m6REeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_bAZv426REeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_qBxdUG6REeGwzsm_EpbUyg" name="&lt;Aktuelle Geschwindigkeit>_out" outgoingConnectors="_pIIJ8HcgEeGRUKIGGCEvBg" refines="_qt73NXg-EeGRUKIGGCEvBg" senderMessageInterface="_AUz3cHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_qBxdUW6REeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_qBxdUm6REeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_qBxdU26REeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_yh_K4G6REeGwzsm_EpbUyg" name="&lt;Weganregungen>_in" outgoingConnectors="_YwySoHchEeGRUKIGGCEvBg" refines="_bhQRoXg-EeGRUKIGGCEvBg" receiverMessageInterface="_EssBMHpNEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_yh_K4W6REeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_yh_K4m6REeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_yh_K426REeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_1nj0sG6REeGwzsm_EpbUyg" name="&lt;Höhenprofil>_in" outgoingConnectors="_qZWhQHcgEeGRUKIGGCEvBg" refines="_Qr2Y4Xg_EeGRUKIGGCEvBg" receiverMessageInterface="_gZSgkHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_1nj0sW6REeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_1nj0sm6REeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_1nj0s26REeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_46XpQG6REeGwzsm_EpbUyg" name="&lt;Statorlagen>_in" outgoingConnectors="_p592kHcgEeGRUKIGGCEvBg" refines="_Cwi7oXg_EeGRUKIGGCEvBg" receiverMessageInterface="_p72b8HpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_46XpQW6REeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_46XpQm6REeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_46XpQ26REeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <embeddedParts xmi:id="_AL4vEG6SEeGwzsm_EpbUyg" name="FzM" componentType="_JHBeEG6SEeGwzsm_EpbUyg" fromRev="_L9vFoHcbEeGRUKIGGCEvBg _XXeoMHpUEeGB3c_CrLx2_A" toRev="_NCd5EHcbEeGRUKIGGCEvBg _PynFcHcbEeGRUKIGGCEvBg _ZGxmMHcgEeGRUKIGGCEvBg _jMomcHchEeGRUKIGGCEvBg _oCYNYHchEeGRUKIGGCEvBg" delegation="_mH2WsG6XEeGwzsm_EpbUyg _nOX54G6XEeGwzsm_EpbUyg _no2PYG6XEeGwzsm_EpbUyg">
+        <cardinality xmi:id="_AL4vEW6SEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_AL4vEm6SEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_AL4vE26SEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </embeddedParts>
+      <embeddedParts xmi:id="_Ge8vcHcgEeGRUKIGGCEvBg" name="Motor" componentType="_u0sgoHcfEeGRUKIGGCEvBg" fromRev="_ZGxmMHcgEeGRUKIGGCEvBg" toRev="_U5pecHcgEeGRUKIGGCEvBg _VYJYUHcgEeGRUKIGGCEvBg _XXeoMHpUEeGB3c_CrLx2_A" delegation="_pIIJ8HcgEeGRUKIGGCEvBg _p592kHcgEeGRUKIGGCEvBg _qZWhQHcgEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_Ge8vcXcgEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_Ge8vcncgEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Ge8vc3cgEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <embeddedParts xmi:id="_RqJAEHchEeGRUKIGGCEvBg" name="Federung" componentType="_8kUc4HcgEeGRUKIGGCEvBg" fromRev="_jMomcHchEeGRUKIGGCEvBg _oCYNYHchEeGRUKIGGCEvBg" toRev="_gt5TIHchEeGRUKIGGCEvBg _hh0DYHchEeGRUKIGGCEvBg" delegation="_YwySoHchEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_RqJAEXchEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_RqJAEnchEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_RqJAE3chEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <embeddedParts xmi:id="_Dz1mUHcbEeGRUKIGGCEvBg" name="Batterie" componentType="_pWQJsHcZEeGRUKIGGCEvBg" fromRev="_NCd5EHcbEeGRUKIGGCEvBg _PynFcHcbEeGRUKIGGCEvBg _U5pecHcgEeGRUKIGGCEvBg _VYJYUHcgEeGRUKIGGCEvBg _gt5TIHchEeGRUKIGGCEvBg _hh0DYHchEeGRUKIGGCEvBg" toRev="_L9vFoHcbEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_Dz-wQHcbEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_Dz-wQXcbEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Dz-wQncbEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <connectors xsi:type="component:Delegation" xmi:id="_mH2WsG6XEeGwzsm_EpbUyg" fromPort="_FmM4IG6REeGwzsm_EpbUyg" toPort="_bv62YG6TEeGwzsm_EpbUyg" componentPart="_AL4vEG6SEeGwzsm_EpbUyg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_nOX54G6XEeGwzsm_EpbUyg" fromPort="_VmWiAG6REeGwzsm_EpbUyg" toPort="_jjgHcG6TEeGwzsm_EpbUyg" componentPart="_AL4vEG6SEeGwzsm_EpbUyg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_no2PYG6XEeGwzsm_EpbUyg" fromPort="_bAZv4G6REeGwzsm_EpbUyg" toPort="_nQDRsG6TEeGwzsm_EpbUyg" componentPart="_AL4vEG6SEeGwzsm_EpbUyg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_L9vFoHcbEeGRUKIGGCEvBg" fromPort="_HHYaMG6VEeGwzsm_EpbUyg" toPort="_kCZ1AHcaEeGRUKIGGCEvBg" to="_Dz1mUHcbEeGRUKIGGCEvBg" from="_AL4vEG6SEeGwzsm_EpbUyg" coordinationPattern="_1TSUEHd0EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_NCd5EHcbEeGRUKIGGCEvBg" fromPort="_sGGbIHcZEeGRUKIGGCEvBg" toPort="_uTJhAG6TEeGwzsm_EpbUyg" to="_AL4vEG6SEeGwzsm_EpbUyg" from="_Dz1mUHcbEeGRUKIGGCEvBg" coordinationPattern="_BqvOYHd0EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_PynFcHcbEeGRUKIGGCEvBg" fromPort="_ip4i4HcaEeGRUKIGGCEvBg" toPort="_QcNRAG6UEeGwzsm_EpbUyg" to="_AL4vEG6SEeGwzsm_EpbUyg" from="_Dz1mUHcbEeGRUKIGGCEvBg" coordinationPattern="_qoHx4Hd0EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_U5pecHcgEeGRUKIGGCEvBg" fromPort="_5k7iUHcaEeGRUKIGGCEvBg" toPort="_DQcMEHcgEeGRUKIGGCEvBg" to="_Ge8vcHcgEeGRUKIGGCEvBg" from="_Dz1mUHcbEeGRUKIGGCEvBg" coordinationPattern="_hmp0AH5cEeGulP9mN2aRlQ"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_VYJYUHcgEeGRUKIGGCEvBg" fromPort="_17WzkHcaEeGRUKIGGCEvBg" toPort="_Bhv1oHcgEeGRUKIGGCEvBg" to="_Ge8vcHcgEeGRUKIGGCEvBg" from="_Dz1mUHcbEeGRUKIGGCEvBg" coordinationPattern="_-Bo40H5aEeGulP9mN2aRlQ"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_ZGxmMHcgEeGRUKIGGCEvBg" fromPort="_0OczkHcfEeGRUKIGGCEvBg" toPort="_uTJhAG6TEeGwzsm_EpbUyg" to="_AL4vEG6SEeGwzsm_EpbUyg" from="_Ge8vcHcgEeGRUKIGGCEvBg" coordinationPattern="_BqvOYHd0EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_pIIJ8HcgEeGRUKIGGCEvBg" fromPort="_qBxdUG6REeGwzsm_EpbUyg" toPort="_416t8HcfEeGRUKIGGCEvBg" componentPart="_Ge8vcHcgEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_p592kHcgEeGRUKIGGCEvBg" fromPort="_46XpQG6REeGwzsm_EpbUyg" toPort="__A7esHcfEeGRUKIGGCEvBg" componentPart="_Ge8vcHcgEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_qZWhQHcgEeGRUKIGGCEvBg" fromPort="_1nj0sG6REeGwzsm_EpbUyg" toPort="_9Z-H8HcfEeGRUKIGGCEvBg" componentPart="_Ge8vcHcgEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_YwySoHchEeGRUKIGGCEvBg" fromPort="_yh_K4G6REeGwzsm_EpbUyg" toPort="_GUt_8HchEeGRUKIGGCEvBg" componentPart="_RqJAEHchEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_gt5TIHchEeGRUKIGGCEvBg" fromPort="_vRarIHcaEeGRUKIGGCEvBg" toPort="_HwzjcHchEeGRUKIGGCEvBg" to="_RqJAEHchEeGRUKIGGCEvBg" from="_Dz1mUHcbEeGRUKIGGCEvBg" coordinationPattern="_NuwZgH59EeGulP9mN2aRlQ"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_hh0DYHchEeGRUKIGGCEvBg" fromPort="_yAPB0HcaEeGRUKIGGCEvBg" toPort="_Oc1WkHchEeGRUKIGGCEvBg" to="_RqJAEHchEeGRUKIGGCEvBg" from="_Dz1mUHcbEeGRUKIGGCEvBg" coordinationPattern="_Jxu_wH58EeGulP9mN2aRlQ"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_jMomcHchEeGRUKIGGCEvBg" fromPort="__h2lAHcgEeGRUKIGGCEvBg" toPort="_HHYaMG6VEeGwzsm_EpbUyg" to="_AL4vEG6SEeGwzsm_EpbUyg" from="_RqJAEHchEeGRUKIGGCEvBg" coordinationPattern="_1TSUEHd0EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_oCYNYHchEeGRUKIGGCEvBg" fromPort="_CXWygHchEeGRUKIGGCEvBg" toPort="_uTJhAG6TEeGwzsm_EpbUyg" to="_AL4vEG6SEeGwzsm_EpbUyg" from="_RqJAEHchEeGRUKIGGCEvBg" coordinationPattern="_BqvOYHd0EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_XXeoMHpUEeGB3c_CrLx2_A" fromPort="_HHYaMG6VEeGwzsm_EpbUyg" toPort="_yZzmIHcfEeGRUKIGGCEvBg" to="_Ge8vcHcgEeGRUKIGGCEvBg" from="_AL4vEG6SEeGwzsm_EpbUyg" coordinationPattern="_1TSUEHd0EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_JHBeEG6SEeGwzsm_EpbUyg" name="Fahrzeugmanagement" referencingComponentParts="_AL4vEG6SEeGwzsm_EpbUyg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_bv62YG6TEeGwzsm_EpbUyg" name="Streckenprofil Prognose &lt;Statorlage, Gleislage, Höhenprofil>_in" incomingConnectors="_mH2WsG6XEeGwzsm_EpbUyg" outgoingConnectors="_a0kxgH6DEeGulP9mN2aRlQ" refines="_49CzkHd1EeGRUKIGGCEvBg" receiverMessageInterface="_99iooHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_bv62YW6TEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_bv62Ym6TEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_bv62Y26TEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_jjgHcG6TEeGwzsm_EpbUyg" name="&lt;Benutzerwünsche>_in" incomingConnectors="_nOX54G6XEeGwzsm_EpbUyg" outgoingConnectors="_FN2lYG6YEeGwzsm_EpbUyg" refines="__kjWMHg9EeGRUKIGGCEvBg" receiverMessageInterface="_a1HtYHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_jjgHcW6TEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_jjgHcm6TEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_jjgHc26TEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_nQDRsG6TEeGwzsm_EpbUyg" name="&lt;v_max>_in" incomingConnectors="_no2PYG6XEeGwzsm_EpbUyg" outgoingConnectors="_EmSPEG6YEeGwzsm_EpbUyg" refines="_cCTikXd1EeGRUKIGGCEvBg" receiverMessageInterface="_p4eNQHpLEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_nQDRsW6TEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_nQDRsm6TEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_nQDRs26TEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_uTJhAG6TEeGwzsm_EpbUyg" name="&lt;Statusmeldung Verlässlichkeit>_in" incomingConnectors="_NCd5EHcbEeGRUKIGGCEvBg _ZGxmMHcgEeGRUKIGGCEvBg _oCYNYHchEeGRUKIGGCEvBg" outgoingConnectors="_KYUpsG6ZEeGwzsm_EpbUyg" refines="_BrCJUHd0EeGRUKIGGCEvBg" receiverMessageInterface="_t1pYAHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_uTJhAW6TEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_uTJhAm6TEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_VsdZwHhEEeGRUKIGGCEvBg" value="3"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_QcNRAG6UEeGwzsm_EpbUyg" name="&lt;Ladegrade>_in" incomingConnectors="_PynFcHcbEeGRUKIGGCEvBg" outgoingConnectors="_lkq10HcWEeGRUKIGGCEvBg" refines="_qoRi4Hd0EeGRUKIGGCEvBg" receiverMessageInterface="_lC1ekHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_QcNRAW6UEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_QcNRAm6UEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_QcNRA26UEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_HHYaMG6VEeGwzsm_EpbUyg" name="&lt;ausgewählter Paretopunkt>_out" incomingConnectors="_jMomcHchEeGRUKIGGCEvBg" outgoingConnectors="_tm1VcHcWEeGRUKIGGCEvBg _L9vFoHcbEeGRUKIGGCEvBg _XXeoMHpUEeGB3c_CrLx2_A" refines="_1TSUFXd0EeGRUKIGGCEvBg" senderMessageInterface="_OaYD8HpMEeGB3c_CrLx2_A" receiverMessageInterface="_cyVfMIl6EeGMgemuusRmqw">
+        <cardinality xmi:id="_HHYaMW6VEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_U1pvgIoJEeG4p6XMvVY4Sg" value="3"/>
+          <upperBound xmi:id="_I90XYG6VEeGwzsm_EpbUyg" value="3"/>
+        </cardinality>
+      </ports>
+      <embeddedParts xmi:id="_upjSAG6XEeGwzsm_EpbUyg" name="SDV" componentType="_zWv2YG6WEeGwzsm_EpbUyg" fromRev="_oMCgsHcWEeGRUKIGGCEvBg _sCQkUHcWEeGRUKIGGCEvBg" delegation="_EmSPEG6YEeGwzsm_EpbUyg _FN2lYG6YEeGwzsm_EpbUyg _a0kxgH6DEeGulP9mN2aRlQ">
+        <cardinality xmi:id="_upjSAW6XEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_upjSAm6XEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_upjSA26XEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </embeddedParts>
+      <embeddedParts xmi:id="_AaOo4G6ZEeGwzsm_EpbUyg" name="SafetyModule" componentType="_xEUO0G6YEeGwzsm_EpbUyg" fromRev="_e9Qc8HcWEeGRUKIGGCEvBg" delegation="_KYUpsG6ZEeGwzsm_EpbUyg">
+        <cardinality xmi:id="_AaOo4W6ZEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_AaOo4m6ZEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_AaOo426ZEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </embeddedParts>
+      <embeddedParts xmi:id="_KLTGYXcVEeGRUKIGGCEvBg" name="Heuristik" componentType="_OTE0EHcVEeGRUKIGGCEvBg" toRev="_e9Qc8HcWEeGRUKIGGCEvBg _oMCgsHcWEeGRUKIGGCEvBg _sCQkUHcWEeGRUKIGGCEvBg" delegation="_lkq10HcWEeGRUKIGGCEvBg _tm1VcHcWEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_KMCtQHcVEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_KMCtQXcVEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_KMCtQncVEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <connectors xsi:type="component:Delegation" xmi:id="_EmSPEG6YEeGwzsm_EpbUyg" fromPort="_nQDRsG6TEeGwzsm_EpbUyg" toPort="_A5WfwG6XEeGwzsm_EpbUyg" componentPart="_upjSAG6XEeGwzsm_EpbUyg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_FN2lYG6YEeGwzsm_EpbUyg" fromPort="_jjgHcG6TEeGwzsm_EpbUyg" toPort="_8L7uYG6WEeGwzsm_EpbUyg" componentPart="_upjSAG6XEeGwzsm_EpbUyg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_KYUpsG6ZEeGwzsm_EpbUyg" fromPort="_uTJhAG6TEeGwzsm_EpbUyg" toPort="_ye6kkG6YEeGwzsm_EpbUyg" componentPart="_AaOo4G6ZEeGwzsm_EpbUyg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_e9Qc8HcWEeGRUKIGGCEvBg" fromPort="_6nLsMG6YEeGwzsm_EpbUyg" toPort="_7vB0oHcVEeGRUKIGGCEvBg" to="_KLTGYXcVEeGRUKIGGCEvBg" from="_AaOo4G6ZEeGwzsm_EpbUyg" coordinationPattern="_okfQwHd1EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_lkq10HcWEeGRUKIGGCEvBg" fromPort="_QcNRAG6UEeGwzsm_EpbUyg" toPort="_x6lfEHcVEeGRUKIGGCEvBg" componentPart="_KLTGYXcVEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_oMCgsHcWEeGRUKIGGCEvBg" fromPort="_LP1ycG6XEeGwzsm_EpbUyg" toPort="_q6L-cHcVEeGRUKIGGCEvBg" to="_KLTGYXcVEeGRUKIGGCEvBg" from="_upjSAG6XEeGwzsm_EpbUyg" coordinationPattern="_cCTikHd1EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_sCQkUHcWEeGRUKIGGCEvBg" fromPort="_HgKbsG6XEeGwzsm_EpbUyg" toPort="_KqnqMHcWEeGRUKIGGCEvBg" to="_KLTGYXcVEeGRUKIGGCEvBg" from="_upjSAG6XEeGwzsm_EpbUyg" coordinationPattern="_485CkHd1EeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_tm1VcHcWEeGRUKIGGCEvBg" fromPort="_HHYaMG6VEeGwzsm_EpbUyg" toPort="_z3bmQHcVEeGRUKIGGCEvBg" componentPart="_KLTGYXcVEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_a0kxgH6DEeGulP9mN2aRlQ" fromPort="_bv62YG6TEeGwzsm_EpbUyg" toPort="_3yAgwG6WEeGwzsm_EpbUyg" componentPart="_upjSAG6XEeGwzsm_EpbUyg"/>
+    </modelElements>
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_zWv2YG6WEeGwzsm_EpbUyg" name="Strecken-Daten-Verarbeitung" referencingComponentParts="_upjSAG6XEeGwzsm_EpbUyg" behavior="_fElVgH6AEeGulP9mN2aRlQ">
+      <ports xsi:type="component:DiscretePort" xmi:id="_3yAgwG6WEeGwzsm_EpbUyg" name="Streckenprofil Prognose &lt;Statorlage, Gleislage, Höhenprofil>_in" incomingConnectors="_a0kxgH6DEeGulP9mN2aRlQ" behavior="_wkO2cHpSEeGB3c_CrLx2_A" refines="_49CzkHd1EeGRUKIGGCEvBg" receiverMessageInterface="_99iooHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_3yAgwW6WEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_3yAgwm6WEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_iA74kHhDEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_8L7uYG6WEeGwzsm_EpbUyg" name="&lt;Benutzerwünsche>_in" incomingConnectors="_FN2lYG6YEeGwzsm_EpbUyg" behavior="_l7JCwHpQEeGB3c_CrLx2_A" refines="__kjWMHg9EeGRUKIGGCEvBg" receiverMessageInterface="_a1HtYHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_8L7uYW6WEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_8L7uYm6WEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_8L7uY26WEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_A5WfwG6XEeGwzsm_EpbUyg" name="&lt;v_max>_in" incomingConnectors="_EmSPEG6YEeGwzsm_EpbUyg" behavior="_5GztwHpNEeGB3c_CrLx2_A" refines="_cCTikXd1EeGRUKIGGCEvBg" receiverMessageInterface="_p4eNQHpLEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_A5WfwW6XEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_A5Wfwm6XEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_A5Wfw26XEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_HgKbsG6XEeGwzsm_EpbUyg" name="Streckenprofil Prognose &lt;Statorlage, Gleislage, Höhenprofil>_out" outgoingConnectors="_sCQkUHcWEeGRUKIGGCEvBg" behavior="_08X7YHpSEeGB3c_CrLx2_A" refines="_49CzlHd1EeGRUKIGGCEvBg" senderMessageInterface="_99iooHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_HgKbsW6XEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_HgKbsm6XEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_HgKbs26XEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_LP1ycG6XEeGwzsm_EpbUyg" name="&lt;v_max>_out" outgoingConnectors="_oMCgsHcWEeGRUKIGGCEvBg" behavior="_CU_UkHpOEeGB3c_CrLx2_A" refines="_cCTilXd1EeGRUKIGGCEvBg" senderMessageInterface="_p4eNQHpLEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_LP1ycW6XEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_LP1ycm6XEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_LP1yc26XEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_xEUO0G6YEeGwzsm_EpbUyg" name="Verlässlichkeitsmodul" referencingComponentParts="_AaOo4G6ZEeGwzsm_EpbUyg" behavior="_uaaQAH6AEeGulP9mN2aRlQ">
+      <ports xsi:type="component:DiscretePort" xmi:id="_ye6kkG6YEeGwzsm_EpbUyg" name="&lt;Statusmeldung Verlässlichkeit>_in" incomingConnectors="_KYUpsG6ZEeGwzsm_EpbUyg" behavior="_fniEwHpSEeGB3c_CrLx2_A" refines="_BrCJUHd0EeGRUKIGGCEvBg" receiverMessageInterface="_t1pYAHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_ye6kkW6YEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_ye6kkm6YEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_mKo44HhDEeGRUKIGGCEvBg" value="3"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_6nLsMG6YEeGwzsm_EpbUyg" name="&lt;Beeinflussung der Punktauswahl>_out" outgoingConnectors="_e9Qc8HcWEeGRUKIGGCEvBg" behavior="_YEv6sHpQEeGB3c_CrLx2_A" refines="_okpBwHd1EeGRUKIGGCEvBg" senderMessageInterface="_RvatIHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_6nLsMW6YEeGwzsm_EpbUyg">
+          <lowerBound xmi:id="_6nLsMm6YEeGwzsm_EpbUyg"/>
+          <upperBound xmi:id="_6nLsM26YEeGwzsm_EpbUyg"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_OTE0EHcVEeGRUKIGGCEvBg" name="Punktauswahl-Heuristik und Datenbank" referencingComponentParts="_KLTGYXcVEeGRUKIGGCEvBg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_q6L-cHcVEeGRUKIGGCEvBg" name="&lt;v_max>_in" incomingConnectors="_oMCgsHcWEeGRUKIGGCEvBg" outgoingConnectors="_FTDoQHcZEeGRUKIGGCEvBg" refines="_cCTikXd1EeGRUKIGGCEvBg" receiverMessageInterface="_p4eNQHpLEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_q6VIYHcVEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_q6VIYXcVEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_q6VIYncVEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_x6lfEHcVEeGRUKIGGCEvBg" name="&lt;Ladegrade>_in" incomingConnectors="_lkq10HcWEeGRUKIGGCEvBg" outgoingConnectors="_HWk_MHcZEeGRUKIGGCEvBg" refines="_qoRi4Hd0EeGRUKIGGCEvBg" receiverMessageInterface="_lC1ekHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_x6lfEXcVEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_x6lfEncVEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_x6lfE3cVEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_z3bmQHcVEeGRUKIGGCEvBg" name="&lt;ausgewählter Paretopunkt>_out" incomingConnectors="_tm1VcHcWEeGRUKIGGCEvBg" outgoingConnectors="_LKRTQHcZEeGRUKIGGCEvBg" refines="_1TSUFXd0EeGRUKIGGCEvBg" senderMessageInterface="_OaYD8HpMEeGB3c_CrLx2_A" receiverMessageInterface="_cyVfMIl6EeGMgemuusRmqw">
+        <cardinality xmi:id="_z3bmQXcVEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_z3bmQncVEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_2kmXIHcVEeGRUKIGGCEvBg" value="3"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_7vB0oHcVEeGRUKIGGCEvBg" name="Beeinflussung der Punktauswahl_in" incomingConnectors="_e9Qc8HcWEeGRUKIGGCEvBg" outgoingConnectors="_ogv_4KMdEeGsjrELS4u1Ww" refines="_okfQwXd1EeGRUKIGGCEvBg" receiverMessageInterface="_RvatIHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_7vB0oXcVEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_7vB0oncVEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_7vB0o3cVEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_KqnqMHcWEeGRUKIGGCEvBg" name="Streckenprofil Prognose &lt;Statorlage, Gleislage, Höhenprofil>_in" incomingConnectors="_sCQkUHcWEeGRUKIGGCEvBg" outgoingConnectors="_F_11wHcZEeGRUKIGGCEvBg" refines="_49CzkHd1EeGRUKIGGCEvBg" receiverMessageInterface="_99iooHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_KqnqMXcWEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_KqnqMncWEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_KqnqM3cWEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <embeddedParts xmi:id="_bG0E8HcYEeGRUKIGGCEvBg" componentType="_r9im8HcXEeGRUKIGGCEvBg" toRev="_RfNW4KMdEeGsjrELS4u1Ww" delegation="_HWk_MHcZEeGRUKIGGCEvBg _LKRTQHcZEeGRUKIGGCEvBg _ogv_4KMdEeGsjrELS4u1Ww">
+        <cardinality xmi:id="_bG0E8XcYEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_bG0E8ncYEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_bG0E83cYEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <embeddedParts xmi:id="_-gM0YHcYEeGRUKIGGCEvBg" componentType="_vQiMQHcYEeGRUKIGGCEvBg" fromRev="_RfNW4KMdEeGsjrELS4u1Ww" delegation="_FTDoQHcZEeGRUKIGGCEvBg _F_11wHcZEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_-gM0YXcYEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_-gM0YncYEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_-gM0Y3cYEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <connectors xsi:type="component:Delegation" xmi:id="_FTDoQHcZEeGRUKIGGCEvBg" fromPort="_q6L-cHcVEeGRUKIGGCEvBg" toPort="_6pOi0HcYEeGRUKIGGCEvBg" componentPart="_-gM0YHcYEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_F_11wHcZEeGRUKIGGCEvBg" fromPort="_KqnqMHcWEeGRUKIGGCEvBg" toPort="_xurCoHcYEeGRUKIGGCEvBg" componentPart="_-gM0YHcYEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_HWk_MHcZEeGRUKIGGCEvBg" fromPort="_x6lfEHcVEeGRUKIGGCEvBg" toPort="_Gu9bAHcYEeGRUKIGGCEvBg" componentPart="_bG0E8HcYEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_LKRTQHcZEeGRUKIGGCEvBg" fromPort="_z3bmQHcVEeGRUKIGGCEvBg" toPort="_IKBDwHcYEeGRUKIGGCEvBg" componentPart="_bG0E8HcYEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Assembly" xmi:id="_RfNW4KMdEeGsjrELS4u1Ww" fromPort="_1-7W4HcYEeGRUKIGGCEvBg" toPort="_RV0E8HcYEeGRUKIGGCEvBg" to="_bG0E8HcYEeGRUKIGGCEvBg" from="_-gM0YHcYEeGRUKIGGCEvBg" coordinationPattern="_PApiUHfyEeGRUKIGGCEvBg"/>
+      <connectors xsi:type="component:Delegation" xmi:id="_ogv_4KMdEeGsjrELS4u1Ww" fromPort="_7vB0oHcVEeGRUKIGGCEvBg" toPort="_dEYqQKMdEeGsjrELS4u1Ww" componentPart="_bG0E8HcYEeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_r9im8HcXEeGRUKIGGCEvBg" name="Energie-Management" referencingComponentParts="_bG0E8HcYEeGRUKIGGCEvBg" behavior="_wsrqEH5_EeGulP9mN2aRlQ">
+      <ports xsi:type="component:DiscretePort" xmi:id="_Gu9bAHcYEeGRUKIGGCEvBg" name="&lt;Ladegrade>_in" incomingConnectors="_HWk_MHcZEeGRUKIGGCEvBg" behavior="_iOVkYHpREeGB3c_CrLx2_A" refines="_qoRi4Hd0EeGRUKIGGCEvBg" receiverMessageInterface="_lC1ekHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_Gu9bAXcYEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_GvHMAHcYEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_GvHMAXcYEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_IKBDwHcYEeGRUKIGGCEvBg" name="&lt;EMParetopunkt>_out" incomingConnectors="_LKRTQHcZEeGRUKIGGCEvBg" refines="_1TSUFXd0EeGRUKIGGCEvBg" senderMessageInterface="_OaYD8HpMEeGB3c_CrLx2_A" receiverMessageInterface="_cyVfMIl6EeGMgemuusRmqw">
+        <cardinality xmi:id="_IKBDwXcYEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_IKBDwncYEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_KuQiIHcYEeGRUKIGGCEvBg" value="3"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_RV0E8HcYEeGRUKIGGCEvBg" name="&lt;a_max, r_max>_in" incomingConnectors="_RfNW4KMdEeGsjrELS4u1Ww" behavior="_9o8mwHpOEeGB3c_CrLx2_A" refines="_PApiUXfyEeGRUKIGGCEvBg" receiverMessageInterface="_IJIvYHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_RV0E8XcYEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_RV0E8ncYEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_RV0E83cYEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_dEYqQKMdEeGsjrELS4u1Ww" name="&lt;Beeinflussung der Punktauswahl>_in" incomingConnectors="_ogv_4KMdEeGsjrELS4u1Ww" behavior="_upKYQHpPEeGB3c_CrLx2_A" refines="_okfQwXd1EeGRUKIGGCEvBg" receiverMessageInterface="_RvatIHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_dE9SAKMdEeGsjrELS4u1Ww">
+          <lowerBound xmi:id="_dE9SAaMdEeGsjrELS4u1Ww"/>
+          <upperBound xmi:id="_dFyYcKMdEeGsjrELS4u1Ww"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_vQiMQHcYEeGRUKIGGCEvBg" name="Profilgenerator" referencingComponentParts="_-gM0YHcYEeGRUKIGGCEvBg" behavior="_Icu-4H6AEeGulP9mN2aRlQ">
+      <ports xsi:type="component:DiscretePort" xmi:id="_xurCoHcYEeGRUKIGGCEvBg" name="Streckenprofil Prognose &lt;Statorlage, Gleislage, Höhenprofil>_in" incomingConnectors="_F_11wHcZEeGRUKIGGCEvBg" refines="_49CzkHd1EeGRUKIGGCEvBg" receiverMessageInterface="_99iooHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_xurCoXcYEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_xurConcYEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_xurCo3cYEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_1-7W4HcYEeGRUKIGGCEvBg" name="&lt;a_max, r_max>_out" outgoingConnectors="_RfNW4KMdEeGsjrELS4u1Ww" behavior="_HQ3jQHpPEeGB3c_CrLx2_A" refines="_PApiVXfyEeGRUKIGGCEvBg" senderMessageInterface="_IJIvYHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_1-7W4XcYEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_1-7W4ncYEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_1-7W43cYEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_6pOi0HcYEeGRUKIGGCEvBg" name="&lt;v_max>_in" incomingConnectors="_FTDoQHcZEeGRUKIGGCEvBg" refines="_cCTikXd1EeGRUKIGGCEvBg" receiverMessageInterface="_p4eNQHpLEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_6pOi0XcYEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_6pOi0ncYEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_6pOi03cYEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_pWQJsHcZEeGRUKIGGCEvBg" name="HES" referencingComponentParts="_Dz1mUHcbEeGRUKIGGCEvBg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_sGGbIHcZEeGRUKIGGCEvBg" name="&lt;Statusmeldung Verlässlichkeit>_out" outgoingConnectors="_NCd5EHcbEeGRUKIGGCEvBg _uqn7cHcbEeGRUKIGGCEvBg" refines="_BrLTQ3d0EeGRUKIGGCEvBg" senderMessageInterface="_t1pYAHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_sGGbIXcZEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_sGGbIncZEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_sGGbI3cZEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_ip4i4HcaEeGRUKIGGCEvBg" name="&lt;Ladegrade>_out" outgoingConnectors="_PynFcHcbEeGRUKIGGCEvBg" behavior="_lWb9wHpREeGB3c_CrLx2_A" refines="_qoRi5Hd0EeGRUKIGGCEvBg" senderMessageInterface="_lC1ekHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_ip4i4XcaEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_ip4i4ncaEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_ip4i43caEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_kCZ1AHcaEeGRUKIGGCEvBg" name="&lt;ausgewählter Paretopunkt>_in" incomingConnectors="_L9vFoHcbEeGRUKIGGCEvBg" refines="_1TSUEXd0EeGRUKIGGCEvBg" receiverMessageInterface="_OaYD8HpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_kCZ1AXcaEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_kCZ1AncaEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_kCZ1A3caEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_vRarIHcaEeGRUKIGGCEvBg" name="&lt;Momentanleistung SUrF>_in" outgoingConnectors="_gt5TIHchEeGRUKIGGCEvBg" behavior="_khETsH59EeGulP9mN2aRlQ" refines="_NuxnoH59EeGulP9mN2aRlQ" receiverMessageInterface="_WcjQEH59EeGulP9mN2aRlQ">
+        <cardinality xmi:id="_vRarIXcaEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_vRarIncaEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_vRarI3caEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_yAPB0HcaEeGRUKIGGCEvBg" name="&lt;Energie SUrF>_out" outgoingConnectors="_hh0DYHchEeGRUKIGGCEvBg" behavior="_lnC5wH58EeGulP9mN2aRlQ" refines="_Jxw09H58EeGulP9mN2aRlQ" senderMessageInterface="_XeUrkH58EeGulP9mN2aRlQ">
+        <cardinality xmi:id="_yAPB0XcaEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_yAPB0ncaEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_yAPB03caEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_17WzkHcaEeGRUKIGGCEvBg" name="&lt;Energie AM>_inout_HES" outgoingConnectors="_VYJYUHcgEeGRUKIGGCEvBg" behavior="_IdORcH5cEeGulP9mN2aRlQ" refines="_-CsBsH5aEeGulP9mN2aRlQ" senderMessageInterface="_pwXikH5bEeGulP9mN2aRlQ" receiverMessageInterface="_pwXikH5bEeGulP9mN2aRlQ">
+        <cardinality xmi:id="_17WzkXcaEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_17WzkncaEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_17Wzk3caEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_5k7iUHcaEeGRUKIGGCEvBg" name="&lt;Momentanleistung AM>_inout_HES" outgoingConnectors="_U5pecHcgEeGRUKIGGCEvBg" behavior="_JbAdcH5eEeGulP9mN2aRlQ" refines="_hmp0AX5cEeGulP9mN2aRlQ" senderMessageInterface="_64kuwH5dEeGulP9mN2aRlQ" receiverMessageInterface="_64kuwH5dEeGulP9mN2aRlQ">
+        <cardinality xmi:id="_5k7iUXcaEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_5k7iUncaEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_5k7iU3caEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <embeddedParts xmi:id="_puL2oHcbEeGRUKIGGCEvBg" componentType="_izlcAHcbEeGRUKIGGCEvBg" delegation="_uqn7cHcbEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_puL2oXcbEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_puL2oncbEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_puL2o3cbEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <connectors xsi:type="component:Delegation" xmi:id="_uqn7cHcbEeGRUKIGGCEvBg" fromPort="_sGGbIHcZEeGRUKIGGCEvBg" toPort="_kTGG8HcbEeGRUKIGGCEvBg" componentPart="_puL2oHcbEeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_izlcAHcbEeGRUKIGGCEvBg" name="VKM" referencingComponentParts="_puL2oHcbEeGRUKIGGCEvBg _yj2dgHcgEeGRUKIGGCEvBg _vh4E0HchEeGRUKIGGCEvBg" behavior="_46_54H6AEeGulP9mN2aRlQ">
+      <ports xsi:type="component:DiscretePort" xmi:id="_kTGG8HcbEeGRUKIGGCEvBg" name="&lt;Statusmeldung Verlässlichkeit>_out" incomingConnectors="_uqn7cHcbEeGRUKIGGCEvBg _1yMo0HcgEeGRUKIGGCEvBg _yYa0IHchEeGRUKIGGCEvBg" behavior="_jPd0wHpSEeGB3c_CrLx2_A" refines="_BrLTQ3d0EeGRUKIGGCEvBg" senderMessageInterface="_t1pYAHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_kTGG8XcbEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_kTGG8ncbEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_kTGG83cbEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_u0sgoHcfEeGRUKIGGCEvBg" name="AM" referencingComponentParts="_Ge8vcHcgEeGRUKIGGCEvBg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_yZzmIHcfEeGRUKIGGCEvBg" name="&lt;ausgewählter Paretopunkt>_in" incomingConnectors="_XXeoMHpUEeGB3c_CrLx2_A" refines="_1TSUEXd0EeGRUKIGGCEvBg" receiverMessageInterface="_OaYD8HpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_yZzmIXcfEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_yZzmIncfEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_yZVqYHhDEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_0OczkHcfEeGRUKIGGCEvBg" name="&lt;Statusmeldung Verlässlichkeit>_out" outgoingConnectors="_ZGxmMHcgEeGRUKIGGCEvBg _1yMo0HcgEeGRUKIGGCEvBg" refines="_BrLTQ3d0EeGRUKIGGCEvBg" senderMessageInterface="_t1pYAHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_0OczkXcfEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_0OczkncfEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_0Oczk3cfEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_416t8HcfEeGRUKIGGCEvBg" name="&lt;Aktuelle Geschwindigkeit>_out" incomingConnectors="_pIIJ8HcgEeGRUKIGGCEvBg" behavior="_VwlxoHpOEeGB3c_CrLx2_A" refines="_qt73NXg-EeGRUKIGGCEvBg" senderMessageInterface="_AUz3cHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_416t8XcfEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_416t8ncfEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_416t83cfEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_9Z-H8HcfEeGRUKIGGCEvBg" name="&lt;Höhenprofil>_in" incomingConnectors="_qZWhQHcgEeGRUKIGGCEvBg" behavior="_KgP-cHpREeGB3c_CrLx2_A" refines="_Qr2Y4Xg_EeGRUKIGGCEvBg" receiverMessageInterface="_gZSgkHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_9Z-H8XcfEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_9Z-H8ncfEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_9Z-H83cfEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="__A7esHcfEeGRUKIGGCEvBg" name="&lt;Statorlagen>_in" incomingConnectors="_p592kHcgEeGRUKIGGCEvBg" behavior="_A_lrEHpSEeGB3c_CrLx2_A" refines="_Cwi7oXg_EeGRUKIGGCEvBg" receiverMessageInterface="_p72b8HpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="__A7esXcfEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="__A7esncfEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="__A7es3cfEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_Bhv1oHcgEeGRUKIGGCEvBg" name="&lt;Energie AM>_inout_AM" incomingConnectors="_VYJYUHcgEeGRUKIGGCEvBg" behavior="_GNWgkH5cEeGulP9mN2aRlQ" refines="_-CsBtH5aEeGulP9mN2aRlQ" senderMessageInterface="_pwXikH5bEeGulP9mN2aRlQ" receiverMessageInterface="_pwXikH5bEeGulP9mN2aRlQ">
+        <cardinality xmi:id="_Bhv1oXcgEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_Bhv1oncgEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Bhv1o3cgEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_DQcMEHcgEeGRUKIGGCEvBg" name="&lt;Momentanleistung AM>_inout_AM" incomingConnectors="_U5pecHcgEeGRUKIGGCEvBg" behavior="_PorgoH5eEeGulP9mN2aRlQ" refines="_hmp0BX5cEeGulP9mN2aRlQ" senderMessageInterface="_64kuwH5dEeGulP9mN2aRlQ" receiverMessageInterface="_64kuwH5dEeGulP9mN2aRlQ">
+        <cardinality xmi:id="_DQcMEXcgEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_DQcMEncgEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_DQcME3cgEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <embeddedParts xmi:id="_yj2dgHcgEeGRUKIGGCEvBg" componentType="_izlcAHcbEeGRUKIGGCEvBg" delegation="_1yMo0HcgEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_yj_ncHcgEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_yj_ncXcgEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_yj_ncncgEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <connectors xsi:type="component:Delegation" xmi:id="_1yMo0HcgEeGRUKIGGCEvBg" fromPort="_0OczkHcfEeGRUKIGGCEvBg" toPort="_kTGG8HcbEeGRUKIGGCEvBg" componentPart="_yj2dgHcgEeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_8kUc4HcgEeGRUKIGGCEvBg" name="SUrF" referencingComponentParts="_RqJAEHchEeGRUKIGGCEvBg">
+      <ports xsi:type="component:DiscretePort" xmi:id="__h2lAHcgEeGRUKIGGCEvBg" name="&lt;ausgewählter Paretopunkt>_in" outgoingConnectors="_jMomcHchEeGRUKIGGCEvBg" refines="_1TSUEXd0EeGRUKIGGCEvBg" receiverMessageInterface="_OaYD8HpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="__h2lAXcgEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="__h2lAncgEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="__h2lA3cgEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_CXWygHchEeGRUKIGGCEvBg" name="&lt;Statusmeldung Verlässlichkeit>_out" outgoingConnectors="_oCYNYHchEeGRUKIGGCEvBg _yYa0IHchEeGRUKIGGCEvBg" refines="_BrLTQ3d0EeGRUKIGGCEvBg" senderMessageInterface="_t1pYAHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_CXWygXchEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_CXWygnchEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_XdpgAHhDEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_GUt_8HchEeGRUKIGGCEvBg" name="&lt;Weganregungen>_in" incomingConnectors="_YwySoHchEeGRUKIGGCEvBg" behavior="_FGgAoHpTEeGB3c_CrLx2_A" refines="_bhQRoXg-EeGRUKIGGCEvBg" receiverMessageInterface="_EssBMHpNEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_GUt_8XchEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_GUt_8nchEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_GUt_83chEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_HwzjcHchEeGRUKIGGCEvBg" name="&lt;Momentanleistung SUrF>_out" incomingConnectors="_gt5TIHchEeGRUKIGGCEvBg" behavior="_xWMzEH59EeGulP9mN2aRlQ" refines="_NuyOs359EeGulP9mN2aRlQ" senderMessageInterface="_WcjQEH59EeGulP9mN2aRlQ">
+        <cardinality xmi:id="_HwzjcXchEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_HwzjcnchEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Hwzjc3chEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_Oc1WkHchEeGRUKIGGCEvBg" name="&lt;Energie SUrF>_in" incomingConnectors="_hh0DYHchEeGRUKIGGCEvBg" behavior="_qkN-YH58EeGulP9mN2aRlQ" refines="_Jxw08H58EeGulP9mN2aRlQ" receiverMessageInterface="_XeUrkH58EeGulP9mN2aRlQ">
+        <cardinality xmi:id="_Oc1WkXchEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_Oc1WknchEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Oc1Wk3chEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </ports>
+      <embeddedParts xmi:id="_vh4E0HchEeGRUKIGGCEvBg" componentType="_izlcAHcbEeGRUKIGGCEvBg" delegation="_yYa0IHchEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_vh4E0XchEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_vh4E0nchEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_vh4E03chEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </embeddedParts>
+      <connectors xsi:type="component:Delegation" xmi:id="_yYa0IHchEeGRUKIGGCEvBg" fromPort="_CXWygHchEeGRUKIGGCEvBg" toPort="_kTGG8HcbEeGRUKIGGCEvBg" componentPart="_vh4E0HchEeGRUKIGGCEvBg"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_-4DEUHdzEeGRUKIGGCEvBg" key="de.uni_paderborn.fujaba.muml.pattern.category" name="pattern">
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_BqvOYHd0EeGRUKIGGCEvBg" name="Statusmeldung Verlässlichkeit">
+      <roles xmi:id="_BrCJUHd0EeGRUKIGGCEvBg" name="&lt;Statusmeldung Verlässlichkeit>_in" receiverMessageInterface="_t1pYAHpMEeGB3c_CrLx2_A" port="_uTJhAG6TEeGwzsm_EpbUyg _ye6kkG6YEeGwzsm_EpbUyg" outgoingRoleConnector="_BrLTR3d0EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_BrLTQHd0EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_BrLTQXd0EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_bTaRsHd0EeGRUKIGGCEvBg" value="3"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_BrLTQ3d0EeGRUKIGGCEvBg" name="&lt;Statusmeldung Verlässlichkeit>_out" incomingRoleConnector="_BrLTR3d0EeGRUKIGGCEvBg" senderMessageInterface="_t1pYAHpMEeGB3c_CrLx2_A" port="_CXWygHchEeGRUKIGGCEvBg _0OczkHcfEeGRUKIGGCEvBg _kTGG8HcbEeGRUKIGGCEvBg _sGGbIHcZEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_BrLTRHd0EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_BrLTRXd0EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_BrLTRnd0EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_BrLTR3d0EeGRUKIGGCEvBg" source="_BrCJUHd0EeGRUKIGGCEvBg" target="_BrLTQ3d0EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_qoHx4Hd0EeGRUKIGGCEvBg" name="Ladegrade">
+      <roles xmi:id="_qoRi4Hd0EeGRUKIGGCEvBg" name="&lt;Ladegrade>_in" receiverMessageInterface="_lC1ekHpMEeGB3c_CrLx2_A" port="_QcNRAG6UEeGwzsm_EpbUyg _x6lfEHcVEeGRUKIGGCEvBg _Gu9bAHcYEeGRUKIGGCEvBg" outgoingRoleConnector="_qoRi6Hd0EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_qoRi4Xd0EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_qoRi4nd0EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_qoRi43d0EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_qoRi5Hd0EeGRUKIGGCEvBg" name="&lt;Ladegrade>_out" incomingRoleConnector="_qoRi6Hd0EeGRUKIGGCEvBg" senderMessageInterface="_lC1ekHpMEeGB3c_CrLx2_A" port="_ip4i4HcaEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_qoRi5Xd0EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_qoRi5nd0EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_qoRi53d0EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_qoRi6Hd0EeGRUKIGGCEvBg" source="_qoRi4Hd0EeGRUKIGGCEvBg" target="_qoRi5Hd0EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_1TSUEHd0EeGRUKIGGCEvBg" name="Ausgewählter Paretopunkt">
+      <roles xmi:id="_1TSUEXd0EeGRUKIGGCEvBg" name="&lt;ausgewählter Paretopunkt>_Empfänger" senderMessageInterface="_cyVfMIl6EeGMgemuusRmqw" receiverMessageInterface="_OaYD8HpMEeGB3c_CrLx2_A" port="_kCZ1AHcaEeGRUKIGGCEvBg __h2lAHcgEeGRUKIGGCEvBg _yZzmIHcfEeGRUKIGGCEvBg" roleAndAdaptationBehavior="_X9DzwHpPEeGB3c_CrLx2_A" outgoingRoleConnector="_1TSUGXd0EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_1TSUEnd0EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_1TSUE3d0EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_1TSUFHd0EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_1TSUFXd0EeGRUKIGGCEvBg" name="&lt;ausgewählter Paretopunkt>_Sender" incomingRoleConnector="_1TSUGXd0EeGRUKIGGCEvBg" senderMessageInterface="_OaYD8HpMEeGB3c_CrLx2_A" receiverMessageInterface="_cyVfMIl6EeGMgemuusRmqw" port="_HHYaMG6VEeGwzsm_EpbUyg _z3bmQHcVEeGRUKIGGCEvBg _IKBDwHcYEeGRUKIGGCEvBg" roleAndAdaptationBehavior="_dhvkUHpPEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_1TSUFnd0EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_QrSA0IoJEeG4p6XMvVY4Sg" value="3"/>
+          <upperBound xmi:id="_GiJMwHd1EeGRUKIGGCEvBg" value="3"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_1TSUGXd0EeGRUKIGGCEvBg" source="_1TSUEXd0EeGRUKIGGCEvBg" target="_1TSUFXd0EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_cCTikHd1EeGRUKIGGCEvBg" name="V_Max">
+      <roles xmi:id="_cCTikXd1EeGRUKIGGCEvBg" name="&lt;v_max>_in" receiverMessageInterface="_p4eNQHpLEeGB3c_CrLx2_A" port="_bAZv4G6REeGwzsm_EpbUyg _nQDRsG6TEeGwzsm_EpbUyg _A5WfwG6XEeGwzsm_EpbUyg _q6L-cHcVEeGRUKIGGCEvBg _6pOi0HcYEeGRUKIGGCEvBg" outgoingRoleConnector="_cCTimXd1EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_cCTiknd1EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_cCTik3d1EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_cCTilHd1EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_cCTilXd1EeGRUKIGGCEvBg" name="&lt;v_max>_out" incomingRoleConnector="_cCTimXd1EeGRUKIGGCEvBg" senderMessageInterface="_p4eNQHpLEeGB3c_CrLx2_A" port="_LP1ycG6XEeGwzsm_EpbUyg">
+        <cardinality xmi:id="_cCTilnd1EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_cCTil3d1EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_cCTimHd1EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_cCTimXd1EeGRUKIGGCEvBg" source="_cCTikXd1EeGRUKIGGCEvBg" target="_cCTilXd1EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_okfQwHd1EeGRUKIGGCEvBg" name="Beeinflussung der Punktauswahl">
+      <roles xmi:id="_okfQwXd1EeGRUKIGGCEvBg" name="&lt;Beeinflussung der Punktauswahl>_in" receiverMessageInterface="_RvatIHpMEeGB3c_CrLx2_A" port="_7vB0oHcVEeGRUKIGGCEvBg _dEYqQKMdEeGsjrELS4u1Ww" outgoingRoleConnector="_okpBxHd1EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_okfQwnd1EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_okfQw3d1EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_okfQxHd1EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_okpBwHd1EeGRUKIGGCEvBg" name="&lt;Beeinflussung der Punktauswahl>_out" incomingRoleConnector="_okpBxHd1EeGRUKIGGCEvBg" senderMessageInterface="_RvatIHpMEeGB3c_CrLx2_A" port="_6nLsMG6YEeGwzsm_EpbUyg">
+        <cardinality xmi:id="_okpBwXd1EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_okpBwnd1EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_okpBw3d1EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_okpBxHd1EeGRUKIGGCEvBg" source="_okfQwXd1EeGRUKIGGCEvBg" target="_okpBwHd1EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_485CkHd1EeGRUKIGGCEvBg" name="Streckenprofil Prognose">
+      <roles xmi:id="_49CzkHd1EeGRUKIGGCEvBg" name="Streckenprofil Prognose &lt;Statorlage, Gleislage, Höhenprofil>_in" receiverMessageInterface="_99iooHpMEeGB3c_CrLx2_A" port="_FmM4IG6REeGwzsm_EpbUyg _bv62YG6TEeGwzsm_EpbUyg _3yAgwG6WEeGwzsm_EpbUyg _KqnqMHcWEeGRUKIGGCEvBg _xurCoHcYEeGRUKIGGCEvBg" outgoingRoleConnector="_49CzmHd1EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_49CzkXd1EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_49Czknd1EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_49Czk3d1EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_49CzlHd1EeGRUKIGGCEvBg" name="Streckenprofil Prognose &lt;Statorlage, Gleislage, Höhenprofil>_out" incomingRoleConnector="_49CzmHd1EeGRUKIGGCEvBg" senderMessageInterface="_99iooHpMEeGB3c_CrLx2_A" port="_HgKbsG6XEeGwzsm_EpbUyg">
+        <cardinality xmi:id="_49CzlXd1EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_49Czlnd1EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_49Czl3d1EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_49CzmHd1EeGRUKIGGCEvBg" source="_49CzkHd1EeGRUKIGGCEvBg" target="_49CzlHd1EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_PApiUHfyEeGRUKIGGCEvBg" name="A_Max, R_Max">
+      <roles xmi:id="_PApiUXfyEeGRUKIGGCEvBg" name="&lt;a_max, r_max>_in" incomingRoleConnector="_h2croCKAEeKh6b7eZrN1wQ" receiverMessageInterface="_IJIvYHpMEeGB3c_CrLx2_A" port="_RV0E8HcYEeGRUKIGGCEvBg" roleAndAdaptationBehavior="_9o8mwHpOEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_PApiUnfyEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_PApiU3fyEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_PApiVHfyEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_PApiVXfyEeGRUKIGGCEvBg" name="&lt;a_max, r_max>_out" senderMessageInterface="_IJIvYHpMEeGB3c_CrLx2_A" port="_1-7W4HcYEeGRUKIGGCEvBg" roleAndAdaptationBehavior="_HQ3jQHpPEeGB3c_CrLx2_A" outgoingRoleConnector="_h2croCKAEeKh6b7eZrN1wQ">
+        <cardinality xmi:id="_PApiVnfyEeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_PApiV3fyEeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_PApiWHfyEeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_h2croCKAEeKh6b7eZrN1wQ" source="_PApiVXfyEeGRUKIGGCEvBg" target="_PApiUXfyEeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="__kZlMHg9EeGRUKIGGCEvBg" name="Benutzerwünsche">
+      <roles xmi:id="__kjWMHg9EeGRUKIGGCEvBg" name="&lt;Benutzerwünsche>_in" receiverMessageInterface="_a1HtYHpMEeGB3c_CrLx2_A" port="_VmWiAG6REeGwzsm_EpbUyg _jjgHcG6TEeGwzsm_EpbUyg _8L7uYG6WEeGwzsm_EpbUyg" outgoingRoleConnector="__kjWOHg9EeGRUKIGGCEvBg">
+        <cardinality xmi:id="__kjWMXg9EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="__kjWMng9EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="__kjWM3g9EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="__kjWNHg9EeGRUKIGGCEvBg" name="&lt;Benutzerwünsche>_out" behavior="_qAiK0HpQEeGB3c_CrLx2_A" incomingRoleConnector="__kjWOHg9EeGRUKIGGCEvBg" senderMessageInterface="_a1HtYHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="__kjWNXg9EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="__kjWNng9EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="__kjWN3g9EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="__kjWOHg9EeGRUKIGGCEvBg" source="__kjWMHg9EeGRUKIGGCEvBg" target="__kjWNHg9EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_bhQRoHg-EeGRUKIGGCEvBg" name="Weganregungen">
+      <roles xmi:id="_bhQRoXg-EeGRUKIGGCEvBg" name="&lt;Weganregungen>_in" receiverMessageInterface="_EssBMHpNEeGB3c_CrLx2_A" port="_yh_K4G6REeGwzsm_EpbUyg _GUt_8HchEeGRUKIGGCEvBg" outgoingRoleConnector="_bhQRqXg-EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_bhQRong-EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_bhQRo3g-EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_bhQRpHg-EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_bhQRpXg-EeGRUKIGGCEvBg" name="&lt;Weganregungen>_out" behavior="_LNxg4HpTEeGB3c_CrLx2_A" incomingRoleConnector="_bhQRqXg-EeGRUKIGGCEvBg" senderMessageInterface="_EssBMHpNEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_bhQRpng-EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_bhQRp3g-EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_bhQRqHg-EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_bhQRqXg-EeGRUKIGGCEvBg" source="_bhQRoXg-EeGRUKIGGCEvBg" target="_bhQRpXg-EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_qt73MHg-EeGRUKIGGCEvBg" name="Aktuelle Geschwindigkeit">
+      <roles xmi:id="_qt73MXg-EeGRUKIGGCEvBg" name="&lt;Aktuelle Geschwindigkeit>_in" behavior="_QEZD0HpOEeGB3c_CrLx2_A" receiverMessageInterface="_AUz3cHpMEeGB3c_CrLx2_A" outgoingRoleConnector="_qt73OXg-EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_qt73Mng-EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_qt73M3g-EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_qt73NHg-EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_qt73NXg-EeGRUKIGGCEvBg" name="&lt;Aktuelle Geschwindigkeit>_out" incomingRoleConnector="_qt73OXg-EeGRUKIGGCEvBg" senderMessageInterface="_AUz3cHpMEeGB3c_CrLx2_A" port="_qBxdUG6REeGwzsm_EpbUyg _416t8HcfEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_qt73Nng-EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_qt73N3g-EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_qt73OHg-EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_qt73OXg-EeGRUKIGGCEvBg" source="_qt73MXg-EeGRUKIGGCEvBg" target="_qt73NXg-EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_Cwi7oHg_EeGRUKIGGCEvBg" name="Statorlagen">
+      <roles xmi:id="_Cwi7oXg_EeGRUKIGGCEvBg" name="&lt;Statorlagen>_in" receiverMessageInterface="_p72b8HpMEeGB3c_CrLx2_A" port="_46XpQG6REeGwzsm_EpbUyg __A7esHcfEeGRUKIGGCEvBg" outgoingRoleConnector="_Cwi7qXg_EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_Cwi7ong_EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_Cwi7o3g_EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Cwi7pHg_EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_Cwi7pXg_EeGRUKIGGCEvBg" name="&lt;Statorlagen>_out" behavior="_E1p9sHpSEeGB3c_CrLx2_A" incomingRoleConnector="_Cwi7qXg_EeGRUKIGGCEvBg" senderMessageInterface="_p72b8HpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_Cwi7png_EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_Cwi7p3g_EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Cwi7qHg_EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_Cwi7qXg_EeGRUKIGGCEvBg" source="_Cwi7oXg_EeGRUKIGGCEvBg" target="_Cwi7pXg_EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_Qr2Y4Hg_EeGRUKIGGCEvBg" name="Höhenprofil">
+      <roles xmi:id="_Qr2Y4Xg_EeGRUKIGGCEvBg" name="&lt;Höhenprofil>_in" receiverMessageInterface="_gZSgkHpMEeGB3c_CrLx2_A" port="_1nj0sG6REeGwzsm_EpbUyg _9Z-H8HcfEeGRUKIGGCEvBg" outgoingRoleConnector="_Qr2Y6Xg_EeGRUKIGGCEvBg">
+        <cardinality xmi:id="_Qr2Y4ng_EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_Qr2Y43g_EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Qr2Y5Hg_EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_Qr2Y5Xg_EeGRUKIGGCEvBg" name="&lt;Höhenprofil>_out" behavior="_Q-lT0HpREeGB3c_CrLx2_A" incomingRoleConnector="_Qr2Y6Xg_EeGRUKIGGCEvBg" senderMessageInterface="_gZSgkHpMEeGB3c_CrLx2_A">
+        <cardinality xmi:id="_Qr2Y5ng_EeGRUKIGGCEvBg">
+          <lowerBound xmi:id="_Qr2Y53g_EeGRUKIGGCEvBg"/>
+          <upperBound xmi:id="_Qr2Y6Hg_EeGRUKIGGCEvBg"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_Qr2Y6Xg_EeGRUKIGGCEvBg" source="_Qr2Y4Xg_EeGRUKIGGCEvBg" target="_Qr2Y5Xg_EeGRUKIGGCEvBg"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_-Bo40H5aEeGulP9mN2aRlQ" name="Energie AM">
+      <roles xmi:id="_-CsBsH5aEeGulP9mN2aRlQ" name="&lt;Energie AM>_inout_HES" senderMessageInterface="_pwXikH5bEeGulP9mN2aRlQ" receiverMessageInterface="_pwXikH5bEeGulP9mN2aRlQ" port="_17WzkHcaEeGRUKIGGCEvBg" outgoingRoleConnector="_-C1LoH5aEeGulP9mN2aRlQ">
+        <cardinality xmi:id="_-CsBsX5aEeGulP9mN2aRlQ">
+          <lowerBound xmi:id="_-CsBsn5aEeGulP9mN2aRlQ"/>
+          <upperBound xmi:id="_-CsBs35aEeGulP9mN2aRlQ"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_-CsBtH5aEeGulP9mN2aRlQ" name="&lt;Energie AM>_inout_AM" incomingRoleConnector="_-C1LoH5aEeGulP9mN2aRlQ" senderMessageInterface="_pwXikH5bEeGulP9mN2aRlQ" receiverMessageInterface="_pwXikH5bEeGulP9mN2aRlQ" port="_Bhv1oHcgEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_-CsBtX5aEeGulP9mN2aRlQ">
+          <lowerBound xmi:id="_-CsBtn5aEeGulP9mN2aRlQ"/>
+          <upperBound xmi:id="_-CsBt35aEeGulP9mN2aRlQ"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_-C1LoH5aEeGulP9mN2aRlQ" source="_-CsBsH5aEeGulP9mN2aRlQ" target="_-CsBtH5aEeGulP9mN2aRlQ"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_hmp0AH5cEeGulP9mN2aRlQ" name="Momentanleistung AM">
+      <roles xmi:id="_hmp0AX5cEeGulP9mN2aRlQ" name="&lt;Momentanleistung AM>_inout_HES" senderMessageInterface="_64kuwH5dEeGulP9mN2aRlQ" receiverMessageInterface="_64kuwH5dEeGulP9mN2aRlQ" port="_5k7iUHcaEeGRUKIGGCEvBg" outgoingRoleConnector="_hmp0CX5cEeGulP9mN2aRlQ">
+        <cardinality xmi:id="_hmp0An5cEeGulP9mN2aRlQ">
+          <lowerBound xmi:id="_hmp0A35cEeGulP9mN2aRlQ"/>
+          <upperBound xmi:id="_hmp0BH5cEeGulP9mN2aRlQ"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_hmp0BX5cEeGulP9mN2aRlQ" name="&lt;Momentanleistung AM>_inout_AM" incomingRoleConnector="_hmp0CX5cEeGulP9mN2aRlQ" senderMessageInterface="_64kuwH5dEeGulP9mN2aRlQ" receiverMessageInterface="_64kuwH5dEeGulP9mN2aRlQ" port="_DQcMEHcgEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_hmp0Bn5cEeGulP9mN2aRlQ">
+          <lowerBound xmi:id="_hmp0B35cEeGulP9mN2aRlQ"/>
+          <upperBound xmi:id="_hmp0CH5cEeGulP9mN2aRlQ"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_hmp0CX5cEeGulP9mN2aRlQ" source="_hmp0AX5cEeGulP9mN2aRlQ" target="_hmp0BX5cEeGulP9mN2aRlQ"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_Jxu_wH58EeGulP9mN2aRlQ" name="Energie SUrF">
+      <roles xmi:id="_Jxw08H58EeGulP9mN2aRlQ" name="&lt;Energie SUrF>_in" receiverMessageInterface="_XeUrkH58EeGulP9mN2aRlQ" port="_Oc1WkHchEeGRUKIGGCEvBg" outgoingRoleConnector="_Jxw0-H58EeGulP9mN2aRlQ">
+        <cardinality xmi:id="_Jxw08X58EeGulP9mN2aRlQ">
+          <lowerBound xmi:id="_Jxw08n58EeGulP9mN2aRlQ"/>
+          <upperBound xmi:id="_Jxw08358EeGulP9mN2aRlQ"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_Jxw09H58EeGulP9mN2aRlQ" name="&lt;Energie SUrF>_out" incomingRoleConnector="_Jxw0-H58EeGulP9mN2aRlQ" senderMessageInterface="_XeUrkH58EeGulP9mN2aRlQ" port="_yAPB0HcaEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_Jxw09X58EeGulP9mN2aRlQ">
+          <lowerBound xmi:id="_Jxw09n58EeGulP9mN2aRlQ"/>
+          <upperBound xmi:id="_Jxw09358EeGulP9mN2aRlQ"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_Jxw0-H58EeGulP9mN2aRlQ" source="_Jxw08H58EeGulP9mN2aRlQ" target="_Jxw09H58EeGulP9mN2aRlQ"/>
+    </modelElements>
+    <modelElements xsi:type="pattern:CoordinationPattern" xmi:id="_NuwZgH59EeGulP9mN2aRlQ" name="Momentanleistung SUrF">
+      <roles xmi:id="_NuxnoH59EeGulP9mN2aRlQ" name="&lt;Momentanleistung SUrF>_in" receiverMessageInterface="_WcjQEH59EeGulP9mN2aRlQ" port="_vRarIHcaEeGRUKIGGCEvBg" outgoingRoleConnector="_NuyOt359EeGulP9mN2aRlQ">
+        <cardinality xmi:id="_NuyOsH59EeGulP9mN2aRlQ">
+          <lowerBound xmi:id="_NuyOsX59EeGulP9mN2aRlQ"/>
+          <upperBound xmi:id="_NuyOsn59EeGulP9mN2aRlQ"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_NuyOs359EeGulP9mN2aRlQ" name="&lt;Momentanleistung SUrF>_out" incomingRoleConnector="_NuyOt359EeGulP9mN2aRlQ" senderMessageInterface="_WcjQEH59EeGulP9mN2aRlQ" port="_HwzjcHchEeGRUKIGGCEvBg">
+        <cardinality xmi:id="_NuyOtH59EeGulP9mN2aRlQ">
+          <lowerBound xmi:id="_NuyOtX59EeGulP9mN2aRlQ"/>
+          <upperBound xmi:id="_NuyOtn59EeGulP9mN2aRlQ"/>
+        </cardinality>
+      </roles>
+      <connector xmi:id="_NuyOt359EeGulP9mN2aRlQ" source="_NuxnoH59EeGulP9mN2aRlQ" target="_NuyOs359EeGulP9mN2aRlQ"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_pPaCIXpLEeGB3c_CrLx2_A" key="de.uni_paderborn.fujaba.muml.messageinterface.category" name="msgiface">
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_p4eNQHpLEeGB3c_CrLx2_A" name="V_Max">
+      <messageTypes xmi:id="_uuEqQHpLEeGB3c_CrLx2_A" name="v_max">
+        <parameters xmi:id="_TMvaQH5_EeGulP9mN2aRlQ" name="v_max" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_AUz3cHpMEeGB3c_CrLx2_A" name="Aktuelle Geschwindigkeit">
+      <messageTypes xmi:id="_B3l40HpMEeGB3c_CrLx2_A" name="aktuelleGeschwindigkeit">
+        <parameters xmi:id="_DIxc0H5-EeGulP9mN2aRlQ" name="aktuelleGeschwindigkeit" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_IJIvYHpMEeGB3c_CrLx2_A" name="A_Max, R_Max">
+      <messageTypes xmi:id="_J_aUgHpMEeGB3c_CrLx2_A" name="a_max_r_max">
+        <parameters xmi:id="_JHYwUH5-EeGulP9mN2aRlQ" name="a_max" type="_97wQRwJREeKsot-FPTx42A"/>
+        <parameters xmi:id="_Lfq2UH5-EeGulP9mN2aRlQ" name="r_max" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_OaYD8HpMEeGB3c_CrLx2_A" name="Ausgewählter Paretopunkt_Sender">
+      <messageTypes xmi:id="_PhCxEHpMEeGB3c_CrLx2_A" name="ausgewaehlterParetopunkt">
+        <parameters xmi:id="_gax-UH5-EeGulP9mN2aRlQ" name="bildpunkt" type="_74yBAAJTEeKsot-FPTx42A"/>
+        <parameters xmi:id="_Qx8icCJ4EeKh6b7eZrN1wQ" name="urbildpunkt" type="_74yBAAJTEeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_RvatIHpMEeGB3c_CrLx2_A" name="Beeinflussung der Punktauswahl">
+      <messageTypes xmi:id="_VHvT0HpMEeGB3c_CrLx2_A" name="beeinflussungDerPunktauswahl">
+        <parameters xmi:id="_ldqCUH5-EeGulP9mN2aRlQ" name="beeinflussungDerPunktauswahl" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_a1HtYHpMEeGB3c_CrLx2_A" name="Benutzerwünsche">
+      <messageTypes xmi:id="_bp71gHpMEeGB3c_CrLx2_A" name="benutzerwuensche">
+        <parameters xmi:id="_qjM_0H5-EeGulP9mN2aRlQ" name="benutzerwuensche" type="_74yBAAJTEeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_gZSgkHpMEeGB3c_CrLx2_A" name="Höhenprofil">
+      <messageTypes xmi:id="_he6r4HpMEeGB3c_CrLx2_A" name="hoehenprofil">
+        <parameters xmi:id="_yAWG0H5-EeGulP9mN2aRlQ" name="hoehenprofil" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+      <messageTypes xmi:id="_Z9sD0CJ5EeKh6b7eZrN1wQ" name="anzahl">
+        <parameters xmi:id="_bZ_pwCJ5EeKh6b7eZrN1wQ" name="anzahl" type="_97wQRQJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_lC1ekHpMEeGB3c_CrLx2_A" name="Ladegrade">
+      <messageTypes xmi:id="_mA30IHpMEeGB3c_CrLx2_A" name="ladegrade">
+        <parameters xmi:id="_1Xzx4H5-EeGulP9mN2aRlQ" name="ladegrade" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_p72b8HpMEeGB3c_CrLx2_A" name="Statorlagen">
+      <messageTypes xmi:id="_qqttEHpMEeGB3c_CrLx2_A" name="statorlagen">
+        <parameters xmi:id="_7Iv1wH5-EeGulP9mN2aRlQ" name="statorlage" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+      <messageTypes xmi:id="_OAEbQCJ5EeKh6b7eZrN1wQ" name="anzahl">
+        <parameters xmi:id="_QeiBwCJ5EeKh6b7eZrN1wQ" name="anzahl" type="_97wQRQJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_t1pYAHpMEeGB3c_CrLx2_A" name="Statusmeldung Verlässlichkeit">
+      <messageTypes xmi:id="_vVc94HpMEeGB3c_CrLx2_A" name="statusmeldung">
+        <parameters xmi:id="_B7yP0H5_EeGulP9mN2aRlQ" name="verlaesslichkeit" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_99iooHpMEeGB3c_CrLx2_A" name="Streckenprofil Prognose">
+      <messageTypes xmi:id="__flDIHpMEeGB3c_CrLx2_A" name="streckenprofil">
+        <parameters xmi:id="_IM8E0H5_EeGulP9mN2aRlQ" name="statorlage" type="_97wQRQJREeKsot-FPTx42A"/>
+        <parameters xmi:id="_NA3G0H5_EeGulP9mN2aRlQ" name="gleislage" type="_97wQRQJREeKsot-FPTx42A"/>
+        <parameters xmi:id="_OOv2QH5_EeGulP9mN2aRlQ" name="hoehenprofil" type="_97wQRQJREeKsot-FPTx42A"/>
+      </messageTypes>
+      <messageTypes xmi:id="_GZd2QCJ5EeKh6b7eZrN1wQ" name="profillaenge">
+        <parameters xmi:id="_IRfH0CJ5EeKh6b7eZrN1wQ" name="laenge" type="_97wQRQJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_EssBMHpNEeGB3c_CrLx2_A" name="Weganregungen">
+      <messageTypes xmi:id="_GXf9MHpNEeGB3c_CrLx2_A" name="weganregungen">
+        <parameters xmi:id="_Wcpr0H5_EeGulP9mN2aRlQ" name="weganregung" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_pwXikH5bEeGulP9mN2aRlQ" name="Energie AM">
+      <messageTypes xmi:id="_rouLUH5bEeGulP9mN2aRlQ" name="energie">
+        <parameters xmi:id="_tuLb8H5bEeGulP9mN2aRlQ" name="energie" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_64kuwH5dEeGulP9mN2aRlQ" name="Momentanleistung AM">
+      <messageTypes xmi:id="_8JztIH5dEeGulP9mN2aRlQ" name="momentanleistung">
+        <parameters xmi:id="_-bc_oH5dEeGulP9mN2aRlQ" name="momentanleistung" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_XeUrkH58EeGulP9mN2aRlQ" name="Energie SUrF">
+      <messageTypes xmi:id="_YR5dkH58EeGulP9mN2aRlQ" name="energie">
+        <parameters xmi:id="_Z0R2UH58EeGulP9mN2aRlQ" name="energie" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_WcjQEH59EeGulP9mN2aRlQ" name="Momentanleistung SUrF">
+      <messageTypes xmi:id="_ZlnSwH59EeGulP9mN2aRlQ" name="momentanleistung">
+        <parameters xmi:id="_bJk_4H59EeGulP9mN2aRlQ" name="momentanleistung" type="_97wQRwJREeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_cyVfMIl6EeGMgemuusRmqw" name="Ausgewählter Paretopunkt_Empfänger">
+      <messageTypes xmi:id="_fUmnoIl6EeGMgemuusRmqw" name="paretopunktErhalten"/>
+      <messageTypes xmi:id="_hk4BIIl6EeGMgemuusRmqw" name="paretopunktEingestellt"/>
+      <messageTypes xmi:id="_aFN8MIl7EeGMgemuusRmqw" name="fehler"/>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_hcfJoIoIEeG4p6XMvVY4Sg" name="Ausgewählter Paretopunkt_Empfänger">
+      <messageTypes xmi:id="_i-STkIoIEeG4p6XMvVY4Sg" name="paretopunktEingestellt"/>
+      <messageTypes xmi:id="_kw0BIIoIEeG4p6XMvVY4Sg" name="fehler"/>
+    </modelElements>
+    <modelElements xsi:type="msgiface:MessageInterface" xmi:id="_YYbRoIrYEeG4p6XMvVY4Sg" name="Ausgewählter Paretopunkt_Sender">
+      <messageTypes xmi:id="_iBO-8IrYEeG4p6XMvVY4Sg" name="ausgewählterParetopunkt">
+        <parameters xmi:id="_mUBp0IrYEeG4p6XMvVY4Sg" name="bildpunkte" type="_jsqbQAJTEeKsot-FPTx42A"/>
+        <parameters xmi:id="_vNiBIIrYEeG4p6XMvVY4Sg" name="urbildpunkte" type="_jsqbQAJTEeKsot-FPTx42A"/>
+      </messageTypes>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_daTxgHpNEeGB3c_CrLx2_A" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_5GztwHpNEeGB3c_CrLx2_A" name="V_Max_in" behavioralElement="_A5WfwG6XEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_CU_UkHpOEeGB3c_CrLx2_A" name="V_Max_out" behavioralElement="_LP1ycG6XEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_QEZD0HpOEeGB3c_CrLx2_A" name="Aktuelle Geschwindigkeit_in" behavioralElement="_qt73MXg-EeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_VwlxoHpOEeGB3c_CrLx2_A" name="Aktuelle Geschwindigkeit_out" behavioralElement="_416t8HcfEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_9o8mwHpOEeGB3c_CrLx2_A" name="A_Max, R_Max_in" behavioralElement="_RV0E8HcYEeGRUKIGGCEvBg">
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_us9EACKAEeKh6b7eZrN1wQ" name="State"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_HQ3jQHpPEeGB3c_CrLx2_A" name="A_Max, R_Max_out" behavioralElement="_1-7W4HcYEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_X9DzwHpPEeGB3c_CrLx2_A" name="Ausgewählter Paretopunkt_Empfänger">
+      <transitions xmi:id="_yT-toIl4EeGMgemuusRmqw" priority="1" target="_sy6RwIl4EeGMgemuusRmqw" source="_KQ-HsIl4EeGMgemuusRmqw"/>
+      <transitions xmi:id="_yy9IoIl4EeGMgemuusRmqw" priority="2" target="_wLG8oIl4EeGMgemuusRmqw" source="_KQ-HsIl4EeGMgemuusRmqw"/>
+      <transitions xmi:id="_GwueoIl5EeGMgemuusRmqw" priority="1" target="_AZco8Il4EeGMgemuusRmqw" source="_sy6RwIl4EeGMgemuusRmqw">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_RJKnMIl7EeGMgemuusRmqw">
+          <message xmi:id="_RJNDcIl7EeGMgemuusRmqw" instanceOf="_hk4BIIl6EeGMgemuusRmqw"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_H4NEEIl5EeGMgemuusRmqw" priority="1" target="_AZco8Il4EeGMgemuusRmqw" source="_wLG8oIl4EeGMgemuusRmqw">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_eMZ0AIl7EeGMgemuusRmqw">
+          <message xmi:id="_eMcQQIl7EeGMgemuusRmqw" instanceOf="_aFN8MIl7EeGMgemuusRmqw"/>
+        </events>
+      </transitions>
+      <transitions xmi:id="_Jwi4wIoIEeG4p6XMvVY4Sg" priority="1" target="_KQ-HsIl4EeGMgemuusRmqw" source="_AZco8Il4EeGMgemuusRmqw">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_KrNxQIoIEeG4p6XMvVY4Sg" kind="TRIGGER">
+          <message xmi:id="_KrOYUIoIEeG4p6XMvVY4Sg" instanceOf="_PhCxEHpMEeGB3c_CrLx2_A"/>
+        </events>
+      </transitions>
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_AZco8Il4EeGMgemuusRmqw" name="Inaktiv" outgoingTransitions="_Jwi4wIoIEeG4p6XMvVY4Sg" incomingTransitions="_GwueoIl5EeGMgemuusRmqw _H4NEEIl5EeGMgemuusRmqw" initial="true"/>
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_KQ-HsIl4EeGMgemuusRmqw" name="Einstellung" outgoingTransitions="_yT-toIl4EeGMgemuusRmqw _yy9IoIl4EeGMgemuusRmqw" incomingTransitions="_Jwi4wIoIEeG4p6XMvVY4Sg"/>
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_sy6RwIl4EeGMgemuusRmqw" name="Erfolg" outgoingTransitions="_GwueoIl5EeGMgemuusRmqw" incomingTransitions="_yT-toIl4EeGMgemuusRmqw"/>
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_wLG8oIl4EeGMgemuusRmqw" name="Fehler" outgoingTransitions="_H4NEEIl5EeGMgemuusRmqw" incomingTransitions="_yy9IoIl4EeGMgemuusRmqw"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_upKYQHpPEeGB3c_CrLx2_A" name="Beeinflussung der Punktauswahl_in" behavioralElement="_dEYqQKMdEeGsjrELS4u1Ww"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_YEv6sHpQEeGB3c_CrLx2_A" name="Beeinflussung der Punktauswahl_out" behavioralElement="_6nLsMG6YEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_l7JCwHpQEeGB3c_CrLx2_A" name="Benutzerwünsche_in" behavioralElement="_8L7uYG6WEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_qAiK0HpQEeGB3c_CrLx2_A" name="Benutzerwünsche_out" behavioralElement="__kjWNHg9EeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_KgP-cHpREeGB3c_CrLx2_A" name="Höhenprofil_in" behavioralElement="_9Z-H8HcfEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Q-lT0HpREeGB3c_CrLx2_A" name="Höhenprofil_out" behavioralElement="_Qr2Y5Xg_EeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_iOVkYHpREeGB3c_CrLx2_A" name="Ladegrade_in" behavioralElement="_Gu9bAHcYEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_lWb9wHpREeGB3c_CrLx2_A" name="Ladegrade_out" behavioralElement="_ip4i4HcaEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_A_lrEHpSEeGB3c_CrLx2_A" name="Statorlagen_in" behavioralElement="__A7esHcfEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_E1p9sHpSEeGB3c_CrLx2_A" name="Statorlagen_out" behavioralElement="_Cwi7pXg_EeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_fniEwHpSEeGB3c_CrLx2_A" name="Statusmeldung Verlässlichkeit_in" behavioralElement="_ye6kkG6YEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_jPd0wHpSEeGB3c_CrLx2_A" name="Statusmeldung Verlässlichkeit_out" behavioralElement="_kTGG8HcbEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_wkO2cHpSEeGB3c_CrLx2_A" name="Streckenprofil Prognose_in" behavioralElement="_3yAgwG6WEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_08X7YHpSEeGB3c_CrLx2_A" name="Streckenprofil Prognose_out" behavioralElement="_HgKbsG6XEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_FGgAoHpTEeGB3c_CrLx2_A" name="Weganregungen_in" behavioralElement="_GUt_8HchEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_LNxg4HpTEeGB3c_CrLx2_A" name="Weganregungen_out" behavioralElement="_bhQRpXg-EeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_GNWgkH5cEeGulP9mN2aRlQ" name="Energie AM_inout_AM" behavioralElement="_Bhv1oHcgEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_IdORcH5cEeGulP9mN2aRlQ" name="Energie AM_inout_HES" behavioralElement="_17WzkHcaEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_JbAdcH5eEeGulP9mN2aRlQ" name="Momentanleistung AM_inout_HES" behavioralElement="_5k7iUHcaEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_PorgoH5eEeGulP9mN2aRlQ" name="Momentanleistung AM_inout_AM" behavioralElement="_DQcMEHcgEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_lnC5wH58EeGulP9mN2aRlQ" name="Energie SUrF_out" behavioralElement="_yAPB0HcaEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_qkN-YH58EeGulP9mN2aRlQ" name="Energie SUrF_in" behavioralElement="_Oc1WkHchEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_khETsH59EeGulP9mN2aRlQ" name="Momentanleistung SUrF_in" behavioralElement="_vRarIHcaEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_xWMzEH59EeGulP9mN2aRlQ" name="Momentanleistung SUrF_out" behavioralElement="_HwzjcHchEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_wsrqEH5_EeGulP9mN2aRlQ" name="Energie-Management" behavioralElement="_r9im8HcXEeGRUKIGGCEvBg">
+      <vertices xsi:type="realtimestatechart:State" xmi:id="_wJ2p0KMeEeGsjrELS4u1Ww" name="Energie-Management_main">
+        <regions xmi:id="_1adn0KMeEeGsjrELS4u1Ww" name="synchronization" priority="1"/>
+        <regions xmi:id="_3fAScKMeEeGsjrELS4u1Ww" name="Ausgewählter Paretopunkt_Sender" priority="2">
+          <statechart xmi:id="_dhvkUHpPEeGB3c_CrLx2_A" name="Ausgewählter Paretopunkt_Sender">
+            <attributes xmi:id="_HGf34IoJEeG4p6XMvVY4Sg" name="bildpunkte" type="_74yBAAJTEeKsot-FPTx42A"/>
+            <attributes xmi:id="_pusEQJNnEeG6r-sq09JQ4g" name="urbildpunkte" type="_74yBAAJTEeKsot-FPTx42A"/>
+            <attributes xmi:id="_vmovEJNnEeG6r-sq09JQ4g" name="eingestellt" type="_74yBAAJTEeKsot-FPTx42A"/>
+            <vertices xsi:type="realtimestatechart:State" xmi:id="_kKKy8Il7EeGMgemuusRmqw" name="Ausgewählter Paretopunkt_Sender_main" initial="true">
+              <regions xmi:id="_7lB_0IoIEeG4p6XMvVY4Sg" name="" priority="1">
+                <statechart xmi:id="_2xUjwIoJEeG4p6XMvVY4Sg" name="adaption">
+                  <transitions xmi:id="_JOtsIIoKEeG4p6XMvVY4Sg" priority="1" target="_IhYsEIoKEeG4p6XMvVY4Sg" source="_EAfTwIoKEeG4p6XMvVY4Sg">
+                    <action xmi:id="_oStTMIoLEeG4p6XMvVY4Sg" name="i := 0;">
+                      <expressions xsi:type="expr:TextualExpression" xmi:id="_xIqnQIoLEeG4p6XMvVY4Sg" expressionText="i := 0"/>
+                    </action>
+                  </transitions>
+                  <transitions xmi:id="_QPPTIIoLEeG4p6XMvVY4Sg" priority="1" target="_IhYsEIoKEeG4p6XMvVY4Sg" source="_IhYsEIoKEeG4p6XMvVY4Sg">
+                    <synchronization xmi:id="_fj7IsIoMEeG4p6XMvVY4Sg" syncChannel="_QRzCcIoMEeG4p6XMvVY4Sg"/>
+                    <guard xsi:type="expr:TextualExpression" xmi:id="_GfD9EIoMEeG4p6XMvVY4Sg" expressionText="i &lt;= 3"/>
+                  </transitions>
+                  <transitions xmi:id="_egl-sJNoEeG6r-sq09JQ4g" priority="3" target="_ayHh0JNoEeG6r-sq09JQ4g" source="_IhYsEIoKEeG4p6XMvVY4Sg">
+                    <guard xsi:type="expr:TextualExpression" xmi:id="_hXSfAJNoEeG6r-sq09JQ4g" expressionText="i > 3" language=""/>
+                  </transitions>
+                  <transitions xmi:id="_yo04QJNoEeG6r-sq09JQ4g" priority="1" target="_ayHh0JNoEeG6r-sq09JQ4g" source="_ayHh0JNoEeG6r-sq09JQ4g">
+                    <action xmi:id="__zzEwJNoEeG6r-sq09JQ4g" name="eingestellt := eingestellt+1"/>
+                  </transitions>
+                  <transitions xmi:id="_CuD2cJNpEeG6r-sq09JQ4g" priority="2" target="_EAfTwIoKEeG4p6XMvVY4Sg" source="_ayHh0JNoEeG6r-sq09JQ4g">
+                    <guard xsi:type="expr:TextualExpression" xmi:id="_GRPCQJNpEeG6r-sq09JQ4g" expressionText="eingestellt == 3"/>
+                  </transitions>
+                  <transitions xmi:id="_JttwMJNpEeG6r-sq09JQ4g" priority="3" target="_H5-hsJNpEeG6r-sq09JQ4g" source="_ayHh0JNoEeG6r-sq09JQ4g"/>
+                  <transitions xmi:id="_LQpikJNpEeG6r-sq09JQ4g" priority="2" target="_H5-hsJNpEeG6r-sq09JQ4g" source="_IhYsEIoKEeG4p6XMvVY4Sg"/>
+                  <transitions xmi:id="_OW0pUJNpEeG6r-sq09JQ4g" priority="1" target="_EAfTwIoKEeG4p6XMvVY4Sg" source="_H5-hsJNpEeG6r-sq09JQ4g"/>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_EAfTwIoKEeG4p6XMvVY4Sg" name="Inaktiv" outgoingTransitions="_JOtsIIoKEeG4p6XMvVY4Sg" incomingTransitions="_CuD2cJNpEeG6r-sq09JQ4g _OW0pUJNpEeG6r-sq09JQ4g">
+                    <entryEvent xmi:id="_CC2ywJNoEeG6r-sq09JQ4g">
+                      <action xmi:id="_DhU74JNoEeG6r-sq09JQ4g" name="eingestellt := 0"/>
+                    </entryEvent>
+                  </vertices>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_IhYsEIoKEeG4p6XMvVY4Sg" name="Sendend" outgoingTransitions="_QPPTIIoLEeG4p6XMvVY4Sg _egl-sJNoEeG6r-sq09JQ4g _LQpikJNpEeG6r-sq09JQ4g" incomingTransitions="_JOtsIIoKEeG4p6XMvVY4Sg _QPPTIIoLEeG4p6XMvVY4Sg">
+                    <entryEvent xmi:id="_6zQdQIoLEeG4p6XMvVY4Sg">
+                      <action xmi:id="_9YgBMIoLEeG4p6XMvVY4Sg" name="i := i+1;">
+                        <expressions xsi:type="expr:TextualExpression" xmi:id="_Bx1jgIoNEeG4p6XMvVY4Sg" expressionText="i := i+1"/>
+                      </action>
+                    </entryEvent>
+                  </vertices>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_ayHh0JNoEeG6r-sq09JQ4g" name="Alle_Gesendet" outgoingTransitions="_yo04QJNoEeG6r-sq09JQ4g _CuD2cJNpEeG6r-sq09JQ4g _JttwMJNpEeG6r-sq09JQ4g" incomingTransitions="_egl-sJNoEeG6r-sq09JQ4g _yo04QJNoEeG6r-sq09JQ4g"/>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_H5-hsJNpEeG6r-sq09JQ4g" name="Fehler" outgoingTransitions="_OW0pUJNpEeG6r-sq09JQ4g" incomingTransitions="_JttwMJNpEeG6r-sq09JQ4g _LQpikJNpEeG6r-sq09JQ4g"/>
+                </statechart>
+              </regions>
+              <regions xmi:id="_-SMwsIoIEeG4p6XMvVY4Sg" name="" priority="2">
+                <statechart xmi:id="_CtsPIIoKEeG4p6XMvVY4Sg" name="sub-role[k]">
+                  <transitions xmi:id="_V_Y9MJNpEeG6r-sq09JQ4g" priority="1" target="_RuizEJNpEeG6r-sq09JQ4g" source="_OXjt4IoNEeG4p6XMvVY4Sg">
+                    <synchronization xmi:id="_XPujsJNpEeG6r-sq09JQ4g" syncChannel="_QRzCcIoMEeG4p6XMvVY4Sg" kind="RECEIVE"/>
+                  </transitions>
+                  <transitions xmi:id="_ci7isJNpEeG6r-sq09JQ4g" priority="1" target="_OXjt4IoNEeG4p6XMvVY4Sg" source="_RuizEJNpEeG6r-sq09JQ4g"/>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_OXjt4IoNEeG4p6XMvVY4Sg" name="Inaktiv" outgoingTransitions="_V_Y9MJNpEeG6r-sq09JQ4g" incomingTransitions="_ci7isJNpEeG6r-sq09JQ4g"/>
+                  <vertices xsi:type="realtimestatechart:State" xmi:id="_RuizEJNpEeG6r-sq09JQ4g" name="Aktiv" outgoingTransitions="_ci7isJNpEeG6r-sq09JQ4g" incomingTransitions="_V_Y9MJNpEeG6r-sq09JQ4g"/>
+                </statechart>
+              </regions>
+              <channels xmi:id="_QRzCcIoMEeG4p6XMvVY4Sg" name="next">
+                <parameters xmi:id="_UlnoEIoMEeG4p6XMvVY4Sg" name="bp" type="_97wQRwJREeKsot-FPTx42A"/>
+                <parameters xmi:id="_40ha8JNnEeG6r-sq09JQ4g" name="ubp" type="_97wQRwJREeKsot-FPTx42A"/>
+              </channels>
+            </vertices>
+          </statechart>
+        </regions>
+      </vertices>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Icu-4H6AEeGulP9mN2aRlQ" name="Profilgenerator" behavioralElement="_vQiMQHcYEeGRUKIGGCEvBg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_fElVgH6AEeGulP9mN2aRlQ" name="Strecken-Daten-Verarbeitung" behavioralElement="_zWv2YG6WEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_uaaQAH6AEeGulP9mN2aRlQ" name="Verlässlichkeitsmodul" behavioralElement="_xEUO0G6YEeGwzsm_EpbUyg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_46_54H6AEeGulP9mN2aRlQ" name="VKM" behavioralElement="_izlcAHcbEeGRUKIGGCEvBg"/>
+  </categories>
+  <categories xmi:id="_97wQQAJREeKsot-FPTx42A" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_97wQQQJREeKsot-FPTx42A" name="VOID"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_97wQQgJREeKsot-FPTx42A" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_97wQQwJREeKsot-FPTx42A" name="BYTE" primitiveType="BYTE"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_97wQRAJREeKsot-FPTx42A" name="SHORT" primitiveType="SHORT"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_97wQRQJREeKsot-FPTx42A" name="INT" primitiveType="INT"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_97wQRgJREeKsot-FPTx42A" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_97wQRwJREeKsot-FPTx42A" name="DOUBLE" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="core:PrimitiveDataType" xmi:id="_97wQSAJREeKsot-FPTx42A" name="STRING" primitiveType="STRING"/>
+    <modelElements xsi:type="core:ArrayDataType" xmi:id="_74yBAAJTEeKsot-FPTx42A" name="double[3]" type="_97wQRwJREeKsot-FPTx42A">
+      <cardinality xmi:id="_9V3qEAJTEeKsot-FPTx42A" value="3"/>
+    </modelElements>
+    <modelElements xsi:type="core:ArrayDataType" xmi:id="_jsqbQAJTEeKsot-FPTx42A" name="double[4]" type="_97wQRwJREeKsot-FPTx42A">
+      <cardinality xmi:id="_kKlGUAJTEeKsot-FPTx42A" value="4"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>

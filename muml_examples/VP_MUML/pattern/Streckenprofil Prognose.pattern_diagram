@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:pattern="http://www.fujaba.de/muml/model/pattern/0.3.1" xmi:id="_3Tx2sAJREeKsot-FPTx42A" type="Pattern" name="Streckenprofil%20Prognose.pattern_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_3Tx2sgJREeKsot-FPTx42A" type="2004" fontName="Bitstream Vera Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3Tx2tAJREeKsot-FPTx42A" type="7004">
+      <children xmi:type="notation:Shape" xmi:id="_cwvzkCJ0EeKh6b7eZrN1wQ" type="3003" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_cwvzkiJ0EeKh6b7eZrN1wQ" type="5003"/>
+        <element xmi:type="pattern:CoordinationPattern" href="../VernetzterPruefstand.fujaba#_485CkHd1EeGRUKIGGCEvBg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cwvzkSJ0EeKh6b7eZrN1wQ" x="543" y="42"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_cwwaoCJ0EeKh6b7eZrN1wQ" type="3004" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_cwxBsCJ0EeKh6b7eZrN1wQ" type="5004">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_cwxBsSJ0EeKh6b7eZrN1wQ" x="-377" y="29"/>
+        </children>
+        <element xmi:type="pattern:Role" href="../VernetzterPruefstand.fujaba#_49CzkHd1EeGRUKIGGCEvBg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cwwaoSJ0EeKh6b7eZrN1wQ" x="411" y="246"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_cwxowCJ0EeKh6b7eZrN1wQ" type="3004" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_cwxowiJ0EeKh6b7eZrN1wQ" type="5004">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_cwxowyJ0EeKh6b7eZrN1wQ" x="-20" y="44"/>
+        </children>
+        <element xmi:type="pattern:Role" href="../VernetzterPruefstand.fujaba#_49CzlHd1EeGRUKIGGCEvBg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cwxowSJ0EeKh6b7eZrN1wQ" x="827" y="254"/>
+      </children>
+    </children>
+    <element xmi:type="pattern:CoordinationPattern" href="../VernetzterPruefstand.fujaba#_485CkHd1EeGRUKIGGCEvBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Tx2swJREeKsot-FPTx42A" width="1297" height="385"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_3Tx2sQJREeKsot-FPTx42A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VernetzterPruefstand.fujaba#_-4DEUHdzEeGRUKIGGCEvBg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_cw7ZwCJ0EeKh6b7eZrN1wQ" type="4003" source="_cwvzkCJ0EeKh6b7eZrN1wQ" target="_cwwaoCJ0EeKh6b7eZrN1wQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_cw7ZwSJ0EeKh6b7eZrN1wQ" fontName="Ubuntu"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cw7ZwiJ0EeKh6b7eZrN1wQ" points="[-72, 3, -21, 1]$[-39, 0, 12, -2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_cw8n4CJ0EeKh6b7eZrN1wQ" type="4003" source="_cwvzkCJ0EeKh6b7eZrN1wQ" target="_cwxowCJ0EeKh6b7eZrN1wQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_cw8n4SJ0EeKh6b7eZrN1wQ" fontName="Ubuntu"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cw8n4iJ0EeKh6b7eZrN1wQ" points="[-48, 14, -7, 2]$[-29, 8, 12, -4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-Zfr0CJ0EeKh6b7eZrN1wQ" id="(0.7210884353741497,0.775)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_cw-dECJ0EeKh6b7eZrN1wQ" type="4004" source="_cwwaoCJ0EeKh6b7eZrN1wQ" target="_cwxowCJ0EeKh6b7eZrN1wQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_cw-dESJ0EeKh6b7eZrN1wQ" fontName="Ubuntu"/>
+    <element xmi:type="pattern:RoleConnector" href="../VernetzterPruefstand.fujaba#_49CzmHd1EeGRUKIGGCEvBg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cw-dEiJ0EeKh6b7eZrN1wQ" points="[12, 12, 2, 2]$[-2, -2, -12, -12]"/>
+  </edges>
+</notation:Diagram>

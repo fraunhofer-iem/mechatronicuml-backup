@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.1" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:pattern="http://www.fujaba.de/muml/model/pattern/0.3.1" xmi:id="_3UgPcAJREeKsot-FPTx42A" type="Pattern" name="Benutzerwünsche.pattern_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_3UgPcgJREeKsot-FPTx42A" type="2004" fontName="Bitstream Vera Sans" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3Ug2gAJREeKsot-FPTx42A" type="7004">
+      <children xmi:type="notation:Shape" xmi:id="_bgVUkCJ0EeKh6b7eZrN1wQ" type="3003" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_bgWisCJ0EeKh6b7eZrN1wQ" type="5003"/>
+        <element xmi:type="pattern:CoordinationPattern" href="../VernetzterPruefstand.fujaba#__kZlMHg9EeGRUKIGGCEvBg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bgVUkSJ0EeKh6b7eZrN1wQ" x="139" y="42"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_bgWisSJ0EeKh6b7eZrN1wQ" type="3004" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_bgXJwCJ0EeKh6b7eZrN1wQ" type="5004">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_bgXJwSJ0EeKh6b7eZrN1wQ" y="5"/>
+        </children>
+        <element xmi:type="pattern:Role" href="../VernetzterPruefstand.fujaba#__kjWMHg9EeGRUKIGGCEvBg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bgWisiJ0EeKh6b7eZrN1wQ" x="103" y="174"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_bgXJwiJ0EeKh6b7eZrN1wQ" type="3004" fontName="Ubuntu" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_bgXJxCJ0EeKh6b7eZrN1wQ" type="5004">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_bgXw0CJ0EeKh6b7eZrN1wQ" y="5"/>
+        </children>
+        <element xmi:type="pattern:Role" href="../VernetzterPruefstand.fujaba#__kjWNHg9EeGRUKIGGCEvBg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bgXJwyJ0EeKh6b7eZrN1wQ" x="279" y="170"/>
+      </children>
+    </children>
+    <element xmi:type="pattern:CoordinationPattern" href="../VernetzterPruefstand.fujaba#__kZlMHg9EeGRUKIGGCEvBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3UgPcwJREeKsot-FPTx42A" height="301"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_3UgPcQJREeKsot-FPTx42A"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../VernetzterPruefstand.fujaba#_-4DEUHdzEeGRUKIGGCEvBg"/>
+</notation:Diagram>
