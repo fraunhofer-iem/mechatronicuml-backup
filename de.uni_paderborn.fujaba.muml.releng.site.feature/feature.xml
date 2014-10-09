@@ -20,10 +20,6 @@ The Fujaba Real-Time Tool Suite is implemented as a plug-in to the Eclipse frame
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.verification.feature"
-         version="0.0.0"/>
-
-   <includes
          id="de.uni_paderborn.fujaba.muml.pim.feature"
          version="0.0.0"/>
 
@@ -65,11 +61,19 @@ The Fujaba Real-Time Tool Suite is implemented as a plug-in to the Eclipse frame
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.psm.feature"
+         id="de.uni_paderborn.fujaba.muml.pm.feature"
          version="0.0.0"/>
 
    <includes
          id="de.uni_paderborn.fujaba.muml.codegen.c.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.verification.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.verification.uppaal.feature"
          version="0.0.0"/>
 
 </feature>
