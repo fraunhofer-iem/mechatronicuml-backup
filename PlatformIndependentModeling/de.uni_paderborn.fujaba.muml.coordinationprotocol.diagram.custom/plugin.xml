@@ -56,7 +56,7 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.handlers.CreateRoleRTSCHandler2"
+            defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.handlers.CreateRoleRTSCHandler"
             description="Create the Role&apos;s RTSC and it&apos;s Diagram"
             id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
             name="Create Role RTSC">
