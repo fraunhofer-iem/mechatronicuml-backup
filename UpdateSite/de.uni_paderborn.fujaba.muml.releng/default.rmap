@@ -55,7 +55,7 @@
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="file:///data/jenkins/jobs/APE Ecore Editor/lastSuccessful/archive/targetPlatform/">
+      <rm:uri format="file:///data/jenkins/jobs/APE_Ecore_Editor/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
