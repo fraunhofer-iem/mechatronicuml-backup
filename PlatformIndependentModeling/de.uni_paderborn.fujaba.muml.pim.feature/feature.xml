@@ -221,13 +221,6 @@
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.utilities"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="de.uni_paderborn.fujaba.muml.doc"
          download-size="0"
          install-size="0"
@@ -236,13 +229,6 @@
 
    <plugin
          id="de.uni_paderborn.fujaba.muml.edit.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.runtime"
          download-size="0"
          install-size="0"
          version="0.0.0"
