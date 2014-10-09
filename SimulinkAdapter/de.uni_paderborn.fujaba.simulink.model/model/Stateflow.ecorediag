@@ -14,7 +14,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_1n9c4Q5uEeShYrn8Gr-OaQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="Simulink.ecore#//stateflow/StateflowMachine"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1n9c4g5uEeShYrn8Gr-OaQ" x="1045" y="575" width="133"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1n9c4g5uEeShYrn8Gr-OaQ" x="935" y="575" width="133"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_1n-rBA5uEeShYrn8Gr-OaQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_1n_SEA5uEeShYrn8Gr-OaQ" type="4001"/>
@@ -153,7 +153,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_1oDjgQ5uEeShYrn8Gr-OaQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="Simulink.ecore#//stateflow/SubStateType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1oDjgg5uEeShYrn8Gr-OaQ" x="45" y="20"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1oDjgg5uEeShYrn8Gr-OaQ" x="45" y="55"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_1oExqA5uEeShYrn8Gr-OaQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_1oFYsA5uEeShYrn8Gr-OaQ" type="4001"/>
@@ -173,7 +173,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_1oExqQ5uEeShYrn8Gr-OaQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="Simulink.ecore#//stateflow/Event"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1oExqg5uEeShYrn8Gr-OaQ" x="975" y="505"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1oExqg5uEeShYrn8Gr-OaQ" x="930" y="505"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_1oFYuw5uEeShYrn8Gr-OaQ" type="1001">
     <children xmi:type="notation:Node" xmi:id="_1oF_wA5uEeShYrn8Gr-OaQ" type="4001"/>
@@ -284,21 +284,21 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_8y7OwQ5uEeShYrn8Gr-OaQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="Simulink.ecore#//Element"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8y7Owg5uEeShYrn8Gr-OaQ" x="550" y="20"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8y7Owg5uEeShYrn8Gr-OaQ" x="605" y="40"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_1nvacQ5uEeShYrn8Gr-OaQ"/>
   <element xmi:type="ecore:EPackage" href="Simulink.ecore#//stateflow"/>
   <edges xmi:type="notation:Edge" xmi:id="_1oKRMA5uEeShYrn8Gr-OaQ" type="3002" source="_1n9c4A5uEeShYrn8Gr-OaQ" target="_1n-rBA5uEeShYrn8Gr-OaQ">
     <children xmi:type="notation:Node" xmi:id="_1oK4QA5uEeShYrn8Gr-OaQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oK4QQ5uEeShYrn8Gr-OaQ" x="25" y="-14"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oK4QQ5uEeShYrn8Gr-OaQ" x="9" y="-14"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_1oK4Qg5uEeShYrn8Gr-OaQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oK4Qw5uEeShYrn8Gr-OaQ" x="28" y="11"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oK4Qw5uEeShYrn8Gr-OaQ" x="17" y="11"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_1oKRMQ5uEeShYrn8Gr-OaQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_1oKRMg5uEeShYrn8Gr-OaQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="Simulink.ecore#//stateflow/StateflowMachine/charts"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1oKRMw5uEeShYrn8Gr-OaQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1oKRMw5uEeShYrn8Gr-OaQ" points="[-8, -5, 331, 0]$[-148, -5, 191, 0]$[-323, -5, 16, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1po34A5uEeShYrn8Gr-OaQ" id="(0.06504065040650407,0.46511627906976744)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1po34Q5uEeShYrn8Gr-OaQ" id="(0.8431372549019608,0.6046511627906976)"/>
   </edges>
@@ -312,17 +312,17 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_1oK4SA5uEeShYrn8Gr-OaQ" type="3002" source="_1n-rBA5uEeShYrn8Gr-OaQ" target="_1n9c4A5uEeShYrn8Gr-OaQ">
     <children xmi:type="notation:Node" xmi:id="_1oK4TA5uEeShYrn8Gr-OaQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oK4TQ5uEeShYrn8Gr-OaQ" x="10" y="-10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oK4TQ5uEeShYrn8Gr-OaQ" x="-5" y="-11"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_1oK4Tg5uEeShYrn8Gr-OaQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oK4Tw5uEeShYrn8Gr-OaQ" x="32" y="6"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oK4Tw5uEeShYrn8Gr-OaQ" x="15" y="14"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_1oK4SQ5uEeShYrn8Gr-OaQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_1oK4Sg5uEeShYrn8Gr-OaQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="Simulink.ecore#//stateflow/Chart/machine"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1oK4Sw5uEeShYrn8Gr-OaQ" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dbQPAA5zEeShYrn8Gr-OaQ" id="(0.8431372549019608,0.6046511627906976)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dbQPAQ5zEeShYrn8Gr-OaQ" id="(0.06504065040650407,0.46511627906976744)"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1oK4Sw5uEeShYrn8Gr-OaQ" points="[16, 0, -323, -5]$[191, 0, -148, -5]$[331, 0, -8, -5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3ffa8E_EEeSTINGyVAKCkQ" id="(0.8431372549019608,0.6046511627906976)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3ffa8U_EEeSTINGyVAKCkQ" id="(0.06504065040650407,0.46511627906976744)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_1oLfUA5uEeShYrn8Gr-OaQ" type="3002" source="_1n-rBA5uEeShYrn8Gr-OaQ" target="_1oHN6w5uEeShYrn8Gr-OaQ">
     <children xmi:type="notation:Node" xmi:id="_1oLfVA5uEeShYrn8Gr-OaQ" type="4011">
@@ -390,15 +390,15 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_1oMGaw5uEeShYrn8Gr-OaQ" type="3002" source="_1oAgOQ5uEeShYrn8Gr-OaQ" target="_1oExqA5uEeShYrn8Gr-OaQ">
     <children xmi:type="notation:Node" xmi:id="_1oMGbw5uEeShYrn8Gr-OaQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oMGcA5uEeShYrn8Gr-OaQ" x="-10" y="-10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oMGcA5uEeShYrn8Gr-OaQ" x="32" y="-10"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_1oMGcQ5uEeShYrn8Gr-OaQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oMGcg5uEeShYrn8Gr-OaQ" x="10" y="10"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oMGcg5uEeShYrn8Gr-OaQ" x="38" y="10"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_1oMGbA5uEeShYrn8Gr-OaQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_1oMGbQ5uEeShYrn8Gr-OaQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="Simulink.ecore#//stateflow/State/events"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1oMGbg5uEeShYrn8Gr-OaQ" points="[0, 3, -402, -47]$[0, 50, -402, 0]$[399, 50, -3, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1oMGbg5uEeShYrn8Gr-OaQ" points="[9, 3, -348, -47]$[9, 50, -348, 0]$[354, 50, -3, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1puXcA5uEeShYrn8Gr-OaQ" id="(0.8538961038961039,0.9734513274336283)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1puXcQ5uEeShYrn8Gr-OaQ" id="(0.034782608695652174,0.5882352941176471)"/>
   </edges>
@@ -538,15 +538,15 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_1oPJtA5uEeShYrn8Gr-OaQ" type="3002" source="_1oBuVg5uEeShYrn8Gr-OaQ" target="_1oExqA5uEeShYrn8Gr-OaQ">
     <children xmi:type="notation:Node" xmi:id="_1oPJuA5uEeShYrn8Gr-OaQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oPJuQ5uEeShYrn8Gr-OaQ" x="66" y="20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oPJuQ5uEeShYrn8Gr-OaQ" x="59" y="20"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_1oPwwA5uEeShYrn8Gr-OaQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oPwwQ5uEeShYrn8Gr-OaQ" x="51" y="16"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1oPwwQ5uEeShYrn8Gr-OaQ" x="44" y="16"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_1oPJtQ5uEeShYrn8Gr-OaQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_1oPJtg5uEeShYrn8Gr-OaQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="Simulink.ecore#//stateflow/Transition/event"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1oPJtw5uEeShYrn8Gr-OaQ" points="[3, 0, -277, -290]$[280, 0, 0, -290]$[280, 241, 0, -49]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1oPJtw5uEeShYrn8Gr-OaQ" points="[3, 0, -232, -290]$[235, 0, 0, -290]$[235, 241, 0, -49]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1pr7MA5uEeShYrn8Gr-OaQ" id="(0.9716981132075472,0.09803921568627451)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1pr7MQ5uEeShYrn8Gr-OaQ" id="(0.4956521739130435,1.0)"/>
   </edges>
