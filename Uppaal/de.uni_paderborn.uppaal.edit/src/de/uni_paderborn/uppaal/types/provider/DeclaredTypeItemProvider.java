@@ -3,6 +3,7 @@
 package de.uni_paderborn.uppaal.types.provider;
 
 
+import de.uni_paderborn.uppaal.types.BuiltInType;
 import java.util.Collection;
 import java.util.List;
 
@@ -89,7 +90,8 @@ public class DeclaredTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DeclaredType)object).getName();
+		BuiltInType labelValue = ((DeclaredType)object).getBaseType();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DeclaredType_type") :
 			getString("_UI_DeclaredType_type") + " " + label;

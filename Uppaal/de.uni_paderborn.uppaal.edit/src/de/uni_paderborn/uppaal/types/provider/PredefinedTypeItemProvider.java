@@ -3,6 +3,7 @@
 package de.uni_paderborn.uppaal.types.provider;
 
 
+import de.uni_paderborn.uppaal.types.BuiltInType;
 import java.util.Collection;
 import java.util.List;
 
@@ -91,7 +92,8 @@ public class PredefinedTypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PredefinedType)object).getName();
+		BuiltInType labelValue = ((PredefinedType)object).getBaseType();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_PredefinedType_type") :
 			getString("_UI_PredefinedType_type") + " " + label;

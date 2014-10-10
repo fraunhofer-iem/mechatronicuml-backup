@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.uppaal.types.util;
 
+import de.uni_paderborn.uppaal.types.*;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
@@ -82,9 +83,6 @@ public class TypesSwitch<T> extends Switch<T> {
 			case TypesPackage.TYPE: {
 				Type type = (Type)theEObject;
 				T result = caseType(type);
-				if (result == null) result = caseEClassifier(type);
-				if (result == null) result = caseENamedElement(type);
-				if (result == null) result = caseEModelElement(type);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -92,9 +90,6 @@ public class TypesSwitch<T> extends Switch<T> {
 				PredefinedType predefinedType = (PredefinedType)theEObject;
 				T result = casePredefinedType(predefinedType);
 				if (result == null) result = caseType(predefinedType);
-				if (result == null) result = caseEClassifier(predefinedType);
-				if (result == null) result = caseENamedElement(predefinedType);
-				if (result == null) result = caseEModelElement(predefinedType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,9 +97,6 @@ public class TypesSwitch<T> extends Switch<T> {
 				DeclaredType declaredType = (DeclaredType)theEObject;
 				T result = caseDeclaredType(declaredType);
 				if (result == null) result = caseType(declaredType);
-				if (result == null) result = caseEClassifier(declaredType);
-				if (result == null) result = caseENamedElement(declaredType);
-				if (result == null) result = caseEModelElement(declaredType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -161,9 +153,6 @@ public class TypesSwitch<T> extends Switch<T> {
 			case TypesPackage.LIBRARY: {
 				Library library = (Library)theEObject;
 				T result = caseLibrary(library);
-				if (result == null) result = caseEPackage(library);
-				if (result == null) result = caseENamedElement(library);
-				if (result == null) result = caseEModelElement(library);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -333,66 +322,6 @@ public class TypesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLibrary(Library object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEModelElement(EModelElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseENamedElement(ENamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EClassifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EClassifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEClassifier(EClassifier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EPackage</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EPackage</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEPackage(EPackage object) {
 		return null;
 	}
 

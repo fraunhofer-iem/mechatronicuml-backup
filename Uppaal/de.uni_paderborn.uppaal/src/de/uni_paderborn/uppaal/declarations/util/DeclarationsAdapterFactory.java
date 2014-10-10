@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.uppaal.core.NamedElement;
+import de.uni_paderborn.uppaal.declarations.*;
 import de.uni_paderborn.uppaal.declarations.ArrayInitializer;
 import de.uni_paderborn.uppaal.declarations.ChannelVariableDeclaration;
 import de.uni_paderborn.uppaal.declarations.ClockVariableDeclaration;

@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.uppaal.visuals.util;
 
+import de.uni_paderborn.uppaal.visuals.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;

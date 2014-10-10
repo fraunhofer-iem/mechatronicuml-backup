@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.uppaal.core.util.CoreValidator;
 import de.uni_paderborn.uppaal.declarations.util.DeclarationsValidator;
+import de.uni_paderborn.uppaal.templates.*;
 import de.uni_paderborn.uppaal.templates.AbstractTemplate;
 import de.uni_paderborn.uppaal.templates.Edge;
 import de.uni_paderborn.uppaal.templates.Location;

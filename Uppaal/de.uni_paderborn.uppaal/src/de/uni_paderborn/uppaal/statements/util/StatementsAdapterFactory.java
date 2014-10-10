@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.uppaal.declarations.VariableContainer;
+import de.uni_paderborn.uppaal.statements.*;
 import de.uni_paderborn.uppaal.statements.Block;
 import de.uni_paderborn.uppaal.statements.DoWhileLoop;
 import de.uni_paderborn.uppaal.statements.EmptyStatement;

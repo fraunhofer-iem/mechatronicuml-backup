@@ -38,7 +38,6 @@ public final class UppaalEditPlugin extends EMFPlugin {
 	public UppaalEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

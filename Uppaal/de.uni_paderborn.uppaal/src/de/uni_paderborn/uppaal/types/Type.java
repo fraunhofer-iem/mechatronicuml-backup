@@ -5,6 +5,7 @@ package de.uni_paderborn.uppaal.types;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClassifier;
 
+import org.eclipse.emf.ecore.EObject;
 import de.uni_paderborn.uppaal.declarations.Index;
 
 /**
@@ -28,7 +29,7 @@ import de.uni_paderborn.uppaal.declarations.Index;
  * @model abstract="true"
  * @generated
  */
-public interface Type extends EClassifier {
+public interface Type extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Index</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.uppaal.declarations.Index}.

@@ -11,8 +11,14 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.provider.EPackageItemProvider;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
 import de.uni_paderborn.uppaal.types.Library;
 import de.uni_paderborn.uppaal.types.TypesFactory;
@@ -23,7 +29,7 @@ import de.uni_paderborn.uppaal.types.TypesFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LibraryItemProvider extends EPackageItemProvider {
+public class LibraryItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -68,10 +74,7 @@ public class LibraryItemProvider extends EPackageItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Library)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Library_type") :
-			getString("_UI_Library_type") + " " + label;
+		return getString("_UI_Library_type");
 	}
 	
 
@@ -98,21 +101,6 @@ public class LibraryItemProvider extends EPackageItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(EcorePackage.Literals.EPACKAGE__ECLASSIFIERS,
-				 TypesFactory.eINSTANCE.createPredefinedType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(EcorePackage.Literals.EPACKAGE__ECLASSIFIERS,
-				 TypesFactory.eINSTANCE.createDeclaredType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(EcorePackage.Literals.EPACKAGE__ESUBPACKAGES,
-				 TypesFactory.eINSTANCE.createLibrary()));
 	}
 
 	/**
