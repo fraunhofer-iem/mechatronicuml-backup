@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.uppaal.types;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -15,5 +14,5 @@ import org.eclipse.emf.ecore.EPackage;
  * @model
  * @generated
  */
-public interface Library extends EObject {
+public interface Library extends EPackage {
 } // Library

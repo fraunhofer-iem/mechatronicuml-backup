@@ -3,7 +3,6 @@
 package de.uni_paderborn.uppaal.types.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.uni_paderborn.uppaal.types.Library;
@@ -18,7 +17,7 @@ import de.uni_paderborn.uppaal.types.TypesPackage;
  *
  * @generated
  */
-public class LibraryImpl extends EObjectImpl implements Library {
+public class LibraryImpl extends EPackageImpl implements Library {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

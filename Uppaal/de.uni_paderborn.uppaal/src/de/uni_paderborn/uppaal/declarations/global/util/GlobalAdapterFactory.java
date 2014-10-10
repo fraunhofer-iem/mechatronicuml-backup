@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.uppaal.declarations.global.util;
 
-import de.uni_paderborn.uppaal.declarations.global.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;

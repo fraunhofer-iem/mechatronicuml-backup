@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import de.uni_paderborn.uppaal.core.NamedElement;
-import de.uni_paderborn.uppaal.declarations.*;
 import de.uni_paderborn.uppaal.declarations.ArrayInitializer;
 import de.uni_paderborn.uppaal.declarations.ChannelVariableDeclaration;
 import de.uni_paderborn.uppaal.declarations.ClockVariableDeclaration;

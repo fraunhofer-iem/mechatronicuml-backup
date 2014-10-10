@@ -7,7 +7,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import de.uni_paderborn.uppaal.declarations.VariableContainer;
-import de.uni_paderborn.uppaal.expressions.*;
 import de.uni_paderborn.uppaal.expressions.ArithmeticExpression;
 import de.uni_paderborn.uppaal.expressions.AssignmentExpression;
 import de.uni_paderborn.uppaal.expressions.BinaryExpression;

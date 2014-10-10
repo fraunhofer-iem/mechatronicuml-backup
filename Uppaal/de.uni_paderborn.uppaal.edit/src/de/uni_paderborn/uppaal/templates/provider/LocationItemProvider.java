@@ -57,7 +57,6 @@ public class LocationItemProvider
 			addColorPropertyDescriptor(object);
 			addColorCodePropertyDescriptor(object);
 			addLocationTimeKindPropertyDescriptor(object);
-			addIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -151,28 +150,6 @@ public class LocationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Location_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Location_id_feature", "_UI_Location_type"),
-				 TemplatesPackage.Literals.LOCATION__ID,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -244,7 +221,6 @@ public class LocationItemProvider
 			case TemplatesPackage.LOCATION__COLOR:
 			case TemplatesPackage.LOCATION__COLOR_CODE:
 			case TemplatesPackage.LOCATION__LOCATION_TIME_KIND:
-			case TemplatesPackage.LOCATION__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TemplatesPackage.LOCATION__POSITION:

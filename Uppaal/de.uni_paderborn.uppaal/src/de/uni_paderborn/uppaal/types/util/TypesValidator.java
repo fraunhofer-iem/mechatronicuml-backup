@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.uppaal.types.util;
 
-import de.uni_paderborn.uppaal.types.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -69,6 +68,14 @@ public class TypesValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EcoreValidator ecoreValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,6 +83,7 @@ public class TypesValidator extends EObjectValidator {
 	 */
 	public TypesValidator() {
 		super();
+		ecoreValidator = EcoreValidator.INSTANCE;
 	}
 
 	/**
@@ -133,7 +141,19 @@ public class TypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateType(Type type, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(type, diagnostics, context);
+		if (!validate_NoCircularContainment(type, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(type, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(type, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(type, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_WellFormedInstanceTypeName(type, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_UniqueTypeParameterNames(type, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -142,7 +162,19 @@ public class TypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePredefinedType(PredefinedType predefinedType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(predefinedType, diagnostics, context);
+		if (!validate_NoCircularContainment(predefinedType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_WellFormedInstanceTypeName(predefinedType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_UniqueTypeParameterNames(predefinedType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -151,7 +183,19 @@ public class TypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDeclaredType(DeclaredType declaredType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(declaredType, diagnostics, context);
+		if (!validate_NoCircularContainment(declaredType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_WellFormedInstanceTypeName(declaredType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEClassifier_UniqueTypeParameterNames(declaredType, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -262,7 +306,22 @@ public class TypesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLibrary(Library library, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(library, diagnostics, context);
+		if (!validate_NoCircularContainment(library, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(library, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(library, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(library, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(library, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(library, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(library, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(library, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(library, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(library, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEPackage_WellFormedNsURI(library, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEPackage_WellFormedNsPrefix(library, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEPackage_UniqueSubpackageNames(library, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEPackage_UniqueClassifierNames(library, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateEPackage_UniqueNsURIs(library, diagnostics, context);
+		return result;
 	}
 
 	/**

@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.uppaal.declarations.util.DeclarationsValidator;
-import de.uni_paderborn.uppaal.statements.*;
 import de.uni_paderborn.uppaal.statements.Block;
 import de.uni_paderborn.uppaal.statements.DoWhileLoop;
 import de.uni_paderborn.uppaal.statements.EmptyStatement;

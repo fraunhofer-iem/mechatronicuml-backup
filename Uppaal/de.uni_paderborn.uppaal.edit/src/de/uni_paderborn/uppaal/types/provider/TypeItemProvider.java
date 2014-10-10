@@ -12,19 +12,12 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.provider.EClassifierItemProvider;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
 import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-import de.uni_paderborn.uppaal.types.BuiltInType;
 import de.uni_paderborn.uppaal.types.Type;
 import de.uni_paderborn.uppaal.types.TypesPackage;
 
@@ -35,7 +28,7 @@ import de.uni_paderborn.uppaal.types.TypesPackage;
  * @generated
  */
 public class TypeItemProvider
-	extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends EClassifierItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -122,8 +115,7 @@ public class TypeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		BuiltInType labelValue = ((Type)object).getBaseType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Type)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Type_type") :
 			getString("_UI_Type_type") + " " + label;

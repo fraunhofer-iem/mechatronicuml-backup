@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EClassifierImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +32,7 @@ import de.uni_paderborn.uppaal.types.TypesPackage;
  *
  * @generated
  */
-public abstract class TypeImpl extends EObjectImpl implements Type {
+public abstract class TypeImpl extends EClassifierImpl implements Type {
 	/**
 	 * The cached value of the '{@link #getIndex() <em>Index</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
