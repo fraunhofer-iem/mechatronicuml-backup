@@ -1,6 +1,6 @@
 package de.uni_paderborn.fujaba.muml.reachanalysis.timedstorychart.ui.commands;
 
-import java.util.HashSet;
+import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -24,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.reachanalysis.core.export.GraphVizExportFile
 import de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.GtAutomatonComputation;
 import de.uni_paderborn.fujaba.muml.reachanalysis.gtautomaton.export.GtAutomatonExporter;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.GtAutomaton;
-import de.uni_paderborn.fujaba.muml.reachanalysis.timedstorychart.ui.GtAutomatonDecorator;
 import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedGraphTransformationSystem;
 import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.TSCTransformationRunner;
 
@@ -75,17 +74,16 @@ public class TimedMCCommand extends AbstractHandler {
 				TSCTransformationRunner transformationRunner = new TSCTransformationRunner();
 				transformationRunner.execute(protocol.getRoleConnector());
 				
-				HashSet<EObject> initialGraphObjects = transformationRunner.getInitialGraphObjects();
 				TimedGraphTransformationSystem tgts = transformationRunner.getTgts();
 				
-				GtAutomatonComputation gtAutomatonComputation = new GtAutomatonComputation(initialGraphObjects, tgts);
+				GtAutomatonComputation gtAutomatonComputation = new GtAutomatonComputation(tgts);
 				gtAutomatonComputation.setMaxPathLength(15);
 				gtAutomatonComputation.computeReachabilityGraph();
 				GtAutomaton gtAutomaton = gtAutomatonComputation.getReachabilityGraph();
 				
 				GtAutomatonExporter exporter = new GtAutomatonExporter();
 				exporter.setType(GraphVizExportFileTypes.SVG);
-				exporter.setDecorator(new GtAutomatonDecorator());
+				//exporter.setDecorator(new GtAutomatonDecorator());
 				exporter.export(gtAutomaton);
 				
 //				MuComputation muComputation = new MuComputation();
