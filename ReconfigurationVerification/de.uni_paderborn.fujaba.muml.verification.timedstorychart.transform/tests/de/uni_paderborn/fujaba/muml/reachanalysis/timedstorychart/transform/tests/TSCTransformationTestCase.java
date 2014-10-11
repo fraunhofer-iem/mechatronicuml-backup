@@ -95,9 +95,9 @@ public abstract class TSCTransformationTestCase {
 		cardinality.setUpperBound(upper);
 		role.setCardinality(cardinality);
 
-		role.setRoleAndAdaptationBehavior(createParentStatechart(name));
+		role.setBehavior(createParentStatechart(name));
 		role.setAdaptationBehavior(adaptationBehavior);
-		role.setBehavior(behavior);
+		role.setSubroleBehavior(behavior);
 		role.setCoordinationProtocol(coordinationProtocol);
 		
 		return role;
