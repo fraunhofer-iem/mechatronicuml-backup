@@ -50,9 +50,9 @@ mapping TSCTransformationInput::inputToOutput() : TSCTransformationOutput {
 		if( (discreteInteractionEndPoint.oclIsKindOf(Role) and discreteInteractionEndPoint.oclAsType(Role).multiRole)
 			 or (discreteInteractionEndPoint.oclIsKindOf(DiscretePort) and discreteInteractionEndPoint.oclAsType(DiscretePort).multiPort) ) then { 
 							discreteInteractionEndPoint.oclAsType(DiscreteInteractionEndpoint).
-									roleAndAdaptationBehavior.oclAsType(RealtimeStatechart) . createClockInstanceRules();
+									behavior.oclAsType(RealtimeStatechart) . createClockInstanceRules();
 							discreteInteractionEndPoint.oclAsType(DiscreteInteractionEndpoint).
-									roleAndAdaptationBehavior.oclAsType(RealtimeStatechart) . createInvariantRules();
+									behavior.oclAsType(RealtimeStatechart) . createInvariantRules();
 		} 
 		else {
 			rtsc.clocks -> map clockToClockInstanceStorydiagram(rtsc);

@@ -38,24 +38,12 @@ disjuncts Role::checkRole, DiscretePort::checkPort {
 
 mapping inout DiscretePort::checkPort() 
 when{self.oclIsTypeOf(DiscretePort)}{
-	if(self.multiPort) then{
-		roleAndAdaptationBehavior.oclAsType(RealtimeStatechart) -> map checkRTSC();
-	}
-	else{
-		behavior.oclAsType(RealtimeStatechart) -> map checkRTSC();
-	}
-	endif;
+	behavior.oclAsType(RealtimeStatechart) -> map checkRTSC();
 }
 
 mapping inout Role::checkRole() 
 when{self.oclIsTypeOf(Role)}{
-	if(self.multiRole) then{
-		self.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart) -> map checkRTSC();
-	}
-	else{
-		behavior.oclAsType(RealtimeStatechart) -> map checkRTSC();
-	}
-	endif;
+	behavior.oclAsType(RealtimeStatechart) -> map checkRTSC();
 }
 
 mapping inout RealtimeStatechart::checkRTSC(){

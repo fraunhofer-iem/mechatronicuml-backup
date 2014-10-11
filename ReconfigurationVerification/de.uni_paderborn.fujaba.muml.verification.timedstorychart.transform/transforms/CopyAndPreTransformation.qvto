@@ -82,9 +82,9 @@ when{self.oclIsTypeOf(DiscretePort)}
 	cardinality := self.cardinality . map copyCardinality();
  
 	if (self.multiPort) then {
-		roleAndAdaptationBehavior := self.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart) . map copyStatechart();
+		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
 		adaptationBehavior := self.adaptationBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
-		behavior := self.behavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
+		subroleBehavior := self.subroleBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
 	}
 	else{
 		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
@@ -105,9 +105,9 @@ when{self.oclIsTypeOf(Role)}
 	receiverMessageBuffer := self.receiverMessageBuffer . map copyMessageBuffer();
  
 	if (self.multiRole) then {
-		roleAndAdaptationBehavior := self.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart) . map copyStatechart();
+		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
 		adaptationBehavior := self.adaptationBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
-		behavior := self.behavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
+		subroleBehavior := self.subroleBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
 	}
 	else {
 		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
