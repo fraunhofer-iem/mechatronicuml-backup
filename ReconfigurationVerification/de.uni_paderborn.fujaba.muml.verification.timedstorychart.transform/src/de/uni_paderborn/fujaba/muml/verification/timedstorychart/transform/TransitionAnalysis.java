@@ -33,7 +33,7 @@ public class TransitionAnalysis {
 	public HashMap<SynchronizationChannel,HashSet<TransitionTuple>> computeSyncPairs(DiscreteInteractionEndpoint endpoint) {
 		RealtimeStatechart rtsc;
 		if (isMultiEndpoint(endpoint)) {
-			rtsc = (RealtimeStatechart) endpoint.getRoleAndAdaptationBehavior();
+			rtsc = (RealtimeStatechart) endpoint.getBehavior();
 			adaptationBehavior = (RealtimeStatechart) endpoint.getAdaptationBehavior();
 		}
 		else

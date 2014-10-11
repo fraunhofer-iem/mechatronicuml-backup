@@ -53,7 +53,7 @@ public class GraphObjectsInitializer {
 
 		RealtimeStatechartInstance realtimeStatechartInstanceAdaptation = RuntimeFactory.eINSTANCE.createRealtimeStatechartInstance();
 		realtimeStatechartInstanceAdaptation.setInstanceOf((RealtimeStatechart) role.getAdaptationBehavior());
-		realtimeStatechartInstanceAdaptation.setActive(getInitialState((RealtimeStatechart) role.getAdaptationBehavior()));
+		realtimeStatechartInstanceAdaptation.setActiveVertex(getInitialState((RealtimeStatechart) role.getAdaptationBehavior()));
 		storeInitialGraphObject(realtimeStatechartInstanceAdaptation, tgts);
 		for(Variable var : role.getAdaptationBehavior().getVariables()){
 			VariableBinding varBinding = RuntimeFactory.eINSTANCE.createVariableBinding();
@@ -83,13 +83,13 @@ public class GraphObjectsInitializer {
 		}
 		
 		RealtimeStatechartInstance realtimeStatechartInstance = RuntimeFactory.eINSTANCE.createRealtimeStatechartInstance();
-		realtimeStatechartInstance.setInstanceOf((RealtimeStatechart) role.getRoleAndAdaptationBehavior());
-		realtimeStatechartInstance.setActive(getInitialState((RealtimeStatechart) role.getRoleAndAdaptationBehavior()));
+		realtimeStatechartInstance.setInstanceOf((RealtimeStatechart) role.getBehavior());
+		realtimeStatechartInstance.setActiveVertex(getInitialState((RealtimeStatechart) role.getBehavior()));
 		roleInstance.setStatechartInstance(realtimeStatechartInstance);
 		realtimeStatechartInstance.getSubRealtimeStatechartInstances().add(realtimeStatechartInstanceAdaptation);
 		storeInitialGraphObject(realtimeStatechartInstance, tgts);
-		storeTypeGraphObject(role.getRoleAndAdaptationBehavior(), tgts);
-		for(Variable var : role.getRoleAndAdaptationBehavior().getVariables()){
+		storeTypeGraphObject(role.getBehavior(), tgts);
+		for(Variable var : role.getBehavior().getVariables()){
 			VariableBinding varBinding = RuntimeFactory.eINSTANCE.createVariableBinding();
 			varBinding.setVariable(var);
 			Expression initializeExpression = var.getInitializeExpression();
@@ -117,7 +117,7 @@ public class GraphObjectsInitializer {
 		roleInstance.setName(role.getName() + "_instance");
 
 		RuntimeMessageBuffer messageBuffer = RuntimeFactory.eINSTANCE.createRuntimeMessageBuffer();
-		roleInstance.setMessageBuffer(messageBuffer);
+		roleInstance.getMessageBuffer().add(messageBuffer);
 
 		storeInitialGraphObject(roleInstance, tgts);
 	}
