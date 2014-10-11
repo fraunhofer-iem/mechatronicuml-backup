@@ -11,10 +11,10 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.verification.fotctl.xtext,
  org.eclipse.xtext,
  org.eclipse.xtext.junit4,
  org.eclipse.xtext.ui.junit,
- org.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
  de.uni_paderborn.fujaba.muml.verification.fotctl;bundle-version="1.0.0",
- org.storydriven.core;bundle-version="1.0.0"
+ org.storydriven.core;bundle-version="1.0.0",
+ org.junit;bundle-version="4.10.0"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
