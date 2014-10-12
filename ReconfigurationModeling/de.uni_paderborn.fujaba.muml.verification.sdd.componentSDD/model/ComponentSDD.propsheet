@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.common.properties">
+  <reconciler>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="ComponentSDD.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties" name="ComponentStoryDecisionDiagram Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorypattern</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorypattern.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+  <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
+  <packages>
+    <genPackage href="ComponentSDD.genmodel#//componentsdd"/>
+    <classes>
+      <genClass href="ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram"/>
+      <properties category="//@packages.0/@classes.0/@propertyCategories.0" initializeOCLExpression="">
+        <genFeature href="ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram/invariantSDD"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.0/@properties.0"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#//@packages.1/@classes.22"/>
+    </classes>
+    <classes>
+      <genClass href="ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
+      <properties tooltip="" initializeOCLExpression="">
+        <genFeature href="ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression"/>
+      <properties>
+        <genFeature href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression/componentSDD"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.propsheet#//@packages.0/@classes.10"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
