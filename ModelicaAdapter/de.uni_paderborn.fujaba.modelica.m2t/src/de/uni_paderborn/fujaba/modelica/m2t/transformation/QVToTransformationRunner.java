@@ -18,4 +18,11 @@ public class QVToTransformationRunner {
 		ExecutionDiagnostic result = executor.execute(context, modelExtent);
 		return result;
 	}
+	
+	public static void checkResult(ExecutionDiagnostic result) {
+		if (result.getSeverity() != ExecutionDiagnostic.OK) {
+			System.out.println("ERROR: " + result.getMessage()  + " (please file a bug)");
+			throw new RuntimeException(result.getException());
+		}
+	}
 }

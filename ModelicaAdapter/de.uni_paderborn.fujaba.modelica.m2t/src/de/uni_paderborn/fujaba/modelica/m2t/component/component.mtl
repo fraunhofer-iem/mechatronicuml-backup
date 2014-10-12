@@ -75,7 +75,7 @@ ERROR: expected AtomicComponentInstance or StructuredComponentInstance
      hybridPortInstanceSet : Set(HybridPortInstance) = componentInstance.portInstances->select(oclIsKindOf(HybridPortInstance))
 		->collect(oclAsType(HybridPortInstance))->asSet();
 }]
-[behavior.normalizeRtscTransitionPriorities()/]
+[behavior.normalizeRtsc()/]
 [generateRTSC(behavior, hybridPortInstanceSet, componentInstance.getModelName().getFullyQualifiedSubpackageName(parentPackage))/]
 [createPackage(componentInstance.getModelName(), parentPackage)/]
 [file (componentInstance.getPath(parentPackage), false, 'UTF-8')]
@@ -164,8 +164,8 @@ end [componentInstance.getModelName()/];
 	// end part declarations
 [/template]
 
-[query public normalizeRtscTransitionPriorities(rtsc : RealtimeStatechart) : OclAny =
-	invoke('de.uni_paderborn.fujaba.modelica.m2t.rtsc.transformation.TransitionPriorityNormalization',
+[query public normalizeRtsc(rtsc : RealtimeStatechart) : OclAny =
+	invoke('de.uni_paderborn.fujaba.modelica.m2t.rtsc.transformation.RealtimeStatechartNormalizations',
 		'normalize(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)',
 		Sequence{rtsc})
 /]

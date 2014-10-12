@@ -1,0 +1,15 @@
+modeltype RTSC uses muml::realtimestatechart("http://www.fujaba.de/muml/0.4.0");
+
+transformation RegionPriorityNormalization(inout rtscModel : RTSC);
+
+main() {
+	rtscModel.objects()[Region]->map normalizePriority();
+}
+
+mapping inout Region::normalizePriority() {
+	self.priority := self.getNormalizedPriority();
+}
+
+query Region::getNormalizedPriority() : Integer {
+	return self.parentState.embeddedRegions->sortedBy(priority)->indexOf(self);
+}
