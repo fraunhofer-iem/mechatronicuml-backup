@@ -54,9 +54,8 @@ mapping RealtimeStatechart::rtsc2graphviz() : DotGraph
 		// FIXME: hack
 		if (self.states->size() = 1) then {
 			result.nodes += self.states->any(true).resolve(DotNode);
-		} else {
-			self.transitions->fixupContainments(result);
 		} endif;
+		self.transitions->fixupContainments(result);
 	} endif;
 	//graphSettings := createGraphSettings();
 	//nodeSettings := createNodeSettings();
