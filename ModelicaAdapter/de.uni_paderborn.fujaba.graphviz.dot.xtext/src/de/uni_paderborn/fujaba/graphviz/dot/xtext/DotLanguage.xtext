@@ -39,7 +39,7 @@ Setting returns dot::Setting:
 DotID returns ecore::EString:
 	// TODO: implement correct id rules from the graphviz spec
 	// (for instance, quotes can also be escaped using \" ...)
-	DOTSTRINGTERM | NUMPREFIXEDID | INT | ID
+	DOTSTRINGTERM | NUMPREFIXEDID | Number | ID // Number is a bit too coarse, but well...
 ;
 
 terminal NUMPREFIXEDID:
@@ -48,4 +48,12 @@ terminal NUMPREFIXEDID:
 
 terminal DOTSTRINGTERM:
 	'"' ( !('"') )* '"'
+;
+
+Number returns ecore::EDouble:
+	'-'? (DOUBLE | INT)
+;
+
+terminal DOUBLE returns ecore::EDouble:
+	INT+ '.' INT+
 ;

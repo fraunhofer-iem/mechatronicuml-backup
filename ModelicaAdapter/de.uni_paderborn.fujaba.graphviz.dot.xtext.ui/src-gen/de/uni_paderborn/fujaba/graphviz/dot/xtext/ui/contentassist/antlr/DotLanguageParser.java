@@ -42,6 +42,7 @@ public class DotLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDotGraphAccess().getAlternatives_3(), "rule__DotGraph__Alternatives_3");
 					put(grammarAccess.getDotEdgeAccess().getAlternatives_1(), "rule__DotEdge__Alternatives_1");
 					put(grammarAccess.getDotIDAccess().getAlternatives(), "rule__DotID__Alternatives");
+					put(grammarAccess.getNumberAccess().getAlternatives_1(), "rule__Number__Alternatives_1");
 					put(grammarAccess.getDotGraphAccess().getGroup(), "rule__DotGraph__Group__0");
 					put(grammarAccess.getDotGraphAccess().getGroup_1_0(), "rule__DotGraph__Group_1_0__0");
 					put(grammarAccess.getDotGraphAccess().getGroup_1_1(), "rule__DotGraph__Group_1_1__0");
@@ -58,6 +59,7 @@ public class DotLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDotEdgeAccess().getGroup_3(), "rule__DotEdge__Group_3__0");
 					put(grammarAccess.getDotEdgeAccess().getGroup_3_2(), "rule__DotEdge__Group_3_2__0");
 					put(grammarAccess.getSettingAccess().getGroup(), "rule__Setting__Group__0");
+					put(grammarAccess.getNumberAccess().getGroup(), "rule__Number__Group__0");
 					put(grammarAccess.getDotGraphAccess().getDirectedGraphAssignment_1_0_0_0(), "rule__DotGraph__DirectedGraphAssignment_1_0_0_0");
 					put(grammarAccess.getDotGraphAccess().getIdAssignment_1_0_1(), "rule__DotGraph__IdAssignment_1_0_1");
 					put(grammarAccess.getDotGraphAccess().getIdAssignment_1_1_1(), "rule__DotGraph__IdAssignment_1_1_1");

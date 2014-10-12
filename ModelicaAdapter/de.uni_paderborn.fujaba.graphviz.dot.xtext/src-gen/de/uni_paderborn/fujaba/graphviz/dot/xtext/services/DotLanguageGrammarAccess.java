@@ -448,17 +448,19 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDOTSTRINGTERMTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cNUMPREFIXEDIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cNumberParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cIDTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//DotID returns ecore::EString: // TODO: implement correct id rules from the graphviz spec
 		//// (for instance, quotes can also be escaped using \" ...)
-		//	DOTSTRINGTERM | NUMPREFIXEDID | INT | ID;
+		//	DOTSTRINGTERM | NUMPREFIXEDID | Number | // Number is a bit too coarse, but well...
+		//	ID;
 		public ParserRule getRule() { return rule; }
 
 		//// TODO: implement correct id rules from the graphviz spec
 		//// (for instance, quotes can also be escaped using \" ...)
-		//DOTSTRINGTERM | NUMPREFIXEDID | INT | ID
+		//DOTSTRINGTERM | NUMPREFIXEDID | Number | // Number is a bit too coarse, but well...
+		//ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//// TODO: implement correct id rules from the graphviz spec
@@ -469,11 +471,40 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//NUMPREFIXEDID
 		public RuleCall getNUMPREFIXEDIDTerminalRuleCall_1() { return cNUMPREFIXEDIDTerminalRuleCall_1; }
 
-		//INT
-		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+		//Number
+		public RuleCall getNumberParserRuleCall_2() { return cNumberParserRuleCall_2; }
 
+		//// Number is a bit too coarse, but well...
 		//ID
 		public RuleCall getIDTerminalRuleCall_3() { return cIDTerminalRuleCall_3; }
+	}
+
+	public class NumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Number");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final RuleCall cDOUBLETerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		
+		//Number returns ecore::EDouble:
+		//	"-"? (DOUBLE | INT);
+		public ParserRule getRule() { return rule; }
+
+		//"-"? (DOUBLE | INT)
+		public Group getGroup() { return cGroup; }
+
+		//"-"?
+		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
+
+		//DOUBLE | INT
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//DOUBLE
+		public RuleCall getDOUBLETerminalRuleCall_1_0() { return cDOUBLETerminalRuleCall_1_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
 	}
 	
 	
@@ -484,6 +515,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private DotIDElements pDotID;
 	private TerminalRule tNUMPREFIXEDID;
 	private TerminalRule tDOTSTRINGTERM;
+	private NumberElements pNumber;
+	private TerminalRule tDOUBLE;
 	
 	private final Grammar grammar;
 
@@ -572,7 +605,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	//DotID returns ecore::EString: // TODO: implement correct id rules from the graphviz spec
 	//// (for instance, quotes can also be escaped using \" ...)
-	//	DOTSTRINGTERM | NUMPREFIXEDID | INT | ID;
+	//	DOTSTRINGTERM | NUMPREFIXEDID | Number | // Number is a bit too coarse, but well...
+	//	ID;
 	public DotIDElements getDotIDAccess() {
 		return (pDotID != null) ? pDotID : (pDotID = new DotIDElements());
 	}
@@ -591,6 +625,22 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//	"\"" !"\""* "\"";
 	public TerminalRule getDOTSTRINGTERMRule() {
 		return (tDOTSTRINGTERM != null) ? tDOTSTRINGTERM : (tDOTSTRINGTERM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOTSTRINGTERM"));
+	} 
+
+	//Number returns ecore::EDouble:
+	//	"-"? (DOUBLE | INT);
+	public NumberElements getNumberAccess() {
+		return (pNumber != null) ? pNumber : (pNumber = new NumberElements());
+	}
+	
+	public ParserRule getNumberRule() {
+		return getNumberAccess().getRule();
+	}
+
+	//terminal DOUBLE returns ecore::EDouble:
+	//	INT+ "." INT+;
+	public TerminalRule getDOUBLERule() {
+		return (tDOUBLE != null) ? tDOUBLE : (tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOUBLE"));
 	} 
 
 	//terminal ID:

@@ -21,32 +21,34 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOTSTRINGTERM", "RULE_NUMPREFIXEDID", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'digraph'", "'graph'", "'subgraph'", "'{'", "'['", "','", "']'", "';'", "'node'", "'edge'", "'}'", "'--'", "'->'", "'='"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DOTSTRINGTERM", "RULE_NUMPREFIXEDID", "RULE_ID", "RULE_DOUBLE", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'digraph'", "'graph'", "'subgraph'", "'{'", "'['", "','", "']'", "';'", "'node'", "'edge'", "'}'", "'--'", "'->'", "'='", "'-'"
     };
-    public static final int RULE_ID=7;
+    public static final int RULE_STRING=9;
     public static final int RULE_NUMPREFIXEDID=5;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=9;
+    public static final int RULE_SL_COMMENT=11;
     public static final int T__19=19;
-    public static final int RULE_STRING=8;
-    public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int RULE_DOUBLE=7;
+    public static final int T__16=16;
     public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int RULE_INT=6;
-    public static final int RULE_WS=11;
+    public static final int EOF=-1;
     public static final int RULE_DOTSTRINGTERM=4;
+    public static final int RULE_ID=6;
+    public static final int RULE_WS=12;
+    public static final int RULE_ANY_OTHER=13;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=8;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=10;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -194,10 +196,10 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( ((LA4_0>=13 && LA4_0<=14)) ) {
+            if ( ((LA4_0>=14 && LA4_0<=15)) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==15) ) {
+            else if ( (LA4_0==16) ) {
                 alt4=2;
             }
             else {
@@ -217,10 +219,10 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     int alt1=2;
                     int LA1_0 = input.LA(1);
 
-                    if ( (LA1_0==13) ) {
+                    if ( (LA1_0==14) ) {
                         alt1=1;
                     }
-                    else if ( (LA1_0==14) ) {
+                    else if ( (LA1_0==15) ) {
                         alt1=2;
                     }
                     else {
@@ -239,7 +241,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                             // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:87:1: (lv_directedGraph_1_0= 'digraph' )
                             // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:88:3: lv_directedGraph_1_0= 'digraph'
                             {
-                            lv_directedGraph_1_0=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleDotGraph140); 
+                            lv_directedGraph_1_0=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleDotGraph140); 
 
                                     newLeafNode(lv_directedGraph_1_0, grammarAccess.getDotGraphAccess().getDirectedGraphDigraphKeyword_1_0_0_0_0());
                                 
@@ -261,7 +263,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                         case 2 :
                             // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:102:7: otherlv_2= 'graph'
                             {
-                            otherlv_2=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleDotGraph171); 
+                            otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleDotGraph171); 
 
                                 	newLeafNode(otherlv_2, grammarAccess.getDotGraphAccess().getGraphKeyword_1_0_0_1());
                                 
@@ -275,7 +277,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
-                    if ( ((LA2_0>=RULE_DOTSTRINGTERM && LA2_0<=RULE_ID)) ) {
+                    if ( ((LA2_0>=RULE_DOTSTRINGTERM && LA2_0<=RULE_INT)||LA2_0==28) ) {
                         alt2=1;
                     }
                     switch (alt2) {
@@ -325,7 +327,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:125:6: (otherlv_4= 'subgraph' ( (lv_id_5_0= ruleDotID ) )? )
                     // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:125:8: otherlv_4= 'subgraph' ( (lv_id_5_0= ruleDotID ) )?
                     {
-                    otherlv_4=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleDotGraph214); 
+                    otherlv_4=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleDotGraph214); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getDotGraphAccess().getSubgraphKeyword_1_1_0());
                         
@@ -333,7 +335,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
-                    if ( ((LA3_0>=RULE_DOTSTRINGTERM && LA3_0<=RULE_ID)) ) {
+                    if ( ((LA3_0>=RULE_DOTSTRINGTERM && LA3_0<=RULE_INT)||LA3_0==28) ) {
                         alt3=1;
                     }
                     switch (alt3) {
@@ -380,7 +382,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleDotGraph250); 
+            otherlv_6=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleDotGraph250); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getDotGraphAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -396,11 +398,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:151:2: (otherlv_7= 'graph' otherlv_8= '[' ( (lv_graphSettings_9_0= ruleSetting ) ) (otherlv_10= ',' ( (lv_graphSettings_11_0= ruleSetting ) ) )* otherlv_12= ']' (otherlv_13= ';' )? )
             	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:151:4: otherlv_7= 'graph' otherlv_8= '[' ( (lv_graphSettings_9_0= ruleSetting ) ) (otherlv_10= ',' ( (lv_graphSettings_11_0= ruleSetting ) ) )* otherlv_12= ']' (otherlv_13= ';' )?
             	    {
-            	    otherlv_7=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleDotGraph264); 
+            	    otherlv_7=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleDotGraph264); 
 
             	        	newLeafNode(otherlv_7, grammarAccess.getDotGraphAccess().getGraphKeyword_3_0_0());
             	        
-            	    otherlv_8=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleDotGraph276); 
+            	    otherlv_8=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotGraph276); 
 
             	        	newLeafNode(otherlv_8, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_3_0_1());
             	        
@@ -441,7 +443,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	        int alt5=2;
             	        int LA5_0 = input.LA(1);
 
-            	        if ( (LA5_0==18) ) {
+            	        if ( (LA5_0==19) ) {
             	            alt5=1;
             	        }
 
@@ -450,7 +452,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    	case 1 :
             	    	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:177:4: otherlv_10= ',' ( (lv_graphSettings_11_0= ruleSetting ) )
             	    	    {
-            	    	    otherlv_10=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotGraph310); 
+            	    	    otherlv_10=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotGraph310); 
 
             	    	        	newLeafNode(otherlv_10, grammarAccess.getDotGraphAccess().getCommaKeyword_3_0_3_0());
             	    	        
@@ -494,7 +496,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	        }
             	    } while (true);
 
-            	    otherlv_12=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotGraph345); 
+            	    otherlv_12=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotGraph345); 
 
             	        	newLeafNode(otherlv_12, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_3_0_4());
             	        
@@ -502,14 +504,14 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    int alt6=2;
             	    int LA6_0 = input.LA(1);
 
-            	    if ( (LA6_0==20) ) {
+            	    if ( (LA6_0==21) ) {
             	        alt6=1;
             	    }
             	    switch (alt6) {
             	        case 1 :
             	            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:203:3: otherlv_13= ';'
             	            {
-            	            otherlv_13=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotGraph358); 
+            	            otherlv_13=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleDotGraph358); 
 
             	                	newLeafNode(otherlv_13, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_0_5());
             	                
@@ -531,11 +533,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:208:6: (otherlv_14= 'node' otherlv_15= '[' ( (lv_nodeSettings_16_0= ruleSetting ) ) (otherlv_17= ',' ( (lv_nodeSettings_18_0= ruleSetting ) ) )* otherlv_19= ']' (otherlv_20= ';' )? )
             	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:208:8: otherlv_14= 'node' otherlv_15= '[' ( (lv_nodeSettings_16_0= ruleSetting ) ) (otherlv_17= ',' ( (lv_nodeSettings_18_0= ruleSetting ) ) )* otherlv_19= ']' (otherlv_20= ';' )?
             	    {
-            	    otherlv_14=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleDotGraph380); 
+            	    otherlv_14=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleDotGraph380); 
 
             	        	newLeafNode(otherlv_14, grammarAccess.getDotGraphAccess().getNodeKeyword_3_1_0());
             	        
-            	    otherlv_15=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleDotGraph392); 
+            	    otherlv_15=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotGraph392); 
 
             	        	newLeafNode(otherlv_15, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_3_1_1());
             	        
@@ -576,7 +578,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	        int alt7=2;
             	        int LA7_0 = input.LA(1);
 
-            	        if ( (LA7_0==18) ) {
+            	        if ( (LA7_0==19) ) {
             	            alt7=1;
             	        }
 
@@ -585,7 +587,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    	case 1 :
             	    	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:234:4: otherlv_17= ',' ( (lv_nodeSettings_18_0= ruleSetting ) )
             	    	    {
-            	    	    otherlv_17=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotGraph426); 
+            	    	    otherlv_17=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotGraph426); 
 
             	    	        	newLeafNode(otherlv_17, grammarAccess.getDotGraphAccess().getCommaKeyword_3_1_3_0());
             	    	        
@@ -629,7 +631,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	        }
             	    } while (true);
 
-            	    otherlv_19=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotGraph461); 
+            	    otherlv_19=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotGraph461); 
 
             	        	newLeafNode(otherlv_19, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_3_1_4());
             	        
@@ -637,14 +639,14 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    int alt8=2;
             	    int LA8_0 = input.LA(1);
 
-            	    if ( (LA8_0==20) ) {
+            	    if ( (LA8_0==21) ) {
             	        alt8=1;
             	    }
             	    switch (alt8) {
             	        case 1 :
             	            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:260:3: otherlv_20= ';'
             	            {
-            	            otherlv_20=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotGraph474); 
+            	            otherlv_20=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleDotGraph474); 
 
             	                	newLeafNode(otherlv_20, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_1_5());
             	                
@@ -666,11 +668,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:265:6: (otherlv_21= 'edge' otherlv_22= '[' ( (lv_edgeSettings_23_0= ruleSetting ) ) (otherlv_24= ',' ( (lv_edgeSettings_25_0= ruleSetting ) ) )* otherlv_26= ']' (otherlv_27= ';' )? )
             	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:265:8: otherlv_21= 'edge' otherlv_22= '[' ( (lv_edgeSettings_23_0= ruleSetting ) ) (otherlv_24= ',' ( (lv_edgeSettings_25_0= ruleSetting ) ) )* otherlv_26= ']' (otherlv_27= ';' )?
             	    {
-            	    otherlv_21=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleDotGraph496); 
+            	    otherlv_21=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleDotGraph496); 
 
             	        	newLeafNode(otherlv_21, grammarAccess.getDotGraphAccess().getEdgeKeyword_3_2_0());
             	        
-            	    otherlv_22=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleDotGraph508); 
+            	    otherlv_22=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotGraph508); 
 
             	        	newLeafNode(otherlv_22, grammarAccess.getDotGraphAccess().getLeftSquareBracketKeyword_3_2_1());
             	        
@@ -711,7 +713,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	        int alt9=2;
             	        int LA9_0 = input.LA(1);
 
-            	        if ( (LA9_0==18) ) {
+            	        if ( (LA9_0==19) ) {
             	            alt9=1;
             	        }
 
@@ -720,7 +722,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    	case 1 :
             	    	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:291:4: otherlv_24= ',' ( (lv_edgeSettings_25_0= ruleSetting ) )
             	    	    {
-            	    	    otherlv_24=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotGraph542); 
+            	    	    otherlv_24=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotGraph542); 
 
             	    	        	newLeafNode(otherlv_24, grammarAccess.getDotGraphAccess().getCommaKeyword_3_2_3_0());
             	    	        
@@ -764,7 +766,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	        }
             	    } while (true);
 
-            	    otherlv_26=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotGraph577); 
+            	    otherlv_26=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotGraph577); 
 
             	        	newLeafNode(otherlv_26, grammarAccess.getDotGraphAccess().getRightSquareBracketKeyword_3_2_4());
             	        
@@ -772,14 +774,14 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             	    int alt10=2;
             	    int LA10_0 = input.LA(1);
 
-            	    if ( (LA10_0==20) ) {
+            	    if ( (LA10_0==21) ) {
             	        alt10=1;
             	    }
             	    switch (alt10) {
             	        case 1 :
             	            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:317:3: otherlv_27= ';'
             	            {
-            	            otherlv_27=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotGraph590); 
+            	            otherlv_27=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleDotGraph590); 
 
             	                	newLeafNode(otherlv_27, grammarAccess.getDotGraphAccess().getSemicolonKeyword_3_2_5());
             	                
@@ -912,7 +914,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_31=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleDotGraph688); 
+            otherlv_31=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleDotGraph688); 
 
                 	newLeafNode(otherlv_31, grammarAccess.getDotGraphAccess().getRightCurlyBracketKeyword_4());
                 
@@ -1032,14 +1034,14 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==17) ) {
+            if ( (LA13_0==18) ) {
                 alt13=1;
             }
             switch (alt13) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:421:4: otherlv_1= '[' ( (lv_settings_2_0= ruleSetting ) ) (otherlv_3= ',' ( (lv_settings_4_0= ruleSetting ) ) )* otherlv_5= ']'
                     {
-                    otherlv_1=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleDotNode793); 
+                    otherlv_1=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotNode793); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getDotNodeAccess().getLeftSquareBracketKeyword_1_0());
                         
@@ -1080,7 +1082,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                         int alt12=2;
                         int LA12_0 = input.LA(1);
 
-                        if ( (LA12_0==18) ) {
+                        if ( (LA12_0==19) ) {
                             alt12=1;
                         }
 
@@ -1089,7 +1091,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:443:4: otherlv_3= ',' ( (lv_settings_4_0= ruleSetting ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotNode827); 
+                    	    otherlv_3=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotNode827); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getDotNodeAccess().getCommaKeyword_1_2_0());
                     	        
@@ -1133,7 +1135,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotNode862); 
+                    otherlv_5=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotNode862); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getDotNodeAccess().getRightSquareBracketKeyword_1_3());
                         
@@ -1147,14 +1149,14 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==20) ) {
+            if ( (LA14_0==21) ) {
                 alt14=1;
             }
             switch (alt14) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:469:5: otherlv_6= ';'
                     {
-                    otherlv_6=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotNode877); 
+                    otherlv_6=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleDotNode877); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getDotNodeAccess().getSemicolonKeyword_2());
                         
@@ -1277,10 +1279,10 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==24) ) {
+            if ( (LA15_0==25) ) {
                 alt15=1;
             }
-            else if ( (LA15_0==25) ) {
+            else if ( (LA15_0==26) ) {
                 alt15=2;
             }
             else {
@@ -1293,7 +1295,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:509:4: otherlv_1= '--'
                     {
-                    otherlv_1=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleDotEdge986); 
+                    otherlv_1=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleDotEdge986); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getDotEdgeAccess().getHyphenMinusHyphenMinusKeyword_1_0());
                         
@@ -1303,7 +1305,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:514:7: otherlv_2= '->'
                     {
-                    otherlv_2=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleDotEdge1004); 
+                    otherlv_2=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleDotEdge1004); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getDotEdgeAccess().getHyphenMinusGreaterThanSignKeyword_1_1());
                         
@@ -1345,14 +1347,14 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==17) ) {
+            if ( (LA17_0==18) ) {
                 alt17=1;
             }
             switch (alt17) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:533:4: otherlv_4= '[' ( (lv_settings_5_0= ruleSetting ) ) (otherlv_6= ',' ( (lv_settings_7_0= ruleSetting ) ) )* otherlv_8= ']'
                     {
-                    otherlv_4=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleDotEdge1041); 
+                    otherlv_4=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotEdge1041); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getDotEdgeAccess().getLeftSquareBracketKeyword_3_0());
                         
@@ -1393,7 +1395,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                         int alt16=2;
                         int LA16_0 = input.LA(1);
 
-                        if ( (LA16_0==18) ) {
+                        if ( (LA16_0==19) ) {
                             alt16=1;
                         }
 
@@ -1402,7 +1404,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:555:4: otherlv_6= ',' ( (lv_settings_7_0= ruleSetting ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDotEdge1075); 
+                    	    otherlv_6=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotEdge1075); 
 
                     	        	newLeafNode(otherlv_6, grammarAccess.getDotEdgeAccess().getCommaKeyword_3_2_0());
                     	        
@@ -1446,7 +1448,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDotEdge1110); 
+                    otherlv_8=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotEdge1110); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getDotEdgeAccess().getRightSquareBracketKeyword_3_3());
                         
@@ -1460,14 +1462,14 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==20) ) {
+            if ( (LA18_0==21) ) {
                 alt18=1;
             }
             switch (alt18) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:581:5: otherlv_9= ';'
                     {
-                    otherlv_9=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleDotEdge1125); 
+                    otherlv_9=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleDotEdge1125); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getDotEdgeAccess().getSemicolonKeyword_4());
                         
@@ -1584,7 +1586,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleSetting1231); 
+            otherlv_1=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleSetting1231); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSettingAccess().getEqualsSignKeyword_1());
                 
@@ -1676,22 +1678,23 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDotID"
-    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:663:1: ruleDotID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_DOTSTRINGTERM_0= RULE_DOTSTRINGTERM | this_NUMPREFIXEDID_1= RULE_NUMPREFIXEDID | this_INT_2= RULE_INT | this_ID_3= RULE_ID ) ;
+    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:663:1: ruleDotID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_DOTSTRINGTERM_0= RULE_DOTSTRINGTERM | this_NUMPREFIXEDID_1= RULE_NUMPREFIXEDID | this_Number_2= ruleNumber | this_ID_3= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleDotID() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token this_DOTSTRINGTERM_0=null;
         Token this_NUMPREFIXEDID_1=null;
-        Token this_INT_2=null;
         Token this_ID_3=null;
+        AntlrDatatypeRuleToken this_Number_2 = null;
+
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:666:28: ( (this_DOTSTRINGTERM_0= RULE_DOTSTRINGTERM | this_NUMPREFIXEDID_1= RULE_NUMPREFIXEDID | this_INT_2= RULE_INT | this_ID_3= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:667:1: (this_DOTSTRINGTERM_0= RULE_DOTSTRINGTERM | this_NUMPREFIXEDID_1= RULE_NUMPREFIXEDID | this_INT_2= RULE_INT | this_ID_3= RULE_ID )
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:666:28: ( (this_DOTSTRINGTERM_0= RULE_DOTSTRINGTERM | this_NUMPREFIXEDID_1= RULE_NUMPREFIXEDID | this_Number_2= ruleNumber | this_ID_3= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:667:1: (this_DOTSTRINGTERM_0= RULE_DOTSTRINGTERM | this_NUMPREFIXEDID_1= RULE_NUMPREFIXEDID | this_Number_2= ruleNumber | this_ID_3= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:667:1: (this_DOTSTRINGTERM_0= RULE_DOTSTRINGTERM | this_NUMPREFIXEDID_1= RULE_NUMPREFIXEDID | this_INT_2= RULE_INT | this_ID_3= RULE_ID )
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:667:1: (this_DOTSTRINGTERM_0= RULE_DOTSTRINGTERM | this_NUMPREFIXEDID_1= RULE_NUMPREFIXEDID | this_Number_2= ruleNumber | this_ID_3= RULE_ID )
             int alt19=4;
             switch ( input.LA(1) ) {
             case RULE_DOTSTRINGTERM:
@@ -1704,7 +1707,9 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                 alt19=2;
                 }
                 break;
+            case RULE_DOUBLE:
             case RULE_INT:
+            case 28:
                 {
                 alt19=3;
                 }
@@ -1749,22 +1754,29 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:683:10: this_INT_2= RULE_INT
+                    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:684:5: this_Number_2= ruleNumber
                     {
-                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDotID1392); 
+                     
+                            newCompositeNode(grammarAccess.getDotIDAccess().getNumberParserRuleCall_2()); 
+                        
+                    pushFollow(FollowSets000.FOLLOW_ruleNumber_in_ruleDotID1399);
+                    this_Number_2=ruleNumber();
 
-                    		current.merge(this_INT_2);
+                    state._fsp--;
+
+
+                    		current.merge(this_Number_2);
                         
                      
-                        newLeafNode(this_INT_2, grammarAccess.getDotIDAccess().getINTTerminalRuleCall_2()); 
+                            afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:691:10: this_ID_3= RULE_ID
+                    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:695:10: this_ID_3= RULE_ID
                     {
-                    this_ID_3=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDotID1418); 
+                    this_ID_3=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDotID1425); 
 
                     		current.merge(this_ID_3);
                         
@@ -1793,33 +1805,183 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleDotID"
 
+
+    // $ANTLR start "entryRuleNumber"
+    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:710:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
+    public final String entryRuleNumber() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleNumber = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:711:2: (iv_ruleNumber= ruleNumber EOF )
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:712:2: iv_ruleNumber= ruleNumber EOF
+            {
+             newCompositeNode(grammarAccess.getNumberRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleNumber_in_entryRuleNumber1471);
+            iv_ruleNumber=ruleNumber();
+
+            state._fsp--;
+
+             current =iv_ruleNumber.getText(); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNumber1482); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNumber"
+
+
+    // $ANTLR start "ruleNumber"
+    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:719:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) ) ;
+    public final AntlrDatatypeRuleToken ruleNumber() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+        Token this_DOUBLE_1=null;
+        Token this_INT_2=null;
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:722:28: ( ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) ) )
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:723:1: ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) )
+            {
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:723:1: ( (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:723:2: (kw= '-' )? (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT )
+            {
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:723:2: (kw= '-' )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==28) ) {
+                alt20=1;
+            }
+            switch (alt20) {
+                case 1 :
+                    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:724:2: kw= '-'
+                    {
+                    kw=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleNumber1521); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getNumberAccess().getHyphenMinusKeyword_0()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+            // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:729:3: (this_DOUBLE_1= RULE_DOUBLE | this_INT_2= RULE_INT )
+            int alt21=2;
+            int LA21_0 = input.LA(1);
+
+            if ( (LA21_0==RULE_DOUBLE) ) {
+                alt21=1;
+            }
+            else if ( (LA21_0==RULE_INT) ) {
+                alt21=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 21, 0, input);
+
+                throw nvae;
+            }
+            switch (alt21) {
+                case 1 :
+                    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:729:8: this_DOUBLE_1= RULE_DOUBLE
+                    {
+                    this_DOUBLE_1=(Token)match(input,RULE_DOUBLE,FollowSets000.FOLLOW_RULE_DOUBLE_in_ruleNumber1539); 
+
+                    		current.merge(this_DOUBLE_1);
+                        
+                     
+                        newLeafNode(this_DOUBLE_1, grammarAccess.getNumberAccess().getDOUBLETerminalRuleCall_1_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.uni_paderborn.fujaba.graphviz.dot.xtext/src-gen/de/uni_paderborn/fujaba/graphviz/dot/xtext/parser/antlr/internal/InternalDotLanguage.g:737:10: this_INT_2= RULE_INT
+                    {
+                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleNumber1565); 
+
+                    		current.merge(this_INT_2);
+                        
+                     
+                        newLeafNode(this_INT_2, grammarAccess.getNumberAccess().getINTTerminalRuleCall_1_1()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNumber"
+
     // Delegated rules
 
 
     protected DFA11 dfa11 = new DFA11(this);
     static final String DFA11_eotS =
-        "\15\uffff";
+        "\17\uffff";
     static final String DFA11_eofS =
-        "\15\uffff";
+        "\17\uffff";
     static final String DFA11_minS =
-        "\1\4\1\uffff\1\4\3\uffff\4\4\3\uffff";
+        "\1\4\1\uffff\1\4\3\uffff\2\4\1\7\3\4\3\uffff";
     static final String DFA11_maxS =
-        "\1\27\1\uffff\1\21\3\uffff\4\31\3\uffff";
+        "\1\34\1\uffff\1\34\3\uffff\2\34\1\10\3\34\3\uffff";
     static final String DFA11_acceptS =
-        "\1\uffff\1\7\1\uffff\1\2\1\3\1\4\4\uffff\1\1\1\6\1\5";
+        "\1\uffff\1\7\1\uffff\1\2\1\3\1\4\6\uffff\1\1\1\6\1\5";
     static final String DFA11_specialS =
-        "\15\uffff}>";
+        "\17\uffff}>";
     static final String[] DFA11_transitionS = {
-            "\1\6\1\7\1\10\1\11\5\uffff\1\5\1\2\1\5\5\uffff\1\3\1\4\1\1",
+            "\1\6\1\7\1\13\1\11\1\12\5\uffff\1\5\1\2\1\5\5\uffff\1\3\1\4"+
+            "\1\1\3\uffff\1\10",
             "",
-            "\4\5\10\uffff\1\5\1\12",
+            "\5\5\10\uffff\1\5\1\14\11\uffff\1\5",
             "",
             "",
             "",
-            "\4\14\5\uffff\3\14\1\uffff\1\14\2\uffff\4\14\2\13",
-            "\4\14\5\uffff\3\14\1\uffff\1\14\2\uffff\4\14\2\13",
-            "\4\14\5\uffff\3\14\1\uffff\1\14\2\uffff\4\14\2\13",
-            "\4\14\5\uffff\3\14\1\uffff\1\14\2\uffff\4\14\2\13",
+            "\5\16\5\uffff\3\16\1\uffff\1\16\2\uffff\4\16\2\15\1\uffff\1"+
+            "\16",
+            "\5\16\5\uffff\3\16\1\uffff\1\16\2\uffff\4\16\2\15\1\uffff\1"+
+            "\16",
+            "\1\11\1\12",
+            "\5\16\5\uffff\3\16\1\uffff\1\16\2\uffff\4\16\2\15\1\uffff\1"+
+            "\16",
+            "\5\16\5\uffff\3\16\1\uffff\1\16\2\uffff\4\16\2\15\1\uffff\1"+
+            "\16",
+            "\5\16\5\uffff\3\16\1\uffff\1\16\2\uffff\4\16\2\15\1\uffff\1"+
+            "\16",
             "",
             "",
             ""
@@ -1864,69 +2026,74 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
     private static class FollowSets000 {
         public static final BitSet FOLLOW_ruleDotGraph_in_entryRuleDotGraph75 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleDotGraph85 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_ruleDotGraph140 = new BitSet(new long[]{0x00000000000100F0L});
-        public static final BitSet FOLLOW_14_in_ruleDotGraph171 = new BitSet(new long[]{0x00000000000100F0L});
-        public static final BitSet FOLLOW_ruleDotID_in_ruleDotGraph193 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_15_in_ruleDotGraph214 = new BitSet(new long[]{0x00000000000100F0L});
-        public static final BitSet FOLLOW_ruleDotID_in_ruleDotGraph235 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleDotGraph250 = new BitSet(new long[]{0x0000000000E0E0F0L});
-        public static final BitSet FOLLOW_14_in_ruleDotGraph264 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_17_in_ruleDotGraph276 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph297 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_18_in_ruleDotGraph310 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph331 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_19_in_ruleDotGraph345 = new BitSet(new long[]{0x0000000000F0E0F0L});
-        public static final BitSet FOLLOW_20_in_ruleDotGraph358 = new BitSet(new long[]{0x0000000000E0E0F0L});
-        public static final BitSet FOLLOW_21_in_ruleDotGraph380 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_17_in_ruleDotGraph392 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph413 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_18_in_ruleDotGraph426 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph447 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_19_in_ruleDotGraph461 = new BitSet(new long[]{0x0000000000F0E0F0L});
-        public static final BitSet FOLLOW_20_in_ruleDotGraph474 = new BitSet(new long[]{0x0000000000E0E0F0L});
-        public static final BitSet FOLLOW_22_in_ruleDotGraph496 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_17_in_ruleDotGraph508 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph529 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_18_in_ruleDotGraph542 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph563 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_19_in_ruleDotGraph577 = new BitSet(new long[]{0x0000000000F0E0F0L});
-        public static final BitSet FOLLOW_20_in_ruleDotGraph590 = new BitSet(new long[]{0x0000000000E0E0F0L});
-        public static final BitSet FOLLOW_ruleDotGraph_in_ruleDotGraph620 = new BitSet(new long[]{0x0000000000E0E0F0L});
-        public static final BitSet FOLLOW_ruleDotNode_in_ruleDotGraph647 = new BitSet(new long[]{0x0000000000E0E0F0L});
-        public static final BitSet FOLLOW_ruleDotEdge_in_ruleDotGraph674 = new BitSet(new long[]{0x0000000000E0E0F0L});
-        public static final BitSet FOLLOW_23_in_ruleDotGraph688 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_ruleDotGraph140 = new BitSet(new long[]{0x00000000100201F0L});
+        public static final BitSet FOLLOW_15_in_ruleDotGraph171 = new BitSet(new long[]{0x00000000100201F0L});
+        public static final BitSet FOLLOW_ruleDotID_in_ruleDotGraph193 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_16_in_ruleDotGraph214 = new BitSet(new long[]{0x00000000100201F0L});
+        public static final BitSet FOLLOW_ruleDotID_in_ruleDotGraph235 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_17_in_ruleDotGraph250 = new BitSet(new long[]{0x0000000011C1C1F0L});
+        public static final BitSet FOLLOW_15_in_ruleDotGraph264 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_18_in_ruleDotGraph276 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph297 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleDotGraph310 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph331 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleDotGraph345 = new BitSet(new long[]{0x0000000011E1C1F0L});
+        public static final BitSet FOLLOW_21_in_ruleDotGraph358 = new BitSet(new long[]{0x0000000011C1C1F0L});
+        public static final BitSet FOLLOW_22_in_ruleDotGraph380 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_18_in_ruleDotGraph392 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph413 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleDotGraph426 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph447 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleDotGraph461 = new BitSet(new long[]{0x0000000011E1C1F0L});
+        public static final BitSet FOLLOW_21_in_ruleDotGraph474 = new BitSet(new long[]{0x0000000011C1C1F0L});
+        public static final BitSet FOLLOW_23_in_ruleDotGraph496 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_18_in_ruleDotGraph508 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph529 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleDotGraph542 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotGraph563 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleDotGraph577 = new BitSet(new long[]{0x0000000011E1C1F0L});
+        public static final BitSet FOLLOW_21_in_ruleDotGraph590 = new BitSet(new long[]{0x0000000011C1C1F0L});
+        public static final BitSet FOLLOW_ruleDotGraph_in_ruleDotGraph620 = new BitSet(new long[]{0x0000000011C1C1F0L});
+        public static final BitSet FOLLOW_ruleDotNode_in_ruleDotGraph647 = new BitSet(new long[]{0x0000000011C1C1F0L});
+        public static final BitSet FOLLOW_ruleDotEdge_in_ruleDotGraph674 = new BitSet(new long[]{0x0000000011C1C1F0L});
+        public static final BitSet FOLLOW_24_in_ruleDotGraph688 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDotNode_in_entryRuleDotNode724 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleDotNode734 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDotID_in_ruleDotNode780 = new BitSet(new long[]{0x0000000000120002L});
-        public static final BitSet FOLLOW_17_in_ruleDotNode793 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotNode814 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_18_in_ruleDotNode827 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotNode848 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_19_in_ruleDotNode862 = new BitSet(new long[]{0x0000000000100002L});
-        public static final BitSet FOLLOW_20_in_ruleDotNode877 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDotID_in_ruleDotNode780 = new BitSet(new long[]{0x0000000000240002L});
+        public static final BitSet FOLLOW_18_in_ruleDotNode793 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotNode814 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleDotNode827 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotNode848 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleDotNode862 = new BitSet(new long[]{0x0000000000200002L});
+        public static final BitSet FOLLOW_21_in_ruleDotNode877 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDotEdge_in_entryRuleDotEdge915 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleDotEdge925 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDotID_in_ruleDotEdge973 = new BitSet(new long[]{0x0000000003000000L});
-        public static final BitSet FOLLOW_24_in_ruleDotEdge986 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_25_in_ruleDotEdge1004 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleDotID_in_ruleDotEdge1028 = new BitSet(new long[]{0x0000000000120002L});
-        public static final BitSet FOLLOW_17_in_ruleDotEdge1041 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotEdge1062 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_18_in_ruleDotEdge1075 = new BitSet(new long[]{0x00000000000000F0L});
-        public static final BitSet FOLLOW_ruleSetting_in_ruleDotEdge1096 = new BitSet(new long[]{0x00000000000C0000L});
-        public static final BitSet FOLLOW_19_in_ruleDotEdge1110 = new BitSet(new long[]{0x0000000000100002L});
-        public static final BitSet FOLLOW_20_in_ruleDotEdge1125 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDotID_in_ruleDotEdge973 = new BitSet(new long[]{0x0000000006000000L});
+        public static final BitSet FOLLOW_25_in_ruleDotEdge986 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_26_in_ruleDotEdge1004 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleDotID_in_ruleDotEdge1028 = new BitSet(new long[]{0x0000000000240002L});
+        public static final BitSet FOLLOW_18_in_ruleDotEdge1041 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotEdge1062 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_19_in_ruleDotEdge1075 = new BitSet(new long[]{0x00000000100001F0L});
+        public static final BitSet FOLLOW_ruleSetting_in_ruleDotEdge1096 = new BitSet(new long[]{0x0000000000180000L});
+        public static final BitSet FOLLOW_20_in_ruleDotEdge1110 = new BitSet(new long[]{0x0000000000200002L});
+        public static final BitSet FOLLOW_21_in_ruleDotEdge1125 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleSetting_in_entryRuleSetting1163 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleSetting1173 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDotID_in_ruleSetting1219 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_ruleSetting1231 = new BitSet(new long[]{0x00000000000000F0L});
+        public static final BitSet FOLLOW_ruleDotID_in_ruleSetting1219 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_27_in_ruleSetting1231 = new BitSet(new long[]{0x00000000100001F0L});
         public static final BitSet FOLLOW_ruleDotID_in_ruleSetting1252 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDotID_in_entryRuleDotID1289 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleDotID1300 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_DOTSTRINGTERM_in_ruleDotID1340 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_NUMPREFIXEDID_in_ruleDotID1366 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleDotID1392 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleDotID1418 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNumber_in_ruleDotID1399 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleDotID1425 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber1471 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleNumber1482 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_ruleNumber1521 = new BitSet(new long[]{0x0000000000000180L});
+        public static final BitSet FOLLOW_RULE_DOUBLE_in_ruleNumber1539 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleNumber1565 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

@@ -70,7 +70,7 @@ public abstract class AbstractDotLanguageSyntacticSequencer extends AbstractSynt
 
 	/**
 	 * Syntax:
-	 *     '--' | '->'
+	 *     '->' | '--'
 	 */
 	protected void emit_DotEdge_HyphenMinusGreaterThanSignKeyword_1_1_or_HyphenMinusHyphenMinusKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

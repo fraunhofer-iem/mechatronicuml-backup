@@ -680,12 +680,16 @@ ruleDotID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     newLeafNode(this_NUMPREFIXEDID_1, grammarAccess.getDotIDAccess().getNUMPREFIXEDIDTerminalRuleCall_1()); 
     }
 
-    |    this_INT_2=RULE_INT    {
-		$current.merge(this_INT_2);
+    |
+    { 
+        newCompositeNode(grammarAccess.getDotIDAccess().getNumberParserRuleCall_2()); 
+    }
+    this_Number_2=ruleNumber    {
+		$current.merge(this_Number_2);
     }
 
     { 
-    newLeafNode(this_INT_2, grammarAccess.getDotIDAccess().getINTTerminalRuleCall_2()); 
+        afterParserOrEnumRuleCall();
     }
 
     |    this_ID_3=RULE_ID    {
@@ -702,9 +706,53 @@ ruleDotID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
+// Entry rule entryRuleNumber
+entryRuleNumber returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNumberRule()); } 
+	 iv_ruleNumber=ruleNumber 
+	 { $current=$iv_ruleNumber.current.getText(); }  
+	 EOF 
+;
+
+// Rule Number
+ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getNumberAccess().getHyphenMinusKeyword_0()); 
+    }
+)?(    this_DOUBLE_1=RULE_DOUBLE    {
+		$current.merge(this_DOUBLE_1);
+    }
+
+    { 
+    newLeafNode(this_DOUBLE_1, grammarAccess.getNumberAccess().getDOUBLETerminalRuleCall_1_0()); 
+    }
+
+    |    this_INT_2=RULE_INT    {
+		$current.merge(this_INT_2);
+    }
+
+    { 
+    newLeafNode(this_INT_2, grammarAccess.getNumberAccess().getINTTerminalRuleCall_1_1()); 
+    }
+))
+    ;
+
+
+
+
+
 RULE_NUMPREFIXEDID : RULE_INT RULE_ID;
 
 RULE_DOTSTRINGTERM : '"' ~('"')* '"';
+
+RULE_DOUBLE : RULE_INT+ '.' RULE_INT+;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
