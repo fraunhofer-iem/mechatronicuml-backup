@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Custom
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.custom.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.custom;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram;bundle-version="1.0.0",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.7.0",
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.4.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="de.uni_paderborn.fujaba.common.properties">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.common.properties">
+          <propertyTab
+             category="domain"
+             id="property.tab.constraint"
+             afterTab="property.tab.comment"
+             label="Constraint"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="de.uni_paderborn.fujaba.common.properties">
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.tabs.ConstraintTabElementFilter"
+            id="property.tab.constraint"
+            tab="property.tab.constraint">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor.ComponentStoryDecisionDiagramEditor$Factory"
+             type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#ComponentStoryDecisionDiagram">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor.ComponentStoryPatternNodeEditor$Factory"
+             type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#ComponentStoryPatternNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor.EvaluateComponentSDDExpressionEditor$Factory"
+             type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#EvaluateComponentSDDExpression">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+    <metamodel
+          contributor="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+    <constraint
+          contributor="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.constraint.CreationConstraintContributor">
+    </constraint>
+ </extension>
+
+</plugin>

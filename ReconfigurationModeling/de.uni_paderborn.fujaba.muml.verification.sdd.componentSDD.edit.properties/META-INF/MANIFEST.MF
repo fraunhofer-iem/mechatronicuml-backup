@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ComponentStoryDecisionDiagram Tabbed Properties
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties; singleton:=true
+Bundle-Version: 0.1
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.properties.runtime,
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD,
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit,
+ org.eclipse.emf.edit,
+ de.uni_paderborn.fujaba.muml.componentstorypattern,
+ org.storydriven.core.edit,
+ org.storydriven.core.edit.properties,
+ de.uni_paderborn.fujaba.muml.componentstorypattern.edit,
+ de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties,
+ de.uni_paderborn.fujaba.muml.edit,
+ de.uni_paderborn.fujaba.muml.edit.properties,
+ de.uni_paderborn.fujaba.muml.reconfiguration.edit,
+ de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.properties;bundle-version="0.4.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.constraint,
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor,
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.custom.providers.CustomSDDEditPartProvider">
+         <Priority
+               name="Medium">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding
+            context="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.TypeContext">
+         <elementType
+               ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005">
+         </elementType>
+         <advice
+               ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3005Advice">
+         </advice>
+      </binding>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel
+            nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
+         <adviceBinding
+               class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.custom.edit.helper.SinglePortVariableEditHelperAdvice"
+               id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3005Advice"
+               inheritance="all"
+               typeId="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.SinglePortVariable_3005">
+         </adviceBinding>
+      </metamodel>
+   </extension>
+   <extension
+         point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+            initializer="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.custom.initializer.ComponentStoryDecisionDiagramInitializer">
+      </initializer>
+   </extension>
+
+</plugin>
