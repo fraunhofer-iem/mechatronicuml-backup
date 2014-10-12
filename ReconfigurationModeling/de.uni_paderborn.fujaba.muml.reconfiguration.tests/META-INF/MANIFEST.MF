@@ -5,9 +5,11 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reconfiguration.tests
 Bundle-Version: 0.4.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml.tests;bundle-version="0.3.1",
+ org.junit;bundle-version="3.8.2",
+ org.storydriven.storydiagrams;bundle-version="1.0.1",
  de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.componentstorydiagram;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.tests;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
