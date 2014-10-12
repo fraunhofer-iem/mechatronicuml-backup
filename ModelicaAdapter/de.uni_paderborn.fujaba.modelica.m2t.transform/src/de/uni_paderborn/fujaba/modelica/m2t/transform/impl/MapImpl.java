@@ -91,7 +91,7 @@ public class MapImpl extends EObjectImpl implements Map {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate GET_EOBJECT__EINVOCATION_DELEGATE = ((EOperation.Internal)TransformPackage.Literals.MAP.getEOperations().get(0)).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate GET_EOBJECT__EINVOCATION_DELEGATE = ((EOperation.Internal)TransformPackage.Literals.MAP___GET__EOBJECT).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,6 +179,20 @@ public class MapImpl extends EObjectImpl implements Map {
 				return entries != null && !entries.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case TransformPackage.MAP___GET__EOBJECT:
+				return get((EObject)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //MapImpl

@@ -6,6 +6,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -87,6 +88,24 @@ public interface TransformPackage extends EPackage {
 	int MAP_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Get</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP___GET__EOBJECT = 0;
+
+	/**
+	 * The number of operations of the '<em>Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_OPERATION_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.impl.RootImpl <em>Root</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,6 +132,15 @@ public interface TransformPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Root</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.impl.EntryImpl <em>Entry</em>}' class.
@@ -150,6 +178,15 @@ public interface TransformPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.impl.RegionInstanceImpl <em>Region Instance</em>}' class.
@@ -262,6 +299,187 @@ public interface TransformPackage extends EPackage {
 
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___ECLASS = RealtimestatechartPackage.REGION___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___EIS_PROXY = RealtimestatechartPackage.REGION___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___ERESOURCE = RealtimestatechartPackage.REGION___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___ECONTAINER = RealtimestatechartPackage.REGION___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___ECONTAINING_FEATURE = RealtimestatechartPackage.REGION___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___ECONTAINMENT_FEATURE = RealtimestatechartPackage.REGION___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___ECONTENTS = RealtimestatechartPackage.REGION___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___EALL_CONTENTS = RealtimestatechartPackage.REGION___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___ECROSS_REFERENCES = RealtimestatechartPackage.REGION___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___EGET__ESTRUCTURALFEATURE = RealtimestatechartPackage.REGION___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = RealtimestatechartPackage.REGION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = RealtimestatechartPackage.REGION___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = RealtimestatechartPackage.REGION___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___EUNSET__ESTRUCTURALFEATURE = RealtimestatechartPackage.REGION___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___EINVOKE__EOPERATION_ELIST = RealtimestatechartPackage.REGION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___GET_EXTENSION__ECLASS = RealtimestatechartPackage.REGION___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___PROVIDE_EXTENSION__ECLASS = RealtimestatechartPackage.REGION___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___GET_ANNOTATION__STRING = RealtimestatechartPackage.REGION___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE___PROVIDE_ANNOTATION__STRING = RealtimestatechartPackage.REGION___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Region Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_INSTANCE_OPERATION_COUNT = RealtimestatechartPackage.REGION_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.Map <em>Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -281,6 +499,16 @@ public interface TransformPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMap_Entries();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.Map#get(org.eclipse.emf.ecore.EObject) <em>Get</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get</em>' operation.
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.Map#get(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getMap__Get__EObject();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.Root <em>Root</em>}'.
@@ -417,6 +645,14 @@ public interface TransformPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MAP__ENTRIES = eINSTANCE.getMap_Entries();
+
+		/**
+		 * The meta object literal for the '<em><b>Get</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAP___GET__EOBJECT = eINSTANCE.getMap__Get__EObject();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.impl.RootImpl <em>Root</em>}' class.

@@ -169,6 +169,15 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getMap__Get__EObject() {
+		return mapEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoot() {
 		return rootEClass;
 	}
@@ -275,6 +284,7 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		// Create classes and their features
 		mapEClass = createEClass(MAP);
 		createEReference(mapEClass, MAP__ENTRIES);
+		createEOperation(mapEClass, MAP___GET__EOBJECT);
 
 		rootEClass = createEClass(ROOT);
 		createEReference(rootEClass, ROOT__MAPS);
@@ -323,11 +333,11 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		// Add supertypes to classes
 		regionInstanceEClass.getESuperTypes().add(theRealtimestatechartPackage.getRegion());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMap_Entries(), this.getEntry(), null, "entries", null, 0, -1, Map.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(mapEClass, theRealtimestatechartPackage.getRealtimeStatechart(), "get", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getMap__Get__EObject(), theRealtimestatechartPackage.getRealtimeStatechart(), "get", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEObject(), "instance", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -359,14 +369,14 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
 		   new String[] {
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });			
+		   });
 	}
 
 	/**
@@ -376,24 +386,24 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
-		  (mapEClass.getEOperations().get(0), 
+		  (getMap__Get__EObject(), 
 		   source, 
 		   new String[] {
-			 "body", "let res : OrderedSet(realtimestatechart::RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(realtimestatechart::RealtimeStatechart))->asOrderedSet()\nin\nif res->isEmpty() then\n\tnull\nelse\n\tres->first()\nendif"
-		   });		
+			 "body", "let res : OrderedSet(muml::realtimestatechart::RealtimeStatechart) = entries->select(key = instance)->collect(value.oclAsType(muml::realtimestatechart::RealtimeStatechart))->asOrderedSet()\nin\nif res->isEmpty() then\n\tnull\nelse\n\tres->first()\nendif"
+		   });	
 		addAnnotation
 		  (getRegionInstance_EmbedsSinglePortStatechart(), 
 		   source, 
 		   new String[] {
 			 "derivation", "let behavioralElement : behavior::BehavioralElement\n=\n\tinstanceOf.embeddedStatechart.behavioralElement\nin\nnot behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(component::DiscretePort)"
-		   });		
+		   });	
 		addAnnotation
 		  (getRegionInstance_EmbedsMultiPortStatechart(), 
 		   source, 
 		   new String[] {
-			 "derivation", "instanceOf.embeddedStatechart.behavioralElement.oclIsUndefined()\nand\nlet r : realtimestatechart::Region =\n\tinstanceOf.embeddedStatechart.states->any(true).embeddedRegions->any(embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort))\nin\nnot r.oclIsUndefined()\nand not r.embeddedStatechart.behavioralElement.oclIsUndefined()\nand r.embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort)\nand r.embeddedStatechart.behavioralElement.oclAsType(component::DiscretePort).multiPort"
+			 "derivation", "instanceOf.embeddedStatechart.behavioralElement.oclIsUndefined()\nand\nlet r : muml::realtimestatechart::Region =\n\tinstanceOf.embeddedStatechart.states->any(true).embeddedRegions->any(embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort))\nin\nnot r.oclIsUndefined()\nand not r.embeddedStatechart.behavioralElement.oclIsUndefined()\nand r.embeddedStatechart.behavioralElement.oclIsTypeOf(component::DiscretePort)\nand r.embeddedStatechart.behavioralElement.oclAsType(component::DiscretePort).multiPort"
 		   });
 	}
 
