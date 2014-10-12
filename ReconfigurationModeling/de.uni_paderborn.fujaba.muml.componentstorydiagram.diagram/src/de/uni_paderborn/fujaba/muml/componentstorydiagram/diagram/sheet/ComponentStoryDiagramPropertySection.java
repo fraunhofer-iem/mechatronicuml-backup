@@ -33,30 +33,6 @@ public class ComponentStoryDiagramPropertySection extends
 		DefaultPropertySection implements IPropertySourceProvider {
 
 	/**
-	 * @generated
-	 */
-	public IPropertySource getPropertySource(Object object) {
-		if (object instanceof IPropertySource) {
-			return (IPropertySource) object;
-		}
-		AdapterFactory af = getAdapterFactory(object);
-		if (af != null) {
-			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
-					IItemPropertySource.class);
-			if (ips != null) {
-				EditingDomain ed = getEditingDomainFor(object);
-				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
-						object, ips, af, ed, this);
-			}
-		}
-		if (object instanceof IAdaptable) {
-			return (IPropertySource) ((IAdaptable) object)
-					.getAdapter(IPropertySource.class);
-		}
-		return null;
-	}
-
-	/**
 	 * Modify/unwrap selection.
 	 * @generated
 	 */

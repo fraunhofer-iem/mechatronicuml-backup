@@ -95,11 +95,11 @@ public class SinglePortVariableEditPart extends ShapeNodeEditPart {
 
 		installEditPolicy(
 				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
 
