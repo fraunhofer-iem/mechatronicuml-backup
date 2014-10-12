@@ -13,7 +13,7 @@ transformation cic2graphviz(in instanceModel : INSTANCE, out dotModel : DOT)
 
 main() {
 	// for testing
-	// instanceModel.objects()[ComponentInstanceConfiguration]->select(name = 'systemconfiguration')->map cic2graphviz();
+	//var cicSet : Set(ComponentInstanceConfiguration) :=  instanceModel.objects()[ComponentInstanceConfiguration]->select(name = 'OvertakerVehicle');
 	var cicSet : Set(ComponentInstanceConfiguration) := instanceModel.rootObjects()[ComponentInstanceConfiguration];
 	var size : Integer := cicSet->size();
 	assert fatal (size = 1) with log("unexpected cicSet size: " + size.toString());
@@ -43,19 +43,19 @@ query DOT::getOrphans() : Set(Element) {
 mapping ComponentInstanceConfiguration::cic2graphviz() : DotGraph
 	inherits EObject::initialGraphSettings, EObject::initialNodeSettings, EObject::initialEdgeSettings
 {
+	if (not self.parentStructuredComponentInstance.oclIsUndefined()) then {
+		nodes := self.parentStructuredComponentInstance.portInstances->map portInstance2node()->flatten();
+	} endif;
 	subgraphs := self.componentInstances->map componentInstance2graph();
 	edges := self.portConnectorInstances->map connectorInstance2edges()->flatten();
-	//if (not self.parentStructuredComponentInstance.oclIsUndefined()) then {
-	//	nodes := self.map structuredComponentInstancePortInstances2node();
-	//} endif;
 	edgeSettings := edgeSettings->select(null);
 }
 
-/* mapping ComponentInstanceConfiguration::structuredComponentInstancePortInstances2node() : Sequence(DotNode)
+mapping ComponentInstanceConfiguration::structuredComponentInstancePortInstances2node() : Sequence(DotNode)
 	when {not self.parentStructuredComponentInstance.oclIsUndefined()}
 {
 	self.parentStructuredComponentInstance.portInstances->map portInstance2node();
-} */
+}
 
 mapping ComponentInstance::componentInstance2graph() : DotGraph {
 	id := self.getName();
@@ -141,13 +141,38 @@ helper MessageType::createEdge(connectorInstance : PortConnectorInstance, isSour
 
 mapping PortConnectorInstance::discreteConnectorInstance2edge(messageType : MessageType, isSourceSender : Boolean) : DotEdge {
 	init {
-		var source : PortInstance := if isSourceSender then self.portInstances->at(1) else self.portInstances->at(2) endif;
-		var target : PortInstance := if isSourceSender then self.portInstances->at(2) else self.portInstances->at(1) endif;
+		var sender : PortInstance := if isSourceSender then self.portInstances->at(1) else self.portInstances->at(2) endif;
+		var receiver : PortInstance := if isSourceSender then self.portInstances->at(2) else self.portInstances->at(1) endif;
 		result := new DotEdge(
-			source.map outPortInstance2node(messageType),
-			target.map inPortInstance2node(messageType)
+			//sender.map outPortInstance2node(messageType),
+			self.getSenderNode(sender, isSourceSender, messageType),
+			self.getReceiverNode(receiver, isSourceSender, messageType)
 		);
 	}
+}
+
+query PortConnectorInstance::getSenderNode(sender : PortInstance, isSourceSender : Boolean, messageType : MessageType) : DotNode {
+	return if self.oclIsKindOf(DelegationConnectorInstance) then
+		if isSourceSender then
+			sender.map outPortInstance2node(messageType)
+		else
+			sender.map inPortInstance2node(messageType)
+		endif
+	else
+		sender.map outPortInstance2node(messageType)
+	endif;
+}
+
+query PortConnectorInstance::getReceiverNode(receiver : PortInstance, isSourceSender : Boolean, messageType : MessageType) : DotNode {
+	return if self.oclIsKindOf(DelegationConnectorInstance) then
+		if isSourceSender then
+			receiver.map outPortInstance2node(messageType)
+		else
+			receiver.map inPortInstance2node(messageType)
+		endif
+	else
+		receiver.map inPortInstance2node(messageType)
+	endif
 }
 
 mapping PortConnectorInstance::contOrHybConnectorInstance2edges() : Sequence(DotEdge)
