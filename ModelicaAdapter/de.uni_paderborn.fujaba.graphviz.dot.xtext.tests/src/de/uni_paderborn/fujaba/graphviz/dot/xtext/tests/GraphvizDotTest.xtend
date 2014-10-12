@@ -141,4 +141,20 @@ class GraphvizDotTest {
   			'''
   		)
   	}
+  	
+  	@Test
+  	def void parseDoubleInSetting() {
+  		parser.parse(
+  			'''
+			graph {
+				graph [bb="0,0,268,124", margin=0, pad=0, splines=polyline];
+				node [fixedsize=true, label="\N", shape=rect, width="1!"];
+				subgraph cluster_overtaker {
+					graph [bb="8,80,260,116"];
+					overtaker_overtaker1_acceptOvertaking_inputDelegationPort [height=0.5, pos="224,98", width=1];
+				}
+			}
+  			'''
+  		)
+  	}
 }
