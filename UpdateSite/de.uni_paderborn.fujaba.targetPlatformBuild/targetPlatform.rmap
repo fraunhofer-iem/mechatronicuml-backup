@@ -29,9 +29,17 @@
             <rm:uri format="http://download.eclipse.org/eclipse/updates/4.4" />
         </rm:provider>
     </rm:searchPath>
+    
+     <rm:searchPath name="emf-compare">
+        <rm:provider componentTypes="osgi.bundle,eclipse.feature"
+            readerType="p2" source="false" mutable="false">
+            <rm:uri format="http://download.eclipse.org/modeling/emf/compare/updates/releases/latest" />
+        </rm:provider>
+    </rm:searchPath>
 
     <rm:locator searchPathRef="local" failOnError="false" />
     <rm:locator searchPathRef="epp" failOnError="false" />
     <rm:locator searchPathRef="luna-releases" failOnError="false" />
     <rm:locator searchPathRef="luna-updates" failOnError="true" />
+     <rm:locator searchPathRef="emf-compare" failOnError="true" />
 </rm:rmap>
