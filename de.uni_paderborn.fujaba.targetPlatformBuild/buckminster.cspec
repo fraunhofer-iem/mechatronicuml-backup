@@ -7,5 +7,6 @@
         <cs:dependency name="org.eclipse.xtext.sdk.feature.group" componentType="eclipse.feature"/>
         <cs:dependency name="org.eclipse.ocl.examples.feature.group" componentType="eclipse.feature"/>       
         <cs:dependency name="org.eclipse.cdt.feature.group" componentType="eclipse.feature"/> 
+        <cs:dependency name="org.eclipse.emf.compare.feature.group" componentType="eclipse.feature"/> 
     </cs:dependencies>
 </cs:cspec>
