@@ -1351,7 +1351,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7002"
@@ -1392,7 +1392,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7006"
@@ -1469,7 +1469,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7012"
