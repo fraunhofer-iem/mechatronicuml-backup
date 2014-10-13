@@ -131,7 +131,7 @@
           <lowerBound xmi:id="_jk3pUnasEeOh__JNCv2_1A"/>
           <upperBound xmi:id="_jk3pU3asEeOh__JNCv2_1A"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_2nsvIHauEeOh__JNCv2_1A" messageType="_BG8KoHauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _Dy8d4HauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA">
+        <receiverMessageBuffer xmi:id="_2nsvIHauEeOh__JNCv2_1A" name="buffer" messageType="_BG8KoHauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _Dy8d4HauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA">
           <bufferSize xmi:id="_TIkFwHbqEeOvXvgZJk5CuQ" value="2"/>
         </receiverMessageBuffer>
       </roles>
@@ -140,7 +140,7 @@
           <lowerBound xmi:id="_XWC0oHavEeOh__JNCv2_1A"/>
           <upperBound xmi:id="_XWC0oXavEeOh__JNCv2_1A"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_7V2gUHauEeOh__JNCv2_1A" messageType="_BG8KoHauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _Dy8d4HauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA">
+        <receiverMessageBuffer xmi:id="_7V2gUHauEeOh__JNCv2_1A" name="buffer" messageType="_BG8KoHauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _Dy8d4HauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA">
           <bufferSize xmi:id="_UdOLkHbqEeOvXvgZJk5CuQ" value="2"/>
         </receiverMessageBuffer>
       </roles>
@@ -161,7 +161,7 @@
           <lowerBound xmi:id="_UQABMo9PEeOh26Tom612Wg"/>
           <upperBound xmi:id="_UQABM49PEeOh26Tom612Wg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_aQ-2wI9QEeOh26Tom612Wg" messageType="_m5UFsI9PEeOh26Tom612Wg _o2b5sI9PEeOh26Tom612Wg _qFu-YI9PEeOh26Tom612Wg _rgMKMI9PEeOh26Tom612Wg">
+        <receiverMessageBuffer xmi:id="_aQ-2wI9QEeOh26Tom612Wg" name="buffer" messageType="_m5UFsI9PEeOh26Tom612Wg _o2b5sI9PEeOh26Tom612Wg _qFu-YI9PEeOh26Tom612Wg _rgMKMI9PEeOh26Tom612Wg">
           <bufferSize xmi:id="_cJVfgI9QEeOh26Tom612Wg"/>
         </receiverMessageBuffer>
       </roles>
@@ -170,7 +170,7 @@
           <lowerBound xmi:id="_ci0L8I9PEeOh26Tom612Wg"/>
           <upperBound xmi:id="_ci988I9PEeOh26Tom612Wg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_fuUCII9QEeOh26Tom612Wg" messageType="_lIjSsI9PEeOh26Tom612Wg _n6Vd0I9PEeOh26Tom612Wg">
+        <receiverMessageBuffer xmi:id="_fuUCII9QEeOh26Tom612Wg" name="buffer" messageType="_lIjSsI9PEeOh26Tom612Wg _n6Vd0I9PEeOh26Tom612Wg">
           <bufferSize xmi:id="_gJ-qcI9QEeOh26Tom612Wg"/>
         </receiverMessageBuffer>
       </roles>
@@ -186,12 +186,12 @@
       </roleConnector>
     </modelElements>
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_qwc3cOo1EeO-8csd75FEHw" name="DistanceTransmission">
-      <roles xmi:id="_qwc3ceo1EeO-8csd75FEHw" connectors="_qwc3feo1EeO-8csd75FEHw" behavior="_sKTmleo1EeO-8csd75FEHw" name="provider" senderMessageTypes="_VpUQMeo2EeO-8csd75FEHw" receiverMessageTypes="_VpUQMuo2EeO-8csd75FEHw" adaptationBehavior="_sKTmU-o1EeO-8csd75FEHw" roleAndAdaptationBehavior="_sKTmUOo1EeO-8csd75FEHw">
+      <roles xmi:id="_qwc3ceo1EeO-8csd75FEHw" connectors="_qwc3feo1EeO-8csd75FEHw" behavior="_sKTmUOo1EeO-8csd75FEHw" name="provider" senderMessageTypes="_VpUQMeo2EeO-8csd75FEHw" receiverMessageTypes="_VpUQMuo2EeO-8csd75FEHw" adaptationBehavior="_sKTmU-o1EeO-8csd75FEHw" subroleBehavior="_sKTmleo1EeO-8csd75FEHw">
         <cardinality xmi:id="_qwc3cuo1EeO-8csd75FEHw">
-          <lowerBound xmi:id="_iFWnwPR2EeOKmIQk3FL8KA" value="0"/>
-          <upperBound xmi:id="_iFfxsPR2EeOKmIQk3FL8KA" value="10"/>
+          <lowerBound xmi:id="_VOCh4FMPEeS30sDV1VCZQA" value="0"/>
+          <upperBound xmi:id="_VOCh4VMPEeS30sDV1VCZQA" value="10"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_qwc3deo1EeO-8csd75FEHw" messageType="_VpUQMuo2EeO-8csd75FEHw">
+        <receiverMessageBuffer xmi:id="_qwc3deo1EeO-8csd75FEHw" name="buffer" messageType="_VpUQMuo2EeO-8csd75FEHw">
           <bufferSize xmi:id="_qwc3duo1EeO-8csd75FEHw"/>
         </receiverMessageBuffer>
       </roles>
@@ -200,7 +200,7 @@
           <lowerBound xmi:id="_qwc3eeo1EeO-8csd75FEHw" value="0"/>
           <upperBound xmi:id="_qwc3euo1EeO-8csd75FEHw"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_qwc3e-o1EeO-8csd75FEHw" messageType="_VpUQMeo2EeO-8csd75FEHw">
+        <receiverMessageBuffer xmi:id="_qwc3e-o1EeO-8csd75FEHw" name="buffer" messageType="_VpUQMeo2EeO-8csd75FEHw">
           <bufferSize xmi:id="_qwc3fOo1EeO-8csd75FEHw"/>
         </receiverMessageBuffer>
       </roles>
@@ -221,7 +221,7 @@
           <lowerBound xmi:id="_EDhPc-o8EeO-8csd75FEHw"/>
           <upperBound xmi:id="_EDhPdOo8EeO-8csd75FEHw"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_EDhPdeo8EeO-8csd75FEHw" messageType="_cSf79uo8EeO-8csd75FEHw _cSf7-Oo8EeO-8csd75FEHw _cSf79Oo8EeO-8csd75FEHw _cSf78-o8EeO-8csd75FEHw _cSf78eo8EeO-8csd75FEHw">
+        <receiverMessageBuffer xmi:id="_EDhPdeo8EeO-8csd75FEHw" name="buffer" messageType="_cSf79uo8EeO-8csd75FEHw _cSf7-Oo8EeO-8csd75FEHw _cSf79Oo8EeO-8csd75FEHw _cSf78-o8EeO-8csd75FEHw _cSf78eo8EeO-8csd75FEHw">
           <bufferSize xmi:id="_EDhPduo8EeO-8csd75FEHw"/>
         </receiverMessageBuffer>
       </roles>
@@ -230,7 +230,7 @@
           <lowerBound xmi:id="_EDhPeeo8EeO-8csd75FEHw"/>
           <upperBound xmi:id="_EDhPeuo8EeO-8csd75FEHw"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_EDhPe-o8EeO-8csd75FEHw" messageType="_cSf79eo8EeO-8csd75FEHw _cSf79-o8EeO-8csd75FEHw _cSf78uo8EeO-8csd75FEHw">
+        <receiverMessageBuffer xmi:id="_EDhPe-o8EeO-8csd75FEHw" name="buffer" messageType="_cSf79eo8EeO-8csd75FEHw _cSf79-o8EeO-8csd75FEHw _cSf78uo8EeO-8csd75FEHw">
           <bufferSize xmi:id="_EDhPfOo8EeO-8csd75FEHw"/>
         </receiverMessageBuffer>
       </roles>
@@ -246,12 +246,12 @@
       </roleConnector>
     </modelElements>
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_uz92IPR7EeOKmIQk3FL8KA" name="ConvoyCoordination">
-      <roles xmi:id="_uz92IfR7EeOKmIQk3FL8KA" connectors="_uz92LfR7EeOKmIQk3FL8KA" behavior="_yyN1ZvR7EeOKmIQk3FL8KA" name="coordinator" senderMessageTypes="_wvJwdPR7EeOKmIQk3FL8KA _wvJwc_R7EeOKmIQk3FL8KA _wvJwePR7EeOKmIQk3FL8KA _wvJwdvR7EeOKmIQk3FL8KA _wvJwdfR7EeOKmIQk3FL8KA _wvJwd_R7EeOKmIQk3FL8KA _wvJwcfR7EeOKmIQk3FL8KA" receiverMessageTypes="_wvJwgfR7EeOKmIQk3FL8KA _wvJwgvR7EeOKmIQk3FL8KA _wvJwfvR7EeOKmIQk3FL8KA _wvJwf_R7EeOKmIQk3FL8KA _wvJwfPR7EeOKmIQk3FL8KA _wvJwffR7EeOKmIQk3FL8KA" adaptationBehavior="_yyN0bvR7EeOKmIQk3FL8KA" roleAndAdaptationBehavior="_yyN0YPR7EeOKmIQk3FL8KA">
+      <roles xmi:id="_uz92IfR7EeOKmIQk3FL8KA" connectors="_uz92LfR7EeOKmIQk3FL8KA" behavior="_yyN0YPR7EeOKmIQk3FL8KA" name="coordinator" senderMessageTypes="_wvJwdPR7EeOKmIQk3FL8KA _wvJwc_R7EeOKmIQk3FL8KA _wvJwePR7EeOKmIQk3FL8KA _wvJwdvR7EeOKmIQk3FL8KA _wvJwdfR7EeOKmIQk3FL8KA _wvJwd_R7EeOKmIQk3FL8KA _wvJwcfR7EeOKmIQk3FL8KA" receiverMessageTypes="_wvJwgfR7EeOKmIQk3FL8KA _wvJwgvR7EeOKmIQk3FL8KA _wvJwfvR7EeOKmIQk3FL8KA _wvJwf_R7EeOKmIQk3FL8KA _wvJwfPR7EeOKmIQk3FL8KA _wvJwffR7EeOKmIQk3FL8KA" adaptationBehavior="_yyN0bvR7EeOKmIQk3FL8KA" subroleBehavior="_yyN1ZvR7EeOKmIQk3FL8KA">
         <cardinality xmi:id="_uz92IvR7EeOKmIQk3FL8KA">
-          <lowerBound xmi:id="_RmA7MAUDEeSn_-l-OlOxjg" value="0"/>
-          <upperBound xmi:id="_RmA7MQUDEeSn_-l-OlOxjg" value="10"/>
+          <lowerBound xmi:id="_BZVL0FMQEeS30sDV1VCZQA" value="0"/>
+          <upperBound xmi:id="_BZVL0VMQEeS30sDV1VCZQA" value="10"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_uz92JfR7EeOKmIQk3FL8KA" messageType="_wvJwgfR7EeOKmIQk3FL8KA _wvJwgvR7EeOKmIQk3FL8KA _wvJwfvR7EeOKmIQk3FL8KA _wvJwf_R7EeOKmIQk3FL8KA _wvJwfPR7EeOKmIQk3FL8KA _wvJwffR7EeOKmIQk3FL8KA">
+        <receiverMessageBuffer xmi:id="_uz92JfR7EeOKmIQk3FL8KA" name="buffer" messageType="_wvJwgfR7EeOKmIQk3FL8KA _wvJwgvR7EeOKmIQk3FL8KA _wvJwfvR7EeOKmIQk3FL8KA _wvJwf_R7EeOKmIQk3FL8KA _wvJwfPR7EeOKmIQk3FL8KA _wvJwffR7EeOKmIQk3FL8KA">
           <bufferSize xmi:id="_uz92JvR7EeOKmIQk3FL8KA" value="10"/>
         </receiverMessageBuffer>
       </roles>
@@ -260,7 +260,7 @@
           <lowerBound xmi:id="_uz92KfR7EeOKmIQk3FL8KA"/>
           <upperBound xmi:id="_uz92KvR7EeOKmIQk3FL8KA"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_uz92K_R7EeOKmIQk3FL8KA" messageType="_wvJwdPR7EeOKmIQk3FL8KA _wvJwc_R7EeOKmIQk3FL8KA _wvJwePR7EeOKmIQk3FL8KA _wvJwdvR7EeOKmIQk3FL8KA _wvJwdfR7EeOKmIQk3FL8KA _wvJwd_R7EeOKmIQk3FL8KA _wvJwcfR7EeOKmIQk3FL8KA">
+        <receiverMessageBuffer xmi:id="_uz92K_R7EeOKmIQk3FL8KA" name="buffer" messageType="_wvJwdPR7EeOKmIQk3FL8KA _wvJwc_R7EeOKmIQk3FL8KA _wvJwePR7EeOKmIQk3FL8KA _wvJwdvR7EeOKmIQk3FL8KA _wvJwdfR7EeOKmIQk3FL8KA _wvJwd_R7EeOKmIQk3FL8KA _wvJwcfR7EeOKmIQk3FL8KA">
           <bufferSize xmi:id="_uz92LPR7EeOKmIQk3FL8KA" value="10"/>
         </receiverMessageBuffer>
       </roles>
@@ -921,7 +921,7 @@
       <states xmi:id="_cLqqQI_eEeOQ4ebIA3G7xw" name="Finished" incomingTransitions="_eJGAQI_eEeOQ4ebIA3G7xw" final="true"/>
       <clocks xmi:id="_TZsbII_aEeOlIYoL3yr3nQ" name="c2"/>
     </modelElements>
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_sKTmUOo1EeO-8csd75FEHw" name="provider_role">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_sKTmUOo1EeO-8csd75FEHw" name="provider_role" behavioralElement="_qwc3ceo1EeO-8csd75FEHw">
       <states xmi:id="_sKTmUeo1EeO-8csd75FEHw" name="Provider_Main" initial="true">
         <embeddedRegions xmi:id="_sKTmUuo1EeO-8csd75FEHw" priority="1">
           <embeddedStatechart xmi:id="_sKTmU-o1EeO-8csd75FEHw" name="adaptation">
@@ -1032,7 +1032,7 @@
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_sKTmlOo1EeO-8csd75FEHw" priority="2">
-          <embeddedStatechart xmi:id="_sKTmleo1EeO-8csd75FEHw" name="subrole" behavioralElement="_qwc3ceo1EeO-8csd75FEHw">
+          <embeddedStatechart xmi:id="_sKTmleo1EeO-8csd75FEHw" name="subrole">
             <transitions xmi:id="_sKTmluo1EeO-8csd75FEHw" priority="1" target="_sKTmweo1EeO-8csd75FEHw" source="_sKTmvOo1EeO-8csd75FEHw" clockResets="_sKTmxeo1EeO-8csd75FEHw">
               <synchronization xmi:id="_sKTml-o1EeO-8csd75FEHw" syncChannel="_sKTmxuo1EeO-8csd75FEHw" kind="RECEIVE">
                 <selectorExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_sKTmmOo1EeO-8csd75FEHw">
@@ -1367,7 +1367,7 @@
       </states>
       <clocks xmi:id="_FekRneo8EeO-8csd75FEHw" name="c2"/>
     </modelElements>
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yyN0YPR7EeOKmIQk3FL8KA" name="ProfileTransmission_coordinator">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yyN0YPR7EeOKmIQk3FL8KA" name="ProfileTransmission_coordinator" behavioralElement="_uz92IfR7EeOKmIQk3FL8KA">
       <operations xmi:id="_yyN0YfR7EeOKmIQk3FL8KA" name="isMemberPossible" returnType="_hm9EU7iwEeKp46K0r5yxrg"/>
       <operations xmi:id="_yyN0YvR7EeOKmIQk3FL8KA" name="calculateProfiles" returnType="_hm9EU7iwEeKp46K0r5yxrg"/>
       <variables xmi:id="_yyN0Y_R7EeOKmIQk3FL8KA" name="n" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
@@ -1771,7 +1771,7 @@
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_yyN1ZfR7EeOKmIQk3FL8KA" priority="2">
-          <embeddedStatechart xmi:id="_yyN1ZvR7EeOKmIQk3FL8KA" name="Coordinator_subRole" behavioralElement="_uz92IfR7EeOKmIQk3FL8KA">
+          <embeddedStatechart xmi:id="_yyN1ZvR7EeOKmIQk3FL8KA" name="Coordinator_subRole">
             <variables xmi:id="_yyN1Z_R7EeOKmIQk3FL8KA" name="newPos" dataType="_hm9EVriwEeKp46K0r5yxrg">
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1aPR7EeOKmIQk3FL8KA" value="1"/>
             </variables>
@@ -3050,9 +3050,9 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_BbBd0AUEEeSn_-l-OlOxjg" name="RefGen" behavioralElement="_BXanEO6FEeOKI4bZ_bxwuQ">
-      <states xmi:id="_BbBd0QUEEeSn_-l-OlOxjg" initial="true">
+      <states xmi:id="_BbBd0QUEEeSn_-l-OlOxjg" name="Main" initial="true">
         <embeddedRegions xmi:id="_BbBd0gUEEeSn_-l-OlOxjg" priority="1">
-          <embeddedStatechart xmi:id="_BbBd0wUEEeSn_-l-OlOxjg" name="provider_role_refDistProvider">
+          <embeddedStatechart xmi:id="_BbBd0wUEEeSn_-l-OlOxjg" name="provider_role_refDistProvider" behavioralElement="_FpmN8O6FEeOKI4bZ_bxwuQ">
             <states xmi:id="_BbBd1AUEEeSn_-l-OlOxjg" name="Provider_Main" initial="true">
               <embeddedRegions xmi:id="_BbBd1QUEEeSn_-l-OlOxjg" priority="1">
                 <embeddedStatechart xmi:id="_BbBd1gUEEeSn_-l-OlOxjg" name="adaptation">
@@ -3163,7 +3163,7 @@
                 </embeddedStatechart>
               </embeddedRegions>
               <embeddedRegions xmi:id="_BbBeFwUEEeSn_-l-OlOxjg" priority="2">
-                <embeddedStatechart xmi:id="_BbBeGAUEEeSn_-l-OlOxjg" name="subrole" behavioralElement="_FpmN8O6FEeOKI4bZ_bxwuQ">
+                <embeddedStatechart xmi:id="_BbBeGAUEEeSn_-l-OlOxjg" name="subrole">
                   <transitions xmi:id="_BbBeGQUEEeSn_-l-OlOxjg" priority="1" target="_BbBeRAUEEeSn_-l-OlOxjg" source="_BbBePwUEEeSn_-l-OlOxjg" clockResets="_BbBeSAUEEeSn_-l-OlOxjg">
                     <synchronization xmi:id="_BbBeGgUEEeSn_-l-OlOxjg" syncChannel="_BbBeSQUEEeSn_-l-OlOxjg" kind="RECEIVE">
                       <selectorExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_BbBeGwUEEeSn_-l-OlOxjg">
@@ -3244,7 +3244,7 @@
                   <clocks xmi:id="_BbBeSAUEEeSn_-l-OlOxjg" name="c1"/>
                 </embeddedStatechart>
               </embeddedRegions>
-              <channels xmi:id="_BbBeSQUEEeSn_-l-OlOxjg" name="send" selectorType="_qwc3ceo1EeO-8csd75FEHw"/>
+              <channels xmi:id="_BbBeSQUEEeSn_-l-OlOxjg" name="send" selectorType="_FpmN8O6FEeOKI4bZ_bxwuQ"/>
               <channels xmi:id="_BbBeSgUEEeSn_-l-OlOxjg" name="done"/>
             </states>
           </embeddedStatechart>
@@ -3298,10 +3298,6 @@
             <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gxay7e5kEeO0hMrCmuqTKA" name="messageBufferSubRole" outgoingLink="_gxazB-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
-            <attributeAssignment xmi:id="_gxay7u5kEeO0hMrCmuqTKA">
-              <attribute href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer/bufferSize"/>
-              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gxay7-5kEeO0hMrCmuqTKA" expressionText="1" language="OCL" languageVersion="1.0"/>
-            </attributeAssignment>
             <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gxay8O5kEeO0hMrCmuqTKA" name="subRoleInstance" incomingLink="_gxazB-5kEeO0hMrCmuqTKA _gxazC-5kEeO0hMrCmuqTKA" outgoingLink="_gxazCO5kEeO0hMrCmuqTKA _gxazCe5kEeO0hMrCmuqTKA _gxazCu5kEeO0hMrCmuqTKA _gxazDO5kEeO0hMrCmuqTKA _gxazEe5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
@@ -3343,10 +3339,6 @@
             <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
           </variable>
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_gxay_-5kEeO0hMrCmuqTKA" name="messageBufferSingleRoleInstance" incomingLink="_gxazG-5kEeO0hMrCmuqTKA" bindingOperator="CREATE">
-            <attributeAssignment xmi:id="_gxazAO5kEeO0hMrCmuqTKA">
-              <attribute href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer/bufferSize"/>
-              <valueExpression xsi:type="expr:TextualExpression" xmi:id="_gxazAe5kEeO0hMrCmuqTKA" expressionText="1" language="OCL" languageVersion="1.0"/>
-            </attributeAssignment>
             <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeMessageBuffer"/>
           </variable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_gxazAu5kEeO0hMrCmuqTKA" name="link" source="_gxay5e5kEeO0hMrCmuqTKA" target="_gxay5u5kEeO0hMrCmuqTKA">
@@ -3389,7 +3381,7 @@
             <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/instanceOf"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_gxazD-5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay8-5kEeO0hMrCmuqTKA" target="_gxay6u5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/active"/>
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/activeVertex"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_gxazEO5kEeO0hMrCmuqTKA" name="link" source="_gxay5-5kEeO0hMrCmuqTKA" target="_gxay9O5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorEndpoint/connectors"/>
@@ -3410,7 +3402,7 @@
             <targetEnd href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_gxazFu5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay--5kEeO0hMrCmuqTKA" target="_gxay9u5kEeO0hMrCmuqTKA">
-            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/active"/>
+            <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/activeVertex"/>
           </linkVariable>
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_gxazF-5kEeO0hMrCmuqTKA" name="link" bindingOperator="CREATE" source="_gxay--5kEeO0hMrCmuqTKA" target="_gxay-u5kEeO0hMrCmuqTKA">
             <targetEnd href="http://www.fujaba.de/muml/runtime/0.4.0#//RealtimeStatechartInstance/instanceOf"/>
@@ -4618,12 +4610,12 @@
           <upperBound xmi:id="_UYNPoe8CEeOkfud6pZP9gQ"/>
         </cardinality>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_FpmN8O6FEeOKI4bZ_bxwuQ" name="refDistProvider" behavior="_BbBeGAUEEeSn_-l-OlOxjg" senderMessageTypes="_VpUQMeo2EeO-8csd75FEHw" receiverMessageTypes="_VpUQMuo2EeO-8csd75FEHw" roleAndAdaptationBehavior="_BbBd0wUEEeSn_-l-OlOxjg" refinedRole="_qwc3ceo1EeO-8csd75FEHw">
+      <ports xsi:type="component:DiscretePort" xmi:id="_FpmN8O6FEeOKI4bZ_bxwuQ" name="refDistProvider" behavior="_BbBd0wUEEeSn_-l-OlOxjg" senderMessageTypes="_VpUQMeo2EeO-8csd75FEHw" receiverMessageTypes="_VpUQMuo2EeO-8csd75FEHw" adaptationBehavior="_BbBd1gUEEeSn_-l-OlOxjg" subroleBehavior="_BbBeGAUEEeSn_-l-OlOxjg" refinedRole="_qwc3ceo1EeO-8csd75FEHw">
         <cardinality xmi:id="_Babn8AUEEeSn_-l-OlOxjg">
-          <lowerBound xmi:id="_T2DOsAUEEeSn_-l-OlOxjg"/>
-          <upperBound xmi:id="_T2DOsQUEEeSn_-l-OlOxjg"/>
+          <lowerBound xmi:id="_PMzGQFMREeS30sDV1VCZQA"/>
+          <upperBound xmi:id="_PM8QMFMREeS30sDV1VCZQA" value="10"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_Ba4T4AUEEeSn_-l-OlOxjg" messageType="_VpUQMuo2EeO-8csd75FEHw">
+        <receiverMessageBuffer xmi:id="_Ba4T4AUEEeSn_-l-OlOxjg" name="buffer" messageType="_VpUQMuo2EeO-8csd75FEHw">
           <bufferSize xmi:id="_Ba4T4QUEEeSn_-l-OlOxjg"/>
         </receiverMessageBuffer>
       </ports>
