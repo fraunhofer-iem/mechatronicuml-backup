@@ -18,90 +18,87 @@
    </license>
 
    <requires>
-      <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.4.0.qualifier"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.storydriven.core"/>
-      <import plugin="de.uni_paderborn.fujaba.common" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.edit" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram" version="0.3.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.component.diagram" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.component.diagram.custom" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.editor"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.core.expressions"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.ui.views"/>
-      <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="de.uni_paderborn.fujaba.muml"/>
+      <import plugin="org.storydriven.storydiagrams"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.componentstorypattern" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.editor"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <import plugin="de.uni_paderborn.fujaba.common"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.common"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.eclipse.gmf.tooling.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.gmf.runtime.emf.core"/>
       <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
       <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
       <import plugin="org.eclipse.draw2d"/>
-      <import plugin="org.eclipse.gef"/>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.storydriven.core.edit"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
+      <import plugin="org.storydriven.storydiagrams.edit"/>
       <import plugin="org.eclipse.emf.validation"/>
-      <import plugin="org.eclipse.gmf.tooling.runtime"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.runtime"/>
+      <import plugin="org.storydriven.core.edit.properties"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.componentstorypattern.edit" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.7.0" match="greaterOrEqual"/>
-      <import plugin="de.upb.swt.core.ui.properties" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.core.ui" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram.custom" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.diagram" version="0.2.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.storydiagrams.editor" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.upb.swt.core.ui.properties" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="de.uni_paderborn.fujaba.common" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.properties" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.edit" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.component.diagram.custom" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.component.diagram"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram.sdm.transforms" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.core" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reachanalysis.sdm" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.edit"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration.common" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.custom" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom" version="0.4.0" match="greaterOrEqual"/>
    </requires>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.reconfiguration"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.reconfiguration.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.reconfiguration.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.reconfiguration.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="de.uni_paderborn.fujaba.muml.componentstorydiagram"
@@ -132,7 +129,104 @@
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.modelinstance.ui.storydiagrams"
+         id="de.uni_paderborn.fujaba.muml.componentstorydiagram.edit.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.componentstorydiagram.sdm.transforms"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.componentstorypattern"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.componentstorypattern.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.reconfiguration"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.reconfiguration.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.reconfiguration.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.reconfiguration.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.custom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
