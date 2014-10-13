@@ -13,6 +13,7 @@
 <rm:locator searchPathRef="SimulinkAdapter" failOnError="false"/>
 <rm:locator searchPathRef="UDBM" failOnError="false"/>
 <rm:locator searchPathRef="C_Codegen" failOnError="false"/>
+<rm:locator searchPathRef="StoryDiagram" failOnError="false"/>
 <rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
 
 
@@ -139,6 +140,15 @@
       <rm:uri format="file:///data/jenkins/jobs/VerificationCore/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
+</rm:searchPath> 
+
+<rm:searchPath name="StoryDiagram">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+        <rm:property key="buckminster.source" value="false"/>
+         <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/StoryDiagram/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+   </rm:provider>
 </rm:searchPath> 
  
 </rm:rmap>
