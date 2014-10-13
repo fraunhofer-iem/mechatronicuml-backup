@@ -1,0 +1,19 @@
+import xpt.GlobalVarOperations;
+import xpt.StreamOperations;
+import xpt.StringOperations;
+
+modeltype gmfgraph uses "http://www.eclipse.org/gmf/2006/GraphicalDefinition";
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+library PatchUtil;
+
+helper gmfgraph::CustomFigure::figureFieldName() : String {
+	return 'my' + self.name.firstToUpper();
+}
+
+helper gmfgraph::ChildAccess::patchedFigureFieldName() : String {
+	if (self.figure.oclIsKindOf(gmfgraph::CustomFigure)) then {
+		return self.figure.oclAsType(gmfgraph::CustomFigure).figureFieldName();
+	} endif;
+	return 'f' + (if self.accessor.startsWith('get') and self.accessor.size() > 3 then self.accessor.substringAfter('get') else self.accessor endif)
+}
