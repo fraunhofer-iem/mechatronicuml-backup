@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="file:./reconf_model.rmap">
+    <cq:rootRequest name="de.uni_paderborn.fujaba.muml.reconfiguration.feature" componentType="eclipse.feature"/>
+    <cq:property key="target.arch" value="*"/>
+    <cq:property key="target.os" value="*"/>
+    <cq:property key="target.ws" value="*"/>
+     <cq:advisorNode namePattern="^org\.eclipse.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.junit.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^com\.google.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^com\.ibm.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^com\.sun.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^com\.javax.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.antl.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^lpg\.runtime.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.objectweb.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.sat4j.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.w3c.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^javax.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePatter=".*" useMaterialization="false" useTargetPlatform="false"/>
+</cq:componentQuery>
