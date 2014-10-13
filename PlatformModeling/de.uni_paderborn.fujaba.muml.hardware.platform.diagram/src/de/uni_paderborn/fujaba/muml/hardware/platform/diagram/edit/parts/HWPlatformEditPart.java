@@ -24,6 +24,29 @@ public class HWPlatformEditPart extends DiagramEditPart {
 	public static final int VISUAL_ID = 1000;
 
 	/**
+	 * MUML FIX, see code comments.
+	 *
+	 * @generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(Request request) {
+
+		@SuppressWarnings("unchecked")
+		Collection<Object> hosts = super.disableCanonicalFor(request);
+
+		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
+		// because GMF supports adding additional commands using Edit Helpers concept,
+		// which could trigger refresh of any canonical edit policy.
+		// So it should be the cleanest solution to disable all canonical edit policies. 
+		EditPart part = this;
+		while (part != null) {
+			hosts.add(part);
+			part = part.getParent();
+		}
+		return hosts;
+	}
+
+	/**
 	 * @generated
 	 */
 	public HWPlatformEditPart(View view) {
@@ -38,9 +61,12 @@ public class HWPlatformEditPart extends DiagramEditPart {
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HWPlatformItemSemanticEditPolicy());
+
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HWPlatformCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HWPlatformCanonicalEditPolicy(
+						true));
+
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(

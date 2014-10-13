@@ -9,7 +9,7 @@
     diagramFileExtension="platform_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
-    templateDirectory="/de.uni_paderborn.fujaba.muml.common/gmf-templates"
+    templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
     pluginDirectory="/de.uni_paderborn.fujaba.muml.hardware.platform.diagram/src">
   <diagram
       visualID="1000"
@@ -1313,7 +1313,7 @@
       <expressions
           body="let isStructuredResourceInstance : Boolean = if self.resourceType.oclIsUndefined() then false else&#xA; self.resourceType.oclIsTypeOf(hwresourceinstance::StructuredResourceInstance) endif in&#xA;let processor : Set(hwresourceinstance::ComputingResourceInstance) = if (isStructuredResourceInstance) then self.resourceType.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::ComputingResourceInstance)).oclAsType(hwresourceinstance::ComputingResourceInstance)->asOrderedSet()&#xA;else Set(hwresourceinstance::ComputingResourceInstance){}  endif in&#xA;let processorString : String = if processor->isEmpty() then 'Processor:' else processor->iterate(p; result : String = 'Processor:' | result.concat(p.frequency.toString().concat(', '))) endif in&#xA;processorString"/>
       <expressions
-          body="let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then &#xA;&#x9;self.name +' :'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name&#xA;else &#xA;&#x9;self.name&#xA;endif &#xA; in&#xA;nameToShow"/>
+          body="let name : String = if (self.name.oclIsUndefined()) then 'Platform' else self.name endif  in&#xA;let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then &#xA;&#x9;self.name +' :'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name&#xA;else &#xA;&#x9;self.name&#xA;endif &#xA; in&#xA;nameToShow"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.oclIsKindOf(hwplatform::HWPortPart) or self.oclIsKindOf(hwplatform::BusPart)"/>
@@ -1341,6 +1341,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.0/@labels.0/@modelFacet"
+        className="BusPartLabelExpressionLabelParser5037"
         viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/BusPart"/>
@@ -1348,6 +1349,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.0/@labels.1/@modelFacet"
+        className="BusPartLabelExpressionLabelParser5038"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/BusPart"/>
@@ -1355,6 +1357,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
+        className="BridgePartLabelExpressionLabelParser5039"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/BridgePart"/>
@@ -1362,6 +1365,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
+        className="HWPortPartLabelExpressionLabelParser5053"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPortPart"/>
@@ -1372,6 +1376,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
+        className="HWPlatformPartLabelExpressionLabelParser5042"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatformPart"/>
@@ -1379,6 +1384,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.2/@modelFacet"
+        className="HWPlatformPartLabelExpressionLabelParser5043"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8"
         editExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
@@ -1387,6 +1393,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        className="DelegationHWPortLabelExpressionLabelParser5044"
         viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
@@ -1394,6 +1401,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.1/@modelFacet"
+        className="ResourcePartLabelExpressionLabelParser5046"
         viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
@@ -1401,6 +1409,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.2/@modelFacet"
+        className="ResourcePartLabelExpressionLabelParser5047"
         viewExpression="//@expressionProviders/@providers.0/@expressions.18"
         editExpression="//@expressionProviders/@providers.0/@expressions.19">
       <expressionContext
@@ -1409,6 +1418,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.3/@modelFacet"
+        className="ResourcePartLabelExpressionLabelParser5048"
         viewExpression="//@expressionProviders/@providers.0/@expressions.20">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
@@ -1416,6 +1426,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.4/@modelFacet"
+        className="ResourcePartLabelExpressionLabelParser5049"
         viewExpression="//@expressionProviders/@providers.0/@expressions.21">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
@@ -1423,6 +1434,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
+        className="HWPlatformLabelExpressionLabelParser5050"
         viewExpression="//@expressionProviders/@providers.0/@expressions.22">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
@@ -1430,6 +1442,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.1/@labels.0/@modelFacet"
+        className="LinkPartLabelExpressionLabelParser6003"
         viewExpression="//@expressionProviders/@providers.0/@expressions.25">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/LinkPart"/>

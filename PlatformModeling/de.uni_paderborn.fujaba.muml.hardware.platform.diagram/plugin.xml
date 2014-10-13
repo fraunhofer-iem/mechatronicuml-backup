@@ -41,7 +41,7 @@
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
-   </extension>
+   	</extension>
 
    	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
       <?gmfgen generated="true"?>
@@ -53,7 +53,7 @@
   	     id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
-   </extension>
+   	</extension>
 	
 	
 	
@@ -609,15 +609,16 @@
              id="property.tab.DiagramPropertySection"
              label="%tab.diagram"/>
           <propertyTab
-             category="domain"
+                       category="extra"
              id="property.tab.domain"
              label="%tab.domain"/>
           <propertyTab
-             category="extra"
+                       category="domain"
              id="property.tab.general"
              label="%tab.general"/>
           <propertyTab
-             category="extra"
+          			 category="domain"
+             afterTab="property.tab.general"
              id="property.tab.documentation"
              label="%tab.documentation"/>
       </propertyTabs>
@@ -668,21 +669,55 @@
          </propertySection>
       </propertySections>
    </extension>
-<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.InitDiagram"
-            nameFilter="*.fujaba"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareInitDiagramFileAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.InitDiagramAction">
-         </action>
-      </objectContribution>
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+<extension
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
+            name="hwplatform">
+         
+         <child
+               class="HWPlatform"
+               packageNsUri="http://www.fujaba.de/muml/hardware/hwplatform/1.0/">
+         </child>
+         
+      </category>
    </extension>
+
+<extension
+         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+      <?gmfgen generated="true"?>
+      <editor
+            preferencesHint="de.uni_paderborn.fujaba.muml.hardware.platform.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramEditorID"
+            editorName="Platform Editor"
+            fileExtension="platform_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
+            modelId="Platform">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/muml/hardware/hwplatform/1.0/"
+               className="HWPlatform">
+         </diagramElement>
+         
+         <topLevelNode
+               domainElement="HWPlatform"
+               semanticHint="2008">
+         </topLevelNode>
+         
+      </editor>
+   </extension>
+
 
 
 

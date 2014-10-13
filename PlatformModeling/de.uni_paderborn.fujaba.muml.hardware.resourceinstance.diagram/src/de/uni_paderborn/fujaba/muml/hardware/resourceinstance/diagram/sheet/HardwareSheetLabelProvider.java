@@ -20,6 +20,17 @@ public class HardwareSheetLabelProvider extends BaseLabelProvider implements
 	 */
 	public String getText(Object element) {
 		element = unwrap(element);
+
+		// BEGIN: Added for MUML #912
+		if (element instanceof IAdaptable) {
+			IAdaptable adaptable = (IAdaptable) element;
+			EObject eObject = (EObject) adaptable.getAdapter(EObject.class);
+			if (eObject != null) {
+				return eObject.eClass().getName();
+			}
+		}
+		// END: Added for MUML #912
+
 		if (element instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup) {
 			return ((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup) element)
 					.getGroupName();

@@ -39,9 +39,19 @@ public class DelegationCreateCommand extends EditElementCommand {
 	public DelegationCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
+		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
+
+		if (container == null) {
+			View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getSourceView(getRequest());
+			View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getTargetView(getRequest());
+			container = deduceContainerUsingViews(sourceView, targetView);
+		}
+		this.container = container;
 	}
 
 	/**
@@ -66,9 +76,23 @@ public class DelegationCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateDelegation_4028(getContainer(),
-						getSource(), getTarget());
+						getSource(), getTarget(), sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorDelegation_4028(
+							getContainer(), getSource(), getTarget(),
+							sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView != null ? targetView : sourceView,
+							errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -159,6 +183,23 @@ public class DelegationCreateCommand extends EditElementCommand {
 				.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) {
 				return (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) element;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Traverse the notation view hierarchy.
+	 * 
+	 * @generated
+	 */
+	private static de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform deduceContainerUsingViews(
+			View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view
+				.eContainer()) {
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) {
+				return (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) view
+						.getElement();
 			}
 		}
 		return null;

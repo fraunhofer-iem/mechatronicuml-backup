@@ -39,9 +39,19 @@ public class LinkInstanceCreateCommand extends EditElementCommand {
 	public LinkInstanceCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
+		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
+
+		if (container == null) {
+			View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getSourceView(getRequest());
+			View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getTargetView(getRequest());
+			container = deduceContainerUsingViews(sourceView, targetView);
+		}
+		this.container = container;
 	}
 
 	/**
@@ -66,9 +76,24 @@ public class LinkInstanceCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateLinkInstance_4009(
-						getContainer(), getSource(), getTarget());
+						getContainer(), getSource(), getTarget(), sourceView,
+						targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorLinkInstance_4009(
+							getContainer(), getSource(), getTarget(),
+							sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView != null ? targetView : sourceView,
+							errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -159,6 +184,23 @@ public class LinkInstanceCreateCommand extends EditElementCommand {
 				.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
 				return (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) element;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Traverse the notation view hierarchy.
+	 * 
+	 * @generated
+	 */
+	private static de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration deduceContainerUsingViews(
+			View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view
+				.eContainer()) {
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) {
+				return (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) view
+						.getElement();
 			}
 		}
 		return null;

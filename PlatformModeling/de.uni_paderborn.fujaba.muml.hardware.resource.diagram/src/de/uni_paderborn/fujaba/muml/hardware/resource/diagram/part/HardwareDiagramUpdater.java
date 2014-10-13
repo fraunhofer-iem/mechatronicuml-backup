@@ -94,6 +94,7 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -120,6 +121,7 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -177,6 +179,7 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 
@@ -212,6 +215,7 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
+
 		return result;
 	}
 

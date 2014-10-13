@@ -322,7 +322,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateProcessorInstanceOwnedCacheInstance_4002(
 				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance source,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance target) {
+				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance target,
+				View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getOwnedCacheInstance() != null) {
 					return false;
@@ -330,7 +331,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			}
 
 			return canExistProcessorInstanceOwnedCacheInstance_4002(source,
-					target);
+					target, sourceView, targetView);
 		}
 
 		/**
@@ -338,8 +339,19 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistProcessorInstanceOwnedCacheInstance_4002(
 				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance source,
-				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance target) {
+				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance target,
+				View sourceView, View targetView) {
 			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorProcessorInstanceOwnedCacheInstance_4002(
+				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance source,
+				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance target,
+				View sourceView, View targetView) {
+			return null;
 		}
 
 	}

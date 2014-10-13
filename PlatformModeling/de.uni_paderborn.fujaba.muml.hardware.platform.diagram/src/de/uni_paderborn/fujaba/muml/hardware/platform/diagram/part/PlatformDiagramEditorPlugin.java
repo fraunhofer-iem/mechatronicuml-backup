@@ -126,6 +126,15 @@ public class PlatformDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
+		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
+		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
+
+		// Custom Factories with positive priority
+		factories.addAll(positivePriorityFactories);
+
+		// Default Factories
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HwplatformItemProviderAdapterFactory());
 		factories
@@ -159,6 +168,9 @@ public class PlatformDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
+
+		// Custom Factories with negative priority
+		factories.addAll(negativePriorityFactories);
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}

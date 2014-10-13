@@ -30,4 +30,43 @@ public class HardwarePropertySection extends DefaultPropertySection implements
 		return selected;
 	}
 
+	/**
+	 * @generated
+	 */
+	protected AdapterFactory getAdapterFactory(Object object) {
+		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
+		if (editingDomain != null) {
+			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
+			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+					.getInstance()
+					.getCustomItemProviderAdapterFactories(
+							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID,
+							true);
+			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+					.getInstance()
+					.getCustomItemProviderAdapterFactories(
+							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID,
+							false);
+
+			// Put all factories into one composed adapter factory.
+			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
+			factories.addAll(positivePriorityFactories);
+			factories.add(defaultFactory);
+			factories.addAll(negativePriorityFactories);
+			return new ComposedAdapterFactory(factories);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected AdapterFactoryEditingDomain getEditingDomainFor(Object object) {
+		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
+			return (AdapterFactoryEditingDomain) getEditingDomain();
+		}
+		return (AdapterFactoryEditingDomain) TransactionUtil
+				.getEditingDomain(object);
+	}
+
 }

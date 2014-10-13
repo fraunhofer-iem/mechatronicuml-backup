@@ -85,7 +85,7 @@
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
-   </extension>
+   	</extension>
 
 <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
       <?gmfgen generated="true"?>
@@ -97,7 +97,7 @@
   	     id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
-   </extension>
+   	</extension>
 
 <extension point="org.eclipse.ui.menus">
 	   <?gmfgen generated="false"?>   
@@ -656,15 +656,16 @@
              id="property.tab.DiagramPropertySection"
              label="%tab.diagram"/>
           <propertyTab
-             category="domain"
+                       category="extra"
              id="property.tab.domain"
              label="%tab.domain"/>
           <propertyTab
-             category="extra"
+                       category="domain"
              id="property.tab.general"
              label="%tab.general"/>
           <propertyTab
-             category="extra"
+          			 category="domain"
+             afterTab="property.tab.general"
              id="property.tab.documentation"
              label="%tab.documentation"/>
       </propertyTabs>
@@ -715,21 +716,65 @@
          </propertySection>
       </propertySections>
    </extension>
-<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.InitDiagram"
-            nameFilter="*.fujaba"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.InitDiagramAction">
-         </action>
-      </objectContribution>
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+<extension
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.hardware.resource.category"
+            name="resource">
+         
+         <child
+               class="ResourceInstanceRepository"
+               packageNsUri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
+         </child>
+         
+      </category>
    </extension>
+
+<extension
+         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+      <?gmfgen generated="true"?>
+      <editor
+            preferencesHint="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
+            editorName="ResourceInstance Editor"
+            fileExtension="resourceinstance_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.resource.category"
+            modelId="ResourceInstance">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/"
+               className="ResourceInstanceRepository">
+         </diagramElement>
+         
+         <topLevelNode
+               domainElement="SensorInstance"
+               semanticHint="2004">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="ActuatorInstance"
+               semanticHint="2005">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="StructuredResourceInstance"
+               semanticHint="2006">
+         </topLevelNode>
+         
+      </editor>
+   </extension>
+
 
 
 

@@ -54,10 +54,24 @@ public class ProcessorInstanceOwnedCacheInstanceCreateCommand extends
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints()
 				.canCreateProcessorInstanceOwnedCacheInstance_4002(getSource(),
-						getTarget());
+						getTarget(), sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+					.getLinkConstraints()
+					.getErrorProcessorInstanceOwnedCacheInstance_4002(
+							getSource(), getTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView != null ? targetView : sourceView,
+							errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**

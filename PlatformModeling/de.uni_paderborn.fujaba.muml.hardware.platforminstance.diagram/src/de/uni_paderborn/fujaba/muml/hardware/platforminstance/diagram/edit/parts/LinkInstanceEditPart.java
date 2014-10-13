@@ -29,6 +29,29 @@ public class LinkInstanceEditPart extends ConnectionNodeEditPart implements
 	public static final int VISUAL_ID = 4009;
 
 	/**
+	 * MUML FIX, see code comments.
+	 *
+	 * @generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(Request request) {
+
+		@SuppressWarnings("unchecked")
+		Collection<Object> hosts = super.disableCanonicalFor(request);
+
+		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
+		// because GMF supports adding additional commands using Edit Helpers concept,
+		// which could trigger refresh of any canonical edit policy.
+		// So it should be the cleanest solution to disable all canonical edit policies. 
+		EditPart part = this;
+		while (part != null) {
+			hosts.add(part);
+			part = part.getParent();
+		}
+		return hosts;
+	}
+
+	/**
 	 * @generated
 	 */
 	public LinkInstanceEditPart(View view) {
@@ -146,6 +169,37 @@ public class LinkInstanceEditPart extends ConnectionNodeEditPart implements
 			return fFigureLinkCommentFigure;
 		}
 
+	}
+
+	/**
+	 * Handles the property changed event.
+	 * It additionally tests, if the source/target feature was changed and updates
+	 * the Connection's visualization accordingly.
+	 * @param notification The property changed event.
+	 * @generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification notification) {
+
+		// Fix for MechatronicUML BUG #17:
+		// Connection does not refresh, after changing its source or target via
+		// Properties View.
+		EObject sourceElement = null;
+		if (getSource() instanceof GraphicalEditPart) {
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
+					.getElement();
+		}
+		EObject targetElement = null;
+		if (getTarget() instanceof GraphicalEditPart) {
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
+					.getElement();
+		}
+		if (notification.getOldValue() == sourceElement
+				|| notification.getOldValue() == targetElement) {
+			doCanonicalRefresh();
+		}
+
+		super.handleNotificationEvent(notification);
 	}
 
 	protected void doCanonicalRefresh() {

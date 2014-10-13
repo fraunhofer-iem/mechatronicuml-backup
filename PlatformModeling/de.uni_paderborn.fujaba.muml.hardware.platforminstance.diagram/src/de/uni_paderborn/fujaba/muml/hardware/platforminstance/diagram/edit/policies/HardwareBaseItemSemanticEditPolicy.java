@@ -328,9 +328,10 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreateDelegationInstance_4008(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			return canExistDelegationInstance_4008(container, null, source,
-					target);
+					target, sourceView, targetView);
 		}
 
 		/**
@@ -339,8 +340,10 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreateLinkInstance_4009(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target) {
-			return canExistLinkInstance_4009(container, null, source, target);
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
+			return canExistLinkInstance_4009(container, null, source, target,
+					sourceView, targetView);
 		}
 
 		/**
@@ -349,9 +352,10 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreateBusConnectorInstance_4010(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			return canExistBusConnectorInstance_4010(container, null, source,
-					target);
+					target, sourceView, targetView);
 		}
 
 		/**
@@ -361,23 +365,30 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
-					Map<String, EClassifier> env = Collections
-							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
-					Object sourceVal = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
 									37,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpointInstance(),
-									env).evaluate(
-									source,
-									Collections.singletonMap(
-											"oppositeEnd", target)); //$NON-NLS-1$
+									envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
 					if (false == sourceVal instanceof Boolean
 							|| !((Boolean) sourceVal).booleanValue()) {
 						return false;
@@ -386,18 +397,24 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				if (target == null) {
 					return true;
 				} else {
-					Map<String, EClassifier> env = Collections
-							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
-					Object targetVal = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
 									38,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpointInstance(),
-									env).evaluate(
-									target,
-									Collections.singletonMap(
-											"oppositeEnd", source)); //$NON-NLS-1$
+									envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
 					if (false == targetVal instanceof Boolean
 							|| !((Boolean) targetVal).booleanValue()) {
 						return false;
@@ -409,6 +426,100 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorDelegationInstance_4008(
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
+			try {
+				if (source == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+							.getExpression(
+									37,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpointInstance(),
+									envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				if (target == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+							.getExpression(
+									38,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpointInstance(),
+									envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				return null;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return "Link constraint evaluation error";
 			}
 		}
 
@@ -419,23 +530,30 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.LinkInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
-					Map<String, EClassifier> env = Collections
-							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
-					Object sourceVal = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
 									41,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpointInstance(),
-									env).evaluate(
-									source,
-									Collections.singletonMap(
-											"oppositeEnd", target)); //$NON-NLS-1$
+									envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
 					if (false == sourceVal instanceof Boolean
 							|| !((Boolean) sourceVal).booleanValue()) {
 						return false;
@@ -444,18 +562,24 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				if (target == null) {
 					return true;
 				} else {
-					Map<String, EClassifier> env = Collections
-							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
-					Object targetVal = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
 									42,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpointInstance(),
-									env).evaluate(
-									target,
-									Collections.singletonMap(
-											"oppositeEnd", source)); //$NON-NLS-1$
+									envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
 					if (false == targetVal instanceof Boolean
 							|| !((Boolean) targetVal).booleanValue()) {
 						return false;
@@ -473,27 +597,128 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public java.lang.String getErrorLinkInstance_4009(
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
+			try {
+				if (source == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+							.getExpression(
+									41,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpointInstance(),
+									envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				if (target == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+							.getExpression(
+									42,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpointInstance(),
+									envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				return null;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return "Link constraint evaluation error";
+			}
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistBusConnectorInstance_4010(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusConnectorInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
-					Map<String, EClassifier> env = Collections
-							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
-					Object sourceVal = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
 									43,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpointInstance(),
-									env).evaluate(
-									source,
-									Collections.singletonMap(
-											"oppositeEnd", target)); //$NON-NLS-1$
+									envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
 					if (false == sourceVal instanceof Boolean
 							|| !((Boolean) sourceVal).booleanValue()) {
 						return false;
@@ -502,18 +727,24 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				if (target == null) {
 					return true;
 				} else {
-					Map<String, EClassifier> env = Collections
-							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
-					Object targetVal = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
 									44,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpointInstance(),
-									env).evaluate(
-									target,
-									Collections.singletonMap(
-											"oppositeEnd", source)); //$NON-NLS-1$
+									envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
 					if (false == targetVal instanceof Boolean
 							|| !((Boolean) targetVal).booleanValue()) {
 						return false;
@@ -525,6 +756,100 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorBusConnectorInstance_4010(
+				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
+			try {
+				if (source == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+							.getExpression(
+									43,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpointInstance(),
+									envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				if (target == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpointInstance()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
+							.getExpression(
+									44,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpointInstance(),
+									envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				return null;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return "Link constraint evaluation error";
 			}
 		}
 

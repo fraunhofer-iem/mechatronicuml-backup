@@ -63,9 +63,12 @@ public class BusConnectorInstanceReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
-			return false;
+		  return false;
 		}
+		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
@@ -73,9 +76,23 @@ public class BusConnectorInstanceReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistBusConnectorInstance_4010(
-						container, getLink(), getNewSource(), target);
+						container, getLink(), getNewSource(), target,
+						sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorBusConnectorInstance_4010(
+							container, getNewSource(), target, sourceView,
+							targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -85,9 +102,12 @@ public class BusConnectorInstanceReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
-			return false;
+		  return false;
 		}
+		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration)) {
@@ -95,9 +115,23 @@ public class BusConnectorInstanceReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistBusConnectorInstance_4010(
-						container, getLink(), source, getNewTarget());
+						container, getLink(), source, getNewTarget(),
+						sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorBusConnectorInstance_4010(
+							container, source, getNewTarget(), sourceView,
+							targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -122,8 +156,13 @@ public class BusConnectorInstanceReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getConnectorEndpointInstances().remove(getOldSource());
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpointInstances().size() > 1) {
+			getLink().getConnectorEndpointInstances().remove(getOldSource());
+		}
 		getLink().getConnectorEndpointInstances().add(getNewSource());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -131,8 +170,13 @@ public class BusConnectorInstanceReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getConnectorEndpointInstances().remove(getOldTarget());
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpointInstances().size() > 1) {
+			getLink().getConnectorEndpointInstances().remove(getOldTarget());
+		}
 		getLink().getConnectorEndpointInstances().add(getNewTarget());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -169,5 +213,12 @@ public class BusConnectorInstanceReorientCommand extends EditElementCommand {
 	 */
 	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected int getReorientDirection() {
+		return reorientDirection;
 	}
 }
