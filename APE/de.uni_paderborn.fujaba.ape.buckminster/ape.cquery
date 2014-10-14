@@ -1,4 +1,4 @@
-<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="file:./pim.rmap">
+<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="file:./ape.rmap">
     <cq:rootRequest name="de.uni_paderborn.fujaba.ape.buckminster" componentType="eclipse.feature"/>
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
