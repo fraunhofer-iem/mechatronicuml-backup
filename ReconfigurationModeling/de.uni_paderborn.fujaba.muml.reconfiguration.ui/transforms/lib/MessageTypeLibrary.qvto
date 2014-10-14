@@ -106,6 +106,7 @@ constructor MessageTypeRepository::MessageTypeRepository(in newName : String){
 }
 
 constructor MessageBuffer::MessageBuffer(in size : Integer){
+	name:='buffer';
 	bufferSize := object NaturalNumber{
 		value := size;
 		infinity := false;
