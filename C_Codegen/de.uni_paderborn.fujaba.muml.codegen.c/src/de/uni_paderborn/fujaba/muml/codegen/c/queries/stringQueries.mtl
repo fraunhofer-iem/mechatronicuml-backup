@@ -18,10 +18,22 @@
  */]
 [query public getHeaderFile (rtsc : RealtimeStatechart) : String = rtsc.name.getName()+'.h'/]
 
+[query public getMessageBufferSize (mb : MessageBuffer) : String =
+	if (mb.bufferSize.toString() = '*') then '20' else mb.bufferSize endif
+/]
+
+
 [query public getWriteMethod (cpi : ContinuousPortInstance) : String = 
 	'write_'+cpi.getName()+'_of'+cpi.componentInstance.componentType.getVariableName()+'_'+cpi.componentInstance.getName()
 /]
 
+[query public getSendMsgVariableName (msg:MessageType, t:Transition) : String = 
+	'sendEventOf'+t.source.name+'to'+t.target.name
+/]
+
+[query public getReceiveMsgVariableName (msg:MessageType, t:Transition) : String = 
+	'recEventOf'+t.source.name+'to'+t.target.name
+/]
 
 [query public getReadMethod (cpi : ContinuousPortInstance) : String = 
 ' read_'+cpi.getName()+'_of'+cpi.componentInstance.componentType.getVariableName()+'_'+cpi.componentInstance.getName()

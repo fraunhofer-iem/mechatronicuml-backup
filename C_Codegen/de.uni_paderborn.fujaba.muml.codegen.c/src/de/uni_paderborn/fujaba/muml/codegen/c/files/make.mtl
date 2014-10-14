@@ -37,7 +37,8 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (CIs.eAllContents(Operation)->siz
 [/for]
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
 ContImplementations.o: continuousComponents/ContImplementations.c
-	$(CC) $(CFLAGS) continuousComponents/ContImplementations.c[/if]
+	$(CC) $(CFLAGS) continuousComponents/ContImplementations.c
+[/if]
 syncChannel.o: lib/syncChannel.c
 	$(CC) $(CFLAGS) lib/syncChannel.c
 discreteConnection.o: lib/discreteConnection.c

@@ -162,14 +162,14 @@
 			[comment Initialization of Ports/]	
 			[for (port : Port | component.ports)]
 				[if (port.oclIsKindOf(DiscretePort))]
-					component->[getVariableName(port)/] = [getCreateMethodName(port)/]([if port.oclAsType(DiscretePort).receiverMessageBuffer.oclIsUndefined()->size()=0]5[else][port.oclAsType(DiscretePort).receiverMessageBuffer.bufferSize/][/if], 
+					component->[getVariableName(port)/] = [getCreateMethodName(port)/]([if port.oclAsType(DiscretePort).receiverMessageBuffer.oclIsUndefined()->size()=0]5[else][port.oclAsType(DiscretePort).receiverMessageBuffer.getMessageBufferSize()/][/if], 
 					[if (port.oclAsType(DiscretePort).isDiscreteInOutPort)]
 						[port.oclAsType(DiscretePort).senderMessageTypes->size()/], cachedEventSignaturesOf[getVariableName(port).toUpperFirst()/],
-						[if port.oclAsType(DiscretePort).receiverMessageBuffer.oclIsUndefined()->size()=0]5[else][port.oclAsType(DiscretePort).receiverMessageBuffer.bufferSize/][/if],
+						[if port.oclAsType(DiscretePort).receiverMessageBuffer.oclIsUndefined()->size()=0]5[else][port.oclAsType(DiscretePort).receiverMessageBuffer.getMessageBufferSize()/][/if],
 						[port.oclAsType(DiscretePort).receiverMessageTypes->size()/], eventSignaturesOf[getVariableName(port).toUpperFirst()/]
 
 					[elseif (port.oclAsType(DiscretePort).isDiscreteInPort)]
-							0, NULL, [port.oclAsType(DiscretePort).receiverMessageBuffer.bufferSize/], [port.oclAsType(DiscretePort).receiverMessageTypes->size()/], eventSignaturesOf[getVariableName(port).toUpperFirst()/]
+							0, NULL, [port.oclAsType(DiscretePort).receiverMessageBuffer.getMessageBufferSize()/], [port.oclAsType(DiscretePort).receiverMessageTypes->size()/], eventSignaturesOf[getVariableName(port).toUpperFirst()/]
 
 					[elseif (port.oclAsType(DiscretePort).isDiscreteOutPort)]
 							[port.oclAsType(DiscretePort).senderMessageTypes->size()/], cachedEventSignaturesOf[getVariableName(port).toUpperFirst()/],5, 0, NULL

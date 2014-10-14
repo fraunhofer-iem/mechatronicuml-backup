@@ -281,7 +281,7 @@
 	[comment Trigger events /]
 	[if (not transition.triggerMessageEvent.oclIsUndefined())]
 		[for (msg : Message | transition.triggerMessageEvent.message)]		
-				Event* [msg.instanceOf.getName()/]Event = DiscretePort_receiveEvent([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature);
+				Event* [getReceiveMsgVariableName(msg.instanceOf,transition)/] = DiscretePort_receiveEvent([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature);
 		[/for]
 	[/if]
 
@@ -322,7 +322,7 @@
 			[if (dPort.isDiscreteOutPort or dPort.isDiscreteInOutPort)]	
 					[for (msgType : MessageType | dPort.senderMessageTypes)]
 						[if (msgType.name = msg.instanceOf.name)]
-							Event *sendEvent = Event_create([getVariableName(msgType)/].signature, [getVariableName(msgType)/].name 
+							Event *[getSendMsgVariableName(msgType,transition)/] = Event_create([getVariableName(msgType)/].signature, [getVariableName(msgType)/].name 
 							[if (not msg.parameterBinding->at(1).oclIsUndefined())]
 								[if (msg.parameterBinding->at(1).parameter.getType() = 'double')]
 									,[msg.parameterBinding->at(1).value.generateExpression(true,'')/]
@@ -332,7 +332,7 @@
 							[else]
 								,0.0
 							[/if]);
-							DiscretePort_sendEvent([getGetterName(dPort)/](stateChart->parentComponent), sendEvent);
+							DiscretePort_sendEvent([getGetterName(dPort)/](stateChart->parentComponent), [getSendMsgVariableName(msgType,transition)/]);
 						[/if]
 					[/for]
 				[/if]
@@ -348,7 +348,7 @@
 //release all created events
 	[if (not transition.triggerMessageEvent.oclIsUndefined())]
 		[for (msg : Message | transition.triggerMessageEvent.message)]		
-				Event_destroy([msg.instanceOf.getName()/]Event);
+				Event_destroy([getReceiveMsgVariableName(msg.instanceOf,transition)/]);
 		[/for]
 	[/if]	
 	[comment State change /]	
