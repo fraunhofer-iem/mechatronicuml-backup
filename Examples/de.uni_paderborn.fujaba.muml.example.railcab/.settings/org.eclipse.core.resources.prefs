@@ -49,6 +49,10 @@ encoding//model/Protocols/SpeedTransmission/RailCab.coordinationprotocol_diagram
 encoding//model/Protocols/SpeedTransmission/SpeedTransmission.messagetype_diagram=UTF-8
 encoding//model/Protocols/SpeedTransmission/SpeedTransmission_receiver.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/SpeedTransmission/SpeedTransmission_sender.realtimestatechart_diagram=UTF-8
+encoding//model/Protocols/StartExecution/StartExecution.coordinationprotocol_diagram=UTF-8
+encoding//model/Protocols/StartExecution/StartExecution.messagetype_diagram=UTF-8
+encoding//model/Protocols/StartExecution/StartExecution_executor.realtimestatechart_diagram=UTF-8
+encoding//model/Protocols/StartExecution/StartExecution_initiator.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/StrategyExchange/StragegyExchange_receiver.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/StrategyExchange/StragegyExchange_sender.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/StrategyExchange/StrategyExchange.coordinationprotocol_diagram=UTF-8

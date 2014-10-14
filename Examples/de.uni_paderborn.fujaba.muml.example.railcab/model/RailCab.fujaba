@@ -136,6 +136,9 @@
       <messageTypes xmi:id="_eNvEsFOnEeSDPNki4Dv8rg" name="newProfile"/>
       <messageTypes xmi:id="_sVFZ4FOnEeSDPNki4Dv8rg" name="ackProfile"/>
     </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_lQLh0FOpEeSDPNki4Dv8rg" name="StartExecution">
+      <messageTypes xmi:id="_mg0DQFOpEeSDPNki4Dv8rg" name="startExecution"/>
+    </modelElements>
   </categories>
   <categories xmi:id="_gSpDkHasEeOh__JNCv2_1A" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_jka9YHasEeOh__JNCv2_1A" name="ConvoyEntry">
@@ -371,6 +374,33 @@
           </minMessageDelay>
           <maxMessageDelay xmi:id="_TNJFFVOnEeSDPNki4Dv8rg" unit="MILLISECONDS">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_TNJFFlOnEeSDPNki4Dv8rg" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_abCkQFOpEeSDPNki4Dv8rg" name="StartExecution">
+      <roles xmi:id="_abCkQVOpEeSDPNki4Dv8rg" connectors="_abCkSVOpEeSDPNki4Dv8rg" behavior="_GqIeMFOsEeSDPNki4Dv8rg" name="initiator" senderMessageTypes="_mg0DQFOpEeSDPNki4Dv8rg">
+        <cardinality xmi:id="_abCkQlOpEeSDPNki4Dv8rg">
+          <lowerBound xmi:id="_fXcFcFOsEeSDPNki4Dv8rg"/>
+          <upperBound xmi:id="_fXcFcVOsEeSDPNki4Dv8rg"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_abCkRVOpEeSDPNki4Dv8rg" connectors="_abCkSVOpEeSDPNki4Dv8rg" behavior="_U210gFOsEeSDPNki4Dv8rg" name="executor" receiverMessageTypes="_mg0DQFOpEeSDPNki4Dv8rg">
+        <cardinality xmi:id="_abCkRlOpEeSDPNki4Dv8rg">
+          <lowerBound xmi:id="_hPzVQFOsEeSDPNki4Dv8rg"/>
+          <upperBound xmi:id="_hPzVQVOsEeSDPNki4Dv8rg"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_spR2UFOpEeSDPNki4Dv8rg" name="buffer" messageType="_mg0DQFOpEeSDPNki4Dv8rg">
+          <bufferSize xmi:id="_xzji0FOpEeSDPNki4Dv8rg" infinity="true"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_abCkSVOpEeSDPNki4Dv8rg" connectorEndpoints="_abCkQVOpEeSDPNki4Dv8rg _abCkRVOpEeSDPNki4Dv8rg">
+        <connectorQualityOfServiceAssumptions xmi:id="_abCkSlOpEeSDPNki4Dv8rg" comment="">
+          <minMessageDelay xmi:id="_abLuMlOpEeSDPNki4Dv8rg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_abLuM1OpEeSDPNki4Dv8rg" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_abLuMFOpEeSDPNki4Dv8rg" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_abLuMVOpEeSDPNki4Dv8rg" value="0"/>
           </maxMessageDelay>
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
@@ -3458,6 +3488,31 @@
             </states>
           </embeddedStatechart>
         </embeddedRegions>
+        <embeddedRegions xmi:id="_-jDpYlOrEeSDPNki4Dv8rg" priority="2">
+          <embeddedStatechart xmi:id="_-jDpY1OrEeSDPNki4Dv8rg" name="ProfileDistribution_profileReceiver_profileReceiver" behavioralElement="_C5W68O6FEeOKI4bZ_bxwuQ">
+            <states xmi:id="_-jDpZFOrEeSDPNki4Dv8rg" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_25yVcFOsEeSDPNki4Dv8rg" priority="3">
+          <embeddedStatechart xmi:id="_25yVcVOsEeSDPNki4Dv8rg" name="StartExecution_initiator_next" behavioralElement="_Rm8wwO6FEeOKI4bZ_bxwuQ">
+            <transitions xmi:id="_25yVclOsEeSDPNki4Dv8rg" priority="1" target="_25yVdVOsEeSDPNki4Dv8rg" source="_25yVdVOsEeSDPNki4Dv8rg">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_25yVc1OsEeSDPNki4Dv8rg">
+                <message xmi:id="_25yVdFOsEeSDPNki4Dv8rg" instanceOf="_eNvEsFOnEeSDPNki4Dv8rg"/>
+              </events>
+            </transitions>
+            <states xmi:id="_25yVdVOsEeSDPNki4Dv8rg" name="SendProfile" outgoingTransitions="_25yVclOsEeSDPNki4Dv8rg" incomingTransitions="_25yVclOsEeSDPNki4Dv8rg" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_5V2IMFOsEeSDPNki4Dv8rg" priority="4">
+          <embeddedStatechart xmi:id="_5V2IMVOsEeSDPNki4Dv8rg" name="StartExecution_executor_prev" behavioralElement="_QPsC4O6FEeOKI4bZ_bxwuQ">
+            <transitions xmi:id="_5V2IMlOsEeSDPNki4Dv8rg" priority="1" target="_5V2INVOsEeSDPNki4Dv8rg" source="_5V2INVOsEeSDPNki4Dv8rg">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_5V2IM1OsEeSDPNki4Dv8rg" kind="TRIGGER">
+                <message xmi:id="_5V2INFOsEeSDPNki4Dv8rg" instanceOf="_eNvEsFOnEeSDPNki4Dv8rg"/>
+              </events>
+            </transitions>
+            <states xmi:id="_5V2INVOsEeSDPNki4Dv8rg" name="Execute" outgoingTransitions="_5V2IMlOsEeSDPNki4Dv8rg" incomingTransitions="_5V2IMlOsEeSDPNki4Dv8rg" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_V-nyYFOgEeSaVK1gfdE5pA" name="SpeedTransmission_sender" behavioralElement="_ncvrkFOfEeSaVK1gfdE5pA">
@@ -4173,6 +4228,11 @@
             <clocks xmi:id="_wyG1xlOmEeSDPNki4Dv8rg" name="c_inv"/>
           </embeddedStatechart>
         </embeddedRegions>
+        <embeddedRegions xmi:id="_4-l7QlOrEeSDPNki4Dv8rg" priority="4">
+          <embeddedStatechart xmi:id="_4-l7Q1OrEeSDPNki4Dv8rg" name="ProfileDistribution_profileProvider_profileProvider" behavioralElement="_aUiTUO6CEeOKI4bZ_bxwuQ">
+            <states xmi:id="_4-l7RFOrEeSDPNki4Dv8rg" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_K4CGMFOlEeSaVK1gfdE5pA" name="StragegyExchange_sender" behavioralElement="_BdVtYVOlEeSaVK1gfdE5pA">
@@ -4186,6 +4246,22 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_a6928FOoEeSDPNki4Dv8rg" name="ProfileDistribution_profileReceiver" behavioralElement="_TM_7JFOnEeSDPNki4Dv8rg">
       <states xmi:id="_a6928VOoEeSDPNki4Dv8rg" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_GqIeMFOsEeSDPNki4Dv8rg" name="StartExecution_initiator" behavioralElement="_abCkQVOpEeSDPNki4Dv8rg">
+      <transitions xmi:id="_KUAH4FOsEeSDPNki4Dv8rg" priority="1" target="_GqIeMVOsEeSDPNki4Dv8rg" source="_GqIeMVOsEeSDPNki4Dv8rg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_LcTMsFOsEeSDPNki4Dv8rg">
+          <message xmi:id="_LqvRUFOsEeSDPNki4Dv8rg" instanceOf="_eNvEsFOnEeSDPNki4Dv8rg"/>
+        </events>
+      </transitions>
+      <states xmi:id="_GqIeMVOsEeSDPNki4Dv8rg" name="SendProfile" outgoingTransitions="_KUAH4FOsEeSDPNki4Dv8rg" incomingTransitions="_KUAH4FOsEeSDPNki4Dv8rg" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_U210gFOsEeSDPNki4Dv8rg" name="StartExecution_executor" behavioralElement="_abCkRVOpEeSDPNki4Dv8rg">
+      <transitions xmi:id="_ZRNHAFOsEeSDPNki4Dv8rg" priority="1" target="_U210gVOsEeSDPNki4Dv8rg" source="_U210gVOsEeSDPNki4Dv8rg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_Z7dk8FOsEeSDPNki4Dv8rg" kind="TRIGGER">
+          <message xmi:id="_aM3eAFOsEeSDPNki4Dv8rg" instanceOf="_eNvEsFOnEeSDPNki4Dv8rg"/>
+        </events>
+      </transitions>
+      <states xmi:id="_U210gVOsEeSDPNki4Dv8rg" name="Execute" outgoingTransitions="_ZRNHAFOsEeSDPNki4Dv8rg" incomingTransitions="_ZRNHAFOsEeSDPNki4Dv8rg" initial="true"/>
     </modelElements>
   </categories>
   <categories xmi:id="_gxay0O5kEeO0hMrCmuqTKA" key="org.storydriven.storydiagrams.category" name="storydiagrams">
@@ -5517,11 +5593,14 @@
           <bufferSize xmi:id="_wyG0QVOmEeSDPNki4Dv8rg" value="10"/>
         </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_aUiTUO6CEeOKI4bZ_bxwuQ" name="profileProvider">
-        <cardinality xmi:id="_aUiTUe6CEeOKI4bZ_bxwuQ">
-          <lowerBound xmi:id="_WXSWAO8DEeOkfud6pZP9gQ"/>
-          <upperBound xmi:id="_WXSWAe8DEeOkfud6pZP9gQ" infinity="true"/>
+      <ports xsi:type="component:DiscretePort" xmi:id="_aUiTUO6CEeOKI4bZ_bxwuQ" name="profileProvider" behavior="_4-l7Q1OrEeSDPNki4Dv8rg" senderMessageTypes="_eNvEsFOnEeSDPNki4Dv8rg" receiverMessageTypes="_sVFZ4FOnEeSDPNki4Dv8rg" refinedRole="_TM_7IFOnEeSDPNki4Dv8rg">
+        <cardinality xmi:id="_4-AFYFOrEeSDPNki4Dv8rg">
+          <lowerBound xmi:id="_5P2qYFOrEeSDPNki4Dv8rg"/>
+          <upperBound xmi:id="_5P2qYVOrEeSDPNki4Dv8rg"/>
         </cardinality>
+        <receiverMessageBuffer xmi:id="_4-l7QFOrEeSDPNki4Dv8rg" name="buffer" messageType="_sVFZ4FOnEeSDPNki4Dv8rg">
+          <bufferSize xmi:id="_4-l7QVOrEeSDPNki4Dv8rg" infinity="true"/>
+        </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_dSy0MO6CEeOKI4bZ_bxwuQ" name="strategy" behavior="_gYEDs1OmEeSDPNki4Dv8rg" senderMessageTypes="_BlOooFOmEeSDPNki4Dv8rg" receiverMessageTypes="_-bCkkFOlEeSDPNki4Dv8rg" refinedRole="_BdVtZVOlEeSaVK1gfdE5pA">
         <cardinality xmi:id="_gXxIwFOmEeSDPNki4Dv8rg">
@@ -5540,11 +5619,14 @@
       </ports>
     </modelElements>
     <modelElements xsi:type="reconfiguration:ReconfigurableAtomicComponent" xmi:id="_BXanEO6FEeOKI4bZ_bxwuQ" name="RefGen" behavior="_BbBd0AUEEeSn_-l-OlOxjg">
-      <ports xsi:type="component:DiscretePort" xmi:id="_C5W68O6FEeOKI4bZ_bxwuQ" name="profileReceiver">
-        <cardinality xmi:id="_C5W68e6FEeOKI4bZ_bxwuQ">
-          <lowerBound xmi:id="_UYNPoO8CEeOkfud6pZP9gQ"/>
-          <upperBound xmi:id="_UYNPoe8CEeOkfud6pZP9gQ"/>
+      <ports xsi:type="component:DiscretePort" xmi:id="_C5W68O6FEeOKI4bZ_bxwuQ" name="profileReceiver" behavior="_-jDpY1OrEeSDPNki4Dv8rg" senderMessageTypes="_sVFZ4FOnEeSDPNki4Dv8rg" receiverMessageTypes="_eNvEsFOnEeSDPNki4Dv8rg" refinedRole="_TM_7JFOnEeSDPNki4Dv8rg">
+        <cardinality xmi:id="_-im9cFOrEeSDPNki4Dv8rg">
+          <lowerBound xmi:id="_-im9cVOrEeSDPNki4Dv8rg"/>
+          <upperBound xmi:id="_-im9clOrEeSDPNki4Dv8rg"/>
         </cardinality>
+        <receiverMessageBuffer xmi:id="_-jDpYFOrEeSDPNki4Dv8rg" name="buffer" messageType="_eNvEsFOnEeSDPNki4Dv8rg">
+          <bufferSize xmi:id="_-jDpYVOrEeSDPNki4Dv8rg" infinity="true"/>
+        </receiverMessageBuffer>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_FpmN8O6FEeOKI4bZ_bxwuQ" name="refDistProvider" behavior="_BbBd0wUEEeSn_-l-OlOxjg" senderMessageTypes="_VpUQMeo2EeO-8csd75FEHw" receiverMessageTypes="_VpUQMuo2EeO-8csd75FEHw" adaptationBehavior="_BbBd1gUEEeSn_-l-OlOxjg" subroleBehavior="_BbBeGAUEEeSn_-l-OlOxjg" refinedRole="_qwc3ceo1EeO-8csd75FEHw">
         <cardinality xmi:id="_Babn8AUEEeSn_-l-OlOxjg">
@@ -5560,16 +5642,19 @@
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_rygW4O8CEeOkfud6pZP9gQ" value="2"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_QPsC4O6FEeOKI4bZ_bxwuQ" name="prev">
-        <cardinality xmi:id="_QPyJgO6FEeOKI4bZ_bxwuQ">
-          <lowerBound xmi:id="_dkc8wO8CEeOkfud6pZP9gQ"/>
-          <upperBound xmi:id="_dkc8we8CEeOkfud6pZP9gQ"/>
+      <ports xsi:type="component:DiscretePort" xmi:id="_QPsC4O6FEeOKI4bZ_bxwuQ" name="prev" behavior="_5V2IMVOsEeSDPNki4Dv8rg" receiverMessageTypes="_mg0DQFOpEeSDPNki4Dv8rg" refinedRole="_abCkRVOpEeSDPNki4Dv8rg">
+        <cardinality xmi:id="_5VjNQFOsEeSDPNki4Dv8rg">
+          <lowerBound xmi:id="_5fOGoFOsEeSDPNki4Dv8rg"/>
+          <upperBound xmi:id="_5fOGoVOsEeSDPNki4Dv8rg"/>
         </cardinality>
+        <receiverMessageBuffer xmi:id="_5VsXMFOsEeSDPNki4Dv8rg" name="buffer" messageType="_mg0DQFOpEeSDPNki4Dv8rg">
+          <bufferSize xmi:id="_5VsXMVOsEeSDPNki4Dv8rg" infinity="true"/>
+        </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_Rm8wwO6FEeOKI4bZ_bxwuQ" name="next">
-        <cardinality xmi:id="_Rm8wwe6FEeOKI4bZ_bxwuQ">
-          <lowerBound xmi:id="_W6qlUO8CEeOkfud6pZP9gQ"/>
-          <upperBound xmi:id="_W6qlUe8CEeOkfud6pZP9gQ"/>
+      <ports xsi:type="component:DiscretePort" xmi:id="_Rm8wwO6FEeOKI4bZ_bxwuQ" name="next" behavior="_25yVcVOsEeSDPNki4Dv8rg" senderMessageTypes="_mg0DQFOpEeSDPNki4Dv8rg" refinedRole="_abCkQVOpEeSDPNki4Dv8rg">
+        <cardinality xmi:id="_25ezcFOsEeSDPNki4Dv8rg">
+          <lowerBound xmi:id="_3GR5UFOsEeSDPNki4Dv8rg"/>
+          <upperBound xmi:id="_3GR5UVOsEeSDPNki4Dv8rg"/>
         </cardinality>
       </ports>
     </modelElements>
