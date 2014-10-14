@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
 <rm:locator searchPathRef="default" failOnError="false"/>
-<rm:locator searchPathRef="ape-properties" failOnError="false"/>
+<rm:locator searchPathRef="APE" failOnError="false"/>
 <rm:locator searchPathRef="MUMLCore" failOnError="false"/>
 <rm:locator searchPathRef="PlatformIndependentModeling" failOnError="false"/>
 <rm:locator searchPathRef="VerificationCore" failOnError="false"/>
@@ -9,7 +9,6 @@
 <rm:locator searchPathRef="UppaalAdapter" failOnError="false"/>
 <rm:locator searchPathRef="PlatformModeling" failOnError="false"/>
 <rm:locator searchPathRef="ModelicaAdapter" failOnError="false"/>
-<rm:locator searchPathRef="ape-ecore" failOnError="false"/>
 <rm:locator searchPathRef="SimulinkAdapter" failOnError="false"/>
 <rm:locator searchPathRef="UDBM" failOnError="false"/>
 <rm:locator searchPathRef="C_Codegen" failOnError="false"/>
@@ -44,7 +43,7 @@
     </rm:provider>
 </rm:searchPath>
  
-<rm:searchPath name="ape-properties">
+<rm:searchPath name="APE">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
@@ -53,15 +52,6 @@
     </rm:provider>
 </rm:searchPath>
   
-<rm:searchPath name="ape-ecore">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="file:///data/jenkins/jobs/APE_Ecore_Editor/lastSuccessful/archive/targetPlatform/">
-      </rm:uri>
-    </rm:provider>
-</rm:searchPath>
-
 <rm:searchPath name="PlatformIndependentModeling">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
