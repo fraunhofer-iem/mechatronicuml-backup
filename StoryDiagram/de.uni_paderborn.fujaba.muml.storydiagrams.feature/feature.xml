@@ -140,9 +140,6 @@
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.8.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.common.ui" version="2.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.compare" version="1.2.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.compare.diff" version="1.2.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.compare.match" version="1.2.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.compare.ui" version="1.2.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.8.0" match="greaterOrEqual"/>
       <import plugin="org.storydriven.core.edit" version="1.0.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.edit" version="1.0.1" match="greaterOrEqual"/>
@@ -383,13 +380,6 @@
 
    <plugin
          id="org.storydriven.storydiagrams.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.storydiagrams.ui.interpreter"
          download-size="0"
          install-size="0"
          version="0.0.0"
