@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_Sm6LgFOnEeSDPNki4Dv8rg" type="Coordination Protocol" name="ProfileDistribution.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_TNS2EFOnEeSDPNki4Dv8rg" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_TNS2ElOnEeSDPNki4Dv8rg" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_TNS2E1OnEeSDPNki4Dv8rg" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_TNS2FVOnEeSDPNki4Dv8rg" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_TM2KIFOnEeSDPNki4Dv8rg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2FFOnEeSDPNki4Dv8rg" x="60" y="-6"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_TNS2FlOnEeSDPNki4Dv8rg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_TNS2GFOnEeSDPNki4Dv8rg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_TNS2GVOnEeSDPNki4Dv8rg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../../RailCab.fujaba#_TM_7IFOnEeSDPNki4Dv8rg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2F1OnEeSDPNki4Dv8rg" y="90"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_TNS2GlOnEeSDPNki4Dv8rg" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_TNS2HFOnEeSDPNki4Dv8rg" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_TNS2HVOnEeSDPNki4Dv8rg" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../../RailCab.fujaba#_TM_7JFOnEeSDPNki4Dv8rg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2G1OnEeSDPNki4Dv8rg" x="132" y="90"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_TM2KIFOnEeSDPNki4Dv8rg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2EVOnEeSDPNki4Dv8rg" x="511" y="238" width="486" height="279"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Sm6LgVOnEeSDPNki4Dv8rg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.fujaba#_gSpDkHasEeOh__JNCv2_1A"/>
+  <edges xmi:type="notation:Connector" xmi:id="_TNcnEFOnEeSDPNki4Dv8rg" type="4007" source="_TNS2E1OnEeSDPNki4Dv8rg" target="_TNS2FlOnEeSDPNki4Dv8rg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_TNcnEVOnEeSDPNki4Dv8rg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TNcnElOnEeSDPNki4Dv8rg" points="[13, 13, 13, 13]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_TNcnE1OnEeSDPNki4Dv8rg" type="4007" source="_TNS2E1OnEeSDPNki4Dv8rg" target="_TNS2GlOnEeSDPNki4Dv8rg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_TNcnFFOnEeSDPNki4Dv8rg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TNcnFVOnEeSDPNki4Dv8rg" points="[13, 13, 3, 3]$[0, 0, -10, -10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_TNcnFlOnEeSDPNki4Dv8rg" type="4006" source="_TNS2FlOnEeSDPNki4Dv8rg" target="_TNS2GlOnEeSDPNki4Dv8rg" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_TNcnF1OnEeSDPNki4Dv8rg" fontName="Segoe UI"/>
+    <element xmi:type="protocol:RoleConnector" href="../../RailCab.fujaba#_TNJFE1OnEeSDPNki4Dv8rg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TNcnGFOnEeSDPNki4Dv8rg" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+  </edges>
+</notation:Diagram>

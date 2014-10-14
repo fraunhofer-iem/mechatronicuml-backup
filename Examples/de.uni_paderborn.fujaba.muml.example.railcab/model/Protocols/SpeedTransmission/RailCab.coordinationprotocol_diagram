@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_eT53wFOfEeSaVK1gfdE5pA" type="Coordination Protocol" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_ndyNYFOfEeSaVK1gfdE5pA" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ndyNYlOfEeSaVK1gfdE5pA" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_neFIUFOfEeSaVK1gfdE5pA" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_neFIUlOfEeSaVK1gfdE5pA" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_ncl6kFOfEeSaVK1gfdE5pA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_neFIUVOfEeSaVK1gfdE5pA" x="60" y="-6"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_neFIU1OfEeSaVK1gfdE5pA" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_neFIVVOfEeSaVK1gfdE5pA" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_neFIVlOfEeSaVK1gfdE5pA" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../../RailCab.fujaba#_ncvrkFOfEeSaVK1gfdE5pA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_neFIVFOfEeSaVK1gfdE5pA" y="90"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_neFIV1OfEeSaVK1gfdE5pA" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_neFIWVOfEeSaVK1gfdE5pA" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_neFIWlOfEeSaVK1gfdE5pA" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../../RailCab.fujaba#_ndCmg1OfEeSaVK1gfdE5pA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_neFIWFOfEeSaVK1gfdE5pA" x="132" y="90"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_ncl6kFOfEeSaVK1gfdE5pA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ndyNYVOfEeSaVK1gfdE5pA" x="432" y="180" width="493" height="289"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_eT53wVOfEeSaVK1gfdE5pA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.fujaba#_gSpDkHasEeOh__JNCv2_1A"/>
+  <edges xmi:type="notation:Connector" xmi:id="_nfalEFOfEeSaVK1gfdE5pA" type="4007" source="_neFIUFOfEeSaVK1gfdE5pA" target="_neFIU1OfEeSaVK1gfdE5pA" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_nfalEVOfEeSaVK1gfdE5pA" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nfalElOfEeSaVK1gfdE5pA" points="[13, 13, 13, 13]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_nfalE1OfEeSaVK1gfdE5pA" type="4007" source="_neFIUFOfEeSaVK1gfdE5pA" target="_neFIV1OfEeSaVK1gfdE5pA" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_nfalFFOfEeSaVK1gfdE5pA" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nfalFVOfEeSaVK1gfdE5pA" points="[13, 13, 3, 3]$[0, 0, -10, -10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_nfalFlOfEeSaVK1gfdE5pA" type="4006" source="_neFIU1OfEeSaVK1gfdE5pA" target="_neFIV1OfEeSaVK1gfdE5pA" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_nfalF1OfEeSaVK1gfdE5pA" fontName="Segoe UI"/>
+    <element xmi:type="protocol:RoleConnector" href="../../RailCab.fujaba#_ndCmh1OfEeSaVK1gfdE5pA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nfalGFOfEeSaVK1gfdE5pA" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+  </edges>
+</notation:Diagram>

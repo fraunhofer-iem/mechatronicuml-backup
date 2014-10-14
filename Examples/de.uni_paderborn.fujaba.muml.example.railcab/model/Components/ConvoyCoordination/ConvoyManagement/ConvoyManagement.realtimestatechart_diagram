@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_rpC08PqfEeO0_ZLnPp6sSA" type="Real-Time Statechart" name="ConvoyManagement.realtimestatechart_diagram" measurementUnit="Pixel">
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_rpC08fqfEeO0_ZLnPp6sSA"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../RailCab.fujaba#_gCDjsvqfEeO0_ZLnPp6sSA"/>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_dfWRglOjEeSaVK1gfdE5pA" type="Real-Time Statechart" name="ConvoyManagement.realtimestatechart_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_dfWRg1OjEeSaVK1gfdE5pA"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../RailCab.fujaba#_dfWRgFOjEeSaVK1gfdE5pA"/>
 </notation:Diagram>
