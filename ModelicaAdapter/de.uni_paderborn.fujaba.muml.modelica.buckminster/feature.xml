@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.uni_paderborn.fujaba.muml.modelica.buckminster"
+      label="Buckminster"
+      version="1.0.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="de.uni_paderborn.fujaba.graphviz.dot.xtext"/>
+      <import plugin="de.uni_paderborn.fujaba.graphviz.dot.xtext.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.xtext.junit4"/>
+      <import plugin="de.uni_paderborn.fujaba.graphviz" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.hamcrest.core"/>
+      <import plugin="de.uni_paderborn.fujaba.graphviz.plain.xtext"/>
+      <import plugin="de.uni_paderborn.fujaba.graphviz.plain.xtext.ui"/>
+   </requires>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.graphviz.dot.xtext.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.graphviz.plain.xtext.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

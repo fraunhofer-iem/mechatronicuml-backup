@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="file:./modelica.rmap">
-    <cq:rootRequest name="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature" componentType="eclipse.feature"/>
+    <cq:rootRequest name="de.uni_paderborn.fujaba.muml.modelica.buckminster" componentType="eclipse.feature"/>
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
     <cq:property key="target.ws" value="*"/>
      <cq:advisorNode namePattern="^org\.eclipse.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.junit.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.google.*" useMaterialization="false" useTargetPlatform="true"/>
@@ -20,6 +19,7 @@
 	<cq:advisorNode namePattern="^org\.sat4j.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.w3c.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^javax.*" useMaterialization="false" useTargetPlatform="true"/>
+     <cq:advisorNode namePattern="^org\.hamcrest.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePatter=".*" useMaterialization="false" useTargetPlatform="false"/>
 </cq:componentQuery>
 
