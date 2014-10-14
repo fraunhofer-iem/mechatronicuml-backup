@@ -43,13 +43,8 @@ public class ExpressionsActivator extends AbstractUIPlugin {
 	public static final String ORG_STORYDRIVEN_MODELING_EXPRESSIONS_COMMON_EXPRESSIONS = "org.storydriven.storydiagrams.expressions.common.Expressions";
 	
 	public Injector getInjector(String languageName) {
-		try {
-			return injectors.get(languageName);
-		} catch(ExecutionException e) {
-			logger.error("Failed to create injector for " + languageName);
-			logger.error(e.getMessage(), e);
-			throw new RuntimeException("Failed to create injector for " + languageName, e);
-		}
+		return injectors.getIfPresent(languageName);
+		
 	}
 	
 	@Override
