@@ -30,27 +30,10 @@
       <import plugin="org.apache.log4j"/>
       <import plugin="org.junit"/>
       <import plugin="org.hamcrest.core"/>
-      <import plugin="org.junit" version="4.10.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.job" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.compare" version="3.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore" version="2.8.3" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.uppaal" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources" version="3.8.101" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.uppaal.options" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jdt.annotation" version="1.1.0" match="compatible"/>
    </requires>
 
    <plugin
          id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.verification.uppaal.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
