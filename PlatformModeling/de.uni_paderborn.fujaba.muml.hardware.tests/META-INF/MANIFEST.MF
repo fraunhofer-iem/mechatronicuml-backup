@@ -25,4 +25,5 @@ Require-Bundle: org.junit;bundle-version="4.11.0",
  org.eclipse.gmf.codegen;bundle-version="2.11.0",
  org.eclipse.gmf.graphdef;bundle-version="2.9.0",
  org.eclipse.gmf.map;bundle-version="2.9.0",
- de.uni_paderborn.fujaba.muml.tests;bundle-version="0.3.1"
+ de.uni_paderborn.fujaba.muml.tests;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0"
