@@ -8,7 +8,7 @@ import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
+import org.storydriven.core.CorePackage;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -32,7 +32,7 @@ public class DiagramPluginXmlTest {
 		// Initialize all packages
 		HardwarePackage.eINSTANCE.eClass();
 		MumlPackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 	}
 
 	@Test
