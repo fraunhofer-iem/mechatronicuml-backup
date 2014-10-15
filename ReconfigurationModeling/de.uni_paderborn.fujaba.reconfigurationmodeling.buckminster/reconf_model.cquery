@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="file:./reconf_model.rmap">
-    <cq:rootRequest name="de.uni_paderborn.fujaba.muml.reconfiguration.feature" componentType="eclipse.feature"/>
+    <cq:rootRequest name="de.uni_paderborn.fujaba.reconfigurationmodeling.buckminster" componentType="eclipse.feature"/>
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
     <cq:property key="target.ws" value="*"/>
      <cq:advisorNode namePattern="^org\.eclipse.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^org\.apache.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern="^org\.hamcrest.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.junit.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.google.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.ibm.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.sun.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.jcraft.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^com\.javax.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.antl.*" useMaterialization="false" useTargetPlatform="true"/>
