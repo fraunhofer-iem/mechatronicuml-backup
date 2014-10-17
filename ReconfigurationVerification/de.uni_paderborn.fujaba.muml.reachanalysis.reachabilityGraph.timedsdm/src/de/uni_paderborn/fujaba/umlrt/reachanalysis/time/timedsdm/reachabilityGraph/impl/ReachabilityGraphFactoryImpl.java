@@ -33,7 +33,7 @@ public class ReachabilityGraphFactoryImpl extends EFactoryImpl implements Reacha
 	 */
 	public static ReachabilityGraphFactory init() {
 		try {
-			ReachabilityGraphFactory theReachabilityGraphFactory = (ReachabilityGraphFactory)EPackage.Registry.INSTANCE.getEFactory("http://de/uni_paderborn/fujaba/umlrt/reachanalysis/time/timedsdm/reachabilityGraph"); 
+			ReachabilityGraphFactory theReachabilityGraphFactory = (ReachabilityGraphFactory)EPackage.Registry.INSTANCE.getEFactory(ReachabilityGraphPackage.eNS_URI);
 			if (theReachabilityGraphFactory != null) {
 				return theReachabilityGraphFactory;
 			}

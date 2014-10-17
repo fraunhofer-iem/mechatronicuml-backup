@@ -5,13 +5,14 @@
 
  $Id$
 --><plugin>
-<extension point="org.eclipse.emf.ecore.generated_package">
-      <package class="de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage" genModel="model/TimedStoryDiagrams.genmodel" uri="http://www.fujaba.de/timedstorydiagram/0.1.0"/>
-   </extension>
+
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage" genModel="model/TimedStoryDiagrams.genmodel" uri="http://www.fujaba.de/timedstorydiagram/0.1.0"/>
+      <!-- @generated TimedStoryDiagrams -->
+      <package
+            uri="http://www.fujaba.de/timedstorydiagram/0.1.0"
+            class="de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedstorydiagramPackage"
+            genModel="model/TimedStoryDiagrams.genmodel"/>
    </extension>
 
 </plugin>

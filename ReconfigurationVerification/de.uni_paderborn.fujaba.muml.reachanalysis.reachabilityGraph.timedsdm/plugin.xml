@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><!--
 --><plugin>
-<extension point="org.eclipse.emf.ecore.generated_package">
-      <package class="de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.ReachabilityGraphPackage" genModel="model/TimedSDMReachabilityAnalysis.genmodel" uri="http://de/uni_paderborn/fujaba/umlrt/reachanalysis/time/timedsdm/reachabilityGraph"/>
-   </extension>
+
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.ReachabilityGraphPackage" genModel="model/TimedSDMReachabilityAnalysis.genmodel" uri="http://de/uni_paderborn/fujaba/umlrt/reachanalysis/time/timedsdm/reachabilityGraph"/>
+      <!-- @generated TimedSDMReachabilityAnalysis -->
+      <package
+            uri="http://de/uni_paderborn/fujaba/umlrt/reachanalysis/time/timedsdm/reachabilityGraph"
+            class="de.uni_paderborn.fujaba.umlrt.reachanalysis.time.timedsdm.reachabilityGraph.ReachabilityGraphPackage"
+            genModel="model/TimedSDMReachabilityAnalysis.genmodel"/>
    </extension>
 
 </plugin>

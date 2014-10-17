@@ -163,6 +163,15 @@ public interface ReachabilityGraphPackage extends EPackage {
 	int TIMED_STEP_GRAPH__UNCHANGEABLE_NODES = SdmPackage.STEP_GRAPH__UNCHANGEABLE_NODES;
 
 	/**
+	 * The feature id for the '<em><b>Contained Nodes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_STEP_GRAPH__CONTAINED_NODES = SdmPackage.STEP_GRAPH__CONTAINED_NODES;
+
+	/**
 	 * The feature id for the '<em><b>Clock Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -12,6 +12,6 @@ Export-Package: de.uni_paderborn.fujaba.muml.timedstorydiagram,
  de.uni_paderborn.fujaba.muml.timedstorydiagram.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.storydriven.core;bundle-version="1.0.0",
- org.storydriven.storydiagrams;bundle-version="1.0.0"
+ org.storydriven.core;bundle-version="1.0.0";visibility:=reexport,
+ org.storydriven.storydiagrams;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
