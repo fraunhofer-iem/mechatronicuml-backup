@@ -1338,7 +1338,11 @@ mapping createMessageDelayInvariant(in maxMessageDelay : Integer) : InvariantSto
 helper RealtimeStatechart::createClockInstanceRules() : Set(ClockInstanceStoryDiagram) {
 	var clockInstanceRules : Set(ClockInstanceStoryDiagram) := object Set(ClockInstanceStoryDiagram){};
 	clockInstanceRules += self.clocks -> map clockToClockInstanceStorydiagram(self);
-	clockInstanceRules += self.states -> embeddedRegions -> embeddedStatechart . createClockInstanceRules();
+	
+	self.states -> embeddedRegions -> forEach(region){
+		clockInstanceRules += region . embeddedStatechart . createClockInstanceRules();
+	};
+	
 	return clockInstanceRules;
 }
 
@@ -1444,8 +1448,11 @@ helper RealtimeStatechart::createInvariantRules() : Set(InvariantStoryDiagram) {
 	var invariantRules : Set(InvariantStoryDiagram) := object Set(InvariantStoryDiagram){};
 	self.states->forEach(state){
 		invariantRules += state.invariants -> map stateInvariantToInvariantStorydiagram(self, state);
-	}; 
-	invariantRules += self.states -> embeddedRegions -> embeddedStatechart . createInvariantRules();
+	};
+	
+	self.states -> embeddedRegions -> forEach(region){
+		invariantRules += region . embeddedStatechart . createInvariantRules();
+	};
 	return invariantRules;
 }
 
