@@ -12,50 +12,50 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalFOTCTLLexer extends Lexer {
+    public static final int T__42=42;
+    public static final int RULE_EDGE_PREDICATE_NAME=5;
+    public static final int T__43=43;
+    public static final int T__40=40;
     public static final int RULE_ID=9;
+    public static final int T__41=41;
+    public static final int T__46=46;
     public static final int T__29=29;
     public static final int T__28=28;
+    public static final int T__44=44;
     public static final int T__27=27;
+    public static final int T__45=45;
     public static final int T__26=26;
+    public static final int RULE_CONSTANT_NAME=6;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int T__21=21;
     public static final int RULE_ANY_OTHER=14;
+    public static final int T__21=21;
     public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int T__19=19;
-    public static final int T__16=16;
-    public static final int T__15=15;
-    public static final int T__18=18;
-    public static final int T__17=17;
-    public static final int RULE_INT=8;
-    public static final int RULE_NODE_PREDICATE_NAME=4;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int RULE_EDGE_PREDICATE_NAME=5;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int RULE_CONSTANT_NAME=6;
     public static final int RULE_SL_COMMENT=12;
+    public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=11;
     public static final int T__30=30;
+    public static final int T__19=19;
     public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_STRING=10;
+    public static final int T__32=32;
     public static final int T__33=33;
+    public static final int T__16=16;
     public static final int T__34=34;
+    public static final int T__15=15;
     public static final int T__35=35;
+    public static final int T__18=18;
     public static final int T__36=36;
+    public static final int T__17=17;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
+    public static final int RULE_INT=8;
     public static final int RULE_VARIABLE_NAME=7;
     public static final int RULE_WS=13;
+    public static final int RULE_NODE_PREDICATE_NAME=4;
 
     // delegates
     // delegators
@@ -1092,10 +1092,10 @@ public class InternalFOTCTLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1113,10 +1113,10 @@ public class InternalFOTCTLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -1132,23 +1132,15 @@ public class InternalFOTCTLLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1173,10 +1165,10 @@ public class InternalFOTCTLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop9:
                     do {
                         int alt9=3;
@@ -1192,23 +1184,15 @@ public class InternalFOTCTLLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/parser/antlr/internal/InternalFOTCTL.g:1682:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();

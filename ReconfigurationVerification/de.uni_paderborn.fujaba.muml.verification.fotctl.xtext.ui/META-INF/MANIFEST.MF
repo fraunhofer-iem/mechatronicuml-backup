@@ -14,10 +14,11 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.verification.fotctl.xtext;visibilit
  org.antlr.runtime,
  org.eclipse.compare,
  org.eclipse.xtext.builder,
- com.google.guava;bundle-version="[10.0.1,12.0.0)"
+ com.google.guava;bundle-version="12.0.1"
 Import-Package: org.apache.commons.logging,
  org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.uni_paderborn.fujaba.muml.verification.ui.contentassist,
- de.uni_paderborn.fujaba.muml.verification.ui.contentassist.antlr
+ de.uni_paderborn.fujaba.muml.verification.ui.contentassist.antlr,
+ de.uni_paderborn.fujaba.muml.verification.ui.quickfix
 Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.ui.internal.FOTCTLActivator

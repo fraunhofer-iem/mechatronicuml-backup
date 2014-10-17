@@ -6,14 +6,13 @@ package de.uni_paderborn.fujaba.muml.verification.parseTreeConstruction;
 import org.eclipse.emf.ecore.*;
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
-import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor;
 
 import de.uni_paderborn.fujaba.muml.verification.services.FOTCTLGrammarAccess;
 
 import com.google.inject.Inject;
 
 @SuppressWarnings("all")
-public class FOTCTLParsetreeConstructor extends AbstractParseTreeConstructor {
+public class FOTCTLParsetreeConstructor extends org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor {
 		
 	@Inject
 	private FOTCTLGrammarAccess grammarAccess;
@@ -62,23 +61,16 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule FoTCTLSpec ****************
  *
  * FoTCTLSpec:
- * 
  * 	{FoTCTLSpec} "Declaration\n" ("NodeLabelPredicates {" nodeLabelPredicates+=NodeLabelPredicateDecl (","
- * 
  * 	nodeLabelPredicates+=NodeLabelPredicateDecl)* "}\n")? ("EdgeLabelPredicates {"
- * 
  * 	edgeLabelPredicates+=EdgeLabelPredicateDecl ("," edgeLabelPredicates+=EdgeLabelPredicateDecl)* "}\n")? ("Constants {"
- * 
  * 	constants+=ConstantSymbolDecl ("," constants+=ConstantSymbolDecl)* "}\n")? "Formulas\n" formulas+=FoTCTLFormula+;
  *
  **/
 
 // {FoTCTLSpec} "Declaration\n" ("NodeLabelPredicates {" nodeLabelPredicates+=NodeLabelPredicateDecl (","
-// 
 // nodeLabelPredicates+=NodeLabelPredicateDecl)* "}\n")? ("EdgeLabelPredicates {"
-// 
 // edgeLabelPredicates+=EdgeLabelPredicateDecl ("," edgeLabelPredicates+=EdgeLabelPredicateDecl)* "}\n")? ("Constants {"
-// 
 // constants+=ConstantSymbolDecl ("," constants+=ConstantSymbolDecl)* "}\n")? "Formulas\n" formulas+=FoTCTLFormula+
 protected class FoTCTLSpec_Group extends GroupToken {
 	
@@ -157,7 +149,6 @@ protected class FoTCTLSpec_DeclarationKeyword_1 extends KeywordToken  {
 }
 
 // ("NodeLabelPredicates {" nodeLabelPredicates+=NodeLabelPredicateDecl ("," nodeLabelPredicates+=NodeLabelPredicateDecl)*
-// 
 // "}\n")?
 protected class FoTCTLSpec_Group_2 extends GroupToken {
 	
@@ -173,7 +164,7 @@ protected class FoTCTLSpec_Group_2 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_2_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new FoTCTLSpec_RightCurlyBracketControl000aKeyword_2_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -341,15 +332,15 @@ protected class FoTCTLSpec_NodeLabelPredicatesAssignment_2_2_1 extends Assignmen
 
 
 // "}\n"
-protected class FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_2_3 extends KeywordToken  {
+protected class FoTCTLSpec_RightCurlyBracketControl000aKeyword_2_3 extends KeywordToken  {
 	
-	public FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_2_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public FoTCTLSpec_RightCurlyBracketControl000aKeyword_2_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_2_3();
+		return grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_2_3();
 	}
 
     @Override
@@ -365,7 +356,6 @@ protected class FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_2_3 extends Keywor
 
 
 // ("EdgeLabelPredicates {" edgeLabelPredicates+=EdgeLabelPredicateDecl ("," edgeLabelPredicates+=EdgeLabelPredicateDecl)*
-// 
 // "}\n")?
 protected class FoTCTLSpec_Group_3 extends GroupToken {
 	
@@ -381,7 +371,7 @@ protected class FoTCTLSpec_Group_3 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_3_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new FoTCTLSpec_RightCurlyBracketControl000aKeyword_3_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -550,15 +540,15 @@ protected class FoTCTLSpec_EdgeLabelPredicatesAssignment_3_2_1 extends Assignmen
 
 
 // "}\n"
-protected class FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_3_3 extends KeywordToken  {
+protected class FoTCTLSpec_RightCurlyBracketControl000aKeyword_3_3 extends KeywordToken  {
 	
-	public FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_3_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public FoTCTLSpec_RightCurlyBracketControl000aKeyword_3_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_3_3();
+		return grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_3_3();
 	}
 
     @Override
@@ -588,7 +578,7 @@ protected class FoTCTLSpec_Group_4 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_4_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new FoTCTLSpec_RightCurlyBracketControl000aKeyword_4_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -758,15 +748,15 @@ protected class FoTCTLSpec_ConstantsAssignment_4_2_1 extends AssignmentToken  {
 
 
 // "}\n"
-protected class FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_4_3 extends KeywordToken  {
+protected class FoTCTLSpec_RightCurlyBracketControl000aKeyword_4_3 extends KeywordToken  {
 	
-	public FoTCTLSpec_RightCurlyBracketLineFeedLfKeyword_4_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public FoTCTLSpec_RightCurlyBracketControl000aKeyword_4_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_4_3();
+		return grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_4_3();
 	}
 
     @Override
@@ -860,7 +850,6 @@ protected class FoTCTLSpec_FormulasAssignment_6 extends AssignmentToken  {
 /************ begin Rule FoTCTLFormula ****************
  *
  * FoTCTLFormula:
- * 
  * 	{FoTCTLFormula} formula=FormulaDefinition ";\n";
  *
  **/
@@ -880,7 +869,7 @@ protected class FoTCTLFormula_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new FoTCTLFormula_SemicolonLineFeedLfKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new FoTCTLFormula_SemicolonControl000aKeyword_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -967,15 +956,15 @@ protected class FoTCTLFormula_FormulaAssignment_1 extends AssignmentToken  {
 }
 
 // ";\n"
-protected class FoTCTLFormula_SemicolonLineFeedLfKeyword_2 extends KeywordToken  {
+protected class FoTCTLFormula_SemicolonControl000aKeyword_2 extends KeywordToken  {
 	
-	public FoTCTLFormula_SemicolonLineFeedLfKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public FoTCTLFormula_SemicolonControl000aKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getFoTCTLFormulaAccess().getSemicolonLineFeedLfKeyword_2();
+		return grammarAccess.getFoTCTLFormulaAccess().getSemicolonControl000aKeyword_2();
 	}
 
     @Override
@@ -995,7 +984,6 @@ protected class FoTCTLFormula_SemicolonLineFeedLfKeyword_2 extends KeywordToken 
 /************ begin Rule FormulaDefinition ****************
  *
  * FormulaDefinition returns tctl::FormulaDefinition:
- * 
  * 	AtomicFormula | UnaryFormula | BinaryFormula;
  *
  **/
@@ -1156,7 +1144,6 @@ protected class FormulaDefinition_BinaryFormulaParserRuleCall_2 extends RuleCall
 /************ begin Rule NodeLabelPredicateDecl ****************
  *
  * NodeLabelPredicateDecl:
- * 
  * 	{NodeLabelPredicateDecl} name=node_predicate_name;
  *
  **/
@@ -1257,7 +1244,6 @@ protected class NodeLabelPredicateDecl_NameAssignment_1 extends AssignmentToken 
 /************ begin Rule EdgeLabelPredicateDecl ****************
  *
  * EdgeLabelPredicateDecl:
- * 
  * 	{EdgeLabelPredicateDecl} name=edge_predicate_name;
  *
  **/
@@ -1358,7 +1344,6 @@ protected class EdgeLabelPredicateDecl_NameAssignment_1 extends AssignmentToken 
 /************ begin Rule ConstantSymbolDecl ****************
  *
  * ConstantSymbolDecl:
- * 
  * 	{ConstantSymbolDecl} name=constant_name;
  *
  **/
@@ -1459,7 +1444,6 @@ protected class ConstantSymbolDecl_NameAssignment_1 extends AssignmentToken  {
 /************ begin Rule Constant ****************
  *
  * Constant:
- * 
  * 	{Constant} declaration=[ConstantSymbolDecl|constant_name];
  *
  **/
@@ -1563,7 +1547,6 @@ protected class Constant_DeclarationAssignment_1 extends AssignmentToken  {
 /************ begin Rule Variable ****************
  *
  * Variable:
- * 
  * 	{Variable} declaration=[QuantifiedFormula|variable_name];
  *
  **/
@@ -1667,7 +1650,6 @@ protected class Variable_DeclarationAssignment_1 extends AssignmentToken  {
 /************ begin Rule UnaryFormula ****************
  *
  * UnaryFormula returns tctl::UnaryFormula:
- * 
  * 	NotFormula | UnaryTemporalFormula | QuantifiedFormula;
  *
  **/
@@ -1820,7 +1802,6 @@ protected class UnaryFormula_QuantifiedFormulaParserRuleCall_2 extends RuleCallT
 /************ begin Rule BinaryFormula ****************
  *
  * BinaryFormula returns tctl::BinaryFormula:
- * 
  * 	BinaryLogicFormula | BinaryTemporalFormula;
  *
  **/
@@ -1935,7 +1916,6 @@ protected class BinaryFormula_BinaryTemporalFormulaParserRuleCall_1 extends Rule
 /************ begin Rule AtomicFormula ****************
  *
  * AtomicFormula returns tctl::AtomicFormula:
- * 
  * 	NodeLabelPredicate | EdgeLabelPredicate;
  *
  **/
@@ -2050,7 +2030,6 @@ protected class AtomicFormula_EdgeLabelPredicateParserRuleCall_1 extends RuleCal
 /************ begin Rule NodeLabelPredicate ****************
  *
  * NodeLabelPredicate:
- * 
  * 	{NodeLabelPredicate} declaration=[NodeLabelPredicateDecl|node_predicate_name] "(" term=Term ")";
  *
  **/
@@ -2244,7 +2223,6 @@ protected class NodeLabelPredicate_RightParenthesisKeyword_4 extends KeywordToke
 /************ begin Rule EdgeLabelPredicate ****************
  *
  * EdgeLabelPredicate:
- * 
  * 	{EdgeLabelPredicate} declaration=[EdgeLabelPredicateDecl|edge_predicate_name] "(" term=Term "," secondTerm=Term ")";
  *
  **/
@@ -2506,16 +2484,13 @@ protected class EdgeLabelPredicate_RightParenthesisKeyword_6 extends KeywordToke
 /************ begin Rule QuantifiedFormula ****************
  *
  * QuantifiedFormula:
- * 
  * 	{QuantifiedFormula} quantifier=Quantifier " " name=variable_name
- * 
  * 	//' ('(variables+=[Variable|name](','variables+=[Variable|name])*)?') '
  *  " " subformula=FormulaDefinition;
  *
  **/
 
 // {QuantifiedFormula} quantifier=Quantifier " " name=variable_name
-// 
 // //' ('(variables+=[Variable|name](','variables+=[Variable|name])*)?') '
 //  " " subformula=FormulaDefinition
 protected class QuantifiedFormula_Group extends GroupToken {
@@ -2738,7 +2713,6 @@ protected class QuantifiedFormula_SubformulaAssignment_5 extends AssignmentToken
 /************ begin Rule TCTLFormula ****************
  *
  * TCTLFormula returns tctl::TCTLFormula:
- * 
  * 	{tctl::TCTLFormula} formula=FormulaDefinition | FoTCTLFormula;
  *
  **/
@@ -2919,7 +2893,6 @@ protected class TCTLFormula_FoTCTLFormulaParserRuleCall_1 extends RuleCallToken 
 /************ begin Rule NotFormula ****************
  *
  * NotFormula returns tctl::NotFormula:
- * 
  * 	"NOT " {tctl::NotFormula} subformula=FormulaDefinition;
  *
  **/
@@ -3054,7 +3027,6 @@ protected class NotFormula_SubformulaAssignment_2 extends AssignmentToken  {
 /************ begin Rule TemporalFormula ****************
  *
  * TemporalFormula returns tctl::TemporalFormula:
- * 
  * 	BinaryTemporalFormula | UnaryTemporalFormula;
  *
  **/
@@ -3169,15 +3141,12 @@ protected class TemporalFormula_UnaryTemporalFormulaParserRuleCall_1 extends Rul
 /************ begin Rule UnaryTemporalFormula ****************
  *
  * UnaryTemporalFormula returns tctl::UnaryTemporalFormula:
- * 
  * 	{tctl::UnaryTemporalFormula} temporalOperator=TemporalOperator "[" comparisonOperator=ComparisonOperator value=INT
- * 
  * 	"] " subformula=FormulaDefinition;
  *
  **/
 
 // {tctl::UnaryTemporalFormula} temporalOperator=TemporalOperator "[" comparisonOperator=ComparisonOperator value=INT "] "
-// 
 // subformula=FormulaDefinition
 protected class UnaryTemporalFormula_Group extends GroupToken {
 	
@@ -3432,15 +3401,12 @@ protected class UnaryTemporalFormula_SubformulaAssignment_6 extends AssignmentTo
 /************ begin Rule BinaryTemporalFormula ****************
  *
  * BinaryTemporalFormula returns tctl::BinaryTemporalFormula:
- * 
  * 	{tctl::BinaryTemporalFormula} "(" leftSubformula=FormulaDefinition " " temporalOperator=TemporalOperator "["
- * 
  * 	comparisonOperator=ComparisonOperator value=INT "] " rightSubformula=FormulaDefinition ")";
  *
  **/
 
 // {tctl::BinaryTemporalFormula} "(" leftSubformula=FormulaDefinition " " temporalOperator=TemporalOperator "["
-// 
 // comparisonOperator=ComparisonOperator value=INT "] " rightSubformula=FormulaDefinition ")"
 protected class BinaryTemporalFormula_Group extends GroupToken {
 	
@@ -3807,15 +3773,12 @@ protected class BinaryTemporalFormula_RightParenthesisKeyword_10 extends Keyword
 /************ begin Rule BinaryLogicFormula ****************
  *
  * BinaryLogicFormula returns tctl::BinaryLogicFormula:
- * 
  * 	{tctl::BinaryLogicFormula} "(" leftSubformula=FormulaDefinition operator=BinaryLogicOperator
- * 
  * 	rightSubformula=FormulaDefinition ")";
  *
  **/
 
 // {tctl::BinaryLogicFormula} "(" leftSubformula=FormulaDefinition operator=BinaryLogicOperator
-// 
 // rightSubformula=FormulaDefinition ")"
 protected class BinaryLogicFormula_Group extends GroupToken {
 	
@@ -4048,7 +4011,6 @@ protected class BinaryLogicFormula_RightParenthesisKeyword_5 extends KeywordToke
 /************ begin Rule Term ****************
  *
  * Term returns tctl::Term:
- * 
  * 	Variable | Constant | AtomicProposition;
  *
  **/
@@ -4201,7 +4163,6 @@ protected class Term_AtomicPropositionParserRuleCall_2 extends RuleCallToken {
 /************ begin Rule AtomicProposition ****************
  *
  * AtomicProposition returns tctl::AtomicProposition:
- * 
  * 	{tctl::AtomicProposition} name=variable_name;
  *
  **/

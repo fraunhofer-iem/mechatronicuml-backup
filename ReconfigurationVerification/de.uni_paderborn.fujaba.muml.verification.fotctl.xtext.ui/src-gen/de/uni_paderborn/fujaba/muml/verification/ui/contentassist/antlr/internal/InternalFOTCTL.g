@@ -1331,11 +1331,11 @@ rule__FoTCTLSpec__Group_2__3__Impl
     }
 :
 (
-{ before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_2_3()); }
+{ before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_2_3()); }
 
 	'}\n' 
 
-{ after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_2_3()); }
+{ after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_2_3()); }
 )
 
 ;
@@ -1521,11 +1521,11 @@ rule__FoTCTLSpec__Group_3__3__Impl
     }
 :
 (
-{ before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_3_3()); }
+{ before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_3_3()); }
 
 	'}\n' 
 
-{ after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_3_3()); }
+{ after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_3_3()); }
 )
 
 ;
@@ -1711,11 +1711,11 @@ rule__FoTCTLSpec__Group_4__3__Impl
     }
 :
 (
-{ before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_4_3()); }
+{ before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_4_3()); }
 
 	'}\n' 
 
-{ after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_4_3()); }
+{ after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_4_3()); }
 )
 
 ;
@@ -1872,11 +1872,11 @@ rule__FoTCTLFormula__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getFoTCTLFormulaAccess().getSemicolonLineFeedLfKeyword_2()); }
+{ before(grammarAccess.getFoTCTLFormulaAccess().getSemicolonControl000aKeyword_2()); }
 
 	';\n' 
 
-{ after(grammarAccess.getFoTCTLFormulaAccess().getSemicolonLineFeedLfKeyword_2()); }
+{ after(grammarAccess.getFoTCTLFormulaAccess().getSemicolonControl000aKeyword_2()); }
 )
 
 ;
@@ -4262,7 +4262,7 @@ RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
-RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
+RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 

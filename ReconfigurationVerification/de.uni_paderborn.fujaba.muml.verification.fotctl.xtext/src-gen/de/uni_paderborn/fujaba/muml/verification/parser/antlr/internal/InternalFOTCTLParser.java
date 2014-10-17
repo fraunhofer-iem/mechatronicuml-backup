@@ -337,7 +337,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     otherlv_6=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleFoTCTLSpec222); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_6, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_2_3());
+                          	newLeafNode(otherlv_6, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_2_3());
                           
                     }
 
@@ -466,7 +466,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     otherlv_11=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleFoTCTLSpec306); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_11, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_3_3());
+                          	newLeafNode(otherlv_11, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_3_3());
                           
                     }
 
@@ -595,7 +595,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
                     otherlv_16=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleFoTCTLSpec390); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_16, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_4_3());
+                          	newLeafNode(otherlv_16, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_4_3());
                           
                     }
 
@@ -805,7 +805,7 @@ public class InternalFOTCTLParser extends AbstractInternalAntlrParser {
             otherlv_2=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleFoTCTLFormula542); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_2, grammarAccess.getFoTCTLFormulaAccess().getSemicolonLineFeedLfKeyword_2());
+                  	newLeafNode(otherlv_2, grammarAccess.getFoTCTLFormulaAccess().getSemicolonControl000aKeyword_2());
                   
             }
 

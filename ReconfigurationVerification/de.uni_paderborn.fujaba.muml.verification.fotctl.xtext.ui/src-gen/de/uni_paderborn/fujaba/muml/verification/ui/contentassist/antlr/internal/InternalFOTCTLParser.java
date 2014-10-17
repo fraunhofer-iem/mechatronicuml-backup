@@ -4248,11 +4248,11 @@ public class InternalFOTCTLParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/ui/contentassist/antlr/internal/InternalFOTCTL.g:1334:1: '}\\n'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_2_3()); 
+               before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_2_3()); 
             }
             match(input,36,FollowSets000.FOLLOW_36_in_rule__FoTCTLSpec__Group_2__3__Impl2825); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_2_3()); 
+               after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_2_3()); 
             }
 
             }
@@ -4760,11 +4760,11 @@ public class InternalFOTCTLParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/ui/contentassist/antlr/internal/InternalFOTCTL.g:1524:1: '}\\n'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_3_3()); 
+               before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_3_3()); 
             }
             match(input,36,FollowSets000.FOLLOW_36_in_rule__FoTCTLSpec__Group_3__3__Impl3198); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_3_3()); 
+               after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_3_3()); 
             }
 
             }
@@ -5272,11 +5272,11 @@ public class InternalFOTCTLParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/ui/contentassist/antlr/internal/InternalFOTCTL.g:1714:1: '}\\n'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_4_3()); 
+               before(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_4_3()); 
             }
             match(input,36,FollowSets000.FOLLOW_36_in_rule__FoTCTLSpec__Group_4__3__Impl3571); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_4_3()); 
+               after(grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_4_3()); 
             }
 
             }
@@ -5677,11 +5677,11 @@ public class InternalFOTCTLParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.fotctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/ui/contentassist/antlr/internal/InternalFOTCTL.g:1875:1: ';\\n'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getFoTCTLFormulaAccess().getSemicolonLineFeedLfKeyword_2()); 
+               before(grammarAccess.getFoTCTLFormulaAccess().getSemicolonControl000aKeyword_2()); 
             }
             match(input,40,FollowSets000.FOLLOW_40_in_rule__FoTCTLFormula__Group__2__Impl3882); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getFoTCTLFormulaAccess().getSemicolonLineFeedLfKeyword_2()); 
+               after(grammarAccess.getFoTCTLFormulaAccess().getSemicolonControl000aKeyword_2()); 
             }
 
             }

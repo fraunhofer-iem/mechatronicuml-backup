@@ -143,7 +143,7 @@ ruleFoTCTLSpec returns [EObject current=null]
 )
 ))*	otherlv_6='}\n' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_2_3());
+    	newLeafNode(otherlv_6, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_2_3());
     }
 )?(	otherlv_7='EdgeLabelPredicates {' 
     {
@@ -191,7 +191,7 @@ ruleFoTCTLSpec returns [EObject current=null]
 )
 ))*	otherlv_11='}\n' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_3_3());
+    	newLeafNode(otherlv_11, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_3_3());
     }
 )?(	otherlv_12='Constants {' 
     {
@@ -239,7 +239,7 @@ ruleFoTCTLSpec returns [EObject current=null]
 )
 ))*	otherlv_16='}\n' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketLineFeedLfKeyword_4_3());
+    	newLeafNode(otherlv_16, grammarAccess.getFoTCTLSpecAccess().getRightCurlyBracketControl000aKeyword_4_3());
     }
 )?	otherlv_17='Formulas\n' 
     {
@@ -313,7 +313,7 @@ ruleFoTCTLFormula returns [EObject current=null]
 )
 )	otherlv_2=';\n' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getFoTCTLFormulaAccess().getSemicolonLineFeedLfKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getFoTCTLFormulaAccess().getSemicolonControl000aKeyword_2());
     }
 )
 ;
@@ -1679,7 +1679,7 @@ RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
-RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
+RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
