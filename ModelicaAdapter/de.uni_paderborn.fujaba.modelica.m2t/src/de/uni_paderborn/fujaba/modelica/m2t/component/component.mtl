@@ -86,7 +86,7 @@ model [componentInstance.getModelName()/]
 		[behavior.getName().toUpperFirst()/].[behavior.getName().toUpperFirst()/] [componentInstance.getBehaviorVariableName()/]
 			[createBehaviorDeclAnnotation(behavior)/];
 		equation
-			[connectPorts(componentInstance.portInstances)/]
+			[connectPorts(componentInstance)/]
 	[componentInstance.createComponentIconDeclAnnotation()/];
 end [componentInstance.getModelName()/];
 [/file]

@@ -60,44 +60,6 @@
 /]
 
 [**
- * Check that the message types that are defined in the sender message types list of
- * the discrete port instance's port type are sent by the discrete port instance's
- * rtsc. If this check is not fulfilled an error is displayed in the error log.
- * @param portInstance the discrete port instance
-*/]
-[query public checkRaiseMessages(portInstance : DiscretePortInstance) : Boolean =
-	let portType : DiscretePort = portInstance.portType.oclAsType(DiscretePort)
-	in
-	let senderMessageTypeList : Set(MessageType) = portType.behavior.oclAsType(RealtimeStatechart)
-		.getAllRaiseMessageEvents()->getAsyncMessageEventRepr()->collect(message.instanceOf)
-		->asSet()
-	in
-	portType.senderMessageTypes->reject(s | senderMessageTypeList->includes(s))->collect(
-		'The message type "' + name + '" is defined as a sender message type but is not sent'
-		+ '(port type: ' + portType.name + ')'
-	)->displayErrors()
-/]
-
-[**
- * Check that the message types that are defined in the receiver message types list of
- * the discrete port instance's port type are received by the discrete port instance's
- * rtsc. If this check is not fulfilled an error is displayed in the error log.
- * @param portInstance the discrete port instance
-*/]
-[query public checkTriggerMessages(portInstance : DiscretePortInstance) : Boolean =
-	let portType : DiscretePort = portInstance.portType.oclAsType(DiscretePort)
-	in
-	let receiverMessageTypeList : Set(MessageType) = portType.behavior.oclAsType(RealtimeStatechart)
-		.getAllTriggerMessageEvents()->getAsyncMessageEventRepr()->collect(message.instanceOf)
-		->asSet()
-	in
-	portType.receiverMessageTypes->reject(s | receiverMessageTypeList->includes(s))->collect(
-		'The message type "' + name + '" is defined as a receiver message type but is not sent'
-		+ '(port type: ' + portType.name + ')'
-	)->displayErrors()
-/]
-
-[**
  * Check if datatypes of the message type's parameters are valid.
  * For instance array data types cannot be transformed because
  * the RealtimeCoordinationLibrary does not support them.

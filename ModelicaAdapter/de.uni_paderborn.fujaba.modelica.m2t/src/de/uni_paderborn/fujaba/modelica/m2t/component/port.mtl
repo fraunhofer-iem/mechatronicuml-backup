@@ -10,6 +10,7 @@
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
 
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::expression]
+[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::queries]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::helper::port]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::hybrid::hybrid]
 
@@ -40,9 +41,7 @@
 */]
 [template private createPortDeclaration(portInstance : DiscreteSinglePortInstance) ? (
 	portInstance.portType.oclAsType(DiscretePort).isDiscreteInPort
-) {
-	dummy : Boolean = portInstance.checkTriggerMessages();
-}]
+)]
 [createInputPortDeclaration(portInstance)/]
 [/template]
 
@@ -52,9 +51,7 @@
 */]
 [template private createPortDeclaration(portInstance : DiscreteSinglePortInstance) ? (
 	portInstance.portType.oclAsType(DiscretePort).isDiscreteOutPort
-) {
-	dummy : Boolean = portInstance.checkRaiseMessages();
-}]
+)]
 [createOutputPortDeclaration(portInstance)/]
 [/template]
 
@@ -122,39 +119,45 @@
 
 [**
  * Connect the atomic component instance ports with their corresponding rtsc ports
- * @param portInstanceSet the set of port instances
+ * @param componentInstance the atomic component instance
 */]
-[template public connectPorts(portInstanceSet : Set(PortInstance)) {
-	discretePortInstanceSet : Set(DiscretePortInstance) = portInstanceSet->select(oclIsKindOf(DiscretePortInstance))
+[template public connectPorts(componentInstance : AtomicComponentInstance) {
+	discretePortInstanceSet : Set(DiscretePortInstance) = componentInstance.portInstances
+		->select(oclIsKindOf(DiscretePortInstance))
 		->collect(oclAsType(DiscretePortInstance))->asSet();
-	hybridPortInstanceSet : Set(HybridPortInstance) = portInstanceSet->select(portType.oclIsKindOf(HybridPort))
+	hybridPortInstanceSet : Set(HybridPortInstance) = componentInstance.portInstances->select(portType.oclIsKindOf(HybridPort))
 		->collect(oclAsType(HybridPortInstance))->asSet();
-	continuousPortInstanceSet : Set(ContinuousPortInstance) = portInstanceSet->select(portType.oclIsKindOf(ContinuousPort))
-		->collect(oclAsType(ContinuousPortInstance))->asSet();
+	rtsc : RealtimeStatechart = componentInstance.componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart);
 }]
-[connectDiscretePorts(discretePortInstanceSet)/]
+[connectDiscretePorts(discretePortInstanceSet, rtsc)/]
 [connectHybridPorts(hybridPortInstanceSet)/]
 [/template]
 
 [**
  * Connect the atomic component instance discrete ports with their corresponding rtsc ports
+ * (A connect statement is only generated, if the actual message type is sent or received by the rtsc)
  * @param discretePortInstanceSet the set of discrete port instances
+ * @param rtsc the atomic component's rtsc (we don't care if this is the original or "transformed" rtsc)
 */]
-[template private connectDiscretePorts(discretePortInstanceSet : Set(DiscretePortInstance))]
-	// connect discrete component ports with the corresponding rtsc ports 
+[template private connectDiscretePorts(discretePortInstanceSet : Set(DiscretePortInstance), rtsc : RealtimeStatechart)]
+	// connect discrete component ports with the corresponding rtsc ports (only for received or sent messages)
 [for (discretePortInstance : DiscretePortInstance | discretePortInstanceSet->select(not oclIsKindOf(DiscreteMultiPortInstance)))]
-[for (messageType : MessageType | discretePortInstance.receiverMessageTypes)]
+[for (messageType : MessageType | discretePortInstance.receiverMessageTypes->select(messageType : MessageType |
+	rtsc.getAllTriggerMessageEvents()->getAsyncMessageEventRepr()->collect(message.instanceOf)->includes(messageType)
+))]
 	connect([discretePortInstance.getRTSCInputPortName(messageType)/],
 		[discretePortInstance.getInputPortName(messageType)/])
 		[createPortConnectAnnotation(discretePortInstance)/];
 [/for]
-[for (messageType : MessageType | discretePortInstance.senderMessageTypes)]
+[for (messageType : MessageType | discretePortInstance.senderMessageTypes->select(messageType : MessageType |
+	rtsc.getAllTriggerMessageEvents()->getAsyncMessageEventRepr()->collect(message.instanceOf)->includes(messageType)
+))]
 	connect([discretePortInstance.getRTSCOutputPortName(messageType)/],
 		[discretePortInstance.getOutputPortName(messageType)/])
 		[createPortConnectAnnotation(discretePortInstance)/];
 [/for]
 [/for]
-	// connect discrete component ports with the corresponding rtsc ports
+	// connect discrete component ports with the corresponding rtsc ports  (only for received or sent messages)
 [/template]
 
 [**
