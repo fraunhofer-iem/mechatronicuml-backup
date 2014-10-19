@@ -169,10 +169,6 @@
              afterTab="property.tab.general"
              id="property.tab.documentation"
              label="%tab.documentation"/>
-          <propertyTab
-                       category="extra"
-             id="property.tab.domain"
-             label="%tab.domain"/>
       </propertyTabs>
    </extension>
 
@@ -218,14 +214,6 @@
             tab="property.tab.documentation"
             filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
-         </propertySection>
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.sheet.ComponentSDDPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>

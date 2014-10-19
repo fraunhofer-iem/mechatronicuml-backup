@@ -29,7 +29,7 @@
 		<link>
 			<name>model/PostReconcileLibrary.qvto</name>
 			<type>1</type>
-			<locationURI>WORKSPACE_LOC//de.uni_paderborn.fujaba.muml.common/transformations/PostReconcileLibrary.qvto</locationURI>
+			<locationURI>WORKSPACE_LOC/de.uni_paderborn.fujaba.common/transformations/PostReconcileLibrary.qvto</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
