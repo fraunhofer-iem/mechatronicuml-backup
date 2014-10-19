@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties; singleton:=true
+Bundle-Version: 0.1
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd,
+ de.uni_paderborn.fujaba.properties.runtime,
+ org.eclipse.emf.edit,
+ de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.constraint,
+ de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.basicSDD.editor
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
