@@ -21,37 +21,6 @@ modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba
 
 ------------ helper functions --------------
 
-/* TODO remove
--- traverses to the parents of rtsc until an RTSC is reached whole BehavioralElement is the Executor
-helper getExecutor(in rtsc : RealtimeStatechart) : Executor{
-
-	var curRTSC : RealtimeStatechart := rtsc;
-	
-	while(not (curRTSC.oclIsUndefined() or curRTSC.behavioralElement.oclIsTypeOf(Executor))){
-		if(not curRTSC.parentRegion.oclIsUndefined()) then {
-			curRTSC := curRTSC.parentRegion.parentState.parentStatechart;
-		} else {
-			curRTSC := null;
-		} endif;
-	};
-	
-	if(curRTSC.oclIsUndefined()) then{
-		return null;
-	} endif;
-
-	return curRTSC.behavioralElement.oclAsType(Executor);
-}
-
--- returns the manager of the reconfiguration controller containing the executor that is generated here
-helper getManager(in executor : Executor) : Manager{
-	if(executor.oclIsUndefined()) then {
-		return null;
-	} endif;
-	
-	return executor.reconfigurationController.manager;
-}
-*/
-
 -- returns the reconfiguration rule associated with the MessageType by ManagerSpecification
 helper MessageType :: getReconfigurationRule(theManager : Manager) : ReconfigurationRule{
 	//TODO we assume a 1:1 mapping from message type to reconfiguration rule, adapt this when 1:n is supported
@@ -72,12 +41,3 @@ helper ReconfigurationRule :: getID(theExecutor : Executor) : Integer{
 	};
 	return entry.id;
 }
-
-/* TODO remove
-helper ReconfigurationRule :: getReconfigurationExecutionPortInterfaceEntry(manager : Manager, executor : Executor) : ReconfigurationExecutionPortInterfaceEntry{
-	//TODO we assume a 1:1 mapping from message type to reconfiguration rule, adapt this when 1:n is supported
-	var managerEntry := manager.specificationEntries->select(reconfigurationRule = self)->any(true);
-	var theMessageType := managerEntry.messageType;
-	
-	return executor.reconfigurationExecutionPorts->any(name = 'parent').interfaceEntries->any(messageType = theMessageType);
-}*/
