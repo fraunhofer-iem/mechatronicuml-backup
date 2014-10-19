@@ -9,7 +9,9 @@
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.propsheet#/"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#/"/>
-  <plugin id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties" name="ComponentStoryDecisionDiagram Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd/model/BasicSDD.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties" name="ComponentStoryDecisionDiagram Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>

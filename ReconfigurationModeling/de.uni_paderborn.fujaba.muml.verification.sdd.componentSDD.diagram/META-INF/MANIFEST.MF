@@ -46,12 +46,18 @@ Require-Bundle: org.eclipse.ui,
  org.storydriven.storydiagrams;visibility:=reexport,
  org.storydriven.storydiagrams.edit;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.4.0",
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties;visibility:=reexport,
+ org.storydriven.core.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.properties.runtime;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.reconfiguration.common;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.common
+ de.uni_paderborn.fujaba.common;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName

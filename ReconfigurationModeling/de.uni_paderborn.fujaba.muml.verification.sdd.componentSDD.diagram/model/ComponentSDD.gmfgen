@@ -1219,6 +1219,13 @@
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredPlugins>
+    <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.edit.properties</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>
