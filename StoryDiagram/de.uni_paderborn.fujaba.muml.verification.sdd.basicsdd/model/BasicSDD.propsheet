@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.common.properties">
+  <reconciler/>
+  <genModel href="BasicSDD.genmodel#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit</requiredBundles>
+  </plugin>
+  <packages>
+    <genPackage href="BasicSDD.genmodel#//basicSDD"/>
+    <classes>
+      <genClass href="BasicSDD.genmodel#//basicSDD/StoryDecisionDiagram"/>
+    </classes>
+    <classes>
+      <genClass href="BasicSDD.genmodel#//basicSDD/StoryPatternNode"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.common.properties">
+  <reconciler/>
+  <genModel href="sdd.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+  <packages>
+    <genPackage href="sdd.genmodel#//sdd"/>
+    <classes>
+      <genClass href="sdd.genmodel#//sdd/AbstractStoryDecisionDiagram"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+    </classes>
+    <classes>
+      <genClass href="sdd.genmodel#//sdd/Node"/>
+      <properties tooltip="" category="//@packages.0/@classes.1/@propertyCategories.0" initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/Node/outgoingEdges"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.0/@classes.1/@propertyCategories.0" initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/Node/incomingEdges"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.0 //@packages.0/@classes.1/@properties.1"/>
+    </classes>
+    <classes>
+      <genClass href="sdd.genmodel#//sdd/Edge"/>
+      <properties initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/Edge/sourceNode"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/Edge/targetNode"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/Edge/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.1">
+      <genClass href="sdd.genmodel#//sdd/LeafNode"/>
+      <properties category="//@packages.0/@classes.3/@propertyCategories.0" initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/LeafNode/value"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.3/@properties.0"/>
+    </classes>
+    <classes>
+      <genClass href="sdd.genmodel#//sdd/PatternNode"/>
+      <properties initializeOCLExpression="">
+        <genFeature href="sdd.genmodel#//sdd/PatternNode/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="#//@packages.0/@classes.1"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
