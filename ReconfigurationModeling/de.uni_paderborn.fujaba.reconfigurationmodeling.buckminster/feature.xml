@@ -20,6 +20,16 @@
          id="de.uni_paderborn.fujaba.muml.reconfiguration.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.junit" version="3.8.2" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.storydiagrams" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.tests" version="0.3.1" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="de.uni_paderborn.fujaba.muml.reconfiguration.tests"
          download-size="0"
