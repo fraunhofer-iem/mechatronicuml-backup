@@ -54,6 +54,21 @@
 	    </iterate>
      </definition>
     </extension>
+    
+        <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="de.uni_paderborn.fujaba.properties.expression.propsheetfile">
+	    <iterate
+           ifEmpty="false"
+           operator="and">
+	       <adapt type="org.eclipse.core.resources.IResource">
+	          <test property="org.eclipse.core.resources.name" 
+	                value="*.propsheet"/>
+	       </adapt>
+	    </iterate>
+     </definition>
+    </extension>
 
     <extension point="org.eclipse.ui.menus">
 	   <menuContribution
@@ -73,12 +88,41 @@
        </command>
 	   </menuContribution>
 	</extension>
+	
+	<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+       <command
+             commandId="de.uni_paderborn.fujaba.properties.generateProperties"
+             icon="icons/full/obj16/Generate.gif"
+             id="de.uni_paderborn.fujaba.properties.generateProperties"
+             label="Generate Properties"
+             style="push">
+          <visibleWhen
+                checkEnabled="false">
+             <reference
+                   definitionId="de.uni_paderborn.fujaba.properties.expression.propsheetfile">
+             </reference>
+          </visibleWhen>
+       </command>
+	   </menuContribution>
+	</extension>
 
     <extension point="org.eclipse.ui.commands">
 		<command
-			description="Initialize realtimestatechart_diagram"
+			description="Initialize Propsheet"
 			defaultHandler="de.uni_paderborn.fujaba.properties.presentation.InitializePropsheetHandler"
 			id="de.uni_paderborn.fujaba.properties.initializePropsheet"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+
+    <extension point="org.eclipse.ui.commands">
+		<command
+			description="Generate Propsheet"
+			defaultHandler="de.uni_paderborn.fujaba.properties.presentation.GeneratePropertiesHandler"
+			id="de.uni_paderborn.fujaba.properties.generateProperties"
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
