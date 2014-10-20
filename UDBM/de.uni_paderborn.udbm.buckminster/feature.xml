@@ -20,6 +20,11 @@
          id="de.uni_paderborn.fujaba.udbm.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import plugin="de.uni_paderborn.fujaba.udbm" version="0.3.0" match="greaterOrEqual"/>
+      <import plugin="org.junit" version="4.10.0" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="de.uni_paderborn.fujaba.udbm.test"
          download-size="0"
