@@ -63,12 +63,11 @@ int main(){
 
 while (1){
 	[comment execution of model/]
-
-	[for (ci : ComponentInstance | CIs)]
-		[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+[for (ci : ComponentInstance | CIs)]
+		[if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined() and ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT)))]
 			[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
 		[/if]
-	[/for]
+[/for]
 
 }
 }
@@ -116,11 +115,11 @@ while (1){
  * @param modelElementCategory
  */]
 [template public generateInstanceConfiguration(CIs : OrderedSet(ComponentInstance))]
-[for (cInst : ComponentInstance | CIs)]
-[if ((cInst.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (cInst.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-//instantiate components of [cInst.getName()/]
-//	[cInst.getVariableName()/] = [getCreateMethodName(cInst)/]();
-	[cInst.configurateInstance()/]
+[for (ci : ComponentInstance | CIs)]
+[if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined() and ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT)))]
+//instantiate components of [ci.getName()/]
+	[ci.getVariableName()/] = [getCreateMethodName(ci)/]();
+	[ci.configurateInstance()/]
 
 [/if]
 [/for]
