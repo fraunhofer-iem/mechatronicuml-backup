@@ -383,6 +383,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String MultiPortOrderConstraint7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String MultiPortOrderConstraint7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ActivityActivityCompartmentEditPart_title;
 
 	/**

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="componentstorydiagram">
   <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="GrayArrowDecoration">
+      <foregroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
+    </figures>
     <descriptors name="ActivityFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="ActivityFigure" fill="false">
         <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
@@ -452,6 +455,13 @@
     <descriptors name="SignatureFigure">
       <actualFigure xsi:type="gmfgraph:InvisibleRectangle" name="SignatureRect"/>
     </descriptors>
+    <descriptors name="MultiPortOrderConstraintFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
+        <children xsi:type="gmfgraph:Label" name="MultiPortOrderConstraintTypeFigure"/>
+      </actualFigure>
+      <accessors accessor="getMultiPortOrderConstraintTypeLabelFigure" figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes name="Activity" figure="ActivityFigure"/>
   <nodes name="InitialNode">
@@ -500,6 +510,7 @@
   <connections name="AssemblyVariable" figure="AssemblyVariableFigure"/>
   <connections name="ActivityEdge" figure="ActivityEdgeFigure"/>
   <connections name="DelegationVariable" figure="DelegationVariableFigure"/>
+  <connections name="MultiPortOrderConstraint" figure="MultiPortOrderConstraintFigure"/>
   <compartments name="ActivityCompartment" figure="ActivityFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <compartments name="ComponentStoryNodeCompartment" figure="ComponentStoryNodeRoundedFigure" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <compartments name="ComponentStoryPatternCompartment" figure="ComponentStoryPatternFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
@@ -537,4 +548,5 @@
   <labels name="PortVariableTypeLabel" elementIcon="false">
     <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
   </labels>
+  <labels name="MultiPortOrderConstraintTypeLabel" figure="MultiPortOrderConstraintFigure" elementIcon="false" accessor="//@figures.0/@descriptors.20/@accessors.0"/>
 </gmfgraph:Canvas>

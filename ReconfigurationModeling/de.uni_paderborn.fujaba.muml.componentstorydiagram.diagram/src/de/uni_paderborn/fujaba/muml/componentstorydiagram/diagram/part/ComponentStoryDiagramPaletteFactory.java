@@ -24,6 +24,8 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
+import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 /**
  * @generated
@@ -70,6 +72,7 @@ public class ComponentStoryDiagramPaletteFactory {
 		paletteContainer.add(createAssemblyVariable4CreationTool());
 		paletteContainer.add(createDelegationVariable5CreationTool());
 		paletteContainer.add(createFadingComponentPartVariable6CreationTool());
+		paletteContainer.add(createMultiPortOrderConstraint7CreationTool());
 		return paletteContainer;
 	}
 
@@ -77,7 +80,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivity1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.Activity1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.Activity1CreationTool_desc,
 				Collections
@@ -93,7 +96,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createComponentStoryNode2CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ComponentStoryNode2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ComponentStoryNode2CreationTool_desc,
 				Collections
@@ -109,7 +112,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createControllerExchangeNode3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ControllerExchangeNode3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ControllerExchangeNode3CreationTool_desc,
 				Collections
@@ -125,7 +128,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityEdge4CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ActivityEdge4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ActivityEdge4CreationTool_desc,
 				Collections
@@ -141,7 +144,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInitialNode5CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.InitialNode5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.InitialNode5CreationTool_desc,
 				Collections
@@ -157,7 +160,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createJunctionNode6CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.JunctionNode6CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.JunctionNode6CreationTool_desc,
 				Collections
@@ -173,7 +176,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityFinalNode7CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ActivityFinalNode7CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ActivityFinalNode7CreationTool_desc,
 				Collections
@@ -189,7 +192,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPartVariable1CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.PartVariable1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.PartVariable1CreationTool_desc,
 				Collections
@@ -209,7 +212,7 @@ public class ComponentStoryDiagramPaletteFactory {
 		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
 		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
 		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.SinglePortVariable2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.SinglePortVariable2CreationTool_desc,
 				types);
@@ -227,7 +230,7 @@ public class ComponentStoryDiagramPaletteFactory {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
 		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.MultiPortVariable3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.MultiPortVariable3CreationTool_desc,
 				types);
@@ -242,7 +245,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAssemblyVariable4CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.AssemblyVariable4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.AssemblyVariable4CreationTool_desc,
 				Collections
@@ -258,7 +261,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDelegationVariable5CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.DelegationVariable5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.DelegationVariable5CreationTool_desc,
 				Collections
@@ -274,7 +277,7 @@ public class ComponentStoryDiagramPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createFadingComponentPartVariable6CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.FadingComponentPartVariable6CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.FadingComponentPartVariable6CreationTool_desc,
 				Collections
@@ -289,58 +292,16 @@ public class ComponentStoryDiagramPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private static class NodeToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> elementTypes;
-
-		/**
-		 * @generated
-		 */
-		private NodeToolEntry(String title, String description,
-				List<IElementType> elementTypes) {
-			super(title, description, null, null);
-			this.elementTypes = elementTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LinkToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> relationshipTypes;
-
-		/**
-		 * @generated
-		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> relationshipTypes) {
-			super(title, description, null, null);
-			this.relationshipTypes = relationshipTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
+	private ToolEntry createMultiPortOrderConstraint7CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.MultiPortOrderConstraint7CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.MultiPortOrderConstraint7CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortOrderConstraint_4006));
+		entry.setId("createMultiPortOrderConstraint7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortOrderConstraint_4006));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 }

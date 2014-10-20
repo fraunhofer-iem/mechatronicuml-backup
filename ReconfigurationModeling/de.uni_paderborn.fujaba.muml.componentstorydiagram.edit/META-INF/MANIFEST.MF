@@ -23,6 +23,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.storydiagrams;visibility:=reexport,
  org.storydriven.storydiagrams.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.componentstorypattern.edit;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0";visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.componentstorypattern.edit;bundle-version="0.4.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

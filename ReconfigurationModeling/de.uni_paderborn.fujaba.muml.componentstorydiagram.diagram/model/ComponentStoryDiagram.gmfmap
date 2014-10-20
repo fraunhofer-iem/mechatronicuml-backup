@@ -626,6 +626,31 @@
           body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
     </creationConstraints>
   </links>
+  <links>
+    <domainMetaElement
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="ComponentStoryDiagram.gmfgraph#MultiPortOrderConstraintTypeLabel"/>
+      <features
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint/orderConstraintType"/>
+    </labelMappings>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortVariable/orderConstraints"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.6"/>
+    <diagramLink
+        href="ComponentStoryDiagram.gmfgraph#MultiPortOrderConstraint"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint/srcSubPortVariable"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortConstraint/tgtSubPortVariable"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="ComponentStoryDiagram.gmfgraph#componentstorydiagram"/>

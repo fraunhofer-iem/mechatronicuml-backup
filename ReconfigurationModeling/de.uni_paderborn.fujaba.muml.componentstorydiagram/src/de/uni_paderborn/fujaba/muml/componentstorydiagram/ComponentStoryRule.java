@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryRule()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ComponentVariableHasToHaveSameTypeAsReconfiguredComponent='self.activity.oclAsType(storydiagrams::activities::Activity).ownedActivityNode->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)'"
  * @generated
  */
 public interface ComponentStoryRule extends ReconfigurationRule {

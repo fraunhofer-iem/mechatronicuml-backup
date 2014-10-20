@@ -344,7 +344,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -352,13 +352,13 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });						
+		   });	
 		addAnnotation
 		  (controllerExchangeNodeEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "HasOnlyOneCreateAndOneDestroyPartVariable ContainsExactlyOneFadingComponentPartVariable"
-		   });		
+		   });
 	}
 
 	/**
@@ -368,14 +368,20 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";						
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (componentStoryRuleEClass, 
+		   source, 
+		   new String[] {
+			 "ComponentVariableHasToHaveSameTypeAsReconfiguredComponent", "self.activity.oclAsType(storydiagrams::activities::Activity).ownedActivityNode->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)"
+		   });	
 		addAnnotation
 		  (controllerExchangeNodeEClass, 
 		   source, 
 		   new String[] {
 			 "HasOnlyOneCreateAndOneDestroyPartVariable", "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables\r\n->select(pV : componentstorypattern::PartVariable | pV.oclIsKindOf(componentstorypattern::ComponentPartVariable))->asOrderedSet() in\r\npartVariables->size() = 2 and\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\nfalse endif endif\r\n",
 			 "ContainsExactlyOneFadingComponentPartVariable", "let fadingComponentPartVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->select(pv : componentstorypattern::PartVariable | pv.oclIsKindOf(componentstorypattern::FadingComponentPartVariable))->asOrderedSet()\r\n  in fadingComponentPartVariables->size() = 1"
-		   });			
+		   });
 	}
 
 } //ComponentstorydiagramPackageImpl

@@ -224,7 +224,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component Story"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022,3023,3024"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4004,4005"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4004,4005,4006"/>
       </viewProvider>
    </extension>
 
@@ -239,7 +239,7 @@
             <method name="getType()" value="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022,3023,3024"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4004,4005"/>
+            <method name="getType()" value="4001,4004,4005,4006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5011,5001,5019,5020,5017,5018,5021,5022,5056,5023,5024,5057,5025,5026,5058,5027,5028,5059,5010,5041,5052,5053,5054,5055"/>
@@ -560,6 +560,16 @@
             <param name="semanticHint" value="4005"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.MultiPortOrderConstraint_4006"
+               name="%metatype.name.MultiPortOrderConstraint_4006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MultiPortOrderConstraint"
+               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.MultiPortOrderConstraintEditHelper">
+            <param name="semanticHint" value="4006"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -593,6 +603,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ActivityEdge_4001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.AssemblyVariable_4004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.DelegationVariable_4005"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.MultiPortOrderConstraint_4006"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

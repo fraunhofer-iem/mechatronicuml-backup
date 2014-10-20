@@ -30,13 +30,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationRule
  * @generated
  */
 public class ComponentStoryRuleItemProvider
-	extends ReconfigurationRuleItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ReconfigurationRuleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

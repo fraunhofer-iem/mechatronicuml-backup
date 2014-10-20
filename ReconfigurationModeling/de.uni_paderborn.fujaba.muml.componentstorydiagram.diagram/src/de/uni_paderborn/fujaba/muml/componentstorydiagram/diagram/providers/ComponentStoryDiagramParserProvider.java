@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
 import org.storydriven.core.CorePackage;
 
 /**
@@ -229,6 +230,24 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	private IParser multiPortOrderConstraintOrderConstraintType_6006Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getMultiPortOrderConstraintOrderConstraintType_6006Parser() {
+		if (multiPortOrderConstraintOrderConstraintType_6006Parser == null) {
+			EAttribute editableFeature = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					.getMultiPortOrderConstraint_OrderConstraintType();
+			EnumParser parser = new EnumParser(editableFeature);
+			multiPortOrderConstraintOrderConstraintType_6006Parser = parser;
+		}
+		return multiPortOrderConstraintOrderConstraintType_6006Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeNameEditPart.VISUAL_ID:
@@ -259,6 +278,9 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 			return getAssemblyVariableName_6004Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:
 			return getDelegationVariableName_6005Parser();
+
+		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintOrderConstraintTypeEditPart.VISUAL_ID:
+			return getMultiPortOrderConstraintOrderConstraintType_6006Parser();
 		}
 		return null;
 	}

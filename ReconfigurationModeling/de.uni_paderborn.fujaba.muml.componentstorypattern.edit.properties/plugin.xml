@@ -103,7 +103,38 @@
              type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#ComponentPartVariable">
        </propertyEditor>
     
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.MultiPortConstraintEditor$Factory"
+             type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#MultiPortConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.MultiPortOrderConstraintEditor$Factory"
+             type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#MultiPortOrderConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.MultiPortPositionConstraintEditor$Factory"
+             type="http://www.fujaba.de/muml/componentstorypattern/0.4.0#MultiPortPositionConstraint">
+       </propertyEditor>
+    
     </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+    <metamodel
+          contributor="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+    <constraint
+          contributor="de.uni_paderborn.fujaba.muml.componentstorypattern.properties.constraint.CreationConstraintContributor">
+    </constraint>
  </extension>
 
 </plugin>

@@ -32,13 +32,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternF
  * @generated
  */
 public class ComponentStoryNodeItemProvider
-	extends ActivityNodeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ActivityNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

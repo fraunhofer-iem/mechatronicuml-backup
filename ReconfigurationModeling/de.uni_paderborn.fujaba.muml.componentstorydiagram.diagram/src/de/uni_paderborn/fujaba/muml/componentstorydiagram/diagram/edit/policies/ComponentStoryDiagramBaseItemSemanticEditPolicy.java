@@ -363,6 +363,18 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
+		public boolean canCreateMultiPortOrderConstraint_4006(
+				de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable container,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable source,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable target,
+				View sourceView, View targetView) {
+			return canExistMultiPortOrderConstraint_4006(container, null,
+					source, target, sourceView, targetView);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistActivityEdge_4001(Activity container,
 				ActivityEdge linkInstance, ActivityNode source,
 				ActivityNode target, View sourceView, View targetView) {
@@ -698,6 +710,29 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistMultiPortOrderConstraint_4006(
+				de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable container,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint linkInstance,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable source,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable target,
+				View sourceView, View targetView) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorMultiPortOrderConstraint_4006(
+				de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable container,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable source,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable target,
+				View sourceView, View targetView) {
+			return null;
 		}
 	}
 

@@ -54,6 +54,11 @@
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
     </classes>
     <classes>
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/PortVariable"/>
@@ -101,6 +106,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
+      <properties initializeOCLExpression="">
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable/positionConstraints"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.3">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
@@ -129,6 +139,35 @@
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortConstraint"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortConstraint/tgtSubPortVariable"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.13">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/srcSubPortVariable"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/orderConstraintType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.13">
+      <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortPositionConstraint"/>
+      <properties>
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortPositionConstraint/positionConstraintType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
   </packages>

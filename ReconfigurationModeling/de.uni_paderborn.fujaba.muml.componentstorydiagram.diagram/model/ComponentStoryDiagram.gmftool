@@ -127,6 +127,10 @@
           xsi:type="gmftool:CreationTool"
           title="FadingComponentPartVariable"
           description="Create new FadingComponentPartVariable"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MultiPortOrderConstraint"
+          description="Create new MultiPortOrderConstraint"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>
