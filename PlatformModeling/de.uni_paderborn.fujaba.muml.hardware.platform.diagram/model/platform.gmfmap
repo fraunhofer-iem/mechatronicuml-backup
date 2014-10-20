@@ -120,14 +120,6 @@
                 </initializers>
               </newElementInitializers>
             </initializers>
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'platformPart'"/>
-            </initializers>
           </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
@@ -286,14 +278,6 @@
                   </newElementInitializers>
                 </initializers>
               </newElementInitializers>
-            </initializers>
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              <value
-                  body="'resourceInstance'"/>
             </initializers>
           </domainInitializer>
           <labelMappings

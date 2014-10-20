@@ -38,7 +38,7 @@ public class DelegationHWPortLabelExpressionLabelParser5044 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						13,
+						12,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 								.getDelegationHWPort(), null).body();
 	}

@@ -19,5 +19,11 @@
          </Priority>
       </ParserProvider>
    </extension>
+   <extension
+         point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+            initializer="de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.HWPlatformDiagramInitializer">
+      </initializer>
+   </extension>
 
 </plugin>

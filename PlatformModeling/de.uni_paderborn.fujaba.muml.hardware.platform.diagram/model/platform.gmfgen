@@ -212,7 +212,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.5">
+              value="//@expressionProviders/@providers.0/@expressions.29">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -373,7 +373,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.10">
+                      value="//@expressionProviders/@providers.0/@expressions.9">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -386,7 +386,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.11">
+                      value="//@expressionProviders/@providers.0/@expressions.10">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -396,7 +396,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.12">
+              value="//@expressionProviders/@providers.0/@expressions.11">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -467,7 +467,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.14">
+                      value="//@expressionProviders/@providers.0/@expressions.13">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -480,7 +480,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.15">
+                      value="//@expressionProviders/@providers.0/@expressions.14">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -490,7 +490,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.16">
+              value="//@expressionProviders/@providers.0/@expressions.30">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -607,6 +607,17 @@
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.28">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5050"
@@ -654,8 +665,8 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.23"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.24"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.21"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.22"/>
     </links>
     <links
         visualID="4029"
@@ -708,8 +719,8 @@
             parser="//@labelParsers/@implementations.13"/>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.26"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.27"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.24"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.25"/>
     </links>
     <links
         visualID="4030"
@@ -741,8 +752,8 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.28"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.29"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.26"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.27"/>
     </links>
     <compartments
         visualID="7002"
@@ -1279,8 +1290,6 @@
       <expressions
           body="1"/>
       <expressions
-          body="'platformPart'"/>
-      <expressions
           body="let portType : String = if self.communicationResource.oclIsUndefined() then 'null' else self.communicationResource.name endif in&#xD;&#xA;let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;portType + '\n' + protocolName"/>
       <expressions
           body="': ' + if self.hwplatformType.oclIsUndefined() then 'null' else self.hwplatformType.name endif"/>
@@ -1300,8 +1309,6 @@
           body="0"/>
       <expressions
           body="1"/>
-      <expressions
-          body="'resourceInstance'"/>
       <expressions
           body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
       <expressions
@@ -1334,6 +1341,12 @@
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.oclIsTypeOf(hwplatform::BridgePart) or self.oclIsTypeOf(hwplatform::BusPart) "/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1366,7 +1379,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
         className="HWPortPartLabelExpressionLabelParser5053"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.6">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPortPart"/>
     </implementations>
@@ -1377,7 +1390,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
         className="HWPlatformPartLabelExpressionLabelParser5042"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.7">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatformPart"/>
     </implementations>
@@ -1385,8 +1398,8 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.2/@modelFacet"
         className="HWPlatformPartLabelExpressionLabelParser5043"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.8"
-        editExpression="//@expressionProviders/@providers.0/@expressions.9">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.7"
+        editExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatformPart"/>
     </implementations>
@@ -1394,7 +1407,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
         className="DelegationHWPortLabelExpressionLabelParser5044"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
     </implementations>
@@ -1402,7 +1415,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.1/@modelFacet"
         className="ResourcePartLabelExpressionLabelParser5046"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.17">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
     </implementations>
@@ -1410,8 +1423,8 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.2/@modelFacet"
         className="ResourcePartLabelExpressionLabelParser5047"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.18"
-        editExpression="//@expressionProviders/@providers.0/@expressions.19">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16"
+        editExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
     </implementations>
@@ -1419,7 +1432,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.3/@modelFacet"
         className="ResourcePartLabelExpressionLabelParser5048"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.20">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.18">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
     </implementations>
@@ -1427,7 +1440,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.4/@modelFacet"
         className="ResourcePartLabelExpressionLabelParser5049"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.21">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.19">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
     </implementations>
@@ -1435,7 +1448,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
         className="HWPlatformLabelExpressionLabelParser5050"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.22">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.20">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
     </implementations>
@@ -1443,7 +1456,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.1/@labels.0/@modelFacet"
         className="LinkPartLabelExpressionLabelParser6003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.25">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.23">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/LinkPart"/>
     </implementations>
@@ -1453,4 +1466,8 @@
     <items
         xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
+  <extensions>
+    <rootInput
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.propsheet#/"/>
+  </extensions>
 </gmfgen:GenEditorGenerator>
