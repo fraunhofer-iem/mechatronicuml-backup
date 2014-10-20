@@ -10,7 +10,6 @@
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
 
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::actionlanguage::expression]
-[import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::queries]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::helper::port]
 [import de::uni_paderborn::fujaba::modelica::m2t::rtsc::hybrid::hybrid]
 
@@ -142,16 +141,12 @@
 [template private connectDiscretePorts(discretePortInstanceSet : Set(DiscretePortInstance), rtsc : RealtimeStatechart)]
 	// connect discrete component ports with the corresponding rtsc ports (only for received or sent messages)
 [for (discretePortInstance : DiscretePortInstance | discretePortInstanceSet->select(not oclIsKindOf(DiscreteMultiPortInstance)))]
-[for (messageType : MessageType | discretePortInstance.receiverMessageTypes->select(messageType : MessageType |
-	rtsc.getAllTriggerMessageEvents()->getAsyncMessageEventRepr()->collect(message.instanceOf)->includes(messageType)
-))]
+[for (messageType : MessageType | discretePortInstance.getReceivedTriggerMessageTypes())]
 	connect([discretePortInstance.getRTSCInputPortName(messageType)/],
 		[discretePortInstance.getInputPortName(messageType)/])
 		[createPortConnectAnnotation(discretePortInstance)/];
 [/for]
-[for (messageType : MessageType | discretePortInstance.senderMessageTypes->select(messageType : MessageType |
-	rtsc.getAllTriggerMessageEvents()->getAsyncMessageEventRepr()->collect(message.instanceOf)->includes(messageType)
-))]
+[for (messageType : MessageType | discretePortInstance.getSentRaiseMessageTypes())]
 	connect([discretePortInstance.getRTSCOutputPortName(messageType)/],
 		[discretePortInstance.getOutputPortName(messageType)/])
 		[createPortConnectAnnotation(discretePortInstance)/];
