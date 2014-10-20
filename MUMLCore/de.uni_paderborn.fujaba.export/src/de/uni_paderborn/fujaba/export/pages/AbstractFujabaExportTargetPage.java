@@ -2,20 +2,41 @@ package de.uni_paderborn.fujaba.export.pages;
 
 import java.io.File;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.viewers.CellEditor;
+import org.eclipse.jface.viewers.CellLabelProvider;
+import org.eclipse.jface.viewers.ColumnViewerEditor;
+import org.eclipse.jface.viewers.ColumnViewerEditorActivationEvent;
+import org.eclipse.jface.viewers.ColumnViewerEditorActivationStrategy;
+import org.eclipse.jface.viewers.EditingSupport;
+import org.eclipse.jface.viewers.FocusCellOwnerDrawHighlighter;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.TreeViewerColumn;
+import org.eclipse.jface.viewers.TreeViewerEditor;
+import org.eclipse.jface.viewers.TreeViewerFocusCellManager;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -26,6 +47,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.dialogs.WizardDataTransferPage;
@@ -33,6 +55,8 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
+
+import de.uni_paderborn.fujaba.export.ExportPlugin;
 
 
 public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferPage implements IWizardPage {
@@ -202,7 +226,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
     }
     
 	@Override
-	public void createControl(Composite parent) {
+	public void createControl(final Composite parent) {
 
         initializeDialogUnits(parent);
         
@@ -212,21 +236,156 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 		section.setText("Target Properties");
 		Composite composite = toolkit.createComposite(section); 
 		section.setClient(composite);
+		final Button createFolderButton = toolkit.createButton(section, "", SWT.PUSH);
+		createFolderButton.setImage(ExportPlugin.imageDescriptorFromPlugin(ExportPlugin.PLUGIN_ID, "images/new_folder.png").createImage());
+		createFolderButton.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(SelectionEvent event) {
+				if (treeViewer.getSelection() instanceof StructuredSelection) {
+					Object firstElement = ((StructuredSelection) treeViewer.getSelection()).getFirstElement();
+					if (firstElement instanceof IContainer) {
+						IContainer container = (IContainer) firstElement;
 
+						String uniqueName = "<unnamed>";
+						for (int i = 1; ; i++) {
+							if (container.findMember(uniqueName) == null) {
+								break;
+							}
+							uniqueName = "<unnamed" + i + ">";
+						}
+						try {
+							IFolder folder = container.getFolder(new Path(uniqueName));
+							folder.create(true, true, new NullProgressMonitor());
+							treeViewer.refresh(true);
+							treeViewer.setSelection(new StructuredSelection(folder));
+							treeViewer.getTree().setFocus();
+							treeViewer.editElement(folder, 0);
+						} catch (CoreException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+		});
+		section.setTextClient(createFolderButton);
         composite.setLayout(new GridLayout());
         composite.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
                 | GridData.HORIZONTAL_ALIGN_FILL));
         composite.setFont(parent.getFont());
 
         Tree tree = toolkit.createTree(composite, SWT.BORDER);
+        
         GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
         tree.setLayoutData(gridData);
         
+        final ILabelProvider labelProvider = new WorkbenchLabelProvider();
         treeViewer = new TreeViewer(tree);
         treeViewer.setContentProvider(new WorkbenchContentProvider());
-        treeViewer.setLabelProvider(new WorkbenchLabelProvider());
+        treeViewer.setLabelProvider(labelProvider);
         treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
         treeViewer.expandAll();
+        treeViewer.getTree().addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent event) {
+				if (treeViewer.getSelection() instanceof StructuredSelection) {
+					Object firstElement = ((StructuredSelection) treeViewer.getSelection()).getFirstElement();
+					if (firstElement instanceof IResource && event.keyCode == SWT.DEL) {
+						IResource resource = (IResource) firstElement;
+						String message = String.format("Are you sure you want to delete resource '%s'?", resource.getName());
+						if (MessageDialog.openQuestion(parent.getShell(), "Delete", message)) {
+							try {
+								resource.delete(true, new NullProgressMonitor());
+							} catch (CoreException e) {
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			}
+        });
+        treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (event.getSelection() instanceof StructuredSelection) {
+					Object firstElement = ((StructuredSelection) event.getSelection()).getFirstElement();
+					createFolderButton.setEnabled(firstElement instanceof IContainer);
+				}
+			}
+        });
+
+
+		ColumnViewerEditorActivationStrategy actSupport = new ColumnViewerEditorActivationStrategy(
+				treeViewer) {
+			protected boolean isEditorActivationEvent(
+					ColumnViewerEditorActivationEvent event) {
+				return event.eventType == ColumnViewerEditorActivationEvent.TRAVERSAL
+						|| event.eventType == ColumnViewerEditorActivationEvent.MOUSE_DOUBLE_CLICK_SELECTION
+						|| (event.eventType == ColumnViewerEditorActivationEvent.KEY_PRESSED && event.keyCode == SWT.F2)
+						|| (event.eventType == ColumnViewerEditorActivationEvent.KEY_PRESSED && event.keyCode == SWT.CR)
+						|| event.eventType == ColumnViewerEditorActivationEvent.PROGRAMMATIC;
+			}
+		};
+
+		TreeViewerFocusCellManager focusCellManager = new TreeViewerFocusCellManager(
+				treeViewer, new FocusCellOwnerDrawHighlighter(treeViewer));
+		
+		TreeViewerEditor.create(treeViewer, focusCellManager, actSupport,
+				ColumnViewerEditor.TABBING_HORIZONTAL
+						| ColumnViewerEditor.TABBING_MOVE_TO_ROW_NEIGHBOR
+						| ColumnViewerEditor.TABBING_VERTICAL
+						| ColumnViewerEditor.KEYBOARD_ACTIVATION);
+
+		final TextCellEditor textCellEditor = new TextCellEditor(
+				treeViewer.getTree());
+
+		
+		TreeViewerColumn column = new TreeViewerColumn(treeViewer, SWT.MULTI);
+		column.getColumn().setWidth(100);
+		column.getColumn().setMoveable(true);
+//		column.getColumn().setText("Name");
+		column.setLabelProvider(new CellLabelProvider() {
+
+			@Override
+			public void update(ViewerCell cell) {
+				cell.setText(labelProvider.getText(cell.getElement()));
+				cell.setImage(labelProvider.getImage(cell.getElement()));
+			}
+			
+		});
+		column.setEditingSupport(new EditingSupport(treeViewer) {
+			protected boolean canEdit(Object element) {
+				return true;
+			}
+
+			protected CellEditor getCellEditor(Object element) {
+				return textCellEditor;
+			}
+
+			protected Object getValue(Object element) {
+				if (element instanceof IResource) {
+					return ((IResource) element).getName();
+				}
+				return element.toString();
+			}
+
+			protected void setValue(Object element, Object value) {
+				if (element instanceof IResource) {
+					try {
+						((IResource) element).move(
+							((IResource) element).getFullPath().removeLastSegments(1).append(value.toString()),
+							true, new NullProgressMonitor()
+						);
+					} catch (CoreException e) {
+						e.printStackTrace();
+					}
+				}
+				
+				treeViewer.update(element, null);
+			}
+		});
+		
+        
+        
+        
         
         // Hide files if destination must be a directory
         if (wizardPageDirectoryDestination()) {
