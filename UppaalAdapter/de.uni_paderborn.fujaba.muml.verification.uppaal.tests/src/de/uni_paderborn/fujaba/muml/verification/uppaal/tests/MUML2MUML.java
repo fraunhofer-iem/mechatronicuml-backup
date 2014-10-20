@@ -8,18 +8,21 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2MumlJob;
+//import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2MumlJob;
 
 @RunWith(value = Parameterized.class)
 public class MUML2MUML extends Model2Model {
@@ -122,15 +125,17 @@ public class MUML2MUML extends Model2Model {
 	protected EObject getTarget() {
 
 		EObject sourceObject = getSource();
+		Assert.fail("FIX ME");
+		return null;
 
-		Muml2MumlJob m2m = new Muml2MumlJob((RootNode) sourceObject,
-				transformation, configurationPropertyBindings);
-
-		IStatus status = m2m.execute(new NullProgressMonitor());
-
-		assertTrue(status.getMessage(), status.isOK());
-
-		return m2m.getNormalizedRootNode();
+//		Muml2MumlJob m2m = new Muml2MumlJob((RootNode) sourceObject,
+//				transformation, configurationPropertyBindings);
+//
+//		IStatus status = m2m.execute(new NullProgressMonitor());
+//
+//		assertTrue(status.getMessage(), status.isOK());
+//
+//		return m2m.getNormalizedRootNode();
 
 	}
 

@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
 
+import javax.security.auth.login.FailedLoginException;
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -13,8 +15,8 @@ import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import  org.junit.*;
 import static org.junit.Assert.assertTrue;
-
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.Muml2UppaalJob;
 
@@ -30,13 +32,15 @@ public class MUML2UPPAAL extends Model2Model {
 		
 		 EObject sourceObject = getSource();
 		    
-		 Muml2UppaalJob m2m = new Muml2UppaalJob((CoordinationProtocol) sourceObject);
-		 
-		 IStatus status = m2m.execute(new NullProgressMonitor());
-		 
-		 assertTrue(status.getMessage(), status.isOK());
-		 
-		 return m2m.getNTA();
+//		 Muml2UppaalJob m2m = new Muml2UppaalJob((CoordinationProtocol) sourceObject);
+//		 
+//		 IStatus status = m2m.execute(new NullProgressMonitor());
+//		 
+//		 assertTrue(status.getMessage(), status.isOK());
+//		 
+//		 return m2m.getNTA();
+		 Assert.fail("FIX ME");
+		 return null;
 		    	
 	}
 	

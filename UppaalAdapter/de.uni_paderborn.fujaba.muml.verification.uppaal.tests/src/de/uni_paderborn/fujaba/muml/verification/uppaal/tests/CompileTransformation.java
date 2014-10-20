@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.tests;
 import static org.junit.Assert.*;
 
 import org.eclipse.core.runtime.IStatus;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,7 +15,8 @@ public class CompileTransformation {
 	
 	@Before
 	public void setUp() throws Exception {
-		status = Muml2UppaalJob.loadTransformation("CoordinationProtocol");
+		//status = Muml2UppaalJob.loadTransformation("CoordinationProtocol");
+		Assert.fail("FIX ME");
 	}
 
 	@Test
