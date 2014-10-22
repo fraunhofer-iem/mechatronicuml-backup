@@ -61,6 +61,7 @@ public class TypeDefinitionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBaseTypePropertyDescriptor(object);
+			addTypeSpecificationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,6 +84,28 @@ public class TypeDefinitionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type Specification feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypeSpecificationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TypeDefinition_typeSpecification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TypeDefinition_typeSpecification_feature", "_UI_TypeDefinition_type"),
+				 TypesPackage.Literals.TYPE_DEFINITION__TYPE_SPECIFICATION,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

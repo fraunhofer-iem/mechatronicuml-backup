@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.types.TypeDefinition#getBaseType <em>Base Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.types.TypeDefinition#getTypeSpecification <em>Type Specification</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,5 +42,21 @@ public interface TypeDefinition extends EObject {
 	 * @generated
 	 */
 	BuiltInType getBaseType();
+
+	/**
+	 * Returns the value of the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Specification</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type Specification</em>' reference.
+	 * @see de.uni_paderborn.uppaal.types.TypesPackage#getTypeDefinition_TypeSpecification()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.oclIsKindOf(TypeReference))\r\nthen self.oclAsType(TypeReference).referredType.typeSpecification\r\nelse\r\n\tif (self.oclIsKindOf(TypeSpecification))\r\n\tthen self.oclAsType(TypeSpecification)\r\n\telse null\r\n\tendif\r\nendif'"
+	 * @generated
+	 */
+	TypeSpecification getTypeSpecification();
 
 } // TypeDefinition

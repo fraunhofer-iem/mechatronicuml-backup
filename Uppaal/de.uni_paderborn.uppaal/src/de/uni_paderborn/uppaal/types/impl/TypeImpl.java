@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.uppaal.declarations.Index;
 import de.uni_paderborn.uppaal.types.BuiltInType;
 import de.uni_paderborn.uppaal.types.Type;
+import de.uni_paderborn.uppaal.types.TypeSpecification;
 import de.uni_paderborn.uppaal.types.TypesPackage;
 
 /**
@@ -27,6 +28,7 @@ import de.uni_paderborn.uppaal.types.TypesPackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.types.impl.TypeImpl#getIndex <em>Index</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.types.impl.TypeImpl#getBaseType <em>Base Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.types.impl.TypeImpl#getTypeSpecification <em>Type Specification</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +54,16 @@ public abstract class TypeImpl extends EClassifierImpl implements Type {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate BASE_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)TypesPackage.Literals.TYPE__BASE_TYPE).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getTypeSpecification() <em>Type Specification</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeSpecification()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TYPE_SPECIFICATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)TypesPackage.Literals.TYPE__TYPE_SPECIFICATION).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,6 +110,24 @@ public abstract class TypeImpl extends EClassifierImpl implements Type {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TypeSpecification getTypeSpecification() {
+		return (TypeSpecification)TYPE_SPECIFICATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeSpecification basicGetTypeSpecification() {
+		return (TypeSpecification)TYPE_SPECIFICATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -119,6 +149,9 @@ public abstract class TypeImpl extends EClassifierImpl implements Type {
 				return getIndex();
 			case TypesPackage.TYPE__BASE_TYPE:
 				return getBaseType();
+			case TypesPackage.TYPE__TYPE_SPECIFICATION:
+				if (resolve) return getTypeSpecification();
+				return basicGetTypeSpecification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +200,8 @@ public abstract class TypeImpl extends EClassifierImpl implements Type {
 				return index != null && !index.isEmpty();
 			case TypesPackage.TYPE__BASE_TYPE:
 				return BASE_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case TypesPackage.TYPE__TYPE_SPECIFICATION:
+				return TYPE_SPECIFICATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

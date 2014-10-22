@@ -21,6 +21,7 @@ import de.uni_paderborn.uppaal.declarations.Index;
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.types.Type#getIndex <em>Index</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.types.Type#getBaseType <em>Base Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.types.Type#getTypeSpecification <em>Type Specification</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,5 +62,17 @@ public interface Type extends EClassifier {
 	 * @generated
 	 */
 	BuiltInType getBaseType();
+
+	/**
+	 * Returns the value of the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type Specification</em>' reference.
+	 * @see de.uni_paderborn.uppaal.types.TypesPackage#getType_TypeSpecification()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.oclIsKindOf(DeclaredType))\r\nthen self.oclAsType(DeclaredType).typeDefinition.typeSpecification\r\nelse null\r\nendif'"
+	 * @generated
+	 */
+	TypeSpecification getTypeSpecification();
 
 } // Type

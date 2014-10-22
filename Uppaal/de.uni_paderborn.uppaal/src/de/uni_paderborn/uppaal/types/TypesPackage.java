@@ -162,13 +162,22 @@ public interface TypesPackage extends EPackage {
 	int TYPE__BASE_TYPE = EcorePackage.ECLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__TYPE_SPECIFICATION = EcorePackage.ECLASSIFIER_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_FEATURE_COUNT = EcorePackage.ECLASSIFIER_FEATURE_COUNT + 2;
+	int TYPE_FEATURE_COUNT = EcorePackage.ECLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.types.impl.PredefinedTypeImpl <em>Predefined Type</em>}' class.
@@ -269,6 +278,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int PREDEFINED_TYPE__BASE_TYPE = TYPE__BASE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDEFINED_TYPE__TYPE_SPECIFICATION = TYPE__TYPE_SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -389,6 +407,15 @@ public interface TypesPackage extends EPackage {
 	int DECLARED_TYPE__BASE_TYPE = TYPE__BASE_TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARED_TYPE__TYPE_SPECIFICATION = TYPE__TYPE_SPECIFICATION;
+
+	/**
 	 * The feature id for the '<em><b>Type Declaration</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -435,13 +462,22 @@ public interface TypesPackage extends EPackage {
 	int TYPE_DEFINITION__BASE_TYPE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_DEFINITION__TYPE_SPECIFICATION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Type Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_DEFINITION_FEATURE_COUNT = 1;
+	int TYPE_DEFINITION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.types.impl.TypeReferenceImpl <em>Type Reference</em>}' class.
@@ -461,6 +497,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPE_REFERENCE__BASE_TYPE = TYPE_DEFINITION__BASE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_REFERENCE__TYPE_SPECIFICATION = TYPE_DEFINITION__TYPE_SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>Referred Type</b></em>' reference.
@@ -500,6 +545,15 @@ public interface TypesPackage extends EPackage {
 	int TYPE_SPECIFICATION__BASE_TYPE = TYPE_DEFINITION__BASE_TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_SPECIFICATION__TYPE_SPECIFICATION = TYPE_DEFINITION__TYPE_SPECIFICATION;
+
+	/**
 	 * The number of structural features of the '<em>Type Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -526,6 +580,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int SCALAR_TYPE_SPECIFICATION__BASE_TYPE = TYPE_SPECIFICATION__BASE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALAR_TYPE_SPECIFICATION__TYPE_SPECIFICATION = TYPE_SPECIFICATION__TYPE_SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>Size Expression</b></em>' containment reference.
@@ -565,6 +628,15 @@ public interface TypesPackage extends EPackage {
 	int STRUCT_TYPE_SPECIFICATION__BASE_TYPE = TYPE_SPECIFICATION__BASE_TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT_TYPE_SPECIFICATION__TYPE_SPECIFICATION = TYPE_SPECIFICATION__TYPE_SPECIFICATION;
+
+	/**
 	 * The feature id for the '<em><b>Declaration</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -600,6 +672,15 @@ public interface TypesPackage extends EPackage {
 	 * @ordered
 	 */
 	int RANGE_TYPE_SPECIFICATION__BASE_TYPE = TYPE_SPECIFICATION__BASE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Type Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGE_TYPE_SPECIFICATION__TYPE_SPECIFICATION = TYPE_SPECIFICATION__TYPE_SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' containment reference.
@@ -791,6 +872,17 @@ public interface TypesPackage extends EPackage {
 	EAttribute getType_BaseType();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.uppaal.types.Type#getTypeSpecification <em>Type Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type Specification</em>'.
+	 * @see de.uni_paderborn.uppaal.types.Type#getTypeSpecification()
+	 * @see #getType()
+	 * @generated
+	 */
+	EReference getType_TypeSpecification();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.types.PredefinedType <em>Predefined Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -863,6 +955,17 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTypeDefinition_BaseType();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.uppaal.types.TypeDefinition#getTypeSpecification <em>Type Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type Specification</em>'.
+	 * @see de.uni_paderborn.uppaal.types.TypeDefinition#getTypeSpecification()
+	 * @see #getTypeDefinition()
+	 * @generated
+	 */
+	EReference getTypeDefinition_TypeSpecification();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.types.TypeReference <em>Type Reference</em>}'.
@@ -1059,6 +1162,14 @@ public interface TypesPackage extends EPackage {
 		EAttribute TYPE__BASE_TYPE = eINSTANCE.getType_BaseType();
 
 		/**
+		 * The meta object literal for the '<em><b>Type Specification</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE__TYPE_SPECIFICATION = eINSTANCE.getType_TypeSpecification();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.types.impl.PredefinedTypeImpl <em>Predefined Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1119,6 +1230,14 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TYPE_DEFINITION__BASE_TYPE = eINSTANCE.getTypeDefinition_BaseType();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Specification</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_DEFINITION__TYPE_SPECIFICATION = eINSTANCE.getTypeDefinition_TypeSpecification();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.types.impl.TypeReferenceImpl <em>Type Reference</em>}' class.

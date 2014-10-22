@@ -39,6 +39,7 @@
       <genClasses image="false" ecoreClass="uppaal.ecore#//types/Type">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//types/Type/index"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute uppaal.ecore#//types/Type/baseType"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference uppaal.ecore#//types/Type/typeSpecification"/>
       </genClasses>
       <genClasses ecoreClass="uppaal.ecore#//types/PredefinedType">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uppaal.ecore#//types/PredefinedType/type"/>
@@ -49,6 +50,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="uppaal.ecore#//types/TypeDefinition">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute uppaal.ecore#//types/TypeDefinition/baseType"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference uppaal.ecore#//types/TypeDefinition/typeSpecification"/>
       </genClasses>
       <genClasses ecoreClass="uppaal.ecore#//types/TypeReference">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -202,8 +204,6 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference uppaal.ecore#//templates/Location/parentTemplate"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//templates/Location/invariant"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uppaal.ecore#//templates/Location/locationTimeKind"/>
-        <genFeatures property="Readonly" createChild="false" propertyDescription=""
-            ecoreFeature="ecore:EAttribute uppaal.ecore#//templates/Location/id"/>
       </genClasses>
       <genClasses ecoreClass="uppaal.ecore#//templates/Edge">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

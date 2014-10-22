@@ -229,8 +229,8 @@ public class SystemValidator extends EObjectValidator {
 		"\t\tand\r\n" +
 		"\t\t((not variableDeclaration.oclIsUndefined())\r\n" +
 		"\t\t\timplies\r\n" +
-		"\t\t (variableDeclaration.typeDefinition.oclIsKindOf(types::RangeTypeSpecification) or\r\n" +
-		"\t\t  variableDeclaration.typeDefinition.oclIsKindOf(types::ScalarTypeSpecification)))\r\n" +
+		"\t\t (variableDeclaration.typeDefinition.typeSpecification.oclIsKindOf(types::RangeTypeSpecification) or\r\n" +
+		"\t\t  variableDeclaration.typeDefinition.typeSpecification.oclIsKindOf(types::ScalarTypeSpecification)))\r\n" +
 		"\t)\r\n" +
 		")";
 
