@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider;
 
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourceInstancePropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourceInstanceTypePropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart;
 
 import java.util.Collection;
@@ -64,11 +64,11 @@ public class ResourcePartItemProvider
 	 * This adds a property descriptor for the Resource Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated 
 	 */
 	protected void addResourceTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new ResourceInstancePropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ResourcePart_resourceType_feature"),
