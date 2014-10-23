@@ -24,11 +24,9 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.udbm.Federation;
 import de.uni_paderborn.fujaba.udbm.FederationFactory;
 import de.uni_paderborn.fujaba.udbm.UDBMClock;
-import de.uni_paderborn.fujaba.udbm.java.JavaFederationFactory;
-import de.uni_paderborn.fujaba.udbm.ruby.RubyFederationFactory;
 
 
-public class TestIsIsomorphic {
+public class TestIsIsomorphic extends AbstractRTSCTest{
 
 	private RuntimeFactory runtimefactory;
 	private RealtimestatechartFactory rtscFactory;
@@ -54,7 +52,6 @@ public class TestIsIsomorphic {
 	private HashSet<RealtimeStatechart> rtscs;
 	
 	private HashSet<UDBMClock> udbmClocks1;
-	private HashSet<UDBMClock> udbmClocks2;
 	
 	private UDBMClock cu1, cu2;
 	
@@ -100,14 +97,12 @@ public class TestIsIsomorphic {
 		cu2 = new UDBMClock("c2", "c2");
 		
 		udbmClocks1 = new HashSet<UDBMClock>();
-		udbmClocks2 = new HashSet<UDBMClock>();
-		
 		
 	}
 	
 	@Test
 	public void testNullFedTrue(){
-		fedFactory = new RubyFederationFactory();
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		
 		//set up runtime objects
@@ -130,7 +125,7 @@ public class TestIsIsomorphic {
 	
 	@Test
 	public void testNullFedFalse(){
-		fedFactory = new RubyFederationFactory();
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		
 		//set up runtime objects
@@ -152,8 +147,8 @@ public class TestIsIsomorphic {
 	}
 	
 	@Test
-	public void testZeroRubyFedTrue(){
-		fedFactory = new RubyFederationFactory();
+	public void testZeroFedTrue(){
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		
 		//set up runtime objects
@@ -185,42 +180,8 @@ public class TestIsIsomorphic {
 	}
 	
 	@Test
-	public void testZeroJavaFedTrue(){
-		fedFactory = new JavaFederationFactory();
-		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-
-		
-		//set up runtime objects
-		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActiveVertex(state1);
-		
-		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActiveVertex(state1);
-		
-		//set up hash sets with udbm clocks
-		udbmClocks1.add(cu1);
-		udbmClocks2.add(cu1);
-		
-		//set up federations
-		fed1 = fedFactory.createZeroFederation(udbmClocks1);
-		fed2 = (Federation)fed1.clone();
-	//	fed2 = fedFactory.createZeroFederation(udbmClocks2);
-		
-		//set up reach objects
-		zone1.getLocations().add(rtscInstance1);
-		zone2.getLocations().add(rtscInstance2);
-		
-		zone1.setFederation(fed1);
-		zone2.setFederation(fed2);
-		
-		assertTrue(reachComputation.isIsomorphic(zone1, zone2));
-		
-		
-	}
-	
-	@Test
-	public void testFalseRubyFed(){
-		fedFactory = new RubyFederationFactory();
+	public void testFalseFed(){
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		
 		//set up runtime objects
@@ -253,42 +214,8 @@ public class TestIsIsomorphic {
 	}
 	
 	@Test
-	public void testFalseJavaFed(){
-		fedFactory = new JavaFederationFactory();
-		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-		
-		//set up runtime objects
-		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActiveVertex(state1);
-		
-		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActiveVertex(state1);
-		
-		//set up hash sets with udbm clocks
-		udbmClocks1.add(cu1);
-		udbmClocks1.add(cu2);
-		
-		//set up federations
-		fed1 = fedFactory.createZeroFederation(udbmClocks1);
-		fed2 = (Federation)fed1.clone();
-		fed2.up();
-	//	fed2 = fedFactory.createZeroFederation(udbmClocks2);
-		
-		//set up reach objects
-		zone1.getLocations().add(rtscInstance1);
-		zone2.getLocations().add(rtscInstance2);
-		
-		zone1.setFederation(fed1);
-		zone2.setFederation(fed2);
-		
-		assertFalse(reachComputation.isIsomorphic(zone1, zone2));
-		
-		
-	}
-	
-	@Test
-	public void testFalseStateRubyFed(){
-		fedFactory = new JavaFederationFactory();
+	public void testFalseStateFed(){
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		
 		//set up runtime objects
@@ -318,47 +245,10 @@ public class TestIsIsomorphic {
 		assertFalse(reachComputation.isIsomorphic(zone1, zone2));
 	}
 	
-	@Test
-	public void testStatesWithSameNamesRuby(){
-		fedFactory = new RubyFederationFactory();
-		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-		
-		//set up runtime objects
-		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActiveVertex(state1);
-		
-		state1.setName("state");
-		
-		state2.setParentStatechart(rtsc1);
-		state2.setName("state");
-		
-		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActiveVertex(state2);
-		
-		//set up hash sets with udbm clocks
-		udbmClocks1.add(cu1);
-		udbmClocks1.add(cu2);
-		
-		//set up federations
-		fed1 = fedFactory.createZeroFederation(udbmClocks1);
-		fed2 = (Federation)fed1.clone();
-	//	fed2 = fedFactory.createZeroFederation(udbmClocks2);
-		
-		//set up reach objects
-		zone1.getLocations().add(rtscInstance1);
-		zone2.getLocations().add(rtscInstance2);
-		
-		zone1.setFederation(fed1);
-		zone2.setFederation(fed2);
-		
-		assertFalse(reachComputation.isIsomorphic(zone1, zone2));
-		
-	}
-	
 	
 	@Test
-	public void testStatesWithSameNamesJava(){
-		fedFactory = new JavaFederationFactory();
+	public void testStatesWithSameNames(){
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		
 		//set up runtime objects

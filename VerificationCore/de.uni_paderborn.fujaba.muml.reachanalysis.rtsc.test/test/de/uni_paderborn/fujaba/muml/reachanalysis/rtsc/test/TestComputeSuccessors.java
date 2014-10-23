@@ -38,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.udbm.Federation;
 
-public class TestComputeSuccessors {
+public class TestComputeSuccessors extends AbstractRTSCTest{
 
 	private RealtimestatechartFactory rtscFactory;
 

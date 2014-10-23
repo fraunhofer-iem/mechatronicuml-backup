@@ -27,10 +27,8 @@ import de.uni_paderborn.fujaba.udbm.FederationFactory;
 import de.uni_paderborn.fujaba.udbm.SimpleClockConstraint;
 import de.uni_paderborn.fujaba.udbm.UDBMClock;
 import de.uni_paderborn.fujaba.udbm.clockconstraint.RelationalOperator;
-import de.uni_paderborn.fujaba.udbm.java.JavaFederationFactory;
-import de.uni_paderborn.fujaba.udbm.ruby.RubyFederationFactory;
 
-public class TestDelay {
+public class TestDelay extends AbstractRTSCTest{
 
 	private RuntimeFactory runtimefactory;
 	private RealtimestatechartFactory rtscFactory;
@@ -121,10 +119,10 @@ public class TestDelay {
 
 	}
 
-	// All c==0 no invariants, Ruby Federation
+	// All c==0 no invariants
 	@Test
-	public void testCZeroRuby() {
-		fedFactory = new RubyFederationFactory();
+	public void testCZero() {
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 
 		// set up runtime objects
@@ -152,42 +150,10 @@ public class TestDelay {
 		assertTrue(delayState.getFederation().equals(fed2));
 	}
 
-	// All c==0 no invariants, Java Federation
+	// All c==0, with invariants
 	@Test
-	public void testCZeroJava() {
-		fedFactory = new JavaFederationFactory();
-		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-
-		// set up runtime objects
-		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActiveVertex(state1);
-
-		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActiveVertex(state1);
-
-
-		// set up federations
-		fed1 = fedFactory.createZeroFederation(udbmClocks);
-		fed2 = (Federation) fed1.clone();
-
-		fed2.up();
-
-		// set up reach objects
-		zone1.getLocations().add(rtscInstance1);
-		zone1.getLocations().add(rtscInstance2);
-
-		zone1.setFederation(fed1);
-
-		ZoneGraphState delayState = (ZoneGraphState) reachComputation.delay(
-				zone1, null, false, null);
-
-		assertTrue(delayState.getFederation().equals(fed2));
-	}
-
-	// All c==0, with invariants, Ruby Federation
-	@Test
-	public void testCZeroRubyInv() {
-		fedFactory = new RubyFederationFactory();
+	public void testCZeroInv() {
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
 
@@ -227,51 +193,9 @@ public class TestDelay {
 		
 	}
 
-	// All c==0, with invariants, Java Federation
 	@Test
-	public void testCZeroJavaInv() {
-		fedFactory = new JavaFederationFactory();
-		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
-
-		// create invariant(s)
-		SimpleClockConstraint constraint = new SimpleClockConstraint(cu1,
-				RelationalOperator.LessOperator, 10);
-		invariants.add(constraint);
-		SimpleClockConstraint constraint2 = new SimpleClockConstraint(cu2,
-				RelationalOperator.GreaterOperator, 10);
-		invariants.add(constraint2);
-
-		// set up runtime objects
-		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActiveVertex(state1);
-
-		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActiveVertex(state1);
-
-
-		// set up federations
-		fed1 = fedFactory.createZeroFederation(udbmClocks);
-		fed2 = (Federation) fed1.clone();
-
-		fed2.up();
-		fed2.and(invariants);
-
-		// set up reach objects
-		zone1.getLocations().add(rtscInstance1);
-		zone1.getLocations().add(rtscInstance2);
-
-		zone1.setFederation(fed1);
-
-		ZoneGraphState delayState = (ZoneGraphState) reachComputation.delay(
-				zone1, invariants, false, null);
-
-		assertTrue(delayState.getFederation().equals(fed2));
-	}
-
-	@Test
-	public void testCNotZeroRuby() {
-		fedFactory = new RubyFederationFactory();
+	public void testCNotZero() {
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
 
@@ -311,106 +235,10 @@ public class TestDelay {
 		assertTrue(delayState.getFederation().equals(fed2));
 
 	}
-	
-	@Test
-	public void testCNotZeroJava() {
-		fedFactory = new JavaFederationFactory();
-		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
-
-		// create invariant(s)
-		SimpleClockConstraint constraint = new SimpleClockConstraint(cu1,
-				RelationalOperator.GreaterOrEqualOperator, 10);
-		invariants.add(constraint);
-		SimpleClockConstraint constraint2 = new SimpleClockConstraint(cu2,
-				RelationalOperator.LessOrEqualOperator, 10);
-		invariants.add(constraint2);
-
-		// set up runtime objects
-		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActiveVertex(state1);
-
-		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActiveVertex(state1);
-
-
-		// set up federations
-		fed1 = fedFactory.createZeroFederation(udbmClocks);
-		fed1.up();
-		fed1.and(invariants);
-		
-		fed2 = (Federation) fed1.clone();
-
-		fed2.up();
-
-		// set up reach objects
-		zone1.getLocations().add(rtscInstance1);
-		zone1.getLocations().add(rtscInstance2);
-
-		zone1.setFederation(fed1);
-
-		ZoneGraphState delayState = (ZoneGraphState) reachComputation.delay(
-				zone1, null, false, null);
-
-		assertTrue(delayState.getFederation().equals(fed2));
-
-	}
 
 	@Test
-	public void testCNotZeroRubyInv() {
-		fedFactory = new RubyFederationFactory();
-		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
-		invariants2 = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
-
-		// create invariant(s)
-		SimpleClockConstraint constraint = new SimpleClockConstraint(cu1,
-				RelationalOperator.GreaterOrEqualOperator, 10);
-		invariants.add(constraint);
-		SimpleClockConstraint constraint2 = new SimpleClockConstraint(cu2,
-				RelationalOperator.LessOrEqualOperator, 10);
-		invariants.add(constraint2);
-		
-		SimpleClockConstraint constraint3 = new SimpleClockConstraint(cu1,
-				RelationalOperator.GreaterOperator, 20);
-		invariants.add(constraint3);
-		SimpleClockConstraint constraint4 = new SimpleClockConstraint(cu2,
-				RelationalOperator.LessOperator, 20);
-		invariants.add(constraint4);
-
-		// set up runtime objects
-		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActiveVertex(state1);
-
-		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActiveVertex(state1);
-
-
-		// set up federations
-		fed1 = fedFactory.createZeroFederation(udbmClocks);
-		fed1.up();
-		fed1.and(invariants);
-		
-		fed2 = (Federation) fed1.clone();
-		fed2.up();
-		fed2.and(invariants2);
-
-		// set up reach objects
-		zone1.getLocations().add(rtscInstance1);
-		zone1.getLocations().add(rtscInstance2);
-
-		zone1.setFederation(fed1);
-
-		ZoneGraphState delayState = (ZoneGraphState) reachComputation.delay(
-				zone1, invariants, false, null);
-
-		assertTrue(delayState.getFederation().equals(fed2));
-
-	}
-
-	@Test
-	public void testCNotZeroJavaInv() {
-		fedFactory = new JavaFederationFactory();
+	public void testCNotZeroInv() {
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 		invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
 		invariants2 = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
@@ -461,45 +289,8 @@ public class TestDelay {
 	}
 	
 	@Test
-	public void testStateIsReachedByDelayRuby(){
-		fedFactory = new RubyFederationFactory();
-		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
-
-		// set up runtime objects
-		rtscInstance1.setInstanceOf(rtsc1);
-		rtscInstance1.setActiveVertex(state1);
-
-		rtscInstance2.setInstanceOf(rtsc1);
-		rtscInstance2.setActiveVertex(state1);
-
-		// set up federations
-		fed1 = fedFactory.createZeroFederation(udbmClocks);
-
-		// set up reach objects
-		zone1.getLocations().add(rtscInstance1);
-		zone1.getLocations().add(rtscInstance2);
-		
-		
-
-		zone1.setFederation(fed1);
-
-		ZoneGraphState delayState = (ZoneGraphState) reachComputation.delay(
-				zone1, null, false, null);
-		
-		
-		DelayTransition delayTransition = rtscReachFactory.createDelayTransition();
-		delayTransition.setTarget(delayState);
-		delayTransition.setSource(zone1);
-		
-		ZoneGraphState delayState2 = (ZoneGraphState)reachComputation.delay(delayState,null, false, null);
-
-		assertTrue(delayState2 == null);
-		
-	}
-	
-	@Test
-	public void testStateIsReachedByDelayJava(){
-		fedFactory = new JavaFederationFactory();
+	public void testStateIsReachedByDelay(){
+		fedFactory = getFederationFactory();
 		reachComputation = new TestableRTSCReachabilityComputation(rtscs);
 
 		// set up runtime objects

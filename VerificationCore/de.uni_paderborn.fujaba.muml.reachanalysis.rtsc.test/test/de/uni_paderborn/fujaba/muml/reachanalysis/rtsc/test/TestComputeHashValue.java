@@ -25,9 +25,8 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.udbm.Federation;
 import de.uni_paderborn.fujaba.udbm.FederationFactory;
 import de.uni_paderborn.fujaba.udbm.UDBMClock;
-import de.uni_paderborn.fujaba.udbm.java.JavaFederationFactory;
 
-public class TestComputeHashValue {
+public class TestComputeHashValue extends AbstractRTSCTest{
 	private RuntimeFactory runtimefactory;
 	private RealtimestatechartFactory rtscFactory;
 	private RtscFactory rtscReachFactory;
@@ -69,7 +68,7 @@ public class TestComputeHashValue {
 		runtimefactory = RuntimeFactory.eINSTANCE;
 		rtscFactory = RealtimestatechartFactory.eINSTANCE;
 		rtscReachFactory = RtscFactory.eINSTANCE;
-		fedFactory = new JavaFederationFactory();
+		fedFactory = getFederationFactory();
 
 		// set up rtsc objects
 		rtsc1 = rtscFactory.createRealtimeStatechart();
