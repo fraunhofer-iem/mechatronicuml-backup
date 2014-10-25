@@ -164,7 +164,7 @@ public class GenerateAll {
 
 	public void generateCIC(IProgressMonitor monitor,
 			ComponentInstanceConfiguration cic) throws IOException {
-		System.out.println(cic.getName());
+		//System.out.println(cic.getName());
 
 		monitor.subTask("generating "+cic.getName()+"...");
 		de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
@@ -172,6 +172,19 @@ public class GenerateAll {
 		gen0.setGenerationID(generationID);
 		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 		monitor.worked(1);
+		try {	
+			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
+			File sourceFolder = new File(resources.toURI());
+			Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
+
+		monitor.subTask("Copying library to target folder...");
+		File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
+		this.copyFolder(sourceFolder, target);
+		monitor.worked(1);
+		}
+		catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**
