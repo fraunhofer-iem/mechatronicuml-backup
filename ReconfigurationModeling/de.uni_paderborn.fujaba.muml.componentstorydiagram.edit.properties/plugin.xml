@@ -29,6 +29,7 @@
           <propertyTab
              category="domain"
              id="property.tab.constraint"
+             afterTab="property.tab.comment"
              label="Constraint"/>
           
       </propertyTabs>
@@ -59,25 +60,41 @@
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.componentstorydiagram.editor.ComponentStoryRuleEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule">
+             type="http://www.fujaba.de/muml/componentstorydiagram/0.4.0#ComponentStoryRule">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.componentstorydiagram.editor.ComponentStoryNodeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode">
+             type="http://www.fujaba.de/muml/componentstorydiagram/0.4.0#ComponentStoryNode">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.componentstorydiagram.editor.ControllerExchangeNodeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode">
+             type="http://www.fujaba.de/muml/componentstorydiagram/0.4.0#ControllerExchangeNode">
        </propertyEditor>
     
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.componentstorydiagram.editor.SendReconfigurationMessageExpressionEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression">
+             type="http://www.fujaba.de/muml/componentstorydiagram/0.4.0#SendReconfigurationMessageExpression">
        </propertyEditor>
     
     </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+    <metamodel
+          contributor="de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.metamodel.MetamodelContributor">
+    </metamodel>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.creationConstraintContributor">
+    <constraint
+          contributor="de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.constraint.CreationConstraintContributor">
+    </constraint>
  </extension>
 
 </plugin>

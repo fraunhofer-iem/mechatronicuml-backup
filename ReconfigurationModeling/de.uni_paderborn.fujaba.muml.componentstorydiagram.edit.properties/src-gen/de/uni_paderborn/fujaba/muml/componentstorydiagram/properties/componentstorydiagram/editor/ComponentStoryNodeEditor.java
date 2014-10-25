@@ -27,7 +27,7 @@ public class ComponentStoryNodeEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentStoryNodeForEachEditor(
+			addForEach_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -37,20 +37,18 @@ public class ComponentStoryNodeEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentStoryNodeForEachEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createComponentStoryNodeForEachEditor(),
-				front);
+	protected void addForEach_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createForEach_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentStoryNodeForEachEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
-						.getComponentStoryNode_ForEach());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createForEach_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
+				.getComponentStoryNode_ForEach();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory, feature);
 
 		return editor;
 

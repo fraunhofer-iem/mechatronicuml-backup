@@ -36,75 +36,35 @@ public class PropertiesUtil {
 	 */
 	protected org.eclipse.emf.edit.provider.ComposedAdapterFactory createAdapterFactory() {
 		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory>();
-		fillItemProviderFactories(factories);
-		return new org.eclipse.emf.edit.provider.ComposedAdapterFactory(
-				factories);
-	}
 
-	/**
-	 * @generated
-	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.componentstorydiagram.provider.ComponentstorydiagramItemProviderAdapterFactory());
-
-		factories
-				.add(new org.storydriven.core.provider.CoreItemProviderAdapterFactory());
-
-		factories
-				.add(new org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory());
-
-		factories
-				.add(new org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.provider.ProtocolinstantiationItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
+		org.eclipse.core.runtime.IConfigurationElement[] elements = org.eclipse.core.runtime.Platform
+				.getExtensionRegistry()
+				.getConfigurationElementsFor(
+						de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.METAMODEL_CONTRIBUTOR__EXTENSION_POINT_ID);
+		for (org.eclipse.core.runtime.IConfigurationElement element : elements) {
+			try {
+				Object object = element
+						.createExecutableExtension("contributor");
+				if (object instanceof de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor) {
+					de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor contributor = (de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor) object;
+					java.util.List<org.eclipse.emf.common.notify.AdapterFactory> contributedFactories = contributor
+							.getItemProviderFactories();
+					if (contributedFactories != null) {
+						factories.addAll(contributedFactories);
+					}
+				}
+			} catch (org.eclipse.core.runtime.CoreException e) {
+				e.printStackTrace();
+			}
+		}
 
 		factories
 				.add(new org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory());
 		factories
 				.add(new org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory());
+
+		return new org.eclipse.emf.edit.provider.ComposedAdapterFactory(
+				factories);
 	}
 
 	/**

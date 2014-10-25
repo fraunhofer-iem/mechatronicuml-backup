@@ -22,7 +22,7 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.properties;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: 
+Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.metamodel, de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.constraint,
  de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.componentstorydiagram.editor,
  de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
