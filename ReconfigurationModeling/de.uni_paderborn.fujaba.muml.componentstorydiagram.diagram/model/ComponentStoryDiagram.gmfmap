@@ -299,6 +299,17 @@
         <ownedChild>
           <domainMetaElement
               href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              <value
+                  body="'init'"/>
+            </initializers>
+          </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.4"/>

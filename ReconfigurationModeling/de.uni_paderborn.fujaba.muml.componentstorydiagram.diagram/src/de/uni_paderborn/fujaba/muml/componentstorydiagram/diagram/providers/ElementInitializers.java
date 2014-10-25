@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers;
 
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.InitialNode;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 import org.storydriven.storydiagrams.patterns.BindingState;
@@ -98,6 +99,22 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_InitialNode_3007(InitialNode instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+					.getExpression(10,
+							ActivitiesPackage.eINSTANCE.getInitialNode(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_ControllerExchangeNode_3021(
 			de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode instance) {
 		try {
@@ -106,7 +123,7 @@ public class ElementInitializers {
 			instance.setComponentStoryPattern(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
-							10,
+							11,
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getComponentStoryPattern(), null)
 					.evaluate(newInstance_0_0);
@@ -116,14 +133,14 @@ public class ElementInitializers {
 			newInstance_0_0.setThisVariable(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
-							11,
+							12,
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getComponentVariable(), null).evaluate(
 							newInstance_0_0_1_0);
 			newInstance_0_0_1_0.setName((String) value_0_0_1_0_0);
 			Object value_0_0_1_0_1 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
-							12,
+							13,
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getComponentVariable(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -134,7 +151,7 @@ public class ElementInitializers {
 			newInstance_0_0_1_0.setBindingState((BindingState) value_0_0_1_0_1);
 			Object value_0_0_1_0_2 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
-							13,
+							14,
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getComponentVariable(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -149,7 +166,7 @@ public class ElementInitializers {
 			newInstance_0_0_1_0.getPartVariables().add(newInstance_0_0_1_0_3_0);
 			Object value_0_0_1_0_3_0_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
-							14,
+							15,
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getComponentPartVariable(), null)
 					.evaluate(newInstance_0_0_1_0_3_0);
@@ -165,7 +182,7 @@ public class ElementInitializers {
 			newInstance_0_0_1_0.getPartVariables().add(newInstance_0_0_1_0_3_1);
 			Object value_0_0_1_0_3_1_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
-							15,
+							16,
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getComponentPartVariable(), null)
 					.evaluate(newInstance_0_0_1_0_3_1);
@@ -178,7 +195,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
-							16,
+							17,
 							de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 									.getControllerExchangeNode(), null)
 					.evaluate(instance);
