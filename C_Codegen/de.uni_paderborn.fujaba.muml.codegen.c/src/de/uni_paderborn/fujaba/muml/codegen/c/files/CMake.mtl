@@ -1,0 +1,26 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates to create CMake files.
+ * In the first stage, we only provide one CMakeLists.txt.
+ * Later, we will extend it to make use of more CMake possibilities.
+ */]
+[module CMake('http://de.uni_paderborn.fujaba.properties/0.4.0', 'http://www.fujaba.de/modelinstance/0.4.0', 'http://www.fujaba.de/muml/0.4.0', 'http://www.fujaba.de/muml/actionlanguage/0.4.0', 'http://www.fujaba.de/muml/allocation/ilp/0.1.0', 'http://www.fujaba.de/muml/runtime/0.4.0', 'http://www.fujaba.de/reachabilityGraph/0.4.0', 'http://www.fujaba.org/ns/identifier', 'http://www.fujaba.org/ns/notation')]
+
+
+[**
+ * Generates the main file for CMake
+ */]
+[template public generateCMakeFiles(cic: ComponentInstanceConfiguration, path: String)]
+
+[file (path+'CMakeLists.txt', false, 'UTF-8')]
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT([cic.name/])
+
+file(GLOB_RECURSE SRCS *.c)
+file(GLOB_RECURSE HDRS *.h)
+include_directories(${CMAKE_SOURCE_DIR})
+
+ADD_EXECUTABLE([cic.name/]  ${SRCS} ${HDRS})
+TARGET_LINK_LIBRARIES([cic.name/]) 
+[/file]
+[/template]

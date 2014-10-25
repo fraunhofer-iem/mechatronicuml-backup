@@ -27,6 +27,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::operations]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::ContinuousPorts]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::make]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::CMake]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::main_C]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::LocalMiddleware]
 
@@ -39,6 +40,8 @@
 	
 	[comment generate mini version for middleware/]
 	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/Middleware/')/]
+
+		 [generateCMakeFiles(cic, cic.name+'/')/]
 [/if]
 [/template]
 
