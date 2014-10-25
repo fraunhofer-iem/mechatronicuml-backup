@@ -24,11 +24,11 @@ public class SignatureEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addSignatureParametersEditor(null, true);
+			addParameters_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addSignatureReturnParametersEditor(null, true);
+			addReturnParameters_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,18 +36,20 @@ public class SignatureEditor
 	/**
 	 * @generated
 	 */
-	protected void addSignatureParametersEditor(String category, boolean front) {
-		addEditorToCategory(category, createSignatureParametersEditor(), front);
+	protected void addParameters_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createParameters_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSignatureParametersEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getSignature_Parameters());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameters_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getSignature_Parameters();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The set of input parameters of the reconfiguration rule.");
 
@@ -58,20 +60,20 @@ public class SignatureEditor
 	/**
 	 * @generated
 	 */
-	protected void addSignatureReturnParametersEditor(String category,
+	protected void addReturnParameters_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category, createSignatureReturnParametersEditor(),
-				front);
+		addEditorToCategory(category,
+				createReturnParameters_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSignatureReturnParametersEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-						.getSignature_ReturnParameters());
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReturnParameters_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getSignature_ReturnParameters();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
 
 		editor.setTooltipMessage("The set of output parameters of the reconfiguration rule.");
 

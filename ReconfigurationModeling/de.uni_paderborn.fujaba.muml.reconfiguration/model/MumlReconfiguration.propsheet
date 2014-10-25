@@ -143,18 +143,26 @@
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase"/>
       <properties>
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase/timeForExecution"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.9">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase"/>
       <properties>
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForFading"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForSetup"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForTeardown"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
@@ -276,6 +284,11 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/StructuralCondition"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/StructuralCondition/reconfigurableComponent"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
