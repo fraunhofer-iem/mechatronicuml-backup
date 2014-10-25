@@ -306,7 +306,7 @@ public class ProtocolinstantiationPackageImpl extends EPackageImpl implements Pr
 		protocolInstantiationPortSpecificationEClass.getESuperTypes().add(this.getBroadcastPortSpecification());
 		discoveryPortSpecificationEClass.getESuperTypes().add(this.getBroadcastPortSpecification());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(broadcastPortEClass, BroadcastPort.class, "BroadcastPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBroadcastPort_Specification(), this.getBroadcastPortSpecification(), null, "specification", null, 1, 1, BroadcastPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBroadcastPort_Kind(), this.getBroadcastPortKind(), "kind", "DISCOVERY", 1, 1, BroadcastPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

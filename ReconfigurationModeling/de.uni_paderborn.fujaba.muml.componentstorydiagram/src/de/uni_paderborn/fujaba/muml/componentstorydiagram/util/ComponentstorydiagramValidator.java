@@ -108,7 +108,47 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComponentStoryRule(ComponentStoryRule componentStoryRule, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(componentStoryRule, diagnostics, context);
+		if (!validate_NoCircularContainment(componentStoryRule, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentStoryRule_test(componentStoryRule, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the test constraint of '<em>Component Story Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPONENT_STORY_RULE__TEST__EEXPRESSION = "-- false\r\n" +
+		"false";
+
+	/**
+	 * Validates the test constraint of '<em>Component Story Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentStoryRule_test(ComponentStoryRule componentStoryRule, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentstorydiagramPackage.Literals.COMPONENT_STORY_RULE,
+				 componentStoryRule,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "test",
+				 COMPONENT_STORY_RULE__TEST__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

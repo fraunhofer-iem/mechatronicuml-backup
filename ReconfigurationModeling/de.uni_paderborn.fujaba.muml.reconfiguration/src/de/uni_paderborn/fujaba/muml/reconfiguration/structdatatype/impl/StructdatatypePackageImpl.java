@@ -317,7 +317,7 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 		attributeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		referenceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(structTypeEClass, StructType.class, "StructType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructType_Attributes(), this.getAttribute(), this.getAttribute_StructType(), "attributes", null, 0, -1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructType_References(), this.getReference(), this.getReference_StructType(), "references", null, 0, -1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -354,6 +354,12 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });	
 		addAnnotation
+		  (componentStoryRuleEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "test"
+		   });	
+		addAnnotation
 		  (controllerExchangeNodeEClass, 
 		   source, 
 		   new String[] {
@@ -373,7 +379,14 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		  (componentStoryRuleEClass, 
 		   source, 
 		   new String[] {
-			 "ComponentVariableHasToHaveSameTypeAsReconfiguredComponent", "self.activity.oclAsType(storydiagrams::activities::Activity).ownedActivityNode->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)"
+			 "ComponentVariableHasToHaveSameTypeAsReconfiguredComponent", "-- A ComponentVariable has to have the reconfigured component as type\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\nand\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)",
+			 "test", "-- false\r\nfalse"
+		   });	
+		addAnnotation
+		  (componentStoryNodeEClass, 
+		   source, 
+		   new String[] {
+			 "test", "-- false\r\nfalse"
 		   });	
 		addAnnotation
 		  (controllerExchangeNodeEClass, 

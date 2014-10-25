@@ -1323,7 +1323,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(reconfigurableComponentEClass, ReconfigurableComponent.class, "ReconfigurableComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(reconfigurableAtomicComponentEClass, ReconfigurableAtomicComponent.class, "ReconfigurableAtomicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
