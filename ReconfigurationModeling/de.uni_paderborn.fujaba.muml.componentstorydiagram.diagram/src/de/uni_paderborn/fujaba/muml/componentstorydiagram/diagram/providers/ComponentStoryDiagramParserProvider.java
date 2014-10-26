@@ -44,7 +44,14 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	 * @generated
 	 */
 	private IParser getComponentPartVariableLabel_5018Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser5018();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser getComponentPartVariableLabel_5063Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser5063();
 	}
 
 	/**
@@ -72,7 +79,7 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	 * @generated
 	 */
 	private IParser getMultiPortVariableLabel_5056Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.MultiPortVariableLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.MultiPortVariableLabelExpressionLabelParser5056();
 	}
 
 	/**
@@ -100,7 +107,7 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	 * @generated
 	 */
 	private IParser getSinglePortVariableLabel_5057Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.SinglePortVariableLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.SinglePortVariableLabelExpressionLabelParser5057();
 	}
 
 	/**
@@ -128,7 +135,7 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	 * @generated
 	 */
 	private IParser getMultiPortVariableLabel_5058Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.MultiPortVariableLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.MultiPortVariableLabelExpressionLabelParser5058();
 	}
 
 	/**
@@ -156,7 +163,7 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	 * @generated
 	 */
 	private IParser getSinglePortVariableLabel_5059Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.SinglePortVariableLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.SinglePortVariableLabelExpressionLabelParser5059();
 	}
 
 	/**
@@ -182,7 +189,7 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	 * @generated
 	 */
 	private IParser getFadingComponentPartVariableLabel_5054Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5054();
 	}
 
 	/**
@@ -254,6 +261,8 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 			return getComponentStoryNodeName_5001Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 			return getComponentPartVariableLabel_5018Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
+			return getComponentPartVariableLabel_5063Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableNameEditPart.VISUAL_ID:
 			return getMultiPortVariableName_5022Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.UnderlinedLabelEditPart.VISUAL_ID:
