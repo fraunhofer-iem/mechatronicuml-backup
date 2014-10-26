@@ -840,6 +840,15 @@
             href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
         <childMetaFeature
             href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.12">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -919,7 +928,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.12">
+                  value="//@expressionProviders/@providers.0/@expressions.13">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -930,19 +939,19 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.13">
+                      value="//@expressionProviders/@providers.0/@expressions.14">
                     <feature
                         href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.14">
+                      value="//@expressionProviders/@providers.0/@expressions.15">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.15">
+                      value="//@expressionProviders/@providers.0/@expressions.16">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
                   </initializers>
@@ -953,7 +962,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.16">
+                          value="//@expressionProviders/@providers.0/@expressions.17">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
                       </initializers>
@@ -963,7 +972,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.17">
+                          value="//@expressionProviders/@providers.0/@expressions.18">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
                       </initializers>
@@ -977,7 +986,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.18">
+              value="//@expressionProviders/@providers.0/@expressions.19">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1316,8 +1325,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.20"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.21"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.21"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.22"/>
     </links>
     <links
         visualID="4005"
@@ -1373,8 +1382,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.22"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.23"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.23"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.24"/>
     </links>
     <links
         visualID="4006"
@@ -1849,6 +1858,8 @@
       <expressions
           body="'init'"/>
       <expressions
+          body="'junction'"/>
+      <expressions
           body="'componentStoryPattern'"/>
       <expressions
           body="'this'"/>
@@ -1938,7 +1949,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.15/@labels.0/@modelFacet"
         className="FadingComponentPartVariableLabelExpressionLabelParser5054"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.19">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.20">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>

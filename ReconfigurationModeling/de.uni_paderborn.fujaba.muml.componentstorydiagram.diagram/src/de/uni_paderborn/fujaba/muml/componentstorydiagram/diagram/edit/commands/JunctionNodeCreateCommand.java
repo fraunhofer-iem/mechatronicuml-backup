@@ -59,6 +59,9 @@ public class JunctionNodeCreateCommand extends EditElementCommand {
 		Activity owner = (Activity) getElementToEdit();
 		owner.getOwnedActivityNodes().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ElementInitializers
+				.getInstance().init_JunctionNode_3008(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
