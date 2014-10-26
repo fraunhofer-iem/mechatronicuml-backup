@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram;
 
-import org.storydriven.storydiagrams.activities.Activity;
-
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
+
+import org.storydriven.storydiagrams.activities.Activity;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,8 +23,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryRule()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ComponentVariableHasToHaveSameTypeAsReconfiguredComponent='-- A ComponentVariable has to have the reconfigured component as type\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\nand\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)' test='-- false\r\nfalse'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='test'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ComponentVariableHasToHaveSameTypeAsReconfiguredComponent='-- A ComponentVariable has to have the reconfigured component as type\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\nand\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ComponentVariableHasToHaveSameTypeAsReconfiguredComponent'"
  * @generated
  */
 public interface ComponentStoryRule extends ReconfigurationRule {

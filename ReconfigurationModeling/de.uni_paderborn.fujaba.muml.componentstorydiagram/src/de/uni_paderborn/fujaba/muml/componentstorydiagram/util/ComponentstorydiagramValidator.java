@@ -117,26 +117,28 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(componentStoryRule, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentStoryRule, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponentStoryRule_test(componentStoryRule, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentStoryRule_ComponentVariableHasToHaveSameTypeAsReconfiguredComponent(componentStoryRule, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the test constraint of '<em>Component Story Rule</em>'.
+	 * The cached validation expression for the ComponentVariableHasToHaveSameTypeAsReconfiguredComponent constraint of '<em>Component Story Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT_STORY_RULE__TEST__EEXPRESSION = "-- false\r\n" +
-		"false";
+	protected static final String COMPONENT_STORY_RULE__COMPONENT_VARIABLE_HAS_TO_HAVE_SAME_TYPE_AS_RECONFIGURED_COMPONENT__EEXPRESSION = "-- A ComponentVariable has to have the reconfigured component as type\r\n" +
+		"self.activity.ownedActivityNode->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\n" +
+		"and\r\n" +
+		"self.activity.ownedActivityNode->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)";
 
 	/**
-	 * Validates the test constraint of '<em>Component Story Rule</em>'.
+	 * Validates the ComponentVariableHasToHaveSameTypeAsReconfiguredComponent constraint of '<em>Component Story Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComponentStoryRule_test(ComponentStoryRule componentStoryRule, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComponentStoryRule_ComponentVariableHasToHaveSameTypeAsReconfiguredComponent(ComponentStoryRule componentStoryRule, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentstorydiagramPackage.Literals.COMPONENT_STORY_RULE,
@@ -144,8 +146,8 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "test",
-				 COMPONENT_STORY_RULE__TEST__EEXPRESSION,
+				 "ComponentVariableHasToHaveSameTypeAsReconfiguredComponent",
+				 COMPONENT_STORY_RULE__COMPONENT_VARIABLE_HAS_TO_HAVE_SAME_TYPE_AS_RECONFIGURED_COMPONENT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

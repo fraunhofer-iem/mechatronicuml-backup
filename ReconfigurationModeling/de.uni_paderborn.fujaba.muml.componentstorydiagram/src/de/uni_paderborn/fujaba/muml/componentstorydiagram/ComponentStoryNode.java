@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryNode()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL test='-- false\r\nfalse'"
+ * @model
  * @generated
  */
 public interface ComponentStoryNode extends ActivityNode {

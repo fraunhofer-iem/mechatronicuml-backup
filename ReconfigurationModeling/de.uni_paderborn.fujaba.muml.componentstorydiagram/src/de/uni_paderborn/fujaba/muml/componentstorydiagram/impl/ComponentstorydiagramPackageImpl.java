@@ -311,7 +311,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		controllerExchangeNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
 		sendReconfigurationMessageExpressionEClass.getESuperTypes().add(theComponentstorypatternPackage.getTriggerEmbeddedComponentExpression());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(componentStoryRuleEClass, ComponentStoryRule.class, "ComponentStoryRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentStoryRule_Activity(), theActivitiesPackage.getActivity(), null, "activity", null, 1, 1, ComponentStoryRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -357,7 +357,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		  (componentStoryRuleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "test"
+			 "constraints", "ComponentVariableHasToHaveSameTypeAsReconfiguredComponent"
 		   });	
 		addAnnotation
 		  (controllerExchangeNodeEClass, 
@@ -379,14 +379,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		  (componentStoryRuleEClass, 
 		   source, 
 		   new String[] {
-			 "ComponentVariableHasToHaveSameTypeAsReconfiguredComponent", "-- A ComponentVariable has to have the reconfigured component as type\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\nand\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)",
-			 "test", "-- false\r\nfalse"
-		   });	
-		addAnnotation
-		  (componentStoryNodeEClass, 
-		   source, 
-		   new String[] {
-			 "test", "-- false\r\nfalse"
+			 "ComponentVariableHasToHaveSameTypeAsReconfiguredComponent", "-- A ComponentVariable has to have the reconfigured component as type\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ComponentStoryNode))->forAll(oAN | oAN.oclAsType(ComponentStoryNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)\r\nand\r\nself.activity.ownedActivityNode->select(oclIsTypeOf(ControllerExchangeNode))->forAll(oAN | oAN.oclAsType(ControllerExchangeNode).componentStoryPattern.thisVariable.type = self.reconfiguredComponent)"
 		   });	
 		addAnnotation
 		  (controllerExchangeNodeEClass, 
