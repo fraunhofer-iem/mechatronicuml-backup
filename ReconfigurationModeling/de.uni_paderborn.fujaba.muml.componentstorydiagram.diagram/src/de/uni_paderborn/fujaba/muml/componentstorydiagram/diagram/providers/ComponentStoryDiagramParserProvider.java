@@ -237,19 +237,8 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser multiPortOrderConstraintOrderConstraintType_6006Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getMultiPortOrderConstraintOrderConstraintType_6006Parser() {
-		if (multiPortOrderConstraintOrderConstraintType_6006Parser == null) {
-			EAttribute editableFeature = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-					.getMultiPortOrderConstraint_OrderConstraintType();
-			EnumParser parser = new EnumParser(editableFeature);
-			multiPortOrderConstraintOrderConstraintType_6006Parser = parser;
-		}
-		return multiPortOrderConstraintOrderConstraintType_6006Parser;
+	private IParser getMultiPortOrderConstraintLabel_6006Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.MultiPortOrderConstraintLabelExpressionLabelParser6006();
 	}
 
 	/**
@@ -287,9 +276,8 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 			return getAssemblyVariableName_6004Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:
 			return getDelegationVariableName_6005Parser();
-
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortOrderConstraintOrderConstraintTypeEditPart.VISUAL_ID:
-			return getMultiPortOrderConstraintOrderConstraintType_6006Parser();
+			return getMultiPortOrderConstraintLabel_6006Parser();
 		}
 		return null;
 	}

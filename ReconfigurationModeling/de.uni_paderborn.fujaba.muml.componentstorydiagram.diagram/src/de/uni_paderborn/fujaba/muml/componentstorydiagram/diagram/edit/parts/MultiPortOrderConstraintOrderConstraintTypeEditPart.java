@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
@@ -40,6 +41,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
+import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
@@ -50,6 +53,8 @@ import org.eclipse.gmf.tooling.runtime.directedit.ComboDirectEditManager;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
 import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultLinkLabelDragPolicy;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
+import org.eclipse.gmf.tooling.runtime.ocl.tracker.HasOclTracker;
+import org.eclipse.gmf.tooling.runtime.ocl.tracker.OclTracker;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.swt.SWT;
@@ -105,7 +110,7 @@ public class MultiPortOrderConstraintOrderConstraintTypeEditPart extends
 	/**
 	 * @generated
 	 */
-	private List<?> parserElements;
+	private OclTracker.Registrator myOclRegistrator;
 
 	/**
 	 * @generated
@@ -290,7 +295,7 @@ public class MultiPortOrderConstraintOrderConstraintTypeEditPart extends
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
@@ -367,7 +372,7 @@ public class MultiPortOrderConstraintOrderConstraintTypeEditPart extends
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new ComboDirectEditManager(
+			setManager(new TextDirectEditManager(
 					this,
 					null,
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryDiagramEditPartFactory
@@ -394,9 +399,21 @@ public class MultiPortOrderConstraintOrderConstraintTypeEditPart extends
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == ComboDirectEditManager.class) {
-			((ComboDirectEditManager) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager.class) {
+			((TextDirectEditManager) getManager()).show(eventLocation
 					.getSWTPoint());
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private void performDirectEdit(char initialCharacter) {
+		if (getManager() instanceof TextDirectEditManager) {
+			((TextDirectEditManager) getManager()).show(initialCharacter);
+		} else //
+		{
+			performDirectEdit();
 		}
 	}
 
@@ -410,7 +427,14 @@ public class MultiPortOrderConstraintOrderConstraintTypeEditPart extends
 
 				public void run() {
 					if (isActive() && isEditable()) {
-						if ((theRequest instanceof DirectEditRequest)
+						if (theRequest
+								.getExtendedData()
+								.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character) theRequest
+									.getExtendedData()
+									.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+							performDirectEdit(initialChar.charValue());
+						} else if ((theRequest instanceof DirectEditRequest)
 								&& (getEditText().equals(getLabelText()))) {
 							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
@@ -517,30 +541,16 @@ public class MultiPortOrderConstraintOrderConstraintTypeEditPart extends
 	 * @generated
 	 */
 	protected void addSemanticListeners() {
-		if (getParser() instanceof ISemanticParser) {
-			EObject element = resolveSemanticElement();
-			parserElements = ((ISemanticParser) getParser())
-					.getSemanticElementsBeingParsed(element);
-			for (int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter(
-						"SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
-			}
-		} else {
-			super.addSemanticListeners();
-		}
+		OclTracker tracker = getTracker();
+		tracker.initialize(resolveSemanticElement());
+		tracker.installListeners(getEditingDomain(), this, getOclRegistrator());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected void removeSemanticListeners() {
-		if (parserElements != null) {
-			for (int i = 0; i < parserElements.size(); i++) {
-				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
-			}
-		} else {
-			super.removeSemanticListeners();
-		}
+		getTracker().uninstallListeners();
 	}
 
 	/**
@@ -563,6 +573,35 @@ public class MultiPortOrderConstraintOrderConstraintTypeEditPart extends
 	 */
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
+	}
+
+	/**
+	 * @generated
+	 */
+	private OclTracker getTracker() {
+		return ((HasOclTracker) getParser()).getOclTracker();
+	}
+
+	/**
+	 * @generated
+	 */
+	private OclTracker.Registrator getOclRegistrator() {
+		if (myOclRegistrator == null) {
+			myOclRegistrator = new OclTracker.Registrator() {
+
+				@Override
+				public void registerListener(String filterId,
+						NotificationListener listener, EObject element) {
+					addListenerFilter(filterId, listener, element);
+				}
+
+				@Override
+				public void unregisterListener(String filterId) {
+					removeListenerFilter(filterId);
+				}
+			};
+		}
+		return myOclRegistrator;
 	}
 
 	/**

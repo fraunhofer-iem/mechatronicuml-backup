@@ -1431,8 +1431,7 @@
           visualID="6006"
           editPartClassName="MultiPortOrderConstraintOrderConstraintTypeEditPart"
           itemSemanticEditPolicyClassName="MultiPortOrderConstraintOrderConstraintTypeItemSemanticEditPolicy"
-          notationViewFactoryClassName="MultiPortOrderConstraintOrderConstraintTypeViewFactory"
-          readOnly="true">
+          notationViewFactoryClassName="MultiPortOrderConstraintOrderConstraintTypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1447,11 +1446,8 @@
               fixedForeground="true"/>
         </viewmap>
         <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.9">
-          <metaFeatures
-              href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/orderConstraintType"/>
-        </modelFacet>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.9"/>
       </labels>
     </links>
     <compartments
@@ -1898,6 +1894,8 @@
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
+      <expressions
+          body="if self.orderConstraintType = MultiPortOrderConstraintType::NEXT then&#xD;&#xA;'«next»'&#xD;&#xA;else&#xD;&#xA;'«prev»'&#xD;&#xA;endif"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1965,8 +1963,13 @@
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
     <implementations
-        xsi:type="gmfgen:PredefinedEnumParser"
-        uses="//@diagram/@links.3/@labels.0/@modelFacet"/>
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@links.3/@labels.0/@modelFacet"
+        className="MultiPortOrderConstraintLabelExpressionLabelParser6006"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.26">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
+    </implementations>
   </labelParsers>
   <contextMenus
       context="//@diagram">
