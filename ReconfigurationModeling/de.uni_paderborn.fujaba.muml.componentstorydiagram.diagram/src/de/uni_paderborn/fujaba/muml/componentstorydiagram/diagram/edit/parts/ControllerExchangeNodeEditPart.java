@@ -1,9 +1,18 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
 
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
@@ -171,6 +180,11 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 							.getFigureControllerExchangeNodeName());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureDeadlineLabel());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureControllerExchangeNodePatternContainer();
@@ -187,6 +201,9 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
@@ -362,16 +379,16 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureControllerExchangeNodeFadingFunctionsContainer;
-
-		/**
-		 * @generated
-		 */
 		private WrappingLabel fFigureControllerExchangeNodeIconLabel;
 		/**
 		 * @generated
 		 */
 		private WrappingLabel fFigureControllerExchangeNodeIconDeadline;
+
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureDeadlineLabel;
 
 		/**
 		 * @generated
@@ -709,22 +726,24 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			rightIconRectangle3.add(lowerRightIconRectangle4,
 					BorderLayout.CENTER);
 
-			fFigureControllerExchangeNodeFadingFunctionsContainer = new RectangleFigure();
+			RectangleFigure deadlineLabelContainer3 = new RectangleFigure();
 
-			fFigureControllerExchangeNodeFadingFunctionsContainer
-					.setOutline(false);
+			deadlineLabelContainer3.setOutline(false);
 
-			GridData constraintFFigureControllerExchangeNodeFadingFunctionsContainer = new GridData();
-			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.verticalAlignment = GridData.CENTER;
-			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalAlignment = GridData.FILL;
-			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalIndent = 0;
-			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalSpan = 1;
-			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.verticalSpan = 1;
-			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.grabExcessHorizontalSpace = true;
-			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.grabExcessVerticalSpace = false;
-			controllerExchangeNodeContentContainer0
-					.add(fFigureControllerExchangeNodeFadingFunctionsContainer,
-							constraintFFigureControllerExchangeNodeFadingFunctionsContainer);
+			controllerExchangeNodeIcon2.add(deadlineLabelContainer3,
+					BorderLayout.BOTTOM);
+
+			GridLayout layoutDeadlineLabelContainer3 = new GridLayout();
+			layoutDeadlineLabelContainer3.numColumns = 1;
+			layoutDeadlineLabelContainer3.makeColumnsEqualWidth = true;
+			deadlineLabelContainer3
+					.setLayoutManager(layoutDeadlineLabelContainer3);
+
+			fFigureDeadlineLabel = new WrappingLabel();
+
+			fFigureDeadlineLabel.setText("");
+
+			deadlineLabelContainer3.add(fFigureDeadlineLabel);
 
 			fFigureControllerExchangeNodePatternContainer = new RectangleFigure();
 
@@ -772,13 +791,6 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureControllerExchangeNodeFadingFunctionsContainer() {
-			return fFigureControllerExchangeNodeFadingFunctionsContainer;
-		}
-
-		/**
-		 * @generated
-		 */
 		public WrappingLabel getFigureControllerExchangeNodeIconLabel() {
 			return fFigureControllerExchangeNodeIconLabel;
 		}
@@ -788,6 +800,13 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public WrappingLabel getFigureControllerExchangeNodeIconDeadline() {
 			return fFigureControllerExchangeNodeIconDeadline;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureDeadlineLabel() {
+			return fFigureDeadlineLabel;
 		}
 
 	}

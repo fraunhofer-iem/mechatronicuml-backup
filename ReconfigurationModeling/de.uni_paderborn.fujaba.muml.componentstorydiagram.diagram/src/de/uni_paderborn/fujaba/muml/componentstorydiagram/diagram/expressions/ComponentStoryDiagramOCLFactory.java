@@ -35,7 +35,7 @@ public class ComponentStoryDiagramOCLFactory {
 	 * @generated
 	 */
 	protected ComponentStoryDiagramOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[27];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[28];
 		this.expressionBodies = new String[] {
 				"\'activity\'", //$NON-NLS-1$
 				"\'componentStoryPattern\'", //$NON-NLS-1$
@@ -59,6 +59,7 @@ public class ComponentStoryDiagramOCLFactory {
 				"storydiagrams::patterns::BindingOperator::CREATE", //$NON-NLS-1$
 				"\'controllerExchangeNode\'", //$NON-NLS-1$
 				"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
+				"if self.deadline.oclIsUndefined() then \'\'\r\nelse\r\nlet lowerBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).lowerBound.oclAsType(muml::valuetype::TimeValue).toString(), \r\n\tupperBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).upperBound.oclAsType(muml::valuetype::TimeValue).toString() in\r\n\'[\'+lowerBound+\', \'+upperBound+\']\'\r\nendif", //$NON-NLS-1$
 				"--Create AssemblyVariable between PortVariables of PartVariables\r\nnot self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()", //$NON-NLS-1$
 				"--Create AssemblyVariable between PortVariables of different PartVariables\r\nself.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() <> oppositeEnd.eContainer()", //$NON-NLS-1$
 				"--Start creation of DelegationVariable at PortVariable of ComponentVariable\r\nself.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()", //$NON-NLS-1$

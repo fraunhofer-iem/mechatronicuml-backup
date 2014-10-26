@@ -310,10 +310,12 @@
                   <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL" vertical="true"/>
                 </children>
               </children>
+              <children xsi:type="gmfgraph:Rectangle" name="DeadlineLabelContainer" outline="false">
+                <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="END" vertical="true"/>
+                <layout xsi:type="gmfgraph:GridLayout"/>
+                <children xsi:type="gmfgraph:Label" name="DeadlineLabel" text=""/>
+              </children>
             </children>
-          </children>
-          <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodeFadingFunctionsContainer" outline="false">
-            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
           </children>
           <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodePatternContainer" outline="false" fill="false">
             <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
@@ -321,10 +323,10 @@
         </children>
       </actualFigure>
       <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.0/@children.0"/>
-      <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.2"/>
       <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.1"/>
       <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.2/@children.0"/>
       <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.2/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.3/@children.0"/>
     </descriptors>
     <descriptors name="FadingFunctionFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="FadingFunctionFigure" outline="false">
@@ -531,7 +533,7 @@
   <compartments name="ComponentVariableCompartment" figure="ComponentVariableFigure" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
   <compartments name="MultiPortVariablesCompartment" figure="MultiPortVariableFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
   <compartments name="ControllerExchangeNodeCompartment" figure="ControllerExchangeNodeFigure" accessor="//@figures.0/@descriptors.14/@accessors.1"/>
-  <compartments name="ControllerExchangeNodeFadingFunctionsCompartment" figure="ControllerExchangeNodeFigure" accessor="//@figures.0/@descriptors.14/@accessors.2"/>
+  <compartments name="ControllerExchangeNodeFadingFunctionsCompartment" figure="ControllerExchangeNodeFigure"/>
   <labels name="ActivityEdgeLabel" figure="ActivityEdgeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.10/@accessors.0">
     <facets xsi:type="gmfgraph:LabelOffsetFacet"/>
     <facets xsi:type="gmfgraph:AlignmentFacet" alignment="CENTER"/>
@@ -544,9 +546,9 @@
   </labels>
   <labels name="ComponentNameLabel" figure="ComponentVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels name="ComponentOperatorLabel" figure="ComponentVariableOperatorFigure" elementIcon="false"/>
+  <labels name="PartVariableNameLabel" figure="PartVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels name="PortVariableNameLabel" figure="PortVariableNameFigure" elementIcon="false"/>
   <labels name="PortVariableOperatorLabel" figure="PortVariableOperatorFigure" elementIcon="false"/>
-  <labels name="PartVariableNameLabel" figure="PartVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels name="PartVariableOperatorLabel" figure="PartVariableOperatorFigure" elementIcon="false"/>
   <labels name="AssemblyNameLabel" figure="AssemblyVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
   <labels name="DelegationNameLabel" figure="DelegationVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
@@ -556,8 +558,8 @@
       <defaultSize dx="-1" dy="-1"/>
     </facets>
   </labels>
-  <labels name="ControllerExchangeNodeIconLabel" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.3"/>
-  <labels name="ControllerExchangeNodeIconDeadline" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.4"/>
+  <labels name="ControllerExchangeNodeIconLabel" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.2"/>
+  <labels name="ControllerExchangeNodeIconDeadline" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.3"/>
   <labels name="FadingComponentVariableNameLabel" figure="FadingComponentVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.17/@accessors.0"/>
   <labels name="PortVariableTypeLabel" elementIcon="false">
     <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
@@ -565,4 +567,5 @@
   <labels name="MultiPortOrderConstraintTypeLabel" figure="MultiPortOrderConstraintFigure" elementIcon="false" accessor="//@figures.0/@descriptors.20/@accessors.0"/>
   <labels name="MultiPortPositionConstraintLabel" figure="MultiPortPositionConstraintFigure"/>
   <labels name="TriggerEmbeddedComponentExpression" figure="PartVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <labels name="DeadlineLabel" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.4"/>
 </gmfgraph:Canvas>

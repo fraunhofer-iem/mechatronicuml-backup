@@ -140,6 +140,9 @@
     <nodeLabelTraces
         visualID="5041"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5064"
+        queryText="true"/>
     <compartmentTraces
         visualID="7009"
         queryText="true"/>

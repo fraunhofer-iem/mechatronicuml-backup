@@ -181,6 +181,10 @@ public class ComponentStoryDiagramEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart(
 						view);
 
+			case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel8EditPart(
+						view);
+
 			case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart(
 						view);
