@@ -46,6 +46,11 @@
     </classes>
     <classes>
       <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ControllerExchangeNode"/>
+      <properties tooltip="" initializeOCLExpression="">
+        <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ControllerExchangeNode/deadline"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
     </classes>
     <classes>
       <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/SendReconfigurationMessageExpression"/>
