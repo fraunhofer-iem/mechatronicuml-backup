@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.swplatform/src" modelPluginID="de.uni_paderborn.fujaba.muml.swplatform"
+    modelName="Swplatform" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>swplatform.ecore</foreignModel>
+  <genPackages prefix="Swplatform" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
+      ecorePackage="swplatform.ecore#/">
+    <genClasses ecoreClass="swplatform.ecore#//OperatingSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//OperatingSystem/apirepositories"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//OperatingSystem/enumerationDataTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//OperatingSystem/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="swplatform.ecore#//APIRepository">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//APIRepository/apiCommands"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference swplatform.ecore#//APIRepository/swPlatform"/>
+    </genClasses>
+    <genClasses ecoreClass="swplatform.ecore#//APICommand">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference swplatform.ecore#//APICommand/returnDataType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//APICommand/parameters"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference swplatform.ecore#//APICommand/repository"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//APICommand/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="swplatform.ecore#//EnumerationValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute swplatform.ecore#//EnumerationValue/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference swplatform.ecore#//EnumerationValue/enumerationDataType"/>
+    </genClasses>
+    <genClasses ecoreClass="swplatform.ecore#//EnumerationDataType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//EnumerationDataType/enumerationValues"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="swplatform.ecore#//Constraint">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference swplatform.ecore#//Constraint/apiCommand"/>
+    </genClasses>
+    <genClasses ecoreClass="swplatform.ecore#//TimeConstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference swplatform.ecore#//TimeConstraint/samplingTime"/>
+    </genClasses>
+    <genClasses ecoreClass="swplatform.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute swplatform.ecore#//Import/importURI"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

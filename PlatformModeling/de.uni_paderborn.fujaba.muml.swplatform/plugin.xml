@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated swplatform -->
+      <package
+            uri="http://www.fujaba.de/muml/swplatform/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage"
+            genModel="model/swplatform.genmodel"/>
+   </extension>
+
+</plugin>
