@@ -9,6 +9,7 @@ transformation settings(inout gmfgen : GMFGEN);
 
 main() {
 	gmfgen.rootObjects()![GenEditorGenerator]->map settings();
+	gmfgen.objects()[ExpressionLabelParser]->map adaptExpressionLabelParserClassName();
 }
 
 mapping inout GenEditorGenerator::settings() {
@@ -27,4 +28,9 @@ mapping inout GenEditorGenerator::editorSpecific() {
 mapping inout GenNode::addLineTypeStyle() {
 	//self.styles += Gen
 
+}
+
+//workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=331875
+mapping inout ExpressionLabelParser::adaptExpressionLabelParserClassName(){
+        className := className.concat(_uses->first().container().oclAsType(GenCommonBase).visualID.toString());
 }
