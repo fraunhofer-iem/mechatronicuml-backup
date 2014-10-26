@@ -59,6 +59,9 @@ public class ActivityFinalNodeCreateCommand extends EditElementCommand {
 		Activity owner = (Activity) getElementToEdit();
 		owner.getOwnedActivityNodes().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ElementInitializers
+				.getInstance().init_ActivityFinalNode_3010(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

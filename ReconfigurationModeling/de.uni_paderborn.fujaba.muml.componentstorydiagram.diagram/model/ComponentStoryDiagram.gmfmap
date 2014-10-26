@@ -357,6 +357,17 @@
         <ownedChild>
           <domainMetaElement
               href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityFinalNode"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              <value
+                  body="'final'"/>
+            </initializers>
+          </domainInitializer>
           <labelMappings
               readOnly="true">
             <diagramLabel

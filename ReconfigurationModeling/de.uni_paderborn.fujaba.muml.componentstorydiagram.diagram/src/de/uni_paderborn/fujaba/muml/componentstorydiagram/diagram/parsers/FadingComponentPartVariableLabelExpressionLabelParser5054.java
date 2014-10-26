@@ -50,7 +50,7 @@ public class FadingComponentPartVariableLabelExpressionLabelParser5054 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						20,
+						21,
 						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getFadingComponentPartVariable(), null).body();
 	}

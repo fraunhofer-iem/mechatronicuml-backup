@@ -1,1465 +1,568 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="componentstorydiagram">
-  <figures
-      name="Default">
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="GrayArrowDecoration">
-      <foregroundColor
-          xsi:type="gmfgraph:ConstantColor"
-          value="gray"/>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="componentstorydiagram">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="GrayArrowDecoration">
+      <foregroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
     </figures>
-    <descriptors
-        name="ActivityFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ActivityFigure"
-          fill="false">
-        <layout
-            xsi:type="gmfgraph:GridLayout"
-            equalWidth="false"/>
-        <children
-            xsi:type="gmfgraph:ScalablePolygon">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                top="2"
-                left="2"
-                bottom="2"
-                right="20"/>
+    <descriptors name="ActivityFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ActivityFigure" fill="false">
+        <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+        <children xsi:type="gmfgraph:ScalablePolygon">
+          <layout xsi:type="gmfgraph:StackLayout"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="2" left="2" bottom="2" right="20"/>
           </border>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="ActivityName"/>
-          <template
-              y="2"/>
-          <template
-              x="20"
-              y="2"/>
-          <template
-              x="21"
-              y="1"/>
-          <template
-              x="21"/>
-          <template
-              x="21"
-              y="1"/>
-          <template
-              x="20"
-              y="2"/>
+          <children xsi:type="gmfgraph:Label" name="ActivityName"/>
+          <template y="2"/>
+          <template x="20" y="2"/>
+          <template x="21" y="1"/>
+          <template x="21"/>
+          <template x="21" y="1"/>
+          <template x="20" y="2"/>
         </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ActivityContainer"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"
-              verticalAlignment="FILL"
-              horizontalAlignment="FILL"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ActivityContainer" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
         </children>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
     </descriptors>
-    <descriptors
-        name="ComponentStoryNodeRoundedFigure">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="ComponentStoryNodeRoundedFigure"
-          cornerWidth="12"
-          cornerHeight="12">
-        <layout
-            xsi:type="gmfgraph:BorderLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="StoryNodeNameContainer"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="BEGINNING"
-              vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="ComponentStoryNodeName">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                horizontalAlignment="BEGINNING"/>
+    <descriptors name="ComponentStoryNodeRoundedFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ComponentStoryNodeRoundedFigure" cornerWidth="12" cornerHeight="12">
+        <layout xsi:type="gmfgraph:BorderLayout"/>
+        <children xsi:type="gmfgraph:Rectangle" name="StoryNodeNameContainer" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING" vertical="true"/>
+          <layout xsi:type="gmfgraph:GridLayout"/>
+          <children xsi:type="gmfgraph:Label" name="ComponentStoryNodeName">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" horizontalAlignment="BEGINNING"/>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentStoryNodeContentContainer"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="FILL"
-              vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:BorderLayout"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="ComponentStoryNodePatternContainer"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:BorderLayoutData"
-                alignment="FILL"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ComponentStoryNodeContentContainer" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL" vertical="true"/>
+          <layout xsi:type="gmfgraph:BorderLayout"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ComponentStoryNodePatternContainer" outline="false" fill="false">
+            <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL"/>
           </children>
         </children>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
     </descriptors>
-    <descriptors
-        name="ComponentStoryPatternFigure">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="ComponentStoryPattern"
-          outline="false"
-          fill="false"
-          cornerWidth="12"
-          cornerHeight="12">
-        <layout
-            xsi:type="gmfgraph:GridLayout"/>
-        <children
-            xsi:type="gmfgraph:RoundedRectangle"
-            name="ComponentStoryPatternContainer"
-            outline="false"
-            fill="false"
-            cornerWidth="12"
-            cornerHeight="12">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"
-              verticalAlignment="FILL"
-              horizontalAlignment="FILL"/>
+    <descriptors name="ComponentStoryPatternFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ComponentStoryPattern" outline="false" fill="false" cornerWidth="12" cornerHeight="12">
+        <layout xsi:type="gmfgraph:GridLayout"/>
+        <children xsi:type="gmfgraph:RoundedRectangle" name="ComponentStoryPatternContainer" outline="false" fill="false" cornerWidth="12" cornerHeight="12">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
         </children>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="ComponentVariableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ComponentFigure">
-        <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentVariableContent"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="container"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                verticalAlignment="BEGINNING"
-                horizontalAlignment="FILL"/>
-            <layout
-                xsi:type="gmfgraph:GridLayout"
-                numColumns="3"/>
-            <border
-                xsi:type="gmfgraph:MarginBorder">
-              <insets
-                  top="3"
-                  left="3"
-                  right="3"/>
+    <descriptors name="ComponentVariableFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ComponentFigure">
+        <layout xsi:type="gmfgraph:StackLayout"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ComponentVariableContent" outline="false" fill="false">
+          <layout xsi:type="gmfgraph:GridLayout"/>
+          <children xsi:type="gmfgraph:Rectangle" name="container" outline="false" fill="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING" horizontalAlignment="FILL"/>
+            <layout xsi:type="gmfgraph:GridLayout" numColumns="3"/>
+            <border xsi:type="gmfgraph:MarginBorder">
+              <insets top="3" left="3" right="3"/>
             </border>
-            <children
-                xsi:type="gmfgraph:Rectangle"
-                name="fake"
-                outline="false"
-                fill="false"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="ComponentVariableThis"
-                text="this">
-              <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  grabExcessHorizontalSpace="true"
-                  verticalAlignment="BEGINNING"/>
-              <font
-                  xsi:type="gmfgraph:BasicFont"
-                  faceName=""
-                  style="BOLD"/>
+            <children xsi:type="gmfgraph:Rectangle" name="fake" outline="false" fill="false"/>
+            <children xsi:type="gmfgraph:Label" name="ComponentVariableThis" text="this">
+              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING"/>
+              <font xsi:type="gmfgraph:BasicFont" faceName="" style="BOLD"/>
             </children>
-            <children
-                xsi:type="gmfgraph:FigureRef">
-              <figure
-                  xsi:type="gmfgraph:Rectangle"
-                  href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
+            <children xsi:type="gmfgraph:FigureRef">
+              <figure xsi:type="gmfgraph:Rectangle" href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
             </children>
           </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="children"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"
-                verticalAlignment="FILL"
-                horizontalAlignment="FILL"/>
+          <children xsi:type="gmfgraph:Rectangle" name="children" outline="false" fill="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
           </children>
         </children>
       </actualFigure>
-      <accessors
-          accessor="getFigureComponentVariableNameFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.1"/>
+      <accessors accessor="getFigureComponentVariableNameFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.1"/>
     </descriptors>
-    <descriptors
-        name="ComponentVariableOperatorFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="ComponentVariableOperator"
-          text="">
-        <font
-            xsi:type="gmfgraph:BasicFont"/>
+    <descriptors name="ComponentVariableOperatorFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ComponentVariableOperator" text="">
+        <font xsi:type="gmfgraph:BasicFont"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure"/>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure"/>
     </descriptors>
-    <descriptors
-        name="PortVariableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="PortVariableFigure">
-        <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="PortVariable">
-          <maximumSize
-              dx="20"
-              dy="20"/>
-          <minimumSize
-              dx="20"
-              dy="20"/>
-          <preferredSize
-              dx="20"
-              dy="20"/>
-          <size
-              x="20"
-              y="20"/>
+    <descriptors name="PortVariableFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="PortVariableFigure">
+        <layout xsi:type="gmfgraph:StackLayout"/>
+        <children xsi:type="gmfgraph:Rectangle" name="PortVariable">
+          <maximumSize dx="20" dy="20"/>
+          <minimumSize dx="20" dy="20"/>
+          <preferredSize dx="20" dy="20"/>
+          <size x="20" y="20"/>
         </children>
-        <children
-            xsi:type="gmfgraph:ScalablePolygon"
-            name="PortNegative1">
+        <children xsi:type="gmfgraph:ScalablePolygon" name="PortNegative1">
           <template/>
-          <template
-              x="1"
-              y="1"/>
+          <template x="1" y="1"/>
         </children>
-        <children
-            xsi:type="gmfgraph:ScalablePolygon"
-            name="PortNegative2">
-          <template
-              x="1"/>
-          <template
-              y="1"/>
+        <children xsi:type="gmfgraph:ScalablePolygon" name="PortNegative2">
+          <template x="1"/>
+          <template y="1"/>
         </children>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.2"/>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.2"/>
     </descriptors>
-    <descriptors
-        name="PortVariableNameFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PortVariableName">
-        <font
-            xsi:type="gmfgraph:BasicFont"
-            height="8"/>
+    <descriptors name="PortVariableNameFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PortVariableName">
+        <font xsi:type="gmfgraph:BasicFont" height="8"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.6/@actualFigure"/>
+      <accessors figure="//@figures.0/@descriptors.6/@actualFigure"/>
     </descriptors>
-    <descriptors
-        name="PortVariableOperatorFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PortVariableOperator">
-        <font
-            xsi:type="gmfgraph:BasicFont"
-            height="8"/>
+    <descriptors name="PortVariableOperatorFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PortVariableOperator">
+        <font xsi:type="gmfgraph:BasicFont" height="8"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.7/@actualFigure"/>
+      <accessors figure="//@figures.0/@descriptors.7/@actualFigure"/>
     </descriptors>
-    <descriptors
-        name="PartVariableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="PartVariableFigure">
-        <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="PartVariable"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:GridLayout"
-              numColumns="2"
-              equalWidth="false"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="NameContainer"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"/>
-            <layout
-                xsi:type="gmfgraph:GridLayout"
-                equalWidth="false"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="PartVariableNameFigure">
-              <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  grabExcessHorizontalSpace="true"
-                  grabExcessVerticalSpace="true"/>
-              <font
-                  xsi:type="gmfgraph:BasicFont"/>
-              <attributes
-                  name="textUnderline"
-                  value="true"/>
+    <descriptors name="PartVariableFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="PartVariableFigure">
+        <layout xsi:type="gmfgraph:StackLayout"/>
+        <children xsi:type="gmfgraph:Rectangle" name="PartVariable" outline="false" fill="false">
+          <layout xsi:type="gmfgraph:GridLayout" numColumns="2" equalWidth="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="NameContainer" outline="false" fill="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true"/>
+            <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+            <children xsi:type="gmfgraph:Label" name="PartVariableNameFigure">
+              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
+              <font xsi:type="gmfgraph:BasicFont"/>
+              <attributes name="textUnderline" value="true"/>
             </children>
           </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="IconContainer"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                horizontalAlignment="END"/>
-            <layout
-                xsi:type="gmfgraph:GridLayout"
-                equalWidth="false"/>
-            <children
-                xsi:type="gmfgraph:FigureRef">
-              <figure
-                  xsi:type="gmfgraph:Rectangle"
-                  href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
+          <children xsi:type="gmfgraph:Rectangle" name="IconContainer" outline="false" fill="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" horizontalAlignment="END"/>
+            <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+            <children xsi:type="gmfgraph:FigureRef">
+              <figure xsi:type="gmfgraph:Rectangle" href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
             </children>
           </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="TriggerEmbeddedComponentExpressionContainer"
-              outline="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                verticalAlignment="END"/>
-            <layout
-                xsi:type="gmfgraph:GridLayout"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="TriggerEmbeddedComponentExpressionFigure"
-                text="">
-              <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  grabExcessHorizontalSpace="true"
-                  grabExcessVerticalSpace="true"/>
-              <font
-                  xsi:type="gmfgraph:BasicFont"/>
+          <children xsi:type="gmfgraph:Rectangle" name="TriggerEmbeddedComponentExpressionContainer" outline="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" verticalAlignment="END"/>
+            <layout xsi:type="gmfgraph:GridLayout"/>
+            <children xsi:type="gmfgraph:Label" name="TriggerEmbeddedComponentExpressionFigure" text="">
+              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
+              <font xsi:type="gmfgraph:BasicFont"/>
             </children>
           </children>
         </children>
       </actualFigure>
-      <accessors
-          accessor="getFigurePartVariableNameFigure"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.2/@children.0"/>
+      <accessors accessor="getFigurePartVariableNameFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.2/@children.0"/>
     </descriptors>
-    <descriptors
-        name="PartVariableOperatorFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PartVariableOperator"/>
-      <accessors
-          figure="//@figures.0/@descriptors.9/@actualFigure"/>
+    <descriptors name="PartVariableOperatorFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="PartVariableOperator"/>
+      <accessors figure="//@figures.0/@descriptors.9/@actualFigure"/>
     </descriptors>
-    <descriptors
-        name="ActivityEdgeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="ActivityEdgeFigure"
-          targetDecoration="//@figures.0/@descriptors.10/@actualFigure/@children.1">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ActivityLabelFigure"/>
-        <children
-            xsi:type="gmfgraph:PolylineDecoration"
-            name="ActivityEdgeArrow"/>
+    <descriptors name="ActivityEdgeFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ActivityEdgeFigure" targetDecoration="//@figures.0/@descriptors.10/@actualFigure/@children.1">
+        <children xsi:type="gmfgraph:Label" name="ActivityLabelFigure"/>
+        <children xsi:type="gmfgraph:PolylineDecoration" name="ActivityEdgeArrow"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="AssemblyVariableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="AssemblyVariableFigure">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="AssemblyVariableLabelFigure"/>
+    <descriptors name="AssemblyVariableFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AssemblyVariableFigure">
+        <children xsi:type="gmfgraph:Label" name="AssemblyVariableLabelFigure"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="DelegationVariableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="DelegationVariableFigure">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="DelegationVariableLabelFigure"/>
+    <descriptors name="DelegationVariableFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DelegationVariableFigure">
+        <children xsi:type="gmfgraph:Label" name="DelegationVariableLabelFigure"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="MultiPortVariableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="MultiPortVariableFigure"
-          fill="false"
-          lineKind="LINE_DASH">
-        <layout
-            xsi:type="gmfgraph:GridLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="SinglePortVariablesCompartment"
-            outline="false">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"/>
+    <descriptors name="MultiPortVariableFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="MultiPortVariableFigure" fill="false" lineKind="LINE_DASH">
+        <layout xsi:type="gmfgraph:GridLayout"/>
+        <children xsi:type="gmfgraph:Rectangle" name="SinglePortVariablesCompartment" outline="false">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
         </children>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="ControllerExchangeNodeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="ControllerExchangeNodeRoundedFigure"
-          fill="false"
-          cornerWidth="12"
-          cornerHeight="12">
-        <layout
-            xsi:type="gmfgraph:BorderLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ControllerExchangeNodeNameContainer"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="BEGINNING"
-              vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-          <border
-              xsi:type="gmfgraph:CustomBorder"
-              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder">
-            <attributes
-                name="Position"
-                value="org.eclipse.draw2d.PositionConstants.BOTTOM"/>
+    <descriptors name="ControllerExchangeNodeFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ControllerExchangeNodeRoundedFigure" fill="false" cornerWidth="12" cornerHeight="12">
+        <layout xsi:type="gmfgraph:BorderLayout"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodeNameContainer" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING" vertical="true"/>
+          <layout xsi:type="gmfgraph:GridLayout"/>
+          <border xsi:type="gmfgraph:CustomBorder" qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder">
+            <attributes name="Position" value="org.eclipse.draw2d.PositionConstants.BOTTOM"/>
           </border>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="ControllerExchangeNodeName">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"
-                horizontalAlignment="BEGINNING"/>
+          <children xsi:type="gmfgraph:Label" name="ControllerExchangeNodeName">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="BEGINNING"/>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ControllerExchangeNodeContentContainer"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="FILL"
-              vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="ControllerExchangeNodeIconContainer"
-              outline="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                verticalAlignment="BEGINNING"
-                horizontalAlignment="FILL"/>
-            <layout
-                xsi:type="gmfgraph:BorderLayout"/>
-            <children
-                xsi:type="gmfgraph:Rectangle"
-                name="ControllerExchangeNodeIconHelper"
-                outline="false">
-              <layoutData
-                  xsi:type="gmfgraph:BorderLayoutData"
-                  alignment="FILL"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodeContentContainer" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL" vertical="true"/>
+          <layout xsi:type="gmfgraph:GridLayout"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodeIconContainer" outline="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING" horizontalAlignment="FILL"/>
+            <layout xsi:type="gmfgraph:BorderLayout"/>
+            <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodeIconHelper" outline="false">
+              <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL"/>
             </children>
-            <children
-                xsi:type="gmfgraph:Rectangle"
-                name="ControllerExchangeNodeIcon">
-              <layoutData
-                  xsi:type="gmfgraph:BorderLayoutData"
-                  alignment="END"/>
-              <layout
-                  xsi:type="gmfgraph:BorderLayout"/>
-              <children
-                  xsi:type="gmfgraph:Rectangle"
-                  name="LeftIconRectangle"
-                  outline="false">
-                <layoutData
-                    xsi:type="gmfgraph:BorderLayoutData"
-                    alignment="BEGINNING"/>
-                <layout
-                    xsi:type="gmfgraph:BorderLayout"/>
-                <children
-                    xsi:type="gmfgraph:Rectangle"
-                    name="UpperLeftIconRectangle"
-                    outline="false">
-                  <layoutData
-                      xsi:type="gmfgraph:BorderLayoutData"
-                      alignment="BEGINNING"
-                      vertical="true"/>
-                  <layout
-                      xsi:type="gmfgraph:BorderLayout"/>
-                  <children
-                      xsi:type="gmfgraph:Rectangle"
-                      name="GreenIconRectangle">
-                    <layoutData
-                        xsi:type="gmfgraph:BorderLayoutData"
-                        alignment="BEGINNING"/>
-                    <foregroundColor
-                        xsi:type="gmfgraph:RGBColor"
-                        green="192"/>
-                    <maximumSize
-                        dx="14"
-                        dy="14"/>
-                    <minimumSize
-                        dx="14"
-                        dy="14"/>
-                    <preferredSize
-                        dx="14"
-                        dy="14"/>
-                    <size
-                        x="14"
-                        y="14"/>
+            <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodeIcon">
+              <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="END"/>
+              <layout xsi:type="gmfgraph:BorderLayout"/>
+              <children xsi:type="gmfgraph:Rectangle" name="LeftIconRectangle" outline="false">
+                <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING"/>
+                <layout xsi:type="gmfgraph:BorderLayout"/>
+                <children xsi:type="gmfgraph:Rectangle" name="UpperLeftIconRectangle" outline="false">
+                  <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING" vertical="true"/>
+                  <layout xsi:type="gmfgraph:BorderLayout"/>
+                  <children xsi:type="gmfgraph:Rectangle" name="GreenIconRectangle">
+                    <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING"/>
+                    <foregroundColor xsi:type="gmfgraph:RGBColor" green="192"/>
+                    <maximumSize dx="14" dy="14"/>
+                    <minimumSize dx="14" dy="14"/>
+                    <preferredSize dx="14" dy="14"/>
+                    <size x="14" y="14"/>
                   </children>
-                  <children
-                      xsi:type="gmfgraph:Rectangle"
-                      name="LeftArrowPolygonRectangle"
-                      outline="false"
-                      fill="false">
-                    <layoutData
-                        xsi:type="gmfgraph:BorderLayoutData"
-                        alignment="END"/>
-                    <preferredSize
-                        dx="7"
-                        dy="14"/>
-                    <children
-                        xsi:type="gmfgraph:Polygon"
-                        name="LeftArrowPolygon">
-                      <foregroundColor
-                          xsi:type="gmfgraph:ConstantColor"
-                          value="black"/>
-                      <backgroundColor
-                          xsi:type="gmfgraph:ConstantColor"
-                          value="black"/>
-                      <maximumSize
-                          dx="7"
-                          dy="14"/>
-                      <minimumSize
-                          dx="7"
-                          dy="14"/>
-                      <preferredSize
-                          dx="7"
-                          dy="14"/>
-                      <size
-                          x="7"
-                          y="14"/>
-                      <template
-                          y="7"/>
-                      <template
-                          x="7"/>
-                      <template
-                          x="7"
-                          y="14"/>
-                      <template
-                          y="7"/>
+                  <children xsi:type="gmfgraph:Rectangle" name="LeftArrowPolygonRectangle" outline="false" fill="false">
+                    <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="END"/>
+                    <preferredSize dx="7" dy="14"/>
+                    <children xsi:type="gmfgraph:Polygon" name="LeftArrowPolygon">
+                      <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+                      <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+                      <maximumSize dx="7" dy="14"/>
+                      <minimumSize dx="7" dy="14"/>
+                      <preferredSize dx="7" dy="14"/>
+                      <size x="7" y="14"/>
+                      <template y="7"/>
+                      <template x="7"/>
+                      <template x="7" y="14"/>
+                      <template y="7"/>
                     </children>
                   </children>
                 </children>
-                <children
-                    xsi:type="gmfgraph:Rectangle"
-                    name="LowerLeftIconRectangle"
-                    outline="false">
-                  <layoutData
-                      xsi:type="gmfgraph:BorderLayoutData"
-                      alignment="FILL"
-                      vertical="true"/>
+                <children xsi:type="gmfgraph:Rectangle" name="LowerLeftIconRectangle" outline="false">
+                  <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL" vertical="true"/>
                 </children>
               </children>
-              <children
-                  xsi:type="gmfgraph:Rectangle"
-                  name="MiddleIconRectangle"
-                  outline="false">
-                <layoutData
-                    xsi:type="gmfgraph:BorderLayoutData"/>
-                <layout
-                    xsi:type="gmfgraph:GridLayout"/>
-                <children
-                    xsi:type="gmfgraph:Rectangle"
-                    name="UpperLineHelper"
-                    outline="false"
-                    fill="false">
-                  <layoutData
-                      xsi:type="gmfgraph:GridLayoutData"
-                      verticalAlignment="BEGINNING"
-                      horizontalAlignment="BEGINNING"/>
-                  <maximumSize
-                      dx="1"
-                      dy="6"/>
-                  <minimumSize
-                      dx="1"
-                      dy="6"/>
-                  <preferredSize
-                      dx="1"
-                      dy="6"/>
-                  <size
-                      x="1"
-                      y="6"/>
+              <children xsi:type="gmfgraph:Rectangle" name="MiddleIconRectangle" outline="false">
+                <layoutData xsi:type="gmfgraph:BorderLayoutData"/>
+                <layout xsi:type="gmfgraph:GridLayout"/>
+                <children xsi:type="gmfgraph:Rectangle" name="UpperLineHelper" outline="false" fill="false">
+                  <layoutData xsi:type="gmfgraph:GridLayoutData" verticalAlignment="BEGINNING" horizontalAlignment="BEGINNING"/>
+                  <maximumSize dx="1" dy="6"/>
+                  <minimumSize dx="1" dy="6"/>
+                  <preferredSize dx="1" dy="6"/>
+                  <size x="1" y="6"/>
                 </children>
-                <children
-                    xsi:type="gmfgraph:ScalablePolygon"
-                    name="LinePolygon"
-                    lineWidth="2">
-                  <layoutData
-                      xsi:type="gmfgraph:GridLayoutData"
-                      grabExcessVerticalSpace="true"
-                      verticalAlignment="FILL"/>
+                <children xsi:type="gmfgraph:ScalablePolygon" name="LinePolygon" lineWidth="2">
+                  <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessVerticalSpace="true" verticalAlignment="FILL"/>
                   <template/>
-                  <template
-                      x="1"/>
+                  <template x="1"/>
                 </children>
-                <children
-                    xsi:type="gmfgraph:Rectangle"
-                    name="LabelRectangle"
-                    outline="false">
-                  <layoutData
-                      xsi:type="gmfgraph:GridLayoutData"
-                      verticalAlignment="END"
-                      horizontalAlignment="FILL"/>
-                  <layout
-                      xsi:type="gmfgraph:BorderLayout"/>
-                  <children
-                      xsi:type="gmfgraph:Label"
-                      name="ControllerExchangeNodeIconLabel"
-                      text="">
-                    <layoutData
-                        xsi:type="gmfgraph:BorderLayoutData"
-                        alignment="BEGINNING"/>
-                    <font
-                        xsi:type="gmfgraph:BasicFont"
-                        height="8"
-                        style="ITALIC"/>
+                <children xsi:type="gmfgraph:Rectangle" name="LabelRectangle" outline="false">
+                  <layoutData xsi:type="gmfgraph:GridLayoutData" verticalAlignment="END" horizontalAlignment="FILL"/>
+                  <layout xsi:type="gmfgraph:BorderLayout"/>
+                  <children xsi:type="gmfgraph:Label" name="ControllerExchangeNodeIconLabel" text="">
+                    <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING"/>
+                    <font xsi:type="gmfgraph:BasicFont" height="8" style="ITALIC"/>
                   </children>
-                  <children
-                      xsi:type="gmfgraph:Label"
-                      name="ControllerExchangeNodeIconDeadline"
-                      text="">
-                    <layoutData
-                        xsi:type="gmfgraph:BorderLayoutData"
-                        alignment="END"/>
-                    <font
-                        xsi:type="gmfgraph:BasicFont"
-                        height="8"/>
+                  <children xsi:type="gmfgraph:Label" name="ControllerExchangeNodeIconDeadline" text="">
+                    <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="END"/>
+                    <font xsi:type="gmfgraph:BasicFont" height="8"/>
                   </children>
                 </children>
               </children>
-              <children
-                  xsi:type="gmfgraph:Rectangle"
-                  name="RightIconRectangle"
-                  outline="false">
-                <layoutData
-                    xsi:type="gmfgraph:BorderLayoutData"
-                    alignment="END"/>
-                <layout
-                    xsi:type="gmfgraph:BorderLayout"/>
-                <children
-                    xsi:type="gmfgraph:Rectangle"
-                    name="UpperRightIconRectangle"
-                    outline="false">
-                  <layoutData
-                      xsi:type="gmfgraph:BorderLayoutData"
-                      alignment="BEGINNING"
-                      vertical="true"/>
-                  <layout
-                      xsi:type="gmfgraph:BorderLayout"/>
-                  <children
-                      xsi:type="gmfgraph:Rectangle"
-                      name="RightArrowPolygonRectangle"
-                      outline="false"
-                      fill="false">
-                    <layoutData
-                        xsi:type="gmfgraph:BorderLayoutData"
-                        alignment="BEGINNING"/>
-                    <preferredSize
-                        dx="7"
-                        dy="14"/>
-                    <children
-                        xsi:type="gmfgraph:Polygon"
-                        name="RightArrowPolygon">
-                      <foregroundColor
-                          xsi:type="gmfgraph:ConstantColor"
-                          value="black"/>
-                      <backgroundColor
-                          xsi:type="gmfgraph:ConstantColor"
-                          value="black"/>
-                      <maximumSize
-                          dx="7"
-                          dy="14"/>
-                      <minimumSize
-                          dx="7"
-                          dy="14"/>
-                      <preferredSize
-                          dx="7"
-                          dy="14"/>
-                      <size
-                          x="7"
-                          y="14"/>
+              <children xsi:type="gmfgraph:Rectangle" name="RightIconRectangle" outline="false">
+                <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="END"/>
+                <layout xsi:type="gmfgraph:BorderLayout"/>
+                <children xsi:type="gmfgraph:Rectangle" name="UpperRightIconRectangle" outline="false">
+                  <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING" vertical="true"/>
+                  <layout xsi:type="gmfgraph:BorderLayout"/>
+                  <children xsi:type="gmfgraph:Rectangle" name="RightArrowPolygonRectangle" outline="false" fill="false">
+                    <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="BEGINNING"/>
+                    <preferredSize dx="7" dy="14"/>
+                    <children xsi:type="gmfgraph:Polygon" name="RightArrowPolygon">
+                      <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+                      <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+                      <maximumSize dx="7" dy="14"/>
+                      <minimumSize dx="7" dy="14"/>
+                      <preferredSize dx="7" dy="14"/>
+                      <size x="7" y="14"/>
                       <template/>
-                      <template
-                          x="7"
-                          y="7"/>
-                      <template
-                          y="14"/>
+                      <template x="7" y="7"/>
+                      <template y="14"/>
                       <template/>
                     </children>
                   </children>
-                  <children
-                      xsi:type="gmfgraph:Rectangle"
-                      name="RedIconRectangle">
-                    <layoutData
-                        xsi:type="gmfgraph:BorderLayoutData"
-                        alignment="END"/>
-                    <foregroundColor
-                        xsi:type="gmfgraph:RGBColor"
-                        red="192"/>
-                    <preferredSize
-                        dx="14"
-                        dy="14"/>
+                  <children xsi:type="gmfgraph:Rectangle" name="RedIconRectangle">
+                    <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="END"/>
+                    <foregroundColor xsi:type="gmfgraph:RGBColor" red="192"/>
+                    <preferredSize dx="14" dy="14"/>
                   </children>
                 </children>
-                <children
-                    xsi:type="gmfgraph:Rectangle"
-                    name="LowerRightIconRectangle"
-                    outline="false">
-                  <layoutData
-                      xsi:type="gmfgraph:BorderLayoutData"
-                      alignment="FILL"
-                      vertical="true"/>
+                <children xsi:type="gmfgraph:Rectangle" name="LowerRightIconRectangle" outline="false">
+                  <layoutData xsi:type="gmfgraph:BorderLayoutData" alignment="FILL" vertical="true"/>
                 </children>
               </children>
             </children>
           </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="ControllerExchangeNodeFadingFunctionsContainer"
-              outline="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                horizontalAlignment="FILL"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodeFadingFunctionsContainer" outline="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
           </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="ControllerExchangeNodePatternContainer"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"
-                verticalAlignment="FILL"
-                horizontalAlignment="FILL"/>
+          <children xsi:type="gmfgraph:Rectangle" name="ControllerExchangeNodePatternContainer" outline="false" fill="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
           </children>
         </children>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.2"/>
-      <accessors
-          figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.2/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.2/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.2"/>
+      <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.2/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.2/@children.1"/>
     </descriptors>
-    <descriptors
-        name="FadingFunctionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="FadingFunctionFigure"
-          outline="false">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="FadingFunctionLabel"
-            text="FadingFunction"/>
+    <descriptors name="FadingFunctionFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="FadingFunctionFigure" outline="false">
+        <children xsi:type="gmfgraph:Label" name="FadingFunctionLabel" text="FadingFunction"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="ComponentStoryNodeRoundedFigureForEach">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="ComponentStoryNodeFigure"
-          outline="false"
-          fill="false"
-          cornerWidth="12"
-          cornerHeight="12">
-        <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <children
-            xsi:type="gmfgraph:RoundedRectangle"
-            name="aux1"
-            outline="false"
-            fill="false"
-            cornerWidth="12"
-            cornerHeight="12">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                left="3"
-                bottom="8"/>
+    <descriptors name="ComponentStoryNodeRoundedFigureForEach">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ComponentStoryNodeFigure" outline="false" fill="false" cornerWidth="12" cornerHeight="12">
+        <layout xsi:type="gmfgraph:StackLayout"/>
+        <children xsi:type="gmfgraph:RoundedRectangle" name="aux1" outline="false" fill="false" cornerWidth="12" cornerHeight="12">
+          <layout xsi:type="gmfgraph:StackLayout"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets left="3" bottom="8"/>
           </border>
-          <children
-              xsi:type="gmfgraph:RoundedRectangle"
-              name="shadow"
-              cornerWidth="12"
-              cornerHeight="12"/>
+          <children xsi:type="gmfgraph:RoundedRectangle" name="shadow" cornerWidth="12" cornerHeight="12"/>
         </children>
-        <children
-            xsi:type="gmfgraph:RoundedRectangle"
-            name="InnerRoundedRectangleContainer"
-            outline="false"
-            fill="false"
-            cornerWidth="12"
-            cornerHeight="12">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                top="8"
-                right="3"/>
+        <children xsi:type="gmfgraph:RoundedRectangle" name="InnerRoundedRectangleContainer" outline="false" fill="false" cornerWidth="12" cornerHeight="12">
+          <layout xsi:type="gmfgraph:StackLayout"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="8" right="3"/>
           </border>
-          <children
-              xsi:type="gmfgraph:FigureRef"
-              figure="//@figures.0/@descriptors.1/@actualFigure"/>
+          <children xsi:type="gmfgraph:FigureRef" figure="//@figures.0/@descriptors.1/@actualFigure"/>
         </children>
       </actualFigure>
-      <accessors
-          accessor="getFigureComponentStoryNodeName"
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
-      <accessors
-          accessor="getFigureComponentStoryNodePatternContainer"
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
-      <accessors
-          accessor="getFigureInnerRoundedRectangleContainer"
-          figure="//@figures.0/@descriptors.16/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureComponentStoryNodeName" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+      <accessors accessor="getFigureComponentStoryNodePatternContainer" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
+      <accessors accessor="getFigureInnerRoundedRectangleContainer" figure="//@figures.0/@descriptors.16/@actualFigure/@children.1"/>
     </descriptors>
-    <descriptors
-        name="FadingComponentVariableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="FadingComponentVariableFigure">
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="FadingComponentVariable"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:GridLayout"
-              numColumns="2"
-              equalWidth="false"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="NameContainer"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"/>
-            <layout
-                xsi:type="gmfgraph:GridLayout"
-                equalWidth="false"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="FadingComponentVariableNameFigure">
-              <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  grabExcessHorizontalSpace="true"
-                  grabExcessVerticalSpace="true"/>
-              <font
-                  xsi:type="gmfgraph:BasicFont"/>
+    <descriptors name="FadingComponentVariableFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="FadingComponentVariableFigure">
+        <children xsi:type="gmfgraph:Rectangle" name="FadingComponentVariable" outline="false" fill="false">
+          <layout xsi:type="gmfgraph:GridLayout" numColumns="2" equalWidth="false"/>
+          <children xsi:type="gmfgraph:Rectangle" name="NameContainer" outline="false" fill="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true"/>
+            <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+            <children xsi:type="gmfgraph:Label" name="FadingComponentVariableNameFigure">
+              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
+              <font xsi:type="gmfgraph:BasicFont"/>
             </children>
           </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="IconContainer"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                horizontalAlignment="END"/>
-            <layout
-                xsi:type="gmfgraph:GridLayout"
-                equalWidth="false"/>
-            <children
-                xsi:type="gmfgraph:FigureRef"
-                figure="//@figures.0/@descriptors.18/@actualFigure"/>
+          <children xsi:type="gmfgraph:Rectangle" name="IconContainer" outline="false" fill="false">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" horizontalAlignment="END"/>
+            <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+            <children xsi:type="gmfgraph:FigureRef" figure="//@figures.0/@descriptors.18/@actualFigure"/>
           </children>
         </children>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.17/@actualFigure/@children.0/@children.0/@children.0"/>
     </descriptors>
-    <descriptors
-        name="FadingComponentIconFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="FadingComponentIconFigure"
-          outline="false"
-          fill="false">
-        <layoutData
-            xsi:type="gmfgraph:GridLayoutData"
-            grabExcessHorizontalSpace="true"
-            verticalAlignment="BEGINNING"
-            horizontalAlignment="END"/>
-        <layout
-            xsi:type="gmfgraph:XYLayout"/>
-        <preferredSize
-            dx="40"
-            dy="22"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentIconOuter"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:XYLayoutData">
-            <topLeft
-                y="2"/>
-            <size
-                dx="40"
-                dy="20"/>
+    <descriptors name="FadingComponentIconFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="FadingComponentIconFigure" outline="false" fill="false">
+        <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING" horizontalAlignment="END"/>
+        <layout xsi:type="gmfgraph:XYLayout"/>
+        <preferredSize dx="40" dy="22"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ComponentIconOuter" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:XYLayoutData">
+            <topLeft y="2"/>
+            <size dx="40" dy="20"/>
           </layoutData>
-          <layout
-              xsi:type="gmfgraph:XYLayout"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="b1">
-            <layoutData
-                xsi:type="gmfgraph:XYLayoutData">
-              <topLeft
-                  x="4"/>
-              <size
-                  dx="36"
-                  dy="20"/>
+          <layout xsi:type="gmfgraph:XYLayout"/>
+          <children xsi:type="gmfgraph:Rectangle" name="b1">
+            <layoutData xsi:type="gmfgraph:XYLayoutData">
+              <topLeft x="4"/>
+              <size dx="36" dy="20"/>
             </layoutData>
-            <layout
-                xsi:type="gmfgraph:XYLayout"/>
-            <children
-                xsi:type="gmfgraph:Rectangle"
-                name="plus">
-              <layoutData
-                  xsi:type="gmfgraph:XYLayoutData">
-                <topLeft
-                    x="10"
-                    y="5"/>
-                <size
-                    dx="10"
-                    dy="10"/>
+            <layout xsi:type="gmfgraph:XYLayout"/>
+            <children xsi:type="gmfgraph:Rectangle" name="plus">
+              <layoutData xsi:type="gmfgraph:XYLayoutData">
+                <topLeft x="10" y="5"/>
+                <size dx="10" dy="10"/>
               </layoutData>
-              <layout
-                  xsi:type="gmfgraph:GridLayout"/>
-              <foregroundColor
-                  xsi:type="gmfgraph:RGBColor"
-                  green="192"/>
+              <layout xsi:type="gmfgraph:GridLayout"/>
+              <foregroundColor xsi:type="gmfgraph:RGBColor" green="192"/>
             </children>
-            <children
-                xsi:type="gmfgraph:Rectangle"
-                name="minus">
-              <layoutData
-                  xsi:type="gmfgraph:XYLayoutData">
-                <topLeft
-                    x="23"
-                    y="5"/>
-                <size
-                    dx="10"
-                    dy="10"/>
+            <children xsi:type="gmfgraph:Rectangle" name="minus">
+              <layoutData xsi:type="gmfgraph:XYLayoutData">
+                <topLeft x="23" y="5"/>
+                <size dx="10" dy="10"/>
               </layoutData>
-              <layout
-                  xsi:type="gmfgraph:GridLayout"/>
-              <foregroundColor
-                  xsi:type="gmfgraph:RGBColor"
-                  red="192"/>
+              <layout xsi:type="gmfgraph:GridLayout"/>
+              <foregroundColor xsi:type="gmfgraph:RGBColor" red="192"/>
             </children>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentIconInner1"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:XYLayoutData">
-            <topLeft
-                y="2"/>
-            <size
-                dx="40"
-                dy="20"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ComponentIconInner1" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:XYLayoutData">
+            <topLeft y="2"/>
+            <size dx="40" dy="20"/>
           </layoutData>
-          <layout
-              xsi:type="gmfgraph:XYLayout"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="c1">
-            <layoutData
-                xsi:type="gmfgraph:XYLayoutData">
-              <topLeft
-                  y="2"/>
-              <size
-                  dx="12"
-                  dy="6"/>
+          <layout xsi:type="gmfgraph:XYLayout"/>
+          <children xsi:type="gmfgraph:Rectangle" name="c1">
+            <layoutData xsi:type="gmfgraph:XYLayoutData">
+              <topLeft y="2"/>
+              <size dx="12" dy="6"/>
             </layoutData>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentIconInner2"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:XYLayoutData">
-            <topLeft
-                y="1"/>
-            <size
-                dx="40"
-                dy="20"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ComponentIconInner2" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:XYLayoutData">
+            <topLeft y="1"/>
+            <size dx="40" dy="20"/>
           </layoutData>
-          <layout
-              xsi:type="gmfgraph:XYLayout"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="d1">
-            <layoutData
-                xsi:type="gmfgraph:XYLayoutData">
-              <topLeft
-                  y="10"/>
-              <size
-                  dx="12"
-                  dy="6"/>
+          <layout xsi:type="gmfgraph:XYLayout"/>
+          <children xsi:type="gmfgraph:Rectangle" name="d1">
+            <layoutData xsi:type="gmfgraph:XYLayoutData">
+              <topLeft y="10"/>
+              <size dx="12" dy="6"/>
             </layoutData>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="plusLabelContainer"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:XYLayoutData">
-            <topLeft
-                x="9"/>
-            <size
-                dx="20"
-                dy="21"/>
+        <children xsi:type="gmfgraph:Rectangle" name="plusLabelContainer" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:XYLayoutData">
+            <topLeft x="9"/>
+            <size dx="20" dy="21"/>
           </layoutData>
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-          <foregroundColor
-              xsi:type="gmfgraph:RGBColor"
-              green="192"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="plusLabel"
-              text="+">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"
-                verticalAlignment="BEGINNING"/>
-            <font
-                xsi:type="gmfgraph:BasicFont"
-                height="7"/>
+          <layout xsi:type="gmfgraph:GridLayout"/>
+          <foregroundColor xsi:type="gmfgraph:RGBColor" green="192"/>
+          <children xsi:type="gmfgraph:Label" name="plusLabel" text="+">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="BEGINNING"/>
+            <font xsi:type="gmfgraph:BasicFont" height="7"/>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="minusLabelContainer"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:XYLayoutData">
-            <topLeft
-                x="22"/>
-            <size
-                dx="20"
-                dy="21"/>
+        <children xsi:type="gmfgraph:Rectangle" name="minusLabelContainer" outline="false" fill="false">
+          <layoutData xsi:type="gmfgraph:XYLayoutData">
+            <topLeft x="22"/>
+            <size dx="20" dy="21"/>
           </layoutData>
-          <layout
-              xsi:type="gmfgraph:GridLayout"/>
-          <foregroundColor
-              xsi:type="gmfgraph:RGBColor"
-              red="192"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="minusLabel"
-              text="-">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"
-                verticalAlignment="BEGINNING"/>
-            <font
-                xsi:type="gmfgraph:BasicFont"
-                height="7"/>
+          <layout xsi:type="gmfgraph:GridLayout"/>
+          <foregroundColor xsi:type="gmfgraph:RGBColor" red="192"/>
+          <children xsi:type="gmfgraph:Label" name="minusLabel" text="-">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="BEGINNING"/>
+            <font xsi:type="gmfgraph:BasicFont" height="7"/>
           </children>
         </children>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="SignatureFigure">
-      <actualFigure
-          xsi:type="gmfgraph:InvisibleRectangle"
-          name="SignatureRect"/>
+    <descriptors name="SignatureFigure">
+      <actualFigure xsi:type="gmfgraph:InvisibleRectangle" name="SignatureRect"/>
     </descriptors>
-    <descriptors
-        name="MultiPortOrderConstraintFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          lineKind="LINE_DASH"
-          targetDecoration="//@figures.0/@figures.0">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="gray"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="MultiPortOrderConstraintTypeFigure"/>
+    <descriptors name="MultiPortOrderConstraintFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
+        <children xsi:type="gmfgraph:Label" name="MultiPortOrderConstraintTypeFigure"/>
       </actualFigure>
-      <accessors
-          accessor="getMultiPortOrderConstraintTypeLabelFigure"
-          figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
+      <accessors accessor="getMultiPortOrderConstraintTypeLabelFigure" figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="MultiPortPositionConstraintFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="MultiPortPositionConstraint"
-          text="test"/>
-      <accessors
-          figure="//@figures.0/@descriptors.21/@actualFigure"/>
+    <descriptors name="MultiPortPositionConstraintFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="MultiPortPositionConstraint" text="test"/>
+      <accessors figure="//@figures.0/@descriptors.21/@actualFigure"/>
     </descriptors>
   </figures>
-  <nodes
-      name="Activity"
-      figure="ActivityFigure"/>
-  <nodes
-      name="InitialNode">
-    <figure
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#InitialNodeFigure"/>
+  <nodes name="Activity" figure="ActivityFigure"/>
+  <nodes name="InitialNode">
+    <figure href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#InitialNodeFigure"/>
   </nodes>
-  <nodes
-      name="JunctionNode">
-    <figure
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#JunctionNodeFigure"/>
+  <nodes name="JunctionNode">
+    <figure href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#JunctionNodeFigure"/>
   </nodes>
-  <nodes
-      name="ActivityFinalNode">
-    <figure
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
+  <nodes name="ActivityFinalNode">
+    <figure href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
   </nodes>
-  <nodes
-      name="ComponentStoryNode"
-      figure="ComponentStoryNodeRoundedFigureForEach"/>
-  <nodes
-      name="ComponentStoryPattern"
-      figure="ComponentStoryPatternFigure"/>
-  <nodes
-      name="ComponentVariable"
-      figure="ComponentVariableFigure"/>
-  <nodes
-      name="PortVariable"
-      figure="PortVariableFigure"
-      affixedParentSide="NORTH">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="30"
-          dy="30"/>
+  <nodes name="ComponentStoryNode" figure="ComponentStoryNodeRoundedFigureForEach"/>
+  <nodes name="ComponentStoryPattern" figure="ComponentStoryPatternFigure"/>
+  <nodes name="ComponentVariable" figure="ComponentVariableFigure"/>
+  <nodes name="PortVariable" figure="PortVariableFigure" affixedParentSide="NORTH">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="30" dy="30"/>
     </facets>
   </nodes>
-  <nodes
-      name="PartVariable"
-      figure="PartVariableFigure"/>
-  <nodes
-      name="MultiPortVariable"
-      figure="MultiPortVariableFigure"
-      affixedParentSide="NORTH">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="44"
-          dy="36"/>
+  <nodes name="PartVariable" figure="PartVariableFigure"/>
+  <nodes name="MultiPortVariable" figure="MultiPortVariableFigure" affixedParentSide="NORTH">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="44" dy="36"/>
     </facets>
   </nodes>
-  <nodes
-      name="SinglePortVariable"
-      affixedParentSide="NORTH">
-    <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="30"
-          dy="30"/>
+  <nodes name="SinglePortVariable" affixedParentSide="NORTH">
+    <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="30" dy="30"/>
     </facets>
   </nodes>
-  <nodes
-      name="InnerSinglePortVariable">
-    <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="30"
-          dy="30"/>
+  <nodes name="InnerSinglePortVariable">
+    <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="30" dy="30"/>
     </facets>
   </nodes>
-  <nodes
-      name="ControllerExchangeNode"
-      figure="ControllerExchangeNodeFigure"/>
-  <nodes
-      name="FadingFunctionNode"
-      figure="FadingFunctionFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="-1"
-          dy="-1"/>
+  <nodes name="ControllerExchangeNode" figure="ControllerExchangeNodeFigure"/>
+  <nodes name="FadingFunctionNode" figure="FadingFunctionFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="-1" dy="-1"/>
     </facets>
   </nodes>
-  <nodes
-      name="FadingComponentVariable"
-      figure="FadingComponentVariableFigure"/>
-  <nodes
-      name="Signature"
-      figure="SignatureFigure"/>
-  <connections
-      name="AssemblyVariable"
-      figure="AssemblyVariableFigure"/>
-  <connections
-      name="ActivityEdge"
-      figure="ActivityEdgeFigure"/>
-  <connections
-      name="DelegationVariable"
-      figure="DelegationVariableFigure"/>
-  <connections
-      name="MultiPortOrderConstraint"
-      figure="MultiPortOrderConstraintFigure"/>
-  <compartments
-      name="ActivityCompartment"
-      figure="ActivityFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <compartments
-      name="ComponentStoryNodeCompartment"
-      figure="ComponentStoryNodeRoundedFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
-  <compartments
-      name="ComponentStoryPatternCompartment"
-      figure="ComponentStoryPatternFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <compartments
-      name="ComponentVariableCompartment"
-      figure="ComponentVariableFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
-  <compartments
-      name="MultiPortVariablesCompartment"
-      figure="MultiPortVariableFigure"
-      accessor="//@figures.0/@descriptors.13/@accessors.0"/>
-  <compartments
-      name="ControllerExchangeNodeCompartment"
-      figure="ControllerExchangeNodeFigure"
-      accessor="//@figures.0/@descriptors.14/@accessors.1"/>
-  <compartments
-      name="ControllerExchangeNodeFadingFunctionsCompartment"
-      figure="ControllerExchangeNodeFigure"
-      accessor="//@figures.0/@descriptors.14/@accessors.2"/>
-  <labels
-      name="ActivityEdgeLabel"
-      figure="ActivityEdgeFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.0">
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"/>
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="CENTER"/>
+  <nodes name="FadingComponentVariable" figure="FadingComponentVariableFigure"/>
+  <nodes name="Signature" figure="SignatureFigure"/>
+  <connections name="AssemblyVariable" figure="AssemblyVariableFigure"/>
+  <connections name="ActivityEdge" figure="ActivityEdgeFigure"/>
+  <connections name="DelegationVariable" figure="DelegationVariableFigure"/>
+  <connections name="MultiPortOrderConstraint" figure="MultiPortOrderConstraintFigure"/>
+  <compartments name="ActivityCompartment" figure="ActivityFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <compartments name="ComponentStoryNodeCompartment" figure="ComponentStoryNodeRoundedFigure" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments name="ComponentStoryPatternCompartment" figure="ComponentStoryPatternFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <compartments name="ComponentVariableCompartment" figure="ComponentVariableFigure" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <compartments name="MultiPortVariablesCompartment" figure="MultiPortVariableFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+  <compartments name="ControllerExchangeNodeCompartment" figure="ControllerExchangeNodeFigure" accessor="//@figures.0/@descriptors.14/@accessors.1"/>
+  <compartments name="ControllerExchangeNodeFadingFunctionsCompartment" figure="ControllerExchangeNodeFigure" accessor="//@figures.0/@descriptors.14/@accessors.2"/>
+  <labels name="ActivityEdgeLabel" figure="ActivityEdgeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.10/@accessors.0">
+    <facets xsi:type="gmfgraph:LabelOffsetFacet"/>
+    <facets xsi:type="gmfgraph:AlignmentFacet" alignment="CENTER"/>
   </labels>
-  <labels
-      name="ActivityNameLabel"
-      figure="ActivityFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <labels
-      name="ComponentStoryNodeLabel"
-      figure="ComponentStoryNodeRoundedFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels
-      name="ActivityFinalNodeLabel">
-    <figure
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
-    <accessor
-        href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels name="ActivityNameLabel" figure="ActivityFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="ComponentStoryNodeLabel" figure="ComponentStoryNodeRoundedFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="ActivityFinalNodeLabel">
+    <figure href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#ActivityFinalNodeFigureDescriptor"/>
+    <accessor href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#//@figures.0/@descriptors.6/@accessors.0"/>
   </labels>
-  <labels
-      name="ComponentNameLabel"
-      figure="ComponentVariableFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
-  <labels
-      name="ComponentOperatorLabel"
-      figure="ComponentVariableOperatorFigure"
-      elementIcon="false"/>
-  <labels
-      name="PortVariableNameLabel"
-      figure="PortVariableNameFigure"
-      elementIcon="false"/>
-  <labels
-      name="PortVariableOperatorLabel"
-      figure="PortVariableOperatorFigure"
-      elementIcon="false"/>
-  <labels
-      name="PartVariableNameLabel"
-      figure="PartVariableFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
-  <labels
-      name="PartVariableOperatorLabel"
-      figure="PartVariableOperatorFigure"
-      elementIcon="false"/>
-  <labels
-      name="AssemblyNameLabel"
-      figure="AssemblyVariableFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
-  <labels
-      name="DelegationNameLabel"
-      figure="DelegationVariableFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
-  <labels
-      name="ControllerExchangeNodeLabel"
-      figure="ControllerExchangeNodeFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.14/@accessors.0"/>
-  <labels
-      name="FadingFunctionLabel"
-      figure="FadingFunctionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.15/@accessors.0">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="-1"
-          dy="-1"/>
+  <labels name="ComponentNameLabel" figure="ComponentVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="ComponentOperatorLabel" figure="ComponentVariableOperatorFigure" elementIcon="false"/>
+  <labels name="PortVariableNameLabel" figure="PortVariableNameFigure" elementIcon="false"/>
+  <labels name="PortVariableOperatorLabel" figure="PortVariableOperatorFigure" elementIcon="false"/>
+  <labels name="PartVariableNameLabel" figure="PartVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels name="PartVariableOperatorLabel" figure="PartVariableOperatorFigure" elementIcon="false"/>
+  <labels name="AssemblyNameLabel" figure="AssemblyVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="DelegationNameLabel" figure="DelegationVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <labels name="ControllerExchangeNodeLabel" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
+  <labels name="FadingFunctionLabel" figure="FadingFunctionFigure" elementIcon="false" accessor="//@figures.0/@descriptors.15/@accessors.0">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="-1" dy="-1"/>
     </facets>
   </labels>
-  <labels
-      name="ControllerExchangeNodeIconLabel"
-      figure="ControllerExchangeNodeFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.14/@accessors.3"/>
-  <labels
-      name="ControllerExchangeNodeIconDeadline"
-      figure="ControllerExchangeNodeFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.14/@accessors.4"/>
-  <labels
-      name="FadingComponentVariableNameLabel"
-      figure="FadingComponentVariableFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.17/@accessors.0"/>
-  <labels
-      name="PortVariableTypeLabel"
-      elementIcon="false">
-    <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
+  <labels name="ControllerExchangeNodeIconLabel" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.3"/>
+  <labels name="ControllerExchangeNodeIconDeadline" figure="ControllerExchangeNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.4"/>
+  <labels name="FadingComponentVariableNameLabel" figure="FadingComponentVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.17/@accessors.0"/>
+  <labels name="PortVariableTypeLabel" elementIcon="false">
+    <figure href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#UnderlinedLabelFigure"/>
   </labels>
-  <labels
-      name="MultiPortOrderConstraintTypeLabel"
-      figure="MultiPortOrderConstraintFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.20/@accessors.0"/>
-  <labels
-      name="MultiPortPositionConstraintLabel"
-      figure="MultiPortPositionConstraintFigure"/>
-  <labels
-      name="TriggerEmbeddedComponentExpression"
-      figure="PartVariableFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <labels name="MultiPortOrderConstraintTypeLabel" figure="MultiPortOrderConstraintFigure" elementIcon="false" accessor="//@figures.0/@descriptors.20/@accessors.0"/>
+  <labels name="MultiPortPositionConstraintLabel" figure="MultiPortPositionConstraintFigure"/>
+  <labels name="TriggerEmbeddedComponentExpression" figure="PartVariableFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
 </gmfgraph:Canvas>

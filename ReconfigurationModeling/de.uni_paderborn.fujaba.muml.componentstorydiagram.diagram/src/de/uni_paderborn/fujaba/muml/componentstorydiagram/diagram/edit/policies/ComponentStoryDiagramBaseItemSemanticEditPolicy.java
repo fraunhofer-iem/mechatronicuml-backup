@@ -415,7 +415,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									21,
+									22,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -440,7 +440,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									22,
+									23,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -483,7 +483,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									21,
+									22,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -520,7 +520,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									22,
+									23,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -576,7 +576,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									23,
+									24,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -601,7 +601,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									24,
+									25,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -644,7 +644,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									23,
+									24,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -681,7 +681,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									24,
+									25,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
