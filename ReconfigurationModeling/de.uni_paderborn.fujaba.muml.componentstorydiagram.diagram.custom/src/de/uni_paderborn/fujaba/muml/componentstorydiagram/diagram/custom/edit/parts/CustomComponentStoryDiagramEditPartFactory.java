@@ -88,8 +88,7 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 				return new CustomWrappingLabelEditPart(view);
 			case WrappingLabel6EditPart.VISUAL_ID:
 				return new CustomWrappingLabel6EditPart(view);
-			case WrappingLabel2EditPart.VISUAL_ID:
-				return new CustomWrappingLabel2EditPart(view);
+
 				
 			case MultiPortVariableEditPart.VISUAL_ID:
 				return new CustomMultiPortVariableEditPart(view);
