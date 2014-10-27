@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.junit.BeforeClass;
 
 import de.uni_paderborn.fujaba.muml.tests.GenmodelTest;
-import de.uni_paderborn.fujaba.muml.tests.TestUtilities;
+import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 public class PSMGenModelTest extends GenmodelTest{
 

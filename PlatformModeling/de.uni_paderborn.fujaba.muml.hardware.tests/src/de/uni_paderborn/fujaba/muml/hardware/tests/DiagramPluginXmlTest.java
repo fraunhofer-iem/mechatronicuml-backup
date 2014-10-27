@@ -18,7 +18,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 public class DiagramPluginXmlTest {
 	public static final String EDITOR_PLUGINS[] = {

@@ -32,7 +32,7 @@ import org.junit.Test;
 import de.uni_paderborn.fujaba.muml.gmf.tests.GMFMapLinkConstraintTest;
 import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 /**
  * 

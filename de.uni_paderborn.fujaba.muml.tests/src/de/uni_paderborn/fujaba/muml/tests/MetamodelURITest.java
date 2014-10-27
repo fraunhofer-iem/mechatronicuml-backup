@@ -46,8 +46,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.TestUtilities;
+import de.uni_paderborn.fujaba.tests.TraverseTest;
+import de.uni_paderborn.fujaba.tests.resource.IResourceVisitor;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 /**
  * This test checks the meta model for invalid OCL.

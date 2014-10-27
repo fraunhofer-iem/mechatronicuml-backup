@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.gmf.tests;
+package de.uni_paderborn.fujaba.gmf.tests;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import org.eclipse.ocl.lpg.BasicEnvironment;
 import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 public abstract class GMFMapTest {
 
@@ -27,7 +27,7 @@ public abstract class GMFMapTest {
 
 	protected static OCL OCL_ENV = OCL
 			.newInstance(EcoreEnvironmentFactory.INSTANCE);
-	ProblemCollector oclErrors = new ProblemCollector();
+	protected ProblemCollector oclErrors = new ProblemCollector();
 
 	protected List<String[]> gmfmap_projects = new ArrayList<String[]>();
 	protected List<String[]> ecore_projects = new ArrayList<String[]>();

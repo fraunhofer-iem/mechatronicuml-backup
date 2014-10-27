@@ -21,6 +21,9 @@ import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.helper.OCLHelper;
 import org.junit.Test;
 
+import de.uni_paderborn.fujaba.gmf.tests.GMFMapTest;
+import de.uni_paderborn.fujaba.gmf.tests.GMFUtils;
+
 /**
  * Test the OCL Expression of the ExpressionLabels in gmfmap models. Subclass
  * needs to override the methods {@link #initGMFMapsToTest()} and

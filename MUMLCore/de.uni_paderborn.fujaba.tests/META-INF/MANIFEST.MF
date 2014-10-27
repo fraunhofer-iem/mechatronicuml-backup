@@ -21,7 +21,7 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Export-Package: de.uni_paderborn.fujaba.muml.gmf.tests,
- de.uni_paderborn.fujaba.muml.tests,
- de.uni_paderborn.fujaba.muml.tests.packages,
- de.uni_paderborn.fujaba.muml.tests.resource
+Export-Package: de.uni_paderborn.fujaba.gmf.tests,
+ de.uni_paderborn.fujaba.tests,
+ de.uni_paderborn.fujaba.tests.packages,
+ de.uni_paderborn.fujaba.tests.resource

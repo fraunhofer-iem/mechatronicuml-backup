@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.tests.packages;
+package de.uni_paderborn.fujaba.tests.packages;
 
 import java.util.Collection;
 import java.util.Map;
@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import de.uni_paderborn.fujaba.muml.tests.TestUtilities;
-import de.uni_paderborn.fujaba.muml.tests.TraverseTest;
-import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.TestUtilities;
+import de.uni_paderborn.fujaba.tests.TraverseTest;
+import de.uni_paderborn.fujaba.tests.resource.IResourceVisitor;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 public abstract class PackageTest extends TraverseTest {
 

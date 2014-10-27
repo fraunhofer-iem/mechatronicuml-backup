@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import de.uni_paderborn.fujaba.muml.tests.TestUtilities;
+import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 /**
  * This class walks through an ecore file and sets up the resourceSet
- * it is based on the MUML Test classes of the package {@link de.uni_paderborn.fujaba.muml.tests}
+ * it is based on the MUML Test classes of the package {@link de.uni_paderborn.fujaba.tests}
  * @author Andreas Dann
  *
  */

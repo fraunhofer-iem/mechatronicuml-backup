@@ -17,6 +17,8 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import de.uni_paderborn.fujaba.tests.packages.PackageTest;
+
 public class ModelPluginXmlPackageTest extends PackageTest {
 
 	private static Resource ecoreModel;

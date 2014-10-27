@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.tests;
+package de.uni_paderborn.fujaba.tests;
 
 import java.util.Collection;
 
@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import de.uni_paderborn.fujaba.muml.tests.resource.ILabelProvider;
-import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
+import de.uni_paderborn.fujaba.tests.resource.ILabelProvider;
+import de.uni_paderborn.fujaba.tests.resource.IResourceVisitor;
 
 public class TraverseTest {
 

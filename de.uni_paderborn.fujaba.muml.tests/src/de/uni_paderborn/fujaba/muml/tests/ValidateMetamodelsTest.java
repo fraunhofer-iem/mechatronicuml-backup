@@ -23,7 +23,8 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.TestUtilities;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 public class ValidateMetamodelsTest {
 	private static ResourceSet resourceSet;

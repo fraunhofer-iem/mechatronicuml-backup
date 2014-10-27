@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.tests.resource;
+package de.uni_paderborn.fujaba.tests.resource;
 
 import java.util.ArrayList;
 

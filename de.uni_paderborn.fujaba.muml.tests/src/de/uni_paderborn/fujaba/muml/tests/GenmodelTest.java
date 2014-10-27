@@ -26,10 +26,12 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import de.uni_paderborn.fujaba.muml.tests.resource.ILabelProvider;
-import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
-import de.uni_paderborn.fujaba.muml.tests.resource.QualifiedLabelProvider;
+import de.uni_paderborn.fujaba.tests.TestUtilities;
+import de.uni_paderborn.fujaba.tests.TraverseTest;
+import de.uni_paderborn.fujaba.tests.resource.ILabelProvider;
+import de.uni_paderborn.fujaba.tests.resource.IResourceVisitor;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.resource.QualifiedLabelProvider;
 
 /**
  * <p>

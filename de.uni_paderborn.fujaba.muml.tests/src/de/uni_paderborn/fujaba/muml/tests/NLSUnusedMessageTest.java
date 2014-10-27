@@ -13,7 +13,7 @@ import org.apache.commons.io.LineIterator;
 import org.eclipse.core.runtime.CoreException;
 import org.junit.Test;
 
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 public class NLSUnusedMessageTest {
 

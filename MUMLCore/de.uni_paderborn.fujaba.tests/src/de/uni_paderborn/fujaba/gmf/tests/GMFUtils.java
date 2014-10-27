@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.gmf.tests;
+package de.uni_paderborn.fujaba.gmf.tests;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,7 +21,7 @@ import org.eclipse.gmf.tooldef.GMFToolPackage;
 import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.MumlPackage;
-import de.uni_paderborn.fujaba.muml.tests.TestUtilities;
+import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 /**
  * This class returns a GMFModel and initializes the dependent Ecore-MetaModels

@@ -19,7 +19,7 @@ import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 /**
  * Test the OCL Derivations in the hardware metamodel
