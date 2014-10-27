@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="PatternEditor">
+  <figures name="Default">
+    <descriptors name="PatternFigureDescriptor">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="PatternFigure"/>
+    </descriptors>
+    <descriptors name="PatternCompartmentFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="PatternCompartment"/>
+    </descriptors>
+  </figures>
+  <nodes name="PatternNode" figure="PatternFigureDescriptor"/>
+  <compartments name="PatternCompartment" figure="PatternCompartmentFigure"/>
+</gmfgraph:Canvas>
