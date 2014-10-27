@@ -473,169 +473,175 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			controllerExchangeNodeIconContainer1
 					.setLayoutManager(layoutControllerExchangeNodeIconContainer1);
 
-			RectangleFigure controllerExchangeNodeIconHelper2 = new RectangleFigure();
+			RectangleFigure iconRow2 = new RectangleFigure();
 
-			controllerExchangeNodeIconHelper2.setOutline(false);
+			controllerExchangeNodeIconContainer1
+					.add(iconRow2, BorderLayout.TOP);
 
-			controllerExchangeNodeIconContainer1.add(
-					controllerExchangeNodeIconHelper2, BorderLayout.CENTER);
+			BorderLayout layoutIconRow2 = new BorderLayout();
+			iconRow2.setLayoutManager(layoutIconRow2);
 
-			RectangleFigure controllerExchangeNodeIcon2 = new RectangleFigure();
+			RectangleFigure controllerExchangeNodeIconHelper3 = new RectangleFigure();
 
-			controllerExchangeNodeIconContainer1.add(
-					controllerExchangeNodeIcon2, BorderLayout.RIGHT);
+			controllerExchangeNodeIconHelper3.setOutline(false);
 
-			BorderLayout layoutControllerExchangeNodeIcon2 = new BorderLayout();
-			controllerExchangeNodeIcon2
-					.setLayoutManager(layoutControllerExchangeNodeIcon2);
+			iconRow2.add(controllerExchangeNodeIconHelper3, BorderLayout.CENTER);
 
-			RectangleFigure leftIconRectangle3 = new RectangleFigure();
+			RectangleFigure controllerExchangeNodeIcon3 = new RectangleFigure();
 
-			leftIconRectangle3.setOutline(false);
+			iconRow2.add(controllerExchangeNodeIcon3, BorderLayout.RIGHT);
 
-			controllerExchangeNodeIcon2.add(leftIconRectangle3,
+			BorderLayout layoutControllerExchangeNodeIcon3 = new BorderLayout();
+			controllerExchangeNodeIcon3
+					.setLayoutManager(layoutControllerExchangeNodeIcon3);
+
+			RectangleFigure leftIconRectangle4 = new RectangleFigure();
+
+			leftIconRectangle4.setOutline(false);
+
+			controllerExchangeNodeIcon3.add(leftIconRectangle4,
 					BorderLayout.LEFT);
 
-			BorderLayout layoutLeftIconRectangle3 = new BorderLayout();
-			leftIconRectangle3.setLayoutManager(layoutLeftIconRectangle3);
+			BorderLayout layoutLeftIconRectangle4 = new BorderLayout();
+			leftIconRectangle4.setLayoutManager(layoutLeftIconRectangle4);
 
-			RectangleFigure upperLeftIconRectangle4 = new RectangleFigure();
+			RectangleFigure upperLeftIconRectangle5 = new RectangleFigure();
 
-			upperLeftIconRectangle4.setOutline(false);
+			upperLeftIconRectangle5.setOutline(false);
 
-			leftIconRectangle3.add(upperLeftIconRectangle4, BorderLayout.TOP);
+			leftIconRectangle4.add(upperLeftIconRectangle5, BorderLayout.TOP);
 
-			BorderLayout layoutUpperLeftIconRectangle4 = new BorderLayout();
-			upperLeftIconRectangle4
-					.setLayoutManager(layoutUpperLeftIconRectangle4);
+			BorderLayout layoutUpperLeftIconRectangle5 = new BorderLayout();
+			upperLeftIconRectangle5
+					.setLayoutManager(layoutUpperLeftIconRectangle5);
 
-			RectangleFigure greenIconRectangle5 = new RectangleFigure();
+			RectangleFigure greenIconRectangle6 = new RectangleFigure();
 
-			greenIconRectangle5.setForegroundColor(GREENICONRECTANGLE5_FORE);
-			greenIconRectangle5.setPreferredSize(new Dimension(getMapMode()
+			greenIconRectangle6.setForegroundColor(GREENICONRECTANGLE6_FORE);
+			greenIconRectangle6.setPreferredSize(new Dimension(getMapMode()
 					.DPtoLP(14), getMapMode().DPtoLP(14)));
-			greenIconRectangle5.setMaximumSize(new Dimension(getMapMode()
+			greenIconRectangle6.setMaximumSize(new Dimension(getMapMode()
 					.DPtoLP(14), getMapMode().DPtoLP(14)));
-			greenIconRectangle5.setMinimumSize(new Dimension(getMapMode()
+			greenIconRectangle6.setMinimumSize(new Dimension(getMapMode()
 					.DPtoLP(14), getMapMode().DPtoLP(14)));
-			greenIconRectangle5.setSize(getMapMode().DPtoLP(14), getMapMode()
+			greenIconRectangle6.setSize(getMapMode().DPtoLP(14), getMapMode()
 					.DPtoLP(14));
 
-			upperLeftIconRectangle4.add(greenIconRectangle5, BorderLayout.LEFT);
+			upperLeftIconRectangle5.add(greenIconRectangle6, BorderLayout.LEFT);
 
-			RectangleFigure leftArrowPolygonRectangle5 = new RectangleFigure();
+			RectangleFigure leftArrowPolygonRectangle6 = new RectangleFigure();
 
-			leftArrowPolygonRectangle5.setFill(false);
-			leftArrowPolygonRectangle5.setOutline(false);
-			leftArrowPolygonRectangle5.setPreferredSize(new Dimension(
+			leftArrowPolygonRectangle6.setFill(false);
+			leftArrowPolygonRectangle6.setOutline(false);
+			leftArrowPolygonRectangle6.setPreferredSize(new Dimension(
 					getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
 
-			upperLeftIconRectangle4.add(leftArrowPolygonRectangle5,
+			upperLeftIconRectangle5.add(leftArrowPolygonRectangle6,
 					BorderLayout.RIGHT);
 
-			PolygonShape leftArrowPolygon6 = new PolygonShape();
+			PolygonShape leftArrowPolygon7 = new PolygonShape();
 
-			leftArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(0),
+			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(7)));
-			leftArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(7),
+			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7),
 					getMapMode().DPtoLP(0)));
-			leftArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(7),
+			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7),
 					getMapMode().DPtoLP(14)));
-			leftArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(0),
+			leftArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(7)));
-			leftArrowPolygon6.setFill(true);
-			leftArrowPolygon6.setForegroundColor(ColorConstants.black);
-			leftArrowPolygon6.setBackgroundColor(ColorConstants.black);
-			leftArrowPolygon6.setPreferredSize(new Dimension(getMapMode()
+			leftArrowPolygon7.setFill(true);
+			leftArrowPolygon7.setForegroundColor(ColorConstants.black);
+			leftArrowPolygon7.setBackgroundColor(ColorConstants.black);
+			leftArrowPolygon7.setPreferredSize(new Dimension(getMapMode()
 					.DPtoLP(7), getMapMode().DPtoLP(14)));
-			leftArrowPolygon6.setMaximumSize(new Dimension(getMapMode().DPtoLP(
+			leftArrowPolygon7.setMaximumSize(new Dimension(getMapMode().DPtoLP(
 					7), getMapMode().DPtoLP(14)));
-			leftArrowPolygon6.setMinimumSize(new Dimension(getMapMode().DPtoLP(
+			leftArrowPolygon7.setMinimumSize(new Dimension(getMapMode().DPtoLP(
 					7), getMapMode().DPtoLP(14)));
-			leftArrowPolygon6.setSize(getMapMode().DPtoLP(7), getMapMode()
+			leftArrowPolygon7.setSize(getMapMode().DPtoLP(7), getMapMode()
 					.DPtoLP(14));
 
-			leftArrowPolygonRectangle5.add(leftArrowPolygon6);
+			leftArrowPolygonRectangle6.add(leftArrowPolygon7);
 
-			RectangleFigure lowerLeftIconRectangle4 = new RectangleFigure();
+			RectangleFigure lowerLeftIconRectangle5 = new RectangleFigure();
 
-			lowerLeftIconRectangle4.setOutline(false);
+			lowerLeftIconRectangle5.setOutline(false);
 
-			leftIconRectangle3
-					.add(lowerLeftIconRectangle4, BorderLayout.CENTER);
+			leftIconRectangle4
+					.add(lowerLeftIconRectangle5, BorderLayout.CENTER);
 
-			RectangleFigure middleIconRectangle3 = new RectangleFigure();
+			RectangleFigure middleIconRectangle4 = new RectangleFigure();
 
-			middleIconRectangle3.setOutline(false);
+			middleIconRectangle4.setOutline(false);
 
-			controllerExchangeNodeIcon2.add(middleIconRectangle3,
+			controllerExchangeNodeIcon3.add(middleIconRectangle4,
 					BorderLayout.CENTER);
 
-			GridLayout layoutMiddleIconRectangle3 = new GridLayout();
-			layoutMiddleIconRectangle3.numColumns = 1;
-			layoutMiddleIconRectangle3.makeColumnsEqualWidth = true;
-			middleIconRectangle3.setLayoutManager(layoutMiddleIconRectangle3);
+			GridLayout layoutMiddleIconRectangle4 = new GridLayout();
+			layoutMiddleIconRectangle4.numColumns = 1;
+			layoutMiddleIconRectangle4.makeColumnsEqualWidth = true;
+			middleIconRectangle4.setLayoutManager(layoutMiddleIconRectangle4);
 
-			RectangleFigure upperLineHelper4 = new RectangleFigure();
+			RectangleFigure upperLineHelper5 = new RectangleFigure();
 
-			upperLineHelper4.setFill(false);
-			upperLineHelper4.setOutline(false);
-			upperLineHelper4.setPreferredSize(new Dimension(getMapMode()
+			upperLineHelper5.setFill(false);
+			upperLineHelper5.setOutline(false);
+			upperLineHelper5.setPreferredSize(new Dimension(getMapMode()
 					.DPtoLP(1), getMapMode().DPtoLP(6)));
-			upperLineHelper4.setMaximumSize(new Dimension(getMapMode()
+			upperLineHelper5.setMaximumSize(new Dimension(getMapMode()
 					.DPtoLP(1), getMapMode().DPtoLP(6)));
-			upperLineHelper4.setMinimumSize(new Dimension(getMapMode()
+			upperLineHelper5.setMinimumSize(new Dimension(getMapMode()
 					.DPtoLP(1), getMapMode().DPtoLP(6)));
-			upperLineHelper4.setSize(getMapMode().DPtoLP(1), getMapMode()
+			upperLineHelper5.setSize(getMapMode().DPtoLP(1), getMapMode()
 					.DPtoLP(6));
 
-			GridData constraintUpperLineHelper4 = new GridData();
-			constraintUpperLineHelper4.verticalAlignment = GridData.BEGINNING;
-			constraintUpperLineHelper4.horizontalAlignment = GridData.BEGINNING;
-			constraintUpperLineHelper4.horizontalIndent = 0;
-			constraintUpperLineHelper4.horizontalSpan = 1;
-			constraintUpperLineHelper4.verticalSpan = 1;
-			constraintUpperLineHelper4.grabExcessHorizontalSpace = false;
-			constraintUpperLineHelper4.grabExcessVerticalSpace = false;
-			middleIconRectangle3.add(upperLineHelper4,
-					constraintUpperLineHelper4);
+			GridData constraintUpperLineHelper5 = new GridData();
+			constraintUpperLineHelper5.verticalAlignment = GridData.BEGINNING;
+			constraintUpperLineHelper5.horizontalAlignment = GridData.BEGINNING;
+			constraintUpperLineHelper5.horizontalIndent = 0;
+			constraintUpperLineHelper5.horizontalSpan = 1;
+			constraintUpperLineHelper5.verticalSpan = 1;
+			constraintUpperLineHelper5.grabExcessHorizontalSpace = false;
+			constraintUpperLineHelper5.grabExcessVerticalSpace = false;
+			middleIconRectangle4.add(upperLineHelper5,
+					constraintUpperLineHelper5);
 
-			ScalablePolygonShape linePolygon4 = new ScalablePolygonShape();
+			ScalablePolygonShape linePolygon5 = new ScalablePolygonShape();
 
-			linePolygon4.addPoint(new Point(getMapMode().DPtoLP(0),
+			linePolygon5.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
-			linePolygon4.addPoint(new Point(getMapMode().DPtoLP(1),
+			linePolygon5.addPoint(new Point(getMapMode().DPtoLP(1),
 					getMapMode().DPtoLP(0)));
-			linePolygon4.setFill(true);
-			linePolygon4.setLineWidth(2);
+			linePolygon5.setFill(true);
+			linePolygon5.setLineWidth(2);
 
-			GridData constraintLinePolygon4 = new GridData();
-			constraintLinePolygon4.verticalAlignment = GridData.FILL;
-			constraintLinePolygon4.horizontalAlignment = GridData.CENTER;
-			constraintLinePolygon4.horizontalIndent = 0;
-			constraintLinePolygon4.horizontalSpan = 1;
-			constraintLinePolygon4.verticalSpan = 1;
-			constraintLinePolygon4.grabExcessHorizontalSpace = false;
-			constraintLinePolygon4.grabExcessVerticalSpace = true;
-			middleIconRectangle3.add(linePolygon4, constraintLinePolygon4);
+			GridData constraintLinePolygon5 = new GridData();
+			constraintLinePolygon5.verticalAlignment = GridData.FILL;
+			constraintLinePolygon5.horizontalAlignment = GridData.CENTER;
+			constraintLinePolygon5.horizontalIndent = 0;
+			constraintLinePolygon5.horizontalSpan = 1;
+			constraintLinePolygon5.verticalSpan = 1;
+			constraintLinePolygon5.grabExcessHorizontalSpace = false;
+			constraintLinePolygon5.grabExcessVerticalSpace = true;
+			middleIconRectangle4.add(linePolygon5, constraintLinePolygon5);
 
-			RectangleFigure labelRectangle4 = new RectangleFigure();
+			RectangleFigure labelRectangle5 = new RectangleFigure();
 
-			labelRectangle4.setOutline(false);
+			labelRectangle5.setOutline(false);
 
-			GridData constraintLabelRectangle4 = new GridData();
-			constraintLabelRectangle4.verticalAlignment = GridData.END;
-			constraintLabelRectangle4.horizontalAlignment = GridData.FILL;
-			constraintLabelRectangle4.horizontalIndent = 0;
-			constraintLabelRectangle4.horizontalSpan = 1;
-			constraintLabelRectangle4.verticalSpan = 1;
-			constraintLabelRectangle4.grabExcessHorizontalSpace = false;
-			constraintLabelRectangle4.grabExcessVerticalSpace = false;
-			middleIconRectangle3
-					.add(labelRectangle4, constraintLabelRectangle4);
+			GridData constraintLabelRectangle5 = new GridData();
+			constraintLabelRectangle5.verticalAlignment = GridData.END;
+			constraintLabelRectangle5.horizontalAlignment = GridData.FILL;
+			constraintLabelRectangle5.horizontalIndent = 0;
+			constraintLabelRectangle5.horizontalSpan = 1;
+			constraintLabelRectangle5.verticalSpan = 1;
+			constraintLabelRectangle5.grabExcessHorizontalSpace = false;
+			constraintLabelRectangle5.grabExcessVerticalSpace = false;
+			middleIconRectangle4
+					.add(labelRectangle5, constraintLabelRectangle5);
 
-			BorderLayout layoutLabelRectangle4 = new BorderLayout();
-			labelRectangle4.setLayoutManager(layoutLabelRectangle4);
+			BorderLayout layoutLabelRectangle5 = new BorderLayout();
+			labelRectangle5.setLayoutManager(layoutLabelRectangle5);
 
 			fFigureControllerExchangeNodeIconLabel = new WrappingLabel();
 
@@ -644,7 +650,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			fFigureControllerExchangeNodeIconLabel
 					.setFont(FFIGURECONTROLLEREXCHANGENODEICONLABEL_FONT);
 
-			labelRectangle4.add(fFigureControllerExchangeNodeIconLabel,
+			labelRectangle5.add(fFigureControllerExchangeNodeIconLabel,
 					BorderLayout.LEFT);
 
 			fFigureControllerExchangeNodeIconDeadline = new WrappingLabel();
@@ -654,84 +660,98 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			fFigureControllerExchangeNodeIconDeadline
 					.setFont(FFIGURECONTROLLEREXCHANGENODEICONDEADLINE_FONT);
 
-			labelRectangle4.add(fFigureControllerExchangeNodeIconDeadline,
+			labelRectangle5.add(fFigureControllerExchangeNodeIconDeadline,
 					BorderLayout.RIGHT);
 
-			RectangleFigure rightIconRectangle3 = new RectangleFigure();
+			RectangleFigure rightIconRectangle4 = new RectangleFigure();
 
-			rightIconRectangle3.setOutline(false);
+			rightIconRectangle4.setOutline(false);
 
-			controllerExchangeNodeIcon2.add(rightIconRectangle3,
+			controllerExchangeNodeIcon3.add(rightIconRectangle4,
 					BorderLayout.RIGHT);
 
-			BorderLayout layoutRightIconRectangle3 = new BorderLayout();
-			rightIconRectangle3.setLayoutManager(layoutRightIconRectangle3);
+			BorderLayout layoutRightIconRectangle4 = new BorderLayout();
+			rightIconRectangle4.setLayoutManager(layoutRightIconRectangle4);
 
-			RectangleFigure upperRightIconRectangle4 = new RectangleFigure();
+			RectangleFigure upperRightIconRectangle5 = new RectangleFigure();
 
-			upperRightIconRectangle4.setOutline(false);
+			upperRightIconRectangle5.setOutline(false);
 
-			rightIconRectangle3.add(upperRightIconRectangle4, BorderLayout.TOP);
+			rightIconRectangle4.add(upperRightIconRectangle5, BorderLayout.TOP);
 
-			BorderLayout layoutUpperRightIconRectangle4 = new BorderLayout();
-			upperRightIconRectangle4
-					.setLayoutManager(layoutUpperRightIconRectangle4);
+			BorderLayout layoutUpperRightIconRectangle5 = new BorderLayout();
+			upperRightIconRectangle5
+					.setLayoutManager(layoutUpperRightIconRectangle5);
 
-			RectangleFigure rightArrowPolygonRectangle5 = new RectangleFigure();
+			RectangleFigure rightArrowPolygonRectangle6 = new RectangleFigure();
 
-			rightArrowPolygonRectangle5.setFill(false);
-			rightArrowPolygonRectangle5.setOutline(false);
-			rightArrowPolygonRectangle5.setPreferredSize(new Dimension(
+			rightArrowPolygonRectangle6.setFill(false);
+			rightArrowPolygonRectangle6.setOutline(false);
+			rightArrowPolygonRectangle6.setPreferredSize(new Dimension(
 					getMapMode().DPtoLP(7), getMapMode().DPtoLP(14)));
 
-			upperRightIconRectangle4.add(rightArrowPolygonRectangle5,
+			upperRightIconRectangle5.add(rightArrowPolygonRectangle6,
 					BorderLayout.LEFT);
 
-			PolygonShape rightArrowPolygon6 = new PolygonShape();
+			PolygonShape rightArrowPolygon7 = new PolygonShape();
 
-			rightArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(0),
+			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
-			rightArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(7),
+			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(7),
 					getMapMode().DPtoLP(7)));
-			rightArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(0),
+			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(14)));
-			rightArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(0),
+			rightArrowPolygon7.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
-			rightArrowPolygon6.setFill(true);
-			rightArrowPolygon6.setForegroundColor(ColorConstants.black);
-			rightArrowPolygon6.setBackgroundColor(ColorConstants.black);
-			rightArrowPolygon6.setPreferredSize(new Dimension(getMapMode()
+			rightArrowPolygon7.setFill(true);
+			rightArrowPolygon7.setForegroundColor(ColorConstants.black);
+			rightArrowPolygon7.setBackgroundColor(ColorConstants.black);
+			rightArrowPolygon7.setPreferredSize(new Dimension(getMapMode()
 					.DPtoLP(7), getMapMode().DPtoLP(14)));
-			rightArrowPolygon6.setMaximumSize(new Dimension(getMapMode()
+			rightArrowPolygon7.setMaximumSize(new Dimension(getMapMode()
 					.DPtoLP(7), getMapMode().DPtoLP(14)));
-			rightArrowPolygon6.setMinimumSize(new Dimension(getMapMode()
+			rightArrowPolygon7.setMinimumSize(new Dimension(getMapMode()
 					.DPtoLP(7), getMapMode().DPtoLP(14)));
-			rightArrowPolygon6.setSize(getMapMode().DPtoLP(7), getMapMode()
+			rightArrowPolygon7.setSize(getMapMode().DPtoLP(7), getMapMode()
 					.DPtoLP(14));
 
-			rightArrowPolygonRectangle5.add(rightArrowPolygon6);
+			rightArrowPolygonRectangle6.add(rightArrowPolygon7);
 
-			RectangleFigure redIconRectangle5 = new RectangleFigure();
+			RectangleFigure redIconRectangle6 = new RectangleFigure();
 
-			redIconRectangle5.setForegroundColor(REDICONRECTANGLE5_FORE);
-			redIconRectangle5.setPreferredSize(new Dimension(getMapMode()
+			redIconRectangle6.setForegroundColor(REDICONRECTANGLE6_FORE);
+			redIconRectangle6.setPreferredSize(new Dimension(getMapMode()
 					.DPtoLP(14), getMapMode().DPtoLP(14)));
 
-			upperRightIconRectangle4.add(redIconRectangle5, BorderLayout.RIGHT);
+			upperRightIconRectangle5.add(redIconRectangle6, BorderLayout.RIGHT);
 
-			RectangleFigure lowerRightIconRectangle4 = new RectangleFigure();
+			RectangleFigure lowerRightIconRectangle5 = new RectangleFigure();
 
-			lowerRightIconRectangle4.setOutline(false);
+			lowerRightIconRectangle5.setOutline(false);
 
-			rightIconRectangle3.add(lowerRightIconRectangle4,
+			rightIconRectangle4.add(lowerRightIconRectangle5,
+					BorderLayout.CENTER);
+
+			RectangleFigure deadlineRow2 = new RectangleFigure();
+
+			controllerExchangeNodeIconContainer1.add(deadlineRow2,
+					BorderLayout.BOTTOM);
+
+			BorderLayout layoutDeadlineRow2 = new BorderLayout();
+			deadlineRow2.setLayoutManager(layoutDeadlineRow2);
+
+			RectangleFigure controllerExchangeNodeDeadlineHelper3 = new RectangleFigure();
+
+			controllerExchangeNodeDeadlineHelper3.setOutline(false);
+
+			deadlineRow2.add(controllerExchangeNodeDeadlineHelper3,
 					BorderLayout.CENTER);
 
 			RectangleFigure deadlineLabelContainer3 = new RectangleFigure();
 
 			deadlineLabelContainer3.setOutline(false);
 
-			controllerExchangeNodeIcon2.add(deadlineLabelContainer3,
-					BorderLayout.BOTTOM);
+			deadlineRow2.add(deadlineLabelContainer3, BorderLayout.RIGHT);
 
 			GridLayout layoutDeadlineLabelContainer3 = new GridLayout();
 			layoutDeadlineLabelContainer3.numColumns = 1;
@@ -814,7 +834,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color GREENICONRECTANGLE5_FORE = new Color(null, 0, 192, 0);
+	static final Color GREENICONRECTANGLE6_FORE = new Color(null, 0, 192, 0);
 
 	/**
 	 * @generated
@@ -833,6 +853,6 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color REDICONRECTANGLE5_FORE = new Color(null, 192, 0, 0);
+	static final Color REDICONRECTANGLE6_FORE = new Color(null, 192, 0, 0);
 
 }
