@@ -877,20 +877,6 @@
           figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.0"/>
     </descriptors>
     <descriptors
-        name="FadingFunctionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="FadingFunctionFigure"
-          outline="false">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="FadingFunctionLabel"
-            text="FadingFunction"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
         name="ComponentStoryNodeRoundedFigureForEach">
       <actualFigure
           xsi:type="gmfgraph:RoundedRectangle"
@@ -950,7 +936,7 @@
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
       <accessors
           accessor="getFigureInnerRoundedRectangleContainer"
-          figure="//@figures.0/@descriptors.16/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="FadingComponentVariableFigure">
@@ -987,6 +973,13 @@
               <font
                   xsi:type="gmfgraph:BasicFont"/>
             </children>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="FadingFunctionLabel">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  verticalAlignment="END"/>
+            </children>
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
@@ -1001,12 +994,14 @@
                 equalWidth="false"/>
             <children
                 xsi:type="gmfgraph:FigureRef"
-                figure="//@figures.0/@descriptors.18/@actualFigure"/>
+                figure="//@figures.0/@descriptors.17/@actualFigure"/>
           </children>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="FadingComponentIconFigure">
@@ -1234,7 +1229,7 @@
       </actualFigure>
       <accessors
           accessor="getMultiPortOrderConstraintTypeLabelFigure"
-          figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="MultiPortPositionConstraintFigure">
@@ -1243,7 +1238,7 @@
           name="MultiPortPositionConstraint"
           text="test"/>
       <accessors
-          figure="//@figures.0/@descriptors.21/@actualFigure"/>
+          figure="//@figures.0/@descriptors.20/@actualFigure"/>
     </descriptors>
   </figures>
   <nodes
@@ -1324,16 +1319,6 @@
   <nodes
       name="ControllerExchangeNode"
       figure="ControllerExchangeNodeFigure"/>
-  <nodes
-      name="FadingFunctionNode"
-      figure="FadingFunctionFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="-1"
-          dy="-1"/>
-    </facets>
-  </nodes>
   <nodes
       name="FadingComponentVariable"
       figure="FadingComponentVariableFigure"/>
@@ -1449,18 +1434,6 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.14/@accessors.0"/>
   <labels
-      name="FadingFunctionLabel"
-      figure="FadingFunctionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.15/@accessors.0">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="-1"
-          dy="-1"/>
-    </facets>
-  </labels>
-  <labels
       name="ControllerExchangeNodeIconLabel"
       figure="ControllerExchangeNodeFigure"
       elementIcon="false"
@@ -1474,7 +1447,7 @@
       name="FadingComponentVariableNameLabel"
       figure="FadingComponentVariableFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.17/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.16/@accessors.0"/>
   <labels
       name="PortVariableTypeLabel"
       elementIcon="false">
@@ -1485,7 +1458,7 @@
       name="MultiPortOrderConstraintTypeLabel"
       figure="MultiPortOrderConstraintFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.20/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.19/@accessors.0"/>
   <labels
       name="MultiPortPositionConstraintLabel"
       figure="MultiPortPositionConstraintFigure"/>
@@ -1499,4 +1472,9 @@
       figure="ControllerExchangeNodeFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.14/@accessors.4"/>
+  <labels
+      name="FadingFunctionLabel"
+      figure="FadingComponentVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.16/@accessors.1"/>
 </gmfgraph:Canvas>

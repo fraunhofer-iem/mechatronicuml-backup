@@ -176,6 +176,9 @@
     <nodeLabelTraces
         visualID="5055"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5065"
+        queryText="true"/>
   </childNodeTraces>
   <linkTraces
       visualID="4001"

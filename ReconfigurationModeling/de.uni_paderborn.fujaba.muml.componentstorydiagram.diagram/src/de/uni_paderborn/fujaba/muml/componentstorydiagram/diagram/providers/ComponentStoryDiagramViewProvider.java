@@ -1293,6 +1293,10 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		Location location5055 = (Location) label5055.getLayoutConstraint();
 		location5055.setX(0);
 		location5055.setY(5);
+		Node label5065 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
 		return node;
 	}
 

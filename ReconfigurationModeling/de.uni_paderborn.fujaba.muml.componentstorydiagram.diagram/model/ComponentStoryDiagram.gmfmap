@@ -559,6 +559,13 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#PartVariableOperatorLabel"/>
                       </labelMappings>
+                      <labelMappings
+                          xsi:type="gmfmap:ExpressionLabelMapping">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#FadingFunctionLabel"/>
+                        <viewExpression
+                            body="if self.appliedFadingFunction.oclIsUndefined()&#xD;&#xA;then ''&#xD;&#xA;else&#xD;&#xA;&#x9;self.appliedFadingFunction.name&#xD;&#xA;endif"/>
+                      </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
                           href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.5"/>

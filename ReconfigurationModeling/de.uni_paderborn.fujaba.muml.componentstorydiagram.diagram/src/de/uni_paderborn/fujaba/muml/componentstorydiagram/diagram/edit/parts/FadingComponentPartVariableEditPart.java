@@ -178,6 +178,11 @@ public class FadingComponentPartVariableEditPart extends
 							.getFigureFadingComponentVariableNameFigure());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel9EditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel9EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureFadingFunctionLabel());
+			return true;
+		}
 		return false;
 	}
 
@@ -186,6 +191,9 @@ public class FadingComponentPartVariableEditPart extends
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel9EditPart) {
 			return true;
 		}
 		return false;
@@ -348,6 +356,11 @@ public class FadingComponentPartVariableEditPart extends
 		/**
 		 * @generated
 		 */
+		private WrappingLabel fFigureFadingFunctionLabel;
+
+		/**
+		 * @generated
+		 */
 		public FadingComponentVariableFigure() {
 			createContents();
 		}
@@ -408,6 +421,21 @@ public class FadingComponentPartVariableEditPart extends
 			constraintFFigureFadingComponentVariableNameFigure.grabExcessVerticalSpace = true;
 			nameContainer1.add(fFigureFadingComponentVariableNameFigure,
 					constraintFFigureFadingComponentVariableNameFigure);
+
+			fFigureFadingFunctionLabel = new WrappingLabel();
+
+			fFigureFadingFunctionLabel.setText("");
+
+			GridData constraintFFigureFadingFunctionLabel = new GridData();
+			constraintFFigureFadingFunctionLabel.verticalAlignment = GridData.END;
+			constraintFFigureFadingFunctionLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigureFadingFunctionLabel.horizontalIndent = 0;
+			constraintFFigureFadingFunctionLabel.horizontalSpan = 1;
+			constraintFFigureFadingFunctionLabel.verticalSpan = 1;
+			constraintFFigureFadingFunctionLabel.grabExcessHorizontalSpace = false;
+			constraintFFigureFadingFunctionLabel.grabExcessVerticalSpace = false;
+			nameContainer1.add(fFigureFadingFunctionLabel,
+					constraintFFigureFadingFunctionLabel);
 
 			RectangleFigure iconContainer1 = new RectangleFigure();
 
@@ -598,6 +626,13 @@ public class FadingComponentPartVariableEditPart extends
 		 */
 		public WrappingLabel getFigureFadingComponentVariableNameFigure() {
 			return fFigureFadingComponentVariableNameFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureFadingFunctionLabel() {
+			return fFigureFadingFunctionLabel;
 		}
 
 	}

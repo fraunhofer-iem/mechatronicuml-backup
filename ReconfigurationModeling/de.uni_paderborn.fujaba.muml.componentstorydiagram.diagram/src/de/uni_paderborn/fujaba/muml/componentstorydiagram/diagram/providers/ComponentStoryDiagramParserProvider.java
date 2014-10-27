@@ -202,6 +202,13 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	private IParser getFadingComponentPartVariableLabel_5065Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5065();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser assemblyVariableName_6004Parser;
 
 	/**
@@ -281,6 +288,8 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 			return getControllerExchangeNodeLabel_5064Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
 			return getFadingComponentPartVariableLabel_5054Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
+			return getFadingComponentPartVariableLabel_5065Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:
 			return getAssemblyVariableName_6004Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:
