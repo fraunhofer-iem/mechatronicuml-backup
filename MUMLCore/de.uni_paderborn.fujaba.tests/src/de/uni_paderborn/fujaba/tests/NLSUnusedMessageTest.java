@@ -1,42 +1,40 @@
-package de.uni_paderborn.fujaba.muml.tests;
+package de.uni_paderborn.fujaba.tests;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Iterator;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Platform;
 import org.junit.Test;
 
 import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
-public class NLSUnusedMessageTest {
+public abstract class NLSUnusedMessageTest {
 
-	public static final String EDITOR_PLUGINS[] = {
-			"de.uni_paderborn.fujaba.muml.component.diagram",
-			"de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram",
-			"de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram",
-			"de.uni_paderborn.fujaba.muml.deployment.diagram",
-			"de.uni_paderborn.fujaba.muml.messagetype.diagram",
-			"de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram",
-			"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram" };
+	private String[] pluginNames;
+	
+	public NLSUnusedMessageTest(String[] pluginNames) {
+		this.pluginNames = pluginNames;
+	}
+
 
 	@Test
-	public void test() throws CoreException, IOException {
+	public void test() throws CoreException, IOException, URISyntaxException {
 
 		final ProblemCollector problems = new ProblemCollector();
 
 		Pattern regMessages = Pattern.compile("(.*)=(.*)");
 
-		for (String pluginName : EDITOR_PLUGINS) {
-			File messageProperties = new File("../" + pluginName
-					+ "/messages.properties");
-			File srcFolder = new File("../" + pluginName + "/src/");
+		for (String pluginName : pluginNames) {
+			File messageProperties = new File(Platform.getBundle(pluginName).getResource("messages.properties").toURI());
+			File srcFolder = new File(Platform.getBundle(pluginName).getResource("src").toURI());
 			LineIterator it = FileUtils
 					.lineIterator(messageProperties, "UTF-8");
 			try {
@@ -56,7 +54,6 @@ public class NLSUnusedMessageTest {
 			} finally {
 				LineIterator.closeQuietly(it);
 			}
-
 		}
 		problems.fail();
 

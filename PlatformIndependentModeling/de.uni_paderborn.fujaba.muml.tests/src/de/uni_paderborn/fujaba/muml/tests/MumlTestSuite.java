@@ -5,15 +5,12 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import de.uni_paderborn.fujaba.muml.tests.gmf.PimGMFMapTest;
-import de.uni_paderborn.fujaba.muml.tests.packages.EditPluginXmlPackageTest;
-import de.uni_paderborn.fujaba.muml.tests.packages.ModelPluginXmlPackageTest;
+import de.uni_paderborn.fujaba.muml.tests.packages.PimPluginXmlPackageTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({ MetamodelOCLTest.class, MetamodelURITest.class,
-		GenmodelTest.class, ModelPluginXmlPackageTest.class,
-		EditPluginXmlPackageTest.class, ValidateMetamodelsTest.class,
-		DiagramPluginXmlTest.class, PimGMFMapTest.class,
-		MetamodelEOperationTest.class })
+@SuiteClasses({ PimMetamodelTest.class, PimGenmodelTest.class,
+		PimPluginXmlPackageTest.class, PimValidateMetamodelsTest.class,
+		PimDiagramPluginXmlTest.class, PimGMFMapTest.class })
 public class MumlTestSuite {
 	// empty
 }

@@ -49,6 +49,11 @@ public abstract class PackageTest extends TraverseTest {
 				if (uris.contains(nsUri)) {
 					while (uris.remove(nsUri)); // Remove all occurrences
 				} else if (isRequiredPackage(_package)) {
+					for (EObject contents : _package.eContents()) {
+						if (contents instanceof EPackage) {
+							return true; // Do not care about hierarchical packages; just the leafs of the package hierarchy.
+						}
+					}
 					problems.add("MISSING: "
 							+ name
 							+ " does not have an extension for package with nsUri: "

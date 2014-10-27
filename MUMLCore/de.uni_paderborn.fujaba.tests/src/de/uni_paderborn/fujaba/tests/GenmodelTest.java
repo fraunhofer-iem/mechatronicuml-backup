@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.tests;
+package de.uni_paderborn.fujaba.tests;
 
 import static org.junit.Assert.fail;
 
@@ -15,14 +15,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import de.uni_paderborn.fujaba.tests.TestUtilities;
-import de.uni_paderborn.fujaba.tests.TraverseTest;
 import de.uni_paderborn.fujaba.tests.resource.ILabelProvider;
 import de.uni_paderborn.fujaba.tests.resource.IResourceVisitor;
 import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
@@ -43,18 +41,15 @@ import de.uni_paderborn.fujaba.tests.resource.QualifiedLabelProvider;
  * @author bingo
  * 
  */
-public class GenmodelTest extends TraverseTest {
+public abstract class GenmodelTest extends TraverseTest {
 
-	/**
-	 * The project-relative path to the muml.genmodel file.
-	 */
-	private static final String GENMODEL_PATH = "de.uni_paderborn.fujaba.muml/model/muml.genmodel";
-
-	/**
-	 * The genmodel resource to work on (will be loaded in setUpBeforeClass()).
-	 */
-	protected static Resource genmodel;
-
+	private Resource genmodelResource;
+	
+	public GenmodelTest(String genmodelPath) throws IOException {
+		genmodelResource = TestUtilities.loadResource(new ResourceSetImpl(), genmodelPath);
+	}
+	
+	
 	private static ILabelProvider defaultLabelProvider = new ILabelProvider() {
 
 		/**
@@ -82,33 +77,8 @@ public class GenmodelTest extends TraverseTest {
 	protected static ILabelProvider qualifiedLabelProvider = new QualifiedLabelProvider(defaultLabelProvider);
 
 
-	/**
-	 * Initializes this test class by loading the genmodel. All tests in this
-	 * class are executed on the loaded genmodel, afterwards.
-	 * 
-	 * @throws Exception
-	 *             In case an exception occurs to make the test fail.
-	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		// Initialize new ResourceSet
-		ResourceSet resourceSet = new ResourceSetImpl();
-//
-//		Map<String, Object> extensionToFactoryMap = resourceSet
-//				.getResourceFactoryRegistry().getExtensionToFactoryMap();
-//		extensionToFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
-//		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
-//		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
-//				new XMIResourceFactoryImpl());
-//
-//
-//		// Register Packages
-//		EcorePackage.eINSTANCE.eClass();
-//		GenModelPackage.eINSTANCE.eClass();
-
-		// Load resource
-		genmodel = TestUtilities.loadResource(resourceSet, GENMODEL_PATH);
-		
 		setLabelProvider(qualifiedLabelProvider);
 	}
 
@@ -118,12 +88,11 @@ public class GenmodelTest extends TraverseTest {
 	 * @throws Exception
 	 *             In case an exception occurs to make the test fail.
 	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		if (MumlRepairSuite.isRepairMode()) {
-			genmodel.save(Collections.emptyMap());
+	@After
+	public void tearDownAfterClass() throws Exception {
+		if (RepairingState.REPAIRING) {
+			genmodelResource.save(Collections.emptyMap());
 		}
-		genmodel = null;
 	}
 
 	/**
@@ -134,7 +103,7 @@ public class GenmodelTest extends TraverseTest {
 	 *         <code>null</null> if there is something wrong with the genmodel.
 	 */
 	private GenModel getRootElement() {
-		EList<EObject> contents = genmodel.getContents();
+		EList<EObject> contents = genmodelResource.getContents();
 		if (contents.size() == 1) {
 			EObject root = contents.get(0);
 			if (root instanceof GenModel) {
@@ -149,7 +118,7 @@ public class GenmodelTest extends TraverseTest {
 	 */
 	@Test
 	public void notEmptyGenmodel() {
-		EList<EObject> contents = genmodel.getContents();
+		EList<EObject> contents = genmodelResource.getContents();
 		if (contents.isEmpty()) {
 			fail("Genmodel is empty.");
 		}
@@ -160,7 +129,7 @@ public class GenmodelTest extends TraverseTest {
 	 */
 	@Test
 	public void validRootElement() {
-		EList<EObject> contents = genmodel.getContents();
+		EList<EObject> contents = genmodelResource.getContents();
 		if (contents.size() == 1 && !(contents.get(0) instanceof GenModel)) {
 			fail("Genmodel Root element is no GenModel.");
 		}
@@ -171,7 +140,7 @@ public class GenmodelTest extends TraverseTest {
 	 */
 	@Test
 	public void singleRootElement() {
-		EList<EObject> contents = genmodel.getContents();
+		EList<EObject> contents = genmodelResource.getContents();
 		if (contents.size() != 1) {
 			fail("Genmodel has not exactly one root element.");
 		}
@@ -291,7 +260,7 @@ public class GenmodelTest extends TraverseTest {
 						problems.add(getLabel(genFeature)
 								+ ": derive = true AND 'PropertyType' is set to EDITABLE.");
 						
-						if (MumlRepairSuite.isRepairMode()) {
+						if (RepairingState.REPAIRING) {
 							genFeature.setProperty(GenPropertyKind.READONLY_LITERAL);
 						}
 					}
@@ -300,7 +269,7 @@ public class GenmodelTest extends TraverseTest {
 						problems.add(getLabel(genFeature)
 								+ ": derive = false AND 'PropertyType' is set to NONE.");
 						
-						if (MumlRepairSuite.isRepairMode()) {
+						if (RepairingState.REPAIRING) {
 							genFeature.setProperty(GenPropertyKind.READONLY_LITERAL);
 						}
 					}

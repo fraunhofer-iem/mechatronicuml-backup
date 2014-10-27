@@ -33,6 +33,7 @@ import org.eclipse.ocl.lpg.BasicEnvironment;
 import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runners.Parameterized.Parameter;
 
 import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
@@ -49,9 +50,13 @@ public abstract class GMFMapTest {
 	protected static OCL OCL_ENV = OCL
 			.newInstance(EcoreEnvironmentFactory.INSTANCE);
 	protected ProblemCollector oclErrors = new ProblemCollector();
-
-	protected List<String> gmfmap_projects = new ArrayList<String>();
-//	protected List<String> ecore_projects = new ArrayList<String>();
+	
+	public String gmfmap_project;
+	
+	public GMFMapTest(String gmfmap) {
+		this.gmfmap_project = gmfmap;
+	}
+	
 	protected HashMap<EObject, Boolean> visitedMapping;
 
 	@BeforeClass
@@ -72,25 +77,6 @@ public abstract class GMFMapTest {
 				new OCLValidationDelegateFactory.Global());
 	}
 	
-
-	/**
-	 * initializes the gmfmap-models which should be test Subclasses must override this method.
-	 */
-	protected abstract void initGMFMapsToTest();
-	
-//	/**
-//	 * initializes the ecore-model which are used by the gmfmap-models
-//	 * Subclasses should override this method
-//	 */
-//	protected void intEcoreModels() {
-//		ecore_projects.add("de.uni_paderborn.fujaba.muml.tests/model/Ecore.ecore");
-//		ecore_projects.add("org.storydriven.core/model/core.ecore");
-//		ecore_projects.add("org.storydriven.storydiagrams/model/storydiagrams.ecore");
-//		ecore_projects.add("de.uni_paderborn.fujaba.muml/model/muml.ecore");
-//		ecore_projects.add("de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore");
-//	}
-//
-
 	/**
 	 * Validates a linkMapping
 	 * 
@@ -133,22 +119,20 @@ public abstract class GMFMapTest {
 	@Test
 	public void testLinkConstraints() {
 		Mapping mapping = null;
-		this.initGMFMapsToTest();
 //		this.intEcoreModels();
 		visitedMapping = new HashMap<EObject, Boolean>();
-		for (String path : gmfmap_projects) {
-			try {
-				mapping = (Mapping) GMFUtils.loadGmfModel(GMFMapPackage.eINSTANCE.getMapping(), path);
-				// mapping = GMFUtils.getGmfMap(path[0], path[1],
-				// projects);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			EList<LinkMapping> links = mapping.getLinks();
-			for (LinkMapping link : links) {
-				this.validateLink(link);
-			}
+		String path = gmfmap_project;
+		try {
+			mapping = (Mapping) GMFUtils.loadGmfModel(GMFMapPackage.eINSTANCE.getMapping(), path);
+			// mapping = GMFUtils.getGmfMap(path[0], path[1],
+			// projects);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		EList<LinkMapping> links = mapping.getLinks();
+		for (LinkMapping link : links) {
+			this.validateLink(link);
 		}
 		oclErrors.fail();
 
@@ -231,21 +215,17 @@ public abstract class GMFMapTest {
 	@Test
 	public void testExpressionLabels() {
 		Mapping mapping = null;
-		this.initGMFMapsToTest();
-//		this.intEcoreModels();
 		visitedMapping = new HashMap<EObject, Boolean>();
-		for (String path : gmfmap_projects) {
-			try {
-				mapping = (Mapping) GMFUtils.loadGmfModel(
-						GMFMapPackage.eINSTANCE.getMapping(), path);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			EList<TopNodeReference> nodes = mapping.getNodes();
-			for (TopNodeReference node : nodes) {
-				this.validateNode(node.getOwnedChild());
-			}
+		String path = gmfmap_project;
+		try {
+			mapping = (Mapping) GMFUtils.loadGmfModel(
+					GMFMapPackage.eINSTANCE.getMapping(), path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		EList<TopNodeReference> nodes = mapping.getNodes();
+		for (TopNodeReference node : nodes) {
+			this.validateNode(node.getOwnedChild());
 		}
 		oclErrors.fail();
 	}
