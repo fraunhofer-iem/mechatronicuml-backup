@@ -138,7 +138,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Provides support for built-in and user-defined types."/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier">
+    <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract base class for all types."/>
       </eAnnotations>
@@ -306,7 +306,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Library" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
   </eSubpackages>
   <eSubpackages name="declarations" nsURI="http://www.uni-paderborn.de/uppaal/declarations/0.4.0"
       nsPrefix="declarations">
