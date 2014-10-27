@@ -29,7 +29,7 @@ import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import de.uni_paderborn.fujaba.muml.gmf.tests.GMFMapLinkConstraintTest;
+import de.uni_paderborn.fujaba.gmf.tests.GMFMapLinkConstraintTest;
 import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;

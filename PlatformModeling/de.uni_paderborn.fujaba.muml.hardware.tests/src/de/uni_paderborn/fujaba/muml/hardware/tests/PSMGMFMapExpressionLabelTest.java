@@ -1,5 +1,5 @@
 package de.uni_paderborn.fujaba.muml.hardware.tests;
-import de.uni_paderborn.fujaba.muml.gmf.tests.GMFMapExpressionLabelTest;
+import de.uni_paderborn.fujaba.gmf.tests.GMFMapExpressionLabelTest;
 import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
 
 

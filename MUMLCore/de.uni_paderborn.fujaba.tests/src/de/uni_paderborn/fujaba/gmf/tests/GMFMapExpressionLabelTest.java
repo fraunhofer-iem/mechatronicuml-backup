@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.gmf.tests;
+package de.uni_paderborn.fujaba.gmf.tests;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -20,9 +20,6 @@ import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.helper.OCLHelper;
 import org.junit.Test;
-
-import de.uni_paderborn.fujaba.gmf.tests.GMFMapTest;
-import de.uni_paderborn.fujaba.gmf.tests.GMFUtils;
 
 /**
  * Test the OCL Expression of the ExpressionLabels in gmfmap models. Subclass
