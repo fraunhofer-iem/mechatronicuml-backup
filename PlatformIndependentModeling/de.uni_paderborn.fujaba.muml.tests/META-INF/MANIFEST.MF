@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Meta-Model Tests
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.tests
+Bundle-SymbolicName: de.uni_paderborn.fujaba.tests
 Bundle-Version: 0.3.1.qualifier
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  org.junit;visibility:=reexport,
