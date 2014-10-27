@@ -31,15 +31,13 @@ import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 public abstract class GMFUtils {
 
-	public static Object loadGmfModel(EClass gmfModelElementToLoad,
-			String plugin, String path, List<String[]> ecoreProjects)
-			throws IOException {
+	public static Object loadGmfModel(EClass gmfModelElementToLoad, String path) throws IOException {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		GMFUtils.initEcoreMetaModel(resourceSet, ecoreProjects);
+//		GMFUtils.initEcoreMetaModel(resourceSet, ecoreProjects);
 		GMFUtils.initGMFModels(resourceSet);
 		Resource resource = null;
 		try {
-			resource = TestUtilities.loadResource(resourceSet, plugin, path);
+			resource = TestUtilities.loadResource(resourceSet, path);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -47,43 +45,43 @@ public abstract class GMFUtils {
 				gmfModelElementToLoad);
 	}
 
-	private static void initEcoreMetaModel(ResourceSet resourceSet,
-			List<String[]> projects) {
-
-		Map<String, Object> extensionToFactoryMap = resourceSet
-				.getResourceFactoryRegistry().getExtensionToFactoryMap();
-		extensionToFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
-		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
-		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
-				new XMIResourceFactoryImpl());
-
-		// Register Packages
-		EcorePackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
-		MumlPackage.eINSTANCE.eClass();
-
-		GenModelPackage.eINSTANCE.eClass();
-
-		GMFToolPackage.eINSTANCE.eClass();
-		GMFMapPackage.eINSTANCE.eClass();
-
-		GMFGenPackage.eINSTANCE.eClass();
-		GMFGraphPackage.eINSTANCE.eClass();
-
-		// Load resource (CAUTION: Order is important; dependant metamodels must
-		// be loaded first, else proxies are not resolved correctly...)
-
-		for (String[] path : projects) {
-			
-			try {
-				TestUtilities.loadResource(resourceSet, path[0], path[1]);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-		}
-		EcoreUtil.resolveAll(resourceSet);
-	}
+//	private static void initEcoreMetaModel(ResourceSet resourceSet,
+//			List<String[]> projects) {
+//
+//		Map<String, Object> extensionToFactoryMap = resourceSet
+//				.getResourceFactoryRegistry().getExtensionToFactoryMap();
+//		extensionToFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
+//		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
+//		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
+//				new XMIResourceFactoryImpl());
+//
+//		// Register Packages
+//		EcorePackage.eINSTANCE.eClass();
+//		CorePackage.eINSTANCE.eClass();
+//		MumlPackage.eINSTANCE.eClass();
+//
+//		GenModelPackage.eINSTANCE.eClass();
+//
+//		GMFToolPackage.eINSTANCE.eClass();
+//		GMFMapPackage.eINSTANCE.eClass();
+//
+//		GMFGenPackage.eINSTANCE.eClass();
+//		GMFGraphPackage.eINSTANCE.eClass();
+//
+//		// Load resource (CAUTION: Order is important; dependant metamodels must
+//		// be loaded first, else proxies are not resolved correctly...)
+//
+//		for (String[] path : projects) {
+//			
+//			try {
+//				TestUtilities.loadResource(resourceSet, path[0], path[1]);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//
+//		}
+//		EcoreUtil.resolveAll(resourceSet);
+//	}
 
 	public static void initGMFModels(ResourceSet resourceSet) {
 		Map<String, Object> extensionToFactoryMap = resourceSet

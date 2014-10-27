@@ -4,24 +4,19 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.Collections;
-import java.util.Map;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenBase;
 import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
-import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.codegen.ecore.genmodel.GenPropertyKind;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -50,16 +45,10 @@ import de.uni_paderborn.fujaba.tests.resource.QualifiedLabelProvider;
  */
 public class GenmodelTest extends TraverseTest {
 
-
-	/**
-	 * The workspace-relative path to the muml project.
-	 */
-	private static final String GENMODEL_PROJECT = "de.uni_paderborn.fujaba.muml";
-
 	/**
 	 * The project-relative path to the muml.genmodel file.
 	 */
-	private static final String GENMODEL_PATH = "/model/muml.genmodel";
+	private static final String GENMODEL_PATH = "de.uni_paderborn.fujaba.muml/model/muml.genmodel";
 
 	/**
 	 * The genmodel resource to work on (will be loaded in setUpBeforeClass()).
@@ -104,21 +93,21 @@ public class GenmodelTest extends TraverseTest {
 	public static void setUpBeforeClass() throws Exception {
 		// Initialize new ResourceSet
 		ResourceSet resourceSet = new ResourceSetImpl();
-
-		Map<String, Object> extensionToFactoryMap = resourceSet
-				.getResourceFactoryRegistry().getExtensionToFactoryMap();
-		extensionToFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
-		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
-		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
-				new XMIResourceFactoryImpl());
-
-
-		// Register Packages
-		EcorePackage.eINSTANCE.eClass();
-		GenModelPackage.eINSTANCE.eClass();
+//
+//		Map<String, Object> extensionToFactoryMap = resourceSet
+//				.getResourceFactoryRegistry().getExtensionToFactoryMap();
+//		extensionToFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
+//		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
+//		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
+//				new XMIResourceFactoryImpl());
+//
+//
+//		// Register Packages
+//		EcorePackage.eINSTANCE.eClass();
+//		GenModelPackage.eINSTANCE.eClass();
 
 		// Load resource
-		genmodel = TestUtilities.loadResource(resourceSet, GENMODEL_PROJECT, GENMODEL_PATH);
+		genmodel = TestUtilities.loadResource(resourceSet, GENMODEL_PATH);
 		
 		setLabelProvider(qualifiedLabelProvider);
 	}

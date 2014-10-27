@@ -92,36 +92,36 @@ public class MetamodelOCLTest extends TraverseTest {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 
-		// Extensions to Factory
-		Map<String, Object> extensionToFactoryMap = resourceSet
-				.getResourceFactoryRegistry().getExtensionToFactoryMap();
-		extensionToFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
-		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
-		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
-				new XMIResourceFactoryImpl());
-
-		// Register Packages
-		EcorePackage.eINSTANCE.eClass();
+//		// Extensions to Factory
+//		Map<String, Object> extensionToFactoryMap = resourceSet
+//				.getResourceFactoryRegistry().getExtensionToFactoryMap();
+//		extensionToFactoryMap.put("ecore", new EcoreResourceFactoryImpl());
+//		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
+//		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
+//				new XMIResourceFactoryImpl());
+//
+//		// Register Packages
+//		EcorePackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
 		
 		
-		// URIMap for Ecore.ecore
-		Map uriMap = resourceSet.getURIConverter().getURIMap(); 
-		uriMap.put( 
-				URI.createURI("platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"),
-				URI.createURI("platform:/resource/de.uni_paderborn.fujaba.muml.tests/model/Ecore.ecore"));
+//		// URIMap for Ecore.ecore
+//		Map uriMap = resourceSet.getURIConverter().getURIMap(); 
+//		uriMap.put( 
+//				URI.createURI("platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"),
+//				URI.createURI("platform:/resource/de.uni_paderborn.fujaba.muml.tests/model/Ecore.ecore"));
 		
-		TestUtilities.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.tests");
-		TestUtilities.registerWorkspaceProject("org.storydriven.core");
+//		TestUtilities.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.tests");
+//		TestUtilities.registerWorkspaceProject("org.storydriven.core");
 
 		// Load resource and add model package
 
 		Resource coreModel = TestUtilities.loadResource(resourceSet,
-				"org.storydriven.core", "/model/core.ecore");
+				"org.storydriven.core/model/core.ecore");
 
 		
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
+				"de.uni_paderborn.fujaba.muml/model/muml.ecore");
 
 
 		

@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.xml.sax.Attributes;
@@ -16,6 +17,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
+import de.uni_paderborn.fujaba.tests.TestUtilities;
 import de.uni_paderborn.fujaba.tests.packages.PackageTest;
 
 public class EditPluginXmlPackageTest extends PackageTest {
@@ -26,7 +28,7 @@ public class EditPluginXmlPackageTest extends PackageTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		ecoreModel = loadEcoreResource("de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
+		ecoreModel = TestUtilities.loadResource(new ResourceSetImpl(), "de.uni_paderborn.fujaba.muml/model/muml.ecore");
 	}
 	
 	@Test

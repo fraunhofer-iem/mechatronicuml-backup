@@ -32,14 +32,14 @@ public class ValidateMetamodelsTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		resourceSet = new ResourceSetImpl();
-		// URIMap for Ecore.ecore
-		Map uriMap = resourceSet.getURIConverter().getURIMap();
-		uriMap.put(
-				URI.createURI("platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"),
-				URI.createURI("platform:/resource/de.uni_paderborn.fujaba.muml.tests/model/Ecore.ecore"));
+//		// URIMap for Ecore.ecore
+//		Map uriMap = resourceSet.getURIConverter().getURIMap();
+//		uriMap.put(
+//				URI.createURI("platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"),
+//				URI.createURI("platform:/resource/de.uni_paderborn.fujaba.muml.tests/model/Ecore.ecore"));
 
-		TestUtilities
-				.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.tests");
+//		TestUtilities
+//				.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.tests");
 
 		// Extensions to Factory
 		Map<String, Object> extensionToFactoryMap = resourceSet
@@ -55,24 +55,14 @@ public class ValidateMetamodelsTest {
 
 		// Load resource (CAUTION: Order is important; dependant metamodels must
 		// be loaded first, else proxies are not resolved correctly...)
-		List<String[]> projects = new ArrayList<String[]>();
-		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.tests", "/model/Ecore.ecore" });
-		projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
-		//projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
-		//projects.add(new String[] { "org.storydriven.storydiagrams",
-		//		"/model/storydiagrams.ecore" });
-		projects.add(new String[] { "de.uni_paderborn.fujaba.muml", "/model/muml.ecore" });
-		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.actionlanguage",
-				"/model/actionlanguage.ecore" });
+		List<String> projects = new ArrayList<String>();
+		projects.add("de.uni_paderborn.fujaba.muml.tests/model/Ecore.ecore");
+		projects.add("org.storydriven.core/model/core.ecore");
+		projects.add("de.uni_paderborn.fujaba.muml/model/muml.ecore");
+		projects.add("de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore");
 
-		for (String[] path : projects) {
-			//try {
-				TestUtilities.loadResource(resourceSet, path[0], path[1]);
-
-			//} catch (Exception e) {
-				//TestUtilities.loadResource(resourceSet, "sdm", "/" + path[0] + path[1]);
-
-			//}
+		for (String path : projects) {
+			TestUtilities.loadResource(resourceSet, path);
 		}
 
 		EcoreUtil.resolveAll(resourceSet);
