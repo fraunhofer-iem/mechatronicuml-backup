@@ -170,6 +170,7 @@
       <rm:uri format="file:///data/jenkins/jobs/ComponentBehaviorSynthesis/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
    </rm:provider>
+</rm:searchPath>
    
    <rm:searchPath name="CoordinationPattern">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
