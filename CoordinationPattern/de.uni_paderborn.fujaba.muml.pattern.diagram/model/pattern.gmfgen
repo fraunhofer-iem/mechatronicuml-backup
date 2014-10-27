@@ -1,46 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" dynamicTemplates="true" templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates">
-  <diagram visualID="1000" editPartClassName="ModelElementCategoryEditPart" itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy" canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true">
-    <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
-    <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ModelElementCategoryEditHelper"/>
-    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
-    <domainDiagramElement href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
-    <childNodes visualID="3001" editPartClassName="CoordinationPattern2EditPart" itemSemanticEditPolicyClassName="CoordinationPattern2ItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationPatternViewFactory" canonicalEditPolicyClassName="CoordinationPattern2CanonicalEditPolicy" compartments="//@diagram/@compartments.1" graphicalNodeEditPolicyClassName="CoordinationPattern2GraphicalNodeEditPolicy" createCommandClassName="CoordinationPattern2CreateCommand" containers="//@diagram/@compartments.1 //@diagram/@compartments.0">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:SpecializationType" metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
-      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.Ellipse"/>
+<gmfgen:GenEditorGenerator
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
+    diagramFileExtension="coordinationpattern_diagram"
+    domainFileExtension="fujaba"
+    dynamicTemplates="true"
+    templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates">
+  <diagram
+      visualID="1000"
+      editPartClassName="ModelElementCategoryEditPart"
+      itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy"
+      canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy"
+      iconProviderPriority="Low"
+      validationProviderPriority="Low"
+      validationEnabled="true"
+      validationDecorators="true">
+    <diagramRunTimeClass
+        href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType
+        xsi:type="gmfgen:MetamodelType"
+        editHelperClassName="ModelElementCategoryEditHelper"/>
+    <viewmap
+        xsi:type="gmfgen:FigureViewmap"
+        figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <domainDiagramElement
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+    <childNodes
+        visualID="3001"
+        editPartClassName="CoordinationPattern2EditPart"
+        itemSemanticEditPolicyClassName="CoordinationPattern2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationPatternViewFactory"
+        canonicalEditPolicyClassName="CoordinationPattern2CanonicalEditPolicy"
+        compartments="//@diagram/@compartments.1"
+        graphicalNodeEditPolicyClassName="CoordinationPattern2GraphicalNodeEditPolicy"
+        createCommandClassName="CoordinationPattern2CreateCommand"
+        containers="//@diagram/@compartments.1 //@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.Ellipse"/>
       <modelFacet>
-        <metaClass href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern"/>
-        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern/gmfCoordinationPattern"/>
-        <childMetaFeature href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern/gmfCoordinationPattern"/>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern/gmfCoordinationPattern"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern/gmfCoordinationPattern"/>
       </modelFacet>
     </childNodes>
-    <topLevelNodes visualID="2001" editPartClassName="CoordinationPatternEditPart" itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationPatternViewFactory" canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="CoordinationPatternGraphicalNodeEditPolicy" createCommandClassName="CoordinationPatternCreateCommand">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="CoordinationPatternEditHelper"/>
-      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.Ellipse"/>
+    <topLevelNodes
+        visualID="2001"
+        editPartClassName="CoordinationPatternEditPart"
+        itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationPatternViewFactory"
+        canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.0"
+        graphicalNodeEditPolicyClassName="CoordinationPatternGraphicalNodeEditPolicy"
+        createCommandClassName="CoordinationPatternCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="CoordinationPatternEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.Ellipse"/>
       <modelFacet>
-        <metaClass href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern"/>
-        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
-        <childMetaFeature href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
     </topLevelNodes>
-    <compartments visualID="7001" editPartClassName="CoordinationPatternPatternCompartmentEditPart" itemSemanticEditPolicyClassName="CoordinationPatternPatternCompartmentItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationPatternPatternCompartmentViewFactory" canonicalEditPolicyClassName="CoordinationPatternPatternCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="PatternCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.0" listLayout="false">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    <compartments
+        visualID="7001"
+        editPartClassName="CoordinationPatternPatternCompartmentEditPart"
+        itemSemanticEditPolicyClassName="CoordinationPatternPatternCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationPatternPatternCompartmentViewFactory"
+        canonicalEditPolicyClassName="CoordinationPatternPatternCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0"
+        title="PatternCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
-    <compartments visualID="7002" editPartClassName="CoordinationPatternPatternCompartment2EditPart" itemSemanticEditPolicyClassName="CoordinationPatternPatternCompartment2ItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationPatternPatternCompartmentViewFactory" canonicalEditPolicyClassName="CoordinationPatternPatternCompartment2CanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" title="PatternCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@childNodes.0" listLayout="false">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    <compartments
+        visualID="7002"
+        editPartClassName="CoordinationPatternPatternCompartment2EditPart"
+        itemSemanticEditPolicyClassName="CoordinationPatternPatternCompartment2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationPatternPatternCompartmentViewFactory"
+        canonicalEditPolicyClassName="CoordinationPatternPatternCompartment2CanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0"
+        title="PatternCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.0"
+        listLayout="false">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
-    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.general" name="Pattern2 Diagram">
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.appearance" name="Appearance" kind="Appearance"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.connections" name="Connections" kind="Connections"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.printing" name="Printing" kind="Printing"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
+    <preferencePages
+        xsi:type="gmfgen:GenStandardPreferencePage"
+        iD="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+        name="Coordination Pattern Diagram Editor"
+        parentCategory="de.uni_paderborn.fujaba.preferences">
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="de.uni_paderborn.fujaba.muml.pattern.diagram.appearance"
+          name="Appearance"
+          parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+          kind="Appearance"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="de.uni_paderborn.fujaba.muml.pattern.diagram.connections"
+          name="Connections"
+          parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+          kind="Connections"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="de.uni_paderborn.fujaba.muml.pattern.diagram.printing"
+          name="Printing"
+          parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+          kind="Printing"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="de.uni_paderborn.fujaba.muml.pattern.diagram.rulersAndGrid"
+          name="Rulers And Grid"
+          parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+          kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin>
+  <plugin
+      name="Coordination Pattern Diagram Editor"
+      provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
@@ -53,25 +162,43 @@
   </plugin>
   <editor/>
   <navigator>
-    <childReferences child="//@diagram"/>
-    <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@childNodes.0"/>
-    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.0"/>
-    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.0"/>
+    <childReferences
+        child="//@diagram"/>
+    <childReferences
+        parent="//@diagram/@childNodes.0"
+        child="//@diagram/@childNodes.0"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.0"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.0"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
-    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
-    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
-    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Core">
-      <filter xsi:type="gmfgen:TypeTabFilter">
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="appearance"/>
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="diagram"/>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="domain"
+        label="Core">
+      <filter
+          xsi:type="gmfgen:TypeTabFilter">
         <types>org.eclipse.gmf.runtime.notation.View</types>
         <types>org.eclipse.gef.EditPart</types>
         <generatedTypes>abstractNavigatorItem</generatedTypes>
       </filter>
     </tabs>
   </propertySheet>
-  <domainGenModel href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#/"/>
-  <contextMenus context="//@diagram">
-    <items xsi:type="gmfgen:LoadResourceAction"/>
+  <domainGenModel
+      href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#/"/>
+  <contextMenus
+      context="//@diagram">
+    <items
+        xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
 </gmfgen:GenEditorGenerator>
