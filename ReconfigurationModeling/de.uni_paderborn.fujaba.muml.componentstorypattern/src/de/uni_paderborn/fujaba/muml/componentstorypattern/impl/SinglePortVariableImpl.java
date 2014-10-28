@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
@@ -139,7 +139,7 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 	 */
 	public EList<MultiPortPositionConstraint> getPositionConstraints() {
 		if (positionConstraints == null) {
-			positionConstraints = new EObjectContainmentEList<MultiPortPositionConstraint>(MultiPortPositionConstraint.class, this, ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS);
+			positionConstraints = new EObjectContainmentWithInverseEList<MultiPortPositionConstraint>(MultiPortPositionConstraint.class, this, ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS, ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE);
 		}
 		return positionConstraints;
 	}
@@ -149,6 +149,7 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -156,6 +157,8 @@ public class SinglePortVariableImpl extends PortVariableImpl implements SinglePo
 				if (multiPortVariable != null)
 					msgs = ((InternalEObject)multiPortVariable).eInverseRemove(this, ComponentstorypatternPackage.MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES, MultiPortVariable.class, msgs);
 				return basicSetMultiPortVariable((MultiPortVariable)otherEnd, msgs);
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPositionConstraints()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

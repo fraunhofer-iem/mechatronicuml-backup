@@ -96,7 +96,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortVariable" eType="#//MultiPortVariable"
         eOpposite="#//MultiPortVariable/subPortVariables"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="positionConstraints" upperBound="-1"
-        eType="#//MultiPortPositionConstraint" containment="true"/>
+        eType="#//MultiPortPositionConstraint" containment="true" eOpposite="#//MultiPortPositionConstraint/subPortVariable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiPortVariable" eSuperTypes="#//PortVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subPortVariables" upperBound="-1"
@@ -142,20 +142,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEmbeddedComponentExpressions"
         eType="#//TriggerEmbeddedComponentExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiPortConstraint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tgtSubPortVariable" lowerBound="1"
-        eType="#//SinglePortVariable"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiPortOrderConstraint" eSuperTypes="#//MultiPortConstraint">
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPortOrderConstraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortVariable" lowerBound="1"
         eType="#//MultiPortVariable" eOpposite="#//MultiPortVariable/orderConstraints"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="srcSubPortVariable" lowerBound="1"
         eType="#//SinglePortVariable"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderConstraintType" eType="#//MultiPortOrderConstraintType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgtSubPortVariable" lowerBound="1"
+        eType="#//SinglePortVariable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiPortPositionConstraint" eSuperTypes="#//MultiPortConstraint">
+  <eClassifiers xsi:type="ecore:EClass" name="MultiPortPositionConstraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="positionConstraintType"
         eType="#//MultiPortPositionConstraintType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subPortVariable" lowerBound="1"
+        eType="#//SinglePortVariable" eOpposite="#//SinglePortVariable/positionConstraints"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MultiPortOrderConstraintType">
     <eLiterals name="NEXT"/>

@@ -54,6 +54,7 @@ public interface SinglePortVariable extends PortVariable {
 	/**
 	 * Returns the value of the '<em><b>Position Constraints</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint#getSubPortVariable <em>Sub Port Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Position Constraints</em>' containment reference list isn't clear,
@@ -62,7 +63,8 @@ public interface SinglePortVariable extends PortVariable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Position Constraints</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getSinglePortVariable_PositionConstraints()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint#getSubPortVariable
+	 * @model opposite="subPortVariable" containment="true"
 	 * @generated
 	 */
 	EList<MultiPortPositionConstraint> getPositionConstraints();

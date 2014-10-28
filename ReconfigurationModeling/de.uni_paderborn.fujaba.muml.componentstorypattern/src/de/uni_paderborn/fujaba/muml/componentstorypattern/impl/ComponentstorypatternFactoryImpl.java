@@ -18,7 +18,6 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternF
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
@@ -79,7 +78,6 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE: return createMultiPortVariable();
 			case ComponentstorypatternPackage.FADING_COMPONENT_PART_VARIABLE: return createFadingComponentPartVariable();
 			case ComponentstorypatternPackage.COMPONENT_PART_VARIABLE: return createComponentPartVariable();
-			case ComponentstorypatternPackage.MULTI_PORT_CONSTRAINT: return createMultiPortConstraint();
 			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT: return createMultiPortOrderConstraint();
 			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT: return createMultiPortPositionConstraint();
 			default:
@@ -209,16 +207,6 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public ComponentPartVariable createComponentPartVariable() {
 		ComponentPartVariableImpl componentPartVariable = new ComponentPartVariableImpl();
 		return componentPartVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MultiPortConstraint createMultiPortConstraint() {
-		MultiPortConstraintImpl multiPortConstraint = new MultiPortConstraintImpl();
-		return multiPortConstraint;
 	}
 
 	/**

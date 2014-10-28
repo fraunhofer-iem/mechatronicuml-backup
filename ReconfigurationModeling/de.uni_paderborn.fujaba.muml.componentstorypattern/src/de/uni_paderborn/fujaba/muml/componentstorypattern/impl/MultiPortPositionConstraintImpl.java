@@ -3,12 +3,17 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,12 +23,13 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConst
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortPositionConstraintImpl#getPositionConstraintType <em>Position Constraint Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortPositionConstraintImpl#getSubPortVariable <em>Sub Port Variable</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MultiPortPositionConstraintImpl extends MultiPortConstraintImpl implements MultiPortPositionConstraint {
+public class MultiPortPositionConstraintImpl extends EObjectImpl implements MultiPortPositionConstraint {
 	/**
 	 * The default value of the '{@link #getPositionConstraintType() <em>Position Constraint Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -89,11 +95,98 @@ public class MultiPortPositionConstraintImpl extends MultiPortConstraintImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SinglePortVariable getSubPortVariable() {
+		if (eContainerFeatureID() != ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE) return null;
+		return (SinglePortVariable)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSubPortVariable(SinglePortVariable newSubPortVariable, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newSubPortVariable, ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSubPortVariable(SinglePortVariable newSubPortVariable) {
+		if (newSubPortVariable != eInternalContainer() || (eContainerFeatureID() != ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE && newSubPortVariable != null)) {
+			if (EcoreUtil.isAncestor(this, newSubPortVariable))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSubPortVariable != null)
+				msgs = ((InternalEObject)newSubPortVariable).eInverseAdd(this, ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS, SinglePortVariable.class, msgs);
+			msgs = basicSetSubPortVariable(newSubPortVariable, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE, newSubPortVariable, newSubPortVariable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSubPortVariable((SinglePortVariable)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE:
+				return basicSetSubPortVariable(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE:
+				return eInternalContainer().eInverseRemove(this, ComponentstorypatternPackage.SINGLE_PORT_VARIABLE__POSITION_CONSTRAINTS, SinglePortVariable.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__POSITION_CONSTRAINT_TYPE:
 				return getPositionConstraintType();
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE:
+				return getSubPortVariable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,6 +201,9 @@ public class MultiPortPositionConstraintImpl extends MultiPortConstraintImpl imp
 		switch (featureID) {
 			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__POSITION_CONSTRAINT_TYPE:
 				setPositionConstraintType((MultiPortPositionConstraintType)newValue);
+				return;
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE:
+				setSubPortVariable((SinglePortVariable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,6 +220,9 @@ public class MultiPortPositionConstraintImpl extends MultiPortConstraintImpl imp
 			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__POSITION_CONSTRAINT_TYPE:
 				setPositionConstraintType(POSITION_CONSTRAINT_TYPE_EDEFAULT);
 				return;
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE:
+				setSubPortVariable((SinglePortVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,6 +237,8 @@ public class MultiPortPositionConstraintImpl extends MultiPortConstraintImpl imp
 		switch (featureID) {
 			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__POSITION_CONSTRAINT_TYPE:
 				return positionConstraintType != POSITION_CONSTRAINT_TYPE_EDEFAULT;
+			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT__SUB_PORT_VARIABLE:
+				return getSubPortVariable() != null;
 		}
 		return super.eIsSet(featureID);
 	}

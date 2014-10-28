@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
@@ -25,12 +26,13 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortOrderConstraintImpl#getMultiPortVariable <em>Multi Port Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortOrderConstraintImpl#getSrcSubPortVariable <em>Src Sub Port Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortOrderConstraintImpl#getOrderConstraintType <em>Order Constraint Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.MultiPortOrderConstraintImpl#getTgtSubPortVariable <em>Tgt Sub Port Variable</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MultiPortOrderConstraintImpl extends MultiPortConstraintImpl implements MultiPortOrderConstraint {
+public class MultiPortOrderConstraintImpl extends EObjectImpl implements MultiPortOrderConstraint {
 	/**
 	 * The cached value of the '{@link #getSrcSubPortVariable() <em>Src Sub Port Variable</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -60,6 +62,16 @@ public class MultiPortOrderConstraintImpl extends MultiPortConstraintImpl implem
 	 * @ordered
 	 */
 	protected MultiPortOrderConstraintType orderConstraintType = ORDER_CONSTRAINT_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTgtSubPortVariable() <em>Tgt Sub Port Variable</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTgtSubPortVariable()
+	 * @generated
+	 * @ordered
+	 */
+	protected SinglePortVariable tgtSubPortVariable;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,6 +197,44 @@ public class MultiPortOrderConstraintImpl extends MultiPortConstraintImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SinglePortVariable getTgtSubPortVariable() {
+		if (tgtSubPortVariable != null && tgtSubPortVariable.eIsProxy()) {
+			InternalEObject oldTgtSubPortVariable = (InternalEObject)tgtSubPortVariable;
+			tgtSubPortVariable = (SinglePortVariable)eResolveProxy(oldTgtSubPortVariable);
+			if (tgtSubPortVariable != oldTgtSubPortVariable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__TGT_SUB_PORT_VARIABLE, oldTgtSubPortVariable, tgtSubPortVariable));
+			}
+		}
+		return tgtSubPortVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SinglePortVariable basicGetTgtSubPortVariable() {
+		return tgtSubPortVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTgtSubPortVariable(SinglePortVariable newTgtSubPortVariable) {
+		SinglePortVariable oldTgtSubPortVariable = tgtSubPortVariable;
+		tgtSubPortVariable = newTgtSubPortVariable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__TGT_SUB_PORT_VARIABLE, oldTgtSubPortVariable, tgtSubPortVariable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -239,6 +289,9 @@ public class MultiPortOrderConstraintImpl extends MultiPortConstraintImpl implem
 				return basicGetSrcSubPortVariable();
 			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE:
 				return getOrderConstraintType();
+			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__TGT_SUB_PORT_VARIABLE:
+				if (resolve) return getTgtSubPortVariable();
+				return basicGetTgtSubPortVariable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,6 +312,9 @@ public class MultiPortOrderConstraintImpl extends MultiPortConstraintImpl implem
 				return;
 			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE:
 				setOrderConstraintType((MultiPortOrderConstraintType)newValue);
+				return;
+			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__TGT_SUB_PORT_VARIABLE:
+				setTgtSubPortVariable((SinglePortVariable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,6 +337,9 @@ public class MultiPortOrderConstraintImpl extends MultiPortConstraintImpl implem
 			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE:
 				setOrderConstraintType(ORDER_CONSTRAINT_TYPE_EDEFAULT);
 				return;
+			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__TGT_SUB_PORT_VARIABLE:
+				setTgtSubPortVariable((SinglePortVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -299,6 +358,8 @@ public class MultiPortOrderConstraintImpl extends MultiPortConstraintImpl implem
 				return srcSubPortVariable != null;
 			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__ORDER_CONSTRAINT_TYPE:
 				return orderConstraintType != ORDER_CONSTRAINT_TYPE_EDEFAULT;
+			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT__TGT_SUB_PORT_VARIABLE:
+				return tgtSubPortVariable != null;
 		}
 		return super.eIsSet(featureID);
 	}

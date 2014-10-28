@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern.properties.components
  */
 public class MultiPortPositionConstraintEditor
 		extends
-			de.uni_paderborn.fujaba.muml.componentstorypattern.properties.componentstorypattern.editor.MultiPortConstraintEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -82,8 +82,8 @@ public class MultiPortPositionConstraintEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general"}).contains(
+					tab);
 		}
 	}
 

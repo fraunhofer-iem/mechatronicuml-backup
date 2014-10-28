@@ -23,12 +23,16 @@ public class SinglePortVariableEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addMultiPortVariable_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPositionConstraints_GeneralTab_Editor(null, true);
+			addPositionConstraints_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}

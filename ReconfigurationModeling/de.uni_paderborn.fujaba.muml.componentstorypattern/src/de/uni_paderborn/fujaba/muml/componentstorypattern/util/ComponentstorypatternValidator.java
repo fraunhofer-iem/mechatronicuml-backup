@@ -19,7 +19,6 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternP
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraintType;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
@@ -128,8 +127,6 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 				return validateFadingComponentPartVariable((FadingComponentPartVariable)value, diagnostics, context);
 			case ComponentstorypatternPackage.COMPONENT_PART_VARIABLE:
 				return validateComponentPartVariable((ComponentPartVariable)value, diagnostics, context);
-			case ComponentstorypatternPackage.MULTI_PORT_CONSTRAINT:
-				return validateMultiPortConstraint((MultiPortConstraint)value, diagnostics, context);
 			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT:
 				return validateMultiPortOrderConstraint((MultiPortOrderConstraint)value, diagnostics, context);
 			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT:
@@ -747,15 +744,6 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validatePartVariable_SameBindingOperatorAsComponentVariable(componentPartVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePartVariable_ValidTypeOfPartVariable(componentPartVariable, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMultiPortConstraint(MultiPortConstraint multiPortConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(multiPortConstraint, diagnostics, context);
 	}
 
 	/**

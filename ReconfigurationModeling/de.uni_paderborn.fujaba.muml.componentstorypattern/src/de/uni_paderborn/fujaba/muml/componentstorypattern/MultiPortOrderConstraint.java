@@ -2,6 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +16,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern;
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getMultiPortVariable <em>Multi Port Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getSrcSubPortVariable <em>Src Sub Port Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getOrderConstraintType <em>Order Constraint Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getTgtSubPortVariable <em>Tgt Sub Port Variable</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,7 +24,7 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern;
  * @model
  * @generated
  */
-public interface MultiPortOrderConstraint extends MultiPortConstraint {
+public interface MultiPortOrderConstraint extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Multi Port Variable</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable#getOrderConstraints <em>Order Constraints</em>}'.
@@ -104,5 +107,31 @@ public interface MultiPortOrderConstraint extends MultiPortConstraint {
 	 * @generated
 	 */
 	void setOrderConstraintType(MultiPortOrderConstraintType value);
+
+	/**
+	 * Returns the value of the '<em><b>Tgt Sub Port Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tgt Sub Port Variable</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tgt Sub Port Variable</em>' reference.
+	 * @see #setTgtSubPortVariable(SinglePortVariable)
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getMultiPortOrderConstraint_TgtSubPortVariable()
+	 * @model required="true"
+	 * @generated
+	 */
+	SinglePortVariable getTgtSubPortVariable();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint#getTgtSubPortVariable <em>Tgt Sub Port Variable</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tgt Sub Port Variable</em>' reference.
+	 * @see #getTgtSubPortVariable()
+	 * @generated
+	 */
+	void setTgtSubPortVariable(SinglePortVariable value);
 
 } // MultiPortOrderConstraint

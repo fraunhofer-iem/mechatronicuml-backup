@@ -19,7 +19,6 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternP
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
@@ -226,23 +225,15 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentstorypatternPackage.MULTI_PORT_CONSTRAINT: {
-				MultiPortConstraint multiPortConstraint = (MultiPortConstraint)theEObject;
-				T result = caseMultiPortConstraint(multiPortConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ComponentstorypatternPackage.MULTI_PORT_ORDER_CONSTRAINT: {
 				MultiPortOrderConstraint multiPortOrderConstraint = (MultiPortOrderConstraint)theEObject;
 				T result = caseMultiPortOrderConstraint(multiPortOrderConstraint);
-				if (result == null) result = caseMultiPortConstraint(multiPortOrderConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ComponentstorypatternPackage.MULTI_PORT_POSITION_CONSTRAINT: {
 				MultiPortPositionConstraint multiPortPositionConstraint = (MultiPortPositionConstraint)theEObject;
 				T result = caseMultiPortPositionConstraint(multiPortPositionConstraint);
-				if (result == null) result = caseMultiPortConstraint(multiPortPositionConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -442,21 +433,6 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentPartVariable(ComponentPartVariable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Multi Port Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Multi Port Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMultiPortConstraint(MultiPortConstraint object) {
 		return null;
 	}
 
