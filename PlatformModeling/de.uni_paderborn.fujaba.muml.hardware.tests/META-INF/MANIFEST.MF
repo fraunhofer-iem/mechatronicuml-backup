@@ -6,12 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.hardware.hwplatform.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwresource.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.tests,
- de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.tests,
- de.uni_paderborn.fujaba.muml.hardware.tests
+Export-Package: de.uni_paderborn.fujaba.muml.hardware.tests
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.junit;bundle-version="4.11.0",
  org.eclipse.emf.ecore;bundle-version="2.10.0",
@@ -29,5 +24,4 @@ Require-Bundle: org.junit;bundle-version="4.11.0",
  org.eclipse.gmf.runtime.emf.core;bundle-version="1.7.0",
  org.eclipse.gmf.validate;bundle-version="1.2.0",
  org.apache.commons.io;bundle-version="2.0.1",
- de.uni_paderborn.fujaba.tests;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.tests
+ de.uni_paderborn.fujaba.tests;bundle-version="0.3.1" 
