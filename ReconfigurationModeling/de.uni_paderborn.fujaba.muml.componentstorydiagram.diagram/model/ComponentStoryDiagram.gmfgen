@@ -1456,7 +1456,7 @@
         <sourceMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/srcSubPortVariable"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortConstraint/tgtSubPortVariable"/>
+            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/tgtSubPortVariable"/>
       </modelFacet>
       <labels
           visualID="6006"

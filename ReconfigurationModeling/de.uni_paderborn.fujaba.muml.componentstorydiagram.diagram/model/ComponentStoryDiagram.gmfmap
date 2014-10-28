@@ -709,7 +709,7 @@
         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint/srcSubPortVariable"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortConstraint/tgtSubPortVariable"/>
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint/tgtSubPortVariable"/>
   </links>
   <diagram>
     <diagramCanvas

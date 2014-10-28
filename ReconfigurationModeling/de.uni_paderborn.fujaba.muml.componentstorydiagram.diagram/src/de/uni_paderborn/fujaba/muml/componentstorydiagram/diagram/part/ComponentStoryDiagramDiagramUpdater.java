@@ -1554,7 +1554,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-					.getMultiPortConstraint_TgtSubPortVariable()
+					.getMultiPortOrderConstraint_TgtSubPortVariable()
 					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint) {
 				continue;
 			}
