@@ -20,6 +20,85 @@
 	comp.behavior.oclAsType(RealtimeStatechart)
 /]
 
+[query public getTargetPortInstance(dpi : DiscretePortInstance) : DiscretePortInstance =
+if (dpi.portConnectorInstances.connectorEndpointInstances->at(1) = dpi) then
+	if (dpi.portConnectorInstances.connectorEndpointInstances->at(2).connectorInstances->size()>1) then
+		getTargetPortInstance(dpi.portConnectorInstances->at(1), dpi.portConnectorInstances.connectorEndpointInstances->at(2).oclAsType(DiscretePortInstance))
+	else
+		dpi.portConnectorInstances.connectorEndpointInstances->at(2).oclAsType(DiscretePortInstance)
+	endif
+else
+	if (dpi.portConnectorInstances.connectorEndpointInstances->at(1).connectorInstances->size()>1) then
+		getTargetPortInstance(dpi.portConnectorInstances->at(2), dpi.portConnectorInstances.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance))
+	else
+		dpi.portConnectorInstances.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)
+	endif
+endif
+/]
+
+[query public getTargetPortInstance(connector : ConnectorInstance, dpi : DiscretePortInstance) : DiscretePortInstance =
+if (dpi.connectorInstances->at(1) = connector) then
+	if (dpi.connectorInstances->at(2).connectorEndpointInstances->at(1) = dpi) then
+		if (dpi.connectorInstances->at(2).connectorEndpointInstances->at(2).connectorInstances->size()>1) then
+			getTargetPortInstance(dpi.connectorInstances->at(2), dpi.connectorInstances->at(2).connectorEndpointInstances->at(2).oclAsType(DiscretePortInstance))
+		else
+			dpi.connectorInstances->at(2).connectorEndpointInstances->at(2).oclAsType(DiscretePortInstance)
+		endif
+	else
+		if (dpi.connectorInstances->at(2).connectorEndpointInstances->at(1).connectorInstances->size()>1) then
+			getTargetPortInstance(dpi.connectorInstances->at(2), dpi.connectorInstances->at(2).connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance))
+		else
+			dpi.connectorInstances->at(2).connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)
+		endif
+	endif
+else
+	if (dpi.connectorInstances->at(1).connectorEndpointInstances->at(1) = dpi) then
+		if (dpi.connectorInstances->at(1).connectorEndpointInstances->at(2).connectorInstances->size()>1) then
+			getTargetPortInstance(dpi.connectorInstances->at(1), dpi.connectorInstances->at(1).connectorEndpointInstances->at(2).oclAsType(DiscretePortInstance))
+		else
+			dpi.connectorInstances->at(1).connectorEndpointInstances->at(2).oclAsType(DiscretePortInstance)
+		endif
+	else
+		if (dpi.connectorInstances->at(1).connectorEndpointInstances->at(1).connectorInstances->size()>1) then
+			getTargetPortInstance(dpi.connectorInstances->at(1), dpi.connectorInstances->at(1).connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance))
+		else
+			dpi.connectorInstances->at(1).connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)
+		endif
+	endif
+endif
+/]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [query public getContinuousPortInstance(hpi : HybridPortInstance) : ContinuousPortInstance =
 if (hpi.portConnectorInstances.connectorEndpointInstances->at(1) = hpi) then
 	if (hpi.portConnectorInstances.connectorEndpointInstances->at(2).connectorInstances->size()>1) then

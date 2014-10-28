@@ -68,7 +68,17 @@ while (1){
 			[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
 		[/if]
 [/for]
-
+[comment workaround, will replaced by new message implementation/]
+[let ci : ComponentInstance = CIs->at(1)]
+[if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined() and ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT)))]
+	//workaround, will replaced by new message implementation
+	[for (conInst : ConnectorInstance | ci.parentCIC.portConnectorInstances)]
+		[if (conInst.connectorEndpointInstances->at(1).type.oclIsKindOf(DiscretePort))]
+		DiscreteConnection_transfer([conInst.getVariableName()/]);
+		[/if]
+	[/for]
+[/if]
+[/let]
 }
 }
 [/file]
@@ -123,6 +133,24 @@ while (1){
 
 [/if]
 [/for]
+
+[comment workaround, will replaced by new message implementation/]
+[let ci : ComponentInstance = CIs->at(1)]
+[if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined() and ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT)))]
+
+	//workaround, will replaced by new message implementation
+[for (conInst : ConnectorInstance | ci.parentCIC.portConnectorInstances)]
+	[if (conInst.connectorEndpointInstances->at(1).type.oclIsKindOf(DiscretePort))]
+		[if conInst.connectorEndpointInstances->at(1).connectorInstances->size()>1]
+	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([getVariablePath(getTargetPortInstance(conInst.connectorEndpointInstances->at(1).connectorInstances->at(1),conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)))/],[getVariablePath(getTargetPortInstance(conInst.connectorEndpointInstances->at(1).connectorInstances->at(2),conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)))/], [conInst.isBidirectional()/]);
+		[else]
+	//DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([getVariablePath(conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance))/],[getVariablePath(getTargetPortInstance(conInst,conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)))/], [conInst.isBidirectional()/]);
+
+		[/if]
+		[/if]
+[/for]
+[/if]
+[/let]
 [/template]
 
 
