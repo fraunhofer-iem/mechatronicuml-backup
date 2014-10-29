@@ -3,6 +3,7 @@ encoding//model/ComponentStoryDiagrams/ApplyCoordinationStrategy.componentstoryd
 encoding//model/ComponentStoryDiagrams/BecomeCoordinator.componentstorydiagram_diagram=UTF-8
 encoding//model/ComponentStoryDiagrams/BecomeMember.componentstorydiagram_diagram=UTF-8
 encoding//model/ComponentStoryDiagrams/RailCab.componentstorydiagram_diagram=UTF-8
+encoding//model/ComponentStoryDiagrams/SwitchToConvoy.componentstorydiagram_diagram=UTF-8
 encoding//model/Components/ConvoyCoordination/ConvoyCoordination.component_diagram=UTF-8
 encoding//model/Components/ConvoyCoordination/ConvoyManagement/ConvoyManagement.component_diagram=UTF-8
 encoding//model/Components/ConvoyCoordination/ConvoyManagement/ConvoyManagement.realtimestatechart_diagram=UTF-8
