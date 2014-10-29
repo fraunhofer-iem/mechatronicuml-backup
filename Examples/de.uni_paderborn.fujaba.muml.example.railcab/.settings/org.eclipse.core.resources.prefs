@@ -56,9 +56,9 @@ encoding//model/Protocols/StartExecution/StartExecution.coordinationprotocol_dia
 encoding//model/Protocols/StartExecution/StartExecution.messagetype_diagram=UTF-8
 encoding//model/Protocols/StartExecution/StartExecution_executor.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/StartExecution/StartExecution_initiator.realtimestatechart_diagram=UTF-8
-encoding//model/Protocols/StrategyExchange/StragegyExchange_receiver.realtimestatechart_diagram=UTF-8
-encoding//model/Protocols/StrategyExchange/StragegyExchange_sender.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/StrategyExchange/StrategyExchange.coordinationprotocol_diagram=UTF-8
 encoding//model/Protocols/StrategyExchange/StrategyExchange.messagetype_diagram=UTF-8
+encoding//model/Protocols/StrategyExchange/StrategyExchange_receiver.realtimestatechart_diagram=UTF-8
+encoding//model/Protocols/StrategyExchange/StrategyExchange_sender.realtimestatechart_diagram=UTF-8
 encoding//model/RailCab.fujaba=UTF-8
 encoding//model/realtimestatechart/ConvoyManagement.realtimestatechart_diagram=UTF-8
