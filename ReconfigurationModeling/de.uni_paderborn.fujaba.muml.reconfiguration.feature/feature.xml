@@ -67,7 +67,7 @@
       <import plugin="de.uni_paderborn.fujaba.common" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.properties" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml.project" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit" version="0.3.1" match="greaterOrEqual"/>
@@ -93,6 +93,8 @@
       <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.ui.navigator.resources"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.edit"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration.common" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.custom" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram" version="1.0.0" match="greaterOrEqual"/>
