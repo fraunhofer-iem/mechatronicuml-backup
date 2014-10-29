@@ -139,6 +139,39 @@
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_lQLh0FOpEeSDPNki4Dv8rg" name="StartExecution">
       <messageTypes xmi:id="_mg0DQFOpEeSDPNki4Dv8rg" name="startExecution"/>
     </modelElements>
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_UPDU0F9qEeSjUsAdueGXzg" name="BroadcastRepository">
+      <messageTypes xmi:id="_ez07IF9qEeSjUsAdueGXzg" name="connectionRequest">
+        <parameters xmi:id="_g0hAgF9qEeSjUsAdueGXzg" name="partnerAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_lqaYcF9qEeSjUsAdueGXzg" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      </messageTypes>
+      <messageTypes xmi:id="_pryjMF9qEeSjUsAdueGXzg" name="connectionDenial">
+        <parameters xmi:id="_xv4VcF9qEeSjUsAdueGXzg" name="partnerAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_0ozqYF9qEeSjUsAdueGXzg" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      </messageTypes>
+      <messageTypes xmi:id="_6aqUQF9qEeSjUsAdueGXzg" name="connectionApproval">
+        <parameters xmi:id="_8c1nYF9qEeSjUsAdueGXzg" name="partnerAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_-HqKcF9qEeSjUsAdueGXzg" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      </messageTypes>
+      <messageTypes xmi:id="_AeNyIF9rEeSjUsAdueGXzg" name="startProtocolInstantiation">
+        <parameters xmi:id="_EClQwF9rEeSjUsAdueGXzg" name="partnerAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_FvoocF9rEeSjUsAdueGXzg" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_zVIKEF9sEeSjUsAdueGXzg" name="ownVersion" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      </messageTypes>
+      <messageTypes xmi:id="_N-dEAF9rEeSjUsAdueGXzg" name="abortProtocolInstantiation">
+        <parameters xmi:id="_P29dwF9rEeSjUsAdueGXzg" name="partnerAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_RW60oF9rEeSjUsAdueGXzg" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      </messageTypes>
+      <messageTypes xmi:id="_kPQMkF9rEeSjUsAdueGXzg" name="confirmProtocolInstantiation">
+        <parameters xmi:id="_nLvy4F9rEeSjUsAdueGXzg" name="partnerAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_pksAMF9rEeSjUsAdueGXzg" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_rU29UF9rEeSjUsAdueGXzg" name="ownPort" dataType="_YETnMPh0EeOAKLom6jxr8Q"/>
+      </messageTypes>
+      <messageTypes xmi:id="_Uwm30F9sEeSjUsAdueGXzg" name="completedProtocolInstantiation">
+        <parameters xmi:id="_al4pIF9sEeSjUsAdueGXzg" name="partnerAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_cfRzsF9sEeSjUsAdueGXzg" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_vt8A8F9sEeSjUsAdueGXzg" name="ownPort" dataType="_YETnMPh0EeOAKLom6jxr8Q"/>
+      </messageTypes>
+    </modelElements>
   </categories>
   <categories xmi:id="_gSpDkHasEeOh__JNCv2_1A" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_jka9YHasEeOh__JNCv2_1A" name="ConvoyEntry">
@@ -6038,7 +6071,7 @@
           <bufferSize xmi:id="_YObr0fqeEeO0_ZLnPp6sSA"/>
         </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="protocolinstantiation:BroadcastPort" xmi:id="_YETnMPh0EeOAKLom6jxr8Q" name="protocolInst" kind="PROTOCOL_INSTANTIATION">
+      <ports xsi:type="protocolinstantiation:BroadcastPort" xmi:id="_YETnMPh0EeOAKLom6jxr8Q" comment="inner" name="protocolInst" kind="PROTOCOL_INSTANTIATION">
         <cardinality xmi:id="_YETnMfh0EeOAKLom6jxr8Q">
           <lowerBound xmi:id="_ZVnMIPh2EeOdcfcso3gQlg"/>
           <upperBound xmi:id="_ZVnMIfh2EeOdcfcso3gQlg"/>
