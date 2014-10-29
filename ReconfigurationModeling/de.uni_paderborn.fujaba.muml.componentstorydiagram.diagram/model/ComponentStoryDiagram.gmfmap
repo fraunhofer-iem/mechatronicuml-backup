@@ -489,7 +489,7 @@
             <diagramLabel
                 href="ComponentStoryDiagram.gmfgraph#DeadlineLabel"/>
             <viewExpression
-                body="if self.deadline.oclIsUndefined() then ''&#xD;&#xA;else&#xD;&#xA;let lowerBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).lowerBound.oclAsType(muml::valuetype::TimeValue).toString(), &#xD;&#xA;&#x9;upperBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).upperBound.oclAsType(muml::valuetype::TimeValue).toString() in&#xD;&#xA;'['+lowerBound+', '+upperBound+']'&#xD;&#xA;endif"/>
+                body="if self.deadline.oclIsUndefined() then ''&#xD;&#xA;else&#xD;&#xA;let lowerBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).lowerBound.oclAsType(muml::valuetype::TimeValue).toString(), &#xD;&#xA;&#x9;upperBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).upperBound.oclAsType(muml::valuetype::TimeValue).toString() in&#xD;&#xA;'['+lowerBound+'; '+upperBound+']'&#xD;&#xA;endif"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
