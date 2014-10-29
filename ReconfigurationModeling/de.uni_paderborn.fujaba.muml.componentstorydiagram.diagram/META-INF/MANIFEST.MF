@@ -61,6 +61,6 @@ Require-Bundle: org.eclipse.emf.ecore.editor,
  de.uni_paderborn.fujaba.muml.componentstorypattern.edit;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.componentstorydiagram.edit.properties;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.properties;visibility:=reexport
+ de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

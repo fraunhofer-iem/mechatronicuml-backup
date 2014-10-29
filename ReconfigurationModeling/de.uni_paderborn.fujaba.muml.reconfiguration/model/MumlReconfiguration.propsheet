@@ -7,7 +7,7 @@
   <genModel href="MumlReconfiguration.genmodel#/"/>
   <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
-  <plugin id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+  <plugin id="de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
