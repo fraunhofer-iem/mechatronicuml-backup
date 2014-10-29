@@ -51,7 +51,7 @@ public interface BroadcastPort extends Port, DiscreteInteractionEndpoint {
 	 * @see #unsetSpecification()
 	 * @see #setSpecification(BroadcastPortSpecification)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage#getBroadcastPort_Specification()
-	 * @model containment="true" unsettable="true" required="true"
+	 * @model containment="true" unsettable="true"
 	 * @generated
 	 */
 	BroadcastPortSpecification getSpecification();

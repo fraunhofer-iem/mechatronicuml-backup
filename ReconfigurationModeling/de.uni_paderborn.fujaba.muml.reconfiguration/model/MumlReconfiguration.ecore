@@ -663,9 +663,8 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A broadcast port is a discrete interaction endpoint that enables for the message&#xD;&#xA;based communication with an unknown number of other systems. A message&#xD;&#xA;send via a broadcast port is received by any other broadcast port that is &quot;in reach&quot;.&#xD;&#xA;Whether a broadcast port is &quot;in reach&quot; depends on the spatial distribution of&#xD;&#xA;the systems and the communication medium. MechatronicUML allows &#xD;&#xA;broadcast communication only for two purposes: (1) executing a discovery protocol&#xD;&#xA;that enables to identify systems that are in reach and (2) instantiating a &#xD;&#xA;real-time coordination protocol with another system."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="specification" lowerBound="1"
-          eType="#//protocolinstantiation/BroadcastPortSpecification" unsettable="true"
-          containment="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="#//protocolinstantiation/BroadcastPortSpecification"
+          unsettable="true" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The specification of this broadcast port defines attributes that differ between &#xD;&#xA;the different kinds of ports."/>
         </eAnnotations>
