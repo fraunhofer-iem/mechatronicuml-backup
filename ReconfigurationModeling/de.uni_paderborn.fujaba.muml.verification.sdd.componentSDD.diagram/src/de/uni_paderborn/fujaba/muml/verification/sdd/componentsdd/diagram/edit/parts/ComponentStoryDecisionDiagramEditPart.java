@@ -29,7 +29,7 @@ public class ComponentStoryDecisionDiagramEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Component Story Decision Diagram"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Component Story Decision"; //$NON-NLS-1$
 
 	/**
 	 * @generated

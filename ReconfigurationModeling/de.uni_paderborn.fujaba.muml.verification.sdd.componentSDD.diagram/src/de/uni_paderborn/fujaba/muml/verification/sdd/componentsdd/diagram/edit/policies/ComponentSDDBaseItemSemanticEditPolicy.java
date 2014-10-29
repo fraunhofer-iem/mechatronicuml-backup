@@ -12,11 +12,10 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.policies;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
-
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
@@ -373,6 +372,18 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateMultiPortOrderConstraint_4004(
+				de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable container,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable source,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable target,
+				View sourceView, View targetView) {
+			return canExistMultiPortOrderConstraint_4004(container, null,
+					source, target, sourceView, targetView);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistEdge_4001(
 				de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram container,
 				de.uni_paderborn.fujaba.muml.verification.sdd.Edge linkInstance,
@@ -418,7 +429,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
-									10,
+									12,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -443,7 +454,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
-									11,
+									13,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -486,7 +497,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
-									10,
+									12,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -523,7 +534,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
-									11,
+									13,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -579,7 +590,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
-									12,
+									14,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -604,7 +615,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
-									13,
+									15,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -647,7 +658,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
-									12,
+									14,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -684,7 +695,7 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression expression = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 							.getExpression(
-									13,
+									15,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -713,6 +724,29 @@ public class ComponentSDDBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistMultiPortOrderConstraint_4004(
+				de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable container,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortOrderConstraint linkInstance,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable source,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable target,
+				View sourceView, View targetView) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorMultiPortOrderConstraint_4004(
+				de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable container,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable source,
+				de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable target,
+				View sourceView, View targetView) {
+			return null;
 		}
 
 	}

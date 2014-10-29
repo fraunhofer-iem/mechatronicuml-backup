@@ -118,6 +118,11 @@ public class ComponentSDDElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType MultiPortOrderConstraint_4004 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.MultiPortOrderConstraint_4004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -227,6 +232,11 @@ public class ComponentSDDElementTypes {
 					DelegationVariable_4003,
 					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getDelegationVariable());
+
+			elements.put(
+					MultiPortOrderConstraint_4004,
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getMultiPortOrderConstraint());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -259,6 +269,7 @@ public class ComponentSDDElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Edge_4001);
 			KNOWN_ELEMENT_TYPES.add(AssemblyVariable_4002);
 			KNOWN_ELEMENT_TYPES.add(DelegationVariable_4003);
+			KNOWN_ELEMENT_TYPES.add(MultiPortOrderConstraint_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -298,6 +309,8 @@ public class ComponentSDDElementTypes {
 			return AssemblyVariable_4002;
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
 			return DelegationVariable_4003;
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID:
+			return MultiPortOrderConstraint_4004;
 		}
 		return null;
 	}

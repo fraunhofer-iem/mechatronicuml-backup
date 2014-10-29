@@ -14,8 +14,6 @@ package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.
 
 import java.util.Collection;
 
-import java.util.Collections;
-import java.util.List;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -28,19 +26,15 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -183,6 +177,11 @@ public class FadingComponentPartVariableEditPart extends
 							.getFigureFadingComponentVariableNameFigure());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart) {
+			((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureFadingFunctionLabel());
+			return true;
+		}
 		return false;
 	}
 
@@ -191,6 +190,9 @@ public class FadingComponentPartVariableEditPart extends
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart) {
 			return true;
 		}
 		return false;
@@ -353,6 +355,11 @@ public class FadingComponentPartVariableEditPart extends
 		/**
 		 * @generated
 		 */
+		private WrappingLabel fFigureFadingFunctionLabel;
+
+		/**
+		 * @generated
+		 */
 		public FadingComponentVariableFigure() {
 			createContents();
 		}
@@ -413,6 +420,21 @@ public class FadingComponentPartVariableEditPart extends
 			constraintFFigureFadingComponentVariableNameFigure.grabExcessVerticalSpace = true;
 			nameContainer1.add(fFigureFadingComponentVariableNameFigure,
 					constraintFFigureFadingComponentVariableNameFigure);
+
+			fFigureFadingFunctionLabel = new WrappingLabel();
+
+			fFigureFadingFunctionLabel.setText("");
+
+			GridData constraintFFigureFadingFunctionLabel = new GridData();
+			constraintFFigureFadingFunctionLabel.verticalAlignment = GridData.END;
+			constraintFFigureFadingFunctionLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigureFadingFunctionLabel.horizontalIndent = 0;
+			constraintFFigureFadingFunctionLabel.horizontalSpan = 1;
+			constraintFFigureFadingFunctionLabel.verticalSpan = 1;
+			constraintFFigureFadingFunctionLabel.grabExcessHorizontalSpace = false;
+			constraintFFigureFadingFunctionLabel.grabExcessVerticalSpace = false;
+			nameContainer1.add(fFigureFadingFunctionLabel,
+					constraintFFigureFadingFunctionLabel);
 
 			RectangleFigure iconContainer1 = new RectangleFigure();
 
@@ -603,6 +625,13 @@ public class FadingComponentPartVariableEditPart extends
 		 */
 		public WrappingLabel getFigureFadingComponentVariableNameFigure() {
 			return fFigureFadingComponentVariableNameFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureFadingFunctionLabel() {
+			return fFigureFadingFunctionLabel;
 		}
 
 	}

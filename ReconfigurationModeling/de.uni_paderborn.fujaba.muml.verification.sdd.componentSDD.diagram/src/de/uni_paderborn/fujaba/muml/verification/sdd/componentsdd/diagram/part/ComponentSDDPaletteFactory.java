@@ -14,15 +14,11 @@ package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
-import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
@@ -72,6 +68,7 @@ public class ComponentSDDPaletteFactory {
 		paletteContainer.add(createFadingComponentPartVariable4CreationTool());
 		paletteContainer.add(createAssemblyVariable5CreationTool());
 		paletteContainer.add(createDelegationVariable6CreationTool());
+		paletteContainer.add(createMultiPortOrderConstraint7CreationTool());
 		return paletteContainer;
 	}
 
@@ -223,6 +220,22 @@ public class ComponentSDDPaletteFactory {
 		entry.setId("createDelegationVariable6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createMultiPortOrderConstraint7CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.MultiPortOrderConstraint7CreationTool_title,
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.MultiPortOrderConstraint7CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004));
+		entry.setId("createMultiPortOrderConstraint7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

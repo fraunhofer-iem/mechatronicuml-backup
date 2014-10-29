@@ -164,7 +164,9 @@ public class MultiPortVariableMultiPortVariablesCompartmentEditPart extends
 						if (elementType
 								.equals(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002)
 								|| elementType
-										.equals(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003))
+										.equals(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003)
+								|| elementType
+										.equals(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004))
 							return super.getTargetEditPart(request);
 					}
 				}

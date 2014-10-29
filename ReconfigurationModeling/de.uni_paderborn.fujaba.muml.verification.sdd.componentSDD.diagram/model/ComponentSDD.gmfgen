@@ -4,7 +4,9 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    modelID="Component Story Decision Diagram"
+    modelID="Component Story Decision"
+    diagramFileExtension="componentsdd_diagram"
+    domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
     copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>">
@@ -145,7 +147,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PartVariableFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PartVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePartVariableNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PartVariableFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure partVariable0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;partVariable0.setFill(false);&#xA;partVariable0.setOutline(false);&#xA;&#xA;this.add(partVariable0);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutPartVariable0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutPartVariable0.numColumns = 2;&#xA;&#x9;layoutPartVariable0.makeColumnsEqualWidth = false;&#xA;&#x9;partVariable0.setLayoutManager(layoutPartVariable0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure nameContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;nameContainer1.setFill(false);&#xA;nameContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintNameContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintNameContainer1.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintNameContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintNameContainer1.horizontalIndent = 0;&#xA;constraintNameContainer1.horizontalSpan = 1;&#xA;constraintNameContainer1.verticalSpan = 1;&#xA;constraintNameContainer1.grabExcessHorizontalSpace = true;&#xA;constraintNameContainer1.grabExcessVerticalSpace = false;&#xA;partVariable0.add(nameContainer1, constraintNameContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutNameContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutNameContainer1.numColumns = 1;&#xA;&#x9;layoutNameContainer1.makeColumnsEqualWidth = false;&#xA;&#x9;nameContainer1.setLayoutManager(layoutNameContainer1);&#xA;&#xA;&#xA;&#xA;fFigurePartVariableNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePartVariableNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigurePartVariableNameFigure.setFont(FFIGUREPARTVARIABLENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigurePartVariableNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigurePartVariableNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigurePartVariableNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigurePartVariableNameFigure.horizontalIndent = 0;&#xA;constraintFFigurePartVariableNameFigure.horizontalSpan = 1;&#xA;constraintFFigurePartVariableNameFigure.verticalSpan = 1;&#xA;constraintFFigurePartVariableNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigurePartVariableNameFigure.grabExcessVerticalSpace = true;&#xA;nameContainer1.add(fFigurePartVariableNameFigure, constraintFFigurePartVariableNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure iconContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;iconContainer1.setFill(false);&#xA;iconContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintIconContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintIconContainer1.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintIconContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintIconContainer1.horizontalIndent = 0;&#xA;constraintIconContainer1.horizontalSpan = 1;&#xA;constraintIconContainer1.verticalSpan = 1;&#xA;constraintIconContainer1.grabExcessHorizontalSpace = false;&#xA;constraintIconContainer1.grabExcessVerticalSpace = false;&#xA;partVariable0.add(iconContainer1, constraintIconContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutIconContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutIconContainer1.numColumns = 1;&#xA;&#x9;layoutIconContainer1.makeColumnsEqualWidth = false;&#xA;&#x9;iconContainer1.setLayoutManager(layoutIconContainer1);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconFigure2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconFigure2.setFill(false);&#xA;componentIconFigure2.setOutline(false);&#xA;componentIconFigure2.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintComponentIconFigure2 = new org.eclipse.draw2d.GridData();&#xA;constraintComponentIconFigure2.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintComponentIconFigure2.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintComponentIconFigure2.horizontalIndent = 0;&#xA;constraintComponentIconFigure2.horizontalSpan = 1;&#xA;constraintComponentIconFigure2.verticalSpan = 1;&#xA;constraintComponentIconFigure2.grabExcessHorizontalSpace = true;&#xA;constraintComponentIconFigure2.grabExcessVerticalSpace = false;&#xA;iconContainer1.add(componentIconFigure2, constraintComponentIconFigure2);&#xA;&#xA;componentIconFigure2.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconOuter3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconOuter3.setFill(false);&#xA;componentIconOuter3.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconOuter3);&#xA;componentIconOuter3.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconOuter3.add(b14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner13.setFill(false);&#xA;componentIconInner13.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconInner13);&#xA;componentIconInner13.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure c14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner13.add(c14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner23 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner23.setFill(false);&#xA;componentIconInner23.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconInner23);&#xA;componentIconInner23.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure d14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner23.add(d14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;// Process FigureRef details&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;iconContainer1.add(componentIconFigure2);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePartVariableNameFigure() {&#xA;&#x9;&#x9;return fFigurePartVariableNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREPARTVARIABLENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PartVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePartVariableNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTriggerEmbeddedComponentExpressionFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PartVariableFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure partVariable0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;partVariable0.setFill(false);&#xA;partVariable0.setOutline(false);&#xA;&#xA;this.add(partVariable0);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutPartVariable0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutPartVariable0.numColumns = 2;&#xA;&#x9;layoutPartVariable0.makeColumnsEqualWidth = false;&#xA;&#x9;partVariable0.setLayoutManager(layoutPartVariable0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure nameContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;nameContainer1.setFill(false);&#xA;nameContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintNameContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintNameContainer1.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintNameContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintNameContainer1.horizontalIndent = 0;&#xA;constraintNameContainer1.horizontalSpan = 1;&#xA;constraintNameContainer1.verticalSpan = 1;&#xA;constraintNameContainer1.grabExcessHorizontalSpace = true;&#xA;constraintNameContainer1.grabExcessVerticalSpace = false;&#xA;partVariable0.add(nameContainer1, constraintNameContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutNameContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutNameContainer1.numColumns = 1;&#xA;&#x9;layoutNameContainer1.makeColumnsEqualWidth = false;&#xA;&#x9;nameContainer1.setLayoutManager(layoutNameContainer1);&#xA;&#xA;&#xA;&#xA;fFigurePartVariableNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePartVariableNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigurePartVariableNameFigure.setFont(FFIGUREPARTVARIABLENAMEFIGURE_FONT);&#xA;&#xA;&#xA;fFigurePartVariableNameFigure.setTextUnderline(true);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigurePartVariableNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigurePartVariableNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigurePartVariableNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigurePartVariableNameFigure.horizontalIndent = 0;&#xA;constraintFFigurePartVariableNameFigure.horizontalSpan = 1;&#xA;constraintFFigurePartVariableNameFigure.verticalSpan = 1;&#xA;constraintFFigurePartVariableNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigurePartVariableNameFigure.grabExcessVerticalSpace = true;&#xA;nameContainer1.add(fFigurePartVariableNameFigure, constraintFFigurePartVariableNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure iconContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;iconContainer1.setFill(false);&#xA;iconContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintIconContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintIconContainer1.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintIconContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintIconContainer1.horizontalIndent = 0;&#xA;constraintIconContainer1.horizontalSpan = 1;&#xA;constraintIconContainer1.verticalSpan = 1;&#xA;constraintIconContainer1.grabExcessHorizontalSpace = false;&#xA;constraintIconContainer1.grabExcessVerticalSpace = false;&#xA;partVariable0.add(iconContainer1, constraintIconContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutIconContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutIconContainer1.numColumns = 1;&#xA;&#x9;layoutIconContainer1.makeColumnsEqualWidth = false;&#xA;&#x9;iconContainer1.setLayoutManager(layoutIconContainer1);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconFigure2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconFigure2.setFill(false);&#xA;componentIconFigure2.setOutline(false);&#xA;componentIconFigure2.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintComponentIconFigure2 = new org.eclipse.draw2d.GridData();&#xA;constraintComponentIconFigure2.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintComponentIconFigure2.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintComponentIconFigure2.horizontalIndent = 0;&#xA;constraintComponentIconFigure2.horizontalSpan = 1;&#xA;constraintComponentIconFigure2.verticalSpan = 1;&#xA;constraintComponentIconFigure2.grabExcessHorizontalSpace = true;&#xA;constraintComponentIconFigure2.grabExcessVerticalSpace = false;&#xA;iconContainer1.add(componentIconFigure2, constraintComponentIconFigure2);&#xA;&#xA;componentIconFigure2.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconOuter3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconOuter3.setFill(false);&#xA;componentIconOuter3.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconOuter3);&#xA;componentIconOuter3.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconOuter3.add(b14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner13.setFill(false);&#xA;componentIconInner13.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconInner13);&#xA;componentIconInner13.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure c14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner13.add(c14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner23 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner23.setFill(false);&#xA;componentIconInner23.setOutline(false);&#xA;&#xA;componentIconFigure2.add(componentIconInner23);&#xA;componentIconInner23.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure d14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner23.add(d14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;// Process FigureRef details&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;iconContainer1.add(componentIconFigure2);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure triggerEmbeddedComponentExpressionContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;triggerEmbeddedComponentExpressionContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintTriggerEmbeddedComponentExpressionContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintTriggerEmbeddedComponentExpressionContainer1.verticalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintTriggerEmbeddedComponentExpressionContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintTriggerEmbeddedComponentExpressionContainer1.horizontalIndent = 0;&#xA;constraintTriggerEmbeddedComponentExpressionContainer1.horizontalSpan = 1;&#xA;constraintTriggerEmbeddedComponentExpressionContainer1.verticalSpan = 1;&#xA;constraintTriggerEmbeddedComponentExpressionContainer1.grabExcessHorizontalSpace = false;&#xA;constraintTriggerEmbeddedComponentExpressionContainer1.grabExcessVerticalSpace = false;&#xA;partVariable0.add(triggerEmbeddedComponentExpressionContainer1, constraintTriggerEmbeddedComponentExpressionContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutTriggerEmbeddedComponentExpressionContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutTriggerEmbeddedComponentExpressionContainer1.numColumns = 1;&#xA;&#x9;layoutTriggerEmbeddedComponentExpressionContainer1.makeColumnsEqualWidth = true;&#xA;&#x9;triggerEmbeddedComponentExpressionContainer1.setLayoutManager(layoutTriggerEmbeddedComponentExpressionContainer1);&#xA;&#xA;&#xA;&#xA;fFigureTriggerEmbeddedComponentExpressionFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTriggerEmbeddedComponentExpressionFigure.setText(&quot;&quot;);&#xA;&#xA;fFigureTriggerEmbeddedComponentExpressionFigure.setFont(FFIGURETRIGGEREMBEDDEDCOMPONENTEXPRESSIONFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureTriggerEmbeddedComponentExpressionFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureTriggerEmbeddedComponentExpressionFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureTriggerEmbeddedComponentExpressionFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureTriggerEmbeddedComponentExpressionFigure.horizontalIndent = 0;&#xA;constraintFFigureTriggerEmbeddedComponentExpressionFigure.horizontalSpan = 1;&#xA;constraintFFigureTriggerEmbeddedComponentExpressionFigure.verticalSpan = 1;&#xA;constraintFFigureTriggerEmbeddedComponentExpressionFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureTriggerEmbeddedComponentExpressionFigure.grabExcessVerticalSpace = true;&#xA;triggerEmbeddedComponentExpressionContainer1.add(fFigureTriggerEmbeddedComponentExpressionFigure, constraintFFigureTriggerEmbeddedComponentExpressionFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePartVariableNameFigure() {&#xA;&#x9;&#x9;return fFigurePartVariableNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTriggerEmbeddedComponentExpressionFigure() {&#xA;&#x9;&#x9;return fFigureTriggerEmbeddedComponentExpressionFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREPARTVARIABLENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURETRIGGEREMBEDDEDCOMPONENTEXPRESSIONFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
@@ -183,7 +185,7 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigurePartVariableNameFigure"
+            getterName="getFigureTriggerEmbeddedComponentExpressionFigure"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
               xsi:type="gmfgen:StyleAttributes"
@@ -192,6 +194,26 @@
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.4"/>
+      </labels>
+      <labels
+          visualID="5040"
+          editPartClassName="WrappingLabel6EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ComponentPartVariableLabelViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigurePartVariableNameFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.5"/>
       </labels>
     </childNodes>
     <childNodes
@@ -331,6 +353,23 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
       </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5039"
+          editPartClassName="MultiPortPositionConstraintEditPart"
+          itemSemanticEditPolicyClassName="MultiPortPositionConstraintItemSemanticEditPolicy"
+          notationViewFactoryClassName="SinglePortVariableLabelViewFactory"
+          readOnly="true"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="MultiPortPositionConstraintFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortPositionConstraintFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMultiPortPositionConstraint; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortPositionConstraintFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;test&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMultiPortPositionConstraint() {&#xA;&#x9;&#x9;return fFigureMultiPortPositionConstraint;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            parser="//@labelParsers/@implementations.0"/>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -531,7 +570,7 @@
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.5"/>
+            parser="//@labelParsers/@implementations.6"/>
       </labels>
     </childNodes>
     <childNodes
@@ -633,7 +672,7 @@
             classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnderlinedLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnderlinedLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setTextUnderline(true);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.6"/>
+            parser="//@labelParsers/@implementations.7"/>
       </labels>
     </childNodes>
     <childNodes
@@ -653,7 +692,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="FadingComponentVariableFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class FadingComponentVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureFadingComponentVariableNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public FadingComponentVariableFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure fadingComponentVariable0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fadingComponentVariable0.setFill(false);&#xA;fadingComponentVariable0.setOutline(false);&#xA;&#xA;this.add(fadingComponentVariable0);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutFadingComponentVariable0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutFadingComponentVariable0.numColumns = 2;&#xA;&#x9;layoutFadingComponentVariable0.makeColumnsEqualWidth = false;&#xA;&#x9;fadingComponentVariable0.setLayoutManager(layoutFadingComponentVariable0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure nameContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;nameContainer1.setFill(false);&#xA;nameContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintNameContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintNameContainer1.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintNameContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintNameContainer1.horizontalIndent = 0;&#xA;constraintNameContainer1.horizontalSpan = 1;&#xA;constraintNameContainer1.verticalSpan = 1;&#xA;constraintNameContainer1.grabExcessHorizontalSpace = true;&#xA;constraintNameContainer1.grabExcessVerticalSpace = false;&#xA;fadingComponentVariable0.add(nameContainer1, constraintNameContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutNameContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutNameContainer1.numColumns = 1;&#xA;&#x9;layoutNameContainer1.makeColumnsEqualWidth = false;&#xA;&#x9;nameContainer1.setLayoutManager(layoutNameContainer1);&#xA;&#xA;&#xA;&#xA;fFigureFadingComponentVariableNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureFadingComponentVariableNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigureFadingComponentVariableNameFigure.setFont(FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureFadingComponentVariableNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureFadingComponentVariableNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureFadingComponentVariableNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureFadingComponentVariableNameFigure.horizontalIndent = 0;&#xA;constraintFFigureFadingComponentVariableNameFigure.horizontalSpan = 1;&#xA;constraintFFigureFadingComponentVariableNameFigure.verticalSpan = 1;&#xA;constraintFFigureFadingComponentVariableNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureFadingComponentVariableNameFigure.grabExcessVerticalSpace = true;&#xA;nameContainer1.add(fFigureFadingComponentVariableNameFigure, constraintFFigureFadingComponentVariableNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure iconContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;iconContainer1.setFill(false);&#xA;iconContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintIconContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintIconContainer1.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintIconContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintIconContainer1.horizontalIndent = 0;&#xA;constraintIconContainer1.horizontalSpan = 1;&#xA;constraintIconContainer1.verticalSpan = 1;&#xA;constraintIconContainer1.grabExcessHorizontalSpace = false;&#xA;constraintIconContainer1.grabExcessVerticalSpace = false;&#xA;fadingComponentVariable0.add(iconContainer1, constraintIconContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutIconContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutIconContainer1.numColumns = 1;&#xA;&#x9;layoutIconContainer1.makeColumnsEqualWidth = false;&#xA;&#x9;iconContainer1.setLayoutManager(layoutIconContainer1);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure fadingComponentIconFigure2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fadingComponentIconFigure2.setFill(false);&#xA;fadingComponentIconFigure2.setOutline(false);&#xA;fadingComponentIconFigure2.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(22)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFadingComponentIconFigure2 = new org.eclipse.draw2d.GridData();&#xA;constraintFadingComponentIconFigure2.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFadingComponentIconFigure2.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFadingComponentIconFigure2.horizontalIndent = 0;&#xA;constraintFadingComponentIconFigure2.horizontalSpan = 1;&#xA;constraintFadingComponentIconFigure2.verticalSpan = 1;&#xA;constraintFadingComponentIconFigure2.grabExcessHorizontalSpace = true;&#xA;constraintFadingComponentIconFigure2.grabExcessVerticalSpace = false;&#xA;iconContainer1.add(fadingComponentIconFigure2, constraintFadingComponentIconFigure2);&#xA;&#xA;fadingComponentIconFigure2.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconOuter3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconOuter3.setFill(false);&#xA;componentIconOuter3.setOutline(false);&#xA;&#xA;fadingComponentIconFigure2.add(componentIconOuter3, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;componentIconOuter3.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconOuter3.add(b14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(36)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;b14.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure plus5 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;plus5.setForegroundColor(PLUS5_FORE&#xA;);&#xA;&#xA;b14.add(plus5, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;)&#xA;);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutPlus5 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutPlus5.numColumns = 1;&#xA;&#x9;layoutPlus5.makeColumnsEqualWidth = true;&#xA;&#x9;plus5.setLayoutManager(layoutPlus5);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure minus5 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;minus5.setForegroundColor(MINUS5_FORE&#xA;);&#xA;&#xA;b14.add(minus5, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;)&#xA;);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutMinus5 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutMinus5.numColumns = 1;&#xA;&#x9;layoutMinus5.makeColumnsEqualWidth = true;&#xA;&#x9;minus5.setLayoutManager(layoutMinus5);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner13.setFill(false);&#xA;componentIconInner13.setOutline(false);&#xA;&#xA;fadingComponentIconFigure2.add(componentIconInner13, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;componentIconInner13.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure c14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner13.add(c14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner23 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner23.setFill(false);&#xA;componentIconInner23.setOutline(false);&#xA;&#xA;fadingComponentIconFigure2.add(componentIconInner23, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;componentIconInner23.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure d14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner23.add(d14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure plusLabelContainer3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;plusLabelContainer3.setFill(false);&#xA;plusLabelContainer3.setOutline(false);&#xA;&#x9;plusLabelContainer3.setForegroundColor(PLUSLABELCONTAINER3_FORE&#xA;);&#xA;&#xA;fadingComponentIconFigure2.add(plusLabelContainer3, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(9)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(21)&#xA;)&#xA;);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutPlusLabelContainer3 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutPlusLabelContainer3.numColumns = 1;&#xA;&#x9;layoutPlusLabelContainer3.makeColumnsEqualWidth = true;&#xA;&#x9;plusLabelContainer3.setLayoutManager(layoutPlusLabelContainer3);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel plusLabel4 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;plusLabel4.setText(&quot;+&quot;);&#xA;&#xA;plusLabel4.setFont(PLUSLABEL4_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintPlusLabel4 = new org.eclipse.draw2d.GridData();&#xA;constraintPlusLabel4.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintPlusLabel4.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintPlusLabel4.horizontalIndent = 0;&#xA;constraintPlusLabel4.horizontalSpan = 1;&#xA;constraintPlusLabel4.verticalSpan = 1;&#xA;constraintPlusLabel4.grabExcessHorizontalSpace = true;&#xA;constraintPlusLabel4.grabExcessVerticalSpace = true;&#xA;plusLabelContainer3.add(plusLabel4, constraintPlusLabel4);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure minusLabelContainer3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;minusLabelContainer3.setFill(false);&#xA;minusLabelContainer3.setOutline(false);&#xA;&#x9;minusLabelContainer3.setForegroundColor(MINUSLABELCONTAINER3_FORE&#xA;);&#xA;&#xA;fadingComponentIconFigure2.add(minusLabelContainer3, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(22)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(21)&#xA;)&#xA;);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutMinusLabelContainer3 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutMinusLabelContainer3.numColumns = 1;&#xA;&#x9;layoutMinusLabelContainer3.makeColumnsEqualWidth = true;&#xA;&#x9;minusLabelContainer3.setLayoutManager(layoutMinusLabelContainer3);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel minusLabel4 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;minusLabel4.setText(&quot;-&quot;);&#xA;&#xA;minusLabel4.setFont(MINUSLABEL4_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMinusLabel4 = new org.eclipse.draw2d.GridData();&#xA;constraintMinusLabel4.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMinusLabel4.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMinusLabel4.horizontalIndent = 0;&#xA;constraintMinusLabel4.horizontalSpan = 1;&#xA;constraintMinusLabel4.verticalSpan = 1;&#xA;constraintMinusLabel4.grabExcessHorizontalSpace = true;&#xA;constraintMinusLabel4.grabExcessVerticalSpace = true;&#xA;minusLabelContainer3.add(minusLabel4, constraintMinusLabel4);&#xA;&#xA;&#xA;&#xA;&#xA;// Process FigureRef details&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;iconContainer1.add(fadingComponentIconFigure2);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureFadingComponentVariableNameFigure() {&#xA;&#x9;&#x9;return fFigureFadingComponentVariableNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color PLUS5_FORE = new org.eclipse.swt.graphics.Color(null, 0, 192, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color MINUS5_FORE = new org.eclipse.swt.graphics.Color(null, 192, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color PLUSLABELCONTAINER3_FORE = new org.eclipse.swt.graphics.Color(null, 0, 192, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font PLUSLABEL4_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color MINUSLABELCONTAINER3_FORE = new org.eclipse.swt.graphics.Color(null, 192, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font MINUSLABEL4_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class FadingComponentVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureFadingComponentVariableNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureFadingFunctionLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public FadingComponentVariableFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure fadingComponentVariable0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fadingComponentVariable0.setFill(false);&#xA;fadingComponentVariable0.setOutline(false);&#xA;&#xA;this.add(fadingComponentVariable0);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutFadingComponentVariable0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutFadingComponentVariable0.numColumns = 2;&#xA;&#x9;layoutFadingComponentVariable0.makeColumnsEqualWidth = false;&#xA;&#x9;fadingComponentVariable0.setLayoutManager(layoutFadingComponentVariable0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure nameContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;nameContainer1.setFill(false);&#xA;nameContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintNameContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintNameContainer1.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintNameContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintNameContainer1.horizontalIndent = 0;&#xA;constraintNameContainer1.horizontalSpan = 1;&#xA;constraintNameContainer1.verticalSpan = 1;&#xA;constraintNameContainer1.grabExcessHorizontalSpace = true;&#xA;constraintNameContainer1.grabExcessVerticalSpace = false;&#xA;fadingComponentVariable0.add(nameContainer1, constraintNameContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutNameContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutNameContainer1.numColumns = 1;&#xA;&#x9;layoutNameContainer1.makeColumnsEqualWidth = false;&#xA;&#x9;nameContainer1.setLayoutManager(layoutNameContainer1);&#xA;&#xA;&#xA;&#xA;fFigureFadingComponentVariableNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureFadingComponentVariableNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigureFadingComponentVariableNameFigure.setFont(FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureFadingComponentVariableNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureFadingComponentVariableNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureFadingComponentVariableNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureFadingComponentVariableNameFigure.horizontalIndent = 0;&#xA;constraintFFigureFadingComponentVariableNameFigure.horizontalSpan = 1;&#xA;constraintFFigureFadingComponentVariableNameFigure.verticalSpan = 1;&#xA;constraintFFigureFadingComponentVariableNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureFadingComponentVariableNameFigure.grabExcessVerticalSpace = true;&#xA;nameContainer1.add(fFigureFadingComponentVariableNameFigure, constraintFFigureFadingComponentVariableNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureFadingFunctionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureFadingFunctionLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureFadingFunctionLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureFadingFunctionLabel.verticalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureFadingFunctionLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureFadingFunctionLabel.horizontalIndent = 0;&#xA;constraintFFigureFadingFunctionLabel.horizontalSpan = 1;&#xA;constraintFFigureFadingFunctionLabel.verticalSpan = 1;&#xA;constraintFFigureFadingFunctionLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureFadingFunctionLabel.grabExcessVerticalSpace = false;&#xA;nameContainer1.add(fFigureFadingFunctionLabel, constraintFFigureFadingFunctionLabel);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure iconContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;iconContainer1.setFill(false);&#xA;iconContainer1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintIconContainer1 = new org.eclipse.draw2d.GridData();&#xA;constraintIconContainer1.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintIconContainer1.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintIconContainer1.horizontalIndent = 0;&#xA;constraintIconContainer1.horizontalSpan = 1;&#xA;constraintIconContainer1.verticalSpan = 1;&#xA;constraintIconContainer1.grabExcessHorizontalSpace = false;&#xA;constraintIconContainer1.grabExcessVerticalSpace = false;&#xA;fadingComponentVariable0.add(iconContainer1, constraintIconContainer1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutIconContainer1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutIconContainer1.numColumns = 1;&#xA;&#x9;layoutIconContainer1.makeColumnsEqualWidth = false;&#xA;&#x9;iconContainer1.setLayoutManager(layoutIconContainer1);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure fadingComponentIconFigure2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fadingComponentIconFigure2.setFill(false);&#xA;fadingComponentIconFigure2.setOutline(false);&#xA;fadingComponentIconFigure2.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(22)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFadingComponentIconFigure2 = new org.eclipse.draw2d.GridData();&#xA;constraintFadingComponentIconFigure2.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFadingComponentIconFigure2.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFadingComponentIconFigure2.horizontalIndent = 0;&#xA;constraintFadingComponentIconFigure2.horizontalSpan = 1;&#xA;constraintFadingComponentIconFigure2.verticalSpan = 1;&#xA;constraintFadingComponentIconFigure2.grabExcessHorizontalSpace = true;&#xA;constraintFadingComponentIconFigure2.grabExcessVerticalSpace = false;&#xA;iconContainer1.add(fadingComponentIconFigure2, constraintFadingComponentIconFigure2);&#xA;&#xA;fadingComponentIconFigure2.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconOuter3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconOuter3.setFill(false);&#xA;componentIconOuter3.setOutline(false);&#xA;&#xA;fadingComponentIconFigure2.add(componentIconOuter3, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;componentIconOuter3.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconOuter3.add(b14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(36)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;b14.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure plus5 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;plus5.setForegroundColor(PLUS5_FORE&#xA;);&#xA;&#xA;b14.add(plus5, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;)&#xA;);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutPlus5 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutPlus5.numColumns = 1;&#xA;&#x9;layoutPlus5.makeColumnsEqualWidth = true;&#xA;&#x9;plus5.setLayoutManager(layoutPlus5);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure minus5 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;minus5.setForegroundColor(MINUS5_FORE&#xA;);&#xA;&#xA;b14.add(minus5, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(23)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;)&#xA;);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutMinus5 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutMinus5.numColumns = 1;&#xA;&#x9;layoutMinus5.makeColumnsEqualWidth = true;&#xA;&#x9;minus5.setLayoutManager(layoutMinus5);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner13.setFill(false);&#xA;componentIconInner13.setOutline(false);&#xA;&#xA;fadingComponentIconFigure2.add(componentIconInner13, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;componentIconInner13.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure c14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner13.add(c14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner23 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner23.setFill(false);&#xA;componentIconInner23.setOutline(false);&#xA;&#xA;fadingComponentIconFigure2.add(componentIconInner23, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;componentIconInner23.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure d14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;componentIconInner23.add(d14, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure plusLabelContainer3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;plusLabelContainer3.setFill(false);&#xA;plusLabelContainer3.setOutline(false);&#xA;&#x9;plusLabelContainer3.setForegroundColor(PLUSLABELCONTAINER3_FORE&#xA;);&#xA;&#xA;fadingComponentIconFigure2.add(plusLabelContainer3, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(9)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(21)&#xA;)&#xA;);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutPlusLabelContainer3 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutPlusLabelContainer3.numColumns = 1;&#xA;&#x9;layoutPlusLabelContainer3.makeColumnsEqualWidth = true;&#xA;&#x9;plusLabelContainer3.setLayoutManager(layoutPlusLabelContainer3);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel plusLabel4 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;plusLabel4.setText(&quot;+&quot;);&#xA;&#xA;plusLabel4.setFont(PLUSLABEL4_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintPlusLabel4 = new org.eclipse.draw2d.GridData();&#xA;constraintPlusLabel4.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintPlusLabel4.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintPlusLabel4.horizontalIndent = 0;&#xA;constraintPlusLabel4.horizontalSpan = 1;&#xA;constraintPlusLabel4.verticalSpan = 1;&#xA;constraintPlusLabel4.grabExcessHorizontalSpace = true;&#xA;constraintPlusLabel4.grabExcessVerticalSpace = true;&#xA;plusLabelContainer3.add(plusLabel4, constraintPlusLabel4);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure minusLabelContainer3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;minusLabelContainer3.setFill(false);&#xA;minusLabelContainer3.setOutline(false);&#xA;&#x9;minusLabelContainer3.setForegroundColor(MINUSLABELCONTAINER3_FORE&#xA;);&#xA;&#xA;fadingComponentIconFigure2.add(minusLabelContainer3, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(22)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(21)&#xA;)&#xA;);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutMinusLabelContainer3 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutMinusLabelContainer3.numColumns = 1;&#xA;&#x9;layoutMinusLabelContainer3.makeColumnsEqualWidth = true;&#xA;&#x9;minusLabelContainer3.setLayoutManager(layoutMinusLabelContainer3);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel minusLabel4 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;minusLabel4.setText(&quot;-&quot;);&#xA;&#xA;minusLabel4.setFont(MINUSLABEL4_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMinusLabel4 = new org.eclipse.draw2d.GridData();&#xA;constraintMinusLabel4.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMinusLabel4.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMinusLabel4.horizontalIndent = 0;&#xA;constraintMinusLabel4.horizontalSpan = 1;&#xA;constraintMinusLabel4.verticalSpan = 1;&#xA;constraintMinusLabel4.grabExcessHorizontalSpace = true;&#xA;constraintMinusLabel4.grabExcessVerticalSpace = true;&#xA;minusLabelContainer3.add(minusLabel4, constraintMinusLabel4);&#xA;&#xA;&#xA;&#xA;&#xA;// Process FigureRef details&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;iconContainer1.add(fadingComponentIconFigure2);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureFadingComponentVariableNameFigure() {&#xA;&#x9;&#x9;return fFigureFadingComponentVariableNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureFadingFunctionLabel() {&#xA;&#x9;&#x9;return fFigureFadingFunctionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color PLUS5_FORE = new org.eclipse.swt.graphics.Color(null, 0, 192, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color MINUS5_FORE = new org.eclipse.swt.graphics.Color(null, 192, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color PLUSLABELCONTAINER3_FORE = new org.eclipse.swt.graphics.Color(null, 0, 192, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font PLUSLABEL4_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color MINUSLABELCONTAINER3_FORE = new org.eclipse.swt.graphics.Color(null, 192, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font MINUSLABEL4_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
@@ -683,7 +722,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.7"/>
+            parser="//@labelParsers/@implementations.8"/>
       </labels>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -699,6 +738,21 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             parser="//@labelParsers/@implementations.0"/>
+      </labels>
+      <labels
+          visualID="5041"
+          editPartClassName="WrappingLabel7EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
+          notationViewFactoryClassName="FadingComponentPartVariableLabelViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureFadingFunctionLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.9"/>
       </labels>
     </childNodes>
     <topLevelNodes
@@ -823,7 +877,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.8">
+            parser="//@labelParsers/@implementations.10">
           <metaFeatures
               href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/PatternNode/type"/>
         </modelFacet>
@@ -949,8 +1003,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.10"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.11"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.12"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.13"/>
     </links>
     <links
         visualID="4003"
@@ -1006,8 +1060,61 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.12"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.13"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.14"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.15"/>
+    </links>
+    <links
+        visualID="4004"
+        editPartClassName="MultiPortOrderConstraintEditPart"
+        itemSemanticEditPolicyClassName="MultiPortOrderConstraintItemSemanticEditPolicy"
+        notationViewFactoryClassName="MultiPortOrderConstraintViewFactory"
+        createCommandClassName="MultiPortOrderConstraintCreateCommand"
+        reorientCommandClassName="MultiPortOrderConstraintReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="MultiPortOrderConstraintEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="MultiPortOrderConstraintFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortOrderConstraintFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fMultiPortOrderConstraintTypeLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortOrderConstraintFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.gray);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fMultiPortOrderConstraintTypeLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fMultiPortOrderConstraintTypeLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fMultiPortOrderConstraintTypeLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;df.setForegroundColor(org.eclipse.draw2d.ColorConstants.gray);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getMultiPortOrderConstraintTypeLabelFigure() {&#xA;&#x9;&#x9;return fMultiPortOrderConstraintTypeLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"/>
+      </viewmap>
+      <modelFacet
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/orderConstraints"/>
+        <sourceMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/srcSubPortVariable"/>
+        <targetMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/tgtSubPortVariable"/>
+      </modelFacet>
+      <labels
+          visualID="6003"
+          editPartClassName="WrappingLabel8EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
+          notationViewFactoryClassName="MultiPortOrderConstraintLabelViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getMultiPortOrderConstraintTypeLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="40"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.11"/>
+      </labels>
     </links>
     <compartments
         visualID="7001"
@@ -1178,6 +1285,11 @@
             description="Create new DelegationVariable"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif"
             genLinks="//@diagram/@links.2"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="MultiPortOrderConstraint"
+            description="Create new MultiPortOrderConstraint"
+            genLinks="//@diagram/@links.3"/>
       </groups>
     </palette>
     <preferences>
@@ -1200,30 +1312,37 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
-        name="ComponentSDD Diagram">
+        name="Component Story Decision Diagram Editor"
+        parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.appearance"
           name="Appearance"
+          parentCategory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.connections"
           name="Connections"
+          parentCategory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.printing"
           name="Printing"
+          parentCategory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.rulersAndGrid"
           name="Rulers And Grid"
+          parentCategory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin>
+  <plugin
+      name="Component Story Decision Diagram Editor"
+      provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
@@ -1578,6 +1697,83 @@
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.3"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.4"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.4"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.5"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.5"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.7"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.7"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.4"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.4"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.5"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.5"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.7"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.7"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -1642,9 +1838,13 @@
       <expressions
           body="':'.concat(self.type.name)"/>
       <expressions
+          body="'test'"/>
+      <expressions
           body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
       <expressions
           body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+      <expressions
+          body="if self.appliedFadingFunction.oclIsUndefined()&#xD;&#xA;then ''&#xD;&#xA;else&#xD;&#xA;&#x9;self.appliedFadingFunction.name&#xD;&#xA;endif"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
@@ -1657,19 +1857,22 @@
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
+      <expressions
+          body="if self.orderConstraintType = MultiPortOrderConstraintType::NEXT then&#xD;&#xA;'«next»'&#xD;&#xA;else&#xD;&#xA;'«prev»'&#xD;&#xA;endif"/>
     </providers>
   </expressionProviders>
   <labelParsers
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:ExternalParser"
-        uses="//@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet"/>
+        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.2/@modelFacet"
+        className="MultiPortVariableLabelExpressionLabelParser5021"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
@@ -1677,6 +1880,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.2/@modelFacet"
+        className="SinglePortVariableLabelExpressionLabelParser5024"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
@@ -1684,13 +1888,23 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
+        className="ComponentPartVariableLabelExpressionLabelParser5026"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.2/@labels.2/@modelFacet"
+        className="ComponentPartVariableLabelExpressionLabelParser5040"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
+        className="MultiPortVariableLabelExpressionLabelParser5029"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
@@ -1698,6 +1912,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.2/@modelFacet"
+        className="SinglePortVariableLabelExpressionLabelParser5032"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
@@ -1705,13 +1920,30 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.0/@modelFacet"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
+        className="FadingComponentPartVariableLabelExpressionLabelParser5035"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.8/@labels.2/@modelFacet"
+        className="FadingComponentPartVariableLabelExpressionLabelParser5041"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedEnumParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@links.3/@labels.0/@modelFacet"
+        className="MultiPortOrderConstraintLabelExpressionLabelParser6003"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
+    </implementations>
   </labelParsers>
   <contextMenus
       context="//@diagram">

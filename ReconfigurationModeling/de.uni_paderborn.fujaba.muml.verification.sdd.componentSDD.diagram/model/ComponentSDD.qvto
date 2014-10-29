@@ -8,6 +8,7 @@ transformation settings(inout gmfgen : GMFGEN);
 
 main() {
 	gmfgen.rootObjects()![GenEditorGenerator]->map settings();
+	gmfgen.objects()[ExpressionLabelParser]->map adaptExpressionLabelParserClassName();
 }
 
 mapping inout GenEditorGenerator::settings() {
@@ -19,4 +20,9 @@ mapping inout GenEditorGenerator::settings() {
 
 mapping inout GenEditorGenerator::editorSpecific() {
 	-- put settings here, that are often lost to apply them permanently
+}
+
+//workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=331875
+mapping inout ExpressionLabelParser::adaptExpressionLabelParserClassName(){
+        className := className.concat(_uses->first().container().oclAsType(GenCommonBase).visualID.toString());
 }

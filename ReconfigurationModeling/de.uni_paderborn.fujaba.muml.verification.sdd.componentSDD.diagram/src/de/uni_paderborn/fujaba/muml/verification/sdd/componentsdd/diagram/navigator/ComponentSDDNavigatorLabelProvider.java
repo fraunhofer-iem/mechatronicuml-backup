@@ -134,6 +134,9 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/componentstorypattern/0.4.0?DelegationVariable", de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.fujaba.de/muml/componentstorypattern/0.4.0?MultiPortOrderConstraint", de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -220,6 +223,8 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 			return getAssemblyVariable_4002Text(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
 			return getDelegationVariable_4003Text(view);
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortOrderConstraintEditPart.VISUAL_ID:
+			return getMultiPortOrderConstraint_4004Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -367,15 +372,20 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getSinglePortVariable_3005Text(View view) {
-		de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable domainModelElement = (de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+		IParser parser = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortPositionConstraintEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3005); //$NON-NLS-1$
+					.getInstance().logError(
+							"Parser was not found for label " + 5039); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -525,6 +535,28 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
 					.getInstance().logError(
 							"Parser was not found for label " + 6002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getMultiPortOrderConstraint_4004Text(View view) {
+		IParser parser = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 6003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

@@ -365,6 +365,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String MultiPortOrderConstraint7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String MultiPortOrderConstraint7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ComponentStoryPatternNodePatternNodeContentCompartmentEditPart_title;
 
 	/**
@@ -496,6 +506,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DelegationVariable_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MultiPortOrderConstraint_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MultiPortOrderConstraint_4004_source;
 
 	/**
 	 * @generated

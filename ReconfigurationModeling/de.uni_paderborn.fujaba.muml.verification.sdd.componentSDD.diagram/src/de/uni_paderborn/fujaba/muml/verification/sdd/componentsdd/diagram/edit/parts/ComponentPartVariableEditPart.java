@@ -14,8 +14,6 @@ package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.
 
 import java.util.Collection;
 
-import java.util.Collections;
-import java.util.List;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -28,12 +26,10 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
@@ -194,6 +190,12 @@ public class ComponentPartVariableEditPart extends
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel3EditPart) {
 			((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
+							.getFigureTriggerEmbeddedComponentExpressionFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel6EditPart) {
+			((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
 							.getFigurePartVariableNameFigure());
 			return true;
 		}
@@ -223,6 +225,9 @@ public class ComponentPartVariableEditPart extends
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel3EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel6EditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) {
@@ -399,6 +404,11 @@ public class ComponentPartVariableEditPart extends
 		/**
 		 * @generated
 		 */
+		private WrappingLabel fFigureTriggerEmbeddedComponentExpressionFigure;
+
+		/**
+		 * @generated
+		 */
 		public PartVariableFigure() {
 			this.setLayoutManager(new StackLayout());
 			createContents();
@@ -447,6 +457,8 @@ public class ComponentPartVariableEditPart extends
 
 			fFigurePartVariableNameFigure
 					.setFont(FFIGUREPARTVARIABLENAMEFIGURE_FONT);
+
+			fFigurePartVariableNameFigure.setTextUnderline(true);
 
 			GridData constraintFFigurePartVariableNameFigure = new GridData();
 			constraintFFigurePartVariableNameFigure.verticalAlignment = GridData.CENTER;
@@ -545,6 +557,46 @@ public class ComponentPartVariableEditPart extends
 
 			iconContainer1.add(componentIconFigure2);
 
+			RectangleFigure triggerEmbeddedComponentExpressionContainer1 = new RectangleFigure();
+
+			triggerEmbeddedComponentExpressionContainer1.setOutline(false);
+
+			GridData constraintTriggerEmbeddedComponentExpressionContainer1 = new GridData();
+			constraintTriggerEmbeddedComponentExpressionContainer1.verticalAlignment = GridData.END;
+			constraintTriggerEmbeddedComponentExpressionContainer1.horizontalAlignment = GridData.CENTER;
+			constraintTriggerEmbeddedComponentExpressionContainer1.horizontalIndent = 0;
+			constraintTriggerEmbeddedComponentExpressionContainer1.horizontalSpan = 1;
+			constraintTriggerEmbeddedComponentExpressionContainer1.verticalSpan = 1;
+			constraintTriggerEmbeddedComponentExpressionContainer1.grabExcessHorizontalSpace = false;
+			constraintTriggerEmbeddedComponentExpressionContainer1.grabExcessVerticalSpace = false;
+			partVariable0.add(triggerEmbeddedComponentExpressionContainer1,
+					constraintTriggerEmbeddedComponentExpressionContainer1);
+
+			GridLayout layoutTriggerEmbeddedComponentExpressionContainer1 = new GridLayout();
+			layoutTriggerEmbeddedComponentExpressionContainer1.numColumns = 1;
+			layoutTriggerEmbeddedComponentExpressionContainer1.makeColumnsEqualWidth = true;
+			triggerEmbeddedComponentExpressionContainer1
+					.setLayoutManager(layoutTriggerEmbeddedComponentExpressionContainer1);
+
+			fFigureTriggerEmbeddedComponentExpressionFigure = new WrappingLabel();
+
+			fFigureTriggerEmbeddedComponentExpressionFigure.setText("");
+
+			fFigureTriggerEmbeddedComponentExpressionFigure
+					.setFont(FFIGURETRIGGEREMBEDDEDCOMPONENTEXPRESSIONFIGURE_FONT);
+
+			GridData constraintFFigureTriggerEmbeddedComponentExpressionFigure = new GridData();
+			constraintFFigureTriggerEmbeddedComponentExpressionFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureTriggerEmbeddedComponentExpressionFigure.horizontalAlignment = GridData.CENTER;
+			constraintFFigureTriggerEmbeddedComponentExpressionFigure.horizontalIndent = 0;
+			constraintFFigureTriggerEmbeddedComponentExpressionFigure.horizontalSpan = 1;
+			constraintFFigureTriggerEmbeddedComponentExpressionFigure.verticalSpan = 1;
+			constraintFFigureTriggerEmbeddedComponentExpressionFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureTriggerEmbeddedComponentExpressionFigure.grabExcessVerticalSpace = true;
+			triggerEmbeddedComponentExpressionContainer1.add(
+					fFigureTriggerEmbeddedComponentExpressionFigure,
+					constraintFFigureTriggerEmbeddedComponentExpressionFigure);
+
 		}
 
 		/**
@@ -554,12 +606,26 @@ public class ComponentPartVariableEditPart extends
 			return fFigurePartVariableNameFigure;
 		}
 
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureTriggerEmbeddedComponentExpressionFigure() {
+			return fFigureTriggerEmbeddedComponentExpressionFigure;
+		}
+
 	}
 
 	/**
 	 * @generated
 	 */
 	static final Font FFIGUREPARTVARIABLENAMEFIGURE_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 9, SWT.NORMAL);
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGURETRIGGEREMBEDDEDCOMPONENTEXPRESSIONFIGURE_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 9, SWT.NORMAL);
 
