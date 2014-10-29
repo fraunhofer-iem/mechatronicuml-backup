@@ -77,6 +77,35 @@ public class SinglePortVariableEditor
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory, feature);
 
+		{
+			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+					.createOCLExpression(
+							"-- only show this editor if SinglePortVariable is \"embedded\" in MultiPortVariable\nif \n	self.eContainer().oclIsUndefined() or not (self.eContainer().oclIsTypeOf(ComponentVariable) or self.eContainer().oclIsKindOf(PartVariable))\nthen\n	false\nelse\n	if\n		self.eContainer().oclIsTypeOf(ComponentVariable)\n	then\n		let container: ComponentVariable = self.eContainer().oclAsType(ComponentVariable) in\n		if\n			container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))\n		then\n			true\n		else\n			false\n		endif\n			\n	else \n		if\n			self.eContainer().oclIsKindOf(PartVariable)\n		then\n			let container: PartVariable = self.eContainer().oclAsType(PartVariable) in\n			if\n				container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))\n			then\n				true\n			else\n				false\n			endif\n			\n		else\n			false\n		endif\n	endif\n\nendif",
+							feature, getEClass());
+			editor.registerOCLAdapter(expression,
+					new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+						@Override
+						public void notifyChanged(
+								org.eclipse.emf.common.notify.Notification notification) {
+							editor.updateVisibility(true, true);
+						}
+					});
+			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+					.createQuery(expression);
+			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+
+				@Override
+				public boolean select(Object object) {
+					return object != null
+							&& Boolean.TRUE.equals(query.evaluate(object));
+				}
+
+			};
+			if (filter != null) {
+				editor.addVisibilityFilter(filter);
+			}
+		}
+
 		return editor;
 
 	}
