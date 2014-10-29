@@ -174,6 +174,9 @@
         <details key="documentation" value="If the component confirmed to the parent that it can execute the requested&#xD;&#xA;reconfiguration, the commit time denotes how long the component may stick&#xD;&#xA;to that confirmation. The minimum commit time sets a lower bound to this value.&#xD;&#xA;It is required for analyzing the reconfiguration behavior."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnValues" upperBound="-1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionTimingSpecification" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">

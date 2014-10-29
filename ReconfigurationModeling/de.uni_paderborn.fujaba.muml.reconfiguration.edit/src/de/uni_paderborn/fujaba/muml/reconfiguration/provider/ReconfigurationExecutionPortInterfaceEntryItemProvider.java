@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -69,6 +70,7 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION);
 			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE);
 			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES);
 		}
 		return childrenFeatures;
 	}
@@ -126,6 +128,7 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE:
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -162,6 +165,11 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 			(createChildParameter
 				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME,
 				 ValuetypeFactory.eINSTANCE.createTimeValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES,
+				 BehaviorFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

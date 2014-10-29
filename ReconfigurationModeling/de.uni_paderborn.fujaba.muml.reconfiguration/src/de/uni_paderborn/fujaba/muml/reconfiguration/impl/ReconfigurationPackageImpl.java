@@ -592,6 +592,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getReconfigurationExecutionPortInterfaceEntry_ReturnValues() {
+		return (EReference)reconfigurationExecutionPortInterfaceEntryEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExecutionTimingSpecification() {
 		return executionTimingSpecificationEClass;
 	}
@@ -1160,6 +1169,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE);
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT);
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME);
+		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES);
 
 		executionTimingSpecificationEClass = createEClass(EXECUTION_TIMING_SPECIFICATION);
 
@@ -1356,6 +1366,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase(), this.getExecutionTimingSpecification(), null, "timeForExecutionPhase", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_ReconfigurationExecutionPort(), this.getReconfigurationExecutionPort(), this.getReconfigurationExecutionPort_InterfaceEntries(), "reconfigurationExecutionPort", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime(), theValuetypePackage.getTimeValue(), null, "minimumCommitTime", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationExecutionPortInterfaceEntry_ReturnValues(), theBehaviorPackage.getParameter(), null, "returnValues", null, 0, -1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(executionTimingSpecificationEClass, ExecutionTimingSpecification.class, "ExecutionTimingSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -6,6 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
+import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
@@ -28,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecutionPhase <em>Time For Execution Phase</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumCommitTime <em>Minimum Commit Time</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReturnValues <em>Return Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -160,5 +164,21 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * @generated
 	 */
 	void setMinimumCommitTime(TimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Return Values</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Return Values</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Return Values</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_ReturnValues()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getReturnValues();
 
 } // ReconfigurationExecutionPortInterfaceEntry

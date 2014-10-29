@@ -35,6 +35,10 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor
 			addTimeForExecutionPhase_GeneralTab_Editor(null, false);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addReturnValues_GeneralTab_Editor(null, true);
+		}
+
 	}
 
 	/**
@@ -109,6 +113,28 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addReturnValues_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createReturnValues_GeneralTab_Editor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReturnValues_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationExecutionPortInterfaceEntry_ReturnValues();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
+
+		return editor;
+
+	}
+
 	//
 	// instantiation
 	//
@@ -143,7 +169,8 @@ public class ReconfigurationExecutionPortInterfaceEntryEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

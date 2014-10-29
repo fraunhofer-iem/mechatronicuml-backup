@@ -41,6 +41,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/timeForExecutionPhase"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/reconfigurationExecutionPort"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/minimumCommitTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionPortInterfaceEntry/returnValues"/>
     </genClasses>
     <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ExecutionTimingSpecification"/>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//ExecutionTimingSpecificationSinglePhase">

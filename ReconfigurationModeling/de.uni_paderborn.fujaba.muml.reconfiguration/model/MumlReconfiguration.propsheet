@@ -139,6 +139,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
+      <properties initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/returnValues"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecification"/>

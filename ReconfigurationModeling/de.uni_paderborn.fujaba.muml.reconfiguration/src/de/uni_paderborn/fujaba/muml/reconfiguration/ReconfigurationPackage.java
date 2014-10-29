@@ -2633,13 +2633,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Return Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Execution Port Interface Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 4;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -7715,6 +7724,17 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReturnValues <em>Return Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Return Values</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReturnValues()
+	 * @see #getReconfigurationExecutionPortInterfaceEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionPortInterfaceEntry_ReturnValues();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification <em>Execution Timing Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8561,6 +8581,14 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_ReturnValues();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationImpl <em>Execution Timing Specification</em>}' class.
