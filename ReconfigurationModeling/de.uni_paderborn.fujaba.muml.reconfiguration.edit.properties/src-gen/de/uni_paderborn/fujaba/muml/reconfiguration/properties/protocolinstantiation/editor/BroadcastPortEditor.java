@@ -28,6 +28,10 @@ public class BroadcastPortEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addSpecification_GeneralTab_Editor(null, false);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addSenderMessageTypes_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
@@ -77,6 +81,30 @@ public class BroadcastPortEditor
 				adapterFactory, feature);
 
 		editor.setTooltipMessage("Defines the kind of broadcast port. The kind either denotes that this port executes\na discovery protocol or that it is used for instantiating real-time coordination \nprotocols.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addSpecification_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createSpecification_GeneralTab_Editor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSpecification_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage.eINSTANCE
+				.getBroadcastPort_Specification();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
+
+		editor.setTooltipMessage("The specification of this broadcast port defines attributes that differ between \nthe different kinds of ports.");
 
 		return editor;
 
@@ -281,6 +309,7 @@ public class BroadcastPortEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
+							"property.tab.general",
 							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general",
 							"property.tab.general", "property.tab.general",
