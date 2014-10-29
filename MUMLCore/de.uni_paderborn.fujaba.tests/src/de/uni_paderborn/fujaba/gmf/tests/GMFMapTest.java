@@ -1,9 +1,7 @@
 package de.uni_paderborn.fujaba.gmf.tests;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -33,7 +31,6 @@ import org.eclipse.ocl.lpg.BasicEnvironment;
 import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runners.Parameterized.Parameter;
 
 import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 

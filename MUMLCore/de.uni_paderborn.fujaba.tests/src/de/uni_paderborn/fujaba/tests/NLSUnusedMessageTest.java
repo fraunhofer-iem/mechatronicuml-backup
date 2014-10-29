@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.tests;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

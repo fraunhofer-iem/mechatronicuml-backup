@@ -1,26 +1,18 @@
 package de.uni_paderborn.fujaba.gmf.tests;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
-import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
 import org.eclipse.gmf.gmfgraph.GMFGraphPackage;
 import org.eclipse.gmf.mappings.GMFMapPackage;
 import org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory;
 import org.eclipse.gmf.tooldef.GMFToolPackage;
-import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.tests.TestUtilities;
 
 /**
