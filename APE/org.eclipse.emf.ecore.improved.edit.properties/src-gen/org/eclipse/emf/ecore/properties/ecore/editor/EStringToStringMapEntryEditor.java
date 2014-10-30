@@ -76,7 +76,7 @@ public class EStringToStringMapEntryEditor
 		{
 			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
 					.createOCLExpression(
-							"not eContainer().oclIsKindOf(ecore::EAnnotation) or eContainer().oclAsType(ecore::EAnnotation).source <> 'http://www.eclipse.org/emf/2002/Ecore/OCL'",
+							"not eContainer().oclIsKindOf(ecore::EAnnotation) or not (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')",
 							feature, getEClass());
 			editor.registerOCLAdapter(expression,
 					new org.eclipse.emf.common.notify.impl.AdapterImpl() {
@@ -125,7 +125,7 @@ public class EStringToStringMapEntryEditor
 		{
 			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
 					.createOCLExpression(
-							"eContainer().oclIsKindOf(ecore::EAnnotation) and eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL'",
+							"eContainer().oclIsKindOf(ecore::EAnnotation) and (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')",
 							feature, getEClass());
 			editor.registerOCLAdapter(expression,
 					new org.eclipse.emf.common.notify.impl.AdapterImpl() {

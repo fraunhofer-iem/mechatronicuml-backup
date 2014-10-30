@@ -214,14 +214,14 @@
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/key"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0" reconcile="false">
+      <properties tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or eContainer().oclAsType(ecore::EAnnotation).source &lt;> 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or not (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
       </properties>
-      <properties tab="//@tabs.2" reconcile="false">
+      <properties tab="//@tabs.2" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="eContainer().oclIsKindOf(ecore::EAnnotation) and eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="eContainer().oclIsKindOf(ecore::EAnnotation) and (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor"/>
       </properties>
     </classes>
