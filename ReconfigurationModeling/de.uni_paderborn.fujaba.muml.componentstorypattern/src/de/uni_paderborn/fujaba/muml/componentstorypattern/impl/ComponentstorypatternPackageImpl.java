@@ -998,6 +998,12 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	protected void createOCLFilterAnnotations() {
 		String source = "http://www.muml.org/emf/OCLFilter";	
 		addAnnotation
+		  (getPortVariable_Type(), 
+		   source, 
+		   new String[] {
+			 "choices", "if self.eContainer().oclIsKindOf(PartVariable)\r\nthen self.eContainer().oclAsType(PartVariable).type.portParts.portType\r\nelse\r\n\tself.eContainer().oclAsType(ComponentVariable).type.ports\r\nendif"
+		   });	
+		addAnnotation
 		  (getAssemblyVariable_Type(), 
 		   source, 
 		   new String[] {

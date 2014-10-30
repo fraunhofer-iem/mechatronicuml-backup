@@ -43,7 +43,11 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="SameBindingOperatorAsParent SameBindingSemanticsAsParent ValidTypeOfPortVariable"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port">
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+        <details key="choices" value="if self.eContainer().oclIsKindOf(PartVariable)&#xD;&#xA;then self.eContainer().oclAsType(PartVariable).type.portParts.portType&#xD;&#xA;else&#xD;&#xA;&#x9;self.eContainer().oclAsType(ComponentVariable).type.ports&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
         eType="#//ConnectorVariable" changeable="false" volatile="true" transient="true"
         derived="true">
@@ -95,10 +99,10 @@
       <details key="ExistingConnectorBetweenPortVariableTypes" value="if not self.type.oclIsUndefined() then&#xD;&#xA;&#x9;let selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |&#xD;&#xA;&#x9;  if cE.oclIsTypeOf(muml::component::PortPart)&#x9;&#xD;&#xA;      then cE.oclAsType(muml::component::PortPart).portType&#xD;&#xA;&#x9;  else &#xD;&#xA;&#x9;  &#x9;if cE.oclIsTypeOf(muml::component::Port)&#xD;&#xA;&#x9;  &#x9;then cE.oclAsType(muml::component::Port)&#xD;&#xA;&#x9;  &#x9;else  null&#xD;&#xA;&#x9;  &#x9;endif&#xD;&#xA;&#x9;  endif)&#xD;&#xA;&#x9;in &#xD;&#xA;&#x9;selfPorts->intersection(typePorts)->size() = 2&#x9;&#x9;&#xD;&#xA;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;endif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DelegationConnector">
-  	<eAnnotations source="http://www.muml.org/emf/OCLFilter">
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
         <details key="choices" value="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).type,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.type->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"/>
       </eAnnotations>
-     </eStructuralFeatures>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SinglePortVariable" eSuperTypes="#//PortVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortVariable" eType="#//MultiPortVariable"

@@ -39,6 +39,7 @@ public interface PortVariable extends ComponentStoryPatternVariable, ConnectorEn
 	 * @see #setType(Port)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getPortVariable_Type()
 	 * @model required="true"
+	 *        annotation="http://www.muml.org/emf/OCLFilter choices='if self.eContainer().oclIsKindOf(PartVariable)\r\nthen self.eContainer().oclAsType(PartVariable).type.portParts.portType\r\nelse\r\n\tself.eContainer().oclAsType(ComponentVariable).type.ports\r\nendif'"
 	 * @generated
 	 */
 	Port getType();
