@@ -2,6 +2,7 @@
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
 <rm:locator searchPathRef="default" failOnError="false"/>
 <rm:locator searchPathRef="APE" failOnError="false"/>
+<rm:locator searchPathRef="EmfOclFilter" failOnError="false"/>
 <rm:locator searchPathRef="MUMLCore" failOnError="false"/>
 <rm:locator searchPathRef="PlatformIndependentModeling" failOnError="false"/>
 <rm:locator searchPathRef="VerificationCore" failOnError="false"/>
@@ -42,6 +43,15 @@
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="file:///data/jenkins/jobs/MUMLCore/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+</rm:searchPath>
+
+<rm:searchPath name="EmfOclFilter">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/EmfOclFilter/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
 </rm:searchPath>
