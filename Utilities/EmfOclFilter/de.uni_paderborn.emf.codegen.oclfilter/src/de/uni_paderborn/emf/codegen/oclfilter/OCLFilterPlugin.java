@@ -129,6 +129,11 @@ public class OCLFilterPlugin extends AbstractUIPlugin {
 				}
 			}
 		}
+		for (EPackage subPackage : ePackage.getESubpackages()) {
+			if (containsAnnotation(subPackage)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
