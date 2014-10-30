@@ -33,6 +33,7 @@ public interface AssemblyVariable extends ConnectorVariable {
 	 * @see #setType(AssemblyConnector)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getAssemblyVariable_Type()
 	 * @model required="true"
+	 *        annotation="http://www.muml.org/emf/OCLFilter choices='let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : OrderedSet(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector))\r\nin\r\n\tassemblyConnectors->select(aC | aC.oclAsType(component::AssemblyConnector).portParts.portType = self.portVariables.type)'"
 	 * @generated
 	 */
 	AssemblyConnector getType();

@@ -998,10 +998,10 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	protected void createOCLFilterAnnotations() {
 		String source = "http://www.muml.org/emf/OCLFilter";	
 		addAnnotation
-		  (getDelegationVariable_Type(), 
+		  (getAssemblyVariable_Type(), 
 		   source, 
 		   new String[] {
-			 "choices", "let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).type,\r\n\tinnerPort : muml::component::Port = self.portVariables.type->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"
+			 "choices", "let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : OrderedSet(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector))\r\nin\r\n\tassemblyConnectors->select(aC | aC.oclAsType(component::AssemblyConnector).portParts.portType = self.portVariables.type)"
 		   });
 	}
 
