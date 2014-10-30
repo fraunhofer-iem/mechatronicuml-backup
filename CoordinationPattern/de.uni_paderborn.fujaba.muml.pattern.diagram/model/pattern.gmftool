@@ -7,8 +7,12 @@
   <palette
       title="Pattern Creation">
     <tools
-        xsi:type="gmftool:CreationTool"
-        title="Coordination Pattern"
-        description="creates a coordination pattern"/>
+        xsi:type="gmftool:ToolGroup"
+        title="CreationTools">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Coordination Pattern"
+          description="creates a coordination pattern"/>
+    </tools>
   </palette>
 </gmftool:ToolRegistry>

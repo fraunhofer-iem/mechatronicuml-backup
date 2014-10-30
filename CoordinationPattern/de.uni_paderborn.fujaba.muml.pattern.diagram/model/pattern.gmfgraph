@@ -7,7 +7,15 @@
     <descriptors name="PatternCompartmentFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="PatternCompartment"/>
     </descriptors>
+    <descriptors name="RoleConnector">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleConnector"/>
+    </descriptors>
+    <descriptors name="RoleRectangle">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="RoleRectangle"/>
+    </descriptors>
   </figures>
   <nodes name="PatternNode" figure="PatternFigureDescriptor"/>
+  <nodes name="RoleNode" figure="RoleRectangle"/>
+  <connections name="RoleConnectorConnection" figure="RoleConnector"/>
   <compartments name="PatternCompartment" figure="PatternCompartmentFigure"/>
 </gmfgraph:Canvas>
