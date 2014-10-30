@@ -141,12 +141,18 @@
           xsi:type="gmftool:CreationTool"
           href="pattern.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="pattern.gmfgraph#PatternNode"/>
+          href="pattern.gmfgraph#PatternContainerNode"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0"
           referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.ecore#//CoordinationPattern/gmfCoordinationPattern"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.ecore#//CoordinationPattern"/>
+          <diagramNode
+              href="pattern.gmfgraph#PatternNode"/>
+        </ownedChild>
       </children>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
