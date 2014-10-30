@@ -28,17 +28,20 @@ import org.eclipse.ocl.options.ParsingOptions;
  * <li> Create an annotation with source <code>http://www.muml.org/emf/OCLFilter</code> in your .ecore file under your property.</li>
  * 
  * <li> Add a details entry with key <code>choices</code>.</li>
- * 	   - The value will be parsed as OCL.
- *     - <code>self</code> refers to the object that values should be generated for.
- *     - It should return a single or multiple possible feature values for this object and this feature.
- *     - Make sure that values you return conform to the feature type!
- * 
+ *     <ul>
+ * 	   <li>The value will be parsed as OCL.</li>
+ *     <li><code>self</code> refers to the object that values should be generated for.</li>
+ *     <li>It should return a single or multiple possible feature values for this object and this feature.</li>
+ *     <li>Make sure that values you return conform to the feature type!</li>
+ *     </ul>
  * 
  * <li> Add a details entry with key <code>filter</code>.</li>
- *     - The value will be parsed as OCL and evaluated once for every possible choice generated before.
- *     - <code>self</code> refers to the value being filtered.
- *     - It should return <code>true</code>, in order to mark the value as valid for this feature. Every other return value,
- *       including OclInvalid, marks the value as invalid and it will not appear in the list of choices.
+ *     <ul>
+ *     <li>The value will be parsed as OCL and evaluated once for every possible choice generated before./li>
+ *     <li><code>self</code> refers to the value being filtered.</li>
+ *     <li>It should return <code>true</code>, in order to mark the value as valid for this feature. Every other return value,
+ *       including OclInvalid, marks the value as invalid and it will not appear in the list of choices.</li>
+ *     </ul>
  * </ol>
  * 
  * <p>Of course you can use either <code>choices</code> or <code>filter</code> independently.</p>
