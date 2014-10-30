@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.uni_paderborn.emf.codegen.oclfilter.feature"
+      label="EMF Codegen OCL-Filter Feature"
+      version="0.4.0.qualifier"
+      provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.codegen.ecore"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.3.100" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="de.uni_paderborn.emf.codegen.oclfilter"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
