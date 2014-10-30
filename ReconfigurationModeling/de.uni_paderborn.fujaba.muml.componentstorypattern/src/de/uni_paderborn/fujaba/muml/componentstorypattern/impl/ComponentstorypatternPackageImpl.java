@@ -862,6 +862,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 	}
 
 	/**
@@ -984,6 +986,22 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   new String[] {
 			 "AppliedFadingFunctionIsContainedInType", " let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n\tself.type.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1",
 			 "NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode", "if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n\tthen self.appliedFadingFunction.oclIsUndefined()\r\nelse true\r\nendif"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.muml.org/emf/OCLFilter</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLFilterAnnotations() {
+		String source = "http://www.muml.org/emf/OCLFilter";	
+		addAnnotation
+		  (getDelegationVariable_Type(), 
+		   source, 
+		   new String[] {
+			 "choices", "let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).type,\r\n\tinnerPort : muml::component::Port = self.portVariables.type->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"
 		   });
 	}
 
