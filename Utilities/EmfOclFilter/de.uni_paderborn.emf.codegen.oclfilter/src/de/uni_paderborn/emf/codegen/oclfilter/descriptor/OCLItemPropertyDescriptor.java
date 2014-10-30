@@ -25,7 +25,7 @@ import org.eclipse.ocl.options.ParsingOptions;
  * 
  * To use this:
  * <ol>
- * <li> Create an annotation with source <code>http://www.eclipse.org/emf/2002/Ecore/OCL</code> in your .ecore file, </li>
+ * <li> Create an annotation with source <code>http://www.muml.org/emf/OCLFilter</code> in your .ecore file under your property.</li>
  * 
  * <li> Add a details entry with key <code>choices</code>.</li>
  * 	   - The value will be parsed as OCL.
@@ -54,15 +54,11 @@ import org.eclipse.ocl.options.ParsingOptions;
  *
  */
 public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
-	/**
-	 * OCL Environment to use; is created once, statically.
-	 */
-	public static org.eclipse.ocl.ecore.OCL OCL_ECORE = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
 
 	/**
 	 * The source value for the annotation to use.
 	 */
-	public static String OCL_ANNOTATION = "http://www.eclipse.org/emf/2002/Ecore/OCL";
+	public static String OCL_ANNOTATION = "http://www.muml.org/emf/OCLFilter";
 
 	/**
 	 * The key for the details entry to use for choices.
@@ -73,7 +69,12 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 * The key for the details entry to use for filters.
 	 */
 	public static String FILTER_KEY = "filter";
-	
+
+	/**
+	 * OCL Environment to use; is created once, statically.
+	 */
+	public static org.eclipse.ocl.ecore.OCL OCL_ECORE = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
+
 	/**
 	 * Default constructor, calls super constructor.
 	 */
