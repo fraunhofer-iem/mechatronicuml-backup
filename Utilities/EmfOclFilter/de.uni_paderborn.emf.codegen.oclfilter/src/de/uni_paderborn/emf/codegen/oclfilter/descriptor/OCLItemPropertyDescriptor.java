@@ -37,7 +37,7 @@ import org.eclipse.ocl.options.ParsingOptions;
  * 
  * <li> Add a details entry with key <code>filter</code>.</li>
  *     <ul>
- *     <li>The value will be parsed as OCL and evaluated once for every possible choice generated before./li>
+ *     <li>The value will be parsed as OCL and evaluated once for every possible choice generated before.</li>
  *     <li><code>self</code> refers to the value being filtered.</li>
  *     <li>It should return <code>true</code>, in order to mark the value as valid for this feature. Every other return value,
  *       including OclInvalid, marks the value as invalid and it will not appear in the list of choices.</li>
