@@ -10,11 +10,11 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
-
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.KeyHandler;
 import org.eclipse.gef.KeyStroke;
+import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds;
@@ -66,7 +66,7 @@ public class Pattern2DiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	public Pattern2DiagramEditor() {
-		super(false);
+		super(true);
 	}
 
 	/**
@@ -74,6 +74,15 @@ public class Pattern2DiagramEditor extends DiagramDocumentEditor implements
 	 */
 	protected String getContextID() {
 		return CONTEXT_ID;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
+		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
+		new Pattern2PaletteFactory().fillPalette(root);
+		return root;
 	}
 
 	/**

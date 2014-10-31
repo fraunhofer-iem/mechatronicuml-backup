@@ -31,11 +31,21 @@ public class Pattern2EditPartFactory implements EditPartFactory {
 			case CoordinationPattern2EditPart.VISUAL_ID:
 				return new CoordinationPattern2EditPart(view);
 
+			case CoordinationPatternNameEditPart.VISUAL_ID:
+				return new CoordinationPatternNameEditPart(view);
+
+			case RoleEditPart.VISUAL_ID:
+				return new RoleEditPart(view);
+
+			case RoleNameEditPart.VISUAL_ID:
+				return new RoleNameEditPart(view);
+
 			case CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
 				return new CoordinationPatternPatternCompartmentEditPart(view);
 
-			case CoordinationPatternPatternCompartment2EditPart.VISUAL_ID:
-				return new CoordinationPatternPatternCompartment2EditPart(view);
+			case RoleConnectorEditPart.VISUAL_ID:
+				return new RoleConnectorEditPart(view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

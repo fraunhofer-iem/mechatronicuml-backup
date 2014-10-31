@@ -1,25 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="PatternEditor">
-  <figures name="Default">
-    <descriptors name="PatternContainerFigure">
-      <actualFigure xsi:type="gmfgraph:Ellipse" name="PatternFigure"/>
+<gmfgraph:Canvas
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="PatternEditor">
+  <figures
+      name="Default">
+    <descriptors
+        name="PatternContainerFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="PatternContainer"/>
     </descriptors>
-    <descriptors name="PatternCompartmentFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="PatternCompartment"/>
+    <descriptors
+        name="PatternCompartmentFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="PatternCompartment"/>
     </descriptors>
-    <descriptors name="RoleConnector">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleConnector"/>
+    <descriptors
+        name="RoleConnectorFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RoleConnector"/>
     </descriptors>
-    <descriptors name="RoleRectangle">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="RoleRectangle"/>
+    <descriptors
+        name="RoleRectangleFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="RoleRectangle">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="NameLabelRole"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="PatternFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PatternFigureRectangle"/>
+    <descriptors
+        name="PatternFigure">
+      <actualFigure
+          xsi:type="gmfgraph:ScalablePolygon">
+        <location
+            x="2"
+            y="2"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="PatternNameLabel"/>
+        <template
+            x="1"/>
+        <template
+            x="3"/>
+        <template
+            x="4"
+            y="1"/>
+        <template
+            x="3"
+            y="2"/>
+        <template
+            x="1"
+            y="2"/>
+        <template
+            y="1"/>
+        <template
+            x="1"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
-  <nodes name="PatternContainerNode" figure="PatternContainerFigure"/>
-  <nodes name="RoleNode" figure="RoleRectangle"/>
-  <nodes name="PatternNode" figure="PatternFigure"/>
-  <connections name="RoleConnectorConnection" figure="RoleConnector"/>
-  <compartments name="PatternCompartment" figure="PatternCompartmentFigure"/>
+  <nodes
+      name="PatternContainerNode"
+      figure="PatternContainerFigure"/>
+  <nodes
+      name="RoleNode"
+      figure="RoleRectangleFigure"/>
+  <nodes
+      name="PatternNode"
+      figure="PatternFigure"/>
+  <connections
+      name="RoleConnectorConnection"
+      figure="RoleConnectorFigure"/>
+  <compartments
+      name="PatternCompartment"
+      figure="PatternCompartmentFigure"/>
+  <labels
+      name="NameLabelPattern"
+      figure="PatternFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels
+      name="NameLabelRole"
+      figure="RoleRectangleFigure"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
 </gmfgraph:Canvas>

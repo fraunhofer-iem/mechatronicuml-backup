@@ -82,7 +82,8 @@ public class Pattern2NewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(Pattern2DiagramEditorUtil
-				.getUniqueFileName(filePath, fileName, "pattern_diagram")); //$NON-NLS-1$
+				.getUniqueFileName(filePath, fileName,
+						"coordinationpattern_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				Messages.Pattern2NewDiagramFileWizard_RootSelectionPageName);

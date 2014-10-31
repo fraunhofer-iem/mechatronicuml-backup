@@ -3,11 +3,10 @@ package pattern.diagram.edit.parts;
 import java.util.Collection;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.ScalablePolygonShape;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -25,18 +24,18 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
-import pattern.diagram.edit.policies.CoordinationPattern2ItemSemanticEditPolicy;
+import pattern.diagram.edit.policies.RoleItemSemanticEditPolicy;
 import pattern.diagram.part.Pattern2VisualIDRegistry;
 
 /**
  * @generated
  */
-public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
+public class RoleEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3001;
+	public static final int VISUAL_ID = 3002;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -74,7 +73,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public CoordinationPattern2EditPart(View view) {
+	public RoleEditPart(View view) {
 		super(view);
 	}
 
@@ -84,7 +83,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CoordinationPattern2ItemSemanticEditPolicy());
+				new RoleItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -129,23 +128,23 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new PatternFigure();
+		return primaryShape = new RoleRectangleFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public PatternFigure getPrimaryShape() {
-		return (PatternFigure) primaryShape;
+	public RoleRectangleFigure getPrimaryShape() {
+		return (RoleRectangleFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof CoordinationPatternNameEditPart) {
-			((CoordinationPatternNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigurePatternNameLabel());
+		if (childEditPart instanceof RoleNameEditPart) {
+			((RoleNameEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getFigureNameLabelRole());
 			return true;
 		}
 		return false;
@@ -155,7 +154,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof CoordinationPatternNameEditPart) {
+		if (childEditPart instanceof RoleNameEditPart) {
 			return true;
 		}
 		return false;
@@ -283,40 +282,23 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(Pattern2VisualIDRegistry
-				.getType(CoordinationPatternNameEditPart.VISUAL_ID));
+				.getType(RoleNameEditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public class PatternFigure extends ScalablePolygonShape {
+	public class RoleRectangleFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigurePatternNameLabel;
+		private WrappingLabel fFigureNameLabelRole;
 
 		/**
 		 * @generated
 		 */
-		public PatternFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(3), getMapMode()
-					.DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode()
-					.DPtoLP(1)));
-			this.addPoint(new Point(getMapMode().DPtoLP(3), getMapMode()
-					.DPtoLP(2)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(2)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-					.DPtoLP(1)));
-			this.addPoint(new Point(getMapMode().DPtoLP(1), getMapMode()
-					.DPtoLP(0)));
-			this.setFill(true);
-			this.setLocation(new Point(getMapMode().DPtoLP(2), getMapMode()
-					.DPtoLP(2)));
+		public RoleRectangleFigure() {
 			createContents();
 		}
 
@@ -325,19 +307,19 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigurePatternNameLabel = new WrappingLabel();
+			fFigureNameLabelRole = new WrappingLabel();
 
-			fFigurePatternNameLabel.setText("");
+			fFigureNameLabelRole.setText("");
 
-			this.add(fFigurePatternNameLabel);
+			this.add(fFigureNameLabelRole);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigurePatternNameLabel() {
-			return fFigurePatternNameLabel;
+		public WrappingLabel getFigureNameLabelRole() {
+			return fFigureNameLabelRole;
 		}
 
 	}

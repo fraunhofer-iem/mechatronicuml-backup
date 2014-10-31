@@ -22,6 +22,8 @@ import org.storydriven.core.expressions.common.provider.CommonExpressionsItemPro
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 
+import pattern.diagram.edit.policies.Pattern2BaseItemSemanticEditPolicy;
+import pattern.diagram.expressions.Pattern2OCLFactory;
 import pattern.diagram.providers.ElementInitializers;
 import pattern.provider.PatternItemProviderAdapterFactory;
 
@@ -64,7 +66,17 @@ public class Pattern2DiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private Pattern2BaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+
+	/**
+	 * @generated
+	 */
 	private ElementInitializers initializers;
+
+	/**
+	 * @generated
+	 */
+	private Pattern2OCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -90,7 +102,9 @@ public class Pattern2DiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
+		linkConstraints = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -247,6 +261,21 @@ public class Pattern2DiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	public Pattern2BaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+		return linkConstraints;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setLinkConstraints(
+			Pattern2BaseItemSemanticEditPolicy.LinkConstraints lc) {
+		this.linkConstraints = lc;
+	}
+
+	/**
+	 * @generated
+	 */
 	public ElementInitializers getElementInitializers() {
 		return initializers;
 	}
@@ -256,6 +285,20 @@ public class Pattern2DiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Pattern2OCLFactory getPattern2OCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setPattern2OCLFactory(Pattern2OCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**

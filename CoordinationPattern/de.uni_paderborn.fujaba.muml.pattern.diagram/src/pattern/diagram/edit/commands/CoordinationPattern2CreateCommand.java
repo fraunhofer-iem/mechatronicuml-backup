@@ -13,7 +13,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pattern.CoordinationPattern;
-import pattern.PatternFactory;
 
 /**
  * @generated
@@ -40,9 +39,6 @@ public class CoordinationPattern2CreateCommand extends EditElementCommand {
 		return container;
 	}
 
-	/**
-	 * @generated
-	 */
 	public boolean canExecute() {
 		// This command must not be used. The containment feature is not changeable!
 		return false;

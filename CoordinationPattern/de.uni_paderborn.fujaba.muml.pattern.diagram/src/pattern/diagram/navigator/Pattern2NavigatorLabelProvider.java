@@ -1,5 +1,8 @@
 package pattern.diagram.navigator;
 
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
+import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -16,10 +19,15 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 import pattern.CoordinationPattern;
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternEditPart;
+import pattern.diagram.edit.parts.CoordinationPatternNameEditPart;
 import pattern.diagram.edit.parts.ModelElementCategoryEditPart;
+import pattern.diagram.edit.parts.RoleConnectorEditPart;
+import pattern.diagram.edit.parts.RoleEditPart;
+import pattern.diagram.edit.parts.RoleNameEditPart;
 import pattern.diagram.part.Pattern2DiagramEditorPlugin;
 import pattern.diagram.part.Pattern2VisualIDRegistry;
 import pattern.diagram.providers.Pattern2ElementTypes;
+import pattern.diagram.providers.Pattern2ParserProvider;
 
 /**
  * @generated
@@ -89,6 +97,12 @@ public class Pattern2NavigatorLabelProvider extends LabelProvider implements
 		case CoordinationPattern2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.fujaba.de/muml/pattern/0.3.18?CoordinationPattern", Pattern2ElementTypes.CoordinationPattern_3001); //$NON-NLS-1$
+		case RoleEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.fujaba.de/muml/protocol/0.4.0?Role", Pattern2ElementTypes.Role_3002); //$NON-NLS-1$
+		case RoleConnectorEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?RoleConnector", Pattern2ElementTypes.RoleConnector_4001); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -147,6 +161,10 @@ public class Pattern2NavigatorLabelProvider extends LabelProvider implements
 			return getCoordinationPattern_2001Text(view);
 		case CoordinationPattern2EditPart.VISUAL_ID:
 			return getCoordinationPattern_3001Text(view);
+		case RoleEditPart.VISUAL_ID:
+			return getRole_3002Text(view);
+		case RoleConnectorEditPart.VISUAL_ID:
+			return getRoleConnector_4001Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -185,13 +203,52 @@ public class Pattern2NavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getCoordinationPattern_3001Text(View view) {
-		CoordinationPattern domainModelElement = (CoordinationPattern) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+		IParser parser = Pattern2ParserProvider.getParser(
+				Pattern2ElementTypes.CoordinationPattern_3001, view
+						.getElement() != null ? view.getElement() : view,
+				Pattern2VisualIDRegistry
+						.getType(CoordinationPatternNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
 			Pattern2DiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 3001); //$NON-NLS-1$
+					"Parser was not found for label " + 5001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRole_3002Text(View view) {
+		IParser parser = Pattern2ParserProvider.getParser(
+				Pattern2ElementTypes.Role_3002,
+				view.getElement() != null ? view.getElement() : view,
+				Pattern2VisualIDRegistry.getType(RoleNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			Pattern2DiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRoleConnector_4001Text(View view) {
+		de.uni_paderborn.fujaba.muml.protocol.RoleConnector domainModelElement = (de.uni_paderborn.fujaba.muml.protocol.RoleConnector) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getComment();
+		} else {
+			Pattern2DiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 4001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

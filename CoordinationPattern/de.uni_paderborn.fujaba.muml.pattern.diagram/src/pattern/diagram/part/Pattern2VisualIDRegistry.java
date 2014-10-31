@@ -10,9 +10,12 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 import pattern.PatternPackage;
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternEditPart;
-import pattern.diagram.edit.parts.CoordinationPatternPatternCompartment2EditPart;
+import pattern.diagram.edit.parts.CoordinationPatternNameEditPart;
 import pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart;
 import pattern.diagram.edit.parts.ModelElementCategoryEditPart;
+import pattern.diagram.edit.parts.RoleConnectorEditPart;
+import pattern.diagram.edit.parts.RoleEditPart;
+import pattern.diagram.edit.parts.RoleNameEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -133,11 +136,9 @@ public class Pattern2VisualIDRegistry {
 					.isSuperTypeOf(domainElement.eClass())) {
 				return CoordinationPattern2EditPart.VISUAL_ID;
 			}
-			break;
-		case CoordinationPatternPatternCompartment2EditPart.VISUAL_ID:
-			if (PatternPackage.eINSTANCE.getCoordinationPattern()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return CoordinationPattern2EditPart.VISUAL_ID;
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getRole().isSuperTypeOf(domainElement.eClass())) {
+				return RoleEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -176,7 +177,12 @@ public class Pattern2VisualIDRegistry {
 			}
 			break;
 		case CoordinationPattern2EditPart.VISUAL_ID:
-			if (CoordinationPatternPatternCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+			if (CoordinationPatternNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case RoleEditPart.VISUAL_ID:
+			if (RoleNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -184,9 +190,7 @@ public class Pattern2VisualIDRegistry {
 			if (CoordinationPattern2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			break;
-		case CoordinationPatternPatternCompartment2EditPart.VISUAL_ID:
-			if (CoordinationPattern2EditPart.VISUAL_ID == nodeVisualID) {
+			if (RoleEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -200,6 +204,10 @@ public class Pattern2VisualIDRegistry {
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
+		}
+		if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+				.getRoleConnector().isSuperTypeOf(domainElement.eClass())) {
+			return RoleConnectorEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -234,7 +242,6 @@ public class Pattern2VisualIDRegistry {
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
 		case CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
-		case CoordinationPatternPatternCompartment2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -249,6 +256,9 @@ public class Pattern2VisualIDRegistry {
 		switch (visualID) {
 		case ModelElementCategoryEditPart.VISUAL_ID:
 			return false;
+		case CoordinationPattern2EditPart.VISUAL_ID:
+		case RoleEditPart.VISUAL_ID:
+			return true;
 		default:
 			break;
 		}

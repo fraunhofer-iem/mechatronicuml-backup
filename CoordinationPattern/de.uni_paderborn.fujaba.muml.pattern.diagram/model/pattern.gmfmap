@@ -143,13 +143,19 @@
       <diagramNode
           href="pattern.gmfgraph#PatternContainerNode"/>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.0/@ownedChild">
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.ecore#//CoordinationPattern/gmfCoordinationPattern"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.ecore#//CoordinationPattern"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="pattern.gmfgraph#NameLabelPattern"/>
+            <features
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          </labelMappings>
           <diagramNode
               href="pattern.gmfgraph#PatternNode"/>
         </ownedChild>
@@ -161,6 +167,14 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/Role"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              editPattern="">
+            <diagramLabel
+                href="pattern.gmfgraph#NameLabelRole"/>
+            <features
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          </labelMappings>
           <diagramNode
               href="pattern.gmfgraph#RoleNode"/>
         </ownedChild>
@@ -193,5 +207,7 @@
         href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.ecore#/"/>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+    <palette
+        href="pattern.gmftool#//@palette"/>
   </diagram>
 </gmfmap:Mapping>

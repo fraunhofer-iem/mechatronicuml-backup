@@ -18,6 +18,8 @@ import pattern.PatternPackage;
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternEditPart;
 import pattern.diagram.edit.parts.ModelElementCategoryEditPart;
+import pattern.diagram.edit.parts.RoleConnectorEditPart;
+import pattern.diagram.edit.parts.RoleEditPart;
 import pattern.diagram.part.Pattern2DiagramEditorPlugin;
 
 /**
@@ -60,6 +62,14 @@ public class Pattern2ElementTypes {
 	 * @generated
 	 */
 	public static final IElementType CoordinationPattern_3001 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3001"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Role_3002 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType RoleConnector_4001 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -109,6 +119,16 @@ public class Pattern2ElementTypes {
 
 			elements.put(CoordinationPattern_3001,
 					PatternPackage.eINSTANCE.getCoordinationPattern());
+
+			elements.put(
+					Role_3002,
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+							.getRole());
+
+			elements.put(
+					RoleConnector_4001,
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+							.getRoleConnector());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -129,6 +149,8 @@ public class Pattern2ElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
 			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_2001);
 			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_3001);
+			KNOWN_ELEMENT_TYPES.add(Role_3002);
+			KNOWN_ELEMENT_TYPES.add(RoleConnector_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -144,6 +166,10 @@ public class Pattern2ElementTypes {
 			return CoordinationPattern_2001;
 		case CoordinationPattern2EditPart.VISUAL_ID:
 			return CoordinationPattern_3001;
+		case RoleEditPart.VISUAL_ID:
+			return Role_3002;
+		case RoleConnectorEditPart.VISUAL_ID:
+			return RoleConnector_4001;
 		}
 		return null;
 	}

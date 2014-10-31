@@ -1,8 +1,9 @@
 package pattern.diagram.edit.parts;
 
 import java.util.Collection;
-import org.eclipse.draw2d.Ellipse;
+
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -124,14 +125,14 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new Ellipse();
+		return primaryShape = new RoundedRectangle();
 	}
 
 	/**
 	 * @generated
 	 */
-	public Ellipse getPrimaryShape() {
-		return (Ellipse) primaryShape;
+	public RoundedRectangle getPrimaryShape() {
+		return (RoundedRectangle) primaryShape;
 	}
 
 	/**

@@ -1,6 +1,7 @@
 package pattern.diagram.edit.parts;
 
 import java.util.Collection;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.gef.EditPart;
@@ -12,6 +13,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeConnectionRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
@@ -132,9 +134,23 @@ public class CoordinationPatternPatternCompartmentEditPart extends
 			if (type == Pattern2ElementTypes.CoordinationPattern_3001) {
 				return this;
 			}
+			if (type == Pattern2ElementTypes.Role_3002) {
+				return this;
+			}
 			return getParent().getTargetEditPart(request);
 		}
 		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+			if (RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
+				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request)
+						.getElementTypes()) {
+					if (type instanceof IElementType) {
+						IElementType elementType = (IElementType) type;
+						if (elementType
+								.equals(Pattern2ElementTypes.RoleConnector_4001))
+							return super.getTargetEditPart(request);
+					}
+				}
+			}
 			return getParent().getTargetEditPart(request);
 		}
 		return super.getTargetEditPart(request);

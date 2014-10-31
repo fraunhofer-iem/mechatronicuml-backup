@@ -32,6 +32,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
+import pattern.diagram.part.Pattern2DiagramEditorPlugin;
 import pattern.diagram.part.Pattern2VisualIDRegistry;
 import pattern.diagram.providers.Pattern2ElementTypes;
 
@@ -291,6 +292,73 @@ public class Pattern2BaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = Pattern2DiagramEditorPlugin.getInstance()
+				.getLinkConstraints();
+		if (cached == null) {
+			Pattern2DiagramEditorPlugin.getInstance().setLinkConstraints(
+					cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static class LinkConstraints {
+
+		/**
+		 * @generated
+		 */
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateRoleConnector_4001(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
+			if (container != null) {
+				if (container.getRoleConnector() != null) {
+					return false;
+				}
+			}
+			return canExistRoleConnector_4001(container, null, source, target,
+					sourceView, targetView);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistRoleConnector_4001(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
+				de.uni_paderborn.fujaba.muml.protocol.RoleConnector linkInstance,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorRoleConnector_4001(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
+			return null;
+		}
+
 	}
 
 }

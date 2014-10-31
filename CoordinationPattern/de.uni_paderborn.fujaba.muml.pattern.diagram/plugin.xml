@@ -4,13 +4,13 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="pattern_diagram"/>
+      <fileTypes type="text" extension="coordinationpattern_diagram"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="pattern_diagram"
+         type="coordinationpattern_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -21,7 +21,7 @@
          id="pattern.diagram.part.Pattern2DiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ModelinstanceDiagramFile.gif"
-         extensions="pattern_diagram"
+         extensions="coordinationpattern_diagram"
          default="true"
          class="pattern.diagram.part.Pattern2DiagramEditor"
          matchingStrategy="pattern.diagram.part.Pattern2MatchingStrategy"
@@ -106,6 +106,7 @@
       <page
             id="de.uni_paderborn.fujaba.muml.pattern.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.pattern.diagram.general"
+            category="de.uni_paderborn.fujaba.preferences"
             class="pattern.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
@@ -202,7 +203,8 @@
       <viewProvider class="pattern.diagram.providers.Pattern2ViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pattern2"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
 
@@ -214,16 +216,16 @@
             <method name="getType()" value="Pattern2"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001"/>
+            <method name="getType()" value="2001,3001,3002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="4001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="5001,5002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002"/>
+            <method name="getType()" value="7001"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -246,6 +248,11 @@
          <Priority name="Lowest"/>
          <object class="pattern.diagram.edit.parts.CoordinationPattern2EditPart" id="CoordinationPattern_3001"/>
          <context elements="CoordinationPattern_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="pattern.diagram.providers.assistants.Pattern2ModelingAssistantProviderOfRoleEditPart">
+         <Priority name="Lowest"/>
+         <object class="pattern.diagram.edit.parts.RoleEditPart" id="Role_3002"/>
+         <context elements="Role_3002"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -289,6 +296,26 @@
             <param name="semanticHint" value="3001"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"
+               name="%metatype.name.Role_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Role"
+               edithelper="pattern.diagram.edit.helpers.RoleEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"
+               name="%metatype.name.RoleConnector_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RoleConnector"
+               edithelper="pattern.diagram.edit.helpers.RoleConnectorEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -304,6 +331,8 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.ModelElementCategory_1000"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -348,7 +377,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="pattern_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="coordinationpattern_diagram"/>
                </and>
                <instanceof value="pattern.diagram.navigator.Pattern2AbstractNavigatorItem"/>
             </or>
@@ -365,7 +394,7 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="pattern_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="coordinationpattern_diagram"/>
                   </and>
                   <instanceof value="pattern.diagram.navigator.Pattern2AbstractNavigatorItem"/>
                </or>
@@ -384,7 +413,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="pattern"/>
+        	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
                <instanceof value="pattern.diagram.navigator.Pattern2DomainNavigatorItem"/>
             </or>
@@ -524,7 +553,7 @@
             preferencesHint="de.uni_paderborn.fujaba.muml.pattern.diagram"
             editorId="pattern.diagram.part.Pattern2DiagramEditorID"
             editorName="Pattern2 Editor"
-            fileExtension="pattern_diagram"
+            fileExtension="coordinationpattern_diagram"
             modelElementCategoryKey="pattern.category"
             modelId="Pattern2">
          <diagramElement
@@ -547,13 +576,12 @@
       </MarkerNavigationProvider>
    </extension>
 
-<extension id="diagnostic" name="Pattern2 Plugin problems" point="org.eclipse.core.resources.markers">
+<extension id="diagnostic" name="Coordination Pattern Diagram Editor problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
       <persistent value="true"/>
-   </extension>
-<extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+   </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
       <decoratorProvider class="pattern.diagram.providers.Pattern2ValidationDecoratorProvider">
          <Priority name="Lowest"/>
@@ -561,6 +589,13 @@
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="pattern.diagram.providers.Pattern2ParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
 
 
 

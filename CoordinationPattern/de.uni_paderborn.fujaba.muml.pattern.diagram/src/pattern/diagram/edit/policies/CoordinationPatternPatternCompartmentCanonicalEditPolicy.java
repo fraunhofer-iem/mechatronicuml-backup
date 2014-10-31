@@ -3,9 +3,11 @@ package pattern.diagram.edit.policies;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -24,6 +26,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import pattern.PatternPackage;
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
+import pattern.diagram.edit.parts.RoleEditPart;
 import pattern.diagram.part.Pattern2DiagramUpdater;
 import pattern.diagram.part.Pattern2NodeDescriptor;
 import pattern.diagram.part.Pattern2VisualIDRegistry;
@@ -33,8 +36,12 @@ import pattern.diagram.part.Pattern2VisualIDRegistry;
  */
 public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
-
 	private boolean canonicalNodes = true;
+
+	/**
+	 * @generated
+	 */
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	public CoordinationPatternPatternCompartmentCanonicalEditPolicy() {
 	}
@@ -59,9 +66,16 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return PatternPackage.eINSTANCE
-				.getCoordinationPattern_GmfCoordinationPattern();
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize.add(PatternPackage.eINSTANCE
+					.getCoordinationPattern_GmfCoordinationPattern());
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+							.getAbstractCoordinationSpecification_Roles());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -92,8 +106,9 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
 				int visualID = Pattern2VisualIDRegistry.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { CoordinationPattern2EditPart.VISUAL_ID });
+				List<Integer> visualIDs = Arrays.asList(new Integer[] {
+						CoordinationPattern2EditPart.VISUAL_ID,
+						RoleEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -127,8 +142,9 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return CoordinationPattern2EditPart.VISUAL_ID == Pattern2VisualIDRegistry
-				.getVisualID(view);
+		int visualID = Pattern2VisualIDRegistry.getVisualID(view);
+		return visualID == CoordinationPattern2EditPart.VISUAL_ID
+				|| visualID == RoleEditPart.VISUAL_ID;
 	}
 
 	/**

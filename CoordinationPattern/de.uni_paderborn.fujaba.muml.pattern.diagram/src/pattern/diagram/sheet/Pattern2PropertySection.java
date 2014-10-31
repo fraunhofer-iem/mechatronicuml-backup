@@ -2,12 +2,14 @@ package pattern.diagram.sheet;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.tooling.runtime.sheet.DefaultPropertySection;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+
 import pattern.diagram.part.Pattern2DiagramEditorPlugin;
 
 /**

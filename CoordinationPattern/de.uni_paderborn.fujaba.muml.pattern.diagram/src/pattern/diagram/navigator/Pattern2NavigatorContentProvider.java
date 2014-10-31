@@ -25,9 +25,11 @@ import org.eclipse.ui.navigator.ICommonContentProvider;
 
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternEditPart;
-import pattern.diagram.edit.parts.CoordinationPatternPatternCompartment2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart;
 import pattern.diagram.edit.parts.ModelElementCategoryEditPart;
+import pattern.diagram.edit.parts.RoleConnectorEditPart;
+import pattern.diagram.edit.parts.RoleEditPart;
+import pattern.diagram.part.Messages;
 import pattern.diagram.part.Pattern2VisualIDRegistry;
 
 /**
@@ -223,12 +225,22 @@ public class Pattern2NavigatorContentProvider implements ICommonContentProvider 
 		case ModelElementCategoryEditPart.VISUAL_ID: {
 			LinkedList<Pattern2AbstractNavigatorItem> result = new LinkedList<Pattern2AbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
+			Pattern2NavigatorGroup links = new Pattern2NavigatorGroup(
+					Messages.NavigatorGroupName_ModelElementCategory_1000_links,
+					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					Pattern2VisualIDRegistry
 							.getType(CoordinationPatternEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					Pattern2VisualIDRegistry
+							.getType(RoleConnectorEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			if (!links.isEmpty()) {
+				result.add(links);
+			}
 			return result.toArray();
 		}
 
@@ -245,22 +257,70 @@ public class Pattern2NavigatorContentProvider implements ICommonContentProvider 
 							.getType(CoordinationPattern2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
-			return result.toArray();
-		}
-
-		case CoordinationPattern2EditPart.VISUAL_ID: {
-			LinkedList<Pattern2AbstractNavigatorItem> result = new LinkedList<Pattern2AbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					Pattern2VisualIDRegistry
-							.getType(CoordinationPatternPatternCompartment2EditPart.VISUAL_ID));
+							.getType(CoordinationPatternPatternCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(connectedViews,
-					Pattern2VisualIDRegistry
-							.getType(CoordinationPattern2EditPart.VISUAL_ID));
+					Pattern2VisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
+			return result.toArray();
+		}
+
+		case RoleEditPart.VISUAL_ID: {
+			LinkedList<Pattern2AbstractNavigatorItem> result = new LinkedList<Pattern2AbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Pattern2NavigatorGroup incominglinks = new Pattern2NavigatorGroup(
+					Messages.NavigatorGroupName_Role_3002_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Pattern2NavigatorGroup outgoinglinks = new Pattern2NavigatorGroup(
+					Messages.NavigatorGroupName_Role_3002_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					Pattern2VisualIDRegistry
+							.getType(RoleConnectorEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					Pattern2VisualIDRegistry
+							.getType(RoleConnectorEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case RoleConnectorEditPart.VISUAL_ID: {
+			LinkedList<Pattern2AbstractNavigatorItem> result = new LinkedList<Pattern2AbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			Pattern2NavigatorGroup target = new Pattern2NavigatorGroup(
+					Messages.NavigatorGroupName_RoleConnector_4001_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Pattern2NavigatorGroup source = new Pattern2NavigatorGroup(
+					Messages.NavigatorGroupName_RoleConnector_4001_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					Pattern2VisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					Pattern2VisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
 			return result.toArray();
 		}
 		}

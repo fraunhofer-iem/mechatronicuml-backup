@@ -12,19 +12,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pattern.CoordinationPattern;
-import pattern.PatternFactory;
-import pattern.diagram.providers.ElementInitializers;
-
 /**
  * @generated
  */
-public class CoordinationPatternCreateCommand extends EditElementCommand {
+public class RoleCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternCreateCommand(CreateElementRequest req) {
+	public RoleCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -45,6 +41,10 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getElementToEdit();
+		if (container.getRoles().size() >= 2) {
+			return false;
+		}
 		return true;
 
 	}
@@ -54,14 +54,11 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		CoordinationPattern newElement = PatternFactory.eINSTANCE
-				.createCoordinationPattern();
+		de.uni_paderborn.fujaba.muml.protocol.Role newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
+				.createRole();
 
-		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
-		owner.getModelElements().add(newElement);
-
-		ElementInitializers.getInstance().init_CoordinationPattern_2001(
-				newElement);
+		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification owner = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getElementToEdit();
+		owner.getRoles().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -72,7 +69,8 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(CoordinationPattern newElement,
+	protected void doConfigure(
+			de.uni_paderborn.fujaba.muml.protocol.Role newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

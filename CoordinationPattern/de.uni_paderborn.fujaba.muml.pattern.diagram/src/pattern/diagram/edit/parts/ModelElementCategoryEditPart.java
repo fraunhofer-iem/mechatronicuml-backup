@@ -1,6 +1,7 @@
 package pattern.diagram.edit.parts;
 
 import java.util.Collection;
+
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
