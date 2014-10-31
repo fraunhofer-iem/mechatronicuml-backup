@@ -68,6 +68,12 @@
       <accessors
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="RolePatternConnectionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RolePatternConnection"/>
+    </descriptors>
   </figures>
   <nodes
       name="PatternContainerNode"
@@ -81,6 +87,9 @@
   <connections
       name="RoleConnectorConnection"
       figure="RoleConnectorFigure"/>
+  <connections
+      name="PatternRoleConnection"
+      figure="RolePatternConnectionFigure"/>
   <compartments
       name="PatternCompartment"
       figure="PatternCompartmentFigure"/>

@@ -146,7 +146,9 @@ public class CoordinationPatternPatternCompartmentEditPart extends
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
 						if (elementType
-								.equals(Pattern2ElementTypes.RoleConnector_4001))
+								.equals(Pattern2ElementTypes.RoleConnector_4001)
+								|| elementType
+										.equals(Pattern2ElementTypes.AbstractCoordinationSpecificationRoles_4002))
 							return super.getTargetEditPart(request);
 					}
 				}

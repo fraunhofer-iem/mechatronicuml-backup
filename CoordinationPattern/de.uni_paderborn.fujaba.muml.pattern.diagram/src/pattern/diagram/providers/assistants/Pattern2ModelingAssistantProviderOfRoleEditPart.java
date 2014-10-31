@@ -101,8 +101,9 @@ public class Pattern2ModelingAssistantProviderOfRoleEditPart extends
 	 * @generated
 	 */
 	public List<IElementType> doGetRelTypesOnTarget(RoleEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(1);
+		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(Pattern2ElementTypes.RoleConnector_4001);
+		types.add(Pattern2ElementTypes.AbstractCoordinationSpecificationRoles_4002);
 		return types;
 	}
 
@@ -126,6 +127,9 @@ public class Pattern2ModelingAssistantProviderOfRoleEditPart extends
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == Pattern2ElementTypes.RoleConnector_4001) {
 			types.add(Pattern2ElementTypes.Role_3002);
+		} else if (relationshipType == Pattern2ElementTypes.AbstractCoordinationSpecificationRoles_4002) {
+			types.add(Pattern2ElementTypes.CoordinationPattern_2001);
+			types.add(Pattern2ElementTypes.CoordinationPattern_3001);
 		}
 		return types;
 	}

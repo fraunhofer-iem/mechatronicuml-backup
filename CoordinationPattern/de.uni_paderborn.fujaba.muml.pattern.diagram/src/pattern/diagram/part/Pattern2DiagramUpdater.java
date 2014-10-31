@@ -15,6 +15,7 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.storydriven.core.ExtendableElement;
 
 import pattern.CoordinationPattern;
+import pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternEditPart;
 import pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart;
@@ -174,6 +175,7 @@ public class Pattern2DiagramUpdater {
 				.getElement();
 		LinkedList<Pattern2LinkDescriptor> result = new LinkedList<Pattern2LinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_RoleConnector_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
 		return result;
 	}
 
@@ -186,6 +188,7 @@ public class Pattern2DiagramUpdater {
 				.getElement();
 		LinkedList<Pattern2LinkDescriptor> result = new LinkedList<Pattern2LinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_RoleConnector_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
 		return result;
 	}
 
@@ -233,6 +236,8 @@ public class Pattern2DiagramUpdater {
 		LinkedList<Pattern2LinkDescriptor> result = new LinkedList<Pattern2LinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_RoleConnector_4001(
 				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(
+				modelElement, crossReferences));
 		return result;
 	}
 
@@ -249,7 +254,11 @@ public class Pattern2DiagramUpdater {
 	 */
 	public static List<Pattern2LinkDescriptor> getCoordinationPattern_2001OutgoingLinks(
 			View view) {
-		return Collections.emptyList();
+		CoordinationPattern modelElement = (CoordinationPattern) view
+				.getElement();
+		LinkedList<Pattern2LinkDescriptor> result = new LinkedList<Pattern2LinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
+		return result;
 	}
 
 	/**
@@ -257,7 +266,11 @@ public class Pattern2DiagramUpdater {
 	 */
 	public static List<Pattern2LinkDescriptor> getCoordinationPattern_3001OutgoingLinks(
 			View view) {
-		return Collections.emptyList();
+		CoordinationPattern modelElement = (CoordinationPattern) view
+				.getElement();
+		LinkedList<Pattern2LinkDescriptor> result = new LinkedList<Pattern2LinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(modelElement));
+		return result;
 	}
 
 	/**
@@ -348,6 +361,28 @@ public class Pattern2DiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection<Pattern2LinkDescriptor> getIncomingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(
+			de.uni_paderborn.fujaba.muml.protocol.Role target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<Pattern2LinkDescriptor> result = new LinkedList<Pattern2LinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getAbstractCoordinationSpecification_Roles()) {
+				result.add(new Pattern2LinkDescriptor(
+						setting.getEObject(),
+						target,
+						Pattern2ElementTypes.AbstractCoordinationSpecificationRoles_4002,
+						AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection<Pattern2LinkDescriptor> getOutgoingTypeModelFacetLinks_RoleConnector_4001(
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = null;
@@ -389,6 +424,25 @@ public class Pattern2DiagramUpdater {
 		result.add(new Pattern2LinkDescriptor(src, dst, link,
 				Pattern2ElementTypes.RoleConnector_4001,
 				RoleConnectorEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<Pattern2LinkDescriptor> getOutgoingFeatureModelFacetLinks_AbstractCoordinationSpecification_Roles_4002(
+			de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source) {
+		LinkedList<Pattern2LinkDescriptor> result = new LinkedList<Pattern2LinkDescriptor>();
+		for (Iterator<?> destinations = source.getRoles().iterator(); destinations
+				.hasNext();) {
+			de.uni_paderborn.fujaba.muml.protocol.Role destination = (de.uni_paderborn.fujaba.muml.protocol.Role) destinations
+					.next();
+			result.add(new Pattern2LinkDescriptor(
+					source,
+					destination,
+					Pattern2ElementTypes.AbstractCoordinationSpecificationRoles_4002,
+					AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+		}
 		return result;
 	}
 

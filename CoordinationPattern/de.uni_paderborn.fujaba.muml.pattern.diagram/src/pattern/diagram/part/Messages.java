@@ -273,6 +273,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_CoordinationPattern_2001_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationPattern_3001_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Role_3002_incominglinks;
 
 	/**
@@ -289,6 +299,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_RoleConnector_4001_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4002_source;
 
 	/**
 	 * @generated

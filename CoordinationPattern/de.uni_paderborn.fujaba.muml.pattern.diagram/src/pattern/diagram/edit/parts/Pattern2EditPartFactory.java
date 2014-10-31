@@ -46,6 +46,9 @@ public class Pattern2EditPartFactory implements EditPartFactory {
 			case RoleConnectorEditPart.VISUAL_ID:
 				return new RoleConnectorEditPart(view);
 
+			case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+				return new AbstractCoordinationSpecificationRolesEditPart(view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

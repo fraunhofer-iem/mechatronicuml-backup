@@ -17,6 +17,7 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import pattern.CoordinationPattern;
+import pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternEditPart;
 import pattern.diagram.edit.parts.CoordinationPatternNameEditPart;
@@ -103,6 +104,9 @@ public class Pattern2NavigatorLabelProvider extends LabelProvider implements
 		case RoleConnectorEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?RoleConnector", Pattern2ElementTypes.RoleConnector_4001); //$NON-NLS-1$
+		case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?AbstractCoordinationSpecification?roles", Pattern2ElementTypes.AbstractCoordinationSpecificationRoles_4002); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -165,6 +169,8 @@ public class Pattern2NavigatorLabelProvider extends LabelProvider implements
 			return getRole_3002Text(view);
 		case RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001Text(view);
+		case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+			return getAbstractCoordinationSpecificationRoles_4002Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -251,6 +257,13 @@ public class Pattern2NavigatorLabelProvider extends LabelProvider implements
 					"No domain element for view with visualID = " + 4001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAbstractCoordinationSpecificationRoles_4002Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

@@ -37,7 +37,7 @@ public class Pattern2OCLFactory {
 	 * @generated
 	 */
 	protected Pattern2OCLFactory() {
-		this.expressions = new Pattern2AbstractExpression[7];
+		this.expressions = new Pattern2AbstractExpression[10];
 		this.expressionBodies = new String[] {
 				"\'role1\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
@@ -46,6 +46,9 @@ public class Pattern2OCLFactory {
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"false", //$NON-NLS-1$
 		};
 	}
 

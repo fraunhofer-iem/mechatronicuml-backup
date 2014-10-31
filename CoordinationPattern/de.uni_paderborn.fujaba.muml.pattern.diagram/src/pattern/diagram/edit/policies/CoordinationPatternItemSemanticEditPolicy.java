@@ -2,17 +2,30 @@ package pattern.diagram.edit.policies;
 
 import java.util.Iterator;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
+import pattern.diagram.edit.commands.AbstractCoordinationSpecificationRolesCreateCommand;
+import pattern.diagram.edit.commands.AbstractCoordinationSpecificationRolesReorientCommand;
+import pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart;
 import pattern.diagram.edit.parts.RoleConnectorEditPart;
@@ -41,6 +54,30 @@ public class CoordinationPatternItemSemanticEditPolicy extends
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
 				getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+			Edge outgoingLink = (Edge) it.next();
+			if (Pattern2VisualIDRegistry.getVisualID(outgoingLink) == AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r) {
+					protected CommandResult doExecuteWithResult(
+							IProgressMonitor progressMonitor, IAdaptable info)
+							throws ExecutionException {
+						EObject referencedObject = getReferencedObject();
+						Resource resource = referencedObject.eResource();
+						CommandResult result = super.doExecuteWithResult(
+								progressMonitor, info);
+						if (resource != null) {
+							resource.getContents().add(referencedObject);
+						}
+						return result;
+					}
+				});
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
 			// there are indirectly referenced children, need extra commands: false
@@ -68,6 +105,38 @@ public class CoordinationPatternItemSemanticEditPolicy extends
 					Node cnode = (Node) cit.next();
 					switch (Pattern2VisualIDRegistry.getVisualID(cnode)) {
 					case CoordinationPattern2EditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
+								.hasNext();) {
+							Edge outgoingLink = (Edge) it.next();
+							if (Pattern2VisualIDRegistry
+									.getVisualID(outgoingLink) == AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										outgoingLink.getSource().getElement(),
+										null, outgoingLink.getTarget()
+												.getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r) {
+									protected CommandResult doExecuteWithResult(
+											IProgressMonitor progressMonitor,
+											IAdaptable info)
+											throws ExecutionException {
+										EObject referencedObject = getReferencedObject();
+										Resource resource = referencedObject
+												.eResource();
+										CommandResult result = super
+												.doExecuteWithResult(
+														progressMonitor, info);
+										if (resource != null) {
+											resource.getContents().add(
+													referencedObject);
+										}
+										return result;
+									}
+								});
+								cmd.add(new DeleteCommand(getEditingDomain(),
+										outgoingLink));
+								continue;
+							}
+						}
 
 						break;
 					case RoleEditPart.VISUAL_ID:
@@ -79,6 +148,34 @@ public class CoordinationPatternItemSemanticEditPolicy extends
 								DestroyElementRequest r = new DestroyElementRequest(
 										incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(),
+										incomingLink));
+								continue;
+							}
+							if (Pattern2VisualIDRegistry
+									.getVisualID(incomingLink) == AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										incomingLink.getSource().getElement(),
+										null, incomingLink.getTarget()
+												.getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r) {
+									protected CommandResult doExecuteWithResult(
+											IProgressMonitor progressMonitor,
+											IAdaptable info)
+											throws ExecutionException {
+										EObject referencedObject = getReferencedObject();
+										Resource resource = referencedObject
+												.eResource();
+										CommandResult result = super
+												.doExecuteWithResult(
+														progressMonitor, info);
+										if (resource != null) {
+											resource.getContents().add(
+													referencedObject);
+										}
+										return result;
+									}
+								});
 								cmd.add(new DeleteCommand(getEditingDomain(),
 										incomingLink));
 								continue;
@@ -110,6 +207,57 @@ public class CoordinationPatternItemSemanticEditPolicy extends
 				break;
 			}
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
+		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
+				: getCompleteCreateRelationshipCommand(req);
+		return command != null ? command : super
+				.getCreateRelationshipCommand(req);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getStartCreateRelationshipCommand(
+			CreateRelationshipRequest req) {
+		if (Pattern2ElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
+				.getElementType()) {
+			return getGEFWrapper(new AbstractCoordinationSpecificationRolesCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCompleteCreateRelationshipCommand(
+			CreateRelationshipRequest req) {
+		if (Pattern2ElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
+				.getElementType()) {
+			return null;
+		}
+		return null;
+	}
+
+	/**
+	 * Returns command to reorient EReference based link. New link target or source
+	 * should be the domain model element associated with this node.
+	 * 
+	 * @generated
+	 */
+	protected Command getReorientReferenceRelationshipCommand(
+			ReorientReferenceRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+			return getGEFWrapper(new AbstractCoordinationSpecificationRolesReorientCommand(
+					req));
+		}
+		return super.getReorientReferenceRelationshipCommand(req);
 	}
 
 }

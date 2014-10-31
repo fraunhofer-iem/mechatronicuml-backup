@@ -97,6 +97,42 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.7">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.8">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
+            </newElementInitializers>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5002"
@@ -271,10 +307,46 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.9">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+              </initializers>
+            </newElementInitializers>
+          </initializers>
+        </modelElementInitializer>
         <sourceMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4002"
+        editPartClassName="AbstractCoordinationSpecificationRolesEditPart"
+        itemSemanticEditPolicyClassName="AbstractCoordinationSpecificationRolesItemSemanticEditPolicy"
+        notationViewFactoryClassName="AbstractCoordinationSpecificationRolesViewFactory"
+        createCommandClassName="AbstractCoordinationSpecificationRolesCreateCommand"
+        reorientCommandClassName="AbstractCoordinationSpecificationRolesReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
       </modelFacet>
     </links>
     <compartments
@@ -408,6 +480,47 @@
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.1"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.1"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.1"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.0"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.0"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -448,6 +561,12 @@
           body="1"/>
       <expressions
           body="OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="false"/>
     </providers>
   </expressionProviders>
   <labelParsers

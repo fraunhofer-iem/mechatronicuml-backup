@@ -135,6 +135,73 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_Role_3002(
+			de.uni_paderborn.fujaba.muml.protocol.Role instance) {
+		try {
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
+			instance.setCardinality(newInstance_0_0);
+			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
+			Object value_0_0_0_0_0 = Pattern2OCLFactory
+					.getExpression(
+							7,
+							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_0_0_0_0);
+
+			value_0_0_0_0_0 = Pattern2AbstractExpression.performCast(
+					value_0_0_0_0_0, EcorePackage.eINSTANCE.getELong());
+			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
+
+			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
+			Object value_0_0_1_0_0 = Pattern2OCLFactory
+					.getExpression(
+							8,
+							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_0_0_1_0);
+
+			value_0_0_1_0_0 = Pattern2AbstractExpression.performCast(
+					value_0_0_1_0_0, EcorePackage.eINSTANCE.getELong());
+			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
+
+		} catch (RuntimeException e) {
+			Pattern2DiagramEditorPlugin.getInstance().logError(
+					"Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_RoleConnector_4001(
+			de.uni_paderborn.fujaba.muml.protocol.RoleConnector instance) {
+		try {
+			de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions newInstance_0_0 = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
+					.createConnectorQualityOfServiceAssumptions();
+			instance.setConnectorQualityOfServiceAssumptions(newInstance_0_0);
+			Object value_0_0_0 = Pattern2OCLFactory
+					.getExpression(
+							9,
+							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+									.getConnectorQualityOfServiceAssumptions(),
+							null).evaluate(newInstance_0_0);
+			newInstance_0_0.setMessageLossPossible(((Boolean) value_0_0_0)
+					.booleanValue());
+
+		} catch (RuntimeException e) {
+			Pattern2DiagramEditorPlugin.getInstance().logError(
+					"Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = Pattern2DiagramEditorPlugin.getInstance()
 				.getElementInitializers();

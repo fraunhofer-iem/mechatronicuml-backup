@@ -167,6 +167,49 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/Role"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/lowerBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/upperBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
+          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
               editPattern="">
@@ -189,6 +232,25 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:ReferenceNewElementSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <newElementInitializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+            <value
+                body="false"/>
+          </initializers>
+        </newElementInitializers>
+      </initializers>
+    </domainInitializer>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
     <diagramLink
@@ -199,6 +261,13 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+  </links>
+  <links>
+    <diagramLink
+        href="pattern.gmfgraph#PatternRoleConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
   </links>
   <diagram>
     <diagramCanvas

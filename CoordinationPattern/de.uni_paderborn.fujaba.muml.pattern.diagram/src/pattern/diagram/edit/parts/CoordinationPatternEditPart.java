@@ -1,12 +1,14 @@
 package pattern.diagram.edit.parts;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -15,6 +17,7 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -222,6 +225,31 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	protected void setLineType(int style) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		boolean update = false;
+
+		if (event.getFeature() == de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+				.getAbstractCoordinationSpecification_Roles()) {
+			update = true;
+		}
+
+		if (update) {
+			doCanonicalRefresh();
+		}
+		super.handleNotificationEvent(event);
+	}
+
+	protected void doCanonicalRefresh() {
+		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+				.getRegisteredEditPolicies(getDiagramView().getElement());
+		for (CanonicalEditPolicy editPolicy : editPolicies) {
+			editPolicy.refresh();
 		}
 	}
 

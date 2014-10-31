@@ -339,6 +339,30 @@ public class Pattern2BaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateAbstractCoordinationSpecificationRoles_4002(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
+				View sourceView, View targetView) {
+			if (source != null) {
+				if (source.getRoles().size() >= 2
+						|| source.getRoles().contains(target)) {
+					return false;
+				}
+				if (source == target) {
+					return false;
+				}
+			}
+			if (target != null && (target.getCoordinationProtocol() != null)) {
+				return false;
+			}
+
+			return canExistAbstractCoordinationSpecificationRoles_4002(source,
+					target, sourceView, targetView);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistRoleConnector_4001(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector linkInstance,
@@ -355,6 +379,26 @@ public class Pattern2BaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
+			return null;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistAbstractCoordinationSpecificationRoles_4002(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
+				View sourceView, View targetView) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorAbstractCoordinationSpecificationRoles_4002(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			return null;
 		}

@@ -204,7 +204,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pattern2"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
    </extension>
 
@@ -219,7 +219,7 @@
             <method name="getType()" value="2001,3001,3002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001"/>
+            <method name="getType()" value="4001,4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5001,5002"/>
@@ -316,6 +316,15 @@
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"
+               name="%metatype.name.AbstractCoordinationSpecificationRoles_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4002"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -333,6 +342,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

@@ -15,6 +15,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import pattern.PatternPackage;
+import pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart;
 import pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import pattern.diagram.edit.parts.CoordinationPatternEditPart;
 import pattern.diagram.edit.parts.ModelElementCategoryEditPart;
@@ -70,6 +71,10 @@ public class Pattern2ElementTypes {
 	 * @generated
 	 */
 	public static final IElementType RoleConnector_4001 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType AbstractCoordinationSpecificationRoles_4002 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -129,6 +134,11 @@ public class Pattern2ElementTypes {
 					RoleConnector_4001,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getRoleConnector());
+
+			elements.put(
+					AbstractCoordinationSpecificationRoles_4002,
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+							.getAbstractCoordinationSpecification_Roles());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -151,6 +161,8 @@ public class Pattern2ElementTypes {
 			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_3001);
 			KNOWN_ELEMENT_TYPES.add(Role_3002);
 			KNOWN_ELEMENT_TYPES.add(RoleConnector_4001);
+			KNOWN_ELEMENT_TYPES
+					.add(AbstractCoordinationSpecificationRoles_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -170,6 +182,8 @@ public class Pattern2ElementTypes {
 			return Role_3002;
 		case RoleConnectorEditPart.VISUAL_ID:
 			return RoleConnector_4001;
+		case AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+			return AbstractCoordinationSpecificationRoles_4002;
 		}
 		return null;
 	}

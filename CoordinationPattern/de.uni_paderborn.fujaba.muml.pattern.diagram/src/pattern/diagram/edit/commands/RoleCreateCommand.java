@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
+import pattern.diagram.providers.ElementInitializers;
+
 /**
  * @generated
  */
@@ -59,6 +61,8 @@ public class RoleCreateCommand extends EditElementCommand {
 
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification owner = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getElementToEdit();
 		owner.getRoles().add(newElement);
+
+		ElementInitializers.getInstance().init_Role_3002(newElement);
 
 		doConfigure(newElement, monitor, info);
 

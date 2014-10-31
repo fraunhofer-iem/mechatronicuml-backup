@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import pattern.diagram.edit.policies.Pattern2BaseItemSemanticEditPolicy;
+import pattern.diagram.providers.ElementInitializers;
 
 /**
  * @generated
@@ -112,6 +113,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		getContainer().setRoleConnector(newElement);
 		newElement.getConnectorEndpoints().add(getSource());
 		newElement.getConnectorEndpoints().add(getTarget());
+		ElementInitializers.getInstance().init_RoleConnector_4001(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
