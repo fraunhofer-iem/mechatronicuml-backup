@@ -129,7 +129,10 @@
       </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_81SHsFOlEeSDPNki4Dv8rg" name="StrategyExchange">
-      <messageTypes xmi:id="_-bCkkFOlEeSDPNki4Dv8rg" name="updateStrategy"/>
+      <messageTypes xmi:id="_-bCkkFOlEeSDPNki4Dv8rg" name="updateStrategy">
+        <parameters xmi:id="_MjK5EGKdEeS-2sR8iwsrMg" name="maxSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_O-fsAGKdEeS-2sR8iwsrMg" name="minDistance" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      </messageTypes>
       <messageTypes xmi:id="_BlOooFOmEeSDPNki4Dv8rg" name="ackStrategy"/>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_dGUwsFOnEeSDPNki4Dv8rg" name="ProfileDistribution">
@@ -354,8 +357,8 @@
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_BdVtYFOlEeSaVK1gfdE5pA" name="StrategyExchange">
       <roles xmi:id="_BdVtYVOlEeSaVK1gfdE5pA" connectors="_BdVtaVOlEeSaVK1gfdE5pA" behavior="_K4CGMFOlEeSaVK1gfdE5pA" name="sender" senderMessageTypes="_-bCkkFOlEeSDPNki4Dv8rg" receiverMessageTypes="_BlOooFOmEeSDPNki4Dv8rg">
         <cardinality xmi:id="_BdVtYlOlEeSaVK1gfdE5pA">
-          <lowerBound xmi:id="_NO5acFOmEeSDPNki4Dv8rg"/>
-          <upperBound xmi:id="_NO5acVOmEeSDPNki4Dv8rg"/>
+          <lowerBound xmi:id="_E2zDQGKdEeS-2sR8iwsrMg"/>
+          <upperBound xmi:id="_E2zqUGKdEeS-2sR8iwsrMg"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_K1XXQFOmEeSDPNki4Dv8rg" name="buffer" messageType="_BlOooFOmEeSDPNki4Dv8rg">
           <bufferSize xmi:id="_NG24wFOmEeSDPNki4Dv8rg" infinity="true"/>
@@ -2447,6 +2450,9 @@
       <clocks xmi:id="_yyXmLPR7EeOKmIQk3FL8KA" name="c"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Qg9CwvqeEeO0_ZLnPp6sSA" name="OperationStrategy" behavioralElement="_ebUwcPhwEeOlYcxv1LeTzQ">
+      <variables xmi:id="_saCSEGKfEeS-2sR8iwsrMg" name="maxSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_v58ugGKfEeS-2sR8iwsrMg" value="120"/>
+      </variables>
       <states xmi:id="_Qg9Cw_qeEeO0_ZLnPp6sSA" name="Main" initial="true">
         <embeddedRegions xmi:id="_QhGzwPqeEeO0_ZLnPp6sSA" priority="1">
           <embeddedStatechart xmi:id="_QhGzwfqeEeO0_ZLnPp6sSA" name="peer_peer" behavioralElement="_iZRzwPhwEeOlYcxv1LeTzQ">
@@ -4969,10 +4975,69 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_K4CGMFOlEeSaVK1gfdE5pA" name="StrategyExchange_sender" behavioralElement="_BdVtYVOlEeSaVK1gfdE5pA">
-      <states xmi:id="_K4CGMVOlEeSaVK1gfdE5pA" name="init" initial="true"/>
+      <variables xmi:id="_eh7ksGKdEeS-2sR8iwsrMg" name="curMaxSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      <variables xmi:id="_i-jhAGKdEeS-2sR8iwsrMg" name="curMinDistance" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      <transitions xmi:id="_Wlt8EGKdEeS-2sR8iwsrMg" priority="1" target="_VkjaAGKdEeS-2sR8iwsrMg" source="_K4CGMVOlEeSaVK1gfdE5pA" clockResets="_vk8ZwGKdEeS-2sR8iwsrMg" urgent="false">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_pbKYEGKdEeS-2sR8iwsrMg">
+          <message xmi:id="_qFz3kGKdEeS-2sR8iwsrMg" instanceOf="_-bCkkFOlEeSDPNki4Dv8rg">
+            <parameterBinding xmi:id="_qy_GoGKdEeS-2sR8iwsrMg" parameter="_MjK5EGKdEeS-2sR8iwsrMg">
+              <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sJpXkGKdEeS-2sR8iwsrMg" typedNamedElement="_eh7ksGKdEeS-2sR8iwsrMg"/>
+            </parameterBinding>
+            <parameterBinding xmi:id="_sUYn8GKdEeS-2sR8iwsrMg" parameter="_O-fsAGKdEeS-2sR8iwsrMg">
+              <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_thPcoGKdEeS-2sR8iwsrMg" typedNamedElement="_i-jhAGKdEeS-2sR8iwsrMg"/>
+            </parameterBinding>
+          </message>
+        </events>
+      </transitions>
+      <transitions xmi:id="_XRKs0GKdEeS-2sR8iwsrMg" priority="1" target="_K4CGMVOlEeSaVK1gfdE5pA" source="_VkjaAGKdEeS-2sR8iwsrMg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_YsmJAGKdEeS-2sR8iwsrMg" kind="TRIGGER">
+          <message xmi:id="_ZYtBEGKdEeS-2sR8iwsrMg" instanceOf="_BlOooFOmEeSDPNki4Dv8rg"/>
+        </events>
+      </transitions>
+      <states xmi:id="_K4CGMVOlEeSaVK1gfdE5pA" name="Idle" outgoingTransitions="_Wlt8EGKdEeS-2sR8iwsrMg" incomingTransitions="_XRKs0GKdEeS-2sR8iwsrMg" initial="true"/>
+      <states xmi:id="_VkjaAGKdEeS-2sR8iwsrMg" name="Wait" outgoingTransitions="_XRKs0GKdEeS-2sR8iwsrMg" incomingTransitions="_Wlt8EGKdEeS-2sR8iwsrMg">
+        <invariants xmi:id="_0ApwEGKdEeS-2sR8iwsrMg" clock="_vk8ZwGKdEeS-2sR8iwsrMg">
+          <bound xmi:id="_0dHCkGKdEeS-2sR8iwsrMg">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_1IzD4GKdEeS-2sR8iwsrMg" value="10"/>
+          </bound>
+        </invariants>
+      </states>
+      <clocks xmi:id="_vk8ZwGKdEeS-2sR8iwsrMg" name="c1"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Q17oAFOlEeSaVK1gfdE5pA" name="StrategyExchange_receiver" behavioralElement="_BdVtZVOlEeSaVK1gfdE5pA">
-      <states xmi:id="_Q17oAVOlEeSaVK1gfdE5pA" name="init" initial="true"/>
+      <variables xmi:id="_FOswcGKeEeS-2sR8iwsrMg" name="newMaxSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      <variables xmi:id="_H9PaUGKeEeS-2sR8iwsrMg" name="newMinDistance" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      <transitions xmi:id="_9d67wGKdEeS-2sR8iwsrMg" priority="1" target="_8FS78GKdEeS-2sR8iwsrMg" source="_Q17oAVOlEeSaVK1gfdE5pA" clockResets="_ZfoTAGKeEeS-2sR8iwsrMg">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="__cKxIGKdEeS-2sR8iwsrMg" kind="TRIGGER">
+          <message xmi:id="_ALn4IGKeEeS-2sR8iwsrMg" instanceOf="_-bCkkFOlEeSDPNki4Dv8rg"/>
+        </events>
+        <action xmi:id="_DEPEAGKeEeS-2sR8iwsrMg" name="{assign msg params}">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_UYOUUGKeEeS-2sR8iwsrMg">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_UYOUUWKeEeS-2sR8iwsrMg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_UYOUUmKeEeS-2sR8iwsrMg" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_MjK5EGKdEeS-2sR8iwsrMg"/>
+              <lhs_typedNamedElementExpression xmi:id="_UYOUU2KeEeS-2sR8iwsrMg" typedNamedElement="_FOswcGKeEeS-2sR8iwsrMg"/>
+            </expressions>
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_UYOUVGKeEeS-2sR8iwsrMg" assignOperator=":=">
+              <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_UYOUVWKeEeS-2sR8iwsrMg" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_O-fsAGKdEeS-2sR8iwsrMg"/>
+              <lhs_typedNamedElementExpression xmi:id="_UYOUVmKeEeS-2sR8iwsrMg" typedNamedElement="_H9PaUGKeEeS-2sR8iwsrMg"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <transitions xmi:id="_97H1IGKdEeS-2sR8iwsrMg" priority="1" target="_Q17oAVOlEeSaVK1gfdE5pA" source="_8FS78GKdEeS-2sR8iwsrMg" urgent="false">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_Bel74GKeEeS-2sR8iwsrMg">
+          <message xmi:id="_BsIBkGKeEeS-2sR8iwsrMg" instanceOf="_BlOooFOmEeSDPNki4Dv8rg"/>
+        </events>
+      </transitions>
+      <states xmi:id="_Q17oAVOlEeSaVK1gfdE5pA" name="WaitForUpdate" outgoingTransitions="_9d67wGKdEeS-2sR8iwsrMg" incomingTransitions="_97H1IGKdEeS-2sR8iwsrMg" initial="true"/>
+      <states xmi:id="_8FS78GKdEeS-2sR8iwsrMg" name="NewStrategy" outgoingTransitions="_97H1IGKdEeS-2sR8iwsrMg" incomingTransitions="_9d67wGKdEeS-2sR8iwsrMg">
+        <invariants xmi:id="_dm1Y8GKeEeS-2sR8iwsrMg" clock="_ZfoTAGKeEeS-2sR8iwsrMg">
+          <bound xmi:id="_eM1pAGKeEeS-2sR8iwsrMg">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_ey3HMGKeEeS-2sR8iwsrMg" value="5"/>
+          </bound>
+        </invariants>
+      </states>
+      <clocks xmi:id="_ZfoTAGKeEeS-2sR8iwsrMg" name="c2"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_SMwJoFOoEeSDPNki4Dv8rg" name="ProfileDistribution_profileProvider" behavioralElement="_TM_7IFOnEeSDPNki4Dv8rg">
       <states xmi:id="_SMwJoVOoEeSDPNki4Dv8rg" name="ProfileProvider_Main" initial="true">
@@ -6672,8 +6737,8 @@
     <modelElements xsi:type="reconfiguration:ReconfigurableAtomicComponent" xmi:id="_ebUwcPhwEeOlYcxv1LeTzQ" name="OperationStrategy" behavior="_Qg9CwvqeEeO0_ZLnPp6sSA">
       <ports xsi:type="component:DiscretePort" xmi:id="_iZRzwPhwEeOlYcxv1LeTzQ" name="peer" behavior="_QhGzwfqeEeO0_ZLnPp6sSA" senderMessageTypes="_Dy8d4HauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _BG8KoHauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA" receiverMessageTypes="_Dy8d4HauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _BG8KoHauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA" refinedRole="_jk3pUHasEeOh__JNCv2_1A">
         <cardinality xmi:id="_Qf6g8PqeEeO0_ZLnPp6sSA">
-          <lowerBound xmi:id="_tJ15EAUCEeSn_-l-OlOxjg" value="0"/>
-          <upperBound xmi:id="_tJ15EQUCEeSn_-l-OlOxjg"/>
+          <lowerBound xmi:id="_mZvjkGKfEeS-2sR8iwsrMg" value="0"/>
+          <upperBound xmi:id="_mZwxsGKfEeS-2sR8iwsrMg"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_Qg9CwPqeEeO0_ZLnPp6sSA" name="buffer" messageType="_BG8KoHauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _Dy8d4HauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA">
           <bufferSize xmi:id="_Qg9CwfqeEeO0_ZLnPp6sSA" value="2"/>
@@ -6699,8 +6764,8 @@
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_KlzIwPh2EeOdcfcso3gQlg" name="speedProvider" behavior="_AXUA0VOiEeSaVK1gfdE5pA" senderMessageTypes="_9L8i8FOfEeSaVK1gfdE5pA" refinedRole="_ncvrkFOfEeSaVK1gfdE5pA">
         <cardinality xmi:id="_AXAe0FOiEeSaVK1gfdE5pA">
-          <lowerBound xmi:id="_AhkwEFOiEeSaVK1gfdE5pA"/>
-          <upperBound xmi:id="_AhkwEVOiEeSaVK1gfdE5pA"/>
+          <lowerBound xmi:id="_eZ3i8GKfEeS-2sR8iwsrMg" value="0"/>
+          <upperBound xmi:id="_eZ4xEGKfEeS-2sR8iwsrMg"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_dd_WwPh2EeOdcfcso3gQlg" name="requestee" behavior="_ax8KYfqeEeO0_ZLnPp6sSA" senderMessageTypes="_m5UFsI9PEeOh26Tom612Wg _o2b5sI9PEeOh26Tom612Wg _qFu-YI9PEeOh26Tom612Wg _rgMKMI9PEeOh26Tom612Wg" receiverMessageTypes="_lIjSsI9PEeOh26Tom612Wg _n6Vd0I9PEeOh26Tom612Wg" refinedRole="_UQABNI9PEeOh26Tom612Wg">
@@ -6714,8 +6779,8 @@
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_WoA8MPuREeO8xJIX1d2eag" name="strategySender" behavior="_YzgtI1OmEeSDPNki4Dv8rg" senderMessageTypes="_-bCkkFOlEeSDPNki4Dv8rg" receiverMessageTypes="_BlOooFOmEeSDPNki4Dv8rg" refinedRole="_BdVtYVOlEeSaVK1gfdE5pA">
         <cardinality xmi:id="_YzNyMFOmEeSDPNki4Dv8rg">
-          <lowerBound xmi:id="_ZE6mMFOmEeSDPNki4Dv8rg"/>
-          <upperBound xmi:id="_ZE6mMVOmEeSDPNki4Dv8rg"/>
+          <lowerBound xmi:id="_fUuBoGKfEeS-2sR8iwsrMg" value="0"/>
+          <upperBound xmi:id="_fUuBoWKfEeS-2sR8iwsrMg"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_YzgtIFOmEeSDPNki4Dv8rg" name="buffer" messageType="_BlOooFOmEeSDPNki4Dv8rg">
           <bufferSize xmi:id="_YzgtIVOmEeSDPNki4Dv8rg" infinity="true"/>
