@@ -1,0 +1,1916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="NetworkInterfaces" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::middleware::NetworkInterfaces" startHeaderPosition="111" endHeaderPosition="1118">
+    <documentation xsi:type="mtl:ModuleDocumentation">
+      <body startPosition="32" endPosition="108" value="&#xA;This module provides all templates to generate the NetworkInterfaces.&#xA;&#xA;"/>
+    </documentation>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//connector"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//behavior"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/expressions/common/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/expressions/common/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/expressions/common/0.3.1#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//types"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//component"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//instance"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/psm/codegen/0.1.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatform"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwvaluetype"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance"/>
+    </input>
+    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
+    <imports href="../queries/middlewareQueries.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateNetworkInterfaces" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateNetworkInterfaceHeader">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateNetworkInterfaces/rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateNetworkInterfaces/path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateNetworkInterfaceClass">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateNetworkInterfaces/rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateNetworkInterfaces/path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="968" endPosition="1118" value="&#xA;Calls the templates for header and implementation file.&#xA;@param rsri the (home)-ECU&#xA;@param path the current file-path for generating files&#xA;&#xA;"/>
+        <parametersDocumentation name="rsri">
+          <body value=" the (home)-ECU"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="path">
+          <body value=" the current file-path for generating files"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rsri">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </parameter>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateNetworkInterfaceHeader" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @file &#xA; * @author generated&#xA; * @brief Implementations of the Interface NetworkInterface&#xA; * @details In this file Method-Stubs for the #NetworkInterface%s of the ECU "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateNetworkInterfaceHeader/rsri">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" are genereated,&#xA; *          These Method-Stubs have to be manually implemented, since they are called in the Middleware and in the Methods MW_NIreceiveMessages(void) and MW_NIsendMessages(void)&#xA; * &#xA; * @warning the Implementation of the #NetworkInterface%s has to be done manually&#xA; */&#xA;#ifndef NETWORKINTERFACEIMPLEMENTATION_H_&#xA;#define NETWORKINTERFACEIMPLEMENTATION_H_&#xA;&#xA;#include &quot;../GlobalIdentifier.h&quot;&#xA;#include &quot;MiddlewareCore.h&quot;&#xA;&#xA;//Intern networkinterface&#xA; /**&#xA;  * @brief Does Nothing, just to be consisten to the Interface&#xA;  * @return True&#xA;  */&#xA;bool_t NetworkInterface_intern_init(void);&#xA;&#xA;/**&#xA; * @brief Send a MiddlewareMessage via the internal NetworkInterface&#xA; * @details The MiddlewareMessage is directly enqued in the NetworkMessageBuffer Middleware::incoming&#xA; * &#xA; * @param msg The MiddlewareMessage to be send&#xA; * @return True, if sending was succesful, otherwise False&#xA; */&#xA;bool_t NetworkInterface_intern_send(MiddlewareMessage* msg);&#xA;&#xA;/**&#xA; * @brief This Method is empty and its purpose is to be conistend to the Interface NetworkInterface&#xA; * @return NULL&#xA; * @warning This method should never be used!&#xA; */&#xA;MiddlewareMessage* NetworkInterface_intern_receive(void);&#xA;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/**&#xA; * @brief INIT method for NetworkInterface: "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" of ECU:"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateNetworkInterfaceHeader/rsri">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=". Usually this is called before the main application is started.&#xA; * @return What you have implemented&#xA; */&#xA;bool_t "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/middlewareQueries.emtl#/0/getInitMethodName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(void);&#xA;&#xA;/**&#xA; * @brief SEND method for the NetworkInterface: "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" of ECU:"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateNetworkInterfaceHeader/rsri">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details Implement this method, to send a message via the  NetworkInterface: Middleware::"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA; * This method ist called by the middleware, if a message has to be sent via this NetworkInterface&#xA; * @param msg the MiddlewareMessage to be sent&#xA; * @return What you have implemented&#xA; * @note use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)&#xA; * to write the message content into a byte array, if needed&#xA; */&#xA;bool_t "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/middlewareQueries.emtl#/0/getSendMethodName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(MiddlewareMessage* msg);&#xA;&#xA;/**&#xA; * @brief RECEIVE method for the NetworkInterface: "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" of ECU:"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateNetworkInterfaceHeader/rsri">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details implement this method, to receive a message via the  NetworkInterface: Middleware::"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA; * This method ist called by the middleware periodically to receive new messages&#xA; * @return the received MiddlewareMessage&#xA; */&#xA;MiddlewareMessage * "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/middlewareQueries.emtl#/0/getReceiveMethodName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(void);&#xA;"/>
+          <loopVariable name="ni">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:IteratorExp" name="select" eType="/16/Sequence(HWPortInstance)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/16/Sequence(HWPortInstance)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/16/OrderedSet(HWPort)">
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateNetworkInterfaceHeader/rsri">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/15/StructuredResourceInstance">
+                    <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/ResourceInstance/hwports"/>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/temp1">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/15/HWPortInstance">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateNetworkInterfaceHeader/%.1/%.3/select/p">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </iterator>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;#endif /* NETWORKINTERFACEIMPLEMENTATION_H_ */&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateNetworkInterfaceHeader/path">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Middleware/NetworkInterfaceImplementation.h">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1422" endPosition="1578" value="&#xA;Generates the header file for the NetworkInterface defintion.&#xA;@param rsri the (home)-ECU&#xA;@param path the current file-path for generating files&#xA;&#xA;"/>
+        <parametersDocumentation name="rsri">
+          <body value=" the (home)-ECU"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="path">
+          <body value=" the current file-path for generating files"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rsri">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </parameter>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateNetworkInterfaceClass" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#include &quot;NetworkInterfaceImplementation.h&quot;&#xA;&#xA;bool_t NetworkInterface_intern_init(void){&#xA;    //do some initialization here&#xA;return true;&#xA;}&#xA;&#xA;bool_t NetworkInterface_intern_send(MiddlewareMessage* msg){&#xA;   return NetworkMessageBuffer_enqueue(mw->incoming, msg);&#xA;&#xA;}&#xA;MiddlewareMessage* NetworkInterface_intern_receive(void){&#xA;    return NULL; //This method should never be used&#xA;}&#xA;/** "/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &#xA;&#xA;/**"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="user includes **/">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="**/&#xA;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;/*&#xA; * INIT method for network interface "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.21"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/expressions/common/0.3.1#//NamedElement/name"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * implement this method, to do additional initialization for NI "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.21"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/expressions/common/0.3.1#//NamedElement/name"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=". Usually this is called before the main application is started.&#xA; */&#xA;bool_t "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/middlewareQueries.emtl#/0/getInitMethodName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(void){&#xA;/** @TODO "/>
+          <body xsi:type="mtl:ProtectedAreaBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &#xA;&#xA;/**"/>
+            <marker xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="mtl:QueryInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="../queries/middlewareQueries.emtl#/0/getInitMethodName"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" **/">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </marker>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="**/&#xA;//standard return value&#xA;return true;&#xA;}&#xA;&#xA;&#xA;/*&#xA; * SEND method for network interface "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.21"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/expressions/common/0.3.1#//NamedElement/name"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA; * implement this method, to send a message via the NI "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.21"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/expressions/common/0.3.1#//NamedElement/name"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA; * This method ist called by the middleware, if a message has to be sent via this network interface&#xA; * @param msg the message to be sent&#xA; * hint: use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)&#xA; * to write the message content into a byte array, if needed&#xA; */&#xA;bool_t "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/middlewareQueries.emtl#/0/getSendMethodName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(MiddlewareMessage * msg){&#xA;/** @TODO "/>
+          <body xsi:type="mtl:ProtectedAreaBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &#xA;&#xA;&#xA;/**"/>
+            <marker xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="mtl:QueryInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="../queries/middlewareQueries.emtl#/0/getSendMethodName"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" **/">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </marker>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="**/&#xA;//free the allocated memory for the message after it has been sent&#xA;free(msg);&#xA;msg = NULL;&#xA;//if we are reaching this statement, everything went ok&#xA;return true;&#xA;}&#xA;&#xA;&#xA;/*&#xA; * RECEIVE method for network interface "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.21"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/expressions/common/0.3.1#//NamedElement/name"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA; * implement this method, to receive a message via the NI "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.21"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/expressions/common/0.3.1#//NamedElement/name"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA; * This method ist called by the middleware periodically to receive new messages&#xA; * @return the received MiddlewareMessage&#xA; */&#xA;MiddlewareMessage * "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/middlewareQueries.emtl#/0/getReceiveMethodName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(void){&#xA;//create new MiddlewareMessage&#xA;MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));&#xA;&#xA;//buffer for receiving data&#xA;char buf"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="30"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;//number of received bytes&#xA;int_t recvLength = 0;&#xA;&#xA;///////////////////////////////&#xA;/** @TODO "/>
+          <body xsi:type="mtl:ProtectedAreaBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &#xA; //fill the buffer *buf and specify the number of received bytres (recvLength)&#xA;/**"/>
+            <marker xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="mtl:QueryInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="../queries/middlewareQueries.emtl#/0/getReceiveMethodName"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" **/">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </marker>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="**/&#xA;///////////////////////////////&#xA;&#xA;if(recvLength&lt;=0 || !(Message_can_read_delimited_from(buf,0,recvLength))){&#xA;&#x9;free(tmpMessage);&#xA;    tmpMessage = NULL;&#xA;&#x9;}&#xA;else{&#xA;&#x9;//read the buffer and create the middlewareMessage&#xA;&#x9;MiddlewareMessage_read_delimited_from(buf, tmpMessage, 0);&#xA;&#x9;}&#xA;//return the received message&#xA;return tmpMessage;&#xA;}&#xA;&#xA;&#x9;&#xA;"/>
+          <loopVariable name="ni">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:IteratorExp" name="select" eType="/16/Sequence(HWPortInstance)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/16/Sequence(HWPortInstance)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/16/OrderedSet(HWPort)">
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateNetworkInterfaceClass/rsri">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/15/StructuredResourceInstance">
+                    <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/ResourceInstance/hwports"/>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/temp2">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/15/HWPortInstance">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateNetworkInterfaceClass/%.1/%.3/select/p">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </iterator>
+          </iterSet>
+        </body>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateNetworkInterfaceClass/path">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Middleware/NetworkInterfaceImplementation.c">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="4740" endPosition="4978" value="&#xA;Generates the implementation file for the NetworkInterface defintion.&#xA;For every network interface a stub with a protected area is generated.&#xA;@param rsri the (home)-ECU&#xA;@param path the current file-path for generating files&#xA;&#xA;"/>
+        <parametersDocumentation name="rsri">
+          <body value=" the (home)-ECU"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="path">
+          <body value=" the current file-path for generating files"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rsri">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </parameter>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateNetworkInterfaces">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateNetworkInterfaces"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateNetworkInterfaceHeader">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateNetworkInterfaceHeader"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateNetworkInterfaceClass">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateNetworkInterfaceClass"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getName.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getName.18"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="port">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getName.21"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="name">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getSendMethodName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/middlewareQueries.emtl#/0/getSendMethodName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hwp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getReceiveMethodName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/middlewareQueries.emtl#/0/getReceiveMethodName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hwp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getInitMethodName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/middlewareQueries.emtl#/0/getInitMethodName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="hwp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RefinedStructuredResourceInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscretePort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/DiscretePort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//connector/MessageBuffer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Component_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="APICallParameterBinding_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/psm/allocation/0.4.0/#//realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Port_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/Port"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//behavior/Operation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Resource_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/Resource"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//behavior/Parameter"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentPart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/ComponentPart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredResourceInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Variable_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//behavior/Variable"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Region_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/Region"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageTypeRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/SynchronizationChannel"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="State_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/State"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HybridPort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/HybridPort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/PortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstanceConfiguration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/AtomicComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Connector_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//connector/Connector"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Clock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/Clock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//connector/ConnectorInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//types/DataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComparingOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/expressions/common/0.3.1#//expressions/common/ComparingOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelElementCategory_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TimeValue_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//valuetype/TimeValue"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/DiscretePortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CodGenAllocation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//CodGenAllocation"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="StructuredResourceInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="HWPortInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(HWPort)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(HWPortInstance)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/%">
+      <details key="start" value="29"/>
+      <details key="end" value="110"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateNetworkInterfaces">
+      <details key="start" value="1121"/>
+      <details key="end" value="1417"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateNetworkInterfaces/%">
+      <details key="start" value="1260"/>
+      <details key="end" value="1261"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateNetworkInterfaces/%.1">
+      <details key="start" value="1262"/>
+      <details key="end" value="1304"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateNetworkInterfaces/%.1/rsri">
+      <details key="start" value="1293"/>
+      <details key="end" value="1297"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateNetworkInterfaces/%.1/path">
+      <details key="start" value="1299"/>
+      <details key="end" value="1303"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateNetworkInterfaces/%.2">
+      <details key="start" value="1306"/>
+      <details key="end" value="1308"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateNetworkInterfaces/%.3">
+      <details key="start" value="1309"/>
+      <details key="end" value="1350"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateNetworkInterfaces/%.3/rsri">
+      <details key="start" value="1339"/>
+      <details key="end" value="1343"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateNetworkInterfaces/%.3/path">
+      <details key="start" value="1345"/>
+      <details key="end" value="1349"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateNetworkInterfaces/%.4">
+      <details key="start" value="1352"/>
+      <details key="end" value="1353"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateNetworkInterfaces/%.5">
+      <details key="start" value="1405"/>
+      <details key="end" value="1406"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateNetworkInterfaces/%.6">
+      <details key="start" value="965"/>
+      <details key="end" value="1120"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateNetworkInterfaces/%.6/rsri">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateNetworkInterfaces/%.6/path">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateNetworkInterfaces/rsri">
+      <details key="start" value="1164"/>
+      <details key="end" value="1204"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateNetworkInterfaces/path">
+      <details key="start" value="1206"/>
+      <details key="end" value="1218"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateNetworkInterfaceHeader">
+      <details key="start" value="1581"/>
+      <details key="end" value="4735"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateNetworkInterfaceHeader/%">
+      <details key="start" value="1686"/>
+      <details key="end" value="1687"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateNetworkInterfaceHeader/%.1">
+      <details key="start" value="1687"/>
+      <details key="end" value="4723"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateNetworkInterfaceHeader/%.1/%">
+      <details key="start" value="1763"/>
+      <details key="end" value="1935"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateNetworkInterfaceHeader/%.1/%.1">
+      <details key="start" value="1936"/>
+      <details key="end" value="1950"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateNetworkInterfaceHeader/%.1/%.1/rsri">
+      <details key="start" value="1936"/>
+      <details key="end" value="1940"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateNetworkInterfaceHeader/%.1/%.2">
+      <details key="start" value="1952"/>
+      <details key="end" value="3124"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateNetworkInterfaceHeader/%.1/%.3">
+      <details key="start" value="3124"/>
+      <details key="end" value="4667"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%">
+      <details key="start" value="3261"/>
+      <details key="end" value="3309"/>
+      <details key="line" value="81"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.1">
+      <details key="start" value="3310"/>
+      <details key="end" value="3322"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.1/ni">
+      <details key="start" value="3310"/>
+      <details key="end" value="3312"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.2">
+      <details key="start" value="3324"/>
+      <details key="end" value="3332"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.3">
+      <details key="start" value="3333"/>
+      <details key="end" value="3347"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.3/rsri">
+      <details key="start" value="3333"/>
+      <details key="end" value="3337"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.4">
+      <details key="start" value="3349"/>
+      <details key="end" value="3451"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.5">
+      <details key="start" value="3452"/>
+      <details key="end" value="3464"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.5/ni">
+      <details key="start" value="3452"/>
+      <details key="end" value="3454"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.6">
+      <details key="start" value="3466"/>
+      <details key="end" value="3579"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.7">
+      <details key="start" value="3580"/>
+      <details key="end" value="3602"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.7/ni">
+      <details key="start" value="3580"/>
+      <details key="end" value="3582"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.8">
+      <details key="start" value="3604"/>
+      <details key="end" value="3665"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.9">
+      <details key="start" value="3666"/>
+      <details key="end" value="3678"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.9/ni">
+      <details key="start" value="3666"/>
+      <details key="end" value="3668"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.10">
+      <details key="start" value="3680"/>
+      <details key="end" value="3688"/>
+      <details key="line" value="89"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.11">
+      <details key="start" value="3689"/>
+      <details key="end" value="3703"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.11/rsri">
+      <details key="start" value="3689"/>
+      <details key="end" value="3693"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.12">
+      <details key="start" value="3705"/>
+      <details key="end" value="3798"/>
+      <details key="line" value="90"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.13">
+      <details key="start" value="3799"/>
+      <details key="end" value="3811"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.13/ni">
+      <details key="start" value="3799"/>
+      <details key="end" value="3801"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.14">
+      <details key="start" value="3813"/>
+      <details key="end" value="4218"/>
+      <details key="line" value="90"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.15">
+      <details key="start" value="4219"/>
+      <details key="end" value="4241"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.15/ni">
+      <details key="start" value="4219"/>
+      <details key="end" value="4221"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.16">
+      <details key="start" value="4243"/>
+      <details key="end" value="4325"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.17">
+      <details key="start" value="4326"/>
+      <details key="end" value="4338"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.17/ni">
+      <details key="start" value="4326"/>
+      <details key="end" value="4328"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.18">
+      <details key="start" value="4340"/>
+      <details key="end" value="4348"/>
+      <details key="line" value="100"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.19">
+      <details key="start" value="4349"/>
+      <details key="end" value="4363"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.19/rsri">
+      <details key="start" value="4349"/>
+      <details key="end" value="4353"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.20">
+      <details key="start" value="4365"/>
+      <details key="end" value="4461"/>
+      <details key="line" value="101"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.21">
+      <details key="start" value="4462"/>
+      <details key="end" value="4474"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.21/ni">
+      <details key="start" value="4462"/>
+      <details key="end" value="4464"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.22">
+      <details key="start" value="4476"/>
+      <details key="end" value="4625"/>
+      <details key="line" value="101"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.23">
+      <details key="start" value="4626"/>
+      <details key="end" value="4651"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.23/ni">
+      <details key="start" value="4626"/>
+      <details key="end" value="4628"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateNetworkInterfaceHeader/%.1/%.3/%.24">
+      <details key="start" value="4653"/>
+      <details key="end" value="4661"/>
+      <details key="line" value="105"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateNetworkInterfaceHeader/%.1/%.3/ni">
+      <details key="start" value="3129"/>
+      <details key="end" value="3147"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select">
+      <details key="start" value="3150"/>
+      <details key="end" value="3258"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect">
+      <details key="start" value="3150"/>
+      <details key="end" value="3226"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/%">
+      <details key="start" value="3150"/>
+      <details key="end" value="3200"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/%/%">
+      <details key="start" value="3150"/>
+      <details key="end" value="3192"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/%/%/rsri">
+      <details key="start" value="3150"/>
+      <details key="end" value="3154"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/%/%/%">
+      <details key="start" value="3165"/>
+      <details key="end" value="3191"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/%.1/%">
+      <details key="start" value="3211"/>
+      <details key="end" value="3225"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/%">
+      <details key="start" value="3237"/>
+      <details key="end" value="3257"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/%/p">
+      <details key="start" value="3237"/>
+      <details key="end" value="3238"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateNetworkInterfaceHeader/%.1/%.3/select/p">
+      <details key="start" value="3235"/>
+      <details key="end" value="3236"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateNetworkInterfaceHeader/%.1/%.4">
+      <details key="start" value="4668"/>
+      <details key="end" value="4716"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateNetworkInterfaceHeader/%.1/%.5">
+      <details key="start" value="1694"/>
+      <details key="end" value="1744"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generateNetworkInterfaceHeader/%.1/%.5/path">
+      <details key="start" value="1694"/>
+      <details key="end" value="1698"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generateNetworkInterfaceHeader/%.1/%.5/%">
+      <details key="start" value="1699"/>
+      <details key="end" value="1744"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/generateNetworkInterfaceHeader/%.1/%.6">
+      <details key="start" value="1753"/>
+      <details key="end" value="1760"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/generateNetworkInterfaceHeader/%.2">
+      <details key="start" value="1419"/>
+      <details key="end" value="1580"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/generateNetworkInterfaceHeader/%.2/rsri">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/generateNetworkInterfaceHeader/%.2/path">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/generateNetworkInterfaceHeader/rsri">
+      <details key="start" value="1629"/>
+      <details key="end" value="1669"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/generateNetworkInterfaceHeader/path">
+      <details key="start" value="1671"/>
+      <details key="end" value="1683"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/generateNetworkInterfaceClass">
+      <details key="start" value="4981"/>
+      <details key="end" value="7985"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/generateNetworkInterfaceClass/%">
+      <details key="start" value="5085"/>
+      <details key="end" value="5086"/>
+      <details key="line" value="119"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/generateNetworkInterfaceClass/%.1">
+      <details key="start" value="5086"/>
+      <details key="end" value="7973"/>
+      <details key="line" value="120"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/generateNetworkInterfaceClass/%.1/%">
+      <details key="start" value="5162"/>
+      <details key="end" value="5539"/>
+      <details key="line" value="121"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/generateNetworkInterfaceClass/%.1/%.1">
+      <details key="start" value="5539"/>
+      <details key="end" value="5590"/>
+      <details key="line" value="135"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/generateNetworkInterfaceClass/%.1/%.1/%">
+      <details key="start" value="5572"/>
+      <details key="end" value="5578"/>
+      <details key="line" value="135"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/generateNetworkInterfaceClass/%.1/%.1/%.1">
+      <details key="start" value="5551"/>
+      <details key="end" value="5570"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/generateNetworkInterfaceClass/%.1/%.2">
+      <details key="start" value="5590"/>
+      <details key="end" value="5595"/>
+      <details key="line" value="137"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/generateNetworkInterfaceClass/%.1/%.3">
+      <details key="start" value="5595"/>
+      <details key="end" value="7965"/>
+      <details key="line" value="139"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/generateNetworkInterfaceClass/%.1/%.3/%">
+      <details key="start" value="5732"/>
+      <details key="end" value="5773"/>
+      <details key="line" value="140"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.1">
+      <details key="start" value="5774"/>
+      <details key="end" value="5791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.1/%">
+      <details key="start" value="5774"/>
+      <details key="end" value="5781"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.1/%/ni">
+      <details key="start" value="5774"/>
+      <details key="end" value="5776"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.2">
+      <details key="start" value="5793"/>
+      <details key="end" value="5859"/>
+      <details key="line" value="143"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.3">
+      <details key="start" value="5860"/>
+      <details key="end" value="5877"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.3/%">
+      <details key="start" value="5860"/>
+      <details key="end" value="5867"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.3/%/ni">
+      <details key="start" value="5860"/>
+      <details key="end" value="5862"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.4">
+      <details key="start" value="5879"/>
+      <details key="end" value="5955"/>
+      <details key="line" value="143"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.5">
+      <details key="start" value="5956"/>
+      <details key="end" value="5978"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.5/ni">
+      <details key="start" value="5956"/>
+      <details key="end" value="5958"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.6">
+      <details key="start" value="5980"/>
+      <details key="end" value="5998"/>
+      <details key="line" value="145"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.7">
+      <details key="start" value="5998"/>
+      <details key="end" value="6059"/>
+      <details key="line" value="146"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.7/%">
+      <details key="start" value="6041"/>
+      <details key="end" value="6047"/>
+      <details key="line" value="146"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.7/%.1">
+      <details key="start" value="6010"/>
+      <details key="end" value="6039"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.7/%.1/%">
+      <details key="start" value="6010"/>
+      <details key="end" value="6032"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.7/%.1/%/ni">
+      <details key="start" value="6010"/>
+      <details key="end" value="6012"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.7/%.1/%.1">
+      <details key="start" value="6033"/>
+      <details key="end" value="6039"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.8">
+      <details key="start" value="6059"/>
+      <details key="end" value="6144"/>
+      <details key="line" value="148"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.9">
+      <details key="start" value="6145"/>
+      <details key="end" value="6162"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.9/%">
+      <details key="start" value="6145"/>
+      <details key="end" value="6152"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.9/%/ni">
+      <details key="start" value="6145"/>
+      <details key="end" value="6147"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.10">
+      <details key="start" value="6164"/>
+      <details key="end" value="6221"/>
+      <details key="line" value="155"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.11">
+      <details key="start" value="6222"/>
+      <details key="end" value="6239"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.11/%">
+      <details key="start" value="6222"/>
+      <details key="end" value="6229"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.11/%/ni">
+      <details key="start" value="6222"/>
+      <details key="end" value="6224"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.12">
+      <details key="start" value="6241"/>
+      <details key="end" value="6600"/>
+      <details key="line" value="156"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.13">
+      <details key="start" value="6601"/>
+      <details key="end" value="6623"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.13/ni">
+      <details key="start" value="6601"/>
+      <details key="end" value="6603"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.14">
+      <details key="start" value="6625"/>
+      <details key="end" value="6662"/>
+      <details key="line" value="162"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.15">
+      <details key="start" value="6662"/>
+      <details key="end" value="6724"/>
+      <details key="line" value="163"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.15/%">
+      <details key="start" value="6705"/>
+      <details key="end" value="6712"/>
+      <details key="line" value="163"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.15/%.1">
+      <details key="start" value="6674"/>
+      <details key="end" value="6703"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.15/%.1/%">
+      <details key="start" value="6674"/>
+      <details key="end" value="6696"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.15/%.1/%/ni">
+      <details key="start" value="6674"/>
+      <details key="end" value="6676"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.15/%.1/%.1">
+      <details key="start" value="6697"/>
+      <details key="end" value="6703"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.16">
+      <details key="start" value="6724"/>
+      <details key="end" value="6934"/>
+      <details key="line" value="166"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.17">
+      <details key="start" value="6935"/>
+      <details key="end" value="6952"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.17/%">
+      <details key="start" value="6935"/>
+      <details key="end" value="6942"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.17/%/ni">
+      <details key="start" value="6935"/>
+      <details key="end" value="6937"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.18">
+      <details key="start" value="6954"/>
+      <details key="end" value="7014"/>
+      <details key="line" value="176"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.19">
+      <details key="start" value="7015"/>
+      <details key="end" value="7032"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.19/%">
+      <details key="start" value="7015"/>
+      <details key="end" value="7022"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.19/%/ni">
+      <details key="start" value="7015"/>
+      <details key="end" value="7017"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.20">
+      <details key="start" value="7034"/>
+      <details key="end" value="7183"/>
+      <details key="line" value="177"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.21">
+      <details key="start" value="7184"/>
+      <details key="end" value="7209"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.21/ni">
+      <details key="start" value="7184"/>
+      <details key="end" value="7186"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.22">
+      <details key="start" value="7211"/>
+      <details key="end" value="7376"/>
+      <details key="line" value="181"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.23">
+      <details key="start" value="7377"/>
+      <details key="end" value="7380"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.24">
+      <details key="start" value="7382"/>
+      <details key="end" value="7384"/>
+      <details key="line" value="186"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.25">
+      <details key="start" value="7385"/>
+      <details key="end" value="7388"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.26">
+      <details key="start" value="7390"/>
+      <details key="end" value="7484"/>
+      <details key="line" value="186"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.27">
+      <details key="start" value="7484"/>
+      <details key="end" value="7626"/>
+      <details key="line" value="191"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.27/%">
+      <details key="start" value="7530"/>
+      <details key="end" value="7614"/>
+      <details key="line" value="191"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.27/%.1">
+      <details key="start" value="7496"/>
+      <details key="end" value="7528"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.27/%.1/%">
+      <details key="start" value="7496"/>
+      <details key="end" value="7521"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.27/%.1/%/ni">
+      <details key="start" value="7496"/>
+      <details key="end" value="7498"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.27/%.1/%.1">
+      <details key="start" value="7522"/>
+      <details key="end" value="7528"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/generateNetworkInterfaceClass/%.1/%.3/%.28">
+      <details key="start" value="7626"/>
+      <details key="end" value="7958"/>
+      <details key="line" value="193"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/generateNetworkInterfaceClass/%.1/%.3/ni">
+      <details key="start" value="5600"/>
+      <details key="end" value="5618"/>
+      <details key="line" value="139"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/generateNetworkInterfaceClass/%.1/%.3/select">
+      <details key="start" value="5621"/>
+      <details key="end" value="5729"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect">
+      <details key="start" value="5621"/>
+      <details key="end" value="5697"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/%">
+      <details key="start" value="5621"/>
+      <details key="end" value="5671"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/%/%">
+      <details key="start" value="5621"/>
+      <details key="end" value="5663"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/%/%/rsri">
+      <details key="start" value="5621"/>
+      <details key="end" value="5625"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/%/%/%">
+      <details key="start" value="5636"/>
+      <details key="end" value="5662"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/%.1/%">
+      <details key="start" value="5682"/>
+      <details key="end" value="5696"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/collect/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/%">
+      <details key="start" value="5708"/>
+      <details key="end" value="5728"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/%/p">
+      <details key="start" value="5708"/>
+      <details key="end" value="5709"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/generateNetworkInterfaceClass/%.1/%.3/select/p">
+      <details key="start" value="5706"/>
+      <details key="end" value="5707"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/generateNetworkInterfaceClass/%.1/%.4">
+      <details key="start" value="5093"/>
+      <details key="end" value="5143"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/generateNetworkInterfaceClass/%.1/%.4/path">
+      <details key="start" value="5093"/>
+      <details key="end" value="5097"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/generateNetworkInterfaceClass/%.1/%.4/%">
+      <details key="start" value="5098"/>
+      <details key="end" value="5143"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/generateNetworkInterfaceClass/%.1/%.5">
+      <details key="start" value="5152"/>
+      <details key="end" value="5159"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/generateNetworkInterfaceClass/%.2">
+      <details key="start" value="4737"/>
+      <details key="end" value="4980"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/generateNetworkInterfaceClass/%.2/rsri">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/generateNetworkInterfaceClass/%.2/path">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/generateNetworkInterfaceClass/rsri">
+      <details key="start" value="5028"/>
+      <details key="end" value="5068"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/generateNetworkInterfaceClass/path">
+      <details key="start" value="5070"/>
+      <details key="end" value="5082"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

@@ -1,0 +1,2537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="Core" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::middleware::Core" startHeaderPosition="300" endHeaderPosition="1494">
+    <documentation xsi:type="mtl:ModuleDocumentation">
+      <body startPosition="32" endPosition="297" value="&#xA;This module contains all templates for generating the Core-Features of the middleware.&#xA;In this files, much code is static, since it contains the maoin functionality&#xA;of the middleware. Nevertheless, small parts are ECU specific and have to be generated.&#xA;&#xA;"/>
+    </documentation>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//connector"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//behavior"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/expressions/common/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/expressions/common/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/expressions/common/0.3.1#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//types"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//component"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//instance"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/psm/codegen/0.1.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatform"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwvaluetype"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance"/>
+    </input>
+    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
+    <imports href="../queries/middlewareQueries.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateMiddlewareCoreFiles" visibility="Public">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateMiddlewareCoreHeader">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreFiles/rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateMiddlewareCoreFiles/path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateMiddlewareCoreClass">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreFiles/rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateMiddlewareCoreFiles/path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1142" endPosition="1494" value="&#xA;In this template all sub-templates are called, which are use to generate the middleware files.&#xA;Please use additional module-files to organize all templates.&#xA;&#xA;This template will be called by the main-template of the code generation.&#xA;@param rsri the home ECU for the middleware&#xA;@param path the current file path for generating files&#xA;&#xA;"/>
+        <parametersDocumentation name="rsri">
+          <body value=" the home ECU for the middleware"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="path">
+          <body value=" the current file path for generating files"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rsri">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </parameter>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="includes">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#include &quot;stdlib.h&quot;&#xA;#include &quot;MiddlewareInternalLogic.h&quot;&#xA;#include &quot;../lib/MiddlewareTypes.h&quot;&#xA;#include &quot;../GlobalIdentifier.h&quot;&#xA;#include &quot;../lib/NetworkMessageBuffer.h&quot;&#xA;#include &quot;../lib/NetworkInterface.h&quot;&#xA;#include &quot;../messages/messages_types.h&quot; &#xA;#include &lt;string.h>&#xA;&#xA;//import all needed ComponentHeaders&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#include &quot;../"/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/stringQueries.emtl#/0/getFileName"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="comp" referredVariable="/0/includes/%.1/comp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;&#xA;"/>
+        <loopVariable name="comp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/12/Sequence(Component)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/12/Sequence(AtomicComponentInstance)">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(RefinedAtomicComponentInstance)">
+              <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/includes/rsri">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/AtomicComponentInstance"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/includes/%.1/collect/collect/temp1">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedAtomicComponentInstance"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/13/AtomicComponentInstance">
+                <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/AtomicComponentInstance"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedAtomicComponentInstance"/>
+            </iterator>
+          </source>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/includes/%.1/collect/temp2">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/AtomicComponentInstance"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance/componentType"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/AtomicComponentInstance"/>
+          </iterator>
+        </iterSet>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1704" endPosition="1807" value="&#xA;Generates the includes for a given ECU&#xA;@param rsri the given ECU (home-ECU for the middleware)&#xA;&#xA;"/>
+        <parametersDocumentation name="rsri">
+          <body value=" the given ECU (home-ECU for the middleware)"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rsri">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateMiddlewareCoreHeader">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;/**&#xA; * @file &#xA; * @author generated&#xA; * @brief Specification of the Core Functionality of the Middleware&#xA; * @details This files contains the main Functions of the Middleware and the global variable Middleware mw&#xA; * &#xA; */&#xA;&#xA;#ifndef MIDDLEWARECORE_H_&#xA;#define MIDDLEWARECORE_H_&#xA;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/includes">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;&#xA;/**&#xA; * &#xA; * @brief Description of the Middleware for the ECU: "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; * @details It contains the Components, which are allocated on a ECU, the NetworkInterfaces of the ECU: "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA; */&#xA;typedef struct Middleware {&#xA;&#xA;//Create components?&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getClassName.3"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="compInst" referredVariable="/0/generateMiddlewareCoreHeader/%/%.7/compInst">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="* "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getVariableName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="compInst" referredVariable="/0/generateMiddlewareCoreHeader/%/%.7/compInst">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="; /**&lt; The ComponentInstance: "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.6"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="compInst" referredVariable="/0/generateMiddlewareCoreHeader/%/%.7/compInst">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" of Type: "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getClassName.3"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="compInst" referredVariable="/0/generateMiddlewareCoreHeader/%/%.7/compInst">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" , which is allocated on the ECU: "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" */&#xA;&#xA;"/>
+          <loopVariable name="compInst">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/12/Sequence(ComponentInstance)">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(RefinedAtomicComponentInstance)">
+              <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateMiddlewareCoreHeader/%/%.7/collect/temp3">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedAtomicComponentInstance"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/13/ComponentInstance">
+                <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp3">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedAtomicComponentInstance"/>
+            </iterator>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;//intern NetworkInterface&#x9;&#xA;NetworkInterface* intern;  /**&lt; Pointer to the internal NetworkInterface of the ECU: "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="  */&#xA;//Create Networkinterfaces&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;NetworkInterface* "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateMiddlewareCoreHeader/%/%.11/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="; /**&lt; Pointer the the NetworkInterface: "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateMiddlewareCoreHeader/%/%.11/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" of the ECU: "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" */&#xA;"/>
+          <loopVariable name="ni">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:IteratorExp" name="select" eType="/12/Sequence(HWPortInstance)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/12/Sequence(HWPortInstance)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(HWPort)">
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/13/StructuredResourceInstance">
+                    <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/ResourceInstance/hwports"/>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/temp4">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/13/HWPortInstance">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp4">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateMiddlewareCoreHeader/%/%.11/select/p">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </iterator>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;//Create NetworkMessageBuffer&#xA;NetworkMessageBuffer* outgoing; /**&lt; Pointer to the NetworkMessageBuffer, which stores the outgoing #MiddlewareMessage%s */&#xA;NetworkMessageBuffer* incoming; /**&lt; Pointer to the NetworkMessageBuffer, which stores the incoming #MiddlewareMessage%s */&#xA;&#xA;ECUID idOfECU; /**&lt; The ECUID of the ECU: "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/stringQueries.emtl#/0/getName.1"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreHeader/rsri">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" on which the Middleware is executed */&#xA;&#xA;}Middleware;&#xA;&#xA;&#xA;/**&#xA; * @brief Global Variable Middleware&#xA; * @details Since, the Middleware is used in different places, we use this global variable to access the Middleware&#xA; * @\warning Only one Middleware is allowed per ECU&#xA; */&#xA;extern Middleware *mw;&#xA;&#xA;/**&#xA; * @brief Creates the Middleware&#xA; * @details Allocates Memory for the struct Middleware, creates its #NetworkInterface%s, and initializes the Middleware&#xA; * @return A Pointer to the new created Middleware&#xA; * @note This Function is called by the system initialization (once)&#xA; */&#xA;Middleware* Middleware_create(void);&#xA;&#xA;/**&#xA; * @brief Initialize the Middleware&#xA; * @details This Function initializes the Middleware, by setting Middleware::idOfECU, and creating the NetworkMessageBuffer Middleware::incoming, and Middleware::outgoing&#xA; * @return True, if the Middleware is successfully initialized, otherwise False&#xA;  */&#xA;bool_t Middelware_init(void);&#xA;&#xA;/**&#xA; * @brief Destroys the Middleware&#xA; * @details Frees the Memory for the struct Middleware&#xA; * @return True, if the Middleware is successfully destroyed, otherwise False&#xA; */&#xA;bool_t Middleware_destroy(void);&#xA;&#xA;/**&#xA; * @brief Takes an arbitary Message, and stores it the NetworkMessatgeBuffer::outgoing&#xA; * @details Takes an arbitary Message, and iff it is a ProtoBuf Message transforms it into an byte-Array, finally the Messages is enqued in Middleware::outgoing&#xA; * &#xA; * @param targetPort The PortID of the target Port to which this Message shall be send&#xA; * @param id The MessageID of the Message which shall be send&#xA; * @param msg The Message to send&#xA; * @return True&#xA; * @todo  always returns true&#xA; */&#xA;bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg);&#xA;&#xA;/**&#xA; * @brief Delivers received Messages to the correct #MessageBuffer%s&#xA; * @details Dequeues alls Messages out of Middleware::incoming and delivers them to the correct #MessageBuffer%s&#xA; * @note This Function will be called periodically&#xA; * @return True&#xA; * @todo  always returns true&#xA; */&#xA;bool_t MW_deliverReceivedMessages(void);&#xA;&#xA;/**&#xA; * @brief Receives Messages for every known NetworkInterface&#xA; * @details Calls the receive Function for each NetworkInterface, which is contained in the struct Middleware&#xA; *          and enques them in Middleware::incoming&#xA; * @return False&#xA; * @todo  Always returns false&#xA; */&#xA;bool_t MW_NIreceiveMessages(void);&#xA;&#xA;/**&#xA; * @brief All outgoing Messages are sent via a corresponding NetworkInterface&#xA; * @details Takes all Messages from Middleware::outgoing, and selects for each the corresponding NetworkInterace, and sends the Message via send Function of the NetworkInterface&#xA; * @return False&#xA; * @todo  Always returns false&#xA; */&#xA;bool_t MW_NIsendMessages(void);&#xA;&#xA;&#xA;&#xA;#endif /* MIDDLEWARECORE_H_ */&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateMiddlewareCoreHeader/path">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/Middleware/MiddlewareCore.h">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2361" endPosition="2534" value="&#xA;Generates the header file for the middleware core.&#xA;@param rsri the given ECU (home-ECU for the middleware)&#xA;@param path the current file-path for generating files&#xA;&#xA;"/>
+        <parametersDocumentation name="rsri">
+          <body value=" the given ECU (home-ECU for the middleware)"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="path">
+          <body value=" the current file-path for generating files"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rsri">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </parameter>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateMiddlewareCoreClass">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="#include &quot;MiddlewareCore.h&quot;&#xA;&#xA;/*&#xA; * create a new middleware instance&#xA; * called by the system initialization (once)&#xA; */&#xA;Middleware* Middleware_create(void){&#xA;&#x9;mw = (Middleware*) malloc(sizeof(Middleware));&#xA;&#x9;/*&#xA;&#x9; * call create-function for every NI of the ECU&#xA;&#x9; */&#xA;&#x9;mw->intern = NetworkInterface_create(&quot;intern&quot;);&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;mw->"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateMiddlewareCoreClass/%/%.1/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = NetworkInterface_create(&quot;"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateMiddlewareCoreClass/%/%.1/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;);&#xA;"/>
+          <loopVariable name="ni">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:IteratorExp" name="select" eType="/12/Sequence(HWPortInstance)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/12/Sequence(HWPortInstance)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(HWPort)">
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreClass/rsri">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/13/StructuredResourceInstance">
+                    <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/ResourceInstance/hwports"/>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateMiddlewareCoreClass/%/%.1/select/collect/temp5">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/13/HWPortInstance">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp5">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateMiddlewareCoreClass/%/%.1/select/p">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </iterator>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;if(Middelware_init() == true){&#xA;&#x9;&#x9;return mw;&#xA;&#x9;}&#xA;&#x9;else{&#xA;&#x9;&#x9;return NULL;&#xA;&#x9;}&#xA;&#xA;}&#xA;&#xA;/*&#xA; * initialize the middleware instance&#xA; * called by the system initialization (once)&#xA; */&#xA;bool_t Middelware_init(void){&#xA;&#x9;&#x9;&#xA;&#x9;if (mw != NULL){&#xA;        mw->idOfECU = "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../queries/middlewareQueries.emtl#/0/getIdentifierVariableName.1"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreClass/rsri">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;        mw->incoming = NetworkMessageBuffer_create(15, true);&#xA;        mw->outgoing = NetworkMessageBuffer_create(15, true);&#xA;&#x9;&#x9;return true;&#xA;&#x9;}else&#xA;&#x9;&#x9;return false;&#xA;}&#xA;&#xA;/*&#xA; * destroys the middleware instance&#xA; * called by the system initialization (once)&#xA; */&#xA;bool_t Middleware_destroy(void){&#xA;&#x9;if (mw != NULL){&#xA;&#x9;&#x9;//destroy all components&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getDestroyMethodName"/>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/61">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance/componentType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(mw->"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getVariableName.1"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="compInst" referredVariable="/0/generateMiddlewareCoreClass/%/%.5/compInst">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+          <loopVariable name="compInst">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/12/Sequence(ComponentInstance)">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(RefinedAtomicComponentInstance)">
+              <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreClass/rsri">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateMiddlewareCoreClass/%/%.5/collect/temp6">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedAtomicComponentInstance"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/13/ComponentInstance">
+                <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp6">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedAtomicComponentInstance"/>
+            </iterator>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;//destroy all network interfaces&#xA;&#x9;NetworkInterface_destroy(mw->intern);&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;NetworkInterface_destroy(mw->"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateMiddlewareCoreClass/%/%.7/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+          <loopVariable name="ni">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:IteratorExp" name="select" eType="/12/Sequence(HWPortInstance)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/12/Sequence(HWPortInstance)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(HWPort)">
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreClass/rsri">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/13/StructuredResourceInstance">
+                    <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/ResourceInstance/hwports"/>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateMiddlewareCoreClass/%/%.7/select/collect/temp7">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/13/HWPortInstance">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp7">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateMiddlewareCoreClass/%/%.7/select/p">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </iterator>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;//destroy all NetworkMessageBuffer&#xA;  &#x9;NetworkMessageBuffer_destroy(mw->incoming);&#xA;    NetworkMessageBuffer_destroy(mw->outgoing);&#xA;// destroy the middleware itself&#xA;&#x9;&#x9;free(mw);&#xA;&#x9;&#x9;return true;&#xA;&#x9;}else&#xA;&#x9;&#x9;return false;&#xA;}&#xA;&#xA;/*&#xA; * sends a message.&#xA; * TODO: add decision, if targetC &lt;-- what does it mean? :(&#xA; */&#xA;bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){&#xA;&#x9;//called in RTSC to send a message&#xA;&#x9;MiddlewareMessage* nwMsg = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));&#xA;&#x9;nwMsg->_msgID = id;&#xA;&#x9;nwMsg->_targetPort = targetPort;&#xA;&#x9;&#xA;&#x9;//choose right function to create the bytearray (which is actually a chararray).&#xA;&#x9;switch(id){&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;case "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/middlewareQueries.emtl#/0/getIdentifierVariableName.2"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="msgtype" referredVariable="/0/generateMiddlewareCoreClass/%/%.9/msgtype">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=":&#xA;&#x9;&#x9;&#x9;nwMsg->_mumlMsg_len = "/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/middlewareQueries.emtl#/0/getMarshallingMethodName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="msgtype" referredVariable="/0/generateMiddlewareCoreClass/%/%.9/msgtype">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(("/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getVariableName.6"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="msgtype" referredVariable="/0/generateMiddlewareCoreClass/%/%.9/msgtype">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="*)msg, nwMsg->_mumlMsg, 0);&#xA;&#x9;&#x9;&#x9;break;&#xA;"/>
+          <loopVariable name="msgtype">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+          </loopVariable>
+          <iterSet xsi:type="mtl:QueryInvocation" eType="/12/Set(MessageType)">
+            <definition href="../queries/middlewareQueries.emtl#/0/getAllUsedMessagesForECU"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreClass/rsri">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+            </argument>
+          </iterSet>
+          <guard xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(Parameter)">
+                <source xsi:type="ocl.ecore:VariableExp" name="msgtype" referredVariable="/0/generateMiddlewareCoreClass/%/%.9/msgtype">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType/parameters"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/size"/>
+            </source>
+            <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="0">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer_Class/%3E"/>
+          </guard>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;default:&#xA;&#x9;&#x9;&#x9;nwMsg->_mumlMsg_len = 0;&#xA;&#x9;&#x9;&#x9;break;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;NetworkMessageBuffer_enqueue(mw->outgoing, nwMsg);&#xA;&#x9;return true;&#xA;}&#xA;&#xA;/*&#xA; * calls the receive-message of the middleware and delivers all messages to the correct buffers&#xA; * will be called periodically&#xA; */&#xA;bool_t MW_deliverReceivedMessages(void){&#xA;&#x9;MiddlewareMessage* msg;&#xA;&#x9;while (mw->incoming->currentSize > 0){&#xA;&#x9;&#x9;msg = NetworkMessageBuffer_dequeue(mw->incoming);&#xA;&#x9;&#x9;if (MW_getTargetECU(msg->_targetPort) == mw->idOfECU){&#xA;&#x9;&#x9;&#x9;//the target receiver is located on this ECU&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;Port_addMessage(MW_getPortforIdentifier(msg->_targetPort), msg);&#xA;&#x9;&#x9;}else&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;NetworkMessageBuffer_enqueue(mw->outgoing, msg);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;    &#xA;&#x9;return true;&#xA;}&#xA;&#xA;&#xA;/*&#xA; * receives messages for every known NetworkInterface&#xA; */&#xA;bool_t MW_NIreceiveMessages(void){&#xA;    &#xA;&#x9;//TODO: Is this function called periodically or something?&#xA;&#xA;&#x9;MiddlewareMessage* msg;&#xA;&#x9;msg = NULL;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;msg = mw->"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../queries/stringQueries.emtl#/0/getName.18"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ni" referredVariable="/0/generateMiddlewareCoreClass/%/%.11/ni">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="->receiveMethod();&#xA;&#x9;&#x9;if (msg != NULL)&#xA;&#x9;&#x9;&#x9;NetworkMessageBuffer_enqueue(mw->incoming, msg);&#xA;"/>
+          <loopVariable name="ni">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:IteratorExp" name="select" eType="/12/Sequence(HWPortInstance)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/12/Sequence(HWPortInstance)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(HWPort)">
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="rsri" referredVariable="/0/generateMiddlewareCoreClass/rsri">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/13/StructuredResourceInstance">
+                    <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/ResourceInstance/hwports"/>
+              </source>
+              <body xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateMiddlewareCoreClass/%/%.11/select/collect/temp8">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/13/HWPortInstance">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp8">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateMiddlewareCoreClass/%/%.11/select/p">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="p">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+            </iterator>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    return true;&#xA;}&#xA;&#xA;/*&#xA; * as long we have messages in the outgoing-buffer,&#xA; * we try to send them via the &quot;best&quot; network interface&#xA; */&#xA;bool_t MW_NIsendMessages(void){&#xA;&#x9;MiddlewareMessage* msg = NULL;&#xA;&#x9;ECUID targetECUID = -1;&#xA;&#x9;ECUID nextStepECUID = -1;&#xA;&#x9;bool_t returnValue = true;&#xA;&#x9;while (mw->outgoing->currentSize>0){&#xA;&#x9;&#x9;msg = NetworkMessageBuffer_dequeue(mw->outgoing);&#xA;&#x9;&#x9;targetECUID = MW_getTargetECU(msg->_targetPort);&#xA;&#x9;&#x9;nextStepECUID = MW_getNextStepECU(targetECUID);&#xA;&#x9;&#x9;if(targetECUID == -1 || nextStepECUID == -1){&#xA;&#x9;&#x9;&#x9;//this message belongs nowhere&#xA;&#x9;&#x9;&#x9;free(msg);&#xA;&#x9;&#x9;&#x9;returnValue = false;&#xA;&#x9;&#x9;&#x9;continue;&#xA;&#x9;&#x9;}&#xA;        NetworkInterface* ni = MW_getNetworkInterface(nextStepECUID);&#xA;&#x9;&#x9;if(ni == NULL){&#xA;&#x9;&#x9;&#x9;//we don't have a NetworkInterface to send it, thus throw it away&#xA;&#x9;&#x9;&#x9;free(msg);&#xA;&#x9;&#x9;&#x9;returnValue = false;&#xA;&#x9;&#x9;&#x9;continue;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;// the allocated memory for the MiddlewareMessage is deallocated (free(msg);) in the generated Stubs of the NetworkInterfaces&#xA;&#x9;&#x9;// !!! Thus, do not call free(msg); here !!!&#xA;        if(!(ni->sendMethod(msg))){&#xA;&#x9;&#x9;&#x9;//something went wrong&#xA;&#x9;&#x9;&#x9;returnValue = false;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;return returnValue;&#xA;}&#xA;&#xA;&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="path" referredVariable="/0/generateMiddlewareCoreClass/path">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/Middleware/MiddlewareCore.c">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="7081" endPosition="7262" value="&#xA;Generates the implementation file for the middleware core.&#xA;@param rsri the given ECU (home-ECU for the middleware)&#xA;@param path the current file-path for generating files&#xA;&#xA;"/>
+        <parametersDocumentation name="rsri">
+          <body value=" the given ECU (home-ECU for the middleware)"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="path">
+          <body value=" the current file-path for generating files"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rsri">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </parameter>
+      <parameter name="path">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateMiddlewareCoreFiles">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateMiddlewareCoreFiles"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="includes">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/includes"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateMiddlewareCoreHeader">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateMiddlewareCoreHeader"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateMiddlewareCoreClass">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateMiddlewareCoreClass"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+        <eParameters name="path">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getName.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getName.6"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="cInst">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getName.18"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="port">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getFileName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getFileName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="component">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+        </eParameters>
+        <eParameters name="header">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getClassName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getClassName.3"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="cInst">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getVariableName.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="cInst">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getVariableName.6"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="msgType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getDestroyMethodName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getDestroyMethodName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="component">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getIdentifierVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/middlewareQueries.emtl#/0/getIdentifierVariableName.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getIdentifierVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/middlewareQueries.emtl#/0/getIdentifierVariableName.2"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="msgT">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getMarshallingMethodName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/middlewareQueries.emtl#/0/getMarshallingMethodName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="msgT">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getAllUsedMessagesForECU">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/middlewareQueries.emtl#/0/getAllUsedMessagesForECU"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SetType" href="../queries/middlewareQueries.emtl#/3/Set(MessageType)"/>
+        <eParameters name="rsri">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RefinedStructuredResourceInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscretePort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/DiscretePort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//connector/MessageBuffer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Component_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="APICallParameterBinding_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/psm/allocation/0.4.0/#//realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Port_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/Port"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//behavior/Operation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Resource_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/Resource"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//behavior/Parameter"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentPart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/ComponentPart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredResourceInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Variable_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//behavior/Variable"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Region_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/Region"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageTypeRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/SynchronizationChannel"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="State_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/State"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HybridPort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//component/HybridPort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/PortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstanceConfiguration"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/AtomicComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Connector_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//connector/Connector"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Clock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//realtimestatechart/Clock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//connector/ConnectorInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//types/DataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComparingOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/expressions/common/0.3.1#//expressions/common/ComparingOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelElementCategory_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TimeValue_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//valuetype/TimeValue"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//instance/DiscretePortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HWPort_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CodGenAllocation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//CodGenAllocation"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(RefinedAtomicComponentInstance)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedAtomicComponentInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(AtomicComponentInstance)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/AtomicComponentInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Component)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(ComponentInstance)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(HWPort)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresource/HWPort"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(HWPortInstance)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(MessageType)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Parameter)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//behavior/Parameter"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//behavior/Parameter"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="AtomicComponentInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/AtomicComponentInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="ComponentInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="StructuredResourceInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwresourceinstance/StructuredResourceInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="HWPortInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//component/Component"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//instance/ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//msgtype/MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#//hwplatforminstance/HWPortInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/psm/codegen/0.1.0#//RefinedStructuredResourceInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/%">
+      <details key="start" value="29"/>
+      <details key="end" value="299"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateMiddlewareCoreFiles">
+      <details key="start" value="1497"/>
+      <details key="end" value="1698"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateMiddlewareCoreFiles/%">
+      <details key="start" value="1601"/>
+      <details key="end" value="1641"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateMiddlewareCoreFiles/%/rsri">
+      <details key="start" value="1630"/>
+      <details key="end" value="1634"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateMiddlewareCoreFiles/%/path">
+      <details key="start" value="1636"/>
+      <details key="end" value="1640"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateMiddlewareCoreFiles/%.1">
+      <details key="start" value="1643"/>
+      <details key="end" value="1644"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateMiddlewareCoreFiles/%.2">
+      <details key="start" value="1645"/>
+      <details key="end" value="1684"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateMiddlewareCoreFiles/%.2/rsri">
+      <details key="start" value="1673"/>
+      <details key="end" value="1677"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateMiddlewareCoreFiles/%.2/path">
+      <details key="start" value="1679"/>
+      <details key="end" value="1683"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateMiddlewareCoreFiles/%.3">
+      <details key="start" value="1139"/>
+      <details key="end" value="1496"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateMiddlewareCoreFiles/%.3/rsri">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateMiddlewareCoreFiles/%.3/path">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateMiddlewareCoreFiles/rsri">
+      <details key="start" value="1542"/>
+      <details key="end" value="1582"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateMiddlewareCoreFiles/path">
+      <details key="start" value="1584"/>
+      <details key="end" value="1597"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/includes">
+      <details key="start" value="1810"/>
+      <details key="end" value="2355"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/includes/%">
+      <details key="start" value="1879"/>
+      <details key="end" value="2182"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/includes/%.1">
+      <details key="start" value="2182"/>
+      <details key="end" value="2343"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/includes/%.1/%">
+      <details key="start" value="2297"/>
+      <details key="end" value="2310"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/includes/%.1/%.1">
+      <details key="start" value="2311"/>
+      <details key="end" value="2333"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/includes/%.1/%.1/comp">
+      <details key="start" value="2311"/>
+      <details key="end" value="2315"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/includes/%.1/%.1/%">
+      <details key="start" value="2328"/>
+      <details key="end" value="2332"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/includes/%.1/%.2">
+      <details key="start" value="2335"/>
+      <details key="end" value="2337"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/includes/%.1/comp">
+      <details key="start" value="2188"/>
+      <details key="end" value="2204"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/includes/%.1/collect">
+      <details key="start" value="2207"/>
+      <details key="end" value="2294"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/includes/%.1/collect/collect">
+      <details key="start" value="2207"/>
+      <details key="end" value="2280"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/includes/%.1/collect/collect/%">
+      <details key="start" value="2207"/>
+      <details key="end" value="2245"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/includes/%.1/collect/collect/%/rsri">
+      <details key="start" value="2207"/>
+      <details key="end" value="2211"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/includes/%.1/collect/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/includes/%.1/collect/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/includes/%.1/collect/collect/%.1/%">
+      <details key="start" value="2256"/>
+      <details key="end" value="2279"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/includes/%.1/collect/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/includes/%.1/collect/%">
+      <details key="start" value="2281"/>
+      <details key="end" value="2294"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/includes/%.1/collect/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/includes/%.1/collect/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/includes/%.2">
+      <details key="start" value="1701"/>
+      <details key="end" value="1809"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/includes/%.2/rsri">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/includes/rsri">
+      <details key="start" value="1837"/>
+      <details key="end" value="1876"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateMiddlewareCoreHeader">
+      <details key="start" value="2537"/>
+      <details key="end" value="7076"/>
+      <details key="line" value="62"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateMiddlewareCoreHeader/%">
+      <details key="start" value="2642"/>
+      <details key="end" value="7064"/>
+      <details key="line" value="63"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateMiddlewareCoreHeader/%/%">
+      <details key="start" value="2700"/>
+      <details key="end" value="2972"/>
+      <details key="line" value="64"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateMiddlewareCoreHeader/%/%.1">
+      <details key="start" value="2973"/>
+      <details key="end" value="2987"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateMiddlewareCoreHeader/%/%.1/rsri">
+      <details key="start" value="2982"/>
+      <details key="end" value="2986"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateMiddlewareCoreHeader/%/%.2">
+      <details key="start" value="2989"/>
+      <details key="end" value="3053"/>
+      <details key="line" value="76"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateMiddlewareCoreHeader/%/%.3">
+      <details key="start" value="3054"/>
+      <details key="end" value="3068"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateMiddlewareCoreHeader/%/%.3/rsri">
+      <details key="start" value="3054"/>
+      <details key="end" value="3058"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateMiddlewareCoreHeader/%/%.4">
+      <details key="start" value="3070"/>
+      <details key="end" value="3175"/>
+      <details key="line" value="81"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateMiddlewareCoreHeader/%/%.5">
+      <details key="start" value="3176"/>
+      <details key="end" value="3190"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateMiddlewareCoreHeader/%/%.5/rsri">
+      <details key="start" value="3176"/>
+      <details key="end" value="3180"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateMiddlewareCoreHeader/%/%.6">
+      <details key="start" value="3192"/>
+      <details key="end" value="3247"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateMiddlewareCoreHeader/%/%.7">
+      <details key="start" value="3247"/>
+      <details key="end" value="3559"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateMiddlewareCoreHeader/%/%.7/%">
+      <details key="start" value="3352"/>
+      <details key="end" value="3353"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateMiddlewareCoreHeader/%/%.7/%.1">
+      <details key="start" value="3354"/>
+      <details key="end" value="3377"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateMiddlewareCoreHeader/%/%.7/%.1/compInst">
+      <details key="start" value="3354"/>
+      <details key="end" value="3362"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateMiddlewareCoreHeader/%/%.7/%.2">
+      <details key="start" value="3379"/>
+      <details key="end" value="3381"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateMiddlewareCoreHeader/%/%.7/%.3">
+      <details key="start" value="3382"/>
+      <details key="end" value="3408"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateMiddlewareCoreHeader/%/%.7/%.3/compInst">
+      <details key="start" value="3382"/>
+      <details key="end" value="3390"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateMiddlewareCoreHeader/%/%.7/%.4">
+      <details key="start" value="3410"/>
+      <details key="end" value="3440"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateMiddlewareCoreHeader/%/%.7/%.5">
+      <details key="start" value="3441"/>
+      <details key="end" value="3459"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateMiddlewareCoreHeader/%/%.7/%.5/compInst">
+      <details key="start" value="3441"/>
+      <details key="end" value="3449"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateMiddlewareCoreHeader/%/%.7/%.6">
+      <details key="start" value="3461"/>
+      <details key="end" value="3471"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateMiddlewareCoreHeader/%/%.7/%.7">
+      <details key="start" value="3472"/>
+      <details key="end" value="3495"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateMiddlewareCoreHeader/%/%.7/%.7/compInst">
+      <details key="start" value="3472"/>
+      <details key="end" value="3480"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateMiddlewareCoreHeader/%/%.7/%.8">
+      <details key="start" value="3497"/>
+      <details key="end" value="3531"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateMiddlewareCoreHeader/%/%.7/%.9">
+      <details key="start" value="3532"/>
+      <details key="end" value="3546"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateMiddlewareCoreHeader/%/%.7/%.9/rsri">
+      <details key="start" value="3532"/>
+      <details key="end" value="3536"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateMiddlewareCoreHeader/%/%.7/%.10">
+      <details key="start" value="3548"/>
+      <details key="end" value="3553"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateMiddlewareCoreHeader/%/%.7/compInst">
+      <details key="start" value="3252"/>
+      <details key="end" value="3279"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateMiddlewareCoreHeader/%/%.7/collect">
+      <details key="start" value="3282"/>
+      <details key="end" value="3349"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateMiddlewareCoreHeader/%/%.7/collect/%">
+      <details key="start" value="3282"/>
+      <details key="end" value="3320"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateMiddlewareCoreHeader/%/%.7/collect/%/rsri">
+      <details key="start" value="3282"/>
+      <details key="end" value="3286"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateMiddlewareCoreHeader/%/%.7/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateMiddlewareCoreHeader/%/%.7/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateMiddlewareCoreHeader/%/%.7/collect/%.1/%">
+      <details key="start" value="3331"/>
+      <details key="end" value="3348"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateMiddlewareCoreHeader/%/%.7/collect/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateMiddlewareCoreHeader/%/%.8">
+      <details key="start" value="3560"/>
+      <details key="end" value="3673"/>
+      <details key="line" value="90"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateMiddlewareCoreHeader/%/%.9">
+      <details key="start" value="3674"/>
+      <details key="end" value="3688"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateMiddlewareCoreHeader/%/%.9/rsri">
+      <details key="start" value="3674"/>
+      <details key="end" value="3678"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateMiddlewareCoreHeader/%/%.10">
+      <details key="start" value="3690"/>
+      <details key="end" value="3722"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generateMiddlewareCoreHeader/%/%.11">
+      <details key="start" value="3722"/>
+      <details key="end" value="3989"/>
+      <details key="line" value="94"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generateMiddlewareCoreHeader/%/%.11/%">
+      <details key="start" value="3859"/>
+      <details key="end" value="3878"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/generateMiddlewareCoreHeader/%/%.11/%.1">
+      <details key="start" value="3879"/>
+      <details key="end" value="3891"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/generateMiddlewareCoreHeader/%/%.11/%.1/ni">
+      <details key="start" value="3879"/>
+      <details key="end" value="3881"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/generateMiddlewareCoreHeader/%/%.11/%.2">
+      <details key="start" value="3893"/>
+      <details key="end" value="3934"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/generateMiddlewareCoreHeader/%/%.11/%.3">
+      <details key="start" value="3935"/>
+      <details key="end" value="3947"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/generateMiddlewareCoreHeader/%/%.11/%.3/ni">
+      <details key="start" value="3935"/>
+      <details key="end" value="3937"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/generateMiddlewareCoreHeader/%/%.11/%.4">
+      <details key="start" value="3949"/>
+      <details key="end" value="3962"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/generateMiddlewareCoreHeader/%/%.11/%.5">
+      <details key="start" value="3963"/>
+      <details key="end" value="3977"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/generateMiddlewareCoreHeader/%/%.11/%.5/rsri">
+      <details key="start" value="3963"/>
+      <details key="end" value="3967"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/generateMiddlewareCoreHeader/%/%.11/%.6">
+      <details key="start" value="3979"/>
+      <details key="end" value="3983"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/generateMiddlewareCoreHeader/%/%.11/ni">
+      <details key="start" value="3727"/>
+      <details key="end" value="3745"/>
+      <details key="line" value="94"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/generateMiddlewareCoreHeader/%/%.11/select">
+      <details key="start" value="3748"/>
+      <details key="end" value="3856"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect">
+      <details key="start" value="3748"/>
+      <details key="end" value="3824"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/%">
+      <details key="start" value="3748"/>
+      <details key="end" value="3798"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/%/%">
+      <details key="start" value="3748"/>
+      <details key="end" value="3790"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/%/%/rsri">
+      <details key="start" value="3748"/>
+      <details key="end" value="3752"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/%/%/%">
+      <details key="start" value="3763"/>
+      <details key="end" value="3789"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/%.1/%">
+      <details key="start" value="3809"/>
+      <details key="end" value="3823"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/generateMiddlewareCoreHeader/%/%.11/select/collect/temp4">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/generateMiddlewareCoreHeader/%/%.11/select/%">
+      <details key="start" value="3835"/>
+      <details key="end" value="3855"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/generateMiddlewareCoreHeader/%/%.11/select/%/p">
+      <details key="start" value="3835"/>
+      <details key="end" value="3836"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/generateMiddlewareCoreHeader/%/%.11/select/p">
+      <details key="start" value="3833"/>
+      <details key="end" value="3834"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/generateMiddlewareCoreHeader/%/%.12">
+      <details key="start" value="3990"/>
+      <details key="end" value="4312"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/generateMiddlewareCoreHeader/%/%.13">
+      <details key="start" value="4313"/>
+      <details key="end" value="4327"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/generateMiddlewareCoreHeader/%/%.13/rsri">
+      <details key="start" value="4313"/>
+      <details key="end" value="4317"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/generateMiddlewareCoreHeader/%/%.14">
+      <details key="start" value="4329"/>
+      <details key="end" value="7057"/>
+      <details key="line" value="102"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/generateMiddlewareCoreHeader/%/%.15">
+      <details key="start" value="2648"/>
+      <details key="end" value="2683"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/generateMiddlewareCoreHeader/%/%.15/path">
+      <details key="start" value="2648"/>
+      <details key="end" value="2652"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/generateMiddlewareCoreHeader/%/%.15/%">
+      <details key="start" value="2653"/>
+      <details key="end" value="2683"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/generateMiddlewareCoreHeader/%/%.16">
+      <details key="start" value="2690"/>
+      <details key="end" value="2697"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/generateMiddlewareCoreHeader/%.1">
+      <details key="start" value="2358"/>
+      <details key="end" value="2536"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/generateMiddlewareCoreHeader/%.1/rsri">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/generateMiddlewareCoreHeader/%.1/path">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/generateMiddlewareCoreHeader/rsri">
+      <details key="start" value="2584"/>
+      <details key="end" value="2624"/>
+      <details key="line" value="62"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/generateMiddlewareCoreHeader/path">
+      <details key="start" value="2626"/>
+      <details key="end" value="2639"/>
+      <details key="line" value="62"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/generateMiddlewareCoreClass">
+      <details key="start" value="7265"/>
+      <details key="end" value="12473"/>
+      <details key="line" value="186"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/generateMiddlewareCoreClass/%">
+      <details key="start" value="7369"/>
+      <details key="end" value="12461"/>
+      <details key="line" value="187"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/generateMiddlewareCoreClass/%/%">
+      <details key="start" value="7427"/>
+      <details key="end" value="7737"/>
+      <details key="line" value="188"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/generateMiddlewareCoreClass/%/%.1">
+      <details key="start" value="7794"/>
+      <details key="end" value="8005"/>
+      <details key="line" value="201"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/generateMiddlewareCoreClass/%/%.1/%">
+      <details key="start" value="7931"/>
+      <details key="end" value="7936"/>
+      <details key="line" value="202"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/generateMiddlewareCoreClass/%/%.1/%.1">
+      <details key="start" value="7937"/>
+      <details key="end" value="7949"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/generateMiddlewareCoreClass/%/%.1/%.1/ni">
+      <details key="start" value="7937"/>
+      <details key="end" value="7939"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/generateMiddlewareCoreClass/%/%.1/%.2">
+      <details key="start" value="7951"/>
+      <details key="end" value="7979"/>
+      <details key="line" value="202"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/generateMiddlewareCoreClass/%/%.1/%.3">
+      <details key="start" value="7980"/>
+      <details key="end" value="7992"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/generateMiddlewareCoreClass/%/%.1/%.3/ni">
+      <details key="start" value="7980"/>
+      <details key="end" value="7982"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/generateMiddlewareCoreClass/%/%.1/%.4">
+      <details key="start" value="7994"/>
+      <details key="end" value="7998"/>
+      <details key="line" value="202"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/generateMiddlewareCoreClass/%/%.1/ni">
+      <details key="start" value="7799"/>
+      <details key="end" value="7817"/>
+      <details key="line" value="201"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/generateMiddlewareCoreClass/%/%.1/select">
+      <details key="start" value="7820"/>
+      <details key="end" value="7928"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect">
+      <details key="start" value="7820"/>
+      <details key="end" value="7896"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect/%">
+      <details key="start" value="7820"/>
+      <details key="end" value="7870"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect/%/%">
+      <details key="start" value="7820"/>
+      <details key="end" value="7862"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect/%/%/rsri">
+      <details key="start" value="7820"/>
+      <details key="end" value="7824"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect/%/%/%">
+      <details key="start" value="7835"/>
+      <details key="end" value="7861"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect/%.1/%">
+      <details key="start" value="7881"/>
+      <details key="end" value="7895"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/generateMiddlewareCoreClass/%/%.1/select/collect/temp5">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/generateMiddlewareCoreClass/%/%.1/select/%">
+      <details key="start" value="7907"/>
+      <details key="end" value="7927"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/generateMiddlewareCoreClass/%/%.1/select/%/p">
+      <details key="start" value="7907"/>
+      <details key="end" value="7908"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/generateMiddlewareCoreClass/%/%.1/select/p">
+      <details key="start" value="7905"/>
+      <details key="end" value="7906"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/generateMiddlewareCoreClass/%/%.2">
+      <details key="start" value="8006"/>
+      <details key="end" value="8248"/>
+      <details key="line" value="204"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/generateMiddlewareCoreClass/%/%.3">
+      <details key="start" value="8249"/>
+      <details key="end" value="8281"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/generateMiddlewareCoreClass/%/%.3/rsri">
+      <details key="start" value="8249"/>
+      <details key="end" value="8253"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/generateMiddlewareCoreClass/%/%.4">
+      <details key="start" value="8283"/>
+      <details key="end" value="8617"/>
+      <details key="line" value="221"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/generateMiddlewareCoreClass/%/%.5">
+      <details key="start" value="8665"/>
+      <details key="end" value="8853"/>
+      <details key="line" value="237"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/generateMiddlewareCoreClass/%/%.5/%">
+      <details key="start" value="8770"/>
+      <details key="end" value="8771"/>
+      <details key="line" value="238"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/generateMiddlewareCoreClass/%/%.5/%.1">
+      <details key="start" value="8772"/>
+      <details key="end" value="8808"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/generateMiddlewareCoreClass/%/%.5/%.1/%">
+      <details key="start" value="8772"/>
+      <details key="end" value="8785"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/generateMiddlewareCoreClass/%/%.5/%.1/%/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/generateMiddlewareCoreClass/%/%.5/%.2">
+      <details key="start" value="8810"/>
+      <details key="end" value="8815"/>
+      <details key="line" value="238"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/generateMiddlewareCoreClass/%/%.5/%.3">
+      <details key="start" value="8816"/>
+      <details key="end" value="8842"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/generateMiddlewareCoreClass/%/%.5/%.3/compInst">
+      <details key="start" value="8816"/>
+      <details key="end" value="8824"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/generateMiddlewareCoreClass/%/%.5/%.4">
+      <details key="start" value="8844"/>
+      <details key="end" value="8847"/>
+      <details key="line" value="238"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/generateMiddlewareCoreClass/%/%.5/compInst">
+      <details key="start" value="8670"/>
+      <details key="end" value="8697"/>
+      <details key="line" value="237"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/generateMiddlewareCoreClass/%/%.5/collect">
+      <details key="start" value="8700"/>
+      <details key="end" value="8767"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/generateMiddlewareCoreClass/%/%.5/collect/%">
+      <details key="start" value="8700"/>
+      <details key="end" value="8738"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/generateMiddlewareCoreClass/%/%.5/collect/%/rsri">
+      <details key="start" value="8700"/>
+      <details key="end" value="8704"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/generateMiddlewareCoreClass/%/%.5/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/generateMiddlewareCoreClass/%/%.5/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/generateMiddlewareCoreClass/%/%.5/collect/%.1/%">
+      <details key="start" value="8749"/>
+      <details key="end" value="8766"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/generateMiddlewareCoreClass/%/%.5/collect/temp6">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/generateMiddlewareCoreClass/%/%.6">
+      <details key="start" value="8854"/>
+      <details key="end" value="8927"/>
+      <details key="line" value="240"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/generateMiddlewareCoreClass/%/%.7">
+      <details key="start" value="8980"/>
+      <details key="end" value="9171"/>
+      <details key="line" value="244"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/generateMiddlewareCoreClass/%/%.7/%">
+      <details key="start" value="9117"/>
+      <details key="end" value="9147"/>
+      <details key="line" value="245"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/generateMiddlewareCoreClass/%/%.7/%.1">
+      <details key="start" value="9148"/>
+      <details key="end" value="9160"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/generateMiddlewareCoreClass/%/%.7/%.1/ni">
+      <details key="start" value="9148"/>
+      <details key="end" value="9150"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/generateMiddlewareCoreClass/%/%.7/%.2">
+      <details key="start" value="9162"/>
+      <details key="end" value="9165"/>
+      <details key="line" value="245"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/generateMiddlewareCoreClass/%/%.7/ni">
+      <details key="start" value="8985"/>
+      <details key="end" value="9003"/>
+      <details key="line" value="244"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/generateMiddlewareCoreClass/%/%.7/select">
+      <details key="start" value="9006"/>
+      <details key="end" value="9114"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect">
+      <details key="start" value="9006"/>
+      <details key="end" value="9082"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect/%">
+      <details key="start" value="9006"/>
+      <details key="end" value="9056"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect/%/%">
+      <details key="start" value="9006"/>
+      <details key="end" value="9048"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect/%/%/rsri">
+      <details key="start" value="9006"/>
+      <details key="end" value="9010"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect/%/%/%">
+      <details key="start" value="9021"/>
+      <details key="end" value="9047"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect/%.1/%">
+      <details key="start" value="9067"/>
+      <details key="end" value="9081"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/generateMiddlewareCoreClass/%/%.7/select/collect/temp7">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/generateMiddlewareCoreClass/%/%.7/select/%">
+      <details key="start" value="9093"/>
+      <details key="end" value="9113"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/generateMiddlewareCoreClass/%/%.7/select/%/p">
+      <details key="start" value="9093"/>
+      <details key="end" value="9094"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/generateMiddlewareCoreClass/%/%.7/select/p">
+      <details key="start" value="9091"/>
+      <details key="end" value="9092"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/generateMiddlewareCoreClass/%/%.8">
+      <details key="start" value="9172"/>
+      <details key="end" value="9815"/>
+      <details key="line" value="247"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/generateMiddlewareCoreClass/%/%.9">
+      <details key="start" value="9869"/>
+      <details key="end" value="10144"/>
+      <details key="line" value="271"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/generateMiddlewareCoreClass/%/%.9/%">
+      <details key="start" value="9964"/>
+      <details key="end" value="9970"/>
+      <details key="line" value="272"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/generateMiddlewareCoreClass/%/%.9/%.1">
+      <details key="start" value="9971"/>
+      <details key="end" value="10005"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/generateMiddlewareCoreClass/%/%.9/%.1/msgtype">
+      <details key="start" value="9997"/>
+      <details key="end" value="10004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/generateMiddlewareCoreClass/%/%.9/%.2">
+      <details key="start" value="10007"/>
+      <details key="end" value="10034"/>
+      <details key="line" value="272"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/generateMiddlewareCoreClass/%/%.9/%.3">
+      <details key="start" value="10035"/>
+      <details key="end" value="10069"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/generateMiddlewareCoreClass/%/%.9/%.3/msgtype">
+      <details key="start" value="10035"/>
+      <details key="end" value="10042"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/generateMiddlewareCoreClass/%/%.9/%.4">
+      <details key="start" value="10071"/>
+      <details key="end" value="10073"/>
+      <details key="line" value="273"/>
+    </eAnnotations>
+    <eAnnotations source="positions.191" references="/0/generateMiddlewareCoreClass/%/%.9/%.5">
+      <details key="start" value="10074"/>
+      <details key="end" value="10098"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.192" references="/0/generateMiddlewareCoreClass/%/%.9/%.5/msgtype">
+      <details key="start" value="10090"/>
+      <details key="end" value="10097"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.193" references="/0/generateMiddlewareCoreClass/%/%.9/%.6">
+      <details key="start" value="10100"/>
+      <details key="end" value="10138"/>
+      <details key="line" value="273"/>
+    </eAnnotations>
+    <eAnnotations source="positions.194" references="/0/generateMiddlewareCoreClass/%/%.9/msgtype">
+      <details key="start" value="9874"/>
+      <details key="end" value="9894"/>
+      <details key="line" value="271"/>
+    </eAnnotations>
+    <eAnnotations source="positions.195" references="/0/generateMiddlewareCoreClass/%/%.9/%.7">
+      <details key="start" value="9897"/>
+      <details key="end" value="9928"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.196" references="/0/generateMiddlewareCoreClass/%/%.9/%.7/rsri">
+      <details key="start" value="9897"/>
+      <details key="end" value="9901"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.197" references="/0/generateMiddlewareCoreClass/%/%.9/%.8">
+      <details key="start" value="9933"/>
+      <details key="end" value="9961"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.198" references="/0/generateMiddlewareCoreClass/%/%.9/%.8/%">
+      <details key="start" value="9933"/>
+      <details key="end" value="9959"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.199" references="/0/generateMiddlewareCoreClass/%/%.9/%.8/%/%">
+      <details key="start" value="9933"/>
+      <details key="end" value="9951"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.200" references="/0/generateMiddlewareCoreClass/%/%.9/%.8/%/%/msgtype">
+      <details key="start" value="9933"/>
+      <details key="end" value="9940"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/generateMiddlewareCoreClass/%/%.9/%.8/%.1">
+      <details key="start" value="9960"/>
+      <details key="end" value="9961"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/generateMiddlewareCoreClass/%/%.10">
+      <details key="start" value="10145"/>
+      <details key="end" value="11029"/>
+      <details key="line" value="276"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/generateMiddlewareCoreClass/%/%.11">
+      <details key="start" value="11079"/>
+      <details key="end" value="11340"/>
+      <details key="line" value="316"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/generateMiddlewareCoreClass/%/%.11/%">
+      <details key="start" value="11216"/>
+      <details key="end" value="11228"/>
+      <details key="line" value="317"/>
+    </eAnnotations>
+    <eAnnotations source="positions.205" references="/0/generateMiddlewareCoreClass/%/%.11/%.1">
+      <details key="start" value="11229"/>
+      <details key="end" value="11241"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.206" references="/0/generateMiddlewareCoreClass/%/%.11/%.1/ni">
+      <details key="start" value="11229"/>
+      <details key="end" value="11231"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.207" references="/0/generateMiddlewareCoreClass/%/%.11/%.2">
+      <details key="start" value="11243"/>
+      <details key="end" value="11333"/>
+      <details key="line" value="317"/>
+    </eAnnotations>
+    <eAnnotations source="positions.208" references="/0/generateMiddlewareCoreClass/%/%.11/ni">
+      <details key="start" value="11084"/>
+      <details key="end" value="11102"/>
+      <details key="line" value="316"/>
+    </eAnnotations>
+    <eAnnotations source="positions.209" references="/0/generateMiddlewareCoreClass/%/%.11/select">
+      <details key="start" value="11105"/>
+      <details key="end" value="11213"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.210" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect">
+      <details key="start" value="11105"/>
+      <details key="end" value="11181"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.211" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect/%">
+      <details key="start" value="11105"/>
+      <details key="end" value="11155"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.212" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect/%/%">
+      <details key="start" value="11105"/>
+      <details key="end" value="11147"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.213" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect/%/%/rsri">
+      <details key="start" value="11105"/>
+      <details key="end" value="11109"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.214" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect/%/%/%">
+      <details key="start" value="11120"/>
+      <details key="end" value="11146"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.217" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect/%.1/%">
+      <details key="start" value="11166"/>
+      <details key="end" value="11180"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.218" references="/0/generateMiddlewareCoreClass/%/%.11/select/collect/temp8">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.219" references="/0/generateMiddlewareCoreClass/%/%.11/select/%">
+      <details key="start" value="11192"/>
+      <details key="end" value="11212"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.220" references="/0/generateMiddlewareCoreClass/%/%.11/select/%/p">
+      <details key="start" value="11192"/>
+      <details key="end" value="11193"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.221" references="/0/generateMiddlewareCoreClass/%/%.11/select/p">
+      <details key="start" value="11190"/>
+      <details key="end" value="11191"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.222" references="/0/generateMiddlewareCoreClass/%/%.12">
+      <details key="start" value="11341"/>
+      <details key="end" value="12454"/>
+      <details key="line" value="321"/>
+    </eAnnotations>
+    <eAnnotations source="positions.223" references="/0/generateMiddlewareCoreClass/%/%.13">
+      <details key="start" value="7375"/>
+      <details key="end" value="7410"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.224" references="/0/generateMiddlewareCoreClass/%/%.13/path">
+      <details key="start" value="7375"/>
+      <details key="end" value="7379"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.225" references="/0/generateMiddlewareCoreClass/%/%.13/%">
+      <details key="start" value="7380"/>
+      <details key="end" value="7410"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.226" references="/0/generateMiddlewareCoreClass/%/%.14">
+      <details key="start" value="7417"/>
+      <details key="end" value="7424"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.227" references="/0/generateMiddlewareCoreClass/%.1">
+      <details key="start" value="7078"/>
+      <details key="end" value="7264"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.228" references="/0/generateMiddlewareCoreClass/%.1/rsri">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.229" references="/0/generateMiddlewareCoreClass/%.1/path">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.230" references="/0/generateMiddlewareCoreClass/rsri">
+      <details key="start" value="7311"/>
+      <details key="end" value="7351"/>
+      <details key="line" value="186"/>
+    </eAnnotations>
+    <eAnnotations source="positions.231" references="/0/generateMiddlewareCoreClass/path">
+      <details key="start" value="7353"/>
+      <details key="end" value="7366"/>
+      <details key="line" value="186"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

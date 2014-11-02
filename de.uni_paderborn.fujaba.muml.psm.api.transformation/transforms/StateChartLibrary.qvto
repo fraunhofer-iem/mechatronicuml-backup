@@ -1,0 +1,581 @@
+import de.uni_paderborn.fujaba.muml.software.transform._blackbox.TimeUnitLibUnit;
+
+library StateChartLibrary;
+
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype API uses psm::api('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
+modeltype PortMappingModel uses psm::api::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype ApiExpessions uses psm::api::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
+
+modeltype APIInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype APIStateChart uses psm::realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
+
+modeltype Modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype Muml uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+-- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
+helper storeRealtimeStatechart(inout rtsc : Muml::realtimestatechart::RealtimeStatechart, inout rootStateChart : Muml::realtimestatechart::RealtimeStatechart){
+	-- create component RTSC if it does not exists yet
+
+	-- hook into component RTSC
+	rootStateChart.states -> forEach(state){
+		-- search initial state and add new region containing the statechart to it
+		if(state.initial = true) then{
+			var newRegion : Muml::realtimestatechart::Region := new Muml::realtimestatechart::Region();
+			state.embeddedRegions += newRegion;
+			newRegion.embeddedStatechart := rtsc;
+			if(not rootStateChart.parentRegion.oclIsUndefined()) then {
+					newRegion.priority:=rootStateChart.parentRegion.priority;
+				}
+				else{
+					newRegion.priority:=state.embeddedRegions.priority->max()+1;
+				}endif;
+		} endif;
+	}
+
+}
+
+
+helper createEmptyRealtimeStateChart( inout theRootNode : RootNode, inout component : Muml::component::AtomicComponent){
+	-- create component RTSC if it does not exists yet
+	if (component.behavior.oclIsUndefined()) then{
+		var behavior := new PSM::realtimestatechart::ParameterizedRealtimeStatechart(component.name);
+		var category : ModelElementCategory := getRTSCCategory(theRootNode);
+		category.modelElements += behavior;
+		component.behavior := behavior;
+	} endif;
+}
+
+-- return the RTSC category of the root node
+query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+}
+
+query getPrimitiveDataType(in theRootNode:RootNode) : Muml::types::PrimitiveDataType{
+	var category: ModelElementCategory :=theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	return category.modelElements[Muml::types::PrimitiveDataType]->select(type|type.primitiveType=Muml::types::PrimitiveTypes::INT)->any(true);
+	
+}
+
+-- constructor for creating new regions
+constructor Muml::realtimestatechart::Region::Region() {
+	
+}
+
+constructor PSM::realtimestatechart::ParameterizedRealtimeStatechart::ParameterizedRealtimeStatechart(_name : String) {
+	name := _name;
+	states += new Muml::realtimestatechart::State(_name,true, false);
+}
+
+constructor Muml::realtimestatechart::State::State(_name:String,_initial : Boolean, _final : Boolean) {
+	name:=_name+"_state";
+	initial := _initial;
+	final := _final;
+}
+
+
+///here starts marios stuff
+
+property initApiName : String = "InitApi";
+property execApiName : String = "ExecApi";
+property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
+property samplingParameterName : String = "SamplingInterval";
+	
+mapping  Muml::component::ContinuousPort::createStatechartContinuousPort(
+			in messageTyp : Muml::msgtype::MessageType, in variable:Muml::behavior::Variable,
+			in hybridPortSamplingTimes : Set(Muml::valuetype::TimeValue),
+			in createApiRegion : Boolean, in theRootNode : RootNode): PSM::realtimestatechart::ParameterizedRealtimeStatechart {
+	-- creates a statechart for the behavior of a continuous port
+	name := self.component.name + "_" + self.name + "_behavior";
+	
+	var hybridPortSamplingTime : Muml::valuetype::TimeValue;
+	hybridPortSamplingTime:=hybridPortSamplingTimes->getMinTimeValue();
+	
+	-- create a new state, that contains more regions
+	var multiState : Muml::realtimestatechart::State;
+
+	multiState := object Muml::realtimestatechart::State {
+			name := self.name + "_initState";
+			parentStatechart := result;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	
+	-- create a region for sending/receiving the value from the sensor/actuator
+	var regionTransmission : Muml::realtimestatechart::Region;
+	
+	if (self.inPort) then {
+		regionTransmission := result.createRegionForPeriodicReceiving(variable, messageTyp, hybridPortSamplingTime);
+	} else {
+		regionTransmission := result.createRegionForPeriodicSending(variable, messageTyp, hybridPortSamplingTime);
+	} endif;
+	regionTransmission.priority := 1;
+	multiState.embeddedRegions += regionTransmission;
+	
+	--create a region for getting/setting the new value of the sensor/actuator
+	if (createApiRegion) then {
+		-- add parameter to the statechart
+		var initApiParam : APIStateChart::realtimestatechartparameter::APICallParameter;
+		var execApiParam : APIStateChart::realtimestatechartparameter::APICallParameter;
+		var timeBetweenApiExecutes : APIStateChart::realtimestatechartparameter::TimeParameter;
+		
+		initApiParam := object APIStateChart::realtimestatechartparameter::APICallParameter {
+				name := initApiName;
+				parameters:=null;
+				returnType:=Muml::types::PrimitiveDataType.allInstances()->select(type|type.name.equalsIgnoreCase("VOID"))->any(true);
+			};
+		execApiParam := object APIStateChart::realtimestatechartparameter::APICallParameter {
+				name := execApiName;
+				if(self.inPort)then{
+					returnType:=Muml::types::PrimitiveDataType.allInstances()->select(type|type.name.equalsIgnoreCase("VOID"))->any(true);
+					parameters:=object Muml::behavior::Parameter{
+						name:=self.name;
+						dataType:=variable.dataType;
+					};
+				}
+				else{
+					returnType:=variable.dataType;
+				}endif;
+			};
+		timeBetweenApiExecutes := object APIStateChart::realtimestatechartparameter::TimeParameter {
+				name := timeBetweenApiExecsName;
+				initializeExpression:= object core::expressions::common::LiteralExpression{
+					value:="20";
+				};
+				dataType:=getPrimitiveDataType(theRootNode);
+			};
+	//	result.parameters += initApiParam;
+	//	result.parameters += execApiParam;
+	//	result.parameters += timeBetweenApiExecutes;
+		
+		-- create the region
+		var regionApi : Muml::realtimestatechart::Region;
+		
+		regionApi := result.createRegionForApiCommand(variable, initApiParam, execApiParam, timeBetweenApiExecutes,self);
+		regionApi.priority := 2;
+		multiState.embeddedRegions += regionApi;
+	} endif;
+	
+	-- add the state for the statechart
+	result.states += multiState;
+	
+}
+
+query Muml::realtimestatechart::RealtimeStatechart::createRegionForPeriodicSending(
+			in portVariable : Muml::behavior::Variable,
+			in messageTyp : Muml::msgtype::MessageType,
+			in samplingTime: Muml::valuetype::TimeValue) : Muml::realtimestatechart::Region {
+	var newRegion : Muml::realtimestatechart::Region;
+	var newStatechart : PSM::realtimestatechart::ParameterizedRealtimeStatechart;
+	
+	newRegion := object Muml::realtimestatechart::Region {};
+	newStatechart := object PSM::realtimestatechart::ParameterizedRealtimeStatechart {
+			name := "PeriodicTransmission";
+		};
+	newRegion.embeddedStatechart := newStatechart;
+	
+	-- create a clock for the sending intervall
+	var newClock : Muml::realtimestatechart::Clock;
+	
+	newClock := object Muml::realtimestatechart::Clock {
+			name := "clockSending";
+		};
+	newStatechart.clocks += newClock;
+	
+	-- create the state for sending
+	var newState : Muml::realtimestatechart::State;
+	
+	newState := object Muml::realtimestatechart::State {
+			name := "PeriodicSending";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	newStatechart.states += newState;
+	-- add invariant to the state
+	newState.invariants += object Muml::realtimestatechart::ClockConstraint {
+			clock := newClock;
+			bound := samplingTime.createAddToTimeValue(
+					createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+				);
+			operator := Core::expressions::common::ComparingOperator::LESS_OR_EQUAL;
+		};
+	-- entry action to the state
+	newState.entryEvent := object Muml::realtimestatechart::EntryEvent {
+			clockResets += newClock;
+		};
+	
+	-- add transition with sending action
+	var newTransition : Muml::realtimestatechart::Transition;
+	
+	newTransition := object Muml::realtimestatechart::Transition {
+			priority := 1;
+			source := newState;
+			target := newState;
+			clockConstraints += object Muml::realtimestatechart::ClockConstraint {
+					clock := newClock;
+					bound := samplingTime.deepclone().oclAsType(Muml::valuetype::TimeValue);
+					operator := Core::expressions::common::ComparingOperator::GREATER_OR_EQUAL;
+				};
+			events += object Muml::realtimestatechart::AsynchronousMessageEvent {
+					kind := Muml::realtimestatechart::EventKind::RAISE;
+					message := object Muml::realtimestatechart::Message {
+							instanceOf := messageTyp;
+							parameterBinding += object Muml::behavior::ParameterBinding {
+									parameter := messageTyp.parameters->any(true);
+									value := object Actionlanguage::TypedNamedElementExpression {
+											typedNamedElement := portVariable;
+										};
+								};
+						};
+				};
+		};
+	newStatechart.transitions += newTransition;
+	
+	-- return new Region
+	return newRegion;
+}
+
+query Muml::realtimestatechart::RealtimeStatechart::createRegionForPeriodicReceiving(
+			in portVariable : Muml::behavior::Variable,
+			in messageTyp : Muml::msgtype::MessageType,
+			in samplingTime : Muml::valuetype::TimeValue) : Muml::realtimestatechart::Region {
+	var newRegion : Muml::realtimestatechart::Region;
+	var newStatechart : PSM::realtimestatechart::ParameterizedRealtimeStatechart;
+	
+	newRegion := object Muml::realtimestatechart::Region {};
+	newStatechart := object PSM::realtimestatechart::ParameterizedRealtimeStatechart {
+			name := "PeriodicTransmission";
+		};
+	newRegion.embeddedStatechart := newStatechart;
+	
+	-- create new samplinintervall with a little buffer from the original one
+	var newSamplingTime : Muml::valuetype::TimeValue;
+	
+	newSamplingTime := samplingTime.createAddToTimeValue(
+			createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+		);
+	
+	-- create a clock for the sending intervall
+	var newClock : Muml::realtimestatechart::Clock;
+	
+	newClock := object Muml::realtimestatechart::Clock {
+			name := "ReceiverTimeout";
+		};
+	newStatechart.clocks += newClock;
+	
+	-- create the state for receiving
+	var stateReceiving : Muml::realtimestatechart::State;
+	
+	stateReceiving := object Muml::realtimestatechart::State {
+			name := "PeriodicReceiving";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	newStatechart.states += stateReceiving;
+	-- add invariant to the state
+	stateReceiving.invariants += object Muml::realtimestatechart::ClockConstraint {
+			clock := newClock;
+			bound := newSamplingTime.createAddToTimeValue(
+					createTimeValueWithMilleseconds( object Core::expressions::common::LiteralExpression {value := "5";} )
+				);
+			--bound := object Muml::valuetype::TimeValue {
+			--		value := samplingTime.value.deepclone()[Core::expressions::Expression]->any(true);
+			--		unit := samplingTime.unit;
+			--		-- add a "Buffer" to the value: ca. 20 ms??
+			--	};
+			operator := Core::expressions::common::ComparingOperator::LESS_OR_EQUAL;
+		};
+	-- entry action to the state
+	stateReceiving.entryEvent := object Muml::realtimestatechart::EntryEvent {
+			clockResets += newClock;
+		};
+	
+	-- add state for Timeout
+	var stateTimeout : Muml::realtimestatechart::State;
+	
+	stateTimeout := object Muml::realtimestatechart::State {
+			name := "Timeout";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := false;
+			urgent := false;
+		};
+	newStatechart.states += stateTimeout;
+	
+	-- add transition with receiving action
+	var newTransition : Muml::realtimestatechart::Transition;
+	
+	newTransition := object Muml::realtimestatechart::Transition {
+			priority := 2;
+			source := stateReceiving;
+			target := stateReceiving;
+			events += object Muml::realtimestatechart::AsynchronousMessageEvent {
+					kind := Muml::realtimestatechart::EventKind::TRIGGER;
+					message := object Muml::realtimestatechart::Message {
+							instanceOf := messageTyp;
+						};
+				};
+			action := object Muml::realtimestatechart::Action {
+					name := "MessageGetter";
+					expressions += object Block { 
+							expressions += object Actionlanguage::Assignment {
+									assignOperator := AssignOperator::ASSIGN;
+									incrementDecrementOperator := IncrementDecrementOperator::UNSET;
+									lhs_typedNamedElementExpression := object TypedNamedElementExpression {
+											typedNamedElement := portVariable;
+										};
+									rhs_assignExpression := object TriggerMessageExpression {
+											messageType := messageTyp;
+											parameter := messageTyp.parameters->first();
+										};
+								};
+						};
+				};
+		};
+	newStatechart.transitions += newTransition;
+	
+	-- add transition for timeoutrealtimestatechart
+	newStatechart.transitions += object Muml::realtimestatechart::Transition {
+			priority := 1;
+			source := stateReceiving;
+			target := stateTimeout;
+			clockConstraints += object Muml::realtimestatechart::ClockConstraint {
+					clock := newClock;
+					bound := newSamplingTime;
+					operator := Core::expressions::common::ComparingOperator::GREATER_OR_EQUAL;
+				};
+		};
+	-- add transition out of the timeout-state
+	newStatechart.transitions += object Muml::realtimestatechart::Transition {
+			priority := 1;
+			source := stateTimeout;
+			target := stateReceiving;
+			events += object Muml::realtimestatechart::AsynchronousMessageEvent {
+					kind := Muml::realtimestatechart::EventKind::TRIGGER;
+					message := object Muml::realtimestatechart::Message {
+							instanceOf := messageTyp;
+						};
+				};
+			action := object Muml::realtimestatechart::Action {
+					name := "MessageGetter";
+					expressions += object Block { 
+							expressions += object Actionlanguage::Assignment {
+									assignOperator := AssignOperator::ASSIGN;
+									incrementDecrementOperator := IncrementDecrementOperator::UNSET;
+									lhs_typedNamedElementExpression := object TypedNamedElementExpression {
+											typedNamedElement := portVariable;
+										};
+									rhs_assignExpression := object TriggerMessageExpression {
+											messageType := messageTyp;
+											parameter := messageTyp.parameters->first();
+										};
+								};
+						};
+				};
+		};
+	
+	-- return new Region
+	return newRegion;
+}
+query Muml::realtimestatechart::RealtimeStatechart::createRegionForApiCommand(
+			in portVariable : Muml::behavior::Variable,
+			in initApiParam: APIStateChart::realtimestatechartparameter::APICallParameter,
+			in execApiParam: APIStateChart::realtimestatechartparameter::APICallParameter,
+			in timeBetweenApiExecutes: APIStateChart::realtimestatechartparameter::TimeParameter, port: Muml::component::ContinuousPort) : Muml::realtimestatechart::Region {
+	var newRegion : Muml::realtimestatechart::Region;
+	var newStatechart : PSM::realtimestatechart::ParameterizedRealtimeStatechart;
+	
+	newRegion := object Muml::realtimestatechart::Region {};
+	newStatechart := object PSM::realtimestatechart::ParameterizedRealtimeStatechart {
+			name := "ApiExecution";
+		};
+	newRegion.embeddedStatechart := newStatechart;
+	newStatechart.parameters += initApiParam;
+	newStatechart.parameters += execApiParam;
+	newStatechart.parameters += timeBetweenApiExecutes;
+	-- create init-state
+	var stateInit : Muml::realtimestatechart::State;
+	
+	stateInit := object Muml::realtimestatechart::State {
+			name := "ExecInitCommand";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	newStatechart.states += stateInit;
+	-- entry action to the state
+	stateInit.entryEvent := object Muml::realtimestatechart::EntryEvent {
+			action := object Muml::realtimestatechart::Action {
+					name := "initCommand";
+					expressions += object APIStateChart::APICall {
+							operation := initApiParam;
+							parameterBinding:=OrderedSet {};
+							apiCallSignature:=initApiParam;
+						};
+				};
+		};
+	var stateExec : Muml::realtimestatechart::State;
+
+	stateExec := object Muml::realtimestatechart::State {
+			name := "ExecExecCommand";
+			parentStatechart := newStatechart;
+			final := false;
+			initial := false;
+			urgent := false;
+		};
+	newStatechart.states += stateExec;
+	-- entry action to the state
+	stateExec.entryEvent := object Muml::realtimestatechart::EntryEvent {
+			action := object Muml::realtimestatechart::Action {
+					name := "executeApiCommand";
+					if(port.outPort) then{
+						
+						expressions+= object Actionlanguage::Assignment{
+							lhs_typedNamedElementExpression:=object Actionlanguage::TypedNamedElementExpression{
+								typedNamedElement:=portVariable;
+							};
+							assignOperator:=Actionlanguage::AssignOperator::ASSIGN;
+							rhs_assignExpression:=object APIStateChart::APICall {
+							operation := execApiParam;
+							apiCallSignature:=execApiParam;
+						};
+						};
+					}
+					
+					else{				
+					expressions += object APIStateChart::APICall {
+							operation := execApiParam;
+							apiCallSignature:=execApiParam;
+							if(port.inPort) then{
+									parameterBinding:=	object Muml::behavior::ParameterBinding{
+										parameter:=execApiParam.parameters->first();
+										value:=object actionlanguage::TypedNamedElementExpression{
+											typedNamedElement:=portVariable;
+										} 
+									}					
+							}endif;
+						};
+						}endif;
+						
+					
+				};
+		};
+		
+	-- create transition for init-state
+	newStatechart.transitions += object Muml::realtimestatechart::Transition {
+			priority := 1;
+			source := stateInit;
+			target := stateExec;
+		};
+	
+	-- create transition for execution-state
+	var execTransition : Muml::realtimestatechart::Transition;
+	
+	execTransition := object Muml::realtimestatechart::Transition {
+			priority := 1;
+			source := stateExec;
+			target := stateExec;
+		};
+	newStatechart.transitions += execTransition;
+	
+	-- add a clock for the time constraint
+	var apiClock : Muml::realtimestatechart::Clock;
+
+	apiClock := object Muml::realtimestatechart::Clock {
+			name := "_apiClock";
+			statechart := newStatechart;
+		};
+	
+	-- add enty-event with the time constraint to the ecexution-state
+	stateExec.entryEvent.clockResets += apiClock;
+	
+	-- add guard with the time constraint to the transition
+	execTransition.clockConstraints += object Muml::realtimestatechart::ClockConstraint {
+			clock := apiClock;
+			//the API-Call is executed within the time Intervall of the parameter timeBetweenAPIExceutes
+			bound := object Muml::valuetype::TimeValue {
+					value := object Actionlanguage::TypedNamedElementExpression {
+					typedNamedElement:=timeBetweenApiExecutes;	
+					};
+					unit:= getTimeUnitMilliSeconds();
+				};
+			operator := Core::expressions::common::ComparingOperator::GREATER_OR_EQUAL;
+		};
+			
+	-- return new Region
+	return newRegion;
+}
+
+
+
+
+mapping in Muml::component::HybridPort::createStatechartHybridPort(
+			in messageTyp : Muml::msgtype::MessageType,
+			in portVariable : Muml::behavior::Variable):PSM::realtimestatechart::ParameterizedRealtimeStatechart {
+	-- creates a statechart for the behavior of a hybrid port
+	name := self.component.name + "_" + self.name + "_behavior";
+		
+	-- create a new state, that contains more regions
+	var multiState : Muml::realtimestatechart::State;
+
+	multiState := object Muml::realtimestatechart::State {
+			name := self.name + "_initState";
+		//	parentStatechart := self;
+			final := false;
+			initial := true;
+			urgent := false;
+		};
+	
+	-- create a region for sending/receiving the value from the sensor/actuator
+	var regionTransmission : Muml::realtimestatechart::Region;
+	
+	if (self.inPort) then {
+		regionTransmission := result.createRegionForPeriodicReceiving(portVariable, messageTyp, self.samplingInterval);
+	} else {
+		regionTransmission := result.createRegionForPeriodicSending(portVariable, messageTyp, self.samplingInterval);
+	} endif;
+	regionTransmission.priority := 1;
+	multiState.embeddedRegions += regionTransmission;
+	
+	-- add the state for the statechart
+	result.states += multiState;
+
+}
+
+query Muml::valuetype::TimeValue::createAddToTimeValue(in adder : Muml::valuetype::TimeValue) : Muml::valuetype::TimeValue {
+	//the orgingal line
+	//return addTimeValueTo(self.deepclone().oclAsType(Muml::valuetype::TimeValue), adder);
+	return addTimeValueTo(self, adder);	
+}
+
+query Set(Muml::valuetype::TimeValue)::getMinTimeValue() : Muml::valuetype::TimeValue {
+	if (self->isEmpty()) then {
+		return null;
+	} endif;
+	
+	-- search for the minimum value in the given set
+	var minValue : Muml::valuetype::TimeValue = self->any(true);
+	
+	self->forEach(timeValue) {
+		if (not timeValue.isGreaterThan(minValue)) then {
+			minValue := timeValue;
+		} endif;
+	};
+	
+	-- return the maximal value
+	return minValue;
+}
+
+query Muml::valuetype::TimeValue::isGreaterThan(in compValue : Muml::valuetype::TimeValue) : Boolean {
+	return isTimeValueGreaterThan(self, compValue);
+}

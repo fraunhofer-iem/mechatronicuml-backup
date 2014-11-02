@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.psm/src" modelPluginID="de.uni_paderborn.fujaba.muml.psm"
+    modelName="Psm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.genmodel#//actionlanguage ../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml ../../de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.genmodel#//swplatform"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>psm.ecore</foreignModel>
+  <genPackages prefix="Psm" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
+      ecorePackage="psm.ecore#/">
+    <genClasses ecoreClass="psm.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute psm.ecore#//Import/importURI"/>
+    </genClasses>
+    <nestedGenPackages prefix="Allocation" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//allocation">
+      <genClasses ecoreClass="psm.ecore#//allocation/SystemAllocation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//allocation/SystemAllocation/allocations"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//allocation/Allocation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//allocation/Allocation/componentInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//allocation/Allocation/resourceInstance"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Properties" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//properties">
+      <genClasses ecoreClass="psm.ecore#//properties/ComponentInstanceExecutionProperties">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/componentInstance"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/wcet"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/codeMem"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/ramMem"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//properties/WCETpair">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//properties/WCETpair/amount"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//properties/WCETpair/resource"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//properties/MemoryPair">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//properties/MemoryPair/amount"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//properties/MemoryPair/resource"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//realtimestatechart">
+      <genClasses ecoreClass="psm.ecore#//realtimestatechart/ParameterizedRealtimeStatechart">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/ParameterizedRealtimeStatechart/parameters"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/ParameterizedRealtimeStatechart/allParameters"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//realtimestatechart/APICall">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/APICall/apiCallSignature"/>
+      </genClasses>
+      <nestedGenPackages prefix="Realtimestatechartparameter" basePackage="de.uni_paderborn.fujaba.muml.psm.realtimestatechart"
+          disposableProviderFactory="true" ecorePackage="psm.ecore#//realtimestatechart/realtimestatechartparameter">
+        <genClasses ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameter/APICallParameter"/>
+        <genClasses ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameter/TimeParameter"/>
+        <genClasses image="false" ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameter/RealtimeStatechartParameter/statechart"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Realtimestatechartparameterbinding" basePackage="de.uni_paderborn.fujaba.muml.psm.realtimestatechart"
+          disposableProviderFactory="true" ecorePackage="psm.ecore#//realtimestatechart/realtimestatechartparameterbinding">
+        <genClasses ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/APICallParameterBinding/expression"/>
+        </genClasses>
+        <genClasses ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/TimeParameterBinding/timeValue"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference psm.ecore#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/parameter"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Api" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//api">
+      <nestedGenPackages prefix="Portapimapping" basePackage="de.uni_paderborn.fujaba.muml.psm.api"
+          disposableProviderFactory="true" ecorePackage="psm.ecore#//api/portapimapping">
+        <genClasses ecoreClass="psm.ecore#//api/portapimapping/PortApiMapping">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/PortApiMapping/port"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/PortApiMapping/execCommand"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/PortApiMapping/repository"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/PortApiMapping/initCommand"/>
+        </genClasses>
+        <genClasses ecoreClass="psm.ecore#//api/portapimapping/MappingRepository">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/MappingRepository/portApiMappings"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/MappingRepository/imports"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Apiexpressions" basePackage="de.uni_paderborn.fujaba.muml.psm.api"
+          disposableProviderFactory="true" ecorePackage="psm.ecore#//api/apiexpressions">
+        <genClasses ecoreClass="psm.ecore#//api/apiexpressions/APICallExpression">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference psm.ecore#//api/apiexpressions/APICallExpression/apiCommand"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/apiexpressions/APICallExpression/parameterBindings"/>
+        </genClasses>
+        <genClasses ecoreClass="psm.ecore#//api/apiexpressions/EnumerationValueExpression">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference psm.ecore#//api/apiexpressions/EnumerationValueExpression/enumValue"/>
+        </genClasses>
+        <genClasses ecoreClass="psm.ecore#//api/apiexpressions/ContinuousPortExpression">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference psm.ecore#//api/apiexpressions/ContinuousPortExpression/continuousPort"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//instance">
+      <genClasses ecoreClass="psm.ecore#//instance/ParameterisableDiscreteSinglePortInstance">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//instance/ParameterisableDiscreteSinglePortInstance/bindings"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
