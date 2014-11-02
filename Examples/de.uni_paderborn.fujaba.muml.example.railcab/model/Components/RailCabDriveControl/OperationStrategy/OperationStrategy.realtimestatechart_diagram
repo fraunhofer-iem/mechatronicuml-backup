@@ -1375,14 +1375,16 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_vU6pcGAbEeSy7YZm1PHpMA" type="4003" source="_un_SA2AbEeSy7YZm1PHpMA" target="_un_SA2AbEeSy7YZm1PHpMA" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_vU6pc2AbEeSy7YZm1PHpMA" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_vU6pdGAbEeSy7YZm1PHpMA" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_vU6pdGAbEeSy7YZm1PHpMA" x="-2" y="-92"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_vU6pdWAbEeSy7YZm1PHpMA" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_vU6pdmAbEeSy7YZm1PHpMA" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_vU6pcWAbEeSy7YZm1PHpMA" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../../../RailCab.fujaba#_AXUA01OiEeSaVK1gfdE5pA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vU6pcmAbEeSy7YZm1PHpMA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vU6pcmAbEeSy7YZm1PHpMA" points="[1, -5, 1, -69]$[155, -5, 155, -69]$[155, 64, 155, 0]$[1, 64, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IJnXgGKgEeS-2sR8iwsrMg" id="(0.9927536231884058,0.29464285714285715)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_H8MmkGKgEeS-2sR8iwsrMg" id="(0.9927536231884058,0.8660714285714286)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Yn7CMGAdEeSy7YZm1PHpMA" type="4003" source="_qchhs2AcEeSy7YZm1PHpMA" target="_Waux4GAdEeSy7YZm1PHpMA" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Yn7CM2AdEeSy7YZm1PHpMA" type="6005">

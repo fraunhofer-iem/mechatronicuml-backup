@@ -2880,7 +2880,6 @@
         </embeddedRegions>
         <embeddedRegions xmi:id="_AXUA0FOiEeSaVK1gfdE5pA" priority="4">
           <embeddedStatechart xmi:id="_AXUA0VOiEeSaVK1gfdE5pA" name="SpeedTransmission_sender_speedProvider" behavioralElement="_KlzIwPh2EeOdcfcso3gQlg">
-            <variables xmi:id="_AXUA0lOiEeSaVK1gfdE5pA" name="speed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
             <transitions xmi:id="_AXUA01OiEeSaVK1gfdE5pA" priority="1" target="_AXUA21OiEeSaVK1gfdE5pA" source="_AXUA21OiEeSaVK1gfdE5pA">
               <clockConstraints xmi:id="_AXUA1FOiEeSaVK1gfdE5pA" clock="_AXUA4FOiEeSaVK1gfdE5pA" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_AXUA1VOiEeSaVK1gfdE5pA">
@@ -2890,7 +2889,7 @@
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_AXUA11OiEeSaVK1gfdE5pA">
                 <message xmi:id="_AXUA2FOiEeSaVK1gfdE5pA" instanceOf="_9L8i8FOfEeSaVK1gfdE5pA">
                   <parameterBinding xmi:id="_AXUA2VOiEeSaVK1gfdE5pA" parameter="_BxB3sFOgEeSaVK1gfdE5pA">
-                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_AXUA2lOiEeSaVK1gfdE5pA" typedNamedElement="_AXUA0lOiEeSaVK1gfdE5pA"/>
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_FcWgAGKgEeS-2sR8iwsrMg" typedNamedElement="_saCSEGKfEeS-2sR8iwsrMg"/>
                   </parameterBinding>
                 </message>
               </events>
