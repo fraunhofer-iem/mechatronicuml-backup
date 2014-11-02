@@ -1,0 +1,64 @@
+import Expressions;
+import GeneralConstraint;
+import LocationConstraint;
+import RequiredHardwareResourceInstanceConstraint;
+import ResourceConstraint;
+import ObjectiveFunction;
+import Util;
+import Variables;
+
+modeltype allocationSpecification uses cs('http://www.fujaba.de/muml/allocation/language/0.1.0/cs');
+modeltype oclcontext uses oclcontext('http://www.fujaba.de/muml/allocation/language/0.1.0/oclcontext');
+//modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/expressions/0.3.1');
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/expressions/common/0.3.1');
+modeltype instance uses muml::instance('http://www.fujaba.de/muml/instance/0.4.0');
+modeltype hwpinstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/');
+modeltype hwrinstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/');
+modeltype ilptype uses ilp('http://www.fujaba.de/muml/allocation/ilp/0.1.0');
+modeltype ocl uses essentialoclcs('http://www.eclipse.org/ocl/3.1.0/EssentialOCLCST');
+modeltype values uses values('http://ww.eclipse.org/OCL/Values');
+
+transformation Specification2ILP(in specification : allocationSpecification, in ins : instance, in hwpi : hwpinstance, out ilpOut : ilptype);
+
+main() {
+	var specificationCS : SpecificationCS := specification.getSpecification();
+	var cic : ComponentInstanceConfiguration := ins.getRootCIC();
+	var hpic : HWPlatformInstanceConfiguration := hwpi.getRootHPIC();
+	var ilp : IntegerLinearProgram := object IntegerLinearProgram {};
+	ilp.map createGeneralConstraints(cic, hpic);
+	specificationCS.createLocationConstraints(ilp, cic, hpic);
+	specificationCS.createHWResInstanceConstraints(ilp, cic, hpic);
+	specificationCS.createResourceConstraints(ilp, cic, hpic);
+	specificationCS.createObjectiveFunction(ilp, cic, hpic);
+	//specificationCS.getSameLocationConstraints()->createSameLocationConstraint(ilp, cic, hpic);
+	ilpOut.removeOrphans();
+	//log(cic.toString());
+	//var ctx : OCLContext := createOCLContext(cic, null);
+	//log(ctx.toString());
+	//log("in qvto ocl result: " + evaluateOCL(null, ctx).toString());
+}
+
+helper ilptype::removeOrphans() {
+	self.removeElement(createOCLContext(ins.getRootCIC(), hwpi.getRootHPIC()));
+}
+
+query instance::getRootCIC() : ComponentInstanceConfiguration {
+	var cicSet : Set(ComponentInstanceConfiguration) := self.rootObjects()[ComponentInstanceConfiguration];
+	assert fatal (cicSet->size() = 1) with log("expected exactly one root cic");
+	return cicSet->any(true);
+}
+
+query hwpinstance::getRootHPIC() : HWPlatformInstanceConfiguration {
+	var hpicSet : Set(HWPlatformInstanceConfiguration) := self.rootObjects()[HWPlatformInstanceConfiguration];
+	log("hpicSet: " + hpicSet->size().toString());
+	assert fatal (hpicSet->size() = 1) with log("expected exactly one root hpic");
+	return hpicSet->any(true);
+}
+
+query allocationSpecification::getSpecification() : SpecificationCS {
+	var specificationSet : Set(SpecificationCS) := self.rootObjects()[SpecificationCS];
+	assert fatal (specificationSet->size() = 1) with log("expected exactly one allocation specification");
+	return specificationSet->any(true);
+}

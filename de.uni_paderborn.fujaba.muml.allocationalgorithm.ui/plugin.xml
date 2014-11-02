@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            class="de.uni_paderborn.fujaba.muml.allocationalgorithm.ui.wizard.AllocationAlgorithmWizard"
+            id="de.uni_paderborn.fujaba.muml.allocationalgorithm.ui.AllocationAlgorithmWizard"
+            name="Run Allocation Algorithm">
+         <selection
+               class="org.eclipse.core.resources.IFile">
+         </selection>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.allocationalgorithm.ui.AllocationAlgorithmCommand"
+               id="de.uni_paderborn.fujaba.muml.allocationalgorithm.ui.AllocationAlgorithm"
+               label="Run Allocation Algorithm"
+               style="push">
+                <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="org.eclipse.core.resources.IFile">
+                        </instanceof>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.allocationalgorithm.ui.wizard.RunAllocationAlgorithmHandler"
+            id="de.uni_paderborn.fujaba.muml.allocationalgorithm.ui.AllocationAlgorithmCommand"
+            name="Run Allocation Algorithm">
+      </command>
+   </extension>
+
+</plugin>
