@@ -17,6 +17,7 @@ import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
@@ -29,6 +30,7 @@ import org.eclipse.ui.ide.IDE;
 
 import de.uni_paderborn.fujaba.export.ExportPlugin;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
+import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportTargetPage;
 
 public abstract class AbstractFujabaExportWizard extends Wizard implements IExportWizard {
     protected FormToolkit toolkit = new FormToolkit(Display.getDefault());
@@ -136,11 +138,24 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IExpo
         //Save dirty editors if possible but do not stop if not all are saved
         saveDirtyEditors();
         
+        saveWidgetValues();
+
         IFujabaExportOperation operation = wizardCreateExportOperation();
         Assert.isNotNull(operation, "Please implement 'wizardCreateExportOperation()' to provide a non-null export operation.");
         return executeExportOperation(operation);
     }
 	
+
+	protected void saveWidgetValues() {
+		 // Save dialog settings for pages with options 
+        for (IWizardPage page : getPages()) {
+        	if (page instanceof AbstractFujabaExportWizard) {
+        		AbstractFujabaExportTargetPage targetPage = (AbstractFujabaExportTargetPage) page;
+        		targetPage.saveWidgetValues();
+        	}
+        }		
+	}
+
 
 	protected boolean saveDirtyEditors() {
         return PlatformUI.getWorkbench().saveAllEditors(true);

@@ -12,6 +12,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CellLabelProvider;
@@ -47,7 +48,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.FileDialog;
-import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.dialogs.WizardDataTransferPage;
@@ -60,90 +60,34 @@ import de.uni_paderborn.fujaba.export.ExportPlugin;
 
 
 public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferPage implements IWizardPage {
-
+	protected Button buttonOverwrite;
 	protected FormToolkit toolkit;
 	protected TreeViewer treeViewer;
 	protected Text destinationText;
+	
+	public static String OVERWRITE_KEY = "overwrite";
 	
     public AbstractFujabaExportTargetPage(String name, FormToolkit toolkit) {
     	super(name); 
     	this.toolkit = toolkit;
     	setTitle("Select Transformation Target");
         setDescription("Target");
-    
     }
 
+    public void restoreWidgetValues() {
+        IDialogSettings settings = getDialogSettings();
+        if (settings != null) {
+        	buttonOverwrite.setSelection(settings.getBoolean(OVERWRITE_KEY));
+        }
+    }
 
-//    /**
-//     *	The Finish button was pressed.  Try to do the required work now and answer
-//     *	a boolean indicating success.  If false is returned then the wizard will
-//     *	not close.
-//     *
-//     *	@return boolean
-//     */
-//    public boolean finish() {
-//       
-//        // about to invoke the operation so save our state
-//        //saveWidgetValues();
-//       }
-//
-//    /**
-//     *	Hook method for saving widget values for restoration by the next instance
-//     *	of this class.
-//     */
-//    protected void internalSaveWidgetValues() {
-//        // update directory names history
-//        IDialogSettings settings = getDialogSettings();
-//        if (settings != null) {
-//            String[] directoryNames = settings
-//                    .getArray(STORE_DESTINATION_NAMES_ID);
-//            if (directoryNames == null) {
-//				directoryNames = new String[0];
-//			}
-//
-//            directoryNames = addToHistory(directoryNames, getDestinationValue());
-//            settings.put(STORE_DESTINATION_NAMES_ID, directoryNames);
-//
-//            // options
-//            settings.put(STORE_OVERWRITE_EXISTING_FILES_ID,
-//                    overwriteExistingFilesCheckbox.getSelection());
-//
-//            settings.put(STORE_CREATE_STRUCTURE_ID,
-//                    createDirectoryStructureButton.getSelection());
-//
-//        }
-//    }
-
-//    /**
-//     *	Hook method for restoring widget values to the values that they held
-//     *	last time this wizard was used to completion.
-//     */
-//    protected void restoreWidgetValues() {
-//        IDialogSettings settings = getDialogSettings();
-//        if (settings != null) {
-//            String[] directoryNames = settings
-//                    .getArray(STORE_DESTINATION_NAMES_ID);
-//            if (directoryNames == null) {
-//				return; // ie.- no settings stored
-//			}
-//
-//            // destination
-//            setDestinationValue(directoryNames[0]);
-//            for (int i = 0; i < directoryNames.length; i++) {
-//				addDestinationItem(directoryNames[i]);
-//			}
-//
-//            // options
-//            overwriteExistingFilesCheckbox.setSelection(settings
-//                    .getBoolean(STORE_OVERWRITE_EXISTING_FILES_ID));
-//
-//            boolean createDirectories = settings
-//                    .getBoolean(STORE_CREATE_STRUCTURE_ID);
-//            createDirectoryStructureButton.setSelection(createDirectories);
-//            createSelectionOnlyButton.setSelection(!createDirectories);
-//        }
-//    }
-
+    @Override
+    public void saveWidgetValues() {
+    	IDialogSettings settings = getDialogSettings();
+        if (settings != null) {
+        	settings.put(OVERWRITE_KEY, buttonOverwrite.getSelection());
+        }
+    }
     /**
      *	Answer a boolean indicating whether the receivers destination specification
      *	widgets currently all contain valid values.
@@ -502,7 +446,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
     }
 
 	public void createOptions(Composite parent) {
-		toolkit.createButton(parent, "Overwrite existing resources", SWT.CHECK);
+		buttonOverwrite = toolkit.createButton(parent, "Overwrite existing resources", SWT.CHECK);
 	}
 	
 	protected boolean shouldDisplayOptions() {
