@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PSM API Transformation
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.psm.api.transformation;singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Vendor: 
+ Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany and Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
+Require-Bundle: de.uni_paderborn.fujaba.muml.psm.api.transformation.blackbox;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.psm;bundle-version="0.1.0"

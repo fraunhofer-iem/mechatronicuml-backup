@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            class="de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui.CodegenTransformationWizard"
+            id="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CodeGenWizard"
+            name="Create Code-Generation Model">
+         <selection
+               class="org.eclipse.core.resources.IFile">
+         </selection>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui.handlers.CreateCodeGenHandler"
+            id="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CreateCodgenModelCommand"
+            name="Create CodeGen Model">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CreateCodgenModelCommand"
+               id="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.createCodeGenModel"
+               label="Create CodeGen Model"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="org.eclipse.core.resources.IFile">
+                        </instanceof>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>

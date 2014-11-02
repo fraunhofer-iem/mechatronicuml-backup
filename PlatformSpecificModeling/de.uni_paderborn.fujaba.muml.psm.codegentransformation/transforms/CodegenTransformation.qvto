@@ -1,0 +1,289 @@
+import hierarchy_transformation;
+transformation CodegenTransformation(in allocationmodel : Allocation, out codegenmodel:Codegen);
+
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.1.0');
+modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
+modeltype PSMInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.1.0');
+modeltype PSMRealtimeStateChart uses psm::realtimestatechart::realtimestatechartparameterbinding('http://www.fujaba.de/muml/psm/0.1.0');
+
+//modeltype PSMPackage uses psm('http://www.fujaba.de/muml/psm/0.1.0');
+modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.1.0');
+modeltype Codegen uses codegen('http://www.fujaba.de/muml/psm/codegen/0.1.0');
+  
+modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.0/');
+modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+property allocationModel : SystemAllocation = allocationmodel.rootObjects()[SystemAllocation]->any(true);
+	
+
+main() {
+	allocationModel:=allocationmodel.rootObjects()[SystemAllocation]->any(true);
+
+	allocationmodel.rootObjects()[SystemAllocation]->map mapSystemAllocation2Codegen();
+} 
+
+
+
+query ComponentInstance::getAllocatedResourceInstance():hardware::hwresourceinstance::StructuredResourceInstance{	
+	return allocationModel.allocations->any(allocation|allocation.componentInstance=self).resourceInstance;
+}
+
+/**
+* Creates a Codegen model from a given SystemAllocation
+**/
+mapping SystemAllocation::mapSystemAllocation2Codegen():Codegen::CodGenAllocation{
+	cic:=self.unionCIC();
+	//flat the hierarchy
+	//cic.flatComponentInstanceConfiguration();	
+	hpic:=self.unionHWPIC();	
+}
+
+/**********************
+* Here is the logic for mapping the ComponentInstances
+***********************/
+
+
+//this function unions all root ComponentInstanceConfigurations to one for the Codegen Model
+helper SystemAllocation::unionCIC():ComponentInstanceConfiguration{
+	var newCIC:ComponentInstanceConfiguration:=new ComponentInstanceConfiguration();
+	newCIC.name:="codeGenComponentInstanceConfiguration";
+	var rootCICs:Set(ComponentInstanceConfiguration):=Set{};
+	self.allocations.componentInstance->forEach(ci){
+		rootCICs+=ci.getRootComponentInstanceConfiguration();
+	};
+	rootCICs->forEach(cic){
+		var tempCIC:ComponentInstanceConfiguration:=cic.map mapCIC();
+		newCIC.componentInstances+=tempCIC.componentInstances;
+		newCIC.portConnectorInstances+=tempCIC.portConnectorInstances;
+		codegenmodel.removeElement(tempCIC);
+	};
+	return newCIC;
+}
+
+mapping ComponentInstanceConfiguration::mapCIC():ComponentInstanceConfiguration{
+	name:=self.name;
+	componentInstances:=self.componentInstances->map mapComponentInstance();
+	portConnectorInstances:=self.portConnectorInstances->map mapConnectorInstance();
+}
+
+
+mapping PortConnectorInstance::mapConnectorInstance():PortConnectorInstance
+	disjuncts AssemblyConnectorInstance::mapAssemblyConnectorInstance,DelegationConnectorInstance::mapDelegationConnectorInstance;
+
+
+mapping AssemblyConnectorInstance::mapAssemblyConnectorInstance():AssemblyConnectorInstance{
+	type:=self.type;
+	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);	
+}
+
+mapping DelegationConnectorInstance::mapDelegationConnectorInstance():DelegationConnectorInstance{
+	type:=self.type;
+	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);	
+}
+
+
+// returns the root ComponentInstanceConfiguration for a given ComponentInstance
+query ComponentInstance::getRootComponentInstanceConfiguration():ComponentInstanceConfiguration{
+	var cic:ComponentInstanceConfiguration:=self.parentCIC;
+	while(not cic.parentStructuredComponentInstance.oclIsUndefined()){
+		cic:=cic.parentStructuredComponentInstance.parentCIC;
+	};
+	return cic;
+}
+
+
+/**
+ * maps the ComponentInstances of the unified CIC to RefinedComponentInstances
+**/
+mapping ComponentInstance::mapComponentInstance():ComponentInstance
+	disjuncts StructuredComponentInstance::mapStructuredComponentInstance,AtomicComponentInstance::mapAtomicComponentInstance;
+
+
+mapping StructuredComponentInstance::mapStructuredComponentInstance():StructuredComponentInstance{ 
+	 name:=self.name;
+	 componentType:=self.componentType;
+	 portInstances:=self.portInstances->map mapPortInstance();
+	 embeddedCIC:=self.embeddedCIC.map mapCIC();
+	}
+
+
+mapping AtomicComponentInstance::mapAtomicComponentInstance():RefinedAtomicComponentInstance{
+	 name:=self.name;
+	 componentType:=self.componentType;
+	 portInstances:=self.portInstances->map mapPortInstance();
+	 componentPart:=self.componentPart;
+	 allocatedResourceInstance:=self.getAllocatedResourceInstance().late resolveone(RefinedStructuredResourceInstance);
+}
+
+
+
+abstract mapping PortInstance::abstractmapPortInstance():PortInstance{
+	name:=self.name;
+	type:=self.type;
+	connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
+}
+
+mapping PortInstance::mapPortInstance():PortInstance disjuncts ParameterisableDiscreteSinglePortInstance::mapParameterisableDiscreteSinglePortInstance, DiscreteMultiPortInstance::mapDiscreteMultiPortInstance, DiscreteSinglePortInstance::mapDiscreteSinglePortInstance;
+//mapping DiscretePortInstance::mapDiscretePortInstance():DiscretePortInstance disjuncts 
+
+
+
+mapping DiscreteMultiPortInstance::mapDiscreteMultiPortInstance():DiscreteMultiPortInstance merges PortInstance::abstractmapPortInstance{
+	subInteractionEndpointInstances:=self.subInteractionEndpointInstances.oclAsType(DiscreteSinglePortInstance)->map mapDiscreteSinglePortInstance();
+}
+
+
+mapping DiscreteSinglePortInstance::mapDiscreteSinglePortInstance():DiscreteSinglePortInstance merges PortInstance::abstractmapPortInstance{
+	multiInteractionEndpointInstance:=self.multiInteractionEndpointInstance;
+	
+}
+
+
+mapping ParameterisableDiscreteSinglePortInstance::mapParameterisableDiscreteSinglePortInstance():ParameterisableDiscreteSinglePortInstance merges PortInstance::abstractmapPortInstance{
+	bindings:=self.bindings.deepclone().oclAsType(RealtimeStatechartParameterBinding);
+}
+
+/**********************
+* Here is the logic for mapping the ResourceInstances
+***********************/
+
+/**
+ * This helper unions all HWPlatformInstance to one for the CodeGen Model
+**/
+helper SystemAllocation::unionHWPIC():HWPlatformInstanceConfiguration{
+ var newHPIC : HWPlatformInstanceConfiguration := new HWPlatformInstanceConfiguration();
+	//newHPIC.name:="codeGenHPIConfiguration";
+	var rootHPIs:Set(HWPlatformInstanceConfiguration):=Set{};
+	self.allocations->collect(resourceInstance)->forEach(ri){
+		rootHPIs+=ri.getRootHWPInstanceConfiguration();
+	};
+	rootHPIs->forEach(cic){
+		var tempHIC:HWPlatformInstanceConfiguration:=cic.map mapHWPlatformInstanceConfiguration();
+		newHPIC.hwplatformInstances+=tempHIC.hwplatformInstances;
+		newHPIC.networkingHardwareInstances+=tempHIC.networkingHardwareInstances;
+		codegenmodel.removeElement(tempHIC);
+	};
+	return newHPIC;
+ 
+}
+
+
+/**
+*  returns the corresponding HWPlatformInstanceConfiguration for a given StructuredResourceInstance
+**/
+query StructuredResourceInstance::getRootHWPInstanceConfiguration():HWPlatformInstanceConfiguration{
+	var hpic:EObject:=self.oclAsType(EObject).eContainer();
+	while(not hpic.eContainer().oclIsKindOf(ModelElementCategory) ){
+		hpic:=hpic.eContainer();
+	};
+	return hpic.oclAsType(HWPlatformInstanceConfiguration);
+}
+
+
+
+/**
+* maps the ResourceInstances to Refined ResourceInstances
+**/
+mapping hardware::hwresourceinstance::ResourceInstance::mapResourceInstance():hardware::hwresourceinstance::ResourceInstance
+	disjuncts StructuredResourceInstance::mapStructuredResourceInstance,ActuatorInstance::mapActuatorInstance, SensorInstance::mapSensorInstance;
+
+
+
+mapping hardware::hwresourceinstance::ActuatorInstance::mapActuatorInstance():hardware::hwresourceinstance::ActuatorInstance{
+	name:=self.name;
+	resourceType:=self.resourceType;
+	hwports:=self.hwports.oclAsType(HWPortInstance)->map mapHWPort().oclAsType(HWPortInstance);
+}
+
+mapping hardware::hwresourceinstance::SensorInstance::mapSensorInstance():hardware::hwresourceinstance::SensorInstance{
+	name:=self.name;
+	resourceType:=self.resourceType;
+	hwports:=self.hwports.oclAsType(HWPortInstance)->map mapHWPort().oclAsType(HWPortInstance);
+}
+
+mapping hardware::hwresourceinstance::StructuredResourceInstance::mapStructuredResourceInstance():RefinedStructuredResourceInstance{
+	name:=self.name;
+	resourceType:=self.resourceType;
+	embeddedAtomicResourceInstances:=self.embeddedAtomicResourceInstances;
+	hwports:=self.hwports.oclAsType(HWPortInstance)->map mapHWPort().oclAsType(HWPortInstance);
+}
+
+
+mapping HWPlatformInstanceConfiguration::mapHWPlatformInstanceConfiguration():HWPlatformInstanceConfiguration{
+//	name:=self.name;
+	hwplatformInstances:=self.hwplatformInstances->map mapHWPlatformInstance();
+	networkingHardwareInstances:=self.networkingHardwareInstances->map mapNetworkHardwareInstance();
+	resources:=self.resources->map mapResourceInstance();
+	
+}
+
+mapping HWPlatformInstance::mapHWPlatformInstance():HWPlatformInstance{
+	//resources:=self.resources->map mapResourceInstance();
+	name:=self.name;
+	//networkingHardwareInstances:=self.networkingHardwareInstances->map mapNetworkHardwareInstance();
+	delegationPorts:=self.delegationPorts->map mapHWPort().oclAsType(DelegationHWPortInstance);
+	embeddedHPIC:=self.embeddedHPIC.map mapHWPlatformInstanceConfiguration();
+}
+
+mapping NetworkingHardwareInstance::mapNetworkHardwareInstance():NetworkingHardwareInstance
+disjuncts BridgeInstance::mapBridgeInstance, BusInstance::mapBusInstance, BusConnectorInstance::mapBusConnectorInstance,LinkInstance::mapLinkInstance,DelegationInstance::mapDelegationInstance;
+
+
+mapping BridgeInstance::mapBridgeInstance():BridgeInstance{
+	name:=self.name;
+	type:=self.type;
+	connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
+	
+}
+
+mapping BusInstance::mapBusInstance():BusInstance{
+	type:=self.type;
+	communicationMediaPart:=self.communicationMediaPart;
+	name:=self.name;
+	connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
+	
+}
+
+mapping BusConnectorInstance::mapBusConnectorInstance():BusConnectorInstance{
+	type:=self.type;
+	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);
+}
+
+mapping LinkInstance::mapLinkInstance():LinkInstance{
+	type:=self.type;
+	communicationMediaPart:=self.communicationMediaPart;
+	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);
+	
+}
+
+mapping DelegationInstance::mapDelegationInstance():DelegationInstance{
+	type:=self.type;
+	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);
+	
+}
+
+mapping ConnectorEndpointInstance::mapHWPort():ConnectorEndpointInstance
+disjuncts HWPortInstance::mapHWPortInstance, DelegationHWPortInstance::mapDelegationHWPortInstance;
+
+mapping HWPortInstance::mapHWPortInstance():HWPortInstance{
+	name:=self.name;
+	type:=self.type;
+	connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
+} 
+
+mapping DelegationHWPortInstance::mapDelegationHWPortInstance():DelegationHWPortInstance{
+	name:=self.name;
+	type:=self.type;
+	connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);	
+}

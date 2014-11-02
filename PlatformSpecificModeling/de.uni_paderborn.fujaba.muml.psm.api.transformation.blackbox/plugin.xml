@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            name="TimeUnitLibUnit"
+            namespace="de.uni_paderborn.fujaba.muml.software.transform._blackbox">
+         <library
+               class="de.uni_paderborn.fujaba.muml.psm.api.transformation.blackbox.TimeUnitLibrary"
+               name="TimenitLib">
+            <metamodel
+                  nsURI="http://www.fujaba.de/muml/valuetype/0.4.0">
+            </metamodel>
+            <metamodel
+                  nsURI="http://www.storydriven.org/core/expressions/0.3.1">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+
+</plugin>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.PsmPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/allocation/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/properties/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameter/0.1.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/realtimestatechart/realtimestatechartparameterbinding/0.1.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/api/portapimapping/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/api/apiexpressions/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/instance/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="de.uni_paderborn.fujaba.muml.psm.api.ApiPackage"
+            genModel="model/psm.genmodel"
+            uri="http://www.fujaba.de/muml/psm/api/0.4.0/">
+      </package>
+   </extension>
+
+</plugin>

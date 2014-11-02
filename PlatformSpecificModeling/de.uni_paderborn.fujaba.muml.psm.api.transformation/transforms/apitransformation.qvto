@@ -1,0 +1,415 @@
+import StateChartLibrary;
+import APIBindingLibrary;
+
+transformation apitransformation(inout muml : Modelinstance, in mapp : PortMappingModel);
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype API uses psm::api('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
+modeltype PortMappingModel uses psm::api::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype ApiExpessions uses psm::api::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
+
+modeltype APIInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype APIStateChart uses psm::realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
+
+modeltype Modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype Muml uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+//this extra attribute is used to dermine which hybridPort is connected to which continous port
+// to determine the messages
+//since the connections are only known at instance level
+intermediate property muml::component::HybridPort::connectedContiniousPort: muml::component::ContinuousPort;
+intermediate property muml::component::ContinuousPort::samplingTimes: Set(muml::valuetype::TimeValue);
+
+// the old Continous/Hybrid Ports/PortInstances, which shall be removed at the end
+property elementsToRemove : Set(Ecore::EObject) = object Set(Ecore::EObject) {};
+
+
+// the message Type Repository for the api values 
+property apiMessageRepository:Muml::msgtype::MessageTypeRepository = object Muml::msgtype::MessageTypeRepository {
+	name:="api_messageType_Repository";
+	comment:="The message types for the api messages"	
+};
+
+//the Mapping Repsitory which is created
+property apiMappingRepository:API::portapimapping::MappingRepository = null;
+
+//the fujaba RootNode
+property  rootNode : Modelinstance::RootNode = null;
+
+main() {
+	// Muml::instance::AtomicComponentInstance.allInstances();
+ 	rootNode := muml.rootObjects()[RootNode]->any(true);
+ 	rootNode.settingUpTheStage();
+ 	apiMappingRepository:=mapp.rootObjects()[API::portapimapping::MappingRepository]->any(true);
+ 	//change Components
+ 	Muml::component::AtomicComponent.allInstances()->map ChangeAtomicComponent();
+ 	 Muml::component::StructuredComponent.allInstances()->map ChangeHybridStructuredComponent2StructuredDiscreteComponent();
+ 	 Muml::component::PortPart.allInstances()->map UpdatePortPart();
+ 	 //Change Component Instances
+ 	Muml::instance::AtomicComponentInstance.allInstances()->map ChangeAtomicComponentInstance();
+ 	Muml::instance::StructuredComponentInstance.allInstances()->map ChangeStructuredComponentInstance2StructuredDiscreteComponentInstance();
+ 	
+ 	//add message repository to catgory
+ 	var messageTypeCategory : Modelinstance::ModelElementCategory;
+	
+	messageTypeCategory := rootNode.categories->select(c|c.name="msgtype")->first();
+	if (messageTypeCategory.oclIsUndefined() or messageTypeCategory.oclIsInvalid()) then {
+		return null;
+	} endif;
+	messageTypeCategory.modelElements += apiMessageRepository;
+	
+	
+ 	//Remove old Continous/Hybrid Ports/PortInstances
+ elementsToRemove->forEach(r) {
+		muml.removeElement(r);
+	};
+}
+
+/**
+* We only know on instance level which continious port instance is connected to which hybrid port instance;
+* However, we need this information on type level since, the statecharts are affected
+* Thus, we walk over the instance model and set for each Hybrid Port Type to which Continus Port Type he could be connected
+*/
+query RootNode::settingUpTheStage(){	
+		Muml::instance::HybridPortInstance.allInstances()->forEach(hybridPortInstance){
+			hybridPortInstance.setConnectedContiniousPort();
+		};
+	return null;
+}
+
+/**
+* Sets the intermediate property  muml::component::HybridPort::connectedContiniousPort: muml::component::ContinuousPort#
+* and muml::component::ContinuousPort::samplingTimes: Set(muml::valuetype::TimeValue);
+*/
+helper   Muml::instance::HybridPortInstance::setConnectedContiniousPort(){
+	var connectedContinousPortInstance:Muml::instance::ContinuousPortInstance;
+	connectedContinousPortInstance:=self.getConnectedContiniousPortInstance();
+	self.portType.oclAsType(Muml::component::HybridPort).setConnectedContiniousPort(self.portType.oclAsType(Muml::component::HybridPort),connectedContinousPortInstance.portType.oclAsType(Muml::component::ContinuousPort));
+	return null;
+}
+
+/**
+* Sets the intermediate property  muml::component::HybridPort::connectedContiniousPort: muml::component::ContinuousPort#
+* and muml::component::ContinuousPort::samplingTimes: Set(muml::valuetype::TimeValue);
+*/
+helper Muml::component::HybridPort::setConnectedContiniousPort(inout hybridPort:Muml::component::HybridPort, connectedContinousPort:Muml::component::ContinuousPort){
+	hybridPort.connectedContiniousPort:=connectedContinousPort;
+	setSamplingTimeOfConnectedHybridPort(connectedContinousPort,self.samplingInterval);
+	return null;
+}
+
+/**
+Sets the sampling time
+*/
+helper setSamplingTimeOfConnectedHybridPort(inout connectedContinousPort:Muml::component::ContinuousPort, in samplingTime:Muml::valuetype::TimeValue){
+	connectedContinousPort.samplingTimes+=samplingTime;
+	return null;
+}
+
+/**
+* Returns for a HybridPortInstance to which ContinuousPortInstance its connected
+*/
+query Muml::instance::HybridPortInstance::getConnectedContiniousPortInstance():Muml::instance::ContinuousPortInstance{
+		if(self.connectorInstances->size()>1 or not self.connectorInstances->first().oclIsKindOf(Muml::instance::PortConnectorInstance)) then{
+			return null;
+		}endif;
+		var portConnectorInstance:Muml::instance::PortConnectorInstance:=self.connectorInstances->first().oclAsType(Muml::instance::PortConnectorInstance);
+		var connectedPortInstance:Muml::instance::PortInstance:=portConnectorInstance.connectorEndpointInstances->select(portInstance|portInstance<>self)->first().oclAsType(Muml::instance::PortInstance);
+		if(connectedPortInstance.oclIsKindOf(Muml::instance::ContinuousPortInstance)) then{
+			return connectedPortInstance.oclAsType(Muml::instance::ContinuousPortInstance).getConnectedContiniousPortInstance(self.oclAsSet());
+		}endif;
+		return null;		
+}
+
+/**
+* Returns for a ContinuousPortInstance to which HybridPortInstance  its connected
+*/
+query Muml::instance::ContinuousPortInstance::getConnectedContiniousPortInstance(visitedPortInstances:Set(Muml::instance::PortInstance)):Muml::instance::ContinuousPortInstance{
+	if(self.componentInstance.oclIsKindOf(Muml::instance::AtomicComponentInstance)) then {
+		return self;
+	}endif;
+	var connectorInstance:Muml::instance::PortConnectorInstance:=self.connectorInstances->select(connectorInstance|connectorInstance.connectorEndpointInstances->excludesAll(visitedPortInstances))->first().oclAsType(Muml::instance::PortConnectorInstance);
+	if(connectorInstance.connectorEndpointInstances->select(p|p<>self)->first().oclIsKindOf(Muml::instance::ContinuousPortInstance)) then{
+		return connectorInstance.connectorEndpointInstances->select(p|p<>self)->first().oclAsType(Muml::instance::ContinuousPortInstance).getConnectedContiniousPortInstance(visitedPortInstances->union(self.oclAsSet()));
+	}endif;
+	return null;
+}
+
+
+/****************************************************
+*	
+*	Here starts the real logic of the transformation
+*
+*********************************************************/
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of Components (Type Level)
+*
+*****************************************************************************/
+//component logic
+mapping inout Muml::component::AtomicComponent::ChangeAtomicComponent() disjuncts
+Muml::component::AtomicComponent::ChangeContinousComponent2DiscreteComponent,Muml::component::AtomicComponent::ChangeSoftwareComponent2DiscreteComponent {}
+
+
+/**
+* Changes a ContiniusComponent to a DiscreteComponent and Replaces its ContinousPorts with DiscretePorts
+*/
+mapping inout Muml::component::AtomicComponent::ChangeContinousComponent2DiscreteComponent() when {self.componentKind=muml::component::ComponentKind::CONTINUOUS_COMPONENT}{
+	componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
+	//create empty statechart here
+	createEmptyRealtimeStateChart(muml.rootObjects()[RootNode]->any(true),self);
+	ports:=self.ports[Muml::component::ContinuousPort]->map ReplacePortWithDiscretePort(self.behavior.oclAsType(Muml::realtimestatechart::RealtimeStatechart));	
+}
+
+
+/**
+* The HybridPorts of a HybridComponent are Replaced  with DiscretePorts
+*/
+mapping inout Muml::component::AtomicComponent::ChangeSoftwareComponent2DiscreteComponent() when {self.componentKind=muml::component::ComponentKind::SOFTWARE_COMPONENT}{
+	ports+=self.ports[Muml::component::HybridPort]->map ReplacePortWithDiscretePort(self.behavior.oclAsType(Muml::realtimestatechart::RealtimeStatechart));	
+}
+
+/**
+* The HybridPorts of a SturcutedComponent are Replaced  with DiscretePorts
+*/
+mapping inout Muml::component::StructuredComponent::ChangeHybridStructuredComponent2StructuredDiscreteComponent() when {self.componentKind=muml::component::ComponentKind::HYBRID_COMPONENT}{
+	componentKind:=	muml::component::ComponentKind::SOFTWARE_COMPONENT;
+	ports+=self.ports[Muml::component::ContinuousPort]->map ReplacePortWithDiscretePort(null);	
+}
+
+/**
+* The General Logic to replace a Port with a  DiscretePort
+*/
+mapping Muml::component::Port::ReplacePortWithDiscretePort(inout componentStateChart:Muml::realtimestatechart::RealtimeStatechart):Muml::component::DiscretePort{
+	name:=self.name;
+	annotation:=self.annotation;
+	extension:=self.extension;
+	comment:=self.comment;
+	connectors:=self.connectors;
+	component:=self.component;
+	cardinality:=object Muml::valuetype::Cardinality{
+			lowerBound:=object Muml::valuetype::NaturalNumber{
+				value:=1;
+			};
+			upperBound:=object Muml::valuetype::NaturalNumber{
+				value:=1;
+			};
+	};
+	//the old port shall be removed at the end
+	elementsToRemove+=self;
+}
+
+/**
+* Replace a HybridPort with a  DiscretePort
+*/
+mapping Muml::component::HybridPort::ReplacePortWithDiscretePort(inout componentStateChart:Muml::realtimestatechart::RealtimeStatechart):Muml::component::DiscretePort inherits Muml::component::Port::ReplacePortWithDiscretePort{
+	
+	if(self.component.oclIsKindOf(Muml::component::AtomicComponent)) then{
+		//create the message stuff
+		var messageType:Muml::msgtype::MessageType:=self.connectedContiniousPort.map CreateMessageTypeForDiscretePort();
+		var variable:Muml::behavior::Variable:=self.CreateStateChartVariable();
+		self.CreateMessageAttributesForDiscretePort(result,messageType);
+		//statechart stuff
+		AddVariableToStateChart(componentStateChart,variable);
+		self.ReplacePortExpressionWithVariableExpression(componentStateChart,variable);
+		var portStateChart:Muml::realtimestatechart::RealtimeStatechart;
+		portStateChart:=self.map createStatechartHybridPort(messageType,variable);
+		storeRealtimeStatechart(portStateChart,componentStateChart);
+		behavior:=portStateChart;
+	}endif;
+
+}
+
+/**
+* Replace a ContinuousPort with a  DiscretePort
+*/
+mapping Muml::component::ContinuousPort::ReplacePortWithDiscretePort(inout componentStateChart:Muml::realtimestatechart::RealtimeStatechart):Muml::component::DiscretePort inherits Muml::component::Port::ReplacePortWithDiscretePort{
+
+	if(self.component.oclIsKindOf(Muml::component::AtomicComponent)) then{
+		//create the message stuff
+		var messageType:Muml::msgtype::MessageType:=self.map CreateMessageTypeForDiscretePort();
+		var variable:Muml::behavior::Variable:=self.CreateStateChartVariable();
+		self.CreateMessageAttributesForDiscretePort(result,messageType);
+		//statechart stuff		
+		AddVariableToStateChart(componentStateChart,variable);
+		var portStateChart:Muml::realtimestatechart::RealtimeStatechart;
+		portStateChart:=self.map createStatechartContinuousPort(messageType,variable,self.samplingTimes,true,rootNode);
+		storeRealtimeStatechart(portStateChart,componentStateChart);
+		behavior:=portStateChart;
+	}endif;
+	
+}
+
+/**
+* updates the port parts of component parts
+*/
+mapping inout Muml::component::PortPart::UpdatePortPart(){
+	if(self.portType.oclIsKindOf(Muml::component::HybridPort)) then{
+		portType:=self.portType.resolveone(Muml::component::Port);
+	}
+	else if (self.portType.oclIsKindOf(Muml::component::ContinuousPort)) then {
+		portType:=self.portType.resolveone(Muml::component::Port);
+	}endif endif;
+	
+}
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of Component-Instances (Instance Level)
+*
+*****************************************************************************/
+
+/**
+*
+* Replaces the Continuos- and Hybrid-PortInstances with DiscretePortInstances of an AtomicComponentInstances
+*
+*/
+// component instance logic
+mapping inout Muml::instance::AtomicComponentInstance::ChangeAtomicComponentInstance(){
+	portInstances+=self.portInstances[Muml::instance::ContinuousPortInstance]->map ReplacePortInstanceWithDiscretePortInstance();
+	portInstances+=self.portInstances[Muml::instance::HybridPortInstance]->map ReplacePortInstanceWithDiscretePortInstance()
+}
+
+/**
+*
+* Replaces the Continuos- and Hybrid-PortInstances with DiscretePortInstances of a StructuredComponentInstances
+*
+*/
+mapping inout Muml::instance::StructuredComponentInstance::ChangeStructuredComponentInstance2StructuredDiscreteComponentInstance(){
+	portInstances+=self.portInstances[Muml::instance::ContinuousPortInstance]->map ReplacePortInstanceWithDiscretePortInstance();
+}
+
+
+/**
+* The General Logic to replace a PortInstance with a  DiscretePortInstance
+*/
+mapping Muml::instance::PortInstance::ReplacePortInstanceWithDiscretePortInstance():Muml::instance::DiscreteSinglePortInstance{
+	name:=self.name;
+	annotation:=self.annotation;
+	extension:=self.extension;
+	comment:=self.comment;
+	connectorInstances:=self.connectorInstances;
+	componentInstance:=self.componentInstance;
+	type:=self.type.resolveone(Muml::component::DiscretePort);
+	//the old port shall be removed at the end
+	elementsToRemove+=self;
+}
+
+/**
+* Replace a hybridPortInstance with a  DiscretePortinstance
+*/
+mapping Muml::instance::HybridPortInstance::ReplacePortInstanceWithDiscretePortInstance():Muml::instance::DiscreteSinglePortInstance inherits Muml::instance::PortInstance::ReplacePortInstanceWithDiscretePortInstance{
+	
+}
+
+mapping Muml::instance::ContinuousPortInstance::ReplacePortInstanceWithDiscretePortInstance():Muml::instance::DiscreteSinglePortInstance
+	disjuncts Muml::instance::ContinuousPortInstance::ReplaceContinusPortInstanceWithParaDiscretePortInstance, Muml::instance::ContinuousPortInstance::ReplaceContinusPortInstanceWithSingleDiscretePortInstance {}
+
+/**
+* Replace a ContiniuosPortIsntance with a  ParametiredDiscreteSinglePortinstance
+*/
+mapping Muml::instance::ContinuousPortInstance::ReplaceContinusPortInstanceWithParaDiscretePortInstance():psm::instance::ParameterisableDiscreteSinglePortInstance inherits Muml::instance::PortInstance::ReplacePortInstanceWithDiscretePortInstance 
+when {self.componentInstance.oclIsKindOf(Muml::instance::AtomicComponentInstance)}{
+ 	createPortBindingParameter(apiMappingRepository,result,self);
+}
+
+mapping Muml::instance::ContinuousPortInstance::ReplaceContinusPortInstanceWithSingleDiscretePortInstance():Muml::instance::DiscreteSinglePortInstance inherits Muml::instance::PortInstance::ReplacePortInstanceWithDiscretePortInstance 
+when {self.componentInstance.oclIsKindOf(Muml::instance::StructuredComponentInstance)}{
+	
+}
+
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of Messages
+*
+*****************************************************************************/
+
+// message stuff
+/**
+*	For each new DiscretePort (created from a ContinousPort) corresponding MessageBuffer and Messages are created
+**/
+helper Muml::component::DirectedTypedPort::CreateMessageAttributesForDiscretePort(inout port:Muml::component::DiscretePort, message:Muml::msgtype::MessageType){
+	if(self.inPort) then{
+		port.receiverMessageBuffer := object Muml::connector::MessageBuffer {
+				bufferSize := object Muml::valuetype::NaturalNumber {
+						value := 1;
+						infinity := false;
+				};
+			messageType := message;
+		//discreteInteractionEndpoint := self;
+		name:="Buffer";
+		bufferOverflowAvoidanceStrategy:=Muml::connector::BufferOverflowAvoidanceStrategy::DISPLACE_OLDEST_MESSAGE_IN_BUFFER;
+		};
+		port.receiverMessageTypes:=message;
+	}
+	else{
+		port.senderMessageTypes:=message;		
+	}endif;
+	return null;
+}
+
+
+/**
+*	For each ConitniousPort and new Message is generated
+**/
+mapping Muml::component::ContinuousPort::CreateMessageTypeForDiscretePort():Muml::msgtype::MessageType{
+	name:=self.component.name+"_"+self.name+"_message";
+	var parameter:Muml::behavior::Parameter := object Muml::behavior::Parameter{
+		name:=self.name+"_value";
+		dataType:=self.dataType;
+	};
+	parameters:=parameter;
+	apiMessageRepository.messageTypes+=result;
+}
+
+
+
+/***************************************************************************
+* 
+*  Here starts the logic for the transformation of StateCharts
+*
+*****************************************************************************/
+/**
+	For each hybrid-port / continius port a new Variable in the RealtimeStateCharts is created,
+	which represents the (old and now deleted) hybrid Port
+**/
+//StateChart stuff
+helper Muml::component::DirectedTypedPort::CreateStateChartVariable():Muml::behavior::Variable{
+	var variable:Muml::behavior::Variable;
+	variable:=object Muml::behavior::Variable{
+		name:=self.name+"_apiValue";
+		dataType:=self.dataType;
+		//we need the initalize Expression from the ContinousPort, also for the new Variable of the HybridPort
+		if(self.oclIsKindOf(Muml::component::HybridPort)) then{
+				initializeExpression:=self.oclAsType(Muml::component::HybridPort).connectedContiniousPort.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
+		}
+		else{
+			initializeExpression:=self.initializeExpression.deepclone().oclAsType(core::expressions::Expression);
+		}endif;
+	};
+	return variable;
+}
+
+
+/**
+ 	In the RealtimeStateChart of a discret component with hybridPorts, all references to the hybridPort are replaced
+ 	with references to the new RealtimeStateChart Variable, that (now) represents the old hybirdPort
+*/
+helper Muml::component::HybridPort::ReplacePortExpressionWithVariableExpression(inout componentStateChart:Muml::realtimestatechart::RealtimeStatechart, in variable:Muml::behavior::Variable){
+	actionlanguage::TypedNamedElementExpression.allInstances()->select(e|e.typedNamedElement=self)->forEach(typedNamedElementexpression){
+		typedNamedElementexpression.typedNamedElement:=variable;
+	}
+}
+
+/**
+ A Variable is added to a RealtimeStateChart
+**/
+helper AddVariableToStateChart(inout stateChart:Muml::realtimestatechart::RealtimeStatechart, in variable:Muml::behavior::Variable){
+	stateChart.variables+=variable;
+	return null;
+}

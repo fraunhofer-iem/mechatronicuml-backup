@@ -1,0 +1,364 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module contains all templates for generating the Core-Features of the middleware.
+ * In this files, much code is static, since it contains the maoin functionality
+ * of the middleware. Nevertheless, small parts are ECU specific and have to be generated.
+ */]
+[module Core('http://www.fujaba.de/muml/connector/0.4.0', 'http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
+				'http://www.fujaba.de/muml/hardware/1.0/')]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::middlewareQueries]
+
+[**
+ * In this template all sub-templates are called, which are use to generate the middleware files.
+ * Please use additional module-files to organize all templates.
+ * 
+ * This template will be called by the main-template of the code generation.
+ * @param rsri the home ECU for the middleware
+ * @param path the current file path for generating files
+ */]
+[template public generateMiddlewareCoreFiles(rsri : RefinedStructuredResourceInstance, path : String)]
+[generateMiddlewareCoreHeader(rsri, path)/]
+[generateMiddlewareCoreClass(rsri, path)/]
+[/template]
+
+
+[**
+ * Generates the includes for a given ECU
+ * @param rsri the given ECU (home-ECU for the middleware)
+*/]
+[template private includes(rsri :RefinedStructuredResourceInstance)]
+#include "stdlib.h"
+#include "MiddlewareInternalLogic.h"
+#include "../lib/MiddlewareTypes.h"
+#include "../GlobalIdentifier.h"
+#include "../lib/NetworkMessageBuffer.h"
+#include "../lib/NetworkInterface.h"
+#include "../messages/messages_types.h" 
+#include <string.h>
+
+//import all needed ComponentHeaders
+[for (comp : Component | rsri.allocatedAtomicComponentInstances.oclAsType(AtomicComponentInstance).componentType)]
+#include "../[comp.getFileName(true)/]"
+[/for]
+[/template]
+
+
+[**
+ * Generates the header file for the middleware core.
+ * @param rsri the given ECU (home-ECU for the middleware)
+ * @param path the current file-path for generating files
+*/]
+[template private generateMiddlewareCoreHeader(rsri : RefinedStructuredResourceInstance, path : String)]
+[file(path+'/Middleware/MiddlewareCore.h',false,'UTF-8')]
+
+/**
+ * @file 
+ * @author generated
+ * @brief Specification of the Core Functionality of the Middleware
+ * @details This files contains the main Functions of the Middleware and the global variable Middleware mw
+ * 
+ */
+
+#ifndef MIDDLEWARECORE_H_
+#define MIDDLEWARECORE_H_
+[includes(rsri)/]
+
+
+/**
+ * 
+ * @brief Description of the Middleware for the ECU: [rsri.getName()/]
+ * @details It contains the Components, which are allocated on a ECU, the NetworkInterfaces of the ECU: [rsri.getName()/]
+ */
+typedef struct Middleware {
+
+//Create components?
+[for(compInst: ComponentInstance | rsri.allocatedAtomicComponentInstances.oclAsType(ComponentInstance))]
+	[compInst.getClassName()/]* [compInst.getVariableName()/]; /**< The ComponentInstance: [compInst.getName()/] of Type: [compInst.getClassName()/] , which is allocated on the ECU: [rsri.getName()/] */
+
+[/for]
+
+//intern NetworkInterface	
+NetworkInterface* intern;  /**< Pointer to the internal NetworkInterface of the ECU: [rsri.getName()/]  */
+//Create Networkinterfaces
+[for(ni: HWPortInstance | rsri.oclAsType(StructuredResourceInstance).hwports.oclAsType(HWPortInstance)->select(p|p.isNetworkInterface))]
+	NetworkInterface* [ni.getName()/]; /**< Pointer the the NetworkInterface: [ni.getName()/] of the ECU: [rsri.getName()/] */
+[/for]
+
+//Create NetworkMessageBuffer
+NetworkMessageBuffer* outgoing; /**< Pointer to the NetworkMessageBuffer, which stores the outgoing #MiddlewareMessage%s */
+NetworkMessageBuffer* incoming; /**< Pointer to the NetworkMessageBuffer, which stores the incoming #MiddlewareMessage%s */
+
+ECUID idOfECU; /**< The ECUID of the ECU: [rsri.getName()/] on which the Middleware is executed */
+
+}Middleware;
+
+
+/**
+ * @brief Global Variable Middleware
+ * @details Since, the Middleware is used in different places, we use this global variable to access the Middleware
+ * @\warning Only one Middleware is allowed per ECU
+ */
+extern Middleware *mw;
+
+/**
+ * @brief Creates the Middleware
+ * @details Allocates Memory for the struct Middleware, creates its #NetworkInterface%s, and initializes the Middleware
+ * @return A Pointer to the new created Middleware
+ * @note This Function is called by the system initialization (once)
+ */
+Middleware* Middleware_create(void);
+
+/**
+ * @brief Initialize the Middleware
+ * @details This Function initializes the Middleware, by setting Middleware::idOfECU, and creating the NetworkMessageBuffer Middleware::incoming, and Middleware::outgoing
+ * @return True, if the Middleware is successfully initialized, otherwise False
+  */
+bool_t Middelware_init(void);
+
+/**
+ * @brief Destroys the Middleware
+ * @details Frees the Memory for the struct Middleware
+ * @return True, if the Middleware is successfully destroyed, otherwise False
+ */
+bool_t Middleware_destroy(void);
+
+/**
+ * @brief Takes an arbitary Message, and stores it the NetworkMessatgeBuffer::outgoing
+ * @details Takes an arbitary Message, and iff it is a ProtoBuf Message transforms it into an byte-Array, finally the Messages is enqued in Middleware::outgoing
+ * 
+ * @param targetPort The PortID of the target Port to which this Message shall be send
+ * @param id The MessageID of the Message which shall be send
+ * @param msg The Message to send
+ * @return True
+ * @todo  always returns true
+ */
+bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg);
+
+/**
+ * @brief Delivers received Messages to the correct #MessageBuffer%s
+ * @details Dequeues alls Messages out of Middleware::incoming and delivers them to the correct #MessageBuffer%s
+ * @note This Function will be called periodically
+ * @return True
+ * @todo  always returns true
+ */
+bool_t MW_deliverReceivedMessages(void);
+
+/**
+ * @brief Receives Messages for every known NetworkInterface
+ * @details Calls the receive Function for each NetworkInterface, which is contained in the struct Middleware
+ *          and enques them in Middleware::incoming
+ * @return False
+ * @todo  Always returns false
+ */
+bool_t MW_NIreceiveMessages(void);
+
+/**
+ * @brief All outgoing Messages are sent via a corresponding NetworkInterface
+ * @details Takes all Messages from Middleware::outgoing, and selects for each the corresponding NetworkInterace, and sends the Message via send Function of the NetworkInterface
+ * @return False
+ * @todo  Always returns false
+ */
+bool_t MW_NIsendMessages(void);
+
+
+
+#endif /* MIDDLEWARECORE_H_ */
+
+[/file]
+[/template]
+
+[**
+ * Generates the implementation file for the middleware core.
+ * @param rsri the given ECU (home-ECU for the middleware)
+ * @param path the current file-path for generating files
+*/]
+[template private generateMiddlewareCoreClass(rsri : RefinedStructuredResourceInstance, path : String)]
+[file(path+'/Middleware/MiddlewareCore.c',false,'UTF-8')]
+#include "MiddlewareCore.h"
+
+/*
+ * create a new middleware instance
+ * called by the system initialization (once)
+ */
+Middleware* Middleware_create(void){
+	mw = (Middleware*) malloc(sizeof(Middleware));
+	/*
+	 * call create-function for every NI of the ECU
+	 */
+	mw->intern = NetworkInterface_create("intern");
+	[comment generate for all defined Network Interfaces/]
+	[for(ni: HWPortInstance | rsri.oclAsType(StructuredResourceInstance).hwports.oclAsType(HWPortInstance)->select(p|p.isNetworkInterface))]
+	mw->[ni.getName()/] = NetworkInterface_create("[ni.getName()/]");
+	[/for]
+
+	if(Middelware_init() == true){
+		return mw;
+	}
+	else{
+		return NULL;
+	}
+
+}
+
+/*
+ * initialize the middleware instance
+ * called by the system initialization (once)
+ */
+bool_t Middelware_init(void){
+		
+	if (mw != NULL){
+        mw->idOfECU = [rsri.getIdentifierVariableName()/];
+        mw->incoming = NetworkMessageBuffer_create(15, true);
+        mw->outgoing = NetworkMessageBuffer_create(15, true);
+		return true;
+	}else
+		return false;
+}
+
+/*
+ * destroys the middleware instance
+ * called by the system initialization (once)
+ */
+bool_t Middleware_destroy(void){
+	if (mw != NULL){
+		//destroy all components
+[comment iterate over all component instances/]
+[for(compInst: ComponentInstance | rsri.allocatedAtomicComponentInstances.oclAsType(ComponentInstance))]
+	[componentType.getDestroyMethodName()/](mw->[compInst.getVariableName()/]);
+[/for]
+
+//destroy all network interfaces
+	NetworkInterface_destroy(mw->intern);
+[comment iterate over all knwon network interfaces/]
+[for(ni: HWPortInstance | rsri.oclAsType(StructuredResourceInstance).hwports.oclAsType(HWPortInstance)->select(p|p.isNetworkInterface))]
+	NetworkInterface_destroy(mw->[ni.getName()/]);
+[/for]
+
+//destroy all NetworkMessageBuffer
+  	NetworkMessageBuffer_destroy(mw->incoming);
+    NetworkMessageBuffer_destroy(mw->outgoing);
+// destroy the middleware itself
+		free(mw);
+		return true;
+	}else
+		return false;
+}
+
+/*
+ * sends a message.
+ * TODO: add decision, if targetC <-- what does it mean? :(
+ */
+bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
+	//called in RTSC to send a message
+	MiddlewareMessage* nwMsg = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
+	nwMsg->_msgID = id;
+	nwMsg->_targetPort = targetPort;
+	
+	//choose right function to create the bytearray (which is actually a chararray).
+	switch(id){
+[comment do for all message-types, used on this ECU/]
+[for(msgtype: MessageType | rsri.getAllUsedMessagesForECU()) ? (msgtype.parameters->size()>0)]
+	case [getIdentifierVariableName(msgtype)/]:
+			nwMsg->_mumlMsg_len = [msgtype.getMarshallingMethodName()/](([getVariableName(msgtype)/]*)msg, nwMsg->_mumlMsg, 0);
+			break;
+[/for]
+		default:
+			nwMsg->_mumlMsg_len = 0;
+			break;
+	}
+	
+	NetworkMessageBuffer_enqueue(mw->outgoing, nwMsg);
+	return true;
+}
+
+/*
+ * calls the receive-message of the middleware and delivers all messages to the correct buffers
+ * will be called periodically
+ */
+bool_t MW_deliverReceivedMessages(void){
+	MiddlewareMessage* msg;
+	while (mw->incoming->currentSize > 0){
+		msg = NetworkMessageBuffer_dequeue(mw->incoming);
+		if (MW_getTargetECU(msg->_targetPort) == mw->idOfECU){
+			//the target receiver is located on this ECU		
+			Port_addMessage(MW_getPortforIdentifier(msg->_targetPort), msg);
+		}else
+		{
+			NetworkMessageBuffer_enqueue(mw->outgoing, msg);
+		}
+	}
+    
+	return true;
+}
+
+
+/*
+ * receives messages for every known NetworkInterface
+ */
+bool_t MW_NIreceiveMessages(void){
+    
+	//TODO: Is this function called periodically or something?
+
+	MiddlewareMessage* msg;
+	msg = NULL;
+	[comment iterate over all component instances/]
+	[for(ni: HWPortInstance | rsri.oclAsType(StructuredResourceInstance).hwports.oclAsType(HWPortInstance)->select(p|p.isNetworkInterface))]
+		msg = mw->[ni.getName()/]->receiveMethod();
+		if (msg != NULL)
+			NetworkMessageBuffer_enqueue(mw->incoming, msg);
+	[/for]
+    return true;
+}
+
+/*
+ * as long we have messages in the outgoing-buffer,
+ * we try to send them via the "best" network interface
+ */
+bool_t MW_NIsendMessages(void){
+	MiddlewareMessage* msg = NULL;
+	ECUID targetECUID = -1;
+	ECUID nextStepECUID = -1;
+	bool_t returnValue = true;
+	while (mw->outgoing->currentSize>0){
+		msg = NetworkMessageBuffer_dequeue(mw->outgoing);
+		targetECUID = MW_getTargetECU(msg->_targetPort);
+		nextStepECUID = MW_getNextStepECU(targetECUID);
+		if(targetECUID == -1 || nextStepECUID == -1){
+			//this message belongs nowhere
+			free(msg);
+			returnValue = false;
+			continue;
+		}
+        NetworkInterface* ni = MW_getNetworkInterface(nextStepECUID);
+		if(ni == NULL){
+			//we don't have a NetworkInterface to send it, thus throw it away
+			free(msg);
+			returnValue = false;
+			continue;
+		}
+		// the allocated memory for the MiddlewareMessage is deallocated (free(msg);) in the generated Stubs of the NetworkInterfaces
+		// !!! Thus, do not call free(msg); here !!!
+        if(!(ni->sendMethod(msg))){
+			//something went wrong
+			returnValue = false;
+		}
+	}
+	return returnValue;
+}
+
+
+
+[/file]
+[/template]
+

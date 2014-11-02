@@ -1,0 +1,211 @@
+[comment encoding = UTF-8 /]
+[**
+ * This module provides all templates to generate the NetworkInterfaces.
+ */]
+[module NetworkInterfaces('http://www.fujaba.de/muml/connector/0.4.0', 'http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
+				'http://www.fujaba.de/muml/hardware/1.0/',)]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::middlewareQueries]
+
+
+[**
+ * Calls the templates for header and implementation file.
+ * @param rsri the (home)-ECU
+ * @param path the current file-path for generating files
+ */]
+[template public generateNetworkInterfaces(rsri : RefinedStructuredResourceInstance, path: String)]
+[comment for every network interface/]
+	[generateNetworkInterfaceHeader(rsri, path)/]
+	[generateNetworkInterfaceClass(rsri, path)/]
+[comment @TODO generate method stubs for every NI/]
+
+[/template]
+
+[**
+ * Generates the header file for the NetworkInterface defintion.
+ * @param rsri the (home)-ECU
+ * @param path the current file-path for generating files
+ */]
+[template public generateNetworkInterfaceHeader(rsri : RefinedStructuredResourceInstance, path: String)]
+
+[file (path+'Middleware/NetworkInterfaceImplementation.h', false, 'UTF-8')]
+/**
+ * @file 
+ * @author generated
+ * @brief Implementations of the Interface NetworkInterface
+ * @details In this file Method-Stubs for the #NetworkInterface%s of the ECU [rsri.getName()/] are genereated,
+ *          These Method-Stubs have to be manually implemented, since they are called in the Middleware and in the Methods MW_NIreceiveMessages(void) and MW_NIsendMessages(void)
+ * 
+ * @warning the Implementation of the #NetworkInterface%s has to be done manually
+ */
+#ifndef NETWORKINTERFACEIMPLEMENTATION_H_
+#define NETWORKINTERFACEIMPLEMENTATION_H_
+
+#include "../GlobalIdentifier.h"
+#include "MiddlewareCore.h"
+
+//Intern networkinterface
+ /**
+  * @brief Does Nothing, just to be consisten to the Interface
+  * @return True
+  */
+bool_t NetworkInterface_intern_init(void);
+
+/**
+ * @brief Send a MiddlewareMessage via the internal NetworkInterface
+ * @details The MiddlewareMessage is directly enqued in the NetworkMessageBuffer Middleware::incoming
+ * 
+ * @param msg The MiddlewareMessage to be send
+ * @return True, if sending was succesful, otherwise False
+ */
+bool_t NetworkInterface_intern_send(MiddlewareMessage* msg);
+
+/**
+ * @brief This Method is empty and its purpose is to be conistend to the Interface NetworkInterface
+ * @return NULL
+ * @warning This method should never be used!
+ */
+MiddlewareMessage* NetworkInterface_intern_receive(void);
+
+[for(ni: HWPortInstance | rsri.oclAsType(StructuredResourceInstance).hwports.oclAsType(HWPortInstance)->select(p|p.isNetworkInterface))]
+/**
+ * @brief INIT method for NetworkInterface: [ni.getName()/] of ECU:[rsri.getName()/]
+ * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::[ni.getName()/]. Usually this is called before the main application is started.
+ * @return What you have implemented
+ */
+bool_t [ni.getInitMethodName()/](void);
+
+/**
+ * @brief SEND method for the NetworkInterface: [ni.getName()/] of ECU:[rsri.getName()/]
+ * @details Implement this method, to send a message via the  NetworkInterface: Middleware::[ni.getName()/].
+ * This method ist called by the middleware, if a message has to be sent via this NetworkInterface
+ * @param msg the MiddlewareMessage to be sent
+ * @return What you have implemented
+ * @note use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
+ * to write the message content into a byte array, if needed
+ */
+bool_t [ni.getSendMethodName()/](MiddlewareMessage* msg);
+
+/**
+ * @brief RECEIVE method for the NetworkInterface: [ni.getName()/] of ECU:[rsri.getName()/]
+ * @details implement this method, to receive a message via the  NetworkInterface: Middleware::[ni.getName()/].
+ * This method ist called by the middleware periodically to receive new messages
+ * @return the received MiddlewareMessage
+ */
+MiddlewareMessage * [ni.getReceiveMethodName()/](void);
+[/for]
+
+#endif /* NETWORKINTERFACEIMPLEMENTATION_H_ */
+[/file]
+[/template]
+
+[**
+ * Generates the implementation file for the NetworkInterface defintion.
+ * For every network interface a stub with a protected area is generated.
+ * @param rsri the (home)-ECU
+ * @param path the current file-path for generating files
+ */]
+[template public generateNetworkInterfaceClass(rsri : RefinedStructuredResourceInstance, path: String)]
+
+[file (path+'Middleware/NetworkInterfaceImplementation.c', false, 'UTF-8')]
+#include "NetworkInterfaceImplementation.h"
+
+bool_t NetworkInterface_intern_init(void){
+    //do some initialization here
+return true;
+}
+
+bool_t NetworkInterface_intern_send(MiddlewareMessage* msg){
+   return NetworkMessageBuffer_enqueue(mw->incoming, msg);
+
+}
+MiddlewareMessage* NetworkInterface_intern_receive(void){
+    return NULL; //This method should never be used
+}
+/** [protected ('user includes **/')] 
+
+/**[/protected]**/
+
+[for(ni: HWPortInstance | rsri.oclAsType(StructuredResourceInstance).hwports.oclAsType(HWPortInstance)->select(p|p.isNetworkInterface))]
+
+/*
+ * INIT method for network interface [ni.name.getName()/]
+ * implement this method, to do additional initialization for NI [ni.name.getName()/]. Usually this is called before the main application is started.
+ */
+bool_t [ni.getInitMethodName()/](void){
+/** @TODO [protected (ni.getInitMethodName()+' **/')] 
+
+/**[/protected]**/
+//standard return value
+return true;
+}
+
+
+/*
+ * SEND method for network interface [ni.name.getName()/].
+ * implement this method, to send a message via the NI [ni.name.getName()/].
+ * This method ist called by the middleware, if a message has to be sent via this network interface
+ * @param msg the message to be sent
+ * hint: use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
+ * to write the message content into a byte array, if needed
+ */
+bool_t [ni.getSendMethodName()/](MiddlewareMessage * msg){
+/** @TODO [protected (ni.getSendMethodName()+' **/')] 
+
+
+/**[/protected]**/
+//free the allocated memory for the message after it has been sent
+free(msg);
+msg = NULL;
+//if we are reaching this statement, everything went ok
+return true;
+}
+
+
+/*
+ * RECEIVE method for network interface [ni.name.getName()/].
+ * implement this method, to receive a message via the NI [ni.name.getName()/].
+ * This method ist called by the middleware periodically to receive new messages
+ * @return the received MiddlewareMessage
+ */
+MiddlewareMessage * [ni.getReceiveMethodName()/](void){
+//create new MiddlewareMessage
+MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
+
+//buffer for receiving data
+char buf['['/]30[']'/];
+//number of received bytes
+int_t recvLength = 0;
+
+///////////////////////////////
+/** @TODO [protected (ni.getReceiveMethodName()+' **/')] 
+ //fill the buffer *buf and specify the number of received bytres (recvLength)
+/**[/protected]**/
+///////////////////////////////
+
+if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,recvLength))){
+	free(tmpMessage);
+    tmpMessage = NULL;
+	}
+else{
+	//read the buffer and create the middlewareMessage
+	MiddlewareMessage_read_delimited_from(buf, tmpMessage, 0);
+	}
+//return the received message
+return tmpMessage;
+}
+
+	
+	[/for]
+[/file]
+[/template]
