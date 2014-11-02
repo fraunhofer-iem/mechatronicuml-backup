@@ -16,6 +16,7 @@
 <rm:locator searchPathRef="StoryDiagram" failOnError="false"/>
 <rm:locator searchPathRef="ReconfigurationModeling" failOnError="false"/>
 <rm:locator searchPathRef="Examples" failOnError="false"/>
+<rm:locator searchPathRef="Graphviz" failOnError="false"/>
 <rm:locator searchPathRef="ComponentBehaviorSynthesis" failOnError="false"/>
 <rm:locator searchPathRef="CoordinationPattern" failOnError="false"/>
 <rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
@@ -182,13 +183,22 @@
    </rm:provider>
 </rm:searchPath>
    
-   <rm:searchPath name="CoordinationPattern">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+<rm:searchPath name="CoordinationPattern">
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
         <rm:property key="buckminster.source" value="false"/>
          <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="file:///data/jenkins/jobs/CoordinationPattern/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
-   </rm:provider>
+  </rm:provider>
+</rm:searchPath>
+
+<rm:searchPath name="Graphviz">
+   <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+        <rm:property key="buckminster.source" value="false"/>
+         <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/Graphviz/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+  </rm:provider>
 </rm:searchPath>
  
 </rm:rmap>
