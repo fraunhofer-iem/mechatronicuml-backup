@@ -5,21 +5,21 @@
       <children xmi:type="notation:Shape" xmi:id="_TNS2E1OnEeSDPNki4Dv8rg" type="3005" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_TNS2FVOnEeSDPNki4Dv8rg" type="5005"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_TM2KIFOnEeSDPNki4Dv8rg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2FFOnEeSDPNki4Dv8rg" x="60" y="-6"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2FFOnEeSDPNki4Dv8rg" x="132" y="38"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_TNS2FlOnEeSDPNki4Dv8rg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_TNS2GFOnEeSDPNki4Dv8rg" type="5006">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_TNS2GVOnEeSDPNki4Dv8rg" y="5"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_TNS2GVOnEeSDPNki4Dv8rg" x="12" y="30"/>
         </children>
         <element xmi:type="protocol:Role" href="../../RailCab.fujaba#_TM_7IFOnEeSDPNki4Dv8rg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2F1OnEeSDPNki4Dv8rg" y="90"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2F1OnEeSDPNki4Dv8rg" x="60" y="110"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_TNS2GlOnEeSDPNki4Dv8rg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_TNS2HFOnEeSDPNki4Dv8rg" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_TNS2HVOnEeSDPNki4Dv8rg" y="5"/>
         </children>
         <element xmi:type="protocol:Role" href="../../RailCab.fujaba#_TM_7JFOnEeSDPNki4Dv8rg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2G1OnEeSDPNki4Dv8rg" x="132" y="90"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TNS2G1OnEeSDPNki4Dv8rg" x="252" y="116"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_TM2KIFOnEeSDPNki4Dv8rg"/>
@@ -40,6 +40,6 @@
   <edges xmi:type="notation:Connector" xmi:id="_TNcnFlOnEeSDPNki4Dv8rg" type="4006" source="_TNS2FlOnEeSDPNki4Dv8rg" target="_TNS2GlOnEeSDPNki4Dv8rg" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_TNcnF1OnEeSDPNki4Dv8rg" fontName="Segoe UI"/>
     <element xmi:type="protocol:RoleConnector" href="../../RailCab.fujaba#_TNJFE1OnEeSDPNki4Dv8rg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TNcnGFOnEeSDPNki4Dv8rg" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TNcnGFOnEeSDPNki4Dv8rg" points="[10, 6, -182, 0]$[182, 6, -10, 0]"/>
   </edges>
 </notation:Diagram>
