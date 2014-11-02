@@ -21,13 +21,8 @@
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.graphviz" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.graphviz.m2t" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.common" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.graphviz.plain.xtext" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.graphviz.plain.xtext.ui" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.graphviz.dot.xtext" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.annotation" version="1.1.0" match="compatible"/>
       <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.util"/>

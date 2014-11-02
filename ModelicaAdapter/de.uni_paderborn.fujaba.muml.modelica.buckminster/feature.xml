@@ -34,18 +34,4 @@
       <import plugin="de.uni_paderborn.fujaba.graphviz.plain.xtext.ui"/>
    </requires>
 
-   <plugin
-         id="de.uni_paderborn.fujaba.graphviz.dot.xtext.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.graphviz.plain.xtext.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
 </feature>
