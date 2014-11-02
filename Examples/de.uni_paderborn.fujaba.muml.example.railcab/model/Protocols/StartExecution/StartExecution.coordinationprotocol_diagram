@@ -5,25 +5,25 @@
       <children xmi:type="notation:Shape" xmi:id="_abLuN1OpEeSDPNki4Dv8rg" type="3005" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_abLuOVOpEeSDPNki4Dv8rg" type="5005"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_abCkQFOpEeSDPNki4Dv8rg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_abLuOFOpEeSDPNki4Dv8rg" x="60" y="-6"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_abLuOFOpEeSDPNki4Dv8rg" x="66" y="12"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_abLuOlOpEeSDPNki4Dv8rg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_abLuPFOpEeSDPNki4Dv8rg" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_abLuPVOpEeSDPNki4Dv8rg" y="5"/>
         </children>
         <element xmi:type="protocol:Role" href="../../RailCab.fujaba#_abCkQVOpEeSDPNki4Dv8rg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_abLuO1OpEeSDPNki4Dv8rg" y="90"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_abLuO1OpEeSDPNki4Dv8rg" x="42" y="90"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_abLuPlOpEeSDPNki4Dv8rg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_abLuQFOpEeSDPNki4Dv8rg" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_abLuQVOpEeSDPNki4Dv8rg" y="5"/>
         </children>
         <element xmi:type="protocol:Role" href="../../RailCab.fujaba#_abCkRVOpEeSDPNki4Dv8rg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_abLuP1OpEeSDPNki4Dv8rg" x="132" y="90"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_abLuP1OpEeSDPNki4Dv8rg" x="174" y="90"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.fujaba#_abCkQFOpEeSDPNki4Dv8rg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_abLuNVOpEeSDPNki4Dv8rg" x="445" y="192"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_abLuNVOpEeSDPNki4Dv8rg" x="445" y="192" width="276" height="193"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_ZwfLYVOpEeSDPNki4Dv8rg"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.fujaba#_gSpDkHasEeOh__JNCv2_1A"/>
