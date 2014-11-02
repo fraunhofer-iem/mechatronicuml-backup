@@ -382,10 +382,10 @@
       </roleConnector>
     </modelElements>
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_TM2KIFOnEeSDPNki4Dv8rg" name="ProfileDistribution">
-      <roles xmi:id="_TM_7IFOnEeSDPNki4Dv8rg" connectors="_TNJFE1OnEeSDPNki4Dv8rg" behavior="_SMwJoFOoEeSDPNki4Dv8rg" name="profileProvider" senderMessageTypes="_eNvEsFOnEeSDPNki4Dv8rg" receiverMessageTypes="_sVFZ4FOnEeSDPNki4Dv8rg">
+      <roles xmi:id="_TM_7IFOnEeSDPNki4Dv8rg" connectors="_TNJFE1OnEeSDPNki4Dv8rg" behavior="_SMwJoFOoEeSDPNki4Dv8rg" name="profileProvider" senderMessageTypes="_eNvEsFOnEeSDPNki4Dv8rg" receiverMessageTypes="_sVFZ4FOnEeSDPNki4Dv8rg" adaptationBehavior="_il9pkGKXEeS-2sR8iwsrMg" subroleBehavior="_jyMMIWKXEeS-2sR8iwsrMg">
         <cardinality xmi:id="_TM_7IVOnEeSDPNki4Dv8rg">
-          <lowerBound xmi:id="_m-zcQFOoEeSDPNki4Dv8rg"/>
-          <upperBound xmi:id="_m-zcQVOoEeSDPNki4Dv8rg"/>
+          <lowerBound xmi:id="_yHVswGKXEeS-2sR8iwsrMg"/>
+          <upperBound xmi:id="_yHVswWKXEeS-2sR8iwsrMg" infinity="true"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_zWr0YFOnEeSDPNki4Dv8rg" name="buffer" messageType="_sVFZ4FOnEeSDPNki4Dv8rg">
           <bufferSize xmi:id="_07sqYFOnEeSDPNki4Dv8rg" infinity="true"/>
@@ -420,8 +420,8 @@
       </roles>
       <roles xmi:id="_abCkRVOpEeSDPNki4Dv8rg" connectors="_abCkSVOpEeSDPNki4Dv8rg" behavior="_U210gFOsEeSDPNki4Dv8rg" name="executor" receiverMessageTypes="_mg0DQFOpEeSDPNki4Dv8rg">
         <cardinality xmi:id="_abCkRlOpEeSDPNki4Dv8rg">
-          <lowerBound xmi:id="_hPzVQFOsEeSDPNki4Dv8rg"/>
-          <upperBound xmi:id="_hPzVQVOsEeSDPNki4Dv8rg"/>
+          <lowerBound xmi:id="_8TM5QGKWEeS-2sR8iwsrMg"/>
+          <upperBound xmi:id="_8TM5QWKWEeS-2sR8iwsrMg"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_spR2UFOpEeSDPNki4Dv8rg" name="buffer" messageType="_mg0DQFOpEeSDPNki4Dv8rg">
           <bufferSize xmi:id="_xzji0FOpEeSDPNki4Dv8rg" infinity="true"/>
@@ -4975,7 +4975,18 @@
       <states xmi:id="_Q17oAVOlEeSaVK1gfdE5pA" name="init" initial="true"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_SMwJoFOoEeSDPNki4Dv8rg" name="ProfileDistribution_profileProvider" behavioralElement="_TM_7IFOnEeSDPNki4Dv8rg">
-      <states xmi:id="_SMwJoVOoEeSDPNki4Dv8rg" name="init" initial="true"/>
+      <states xmi:id="_SMwJoVOoEeSDPNki4Dv8rg" name="ProfileProvider_Main" initial="true">
+        <embeddedRegions xmi:id="_ilaP8GKXEeS-2sR8iwsrMg" priority="1">
+          <embeddedStatechart xmi:id="_il9pkGKXEeS-2sR8iwsrMg" name="adaptation_ProfileProvider">
+            <states xmi:id="_il-QoGKXEeS-2sR8iwsrMg" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_jyMMIGKXEeS-2sR8iwsrMg" priority="2">
+          <embeddedStatechart xmi:id="_jyMMIWKXEeS-2sR8iwsrMg" name="subrole_ProfileProvider">
+            <states xmi:id="_jyMMImKXEeS-2sR8iwsrMg" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+      </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_a6928FOoEeSDPNki4Dv8rg" name="ProfileDistribution_profileReceiver" behavioralElement="_TM_7JFOnEeSDPNki4Dv8rg">
       <states xmi:id="_a6928VOoEeSDPNki4Dv8rg" name="init" initial="true"/>
@@ -4983,7 +4994,7 @@
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_GqIeMFOsEeSDPNki4Dv8rg" name="StartExecution_initiator" behavioralElement="_abCkQVOpEeSDPNki4Dv8rg">
       <transitions xmi:id="_KUAH4FOsEeSDPNki4Dv8rg" priority="1" target="_GqIeMVOsEeSDPNki4Dv8rg" source="_GqIeMVOsEeSDPNki4Dv8rg">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_LcTMsFOsEeSDPNki4Dv8rg">
-          <message xmi:id="_LqvRUFOsEeSDPNki4Dv8rg" instanceOf="_eNvEsFOnEeSDPNki4Dv8rg"/>
+          <message xmi:id="_LqvRUFOsEeSDPNki4Dv8rg" instanceOf="_mg0DQFOpEeSDPNki4Dv8rg"/>
         </events>
       </transitions>
       <states xmi:id="_GqIeMVOsEeSDPNki4Dv8rg" name="SendProfile" outgoingTransitions="_KUAH4FOsEeSDPNki4Dv8rg" incomingTransitions="_KUAH4FOsEeSDPNki4Dv8rg" initial="true"/>
@@ -4991,7 +5002,7 @@
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_U210gFOsEeSDPNki4Dv8rg" name="StartExecution_executor" behavioralElement="_abCkRVOpEeSDPNki4Dv8rg">
       <transitions xmi:id="_ZRNHAFOsEeSDPNki4Dv8rg" priority="1" target="_U210gVOsEeSDPNki4Dv8rg" source="_U210gVOsEeSDPNki4Dv8rg">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_Z7dk8FOsEeSDPNki4Dv8rg" kind="TRIGGER">
-          <message xmi:id="_aM3eAFOsEeSDPNki4Dv8rg" instanceOf="_eNvEsFOnEeSDPNki4Dv8rg"/>
+          <message xmi:id="_aM3eAFOsEeSDPNki4Dv8rg" instanceOf="_mg0DQFOpEeSDPNki4Dv8rg"/>
         </events>
       </transitions>
       <states xmi:id="_U210gVOsEeSDPNki4Dv8rg" name="Execute" outgoingTransitions="_ZRNHAFOsEeSDPNki4Dv8rg" incomingTransitions="_ZRNHAFOsEeSDPNki4Dv8rg" initial="true"/>
