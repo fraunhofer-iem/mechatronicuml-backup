@@ -372,8 +372,10 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 	main() {
 		
-		assert fatal (input.objects()[MessageBuffer]->forAll(mb : MessageBuffer | not mb.bufferSize.infinity and mb.bufferSize.value < 5000)) 
-		with log('Only finite buffer sizes are supported');
+		assert fatal (cicToVerify().discretePortInstances()->collect(receiverMessageBuffer)->forAll(mb : MessageBuffer | not mb.bufferSize.infinity and mb.bufferSize.value < 5000)) 
+		with log('Only finite buffer sizes <5000 are supported');
+		
+		
 		
 		// TODO Support arbitrary CICs
 /*		assert fatal (input.objects()[ComponentInstance]
