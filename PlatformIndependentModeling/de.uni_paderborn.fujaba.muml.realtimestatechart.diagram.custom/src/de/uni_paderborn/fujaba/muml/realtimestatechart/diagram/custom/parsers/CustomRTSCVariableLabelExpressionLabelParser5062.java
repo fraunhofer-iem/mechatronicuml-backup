@@ -46,7 +46,9 @@ public class CustomRTSCVariableLabelExpressionLabelParser5062 extends
 			if (sbOperations.length() != 0) {
 				sbOperations.append(", ");
 			}
-			sbOperations.append(op.getReturnType().getName());
+			if (op.getReturnType() != null) {
+				sbOperations.append(op.getReturnType().getName());
+			}
 			sbOperations.append(" ");
 			sbOperations.append(op.getName());
 			sbOperations.append("(");
@@ -56,7 +58,9 @@ public class CustomRTSCVariableLabelExpressionLabelParser5062 extends
 				if (sbParameter.length() != 0) {
 					sbParameter.append(", ");
 				}
-				sbParameter.append(par.getDataType().getName());
+				if (par.getDataType() != null) {
+					sbParameter.append(par.getDataType().getName());
+				}
 				sbParameter.append(par.getName());
 			}
 			sbOperations.append(sbParameter.toString());
