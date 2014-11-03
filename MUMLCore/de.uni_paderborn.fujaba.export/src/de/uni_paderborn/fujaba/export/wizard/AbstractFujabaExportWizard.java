@@ -149,7 +149,7 @@ public abstract class AbstractFujabaExportWizard extends Wizard implements IExpo
 	protected void saveWidgetValues() {
 		 // Save dialog settings for pages with options 
         for (IWizardPage page : getPages()) {
-        	if (page instanceof AbstractFujabaExportWizard) {
+        	if (page instanceof AbstractFujabaExportTargetPage) {
         		AbstractFujabaExportTargetPage targetPage = (AbstractFujabaExportTargetPage) page;
         		targetPage.saveWidgetValues();
         	}
