@@ -28,7 +28,9 @@ public class CustomRTSCVariableLabelExpressionLabelParser5062 extends
 			if (sbVariables.length() != 0) {
 				sbVariables.append(", ");
 			}
-			sbVariables.append(var.getDataType().getName());
+			if (var.getDataType() != null) {
+				sbVariables.append(var.getDataType().getName());
+			}
 			sbVariables.append(" ");
 			sbVariables.append(var.getName());
 			if (var.getInitializeExpression() != null) {
