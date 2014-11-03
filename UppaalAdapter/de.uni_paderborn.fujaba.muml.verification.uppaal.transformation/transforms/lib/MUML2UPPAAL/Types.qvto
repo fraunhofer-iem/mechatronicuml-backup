@@ -133,7 +133,7 @@ modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
 	mapping DataType :: failOnUnsupportedType() : Type {
 	
 		init {
-			assert fatal (false) with log("Mapping this type is unsupported.")
+			assert fatal (false) with log("The DataType "+self.toString()+" is unsupported.")
 		}
 	
 	}
