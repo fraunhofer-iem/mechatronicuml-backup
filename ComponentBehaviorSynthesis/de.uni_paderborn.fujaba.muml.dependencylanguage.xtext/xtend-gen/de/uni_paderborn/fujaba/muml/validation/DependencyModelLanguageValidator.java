@@ -13,3 +13,4 @@ import de.uni_paderborn.fujaba.muml.validation.AbstractDependencyModelLanguageVa
 @SuppressWarnings("all")
 public class DependencyModelLanguageValidator extends AbstractDependencyModelLanguageValidator {
 }
+

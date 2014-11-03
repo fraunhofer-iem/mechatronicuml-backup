@@ -17,3 +17,4 @@ public class DependencyModelLanguageGenerator implements IGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
   }
 }
+

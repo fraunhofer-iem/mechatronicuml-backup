@@ -153,7 +153,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
       _and = false;
     } else {
       Behavior _behavior_3 = this.synBehavior.getBehavior();
-      _and = (_notEquals && (_behavior_3 instanceof RealtimeStatechart));
+      _and = (_behavior_3 instanceof RealtimeStatechart);
     }
     if (_and) {
       Behavior _behavior_4 = this.synBehavior.getBehavior();
@@ -254,8 +254,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
   }
   
   IScope scope_ForbiddenStateCombination_states(final ForbiddenStateCombination context, final EReference reference) {
-    BasicEList<State> _basicEList = new BasicEList<State>();
-    BasicEList<State> states = _basicEList;
+    BasicEList<State> states = new BasicEList<State>();
     states.addAll(this.listOfAllStates);
     return this.createQNScope(states);
   }
@@ -310,8 +309,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
   
   IScope scope_TypedNamedElement(final EObject context, final EReference ref) {
     EObject container = context.eContainer();
-    BasicEList<TypedNamedElement> _basicEList = new BasicEList<TypedNamedElement>();
-    BasicEList<TypedNamedElement> scopeList = _basicEList;
+    BasicEList<TypedNamedElement> scopeList = new BasicEList<TypedNamedElement>();
     scopeList.addAll(this.listOfAllVariables);
     scopeList.addAll(this.listOfAllHybridPorts);
     boolean _and = false;
@@ -320,7 +318,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
     } else {
       TypedNamedElementExpression _lhs_typedNamedElementExpression = ((Assignment) container).getLhs_typedNamedElementExpression();
       boolean _equals = Objects.equal(_lhs_typedNamedElementExpression, context);
-      _and = ((container instanceof Assignment) && _equals);
+      _and = _equals;
     }
     if (_and) {
       for (final HybridPort p : this.listOfAllHybridPorts) {
@@ -348,8 +346,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
   }
   
   IScope scope_NondeterministicChoiceExpression_dataType(final EObject context, final EReference ref) {
-    BasicEList<PrimitiveDataType> _basicEList = new BasicEList<PrimitiveDataType>();
-    List<PrimitiveDataType> scopeList = _basicEList;
+    List<PrimitiveDataType> scopeList = new BasicEList<PrimitiveDataType>();
     for (final DataType dataType : this.listOfAllDataTypes) {
       boolean _and = false;
       String _name = dataType.getName();
@@ -357,7 +354,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
       if (!_equals) {
         _and = false;
       } else {
-        _and = (_equals && (dataType instanceof PrimitiveDataType));
+        _and = (dataType instanceof PrimitiveDataType);
       }
       if (_and) {
         scopeList.add(((PrimitiveDataType) dataType));
@@ -380,14 +377,13 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
   }
   
   IScope scope_Parameter(final EObject context, final EReference ref) {
-    BasicEList<Parameter> _basicEList = new BasicEList<Parameter>();
-    List<Parameter> parameterList = _basicEList;
+    List<Parameter> parameterList = new BasicEList<Parameter>();
     boolean _and = false;
     if (!(context instanceof ParameterBinding)) {
       _and = false;
     } else {
       EObject _eContainer = context.eContainer();
-      _and = ((context instanceof ParameterBinding) && (_eContainer instanceof OperationCall));
+      _and = (_eContainer instanceof OperationCall);
     }
     if (_and) {
       EObject _eContainer_1 = context.eContainer();
@@ -413,8 +409,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
   private List<Parameter> getScopeForOperation(final Operation operation) {
     boolean _equals = Objects.equal(operation, null);
     if (_equals) {
-      BasicEList<Parameter> _basicEList = new BasicEList<Parameter>();
-      return _basicEList;
+      return new BasicEList<Parameter>();
     }
     return operation.getParameters();
   }
@@ -423,8 +418,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
     MessageType _messageType = triggerMessageExpression.getMessageType();
     boolean _equals = Objects.equal(_messageType, null);
     if (_equals) {
-      BasicEList<Parameter> _basicEList = new BasicEList<Parameter>();
-      return _basicEList;
+      return new BasicEList<Parameter>();
     }
     MessageType _messageType_1 = triggerMessageExpression.getMessageType();
     return _messageType_1.getParameters();
@@ -434,9 +428,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
     boolean _setScopeSwitch = this.setScopeSwitch(object);
     boolean _not = (!_setScopeSwitch);
     if (_not) {
-      String _plus = ("scope not found for object: " + object);
-      IllegalArgumentException _illegalArgumentException = new IllegalArgumentException(_plus);
-      throw _illegalArgumentException;
+      throw new IllegalArgumentException(("scope not found for object: " + object));
     }
   }
   
@@ -464,8 +456,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
       EObject _base_1 = ext.getBase();
       this.component = ((AtomicComponent) _base_1);
     } else {
-      IllegalArgumentException _illegalArgumentException = new IllegalArgumentException("SynthesizableBehavior is broken");
-      throw _illegalArgumentException;
+      throw new IllegalArgumentException("SynthesizableBehavior is broken");
     }
   }
   
@@ -476,7 +467,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
       _or = true;
     } else {
       boolean _isEmpty = list.isEmpty();
-      _or = (_equals || _isEmpty);
+      _or = _isEmpty;
     }
     if (_or) {
       return IScope.NULLSCOPE;
@@ -492,7 +483,7 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
       _or = true;
     } else {
       boolean _isEmpty = list.isEmpty();
-      _or = (_equals || _isEmpty);
+      _or = _isEmpty;
     }
     if (_or) {
       return IScope.NULLSCOPE;
