@@ -139,7 +139,7 @@ public class StateEditPolicy extends NotifyingGraphicalEditPolicy {
 		for (Object child : getHost().getChildren()) {
 			EditPart childEp = (EditPart) child;
 			ConnectionPointEditPolicy connectionPointEditPolicy = (ConnectionPointEditPolicy) childEp
-					.getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_POINT_VISUALIZATION_ROLE);
+					.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.CONNECTION_POINT_VISUALIZATION_ROLE);
 			if (connectionPointEditPolicy != null) {
 				connectionPointEditPolicy.updateBorderItemLocator();
 			}
