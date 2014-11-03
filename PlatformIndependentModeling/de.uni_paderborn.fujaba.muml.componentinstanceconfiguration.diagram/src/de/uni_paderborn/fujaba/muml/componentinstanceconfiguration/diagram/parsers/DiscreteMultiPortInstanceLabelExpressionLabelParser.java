@@ -50,7 +50,7 @@ public class DiscreteMultiPortInstanceLabelExpressionLabelParser extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						8,
+						4,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDiscreteMultiPortInstance(), null).body();
 	}

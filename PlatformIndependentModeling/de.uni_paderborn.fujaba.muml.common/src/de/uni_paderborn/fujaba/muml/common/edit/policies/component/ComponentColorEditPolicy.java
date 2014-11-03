@@ -12,6 +12,8 @@ import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
 	
@@ -27,6 +29,11 @@ public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
 	protected void addListeners() {
 		super.addListeners();
 		EObject element = getSemanticElement();
+		if (element instanceof ComponentInstance) {
+			ComponentInstance componentInstance = (ComponentInstance) element;
+			addNotificationListener(componentInstance.getComponentPart());
+			addNotificationListener(componentInstance.getComponentType());
+		}
 		if (element instanceof ComponentPart) {
 			ComponentPart componentPart = (ComponentPart) element;
 			addNotificationListener(componentPart.getComponentType());
@@ -42,10 +49,27 @@ public class ComponentColorEditPolicy extends NotifyingGraphicalEditPolicy {
 		if (notification.getFeature() == ComponentPackage.Literals.COMPONENT__COMPONENT_KIND) {
 			updateColor();
 		}
+		if (notification.getFeature() == InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_PART) {
+			updateListeners();
+			updateColor();
+		}
+		if (notification.getFeature() == InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE) {
+			updateListeners();
+			updateColor();
+		}
 	}
 	
 	private Component getComponent() {
 		EObject semanticElement = getSemanticElement();
+		if (semanticElement instanceof ComponentInstance) {
+			ComponentInstance componentInstance = (ComponentInstance) semanticElement;
+			if (componentInstance.getComponentPart() != null && componentInstance.getComponentPart().getComponentType() != null) {
+				semanticElement = componentInstance.getComponentPart();
+			}
+			if (componentInstance.getComponentType() != null) {
+				semanticElement = componentInstance.getComponentType();
+			}
+		}
 		if (semanticElement instanceof ComponentPart) {
 			return ((ComponentPart) semanticElement).getComponentType();
 		} else if (semanticElement instanceof Component) {

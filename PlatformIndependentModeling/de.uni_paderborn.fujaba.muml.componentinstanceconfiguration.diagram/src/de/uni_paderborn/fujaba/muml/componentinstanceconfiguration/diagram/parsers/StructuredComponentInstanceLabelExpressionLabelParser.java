@@ -50,7 +50,7 @@ public class StructuredComponentInstanceLabelExpressionLabelParser extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						15,
+						8,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getStructuredComponentInstance(), null).body();
 	}
