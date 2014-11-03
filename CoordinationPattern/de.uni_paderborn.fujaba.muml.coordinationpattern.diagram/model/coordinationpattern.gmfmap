@@ -262,6 +262,25 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:ReferenceNewElementSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <newElementInitializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+            <value
+                body="''"/>
+          </initializers>
+        </newElementInitializers>
+      </initializers>
+    </domainInitializer>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
     <tool
