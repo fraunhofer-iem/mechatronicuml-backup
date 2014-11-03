@@ -360,7 +360,7 @@ public class WrappingLabel9EditPart extends LabelEditPart implements
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager2(
+			setManager(new TextDirectEditManager(
 					this,
 					null,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.MumlEditPartFactory
@@ -387,8 +387,8 @@ public class WrappingLabel9EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager2.class) {
-			((TextDirectEditManager2) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager.class) {
+			((TextDirectEditManager) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}
@@ -399,9 +399,6 @@ public class WrappingLabel9EditPart extends LabelEditPart implements
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
-		} else // 
-		if (getManager() instanceof TextDirectEditManager2) {
-			((TextDirectEditManager2) getManager()).show(initialCharacter);
 		} else //
 		{
 			performDirectEdit();

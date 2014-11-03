@@ -150,10 +150,6 @@ public class StateActionCompartmentEditPart extends ListCompartmentEditPart {
 		return super.getTargetEditPart(request);
 	}
 
-	// Fix to hide this Compartment, if it has no children. See also GMF bug:
-	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=147855
-	// and workaround:
-	// http://www.eclipse.org/forums/index.php/m/9761/
 	/**
 	 * @generated
 	 */
@@ -163,7 +159,6 @@ public class StateActionCompartmentEditPart extends ListCompartmentEditPart {
 		setVisibility(hasChildren);
 	}
 
-	// This is also part of the fix mentioned above.
 	/**
 	 * @generated
 	 */

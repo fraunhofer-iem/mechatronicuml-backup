@@ -9,14 +9,10 @@ public interface EditPolicyRoles {
 	
 	public static final String COMPARTMENT_ORIENTATION_ROLE = "CompartmentOrientationRole"; //$NON-NLS-1$
 	
-	public static final String COMPONENT_COLOR_ROLE = "ComponentColorRole"; //$NON-NLS-1$
-	
 	public static final String COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE = "ComponentStoryPatternVariableVisualizationRole"; //$NON-NLS-1$
 		
 	public static final String ERROR_FEEDBACK_ROLE = "ErrorFeedbackPolicy"; //$NON-NLS-1$
 
-	public static final String CONNECTION_POINT_VISUALIZATION_ROLE = "ConnectionPointVisualizationRole"; //$NON-NLS-1$
-	
 	public static final String ENLARGE_COMPARTMENT_ROLE = "EnlargeCompartmentRole";
 
 	public static final String WRAPPING_LABEL_MULTI_LINE_ROLE = "WrappingLabelMultiLineEditPolicy";

@@ -69,6 +69,9 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.TransitionItemSemanticEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.TRANSITION_COLOR_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.TransitionColorEditPolicy());
 	}
 
 	/**

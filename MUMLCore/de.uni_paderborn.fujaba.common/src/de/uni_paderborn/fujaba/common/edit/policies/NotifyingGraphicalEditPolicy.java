@@ -9,6 +9,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
@@ -79,7 +80,13 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	 * @return The host edit part's editing domain.
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
-		return ((GraphicalEditPart) getHost()).getEditingDomain();
+		if (getHost() instanceof GraphicalEditPart) {
+			return ((GraphicalEditPart) getHost()).getEditingDomain();
+		}
+		if (getHost() instanceof ConnectionEditPart) {
+			return ((ConnectionEditPart) getHost()).getEditingDomain();
+		}
+		return null;	
 	}
 
 	/**
@@ -88,7 +95,7 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	 * @return The semantic element.
 	 */
 	protected EObject getSemanticElement() {
-		return ((GraphicalEditPart) getHost()).getNotationView().getElement();
+		return (EObject) getHost().getAdapter(EObject.class);
 	}
 	
 	/**
@@ -97,7 +104,10 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	 * @return notation view.
 	 */
 	protected View getNotationView() {
-		return ((GraphicalEditPart) getHost()).getNotationView();
+		if (getHost().getModel() instanceof View) {
+			return (View) getHost().getModel();
+		}
+		return null;
 	}
 	
 

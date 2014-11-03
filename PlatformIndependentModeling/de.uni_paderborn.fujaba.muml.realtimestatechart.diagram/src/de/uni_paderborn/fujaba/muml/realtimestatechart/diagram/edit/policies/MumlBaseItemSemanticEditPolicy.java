@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

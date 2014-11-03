@@ -1,0 +1,141 @@
+package de.uni_paderborn.fujaba.muml.common.edit.policies.statechart;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.swt.graphics.Color;
+
+import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+
+public class TransitionColorEditPolicy extends NotifyingGraphicalEditPolicy implements ISelectionChangedListener {
+
+	protected static final Color COLOR_COMPATIBLE_TRANSITION = new Color(null, 0, 100, 0);
+
+	protected PolylineConnectionEx polyline;
+	
+	protected int defaultLineWidth = 1;
+	
+	protected Color defaultColor = new Color(null, 0, 0, 0);
+	
+	protected List<EObject> currentSelection = Collections.emptyList();
+	
+	@Override
+	public void activate() {
+		super.activate();
+		getHost().getViewer().addSelectionChangedListener(this);
+		if (getHostFigure() instanceof PolylineConnectionEx) {
+			polyline = (PolylineConnectionEx) getHostFigure();
+		}
+		if (polyline != null) {
+			defaultLineWidth = polyline.getLineWidth();
+			defaultColor = polyline.getForegroundColor();
+		}
+	}
+
+	@Override
+	public void deactivate() {
+		super.deactivate();
+		getHost().getViewer().removeSelectionChangedListener(this);
+		if (polyline != null) {
+			polyline.setLineWidth(defaultLineWidth);
+		}
+		polyline = null;
+	}
+
+	@Override
+	public void selectionChanged(SelectionChangedEvent event) {
+		if (event.getSelection() instanceof IStructuredSelection) {
+			IStructuredSelection selection = (IStructuredSelection) event.getSelection();
+			List<EObject> selectedElements = new ArrayList<EObject>();
+			for (Object selectedObject : selection.toList()) {
+				if (selectedObject instanceof IAdaptable) {
+					EObject element = (EObject) ((IAdaptable) selectedObject).getAdapter(EObject.class);
+					if (element != null) {
+						selectedElements.add(element);
+					}
+				}
+				
+			}
+			setSelection(selectedElements);
+		}
+	}
+	
+	@Override
+	public void handleNotificationEvent(Notification notification) {
+		super.handleNotificationEvent(notification);
+		updateFigure();
+	}
+
+	protected void setSelection(List<EObject> selectedElements) {
+		if (!selectedElements.equals(this.currentSelection)) {
+			this.currentSelection = selectedElements;
+			selectionChanged();
+		}
+	}
+	
+	protected void selectionChanged() {
+		updateListeners();
+		updateFigure();
+	}
+	
+	protected void addListeners() {
+		super.addListeners();
+		
+		for (EObject selectedObject : this.currentSelection) {
+			if (selectedObject instanceof Transition) {
+				Transition selectedTransition = (Transition) selectedObject;
+				addNotificationListener(selectedTransition);
+				Synchronization synchronization = null;
+				if (selectedTransition.getSynchronization() != null) {
+					synchronization = selectedTransition.getSynchronization();
+					addNotificationListener(synchronization);
+				}
+				if (synchronization != null && synchronization.getSyncChannel() != null) {
+					addNotificationListener(synchronization.getSyncChannel());
+				}
+			}
+		}
+	}
+	
+
+	private void updateFigure() {
+		Transition transition = (Transition) getSemanticElement();
+		boolean selected = false, compatible = false;
+		for (EObject selectedObject : this.currentSelection) {
+			if (transition == selectedObject) {
+				selected = true;
+			}
+			if (selectedObject instanceof Transition) {
+				Transition selectedTransition = (Transition) selectedObject;
+				if (isCompatible(transition, selectedTransition)) {
+					compatible = true;
+				}
+			}
+		}
+		
+		if (getHostFigure() instanceof PolylineConnectionEx) {
+			PolylineConnectionEx polyline = (PolylineConnectionEx)getHostFigure();
+			polyline.setLineWidth(selected ? 3 : defaultLineWidth);
+			polyline.setForegroundColor(!selected && compatible ? COLOR_COMPATIBLE_TRANSITION : defaultColor);
+		}		
+	}
+
+	protected boolean isCompatible(Transition a, Transition b) {
+		if (a.getSynchronization() != null && b.getSynchronization() != null) {
+			return a.getSynchronization().getKind() != b.getSynchronization().getKind() && a.getSynchronization().getSyncChannel() == b.getSynchronization().getSyncChannel();
+		}
+		return false;		
+	}
+
+
+}
