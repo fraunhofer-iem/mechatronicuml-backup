@@ -123,13 +123,17 @@ public abstract class SearchableViewerPane extends ViewerPane {
 		Object input = getViewer().getInput();
 		StructuredViewer structuredViewer = (StructuredViewer) getViewer();
 		ITreeContentProvider contentProvider = (ITreeContentProvider) structuredViewer.getContentProvider();
-		IBaseLabelProvider labelProvider = structuredViewer.getLabelProvider();
 		List<Object> children = new ArrayList<Object>();
+		List<Object> visited = new ArrayList<Object>();
 		children.add(input);
 		while (!children.isEmpty()) {
 			List<Object> newChildren = new ArrayList<Object>();
 			for (Object child : children) {
-				for (Object newObject : Arrays.asList(contentProvider.getChildren(child))) {
+				for (Object newObject : contentProvider.getChildren(child)) {
+					if (visited.contains(newObject)) {
+						continue;
+					}
+					visited.add(newObject);
 					if (selectObject(newObject)) {
 						Object parent = newObject;
 						while (parent != null && parent != input) {
