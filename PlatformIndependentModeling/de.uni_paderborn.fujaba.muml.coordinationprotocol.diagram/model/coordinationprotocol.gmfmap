@@ -157,7 +157,7 @@
           xsi:type="gmftool:CreationTool"
           href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="coordinationprotocol.gmfgraph#CoordinationProtocolContainer"/>
+          href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainer"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -171,12 +171,12 @@
               editorPattern=""
               editPattern="">
             <diagramLabel
-                href="coordinationprotocol.gmfgraph#CoordinationProtocolName"/>
+                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolName"/>
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <diagramNode
-              href="coordinationprotocol.gmfgraph#CoordinationProtocol"/>
+              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocol"/>
         </ownedChild>
       </children>
       <children
@@ -234,7 +234,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="coordinationprotocol.gmfgraph#RoleName"/>
+                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleName"/>
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -242,19 +242,19 @@
               xsi:type="gmftool:CreationTool"
               href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
-              href="coordinationprotocol.gmfgraph#Role"/>
+              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#Role"/>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1">
         <compartment
-            href="coordinationprotocol.gmfgraph#CoordinationProtocolContainerCompartment"/>
+            href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainerCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
   <links>
     <diagramLink
-        href="coordinationprotocol.gmfgraph#RolePattern"/>
+        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
@@ -287,7 +287,7 @@
         xsi:type="gmftool:CreationTool"
         href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.2"/>
     <diagramLink
-        href="coordinationprotocol.gmfgraph#RoleConnector"/>
+        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnector"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
@@ -301,7 +301,7 @@
   </links>
   <diagram>
     <diagramCanvas
-        href="coordinationprotocol.gmfgraph#protocoleditor"/>
+        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#protocoleditor"/>
     <domainModel
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol"/>
     <domainMetaElement
