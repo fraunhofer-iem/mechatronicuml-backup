@@ -14,6 +14,7 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
@@ -74,6 +75,11 @@ public class TransitionColorEditPolicy extends NotifyingGraphicalEditPolicy impl
 	public void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
 		updateFigure();
+		if (notification.getFeature() == RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION
+			|| notification.getFeature() == RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL)
+		{
+			updateListeners();
+		}
 	}
 
 	protected void setSelection(List<EObject> selectedElements) {
