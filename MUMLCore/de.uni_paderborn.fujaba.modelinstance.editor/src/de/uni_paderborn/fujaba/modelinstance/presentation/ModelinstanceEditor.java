@@ -1067,7 +1067,6 @@ public class ModelinstanceEditor
 				viewerPane.createControl(getContainer());
 
 				parentViewer = (TreeViewer)viewerPane.getViewer();
-				parentViewer.setAutoExpandLevel(30);
 				parentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));
 				parentViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 

@@ -9,7 +9,9 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -87,18 +89,20 @@ public abstract class SearchableViewerPane extends ViewerPane {
 	}
 
 	public void setSearchPattern(String searchPattern) {
-		this.searchPattern = searchPattern;
-
-		// Stop already running timer
-		if (this.timer != null) {
-		    Display.getCurrent().timerExec(-1, timer);
-		}
-	    this.timer = new Runnable() {
-			public void run() {
-				recalculateSearchResults();
+		if (!this.searchPattern.equals(searchPattern)) {
+			this.searchPattern = searchPattern;
+	
+			// Stop already running timer
+			if (this.timer != null) {
+			    Display.getCurrent().timerExec(-1, timer);
 			}
-	    };
-	    Display.getCurrent().timerExec(150, timer);
+		    this.timer = new Runnable() {
+				public void run() {
+					recalculateSearchResults();
+				}
+		    };
+		    Display.getCurrent().timerExec(150, timer);
+		}
 	}
 
 	protected void recalculateSearchResults() {
@@ -106,6 +110,14 @@ public abstract class SearchableViewerPane extends ViewerPane {
 			return;
 		}
 
+		Object selectedElement = null;
+		if (getViewer().getSelection() instanceof IStructuredSelection) {
+			IStructuredSelection selection = (IStructuredSelection) getViewer().getSelection();
+			if (!selection.isEmpty()) {
+				selectedElement = selection.getFirstElement();
+			}
+		}
+		
 		searchResult.clear();
 		
 		Object input = getViewer().getInput();
@@ -136,7 +148,14 @@ public abstract class SearchableViewerPane extends ViewerPane {
 		
 		getViewer().refresh();
 		if (getViewer() instanceof AbstractTreeViewer) {
-			((AbstractTreeViewer) getViewer()).expandAll();
+			AbstractTreeViewer treeViewer = (AbstractTreeViewer) getViewer();
+			if (!searchPattern.isEmpty() && !searchResult.isEmpty() && !searchResult.contains(selectedElement)) {
+				treeViewer.expandAll();
+				selectedElement = searchResult.get(0);
+			}
+			if (selectedElement != null) {
+				treeViewer.setSelection(new StructuredSelection(selectedElement));
+			}
 		}
 	}
 
@@ -174,7 +193,7 @@ public abstract class SearchableViewerPane extends ViewerPane {
 			@Override
 			public boolean select(Viewer viewer, Object parentElement,
 					Object element) {
-				return searchResult.contains(element);
+				return searchResult.contains(element) || searchPattern == null || searchPattern.isEmpty();
 			}
 		});
 		getViewer().getControl().setFocus();
