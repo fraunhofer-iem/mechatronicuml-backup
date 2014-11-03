@@ -58,78 +58,41 @@
 	
 	
 	
-	<extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="true"?>   
-	   <menuContribution
-	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=structural-diagrams">
-	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
-	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
-	            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
-	            label="Create Coordination Protocol Diagram"
-	            style="push">
-	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
-          			</visibleWhen>
-	      </command>
-	   </menuContribution>
-	</extension>
-
-	
-	<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-
-	
-	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.protocol.category"
-            name="protocol">
-         
-         
-         <child
-               class="CoordinationProtocol"
-               packageNsUri="http://www.fujaba.de/muml/protocol/0.4.0">
-         </child>
-         
-         
-      </category>
-   </extension>
-
-	
-	<extension
-         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+	<extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="true"?>
-      <editor
-            preferencesHint="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-            editorName="Coordination Protocol Editor"
-            fileExtension="coordinationprotocol_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.protocol.category"
-            modelId="Coordination Protocol">
-         <diagramElement
-               packageNsURI="http://www.fujaba.de/modelinstance/0.4.0"
-               className="ModelElementCategory">
-         </diagramElement>
-         
-         <topLevelNode
-               domainElement="CoordinationProtocol"
-               semanticHint="2005">
-         </topLevelNode>
-         
-      </editor>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
 
+	
+	<extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+
+	
+	
+	
+	
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
@@ -510,14 +473,13 @@
          </selectionEnablement>
       </linkHelper>
    </extension>
-   <extension point="org.eclipse.ui.commands" id="update-cmd">
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <command
-         categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdateCommand"
-         description="%update.diagram.description"
-         id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.updateDiagram"
-         name="%update.diagram.name"/>
+      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.LoadResourceAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
@@ -529,35 +491,8 @@
          sequence="F5"/>
    </extension>
 
-   <extension point="org.eclipse.ui.menus" id="context-menus">
-      <?gmfgen generated="true"?>
-      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
-      </menuContribution>
-      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
-      </menuContribution -->
-      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
-         <command commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.LoadResourceAction">
-            <visibleWhen>
-               <and>
-                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart"/>
-                  </iterate></with>
-               </and>
-            </visibleWhen>
-         </command>
-      </menuContribution>
-   </extension>
-
-   <extension point="org.eclipse.ui.commands" id="menu-commands">
-      <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.LoadResourceAction"
-         name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.LoadResourceAction"/>
-   </extension>
-
+   
+   
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
@@ -644,6 +579,76 @@
          </propertySection>
       </propertySections>
    </extension>
+<extension point="org.eclipse.ui.menus">
+	   <?gmfgen generated="true"?>   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=structural-diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
+	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
+	            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
+	            label="Create Coordination Protocol Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+<extension
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.protocol.category"
+            name="protocol">
+         
+         
+         <child
+               class="CoordinationProtocol"
+               packageNsUri="http://www.fujaba.de/muml/protocol/0.4.0">
+         </child>
+         
+         
+      </category>
+   </extension>
+
+<extension
+         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+      <?gmfgen generated="true"?>
+      <editor
+            preferencesHint="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+            editorName="Coordination Protocol Editor"
+            fileExtension="coordinationprotocol_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.protocol.category"
+            modelId="Coordination Protocol">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/modelinstance/0.4.0"
+               className="ModelElementCategory">
+         </diagramElement>
+         
+         <topLevelNode
+               domainElement="CoordinationProtocol"
+               semanticHint="2005">
+         </topLevelNode>
+         
+      </editor>
+   </extension>
+
+
 
 
 
