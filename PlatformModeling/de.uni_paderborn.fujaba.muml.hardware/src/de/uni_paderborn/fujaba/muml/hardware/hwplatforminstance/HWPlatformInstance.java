@@ -85,7 +85,7 @@ public interface HWPlatformInstance extends NamedElement {
 	 * @see #setEmbeddedHPIC(HWPlatformInstanceConfiguration)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstance_EmbeddedHPIC()
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getParentHWPlatformInstance
-	 * @model opposite="parentHWPlatformInstance" containment="true"
+	 * @model opposite="parentHWPlatformInstance" containment="true" required="true"
 	 * @generated
 	 */
 	HWPlatformInstanceConfiguration getEmbeddedHPIC();

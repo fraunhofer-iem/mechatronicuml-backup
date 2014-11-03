@@ -21,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getDelegationInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='HWPortInstanceToDelegationPortInstance'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL HWPortInstanceToDelegationPortInstance='( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL HWPortInstanceToDelegationPortInstance='-- One End of a DelegationInstance must be a DelegationPortInstance\n( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n'"
  * @generated
  */
 public interface DelegationInstance extends NetworkingHardwareInstance, ConnectorInstance {

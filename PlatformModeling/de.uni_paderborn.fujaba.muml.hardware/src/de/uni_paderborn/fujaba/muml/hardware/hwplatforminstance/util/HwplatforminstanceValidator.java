@@ -165,7 +165,8 @@ public class HwplatforminstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DELEGATION_INSTANCE__HW_PORT_INSTANCE_TO_DELEGATION_PORT_INSTANCE__EEXPRESSION = "( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n" +
+	protected static final String DELEGATION_INSTANCE__HW_PORT_INSTANCE_TO_DELEGATION_PORT_INSTANCE__EEXPRESSION = "-- One End of a DelegationInstance must be a DelegationPortInstance\n" +
+		"( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n" +
 		"";
 
 	/**
@@ -232,7 +233,8 @@ public class HwplatforminstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LINK_INSTANCE__ONLY2_CONNECTIONS__EEXPRESSION = "self.connectorEndpointInstances->size()<=2";
+	protected static final String LINK_INSTANCE__ONLY2_CONNECTIONS__EEXPRESSION = "-- A LinkInstance can only connect to EndpointInstances\n" +
+		"self.connectorEndpointInstances->size()<=2";
 
 	/**
 	 * Validates the Only2Connections constraint of '<em>Link Instance</em>'.

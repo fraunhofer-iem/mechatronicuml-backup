@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPlatformPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoLoop'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoLoop='self.hwplatformType<>self.parentHWPlatform'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoLoop='-- HWPlatformPart must NOT have the same type as its parent HWPlatform\nself.hwplatformType<>self.parentHWPlatform'"
  * @generated
  */
 public interface HWPlatformPart extends PlatformPart {

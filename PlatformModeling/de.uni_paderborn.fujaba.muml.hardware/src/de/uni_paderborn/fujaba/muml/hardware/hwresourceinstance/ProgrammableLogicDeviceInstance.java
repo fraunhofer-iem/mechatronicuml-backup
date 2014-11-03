@@ -15,7 +15,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getProgrammableLogicDeviceInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckResourceType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckResourceType='self.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckResourceType='-- ResourceType must be of Kind PLD\nself.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)'"
  * @generated
  */
 public interface ProgrammableLogicDeviceInstance extends ComputingResourceInstance {

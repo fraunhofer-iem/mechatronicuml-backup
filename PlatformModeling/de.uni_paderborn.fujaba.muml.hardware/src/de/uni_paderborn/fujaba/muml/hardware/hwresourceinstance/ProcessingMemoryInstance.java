@@ -15,7 +15,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getProcessingMemoryInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckMemoryVolatile'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckMemoryVolatile='self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true\n'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckMemoryVolatile='-- The ResourceType must be of Kind volatile MemoryResource\nif self.resourceType.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true\r\nendif\n\n'"
  * @generated
  */
 public interface ProcessingMemoryInstance extends MemoryResourceInstance {

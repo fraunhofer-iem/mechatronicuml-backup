@@ -23,7 +23,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getProcessorInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckResourceType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckResourceType='self.resourceType.oclIsKindOf(hwresource::Processor)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckResourceType='-- ResourceType must be of Kind Processor\nself.resourceType.oclIsKindOf(hwresource::Processor)'"
  * @generated
  */
 public interface ProcessorInstance extends ComputingResourceInstance {

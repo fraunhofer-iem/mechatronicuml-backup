@@ -25,7 +25,7 @@ import org.storydriven.core.CommentableElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getResourceRepository()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueProtocolName='self.protocols->isUnique(name)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueProtocolName='-- A Protocol must have an unique name\nself.protocols->isUnique(name)'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueProtocolName'"
  * @generated
  */

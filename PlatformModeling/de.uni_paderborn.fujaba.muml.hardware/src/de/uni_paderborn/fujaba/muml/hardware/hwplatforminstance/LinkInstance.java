@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getLinkInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='Only2Connections'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL Only2Connections='self.connectorEndpointInstances->size()<=2'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL Only2Connections='-- A LinkInstance can only connect to EndpointInstances\nself.connectorEndpointInstances->size()<=2'"
  * @generated
  */
 public interface LinkInstance extends CommunicationMediaInstance, ConnectorInstance {

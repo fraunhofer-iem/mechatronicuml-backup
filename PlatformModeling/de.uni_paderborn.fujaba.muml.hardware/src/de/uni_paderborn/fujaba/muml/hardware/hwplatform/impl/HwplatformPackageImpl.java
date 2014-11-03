@@ -840,7 +840,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -848,37 +848,37 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });								
+		   });	
 		addAnnotation
 		  (platformPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CardinalityLowerBoundSet CardinalityUpperBoundSet"
-		   });							
+		   });	
 		addAnnotation
 		  (hwPlatformPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "NoLoop"
-		   });										
+		   });	
 		addAnnotation
 		  (delegationEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "HWPortPartToDelegationHWPort"
-		   });			
+		   });	
 		addAnnotation
 		  (hwPortPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "SameProtocol LinkPort2Link"
-		   });																					
+		   });	
 		addAnnotation
 		  (linkPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "Only2Connections"
-		   });													
+		   });
 	}
 
 	/**
@@ -888,117 +888,117 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";											
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (platformPartEClass, 
 		   source, 
 		   new String[] {
-			 "CardinalityLowerBoundSet", "self.cardinality.lowerBound->notEmpty()",
-			 "CardinalityUpperBoundSet", "self.cardinality.upperBound->notEmpty()"
-		   });							
+			 "CardinalityLowerBoundSet", "-- Lower Bound of Cardinality must be set\nif self.cardinality.lowerBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.lowerBound->notEmpty()\r\nendif",
+			 "CardinalityUpperBoundSet", "-- Upper bound of cardinality must be set\r\nif self.cardinality.upperBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.upperBound->notEmpty()\r\nendif"
+		   });	
 		addAnnotation
 		  (hwPlatformPartEClass, 
 		   source, 
 		   new String[] {
-			 "NoLoop", "self.hwplatformType<>self.parentHWPlatform"
-		   });				
+			 "NoLoop", "-- HWPlatformPart must NOT have the same type as its parent HWPlatform\nself.hwplatformType<>self.parentHWPlatform"
+		   });	
 		addAnnotation
 		  (getHWPlatformPart_EmbeddedBridges(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if hwplatformType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tself.hwplatformType.networkingHardwareParts->select(c| c.oclIsTypeOf(hwplatform::BridgePart)).oclAsType(hwplatform::BridgePart)->asOrderedSet()\nendif"
-		   });							
+		   });	
 		addAnnotation
 		  (delegationEClass, 
 		   source, 
 		   new String[] {
-			 "HWPortPartToDelegationHWPort", "self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::HWPortPart)) and ( self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::DelegationHWPort)) or self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::BusPart)))"
-		   });			
+			 "HWPortPartToDelegationHWPort", "-- One End of a Delegation must be a Delegation Port\nself.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::HWPortPart)) and ( self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::DelegationHWPort)) or self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::BusPart)))"
+		   });	
 		addAnnotation
 		  (hwPortPartEClass, 
 		   source, 
 		   new String[] {
-			 "SameProtocol", "if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif",
-			 "LinkPort2Link", "if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n\ttrue\nelse \n\tif (self.portKind = hwresource::HWPortKind::BUS) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n\telse if (self.portKind = hwresource::HWPortKind::LINK) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))\n\telse true\nendif endif endif\n"
-		   });				
+			 "SameProtocol", "-- Connected Ports must use the same Protocol\nif (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif",
+			 "LinkPort2Link", "-- A Linkt Port must be connected via a Link\nif (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n\ttrue\nelse \n\tif (self.portKind = hwresource::HWPortKind::BUS) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n\telse if (self.portKind = hwresource::HWPortKind::LINK) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))\n\telse true\nendif endif endif\n"
+		   });	
 		addAnnotation
 		  (getHWPortPart_ConnectedMediaPart(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\tself.connectors.oclAsType(hwplatform::BusConnector).connectedBusPart.oclAsType(hwplatform::CommunicationMediaPart)->asOrderedSet()\nelse \n\tself.connectors.oclAsType(hwplatform::CommunicationMediaPart)->asOrderedSet()\nendif"
-		   });		
+		   });	
 		addAnnotation
 		  (getHWPortPart_Protocol(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if(self.communicationResource.oclIsUndefined()) then\n\tnull \nelse\n self.communicationResource.protocol\n endif"
-		   });				
+		   });	
 		addAnnotation
 		  (getHWPortPart_Cardinality(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if(self.communicationResource.oclIsUndefined()) then\n\t null\n\telse\n\t \tself.communicationResource.cardinality\n\t endif"
-		   });		
+		   });	
 		addAnnotation
 		  (getHWPortPart_MultiHWPort(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.communicationResource.oclIsUndefined()) then\n\tfalse\nelse \n   self.communicationResource.multiHWPort\n  endif"
-		   });				
+		   });	
 		addAnnotation
 		  (getHWPortPart_PortKind(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.communicationResource.oclIsUndefined()) then\n\tnull\nelse \n   self.communicationResource.portKind\n  endif"
-		   });				
+		   });	
 		addAnnotation
 		  (getBusConnector_ConnectedBusPart(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(e|e.oclIsKindOf(hwplatform::BusPart)).oclAsType(hwplatform::BusPart)->asOrderedSet()"
-		   });		
+		   });	
 		addAnnotation
 		  (getBusConnector_ConnectedHWPortParts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(e|e.oclIsKindOf(hwplatform::HWPortPart)).oclAsType(hwplatform::HWPortPart)->asOrderedSet()"
-		   });			
+		   });	
 		addAnnotation
 		  (getBusPart_ConnectedHWPortParts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectors->select(c|c.oclIsKindOf(BusConnector))->collect(connectedHWPortParts)->asOrderedSet()"
-		   });				
+		   });	
 		addAnnotation
 		  (linkPartEClass, 
 		   source, 
 		   new String[] {
-			 "Only2Connections", "self.connectorEndpoints->size()<=2"
-		   });			
+			 "Only2Connections", "-- A link can only connect to Link Ports\nself.connectorEndpoints->size()<=2"
+		   });	
 		addAnnotation
 		  (getLinkPart_ConnectedHWPortParts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(e|e.oclIsKindOf(HWPortPart)).oclAsType(HWPortPart)->asOrderedSet()\n"
-		   });					
+		   });	
 		addAnnotation
 		  (getCommunicationMediaPart_Protocol(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.communicationMedia.oclIsUndefined()) then\n\tnull\nelse \n\tself.communicationMedia.protocol\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (getCommunicationMediaPart_Bandwidth(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.communicationMedia.oclIsUndefined()) then\n\tnull\nelse \n\tself.communicationMedia.bandwidth\nendif"
-		   });				
+		   });	
 		addAnnotation
 		  (getBridgePart_ConnectedCommunicationMediaPart(), 
 		   source, 
 		   new String[] {
 			 "derivation", "let links:Set(CommunicationMediaPart) = self.connectors->select(c|c.oclIsKindOf(LinkPart)).oclAsType(CommunicationMediaPart)->asOrderedSet() in\nlet buses: Set(CommunicationMediaPart) = self.connectors->select(c|c.oclIsKindOf(BusConnector)).oclAsType(BusConnector)->collect(connectedBusPart).oclAsType(CommunicationMediaPart)->asOrderedSet() in\nlinks->union(buses)->asOrderedSet()"
-		   });	
+		   });
 	}
 
 } //HwplatformPackageImpl

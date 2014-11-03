@@ -162,7 +162,8 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MEMORY_RESOURCE_INSTANCE__CHECK_RESOURCE_TYPE__EEXPRESSION = "self.resourceType.oclIsKindOf(hwresource::MemoryResource)";
+	protected static final String MEMORY_RESOURCE_INSTANCE__CHECK_RESOURCE_TYPE__EEXPRESSION = "-- The ResourceType must be of Kind MemoryResource\n" +
+		"self.resourceType.oclIsKindOf(hwresource::MemoryResource)";
 
 	/**
 	 * Validates the CheckResourceType constraint of '<em>Memory Resource Instance</em>'.
@@ -220,7 +221,15 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STORAGE_MEMORY_INSTANCE__CHECK_MEMORY_NON_VOLATILE__EEXPRESSION = "self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false";
+	protected static final String STORAGE_MEMORY_INSTANCE__CHECK_MEMORY_NON_VOLATILE__EEXPRESSION = "-- The ResourceType must be of Kind non-volatile MemoryResource\n" +
+		"-- The ResourceType must be of Kind volatile MemoryResource\n" +
+		"if self.resourceType.oclIsUndefined() then\r\n" +
+		"false\r\n" +
+		"else\r\n" +
+		"self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false\r\n" +
+		"endif\n" +
+		"\n" +
+		"";
 
 	/**
 	 * Validates the CheckMemoryNonVolatile constraint of '<em>Storage Memory Instance</em>'.
@@ -269,7 +278,13 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PROCESSING_MEMORY_INSTANCE__CHECK_MEMORY_VOLATILE__EEXPRESSION = "self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true\n" +
+	protected static final String PROCESSING_MEMORY_INSTANCE__CHECK_MEMORY_VOLATILE__EEXPRESSION = "-- The ResourceType must be of Kind volatile MemoryResource\n" +
+		"if self.resourceType.oclIsUndefined() then\r\n" +
+		"false\r\n" +
+		"else\r\n" +
+		"self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true\r\n" +
+		"endif\n" +
+		"\n" +
 		"";
 
 	/**
@@ -337,7 +352,8 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PROGRAMMABLE_LOGIC_DEVICE_INSTANCE__CHECK_RESOURCE_TYPE__EEXPRESSION = "self.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)";
+	protected static final String PROGRAMMABLE_LOGIC_DEVICE_INSTANCE__CHECK_RESOURCE_TYPE__EEXPRESSION = "-- ResourceType must be of Kind PLD\n" +
+		"self.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)";
 
 	/**
 	 * Validates the CheckResourceType constraint of '<em>Programmable Logic Device Instance</em>'.
@@ -385,7 +401,8 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PROCESSOR_INSTANCE__CHECK_RESOURCE_TYPE__EEXPRESSION = "self.resourceType.oclIsKindOf(hwresource::Processor)";
+	protected static final String PROCESSOR_INSTANCE__CHECK_RESOURCE_TYPE__EEXPRESSION = "-- ResourceType must be of Kind Processor\n" +
+		"self.resourceType.oclIsKindOf(hwresource::Processor)";
 
 	/**
 	 * Validates the CheckResourceType constraint of '<em>Processor Instance</em>'.
@@ -444,7 +461,8 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_RESOURCE_INSTANCE__CHECK_RESOURCE_TYPE__EEXPRESSION = "self.resourceType.oclIsKindOf(hwresource::StructuredResource)";
+	protected static final String STRUCTURED_RESOURCE_INSTANCE__CHECK_RESOURCE_TYPE__EEXPRESSION = "-- ResourceType must be of Kind StructuredResource\n" +
+		"self.resourceType.oclIsKindOf(hwresource::StructuredResource)";
 
 	/**
 	 * Validates the CheckResourceType constraint of '<em>Structured Resource Instance</em>'.
@@ -473,7 +491,8 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_RESOURCE_INSTANCE__ALL_ATOMIC_RESOURCE_TYPES_ARE_INITIALIZED__EEXPRESSION = "if(self.resourceType.oclIsUndefined()) then\n" +
+	protected static final String STRUCTURED_RESOURCE_INSTANCE__ALL_ATOMIC_RESOURCE_TYPES_ARE_INITIALIZED__EEXPRESSION = "-- All Atomic Resources must be initialized\n" +
+		"if(self.resourceType.oclIsUndefined()) then\n" +
 		"\ttrue\n" +
 		"else \n" +
 		"\tself.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))\n" +
@@ -506,7 +525,8 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_RESOURCE_INSTANCE__UNIQUE_PORT_NAMES__EEXPRESSION = "self.hwports->isUnique(name)";
+	protected static final String STRUCTURED_RESOURCE_INSTANCE__UNIQUE_PORT_NAMES__EEXPRESSION = "-- The Ports must have an unique name\n" +
+		"self.hwports->isUnique(name)";
 
 	/**
 	 * Validates the UniquePortNames constraint of '<em>Structured Resource Instance</em>'.

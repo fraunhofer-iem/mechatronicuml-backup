@@ -655,7 +655,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -663,43 +663,43 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });							
+		   });	
 		addAnnotation
 		  (memoryResourceInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CheckResourceType"
-		   });									
+		   });	
 		addAnnotation
 		  (storageMemoryInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CheckMemoryNonVolatile"
-		   });				
+		   });	
 		addAnnotation
 		  (processingMemoryInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CheckMemoryVolatile"
-		   });					
+		   });	
 		addAnnotation
 		  (programmableLogicDeviceInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CheckResourceType"
-		   });				
+		   });	
 		addAnnotation
 		  (processorInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CheckResourceType"
-		   });									
+		   });	
 		addAnnotation
 		  (structuredResourceInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CheckResourceType AllAtomicResourceTypesAreInitialized UniquePortNames"
-		   });							
+		   });
 	}
 
 	/**
@@ -709,51 +709,51 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";										
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (memoryResourceInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "CheckResourceType", "self.resourceType.oclIsKindOf(hwresource::MemoryResource)"
-		   });					
+			 "CheckResourceType", "-- The ResourceType must be of Kind MemoryResource\nself.resourceType.oclIsKindOf(hwresource::MemoryResource)"
+		   });	
 		addAnnotation
 		  (getMemoryResourceInstance_MemoryType(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.resourceType.oclAsType(hwresource::MemoryResource).memoryType"
-		   });					
+		   });	
 		addAnnotation
 		  (storageMemoryInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "CheckMemoryNonVolatile", "self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false"
-		   });				
+			 "CheckMemoryNonVolatile", "-- The ResourceType must be of Kind non-volatile MemoryResource\n-- The ResourceType must be of Kind volatile MemoryResource\nif self.resourceType.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false\r\nendif\n\n"
+		   });	
 		addAnnotation
 		  (processingMemoryInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "CheckMemoryVolatile", "self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true\n"
-		   });					
+			 "CheckMemoryVolatile", "-- The ResourceType must be of Kind volatile MemoryResource\nif self.resourceType.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true\r\nendif\n\n"
+		   });	
 		addAnnotation
 		  (programmableLogicDeviceInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "CheckResourceType", "self.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)"
-		   });				
+			 "CheckResourceType", "-- ResourceType must be of Kind PLD\nself.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)"
+		   });	
 		addAnnotation
 		  (processorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "CheckResourceType", "self.resourceType.oclIsKindOf(hwresource::Processor)"
-		   });									
+			 "CheckResourceType", "-- ResourceType must be of Kind Processor\nself.resourceType.oclIsKindOf(hwresource::Processor)"
+		   });	
 		addAnnotation
 		  (structuredResourceInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "AllAtomicResourceTypesAreInitialized", "if(self.resourceType.oclIsUndefined()) then\n\ttrue\nelse \n\tself.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))\nendif",
-			 "CheckResourceType", "self.resourceType.oclIsKindOf(hwresource::StructuredResource)",
-			 "UniquePortNames", "self.hwports->isUnique(name)"
-		   });						
+			 "AllAtomicResourceTypesAreInitialized", "-- All Atomic Resources must be initialized\nif(self.resourceType.oclIsUndefined()) then\n\ttrue\nelse \n\tself.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))\nendif",
+			 "CheckResourceType", "-- ResourceType must be of Kind StructuredResource\nself.resourceType.oclIsKindOf(hwresource::StructuredResource)",
+			 "UniquePortNames", "-- The Ports must have an unique name\nself.hwports->isUnique(name)"
+		   });
 	}
 
 } //HwresourceinstancePackageImpl

@@ -23,8 +23,8 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getMemoryResource()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RAMimpliesRW'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RAMimpliesRW='self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE' ROMimpliesReadOnly='self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RAMimpliesRW ROMimpliesReadOnly'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RAMimpliesRW='-- A RAM implies R/W Access\nself.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE' ROMimpliesReadOnly='-- A ROM implies Read-Only Access\nself.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY'"
  * @generated
  */
 public interface MemoryResource extends AtomicResource {

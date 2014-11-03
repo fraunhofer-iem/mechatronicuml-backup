@@ -29,7 +29,7 @@ import org.storydriven.core.NamedElement;
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getPlatformPart()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CardinalityLowerBoundSet CardinalityUpperBoundSet'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='self.cardinality.lowerBound->notEmpty()' CardinalityUpperBoundSet='self.cardinality.upperBound->notEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='-- Lower Bound of Cardinality must be set\nif self.cardinality.lowerBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.lowerBound->notEmpty()\r\nendif' CardinalityUpperBoundSet='-- Upper bound of cardinality must be set\r\nif self.cardinality.upperBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.upperBound->notEmpty()\r\nendif'"
  * @generated
  */
 public interface PlatformPart extends NamedElement {

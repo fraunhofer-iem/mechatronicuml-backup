@@ -181,6 +181,7 @@ public class HwresourceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(memoryResource, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(memoryResource, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMemoryResource_RAMimpliesRW(memoryResource, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMemoryResource_ROMimpliesReadOnly(memoryResource, diagnostics, context);
 		return result;
 	}
 
@@ -190,7 +191,8 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MEMORY_RESOURCE__RA_MIMPLIES_RW__EEXPRESSION = "self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE";
+	protected static final String MEMORY_RESOURCE__RA_MIMPLIES_RW__EEXPRESSION = "-- A RAM implies R/W Access\n" +
+		"self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE";
 
 	/**
 	 * Validates the RAMimpliesRW constraint of '<em>Memory Resource</em>'.
@@ -208,6 +210,36 @@ public class HwresourceValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "RAMimpliesRW",
 				 MEMORY_RESOURCE__RA_MIMPLIES_RW__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ROMimpliesReadOnly constraint of '<em>Memory Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MEMORY_RESOURCE__RO_MIMPLIES_READ_ONLY__EEXPRESSION = "-- A ROM implies Read-Only Access\n" +
+		"self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY";
+
+	/**
+	 * Validates the ROMimpliesReadOnly constraint of '<em>Memory Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMemoryResource_ROMimpliesReadOnly(MemoryResource memoryResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(HwresourcePackage.Literals.MEMORY_RESOURCE,
+				 memoryResource,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ROMimpliesReadOnly",
+				 MEMORY_RESOURCE__RO_MIMPLIES_READ_ONLY__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -238,6 +270,7 @@ public class HwresourceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cache, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cache, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMemoryResource_RAMimpliesRW(cache, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMemoryResource_ROMimpliesReadOnly(cache, diagnostics, context);
 		return result;
 	}
 
@@ -275,7 +308,8 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PROCESSOR__OWNED_CACHE_IN_SAME_STRUCTURED_RESOURCE__EEXPRESSION = "if not self.ownedCache.oclIsUndefined() then\n" +
+	protected static final String PROCESSOR__OWNED_CACHE_IN_SAME_STRUCTURED_RESOURCE__EEXPRESSION = "-- The used Cache must be containted in the same parent Resource\n" +
+		"if not self.ownedCache.oclIsUndefined() then\n" +
 		"\tself.parentStructuredResource=self.ownedCache.parentStructuredResource\n" +
 		"else\n" +
 		"\t true\n" +
@@ -346,7 +380,8 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String RESOURCE_REPOSITORY__UNIQUE_PROTOCOL_NAME__EEXPRESSION = "self.protocols->isUnique(name)";
+	protected static final String RESOURCE_REPOSITORY__UNIQUE_PROTOCOL_NAME__EEXPRESSION = "-- A Protocol must have an unique name\n" +
+		"self.protocols->isUnique(name)";
 
 	/**
 	 * Validates the UniqueProtocolName constraint of '<em>Resource Repository</em>'.
@@ -448,7 +483,8 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String BUS__BUS_PROTOCOL__EEXPRESSION = "self.protocol.oclIsTypeOf(hwresource::BusProtocol)";
+	protected static final String BUS__BUS_PROTOCOL__EEXPRESSION = "-- Must use a Bus Protocol\n" +
+		"self.protocol.oclIsTypeOf(hwresource::BusProtocol)";
 
 	/**
 	 * Validates the BusProtocol constraint of '<em>Bus</em>'.
@@ -496,7 +532,8 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LINK__LINK_PROTOCOL__EEXPRESSION = "self.protocol.oclIsTypeOf(hwresource::LinkProtocol)";
+	protected static final String LINK__LINK_PROTOCOL__EEXPRESSION = "-- Must use a Link Protocl\n" +
+		"self.protocol.oclIsTypeOf(hwresource::LinkProtocol)";
 
 	/**
 	 * Validates the LinkProtocol constraint of '<em>Link</em>'.

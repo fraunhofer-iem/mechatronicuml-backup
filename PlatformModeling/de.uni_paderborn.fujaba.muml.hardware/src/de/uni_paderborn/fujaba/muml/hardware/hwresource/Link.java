@@ -15,7 +15,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getLink()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LinkProtocol'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LinkProtocol='self.protocol.oclIsTypeOf(hwresource::LinkProtocol)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LinkProtocol='-- Must use a Link Protocl\nself.protocol.oclIsTypeOf(hwresource::LinkProtocol)'"
  * @generated
  */
 public interface Link extends CommunicationMedia {

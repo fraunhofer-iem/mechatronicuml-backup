@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getLinkPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='Only2Connections'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL Only2Connections='self.connectorEndpoints->size()<=2'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL Only2Connections='-- A link can only connect to Link Ports\nself.connectorEndpoints->size()<=2'"
  * @generated
  */
 public interface LinkPart extends CommunicationMediaPart, Connector {

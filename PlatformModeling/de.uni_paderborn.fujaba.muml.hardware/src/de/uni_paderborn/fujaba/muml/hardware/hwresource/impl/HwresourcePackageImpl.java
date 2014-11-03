@@ -1289,7 +1289,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -1297,37 +1297,37 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });	
 		addAnnotation
 		  (memoryResourceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "RAMimpliesRW"
-		   });																		
+			 "constraints", "RAMimpliesRW ROMimpliesReadOnly"
+		   });	
 		addAnnotation
 		  (processorEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ownedCacheInSameStructuredResource"
-		   });																				
+		   });	
 		addAnnotation
 		  (resourceRepositoryEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueProtocolName"
-		   });																													
+		   });	
 		addAnnotation
 		  (busEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "BusProtocol"
-		   });			
+		   });	
 		addAnnotation
 		  (linkEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "LinkProtocol"
-		   });							
+		   });
 	}
 
 	/**
@@ -1337,50 +1337,50 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";							
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (memoryResourceEClass, 
 		   source, 
 		   new String[] {
-			 "RAMimpliesRW", "self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE",
-			 "ROMimpliesReadOnly", "self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY"
-		   });																
+			 "RAMimpliesRW", "-- A RAM implies R/W Access\nself.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE",
+			 "ROMimpliesReadOnly", "-- A ROM implies Read-Only Access\nself.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY"
+		   });	
 		addAnnotation
 		  (processorEClass, 
 		   source, 
 		   new String[] {
-			 "ownedCacheInSameStructuredResource", "if not self.ownedCache.oclIsUndefined() then\n\tself.parentStructuredResource=self.ownedCache.parentStructuredResource\nelse\n\t true\nendif\n"
-		   });																				
+			 "ownedCacheInSameStructuredResource", "-- The used Cache must be containted in the same parent Resource\nif not self.ownedCache.oclIsUndefined() then\n\tself.parentStructuredResource=self.ownedCache.parentStructuredResource\nelse\n\t true\nendif\n"
+		   });	
 		addAnnotation
 		  (resourceRepositoryEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueProtocolName", "self.protocols->isUnique(name)"
-		   });																						
+			 "UniqueProtocolName", "-- A Protocol must have an unique name\nself.protocols->isUnique(name)"
+		   });	
 		addAnnotation
 		  (getCommunicationResource_PortKind(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.protocol.oclIsUndefined()) then\n\thwresource::HWPortKind::BUS\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\t\thwresource::HWPortKind::BUS\nelse\n\t\thwresource::HWPortKind::LINK\nendif endif"
-		   });				
+		   });	
 		addAnnotation
 		  (getCommunicationResource_MultiHWPort(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.cardinality.oclIsUndefined()) then false else self.cardinality.upperBound.value>1 endif\n"
-		   });							
+		   });	
 		addAnnotation
 		  (busEClass, 
 		   source, 
 		   new String[] {
-			 "BusProtocol", "self.protocol.oclIsTypeOf(hwresource::BusProtocol)"
-		   });			
+			 "BusProtocol", "-- Must use a Bus Protocol\nself.protocol.oclIsTypeOf(hwresource::BusProtocol)"
+		   });	
 		addAnnotation
 		  (linkEClass, 
 		   source, 
 		   new String[] {
-			 "LinkProtocol", "self.protocol.oclIsTypeOf(hwresource::LinkProtocol)"
-		   });						
+			 "LinkProtocol", "-- Must use a Link Protocl\nself.protocol.oclIsTypeOf(hwresource::LinkProtocol)"
+		   });
 	}
 
 } //HwresourcePackageImpl

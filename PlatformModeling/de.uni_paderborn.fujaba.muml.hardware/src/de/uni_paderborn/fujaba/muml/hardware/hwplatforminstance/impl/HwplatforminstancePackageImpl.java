@@ -680,7 +680,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		initEClass(hwPlatformInstanceEClass, HWPlatformInstance.class, "HWPlatformInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatformInstance_HwplatformType(), theHwplatformPackage.getHWPlatform(), null, "hwplatformType", null, 1, 1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatformInstance_DelegationPorts(), this.getDelegationHWPortInstance(), this.getDelegationHWPortInstance_ParentHWPlatformInstance(), "delegationPorts", null, 0, -1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPlatformInstance_EmbeddedHPIC(), this.getHWPlatformInstanceConfiguration(), this.getHWPlatformInstanceConfiguration_ParentHWPlatformInstance(), "embeddedHPIC", null, 0, 1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatformInstance_EmbeddedHPIC(), this.getHWPlatformInstanceConfiguration(), this.getHWPlatformInstanceConfiguration_ParentHWPlatformInstance(), "embeddedHPIC", null, 1, 1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatformInstance_ParentHPIC(), this.getHWPlatformInstanceConfiguration(), this.getHWPlatformInstanceConfiguration_HwplatformInstances(), "parentHPIC", null, 1, 1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPlatformInstanceConfigurationEClass, HWPlatformInstanceConfiguration.class, "HWPlatformInstanceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -741,7 +741,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -749,19 +749,19 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																				
+		   });	
 		addAnnotation
 		  (delegationInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "HWPortInstanceToDelegationPortInstance"
-		   });									
+		   });	
 		addAnnotation
 		  (linkInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "Only2Connections"
-		   });														
+		   });
 	}
 
 	/**
@@ -771,103 +771,103 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";												
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (getHWPortInstance_HwPortType(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.type.oclIsUndefined()) then\n\tnull\nelse\n\tself.type.oclAsType(hwplatform::HWPortPart).communicationResource\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (getHWPortInstance_ConnectedMediaInstances(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\tself.connectorInstances.oclAsType(BusConnectorInstance).connectedBusInstance.oclAsType(CommunicationMediaInstance)->asOrderedSet()\nelse \n\tself.connectorInstances.oclAsType(CommunicationMediaInstance)->asOrderedSet()\nendif"
-		   });		
+		   });	
 		addAnnotation
 		  (getHWPortInstance_Protocol(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if(self.hwPortType.oclIsUndefined()) then\n\tnull \nelse\n self.hwPortType.protocol\n endif"
-		   });				
+		   });	
 		addAnnotation
 		  (getHWPortInstance_PortKind(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.hwPortType.oclIsUndefined()) then\n hwresource::HWPortKind::BUS\nelse\n self.hwPortType.portKind\nendif\n"
-		   });		
+		   });	
 		addAnnotation
 		  (getHWPortInstance_IsNetworkInterface(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.protocol.oclIsUndefined()) then\n\tfalse\nelse self.protocol.isNetworkingProtocol\nendif"
-		   });				
+		   });	
 		addAnnotation
 		  (delegationInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "HWPortInstanceToDelegationPortInstance", "( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n"
-		   });		
+			 "HWPortInstanceToDelegationPortInstance", "-- One End of a DelegationInstance must be a DelegationPortInstance\n( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))\n"
+		   });	
 		addAnnotation
 		  (getBusConnectorInstance_ConnectedBusInstance(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpointInstances->select(e|e.oclIsKindOf(BusInstance)).oclAsType(BusInstance)->asOrderedSet()\n"
-		   });		
+		   });	
 		addAnnotation
 		  (getBusConnectorInstance_ConnectedHWPortInstances(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpointInstances->select(e|e.oclIsKindOf(HWPortInstance)).oclAsType(HWPortInstance)->asOrderedSet()"
-		   });			
+		   });	
 		addAnnotation
 		  (getBusInstance_ConnectedHWPortInstances(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorInstances->select(c|c.oclIsKindOf(BusConnectorInstance))->collect(connectedHWPortInstances)->asOrderedSet()"
-		   });			
+		   });	
 		addAnnotation
 		  (getBusInstance_BusPart(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.type.oclIsUndefined()) then\n\tnull\nelse \n\tself.type.oclAsType(hwplatform::BusPart)\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (linkInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "Only2Connections", "self.connectorEndpointInstances->size()<=2"
-		   });			
+			 "Only2Connections", "-- A LinkInstance can only connect to EndpointInstances\nself.connectorEndpointInstances->size()<=2"
+		   });	
 		addAnnotation
 		  (getLinkInstance_ConnectedHWPortInstances(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpointInstances->select(e|e.oclIsKindOf(HWPortInstance)).oclAsType(HWPortInstance)->asOrderedSet()\n"
-		   });			
+		   });	
 		addAnnotation
 		  (getLinkInstance_LinkPart(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.type.oclIsUndefined()) then\n\tnull\nelse \n\tself.type.oclAsType(hwplatform::LinkPart)\nendif\n"
-		   });				
+		   });	
 		addAnnotation
 		  (getCommunicationMediaInstance_Protocol(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.communicationMedia.oclIsUndefined()) then\n\tnull\nelse \n\tself.communicationMedia.protocol\nendif"
-		   });		
+		   });	
 		addAnnotation
 		  (getCommunicationMediaInstance_CommunicationMedia(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.communicationMediaPart.oclIsUndefined()) then\n\tnull\nelse \n\tself.communicationMediaPart.communicationMedia\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (getCommunicationMediaInstance_Bandwidth(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.communicationMedia.oclIsUndefined()) then\n\tnull\nelse \n\tself.communicationMedia.bandwidth\nendif"
-		   });				
+		   });	
 		addAnnotation
 		  (getBridgeInstance_ConnectedCommunicationMediaInstance(), 
 		   source, 

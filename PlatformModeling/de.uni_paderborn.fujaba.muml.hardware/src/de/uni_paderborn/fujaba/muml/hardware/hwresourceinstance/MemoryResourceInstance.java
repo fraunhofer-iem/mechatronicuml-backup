@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getMemoryResourceInstance()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckResourceType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckResourceType='self.resourceType.oclIsKindOf(hwresource::MemoryResource)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckResourceType='-- The ResourceType must be of Kind MemoryResource\nself.resourceType.oclIsKindOf(hwresource::MemoryResource)'"
  * @generated
  */
 public interface MemoryResourceInstance extends AtomicResourceInstance {

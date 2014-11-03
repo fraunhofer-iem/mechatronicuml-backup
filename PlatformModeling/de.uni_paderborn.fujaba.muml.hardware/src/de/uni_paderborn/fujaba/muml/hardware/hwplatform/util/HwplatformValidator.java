@@ -163,7 +163,12 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PLATFORM_PART__CARDINALITY_LOWER_BOUND_SET__EEXPRESSION = "self.cardinality.lowerBound->notEmpty()";
+	protected static final String PLATFORM_PART__CARDINALITY_LOWER_BOUND_SET__EEXPRESSION = "-- Lower Bound of Cardinality must be set\n" +
+		"if self.cardinality.lowerBound.oclIsUndefined() then\r\n" +
+		"false\r\n" +
+		"else\r\n" +
+		"self.cardinality.lowerBound->notEmpty()\r\n" +
+		"endif";
 
 	/**
 	 * Validates the CardinalityLowerBoundSet constraint of '<em>Platform Part</em>'.
@@ -192,7 +197,12 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PLATFORM_PART__CARDINALITY_UPPER_BOUND_SET__EEXPRESSION = "self.cardinality.upperBound->notEmpty()";
+	protected static final String PLATFORM_PART__CARDINALITY_UPPER_BOUND_SET__EEXPRESSION = "-- Upper bound of cardinality must be set\r\n" +
+		"if self.cardinality.upperBound.oclIsUndefined() then\r\n" +
+		"false\r\n" +
+		"else\r\n" +
+		"self.cardinality.upperBound->notEmpty()\r\n" +
+		"endif";
 
 	/**
 	 * Validates the CardinalityUpperBoundSet constraint of '<em>Platform Part</em>'.
@@ -242,7 +252,8 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PLATFORM_PART__NO_LOOP__EEXPRESSION = "self.hwplatformType<>self.parentHWPlatform";
+	protected static final String HW_PLATFORM_PART__NO_LOOP__EEXPRESSION = "-- HWPlatformPart must NOT have the same type as its parent HWPlatform\n" +
+		"self.hwplatformType<>self.parentHWPlatform";
 
 	/**
 	 * Validates the NoLoop constraint of '<em>HW Platform Part</em>'.
@@ -310,7 +321,8 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DELEGATION__HW_PORT_PART_TO_DELEGATION_HW_PORT__EEXPRESSION = "self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::HWPortPart)) and ( self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::DelegationHWPort)) or self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::BusPart)))";
+	protected static final String DELEGATION__HW_PORT_PART_TO_DELEGATION_HW_PORT__EEXPRESSION = "-- One End of a Delegation must be a Delegation Port\n" +
+		"self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::HWPortPart)) and ( self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::DelegationHWPort)) or self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::BusPart)))";
 
 	/**
 	 * Validates the HWPortPartToDelegationHWPort constraint of '<em>Delegation</em>'.
@@ -368,7 +380,8 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__SAME_PROTOCOL__EEXPRESSION = "if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n" +
+	protected static final String HW_PORT_PART__SAME_PROTOCOL__EEXPRESSION = "-- Connected Ports must use the same Protocol\n" +
+		"if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n" +
 		"\tself.connectedMediaPart->first().protocol=self.protocol\n" +
 		"else true\n" +
 		"endif";
@@ -400,7 +413,8 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n" +
+	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "-- A Linkt Port must be connected via a Link\n" +
+		"if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n" +
 		"\ttrue\n" +
 		"else \n" +
 		"\tif (self.portKind = hwresource::HWPortKind::BUS) then\n" +
@@ -475,7 +489,8 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LINK_PART__ONLY2_CONNECTIONS__EEXPRESSION = "self.connectorEndpoints->size()<=2";
+	protected static final String LINK_PART__ONLY2_CONNECTIONS__EEXPRESSION = "-- A link can only connect to Link Ports\n" +
+		"self.connectorEndpoints->size()<=2";
 
 	/**
 	 * Validates the Only2Connections constraint of '<em>Link Part</em>'.

@@ -15,7 +15,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getStorageMemoryInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckMemoryNonVolatile'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckMemoryNonVolatile='self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckMemoryNonVolatile='-- The ResourceType must be of Kind non-volatile MemoryResource\n-- The ResourceType must be of Kind volatile MemoryResource\nif self.resourceType.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false\r\nendif\n\n'"
  * @generated
  */
 public interface StorageMemoryInstance extends MemoryResourceInstance {

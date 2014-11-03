@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getProcessor()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ownedCacheInSameStructuredResource='if not self.ownedCache.oclIsUndefined() then\n\tself.parentStructuredResource=self.ownedCache.parentStructuredResource\nelse\n\t true\nendif\n'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ownedCacheInSameStructuredResource='-- The used Cache must be containted in the same parent Resource\nif not self.ownedCache.oclIsUndefined() then\n\tself.parentStructuredResource=self.ownedCache.parentStructuredResource\nelse\n\t true\nendif\n'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ownedCacheInSameStructuredResource'"
  * @generated
  */

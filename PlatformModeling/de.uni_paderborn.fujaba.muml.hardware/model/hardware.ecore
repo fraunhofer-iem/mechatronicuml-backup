@@ -54,8 +54,8 @@
         <details key="constraints" value="CardinalityLowerBoundSet CardinalityUpperBoundSet"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CardinalityLowerBoundSet" value="self.cardinality.lowerBound->notEmpty()"/>
-        <details key="CardinalityUpperBoundSet" value="self.cardinality.upperBound->notEmpty()"/>
+        <details key="CardinalityLowerBoundSet" value="-- Lower Bound of Cardinality must be set&#xA;if self.cardinality.lowerBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.lowerBound->notEmpty()&#xD;&#xA;endif"/>
+        <details key="CardinalityUpperBoundSet" value="-- Upper bound of cardinality must be set&#xD;&#xA;if self.cardinality.upperBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.upperBound->notEmpty()&#xD;&#xA;endif"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class represents a PlatformPart. &#xA;PlatformParts are used to specify the inner structure of a HWPlatform.&#xD;&#xA;A PlatformPart can be a HWPlatformPart or a ResourceInstancePart."/>
@@ -85,7 +85,7 @@
         <details key="constraints" value="NoLoop"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="NoLoop" value="self.hwplatformType&lt;>self.parentHWPlatform"/>
+        <details key="NoLoop" value="-- HWPlatformPart must NOT have the same type as its parent HWPlatform&#xA;self.hwplatformType&lt;>self.parentHWPlatform"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a HWPlatformPart. &#xA;HWPlatformParts are used to specify the structure of a HWPlatform. &#xA;A HWPlatformPart is embedded in a HWPlatform and it is typed over a HWPlatform."/>
@@ -126,7 +126,7 @@
         <details key="constraints" value="HWPortPartToDelegationHWPort"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="HWPortPartToDelegationHWPort" value="self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::HWPortPart)) and ( self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::DelegationHWPort)) or self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::BusPart)))"/>
+        <details key="HWPortPartToDelegationHWPort" value="-- One End of a Delegation must be a Delegation Port&#xA;self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::HWPortPart)) and ( self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::DelegationHWPort)) or self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::BusPart)))"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwresource/CommunicationResource"/>
@@ -135,8 +135,8 @@
         <details key="constraints" value="SameProtocol LinkPort2Link"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SameProtocol" value="if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then&#xA;&#x9;self.connectedMediaPart->first().protocol=self.protocol&#xA;else true&#xA;endif"/>
-        <details key="LinkPort2Link" value="if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()&lt;1) then&#xA;&#x9;true&#xA;else &#xA;&#x9;if (self.portKind = hwresource::HWPortKind::BUS) then&#xA;&#x9;&#x9;self.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))&#xA;&#x9;else if (self.portKind = hwresource::HWPortKind::LINK) then&#xA;&#x9;&#x9;self.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))&#xA;&#x9;else true&#xA;endif endif endif&#xA;"/>
+        <details key="SameProtocol" value="-- Connected Ports must use the same Protocol&#xA;if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then&#xA;&#x9;self.connectedMediaPart->first().protocol=self.protocol&#xA;else true&#xA;endif"/>
+        <details key="LinkPort2Link" value="-- A Linkt Port must be connected via a Link&#xA;if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()&lt;1) then&#xA;&#x9;true&#xA;else &#xA;&#x9;if (self.portKind = hwresource::HWPortKind::BUS) then&#xA;&#x9;&#x9;self.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))&#xA;&#x9;else if (self.portKind = hwresource::HWPortKind::LINK) then&#xA;&#x9;&#x9;self.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))&#xA;&#x9;else true&#xA;endif endif endif&#xA;"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a hardware port of a PlatformPart."/>
@@ -239,7 +239,7 @@
         <details key="constraints" value="Only2Connections"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="Only2Connections" value="self.connectorEndpoints->size()&lt;=2"/>
+        <details key="Only2Connections" value="-- A link can only connect to Link Ports&#xA;self.connectorEndpoints->size()&lt;=2"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a link connection. A link can only be connected to two LinkPortInstances or to one LinkPortInstance and one Bridge."/>
@@ -552,7 +552,7 @@
         <details key="constraints" value="HWPortInstanceToDelegationPortInstance"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="HWPortInstanceToDelegationPortInstance" value="( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))&#xA;"/>
+        <details key="HWPortInstanceToDelegationPortInstance" value="-- One End of a DelegationInstance must be a DelegationPortInstance&#xA;( self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)) or self.connectorEndpointInstances->exists(c|c.oclIsKindOf(hwplatforminstance::BusInstance)))&#xA;"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BusConnectorInstance" eSuperTypes="#//hwplatforminstance/NetworkingHardwareInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance">
@@ -597,7 +597,7 @@
         <details key="constraints" value="Only2Connections"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="Only2Connections" value="self.connectorEndpointInstances->size()&lt;=2"/>
+        <details key="Only2Connections" value="-- A LinkInstance can only connect to EndpointInstances&#xA;self.connectorEndpointInstances->size()&lt;=2"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a link connection. A link can only be connected to two LinkPortInstances or to one LinkPortInstance and one Bridge."/>
@@ -699,11 +699,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MemoryResource" eSuperTypes="#//hwresource/AtomicResource">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="RAMimpliesRW"/>
+        <details key="constraints" value="RAMimpliesRW ROMimpliesReadOnly"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="RAMimpliesRW" value="self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE"/>
-        <details key="ROMimpliesReadOnly" value="self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY"/>
+        <details key="RAMimpliesRW" value="-- A RAM implies R/W Access&#xA;self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE"/>
+        <details key="ROMimpliesReadOnly" value="-- A ROM implies Read-Only Access&#xA;self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents an AtomicResource that is capable of storing data. &#xA;"/>
@@ -778,7 +778,7 @@
         <details key="documentation" value="The class Processor is a ComputingResource. It represents different kind of a processor specified by its family and architecture."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="ownedCacheInSameStructuredResource" value="if not self.ownedCache.oclIsUndefined() then&#xA;&#x9;self.parentStructuredResource=self.ownedCache.parentStructuredResource&#xA;else&#xA;&#x9; true&#xA;endif&#xA;"/>
+        <details key="ownedCacheInSameStructuredResource" value="-- The used Cache must be containted in the same parent Resource&#xA;if not self.ownedCache.oclIsUndefined() then&#xA;&#x9;self.parentStructuredResource=self.ownedCache.parentStructuredResource&#xA;else&#xA;&#x9; true&#xA;endif&#xA;"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="ownedCacheInSameStructuredResource"/>
@@ -900,7 +900,7 @@
         <details key="documentation" value="This class represents a repository containing several resource types."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="UniqueProtocolName" value="self.protocols->isUnique(name)"/>
+        <details key="UniqueProtocolName" value="-- A Protocol must have an unique name&#xA;self.protocols->isUnique(name)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UniqueProtocolName"/>
@@ -1078,7 +1078,7 @@
         <details key="constraints" value="BusProtocol"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="BusProtocol" value="self.protocol.oclIsTypeOf(hwresource::BusProtocol)"/>
+        <details key="BusProtocol" value="-- Must use a Bus Protocol&#xA;self.protocol.oclIsTypeOf(hwresource::BusProtocol)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//hwresource/CommunicationMedia">
@@ -1086,7 +1086,7 @@
         <details key="constraints" value="LinkProtocol"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="LinkProtocol" value="self.protocol.oclIsTypeOf(hwresource::LinkProtocol)"/>
+        <details key="LinkProtocol" value="-- Must use a Link Protocl&#xA;self.protocol.oclIsTypeOf(hwresource::LinkProtocol)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a link connection. A link can only be connected to two LinkPortInstances or to one LinkPortInstance and one Bridge."/>
@@ -1168,7 +1168,7 @@
         <details key="constraints" value="CheckResourceType"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CheckResourceType" value="self.resourceType.oclIsKindOf(hwresource::MemoryResource)"/>
+        <details key="CheckResourceType" value="-- The ResourceType must be of Kind MemoryResource&#xA;self.resourceType.oclIsKindOf(hwresource::MemoryResource)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class is the super class for all memory instances."/>
@@ -1206,7 +1206,7 @@
         <details key="constraints" value="CheckMemoryNonVolatile"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CheckMemoryNonVolatile" value="self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false"/>
+        <details key="CheckMemoryNonVolatile" value="-- The ResourceType must be of Kind non-volatile MemoryResource&#xA;-- The ResourceType must be of Kind volatile MemoryResource&#xA;if self.resourceType.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false&#xD;&#xA;endif&#xA;&#xA;"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents an instance of non-volatile memory which is capable of storing data."/>
@@ -1217,7 +1217,7 @@
         <details key="constraints" value="CheckMemoryVolatile"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CheckMemoryVolatile" value="self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true&#xA;"/>
+        <details key="CheckMemoryVolatile" value="-- The ResourceType must be of Kind volatile MemoryResource&#xA;if self.resourceType.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=true&#xD;&#xA;endif&#xA;&#xA;"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents fast and volatile processing memory (i.e. SRAM)."/>
@@ -1233,7 +1233,7 @@
         <details key="constraints" value="CheckResourceType"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CheckResourceType" value="self.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)"/>
+        <details key="CheckResourceType" value="-- ResourceType must be of Kind PLD&#xA;self.resourceType.oclIsKindOf(hwresource::ProgrammableLogicDevice)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a PLD at instance level."/>
@@ -1244,7 +1244,7 @@
         <details key="constraints" value="CheckResourceType"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CheckResourceType" value="self.resourceType.oclIsKindOf(hwresource::Processor)"/>
+        <details key="CheckResourceType" value="-- ResourceType must be of Kind Processor&#xA;self.resourceType.oclIsKindOf(hwresource::Processor)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A processor at instance level."/>
@@ -1283,9 +1283,9 @@
         <details key="constraints" value="CheckResourceType AllAtomicResourceTypesAreInitialized UniquePortNames"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AllAtomicResourceTypesAreInitialized" value="if(self.resourceType.oclIsUndefined()) then&#xA;&#x9;true&#xA;else &#xA;&#x9;self.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))&#xA;endif"/>
-        <details key="CheckResourceType" value="self.resourceType.oclIsKindOf(hwresource::StructuredResource)"/>
-        <details key="UniquePortNames" value="self.hwports->isUnique(name)"/>
+        <details key="AllAtomicResourceTypesAreInitialized" value="-- All Atomic Resources must be initialized&#xA;if(self.resourceType.oclIsUndefined()) then&#xA;&#x9;true&#xA;else &#xA;&#x9;self.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))&#xA;endif"/>
+        <details key="CheckResourceType" value="-- ResourceType must be of Kind StructuredResource&#xA;self.resourceType.oclIsKindOf(hwresource::StructuredResource)"/>
+        <details key="UniquePortNames" value="-- The Ports must have an unique name&#xA;self.hwports->isUnique(name)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a structured resource at instance level.&#xA;A StructuredResourceInstance is  derived from its resourcetype.&#xA;The embedded AtomicResourceInstances of this StructuredResourceInstance are derived from its type."/>

@@ -15,7 +15,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getBus()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='BusProtocol'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL BusProtocol='self.protocol.oclIsTypeOf(hwresource::BusProtocol)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL BusProtocol='-- Must use a Bus Protocol\nself.protocol.oclIsTypeOf(hwresource::BusProtocol)'"
  * @generated
  */
 public interface Bus extends CommunicationMedia {

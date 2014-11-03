@@ -509,7 +509,7 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -517,7 +517,7 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																				
+		   });
 	}
 
 } //HwvaluetypePackageImpl
