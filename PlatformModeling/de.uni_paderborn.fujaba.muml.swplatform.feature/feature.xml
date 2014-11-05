@@ -16,6 +16,39 @@
       [Enter License Description here.]
    </license>
 
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.storydriven.core"/>
+      <import plugin="de.uni_paderborn.fujaba.muml"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.storydriven.core.edit"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.swplatform" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.xtext.ui"/>
+      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.xtext.common.types.ui"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.compare"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.compare" version="3.0.2" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.pm.common" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.swplatform.oslanguage" version="0.4.0" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="de.uni_paderborn.fujaba.muml.swplatform"
          download-size="0"
