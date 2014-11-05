@@ -3229,6 +3229,12 @@
                   <operations xmi:id="_YyWP4GAlEeSy7YZm1PHpMA" name="createConnector" returnType="_hm9EUriwEeKp46K0r5yxrg">
                     <parameters xmi:id="_kuEBsGAqEeSVOOiFz-_Tiw" name="reqPort" dataType="_Tw2JwPh7EeOdcfcso3gQlg"/>
                   </operations>
+                  <variables xmi:id="_IA_oAGUGEeS2Zodb8JPC8A" name="numOfPorts" dataType="_hm9EVriwEeKp46K0r5yxrg">
+                    <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_LSnJwGUGEeS2Zodb8JPC8A" value="0"/>
+                  </variables>
+                  <variables xmi:id="_NTmxIGUGEeS2Zodb8JPC8A" name="maxNumPorts" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
+                    <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_PcUxIGUGEeS2Zodb8JPC8A" value="1"/>
+                  </variables>
                   <transitions xmi:id="_9lTaUGAlEeSy7YZm1PHpMA" priority="1" target="_6P92MGAlEeSy7YZm1PHpMA" source="_RAs4gWAlEeSy7YZm1PHpMA">
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DHPY4GAmEeSy7YZm1PHpMA" kind="TRIGGER">
                       <message xmi:id="_D5FFgGAmEeSy7YZm1PHpMA" instanceOf="_ez07IF9qEeSjUsAdueGXzg"/>
@@ -3281,6 +3287,10 @@
                     </action>
                   </transitions>
                   <transitions xmi:id="_zImVcGAmEeSy7YZm1PHpMA" priority="1" target="_RAs4gWAlEeSy7YZm1PHpMA" source="_iVasIGAmEeSy7YZm1PHpMA">
+                    <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_V7jeYGUGEeS2Zodb8JPC8A" operator="GREATER_OR_EQUAL">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_V7jeYWUGEeS2Zodb8JPC8A" typedNamedElement="_IA_oAGUGEeS2Zodb8JPC8A"/>
+                      <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_V7jeYmUGEeS2Zodb8JPC8A" typedNamedElement="_NTmxIGUGEeS2Zodb8JPC8A"/>
+                    </guard>
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_BzzloGAnEeSy7YZm1PHpMA">
                       <message xmi:id="_B9no8GAnEeSy7YZm1PHpMA" instanceOf="_pryjMF9qEeSjUsAdueGXzg">
                         <parameterBinding xmi:id="_EJ6hYGAnEeSy7YZm1PHpMA" parameter="_xv4VcF9qEeSjUsAdueGXzg">
@@ -3301,6 +3311,10 @@
                     </action>
                   </transitions>
                   <transitions xmi:id="_OAHxgGAnEeSy7YZm1PHpMA" priority="2" target="_LYmVoGAnEeSy7YZm1PHpMA" source="_iVasIGAmEeSy7YZm1PHpMA">
+                    <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_Yx8csGUGEeS2Zodb8JPC8A">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Yx8csWUGEeS2Zodb8JPC8A" typedNamedElement="_IA_oAGUGEeS2Zodb8JPC8A"/>
+                      <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_Yx8csmUGEeS2Zodb8JPC8A" typedNamedElement="_NTmxIGUGEeS2Zodb8JPC8A"/>
+                    </guard>
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_VK8ZcGAnEeSy7YZm1PHpMA">
                       <message xmi:id="_VXJCYGAnEeSy7YZm1PHpMA" instanceOf="_6aqUQF9qEeSjUsAdueGXzg">
                         <parameterBinding xmi:id="_WOCOIGAnEeSy7YZm1PHpMA" parameter="_8c1nYF9qEeSjUsAdueGXzg">
