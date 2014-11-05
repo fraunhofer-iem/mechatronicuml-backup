@@ -40,6 +40,6 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_KUTC0VOsEeSDPNki4Dv8rg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../../RailCab.fujaba#_KUAH4FOsEeSDPNki4Dv8rg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KUTC0lOsEeSDPNki4Dv8rg" points="[41, 6, 41, 6]$[41, 6, 41, 6]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KUTC0lOsEeSDPNki4Dv8rg" points="[41, 0, 41, 0]$[103, 0, 103, 0]$[103, 40, 103, 40]$[9, 40, 9, 40]$[9, 30, 9, 30]"/>
   </edges>
 </notation:Diagram>
