@@ -2911,8 +2911,12 @@
         <embeddedRegions xmi:id="_R7X8kGAbEeSfs_07wA2Ibg" priority="6">
           <embeddedStatechart xmi:id="_R7hGgGAbEeSfs_07wA2Ibg" name="broadcast" behavioralElement="_YETnMPh0EeOAKLom6jxr8Q">
             <operations xmi:id="_rUFw8GAeEeSy7YZm1PHpMA" name="checkIDs" returnType="_hm9EU7iwEeKp46K0r5yxrg"/>
-            <variables xmi:id="_6SiNkGAbEeSy7YZm1PHpMA" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true"/>
-            <variables xmi:id="__FAeEGAbEeSy7YZm1PHpMA" name="ownVersion" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true"/>
+            <variables xmi:id="_6SiNkGAbEeSy7YZm1PHpMA" name="ownAddr" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
+              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_BU6tMGToEeSqt48LSH-_nQ" value="4711"/>
+            </variables>
+            <variables xmi:id="__FAeEGAbEeSy7YZm1PHpMA" name="ownVersion" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
+              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_EJXx0GToEeSqt48LSH-_nQ" value="1"/>
+            </variables>
             <variables xmi:id="_B2V9QGAcEeSy7YZm1PHpMA" name="partnerAddr" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
             <variables xmi:id="_FUA-AGAcEeSy7YZm1PHpMA" name="partnerPort" dataType="_Tw2JwPh7EeOdcfcso3gQlg"/>
             <variables xmi:id="_IUiIsGAcEeSy7YZm1PHpMA" name="partnerVersion" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
