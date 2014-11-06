@@ -5708,7 +5708,7 @@
       <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_uuWpwPSTEeOKmIQk3FL8KA" name="finalCreateSubRoleInstance" incoming="_uuWpgvSTEeOKmIQk3FL8KA">
         <returnValues xsi:type="expr:TextualExpression" xmi:id="_uuWpwfSTEeOKmIQk3FL8KA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNode>
-      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWpwvSTEeOKmIQk3FL8KA" name="Add Variable Bindings to Subrole" outgoing="_uuWpf_STEeOKmIQk3FL8KA _uuWpgPSTEeOKmIQk3FL8KA" incoming="_uuWpf_STEeOKmIQk3FL8KA _uuWpg_STEeOKmIQk3FL8KA _uuWphfSTEeOKmIQk3FL8KA" forEach="true">
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWpwvSTEeOKmIQk3FL8KA" name="4444" outgoing="_uuWpf_STEeOKmIQk3FL8KA _uuWpgPSTEeOKmIQk3FL8KA" incoming="_uuWpf_STEeOKmIQk3FL8KA _uuWpg_STEeOKmIQk3FL8KA _uuWphfSTEeOKmIQk3FL8KA" forEach="true">
         <ownedRule xmi:id="_uuWpw_STEeOKmIQk3FL8KA" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuWpxPSTEeOKmIQk3FL8KA" name="subRoleRTSC" bindingState="BOUND" outgoingLink="_uuWpyvSTEeOKmIQk3FL8KA">
             <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
@@ -5737,7 +5737,7 @@
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
-      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWpzfSTEeOKmIQk3FL8KA" name="Add Variable Bindings to Singlerole" outgoing="_uuWpgfSTEeOKmIQk3FL8KA _uuWpgvSTEeOKmIQk3FL8KA" incoming="_uuWpgPSTEeOKmIQk3FL8KA _uuWpgfSTEeOKmIQk3FL8KA" forEach="true">
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_uuWpzfSTEeOKmIQk3FL8KA" name="444444" outgoing="_uuWpgfSTEeOKmIQk3FL8KA _uuWpgvSTEeOKmIQk3FL8KA" incoming="_uuWpgPSTEeOKmIQk3FL8KA _uuWpgfSTEeOKmIQk3FL8KA" forEach="true">
         <ownedRule xmi:id="_uuWpzvSTEeOKmIQk3FL8KA" comment="">
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_uuWpz_STEeOKmIQk3FL8KA" name="singleRoleRTSC" bindingState="BOUND" outgoingLink="_uuWp1fSTEeOKmIQk3FL8KA">
             <classifier href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>

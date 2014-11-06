@@ -1,5 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" type="Storydiagrams" name="obtainProfiles.storydiagrams_diagram" measurementUnit="Pixel">
+  <children xsi:type="notation:Shape" type="2005" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5013"/>
+    <element href="../RailCab.fujaba#_uuWqCvSTEeOKmIQk3FL8KA"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="6"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001">
+      <children xsi:type="notation:Shape" type="3001" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="7002">
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../RailCab.fujaba#_uuWqDfSTEeOKmIQk3FL8KA"/>
+            <layoutConstraint xsi:type="notation:Bounds"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../RailCab.fujaba#_uuWqDvSTEeOKmIQk3FL8KA"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="165"/>
+          </children>
+          <children xsi:type="notation:Shape" type="3005" fontName="Segoe UI">
+            <children xsi:type="notation:DecorationNode" type="5008"/>
+            <children xsi:type="notation:DecorationNode" type="5009"/>
+            <children xsi:type="notation:DecorationNode" type="5010"/>
+            <children xsi:type="notation:DecorationNode" type="7006">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <children xsi:type="notation:DecorationNode" type="7007">
+              <styles xsi:type="notation:SortingStyle"/>
+              <styles xsi:type="notation:FilteringStyle"/>
+            </children>
+            <element href="../RailCab.fujaba#_uuWqD_STEeOKmIQk3FL8KA"/>
+            <layoutConstraint xsi:type="notation:Bounds" x="252"/>
+          </children>
+        </children>
+        <children xsi:type="notation:DecorationNode" type="7003">
+          <styles xsi:type="notation:SortingStyle"/>
+          <styles xsi:type="notation:FilteringStyle"/>
+        </children>
+        <element href="../RailCab.fujaba#_uuWqDPSTEeOKmIQk3FL8KA"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+    </children>
+    <element href="../RailCab.fujaba#_uuWqC_STEeOKmIQk3FL8KA"/>
+    <layoutConstraint xsi:type="notation:Bounds" y="322"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2008" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5014"/>
+    <element href="../RailCab.fujaba#_uuWqFfSTEeOKmIQk3FL8KA"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="196" y="754"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001"/>
+    <element href="../RailCab.fujaba#_uuWqF_STEeOKmIQk3FL8KA"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="44" y="105"/>
+  </children>
+  <children xsi:type="notation:Shape" type="2003" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5011"/>
+    <children xsi:type="notation:DecorationNode" type="7001"/>
+    <element href="../RailCab.fujaba#_uuWqHfSTEeOKmIQk3FL8KA"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="131" y="543"/>
+  </children>
   <styles xsi:type="notation:DiagramStyle"/>
   <element href="../RailCab.fujaba#_uuWp_PSTEeOKmIQk3FL8KA"/>
+  <edges type="4001" source="//@children.0" target="//@children.3">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../RailCab.fujaba#_uuWqBfSTEeOKmIQk3FL8KA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.498812351543943,1.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.4985507246376812,0.0)"/>
+  </edges>
+  <edges type="4001" source="//@children.3" target="//@children.1">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../RailCab.fujaba#_uuWqBvSTEeOKmIQk3FL8KA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.4985507246376812,1.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.0)"/>
+  </edges>
+  <edges type="4001" source="//@children.1" target="//@children.4">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../RailCab.fujaba#_uuWqB_STEeOKmIQk3FL8KA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.0)"/>
+  </edges>
+  <edges type="4001" source="//@children.1" target="//@children.1">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../RailCab.fujaba#_uuWqCPSTEeOKmIQk3FL8KA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges type="4001" source="//@children.4" target="//@children.2">
+    <children xsi:type="notation:DecorationNode" type="6001">
+      <layoutConstraint xsi:type="notation:Location" y="40"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../RailCab.fujaba#_uuWqCfSTEeOKmIQk3FL8KA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, -60]$[0, 60, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.0)"/>
+  </edges>
+  <edges type="4002" source="//@children.1/@children.1/@children.0/@children.0/@children.0" target="//@children.1/@children.1/@children.0/@children.0/@children.1">
+    <children xsi:type="notation:DecorationNode" type="6002">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6003">
+      <layoutConstraint xsi:type="notation:Location" y="-10"/>
+    </children>
+    <children xsi:type="notation:DecorationNode" type="6004">
+      <layoutConstraint xsi:type="notation:Location" x="-32" y="15"/>
+    </children>
+    <styles xsi:type="notation:RoutingStyle"/>
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="../RailCab.fujaba#_uuWqFPSTEeOKmIQk3FL8KA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[1, 37, 0, 20]$[0, -27, -1, -44]"/>
+  </edges>
 </notation:Diagram>
