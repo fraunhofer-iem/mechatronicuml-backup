@@ -14,13 +14,13 @@
 <plugin>
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="sdm_diagram"/>
+      <fileTypes type="text" extension="storydiagrams_diagram"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="sdm_diagram"
+         type="storydiagrams_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -31,7 +31,7 @@
          id="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ActivitiesDiagramFile.gif"
-         extensions="sdm_diagram"
+         extensions="storydiagrams_diagram"
          default="true"
          class="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditor"
          matchingStrategy="org.storydriven.storydiagrams.diagram.part.StorydiagramsMatchingStrategy"
@@ -65,7 +65,7 @@
       <?gmfgen generated="true"?>
       <objectContribution
             id="org.storydriven.storydiagrams.diagram.InitDiagram"
-            nameFilter="*.ecore"
+            nameFilter="*.fujaba"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
@@ -267,19 +267,87 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.StorydiagramsModelingAssistantProvider">
+      <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityEditPart">
          <Priority name="Lowest"/>
          <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart" id="Activity_1000"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart" id="ActivityCallNode_2001"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart" id="StatementNode_2002"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart" id="ModifyingStoryNode_2003"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart" id="MatchingStoryNode_2004"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2005"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_2006"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_2007"/>
-         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_2008"/>
-         <context elements="Activity_1000,ActivityCallNode_2001,StatementNode_2002,ModifyingStoryNode_2003,MatchingStoryNode_2004,InitialNode_2005,JunctionNode_2006,FlowFinalNode_2007,ActivityFinalNode_2008"/>
+         <context elements="Activity_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityCallNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeEditPart" id="ActivityCallNode_2001"/>
+         <context elements="ActivityCallNode_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfStatementNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.StatementNodeEditPart" id="StatementNode_2002"/>
+         <context elements="StatementNode_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfModifyingStoryNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ModifyingStoryNodeEditPart" id="ModifyingStoryNode_2003"/>
+         <context elements="ModifyingStoryNode_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfMatchingStoryNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.MatchingStoryNodeEditPart" id="MatchingStoryNode_2004"/>
+         <context elements="MatchingStoryNode_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfInitialNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2005"/>
+         <context elements="InitialNode_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfJunctionNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart" id="JunctionNode_2006"/>
+         <context elements="JunctionNode_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfFlowFinalNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart" id="FlowFinalNode_2007"/>
+         <context elements="FlowFinalNode_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfActivityFinalNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_2008"/>
+         <context elements="ActivityFinalNode_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfStoryPatternEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.StoryPatternEditPart" id="StoryPattern_3001"/>
+         <context elements="StoryPattern_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfCollectionVariableEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.CollectionVariableEditPart" id="CollectionVariable_3002"/>
+         <context elements="CollectionVariable_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfAttributeAssignmentEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.AttributeAssignmentEditPart" id="AttributeAssignment_3003"/>
+         <context elements="AttributeAssignment_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfConstraintEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ConstraintEditPart" id="Constraint_3004"/>
+         <context elements="Constraint_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfObjectVariableEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.ObjectVariableEditPart" id="ObjectVariable_3005"/>
+         <context elements="ObjectVariable_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfConstraint2EditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.Constraint2EditPart" id="Constraint_3006"/>
+         <context elements="Constraint_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.storydriven.storydiagrams.diagram.providers.assistants.StorydiagramsModelingAssistantProviderOfMatchingPatternEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.storydriven.storydiagrams.diagram.edit.parts.MatchingPatternEditPart" id="MatchingPattern_3007"/>
+         <context elements="MatchingPattern_3007"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
@@ -573,7 +641,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="sdm_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="storydiagrams_diagram"/>
                </and>
                <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
             </or>
@@ -590,7 +658,7 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="sdm_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="storydiagrams_diagram"/>
                   </and>
                   <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsAbstractNavigatorItem"/>
                </or>
@@ -609,7 +677,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="sdm"/>
+        	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
                <instanceof value="org.storydriven.storydiagrams.diagram.navigator.StorydiagramsDomainNavigatorItem"/>
             </or>
@@ -670,7 +738,32 @@
       </menuContribution>
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.storydriven.storydiagrams.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="org.storydriven.storydiagrams.diagram.edit.parts.ActivityEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
+<extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.storydriven.storydiagrams.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"
+         defaultHandler="org.storydriven.storydiagrams.diagram.part.LoadResourceAction"/>
+   </extension>
+
+<extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>

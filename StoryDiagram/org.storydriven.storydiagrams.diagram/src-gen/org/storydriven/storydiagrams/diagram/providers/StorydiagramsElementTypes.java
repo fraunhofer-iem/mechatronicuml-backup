@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
+import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
@@ -58,7 +60,9 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	private static ImageRegistry imageRegistry;
+	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
+			StorydiagramsDiagramEditorPlugin.getInstance()
+					.getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -149,98 +153,29 @@ public class StorydiagramsElementTypes {
 	/**
 	 * @generated
 	 */
-	private static ImageRegistry getImageRegistry() {
-		if (imageRegistry == null) {
-			imageRegistry = new ImageRegistry();
-		}
-		return imageRegistry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static String getImageRegistryKey(ENamedElement element) {
-		return element.getName();
-	}
-
-	/**
-	 * @generated
-	 */
-	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
-		if (element instanceof EStructuralFeature) {
-			EStructuralFeature feature = ((EStructuralFeature) element);
-			EClass eContainingClass = feature.getEContainingClass();
-			EClassifier eType = feature.getEType();
-			if (eContainingClass != null && !eContainingClass.isAbstract()) {
-				element = eContainingClass;
-			} else if (eType instanceof EClass && !((EClass) eType).isAbstract()) {
-				element = eType;
-			}
-		}
-		if (element instanceof EClass) {
-			EClass eClass = (EClass) element;
-			if (!eClass.isAbstract()) {
-				return StorydiagramsDiagramEditorPlugin.getInstance().getItemImageDescriptor(
-						eClass.getEPackage().getEFactoryInstance().create(eClass));
-			}
-		}
-		// TODO : support structural features
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
-		String key = getImageRegistryKey(element);
-		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(key);
-		if (imageDescriptor == null) {
-			imageDescriptor = getProvidedImageDescriptor(element);
-			if (imageDescriptor == null) {
-				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
-			}
-			getImageRegistry().put(key, imageDescriptor);
-		}
-		return imageDescriptor;
+		return elementTypeImages.getImageDescriptor(element);
 	}
 
 	/**
 	 * @generated
 	 */
 	public static Image getImage(ENamedElement element) {
-		String key = getImageRegistryKey(element);
-		Image image = getImageRegistry().get(key);
-		if (image == null) {
-			ImageDescriptor imageDescriptor = getProvidedImageDescriptor(element);
-			if (imageDescriptor == null) {
-				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
-			}
-			getImageRegistry().put(key, imageDescriptor);
-			image = getImageRegistry().get(key);
-		}
-		return image;
+		return elementTypeImages.getImage(element);
 	}
 
 	/**
 	 * @generated
 	 */
 	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
-		ENamedElement element = getElement(hint);
-		if (element == null) {
-			return null;
-		}
-		return getImageDescriptor(element);
+		return getImageDescriptor(getElement(hint));
 	}
 
 	/**
 	 * @generated
 	 */
 	public static Image getImage(IAdaptable hint) {
-		ENamedElement element = getElement(hint);
-		if (element == null) {
-			return null;
-		}
-		return getImage(element);
+		return getImage(getElement(hint));
 	}
 
 	/**
@@ -253,45 +188,65 @@ public class StorydiagramsElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(Activity_1000, ActivitiesPackage.eINSTANCE.getActivity());
+			elements.put(Activity_1000,
+					ActivitiesPackage.eINSTANCE.getActivity());
 
-			elements.put(ActivityCallNode_2001, ActivitiesPackage.eINSTANCE.getActivityCallNode());
+			elements.put(ActivityCallNode_2001,
+					ActivitiesPackage.eINSTANCE.getActivityCallNode());
 
-			elements.put(StatementNode_2002, ActivitiesPackage.eINSTANCE.getStatementNode());
+			elements.put(StatementNode_2002,
+					ActivitiesPackage.eINSTANCE.getStatementNode());
 
-			elements.put(ModifyingStoryNode_2003, ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
+			elements.put(ModifyingStoryNode_2003,
+					ActivitiesPackage.eINSTANCE.getModifyingStoryNode());
 
-			elements.put(MatchingStoryNode_2004, ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
+			elements.put(MatchingStoryNode_2004,
+					ActivitiesPackage.eINSTANCE.getMatchingStoryNode());
 
-			elements.put(InitialNode_2005, ActivitiesPackage.eINSTANCE.getInitialNode());
+			elements.put(InitialNode_2005,
+					ActivitiesPackage.eINSTANCE.getInitialNode());
 
-			elements.put(JunctionNode_2006, ActivitiesPackage.eINSTANCE.getJunctionNode());
+			elements.put(JunctionNode_2006,
+					ActivitiesPackage.eINSTANCE.getJunctionNode());
 
-			elements.put(FlowFinalNode_2007, ActivitiesPackage.eINSTANCE.getFlowFinalNode());
+			elements.put(FlowFinalNode_2007,
+					ActivitiesPackage.eINSTANCE.getFlowFinalNode());
 
-			elements.put(ActivityFinalNode_2008, ActivitiesPackage.eINSTANCE.getActivityFinalNode());
+			elements.put(ActivityFinalNode_2008,
+					ActivitiesPackage.eINSTANCE.getActivityFinalNode());
 
-			elements.put(StoryPattern_3001, PatternsPackage.eINSTANCE.getStoryPattern());
+			elements.put(StoryPattern_3001,
+					PatternsPackage.eINSTANCE.getStoryPattern());
 
-			elements.put(CollectionVariable_3002, PatternsPackage.eINSTANCE.getCollectionVariable());
+			elements.put(CollectionVariable_3002,
+					PatternsPackage.eINSTANCE.getCollectionVariable());
 
-			elements.put(AttributeAssignment_3003, PatternsPackage.eINSTANCE.getAttributeAssignment());
+			elements.put(AttributeAssignment_3003,
+					PatternsPackage.eINSTANCE.getAttributeAssignment());
 
-			elements.put(Constraint_3004, PatternsPackage.eINSTANCE.getConstraint());
+			elements.put(Constraint_3004,
+					PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(ObjectVariable_3005, PatternsPackage.eINSTANCE.getObjectVariable());
+			elements.put(ObjectVariable_3005,
+					PatternsPackage.eINSTANCE.getObjectVariable());
 
-			elements.put(Constraint_3006, PatternsPackage.eINSTANCE.getConstraint());
+			elements.put(Constraint_3006,
+					PatternsPackage.eINSTANCE.getConstraint());
 
-			elements.put(MatchingPattern_3007, PatternsPackage.eINSTANCE.getMatchingPattern());
+			elements.put(MatchingPattern_3007,
+					PatternsPackage.eINSTANCE.getMatchingPattern());
 
-			elements.put(ActivityEdge_4001, ActivitiesPackage.eINSTANCE.getActivityEdge());
+			elements.put(ActivityEdge_4001,
+					ActivitiesPackage.eINSTANCE.getActivityEdge());
 
-			elements.put(LinkVariable_4002, PatternsPackage.eINSTANCE.getLinkVariable());
+			elements.put(LinkVariable_4002,
+					PatternsPackage.eINSTANCE.getLinkVariable());
 
-			elements.put(InclusionLink_4003, PatternsPackage.eINSTANCE.getInclusionLink());
+			elements.put(InclusionLink_4003,
+					PatternsPackage.eINSTANCE.getInclusionLink());
 
-			elements.put(MaybeLink_4004, PatternsPackage.eINSTANCE.getMaybeLink());
+			elements.put(MaybeLink_4004,
+					PatternsPackage.eINSTANCE.getMaybeLink());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -381,5 +336,40 @@ public class StorydiagramsElementTypes {
 		}
 		return null;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
+			elementTypeImages) {
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isKnownElementType(IElementType elementType) {
+			return org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
+					.isKnownElementType(elementType);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public IElementType getElementTypeForVisualId(int visualID) {
+			return org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
+					.getElementType(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public ENamedElement getDefiningNamedElement(
+				IAdaptable elementTypeAdapter) {
+			return org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
+					.getElement(elementTypeAdapter);
+		}
+	};
 
 }

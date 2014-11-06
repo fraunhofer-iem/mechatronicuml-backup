@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.diagram.edit.parts.ActivityCallNodeCalleeLabelEditPart;
@@ -84,7 +85,8 @@ public class StorydiagramsVisualIDRegistry {
 				return -1;
 			}
 		}
-		return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry.getVisualID(view.getType());
+		return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry
+				.getVisualID(view.getType());
 	}
 
 	/**
@@ -109,9 +111,11 @@ public class StorydiagramsVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
+			if (Boolean.TRUE.toString().equalsIgnoreCase(
+					Platform.getDebugOption(DEBUG_KEY))) {
 				StorydiagramsDiagramEditorPlugin.getInstance().logError(
-						"Unable to parse view type as a visualID number: " + type);
+						"Unable to parse view type as a visualID number: "
+								+ type);
 			}
 		}
 		return -1;
@@ -131,7 +135,8 @@ public class StorydiagramsVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (ActivitiesPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())
+		if (ActivitiesPackage.eINSTANCE.getActivity().isSuperTypeOf(
+				domainElement.eClass())
 				&& isDiagram((Activity) domainElement)) {
 			return ActivityEditPart.VISUAL_ID;
 		}
@@ -163,84 +168,104 @@ public class StorydiagramsVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case ActivityEditPart.VISUAL_ID:
-			if (ActivitiesPackage.eINSTANCE.getActivityCallNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getActivityCallNode()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return ActivityCallNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getStatementNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StatementNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getModifyingStoryNode()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return ModifyingStoryNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getMatchingStoryNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getMatchingStoryNode()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return MatchingStoryNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getInitialNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return InitialNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getJunctionNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return JunctionNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getFlowFinalNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return FlowFinalNodeEditPart.VISUAL_ID;
 			}
-			if (ActivitiesPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ActivitiesPackage.eINSTANCE.getActivityFinalNode()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return ActivityFinalNodeEditPart.VISUAL_ID;
 			}
 			break;
 		case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getStoryPattern().isSuperTypeOf(
+					domainElement.eClass())) {
 				return StoryPatternEditPart.VISUAL_ID;
 			}
 			break;
 		case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getCollectionVariable().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getCollectionVariable()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return CollectionVariableEditPart.VISUAL_ID;
 			}
-			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ObjectVariableEditPart.VISUAL_ID;
 			}
 			break;
 		case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(
+					domainElement.eClass())) {
 				return Constraint2EditPart.VISUAL_ID;
 			}
 			break;
 		case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ConstraintEditPart.VISUAL_ID;
 			}
 			break;
 		case CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getAttributeAssignment().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getAttributeAssignment()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return AttributeAssignmentEditPart.VISUAL_ID;
 			}
 			break;
 		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ConstraintEditPart.VISUAL_ID;
 			}
 			break;
 		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getAttributeAssignment().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getAttributeAssignment()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return AttributeAssignmentEditPart.VISUAL_ID;
 			}
 			break;
 		case MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getMatchingPattern().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getMatchingPattern().isSuperTypeOf(
+					domainElement.eClass())) {
 				return MatchingPatternEditPart.VISUAL_ID;
 			}
 			break;
 		case MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getCollectionVariable().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getCollectionVariable()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return CollectionVariableEditPart.VISUAL_ID;
 			}
-			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getObjectVariable().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ObjectVariableEditPart.VISUAL_ID;
 			}
 			break;
 		case MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+			if (PatternsPackage.eINSTANCE.getConstraint().isSuperTypeOf(
+					domainElement.eClass())) {
 				return Constraint2EditPart.VISUAL_ID;
 			}
 			break;
@@ -480,16 +505,20 @@ public class StorydiagramsVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (ActivitiesPackage.eINSTANCE.getActivityEdge().isSuperTypeOf(domainElement.eClass())) {
+		if (ActivitiesPackage.eINSTANCE.getActivityEdge().isSuperTypeOf(
+				domainElement.eClass())) {
 			return ActivityEdgeEditPart.VISUAL_ID;
 		}
-		if (PatternsPackage.eINSTANCE.getLinkVariable().isSuperTypeOf(domainElement.eClass())) {
+		if (PatternsPackage.eINSTANCE.getLinkVariable().isSuperTypeOf(
+				domainElement.eClass())) {
 			return LinkVariableEditPart.VISUAL_ID;
 		}
-		if (PatternsPackage.eINSTANCE.getInclusionLink().isSuperTypeOf(domainElement.eClass())) {
+		if (PatternsPackage.eINSTANCE.getInclusionLink().isSuperTypeOf(
+				domainElement.eClass())) {
 			return InclusionLinkEditPart.VISUAL_ID;
 		}
-		if (PatternsPackage.eINSTANCE.getMaybeLink().isSuperTypeOf(domainElement.eClass())) {
+		if (PatternsPackage.eINSTANCE.getMaybeLink().isSuperTypeOf(
+				domainElement.eClass())) {
 			return MaybeLinkEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -504,5 +533,123 @@ public class StorydiagramsVisualIDRegistry {
 	private static boolean isDiagram(Activity element) {
 		return true;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView,
+			EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
+		}
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
+		case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
+		case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
+		case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
+		case CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+		case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
+		case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
+		case MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
+		case MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
+		case MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case ActivityEditPart.VISUAL_ID:
+			return false;
+		case ActivityCallNodeEditPart.VISUAL_ID:
+		case StatementNodeEditPart.VISUAL_ID:
+		case InitialNodeEditPart.VISUAL_ID:
+		case JunctionNodeEditPart.VISUAL_ID:
+		case FlowFinalNodeEditPart.VISUAL_ID:
+		case ActivityFinalNodeEditPart.VISUAL_ID:
+		case AttributeAssignmentEditPart.VISUAL_ID:
+		case ConstraintEditPart.VISUAL_ID:
+		case Constraint2EditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public int getVisualID(View view) {
+			return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry
+					.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public String getModelID(View view) {
+			return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry
+					.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry
+					.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean checkNodeVisualID(View containerView,
+				EObject domainElement, int candidate) {
+			return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry
+					.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isCompartmentVisualID(int visualID) {
+			return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry
+					.isCompartmentVisualID(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return org.storydriven.storydiagrams.diagram.part.StorydiagramsVisualIDRegistry
+					.isSemanticLeafVisualID(visualID);
+		}
+	};
 
 }

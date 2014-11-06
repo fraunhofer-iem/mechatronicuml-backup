@@ -8,7 +8,8 @@ import org.storydriven.storydiagrams.diagram.providers.StorydiagramsElementTypes
 /**
  * @generated
  */
-public class InclusionLinkItemSemanticEditPolicy extends StorydiagramsBaseItemSemanticEditPolicy {
+public class InclusionLinkItemSemanticEditPolicy extends
+		StorydiagramsBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

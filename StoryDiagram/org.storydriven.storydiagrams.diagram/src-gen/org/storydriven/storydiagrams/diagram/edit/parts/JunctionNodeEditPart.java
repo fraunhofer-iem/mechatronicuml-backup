@@ -61,7 +61,8 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new JunctionNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new JunctionNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -74,7 +75,8 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child
+						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -190,107 +192,28 @@ public class JunctionNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof ActivityCallNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof InitialNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.JunctionNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof FlowFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
-			types.add(StorydiagramsElementTypes.StatementNode_2002);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
-			types.add(StorydiagramsElementTypes.InitialNode_2005);
-			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
-			types.add(StorydiagramsElementTypes.StatementNode_2002);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
-			types.add(StorydiagramsElementTypes.InitialNode_2005);
-			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
 	public class JunctionNodeFigure extends ScalablePolygonShape {
 
 		/**
 		 * @generated
 		 */
 		public JunctionNodeFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode().DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(22), getMapMode().DPtoLP(11)));
-			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode().DPtoLP(22)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(11)));
+			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode()
+					.DPtoLP(0)));
+			this.addPoint(new Point(getMapMode().DPtoLP(22), getMapMode()
+					.DPtoLP(11)));
+			this.addPoint(new Point(getMapMode().DPtoLP(11), getMapMode()
+					.DPtoLP(22)));
+			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(11)));
 			this.setFill(true);
 			this.setForegroundColor(ColorConstants.black);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(22), getMapMode().DPtoLP(22)));
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(22),
+					getMapMode().DPtoLP(22)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(22),
+					getMapMode().DPtoLP(22)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(22),
+					getMapMode().DPtoLP(22)));
 		}
 
 	}

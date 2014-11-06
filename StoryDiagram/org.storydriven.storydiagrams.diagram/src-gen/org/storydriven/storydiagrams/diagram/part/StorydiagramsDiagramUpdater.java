@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityCallNode;
@@ -74,7 +75,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsNodeDescriptor> getSemanticChildren(View view) {
+	public static List<StorydiagramsNodeDescriptor> getSemanticChildren(
+			View view) {
 		switch (StorydiagramsVisualIDRegistry.getVisualID(view)) {
 		case ActivityEditPart.VISUAL_ID:
 			return getActivity_1000SemanticChildren(view);
@@ -105,45 +107,56 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsNodeDescriptor> getActivity_1000SemanticChildren(View view) {
+	public static List<StorydiagramsNodeDescriptor> getActivity_1000SemanticChildren(
+			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
 		Activity modelElement = (Activity) view.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getOwnedActivityNodes().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOwnedActivityNodes().iterator(); it
+				.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == ActivityCallNodeEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == StatementNodeEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == ModifyingStoryNodeEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == MatchingStoryNodeEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == InitialNodeEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == JunctionNodeEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == FlowFinalNodeEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == ActivityFinalNodeEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -162,13 +175,16 @@ public class StorydiagramsDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		ModifyingStoryNode modelElement = (ModifyingStoryNode) containerView.getElement();
+		ModifyingStoryNode modelElement = (ModifyingStoryNode) containerView
+				.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
 		{
 			StoryPattern childElement = modelElement.getOwnedRule();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == StoryPatternEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 			}
 		}
 		return result;
@@ -188,15 +204,19 @@ public class StorydiagramsDiagramUpdater {
 		}
 		StoryPattern modelElement = (StoryPattern) containerView.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getVariables().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getVariables().iterator(); it
+				.hasNext();) {
 			AbstractVariable childElement = (AbstractVariable) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == CollectionVariableEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == ObjectVariableEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -217,11 +237,14 @@ public class StorydiagramsDiagramUpdater {
 		}
 		StoryPattern modelElement = (StoryPattern) containerView.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getConstraints().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getConstraints().iterator(); it
+				.hasNext();) {
 			Constraint childElement = (Constraint) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == Constraint2EditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -240,13 +263,17 @@ public class StorydiagramsDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		CollectionVariable modelElement = (CollectionVariable) containerView.getElement();
+		CollectionVariable modelElement = (CollectionVariable) containerView
+				.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getConstraints().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getConstraints().iterator(); it
+				.hasNext();) {
 			Constraint childElement = (Constraint) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == ConstraintEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -265,13 +292,17 @@ public class StorydiagramsDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		CollectionVariable modelElement = (CollectionVariable) containerView.getElement();
+		CollectionVariable modelElement = (CollectionVariable) containerView
+				.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getAttributeAssignments().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getAttributeAssignments().iterator(); it
+				.hasNext();) {
 			AttributeAssignment childElement = (AttributeAssignment) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == AttributeAssignmentEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -290,13 +321,17 @@ public class StorydiagramsDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		ObjectVariable modelElement = (ObjectVariable) containerView.getElement();
+		ObjectVariable modelElement = (ObjectVariable) containerView
+				.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getConstraints().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getConstraints().iterator(); it
+				.hasNext();) {
 			Constraint childElement = (Constraint) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == ConstraintEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -315,13 +350,17 @@ public class StorydiagramsDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		ObjectVariable modelElement = (ObjectVariable) containerView.getElement();
+		ObjectVariable modelElement = (ObjectVariable) containerView
+				.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getAttributeAssignments().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getAttributeAssignments().iterator(); it
+				.hasNext();) {
 			AttributeAssignment childElement = (AttributeAssignment) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == AttributeAssignmentEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -340,13 +379,16 @@ public class StorydiagramsDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		MatchingStoryNode modelElement = (MatchingStoryNode) containerView.getElement();
+		MatchingStoryNode modelElement = (MatchingStoryNode) containerView
+				.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
 		{
 			MatchingPattern childElement = modelElement.getOwnedPattern();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == MatchingPatternEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 			}
 		}
 		return result;
@@ -364,17 +406,22 @@ public class StorydiagramsDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		MatchingPattern modelElement = (MatchingPattern) containerView.getElement();
+		MatchingPattern modelElement = (MatchingPattern) containerView
+				.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getVariables().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getVariables().iterator(); it
+				.hasNext();) {
 			AbstractVariable childElement = (AbstractVariable) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == CollectionVariableEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 			if (visualID == ObjectVariableEditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -393,13 +440,17 @@ public class StorydiagramsDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		MatchingPattern modelElement = (MatchingPattern) containerView.getElement();
+		MatchingPattern modelElement = (MatchingPattern) containerView
+				.getElement();
 		LinkedList<StorydiagramsNodeDescriptor> result = new LinkedList<StorydiagramsNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getConstraints().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getConstraints().iterator(); it
+				.hasNext();) {
 			Constraint childElement = (Constraint) it.next();
-			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view, childElement);
+			int visualID = StorydiagramsVisualIDRegistry.getNodeVisualID(view,
+					childElement);
 			if (visualID == Constraint2EditPart.VISUAL_ID) {
-				result.add(new StorydiagramsNodeDescriptor(childElement, visualID));
+				result.add(new StorydiagramsNodeDescriptor(childElement,
+						visualID));
 				continue;
 			}
 		}
@@ -552,7 +603,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivity_1000ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivity_1000ContainedLinks(
+			View view) {
 		Activity modelElement = (Activity) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -562,63 +614,72 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_2001ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_2001ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStatementNode_2002ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getStatementNode_2002ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_2003ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_2003ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_2004ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_2004ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getInitialNode_2005ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getInitialNode_2005ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getJunctionNode_2006ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getJunctionNode_2006ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getFlowFinalNode_2007ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getFlowFinalNode_2007ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityFinalNode_2008ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityFinalNode_2008ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStoryPattern_3001ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getStoryPattern_3001ContainedLinks(
+			View view) {
 		StoryPattern modelElement = (StoryPattern) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_LinkVariable_4002(modelElement));
@@ -630,42 +691,48 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getCollectionVariable_3002ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getCollectionVariable_3002ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getAttributeAssignment_3003ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getAttributeAssignment_3003ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getConstraint_3004ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getConstraint_3004ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getObjectVariable_3005ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getObjectVariable_3005ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getConstraint_3006ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getConstraint_3006ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3007ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3007ContainedLinks(
+			View view) {
 		MatchingPattern modelElement = (MatchingPattern) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_LinkVariable_4002(modelElement));
@@ -677,222 +744,262 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityEdge_4001ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityEdge_4001ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getLinkVariable_4002ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getLinkVariable_4002ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getInclusionLink_4003ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getInclusionLink_4003ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMaybeLink_4004ContainedLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMaybeLink_4004ContainedLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_2001IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_2001IncomingLinks(
+			View view) {
 		ActivityCallNode modelElement = (ActivityCallNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStatementNode_2002IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getStatementNode_2002IncomingLinks(
+			View view) {
 		StatementNode modelElement = (StatementNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_2003IncomingLinks(View view) {
-		ModifyingStoryNode modelElement = (ModifyingStoryNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_2003IncomingLinks(
+			View view) {
+		ModifyingStoryNode modelElement = (ModifyingStoryNode) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_2004IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_2004IncomingLinks(
+			View view) {
 		MatchingStoryNode modelElement = (MatchingStoryNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getInitialNode_2005IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getInitialNode_2005IncomingLinks(
+			View view) {
 		InitialNode modelElement = (InitialNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getJunctionNode_2006IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getJunctionNode_2006IncomingLinks(
+			View view) {
 		JunctionNode modelElement = (JunctionNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getFlowFinalNode_2007IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getFlowFinalNode_2007IncomingLinks(
+			View view) {
 		FlowFinalNode modelElement = (FlowFinalNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityFinalNode_2008IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityFinalNode_2008IncomingLinks(
+			View view) {
 		ActivityFinalNode modelElement = (ActivityFinalNode) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ActivityEdge_4001(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStoryPattern_3001IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getStoryPattern_3001IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getCollectionVariable_3002IncomingLinks(View view) {
-		CollectionVariable modelElement = (CollectionVariable) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+	public static List<StorydiagramsLinkDescriptor> getCollectionVariable_3002IncomingLinks(
+			View view) {
+		CollectionVariable modelElement = (CollectionVariable) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_LinkVariable_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_InclusionLink_4003(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_MaybeLink_4004(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_LinkVariable_4002(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_InclusionLink_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_MaybeLink_4004(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getAttributeAssignment_3003IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getAttributeAssignment_3003IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getConstraint_3004IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getConstraint_3004IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getObjectVariable_3005IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getObjectVariable_3005IncomingLinks(
+			View view) {
 		ObjectVariable modelElement = (ObjectVariable) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view
-				.eResource().getResourceSet().getResources());
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_LinkVariable_4002(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_InclusionLink_4003(modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_MaybeLink_4004(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_LinkVariable_4002(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_InclusionLink_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_MaybeLink_4004(
+				modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getConstraint_3006IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getConstraint_3006IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3007IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3007IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityEdge_4001IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityEdge_4001IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getLinkVariable_4002IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getLinkVariable_4002IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getInclusionLink_4003IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getInclusionLink_4003IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMaybeLink_4004IncomingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMaybeLink_4004IncomingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_2001OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityCallNode_2001OutgoingLinks(
+			View view) {
 		ActivityCallNode modelElement = (ActivityCallNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -902,7 +1009,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStatementNode_2002OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getStatementNode_2002OutgoingLinks(
+			View view) {
 		StatementNode modelElement = (StatementNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -912,8 +1020,10 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_2003OutgoingLinks(View view) {
-		ModifyingStoryNode modelElement = (ModifyingStoryNode) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getModifyingStoryNode_2003OutgoingLinks(
+			View view) {
+		ModifyingStoryNode modelElement = (ModifyingStoryNode) view
+				.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
 		return result;
@@ -922,7 +1032,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_2004OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMatchingStoryNode_2004OutgoingLinks(
+			View view) {
 		MatchingStoryNode modelElement = (MatchingStoryNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -932,7 +1043,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getInitialNode_2005OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getInitialNode_2005OutgoingLinks(
+			View view) {
 		InitialNode modelElement = (InitialNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -942,7 +1054,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getJunctionNode_2006OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getJunctionNode_2006OutgoingLinks(
+			View view) {
 		JunctionNode modelElement = (JunctionNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -952,7 +1065,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getFlowFinalNode_2007OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getFlowFinalNode_2007OutgoingLinks(
+			View view) {
 		FlowFinalNode modelElement = (FlowFinalNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -962,7 +1076,8 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityFinalNode_2008OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityFinalNode_2008OutgoingLinks(
+			View view) {
 		ActivityFinalNode modelElement = (ActivityFinalNode) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -972,15 +1087,18 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getStoryPattern_3001OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getStoryPattern_3001OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getCollectionVariable_3002OutgoingLinks(View view) {
-		CollectionVariable modelElement = (CollectionVariable) view.getElement();
+	public static List<StorydiagramsLinkDescriptor> getCollectionVariable_3002OutgoingLinks(
+			View view) {
+		CollectionVariable modelElement = (CollectionVariable) view
+				.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_LinkVariable_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_InclusionLink_4003(modelElement));
@@ -991,21 +1109,24 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getAttributeAssignment_3003OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getAttributeAssignment_3003OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getConstraint_3004OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getConstraint_3004OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getObjectVariable_3005OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getObjectVariable_3005OutgoingLinks(
+			View view) {
 		ObjectVariable modelElement = (ObjectVariable) view.getElement();
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_LinkVariable_4002(modelElement));
@@ -1017,42 +1138,48 @@ public class StorydiagramsDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getConstraint_3006OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getConstraint_3006OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3007OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMatchingPattern_3007OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getActivityEdge_4001OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getActivityEdge_4001OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getLinkVariable_4002OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getLinkVariable_4002OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getInclusionLink_4003OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getInclusionLink_4003OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<StorydiagramsLinkDescriptor> getMaybeLink_4004OutgoingLinks(View view) {
+	public static List<StorydiagramsLinkDescriptor> getMaybeLink_4004OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 
@@ -1062,18 +1189,21 @@ public class StorydiagramsDiagramUpdater {
 	private static Collection<StorydiagramsLinkDescriptor> getContainedTypeModelFacetLinks_ActivityEdge_4001(
 			Activity container) {
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		for (Iterator<?> links = container.getOwnedActivityEdges().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getOwnedActivityEdges().iterator(); links
+				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ActivityEdge) {
 				continue;
 			}
 			ActivityEdge link = (ActivityEdge) linkObject;
-			if (ActivityEdgeEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (ActivityEdgeEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			ActivityNode dst = link.getTarget();
 			ActivityNode src = link.getSource();
-			result.add(new StorydiagramsLinkDescriptor(src, dst, link, StorydiagramsElementTypes.ActivityEdge_4001,
+			result.add(new StorydiagramsLinkDescriptor(src, dst, link,
+					StorydiagramsElementTypes.ActivityEdge_4001,
 					ActivityEdgeEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1085,18 +1215,21 @@ public class StorydiagramsDiagramUpdater {
 	private static Collection<StorydiagramsLinkDescriptor> getContainedTypeModelFacetLinks_LinkVariable_4002(
 			StoryPattern container) {
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		for (Iterator<?> links = container.getLinkVariables().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLinkVariables().iterator(); links
+				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof LinkVariable) {
 				continue;
 			}
 			LinkVariable link = (LinkVariable) linkObject;
-			if (LinkVariableEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (LinkVariableEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			AbstractVariable dst = link.getTarget();
 			ObjectVariable src = link.getSource();
-			result.add(new StorydiagramsLinkDescriptor(src, dst, link, StorydiagramsElementTypes.LinkVariable_4002,
+			result.add(new StorydiagramsLinkDescriptor(src, dst, link,
+					StorydiagramsElementTypes.LinkVariable_4002,
 					LinkVariableEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1108,18 +1241,21 @@ public class StorydiagramsDiagramUpdater {
 	private static Collection<StorydiagramsLinkDescriptor> getContainedTypeModelFacetLinks_InclusionLink_4003(
 			StoryPattern container) {
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		for (Iterator<?> links = container.getLinkVariables().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLinkVariables().iterator(); links
+				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InclusionLink) {
 				continue;
 			}
 			InclusionLink link = (InclusionLink) linkObject;
-			if (InclusionLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (InclusionLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			AbstractVariable dst = link.getTarget();
 			ObjectVariable src = link.getSource();
-			result.add(new StorydiagramsLinkDescriptor(src, dst, link, StorydiagramsElementTypes.InclusionLink_4003,
+			result.add(new StorydiagramsLinkDescriptor(src, dst, link,
+					StorydiagramsElementTypes.InclusionLink_4003,
 					InclusionLinkEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1131,18 +1267,21 @@ public class StorydiagramsDiagramUpdater {
 	private static Collection<StorydiagramsLinkDescriptor> getContainedTypeModelFacetLinks_MaybeLink_4004(
 			StoryPattern container) {
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		for (Iterator<?> links = container.getLinkVariables().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLinkVariables().iterator(); links
+				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof MaybeLink) {
 				continue;
 			}
 			MaybeLink link = (MaybeLink) linkObject;
-			if (MaybeLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (MaybeLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			AbstractVariable dst = link.getTarget();
 			ObjectVariable src = link.getSource();
-			result.add(new StorydiagramsLinkDescriptor(src, dst, link, StorydiagramsElementTypes.MaybeLink_4004,
+			result.add(new StorydiagramsLinkDescriptor(src, dst, link,
+					StorydiagramsElementTypes.MaybeLink_4004,
 					MaybeLinkEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1152,20 +1291,25 @@ public class StorydiagramsDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<StorydiagramsLinkDescriptor> getIncomingTypeModelFacetLinks_ActivityEdge_4001(
-			ActivityNode target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			ActivityNode target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != ActivitiesPackage.eINSTANCE.getActivityEdge_Target()
+			if (setting.getEStructuralFeature() != ActivitiesPackage.eINSTANCE
+					.getActivityEdge_Target()
 					|| false == setting.getEObject() instanceof ActivityEdge) {
 				continue;
 			}
 			ActivityEdge link = (ActivityEdge) setting.getEObject();
-			if (ActivityEdgeEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (ActivityEdgeEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			ActivityNode src = link.getSource();
-			result.add(new StorydiagramsLinkDescriptor(src, target, link, StorydiagramsElementTypes.ActivityEdge_4001,
+			result.add(new StorydiagramsLinkDescriptor(src, target, link,
+					StorydiagramsElementTypes.ActivityEdge_4001,
 					ActivityEdgeEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1175,20 +1319,25 @@ public class StorydiagramsDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<StorydiagramsLinkDescriptor> getIncomingTypeModelFacetLinks_LinkVariable_4002(
-			AbstractVariable target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			AbstractVariable target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != PatternsPackage.eINSTANCE.getAbstractLinkVariable_Target()
+			if (setting.getEStructuralFeature() != PatternsPackage.eINSTANCE
+					.getAbstractLinkVariable_Target()
 					|| false == setting.getEObject() instanceof LinkVariable) {
 				continue;
 			}
 			LinkVariable link = (LinkVariable) setting.getEObject();
-			if (LinkVariableEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (LinkVariableEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			ObjectVariable src = link.getSource();
-			result.add(new StorydiagramsLinkDescriptor(src, target, link, StorydiagramsElementTypes.LinkVariable_4002,
+			result.add(new StorydiagramsLinkDescriptor(src, target, link,
+					StorydiagramsElementTypes.LinkVariable_4002,
 					LinkVariableEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1198,20 +1347,25 @@ public class StorydiagramsDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<StorydiagramsLinkDescriptor> getIncomingTypeModelFacetLinks_InclusionLink_4003(
-			AbstractVariable target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			AbstractVariable target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != PatternsPackage.eINSTANCE.getAbstractLinkVariable_Target()
+			if (setting.getEStructuralFeature() != PatternsPackage.eINSTANCE
+					.getAbstractLinkVariable_Target()
 					|| false == setting.getEObject() instanceof InclusionLink) {
 				continue;
 			}
 			InclusionLink link = (InclusionLink) setting.getEObject();
-			if (InclusionLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (InclusionLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			ObjectVariable src = link.getSource();
-			result.add(new StorydiagramsLinkDescriptor(src, target, link, StorydiagramsElementTypes.InclusionLink_4003,
+			result.add(new StorydiagramsLinkDescriptor(src, target, link,
+					StorydiagramsElementTypes.InclusionLink_4003,
 					InclusionLinkEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1221,20 +1375,25 @@ public class StorydiagramsDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<StorydiagramsLinkDescriptor> getIncomingTypeModelFacetLinks_MaybeLink_4004(
-			AbstractVariable target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			AbstractVariable target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != PatternsPackage.eINSTANCE.getAbstractLinkVariable_Target()
+			if (setting.getEStructuralFeature() != PatternsPackage.eINSTANCE
+					.getAbstractLinkVariable_Target()
 					|| false == setting.getEObject() instanceof MaybeLink) {
 				continue;
 			}
 			MaybeLink link = (MaybeLink) setting.getEObject();
-			if (MaybeLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (MaybeLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			ObjectVariable src = link.getSource();
-			result.add(new StorydiagramsLinkDescriptor(src, target, link, StorydiagramsElementTypes.MaybeLink_4004,
+			result.add(new StorydiagramsLinkDescriptor(src, target, link,
+					StorydiagramsElementTypes.MaybeLink_4004,
 					MaybeLinkEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1249,7 +1408,8 @@ public class StorydiagramsDiagramUpdater {
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
 			if (element instanceof Activity) {
 				container = (Activity) element;
 			}
@@ -1258,13 +1418,15 @@ public class StorydiagramsDiagramUpdater {
 			return Collections.emptyList();
 		}
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		for (Iterator<?> links = container.getOwnedActivityEdges().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getOwnedActivityEdges().iterator(); links
+				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ActivityEdge) {
 				continue;
 			}
 			ActivityEdge link = (ActivityEdge) linkObject;
-			if (ActivityEdgeEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (ActivityEdgeEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			ActivityNode dst = link.getTarget();
@@ -1272,7 +1434,8 @@ public class StorydiagramsDiagramUpdater {
 			if (src != source) {
 				continue;
 			}
-			result.add(new StorydiagramsLinkDescriptor(src, dst, link, StorydiagramsElementTypes.ActivityEdge_4001,
+			result.add(new StorydiagramsLinkDescriptor(src, dst, link,
+					StorydiagramsElementTypes.ActivityEdge_4001,
 					ActivityEdgeEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1287,7 +1450,8 @@ public class StorydiagramsDiagramUpdater {
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
 			if (element instanceof StoryPattern) {
 				container = (StoryPattern) element;
 			}
@@ -1296,13 +1460,15 @@ public class StorydiagramsDiagramUpdater {
 			return Collections.emptyList();
 		}
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		for (Iterator<?> links = container.getLinkVariables().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLinkVariables().iterator(); links
+				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof LinkVariable) {
 				continue;
 			}
 			LinkVariable link = (LinkVariable) linkObject;
-			if (LinkVariableEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (LinkVariableEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			AbstractVariable dst = link.getTarget();
@@ -1310,7 +1476,8 @@ public class StorydiagramsDiagramUpdater {
 			if (src != source) {
 				continue;
 			}
-			result.add(new StorydiagramsLinkDescriptor(src, dst, link, StorydiagramsElementTypes.LinkVariable_4002,
+			result.add(new StorydiagramsLinkDescriptor(src, dst, link,
+					StorydiagramsElementTypes.LinkVariable_4002,
 					LinkVariableEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1325,7 +1492,8 @@ public class StorydiagramsDiagramUpdater {
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
 			if (element instanceof StoryPattern) {
 				container = (StoryPattern) element;
 			}
@@ -1334,13 +1502,15 @@ public class StorydiagramsDiagramUpdater {
 			return Collections.emptyList();
 		}
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		for (Iterator<?> links = container.getLinkVariables().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLinkVariables().iterator(); links
+				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InclusionLink) {
 				continue;
 			}
 			InclusionLink link = (InclusionLink) linkObject;
-			if (InclusionLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (InclusionLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			AbstractVariable dst = link.getTarget();
@@ -1348,7 +1518,8 @@ public class StorydiagramsDiagramUpdater {
 			if (src != source) {
 				continue;
 			}
-			result.add(new StorydiagramsLinkDescriptor(src, dst, link, StorydiagramsElementTypes.InclusionLink_4003,
+			result.add(new StorydiagramsLinkDescriptor(src, dst, link,
+					StorydiagramsElementTypes.InclusionLink_4003,
 					InclusionLinkEditPart.VISUAL_ID));
 		}
 		return result;
@@ -1363,7 +1534,8 @@ public class StorydiagramsDiagramUpdater {
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
 			if (element instanceof StoryPattern) {
 				container = (StoryPattern) element;
 			}
@@ -1372,13 +1544,15 @@ public class StorydiagramsDiagramUpdater {
 			return Collections.emptyList();
 		}
 		LinkedList<StorydiagramsLinkDescriptor> result = new LinkedList<StorydiagramsLinkDescriptor>();
-		for (Iterator<?> links = container.getLinkVariables().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getLinkVariables().iterator(); links
+				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof MaybeLink) {
 				continue;
 			}
 			MaybeLink link = (MaybeLink) linkObject;
-			if (MaybeLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			if (MaybeLinkEditPart.VISUAL_ID != StorydiagramsVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
 			AbstractVariable dst = link.getTarget();
@@ -1386,10 +1560,48 @@ public class StorydiagramsDiagramUpdater {
 			if (src != source) {
 				continue;
 			}
-			result.add(new StorydiagramsLinkDescriptor(src, dst, link, StorydiagramsElementTypes.MaybeLink_4004,
+			result.add(new StorydiagramsLinkDescriptor(src, dst, link,
+					StorydiagramsElementTypes.MaybeLink_4004,
 					MaybeLinkEditPart.VISUAL_ID));
 		}
 		return result;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<StorydiagramsNodeDescriptor> getSemanticChildren(View view) {
+			return StorydiagramsDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<StorydiagramsLinkDescriptor> getContainedLinks(View view) {
+			return StorydiagramsDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<StorydiagramsLinkDescriptor> getIncomingLinks(View view) {
+			return StorydiagramsDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<StorydiagramsLinkDescriptor> getOutgoingLinks(View view) {
+			return StorydiagramsDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 }

@@ -14,7 +14,8 @@ import org.storydriven.storydiagrams.diagram.edit.policies.LinkVariableItemSeman
 /**
  * @generated
  */
-public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class LinkVariableEditPart extends ConnectionNodeEditPart implements
+		ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -33,7 +34,8 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LinkVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new LinkVariableItemSemanticEditPolicy());
 	}
 
 	/**
@@ -41,18 +43,18 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof LinkVariableSourceEndLabelEditPart) {
-			((LinkVariableSourceEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableSourceEndLabel());
+			((LinkVariableSourceEndLabelEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getLinkVariableSourceEndLabel());
 			return true;
 		}
 		if (childEditPart instanceof LinkVariableOperatorLabelEditPart) {
-			((LinkVariableOperatorLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableOperatorLabel());
+			((LinkVariableOperatorLabelEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getLinkVariableOperatorLabel());
 			return true;
 		}
 		if (childEditPart instanceof LinkVariableTargetEndLabelEditPart) {
-			((LinkVariableTargetEndLabelEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getLinkVariableTargetEndLabel());
+			((LinkVariableTargetEndLabelEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getLinkVariableTargetEndLabel());
 			return true;
 		}
 		return false;
@@ -148,16 +150,19 @@ public class LinkVariableEditPart extends ConnectionNodeEditPart implements ITre
 		private void createContents() {
 
 			fLinkVariableSourceEndLabel = new WrappingLabel();
+
 			fLinkVariableSourceEndLabel.setText("");
 
 			this.add(fLinkVariableSourceEndLabel);
 
 			fLinkVariableOperatorLabel = new WrappingLabel();
+
 			fLinkVariableOperatorLabel.setText("");
 
 			this.add(fLinkVariableOperatorLabel);
 
 			fLinkVariableTargetEndLabel = new WrappingLabel();
+
 			fLinkVariableTargetEndLabel.setText("");
 
 			this.add(fLinkVariableTargetEndLabel);

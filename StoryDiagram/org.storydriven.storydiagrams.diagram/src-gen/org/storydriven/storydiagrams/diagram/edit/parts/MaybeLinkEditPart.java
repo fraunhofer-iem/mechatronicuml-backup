@@ -15,7 +15,8 @@ import org.storydriven.storydiagrams.diagram.edit.policies.MaybeLinkItemSemantic
 /**
  * @generated
  */
-public class MaybeLinkEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class MaybeLinkEditPart extends ConnectionNodeEditPart implements
+		ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -34,7 +35,8 @@ public class MaybeLinkEditPart extends ConnectionNodeEditPart implements ITreeBr
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new MaybeLinkItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new MaybeLinkItemSemanticEditPolicy());
 	}
 
 	/**
@@ -42,7 +44,8 @@ public class MaybeLinkEditPart extends ConnectionNodeEditPart implements ITreeBr
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof MaybeLinkLabelEditPart) {
-			((MaybeLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getMaybeLinkLabel());
+			((MaybeLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape()
+					.getMaybeLinkLabel());
 			return true;
 		}
 		return false;
@@ -125,6 +128,7 @@ public class MaybeLinkEditPart extends ConnectionNodeEditPart implements ITreeBr
 		private void createContents() {
 
 			fMaybeLinkLabel = new WrappingLabel();
+
 			fMaybeLinkLabel.setText("{same?}");
 
 			this.add(fMaybeLinkLabel);

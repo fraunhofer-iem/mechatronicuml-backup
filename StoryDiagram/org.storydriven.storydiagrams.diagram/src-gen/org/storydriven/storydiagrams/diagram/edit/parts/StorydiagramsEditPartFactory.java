@@ -10,6 +10,7 @@ import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
@@ -119,34 +120,44 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 				return new MatchingPatternEditPart(view);
 
 			case ModifyingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
-				return new ModifyingStoryNodeStoryNodePatternCompartmentEditPart(view);
+				return new ModifyingStoryNodeStoryNodePatternCompartmentEditPart(
+						view);
 
 			case StoryPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-				return new StoryPatternStoryPatternContentCompartmentEditPart(view);
+				return new StoryPatternStoryPatternContentCompartmentEditPart(
+						view);
 
 			case StoryPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-				return new StoryPatternStoryPatternConstraintsCompartmentEditPart(view);
+				return new StoryPatternStoryPatternConstraintsCompartmentEditPart(
+						view);
 
 			case CollectionVariableCollectionVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				return new CollectionVariableCollectionVariableConstraintsCompartmentEditPart(view);
+				return new CollectionVariableCollectionVariableConstraintsCompartmentEditPart(
+						view);
 
 			case CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-				return new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(view);
+				return new CollectionVariableCollectionVariableAttributeAssignmentsCompartmentEditPart(
+						view);
 
 			case ObjectVariableObjectVariableConstraintsCompartmentEditPart.VISUAL_ID:
-				return new ObjectVariableObjectVariableConstraintsCompartmentEditPart(view);
+				return new ObjectVariableObjectVariableConstraintsCompartmentEditPart(
+						view);
 
 			case ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart.VISUAL_ID:
-				return new ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(view);
+				return new ObjectVariableObjectVariableAttributeAssignmentsCompartmentEditPart(
+						view);
 
 			case MatchingStoryNodeStoryNodePatternCompartmentEditPart.VISUAL_ID:
-				return new MatchingStoryNodeStoryNodePatternCompartmentEditPart(view);
+				return new MatchingStoryNodeStoryNodePatternCompartmentEditPart(
+						view);
 
 			case MatchingPatternStoryPatternContentCompartmentEditPart.VISUAL_ID:
-				return new MatchingPatternStoryPatternContentCompartmentEditPart(view);
+				return new MatchingPatternStoryPatternContentCompartmentEditPart(
+						view);
 
 			case MatchingPatternStoryPatternConstraintsCompartmentEditPart.VISUAL_ID:
-				return new MatchingPatternStoryPatternConstraintsCompartmentEditPart(view);
+				return new MatchingPatternStoryPatternConstraintsCompartmentEditPart(
+						view);
 
 			case ActivityEdgeEditPart.VISUAL_ID:
 				return new ActivityEdgeEditPart(view);
@@ -194,97 +205,9 @@ public class StorydiagramsEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
-		if (source.getFigure() instanceof WrappingLabel)
-			return new TextCellEditorLocator((WrappingLabel) source.getFigure());
-		else {
-			return new LabelCellEditorLocator((Label) source.getFigure());
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	static private class TextCellEditorLocator implements CellEditorLocator {
-
-		/**
-		 * @generated
-		 */
-		private WrappingLabel wrapLabel;
-
-		/**
-		 * @generated
-		 */
-		public TextCellEditorLocator(WrappingLabel wrapLabel) {
-			this.wrapLabel = wrapLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getWrapLabel() {
-			return wrapLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public void relocate(CellEditor celleditor) {
-			Text text = (Text) celleditor.getControl();
-			Rectangle rect = getWrapLabel().getTextBounds().getCopy();
-			getWrapLabel().translateToAbsolute(rect);
-			if (!text.getFont().isDisposed()) {
-				if (getWrapLabel().isTextWrapOn() && getWrapLabel().getText().length() > 0) {
-					rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
-				} else {
-					int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
-					rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
-				}
-			}
-			if (!rect.equals(new Rectangle(text.getBounds()))) {
-				text.setBounds(rect.x, rect.y, rect.width, rect.height);
-			}
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LabelCellEditorLocator implements CellEditorLocator {
-
-		/**
-		 * @generated
-		 */
-		private Label label;
-
-		/**
-		 * @generated
-		 */
-		public LabelCellEditorLocator(Label label) {
-			this.label = label;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getLabel() {
-			return label;
-		}
-
-		/**
-		 * @generated
-		 */
-		public void relocate(CellEditor celleditor) {
-			Text text = (Text) celleditor.getControl();
-			Rectangle rect = getLabel().getTextBounds().getCopy();
-			getLabel().translateToAbsolute(rect);
-			if (!text.getFont().isDisposed()) {
-				int avr = FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
-				rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
-			}
-			if (!rect.equals(new Rectangle(text.getBounds()))) {
-				text.setBounds(rect.x, rect.y, rect.width, rect.height);
-			}
-		}
+	public static CellEditorLocator getTextCellEditorLocator(
+			ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE
+				.getTextCellEditorLocator(source);
 	}
 }

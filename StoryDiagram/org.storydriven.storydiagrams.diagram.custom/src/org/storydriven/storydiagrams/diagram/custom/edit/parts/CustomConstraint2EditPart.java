@@ -9,10 +9,6 @@ import org.storydriven.storydiagrams.patterns.Constraint;
 public class CustomConstraint2EditPart extends Constraint2EditPart {
 	public CustomConstraint2EditPart(View view) {
 		super(view);
-		System.out.println("CustomConstraint2EditPart");
-		if (view.getElement() instanceof Constraint) {
-			System.out.println(view.getElement().eContainer());
-		}
 	}
 
 	@Override

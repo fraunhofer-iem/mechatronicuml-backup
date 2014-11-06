@@ -30,6 +30,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
@@ -78,9 +79,11 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	 */
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
+			Object view = ((ReconnectRequest) request).getConnectionEditPart()
+					.getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(StorydiagramsVisualIDRegistry.getVisualID((View) view));
+				Integer id = new Integer(
+						StorydiagramsVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -102,10 +105,12 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
+		semanticCommand = getEditHelperCommand(completedRequest,
+				semanticCommand);
 		if (completedRequest instanceof DestroyRequest) {
 			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
+			return shouldProceed(destroyRequest) ? addDeleteViewCommand(
+					semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
@@ -113,28 +118,35 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	/**
 	 * @generated
 	 */
-	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
-		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
+	protected Command addDeleteViewCommand(Command mainCommand,
+			DestroyRequest completedRequest) {
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(
+				getEditingDomain(), (View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand
+				.chain(deleteViewCommand);
 	}
 
 	/**
 	 * @generated
 	 */
-	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
+	private Command getEditHelperCommand(IEditCommandRequest request,
+			Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
 			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
 					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(StorydiagramsBaseEditHelper.EDIT_POLICY_COMMAND, command);
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
+					command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(StorydiagramsBaseEditHelper.CONTEXT_ELEMENT_TYPE, requestContextElementType);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
+				requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
-		request.setParameter(StorydiagramsBaseEditHelper.EDIT_POLICY_COMMAND, null);
-		request.setParameter(StorydiagramsBaseEditHelper.CONTEXT_ELEMENT_TYPE, null);
+		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
-				command = new CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
+				command = new CompositeTransactionalCommand(getEditingDomain(),
+						command.getLabel()).compose(command);
 			}
 			return new ICommandProxy(command);
 		}
@@ -145,8 +157,10 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = StorydiagramsElementTypes.getElementType(getVisualID(request));
-		return requestContextElementType != null ? requestContextElementType : myElementType;
+		IElementType requestContextElementType = StorydiagramsElementTypes
+				.getElementType(getVisualID(request));
+		return requestContextElementType != null ? requestContextElementType
+				: myElementType;
 	}
 
 	/**
@@ -245,14 +259,16 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	/**
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(
+			ReorientReferenceRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(
+			ReorientRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -277,7 +293,8 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
+		for (Iterator it = view.getDiagram().getChildren().iterator(); it
+				.hasNext();) {
 			View nextView = (View) it.next();
 			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
 				continue;
@@ -290,9 +307,11 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = StorydiagramsDiagramEditorPlugin.getInstance().getLinkConstraints();
+		LinkConstraints cached = StorydiagramsDiagramEditorPlugin.getInstance()
+				.getLinkConstraints();
 		if (cached == null) {
-			StorydiagramsDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
+			StorydiagramsDiagramEditorPlugin.getInstance().setLinkConstraints(
+					cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -312,36 +331,40 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateActivityEdge_4001(Activity container, ActivityNode source, ActivityNode target) {
+		public boolean canCreateActivityEdge_4001(Activity container,
+				ActivityNode source, ActivityNode target) {
 			return canExistActivityEdge_4001(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateLinkVariable_4002(StoryPattern container, ObjectVariable source, AbstractVariable target) {
+		public boolean canCreateLinkVariable_4002(StoryPattern container,
+				ObjectVariable source, AbstractVariable target) {
 			return canExistLinkVariable_4002(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateInclusionLink_4003(StoryPattern container, ObjectVariable source,
-				AbstractVariable target) {
+		public boolean canCreateInclusionLink_4003(StoryPattern container,
+				ObjectVariable source, AbstractVariable target) {
 			return canExistInclusionLink_4003(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateMaybeLink_4004(StoryPattern container, ObjectVariable source, AbstractVariable target) {
+		public boolean canCreateMaybeLink_4004(StoryPattern container,
+				ObjectVariable source, AbstractVariable target) {
 			return canExistMaybeLink_4004(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistActivityEdge_4001(Activity container, ActivityEdge linkInstance, ActivityNode source,
+		public boolean canExistActivityEdge_4001(Activity container,
+				ActivityEdge linkInstance, ActivityNode source,
 				ActivityNode target) {
 			return true;
 		}
@@ -349,23 +372,26 @@ public class StorydiagramsBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 		/**
 		 * @generated
 		 */
-		public boolean canExistLinkVariable_4002(StoryPattern container, LinkVariable linkInstance,
-				ObjectVariable source, AbstractVariable target) {
+		public boolean canExistLinkVariable_4002(StoryPattern container,
+				LinkVariable linkInstance, ObjectVariable source,
+				AbstractVariable target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistInclusionLink_4003(StoryPattern container, InclusionLink linkInstance,
-				ObjectVariable source, AbstractVariable target) {
+		public boolean canExistInclusionLink_4003(StoryPattern container,
+				InclusionLink linkInstance, ObjectVariable source,
+				AbstractVariable target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistMaybeLink_4004(StoryPattern container, MaybeLink linkInstance, ObjectVariable source,
+		public boolean canExistMaybeLink_4004(StoryPattern container,
+				MaybeLink linkInstance, ObjectVariable source,
 				AbstractVariable target) {
 			return true;
 		}

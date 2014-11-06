@@ -14,7 +14,8 @@ import org.storydriven.storydiagrams.diagram.edit.policies.InclusionLinkItemSema
 /**
  * @generated
  */
-public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class InclusionLinkEditPart extends ConnectionNodeEditPart implements
+		ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -33,7 +34,8 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITr
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InclusionLinkItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new InclusionLinkItemSemanticEditPolicy());
 	}
 
 	/**
@@ -41,7 +43,8 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITr
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof InclusionLinkLabelEditPart) {
-			((InclusionLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getInclusionLinkLabel());
+			((InclusionLinkLabelEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getInclusionLinkLabel());
 			return true;
 		}
 		return false;
@@ -123,6 +126,7 @@ public class InclusionLinkEditPart extends ConnectionNodeEditPart implements ITr
 		private void createContents() {
 
 			fInclusionLinkLabel = new WrappingLabel();
+
 			fInclusionLinkLabel.setText("");
 
 			this.add(fInclusionLinkLabel);

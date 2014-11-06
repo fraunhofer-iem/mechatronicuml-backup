@@ -3,8 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Localization: plugin
 Bundle-Vendor: %providerName
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.storydriven.storydiagrams.diagram;singleton:=true
-Bundle-Version: 1.0.1.qualifier
+Bundle-SymbolicName: org.storydriven.storydiagrams.diagram; singleton:=true
+Bundle-Version: 0.3.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorPlugin
@@ -41,9 +41,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.storydiagrams.editor;bundle-version="0.3.0",
  org.storydriven.core.edit;visibility:=reexport,
  org.eclipse.gmf.runtime.diagram.ui.printing,
- org.eclipse.gmf.runtime.diagram.ui.printing.render
+ org.eclipse.gmf.runtime.diagram.ui.printing.render,
+ org.eclipse.gmf.tooling.runtime;visibility:=reexport
 Export-Package: org.storydriven.storydiagrams.diagram.edit.commands,
  org.storydriven.storydiagrams.diagram.edit.parts,
  org.storydriven.storydiagrams.diagram.part,
  org.storydriven.storydiagrams.diagram.providers,
  org.storydriven.storydiagrams.diagram.sheet
+Bundle-ClassPath: .

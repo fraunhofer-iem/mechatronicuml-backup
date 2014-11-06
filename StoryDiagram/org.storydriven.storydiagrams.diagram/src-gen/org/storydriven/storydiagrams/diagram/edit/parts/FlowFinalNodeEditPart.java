@@ -63,7 +63,8 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new FlowFinalNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new FlowFinalNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -196,92 +197,6 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof ActivityCallNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof InitialNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof JunctionNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.FlowFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
-			types.add(StorydiagramsElementTypes.StatementNode_2002);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
-			types.add(StorydiagramsElementTypes.InitialNode_2005);
-			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
-			types.add(StorydiagramsElementTypes.StatementNode_2002);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
-			types.add(StorydiagramsElementTypes.InitialNode_2005);
-			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
 	public class FlowFinalNodeFigureDescriptor extends Ellipse {
 
 		/**
@@ -291,9 +206,12 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 			this.setLayoutManager(new XYLayout());
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(ColorConstants.white);
-			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23),
+					getMapMode().DPtoLP(23)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23),
+					getMapMode().DPtoLP(23)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(23),
+					getMapMode().DPtoLP(23)));
 			createContents();
 		}
 
@@ -303,15 +221,21 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			PolylineShape crossNWSE0 = new PolylineShape();
-			crossNWSE0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			crossNWSE0.addPoint(new Point(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
+
+			crossNWSE0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(0)));
+			crossNWSE0.addPoint(new Point(getMapMode().DPtoLP(23), getMapMode()
+					.DPtoLP(23)));
 			crossNWSE0.setForegroundColor(ColorConstants.black);
 
 			this.add(crossNWSE0);
 
 			PolylineShape crossSWNE0 = new PolylineShape();
-			crossSWNE0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(23)));
-			crossSWNE0.addPoint(new Point(getMapMode().DPtoLP(23), getMapMode().DPtoLP(0)));
+
+			crossSWNE0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
+					.DPtoLP(23)));
+			crossSWNE0.addPoint(new Point(getMapMode().DPtoLP(23), getMapMode()
+					.DPtoLP(0)));
 			crossSWNE0.setForegroundColor(ColorConstants.black);
 
 			this.add(crossSWNE0);

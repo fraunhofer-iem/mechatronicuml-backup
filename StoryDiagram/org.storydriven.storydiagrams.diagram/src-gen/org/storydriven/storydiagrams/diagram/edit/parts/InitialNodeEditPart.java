@@ -68,7 +68,8 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InitialNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new InitialNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -81,7 +82,8 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child
+						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -118,7 +120,8 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof InitialNodeLabelEditPart) {
-			((InitialNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getInitialNodeLabel());
+			((InitialNodeLabelEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getInitialNodeLabel());
 			return true;
 		}
 		return false;
@@ -263,93 +266,8 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(StorydiagramsVisualIDRegistry.getType(InitialNodeLabelEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof ActivityCallNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof StatementNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ModifyingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof MatchingStoryNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof org.storydriven.storydiagrams.diagram.edit.parts.InitialNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof JunctionNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof FlowFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
-			types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
-			types.add(StorydiagramsElementTypes.StatementNode_2002);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
-			types.add(StorydiagramsElementTypes.InitialNode_2005);
-			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(StorydiagramsElementTypes.ActivityEdge_4001);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == StorydiagramsElementTypes.ActivityEdge_4001) {
-			types.add(StorydiagramsElementTypes.ActivityCallNode_2001);
-			types.add(StorydiagramsElementTypes.StatementNode_2002);
-			types.add(StorydiagramsElementTypes.ModifyingStoryNode_2003);
-			types.add(StorydiagramsElementTypes.MatchingStoryNode_2004);
-			types.add(StorydiagramsElementTypes.InitialNode_2005);
-			types.add(StorydiagramsElementTypes.JunctionNode_2006);
-			types.add(StorydiagramsElementTypes.FlowFinalNode_2007);
-			types.add(StorydiagramsElementTypes.ActivityFinalNode_2008);
-		}
-		return types;
+		return getChildBySemanticHint(StorydiagramsVisualIDRegistry
+				.getType(InitialNodeLabelEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -383,11 +301,15 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			Ellipse startNodeEllipse0 = new Ellipse();
+
 			startNodeEllipse0.setForegroundColor(ColorConstants.black);
 			startNodeEllipse0.setBackgroundColor(ColorConstants.black);
-			startNodeEllipse0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			startNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
-			startNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setPreferredSize(new Dimension(getMapMode()
+					.DPtoLP(15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(
+					15), getMapMode().DPtoLP(15)));
+			startNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(
+					15), getMapMode().DPtoLP(15)));
 
 			GridData constraintStartNodeEllipse0 = new GridData();
 			constraintStartNodeEllipse0.verticalAlignment = GridData.CENTER;
@@ -400,6 +322,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 			this.add(startNodeEllipse0, constraintStartNodeEllipse0);
 
 			fInitialNodeLabel = new WrappingLabel();
+
 			fInitialNodeLabel.setText("");
 
 			GridData constraintFInitialNodeLabel = new GridData();
