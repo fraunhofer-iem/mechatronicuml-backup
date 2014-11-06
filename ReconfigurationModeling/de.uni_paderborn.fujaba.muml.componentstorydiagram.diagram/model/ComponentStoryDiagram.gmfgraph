@@ -972,13 +972,9 @@
                   grabExcessVerticalSpace="true"/>
               <font
                   xsi:type="gmfgraph:BasicFont"/>
-            </children>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="FadingFunctionLabel">
-              <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  verticalAlignment="END"/>
+              <attributes
+                  name="textUnderline"
+                  value="true"/>
             </children>
           </children>
           <children
@@ -996,12 +992,19 @@
                 xsi:type="gmfgraph:FigureRef"
                 figure="//@figures.0/@descriptors.17/@actualFigure"/>
           </children>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="FadingFunctionLabel">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                verticalAlignment="END"/>
+          </children>
         </children>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.16/@actualFigure/@children.0/@children.0/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0/@children.2"/>
     </descriptors>
     <descriptors
         name="FadingComponentIconFigure">

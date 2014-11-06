@@ -459,6 +459,8 @@ public class FadingComponentPartVariableEditPart extends
 			fFigureFadingComponentVariableNameFigure
 					.setFont(FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT);
 
+			fFigureFadingComponentVariableNameFigure.setTextUnderline(true);
+
 			GridData constraintFFigureFadingComponentVariableNameFigure = new GridData();
 			constraintFFigureFadingComponentVariableNameFigure.verticalAlignment = GridData.CENTER;
 			constraintFFigureFadingComponentVariableNameFigure.horizontalAlignment = GridData.CENTER;
@@ -469,21 +471,6 @@ public class FadingComponentPartVariableEditPart extends
 			constraintFFigureFadingComponentVariableNameFigure.grabExcessVerticalSpace = true;
 			nameContainer1.add(fFigureFadingComponentVariableNameFigure,
 					constraintFFigureFadingComponentVariableNameFigure);
-
-			fFigureFadingFunctionLabel = new WrappingLabel();
-
-			fFigureFadingFunctionLabel.setText("");
-
-			GridData constraintFFigureFadingFunctionLabel = new GridData();
-			constraintFFigureFadingFunctionLabel.verticalAlignment = GridData.END;
-			constraintFFigureFadingFunctionLabel.horizontalAlignment = GridData.CENTER;
-			constraintFFigureFadingFunctionLabel.horizontalIndent = 0;
-			constraintFFigureFadingFunctionLabel.horizontalSpan = 1;
-			constraintFFigureFadingFunctionLabel.verticalSpan = 1;
-			constraintFFigureFadingFunctionLabel.grabExcessHorizontalSpace = false;
-			constraintFFigureFadingFunctionLabel.grabExcessVerticalSpace = false;
-			nameContainer1.add(fFigureFadingFunctionLabel,
-					constraintFFigureFadingFunctionLabel);
 
 			RectangleFigure iconContainer1 = new RectangleFigure();
 
@@ -666,6 +653,21 @@ public class FadingComponentPartVariableEditPart extends
 			// Process FigureRef details
 
 			iconContainer1.add(fadingComponentIconFigure2);
+
+			fFigureFadingFunctionLabel = new WrappingLabel();
+
+			fFigureFadingFunctionLabel.setText("");
+
+			GridData constraintFFigureFadingFunctionLabel = new GridData();
+			constraintFFigureFadingFunctionLabel.verticalAlignment = GridData.END;
+			constraintFFigureFadingFunctionLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigureFadingFunctionLabel.horizontalIndent = 0;
+			constraintFFigureFadingFunctionLabel.horizontalSpan = 1;
+			constraintFFigureFadingFunctionLabel.verticalSpan = 1;
+			constraintFFigureFadingFunctionLabel.grabExcessHorizontalSpace = false;
+			constraintFFigureFadingFunctionLabel.grabExcessVerticalSpace = false;
+			fadingComponentVariable0.add(fFigureFadingFunctionLabel,
+					constraintFFigureFadingFunctionLabel);
 
 		}
 
