@@ -571,6 +571,16 @@
                           href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
                       <diagramNode
                           href="ComponentStoryDiagram.gmfgraph#FadingComponentVariable"/>
+                      <children
+                          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
+                        <containmentFeature
+                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
+                      </children>
+                      <children
+                          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
+                        <containmentFeature
+                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
+                      </children>
                     </ownedChild>
                   </children>
                   <compartments

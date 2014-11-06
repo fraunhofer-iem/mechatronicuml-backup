@@ -12,11 +12,27 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.assistants;
 
+import java.util.ArrayList;
+import java.util.List;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+
 /**
  * @generated
  */
 public class ComponentStoryDiagramModelingAssistantProviderOfFadingComponentPartVariableEditPart
 		extends
 		de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramModelingAssistantProvider {
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
+		List<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
+		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
+		return types;
+	}
 
 }
