@@ -54,6 +54,7 @@ public interface PartVariable extends ComponentStoryPatternVariable {
 	 * @see #setType(ComponentPart)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getPartVariable_Type()
 	 * @model required="true"
+	 *        annotation="http://www.muml.org/emf/OCLFilter choices='let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts'"
 	 * @generated
 	 */
 	ComponentPart getType();

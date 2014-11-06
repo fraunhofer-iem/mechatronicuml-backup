@@ -1004,6 +1004,12 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 			 "choices", "if self.eContainer().oclIsKindOf(PartVariable)\r\nthen self.eContainer().oclAsType(PartVariable).type.portParts.portType\r\nelse\r\n\tself.eContainer().oclAsType(ComponentVariable).type.ports\r\nendif"
 		   });	
 		addAnnotation
+		  (getPartVariable_Type(), 
+		   source, 
+		   new String[] {
+			 "choices", "let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts"
+		   });	
+		addAnnotation
 		  (getAssemblyVariable_Type(), 
 		   source, 
 		   new String[] {
