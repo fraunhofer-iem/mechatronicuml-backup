@@ -39,141 +39,170 @@ public class ComponentPartIconEditPolicy extends NotifyingGraphicalEditPolicy {
 		ComponentPart semanticModelElement = (ComponentPart) view.getElement();
 
 		if (semanticModelElement.getComponentType() != null
-				&& semanticModelElement.getComponentType() instanceof FadingComponent) {
-			iconFigure.getChildren().clear();
+				&& semanticModelElement.getComponentType() instanceof FadingComponent)
+			setFadingComponentIcon(iconFigure);
 
-			RectangleFigure componentIconFigure1 = new RectangleFigure();
+		else
+			setNormalComponentIcon(iconFigure);
 
-				componentIconFigure1.setFill(false);
-				componentIconFigure1.setOutline(false);
-				componentIconFigure1.setPreferredSize(new Dimension(getMapMode()
-						.DPtoLP(35), getMapMode().DPtoLP(20)));
+	}
 
-				GridData constraintComponentIconFigure1 = new GridData();
-				constraintComponentIconFigure1.verticalAlignment = GridData.BEGINNING;
-				constraintComponentIconFigure1.horizontalAlignment = GridData.END;
-				constraintComponentIconFigure1.horizontalIndent = 0;
-				constraintComponentIconFigure1.horizontalSpan = 1;
-				constraintComponentIconFigure1.verticalSpan = 1;
-				constraintComponentIconFigure1.grabExcessHorizontalSpace = true;
-				constraintComponentIconFigure1.grabExcessVerticalSpace = false;
-				iconFigure.add(componentIconFigure1,
-						constraintComponentIconFigure1);
+	@Override
+	public void activate() {
+		super.activate();
+		RectangleFigure iconFigure = ((ComponentMultiFigure) ((CustomComponentPartEditPart) getHost())
+				.getPrimaryShape()).getFigureComponentIconRectangle();
 
-				componentIconFigure1.setLayoutManager(new StackLayout());
-				
-			RectangleFigure componentIconOuter2 = new RectangleFigure();
+		Shape view = (Shape) ((CustomComponentPartEditPart) getHost())
+				.getModel();
+		ComponentPart semanticModelElement = (ComponentPart) view.getElement();
 
-			componentIconOuter2.setFill(false);
-			componentIconOuter2.setOutline(false);
+		if (semanticModelElement.getComponentType() != null
+				&& semanticModelElement.getComponentType() instanceof FadingComponent)
+			setFadingComponentIcon(iconFigure);
+	}
 
-			componentIconFigure1.add(componentIconOuter2);
-			componentIconOuter2.setLayoutManager(new XYLayout());
+	@Override
+	public void deactivate() {
+		super.deactivate();
+		RectangleFigure iconFigure = ((ComponentMultiFigure) ((CustomComponentPartEditPart) getHost())
+				.getPrimaryShape()).getFigureComponentIconRectangle();
+		setNormalComponentIcon(iconFigure);
 
-			RectangleFigure b13 = new RectangleFigure();
+	}
 
-			componentIconOuter2.add(b13, new Rectangle(getMapMode().DPtoLP(4),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(30),
-					getMapMode().DPtoLP(20)));
-			
-			RectangleFigure componentIconInner12 = new RectangleFigure();
+	private void setFadingComponentIcon(RectangleFigure iconFigure) {
+		iconFigure.getChildren().clear();
 
-			componentIconInner12.setFill(false);
-			componentIconInner12.setOutline(false);
+		RectangleFigure componentIconFigure1 = new RectangleFigure();
 
-			componentIconFigure1.add(componentIconInner12);
-			componentIconInner12.setLayoutManager(new XYLayout());
+		componentIconFigure1.setFill(false);
+		componentIconFigure1.setOutline(false);
+		componentIconFigure1.setPreferredSize(new Dimension(getMapMode()
+				.DPtoLP(35), getMapMode().DPtoLP(20)));
 
-			RectangleFigure c13 = new RectangleFigure();
+		GridData constraintComponentIconFigure1 = new GridData();
+		constraintComponentIconFigure1.verticalAlignment = GridData.BEGINNING;
+		constraintComponentIconFigure1.horizontalAlignment = GridData.END;
+		constraintComponentIconFigure1.horizontalIndent = 0;
+		constraintComponentIconFigure1.horizontalSpan = 1;
+		constraintComponentIconFigure1.verticalSpan = 1;
+		constraintComponentIconFigure1.grabExcessHorizontalSpace = true;
+		constraintComponentIconFigure1.grabExcessVerticalSpace = false;
+		iconFigure.add(componentIconFigure1, constraintComponentIconFigure1);
 
-			componentIconInner12.add(c13, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(2), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+		componentIconFigure1.setLayoutManager(new StackLayout());
 
-			RectangleFigure componentIconInner22 = new RectangleFigure();
+		RectangleFigure componentIconOuter2 = new RectangleFigure();
 
-			componentIconInner22.setFill(false);
-			componentIconInner22.setOutline(false);
+		componentIconOuter2.setFill(false);
+		componentIconOuter2.setOutline(false);
 
-			componentIconFigure1.add(componentIconInner22);
-			componentIconInner22.setLayoutManager(new XYLayout());
+		componentIconFigure1.add(componentIconOuter2);
+		componentIconOuter2.setLayoutManager(new XYLayout());
 
-			RectangleFigure d13 = new RectangleFigure();
+		RectangleFigure b13 = new RectangleFigure();
 
-			componentIconInner22.add(d13, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+		componentIconOuter2.add(b13, new Rectangle(getMapMode().DPtoLP(4),
+				getMapMode().DPtoLP(0), getMapMode().DPtoLP(30), getMapMode()
+						.DPtoLP(20)));
 
-			Color green = new Color(Display.getCurrent(), 0, 150, 0);
-			RectangleFigure plusFigure = new RectangleFigure();
+		RectangleFigure componentIconInner12 = new RectangleFigure();
 
-			plusFigure.setFill(false);
-			plusFigure.setOutline(true);
-			plusFigure.setForegroundColor(green);
+		componentIconInner12.setFill(false);
+		componentIconInner12.setOutline(false);
 
-			plusFigure.setLayoutManager(new XYLayout());
-			WrappingLabel plus = new WrappingLabel();
+		componentIconFigure1.add(componentIconInner12);
+		componentIconInner12.setLayoutManager(new XYLayout());
 
-			plus.setText("+");
-			plus.setAlignment(PositionConstants.CENTER);
+		RectangleFigure c13 = new RectangleFigure();
 
-			plus.setForegroundColor(green);
+		componentIconInner12.add(c13, new Rectangle(getMapMode().DPtoLP(0),
+				getMapMode().DPtoLP(2), getMapMode().DPtoLP(12), getMapMode()
+						.DPtoLP(6)));
 
-			plus.setFont(new Font(Display.getCurrent(), Display.getDefault()
-					.getSystemFont().getFontData()[0].getName(), 7, SWT.NORMAL));
+		RectangleFigure componentIconInner22 = new RectangleFigure();
 
-			plusFigure.add(plus, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(-1), getMapMode().DPtoLP(10),
-					getMapMode().DPtoLP(10)));
+		componentIconInner22.setFill(false);
+		componentIconInner22.setOutline(false);
 
-			componentIconOuter2.add(plusFigure, new Rectangle(getMapMode()
-					.DPtoLP(13), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(9), getMapMode().DPtoLP(10)));
+		componentIconFigure1.add(componentIconInner22);
+		componentIconInner22.setLayoutManager(new XYLayout());
 
-			Color red = new Color(Display.getCurrent(), 150, 0, 0);
-			RectangleFigure minusFigure = new RectangleFigure();
+		RectangleFigure d13 = new RectangleFigure();
 
-			minusFigure.setFill(false);
-			minusFigure.setOutline(true);
-			minusFigure.setForegroundColor(red);
+		componentIconInner22.add(d13, new Rectangle(getMapMode().DPtoLP(0),
+				getMapMode().DPtoLP(10), getMapMode().DPtoLP(12), getMapMode()
+						.DPtoLP(6)));
 
-			minusFigure.setLayoutManager(new XYLayout());
+		Color green = new Color(Display.getCurrent(), 0, 150, 0);
+		RectangleFigure plusFigure = new RectangleFigure();
 
-			WrappingLabel minus = new WrappingLabel();
-			minus.setText("-");
-			minus.setAlignment(PositionConstants.TOP);
-			minus.setForegroundColor(red);
-			minus.setFont(new Font(Display.getCurrent(), Display.getDefault()
-					.getSystemFont().getFontData()[0].getName(), 7, SWT.NORMAL));
+		plusFigure.setFill(false);
+		plusFigure.setOutline(true);
+		plusFigure.setForegroundColor(green);
 
-			minusFigure.add(minus, new Rectangle(getMapMode().DPtoLP(-1),
-					getMapMode().DPtoLP(-2), getMapMode().DPtoLP(10),
-					getMapMode().DPtoLP(10)));
+		plusFigure.setLayoutManager(new XYLayout());
+		WrappingLabel plus = new WrappingLabel();
 
-			componentIconOuter2.add(minusFigure, new Rectangle(getMapMode()
-					.DPtoLP(23), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(9), getMapMode().DPtoLP(10)));
-		}
+		plus.setText("+");
+		plus.setAlignment(PositionConstants.CENTER);
 
-		else {
-			iconFigure.getChildren().clear();
-			ComponentMultiFigure componentFigure = ((ComponentPartEditPart) getHost()).new ComponentMultiFigure();
-			IFigure iconContainer = componentFigure
-					.getFigureComponentIconRectangle();
+		plus.setForegroundColor(green);
 
-			IFigure icon = (IFigure) iconContainer.getChildren().get(0);
+		plus.setFont(new Font(Display.getCurrent(), Display.getDefault()
+				.getSystemFont().getFontData()[0].getName(), 7, SWT.NORMAL));
 
-			GridData constraintComponentIconFigure3 = new GridData();
-			constraintComponentIconFigure3.verticalAlignment = GridData.BEGINNING;
-			constraintComponentIconFigure3.horizontalAlignment = GridData.END;
-			constraintComponentIconFigure3.horizontalIndent = 0;
-			constraintComponentIconFigure3.horizontalSpan = 1;
-			constraintComponentIconFigure3.verticalSpan = 1;
-			constraintComponentIconFigure3.grabExcessHorizontalSpace = true;
-			constraintComponentIconFigure3.grabExcessVerticalSpace = false;
+		plusFigure.add(plus, new Rectangle(getMapMode().DPtoLP(0), getMapMode()
+				.DPtoLP(-1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
 
-			iconFigure.add((IFigure) icon, constraintComponentIconFigure3);
-		}
+		componentIconOuter2.add(plusFigure,
+				new Rectangle(getMapMode().DPtoLP(13), getMapMode().DPtoLP(5),
+						getMapMode().DPtoLP(9), getMapMode().DPtoLP(10)));
+
+		Color red = new Color(Display.getCurrent(), 150, 0, 0);
+		RectangleFigure minusFigure = new RectangleFigure();
+
+		minusFigure.setFill(false);
+		minusFigure.setOutline(true);
+		minusFigure.setForegroundColor(red);
+
+		minusFigure.setLayoutManager(new XYLayout());
+
+		WrappingLabel minus = new WrappingLabel();
+		minus.setText("-");
+		minus.setAlignment(PositionConstants.TOP);
+		minus.setForegroundColor(red);
+		minus.setFont(new Font(Display.getCurrent(), Display.getDefault()
+				.getSystemFont().getFontData()[0].getName(), 7, SWT.NORMAL));
+
+		minusFigure.add(minus, new Rectangle(getMapMode().DPtoLP(-1),
+				getMapMode().DPtoLP(-2), getMapMode().DPtoLP(10), getMapMode()
+						.DPtoLP(10)));
+
+		componentIconOuter2.add(minusFigure,
+				new Rectangle(getMapMode().DPtoLP(23), getMapMode().DPtoLP(5),
+						getMapMode().DPtoLP(9), getMapMode().DPtoLP(10)));
+	}
+
+	private void setNormalComponentIcon(RectangleFigure iconFigure) {
+		iconFigure.getChildren().clear();
+		ComponentMultiFigure componentFigure = ((ComponentPartEditPart) getHost()).new ComponentMultiFigure();
+		IFigure iconContainer = componentFigure
+				.getFigureComponentIconRectangle();
+
+		IFigure icon = (IFigure) iconContainer.getChildren().get(0);
+
+		GridData constraintComponentIconFigure3 = new GridData();
+		constraintComponentIconFigure3.verticalAlignment = GridData.BEGINNING;
+		constraintComponentIconFigure3.horizontalAlignment = GridData.END;
+		constraintComponentIconFigure3.horizontalIndent = 0;
+		constraintComponentIconFigure3.horizontalSpan = 1;
+		constraintComponentIconFigure3.verticalSpan = 1;
+		constraintComponentIconFigure3.grabExcessHorizontalSpace = true;
+		constraintComponentIconFigure3.grabExcessVerticalSpace = false;
+
+		iconFigure.add((IFigure) icon, constraintComponentIconFigure3);
 	}
 
 	protected IMapMode getMapMode() {
