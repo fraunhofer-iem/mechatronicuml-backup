@@ -7271,22 +7271,27 @@
               <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_09e6E10eEeS2BIKtSTOWXg" name="sd" bindingOperator="DESTROY" type="_Jy-s4O5_EeOKI4bZ_bxwuQ">
                 <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_8mtugF3dEeS_y5G1EuXW5Q" name="" bindingOperator="DESTROY" connectors="_ncmrwF3eEeS_y5G1EuXW5Q" type="_yNxpEO5xEeOKI4bZ_bxwuQ"/>
                 <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_B69PUF3eEeS_y5G1EuXW5Q" name="" bindingOperator="DESTROY" connectors="_iDTr0F3eEeS_y5G1EuXW5Q" type="_0SyNwO5xEeOKI4bZ_bxwuQ"/>
-                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_MxbpoF3eEeS_y5G1EuXW5Q" name="" bindingOperator="DESTROY" type="_15SRgO5xEeOKI4bZ_bxwuQ"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_MxbpoF3eEeS_y5G1EuXW5Q" name="" bindingOperator="DESTROY" connectors="_mna5UGW3EeS0Pukr93HjHA" type="_15SRgO5xEeOKI4bZ_bxwuQ"/>
               </partVariables>
               <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_09e6FF0eEeS2BIKtSTOWXg" name="cd" bindingOperator="CREATE" type="_PDoHIO5_EeOKI4bZ_bxwuQ">
                 <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_XV3uMF3dEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectors="_lI3ukF3eEeS_y5G1EuXW5Q" type="_Li-WwO5yEeOKI4bZ_bxwuQ"/>
                 <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_jEIsIF3dEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectors="_V-ICsF3eEeS_y5G1EuXW5Q" type="_M4q-YO5yEeOKI4bZ_bxwuQ"/>
                 <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_rK6mAF3dEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectors="_bE_O0F3eEeS_y5G1EuXW5Q" type="_OIQ-AO5yEeOKI4bZ_bxwuQ"/>
                 <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_wilOQF3dEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectors="_drKm4F3eEeS_y5G1EuXW5Q" type="_QC2bYO5yEeOKI4bZ_bxwuQ"/>
-                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_RitnUF3eEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" type="_RMMpEO5yEeOKI4bZ_bxwuQ"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_RitnUF3eEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectors="_wW7rkGW3EeS0Pukr93HjHA" type="_RMMpEO5yEeOKI4bZ_bxwuQ"/>
               </partVariables>
-              <partVariables xsi:type="componentstorypattern:FadingComponentPartVariable" xmi:id="_765_MF0eEeS2BIKtSTOWXg" name="f" type="_U06JQO5_EeOKI4bZ_bxwuQ" appliedFadingFunction="_saL3YO8BEeOkfud6pZP9gQ"/>
+              <partVariables xsi:type="componentstorypattern:FadingComponentPartVariable" xmi:id="_5QJH8GW3EeS0Pukr93HjHA" name="f" type="_U06JQO5_EeOKI4bZ_bxwuQ" appliedFadingFunction="_saL3YO8BEeOkfud6pZP9gQ">
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="__NTC4GW3EeS0Pukr93HjHA" name="" bindingOperator="CREATE" connectors="_wW7rkGW3EeS0Pukr93HjHA" type="_URajAO5xEeOKI4bZ_bxwuQ"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_EJTC0GW4EeS0Pukr93HjHA" name="" bindingOperator="DESTROY" connectors="_mna5UGW3EeS0Pukr93HjHA" type="_SQudoO5xEeOKI4bZ_bxwuQ"/>
+              </partVariables>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_V-ICsF3eEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectorEndpoints="_FRBBoF3dEeS_y5G1EuXW5Q _jEIsIF3dEeS_y5G1EuXW5Q" type="_SE1Y4O6AEeOKI4bZ_bxwuQ"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_bE_O0F3eEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectorEndpoints="_JpTQgF3dEeS_y5G1EuXW5Q _rK6mAF3dEeS_y5G1EuXW5Q" type="_Y1WDYO6AEeOKI4bZ_bxwuQ"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_drKm4F3eEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectorEndpoints="_NoS1oF3dEeS_y5G1EuXW5Q _wilOQF3dEeS_y5G1EuXW5Q" type="_Ziv78O6AEeOKI4bZ_bxwuQ"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_iDTr0F3eEeS_y5G1EuXW5Q" name="" bindingOperator="DESTROY" connectorEndpoints="_FRBBoF3dEeS_y5G1EuXW5Q _B69PUF3eEeS_y5G1EuXW5Q" type="_QHrvsO6AEeOKI4bZ_bxwuQ"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_lI3ukF3eEeS_y5G1EuXW5Q" name="" bindingOperator="CREATE" connectorEndpoints="_Bs8d8F3dEeS_y5G1EuXW5Q _XV3uMF3dEeS_y5G1EuXW5Q" type="_yFoRUO5_EeOKI4bZ_bxwuQ"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_ncmrwF3eEeS_y5G1EuXW5Q" name="" bindingOperator="DESTROY" connectorEndpoints="_Bs8d8F3dEeS_y5G1EuXW5Q _8mtugF3dEeS_y5G1EuXW5Q" type="_LRomwO6AEeOKI4bZ_bxwuQ"/>
+              <connectorVariables xsi:type="componentstorypattern:AssemblyVariable" xmi:id="_mna5UGW3EeS0Pukr93HjHA" name="" bindingOperator="DESTROY" connectorEndpoints="_MxbpoF3eEeS_y5G1EuXW5Q _EJTC0GW4EeS0Pukr93HjHA" type="_w3kGQO6AEeOKI4bZ_bxwuQ"/>
+              <connectorVariables xsi:type="componentstorypattern:AssemblyVariable" xmi:id="_wW7rkGW3EeS0Pukr93HjHA" name="" bindingOperator="CREATE" connectorEndpoints="_RitnUF3eEeS_y5G1EuXW5Q __NTC4GW3EeS0Pukr93HjHA" type="_x0CVkO6AEeOKI4bZ_bxwuQ"/>
             </thisVariable>
           </componentStoryPattern>
         </ownedActivityNode>

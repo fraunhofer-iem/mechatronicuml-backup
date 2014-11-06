@@ -147,14 +147,43 @@
                     <element xmi:type="componentstorypattern:ComponentPartVariable" href="../RailCab.fujaba#_09e6FF0eEeS2BIKtSTOWXg"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_09oEEF0eEeS2BIKtSTOWXg" x="170" y="203" width="249" height="325"/>
                   </children>
-                  <children xmi:type="notation:Shape" xmi:id="_765_MV0eEeS2BIKtSTOWXg" type="3024" fontName="Segoe UI" lineColor="0">
-                    <children xmi:type="notation:DecorationNode" xmi:id="_765_M10eEeS2BIKtSTOWXg" type="5054"/>
-                    <children xmi:type="notation:DecorationNode" xmi:id="_765_NF0eEeS2BIKtSTOWXg" type="5055">
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_765_NV0eEeS2BIKtSTOWXg" y="5"/>
+                  <children xmi:type="notation:Shape" xmi:id="_5QJH8WW3EeS0Pukr93HjHA" type="3024" fontName="Segoe UI" lineColor="0">
+                    <children xmi:type="notation:DecorationNode" xmi:id="_5QJH82W3EeS0Pukr93HjHA" type="5054"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_5QJH9GW3EeS0Pukr93HjHA" type="5055">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_5QJH9WW3EeS0Pukr93HjHA" y="5"/>
                     </children>
-                    <styles xmi:type="notation:LineTypeStyle" xmi:id="_77DwMF0eEeS2BIKtSTOWXg"/>
-                    <element xmi:type="componentstorypattern:FadingComponentPartVariable" href="../RailCab.fujaba#_765_MF0eEeS2BIKtSTOWXg"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_765_Ml0eEeS2BIKtSTOWXg" x="570" y="163" height="97"/>
+                    <children xmi:type="notation:DecorationNode" xmi:id="_5QJH9mW3EeS0Pukr93HjHA" type="5065"/>
+                    <children xmi:type="notation:Shape" xmi:id="__NTC4WW3EeS0Pukr93HjHA" type="3018" fontColor="49152" fontName="Segoe UI" lineColor="49152">
+                      <children xmi:type="notation:DecorationNode" xmi:id="__NTC42W3EeS0Pukr93HjHA" type="5023">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="__NTC5GW3EeS0Pukr93HjHA" x="-30" y="37"/>
+                      </children>
+                      <children xmi:type="notation:DecorationNode" xmi:id="__NTC5WW3EeS0Pukr93HjHA" type="5024">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="__NTC5mW3EeS0Pukr93HjHA" y="5"/>
+                      </children>
+                      <children xmi:type="notation:DecorationNode" xmi:id="__NTC52W3EeS0Pukr93HjHA" type="5057">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="__NTC6GW3EeS0Pukr93HjHA" x="-54" y="1"/>
+                      </children>
+                      <styles xmi:type="notation:LineTypeStyle" xmi:id="__NTC6WW3EeS0Pukr93HjHA"/>
+                      <element xmi:type="componentstorypattern:SinglePortVariable" href="../RailCab.fujaba#__NTC4GW3EeS0Pukr93HjHA"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__NTC4mW3EeS0Pukr93HjHA" x="-18" y="107"/>
+                    </children>
+                    <children xmi:type="notation:Shape" xmi:id="_EJTC0WW4EeS0Pukr93HjHA" type="3018" fontColor="192" fontName="Segoe UI" lineColor="192">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_EJTC02W4EeS0Pukr93HjHA" type="5023">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_EJTC1GW4EeS0Pukr93HjHA" x="-30" y="-24"/>
+                      </children>
+                      <children xmi:type="notation:DecorationNode" xmi:id="_EJTC1WW4EeS0Pukr93HjHA" type="5024">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_EJTC1mW4EeS0Pukr93HjHA" y="5"/>
+                      </children>
+                      <children xmi:type="notation:DecorationNode" xmi:id="_EJTC12W4EeS0Pukr93HjHA" type="5057">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_EJTC2GW4EeS0Pukr93HjHA" x="-66" y="24"/>
+                      </children>
+                      <styles xmi:type="notation:LineTypeStyle" xmi:id="_EJTC2WW4EeS0Pukr93HjHA"/>
+                      <element xmi:type="componentstorypattern:SinglePortVariable" href="../RailCab.fujaba#_EJTC0GW4EeS0Pukr93HjHA"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EJTC0mW4EeS0Pukr93HjHA" x="-18" y="36"/>
+                    </children>
+                    <styles xmi:type="notation:LineTypeStyle" xmi:id="_5QSR4GW3EeS0Pukr93HjHA"/>
+                    <element xmi:type="componentstorypattern:FadingComponentPartVariable" href="../RailCab.fujaba#_5QJH8GW3EeS0Pukr93HjHA"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5QJH8mW3EeS0Pukr93HjHA" x="578" y="162" height="156"/>
                   </children>
                 </children>
                 <children xmi:type="notation:Shape" xmi:id="_BtFn4F3dEeS_y5G1EuXW5Q" type="3020" fontName="Segoe UI" lineColor="0">
@@ -283,5 +312,22 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_ncmrwl3eEeS_y5G1EuXW5Q" fontName="Segoe UI"/>
     <element xmi:type="componentstorypattern:DelegationVariable" href="../RailCab.fujaba#_ncmrwF3eEeS_y5G1EuXW5Q"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ncmrw13eEeS_y5G1EuXW5Q" points="[15, -5, -165, 47]$[174, -67, -6, -15]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_mn3lQGW3EeS0Pukr93HjHA" type="4004" source="_MxlaoF3eEeS_y5G1EuXW5Q" target="_EJTC0WW4EeS0Pukr93HjHA" lineColor="192">
+    <children xmi:type="notation:DecorationNode" xmi:id="_mn3lQ2W3EeS0Pukr93HjHA" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_mn3lRGW3EeS0Pukr93HjHA" y="40"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_mn3lQWW3EeS0Pukr93HjHA" fontName="Segoe UI"/>
+    <element xmi:type="componentstorypattern:AssemblyVariable" href="../RailCab.fujaba#_mna5UGW3EeS0Pukr93HjHA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mn3lQmW3EeS0Pukr93HjHA" points="[15, 4, -133, -118]$[93, 4, -55, -118]$[93, 122, -55, 0]$[133, 122, -15, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_wXFckGW3EeS0Pukr93HjHA" type="4004" source="_Ri3YUF3eEeS_y5G1EuXW5Q" target="__NTC4WW3EeS0Pukr93HjHA" lineColor="49152">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wXFck2W3EeS0Pukr93HjHA" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wXFclGW3EeS0Pukr93HjHA" y="40"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_wXFckWW3EeS0Pukr93HjHA" fontName="Segoe UI"/>
+    <element xmi:type="componentstorypattern:AssemblyVariable" href="../RailCab.fujaba#_wW7rkGW3EeS0Pukr93HjHA"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wXFckmW3EeS0Pukr93HjHA" points="[15, 0, -129, 75]$[56, 0, -88, 75]$[56, -72, -88, 3]$[138, -72, -6, 3]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Dcg1UGW4EeS0Pukr93HjHA" id="(0.2,0.6)"/>
   </edges>
 </notation:Diagram>
