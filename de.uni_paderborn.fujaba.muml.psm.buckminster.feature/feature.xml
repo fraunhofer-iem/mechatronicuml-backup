@@ -20,6 +20,32 @@
          id="de.uni_paderborn.fujaba.muml.psm.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import plugin="org.junit" version="4.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.10.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtend.lib" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.compare" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.algorithm" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.annotation" version="0.0.0"/>
+      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext.ui"/>
+      <import plugin="org.eclipse.xtext.junit4"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.hamcrest.core"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ilp"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.ocl" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.ecore" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.codegen.ecore"/>
+      <import plugin="org.eclipse.uml2.codegen.ecore"/>
+      <import plugin="de.uni_paderborn.fujaba.tests" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.language.xtext"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.language.xtext.ui"/>
+   </requires>
+
    <plugin
          id="de.uni_paderborn.fujaba.muml.allocation.algorithm.tests"
          download-size="0"
