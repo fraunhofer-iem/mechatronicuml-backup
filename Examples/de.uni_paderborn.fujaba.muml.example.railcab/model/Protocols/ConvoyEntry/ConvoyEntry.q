@@ -8,27 +8,27 @@ A[] overflow == 0
 /*
 
 */
-peer_1.Slave_ACTIVE_IN_peer --> peer_2.Master_ACTIVE_IN_peer2
+MumlElement_peer1_0.MumlElement_Slave2_ACTIVE_IN_MumlElement_peer1 --> MumlElement_peer21_1.MumlElement_Master3_ACTIVE_IN_MumlElement_peer21
 
 /*
 
 */
-peer_1.Master_ACTIVE_IN_peer --> peer_2.Slave_ACTIVE_IN_peer2
+MumlElement_peer1_0.MumlElement_Master2_ACTIVE_IN_MumlElement_peer1 --> MumlElement_peer21_1.MumlElement_Slave3_ACTIVE_IN_MumlElement_peer21
 
 /*
 
 */
-E<> peer_1.Master_ACTIVE_IN_peer
+E<> MumlElement_peer1_0.MumlElement_Master2_ACTIVE_IN_MumlElement_peer1
 
 /*
 
 */
-E<> peer_1.Slave_ACTIVE_IN_peer
+E<> MumlElement_peer1_0.MumlElement_Slave2_ACTIVE_IN_MumlElement_peer1
 
 /*
 
 */
-E<> peer_1.Failed_ACTIVE_IN_peer
+E<> MumlElement_peer1_0.MumlElement_Failed6_ACTIVE_IN_MumlElement_peer1
 
 /*
 
