@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.uni_paderborn.fujaba.muml.cybertron.codegen.feature"
+      label="Codegeneration of PG Cybertron"
+      version="1.0.0.qualifier"
+      provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany and Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import feature="de.uni_paderborn.fujaba.muml.psm.feature" version="0.4.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.model.gen.c"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.model.gen.c.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
