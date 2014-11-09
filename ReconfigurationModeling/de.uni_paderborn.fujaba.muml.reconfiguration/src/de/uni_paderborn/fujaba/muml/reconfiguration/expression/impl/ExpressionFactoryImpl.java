@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
@@ -63,6 +64,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 		switch (eClass.getClassifierID()) {
 			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION: return createActivityCallExpression();
 			case ExpressionPackage.RECONFIGURATION_RULE_CALL_EXPRESSION: return createReconfigurationRuleCallExpression();
+			case ExpressionPackage.EVALUATE_STRUCTURAL_CONDITION_EXPRESSION: return createEvaluateStructuralConditionExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -86,6 +88,16 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	public ReconfigurationRuleCallExpression createReconfigurationRuleCallExpression() {
 		ReconfigurationRuleCallExpressionImpl reconfigurationRuleCallExpression = new ReconfigurationRuleCallExpressionImpl();
 		return reconfigurationRuleCallExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EvaluateStructuralConditionExpression createEvaluateStructuralConditionExpression() {
+		EvaluateStructuralConditionExpressionImpl evaluateStructuralConditionExpression = new EvaluateStructuralConditionExpressionImpl();
+		return evaluateStructuralConditionExpression;
 	}
 
 	/**

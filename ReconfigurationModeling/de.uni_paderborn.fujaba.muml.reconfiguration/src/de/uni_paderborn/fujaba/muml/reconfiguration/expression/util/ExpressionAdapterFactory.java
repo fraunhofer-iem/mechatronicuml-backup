@@ -16,6 +16,7 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.calls.Invocation;
 
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
 
@@ -84,6 +85,10 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 				return createReconfigurationRuleCallExpressionAdapter();
 			}
 			@Override
+			public Adapter caseEvaluateStructuralConditionExpression(EvaluateStructuralConditionExpression object) {
+				return createEvaluateStructuralConditionExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -144,6 +149,20 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReconfigurationRuleCallExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression <em>Evaluate Structural Condition Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression
+	 * @generated
+	 */
+	public Adapter createEvaluateStructuralConditionExpressionAdapter() {
 		return null;
 	}
 

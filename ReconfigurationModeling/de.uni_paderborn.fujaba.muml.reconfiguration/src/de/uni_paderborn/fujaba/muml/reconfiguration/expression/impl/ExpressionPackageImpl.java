@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
@@ -56,6 +57,13 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * @generated
 	 */
 	private EClass reconfigurationRuleCallExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass evaluateStructuralConditionExpressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -192,6 +200,33 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEvaluateStructuralConditionExpression() {
+		return evaluateStructuralConditionExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEvaluateStructuralConditionExpression_ParameterBindings() {
+		return (EReference)evaluateStructuralConditionExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEvaluateStructuralConditionExpression_StructuralCondition() {
+		return (EReference)evaluateStructuralConditionExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ExpressionFactory getExpressionFactory() {
 		return (ExpressionFactory)getEFactoryInstance();
 	}
@@ -221,6 +256,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		reconfigurationRuleCallExpressionEClass = createEClass(RECONFIGURATION_RULE_CALL_EXPRESSION);
 		createEReference(reconfigurationRuleCallExpressionEClass, RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE);
 		createEReference(reconfigurationRuleCallExpressionEClass, RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS);
+
+		evaluateStructuralConditionExpressionEClass = createEClass(EVALUATE_STRUCTURAL_CONDITION_EXPRESSION);
+		createEReference(evaluateStructuralConditionExpressionEClass, EVALUATE_STRUCTURAL_CONDITION_EXPRESSION__PARAMETER_BINDINGS);
+		createEReference(evaluateStructuralConditionExpressionEClass, EVALUATE_STRUCTURAL_CONDITION_EXPRESSION__STRUCTURAL_CONDITION);
 	}
 
 	/**
@@ -261,6 +300,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		activityCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		activityCallExpressionEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		reconfigurationRuleCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		evaluateStructuralConditionExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(activityCallExpressionEClass, ActivityCallExpression.class, "ActivityCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -269,6 +309,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		initEClass(reconfigurationRuleCallExpressionEClass, ReconfigurationRuleCallExpression.class, "ReconfigurationRuleCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationRuleCallExpression_ReconfigurationRule(), theReconfigurationPackage.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRuleCallExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(evaluateStructuralConditionExpressionEClass, EvaluateStructuralConditionExpression.class, "EvaluateStructuralConditionExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEvaluateStructuralConditionExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, EvaluateStructuralConditionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEvaluateStructuralConditionExpression_StructuralCondition(), theReconfigurationPackage.getStructuralCondition(), null, "structuralCondition", null, 1, 1, EvaluateStructuralConditionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

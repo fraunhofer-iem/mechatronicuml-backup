@@ -124,6 +124,11 @@
             ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//expression/ReconfigurationRuleCallExpression/reconfigurationRule"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//expression/ReconfigurationRuleCallExpression/parameterBindings"/>
       </genClasses>
+      <genClasses ecoreClass="MumlReconfiguration.ecore#//expression/EvaluateStructuralConditionExpression">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//expression/EvaluateStructuralConditionExpression/parameterBindings"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//expression/EvaluateStructuralConditionExpression/structuralCondition"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Structdatatype" basePackage="de.uni_paderborn.fujaba.muml.reconfiguration"
         disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#//structdatatype">

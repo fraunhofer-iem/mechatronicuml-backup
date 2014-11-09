@@ -121,6 +121,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EvaluateStructuralConditionExpressionItemProvider evaluateStructuralConditionExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEvaluateStructuralConditionExpressionAdapter() {
+		if (evaluateStructuralConditionExpressionItemProvider == null) {
+			evaluateStructuralConditionExpressionItemProvider = new EvaluateStructuralConditionExpressionItemProvider(this);
+		}
+
+		return evaluateStructuralConditionExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,6 +244,7 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	public void dispose() {
 		if (activityCallExpressionItemProvider != null) activityCallExpressionItemProvider.dispose();
 		if (reconfigurationRuleCallExpressionItemProvider != null) reconfigurationRuleCallExpressionItemProvider.dispose();
+		if (evaluateStructuralConditionExpressionItemProvider != null) evaluateStructuralConditionExpressionItemProvider.dispose();
 	}
 
 }

@@ -44,6 +44,15 @@ public interface ExpressionFactory extends EFactory {
 	ReconfigurationRuleCallExpression createReconfigurationRuleCallExpression();
 
 	/**
+	 * Returns a new object of class '<em>Evaluate Structural Condition Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Evaluate Structural Condition Expression</em>'.
+	 * @generated
+	 */
+	EvaluateStructuralConditionExpression createEvaluateStructuralConditionExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
