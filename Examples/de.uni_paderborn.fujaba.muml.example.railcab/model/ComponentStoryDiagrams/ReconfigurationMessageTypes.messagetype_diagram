@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_FA42EGjBEeSJccZJNeJaVg" type="Message Type" name="ReconfigurationMessageTypes.messagetype_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_FBCnEGjBEeSJccZJNeJaVg" type="2008" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_FBCnEmjBEeSJccZJNeJaVg" type="5017"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_FBCnE2jBEeSJccZJNeJaVg" type="7010">
+      <children xmi:type="notation:Shape" xmi:id="_KX9ocGjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KX9ocmjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KX9oc2jBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KX9odGjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KX9odWjBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_dZh2ELi6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KX9ocWjBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KX9odmjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KX9oeGjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KX9oeWjBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KX9oemjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KX9oe2jBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_e16UgLi6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KX9od2jBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KX9ofGjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KX9ofmjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KX9of2jBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KX9ogGjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KX9ogWjBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_gGi18Li6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KX9ofWjBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KX9ogmjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KX9ohGjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KX9ohWjBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KX9ohmjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KX9oh2jBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_iczisLi6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KX9og2jBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KX9oiGjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KYGyYGjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KYGyYWjBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KYGyYmjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KYGyY2jBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_jWY2ELi6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KX9oiWjBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KYGyZGjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KYGyZmjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KYGyZ2jBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KYGyaGjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KYGyaWjBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_lPyAoLi6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KYGyZWjBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KYGyamjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KYGybGjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KYGybWjBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KYGybmjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KYGyb2jBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_mToDQLi6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KYGya2jBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KYGycGjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KYGycmjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KYGyc2jBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KYGydGjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KYGydWjBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_nktQoLi6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KYGycWjBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KYGydmjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KYGyeGjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KYGyeWjBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KYGyemjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KYGye2jBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#__tl8MLi6EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KYGyd2jBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KYGyfGjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KYGyfmjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KYGyf2jBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KYGygGjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KYGygWjBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_B-C74Li7EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KYGyfWjBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_KYGygmjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_KYGyhGjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_KYGyhWjBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_KYGyhmjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_KYGyh2jBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_C9kfMLi7EeKp46K0r5yxrg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KYGyg2jBEeSJccZJNeJaVg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_LkuWgGjBEeSJccZJNeJaVg" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_LkuWgmjBEeSJccZJNeJaVg" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_LkuWg2jBEeSJccZJNeJaVg" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_LkuWhGjBEeSJccZJNeJaVg"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_LkuWhWjBEeSJccZJNeJaVg"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="../RailCab.fujaba#_LkSRoGjBEeSJccZJNeJaVg"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LkuWgWjBEeSJccZJNeJaVg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_FBCnFGjBEeSJccZJNeJaVg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_FBCnFWjBEeSJccZJNeJaVg"/>
+    </children>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../RailCab.fujaba#_TOBrYLi6EeKp46K0r5yxrg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FBCnEWjBEeSJccZJNeJaVg" width="505" height="613"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_FA42EWjBEeSJccZJNeJaVg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../RailCab.fujaba#_SuoZoLi6EeKp46K0r5yxrg"/>
+</notation:Diagram>
