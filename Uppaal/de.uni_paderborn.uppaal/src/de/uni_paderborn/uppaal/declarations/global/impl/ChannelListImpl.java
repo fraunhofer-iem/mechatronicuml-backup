@@ -4,9 +4,12 @@ package de.uni_paderborn.uppaal.declarations.global.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.uppaal.declarations.global.ChannelList;
 import de.uni_paderborn.uppaal.declarations.global.GlobalPackage;
@@ -27,7 +30,7 @@ import de.uni_paderborn.uppaal.expressions.IdentifierExpression;
  */
 public class ChannelListImpl extends ChannelPriorityItemImpl implements ChannelList {
 	/**
-	 * The cached value of the '{@link #getChannelExpression() <em>Channel Expression</em>}' reference list.
+	 * The cached value of the '{@link #getChannelExpression() <em>Channel Expression</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getChannelExpression()
@@ -62,9 +65,23 @@ public class ChannelListImpl extends ChannelPriorityItemImpl implements ChannelL
 	 */
 	public EList<IdentifierExpression> getChannelExpression() {
 		if (channelExpression == null) {
-			channelExpression = new EObjectResolvingEList<IdentifierExpression>(IdentifierExpression.class, this, GlobalPackage.CHANNEL_LIST__CHANNEL_EXPRESSION);
+			channelExpression = new EObjectContainmentEList<IdentifierExpression>(IdentifierExpression.class, this, GlobalPackage.CHANNEL_LIST__CHANNEL_EXPRESSION);
 		}
 		return channelExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case GlobalPackage.CHANNEL_LIST__CHANNEL_EXPRESSION:
+				return ((InternalEList<?>)getChannelExpression()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

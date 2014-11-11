@@ -29,16 +29,16 @@ import de.uni_paderborn.uppaal.expressions.IdentifierExpression;
  */
 public interface ChannelList extends ChannelPriorityItem {
 	/**
-	 * Returns the value of the '<em><b>Channel Expression</b></em>' reference list.
+	 * Returns the value of the '<em><b>Channel Expression</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.uppaal.expressions.IdentifierExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The variable expressions representing the synchronization channels inside the channel list.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Channel Expression</em>' reference list.
+	 * @return the value of the '<em>Channel Expression</em>' containment reference list.
 	 * @see de.uni_paderborn.uppaal.declarations.global.GlobalPackage#getChannelList_ChannelExpression()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<IdentifierExpression> getChannelExpression();

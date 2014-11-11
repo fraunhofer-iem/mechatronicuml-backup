@@ -116,7 +116,7 @@ public interface GlobalPackage extends EPackage {
 	int CHANNEL_LIST = 2;
 
 	/**
-	 * The feature id for the '<em><b>Channel Expression</b></em>' reference list.
+	 * The feature id for the '<em><b>Channel Expression</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,10 +195,10 @@ public interface GlobalPackage extends EPackage {
 	EClass getChannelList();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.uppaal.declarations.global.ChannelList#getChannelExpression <em>Channel Expression</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.uppaal.declarations.global.ChannelList#getChannelExpression <em>Channel Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Channel Expression</em>'.
+	 * @return the meta object for the containment reference list '<em>Channel Expression</em>'.
 	 * @see de.uni_paderborn.uppaal.declarations.global.ChannelList#getChannelExpression()
 	 * @see #getChannelList()
 	 * @generated
@@ -276,7 +276,7 @@ public interface GlobalPackage extends EPackage {
 		EClass CHANNEL_LIST = eINSTANCE.getChannelList();
 
 		/**
-		 * The meta object literal for the '<em><b>Channel Expression</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Channel Expression</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

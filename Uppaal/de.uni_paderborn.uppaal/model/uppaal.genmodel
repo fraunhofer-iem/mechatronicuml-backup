@@ -152,8 +152,7 @@
         </genClasses>
         <genClasses image="false" ecoreClass="uppaal.ecore#//declarations/global/ChannelPriorityItem"/>
         <genClasses ecoreClass="uppaal.ecore#//declarations/global/ChannelList">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference uppaal.ecore#//declarations/global/ChannelList/channelExpression"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uppaal.ecore#//declarations/global/ChannelList/channelExpression"/>
         </genClasses>
         <genClasses ecoreClass="uppaal.ecore#//declarations/global/DefaultChannelPriority"/>
       </nestedGenPackages>
