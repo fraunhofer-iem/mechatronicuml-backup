@@ -27,35 +27,9 @@ public class SinglePortVariableEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMultiPortVariable_GeneralTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addPositionConstraints_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addMultiPortVariable_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createMultiPortVariable_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMultiPortVariable_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-				.getSinglePortVariable_MultiPortVariable();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
 
 	}
 
@@ -143,7 +117,6 @@ public class SinglePortVariableEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general",
 							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general",
 							"property.tab.general", "property.tab.general",
