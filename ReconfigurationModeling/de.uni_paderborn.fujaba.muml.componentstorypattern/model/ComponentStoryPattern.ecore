@@ -94,7 +94,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AssemblyConnector">
       <eAnnotations source="http://www.muml.org/emf/OCLFilter">
-        <details key="choices" value="let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : OrderedSet(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;assemblyConnectors->select(aC | aC.oclAsType(component::AssemblyConnector).portParts.portType = self.portVariables.type)"/>
+        <details key="choices" value="let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : OrderedSet(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;assemblyConnectors->select(aC | aC.oclAsType(component::AssemblyConnector).portParts.portType->forAll(pT | self.portVariables.type->includes(pT)))"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
