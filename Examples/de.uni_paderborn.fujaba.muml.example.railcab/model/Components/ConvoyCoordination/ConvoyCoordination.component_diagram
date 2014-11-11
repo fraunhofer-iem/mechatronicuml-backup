@@ -190,7 +190,7 @@
   <edges xmi:type="notation:Connector" xmi:id="_S9ogWe8IEeOVLMt-YZuZhA" type="4001" source="_3BRD7O6KEeO-LsFH58kjnA" target="_3BRD8O6KEeO-LsFH58kjnA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_S9ogWu8IEeOVLMt-YZuZhA" fontName="Segoe UI"/>
     <element xmi:type="component:AssemblyConnector" href="../../RailCab.fujaba#_TeJJMO8EEeOoIPzCC8d2Xg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_S9ogW-8IEeOVLMt-YZuZhA" points="[12, -3, -97, 24]$[97, -25, -12, 2]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_S9ogW-8IEeOVLMt-YZuZhA" points="[0, 12, -109, 39]$[0, 33, -109, 60]$[168, 33, 59, 60]$[168, -27, 59, 0]$[121, -27, 12, 0]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_S9ogX-8IEeOVLMt-YZuZhA" type="4002" source="_sd_SfO6KEeO-LsFH58kjnA" target="_3BRD6O6KEeO-LsFH58kjnA" lineColor="0">
     <styles xmi:type="notation:FontStyle" xmi:id="_S9ogYO8IEeOVLMt-YZuZhA" fontName="Segoe UI"/>
