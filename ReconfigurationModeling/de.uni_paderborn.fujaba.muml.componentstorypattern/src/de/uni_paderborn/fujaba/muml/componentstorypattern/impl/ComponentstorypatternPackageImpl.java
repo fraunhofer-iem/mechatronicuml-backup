@@ -1013,7 +1013,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (getAssemblyVariable_Type(), 
 		   source, 
 		   new String[] {
-			 "choices", "let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : OrderedSet(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector)),\r\n\tportVariableTypes: OrderedSet(component::Port) = self.portVariables.type->excluding(null)->excluding(oclIsUndefined())\r\nin\r\n\tassemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(component::AssemblyConnector).portParts.portType->includes(p)))"
+			 "choices", "let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : Collection(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector)),\r\n\tportVariableTypes: Collection(component::Port) = self.portVariables.type->excluding(null)\r\nin\r\n\tassemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(component::AssemblyConnector).portParts.portType->includes(p)))"
 		   });	
 		addAnnotation
 		  (getDelegationVariable_Type(), 
