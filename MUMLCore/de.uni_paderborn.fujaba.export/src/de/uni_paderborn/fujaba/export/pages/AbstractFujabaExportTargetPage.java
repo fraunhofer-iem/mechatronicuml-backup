@@ -76,7 +76,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 
     public void restoreWidgetValues() {
         IDialogSettings settings = getDialogSettings();
-        if (settings != null) {
+        if (settings != null && buttonOverwrite != null) {
         	buttonOverwrite.setSelection(settings.getBoolean(OVERWRITE_KEY));
         }
     }
