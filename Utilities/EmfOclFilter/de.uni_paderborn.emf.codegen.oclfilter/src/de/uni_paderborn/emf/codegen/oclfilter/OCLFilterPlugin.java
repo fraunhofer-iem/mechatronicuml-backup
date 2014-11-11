@@ -147,7 +147,7 @@ public class OCLFilterPlugin extends AbstractUIPlugin {
 	}
 	
 	public static boolean containsAnnotation(EStructuralFeature feature) {
-		EAnnotation annotation = feature.getEAnnotation(OCLItemPropertyDescriptor.OCL_ANNOTATION);
+		EAnnotation annotation = feature.getEAnnotation(OCLItemPropertyDescriptor.FILTER_ANNOTATION);
 		if (annotation != null) {
 			return annotation.getDetails().containsKey(OCLItemPropertyDescriptor.CHOICES_KEY) || annotation.getDetails().containsKey(OCLItemPropertyDescriptor.FILTER_KEY);
 		}
