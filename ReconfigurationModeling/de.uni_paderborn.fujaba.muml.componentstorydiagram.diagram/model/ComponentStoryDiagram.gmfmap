@@ -209,7 +209,7 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#PortVariableTypeLabel"/>
                         <viewExpression
-                            body="':'.concat(self.type.name)"/>
+                            body="if&#xD;&#xA;&#x9;self.bindingState = storydiagrams::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.type.name&#xD;&#xA;endif"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -270,7 +270,7 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#PortVariableTypeLabel"/>
                         <viewExpression
-                            body="':'.concat(self.type.name)"/>
+                            body="if&#xD;&#xA;&#x9;self.bindingState = storydiagrams::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.type.name&#xD;&#xA;endif"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"

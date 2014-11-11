@@ -700,6 +700,7 @@ public class SinglePortVariableNameEditPart extends LabelEditPart implements
 
 			this.setFont(THIS_FONT);
 
+			this.setTextUnderline(true);
 		}
 
 		/**

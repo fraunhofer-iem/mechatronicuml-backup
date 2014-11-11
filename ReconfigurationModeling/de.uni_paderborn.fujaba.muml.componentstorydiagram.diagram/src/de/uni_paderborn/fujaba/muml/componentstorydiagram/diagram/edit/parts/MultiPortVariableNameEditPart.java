@@ -700,6 +700,7 @@ public class MultiPortVariableNameEditPart extends LabelEditPart implements
 
 			this.setFont(THIS_FONT);
 
+			this.setTextUnderline(true);
 		}
 
 		/**
