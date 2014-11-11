@@ -3,6 +3,7 @@ package de.uni_paderborn.emf.codegen.oclfilter.descriptor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -19,6 +20,7 @@ import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.options.ParsingOptions;
+import org.eclipse.ocl.types.OCLStandardLibrary;
 
 /**
  * This item property descriptor allows generating and filtering choices using an OCL annotation in the metamodel.
@@ -117,13 +119,22 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 				} catch (ParserException e) {
 					e.printStackTrace();
 				}
-				
+
 				if (result instanceof Collection) {
 					choices = (Collection<?>) result;
 				} else {
-					choices = Collections.singletonList(result);		
+					choices = new ArrayList<Object>(Collections.singletonList(result));		
 				}
-				
+
+				// Filter out oclInvalid
+				Iterator<?> it = choices.iterator();
+				while (it.hasNext()) {
+					Object choice = it.next();
+					if (choice == OCL_ECORE.getEnvironment().getOCLStandardLibrary().getInvalid()) {
+						it.remove();
+					}
+				}
+
 				try {
 					checkResult(choices);
 				} catch (RuntimeException e) {
