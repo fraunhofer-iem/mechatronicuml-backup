@@ -4263,7 +4263,13 @@
                 </expressions>
               </action>
             </transitions>
-            <states xmi:id="_aTSSomUREeS2Zodb8JPC8A" name="InitUpdates" outgoingTransitions="_ekV7UGUVEeSC9fIvMvldiA _x7QssGUVEeSC9fIvMvldiA" incomingTransitions="_ekV7UGUVEeSC9fIvMvldiA _x7QssGUVEeSC9fIvMvldiA" initial="true"/>
+            <states xmi:id="_aTSSomUREeS2Zodb8JPC8A" name="InitUpdates" outgoingTransitions="_ekV7UGUVEeSC9fIvMvldiA _x7QssGUVEeSC9fIvMvldiA" incomingTransitions="_ekV7UGUVEeSC9fIvMvldiA _x7QssGUVEeSC9fIvMvldiA" initial="true">
+              <invariants xmi:id="_gAeC4Gl6EeSXE4rpuZXbWA" clock="_lHcb8GUVEeSC9fIvMvldiA">
+                <bound xmi:id="_gvMxIGl6EeSXE4rpuZXbWA">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_iA9T8Gl6EeSXE4rpuZXbWA" value="500"/>
+                </bound>
+              </invariants>
+            </states>
             <clocks xmi:id="_lHcb8GUVEeSC9fIvMvldiA" name="c3"/>
           </embeddedStatechart>
         </embeddedRegions>
