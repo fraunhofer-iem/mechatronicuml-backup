@@ -421,13 +421,22 @@ public interface ProtocolPackage extends EPackage {
 	int COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Message Buffers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Coordination Protocol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_FEATURE_COUNT = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 1;
+	int COORDINATION_PROTOCOL_FEATURE_COUNT = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1565,6 +1574,17 @@ public interface ProtocolPackage extends EPackage {
 	EReference getCoordinationProtocol_GmfCoordinationProtocol();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfMessageBuffers <em>Gmf Message Buffers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Gmf Message Buffers</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfMessageBuffers()
+	 * @see #getCoordinationProtocol()
+	 * @generated
+	 */
+	EReference getCoordinationProtocol_GmfMessageBuffers();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.protocol.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1749,6 +1769,14 @@ public interface ProtocolPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocol_GmfCoordinationProtocol();
+
+		/**
+		 * The meta object literal for the '<em><b>Gmf Message Buffers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS = eINSTANCE.getCoordinationProtocol_GmfMessageBuffers();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl <em>Role</em>}' class.

@@ -315,7 +315,7 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COORDINATION_PROTOCOL__COORDINATION_PROTOCOL_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "-- Coordination Protocols must have unique names\n" +
+	protected static final String COORDINATION_PROTOCOL__COORDINATION_PROTOCOL_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "-- Coordination Protocols must have unique names\r\n" +
 		"CoordinationProtocol.allInstances()->isUnique(name)";
 
 	/**

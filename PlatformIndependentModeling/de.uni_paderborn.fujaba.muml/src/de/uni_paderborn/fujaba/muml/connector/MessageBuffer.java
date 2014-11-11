@@ -25,11 +25,13 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getDiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getBufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getGmfMessageTypes <em>Gmf Message Types</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getMessageBuffer()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DiscreteInteractionEndpointMustBeSet'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DiscreteInteractionEndpointMustBeSet='not self.discreteInteractionEndpoint.oclIsInvalid()'"
  * @generated
  */
 public interface MessageBuffer extends NamedElement, CommentableElement {
@@ -79,13 +81,13 @@ public interface MessageBuffer extends NamedElement, CommentableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The role that contains this message buffer.
+	 * The role that contains this message buffer. The lower bound is 0, but semantically has to be 1. This is due to the derived containment feature CoordinationProtocol.gmfMessageBuffers.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Discrete Interaction Endpoint</em>' container reference.
 	 * @see #setDiscreteInteractionEndpoint(DiscreteInteractionEndpoint)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getMessageBuffer_DiscreteInteractionEndpoint()
 	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageBuffer
-	 * @model opposite="receiverMessageBuffer" required="true" transient="false"
+	 * @model opposite="receiverMessageBuffer" transient="false"
 	 * @generated
 	 */
 	DiscreteInteractionEndpoint getDiscreteInteractionEndpoint();
@@ -129,5 +131,21 @@ public interface MessageBuffer extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	void setBufferOverflowAvoidanceStrategy(BufferOverflowAvoidanceStrategy value);
+
+	/**
+	 * Returns the value of the '<em><b>Gmf Message Types</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.msgtype.MessageType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The message types this message buffer can store.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Gmf Message Types</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getMessageBuffer_GmfMessageTypes()
+	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.messageType'"
+	 * @generated
+	 */
+	EList<MessageType> getGmfMessageTypes();
 
 } // MessageBuffer

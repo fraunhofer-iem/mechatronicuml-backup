@@ -972,13 +972,23 @@
         <details key="constraints" value="CoordinationProtocolNamesMustBeUnique"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CoordinationProtocolNamesMustBeUnique" value="-- Coordination Protocols must have unique names&#xA;CoordinationProtocol.allInstances()->isUnique(name)"/>
+        <details key="CoordinationProtocolNamesMustBeUnique" value="-- Coordination Protocols must have unique names&#xD;&#xA;CoordinationProtocol.allInstances()->isUnique(name)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="gmfCoordinationProtocol"
           eType="#//protocol/CoordinationProtocol" changeable="false" volatile="true"
           transient="true" derived="true" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the inner hexagon of a Real-Time Coordination Protocol."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="gmfMessageBuffers" upperBound="-1"
+          eType="#//connector/MessageBuffer" changeable="false" volatile="true" transient="true"
+          derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="roles->collect(receiverMessageBuffer)->asOrderedSet()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the inner hexagon of a Real-Time Coordination Protocol."/>
@@ -1940,10 +1950,11 @@
         <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the ordered list of parameters. In addition, a message&#xD;&#xA;type is contained in a message type repository."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="UniqueParameterNames" value="-- Parameter names must be unique&#xA;self.parameters->isUnique(name)"/>
+        <details key="UniqueParameterNames" value="-- Parameter names must be unique&#xD;&#xA;self.parameters->isUnique(name)"/>
+        <details key="repositoryMustBeSet" value="not self.repository.oclIsUndefined()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="UniqueParameterNames"/>
+        <details key="constraints" value="UniqueParameterNames repositoryMustBeSet"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
           eType="#//behavior/Parameter" containment="true">
@@ -1951,22 +1962,27 @@
           <details key="documentation" value="This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
-          eType="#//msgtype/MessageTypeRepository" eOpposite="#//msgtype/MessageTypeRepository/messageTypes">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//msgtype/MessageTypeRepository"
+          eOpposite="#//msgtype/MessageTypeRepository/messageTypes">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The message type repository that contains this message type."/>
+          <details key="documentation" value="The message type repository that contains this message type. The lower bound is set to 0, but it has to be 1. This is due to the containment reference MessageBuffer.gmfMessageTypes."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="AtLeastOneMessageType" value="self.messageTypes->notEmpty()"/>
+      </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A MessageTypeRepository contains a set of message types which are then used&#xD;&#xA;by discrete interaction endpoints and their behavior specifications. Message type&#xD;&#xA;repositories enable to group message types logically, but have no semantics for&#xD;&#xA;the MechatronicUML model."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="AtLeastOneMessageType"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="messageTypes" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//msgtype/MessageType" containment="true"
-          eOpposite="#//msgtype/MessageType/repository">
+          upperBound="-1" eType="#//msgtype/MessageType" containment="true" eOpposite="#//msgtype/MessageType/repository">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The message types that are contained in this message type repository."/>
+          <details key="documentation" value="The message types that are contained in this message type repository.&#xD;&#xA; The lower bound should semantically be 1, but is 0 because of the containment reference CoordinationProtocol.gmfMessageTypes"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -2265,6 +2281,12 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination protocol. Message types are always stored in FIFO order."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="DiscreteInteractionEndpointMustBeSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="DiscreteInteractionEndpointMustBeSet" value="not self.discreteInteractionEndpoint.oclIsInvalid()"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bufferSize" lowerBound="1"
           eType="#//valuetype/NaturalNumber" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2278,13 +2300,23 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="discreteInteractionEndpoint"
-          lowerBound="1" eType="#//connector/DiscreteInteractionEndpoint" eOpposite="#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer">
+          eType="#//connector/DiscreteInteractionEndpoint" eOpposite="#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The role that contains this message buffer."/>
+          <details key="documentation" value="The role that contains this message buffer. The lower bound is 0, but semantically has to be 1. This is due to the derived containment feature CoordinationProtocol.gmfMessageBuffers."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferOverflowAvoidanceStrategy"
           lowerBound="1" eType="#//connector/BufferOverflowAvoidanceStrategy" defaultValueLiteral="discard incoming message"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="gmfMessageTypes" lowerBound="1"
+          upperBound="-1" eType="#//msgtype/MessageType" volatile="true" transient="true"
+          derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The message types this message buffer can store."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.messageType"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="BufferOverflowAvoidanceStrategy">
       <eLiterals name="DISCARD_INCOMING_MESSAGE" literal="discard incoming message"/>

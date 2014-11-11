@@ -547,6 +547,15 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMessageBuffer_GmfMessageTypes() {
+		return (EReference)messageBufferEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBufferOverflowAvoidanceStrategy() {
 		return bufferOverflowAvoidanceStrategyEEnum;
 	}
@@ -622,6 +631,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		createEReference(messageBufferEClass, MESSAGE_BUFFER__MESSAGE_TYPE);
 		createEReference(messageBufferEClass, MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT);
 		createEAttribute(messageBufferEClass, MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY);
+		createEReference(messageBufferEClass, MESSAGE_BUFFER__GMF_MESSAGE_TYPES);
 
 		// Create enums
 		bufferOverflowAvoidanceStrategyEEnum = createEEnum(BUFFER_OVERFLOW_AVOIDANCE_STRATEGY);
@@ -717,8 +727,9 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEClass(messageBufferEClass, MessageBuffer.class, "MessageBuffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageBuffer_BufferSize(), theValuetypePackage.getNaturalNumber(), null, "bufferSize", null, 1, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageBuffer_MessageType(), theMsgtypePackage.getMessageType(), null, "messageType", null, 1, -1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageBuffer_DiscreteInteractionEndpoint(), this.getDiscreteInteractionEndpoint(), this.getDiscreteInteractionEndpoint_ReceiverMessageBuffer(), "discreteInteractionEndpoint", null, 1, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageBuffer_DiscreteInteractionEndpoint(), this.getDiscreteInteractionEndpoint(), this.getDiscreteInteractionEndpoint_ReceiverMessageBuffer(), "discreteInteractionEndpoint", null, 0, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageBuffer_BufferOverflowAvoidanceStrategy(), this.getBufferOverflowAvoidanceStrategy(), "bufferOverflowAvoidanceStrategy", "discard incoming message", 1, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageBuffer_GmfMessageTypes(), theMsgtypePackage.getMessageType(), null, "gmfMessageTypes", null, 1, -1, MessageBuffer.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.class, "BufferOverflowAvoidanceStrategy");
@@ -742,7 +753,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -750,25 +761,31 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																
+		   });	
 		addAnnotation
 		  (discreteInteractionEndpointEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
-		   });														
+		   });	
 		addAnnotation
 		  (discreteSingleInteractionEndpointInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "StandaloneSingleEndpointInstanceRequiresSingleEndpointType"
-		   });											
+		   });	
 		addAnnotation
 		  (discreteMultiInteractionEndpointInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "TypeIsMultiDiscreteInteractionEndpoint NumberOfsubEndpointsCorrespondsToLowerBound NumberOfsubEndpointsCorrespondsToUpperBound"
-		   });							
+		   });	
+		addAnnotation
+		  (messageBufferEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "DiscreteInteractionEndpointMustBeSet"
+		   });
 	}
 
 	/**
@@ -778,44 +795,44 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";								
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (getConnector_SelfConnector(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->size() = 1\r\n-- author: bingo, cgerking, see MUML #872"
-		   });											
+		   });	
 		addAnnotation
 		  (discreteInteractionEndpointEClass, 
 		   source, 
 		   new String[] {
 			 "ReceivingInteractionEndpointRequiresMessageBuffer", "-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
-		   });									
+		   });	
 		addAnnotation
 		  (getDiscreteInteractionEndpoint_Multi(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n"
-		   });				
+		   });	
 		addAnnotation
 		  (discreteSingleInteractionEndpointInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "StandaloneSingleEndpointInstanceRequiresSingleEndpointType", "-- For a DiscreteSingleInteractionEndpointInstance the type has to be a single DiscreteInteractionEndpoint, too.\n(not self.type.oclIsUndefined() and self.multiInteractionEndpointInstance.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (not self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\n-- adann"
-		   });							
+		   });	
 		addAnnotation
 		  (getDiscreteSingleInteractionEndpointInstance_First(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.first endif"
-		   });			
+		   });	
 		addAnnotation
 		  (getDiscreteSingleInteractionEndpointInstance_Last(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.last endif"
-		   });			
+		   });	
 		addAnnotation
 		  (discreteMultiInteractionEndpointInstanceEClass, 
 		   source, 
@@ -823,7 +840,19 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 			 "TypeIsMultiDiscreteInteractionEndpoint", "-- For a DiscreteMultiInteractionEndpointInstance the type has to be a multi DiscreteInteractionEndpoint, too.\n(not self.type.oclIsUndefined() and self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint)) implies (self.type.oclAsType(connector::DiscreteInteractionEndpoint).multi)\n-- adann",
 			 "NumberOfsubEndpointsCorrespondsToLowerBound", "-- The number of subInteractionEndpointInstances is too low with respect to the cardinality\nlet discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\nlet lowerBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in\nif (lowerBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif\n-- adann",
 			 "NumberOfsubEndpointsCorrespondsToUpperBound", "-- The number of subInteractionEndpointInstances is too high with respect to the cardinality\nlet discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\nlet upperBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in\nif (upperBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()<=upperBoundOfsubInteractionEndpointInstance else true endif\n-- adann"
-		   });								
+		   });	
+		addAnnotation
+		  (messageBufferEClass, 
+		   source, 
+		   new String[] {
+			 "DiscreteInteractionEndpointMustBeSet", "not self.discreteInteractionEndpoint.oclIsInvalid()"
+		   });	
+		addAnnotation
+		  (getMessageBuffer_GmfMessageTypes(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.messageType"
+		   });
 	}
 
 } //ConnectorPackageImpl

@@ -32,8 +32,8 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageType()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueParameterNames='-- Parameter names must be unique\nself.parameters->isUnique(name)'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueParameterNames'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueParameterNames='-- Parameter names must be unique\r\nself.parameters->isUnique(name)' repositoryMustBeSet='not self.repository.oclIsUndefined()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueParameterNames repositoryMustBeSet'"
  * @generated
  */
 public interface MessageType extends NamedElement, CommentableElement {
@@ -62,13 +62,13 @@ public interface MessageType extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The message type repository that contains this message type.
+	 * The message type repository that contains this message type. The lower bound is set to 0, but it has to be 1. This is due to the containment reference MessageBuffer.gmfMessageTypes.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Repository</em>' container reference.
 	 * @see #setRepository(MessageTypeRepository)
 	 * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageType_Repository()
 	 * @see de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository#getMessageTypes
-	 * @model opposite="messageTypes" required="true" transient="false"
+	 * @model opposite="messageTypes" transient="false"
 	 * @generated
 	 */
 	MessageTypeRepository getRepository();

@@ -8,20 +8,25 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getDiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getBufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getGmfMessageTypes <em>Gmf Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,12 +108,26 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	protected BufferOverflowAvoidanceStrategy bufferOverflowAvoidanceStrategy = BUFFER_OVERFLOW_AVOIDANCE_STRATEGY_EDEFAULT;
 
 	/**
+	 * The cached setting delegate for the '{@link #getGmfMessageTypes() <em>Gmf Message Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #getGmfMessageTypes()
 	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate GMF_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.MESSAGE_BUFFER__GMF_MESSAGE_TYPES).getSettingDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated not 
 	 */
 	protected MessageBufferImpl() {
 		super();
+		DerivedAttributeAdapter adapter = new DerivedAttributeAdapter(this, ConnectorPackage.Literals.MESSAGE_BUFFER__GMF_MESSAGE_TYPES);
+		adapter.addLocalDependency(ConnectorPackage.Literals.MESSAGE_BUFFER__MESSAGE_TYPE);
+	
+		
 	}
 
 	/**
@@ -263,6 +283,16 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<MessageType> getGmfMessageTypes() {
+		return (EList<MessageType>)GMF_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -286,6 +316,8 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 				return basicSetBufferSize(null, msgs);
 			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
 				return basicSetDiscreteInteractionEndpoint(null, msgs);
+			case ConnectorPackage.MESSAGE_BUFFER__GMF_MESSAGE_TYPES:
+				return ((InternalEList<?>)getGmfMessageTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -322,6 +354,8 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 				return getDiscreteInteractionEndpoint();
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
 				return getBufferOverflowAvoidanceStrategy();
+			case ConnectorPackage.MESSAGE_BUFFER__GMF_MESSAGE_TYPES:
+				return getGmfMessageTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -351,6 +385,10 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
 				setBufferOverflowAvoidanceStrategy((BufferOverflowAvoidanceStrategy)newValue);
 				return;
+			case ConnectorPackage.MESSAGE_BUFFER__GMF_MESSAGE_TYPES:
+				getGmfMessageTypes().clear();
+				getGmfMessageTypes().addAll((Collection<? extends MessageType>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -378,6 +416,9 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
 				setBufferOverflowAvoidanceStrategy(BUFFER_OVERFLOW_AVOIDANCE_STRATEGY_EDEFAULT);
 				return;
+			case ConnectorPackage.MESSAGE_BUFFER__GMF_MESSAGE_TYPES:
+				getGmfMessageTypes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -400,6 +441,8 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 				return getDiscreteInteractionEndpoint() != null;
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
 				return bufferOverflowAvoidanceStrategy != BUFFER_OVERFLOW_AVOIDANCE_STRATEGY_EDEFAULT;
+			case ConnectorPackage.MESSAGE_BUFFER__GMF_MESSAGE_TYPES:
+				return GMF_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

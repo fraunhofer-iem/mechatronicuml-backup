@@ -116,6 +116,7 @@ public class MsgtypeValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(messageType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(messageType, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMessageType_UniqueParameterNames(messageType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMessageType_repositoryMustBeSet(messageType, diagnostics, context);
 		return result;
 	}
 
@@ -125,7 +126,7 @@ public class MsgtypeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MESSAGE_TYPE__UNIQUE_PARAMETER_NAMES__EEXPRESSION = "-- Parameter names must be unique\n" +
+	protected static final String MESSAGE_TYPE__UNIQUE_PARAMETER_NAMES__EEXPRESSION = "-- Parameter names must be unique\r\n" +
 		"self.parameters->isUnique(name)";
 
 	/**
@@ -150,12 +151,80 @@ public class MsgtypeValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the repositoryMustBeSet constraint of '<em>Message Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MESSAGE_TYPE__REPOSITORY_MUST_BE_SET__EEXPRESSION = "not self.repository.oclIsUndefined()";
+
+	/**
+	 * Validates the repositoryMustBeSet constraint of '<em>Message Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMessageType_repositoryMustBeSet(MessageType messageType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(MsgtypePackage.Literals.MESSAGE_TYPE,
+				 messageType,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "repositoryMustBeSet",
+				 MESSAGE_TYPE__REPOSITORY_MUST_BE_SET__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateMessageTypeRepository(MessageTypeRepository messageTypeRepository, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(messageTypeRepository, diagnostics, context);
+		if (!validate_NoCircularContainment(messageTypeRepository, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(messageTypeRepository, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(messageTypeRepository, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(messageTypeRepository, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(messageTypeRepository, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(messageTypeRepository, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(messageTypeRepository, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(messageTypeRepository, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(messageTypeRepository, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMessageTypeRepository_AtLeastOneMessageType(messageTypeRepository, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AtLeastOneMessageType constraint of '<em>Message Type Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MESSAGE_TYPE_REPOSITORY__AT_LEAST_ONE_MESSAGE_TYPE__EEXPRESSION = "self.messageTypes->notEmpty()";
+
+	/**
+	 * Validates the AtLeastOneMessageType constraint of '<em>Message Type Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMessageTypeRepository_AtLeastOneMessageType(MessageTypeRepository messageTypeRepository, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(MsgtypePackage.Literals.MESSAGE_TYPE_REPOSITORY,
+				 messageTypeRepository,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AtLeastOneMessageType",
+				 MESSAGE_TYPE_REPOSITORY__AT_LEAST_ONE_MESSAGE_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

@@ -282,10 +282,10 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageType_Parameters(), theBehaviorPackage.getParameter(), null, "parameters", null, 0, -1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageType_Repository(), this.getMessageTypeRepository(), this.getMessageTypeRepository_MessageTypes(), "repository", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageType_Repository(), this.getMessageTypeRepository(), this.getMessageTypeRepository_MessageTypes(), "repository", null, 0, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageTypeRepositoryEClass, MessageTypeRepository.class, "MessageTypeRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageTypeRepository_MessageTypes(), this.getMessageType(), this.getMessageType_Repository(), "messageTypes", null, 1, -1, MessageTypeRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMessageTypeRepository_MessageTypes(), this.getMessageType(), this.getMessageType_Repository(), "messageTypes", null, 0, -1, MessageTypeRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -304,7 +304,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -312,13 +312,19 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });	
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueParameterNames"
-		   });				
+			 "constraints", "UniqueParameterNames repositoryMustBeSet"
+		   });	
+		addAnnotation
+		  (messageTypeRepositoryEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AtLeastOneMessageType"
+		   });
 	}
 
 	/**
@@ -328,13 +334,20 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueParameterNames", "-- Parameter names must be unique\nself.parameters->isUnique(name)"
-		   });					
+			 "UniqueParameterNames", "-- Parameter names must be unique\r\nself.parameters->isUnique(name)",
+			 "repositoryMustBeSet", "not self.repository.oclIsUndefined()"
+		   });	
+		addAnnotation
+		  (messageTypeRepositoryEClass, 
+		   source, 
+		   new String[] {
+			 "AtLeastOneMessageType", "self.messageTypes->notEmpty()"
+		   });
 	}
 
 } //MsgtypePackageImpl

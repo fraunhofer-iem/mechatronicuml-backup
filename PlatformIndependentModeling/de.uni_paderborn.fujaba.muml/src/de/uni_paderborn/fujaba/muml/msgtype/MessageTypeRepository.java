@@ -30,7 +30,8 @@ import org.storydriven.core.NamedElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageTypeRepository()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageType='self.messageTypes->notEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneMessageType'"
  * @generated
  */
 public interface MessageTypeRepository extends NamedElement, CommentableElement {
@@ -46,11 +47,12 @@ public interface MessageTypeRepository extends NamedElement, CommentableElement 
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The message types that are contained in this message type repository.
+	 *  The lower bound should semantically be 1, but is 0 because of the containment reference CoordinationProtocol.gmfMessageTypes
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Types</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageTypeRepository_MessageTypes()
 	 * @see de.uni_paderborn.fujaba.muml.msgtype.MessageType#getRepository
-	 * @model opposite="repository" containment="true" required="true" ordered="false"
+	 * @model opposite="repository" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<MessageType> getMessageTypes();

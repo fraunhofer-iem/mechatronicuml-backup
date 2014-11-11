@@ -272,6 +272,15 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCoordinationProtocol_GmfMessageBuffers() {
+		return (EReference)coordinationProtocolEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRole() {
 		return roleEClass;
 	}
@@ -373,6 +382,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		coordinationProtocolEClass = createEClass(COORDINATION_PROTOCOL);
 		createEReference(coordinationProtocolEClass, COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL);
+		createEReference(coordinationProtocolEClass, COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS);
 
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__COORDINATION_PROTOCOL);
@@ -441,6 +451,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		initEClass(coordinationProtocolEClass, CoordinationProtocol.class, "CoordinationProtocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationProtocol_GmfCoordinationProtocol(), this.getCoordinationProtocol(), null, "gmfCoordinationProtocol", null, 0, 1, CoordinationProtocol.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationProtocol_GmfMessageBuffers(), theConnectorPackage.getMessageBuffer(), null, "gmfMessageBuffers", null, 0, -1, CoordinationProtocol.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_CoordinationProtocol(), this.getAbstractCoordinationSpecification(), this.getAbstractCoordinationSpecification_Roles(), "coordinationProtocol", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -474,7 +485,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -482,31 +493,31 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });			
+		   });	
 		addAnnotation
 		  (abstractCoordinationSpecificationEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole"
-		   });							
+		   });	
 		addAnnotation
 		  (coordinationProtocolEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CoordinationProtocolNamesMustBeUnique"
-		   });						
+		   });	
 		addAnnotation
 		  (roleEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior"
-		   });									
+		   });	
 		addAnnotation
 		  (roleConnectorEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyRolesOfSameCoordinationProtocol"
-		   });									
+		   });
 	}
 
 	/**
@@ -516,7 +527,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (abstractCoordinationSpecificationEClass, 
 		   source, 
@@ -524,19 +535,25 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 			 "UniqueRoleNames", "-- Names of roles must be unique\nself.roles->isUnique(name)",
 			 "RoleMessageTypesMustBeCompatible", "-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n)",
 			 "SingleRoleImpliesMultiRole", "-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole"
-		   });							
+		   });	
 		addAnnotation
 		  (coordinationProtocolEClass, 
 		   source, 
 		   new String[] {
-			 "CoordinationProtocolNamesMustBeUnique", "-- Coordination Protocols must have unique names\nCoordinationProtocol.allInstances()->isUnique(name)"
-		   });		
+			 "CoordinationProtocolNamesMustBeUnique", "-- Coordination Protocols must have unique names\r\nCoordinationProtocol.allInstances()->isUnique(name)"
+		   });	
 		addAnnotation
 		  (getCoordinationProtocol_GmfCoordinationProtocol(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self"
-		   });					
+		   });	
+		addAnnotation
+		  (getCoordinationProtocol_GmfMessageBuffers(), 
+		   source, 
+		   new String[] {
+			 "derivation", "roles->collect(receiverMessageBuffer)->asOrderedSet()"
+		   });	
 		addAnnotation
 		  (roleEClass, 
 		   source, 
@@ -545,31 +562,31 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 			 "RoleRequiresMessageTypes", "-- Role requires message types to be set\nself.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))",
 			 "MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior", "-- adaptationBehavior and subroleBehavior should be set if and only if this is a multirole\r\n(self.multiRole = not self.adaptationBehavior.oclIsUndefined())\r\nand self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"
-		   });			
+		   });	
 		addAnnotation
 		  (getRole_RoleConnector(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)"
-		   });				
+		   });	
 		addAnnotation
 		  (getRole_MultiRole(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.multi"
-		   });				
+		   });	
 		addAnnotation
 		  (roleConnectorEClass, 
 		   source, 
 		   new String[] {
 			 "OnlyRolesOfSameCoordinationProtocol", "-- Role connector must not connect roles at different coordination protocols\r\nif self.coordinationProtocol.roles->oclIsUndefined() then \r\ntrue\r\nelse\r\nself.coordinationProtocol.roles = self.roles\r\nendif"
-		   });				
+		   });	
 		addAnnotation
 		  (getRoleConnector_Roles(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"
-		   });					
+		   });
 	}
 
 } //ProtocolPackageImpl

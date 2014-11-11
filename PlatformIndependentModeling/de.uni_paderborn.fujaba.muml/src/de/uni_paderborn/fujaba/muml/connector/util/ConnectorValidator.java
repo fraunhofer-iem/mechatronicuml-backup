@@ -426,7 +426,46 @@ public class ConnectorValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateMessageBuffer(MessageBuffer messageBuffer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(messageBuffer, diagnostics, context);
+		if (!validate_NoCircularContainment(messageBuffer, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(messageBuffer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(messageBuffer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(messageBuffer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(messageBuffer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(messageBuffer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(messageBuffer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(messageBuffer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(messageBuffer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMessageBuffer_DiscreteInteractionEndpointMustBeSet(messageBuffer, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the DiscreteInteractionEndpointMustBeSet constraint of '<em>Message Buffer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT_MUST_BE_SET__EEXPRESSION = "not self.discreteInteractionEndpoint.oclIsInvalid()";
+
+	/**
+	 * Validates the DiscreteInteractionEndpointMustBeSet constraint of '<em>Message Buffer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMessageBuffer_DiscreteInteractionEndpointMustBeSet(MessageBuffer messageBuffer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ConnectorPackage.Literals.MESSAGE_BUFFER,
+				 messageBuffer,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscreteInteractionEndpointMustBeSet",
+				 MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT_MUST_BE_SET__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

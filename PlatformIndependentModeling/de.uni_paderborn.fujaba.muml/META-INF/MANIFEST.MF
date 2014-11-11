@@ -10,7 +10,7 @@ Bundle-Vendor: Software Engineering Group,
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: de.uni_paderborn.fujaba.common;visibility:=reexport,
- de.uni_paderborn.fujaba.modelinstance,
+ de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.storydriven.core;visibility:=reexport

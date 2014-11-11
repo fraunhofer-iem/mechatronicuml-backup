@@ -2276,13 +2276,22 @@ public interface ConnectorPackage extends EPackage {
 	int MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Message Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_BUFFER__GMF_MESSAGE_TYPES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Message Buffer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int MESSAGE_BUFFER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2853,6 +2862,17 @@ public interface ConnectorPackage extends EPackage {
 	EAttribute getMessageBuffer_BufferOverflowAvoidanceStrategy();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getGmfMessageTypes <em>Gmf Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Gmf Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getGmfMessageTypes()
+	 * @see #getMessageBuffer()
+	 * @generated
+	 */
+	EReference getMessageBuffer_GmfMessageTypes();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3181,6 +3201,14 @@ public interface ConnectorPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY = eINSTANCE.getMessageBuffer_BufferOverflowAvoidanceStrategy();
+
+		/**
+		 * The meta object literal for the '<em><b>Gmf Message Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_BUFFER__GMF_MESSAGE_TYPES = eINSTANCE.getMessageBuffer_GmfMessageTypes();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.connector.BufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}' enum.
