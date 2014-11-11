@@ -958,31 +958,31 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
 		   new String[] {
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });										
+		   });	
 		addAnnotation
 		  (assignmentEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ValidLHS"
-		   });																	
+		   });	
 		addAnnotation
 		  (operationCallEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ParameterBindingForEveryParameter"
-		   });															
+		   });	
 		addAnnotation
 		  (localVariableDeclarationStatementEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueName"
-		   });											
+		   });
 	}
 
 	/**
@@ -992,31 +992,31 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";													
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (assignmentEClass, 
 		   source, 
 		   new String[] {
-			 "ValidLHS", "-- a hybrid in port is not allowed as a lhs of an assignment\nlet lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\nin\nif not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then\n\tlhs.typedNamedElement.oclAsType(component::HybridPort).outPort\nelse\n\ttrue\nendif"
-		   });																	
+			 "ValidLHS", "-- a hybrid in port is not allowed as a lhs of an assignment\nlet lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\nin\nif not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(muml::component::HybridPort) then\n\tlhs.typedNamedElement.oclAsType(muml::component::HybridPort).outPort\nelse\n\ttrue\nendif"
+		   });	
 		addAnnotation
 		  (operationCallEClass, 
 		   source, 
 		   new String[] {
 			 "ParameterBindingForEveryParameter", "-- An OperationCall must bind exactly one value to every parameter\nnot operation.oclIsUndefined() implies \noperation.parameters->asBag() = parameterBinding.parameter->asBag()\n-- author: bingo, adann"
-		   });															
+		   });	
 		addAnnotation
 		  (localVariableDeclarationStatementEClass, 
 		   source, 
 		   new String[] {
 			 "UniqueName", "-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->one(\n\tvariable.name = self.variable.name\n)"
-		   });				
+		   });	
 		addAnnotation
 		  (getLocalVariableDeclarationStatement_AllSurroundingBlocks(), 
 		   source, 
 		   new String[] {
 			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
-		   });							
+		   });
 	}
 
 } //ActionlanguagePackageImpl

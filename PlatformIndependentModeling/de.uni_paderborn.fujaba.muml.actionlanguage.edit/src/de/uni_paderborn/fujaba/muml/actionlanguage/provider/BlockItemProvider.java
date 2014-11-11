@@ -38,13 +38,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
  * @generated
  */
 public class BlockItemProvider
-	extends ExpressionItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExpressionItemProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.

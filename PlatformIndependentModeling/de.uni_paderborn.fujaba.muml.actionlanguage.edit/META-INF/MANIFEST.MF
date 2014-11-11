@@ -12,10 +12,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.provider
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml.actionlanguage;visibility:=reexport;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1";visibility:=reexport,
  org.storydriven.core;visibility:=reexport,
  org.storydriven.core.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,

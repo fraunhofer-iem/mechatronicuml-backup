@@ -33,13 +33,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
  * @generated
  */
 public class ForLoopItemProvider
-	extends LoopItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends LoopItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

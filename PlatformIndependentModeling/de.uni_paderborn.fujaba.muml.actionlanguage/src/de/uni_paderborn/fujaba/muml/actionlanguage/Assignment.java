@@ -29,7 +29,7 @@ import org.storydriven.core.expressions.Expression;
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAssignment()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidLHS'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidLHS='-- a hybrid in port is not allowed as a lhs of an assignment\nlet lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\nin\nif not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then\n\tlhs.typedNamedElement.oclAsType(component::HybridPort).outPort\nelse\n\ttrue\nendif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidLHS='-- a hybrid in port is not allowed as a lhs of an assignment\nlet lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\nin\nif not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(muml::component::HybridPort) then\n\tlhs.typedNamedElement.oclAsType(muml::component::HybridPort).outPort\nelse\n\ttrue\nendif'"
  * @generated
  */
 public interface Assignment extends Expression {

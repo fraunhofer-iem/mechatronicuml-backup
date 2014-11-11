@@ -37,13 +37,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
  * @generated
  */
 public class ReturnStatementItemProvider
-	extends ExpressionItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

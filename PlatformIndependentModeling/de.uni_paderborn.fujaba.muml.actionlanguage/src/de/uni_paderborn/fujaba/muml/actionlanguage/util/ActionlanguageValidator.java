@@ -215,8 +215,8 @@ public class ActionlanguageValidator extends EObjectValidator {
 	protected static final String ASSIGNMENT__VALID_LHS__EEXPRESSION = "-- a hybrid in port is not allowed as a lhs of an assignment\n" +
 		"let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\n" +
 		"in\n" +
-		"if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then\n" +
-		"\tlhs.typedNamedElement.oclAsType(component::HybridPort).outPort\n" +
+		"if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(muml::component::HybridPort) then\n" +
+		"\tlhs.typedNamedElement.oclAsType(muml::component::HybridPort).outPort\n" +
 		"else\n" +
 		"\ttrue\n" +
 		"endif";

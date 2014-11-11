@@ -36,13 +36,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
  * @generated
  */
 public class PositionSelectorItemProvider
-	extends ExpressionItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
