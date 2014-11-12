@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Storydiagrams Tabbed Properties
+Bundle-SymbolicName: org.storydriven.storydiagrams.edit.properties; singleton:=true
+Bundle-Version: 0.4.0
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.properties.runtime,
+ org.storydriven.storydiagrams.edit,
+ org.eclipse.emf.edit,
+ org.storydriven.storydiagrams,
+ org.storydriven.core.edit,
+ org.storydriven.core.edit.properties,
+ de.uni_paderborn.fujaba.muml.edit,
+ de.uni_paderborn.fujaba.muml.edit.properties
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.storydriven.storydiagrams.properties.metamodel, org.storydriven.storydiagrams.properties.constraint,
+ org.storydriven.storydiagrams.properties.storydiagrams.editor,
+ org.storydriven.storydiagrams.properties.activities.editor,
+ org.storydriven.storydiagrams.properties.calls.editor,
+ org.storydriven.storydiagrams.properties.patterns.editor,
+ org.storydriven.storydiagrams.properties.templates.editor
+Bundle-Vendor: 
