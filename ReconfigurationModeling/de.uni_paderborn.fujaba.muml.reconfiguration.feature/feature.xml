@@ -97,7 +97,7 @@
       <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.reconfiguration.common" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram.custom" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.7.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom" version="0.4.0" match="greaterOrEqual"/>
    </requires>
