@@ -34,12 +34,16 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -100,10 +104,19 @@ public class FadingComponentPartVariableEditPart extends
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.policies.FadingComponentPartVariableItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
+				new DragDropEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CANONICAL_ROLE,
+				new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.policies.FadingComponentPartVariableCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
@@ -133,6 +146,9 @@ public class FadingComponentPartVariableEditPart extends
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
 					return new de.uni_paderborn.fujaba.common.edit.policies.BorderItemSelectionEditPolicy();
+				case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
 						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -182,6 +198,24 @@ public class FadingComponentPartVariableEditPart extends
 					.setLabel(getPrimaryShape().getFigureFadingFunctionLabel());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
+					PositionConstants.NORTH);
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.add(((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) childEditPart)
+							.getFigure(), locator);
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
+					PositionConstants.NORTH);
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.add(((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) childEditPart)
+							.getFigure(), locator);
+			return true;
+		}
 		return false;
 	}
 
@@ -193,6 +227,20 @@ public class FadingComponentPartVariableEditPart extends
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart) childEditPart)
+							.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		return false;
@@ -410,6 +458,8 @@ public class FadingComponentPartVariableEditPart extends
 			fFigureFadingComponentVariableNameFigure
 					.setFont(FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT);
 
+			fFigureFadingComponentVariableNameFigure.setTextUnderline(true);
+
 			GridData constraintFFigureFadingComponentVariableNameFigure = new GridData();
 			constraintFFigureFadingComponentVariableNameFigure.verticalAlignment = GridData.CENTER;
 			constraintFFigureFadingComponentVariableNameFigure.horizontalAlignment = GridData.CENTER;
@@ -420,21 +470,6 @@ public class FadingComponentPartVariableEditPart extends
 			constraintFFigureFadingComponentVariableNameFigure.grabExcessVerticalSpace = true;
 			nameContainer1.add(fFigureFadingComponentVariableNameFigure,
 					constraintFFigureFadingComponentVariableNameFigure);
-
-			fFigureFadingFunctionLabel = new WrappingLabel();
-
-			fFigureFadingFunctionLabel.setText("");
-
-			GridData constraintFFigureFadingFunctionLabel = new GridData();
-			constraintFFigureFadingFunctionLabel.verticalAlignment = GridData.END;
-			constraintFFigureFadingFunctionLabel.horizontalAlignment = GridData.CENTER;
-			constraintFFigureFadingFunctionLabel.horizontalIndent = 0;
-			constraintFFigureFadingFunctionLabel.horizontalSpan = 1;
-			constraintFFigureFadingFunctionLabel.verticalSpan = 1;
-			constraintFFigureFadingFunctionLabel.grabExcessHorizontalSpace = false;
-			constraintFFigureFadingFunctionLabel.grabExcessVerticalSpace = false;
-			nameContainer1.add(fFigureFadingFunctionLabel,
-					constraintFFigureFadingFunctionLabel);
 
 			RectangleFigure iconContainer1 = new RectangleFigure();
 
@@ -617,6 +652,21 @@ public class FadingComponentPartVariableEditPart extends
 			// Process FigureRef details
 
 			iconContainer1.add(fadingComponentIconFigure2);
+
+			fFigureFadingFunctionLabel = new WrappingLabel();
+
+			fFigureFadingFunctionLabel.setText("");
+
+			GridData constraintFFigureFadingFunctionLabel = new GridData();
+			constraintFFigureFadingFunctionLabel.verticalAlignment = GridData.END;
+			constraintFFigureFadingFunctionLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigureFadingFunctionLabel.horizontalIndent = 0;
+			constraintFFigureFadingFunctionLabel.horizontalSpan = 1;
+			constraintFFigureFadingFunctionLabel.verticalSpan = 1;
+			constraintFFigureFadingFunctionLabel.grabExcessHorizontalSpace = false;
+			constraintFFigureFadingFunctionLabel.grabExcessVerticalSpace = false;
+			fadingComponentVariable0.add(fFigureFadingFunctionLabel,
+					constraintFFigureFadingFunctionLabel);
 
 		}
 

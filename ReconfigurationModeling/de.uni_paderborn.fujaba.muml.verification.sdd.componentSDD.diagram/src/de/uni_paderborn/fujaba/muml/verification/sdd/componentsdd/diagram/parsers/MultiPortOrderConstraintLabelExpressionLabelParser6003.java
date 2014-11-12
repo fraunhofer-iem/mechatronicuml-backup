@@ -50,7 +50,7 @@ public class MultiPortOrderConstraintLabelExpressionLabelParser6003 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 				.getExpression(
-						16,
+						17,
 						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getMultiPortOrderConstraint(), null).body();
 	}

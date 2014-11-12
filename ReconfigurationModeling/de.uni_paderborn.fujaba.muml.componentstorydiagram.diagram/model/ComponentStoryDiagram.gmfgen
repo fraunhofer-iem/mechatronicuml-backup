@@ -94,13 +94,19 @@
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
                   </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.5">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
+                  </initializers>
                 </newElementInitializers>
               </initializers>
             </newElementInitializers>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.5">
+              value="//@expressionProviders/@providers.0/@expressions.6">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -499,7 +505,7 @@
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.8">
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
@@ -701,7 +707,7 @@
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.8">
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
         <containmentMetaFeature
@@ -800,7 +806,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.11">
+              value="//@expressionProviders/@providers.0/@expressions.12">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -844,7 +850,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.12">
+              value="//@expressionProviders/@providers.0/@expressions.13">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -880,7 +886,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.13">
+              value="//@expressionProviders/@providers.0/@expressions.14">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -937,7 +943,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.14">
+                  value="//@expressionProviders/@providers.0/@expressions.15">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -948,19 +954,19 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.15">
+                      value="//@expressionProviders/@providers.0/@expressions.16">
                     <feature
                         href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.16">
+                      value="//@expressionProviders/@providers.0/@expressions.17">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.17">
+                      value="//@expressionProviders/@providers.0/@expressions.18">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
                   </initializers>
@@ -971,7 +977,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.18">
+                          value="//@expressionProviders/@providers.0/@expressions.19">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
                       </initializers>
@@ -981,7 +987,7 @@
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
-                          value="//@expressionProviders/@providers.0/@expressions.19">
+                          value="//@expressionProviders/@providers.0/@expressions.20">
                         <feature
                             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
                       </initializers>
@@ -989,13 +995,19 @@
                           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
                     </newElementInitializers>
                   </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.21">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
+                  </initializers>
                 </newElementInitializers>
               </initializers>
             </newElementInitializers>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.20">
+              value="//@expressionProviders/@providers.0/@expressions.22">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1366,8 +1378,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.24"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.25"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.26"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.27"/>
     </links>
     <links
         visualID="4005"
@@ -1423,8 +1435,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.26"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.27"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.28"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.29"/>
     </links>
     <links
         visualID="4006"
@@ -1880,6 +1892,8 @@
       <expressions
           body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
       <expressions
+          body="let&#xD;&#xA;&#x9;--couldn't get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentstorydiagram::ComponentStoryRule))&#xD;&#xA;&#x9;compStoryRule : componentstorydiagram::ComponentStoryRule = self.eContainer().eContainer().eContainer().eContainer().oclAsType(componentstorydiagram::ComponentStoryRule)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not compStoryRule.reconfiguredComponent.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;compStoryRule.reconfiguredComponent&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
+      <expressions
           body="'componentStoryNode'"/>
       <expressions
           body="if&#xD;&#xA;&#x9;self.bindingState = storydiagrams::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.type.name&#xD;&#xA;endif"/>
@@ -1910,6 +1924,8 @@
           body="storydiagrams::patterns::BindingOperator::DESTROY"/>
       <expressions
           body="storydiagrams::patterns::BindingOperator::CREATE"/>
+      <expressions
+          body="let&#xD;&#xA;&#x9;--couldn't get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentstorydiagram::ComponentStoryRule))&#xD;&#xA;&#x9;compStoryRule : componentstorydiagram::ComponentStoryRule = self.eContainer().eContainer().eContainer().eContainer().oclAsType(componentstorydiagram::ComponentStoryRule)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not compStoryRule.reconfiguredComponent.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;compStoryRule.reconfiguredComponent&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
       <expressions
           body="'controllerExchangeNode'"/>
       <expressions
@@ -1946,7 +1962,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.2/@modelFacet"
         className="MultiPortVariableLabelExpressionLabelParser5056"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.6">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
     </implementations>
@@ -1954,7 +1970,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
         className="SinglePortVariableLabelExpressionLabelParser5057"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.8">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
     </implementations>
@@ -1962,7 +1978,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"
         className="ComponentPartVariableLabelExpressionLabelParser5018"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
     </implementations>
@@ -1970,7 +1986,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.2/@modelFacet"
         className="ComponentPartVariableLabelExpressionLabelParser5063"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
     </implementations>
@@ -1978,7 +1994,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.7/@labels.2/@modelFacet"
         className="MultiPortVariableLabelExpressionLabelParser5058"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.6">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
     </implementations>
@@ -1986,7 +2002,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.2/@modelFacet"
         className="SinglePortVariableLabelExpressionLabelParser5059"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.8">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
     </implementations>
@@ -1994,7 +2010,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.15/@labels.0/@modelFacet"
         className="FadingComponentPartVariableLabelExpressionLabelParser5054"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.21">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.23">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
@@ -2002,7 +2018,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.15/@labels.2/@modelFacet"
         className="FadingComponentPartVariableLabelExpressionLabelParser5065"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.22">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.24">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
@@ -2010,7 +2026,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.12/@labels.1/@modelFacet"
         className="ControllerExchangeNodeLabelExpressionLabelParser5064"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.23">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.25">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/ControllerExchangeNode"/>
     </implementations>
@@ -2018,7 +2034,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.3/@labels.0/@modelFacet"
         className="MultiPortOrderConstraintLabelExpressionLabelParser6006"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.28">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.30">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
     </implementations>

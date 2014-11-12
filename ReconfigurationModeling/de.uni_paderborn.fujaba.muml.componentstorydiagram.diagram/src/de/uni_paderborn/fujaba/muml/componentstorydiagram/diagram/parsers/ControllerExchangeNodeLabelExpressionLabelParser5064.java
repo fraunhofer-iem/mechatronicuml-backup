@@ -50,7 +50,7 @@ public class ControllerExchangeNodeLabelExpressionLabelParser5064 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						23,
+						25,
 						de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 								.getControllerExchangeNode(), null).body();
 	}

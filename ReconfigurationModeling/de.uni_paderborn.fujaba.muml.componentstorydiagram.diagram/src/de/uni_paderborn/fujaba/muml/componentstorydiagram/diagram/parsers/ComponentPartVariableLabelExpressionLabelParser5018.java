@@ -50,7 +50,7 @@ public class ComponentPartVariableLabelExpressionLabelParser5018 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						9,
+						10,
 						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getComponentPartVariable(), null).body();
 	}

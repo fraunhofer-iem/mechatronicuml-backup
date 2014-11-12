@@ -47,16 +47,17 @@ public class ComponentSDDOCLFactory {
 	 * @generated
 	 */
 	protected ComponentSDDOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression[17];
+		this.expressions = new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression[18];
 		this.expressionBodies = new String[] {
 				"\'componentStoryPattern\'", //$NON-NLS-1$
 				"\'this\'", //$NON-NLS-1$
 				"storydiagrams::patterns::BindingState::BOUND", //$NON-NLS-1$
 				"storydiagrams::patterns::BindingSemantics::MANDATORY", //$NON-NLS-1$
+				"let\r\n\t--couldn\'t get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentsdd::ComponentStoryDecisionDiagram))\r\n\tcompStoryRule : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().eContainer().eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram)\r\nin\r\n\tif\r\n\t\tnot compStoryRule.reconfigurableComponent.oclIsUndefined()\r\n\tthen\r\n\t\tcompStoryRule.reconfigurableComponent\r\n\telse\r\n\t\tnull\r\n\tendif", //$NON-NLS-1$
 				"\'componentStoryPatternNode\'", //$NON-NLS-1$
-				"\':\'.concat(self.type.name)", //$NON-NLS-1$
+				"if\r\n\tself.bindingState = storydiagrams::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.type.name\r\nendif", //$NON-NLS-1$
 				"self.multiPortVariable.oclIsUndefined()", //$NON-NLS-1$
-				"\':\'.concat(self.type.name)", //$NON-NLS-1$
+				"if\r\n\tself.bindingState = storydiagrams::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.type.name\r\nendif", //$NON-NLS-1$
 				"\'test\'", //$NON-NLS-1$
 				"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
 				"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$

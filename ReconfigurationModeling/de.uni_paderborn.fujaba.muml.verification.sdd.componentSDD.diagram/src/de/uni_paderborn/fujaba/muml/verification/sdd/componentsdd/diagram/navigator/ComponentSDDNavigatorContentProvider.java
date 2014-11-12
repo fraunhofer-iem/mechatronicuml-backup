@@ -692,6 +692,25 @@ public class ComponentSDDNavigatorContentProvider implements
 			return result.toArray();
 		}
 
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			return result.toArray();
+		}
+
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.EdgeEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.navigator.ComponentSDDAbstractNavigatorItem>();
 			Edge sv = (Edge) view;

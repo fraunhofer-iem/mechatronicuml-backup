@@ -50,7 +50,7 @@ public class MultiPortVariableLabelExpressionLabelParser5056 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						6,
+						7,
 						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getMultiPortVariable(), null).body();
 	}

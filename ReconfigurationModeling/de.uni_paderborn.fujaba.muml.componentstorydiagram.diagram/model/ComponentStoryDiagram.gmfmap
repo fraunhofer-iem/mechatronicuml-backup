@@ -86,6 +86,14 @@
                       <value
                           body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
                     </initializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EReference"
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/type"/>
+                      <value
+                          body="let&#xD;&#xA;&#x9;--couldn't get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentstorydiagram::ComponentStoryRule))&#xD;&#xA;&#x9;compStoryRule : componentstorydiagram::ComponentStoryRule = self.eContainer().eContainer().eContainer().eContainer().oclAsType(componentstorydiagram::ComponentStoryRule)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not compStoryRule.reconfiguredComponent.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;compStoryRule.reconfiguredComponent&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
+                    </initializers>
                   </newElementInitializers>
                 </initializers>
               </newElementInitializers>
@@ -462,6 +470,14 @@
                         <elementClass
                             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable"/>
                       </newElementInitializers>
+                    </initializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EReference"
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/type"/>
+                      <value
+                          body="let&#xD;&#xA;&#x9;--couldn't get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentstorydiagram::ComponentStoryRule))&#xD;&#xA;&#x9;compStoryRule : componentstorydiagram::ComponentStoryRule = self.eContainer().eContainer().eContainer().eContainer().oclAsType(componentstorydiagram::ComponentStoryRule)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not compStoryRule.reconfiguredComponent.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;compStoryRule.reconfiguredComponent&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
                     </initializers>
                   </newElementInitializers>
                 </initializers>

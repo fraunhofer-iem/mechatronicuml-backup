@@ -588,7 +588,7 @@ public class ComponentStoryDiagramVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						7,
+						8,
 						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getSinglePortVariable(), null).evaluate(
 						domainElement);
@@ -602,7 +602,7 @@ public class ComponentStoryDiagramVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						7,
+						8,
 						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getSinglePortVariable(), null).evaluate(
 						domainElement);

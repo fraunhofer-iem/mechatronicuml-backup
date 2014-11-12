@@ -58,6 +58,14 @@
                   <value
                       body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
                 </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/type"/>
+                  <value
+                      body="let&#xD;&#xA;&#x9;--couldn't get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentsdd::ComponentStoryDecisionDiagram))&#xD;&#xA;&#x9;compStoryRule : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().eContainer().eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not compStoryRule.reconfigurableComponent.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;compStoryRule.reconfigurableComponent&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
+                </initializers>
               </newElementInitializers>
             </initializers>
           </newElementInitializers>

@@ -74,10 +74,18 @@ public class ElementInitializers {
 							PatternsPackage.eINSTANCE.getBindingSemantics());
 			newInstance_0_0_1_0
 					.setBindingSemantics((BindingSemantics) value_0_0_1_0_2);
+			Object value_0_0_1_0_3 = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
+					.getExpression(
+							4,
+							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+									.getComponentVariable(), null).evaluate(
+							newInstance_0_0_1_0);
+			newInstance_0_0_1_0
+					.setType((de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent) value_0_0_1_0_3);
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 					.getExpression(
-							4,
+							5,
 							de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
 									.getComponentStoryPatternNode(), null)
 					.evaluate(instance);

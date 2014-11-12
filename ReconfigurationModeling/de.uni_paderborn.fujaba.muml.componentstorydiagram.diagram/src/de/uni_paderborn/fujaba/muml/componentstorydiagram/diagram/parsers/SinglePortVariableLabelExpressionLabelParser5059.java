@@ -50,7 +50,7 @@ public class SinglePortVariableLabelExpressionLabelParser5059 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
-						8,
+						9,
 						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getSinglePortVariable(), null).body();
 	}

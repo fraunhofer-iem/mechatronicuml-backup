@@ -35,13 +35,14 @@ public class ComponentStoryDiagramOCLFactory {
 	 * @generated
 	 */
 	protected ComponentStoryDiagramOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[29];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[31];
 		this.expressionBodies = new String[] {
 				"\'activity\'", //$NON-NLS-1$
 				"\'componentStoryPattern\'", //$NON-NLS-1$
 				"\'this\'", //$NON-NLS-1$
 				"storydiagrams::patterns::BindingState::BOUND", //$NON-NLS-1$
 				"storydiagrams::patterns::BindingSemantics::MANDATORY", //$NON-NLS-1$
+				"let\r\n\t--couldn\'t get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentstorydiagram::ComponentStoryRule))\r\n\tcompStoryRule : componentstorydiagram::ComponentStoryRule = self.eContainer().eContainer().eContainer().eContainer().oclAsType(componentstorydiagram::ComponentStoryRule)\r\nin\r\n\tif\r\n\t\tnot compStoryRule.reconfiguredComponent.oclIsUndefined()\r\n\tthen\r\n\t\tcompStoryRule.reconfiguredComponent\r\n\telse\r\n\t\tnull\r\n\tendif", //$NON-NLS-1$
 				"\'componentStoryNode\'", //$NON-NLS-1$
 				"if\r\n\tself.bindingState = storydiagrams::patterns::BindingState::BOUND\r\nthen\r\n\t\'\'\r\nelse\r\n\t\':\'+self.type.name\r\nendif", //$NON-NLS-1$
 				"self.multiPortVariable.oclIsUndefined()", //$NON-NLS-1$
@@ -57,6 +58,7 @@ public class ComponentStoryDiagramOCLFactory {
 				"storydiagrams::patterns::BindingSemantics::MANDATORY", //$NON-NLS-1$
 				"storydiagrams::patterns::BindingOperator::DESTROY", //$NON-NLS-1$
 				"storydiagrams::patterns::BindingOperator::CREATE", //$NON-NLS-1$
+				"let\r\n\t--couldn\'t get ->closure() working. Nicer Implementation would be something like: self->closure(eContainer())->select(oclIsTypeOf(componentstorydiagram::ComponentStoryRule))\r\n\tcompStoryRule : componentstorydiagram::ComponentStoryRule = self.eContainer().eContainer().eContainer().eContainer().oclAsType(componentstorydiagram::ComponentStoryRule)\r\nin\r\n\tif\r\n\t\tnot compStoryRule.reconfiguredComponent.oclIsUndefined()\r\n\tthen\r\n\t\tcompStoryRule.reconfiguredComponent\r\n\telse\r\n\t\tnull\r\n\tendif", //$NON-NLS-1$
 				"\'controllerExchangeNode\'", //$NON-NLS-1$
 				"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
 				"if self.appliedFadingFunction.oclIsUndefined()\r\nthen \'\'\r\nelse\r\n\tself.appliedFadingFunction.name\r\nendif", //$NON-NLS-1$

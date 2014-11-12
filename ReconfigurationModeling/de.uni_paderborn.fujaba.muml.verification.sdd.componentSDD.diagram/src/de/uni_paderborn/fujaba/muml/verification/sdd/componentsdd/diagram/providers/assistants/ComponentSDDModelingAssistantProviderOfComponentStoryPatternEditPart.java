@@ -12,7 +12,6 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants;
 
-
 /**
  * @generated
  */
