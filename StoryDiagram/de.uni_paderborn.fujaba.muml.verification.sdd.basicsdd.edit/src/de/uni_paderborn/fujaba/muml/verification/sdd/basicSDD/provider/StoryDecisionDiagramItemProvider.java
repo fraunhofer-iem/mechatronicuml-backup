@@ -38,13 +38,7 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
  * @generated
  */
 public class StoryDecisionDiagramItemProvider
-	extends AbstractStoryDecisionDiagramItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends AbstractStoryDecisionDiagramItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -28,6 +28,10 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties</requiredBundles>
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
   <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
@@ -42,14 +46,16 @@
       </properties>
       <propertyCategories title="Booleans" properties="//@packages.0/@classes.0/@properties.0"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#//@packages.1/@classes.22"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes>
       <genClass href="ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
-      <properties tooltip="" initializeOCLExpression="">
-        <genFeature href="ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode/pattern"/>
+      <properties initializeOCLExpression="">
+        <genFeature href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/PatternNode/type"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#//@packages.0/@classes.4"/>
     </classes>
     <classes>
       <genClass href="ComponentSDD.genmodel#//componentsdd/EvaluateComponentSDDExpression"/>

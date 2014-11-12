@@ -148,32 +148,41 @@ public class BasicSDDValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the noNegativeObjects constraint of '<em>Story Pattern Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STORY_PATTERN_NODE__NO_NEGATIVE_OBJECTS__EEXPRESSION = "(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV | oV.bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)";
+
+	/**
 	 * Validates the noNegativeObjects constraint of '<em>Story Pattern Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateStoryPatternNode_noNegativeObjects(StoryPatternNode storyPatternNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "noNegativeObjects", getObjectLabel(storyPatternNode, context) },
-						 new Object[] { storyPatternNode },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(BasicSDDPackage.Literals.STORY_PATTERN_NODE,
+				 storyPatternNode,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "noNegativeObjects",
+				 STORY_PATTERN_NODE__NO_NEGATIVE_OBJECTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the noLinkModifications constraint of '<em>Story Pattern Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STORY_PATTERN_NODE__NO_LINK_MODIFICATIONS__EEXPRESSION = "(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(storydiagrams::patterns::LinkVariable))->forAll(lV | lV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)";
 
 	/**
 	 * Validates the noLinkModifications constraint of '<em>Story Pattern Node</em>'.
@@ -182,26 +191,27 @@ public class BasicSDDValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStoryPatternNode_noLinkModifications(StoryPatternNode storyPatternNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "noLinkModifications", getObjectLabel(storyPatternNode, context) },
-						 new Object[] { storyPatternNode },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(BasicSDDPackage.Literals.STORY_PATTERN_NODE,
+				 storyPatternNode,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "noLinkModifications",
+				 STORY_PATTERN_NODE__NO_LINK_MODIFICATIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the noNegativeLinks constraint of '<em>Story Pattern Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STORY_PATTERN_NODE__NO_NEGATIVE_LINKS__EEXPRESSION = "(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(storydiagrams::patterns::LinkVariable))->forAll(bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)";
 
 	/**
 	 * Validates the noNegativeLinks constraint of '<em>Story Pattern Node</em>'.
@@ -210,26 +220,27 @@ public class BasicSDDValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStoryPatternNode_noNegativeLinks(StoryPatternNode storyPatternNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "noNegativeLinks", getObjectLabel(storyPatternNode, context) },
-						 new Object[] { storyPatternNode },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(BasicSDDPackage.Literals.STORY_PATTERN_NODE,
+				 storyPatternNode,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "noNegativeLinks",
+				 STORY_PATTERN_NODE__NO_NEGATIVE_LINKS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the noObjectModifications constraint of '<em>Story Pattern Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STORY_PATTERN_NODE__NO_OBJECT_MODIFICATIONS__EEXPRESSION = "(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV |oV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)";
 
 	/**
 	 * Validates the noObjectModifications constraint of '<em>Story Pattern Node</em>'.
@@ -238,25 +249,18 @@ public class BasicSDDValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStoryPatternNode_noObjectModifications(StoryPatternNode storyPatternNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "noObjectModifications", getObjectLabel(storyPatternNode, context) },
-						 new Object[] { storyPatternNode },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(BasicSDDPackage.Literals.STORY_PATTERN_NODE,
+				 storyPatternNode,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "noObjectModifications",
+				 STORY_PATTERN_NODE__NO_OBJECT_MODIFICATIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

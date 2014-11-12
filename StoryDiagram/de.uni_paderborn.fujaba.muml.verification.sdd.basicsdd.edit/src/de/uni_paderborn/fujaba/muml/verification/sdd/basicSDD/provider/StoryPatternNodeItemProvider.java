@@ -41,13 +41,7 @@ import org.storydriven.storydiagrams.patterns.PatternsFactory;
  * @generated
  */
 public class StoryPatternNodeItemProvider
-	extends PatternNodeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends PatternNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

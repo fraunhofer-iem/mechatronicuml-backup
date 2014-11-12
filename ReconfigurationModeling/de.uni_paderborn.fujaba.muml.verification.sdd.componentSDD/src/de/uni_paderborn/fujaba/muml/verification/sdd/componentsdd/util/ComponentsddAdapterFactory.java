@@ -16,6 +16,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
 import de.uni_paderborn.fujaba.muml.verification.sdd.AbstractStoryDecisionDiagram;
 import de.uni_paderborn.fujaba.muml.verification.sdd.Node;
 import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.*;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryPatternNode;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;

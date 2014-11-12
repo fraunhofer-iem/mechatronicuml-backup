@@ -18,7 +18,8 @@ import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage#getComponentStoryPatternNode()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='noNegativeVariables noVariableModifications'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL noNegativeVariables='let\r\n\tpartVariables : OrderedSet(componentstorypattern::PartVariable) = pattern.thisVariable.partVariables,\r\n\tconnectorVariables : OrderedSet(componentstorypattern::ConnectorVariable) = pattern.thisVariable.connectorVariables,\r\n\tportVariable : OrderedSet(componentstorypattern::ComponentStoryPatternVariable) = partVariables->collect(portVariables)->asOrderedSet()\r\nin\r\n\tportVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)' noVariableModifications='let\r\n\tpartVariables : OrderedSet(componentstorypattern::PartVariable) = pattern.thisVariable.partVariables,\r\n\tconnectorVariables : OrderedSet(componentstorypattern::ConnectorVariable) = pattern.thisVariable.connectorVariables,\r\n\tportVariable : OrderedSet(componentstorypattern::ComponentStoryPatternVariable) = partVariables->collect(portVariables)->asOrderedSet()\r\nin\r\n\tportVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)'"
  * @generated
  */
 public interface ComponentStoryPatternNode extends PatternNode {

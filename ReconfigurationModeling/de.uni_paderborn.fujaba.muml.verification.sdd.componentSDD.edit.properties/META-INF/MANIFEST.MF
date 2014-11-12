@@ -18,7 +18,11 @@ Require-Bundle: org.eclipse.emf.ecore,
  de.uni_paderborn.fujaba.muml.edit,
  de.uni_paderborn.fujaba.muml.edit.properties,
  de.uni_paderborn.fujaba.muml.reconfiguration.edit,
- de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties,
+ de.uni_paderborn.fujaba.muml.verification.sdd.edit,
+ de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties,
+ de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit,
+ de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.constraint,
