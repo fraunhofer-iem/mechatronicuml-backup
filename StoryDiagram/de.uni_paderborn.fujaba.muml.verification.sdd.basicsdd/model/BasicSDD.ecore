@@ -4,6 +4,15 @@
     nsPrefix="basicSDD">
   <eClassifiers xsi:type="ecore:EClass" name="StoryDecisionDiagram" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram"/>
   <eClassifiers xsi:type="ecore:EClass" name="StoryPatternNode" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//PatternNode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noNegativeObjects noLinkModifications noNegativeLinks noObjectModifications"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="noNegativeObjects" value="(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV | oV.bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)"/>
+      <details key="noLinkModifications" value="(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(storydiagrams::patterns::LinkVariable))->forAll(lV | lV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)"/>
+      <details key="noNegativeLinks" value="(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(storydiagrams::patterns::LinkVariable))->forAll(bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)"/>
+      <details key="noObjectModifications" value="(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV |oV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
         eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern"
         containment="true"/>

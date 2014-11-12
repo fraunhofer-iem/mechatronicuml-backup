@@ -22,8 +22,6 @@ import org.storydriven.core.NamedElement;
  *
  * @see de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage#getPatternNode()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='noNegativeObjects noLinkModifications noNegativeLinks noObjectModifications'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL noNegativeObjects='(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(sdmp::ObjectVariable)).oclAsType(sdmp::ObjectVariable)->forAll(bindingSemantics = sdmp::BindingSemantics::MANDATORY)' noLinkModifications='(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(sdmp::LinkVariable))->forAll(bindingOperator = sdmp::BindingOperator::CHECK_ONLY)' noNegativeLinks='(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(sdmp::LinkVariable))->forAll(bindingSemantics = sdmp::BindingSemantics::MANDATORY)' noObjectModifications='(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(sdmp::ObjectVariable)).oclAsType(sdmp::ObjectVariable)->forAll(bindingOperator = sdmp::BindingOperator::CHECK_ONLY)'"
  * @generated
  */
 public interface PatternNode extends Node, NamedElement {

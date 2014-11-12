@@ -26,17 +26,6 @@
     </classes>
     <classes>
       <genClass href="sdd.genmodel#//sdd/Node"/>
-      <properties tooltip="" category="//@packages.0/@classes.1/@propertyCategories.0" initializeOCLExpression="">
-        <genFeature href="sdd.genmodel#//sdd/Node/outgoingEdges"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.0/@classes.1/@propertyCategories.0" initializeOCLExpression="">
-        <genFeature href="sdd.genmodel#//sdd/Node/incomingEdges"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.0 //@packages.0/@classes.1/@properties.1"/>
     </classes>
     <classes>
       <genClass href="sdd.genmodel#//sdd/Edge"/>

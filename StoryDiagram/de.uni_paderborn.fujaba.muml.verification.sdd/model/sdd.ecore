@@ -50,15 +50,6 @@
         defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PatternNode" abstract="true" eSuperTypes="#//Node ../../org.storydriven.core/model/core.ecore#//NamedElement">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="noNegativeObjects noLinkModifications noNegativeLinks noObjectModifications"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="noNegativeObjects" value="(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(sdmp::ObjectVariable)).oclAsType(sdmp::ObjectVariable)->forAll(bindingSemantics = sdmp::BindingSemantics::MANDATORY)"/>
-      <details key="noLinkModifications" value="(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(sdmp::LinkVariable))->forAll(bindingOperator = sdmp::BindingOperator::CHECK_ONLY)"/>
-      <details key="noNegativeLinks" value="(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(sdmp::LinkVariable))->forAll(bindingSemantics = sdmp::BindingSemantics::MANDATORY)"/>
-      <details key="noObjectModifications" value="(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(sdmp::ObjectVariable)).oclAsType(sdmp::ObjectVariable)->forAll(bindingOperator = sdmp::BindingOperator::CHECK_ONLY)"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PatternNodeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="EdgeType">

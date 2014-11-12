@@ -387,7 +387,7 @@ public class SDDPackageImpl extends EPackageImpl implements SDDPackage {
 		patternNodeEClass.getESuperTypes().add(this.getNode());
 		patternNodeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractStoryDecisionDiagramEClass, AbstractStoryDecisionDiagram.class, "AbstractStoryDecisionDiagram", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractStoryDecisionDiagram_Nodes(), this.getNode(), null, "nodes", null, 0, -1, AbstractStoryDecisionDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStoryDecisionDiagram_Edges(), this.getEdge(), null, "edges", null, 0, -1, AbstractStoryDecisionDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -459,12 +459,6 @@ public class SDDPackageImpl extends EPackageImpl implements SDDPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "noOutgoingEdge"
-		   });	
-		addAnnotation
-		  (patternNodeEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "noNegativeObjects noLinkModifications noNegativeLinks noObjectModifications"
 		   });
 	}
 
@@ -493,15 +487,6 @@ public class SDDPackageImpl extends EPackageImpl implements SDDPackage {
 		   source, 
 		   new String[] {
 			 "noOutgoingEdge", "outgoingEdges->size()=0"
-		   });	
-		addAnnotation
-		  (patternNodeEClass, 
-		   source, 
-		   new String[] {
-			 "noNegativeObjects", "(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(sdmp::ObjectVariable)).oclAsType(sdmp::ObjectVariable)->forAll(bindingSemantics = sdmp::BindingSemantics::MANDATORY)",
-			 "noLinkModifications", "(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(sdmp::LinkVariable))->forAll(bindingOperator = sdmp::BindingOperator::CHECK_ONLY)",
-			 "noNegativeLinks", "(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(sdmp::LinkVariable))->forAll(bindingSemantics = sdmp::BindingSemantics::MANDATORY)",
-			 "noObjectModifications", "(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(sdmp::ObjectVariable)).oclAsType(sdmp::ObjectVariable)->forAll(bindingOperator = sdmp::BindingOperator::CHECK_ONLY)"
 		   });
 	}
 

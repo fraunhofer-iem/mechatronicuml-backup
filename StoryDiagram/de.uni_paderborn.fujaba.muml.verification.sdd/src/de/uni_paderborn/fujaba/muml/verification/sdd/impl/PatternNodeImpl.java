@@ -413,6 +413,70 @@ public abstract class PatternNodeImpl extends NodeImpl implements PatternNode {
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == EObject.class) {
+			switch (baseOperationID) {
+				case EcorePackage.EOBJECT___ECLASS: return SDDPackage.PATTERN_NODE___ECLASS;
+				case EcorePackage.EOBJECT___EIS_PROXY: return SDDPackage.PATTERN_NODE___EIS_PROXY;
+				case EcorePackage.EOBJECT___ERESOURCE: return SDDPackage.PATTERN_NODE___ERESOURCE;
+				case EcorePackage.EOBJECT___ECONTAINER: return SDDPackage.PATTERN_NODE___ECONTAINER;
+				case EcorePackage.EOBJECT___ECONTAINING_FEATURE: return SDDPackage.PATTERN_NODE___ECONTAINING_FEATURE;
+				case EcorePackage.EOBJECT___ECONTAINMENT_FEATURE: return SDDPackage.PATTERN_NODE___ECONTAINMENT_FEATURE;
+				case EcorePackage.EOBJECT___ECONTENTS: return SDDPackage.PATTERN_NODE___ECONTENTS;
+				case EcorePackage.EOBJECT___EALL_CONTENTS: return SDDPackage.PATTERN_NODE___EALL_CONTENTS;
+				case EcorePackage.EOBJECT___ECROSS_REFERENCES: return SDDPackage.PATTERN_NODE___ECROSS_REFERENCES;
+				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE: return SDDPackage.PATTERN_NODE___EGET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE_BOOLEAN: return SDDPackage.PATTERN_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+				case EcorePackage.EOBJECT___ESET__ESTRUCTURALFEATURE_OBJECT: return SDDPackage.PATTERN_NODE___ESET__ESTRUCTURALFEATURE_OBJECT;
+				case EcorePackage.EOBJECT___EIS_SET__ESTRUCTURALFEATURE: return SDDPackage.PATTERN_NODE___EIS_SET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EUNSET__ESTRUCTURALFEATURE: return SDDPackage.PATTERN_NODE___EUNSET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EINVOKE__EOPERATION_ELIST: return SDDPackage.PATTERN_NODE___EINVOKE__EOPERATION_ELIST;
+				default: return -1;
+			}
+		}
+		if (baseClass == ExtendableElement.class) {
+			switch (baseOperationID) {
+				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return SDDPackage.PATTERN_NODE___GET_EXTENSION__ECLASS;
+				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS: return SDDPackage.PATTERN_NODE___PROVIDE_EXTENSION__ECLASS;
+				case CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING: return SDDPackage.PATTERN_NODE___GET_ANNOTATION__STRING;
+				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING: return SDDPackage.PATTERN_NODE___PROVIDE_ANNOTATION__STRING;
+				default: return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SDDPackage.PATTERN_NODE___GET_EXTENSION__ECLASS:
+				return getExtension((EClass)arguments.get(0));
+			case SDDPackage.PATTERN_NODE___PROVIDE_EXTENSION__ECLASS:
+				return provideExtension((EClass)arguments.get(0));
+			case SDDPackage.PATTERN_NODE___GET_ANNOTATION__STRING:
+				return getAnnotation((String)arguments.get(0));
+			case SDDPackage.PATTERN_NODE___PROVIDE_ANNOTATION__STRING:
+				return provideAnnotation((String)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

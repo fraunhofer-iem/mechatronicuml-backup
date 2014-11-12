@@ -9,10 +9,12 @@ import de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD.BasicSDDPackage;
 import de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD.StoryDecisionDiagram;
 import de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD.StoryPatternNode;
 
+import de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD.util.BasicSDDValidator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.storydriven.storydiagrams.StorydiagramsPackage;
@@ -95,6 +97,15 @@ public class BasicSDDPackageImpl extends EPackageImpl implements BasicSDDPackage
 
 		// Initialize created meta-data
 		theBasicSDDPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theBasicSDDPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return BasicSDDValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theBasicSDDPackage.freeze();
@@ -201,7 +212,7 @@ public class BasicSDDPackageImpl extends EPackageImpl implements BasicSDDPackage
 		storyDecisionDiagramEClass.getESuperTypes().add(theSDDPackage.getAbstractStoryDecisionDiagram());
 		storyPatternNodeEClass.getESuperTypes().add(theSDDPackage.getPatternNode());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(storyDecisionDiagramEClass, StoryDecisionDiagram.class, "StoryDecisionDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(storyPatternNodeEClass, StoryPatternNode.class, "StoryPatternNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -209,6 +220,47 @@ public class BasicSDDPackageImpl extends EPackageImpl implements BasicSDDPackage
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (storyPatternNodeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "noNegativeObjects noLinkModifications noNegativeLinks noObjectModifications"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (storyPatternNodeEClass, 
+		   source, 
+		   new String[] {
+			 "noNegativeObjects", "(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV | oV.bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)",
+			 "noLinkModifications", "(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(storydiagrams::patterns::LinkVariable))->forAll(lV | lV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)",
+			 "noNegativeLinks", "(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(storydiagrams::patterns::LinkVariable))->forAll(bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)",
+			 "noObjectModifications", "(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV |oV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)"
+		   });
 	}
 
 } //BasicSDDPackageImpl

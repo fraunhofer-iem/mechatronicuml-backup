@@ -19,7 +19,8 @@ import org.storydriven.storydiagrams.patterns.StoryPattern;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.sdd.basicSDD.BasicSDDPackage#getStoryPatternNode()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='noNegativeObjects noLinkModifications noNegativeLinks noObjectModifications'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL noNegativeObjects='(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV | oV.bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)' noLinkModifications='(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(storydiagrams::patterns::LinkVariable))->forAll(lV | lV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)' noNegativeLinks='(not pattern.oclIsUndefined()) implies pattern.linkVariable->select(oclIsKindOf(storydiagrams::patterns::LinkVariable))->forAll(bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)' noObjectModifications='(not pattern.oclIsUndefined()) implies pattern.variable->select(oclIsKindOf(storydiagrams::patterns::ObjectVariable)).oclAsType(storydiagrams::patterns::ObjectVariable)->forAll(oV |oV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)'"
  * @generated
  */
 public interface StoryPatternNode extends PatternNode {

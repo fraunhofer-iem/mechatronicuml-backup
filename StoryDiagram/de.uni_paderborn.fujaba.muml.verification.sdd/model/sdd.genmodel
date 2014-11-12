@@ -8,7 +8,7 @@
     testSuiteClass="de.uni_paderborn.fujaba.muml.verification.sdd.tests.SDDAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     editPluginID="de.uni_paderborn.fujaba.muml.verification.sdd.edit" editorPluginID="de.uni_paderborn.fujaba.muml.verification.sdd.editor"
-    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core" operationReflection="true">
   <foreignModel>sdd.ecore</foreignModel>
   <genPackages prefix="SDD" basePackage="de.uni_paderborn.fujaba.muml.verification"
       disposableProviderFactory="true" ecorePackage="sdd.ecore#/">
