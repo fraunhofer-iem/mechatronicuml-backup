@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:componentstorydiagram="http://www.fujaba.de/muml/componentstorydiagram/0.4.0" xmlns:componentstorypattern="http://www.fujaba.de/muml/componentstorypattern/0.4.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:expression="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:protocolinstantiation="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:reconfiguration="http://www.fujaba.de/muml/reconfiguration/0.3.18" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:structdatatype="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hm9EULiwEeKp46K0r5yxrg">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:componentsdd="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0" xmlns:componentstorydiagram="http://www.fujaba.de/muml/componentstorydiagram/0.4.0" xmlns:componentstorypattern="http://www.fujaba.de/muml/componentstorypattern/0.4.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:expression="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:protocolinstantiation="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:reconfiguration="http://www.fujaba.de/muml/reconfiguration/0.3.18" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:sdd="http://www.fujaba.de/muml/verification/sdd/0.4.0" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:structdatatype="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hm9EULiwEeKp46K0r5yxrg">
   <categories xmi:id="_hm9EUbiwEeKp46K0r5yxrg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EUriwEeKp46K0r5yxrg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EU7iwEeKp46K0r5yxrg" name="BOOLEAN" primitiveType="BOOLEAN"/>
@@ -7425,11 +7425,60 @@
                 <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_bGONEGmTEeSuxqgBP_WF2w" name="" connectors="_tQcP4GmVEeSLo7HduyNOnw" type="_QPsC4O6FEeOKI4bZ_bxwuQ"/>
               </partVariables>
               <connectorVariables xsi:type="componentstorypattern:AssemblyVariable" xmi:id="_XRjQUGmNEeSbsbbH1osIGg" name="" connectorEndpoints="_Ap1ckGmNEeSbsbbH1osIGg _TT5H8GmNEeSbsbbH1osIGg" type="_Qov8gO8cEeOgFIvanw5ruQ"/>
-              <connectorVariables xsi:type="componentstorypattern:AssemblyVariable" xmi:id="_tQcP4GmVEeSLo7HduyNOnw" name="" connectorEndpoints="_d2s7MGmUEeSuxqgBP_WF2w _bGONEGmTEeSuxqgBP_WF2w"/>
+              <connectorVariables xsi:type="componentstorypattern:AssemblyVariable" xmi:id="_tQcP4GmVEeSLo7HduyNOnw" name="" connectorEndpoints="_d2s7MGmUEeSuxqgBP_WF2w _bGONEGmTEeSuxqgBP_WF2w" type="_TeJJMO8EEeOoIPzCC8d2Xg"/>
             </thisVariable>
           </componentStoryPattern>
         </ownedActivityNode>
       </activity>
+    </modelElements>
+  </categories>
+  <categories xmi:id="__Z0ZkGplEeSj9d0uO60xOw" key="de.uni_paderborn.fujaba.muml.verification.sdd.componentssdd.category" name="componentsdd">
+    <modelElements xsi:type="componentsdd:ComponentStoryDecisionDiagram" xmi:id="__Z0ZkWplEeSj9d0uO60xOw" name="CSDD" reconfigurableComponent="_RbW-QPhpEeOQsfT56fxzVQ" invariantSDD="true">
+      <nodes xsi:type="componentsdd:ComponentStoryPatternNode" xmi:id="_NFf44GqGEeSpW9kj4Guewg" outgoingEdges="_C0QnsGqIEeSpW9kj4Guewg _GZheMGqIEeSpW9kj4Guewg" name="componentStoryPatternNode">
+        <pattern xmi:id="_NFpp4GqGEeSpW9kj4Guewg" name="componentStoryPattern">
+          <thisVariable xmi:id="_NFpp4WqGEeSpW9kj4Guewg" name="this" bindingState="BOUND" type="_RbW-QPhpEeOQsfT56fxzVQ">
+            <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_ODPTgGqGEeSpW9kj4Guewg" name="cc" type="_P32scPuQEeO8xJIX1d2eag"/>
+          </thisVariable>
+        </pattern>
+      </nodes>
+      <nodes xsi:type="componentsdd:ComponentStoryPatternNode" xmi:id="_SkSAUGqHEeSpW9kj4Guewg" outgoingEdges="_JeBUgGqJEeSpW9kj4Guewg" incomingEdges="_C0QnsGqIEeSpW9kj4Guewg" name="componentStoryPatternNode" type="Universal">
+        <pattern xmi:id="_SkSAUWqHEeSpW9kj4Guewg" name="componentStoryPattern">
+          <thisVariable xmi:id="_SkSAUmqHEeSpW9kj4Guewg" name="this" bindingState="BOUND" type="_RbW-QPhpEeOQsfT56fxzVQ">
+            <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_U0ghEGqIEeSpW9kj4Guewg" name="" type="_64P0EPuREeO8xJIX1d2eag" subPortVariables="_VSQ0EGqIEeSpW9kj4Guewg _Vp7GIGqIEeSpW9kj4Guewg">
+              <orderConstraints xmi:id="_ZC-soGqIEeSpW9kj4Guewg" srcSubPortVariable="_VSQ0EGqIEeSpW9kj4Guewg" tgtSubPortVariable="_Vp7GIGqIEeSpW9kj4Guewg"/>
+            </portVariables>
+            <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_VSQ0EGqIEeSpW9kj4Guewg" name="rdp1" type="_64P0EPuREeO8xJIX1d2eag" multiPortVariable="_U0ghEGqIEeSpW9kj4Guewg"/>
+            <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_Vp7GIGqIEeSpW9kj4Guewg" name="rdp2" type="_64P0EPuREeO8xJIX1d2eag" multiPortVariable="_U0ghEGqIEeSpW9kj4Guewg"/>
+            <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_Z7wkMGqHEeSpW9kj4Guewg" name="cc" bindingState="BOUND" type="_P32scPuQEeO8xJIX1d2eag">
+              <triggerEmbeddedComponentExpressions xsi:type="componentsdd:EvaluateComponentSDDExpression" xmi:id="_cnJzcGqHEeSpW9kj4Guewg"/>
+            </partVariables>
+          </thisVariable>
+        </pattern>
+      </nodes>
+      <nodes xsi:type="sdd:LeafNode" xmi:id="_FhSOoGqIEeSpW9kj4Guewg" incomingEdges="_GZheMGqIEeSpW9kj4Guewg"/>
+      <nodes xsi:type="componentsdd:ComponentStoryPatternNode" xmi:id="_JG2AEGqIEeSpW9kj4Guewg" outgoingEdges="_Q7lSQGqJEeSpW9kj4Guewg _R2DWcGqJEeSpW9kj4Guewg" incomingEdges="_JeBUgGqJEeSpW9kj4Guewg" name="componentStoryPatternNode">
+        <pattern xmi:id="_JG2AEWqIEeSpW9kj4Guewg" name="componentStoryPattern">
+          <thisVariable xmi:id="_JG2AEmqIEeSpW9kj4Guewg" name="this" bindingState="BOUND" type="_RbW-QPhpEeOQsfT56fxzVQ">
+            <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_PQWU8GqIEeSpW9kj4Guewg" name="" type="_64P0EPuREeO8xJIX1d2eag" subPortVariables="_QB5GoGqIEeSpW9kj4Guewg _QWRbMGqIEeSpW9kj4Guewg"/>
+            <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_QB5GoGqIEeSpW9kj4Guewg" name="rdp1" bindingState="BOUND" connectors="_9RQcsGqIEeSpW9kj4Guewg" type="_64P0EPuREeO8xJIX1d2eag" multiPortVariable="_PQWU8GqIEeSpW9kj4Guewg"/>
+            <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_QWRbMGqIEeSpW9kj4Guewg" name="rdp2" bindingState="BOUND" connectors="_-gtSYGqIEeSpW9kj4Guewg" type="_64P0EPuREeO8xJIX1d2eag" multiPortVariable="_PQWU8GqIEeSpW9kj4Guewg"/>
+            <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_MailcGqIEeSpW9kj4Guewg" name="cc" bindingState="BOUND" type="_P32scPuQEeO8xJIX1d2eag">
+              <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_hdZUMGqIEeSpW9kj4Guewg" name="" type="_hWucUO6FEeOKI4bZ_bxwuQ" subPortVariables="_iCSJ8GqIEeSpW9kj4Guewg _iYKTUGqIEeSpW9kj4Guewg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_iCSJ8GqIEeSpW9kj4Guewg" name="rdp3" connectors="_9RQcsGqIEeSpW9kj4Guewg" type="_hWucUO6FEeOKI4bZ_bxwuQ" multiPortVariable="_hdZUMGqIEeSpW9kj4Guewg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_iYKTUGqIEeSpW9kj4Guewg" name="rdp4" connectors="_-gtSYGqIEeSpW9kj4Guewg" type="_hWucUO6FEeOKI4bZ_bxwuQ" multiPortVariable="_hdZUMGqIEeSpW9kj4Guewg"/>
+            </partVariables>
+            <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_9RQcsGqIEeSpW9kj4Guewg" name="" connectorEndpoints="_QB5GoGqIEeSpW9kj4Guewg _iCSJ8GqIEeSpW9kj4Guewg" type="_C62_oPuSEeO8xJIX1d2eag"/>
+            <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_-gtSYGqIEeSpW9kj4Guewg" name="" connectorEndpoints="_QWRbMGqIEeSpW9kj4Guewg _iYKTUGqIEeSpW9kj4Guewg" type="_C62_oPuSEeO8xJIX1d2eag"/>
+          </thisVariable>
+        </pattern>
+      </nodes>
+      <nodes xsi:type="sdd:LeafNode" xmi:id="_MOw90GqJEeSpW9kj4Guewg" incomingEdges="_Q7lSQGqJEeSpW9kj4Guewg"/>
+      <nodes xsi:type="sdd:LeafNode" xmi:id="_NjHhoGqJEeSpW9kj4Guewg" incomingEdges="_R2DWcGqJEeSpW9kj4Guewg" value="false"/>
+      <edges xmi:id="_C0QnsGqIEeSpW9kj4Guewg" sourceNode="_NFf44GqGEeSpW9kj4Guewg" targetNode="_SkSAUGqHEeSpW9kj4Guewg"/>
+      <edges xmi:id="_GZheMGqIEeSpW9kj4Guewg" sourceNode="_NFf44GqGEeSpW9kj4Guewg" targetNode="_FhSOoGqIEeSpW9kj4Guewg" type="Low"/>
+      <edges xmi:id="_JeBUgGqJEeSpW9kj4Guewg" sourceNode="_SkSAUGqHEeSpW9kj4Guewg" targetNode="_JG2AEGqIEeSpW9kj4Guewg"/>
+      <edges xmi:id="_Q7lSQGqJEeSpW9kj4Guewg" sourceNode="_JG2AEGqIEeSpW9kj4Guewg" targetNode="_MOw90GqJEeSpW9kj4Guewg"/>
+      <edges xmi:id="_R2DWcGqJEeSpW9kj4Guewg" sourceNode="_JG2AEGqIEeSpW9kj4Guewg" targetNode="_NjHhoGqJEeSpW9kj4Guewg" type="Low"/>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
