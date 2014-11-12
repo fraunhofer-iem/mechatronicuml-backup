@@ -28,6 +28,10 @@ public abstract class StructuralConditionEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addParameters_GeneralTab_Editor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 
@@ -50,6 +54,30 @@ public abstract class StructuralConditionEditor
 				.getStructuralCondition_ReconfigurableComponent();
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addParameters_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createParameters_GeneralTab_Editor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameters_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getStructuralCondition_Parameters();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
+
+		editor.setTooltipMessage("Input parameters provided to the structural condition.");
 
 		return editor;
 

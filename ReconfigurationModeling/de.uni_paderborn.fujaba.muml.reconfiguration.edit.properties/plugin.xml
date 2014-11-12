@@ -184,6 +184,11 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor.EvaluateStructuralConditionExpressionEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7#EvaluateStructuralConditionExpression">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.editor.StructTypeEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18#StructType">
        </propertyEditor>
