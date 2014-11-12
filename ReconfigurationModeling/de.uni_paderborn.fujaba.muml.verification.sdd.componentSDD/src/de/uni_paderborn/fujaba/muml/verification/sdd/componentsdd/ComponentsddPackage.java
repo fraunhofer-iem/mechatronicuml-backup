@@ -287,13 +287,22 @@ public interface ComponentsddPackage extends EPackage {
 	int EVALUATE_COMPONENT_SDD_EXPRESSION__COMPONENT_SDD = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Parameter Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVALUATE_COMPONENT_SDD_EXPRESSION__PARAMETER_BINDINGS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Evaluate Component SDD Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVALUATE_COMPONENT_SDD_EXPRESSION_FEATURE_COUNT = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_FEATURE_COUNT + 1;
+	int EVALUATE_COMPONENT_SDD_EXPRESSION_FEATURE_COUNT = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_FEATURE_COUNT + 2;
 
 
 	/**
@@ -358,6 +367,17 @@ public interface ComponentsddPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEvaluateComponentSDDExpression_ComponentSDD();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.EvaluateComponentSDDExpression#getParameterBindings <em>Parameter Bindings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter Bindings</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.EvaluateComponentSDDExpression#getParameterBindings()
+	 * @see #getEvaluateComponentSDDExpression()
+	 * @generated
+	 */
+	EReference getEvaluateComponentSDDExpression_ParameterBindings();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -434,6 +454,14 @@ public interface ComponentsddPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EVALUATE_COMPONENT_SDD_EXPRESSION__COMPONENT_SDD = eINSTANCE.getEvaluateComponentSDDExpression_ComponentSDD();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter Bindings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVALUATE_COMPONENT_SDD_EXPRESSION__PARAMETER_BINDINGS = eINSTANCE.getEvaluateComponentSDDExpression_ParameterBindings();
 
 	}
 

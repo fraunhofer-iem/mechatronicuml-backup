@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage;
@@ -170,6 +171,15 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEvaluateComponentSDDExpression_ParameterBindings() {
+		return (EReference)evaluateComponentSDDExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentsddFactory getComponentsddFactory() {
 		return (ComponentsddFactory)getEFactoryInstance();
 	}
@@ -201,6 +211,7 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 
 		evaluateComponentSDDExpressionEClass = createEClass(EVALUATE_COMPONENT_SDD_EXPRESSION);
 		createEReference(evaluateComponentSDDExpressionEClass, EVALUATE_COMPONENT_SDD_EXPRESSION__COMPONENT_SDD);
+		createEReference(evaluateComponentSDDExpressionEClass, EVALUATE_COMPONENT_SDD_EXPRESSION__PARAMETER_BINDINGS);
 	}
 
 	/**
@@ -231,6 +242,7 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ComponentstorypatternPackage theComponentstorypatternPackage = (ComponentstorypatternPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -251,6 +263,7 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 
 		initEClass(evaluateComponentSDDExpressionEClass, EvaluateComponentSDDExpression.class, "EvaluateComponentSDDExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEvaluateComponentSDDExpression_ComponentSDD(), this.getComponentStoryDecisionDiagram(), null, "componentSDD", null, 1, 1, EvaluateComponentSDDExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEvaluateComponentSDDExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, EvaluateComponentSDDExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
