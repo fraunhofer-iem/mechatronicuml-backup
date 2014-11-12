@@ -372,20 +372,15 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getSinglePortVariable_3005Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.SinglePortVariable_3005,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortPositionConstraintEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
+		de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable domainModelElement = (de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
 		} else {
 			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5039); //$NON-NLS-1$
+					.getInstance()
+					.logError(
+							"No domain element for view with visualID = " + 3005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

@@ -28,6 +28,7 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -37,7 +38,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class SinglePortVariableEditPart extends AbstractBorderedShapeEditPart {
+public class SinglePortVariableEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
@@ -119,12 +120,6 @@ public class SinglePortVariableEditPart extends AbstractBorderedShapeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortPositionConstraintEditPart.VISUAL_ID:
-					return new de.uni_paderborn.fujaba.common.edit.policies.BorderItemSelectionEditPolicy();
-				}
 				EditPolicy result = child
 						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -161,22 +156,6 @@ public class SinglePortVariableEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	protected void addBorderItem(IFigure borderItemContainer,
-			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortPositionConstraintEditPart) {
-			// bug-fix: allows the free positioning of external Labels
-			de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator(
-					getMainFigure(), PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-20, -20));
-			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else {
-			super.addBorderItem(borderItemContainer, borderItemEditPart);
-		}
-	}
-
-	/**
-	 * @generated
-	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(30, 30);
 
@@ -194,7 +173,7 @@ public class SinglePortVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createMainFigure() {
+	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -257,14 +236,6 @@ public class SinglePortVariableEditPart extends AbstractBorderedShapeEditPart {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortPositionConstraintEditPart.VISUAL_ID));
 	}
 
 }

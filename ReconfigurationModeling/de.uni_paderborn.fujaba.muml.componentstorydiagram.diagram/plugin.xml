@@ -242,7 +242,7 @@
             <method name="getType()" value="4001,4004,4005,4006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5011,5001,5019,5020,5017,5018,5063,5021,5022,5056,5062,5023,5024,5057,5025,5026,5058,5027,5028,5059,5010,5041,5064,5052,5053,5054,5055,5065"/>
+            <method name="getType()" value="5011,5001,5019,5020,5017,5018,5063,5021,5022,5056,5023,5024,5057,5025,5026,5058,5027,5028,5059,5010,5041,5064,5052,5053,5054,5055,5065"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7005,7006,7007,7008,7009,7012,7013"/>

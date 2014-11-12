@@ -691,15 +691,6 @@ public class ComponentSDDViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5039 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortPositionConstraintEditPart.VISUAL_ID));
-		label5039.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
-		Location location5039 = (Location) label5039.getLayoutConstraint();
-		location5039.setX(0);
-		location5039.setY(5);
 		return node;
 	}
 

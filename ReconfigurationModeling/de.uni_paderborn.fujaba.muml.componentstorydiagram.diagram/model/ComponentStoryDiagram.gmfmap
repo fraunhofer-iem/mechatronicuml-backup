@@ -231,11 +231,6 @@
                         <ownedChild>
                           <domainMetaElement
                               href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//SinglePortVariable"/>
-                          <labelMappings
-                              readOnly="true">
-                            <diagramLabel
-                                href="ComponentStoryDiagram.gmfgraph#MultiPortPositionConstraintLabel"/>
-                          </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>

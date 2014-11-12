@@ -353,23 +353,6 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
       </modelFacet>
-      <labels
-          xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5039"
-          editPartClassName="MultiPortPositionConstraintEditPart"
-          itemSemanticEditPolicyClassName="MultiPortPositionConstraintItemSemanticEditPolicy"
-          notationViewFactoryClassName="SinglePortVariableLabelViewFactory"
-          readOnly="true"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:InnerClassViewmap"
-            className="MultiPortPositionConstraintFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortPositionConstraintFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMultiPortPositionConstraint; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortPositionConstraintFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;test&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMultiPortPositionConstraint() {&#xA;&#x9;&#x9;return fFigureMultiPortPositionConstraint;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-        <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
-      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -1880,7 +1863,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:ExternalParser"
-        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet"/>
+        uses="//@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>

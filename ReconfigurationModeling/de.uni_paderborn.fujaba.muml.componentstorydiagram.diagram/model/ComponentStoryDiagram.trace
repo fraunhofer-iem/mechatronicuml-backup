@@ -87,11 +87,7 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3017"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'MultiPortVariable') and _containmentMF_.name = 'gmfSubPortVariables')">
-    <nodeLabelTraces
-        visualID="5062"
-        queryText="true"/>
-  </childNodeTraces>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'MultiPortVariable') and _containmentMF_.name = 'gmfSubPortVariables')"/>
   <childNodeTraces
       visualID="3018"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'SinglePortVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'PartVariable') and _containmentMF_.name = 'portVariables')">

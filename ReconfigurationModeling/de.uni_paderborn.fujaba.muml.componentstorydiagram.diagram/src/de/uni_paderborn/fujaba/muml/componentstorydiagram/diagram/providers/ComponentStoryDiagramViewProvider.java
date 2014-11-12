@@ -717,15 +717,6 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5062 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortPositionConstraintEditPart.VISUAL_ID));
-		label5062.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
-		Location location5062 = (Location) label5062.getLayoutConstraint();
-		location5062.setX(0);
-		location5062.setY(5);
 		return node;
 	}
 

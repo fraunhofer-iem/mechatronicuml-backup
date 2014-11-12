@@ -320,11 +320,6 @@ public class ComponentSDDVisualIDRegistry {
 				return true;
 			}
 			break;
-		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.MultiPortPositionConstraintEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.PortVariableOperator2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
