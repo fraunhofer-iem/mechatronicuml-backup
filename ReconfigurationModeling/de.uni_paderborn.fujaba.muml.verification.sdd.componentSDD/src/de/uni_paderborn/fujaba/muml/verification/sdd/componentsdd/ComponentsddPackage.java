@@ -848,6 +848,53 @@ public interface ComponentsddPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.InitialNodeImpl <em>Initial Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.InitialNodeImpl
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.ComponentsddPackageImpl#getInitialNode()
+	 * @generated
+	 */
+	int INITIAL_NODE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE__OUTGOING_EDGES = SDDPackage.NODE__OUTGOING_EDGES;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Edges</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE__INCOMING_EDGES = SDDPackage.NODE__INCOMING_EDGES;
+
+	/**
+	 * The number of structural features of the '<em>Initial Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE_FEATURE_COUNT = SDDPackage.NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Initial Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE_OPERATION_COUNT = SDDPackage.NODE_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram <em>Component Story Decision Diagram</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -920,6 +967,16 @@ public interface ComponentsddPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEvaluateComponentSDDExpression_ParameterBindings();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode <em>Initial Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Initial Node</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode
+	 * @generated
+	 */
+	EClass getInitialNode();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1004,6 +1061,16 @@ public interface ComponentsddPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EVALUATE_COMPONENT_SDD_EXPRESSION__PARAMETER_BINDINGS = eINSTANCE.getEvaluateComponentSDDExpression_ParameterBindings();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.InitialNodeImpl <em>Initial Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.InitialNodeImpl
+		 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.impl.ComponentsddPackageImpl#getInitialNode()
+		 * @generated
+		 */
+		EClass INITIAL_NODE = eINSTANCE.getInitialNode();
 
 	}
 

@@ -140,6 +140,29 @@ public class ComponentsddItemProviderAdapterFactory extends ComponentsddAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InitialNodeItemProvider initialNodeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInitialNodeAdapter() {
+		if (initialNodeItemProvider == null) {
+			initialNodeItemProvider = new InitialNodeItemProvider(this);
+		}
+
+		return initialNodeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,6 +264,7 @@ public class ComponentsddItemProviderAdapterFactory extends ComponentsddAdapterF
 		if (componentStoryDecisionDiagramItemProvider != null) componentStoryDecisionDiagramItemProvider.dispose();
 		if (componentStoryPatternNodeItemProvider != null) componentStoryPatternNodeItemProvider.dispose();
 		if (evaluateComponentSDDExpressionItemProvider != null) evaluateComponentSDDExpressionItemProvider.dispose();
+		if (initialNodeItemProvider != null) initialNodeItemProvider.dispose();
 	}
 
 }

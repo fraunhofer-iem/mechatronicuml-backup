@@ -113,6 +113,8 @@ public class ComponentsddValidator extends EObjectValidator {
 				return validateComponentStoryPatternNode((ComponentStoryPatternNode)value, diagnostics, context);
 			case ComponentsddPackage.EVALUATE_COMPONENT_SDD_EXPRESSION:
 				return validateEvaluateComponentSDDExpression((EvaluateComponentSDDExpression)value, diagnostics, context);
+			case ComponentsddPackage.INITIAL_NODE:
+				return validateInitialNode((InitialNode)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -232,6 +234,15 @@ public class ComponentsddValidator extends EObjectValidator {
 	 */
 	public boolean validateEvaluateComponentSDDExpression(EvaluateComponentSDDExpression evaluateComponentSDDExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(evaluateComponentSDDExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInitialNode(InitialNode initialNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(initialNode, diagnostics, context);
 	}
 
 	/**

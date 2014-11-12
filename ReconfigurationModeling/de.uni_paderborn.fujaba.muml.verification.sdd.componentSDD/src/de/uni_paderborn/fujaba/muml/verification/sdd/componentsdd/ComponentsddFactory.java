@@ -49,6 +49,15 @@ public interface ComponentsddFactory extends EFactory {
 	EvaluateComponentSDDExpression createEvaluateComponentSDDExpression();
 
 	/**
+	 * Returns a new object of class '<em>Initial Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Initial Node</em>'.
+	 * @generated
+	 */
+	InitialNode createInitialNode();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

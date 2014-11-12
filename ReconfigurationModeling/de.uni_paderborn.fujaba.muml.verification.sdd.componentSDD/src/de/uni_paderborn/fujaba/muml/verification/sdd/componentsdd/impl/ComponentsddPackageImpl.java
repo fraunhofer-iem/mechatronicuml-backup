@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStory
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddFactory;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.EvaluateComponentSDDExpression;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.util.ComponentsddValidator;
 
 /**
@@ -48,6 +49,13 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 	 * @generated
 	 */
 	private EClass evaluateComponentSDDExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass initialNodeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -191,6 +199,15 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInitialNode() {
+		return initialNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentsddFactory getComponentsddFactory() {
 		return (ComponentsddFactory)getEFactoryInstance();
 	}
@@ -223,6 +240,8 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 		evaluateComponentSDDExpressionEClass = createEClass(EVALUATE_COMPONENT_SDD_EXPRESSION);
 		createEReference(evaluateComponentSDDExpressionEClass, EVALUATE_COMPONENT_SDD_EXPRESSION__COMPONENT_SDD);
 		createEReference(evaluateComponentSDDExpressionEClass, EVALUATE_COMPONENT_SDD_EXPRESSION__PARAMETER_BINDINGS);
+
+		initialNodeEClass = createEClass(INITIAL_NODE);
 	}
 
 	/**
@@ -264,6 +283,7 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 		componentStoryDecisionDiagramEClass.getESuperTypes().add(theReconfigurationPackage.getStructuralCondition());
 		componentStoryPatternNodeEClass.getESuperTypes().add(theSDDPackage.getPatternNode());
 		evaluateComponentSDDExpressionEClass.getESuperTypes().add(theComponentstorypatternPackage.getTriggerEmbeddedComponentExpression());
+		initialNodeEClass.getESuperTypes().add(theSDDPackage.getNode());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentStoryDecisionDiagramEClass, ComponentStoryDecisionDiagram.class, "ComponentStoryDecisionDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -275,6 +295,8 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 		initEClass(evaluateComponentSDDExpressionEClass, EvaluateComponentSDDExpression.class, "EvaluateComponentSDDExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEvaluateComponentSDDExpression_ComponentSDD(), this.getComponentStoryDecisionDiagram(), null, "componentSDD", null, 1, 1, EvaluateComponentSDDExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEvaluateComponentSDDExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, EvaluateComponentSDDExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(initialNodeEClass, InitialNode.class, "InitialNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

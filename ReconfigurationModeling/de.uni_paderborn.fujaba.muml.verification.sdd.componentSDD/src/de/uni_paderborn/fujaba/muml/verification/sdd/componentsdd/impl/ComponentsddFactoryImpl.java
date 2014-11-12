@@ -62,6 +62,7 @@ public class ComponentsddFactoryImpl extends EFactoryImpl implements Componentsd
 			case ComponentsddPackage.COMPONENT_STORY_DECISION_DIAGRAM: return createComponentStoryDecisionDiagram();
 			case ComponentsddPackage.COMPONENT_STORY_PATTERN_NODE: return createComponentStoryPatternNode();
 			case ComponentsddPackage.EVALUATE_COMPONENT_SDD_EXPRESSION: return createEvaluateComponentSDDExpression();
+			case ComponentsddPackage.INITIAL_NODE: return createInitialNode();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +96,16 @@ public class ComponentsddFactoryImpl extends EFactoryImpl implements Componentsd
 	public EvaluateComponentSDDExpression createEvaluateComponentSDDExpression() {
 		EvaluateComponentSDDExpressionImpl evaluateComponentSDDExpression = new EvaluateComponentSDDExpressionImpl();
 		return evaluateComponentSDDExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InitialNode createInitialNode() {
+		InitialNodeImpl initialNode = new InitialNodeImpl();
+		return initialNode;
 	}
 
 	/**

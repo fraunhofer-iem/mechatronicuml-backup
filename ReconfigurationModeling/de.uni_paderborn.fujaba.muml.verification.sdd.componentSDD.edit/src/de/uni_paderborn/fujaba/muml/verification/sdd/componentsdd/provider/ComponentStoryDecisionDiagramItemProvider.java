@@ -234,6 +234,11 @@ public class ComponentStoryDecisionDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(SDDPackage.Literals.ABSTRACT_STORY_DECISION_DIAGRAM__NODES,
+				 ComponentsddFactory.eINSTANCE.createInitialNode()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ReconfigurationPackage.Literals.STRUCTURAL_CONDITION__PARAMETERS,
 				 BehaviorFactory.eINSTANCE.createParameter()));
 	}

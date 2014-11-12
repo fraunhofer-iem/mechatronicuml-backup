@@ -91,6 +91,10 @@ public class ComponentsddAdapterFactory extends AdapterFactoryImpl {
 				return createEvaluateComponentSDDExpressionAdapter();
 			}
 			@Override
+			public Adapter caseInitialNode(InitialNode object) {
+				return createInitialNodeAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -185,6 +189,20 @@ public class ComponentsddAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEvaluateComponentSDDExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode <em>Initial Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode
+	 * @generated
+	 */
+	public Adapter createInitialNodeAdapter() {
 		return null;
 	}
 
