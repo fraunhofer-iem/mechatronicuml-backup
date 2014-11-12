@@ -84,7 +84,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
     @Override
     public void saveWidgetValues() {
     	IDialogSettings settings = getDialogSettings();
-        if (settings != null) {
+        if (settings != null && buttonOverwrite != null) {
         	settings.put(OVERWRITE_KEY, buttonOverwrite.getSelection());
         }
     }
