@@ -1,298 +1,916 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram" modelID="Coordination Protocol" diagramFileExtension="coordinationprotocol_diagram" domainFileExtension="fujaba" dynamicTemplates="true" templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates" copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>" pluginDirectory="/de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/src">
-  <diagram visualID="1000" editPartClassName="ModelElementCategoryEditPart" itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy" canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy" iconProviderPriority="Low" creationWizardCategoryID="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true">
-    <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
-    <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ModelElementCategoryEditHelper"/>
-    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
-    <domainDiagramElement href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
-    <childNodes visualID="3005" editPartClassName="CoordinationProtocol2EditPart" itemSemanticEditPolicyClassName="CoordinationProtocol2ItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationProtocolViewFactory" canonicalEditPolicyClassName="CoordinationProtocol2CanonicalEditPolicy" graphicalNodeEditPolicyClassName="CoordinationProtocol2GraphicalNodeEditPolicy" createCommandClassName="CoordinationProtocol2CreateCommand" containers="//@diagram/@compartments.0">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:SpecializationType" metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="CoordinationProtocolFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationProtocolNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationProtocolNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCoordinationProtocolNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationProtocolNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationProtocolNameFigure, constraintFFigureCoordinationProtocolNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationProtocolNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationProtocolNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+<gmfgen:GenEditorGenerator
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
+    packageNamePrefix="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
+    modelID="Coordination Protocol"
+    diagramFileExtension="coordinationprotocol_diagram"
+    domainFileExtension="fujaba"
+    dynamicTemplates="true"
+    templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
+    copyrightText="&lt;copyright>&#xD;&#xA;Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;    Software Engineering Group - initial API and implementation&#xD;&#xA;&lt;/copyright>"
+    pluginDirectory="/de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/src">
+  <diagram
+      visualID="1000"
+      editPartClassName="ModelElementCategoryEditPart"
+      itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy"
+      canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy"
+      iconProviderPriority="Low"
+      creationWizardCategoryID="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+      validationProviderPriority="Low"
+      validationEnabled="true"
+      validationDecorators="true">
+    <diagramRunTimeClass
+        href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType
+        xsi:type="gmfgen:MetamodelType"
+        editHelperClassName="ModelElementCategoryEditHelper"/>
+    <viewmap
+        xsi:type="gmfgen:FigureViewmap"
+        figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <domainDiagramElement
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+    <childNodes
+        visualID="3005"
+        editPartClassName="CoordinationProtocol2EditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocol2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolViewFactory"
+        canonicalEditPolicyClassName="CoordinationProtocol2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="CoordinationProtocol2GraphicalNodeEditPolicy"
+        createCommandClassName="CoordinationProtocol2CreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="CoordinationProtocolFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationProtocolNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationProtocolNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCoordinationProtocolNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationProtocolNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationProtocolNameFigure, constraintFFigureCoordinationProtocolNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationProtocolNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationProtocolNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
-        <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
-        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
-        <childMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
-        <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.12">
-            <feature href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.13">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5005" editPartClassName="CoordinationProtocolNameEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationProtocolNameViewFactory">
-        <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureCoordinationProtocolNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="" editorPattern="" editPattern="">
-          <metaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+      <labels
+          visualID="5005"
+          editPartClassName="CoordinationProtocolNameEditPart"
+          itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CoordinationProtocolNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureCoordinationProtocolNameFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"
+            viewPattern=""
+            editorPattern=""
+            editPattern="">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
-    <childNodes visualID="3006" editPartClassName="RoleEditPart" itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy" notationViewFactoryClassName="RoleViewFactory" canonicalEditPolicyClassName="RoleCanonicalEditPolicy" graphicalNodeEditPolicyClassName="RoleGraphicalNodeEditPolicy" createCommandClassName="RoleCreateCommand" containers="//@diagram/@compartments.0">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="RoleEditHelper"/>
-      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
-        <attributes xsi:type="gmfgen:ResizeConstraints"/>
-        <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="20" height="20"/>
+    <childNodes
+        visualID="3006"
+        editPartClassName="RoleEditPart"
+        itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy"
+        notationViewFactoryClassName="RoleViewFactory"
+        canonicalEditPolicyClassName="RoleCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="RoleGraphicalNodeEditPolicy"
+        createCommandClassName="RoleCreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="RoleEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+        <attributes
+            xsi:type="gmfgen:ResizeConstraints"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="20"
+            height="20"/>
       </viewmap>
-      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy"/>
-      <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <modelFacet>
-        <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/Role"/>
-        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
-        <childMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
-        <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-            <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/Role"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
             <newElementInitializers>
-              <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
                 <newElementInitializers>
-                  <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.7">
-                    <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.7">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
-              <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
                 <newElementInitializers>
-                  <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.8">
-                    <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.8">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
-              <elementClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality"/>
+              <elementClass
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality"/>
             </newElementInitializers>
           </initializers>
-          <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.13">
-            <feature href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.14">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5006" editPartClassName="RoleNameEditPart" itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy" notationViewFactoryClassName="RoleNameViewFactory">
-        <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5006"
+          editPartClassName="RoleNameEditPart"
+          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="RoleNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
-    <topLevelNodes visualID="2005" editPartClassName="CoordinationProtocolEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationProtocolViewFactory" canonicalEditPolicyClassName="CoordinationProtocolCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="CoordinationProtocolGraphicalNodeEditPolicy" createCommandClassName="CoordinationProtocolCreateCommand">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="CoordinationProtocolEditHelper"/>
-      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    <childNodes
+        visualID="3010"
+        editPartClassName="MessageBuffer2EditPart"
+        itemSemanticEditPolicyClassName="MessageBuffer2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageBufferViewFactory"
+        canonicalEditPolicyClassName="MessageBuffer2CanonicalEditPolicy"
+        compartments="//@diagram/@compartments.1"
+        graphicalNodeEditPolicyClassName="MessageBuffer2GraphicalNodeEditPolicy"
+        createCommandClassName="MessageBuffer2CreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="MessageBufferEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="MessageBuffferFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MessageBuffferFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageBufferNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageBufferSizeLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MessageBuffferFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageBufferStaticHeadLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageBufferStaticHeadLabel0.setText(&quot;message buffer information:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageBufferStaticHeadLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageBufferStaticHeadLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMessageBufferStaticHeadLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageBufferStaticHeadLabel0.horizontalIndent = 0;&#xA;constraintMessageBufferStaticHeadLabel0.horizontalSpan = 2;&#xA;constraintMessageBufferStaticHeadLabel0.verticalSpan = 1;&#xA;constraintMessageBufferStaticHeadLabel0.grabExcessHorizontalSpace = false;&#xA;constraintMessageBufferStaticHeadLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageBufferStaticHeadLabel0, constraintMessageBufferStaticHeadLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape polyline10 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintPolyline10 = new org.eclipse.draw2d.GridData();&#xA;constraintPolyline10.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintPolyline10.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintPolyline10.horizontalIndent = 0;&#xA;constraintPolyline10.horizontalSpan = 2;&#xA;constraintPolyline10.verticalSpan = 1;&#xA;constraintPolyline10.grabExcessHorizontalSpace = true;&#xA;constraintPolyline10.grabExcessVerticalSpace = false;&#xA;this.add(polyline10, constraintPolyline10);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageBufferStaticNameLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageBufferStaticNameLabel0.setText(&quot;name:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageBufferStaticNameLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageBufferStaticNameLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMessageBufferStaticNameLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageBufferStaticNameLabel0.horizontalIndent = 0;&#xA;constraintMessageBufferStaticNameLabel0.horizontalSpan = 1;&#xA;constraintMessageBufferStaticNameLabel0.verticalSpan = 1;&#xA;constraintMessageBufferStaticNameLabel0.grabExcessHorizontalSpace = false;&#xA;constraintMessageBufferStaticNameLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageBufferStaticNameLabel0, constraintMessageBufferStaticNameLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMessageBufferNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageBufferNameLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageBufferNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageBufferNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageBufferNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMessageBufferNameLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageBufferNameLabel.horizontalSpan = 1;&#xA;constraintFFigureMessageBufferNameLabel.verticalSpan = 1;&#xA;constraintFFigureMessageBufferNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageBufferNameLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageBufferNameLabel, constraintFFigureMessageBufferNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageBufferStaticBufferSizeLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageBufferStaticBufferSizeLabel0.setText(&quot;buffer size:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageBufferStaticBufferSizeLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageBufferStaticBufferSizeLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMessageBufferStaticBufferSizeLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageBufferStaticBufferSizeLabel0.horizontalIndent = 0;&#xA;constraintMessageBufferStaticBufferSizeLabel0.horizontalSpan = 1;&#xA;constraintMessageBufferStaticBufferSizeLabel0.verticalSpan = 1;&#xA;constraintMessageBufferStaticBufferSizeLabel0.grabExcessHorizontalSpace = false;&#xA;constraintMessageBufferStaticBufferSizeLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageBufferStaticBufferSizeLabel0, constraintMessageBufferStaticBufferSizeLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMessageBufferSizeLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageBufferSizeLabel.setText(&quot;Name:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageBufferSizeLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageBufferSizeLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalSpan = 1;&#xA;constraintFFigureMessageBufferSizeLabel.verticalSpan = 1;&#xA;constraintFFigureMessageBufferSizeLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageBufferSizeLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageBufferSizeLabel, constraintFFigureMessageBufferSizeLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageTypesStaticLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageTypesStaticLabel0.setText(&quot;message types:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageTypesStaticLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageTypesStaticLabel0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageTypesStaticLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageTypesStaticLabel0.horizontalIndent = 0;&#xA;constraintMessageTypesStaticLabel0.horizontalSpan = 1;&#xA;constraintMessageTypesStaticLabel0.verticalSpan = 1;&#xA;constraintMessageTypesStaticLabel0.grabExcessHorizontalSpace = true;&#xA;constraintMessageTypesStaticLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageTypesStaticLabel0, constraintMessageTypesStaticLabel0);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageBufferNameLabel() {&#xA;&#x9;&#x9;return fFigureMessageBufferNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageBufferSizeLabel() {&#xA;&#x9;&#x9;return fFigureMessageBufferSizeLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
-        <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
-        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
-        <childMetaFeature href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
-        <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-            <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfMessageBuffers"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfMessageBuffers"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.15">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5012"
+          editPartClassName="MessageBufferName2EditPart"
+          itemSemanticEditPolicyClassName="MessageBufferName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageBufferNameViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureMessageBufferNameLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5013"
+          editPartClassName="WrappingLabel2EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageBufferLabelViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureMessageBufferSizeLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"/>
+      </labels>
+    </childNodes>
+    <childNodes
+        visualID="3009"
+        editPartClassName="MessageTypeEditPart"
+        itemSemanticEditPolicyClassName="MessageTypeItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeViewFactory"
+        canonicalEditPolicyClassName="MessageTypeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="MessageTypeGraphicalNodeEditPolicy"
+        createCommandClassName="MessageTypeCreateCommand"
+        containers="//@diagram/@compartments.1">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="MessageTypeEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="MessageTypeFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MessageTypeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageTypeNameLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MessageTypeFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setOutline(false);&#xA;this.setFill(false);&#xA;this.setOpaque(false);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(80)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;this.setMaximumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(120)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureMessageTypeNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageTypeNameLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureMessageTypeNameLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageTypeNameLabel() {&#xA;&#x9;&#x9;return fFigureMessageTypeNameLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="80"
+            height="20"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/msgtype/MessageType"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer/gmfMessageTypes"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer/gmfMessageTypes"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.16">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/msgtype/MessageType"/>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5010"
+          editPartClassName="MessageTypeNameEditPart"
+          itemSemanticEditPolicyClassName="MessageTypeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageTypeNameViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureMessageTypeNameLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <topLevelNodes
+        visualID="2005"
+        editPartClassName="CoordinationProtocolEditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocolItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolViewFactory"
+        canonicalEditPolicyClassName="CoordinationProtocolCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.0"
+        graphicalNodeEditPolicyClassName="CoordinationProtocolGraphicalNodeEditPolicy"
+        createCommandClassName="CoordinationProtocolCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="CoordinationProtocolEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
             <newElementInitializers>
-              <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.0">
-                <feature href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.0">
+                <feature
+                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
-              <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
                 <newElementInitializers>
-                  <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                    <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+                  <initializers
+                      xsi:type="gmfgen:GenReferenceNewElementSpec">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
                     <newElementInitializers>
-                      <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.1">
-                        <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.1">
+                        <feature
+                            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
-                  <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                    <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+                  <initializers
+                      xsi:type="gmfgen:GenReferenceNewElementSpec">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
                     <newElementInitializers>
-                      <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.2">
-                        <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.2">
+                        <feature
+                            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
-                  <elementClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality"/>
+                  <elementClass
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality"/>
                 </newElementInitializers>
               </initializers>
-              <elementClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/Role"/>
+              <elementClass
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/Role"/>
             </newElementInitializers>
             <newElementInitializers>
-              <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
                 <newElementInitializers>
-                  <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                    <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+                  <initializers
+                      xsi:type="gmfgen:GenReferenceNewElementSpec">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
                     <newElementInitializers>
-                      <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.3">
-                        <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.3">
+                        <feature
+                            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
-                  <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                    <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+                  <initializers
+                      xsi:type="gmfgen:GenReferenceNewElementSpec">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
                     <newElementInitializers>
-                      <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.4">
-                        <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.4">
+                        <feature
+                            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
-                  <elementClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality"/>
+                  <elementClass
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality"/>
                 </newElementInitializers>
               </initializers>
             </newElementInitializers>
           </initializers>
-          <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-            <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
             <newElementInitializers>
-              <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.5">
-                <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.5">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
               </initializers>
-              <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-                <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
                 <newElementInitializers>
-                  <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.6">
-                    <feature href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.6">
+                    <feature
+                        href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
-              <elementClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector"/>
+              <elementClass
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector"/>
             </newElementInitializers>
           </initializers>
-          <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.11">
-            <feature href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.12">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
     </topLevelNodes>
-    <links visualID="4007" editPartClassName="AbstractCoordinationSpecificationRolesEditPart" itemSemanticEditPolicyClassName="AbstractCoordinationSpecificationRolesItemSemanticEditPolicy" notationViewFactoryClassName="AbstractCoordinationSpecificationRolesViewFactory" createCommandClassName="AbstractCoordinationSpecificationRolesCreateCommand" reorientCommandClassName="AbstractCoordinationSpecificationRolesReorientCommand">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType xsi:type="gmfgen:SpecializationType"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RolePatternFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RolePatternFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureRolePatternLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RolePatternFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRolePatternLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureRolePatternLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureRolePatternLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureRolePatternLabel() {&#xA;&#x9;&#x9;return fFigureRolePatternLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
+    <links
+        visualID="4007"
+        editPartClassName="AbstractCoordinationSpecificationRolesEditPart"
+        itemSemanticEditPolicyClassName="AbstractCoordinationSpecificationRolesItemSemanticEditPolicy"
+        notationViewFactoryClassName="AbstractCoordinationSpecificationRolesViewFactory"
+        createCommandClassName="AbstractCoordinationSpecificationRolesCreateCommand"
+        reorientCommandClassName="AbstractCoordinationSpecificationRolesReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="RolePatternFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RolePatternFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureRolePatternLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RolePatternFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRolePatternLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureRolePatternLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureRolePatternLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureRolePatternLabel() {&#xA;&#x9;&#x9;return fFigureRolePatternLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
       </modelFacet>
     </links>
-    <links visualID="4006" editPartClassName="RoleConnectorEditPart" itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy" notationViewFactoryClassName="RoleConnectorViewFactory" createCommandClassName="RoleConnectorCreateCommand" reorientCommandClassName="RoleConnectorReorientCommand">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="RoleConnectorEditHelper"/>
-      <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
-      <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector"/>
-        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
-        <childMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
-        <modelElementInitializer xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers xsi:type="gmfgen:GenReferenceNewElementSpec">
-            <feature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+    <links
+        visualID="4006"
+        editPartClassName="RoleConnectorEditPart"
+        itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy"
+        notationViewFactoryClassName="RoleConnectorViewFactory"
+        createCommandClassName="RoleConnectorCreateCommand"
+        reorientCommandClassName="RoleConnectorReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="RoleConnectorEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
+      <modelFacet
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
             <newElementInitializers>
-              <initializers xsi:type="gmfgen:GenFeatureValueSpec" value="//@expressionProviders/@providers.0/@expressions.9">
-                <feature href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.10">
+                <feature
+                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
               </initializers>
             </newElementInitializers>
           </initializers>
         </modelElementInitializer>
-        <sourceMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
-        <targetMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+        <sourceMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+        <targetMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
-      <creationConstraints targetEnd="//@expressionProviders/@providers.0/@expressions.10"/>
+      <creationConstraints
+          targetEnd="//@expressionProviders/@providers.0/@expressions.11"/>
     </links>
-    <compartments visualID="7005" editPartClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentViewFactory" canonicalEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1" title="CoordinationProtocolContainerCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.0" listLayout="false">
-      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="CoordinationProtocolContainerCompartmentFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolContainerCompartmentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolContainerCompartmentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+    <links
+        visualID="4008"
+        editPartClassName="DiscreteInteractionEndpointReceiverMessageBufferEditPart"
+        itemSemanticEditPolicyClassName="DiscreteInteractionEndpointReceiverMessageBufferItemSemanticEditPolicy"
+        createCommandClassName="DiscreteInteractionEndpointReceiverMessageBufferCreateCommand"
+        reorientCommandClassName="DiscreteInteractionEndpointReceiverMessageBufferReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+      </modelFacet>
+    </links>
+    <compartments
+        visualID="7005"
+        editPartClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentViewFactory"
+        canonicalEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
+        title="CoordinationProtocolContainerCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="CoordinationProtocolContainerCompartmentFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolContainerCompartmentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolContainerCompartmentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+    </compartments>
+    <compartments
+        visualID="7008"
+        editPartClassName="MessageBufferMessageBufferCompartment2EditPart"
+        itemSemanticEditPolicyClassName="MessageBufferMessageBufferCompartment2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageBufferMessageBufferCompartmentViewFactory"
+        canonicalEditPolicyClassName="MessageBufferMessageBufferCompartment2CanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.3"
+        title="MessageBufferCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.2">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <palette>
-      <groups title="de">
-        <entries xsi:type="gmfgen:ToolEntry" title="CoordinationProtocol" description="Create new CoordinationProtocol" smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif" genNodes="//@diagram/@topLevelNodes.0"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Role" description="Create new Role" genNodes="//@diagram/@childNodes.1"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="Role Connector" description="Create new Role Connector" genLinks="//@diagram/@links.1"/>
+      <groups
+          title="de">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="CoordinationProtocol"
+            description="Create new CoordinationProtocol"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif"
+            genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Role"
+            description="Create new Role"
+            genNodes="//@diagram/@childNodes.1"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Role Connector"
+            description="Create new Role Connector"
+            genLinks="//@diagram/@links.1"/>
       </groups>
     </palette>
     <preferences>
-      <fontColor xsi:type="gmfgen:GenConstantColor" name="black"/>
-      <fillColor xsi:type="gmfgen:GenConstantColor" name="white"/>
-      <lineColor xsi:type="gmfgen:GenConstantColor" name="black"/>
-      <noteFillColor xsi:type="gmfgen:GenConstantColor" name="yellow"/>
-      <noteLineColor xsi:type="gmfgen:GenConstantColor" name="orange"/>
+      <fontColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="black"/>
+      <fillColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="white"/>
+      <lineColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="black"/>
+      <noteFillColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="yellow"/>
+      <noteLineColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="orange"/>
     </preferences>
-    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general" name="Coordination Protocol Diagram Editor" parentCategory="de.uni_paderborn.fujaba.preferences">
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.appearance" name="Appearance" parentCategory="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general" kind="Appearance"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.connections" name="Connections" parentCategory="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general" kind="Connections"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.printing" name="Printing" parentCategory="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general" kind="Printing"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.rulersAndGrid" name="Rulers And Grid" parentCategory="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general" kind="RulersAndGrid"/>
+    <preferencePages
+        xsi:type="gmfgen:GenStandardPreferencePage"
+        iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
+        name="Coordination Protocol Diagram Editor"
+        parentCategory="de.uni_paderborn.fujaba.preferences">
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.appearance"
+          name="Appearance"
+          parentCategory="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
+          kind="Appearance"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.connections"
+          name="Connections"
+          parentCategory="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
+          kind="Connections"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.printing"
+          name="Printing"
+          parentCategory="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
+          kind="Printing"/>
+      <children
+          xsi:type="gmfgen:GenStandardPreferencePage"
+          iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.rulersAndGrid"
+          name="Rulers And Grid"
+          parentCategory="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
+          kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram" name="Coordination Protocol Diagram Editor" provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+  <plugin
+      iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
+      name="Coordination Protocol Diagram Editor"
+      provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
+      version="0.4.0.qualifier">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
     <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
   </plugin>
-  <editor className="CoordinationProtocolDiagramEditor" iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/>
+  <editor
+      className="CoordinationProtocolDiagramEditor"
+      iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/>
   <navigator>
-    <childReferences child="//@diagram"/>
-    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.0"/>
-    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.1"/>
-    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.0"/>
-    <childReferences parent="//@diagram" child="//@diagram/@links.0" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.1" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.0" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.0" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram" child="//@diagram/@links.1" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.1" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@links.1" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.1" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@links.1" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        child="//@diagram"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.0"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.1"/>
+    <childReferences
+        parent="//@diagram/@childNodes.2"
+        child="//@diagram/@childNodes.3"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.2"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.0"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.0"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.1"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.1"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.0"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.0"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.1"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.1"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.1"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.1"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.1"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.2"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@childNodes.2"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.2"
+        child="//@diagram/@links.2"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@childNodes.1"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.1"
+        child="//@diagram/@links.2"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
-    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
-    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
-    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Advanced">
-      <filter xsi:type="gmfgen:TypeTabFilter">
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="appearance"/>
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="diagram"/>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="domain"
+        label="Advanced">
+      <filter
+          xsi:type="gmfgen:TypeTabFilter">
         <types>org.eclipse.gmf.runtime.notation.View</types>
         <types>org.eclipse.gef.EditPart</types>
         <generatedTypes>abstractNavigatorItem</generatedTypes>
       </filter>
     </tabs>
-    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="general" label="General" className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection" generateBoilerplate="false">
-      <filter xsi:type="gmfgen:CustomTabFilter" className="org.storydriven.core.properties.tabs.GeneralTabElementFilter"/>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="general"
+        label="General"
+        className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+        generateBoilerplate="false">
+      <filter
+          xsi:type="gmfgen:CustomTabFilter"
+          className="org.storydriven.core.properties.tabs.GeneralTabElementFilter"/>
     </tabs>
-    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="documentation" label="Documentation" className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection" generateBoilerplate="false">
-      <filter xsi:type="gmfgen:CustomTabFilter" className="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"/>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="documentation"
+        label="Documentation"
+        className="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+        generateBoilerplate="false">
+      <filter
+          xsi:type="gmfgen:CustomTabFilter"
+          className="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"/>
     </tabs>
   </propertySheet>
-  <domainGenModel href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
+  <domainGenModel
+      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
   <expressionProviders>
-    <providers xsi:type="gmfgen:GenExpressionInterpreter">
-      <expressions body="'role1'"/>
-      <expressions body="1"/>
-      <expressions body="1"/>
-      <expressions body="1"/>
-      <expressions body="1"/>
-      <expressions body="OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
-      <expressions body="''"/>
-      <expressions body="1"/>
-      <expressions body="1"/>
-      <expressions body="''"/>
-      <expressions xsi:type="gmfgen:GenConstraint" body="self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
-      <expressions body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
-      <expressions body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
-      <expressions body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+    <providers
+        xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          body="'role1'"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
+      <expressions
+          body="''"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="self.bufferSize"/>
+      <expressions
+          body="''"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
     </providers>
   </expressionProviders>
-  <labelParsers extensibleViaService="true">
-    <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet"/>
+  <labelParsers
+      extensibleViaService="true">
+    <implementations
+        xsi:type="gmfgen:PredefinedParser"
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
+        className="MessageBufferLabelExpressionLabelParser5013"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
+    </implementations>
   </labelParsers>
-  <contextMenus context="//@diagram">
-    <items xsi:type="gmfgen:LoadResourceAction"/>
+  <contextMenus
+      context="//@diagram">
+    <items
+        xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
   <extensions>
-    <rootInput href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+    <rootInput
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
   </extensions>
 </gmfgen:GenEditorGenerator>

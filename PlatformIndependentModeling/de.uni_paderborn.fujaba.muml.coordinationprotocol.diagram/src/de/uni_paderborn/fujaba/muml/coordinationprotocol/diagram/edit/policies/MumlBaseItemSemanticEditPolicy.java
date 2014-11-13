@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies;
 
 import java.util.HashMap;
@@ -365,6 +377,30 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateDiscreteInteractionEndpointReceiverMessageBuffer_4008(
+				de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target,
+				View sourceView, View targetView) {
+			if (source != null) {
+				if (source.getReceiverMessageBuffer().contains(target)) {
+					return false;
+				}
+				if (source == target) {
+					return false;
+				}
+			}
+			if (target != null
+					&& (target.getDiscreteInteractionEndpoint() != null)) {
+				return false;
+			}
+
+			return canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(
+					source, target, sourceView, targetView);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistAbstractCoordinationSpecificationRoles_4007(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
 				de.uni_paderborn.fujaba.muml.protocol.Role target,
@@ -407,7 +443,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									10,
+									11,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -450,7 +486,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									10,
+									11,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -479,6 +515,26 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(
+				de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target,
+				View sourceView, View targetView) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4008(
+				de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target,
+				View sourceView, View targetView) {
+			return null;
 		}
 
 	}

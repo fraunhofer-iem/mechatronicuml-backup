@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies;
 
 import java.util.Iterator;
@@ -188,6 +200,34 @@ public class CoordinationProtocolItemSemanticEditPolicy
 										outgoingLink));
 								continue;
 							}
+							if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										outgoingLink.getSource().getElement(),
+										null, outgoingLink.getTarget()
+												.getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r) {
+									protected CommandResult doExecuteWithResult(
+											IProgressMonitor progressMonitor,
+											IAdaptable info)
+											throws ExecutionException {
+										EObject referencedObject = getReferencedObject();
+										Resource resource = referencedObject
+												.eResource();
+										CommandResult result = super
+												.doExecuteWithResult(
+														progressMonitor, info);
+										if (resource != null) {
+											resource.getContents().add(
+													referencedObject);
+										}
+										return result;
+									}
+								});
+								cmd.add(new DeleteCommand(getEditingDomain(),
+										outgoingLink));
+								continue;
+							}
 						}
 
 						cmd.add(new DestroyElementCommand(
@@ -195,6 +235,41 @@ public class CoordinationProtocolItemSemanticEditPolicy
 										cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+
+						break;
+					case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID:
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
+								.hasNext();) {
+							Edge incomingLink = (Edge) it.next();
+							if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										incomingLink.getSource().getElement(),
+										null, incomingLink.getTarget()
+												.getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r) {
+									protected CommandResult doExecuteWithResult(
+											IProgressMonitor progressMonitor,
+											IAdaptable info)
+											throws ExecutionException {
+										EObject referencedObject = getReferencedObject();
+										Resource resource = referencedObject
+												.eResource();
+										CommandResult result = super
+												.doExecuteWithResult(
+														progressMonitor, info);
+										if (resource != null) {
+											resource.getContents().add(
+													referencedObject);
+										}
+										return result;
+									}
+								});
+								cmd.add(new DeleteCommand(getEditingDomain(),
+										incomingLink));
+								continue;
+							}
+						}
 
 						break;
 					}

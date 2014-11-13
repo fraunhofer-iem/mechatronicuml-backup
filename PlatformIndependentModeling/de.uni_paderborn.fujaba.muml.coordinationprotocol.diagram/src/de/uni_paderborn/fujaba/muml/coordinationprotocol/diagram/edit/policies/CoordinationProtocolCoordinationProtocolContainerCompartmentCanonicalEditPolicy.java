@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies;
 
 import java.util.ArrayList;
@@ -68,6 +80,9 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getAbstractCoordinationSpecification_Roles());
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+							.getCoordinationProtocol_GmfMessageBuffers());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -104,7 +119,8 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 				List<Integer> visualIDs = Arrays
 						.asList(new Integer[] {
 								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID });
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -141,7 +157,8 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 		int visualID = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID;
+				|| visualID == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID;
 	}
 
 	/**

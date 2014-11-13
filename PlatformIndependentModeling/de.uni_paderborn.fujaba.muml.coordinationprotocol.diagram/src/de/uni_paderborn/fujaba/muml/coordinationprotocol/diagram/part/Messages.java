@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part;
 
 import org.eclipse.osgi.util.NLS;
@@ -283,7 +295,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String MessageBufferMessageBufferCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ModelElementCategory_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationProtocol_2005_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationProtocol_3005_outgoinglinks;
 
 	/**
 	 * @generated
@@ -298,17 +330,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocol_3005_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ModelElementCategory_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_CoordinationProtocol_2005_outgoinglinks;
+	public static String NavigatorGroupName_MessageBuffer_3010_incominglinks;
 
 	/**
 	 * @generated
@@ -329,6 +351,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4007_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4008_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4008_source;
 
 	/**
 	 * @generated
