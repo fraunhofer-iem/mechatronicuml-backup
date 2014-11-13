@@ -48,6 +48,11 @@ public class ComponentStoryDecisionDiagramItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.commands.LeafNodeCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.InitialNode_2004 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.commands.InitialNodeCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

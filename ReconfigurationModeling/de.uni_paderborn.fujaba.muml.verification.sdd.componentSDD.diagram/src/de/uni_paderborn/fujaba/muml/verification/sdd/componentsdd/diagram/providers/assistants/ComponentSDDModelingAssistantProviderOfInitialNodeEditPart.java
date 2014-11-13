@@ -23,7 +23,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 /**
  * @generated
  */
-public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEditPart
+public class ComponentSDDModelingAssistantProviderOfInitialNodeEditPart
 		extends
 		de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDModelingAssistantProvider {
 
@@ -34,14 +34,14 @@ public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEdi
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
 				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart) sourceEditPart);
+		return doGetRelTypesOnSource((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart) sourceEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
 	public List<IElementType> doGetRelTypesOnSource(
-			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart source) {
+			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart source) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001);
 		return types;
@@ -58,7 +58,7 @@ public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEdi
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSourceAndTarget(
-				(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart) sourceEditPart,
+				(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart) sourceEditPart,
 				targetEditPart);
 	}
 
@@ -66,7 +66,7 @@ public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEdi
 	 * @generated
 	 */
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(
-			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart source,
+			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart) {
@@ -90,7 +90,7 @@ public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEdi
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
 				.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForTarget(
-				(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart) sourceEditPart,
+				(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart) sourceEditPart,
 				relationshipType);
 	}
 
@@ -98,7 +98,7 @@ public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEdi
 	 * @generated
 	 */
 	public List<IElementType> doGetTypesForTarget(
-			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart source,
+			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart source,
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001) {
@@ -116,14 +116,14 @@ public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEdi
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart) targetEditPart);
+		return doGetRelTypesOnTarget((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart) targetEditPart);
 	}
 
 	/**
 	 * @generated
 	 */
 	public List<IElementType> doGetRelTypesOnTarget(
-			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart target) {
+			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart target) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001);
 		return types;
@@ -138,7 +138,7 @@ public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEdi
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForSource(
-				(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart) targetEditPart,
+				(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart) targetEditPart,
 				relationshipType);
 	}
 
@@ -146,7 +146,7 @@ public class ComponentSDDModelingAssistantProviderOfComponentStoryPatternNodeEdi
 	 * @generated
 	 */
 	public List<IElementType> doGetTypesForSource(
-			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeEditPart target,
+			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart target,
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.Edge_4001) {

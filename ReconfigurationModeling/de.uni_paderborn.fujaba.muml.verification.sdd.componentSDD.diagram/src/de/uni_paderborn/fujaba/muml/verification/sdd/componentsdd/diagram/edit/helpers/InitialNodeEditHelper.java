@@ -1,4 +1,4 @@
-/**
+/*
  * <copyright>
  * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
  * All rights reserved. This program and the accompanying materials
@@ -10,20 +10,12 @@
  *     Software Engineering Group - initial API and implementation
  * </copyright>
  */
-package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd;
-
-import de.uni_paderborn.fujaba.muml.verification.sdd.Node;
-import org.eclipse.emf.ecore.EObject;
+package de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Initial Node</b></em>'.
- * <!-- end-user-doc -->
- *
- *
- * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage#getInitialNode()
- * @model
  * @generated
  */
-public interface InitialNode extends Node, EObject {
-} // InitialNode
+public class InitialNodeEditHelper
+		extends
+		de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.ComponentSDDBaseEditHelper {
+}

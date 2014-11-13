@@ -33,5 +33,5 @@
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//Node platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
 </ecore:EPackage>

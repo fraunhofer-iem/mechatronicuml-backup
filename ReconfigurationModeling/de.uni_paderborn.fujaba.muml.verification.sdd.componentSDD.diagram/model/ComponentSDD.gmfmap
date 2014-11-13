@@ -127,6 +127,35 @@
           href="../../de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.diagram/model/sdd.gmfgraph#LeafNode"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//AbstractStoryDecisionDiagram/nodes"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.ecore#//InitialNode"/>
+      <labelMappings
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
+        <diagramLabel
+            href="ComponentSDD.gmfgraph#CSDDInitialNodeCSDDNameLabel"/>
+        <viewExpression
+            body="let&#xD;&#xA;&#x9;csdd : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram),&#xD;&#xA;&#x9;compName : String = csdd.reconfigurableComponent.name,&#xD;&#xA;&#x9;parameters : String = csdd.parameters->iterate(p:behavior::Parameter; s: String = '' | s+p.name+': '+p.dataType.name+&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;csdd.parameters->indexOf(p) = csdd.parameters->size()&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;'; '&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)&#xD;&#xA;in&#xD;&#xA;&#x9;compName+'::'+csdd.name+'('+parameters+')'"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
+        <diagramLabel
+            href="ComponentSDD.gmfgraph#CSDDInitialNodeInvariantLabel"/>
+        <viewExpression
+            body="let&#xD;&#xA;&#x9;csdd : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram)&#x9;&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;csdd.invariantSDD&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;'«invariant»'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;endif"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="../../org.storydriven.storydiagrams/model/storydiagrams.gmftool#//@palette/@tools.0/@tools.7"/>
+      <diagramNode
+          href="ComponentSDD.gmfgraph#CSDDInitialNode"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.ecore#//Edge"/>

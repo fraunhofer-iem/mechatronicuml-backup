@@ -224,7 +224,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component Story Decision"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,2002,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,2002,2004,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004"/>
       </viewProvider>
    </extension>
@@ -237,13 +237,13 @@
             <method name="getType()" value="Component Story Decision"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2003,2002,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
+            <method name="getType()" value="2003,2002,2004,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5037,5038,5033,5034,5025,5026,5040,5019,5020,5021,5022,5023,5024,5027,5028,5029,5030,5031,5032,5035,5036,5041"/>
+            <method name="getType()" value="5037,5038,5042,5043,5033,5034,5025,5026,5040,5019,5020,5021,5022,5023,5024,5027,5028,5029,5030,5031,5032,5035,5036,5041"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7003,7004,7005"/>
@@ -269,6 +269,11 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart" id="LeafNode_2002"/>
          <context elements="LeafNode_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfInitialNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart" id="InitialNode_2004"/>
+         <context elements="InitialNode_2004"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.assistants.ComponentSDDModelingAssistantProviderOfComponentStoryPatternEditPart">
          <Priority name="Lowest"/>
@@ -357,6 +362,16 @@
                eclass="LeafNode"
                edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.LeafNodeEditHelper">
             <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.InitialNode_2004"
+               name="%metatype.name.InitialNode_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InitialNode"
+               edithelper="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.helpers.InitialNodeEditHelper">
+            <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
@@ -501,6 +516,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryDecisionDiagram_1000"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPatternNode_2003"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.LeafNode_2002"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.InitialNode_2004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPattern_3001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentVariable_3002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentPartVariable_3003"/>
@@ -778,6 +794,11 @@
          <topLevelNode
                domainElement="LeafNode"
                semanticHint="2002">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="InitialNode"
+               semanticHint="2004">
          </topLevelNode>
          
       </editor>

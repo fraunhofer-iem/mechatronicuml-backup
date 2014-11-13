@@ -284,6 +284,7 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 		componentStoryPatternNodeEClass.getESuperTypes().add(theSDDPackage.getPatternNode());
 		evaluateComponentSDDExpressionEClass.getESuperTypes().add(theComponentstorypatternPackage.getTriggerEmbeddedComponentExpression());
 		initialNodeEClass.getESuperTypes().add(theSDDPackage.getNode());
+		initialNodeEClass.getESuperTypes().add(theEcorePackage.getEObject());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentStoryDecisionDiagramEClass, ComponentStoryDecisionDiagram.class, "ComponentStoryDecisionDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

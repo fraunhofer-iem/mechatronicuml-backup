@@ -75,6 +75,20 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser getInitialNodeLabel_5042Parser() {
+		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.InitialNodeLabelExpressionLabelParser5042();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser getInitialNodeLabel_5043Parser() {
+		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.InitialNodeLabelExpressionLabelParser5043();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser getComponentPartVariableLabel_5026Parser() {
 		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser5026();
 	}
@@ -271,6 +285,10 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeTypeEditPart.VISUAL_ID:
 			return getComponentStoryPatternNodeType_5038Parser();
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
+			return getInitialNodeLabel_5042Parser();
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
+			return getInitialNodeLabel_5043Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
 			return getComponentPartVariableLabel_5026Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:

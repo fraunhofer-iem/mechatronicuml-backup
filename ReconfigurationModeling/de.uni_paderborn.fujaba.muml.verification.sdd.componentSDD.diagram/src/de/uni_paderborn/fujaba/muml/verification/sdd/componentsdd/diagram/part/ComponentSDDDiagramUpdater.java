@@ -85,6 +85,11 @@ public class ComponentSDDDiagramUpdater {
 						childElement, visualID));
 				continue;
 			}
+			if (visualID == de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
 		}
 
 		return result;
@@ -355,6 +360,8 @@ public class ComponentSDDDiagramUpdater {
 			return getComponentStoryPatternNode_2003ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
 			return getLeafNode_2002ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
+			return getInitialNode_2004ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
 			return getComponentStoryPattern_3001ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
@@ -396,6 +403,8 @@ public class ComponentSDDDiagramUpdater {
 			return getComponentStoryPatternNode_2003IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
 			return getLeafNode_2002IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
+			return getInitialNode_2004IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
 			return getComponentStoryPattern_3001IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
@@ -437,6 +446,8 @@ public class ComponentSDDDiagramUpdater {
 			return getComponentStoryPatternNode_2003OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
 			return getLeafNode_2002OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
+			return getInitialNode_2004OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
 			return getComponentStoryPattern_3001OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
@@ -491,6 +502,14 @@ public class ComponentSDDDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getLeafNode_2002ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getInitialNode_2004ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -633,6 +652,21 @@ public class ComponentSDDDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getLeafNode_2002IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode modelElement = (de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Edge_4001(modelElement,
+				crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getInitialNode_2004IncomingLinks(
+			View view) {
+		de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode modelElement = (de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -815,6 +849,18 @@ public class ComponentSDDDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getLeafNode_2002OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode modelElement = (de.uni_paderborn.fujaba.muml.verification.sdd.LeafNode) view
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Edge_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> getInitialNode_2004OutgoingLinks(
+			View view) {
+		de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode modelElement = (de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.InitialNode) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Edge_4001(modelElement));

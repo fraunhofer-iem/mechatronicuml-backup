@@ -47,7 +47,7 @@ public class ComponentSDDOCLFactory {
 	 * @generated
 	 */
 	protected ComponentSDDOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression[18];
+		this.expressions = new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDAbstractExpression[20];
 		this.expressionBodies = new String[] {
 				"\'componentStoryPattern\'", //$NON-NLS-1$
 				"\'this\'", //$NON-NLS-1$
@@ -62,6 +62,8 @@ public class ComponentSDDOCLFactory {
 				"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
 				"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
 				"if self.appliedFadingFunction.oclIsUndefined()\r\nthen \'\'\r\nelse\r\n\tself.appliedFadingFunction.name\r\nendif", //$NON-NLS-1$
+				"let\r\n\tcsdd : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram),\r\n\tcompName : String = csdd.reconfigurableComponent.name,\r\n\tparameters : String = csdd.parameters->iterate(p:behavior::Parameter; s: String = \'\' | s+p.name+\': \'+p.dataType.name+\r\n\t\tif\r\n\t\t\tcsdd.parameters->indexOf(p) = csdd.parameters->size()\r\n\t\tthen\r\n\t\t\t\'\'\r\n\t\telse\r\n\t\t\t\'; \'\r\n\t\tendif\r\n\t)\r\nin\r\n\tcompName+\'::\'+csdd.name+\'(\'+parameters+\')\'", //$NON-NLS-1$
+				"let\r\n\tcsdd : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram)\t\r\nin\r\n\tif\r\n\t\tcsdd.invariantSDD\r\n\tthen\r\n\t\t\'\u00abinvariant\u00bb\'\r\n\telse\r\n\t\t\'\'\r\n\tendif", //$NON-NLS-1$
 				"--Create AssemblyVariable between PortVariables of PartVariables\r\nnot self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()", //$NON-NLS-1$
 				"--Create AssemblyVariable between PortVariables of different PartVariables\r\nself.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() <> oppositeEnd.eContainer()", //$NON-NLS-1$
 				"--Start creation of DelegationVariable at PortVariable of ComponentVariable\r\nself.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()", //$NON-NLS-1$

@@ -69,6 +69,11 @@ public class ComponentSDDElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType InitialNode_2004 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.InitialNode_2004"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ComponentStoryPattern_3001 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.ComponentStoryPattern_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
@@ -174,6 +179,11 @@ public class ComponentSDDElementTypes {
 							.getLeafNode());
 
 			elements.put(
+					InitialNode_2004,
+					de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
+							.getInitialNode());
+
+			elements.put(
 					ComponentStoryPattern_3001,
 					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentStoryPattern());
@@ -257,6 +267,7 @@ public class ComponentSDDElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryDecisionDiagram_1000);
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryPatternNode_2003);
 			KNOWN_ELEMENT_TYPES.add(LeafNode_2002);
+			KNOWN_ELEMENT_TYPES.add(InitialNode_2004);
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryPattern_3001);
 			KNOWN_ELEMENT_TYPES.add(ComponentVariable_3002);
 			KNOWN_ELEMENT_TYPES.add(ComponentPartVariable_3003);
@@ -285,6 +296,8 @@ public class ComponentSDDElementTypes {
 			return ComponentStoryPatternNode_2003;
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.LeafNodeEditPart.VISUAL_ID:
 			return LeafNode_2002;
+		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
+			return InitialNode_2004;
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
 			return ComponentStoryPattern_3001;
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:

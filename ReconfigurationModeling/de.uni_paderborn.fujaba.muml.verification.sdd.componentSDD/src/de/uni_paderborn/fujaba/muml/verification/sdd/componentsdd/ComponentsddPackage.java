@@ -885,13 +885,148 @@ public interface ComponentsddPackage extends EPackage {
 	int INITIAL_NODE_FEATURE_COUNT = SDDPackage.NODE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___ECLASS = SDDPackage.NODE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___EIS_PROXY = SDDPackage.NODE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___ERESOURCE = SDDPackage.NODE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___ECONTAINER = SDDPackage.NODE_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___ECONTAINING_FEATURE = SDDPackage.NODE_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___ECONTAINMENT_FEATURE = SDDPackage.NODE_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___ECONTENTS = SDDPackage.NODE_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___EALL_CONTENTS = SDDPackage.NODE_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___ECROSS_REFERENCES = SDDPackage.NODE_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___EGET__ESTRUCTURALFEATURE = SDDPackage.NODE_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDDPackage.NODE_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___ESET__ESTRUCTURALFEATURE_OBJECT = SDDPackage.NODE_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___EIS_SET__ESTRUCTURALFEATURE = SDDPackage.NODE_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___EUNSET__ESTRUCTURALFEATURE = SDDPackage.NODE_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_NODE___EINVOKE__EOPERATION_ELIST = SDDPackage.NODE_OPERATION_COUNT + 14;
+
+	/**
 	 * The number of operations of the '<em>Initial Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INITIAL_NODE_OPERATION_COUNT = SDDPackage.NODE_OPERATION_COUNT + 0;
+	int INITIAL_NODE_OPERATION_COUNT = SDDPackage.NODE_OPERATION_COUNT + 15;
 
 
 	/**

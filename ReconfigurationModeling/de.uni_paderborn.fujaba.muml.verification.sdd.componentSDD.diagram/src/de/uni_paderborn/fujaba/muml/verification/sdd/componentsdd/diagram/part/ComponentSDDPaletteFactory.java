@@ -66,9 +66,10 @@ public class ComponentSDDPaletteFactory {
 		paletteContainer.add(createMultiPortVariable2CreationTool());
 		paletteContainer.add(createSinglePortVariable3CreationTool());
 		paletteContainer.add(createFadingComponentPartVariable4CreationTool());
-		paletteContainer.add(createAssemblyVariable5CreationTool());
-		paletteContainer.add(createDelegationVariable6CreationTool());
-		paletteContainer.add(createMultiPortOrderConstraint7CreationTool());
+		paletteContainer.add(createInitialNode5CreationTool());
+		paletteContainer.add(createAssemblyVariable6CreationTool());
+		paletteContainer.add(createDelegationVariable7CreationTool());
+		paletteContainer.add(createMultiPortOrderConstraint8CreationTool());
 		return paletteContainer;
 	}
 
@@ -195,13 +196,29 @@ public class ComponentSDDPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createAssemblyVariable5CreationTool() {
+	private ToolEntry createInitialNode5CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.InitialNode5CreationTool_title,
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.InitialNode5CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.InitialNode_2004));
+		entry.setId("createInitialNode5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.InitialNode_2004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAssemblyVariable6CreationTool() {
 		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.AssemblyVariable5CreationTool_title,
-				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.AssemblyVariable5CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.AssemblyVariable6CreationTool_title,
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.AssemblyVariable6CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.AssemblyVariable_4002));
-		entry.setId("createAssemblyVariable5CreationTool"); //$NON-NLS-1$
+		entry.setId("createAssemblyVariable6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -211,13 +228,13 @@ public class ComponentSDDPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDelegationVariable6CreationTool() {
+	private ToolEntry createDelegationVariable7CreationTool() {
 		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.DelegationVariable6CreationTool_title,
-				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.DelegationVariable6CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.DelegationVariable7CreationTool_title,
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.DelegationVariable7CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.DelegationVariable_4003));
-		entry.setId("createDelegationVariable6CreationTool"); //$NON-NLS-1$
+		entry.setId("createDelegationVariable7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -227,13 +244,13 @@ public class ComponentSDDPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createMultiPortOrderConstraint7CreationTool() {
+	private ToolEntry createMultiPortOrderConstraint8CreationTool() {
 		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.MultiPortOrderConstraint7CreationTool_title,
-				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.MultiPortOrderConstraint7CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.MultiPortOrderConstraint8CreationTool_title,
+				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.Messages.MultiPortOrderConstraint8CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004));
-		entry.setId("createMultiPortOrderConstraint7CreationTool"); //$NON-NLS-1$
+		entry.setId("createMultiPortOrderConstraint8CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.providers.ComponentSDDElementTypes.MultiPortOrderConstraint_4004));
 		entry.setLargeIcon(entry.getSmallIcon());

@@ -345,32 +345,42 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AssemblyVariable5CreationTool_title;
+	public static String InitialNode5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AssemblyVariable5CreationTool_desc;
+	public static String InitialNode5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DelegationVariable6CreationTool_title;
+	public static String AssemblyVariable6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DelegationVariable6CreationTool_desc;
+	public static String AssemblyVariable6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String MultiPortOrderConstraint7CreationTool_title;
+	public static String DelegationVariable7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String MultiPortOrderConstraint7CreationTool_desc;
+	public static String DelegationVariable7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String MultiPortOrderConstraint8CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String MultiPortOrderConstraint8CreationTool_desc;
 
 	/**
 	 * @generated
@@ -426,6 +436,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ComponentStoryPatternNode_2003_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InitialNode_2004_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InitialNode_2004_outgoinglinks;
 
 	/**
 	 * @generated
