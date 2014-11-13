@@ -1148,7 +1148,8 @@
           visualID="6003"
           editPartClassName="WrappingLabel8EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
-          notationViewFactoryClassName="MultiPortOrderConstraintLabelViewFactory">
+          notationViewFactoryClassName="MultiPortOrderConstraintLabelViewFactory"
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

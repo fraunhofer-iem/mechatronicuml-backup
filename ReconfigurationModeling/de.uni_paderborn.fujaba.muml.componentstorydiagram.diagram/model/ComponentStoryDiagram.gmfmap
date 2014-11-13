@@ -712,7 +712,8 @@
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortOrderConstraint"/>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="ComponentStoryDiagram.gmfgraph#MultiPortOrderConstraintTypeLabel"/>
       <viewExpression

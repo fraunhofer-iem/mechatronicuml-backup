@@ -295,7 +295,7 @@ public class MultiPortOrderConstraintOrderConstraintTypeEditPart extends
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**

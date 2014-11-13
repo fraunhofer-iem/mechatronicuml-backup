@@ -294,7 +294,7 @@ public class WrappingLabel8EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
