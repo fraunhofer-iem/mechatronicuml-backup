@@ -756,7 +756,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PatternNodeFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PatternNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePatternNodeNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePatternNodeTypeFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.ScalablePolygonShape fFigurePatternNodeElementsPolygon; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PatternNodeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;layoutThis.horizontalSpacing = 0;&#xA;&#x9;layoutThis.verticalSpacing = 0;&#xA;&#x9;layoutThis.marginWidth = 0;&#xA;&#x9;layoutThis.marginHeight = 0;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(150)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape patternNodeLabelPolygon0 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(75)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(75)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(75)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;patternNodeLabelPolygon0.setFill(true);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintPatternNodeLabelPolygon0 = new org.eclipse.draw2d.GridData();&#xA;constraintPatternNodeLabelPolygon0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintPatternNodeLabelPolygon0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintPatternNodeLabelPolygon0.horizontalIndent = 0;&#xA;constraintPatternNodeLabelPolygon0.horizontalSpan = 1;&#xA;constraintPatternNodeLabelPolygon0.verticalSpan = 1;&#xA;constraintPatternNodeLabelPolygon0.grabExcessHorizontalSpace = true;&#xA;constraintPatternNodeLabelPolygon0.grabExcessVerticalSpace = false;&#xA;this.add(patternNodeLabelPolygon0, constraintPatternNodeLabelPolygon0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutPatternNodeLabelPolygon0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutPatternNodeLabelPolygon0.numColumns = 4;&#xA;&#x9;layoutPatternNodeLabelPolygon0.makeColumnsEqualWidth = false;&#xA;&#x9;layoutPatternNodeLabelPolygon0.horizontalSpacing = 0;&#xA;&#x9;layoutPatternNodeLabelPolygon0.verticalSpacing = 0;&#xA;&#x9;layoutPatternNodeLabelPolygon0.marginWidth = 0;&#xA;&#x9;layoutPatternNodeLabelPolygon0.marginHeight = 0;&#xA;&#x9;patternNodeLabelPolygon0.setLayoutManager(layoutPatternNodeLabelPolygon0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape insetBottomPolygon1 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;insetBottomPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;insetBottomPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintInsetBottomPolygon1 = new org.eclipse.draw2d.GridData();&#xA;constraintInsetBottomPolygon1.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintInsetBottomPolygon1.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintInsetBottomPolygon1.horizontalIndent = 0;&#xA;constraintInsetBottomPolygon1.horizontalSpan = 1;&#xA;constraintInsetBottomPolygon1.verticalSpan = 1;&#xA;constraintInsetBottomPolygon1.grabExcessHorizontalSpace = false;&#xA;constraintInsetBottomPolygon1.grabExcessVerticalSpace = false;&#xA;patternNodeLabelPolygon0.add(insetBottomPolygon1, constraintInsetBottomPolygon1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutInsetBottomPolygon1 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutInsetBottomPolygon1.setStretchMinorAxis(true);&#xA;&#x9;layoutInsetBottomPolygon1.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xA;);&#xA;&#xA;&#x9;layoutInsetBottomPolygon1.setSpacing(0);&#xA;&#x9;layoutInsetBottomPolygon1.setVertical(false);&#xA;&#xA;&#x9;insetBottomPolygon1.setLayoutManager(layoutInsetBottomPolygon1);&#xA;&#xA;&#xA;&#xA;fFigurePatternNodeNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePatternNodeNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigurePatternNodeNameFigure.setFont(FFIGUREPATTERNNODENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;fFigurePatternNodeNameFigure.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;insetBottomPolygon1.add(fFigurePatternNodeNameFigure);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel colonFigure2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;colonFigure2.setText(&quot;: &quot;);&#xA;&#xA;colonFigure2.setFont(COLONFIGURE2_FONT);&#xA;&#xA;&#xA;&#xA;insetBottomPolygon1.add(colonFigure2);&#xA;&#xA;&#xA;&#xA;fFigurePatternNodeTypeFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePatternNodeTypeFigure.setText(&quot;&quot;);&#xA;&#xA;fFigurePatternNodeTypeFigure.setFont(FFIGUREPATTERNNODETYPEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;insetBottomPolygon1.add(fFigurePatternNodeTypeFigure);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape insetRightPolygon1 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;insetRightPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;insetRightPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;insetRightPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;insetRightPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;insetRightPolygon1.setFill(true);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintInsetRightPolygon1 = new org.eclipse.draw2d.GridData();&#xA;constraintInsetRightPolygon1.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintInsetRightPolygon1.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintInsetRightPolygon1.horizontalIndent = 0;&#xA;constraintInsetRightPolygon1.horizontalSpan = 1;&#xA;constraintInsetRightPolygon1.verticalSpan = 1;&#xA;constraintInsetRightPolygon1.grabExcessHorizontalSpace = false;&#xA;constraintInsetRightPolygon1.grabExcessVerticalSpace = false;&#xA;patternNodeLabelPolygon0.add(insetRightPolygon1, constraintInsetRightPolygon1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutInsetRightPolygon1 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutInsetRightPolygon1.setStretchMinorAxis(false);&#xA;&#x9;layoutInsetRightPolygon1.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xA;);&#xA;&#xA;&#x9;layoutInsetRightPolygon1.setSpacing(0);&#xA;&#x9;layoutInsetRightPolygon1.setVertical(false);&#xA;&#xA;&#x9;insetRightPolygon1.setLayoutManager(layoutInsetRightPolygon1);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel whitespaceLabel2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;whitespaceLabel2.setText(&quot;  &quot;);&#xA;&#xA;insetRightPolygon1.add(whitespaceLabel2);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigurePatternNodeElementsPolygon = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(99)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(99)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(99)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(99)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.setFill(true);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigurePatternNodeElementsPolygon = new org.eclipse.draw2d.GridData();&#xA;constraintFFigurePatternNodeElementsPolygon.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigurePatternNodeElementsPolygon.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigurePatternNodeElementsPolygon.horizontalIndent = 0;&#xA;constraintFFigurePatternNodeElementsPolygon.horizontalSpan = 1;&#xA;constraintFFigurePatternNodeElementsPolygon.verticalSpan = 1;&#xA;constraintFFigurePatternNodeElementsPolygon.grabExcessHorizontalSpace = true;&#xA;constraintFFigurePatternNodeElementsPolygon.grabExcessVerticalSpace = true;&#xA;this.add(fFigurePatternNodeElementsPolygon, constraintFFigurePatternNodeElementsPolygon);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePatternNodeNameFigure() {&#xA;&#x9;&#x9;return fFigurePatternNodeNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePatternNodeTypeFigure() {&#xA;&#x9;&#x9;return fFigurePatternNodeTypeFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.ScalablePolygonShape getFigurePatternNodeElementsPolygon() {&#xA;&#x9;&#x9;return fFigurePatternNodeElementsPolygon;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREPATTERNNODENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font COLONFIGURE2_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREPATTERNNODETYPEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PatternNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePatternNodeNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePatternNodeTypeFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.ScalablePolygonShape fFigurePatternNodeElementsPolygon; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PatternNodeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;layoutThis.horizontalSpacing = 0;&#xA;&#x9;layoutThis.verticalSpacing = 0;&#xA;&#x9;layoutThis.marginWidth = 0;&#xA;&#x9;layoutThis.marginHeight = 0;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(150)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape patternNodeLabelPolygon0 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(75)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(75)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(75)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;patternNodeLabelPolygon0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;patternNodeLabelPolygon0.setFill(true);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintPatternNodeLabelPolygon0 = new org.eclipse.draw2d.GridData();&#xA;constraintPatternNodeLabelPolygon0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintPatternNodeLabelPolygon0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintPatternNodeLabelPolygon0.horizontalIndent = 0;&#xA;constraintPatternNodeLabelPolygon0.horizontalSpan = 1;&#xA;constraintPatternNodeLabelPolygon0.verticalSpan = 1;&#xA;constraintPatternNodeLabelPolygon0.grabExcessHorizontalSpace = true;&#xA;constraintPatternNodeLabelPolygon0.grabExcessVerticalSpace = false;&#xA;this.add(patternNodeLabelPolygon0, constraintPatternNodeLabelPolygon0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutPatternNodeLabelPolygon0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutPatternNodeLabelPolygon0.numColumns = 4;&#xA;&#x9;layoutPatternNodeLabelPolygon0.makeColumnsEqualWidth = false;&#xA;&#x9;layoutPatternNodeLabelPolygon0.horizontalSpacing = 0;&#xA;&#x9;layoutPatternNodeLabelPolygon0.verticalSpacing = 0;&#xA;&#x9;layoutPatternNodeLabelPolygon0.marginWidth = 0;&#xA;&#x9;layoutPatternNodeLabelPolygon0.marginHeight = 0;&#xA;&#x9;patternNodeLabelPolygon0.setLayoutManager(layoutPatternNodeLabelPolygon0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape insetBottomPolygon1 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;insetBottomPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;insetBottomPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintInsetBottomPolygon1 = new org.eclipse.draw2d.GridData();&#xA;constraintInsetBottomPolygon1.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintInsetBottomPolygon1.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintInsetBottomPolygon1.horizontalIndent = 0;&#xA;constraintInsetBottomPolygon1.horizontalSpan = 1;&#xA;constraintInsetBottomPolygon1.verticalSpan = 1;&#xA;constraintInsetBottomPolygon1.grabExcessHorizontalSpace = false;&#xA;constraintInsetBottomPolygon1.grabExcessVerticalSpace = false;&#xA;patternNodeLabelPolygon0.add(insetBottomPolygon1, constraintInsetBottomPolygon1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutInsetBottomPolygon1 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutInsetBottomPolygon1.setStretchMinorAxis(true);&#xA;&#x9;layoutInsetBottomPolygon1.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xA;);&#xA;&#xA;&#x9;layoutInsetBottomPolygon1.setSpacing(0);&#xA;&#x9;layoutInsetBottomPolygon1.setVertical(false);&#xA;&#xA;&#x9;insetBottomPolygon1.setLayoutManager(layoutInsetBottomPolygon1);&#xA;&#xA;&#xA;&#xA;fFigurePatternNodeNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePatternNodeNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigurePatternNodeNameFigure.setFont(FFIGUREPATTERNNODENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;fFigurePatternNodeNameFigure.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;insetBottomPolygon1.add(fFigurePatternNodeNameFigure);&#xA;&#xA;&#xA;&#xA;fFigurePatternNodeTypeFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePatternNodeTypeFigure.setText(&quot;&quot;);&#xA;&#xA;fFigurePatternNodeTypeFigure.setFont(FFIGUREPATTERNNODETYPEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;insetBottomPolygon1.add(fFigurePatternNodeTypeFigure);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape insetRightPolygon1 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;insetRightPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(100)&#xA;));&#xA;insetRightPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;insetRightPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;insetRightPolygon1.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(50)&#xA;));&#xA;insetRightPolygon1.setFill(true);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintInsetRightPolygon1 = new org.eclipse.draw2d.GridData();&#xA;constraintInsetRightPolygon1.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintInsetRightPolygon1.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintInsetRightPolygon1.horizontalIndent = 0;&#xA;constraintInsetRightPolygon1.horizontalSpan = 1;&#xA;constraintInsetRightPolygon1.verticalSpan = 1;&#xA;constraintInsetRightPolygon1.grabExcessHorizontalSpace = false;&#xA;constraintInsetRightPolygon1.grabExcessVerticalSpace = false;&#xA;patternNodeLabelPolygon0.add(insetRightPolygon1, constraintInsetRightPolygon1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutInsetRightPolygon1 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutInsetRightPolygon1.setStretchMinorAxis(false);&#xA;&#x9;layoutInsetRightPolygon1.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xA;);&#xA;&#xA;&#x9;layoutInsetRightPolygon1.setSpacing(0);&#xA;&#x9;layoutInsetRightPolygon1.setVertical(false);&#xA;&#xA;&#x9;insetRightPolygon1.setLayoutManager(layoutInsetRightPolygon1);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel whitespaceLabel2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;whitespaceLabel2.setText(&quot;  &quot;);&#xA;&#xA;insetRightPolygon1.add(whitespaceLabel2);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigurePatternNodeElementsPolygon = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(99)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(99)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(99)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(99)&#xA;));&#xA;fFigurePatternNodeElementsPolygon.setFill(true);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigurePatternNodeElementsPolygon = new org.eclipse.draw2d.GridData();&#xA;constraintFFigurePatternNodeElementsPolygon.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigurePatternNodeElementsPolygon.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigurePatternNodeElementsPolygon.horizontalIndent = 0;&#xA;constraintFFigurePatternNodeElementsPolygon.horizontalSpan = 1;&#xA;constraintFFigurePatternNodeElementsPolygon.verticalSpan = 1;&#xA;constraintFFigurePatternNodeElementsPolygon.grabExcessHorizontalSpace = true;&#xA;constraintFFigurePatternNodeElementsPolygon.grabExcessVerticalSpace = true;&#xA;this.add(fFigurePatternNodeElementsPolygon, constraintFFigurePatternNodeElementsPolygon);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePatternNodeNameFigure() {&#xA;&#x9;&#x9;return fFigurePatternNodeNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePatternNodeTypeFigure() {&#xA;&#x9;&#x9;return fFigurePatternNodeTypeFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.ScalablePolygonShape getFigurePatternNodeElementsPolygon() {&#xA;&#x9;&#x9;return fFigurePatternNodeElementsPolygon;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREPATTERNNODENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREPATTERNNODETYPEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:StyleAttributes"
             fixedForeground="true"/>
@@ -830,31 +830,8 @@
           visualID="5037"
           editPartClassName="ComponentStoryPatternNodeNameEditPart"
           itemSemanticEditPolicyClassName="ComponentStoryPatternNodeNameEditPolicy"
-          notationViewFactoryClassName="ComponentStoryPatternNodeLabelViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigurePatternNodeNameFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.1">
-          <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-          <editableMetaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-        </modelFacet>
-      </labels>
-      <labels
-          visualID="5038"
-          editPartClassName="ComponentStoryPatternNodeTypeEditPart"
-          itemSemanticEditPolicyClassName="ComponentStoryPatternNodeTypeEditPolicy"
-          notationViewFactoryClassName="ComponentStoryPatternNodeLabelViewFactory">
+          notationViewFactoryClassName="ComponentStoryPatternNodeLabelViewFactory"
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -866,11 +843,28 @@
               fixedFont="true"/>
         </viewmap>
         <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.10">
-          <metaFeatures
-              href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.genmodel#//sdd/PatternNode/type"/>
-        </modelFacet>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.10"/>
+      </labels>
+      <labels
+          visualID="5038"
+          editPartClassName="ComponentStoryPatternNodeTypeEditPart"
+          itemSemanticEditPolicyClassName="ComponentStoryPatternNodeTypeEditPolicy"
+          notationViewFactoryClassName="ComponentStoryPatternNodeLabelViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigurePatternNodeNameFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.11"/>
       </labels>
     </topLevelNodes>
     <topLevelNodes
@@ -944,7 +938,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.11"/>
+            parser="//@labelParsers/@implementations.12"/>
       </labels>
       <labels
           visualID="5043"
@@ -960,7 +954,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.12"/>
+            parser="//@labelParsers/@implementations.13"/>
       </labels>
     </topLevelNodes>
     <links
@@ -1051,8 +1045,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.15"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.16"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.17"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.18"/>
     </links>
     <links
         visualID="4003"
@@ -1108,8 +1102,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.17"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.18"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.19"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.20"/>
     </links>
     <links
         visualID="4004"
@@ -1162,7 +1156,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.13"/>
+            parser="//@labelParsers/@implementations.14"/>
       </labels>
     </links>
     <compartments
@@ -1935,6 +1929,10 @@
       <expressions
           body="if self.appliedFadingFunction.oclIsUndefined()&#xD;&#xA;then ''&#xD;&#xA;else&#xD;&#xA;&#x9;self.appliedFadingFunction.name&#xD;&#xA;endif"/>
       <expressions
+          body="let&#xD;&#xA;&#x9;directContents : Sequence(OclAny) = self.eContents(),&#xD;&#xA;&#x9;allContents: Set(OclAny)= directContents->closure(t | &#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;t.oclIsKindOf(ecore::EObject)&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;t.oclAsType(ecore::EObject).eContents()&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)->flatten()->asSet(),&#xD;&#xA;&#x9;boundCompSPVariables : Set(OclAny) = allContents->select(oclIsKindOf(componentstorypattern::ComponentStoryPatternVariable) and oclAsType(componentstorypattern::ComponentStoryPatternVariable).bindingState = storydiagrams::patterns::BindingState::UNBOUND),&#xD;&#xA;&#x9;checkVariables : OrderedSet(OclAny) = boundCompSPVariables->select(not (oclIsTypeOf(componentstorypattern::ComponentVariable) or oclAsType(componentstorypattern::ComponentStoryPatternVariable).name = ''))->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;checkVariables->iterate(v : OclAny; s : String = '' | s+v.oclAsType(componentstorypattern::ComponentStoryPatternVariable).name+&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;checkVariables->indexOf(v) = checkVariables->size()&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;', '&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)"/>
+      <expressions
+          body="if&#xD;&#xA;&#x9;self.type = sdd::PatternNodeType::Existential&#xD;&#xA;then&#xD;&#xA;&#x9;'\u2203'&#xD;&#xA;else&#xD;&#xA;&#x9;'\u2200'&#xD;&#xA;endif"/>
+      <expressions
           body="let&#xD;&#xA;&#x9;csdd : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram),&#xD;&#xA;&#x9;compName : String = csdd.reconfigurableComponent.name,&#xD;&#xA;&#x9;parameters : String = csdd.parameters->iterate(p:behavior::Parameter; s: String = '' | s+p.name+': '+p.dataType.name+&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;csdd.parameters->indexOf(p) = csdd.parameters->size()&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;''&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;'; '&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;)&#xD;&#xA;in&#xD;&#xA;&#x9;compName+'::'+csdd.name+'('+parameters+')'"/>
       <expressions
           body="let&#xD;&#xA;&#x9;csdd : componentsdd::ComponentStoryDecisionDiagram = self.eContainer().oclAsType(componentsdd::ComponentStoryDecisionDiagram)&#x9;&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;csdd.invariantSDD&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;'«invariant»'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;endif"/>
@@ -1961,7 +1959,7 @@
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.2/@modelFacet"
@@ -2027,13 +2025,26 @@
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
     </implementations>
     <implementations
-        xsi:type="gmfgen:PredefinedEnumParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"/>
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
+        className="ComponentStoryPatternNodeLabelExpressionLabelParser5037"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
+        className="ComponentStoryPatternNodeLabelExpressionLabelParser5038"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/ComponentStoryPatternNode"/>
+    </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.2/@labels.0/@modelFacet"
         className="InitialNodeLabelExpressionLabelParser5042"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/InitialNode"/>
     </implementations>
@@ -2041,7 +2052,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
         className="InitialNodeLabelExpressionLabelParser5043"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD/model/ComponentSDD.genmodel#//componentsdd/InitialNode"/>
     </implementations>
@@ -2049,7 +2060,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.3/@labels.0/@modelFacet"
         className="MultiPortOrderConstraintLabelExpressionLabelParser6003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.19">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.21">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
     </implementations>

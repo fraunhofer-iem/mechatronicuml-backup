@@ -36,40 +36,15 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser componentStoryPatternNodeName_5037Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getComponentStoryPatternNodeName_5037Parser() {
-		if (componentStoryPatternNodeName_5037Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.MessageFormatParser(
-					features, editableFeatures);
-			componentStoryPatternNodeName_5037Parser = parser;
-		}
-		return componentStoryPatternNodeName_5037Parser;
+	private IParser getComponentStoryPatternNodeLabel_5037Parser() {
+		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.ComponentStoryPatternNodeLabelExpressionLabelParser5037();
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser componentStoryPatternNodeType_5038Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getComponentStoryPatternNodeType_5038Parser() {
-		if (componentStoryPatternNodeType_5038Parser == null) {
-			EAttribute editableFeature = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
-					.getPatternNode_Type();
-			EnumParser parser = new EnumParser(editableFeature);
-			componentStoryPatternNodeType_5038Parser = parser;
-		}
-		return componentStoryPatternNodeType_5038Parser;
+	private IParser getComponentStoryPatternNodeLabel_5038Parser() {
+		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.ComponentStoryPatternNodeLabelExpressionLabelParser5038();
 	}
 
 	/**
@@ -281,10 +256,9 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeNameEditPart.VISUAL_ID:
-			return getComponentStoryPatternNodeName_5037Parser();
-
+			return getComponentStoryPatternNodeLabel_5037Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeTypeEditPart.VISUAL_ID:
-			return getComponentStoryPatternNodeType_5038Parser();
+			return getComponentStoryPatternNodeLabel_5038Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
 			return getInitialNodeLabel_5042Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:

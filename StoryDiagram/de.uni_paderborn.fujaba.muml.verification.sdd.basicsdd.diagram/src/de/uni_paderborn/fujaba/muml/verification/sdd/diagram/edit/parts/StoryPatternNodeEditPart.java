@@ -451,14 +451,6 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 
 			insetBottomPolygon1.add(fFigurePatternNodeNameFigure);
 
-			WrappingLabel colonFigure2 = new WrappingLabel();
-
-			colonFigure2.setText(": ");
-
-			colonFigure2.setFont(COLONFIGURE2_FONT);
-
-			insetBottomPolygon1.add(colonFigure2);
-
 			fFigurePatternNodeTypeFigure = new WrappingLabel();
 
 			fFigurePatternNodeTypeFigure.setText("");
@@ -565,13 +557,6 @@ public class StoryPatternNodeEditPart extends ShapeNodeEditPart {
 	static final Font FFIGUREPATTERNNODENAMEFIGURE_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 9, SWT.NORMAL);
-
-	/**
-	 * @generated
-	 */
-	static final Font COLONFIGURE2_FONT = new Font(Display.getCurrent(),
-			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9,
-			SWT.NORMAL);
 
 	/**
 	 * @generated

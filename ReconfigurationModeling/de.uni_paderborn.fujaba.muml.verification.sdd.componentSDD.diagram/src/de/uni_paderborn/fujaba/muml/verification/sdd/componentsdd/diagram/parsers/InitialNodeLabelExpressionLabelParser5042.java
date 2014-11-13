@@ -50,7 +50,7 @@ public class InitialNodeLabelExpressionLabelParser5042 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 				.getExpression(
-						13,
+						15,
 						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
 								.getInitialNode(), null).body();
 	}

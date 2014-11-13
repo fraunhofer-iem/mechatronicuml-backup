@@ -165,13 +165,13 @@ public class ComponentStoryPatternNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigurePatternNodeNameFigure());
+							.getFigurePatternNodeTypeFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeTypeEditPart) {
 			((de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodeTypeEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigurePatternNodeTypeFigure());
+							.getFigurePatternNodeNameFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.ComponentStoryPatternNodePatternNodeContentCompartmentEditPart) {
@@ -459,14 +459,6 @@ public class ComponentStoryPatternNodeEditPart extends ShapeNodeEditPart {
 
 			insetBottomPolygon1.add(fFigurePatternNodeNameFigure);
 
-			WrappingLabel colonFigure2 = new WrappingLabel();
-
-			colonFigure2.setText(": ");
-
-			colonFigure2.setFont(COLONFIGURE2_FONT);
-
-			insetBottomPolygon1.add(colonFigure2);
-
 			fFigurePatternNodeTypeFigure = new WrappingLabel();
 
 			fFigurePatternNodeTypeFigure.setText("");
@@ -573,13 +565,6 @@ public class ComponentStoryPatternNodeEditPart extends ShapeNodeEditPart {
 	static final Font FFIGUREPATTERNNODENAMEFIGURE_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 9, SWT.NORMAL);
-
-	/**
-	 * @generated
-	 */
-	static final Font COLONFIGURE2_FONT = new Font(Display.getCurrent(),
-			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9,
-			SWT.NORMAL);
 
 	/**
 	 * @generated

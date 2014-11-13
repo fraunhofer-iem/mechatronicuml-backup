@@ -35,12 +35,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class MultiPortOrderConstraintLabelExpressionLabelParser6003 extends
+public class ComponentStoryPatternNodeLabelExpressionLabelParser5037 extends
 		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public MultiPortOrderConstraintLabelExpressionLabelParser6003() {
+	public ComponentStoryPatternNodeLabelExpressionLabelParser5037() {
 	}
 
 	/**
@@ -50,9 +50,9 @@ public class MultiPortOrderConstraintLabelExpressionLabelParser6003 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
 				.getExpression(
-						21,
-						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-								.getMultiPortOrderConstraint(), null).body();
+						13,
+						de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage.eINSTANCE
+								.getComponentStoryPatternNode(), null).body();
 	}
 
 	/**
