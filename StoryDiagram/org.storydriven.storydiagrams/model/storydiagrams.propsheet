@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="">
+  <reconciler>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="storydiagrams.uml.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <plugin id="org.storydriven.storydiagrams.edit.properties" name="Storydiagrams Tabbed Properties" vendor="" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.storydriven.storydiagrams.edit</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.storydriven.storydiagrams</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+  <packages>
+    <genPackage href="storydiagrams.uml.genmodel#//storydiagrams"/>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/Variable"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.4"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="storydiagrams.uml.genmodel#//storydiagrams/activities"/>
+    <classes superClasses="//@packages.0/@classes.0">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable"/>
+      <properties tooltip="" initializeOCLExpression="">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/name"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.1/@classes.0/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/exceptionType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.1/@classes.0/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/genericExceptionType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.1/@classes.0/@properties.1 //@packages.1/@classes.0/@properties.2"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/target"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/source"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/guard"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode"/>
+      <properties category="//@packages.1/@classes.2/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode/outgoing"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.1/@classes.2/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode/incoming"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.1/@classes.2/@properties.0 //@packages.1/@classes.2/@properties.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/precondition"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <superClasses href="#//@packages.2/@classes.4"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/OperationExtension"/>
+      <superClasses href="#//@packages.2/@classes.4"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.2"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.6">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/MatchingStoryNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/StoryNode"/>
+      <properties category="//@packages.1/@classes.6/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/StoryNode/forEach"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" properties="//@packages.1/@classes.6/@properties.0"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/StructuredNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/JunctionNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/InitialNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/StatementNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityFinalNode"/>
+      <properties category="//@packages.1/@classes.11/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityFinalNode/success"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" properties="//@packages.1/@classes.11/@properties.0"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2 //@packages.2/@classes.0">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityCallNode"/>
+      <properties category="//@packages.1/@classes.12/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityCallNode/calledActivity"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.1/@classes.12/@properties.0"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.6">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ModifyingStoryNode"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.11">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/FlowFinalNode"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="storydiagrams.uml.genmodel#//storydiagrams/calls"/>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/Invocation"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Invocation/callee"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterBinding"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterBinding/parameter"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.4">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/OpaqueCallable"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/OpaqueCallable/name"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterExtension"/>
+      <superClasses href="#//@packages.0/@classes.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.2"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable"/>
+      <properties category="//@packages.2/@classes.4/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable/inParameter"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.2/@classes.4/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable/outParameter"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.2/@classes.4/@properties.0 //@packages.2/@classes.4/@properties.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="storydiagrams.uml.genmodel#//storydiagrams/patterns"/>
+    <classes superClasses="//@packages.3/@classes.1">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable"/>
+      <properties category="//@packages.3/@classes.0/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/outgoingLink"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/bindingSemantics"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/bindingOperator"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/classifier"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.3/@classes.0/@properties.0"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable/bindingState"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.1/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable/incomingLink"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.3/@classes.1/@properties.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="#//@packages.0/@classes.0"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/Constraint"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/bindingSemantics"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/bindingOperator"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/source"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.3/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/secondLinkConstraint"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.3/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/firstLinkConstraint"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/target"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.3/@classes.3/@properties.3 //@packages.3/@classes.3/@properties.4"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/index"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/constraintType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.4/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/negative"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/firstLink"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/secondLink"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" properties="//@packages.3/@classes.4/@properties.2"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AttributeAssignment"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AttributeAssignment/attribute"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.0">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable"/>
+      <properties category="//@packages.3/@classes.6/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable/atLeastOne"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.6/@propertyCategories.0">
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable/unique"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" properties="//@packages.3/@classes.6/@properties.0 //@packages.3/@classes.6/@properties.1"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.1">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/PrimitiveVariable"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/PrimitiveVariable/classifier"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.3">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/Path"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.3">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkVariable"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkVariable/targetEnd"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.3">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/InclusionLink"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.13">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/MatchingPattern"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.3">
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/MaybeLink"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/StoryPattern"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/StoryPattern/bindingSemantics"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="storydiagrams.uml.genmodel#//storydiagrams/templates"/>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/templates/TemplateBinding"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/templates/TemplateBinding/boundParameter"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/templates/PropertyBinding"/>
+      <properties>
+        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/templates/PropertyBinding/boundProperty"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+    </classes>
+    <classes>
+      <genClass href="storydiagrams.uml.genmodel#//storydiagrams/templates/TemplateSignature"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
