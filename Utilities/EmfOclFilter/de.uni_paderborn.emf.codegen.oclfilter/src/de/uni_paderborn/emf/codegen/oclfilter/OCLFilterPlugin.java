@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -121,7 +122,17 @@ public class OCLFilterPlugin extends AbstractUIPlugin {
 		}
 	}
 
-	public static boolean containsAnnotation(EPackage ePackage) {
+	public static boolean shouldGenerate(GenModel genModel) {
+		for (GenPackage genPackage : genModel.getGenPackages()) {
+			EPackage ePackage = genPackage.getEcorePackage();
+			if (containsAnnotation(ePackage)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean shouldGenerate(EPackage ePackage) {
 		for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 			if (eClassifier instanceof EClass) {
 				if (containsAnnotation((EClass) eClassifier)) {
@@ -137,31 +148,30 @@ public class OCLFilterPlugin extends AbstractUIPlugin {
 		return false;
 	}
 
-	public static boolean containsAnnotation(EClass eClass) {
+	public static boolean shouldGenerate(EClass eClass) {
+		if (containsAnnotation(eClass)) {
+			return true;
+		}
 		for (EStructuralFeature feature : eClass.getEStructuralFeatures()) {
 			if (containsAnnotation(feature)) {
+				return true;
+			}
+		}
+		for (EClass superType : eClass.getESuperTypes()) {
+			if (shouldGenerate(superType)) {
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	public static boolean containsAnnotation(EStructuralFeature feature) {
-		EAnnotation annotation = feature.getEAnnotation(OCLItemPropertyDescriptor.FILTER_ANNOTATION);
+	public static boolean containsAnnotation(EModelElement modelElement) {
+		EAnnotation annotation = modelElement.getEAnnotation(OCLItemPropertyDescriptor.FILTER_ANNOTATION);
 		if (annotation != null) {
 			return annotation.getDetails().containsKey(OCLItemPropertyDescriptor.CHOICES_KEY) || annotation.getDetails().containsKey(OCLItemPropertyDescriptor.FILTER_KEY);
 		}
 		return false;
 	}
 
-	public static boolean containsAnnotation(GenModel genModel) {
-		for (GenPackage genPackage : genModel.getGenPackages()) {
-			EPackage ePackage = genPackage.getEcorePackage();
-			if (containsAnnotation(ePackage)) {
-				return true;
-			}
-		}
-		return false;
-	}
 
 }

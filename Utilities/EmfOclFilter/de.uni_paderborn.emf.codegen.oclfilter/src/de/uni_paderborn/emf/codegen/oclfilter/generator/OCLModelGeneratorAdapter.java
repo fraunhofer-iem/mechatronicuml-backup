@@ -50,7 +50,7 @@ public class OCLModelGeneratorAdapter extends GenModelGeneratorAdapter {
 	protected void generateEditManifest(GenModel genModel, Monitor monitor) {
 		super.generateEditManifest(genModel, monitor);
 	    
-		if (OCLFilterPlugin.containsAnnotation(genModel)) {
+		if (OCLFilterPlugin.shouldGenerate(genModel)) {
 			copyPropertyDescriptor(genModel);
 			addOCLDependency(genModel);
 		}
