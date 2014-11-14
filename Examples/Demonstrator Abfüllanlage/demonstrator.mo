@@ -11,7 +11,7 @@ package demonstrator
         Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=270,
-          origin={-188,262})));
+          origin={-112,264})));
     TemperatureControl.TC tc_TemperaturControl(
       limitBebot=60,
       limitTank=80,
@@ -48,8 +48,8 @@ package demonstrator
 
     Robot.Robot physicalRobots[4](                             each ystart=0, ID = {1,2,3,4},
       xstart={0,-0.12,-0.24,-0.36})
-                               annotation (Placement(transformation(extent={{-112,
-              -236},{-186,-198}})));
+                               annotation (Placement(transformation(extent={{166,
+              -348},{92,-310}})));
 
     inner Modelica.Mechanics.MultiBody.World world(label2="z", n={0,0,-1})
       annotation (Placement(transformation(extent={{-308,180},{-274,214}})));
@@ -57,7 +57,7 @@ package demonstrator
     Robot.distance distancesBetweenRobots[4,4] annotation (Placement(transformation(
           extent={{-21,-26},{21,26}},
           rotation=270,
-          origin={-81,-352})));
+          origin={-19,-342})));
     Sink.Sink sink(
       maxLevel=300,
       height=0.5,
@@ -75,69 +75,15 @@ package demonstrator
       height=0.6,
       radius=0.2,
       position={0.95,0,0})
-      annotation (Placement(transformation(extent={{-204,110},{-136,158}})));
+      annotation (Placement(transformation(extent={{-212,112},{-144,160}})));
     Radiator.Radiator radiator1(position={0.8,0.8,0.2})
       annotation (Placement(transformation(extent={{348,-92},{438,-36}})));
-
-    Modelica.Blocks.Interfaces.RealOutput outFlowRobot
-      annotation (Placement(transformation(extent={{224,-418},{268,-374}})));
-
-    Boolean noRobotInStateUnload(start= true);
-    Boolean watched(start= false);
-    Modelica.Blocks.Sources.RealExpression tempRobot(y=temp) annotation (
-        Placement(transformation(
-          extent={{-10,-10},{10,10}},
-          rotation=270,
-          origin={-232,-266})));
-    Modelica.Blocks.Interfaces.RealOutput temperatureOfObservedBebotAtStop3 annotation(Placement(transformation(
-          extent={{-15,-15},{15,15}},
-          rotation=270,
-          origin={-231,-327})));
-    Real temp;
   equation
-     for i in 1:4 loop
-       // choose robot at position 3 ( can only be one at a time)
-       if physicalRobots[i].currentStop ==2 then
-           if amountOfFlowBlock.out >0 then
-                    physicalRobots[i].currentFluidTemp=  80; // muss noch angepasse werden auf die Temperatur des Tank!!
-                 end if;
-
-                 when sample(0,0.01) then
-                   physicalRobots[i].currentFluidLebel=  amountOfFlowBlock.out;
-                 end when;
-       end if;
-      noRobotInStateUnload =  true;
-       if physicalRobots[i].currentStop ==2 then
-             noRobotInStateUnload =  false;
-             outFlowRobot =  physicalRobots[i].currentFluidLevel;
-             when sample(0,0.1) and physicalRobots[i].currentFluidLevel > 0 then
-                 physicalRobots[i].currentFluidLevel = physicalRobots[i].currentFluidLevel - 2;
-             end when;
-       else
-
-       end if;
-
-     end for;
-
-     when noRobotInStateUnload then
-       outFlowRobot =  0;
-     end when;
-
-      // compute the temperature that is observed
-     watched =  false;
-     for i in 1:4 loop
-       if not watched and physicalRobots[i].currentStop == 3 then // look for the first robot at stop 3
-         watched =  true;
-         temp = physicalRobots[i].currentFluidTemp; // set the oberverd temperature to the temperature of the robot
-        when sample(0,0.01) then
-          physicalRobots[i].currentFluidTemp =  physicalRobots[i].currentFluidTemp - coolDownBlock.out;
-        end when;
-       end if;
-     end for;
-     if not watched then // if there is no robot at step 3, set the temperature to default value
-       temp=  20;
-     end if;
-
+      /*for i in 1:4 loop
+     connect(rc_RobotControl.masterOfRobots[i].Out_Order_Delegation, physicalRobots[i].in_Order);
+     connect(rc_RobotControl.masterOfRobots[i].In_DelegationFailed, physicalRobots[i].fail);
+     connect(rc_RobotControl.masterOfRobots[i].In_Delegation_Succeded, physicalRobots[i].success);
+   end for;*/
      // connect robot color to filling level of Robot
      for i in 1:4 loop
        for j in 1:4 loop
@@ -181,55 +127,62 @@ package demonstrator
         smooth=Smooth.None));
     connect(rc_RobotControl.OutFail, central_MainControl.InFail1) annotation (
         Line(
-        points={{207.027,-131.438},{207.027,-132},{246,-132},{246,-86},{6.77778,
-            -86},{6.77778,-78}},
+        points={{207.027,-131.438},{207.027,-132},{246,-132},{246,-86},{8.77273,
+            -86},{8.77273,-78}},
         color={0,0,0},
         smooth=Smooth.None));
+    connect(rc_RobotControl.temperatureOfObservedBebotAtStop3,
+      tc_TemperaturControl.bebotSensor) annotation (Line(
+        points={{187.073,-210.756},{192,-210.756},{192,-210},{198,-210},{198,
+            -392},{-230,-392},{-230,-214},{-214,-214},{-214,-46.425},{-116.371,
+            -46.425}},
+        color={0,0,127},
+        smooth=Smooth.None));
     connect(physicalRobots.fail, rc_RobotControl.Robot_Failed) annotation (Line(
-        points={{-170.062,-198},{-170.062,-276.3},{112.613,-276.3},{112.613,
+        points={{107.938,-310},{107.938,-276.3},{112.613,-276.3},{112.613,
             -211.063}},
         color={0,0,0},
         smooth=Smooth.None));
 
     connect(physicalRobots.in_Order, rc_RobotControl.Robot_Order) annotation (
         Line(
-        points={{-186.285,-206.718},{32,-206.718},{32,-242},{52,-242},{52,
+        points={{91.7154,-318.718},{32,-318.718},{32,-242},{52,-242},{52,
             -190.85},{62,-190.85}},
         color={0,0,0},
         smooth=Smooth.None));
 
     connect(physicalRobots.success, rc_RobotControl.Robot_Success) annotation (
         Line(
-        points={{-155.546,-198.224},{-155.546,-245.1},{74.6533,-245.1},{74.6533,
+        points={{122.454,-310.224},{122.454,-245.1},{74.6533,-245.1},{74.6533,
             -207.387}},
         color={0,0,0},
         smooth=Smooth.None));
 
     connect(central_MainControl.InDone1, rc_RobotControl.OutDone) annotation (
         Line(
-        points={{24.3333,-78},{8,-78},{8,-100},{222,-100},{222,-115.513},{
+        points={{30.3182,-78},{8,-78},{8,-100},{222,-100},{222,-115.513},{
             208.973,-115.513}},
         color={0,0,0},
         smooth=Smooth.None));
 
     connect(rc_RobotControl.InOrder, central_MainControl.OutOrder1) annotation (
         Line(
-        points={{62,-121.638},{20,-121.638},{20,-77.4},{51.837,-77.4}},
+        points={{62,-121.638},{20,-121.638},{20,-77.4},{64.0727,-77.4}},
         color={0,0,0},
         smooth=Smooth.None));
     connect(bc_BottlingControl.OutDone, central_MainControl.InDone) annotation (
         Line(
-        points={{-46.88,35.2},{-46.88,22.83},{20.237,22.83},{20.237,5.4}},
+        points={{-46.88,35.2},{-46.88,22.83},{25.2909,22.83},{25.2909,5.4}},
         color={0,0,0},
         smooth=Smooth.None));
     connect(central_MainControl.InFail, bc_BottlingControl.outFail) annotation (
         Line(
-        points={{37.7926,5.4},{50,5.4},{50,96},{-64,96},{-64,58.72},{-46,58.72}},
+        points={{46.8364,5.4},{50,5.4},{50,96},{-64,96},{-64,58.72},{-46,58.72}},
         color={0,0,0},
         smooth=Smooth.None));
     connect(bc_BottlingControl.inOrder, central_MainControl.OutOrder) annotation (
        Line(
-        points={{43.76,35.2},{43.76,52.34},{54.1778,52.34},{54.1778,5.4}},
+        points={{43.76,35.2},{43.76,52.34},{66.9455,52.34},{66.9455,5.4}},
         color={0,0,0},
         smooth=Smooth.None));
     connect(sink.frame_a, world.frame_b) annotation (Line(
@@ -237,37 +190,41 @@ package demonstrator
         color={95,95,95},
         thickness=0.5,
         smooth=Smooth.None));
+    connect(rc_RobotControl.outFlowRobot, sink.inFlow) annotation (Line(
+        points={{219.68,-164.512},{262.6,-164.512},{262.6,-282},{270.88,-282}},
+        color={0,0,127},
+        smooth=Smooth.None));
     connect(realExpression.y, sink.warmth) annotation (Line(
         points={{376,-257},{374,-257},{374,-279.52},{293.2,-279.52}},
         color={0,0,127},
         smooth=Smooth.None));
     connect(tank1.currentFillingLevelOfTank, bc_BottlingControl.fluidSensorOfTank)
       annotation (Line(
-        points={{-147.56,107.6},{-147.56,86},{-32.36,86},{-32.36,78.16}},
+        points={{-155.56,109.6},{-155.56,86},{-32.36,86},{-32.36,78.16}},
         color={0,0,127},
         smooth=Smooth.None));
     connect(tank1.currentTemperatureOfTank, tc_TemperaturControl.tankSensor)
       annotation (Line(
-        points={{-167.28,108.08},{-167.28,-68.4},{-115.824,-68.4},{-115.824,
+        points={{-175.28,110.08},{-175.28,-68.4},{-115.824,-68.4},{-115.824,
             -69.15}},
         color={0,0,127},
         smooth=Smooth.None));
     connect(tank1.exactOutFlow, rc_RobotControl.inFlow) annotation (Line(
-        points={{-208.76,147.44},{-441.7,147.44},{-441.7,-159.613},{58.1067,
+        points={{-216.76,149.44},{-233.7,149.44},{-233.7,-159.613},{58.1067,
             -159.613}},
         color={0,0,127},
         smooth=Smooth.None));
     connect(tank1.frame_a, world.frame_b) annotation (Line(
-        points={{-204,122.96},{-204,128},{-246,128},{-246,197},{-274,197}},
+        points={{-212,124.96},{-212,128},{-246,128},{-246,197},{-274,197}},
         color={95,95,95},
         thickness=0.5,
         smooth=Smooth.None));
     connect(productionRate.y, tank1.inFlow) annotation (Line(
-        points={{-188,251},{-182,251},{-182,159.44},{-167.28,159.44}},
+        points={{-112,253},{-180,253},{-180,161.44},{-175.28,161.44}},
         color={0,0,127},
         smooth=Smooth.None));
     connect(radiator1.y, rc_RobotControl.coolingRate) annotation (Line(
-        points={{393.45,-94.52},{393.45,-157.45},{209.947,-157.45},{209.947,
+        points={{393.45,-94.52},{393.45,-147.45},{209.947,-147.45},{209.947,
             -146.137}},
         color={0,0,127},
         smooth=Smooth.None));
@@ -277,24 +234,11 @@ package demonstrator
         thickness=0.5,
         smooth=Smooth.None));
     connect(central_MainControl.coolerOn, radiator1.on) annotation (Line(
-        points={{127.326,-46.8},{127.326,-10},{395.7,-10},{395.7,-34.88}},
+        points={{156.718,-46.8},{156.718,-2},{395.7,-2},{395.7,-34.88}},
         color={255,0,255},
         smooth=Smooth.None));
     connect(tank1.outwardFlow, bc_BottlingControl.outFlowTank) annotation (Line(
-        points={{-147.56,159.44},{14.22,159.44},{14.22,80.32},{12.08,80.32}},
-        color={0,0,127},
-        smooth=Smooth.None));
-    connect(outFlowRobot, sink.inFlow) annotation (Line(
-        points={{246,-396},{246,-282},{270.88,-282}},
-        color={0,0,127},
-        smooth=Smooth.None));
-    connect(tempRobot.y,temperatureOfObservedBebotAtStop3)  annotation (Line(
-        points={{-232,-277},{-232,-327},{-231,-327}},
-        color={0,0,127},
-        smooth=Smooth.None));
-    connect(temperatureOfObservedBebotAtStop3, tc_TemperaturControl.bebotSensor)
-      annotation (Line(
-        points={{-231,-327},{-287.5,-327},{-287.5,-46.425},{-116.371,-46.425}},
+        points={{-155.56,161.44},{14.22,161.44},{14.22,80.32},{12.08,80.32}},
         color={0,0,127},
         smooth=Smooth.None));
     annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,
@@ -1080,8 +1024,8 @@ package demonstrator
           smooth=Smooth.None));
 
       annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -140},{440,140}}),                                                                     graphics), Icon(
-            coordinateSystem(extent={{-100,-140},{440,140}})));
+                -140},{340,140}}),                                                                     graphics), Icon(
+            coordinateSystem(extent={{-100,-140},{340,140}})));
     end Central;
 
     function deriveNewTarget
@@ -1818,6 +1762,16 @@ package demonstrator
         Boolean watched;
         Integer to;
         Real temp(start=20);
+      Modelica.Blocks.Interfaces.RealOutput temperatureOfObservedBebotAtStop3
+        annotation (Placement(transformation(
+            extent={{-15,-15},{15,15}},
+            rotation=270,
+            origin={157,-229})));
+      Modelica.Blocks.Sources.RealExpression tempRobot(y=temp) annotation (
+          Placement(transformation(
+            extent={{-10,-10},{10,10}},
+            rotation=270,
+            origin={156,-168})));
       Modelica.Blocks.Interfaces.RealInput inFlow
         annotation (Placement(transformation(extent={{-128,-82},{-88,-42}})));
       Modelica.Blocks.Interfaces.RealInput coolingRate annotation (Placement(
@@ -1832,16 +1786,16 @@ package demonstrator
       IntegratorBlock amountOfFlowBlock annotation (Placement(transformation(
             extent={{-10,-10},{10,10}},
             rotation=90,
-            origin={-68,-14})));
+            origin={-50,-62})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Step Initial(
         initialStep=true,
-        nIn=3,
+        nIn=4,
         nOut=1)
                annotation (Placement(transformation(
             extent={{-4,-4},{4,4}},
             rotation=0,
             origin={44,-14})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Step CheckOrder(       nOut=2, nIn=1)
+      RealTimeCoordinationLibrary.RealTimeCoordination.Step CheckOrder(       nOut=3, nIn=1)
         annotation (Placement(transformation(
             extent={{-4,-4},{4,4}},
             rotation=0,
@@ -1855,13 +1809,13 @@ package demonstrator
             extent={{4,-4},{-4,4}},
             rotation=0,
             origin={46,-26})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Step FillOrUnloadRobot(nIn=1,
-          nOut=1) annotation (Placement(transformation(
+      RealTimeCoordinationLibrary.RealTimeCoordination.Step FillRobot(nIn=1, nOut=1)
+        annotation (Placement(transformation(
             extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={78,-80})));
+            rotation=0,
+            origin={54,-76})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Transition T3(condition=fSD.from
-             == 2 and fSD.to == 2 or fSD.from == 4 and fSD.to == 4)
+             == 2 and fSD.to == 2)
         annotation (Placement(transformation(extent={{42,-66},{50,-58}})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Step SendRobotToNextStop(nIn=
            1, nOut=1) annotation (Placement(transformation(
@@ -1871,17 +1825,26 @@ package demonstrator
       RealTimeCoordinationLibrary.RealTimeCoordination.Transition T4(condition=not (
             fSD.from == fSD.to))
         annotation (Placement(transformation(extent={{20,-60},{28,-52}})));
+      RealTimeCoordinationLibrary.RealTimeCoordination.Transition T6(use_syncSend=true,numberOfSyncSend=1,
+        condition=amountOfFlowBlock.out >= fSD.order)                annotation (
+          Placement(transformation(
+            extent={{-4,-4},{4,4}},
+            rotation=0,
+            origin={46,-94})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Transition T7(use_syncSend=true,
           numberOfSyncSend=1)                                        annotation (
           Placement(transformation(
             extent={{-4,-4},{4,4}},
             rotation=180,
             origin={-36,-134})));
+      RealTimeCoordinationLibrary.RealTimeCoordination.Transition T8(condition=fSD.from
+             == 4 and fSD.to == 4)
+        annotation (Placement(transformation(extent={{106,-58},{114,-50}})));
+      RealTimeCoordinationLibrary.RealTimeCoordination.Step UnloadRobot(nIn=1, nOut=
+           1) annotation (Placement(transformation(extent={{108,-78},{116,-70}})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Transition T9(use_syncSend=true,numberOfSyncSend=1,
         condition=robots[currentRobot, 2] <= 0)
-        annotation (Placement(transformation(extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={232,-106})));
+        annotation (Placement(transformation(extent={{110,-98},{118,-90}})));
 
       Modelica.Blocks.Sources.IntegerExpression goal(y=to)
         annotation (Placement(transformation(extent={{-92,-132},{-72,-112}})));
@@ -1959,30 +1922,8 @@ package demonstrator
             origin={102,-130})));
       FODelegation_Slave fSD(worktime=10)
         annotation (Placement(transformation(extent={{0,18},{86,70}})));
-      Modelica.Blocks.Sources.IntegerExpression location(y=from)
-        annotation (Placement(transformation(extent={{-90,-104},{-70,-84}})));
-      Modelica.Blocks.Sources.IntegerExpression fluidOrder(y=order)
-        annotation (Placement(transformation(extent={{-68,-76},{-48,-56}})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Step InformRobot(nIn=1, nOut=
-           1) annotation (Placement(transformation(
-            extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={162,-92})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Transition T2 annotation (
-          Placement(transformation(
-            extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={132,-94})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Transition T5 annotation (
-          Placement(transformation(
-            extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={190,-86})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Step RobotOk(nIn=1, nOut=1)
-        annotation (Placement(transformation(
-            extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={208,-110})));
+      Modelica.Blocks.Interfaces.RealOutput outFlowRobot
+        annotation (Placement(transformation(extent={{202,-100},{246,-56}})));
     algorithm
         when SendRobotToNextStop.active then
           for from in 1:size(robots,1) loop
@@ -2006,7 +1947,20 @@ package demonstrator
         when targetReached.active then
            robots[currentRobot,1]:=to;
         end when;
-
+        /*for i in 1:size(robots,1) loop
+      when masterOfRobots[i].T4.fire then
+        robots[i,1] :=to;
+      end when;
+    end for;*/
+       /* when not SendRobotToNextStop.active and not RobotDetermined.active then
+      for i in 1:size(robots,1) loop
+        startMoving[i] := false;
+      end for;
+    end when;*/
+       // if FillRobot.active then
+           //for from in 1:size(robots,1) loop
+          // to := if fSD.from ==4 then 1 else fSD.from +1;
+           // if fSD.from == from then
           if FillRobot.active then
              set := false;
                for i in 1:size(robots,1) loop
@@ -2022,6 +1976,8 @@ package demonstrator
                  end if;
                end for;
            end if;
+          //end for;
+      //  end if;
 
            if UnloadRobot.active then
 
@@ -2047,6 +2003,22 @@ package demonstrator
                robots[i,3] :=20;
             end if;
           end for;
+       // compute the temperature that is observed
+       watched := false;
+       for i in 1:size(robots,1) loop
+         if not watched and robots[i,1] == 3 then // look for the first robot at stop 3
+           watched := true;
+           temp := robots[i,3]; // set the oberverd temperature to the temperature of the robot
+          when sample(0,0.01) then
+            robots[i,3] := robots[i,3]-coolDownBlock.out;
+          end when;
+         end if;
+       end for;
+       if not watched then // if there is no robot at step 3, set the temperature to default value
+         temp:= 20;
+       end if;
+     //Robot.Robot physicalRobots[4];
+       //  Master masterOfRobots[4];
 
     equation
 
@@ -2063,43 +2035,66 @@ package demonstrator
 
        for i in 1:1:size(robots,1) loop
           connect(goal.y, masterOfRobots[i].goal);
-          connect(location.y, masterOfRobots[i].location);
-          connect(fluidOrder.y, masterOfRobots[i].order);
        end for;
 
-       connect(T9.sender[1], fSD.T3.receiver[2]);
+       connect(T6.sender[1], fSD.T3.receiver[2]);
+       connect(T9.sender[1], fSD.T3.receiver[3]);
+      connect(tempRobot.y, temperatureOfObservedBebotAtStop3) annotation (Line(
+          points={{156,-179},{156,-229},{157,-229}},
+          color={0,0,127},
+          smooth=Smooth.None));
       connect(coolDownBlock.x, coolingRate) annotation (Line(
           points={{168.6,-17.6},{167.3,-17.6},{167.3,-18},{204,-18}},
           color={0,0,127},
           smooth=Smooth.None));
       connect(inFlow, amountOfFlowBlock.x) annotation (Line(
-          points={{-108,-62},{-90,-62},{-90,-14.4},{-78.6,-14.4}},
+          points={{-108,-62},{-66,-62},{-66,-62.4},{-60.6,-62.4}},
           color={0,0,127},
           smooth=Smooth.None));
 
       connect(CheckOrder.outPort[1], T3.inPort) annotation (Line(
-          points={{77,-46.6},{77,-54},{46,-54},{46,-58}},
+          points={{76.6667,-46.6},{76.6667,-54},{46,-54},{46,-58}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(CheckOrder.outPort[2], T4.inPort) annotation (Line(
-          points={{79,-46.6},{24,-46.6},{24,-52}},
+          points={{78,-46.6},{24,-46.6},{24,-52}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(T4.outPort, SendRobotToNextStop.inPort[1]) annotation (Line(
           points={{24,-61},{24,-72},{4,-72}},
           color={0,0,0},
           smooth=Smooth.None));
-      connect(T7.outPort, Initial.inPort[1]) annotation (Line(
-          points={{-36,-129},{-30,-129},{-30,-10},{42.6667,-10}},
+      connect(FillRobot.outPort[1], T6.inPort) annotation (Line(
+          points={{54,-80.6},{54,-86},{46,-86},{46,-90}},
           color={0,0,0},
           smooth=Smooth.None));
-      connect(T3.outPort, FillOrUnloadRobot.inPort[1]) annotation (Line(
-          points={{46,-67},{46,-66},{74,-66},{74,-80}},
+      connect(T6.outPort, Initial.inPort[1]) annotation (Line(
+          points={{46,-99},{-16,-99},{-16,-10},{42.5,-10}},
+          color={0,0,0},
+          smooth=Smooth.None));
+      connect(T7.outPort, Initial.inPort[2]) annotation (Line(
+          points={{-36,-129},{-30,-129},{-30,-10},{43.5,-10}},
+          color={0,0,0},
+          smooth=Smooth.None));
+      connect(T3.outPort, FillRobot.inPort[1]) annotation (Line(
+          points={{46,-67},{46,-66},{54,-66},{54,-72}},
           color={0,0,0},
           smooth=Smooth.None));
 
-      connect(T9.outPort, Initial.inPort[2]) annotation (Line(
-          points={{237,-106},{248,-106},{248,-10},{44,-10}},
+      connect(CheckOrder.outPort[3], T8.inPort) annotation (Line(
+          points={{79.3333,-46.6},{78,-46.6},{78,-50},{110,-50}},
+          color={0,0,0},
+          smooth=Smooth.None));
+      connect(T8.outPort, UnloadRobot.inPort[1]) annotation (Line(
+          points={{110,-59},{112,-59},{112,-70}},
+          color={0,0,0},
+          smooth=Smooth.None));
+      connect(UnloadRobot.outPort[1], T9.inPort) annotation (Line(
+          points={{112,-78.6},{114,-78.6},{114,-90}},
+          color={0,0,0},
+          smooth=Smooth.None));
+      connect(T9.outPort, Initial.inPort[3]) annotation (Line(
+          points={{114,-99},{132,-99},{132,-10},{44.5,-10}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(Initial.outPort[1], T1.inPort) annotation (Line(
@@ -2135,7 +2130,7 @@ package demonstrator
           color={0,0,0},
           smooth=Smooth.None));
       connect(SendRobotToNextStop.outPort[1], T11.inPort) annotation (Line(
-          points={{4,-80.6},{4,-90}},
+          points={{4,-80.6},{4,-86},{4,-86},{4,-90}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(T11.outPort, RobotDetermined.inPort[1]) annotation (Line(
@@ -2155,8 +2150,8 @@ package demonstrator
           points={{78.6,-134},{88,-134},{88,-130},{98,-130}},
           color={0,0,0},
           smooth=Smooth.None));
-      connect(T13.outPort, Initial.inPort[3]) annotation (Line(
-          points={{107,-130},{142,-130},{142,0},{44,0},{44,-10},{45.3333,-10}},
+      connect(T13.outPort, Initial.inPort[4]) annotation (Line(
+          points={{107,-130},{142,-130},{142,0},{44,0},{44,-10},{45.5,-10}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(T12.receiver[1:4], masterOfRobots.failed) annotation (Line(
@@ -2192,26 +2187,6 @@ package demonstrator
           points={{13,-114.6},{14,-114.6},{14,-126},{16,-126}},
           color={0,0,0},
           smooth=Smooth.None));
-      connect(FillOrUnloadRobot.outPort[1], T2.inPort) annotation (Line(
-          points={{82.6,-80},{106,-80},{106,-94},{128,-94}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(T2.outPort, InformRobot.inPort[1]) annotation (Line(
-          points={{137,-94},{148,-94},{148,-92},{158,-92}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(InformRobot.outPort[1], T5.inPort) annotation (Line(
-          points={{166.6,-92},{178,-92},{178,-86},{186,-86}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(T5.outPort, RobotOk.inPort[1]) annotation (Line(
-          points={{195,-86},{198,-86},{198,-110},{204,-110}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(RobotOk.outPort[1], T9.inPort) annotation (Line(
-          points={{212.6,-110},{218,-110},{218,-106},{228,-106}},
-          color={0,0,0},
-          smooth=Smooth.None));
       annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
                 -220},{200,100}}),                                                                     graphics), Icon(
             coordinateSystem(extent={{-100,-220},{200,100}}, preserveAspectRatio=false),
@@ -2230,10 +2205,10 @@ package demonstrator
           redeclare Boolean booleans[0] "booelans[0]",
           redeclare Real reals[0] "reals[0]"),
         Out_Order_Delegation(
+          redeclare Integer integers[1] "integers[1]",
           redeclare Boolean booleans[0] "booelans[0]",
-          redeclare Real reals[0] "reals[0]",
-          redeclare Integer integers[3] "integers[3]"),
-        message(numberOfMessageIntegers=3),
+          redeclare Real reals[0] "reals[0]"),
+        message(numberOfMessageIntegers=1),
         T1(
           use_conditionPort=false,
           afterTime=0.01,
@@ -2255,16 +2230,6 @@ package demonstrator
       RealTimeCoordinationLibrary.RealTimeCoordination.Internal.Interfaces.Synchron.sender
         failed
         annotation (Placement(transformation(extent={{-2,-110},{18,-90}})));
-      Modelica.Blocks.Interfaces.IntegerInput location annotation (Placement(
-            transformation(
-            extent={{-20,-20},{20,20}},
-            rotation=270,
-            origin={16,148})));
-      Modelica.Blocks.Interfaces.IntegerInput order annotation (Placement(
-            transformation(
-            extent={{-20,-20},{20,20}},
-            rotation=270,
-            origin={-38,148})));
     equation
       connect(message.u_integers[1], goal) annotation (Line(
           points={{57,103.2},{57,112.6},{58,112.6},{58,148}},
@@ -2275,14 +2240,6 @@ package demonstrator
               -96},{8,-100}},
           color={255,128,0},
           smooth=Smooth.None));
-      connect(location, message.u_integers[2]) annotation (Line(
-          points={{16,148},{38,148},{38,103.2},{57,103.2}},
-          color={255,127,0},
-          smooth=Smooth.None));
-      connect(order, message.u_integers[3]) annotation (Line(
-          points={{-38,148},{10,148},{10,103.2},{57,103.2}},
-          color={255,127,0},
-          smooth=Smooth.None));
       annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
                 -100},{100,140}}),      graphics), Icon(coordinateSystem(extent=
                {{-100,-100},{100,140}})));
@@ -2292,7 +2249,7 @@ package demonstrator
       extends
         RealTimeCoordinationLibrary.CoordinationPattern.Fail_Operational_Delegation.Delegation_Slave(
         T2(use_syncReceive=true, numberOfSyncReceive=1),
-        T3(use_syncReceive=true, numberOfSyncReceive=2),
+        T3(use_syncReceive=true, numberOfSyncReceive=3),
         Out_Delegation_Failed(
           redeclare Integer integers[0] "integers[0]",
           redeclare Boolean booleans[0] "booelans[0]",
@@ -2520,9 +2477,9 @@ Version History
       extends
         RealTimeCoordinationLibrary.CoordinationPattern.Fail_Operational_Delegation.Delegation_Slave(
         In_Order_Delegation(
+          redeclare Integer integers[1] "integers[1]",
           redeclare Boolean booleans[0] "booelans[0]",
-          redeclare Real reals[0] "reals[0]",
-          redeclare Integer integers[3] "integers[2]"),
+          redeclare Real reals[0] "reals[0]"),
         Out_Delegation_Failed(
           redeclare Integer integers[0] "integers[0]",
           redeclare Boolean booleans[0] "booelans[0]",
@@ -2531,23 +2488,18 @@ Version History
           redeclare Integer integers[0] "integers[0]",
           redeclare Boolean booleans[0] "booelans[0]",
           redeclare Real reals[0] "reals[0]"),
-        mailbox(numberOfMessageIntegers=3),
-        T1(                           use_syncSend=true,numberOfSyncSend=3,
-          numberOfMessageIntegers=3),
+        mailbox(numberOfMessageIntegers=1),
+        T1(numberOfMessageIntegers=1, use_syncSend=true,numberOfSyncSend=1),
         T2(use_syncReceive=true, numberOfSyncReceive=1),
-        T3(use_syncReceive=true,numberOfSyncReceive=3));
+        T3(use_syncReceive=true,numberOfSyncReceive=1));
 
         Modelica.Blocks.Interfaces.IntegerOutput goal(start=2);
-         Modelica.Blocks.Interfaces.IntegerOutput location(start=1);
-           Modelica.Blocks.Interfaces.IntegerOutput order(start=0);
       RealTimeCoordinationLibrary.RealTimeCoordination.Internal.Interfaces.Synchron.receiver
         fail
         annotation (Placement(transformation(extent={{-112,-36},{-92,-16}})));
     equation
      when T1.fire then
           goal = T1.transition_input_port[1].integers[1];
-          location = T1.transition_input_port[1].integers[2];
-          order = T1.transition_input_port[1].integers[3];
      end when;
       connect(T2.receiver[1], fail) annotation (Line(
           points={{-13.98,24.82},{-41.99,24.82},{-41.99,-26},{-102,-26}},
@@ -2604,7 +2556,6 @@ Version History
       parameter Integer ID = 1;
       Modelica.SIunits.Position posX;
       Modelica.SIunits.Position posY;
-
       Robot_V3 robot_V3_1(xstart_wmr=xstart, ystart_wmr=ystart)
         annotation (Placement(transformation(extent={{-22,-32},{8,-12}})));
       Modelica.Blocks.Sources.RealExpression left(y=speedLeft)
@@ -2617,16 +2568,15 @@ Version History
             origin={34,-24})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Step stop(
         initialStep=true,
-        nOut=3,
-        nIn=4) annotation (Placement(transformation(extent={{148,-4},{156,4}})));
+        nOut=1,
+        nIn=2) annotation (Placement(transformation(extent={{148,-4},{156,4}})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Step move(nIn=1, nOut=4)
         annotation (Placement(transformation(extent={{124,-50},{132,-42}})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Transition T10(
         use_after=true,
         afterTime=0.001,
         use_syncReceive=true,
-        numberOfSyncReceive=1,
-        condition=delegation_Slave.goal <> delegation_Slave.location)
+        numberOfSyncReceive=1)
         annotation (Placement(transformation(extent={{124,-28},{132,-20}})));
       RealTimeCoordinationLibrary.RealTimeCoordination.Transition T12(
         use_syncSend=true,
@@ -2651,10 +2601,10 @@ Version History
         annotation (Placement(transformation(extent={{258,90},{278,110}})));
       RealTimeCoordinationLibrary.RealTimeCoordination.MessageInterface.InputDelegationPort
         in_Order(
+        redeclare Integer integers[1] "integers[1]",
         redeclare Boolean booleans[0] "booelans[0]",
-        redeclare Real reals[0] "reals[0]",
-        redeclare Integer integers[3] "integers[2]")
-        annotation (Placement(transformation(extent={{376,36},{396,56}})));
+        redeclare Real reals[0] "reals[0]")
+        annotation (Placement(transformation(extent={{372,12},{392,32}})));
       Delegation_Slave delegation_Slave(worktime=3.5)
                                         annotation (Placement(transformation(
             extent={{10,-10},{-10,10}},
@@ -2840,49 +2790,6 @@ Version History
             extent={{-4,-4},{4,4}},
             rotation=180,
             origin={284,-224})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Step FillRobot(nIn=2, nOut=1)
-        annotation (Placement(transformation(extent={{292,-82},{300,-74}})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Transition T15(condition=
-            delegation_Slave.goal == delegation_Slave.location and delegation_Slave.goal
-             == 2, use_syncReceive=true, numberOfSyncReceive=1)
-        annotation (Placement(transformation(extent={{236,-28},{244,-20}})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Transition T16(condition=
-            delegation_Slave.goal == delegation_Slave.location and delegation_Slave.goal
-             == 4, use_syncReceive=true,numberOfSyncReceive=1)
-        annotation (Placement(transformation(extent={{344,-20},{352,-12}})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Step UnloadRobot(nIn=1, nOut=
-           1) annotation (Placement(transformation(
-            extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={362,-64})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Transition T17(use_syncSend=true,numberOfSyncSend=1,
-          condition=currentFluidLevel >= delegation_Slave.order)
-        annotation (Placement(transformation(
-            extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={354,-114})));
-      RealTimeCoordinationLibrary.RealTimeCoordination.Transition T23(use_syncSend=true,numberOfSyncSend=1,
-          condition=currentFluidLevel <= 0)
-        annotation (Placement(transformation(
-            extent={{-4,-4},{4,4}},
-            rotation=90,
-            origin={390,-64})));
-
-      Modelica.Blocks.Interfaces.RealInput currentFluidLevel(start = 1) annotation (Placement(
-            transformation(
-            extent={{-20,-20},{20,20}},
-            rotation=270,
-            origin={322,110})));
-      Modelica.Blocks.Interfaces.RealInput currentFluidTemp(start = 20) annotation (Placement(
-            transformation(
-            extent={{-20,-20},{20,20}},
-            rotation=270,
-            origin={376,108})));
-      Modelica.Blocks.Interfaces.RealOutput currentStop(start = 0) annotation (Placement(
-            transformation(
-            extent={{-28,-28},{28,28}},
-            rotation=270,
-            origin={364,-252})));
     algorithm
       /*direction :=sign((delegation_Slave.goal - position));
 
@@ -2950,14 +2857,10 @@ Version History
 
       end if;
 
-      when ArrivedAtStop.active then
-        currentStop := delegation_Slave.goal;
-      end when;
     /*   when T16.fire then
       stopBlocked := false;
    end when;
-   */
-
+*/
     equation
       for i in 1:4 loop
         if not i == ID then
@@ -2970,12 +2873,7 @@ Version History
       posY = robot_V3_1.y;
 
       connect(delegation_Slave.T1.sender[1], T10.receiver[1]);
-      connect(delegation_Slave.T1.sender[2], T16.receiver[1]);
-      connect(delegation_Slave.T1.sender[3], T15.receiver[1]);
       connect(T12.sender[1], delegation_Slave.T3.receiver[1]);
-      connect(T17.sender[1], delegation_Slave.T3.receiver[2]);
-      connect(T23.sender[1], delegation_Slave.T3.receiver[3]);
-
       connect(robot_V3_1.omegaR_des, right.y) annotation (Line(
           points={{7,-22},{14,-22},{14,-24},{23,-24}},
           color={0,0,127},
@@ -2985,7 +2883,7 @@ Version History
           color={0,0,127},
           smooth=Smooth.None));
       connect(delegation_Slave.In_Order_Delegation, in_Order) annotation (Line(
-          points={{269.4,27.8},{277.9,27.8},{277.9,46},{386,46}},
+          points={{269.4,27.8},{277.9,27.8},{277.9,22},{382,22}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(delegation_Slave.Out_Delegation_Succeded, success) annotation (Line(
@@ -2997,7 +2895,7 @@ Version History
           color={0,0,0},
           smooth=Smooth.None));
       connect(stop.outPort[1], T10.inPort) annotation (Line(
-          points={{150.667,-4.6},{130,-4.6},{130,-20},{128,-20}},
+          points={{152,-4.6},{130,-4.6},{130,-20},{128,-20}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(T10.outPort, move.inPort[1]) annotation (Line(
@@ -3105,7 +3003,7 @@ Version History
           color={0,0,0},
           smooth=Smooth.None));
       connect(T12.outPort, stop.inPort[1]) annotation (Line(
-          points={{212,-25},{212,14},{138,14},{138,4},{150.5,4}},
+          points={{212,-25},{212,14},{138,14},{138,4},{151,4}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(integerExpression1.y, robot_V3_1.red) annotation (Line(
@@ -3121,7 +3019,7 @@ Version History
           color={255,127,0},
           smooth=Smooth.None));
       connect(red, tankmodel.fillingLevel) annotation (Line(
-          points={{-124,106},{-106,106},{-106,-101.8},{-106.4,-101.8}},
+          points={{-124,106},{-118,106},{-118,-101.8},{-106.4,-101.8}},
           color={0,0,127},
           smooth=Smooth.None));
       connect(tankmodel.frame_a, robot_V3_1.Frame) annotation (Line(
@@ -3131,7 +3029,7 @@ Version History
           smooth=Smooth.None));
 
       connect(tankmodel.warmth, warmth) annotation (Line(
-          points={{-117,-101.4},{-231.5,-101.4},{-231.5,110},{88,110}},
+          points={{-117,-101.4},{-107.5,-101.4},{-107.5,110},{88,110}},
           color={0,0,127},
           smooth=Smooth.None));
       connect(robot_V3_1.x, x) annotation (Line(
@@ -3180,45 +3078,12 @@ Version History
           color={0,0,0},
           smooth=Smooth.None));
       connect(T22.outPort, stop.inPort[2]) annotation (Line(
-          points={{284,-219},{328,-219},{328,4},{151.5,4}},
+          points={{284,-219},{286,-219},{286,4},{153,4}},
           color={0,0,0},
           smooth=Smooth.None));
       connect(T22.sender[1], delegation_Slave.fail) annotation (Line(
-          points={{281.4,-228.06},{281.4,-180},{282,-180},{282,-130},{257.4,
-              -130},{257.4,27.8}},
+          points={{281.4,-228.06},{281.4,16.97},{257.4,16.97},{257.4,27.8}},
           color={255,128,0},
-          smooth=Smooth.None));
-      connect(stop.outPort[2], T15.inPort) annotation (Line(
-          points={{152,-4.6},{196,-4.6},{196,-20},{240,-20}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(T15.outPort, FillRobot.inPort[1]) annotation (Line(
-          points={{240,-29},{270,-29},{270,-74},{295,-74}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(stop.outPort[3], T16.inPort) annotation (Line(
-          points={{153.333,-4.6},{228,-4.6},{228,-12},{348,-12}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(T16.outPort, UnloadRobot.inPort[1]) annotation (Line(
-          points={{348,-21},{334,-21},{334,-64},{358,-64}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(FillRobot.outPort[1], T17.inPort) annotation (Line(
-          points={{296,-82.6},{324,-82.6},{324,-114},{350,-114}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(T17.outPort, stop.inPort[3]) annotation (Line(
-          points={{359,-114},{420,-114},{420,20},{152,20},{152,4},{152.5,4}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(UnloadRobot.outPort[1], T23.inPort) annotation (Line(
-          points={{366.6,-64},{386,-64}},
-          color={0,0,0},
-          smooth=Smooth.None));
-      connect(T23.outPort, stop.inPort[4]) annotation (Line(
-          points={{395,-64},{400,-64},{400,6},{154,6},{154,4},{153.5,4}},
-          color={0,0,0},
           smooth=Smooth.None));
      annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,
                 -240},{380,100}}), graphics), Icon(coordinateSystem(extent={{-140,-240},
