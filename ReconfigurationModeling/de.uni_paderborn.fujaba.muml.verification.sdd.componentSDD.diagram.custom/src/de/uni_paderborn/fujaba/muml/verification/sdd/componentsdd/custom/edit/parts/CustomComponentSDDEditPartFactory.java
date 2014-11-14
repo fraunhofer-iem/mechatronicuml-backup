@@ -60,8 +60,6 @@ public class CustomComponentSDDEditPartFactory extends ComponentSDDEditPartFacto
 				return new CustomPatternNodeEditPart(view);
 			case ComponentStoryPatternNodePatternNodeContentCompartmentEditPart.VISUAL_ID:
 				return new CustomPatternNodePatternNodeContentCompartmentEditPart(view);
-			case ComponentStoryPatternNodeTypeEditPart.VISUAL_ID:
-				return new CustomPatternNodeTypeEditPart(view);
 			case MultiPortVariable2EditPart.VISUAL_ID:
 				return new CustomMultiPortVariable2EditPart(view);
 			case MultiPortVariableEditPart.VISUAL_ID:
