@@ -264,9 +264,23 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 
 	public void setDefaultValue() {
-		setValue(feature.getDefaultValue());
+		setValue(getDefaultValue());
 	}
 	
+	protected Object getDefaultValue() {
+		Object defaultValue = feature.getDefaultValue();
+		
+		// WORKAROUND: Emf implementation of EStructuralFeature.getDefaultValue() returns null for many-feature...
+		if (feature.isMany() && !(defaultValue instanceof Collection<?>)) {
+			List<Object> manyValue = new ArrayList<Object>();
+			if (defaultValue != null) {
+				manyValue.add(defaultValue);
+			}
+			defaultValue = manyValue;
+		}
+		return defaultValue;
+	}
+
 	public void setValue(final Object newValue) {
 		boolean changed = (value == null) != (newValue == null) || (value != null && newValue != null && !value.equals(newValue));
 		EditingDomain editingDomain = getEditingDomain(element);
