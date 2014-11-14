@@ -3,6 +3,7 @@ package ocl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -27,21 +28,33 @@ import org.eclipse.ocl.options.ParsingOptions;
  * <ol>
  * <li> Create an annotation with source <code>http://www.muml.org/emf/OCLFilter</code> in your .ecore file under your property.</li>
  * 
- * <li> Add a details entry with key <code>choices</code>.</li>
+ * <li> Add a details entry with key <code>choices</code>.
  *     <ul>
  * 	   <li>The value will be parsed as OCL.</li>
  *     <li><code>self</code> refers to the object that values should be generated for.</li>
  *     <li>It should return a single or multiple possible feature values for this object and this feature.</li>
  *     <li>Make sure that values you return conform to the feature type!</li>
  *     </ul>
- * 
- * <li> Add a details entry with key <code>filter</code>.</li>
+ * </li>
+ *
+ * <li> Add a details entry with key <code>filter</code>.
  *     <ul>
  *     <li>The value will be parsed as OCL and evaluated once for every possible choice generated before.</li>
  *     <li><code>self</code> refers to the value being filtered.</li>
  *     <li>It should return <code>true</code>, in order to mark the value as valid for this feature. Every other return value,
  *       including OclInvalid, marks the value as invalid and it will not appear in the list of choices.</li>
  *     </ul>
+ * </li>
+ * 
+ * <li> Add a details entry with key <code>allowEmpty</code> and value <code>true</code> or <code>false</code>.
+ *      When the value is set to <code>true</code>, the behavior of the <code>choices</code> key (see above) is changed in the following way:
+ *      <ul>
+ *      <li>In case the <code>choices</code> key generates an empty list of choices, a collection of all values conforming to the feature type will be generated.</li>
+ *      <li>In case the <code>choices</code> key generates one or more choices, these choices will be used as normal.</li>
+ *      </ul>
+ *      <p>Note: Default value is <code>true</code>, in case this details entry is not specified or an invalid value was specified.</p>
+ * </li>
+ * 
  * </ol>
  * 
  * <p>Of course you can use either <code>choices</code> or <code>filter</code> independently.</p>
@@ -61,7 +74,7 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	/**
 	 * The source value for the annotation to use.
 	 */
-	public static String OCL_ANNOTATION = "http://www.muml.org/emf/OCLFilter";
+	public static String FILTER_ANNOTATION = "http://www.muml.org/emf/OCLFilter";
 
 	/**
 	 * The key for the details entry to use for choices.
@@ -72,6 +85,11 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 * The key for the details entry to use for filters.
 	 */
 	public static String FILTER_KEY = "filter";
+
+	/**
+	 * The key for the details entry to use for the allowEmpty switch.
+	 */
+	public static String ALLOW_EMPTY_KEY = "allowEmpty";
 
 	/**
 	 * OCL Environment to use; is created once, statically.
@@ -104,7 +122,7 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	public Collection<?> getChoiceOfValues(Object object) {
 		if (object instanceof EObject && feature != null) {
 			EObject element = (EObject) object;
-			EAnnotation oclAnnotation = ((EStructuralFeature) feature).getEAnnotation(OCL_ANNOTATION);
+			EAnnotation oclAnnotation = ((EStructuralFeature) feature).getEAnnotation(FILTER_ANNOTATION);
 
 			// (1) Generate choices using the "choices" key:
 			Collection<?> choices = null;
@@ -117,13 +135,23 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 				} catch (ParserException e) {
 					e.printStackTrace();
 				}
-				
+
 				if (result instanceof Collection) {
 					choices = (Collection<?>) result;
 				} else {
-					choices = Collections.singletonList(result);		
+					choices = new ArrayList<Object>(Collections.singletonList(result));		
 				}
-				
+
+				// Filter out oclInvalid
+				Iterator<?> it = choices.iterator();
+				while (it.hasNext()) {
+					Object choice = it.next();
+					if (choice == OCL_ECORE.getEnvironment().getOCLStandardLibrary().getInvalid()) {
+						it.remove();
+					}
+				}
+
+
 				try {
 					checkResult(choices);
 				} catch (RuntimeException e) {
@@ -131,7 +159,11 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 					choices = Collections.emptyList();
 				}
 
-			} else {
+				// At this point choices is never null.
+			}
+			
+			// Generate all choices of correct type
+			if (choices == null || (choices.isEmpty() && oclAnnotation != null && "true".equalsIgnoreCase(oclAnnotation.getDetails().get(ALLOW_EMPTY_KEY)))) {
 				choices = super.getChoiceOfValues(object);
 			}
 
