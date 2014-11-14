@@ -165,7 +165,7 @@
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#TriggerEmbeddedComponentExpression"/>
                         <viewExpression
-                            body="'test'"/>
+                            body="''"/>
                       </labelMappings>
                       <labelMappings
                           xsi:type="gmfmap:ExpressionLabelMapping"
