@@ -57,7 +57,7 @@ package demonstrator
     Robot.distance distancesBetweenRobots[4,4] annotation (Placement(transformation(
           extent={{-21,-26},{21,26}},
           rotation=270,
-          origin={-19,-342})));
+          origin={-87,-296})));
     Sink.Sink sink(
       maxLevel=300,
       height=0.5,
@@ -3340,7 +3340,7 @@ Version History
         width=0.05,
         height=0.05,
         r_shape=position,
-        shapeType="15")
+        shapeType="4")
         annotation (Placement(transformation(extent={{-52,-20},{-32,0}})));
       Modelica.Mechanics.MultiBody.Interfaces.Frame_a frame_a
         annotation (Placement(transformation(extent={{-106,6},{-74,38}})));
