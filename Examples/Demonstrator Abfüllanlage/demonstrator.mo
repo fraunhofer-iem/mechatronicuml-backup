@@ -1034,8 +1034,8 @@ package demonstrator
 
       output Integer result[3];
 
-      Integer orders[12,3] = {{1,2,0},{1,2,0},{2,2,50},{2,3,0},{3,4,0},{4,4,0},{4,1,0},
-      {2,2,50},{2,3,0},{3,4,0},{4,4,0},{4,1,0}};
+      Integer orders[12,3] = {{1,2,0},{1,2,0},{2,2,50},{2,3,0},{2,2,50},{3,4,0},{2,3,0},{4,4,0},{4,1,0},{3,4,0},{4,4,0},
+     {4,1,0}};
 
     algorithm
       result[1] :=orders[step,1];
@@ -3333,40 +3333,17 @@ Version History
             extent={{-10,-10},{10,10}},
             rotation=0,
             origin={56,32})));
-      Modelica.Mechanics.MultiBody.Visualizers.FixedShape fixedShape1(shapeType="pipe",
+      Modelica.Mechanics.MultiBody.Visualizers.FixedShape fixedShape1(
         color={0,0,0},
         length=0.2,
         lengthDirection={0,sin(timer.y),cos(timer.y)},
         width=0.05,
         height=0.05,
-        r_shape=position)
+        r_shape=position,
+        shapeType="15")
         annotation (Placement(transformation(extent={{-52,-20},{-32,0}})));
       Modelica.Mechanics.MultiBody.Interfaces.Frame_a frame_a
         annotation (Placement(transformation(extent={{-106,6},{-74,38}})));
-      Modelica.Mechanics.MultiBody.Visualizers.FixedShape fixedShape2(shapeType="pipe",
-        color={0,0,0},
-        length=0.2,
-        lengthDirection={0,sin(pi + timer.y),cos(pi + timer.y)},
-        width=0.05,
-        height=0.05,
-        r_shape=position)
-        annotation (Placement(transformation(extent={{6,-24},{26,-4}})));
-      Modelica.Mechanics.MultiBody.Visualizers.FixedShape fixedShape3(shapeType="pipe",
-        color={0,0,0},
-        length=0.2,
-        lengthDirection={0,sin(pi/2 + timer.y),cos(pi/2 + timer.y)},
-        width=0.05,
-        height=0.05,
-        r_shape=position)
-        annotation (Placement(transformation(extent={{-54,-58},{-34,-38}})));
-      Modelica.Mechanics.MultiBody.Visualizers.FixedShape fixedShape4(shapeType="pipe",
-        color={0,0,0},
-        length=0.2,
-        lengthDirection={0,sin(1.5*pi + timer.y),cos(1.5*pi + timer.y)},
-        width=0.05,
-        height=0.05,
-        r_shape=position)
-        annotation (Placement(transformation(extent={{2,-62},{22,-42}})));
       Modelica.Blocks.Interfaces.BooleanInput on annotation (Placement(
             transformation(
             extent={{-20,-20},{20,20}},
@@ -3375,21 +3352,6 @@ Version History
     equation
       connect(fixedShape1.frame_a, frame_a) annotation (Line(
           points={{-52,-10},{-68,-10},{-68,22},{-90,22}},
-          color={95,95,95},
-          thickness=0.5,
-          smooth=Smooth.None));
-      connect(fixedShape3.frame_a, frame_a) annotation (Line(
-          points={{-54,-48},{-68,-48},{-68,22},{-90,22}},
-          color={95,95,95},
-          thickness=0.5,
-          smooth=Smooth.None));
-      connect(fixedShape2.frame_a, frame_a) annotation (Line(
-          points={{6,-14},{-10,-14},{-10,22},{-90,22}},
-          color={95,95,95},
-          thickness=0.5,
-          smooth=Smooth.None));
-      connect(fixedShape4.frame_a, frame_a) annotation (Line(
-          points={{2,-52},{-28,-52},{-28,22},{-90,22}},
           color={95,95,95},
           thickness=0.5,
           smooth=Smooth.None));
