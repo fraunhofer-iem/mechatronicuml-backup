@@ -10,6 +10,8 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvide
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
 public class CustomComponentStoryDiagramEditPolicyProvider extends AbstractProvider
 		implements IEditPolicyProvider {
@@ -24,6 +26,12 @@ public class CustomComponentStoryDiagramEditPolicyProvider extends AbstractProvi
 						"ComponentStoryNodeFigureRole",
 						new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies.ComponentStoryNodeFigureEditPolicy());
 			}
+			
+//			else if (element instanceof SinglePortVariable) {
+//				ep.installEditPolicy(
+//						"ComponentStoryNodeFigureRole",
+//						new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies.EmbeddedSinglePortVariableExternalLabelsEditPolicy());
+//			}
 		}
 	}
 
@@ -37,6 +45,12 @@ public class CustomComponentStoryDiagramEditPolicyProvider extends AbstractProvi
 						.resolveSemanticElement();
 				return element instanceof ComponentStoryNode;
 			}
+			
+//			else if (ep instanceof SinglePortVariableEditPart) {
+//				EObject element = ((IGraphicalEditPart) ep)
+//						.resolveSemanticElement();
+//				return element instanceof SinglePortVariable;
+//			}
 		}
 		return false;
 	}
