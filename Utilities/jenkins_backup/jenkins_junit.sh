@@ -31,7 +31,7 @@ then
 else
         touch build_command.txt
 fi
-find -name "*.tests.launch" |
+find -name "*.test*.launch" |
 while read filename
 do
  directory=`dirname $filename | xargs -I{} basename {}`
