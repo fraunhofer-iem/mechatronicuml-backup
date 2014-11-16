@@ -1,13 +1,12 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies;
 
+import org.eclipse.draw2d.AncestorListener;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.FigureListener;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -15,7 +14,6 @@ import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.draw2d.ColorConstants;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
@@ -23,15 +21,12 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConst
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
 public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
-		NotifyingGraphicalEditPolicy implements FigureListener {
-	protected WrappingLabel portNameLabel;
-	protected WrappingLabel positionConstraintsLabelFirst;
-	protected WrappingLabel positionConstraintsLabelLast;
-	protected MultiPortPositionConstraint firstConstraint;
-	protected MultiPortPositionConstraint lastConstraint;
+		NotifyingGraphicalEditPolicy implements AncestorListener {
+	protected WrappingLabel nameLabel;
+	protected WrappingLabel firstLabel;
+	protected WrappingLabel lastLabel;
 
 	protected IFigure parent;
-	SinglePortVariable modelElement;
 
 	@Override
 	public void activate() {
@@ -39,21 +34,17 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 		GraphicalEditPart parentPart = ((GraphicalEditPart) getHost()
 				.getViewer().getRootEditPart().getChildren().get(0));
 		parent = parentPart.getContentPane();
-		if (getHost().getModel() instanceof Shape)
-			modelElement = (SinglePortVariable) ((Shape) getHost().getModel())
-					.getElement();
 
-		portNameLabel = new PortVariableNameFigure();
-		positionConstraintsLabelFirst = new MultiPortPositionConstraintsFigure();
+		nameLabel = new PortVariableNameFigure();
+		firstLabel = new MultiPortPositionConstraintsFigure();
+		lastLabel = new MultiPortPositionConstraintsFigure();
 
 		IFigure hostFigure = ((GraphicalEditPart) getHost()).getFigure();
-		hostFigure.addFigureListener(this);
+		hostFigure.addAncestorListener(this);
 
-		updateConstraints();
-
-		parent.add(portNameLabel);
-		parent.add(positionConstraintsLabelFirst);
-		parent.add(positionConstraintsLabelLast);
+		parent.add(nameLabel);
+		parent.add(firstLabel);
+		parent.add(lastLabel);
 
 		updatePosition();
 		updateText();
@@ -63,27 +54,21 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 	@Override
 	public void deactivate() {
 		super.deactivate();
-		parent.remove(portNameLabel);
-		parent.remove(positionConstraintsLabelFirst);
-		parent.remove(positionConstraintsLabelFirst);
+		parent.remove(nameLabel);
+		parent.remove(firstLabel);
+		parent.remove(lastLabel);
 	}
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
-		if (getHost().getModel() instanceof Shape) {
-			EObject element = ((Shape) getHost().getModel()).getElement();
-			if (element == notification.getNotifier()) {
-				updateConstraints();
-				updateText();
-			}
-		}
+		SinglePortVariable modelElement = getModelElement();
+		Object notificationElement = notification.getNotifier();
+
+		if (modelElement != null && modelElement == notificationElement)
+			updateText();
 	}
 
-	@Override
-	public void figureMoved(IFigure source) {
-		updatePosition();
-	}
 
 	private void updatePosition() {
 
@@ -92,19 +77,21 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 		Point hostPosition = hostFigure.getBounds().getTopLeft();
 		hostFigure.translateToAbsolute(hostPosition);
 
-		Point namePosition = hostPosition;
-		Point constraintFirstPosition = hostPosition;
-		Point constraintLastPosition = hostPosition;
+		Point centerPosition = hostPosition;
+		Point topPosition = hostPosition;
+		Point bottomPosition = hostPosition;
 
-		parent.translateToRelative(namePosition);
-		parent.translateToRelative(constraintFirstPosition);
-		parent.translateToRelative(constraintLastPosition);
+		parent.translateToRelative(centerPosition);
+		parent.translateToRelative(topPosition);
+		parent.translateToRelative(bottomPosition);
+		
+		WrappingLabel topLabel = getTopLabel();
+		WrappingLabel centerLabel = getCenterLabel();
+		WrappingLabel bottomLabel = getBottomLabel();
 
-		portNameLabel.setSize(portNameLabel.getPreferredSize());
-		positionConstraintsLabelFirst.setSize(positionConstraintsLabelFirst
-				.getPreferredSize());
-		positionConstraintsLabelLast.setSize(positionConstraintsLabelLast
-				.getPreferredSize());
+		topLabel.setSize(topLabel.getPreferredSize());
+		centerLabel.setSize(centerLabel.getPreferredSize());
+		bottomLabel.setSize(bottomLabel.getPreferredSize());
 
 		BorderItemLocator locator = findBorderItemLocator(hostFigure);
 
@@ -117,8 +104,8 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 
 		// position the label
 		if (side == PositionConstants.NORTH) {
-			namePosition.y -= portNameLabel.getSize().height + padding;
-			namePosition.x += (hostFigure.getBounds().width - portNameLabel
+			centerPosition.y -= centerLabel.getSize().height + padding;
+			centerPosition.x += (hostFigure.getBounds().width - centerLabel
 					.getSize().width) / 2;
 
 			// compute positions for first
@@ -126,8 +113,8 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 			// compute positions for last
 		}
 		if (side == PositionConstants.SOUTH) {
-			namePosition.y += hostFigure.getBounds().height + padding;
-			namePosition.x += (hostFigure.getBounds().width - portNameLabel
+			centerPosition.y += hostFigure.getBounds().height + padding;
+			centerPosition.x += (hostFigure.getBounds().width - centerLabel
 					.getSize().width) / 2;
 
 			// compute positions for first
@@ -135,22 +122,22 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 			// compute positions for last
 		}
 		if (side == PositionConstants.WEST) {
-			namePosition.x -= portNameLabel.getSize().width + padding;
-			namePosition.y += (hostFigure.getBounds().height - portNameLabel
+			centerPosition.x -= centerLabel.getSize().width + padding;
+			centerPosition.y += (hostFigure.getBounds().height - centerLabel
 					.getSize().height) / 2;
 
 			// compute positions for first
-			constraintFirstPosition.x = namePosition.x;
-			constraintFirstPosition.y = namePosition.y +10;
+			// constraintFirstPosition.x = namePosition.x;
+			// constraintFirstPosition.y = namePosition.y + 10;
+			//
+			// // compute positions for last
+			// constraintFirstPosition.x = namePosition.x;
+			// constraintFirstPosition.y = namePosition.y - 10;
 
-			// compute positions for last
-			constraintFirstPosition.x = namePosition.x;
-			constraintFirstPosition.y = namePosition.y -10;
-			
 		}
 		if (side == PositionConstants.EAST) {
-			namePosition.x += hostFigure.getBounds().width + padding;
-			namePosition.y += (hostFigure.getBounds().height - portNameLabel
+			centerPosition.x += hostFigure.getBounds().width + padding;
+			centerPosition.y += (hostFigure.getBounds().height - centerLabel
 					.getSize().height) / 2;
 
 			// compute positions for first
@@ -158,50 +145,104 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 			// compute positions for last
 		}
 
-		portNameLabel.setLocation(namePosition);
-		positionConstraintsLabelFirst.setLocation(namePosition);
+		topLabel.setLocation(topPosition);
+		centerLabel.setLocation(centerPosition);
+		bottomLabel.setLocation(bottomPosition);
 
 	}
 
 	private void updateText() {
 
-		if (firstConstraint != null)
-			positionConstraintsLabelFirst.setText("쳀irst�");
-
-		if (lastConstraint != null)
-			positionConstraintsLabelLast.setText("쳊ast�");
+		SinglePortVariable modelElement = getModelElement();
 
 		if (modelElement != null) {
-			portNameLabel.setText(modelElement.getName());
+			if (getPostionConstraint(modelElement,
+					MultiPortPositionConstraintType.FIRST) != null)
+				firstLabel.setText("쳀irst�");
 
-			for (MultiPortPositionConstraint constraint : modelElement
-					.getPositionConstraints()) {
-				if (constraint.getPositionConstraintType() == MultiPortPositionConstraintType.FIRST)
-					positionConstraintsLabelFirst.setText("쳀irst�");
-				if (constraint.getPositionConstraintType() == MultiPortPositionConstraintType.LAST)
-					positionConstraintsLabelLast.setText("쳊ast�");
-			}
+			else
+				firstLabel.setText("");
 
+			if (getPostionConstraint(modelElement,
+					MultiPortPositionConstraintType.LAST) != null)
+				lastLabel.setText("쳊ast�");
+			else
+				lastLabel.setText("");
+
+			nameLabel.setText(modelElement.getName());
 		}
+
+		updatePosition();
+
 	}
 
-	private void updateConstraints() {
+	protected WrappingLabel getTopLabel() {
+		SinglePortVariable modelElement = getModelElement();
 
-		firstConstraint = null;
-		lastConstraint = null;
+		if (getPostionConstraint(modelElement,
+				MultiPortPositionConstraintType.FIRST) != null)
+			return firstLabel;
+		
+		if (!(modelElement.getName() == null || modelElement.getName().equals("")))
+			return nameLabel;
 
-		if (modelElement != null) {
-			portNameLabel.setText(modelElement.getName());
+		if (getPostionConstraint(modelElement,
+				MultiPortPositionConstraintType.LAST) != null)
+			return lastLabel;
 
-			for (MultiPortPositionConstraint constraint : modelElement
-					.getPositionConstraints()) {
-				if (constraint.getPositionConstraintType() == MultiPortPositionConstraintType.FIRST)
-					firstConstraint = constraint;
-				if (constraint.getPositionConstraintType() == MultiPortPositionConstraintType.LAST)
-					lastConstraint = constraint;
-			}
+		return firstLabel;
+	}
 
-		}
+	protected WrappingLabel getCenterLabel() {
+		SinglePortVariable modelElement = getModelElement();
+
+		if (getPostionConstraint(modelElement,
+				MultiPortPositionConstraintType.FIRST) == null)
+			return firstLabel;
+
+		if (getPostionConstraint(modelElement,
+				MultiPortPositionConstraintType.LAST) == null)
+			return lastLabel;
+
+		return nameLabel;
+
+	}
+	
+	protected WrappingLabel getBottomLabel() {
+		SinglePortVariable modelElement = getModelElement();
+		
+		if (getPostionConstraint(modelElement,
+				MultiPortPositionConstraintType.LAST) != null)
+			return lastLabel;
+
+		if (!(modelElement.getName() == null || modelElement.getName().equals("")))
+			return nameLabel;
+
+		return lastLabel;
+	}
+
+	protected SinglePortVariable getModelElement() {
+		if (getHost().getModel() instanceof Shape)
+			return (SinglePortVariable) ((Shape) getHost().getModel())
+					.getElement();
+
+		return null;
+	}
+
+	/**
+	 * Returns the first {@link MultiPortPositionConstraint} of
+	 * <code>type</code> that can be found in <code>variable</code>'s
+	 * <code>positionConstraints</code> reference.
+	 */
+	protected MultiPortPositionConstraint getPostionConstraint(
+			SinglePortVariable variable, MultiPortPositionConstraintType type) {
+
+		for (MultiPortPositionConstraint constraint : variable
+				.getPositionConstraints())
+			if (constraint.getPositionConstraintType() == type)
+				return constraint;
+
+		return null;
 	}
 
 	/**
@@ -241,6 +282,21 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 			this.setForegroundColor(ColorConstants.gray);
 		}
 
+	}
+
+	@Override
+	public void ancestorAdded(IFigure ancestor) {
+		updatePosition();
+	}
+
+	@Override
+	public void ancestorMoved(IFigure ancestor) {
+		updatePosition();
+	}
+
+	@Override
+	public void ancestorRemoved(IFigure ancestor) {
+		updatePosition();
 	}
 
 }
