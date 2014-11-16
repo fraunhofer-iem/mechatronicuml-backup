@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies;
+package de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies;
 
 import org.eclipse.draw2d.AncestorListener;
 import org.eclipse.draw2d.ColorConstants;

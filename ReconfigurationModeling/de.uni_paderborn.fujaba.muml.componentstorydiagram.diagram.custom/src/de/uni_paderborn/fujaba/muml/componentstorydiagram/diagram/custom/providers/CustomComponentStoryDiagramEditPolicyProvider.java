@@ -27,11 +27,6 @@ public class CustomComponentStoryDiagramEditPolicyProvider extends
 						new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies.ComponentStoryNodeFigureEditPolicy());
 			}
 
-			else if (element instanceof SinglePortVariable) {
-				ep.installEditPolicy(
-						"ComponentStoryNodeFigureRole",
-						new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies.EmbeddedSinglePortVariableExternalLabelsEditPolicy());
-			}
 		}
 	}
 
@@ -46,11 +41,6 @@ public class CustomComponentStoryDiagramEditPolicyProvider extends
 				return element instanceof ComponentStoryNode;
 			}
 
-			else if (ep instanceof SinglePortVariableEditPart) {
-				EObject element = ((IGraphicalEditPart) ep)
-						.resolveSemanticElement();
-				return element instanceof SinglePortVariable;
-			}
 		}
 		return false;
 	}
