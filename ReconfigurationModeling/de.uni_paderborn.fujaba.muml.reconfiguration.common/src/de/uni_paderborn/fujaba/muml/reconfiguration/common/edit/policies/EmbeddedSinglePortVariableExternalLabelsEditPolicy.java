@@ -30,6 +30,9 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 	protected WrappingLabel lastLabel;
 
 	protected IFigure parent;
+	
+	private static final String GUILLEMET_CLOSE = "\u00ab"; //$NON-NLS-1$
+	private static final String GUILLEMET_OPEN = "\u00bb"; //$NON-NLS-1$
 
 	@Override
 	public void activate() {
@@ -202,14 +205,14 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 		if (modelElement != null) {
 			if (getPostionConstraint(modelElement,
 					MultiPortPositionConstraintType.FIRST) != null)
-				firstLabel.setText("«first»");
+				firstLabel.setText(GUILLEMET_CLOSE+"first"+GUILLEMET_OPEN);
 
 			else
 				firstLabel.setText("");
 
 			if (getPostionConstraint(modelElement,
 					MultiPortPositionConstraintType.LAST) != null)
-				lastLabel.setText("«last»");
+				lastLabel.setText(GUILLEMET_CLOSE+"«last»"+GUILLEMET_OPEN);
 			else
 				lastLabel.setText("");
 
