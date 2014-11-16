@@ -13,8 +13,8 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.Com
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
-public class CustomComponentStoryDiagramEditPolicyProvider extends AbstractProvider
-		implements IEditPolicyProvider {
+public class CustomComponentStoryDiagramEditPolicyProvider extends
+		AbstractProvider implements IEditPolicyProvider {
 
 	public void createEditPolicies(EditPart ep) {
 		if (ep instanceof IGraphicalEditPart) {
@@ -26,31 +26,31 @@ public class CustomComponentStoryDiagramEditPolicyProvider extends AbstractProvi
 						"ComponentStoryNodeFigureRole",
 						new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies.ComponentStoryNodeFigureEditPolicy());
 			}
-			
-//			else if (element instanceof SinglePortVariable) {
-//				ep.installEditPolicy(
-//						"ComponentStoryNodeFigureRole",
-//						new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies.EmbeddedSinglePortVariableExternalLabelsEditPolicy());
-//			}
+
+			else if (element instanceof SinglePortVariable) {
+				ep.installEditPolicy(
+						"ComponentStoryNodeFigureRole",
+						new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.policies.EmbeddedSinglePortVariableExternalLabelsEditPolicy());
+			}
 		}
 	}
 
 	public boolean provides(IOperation operation) {
 		if (operation instanceof CreateEditPoliciesOperation) {
-			EditPart ep = ((CreateEditPoliciesOperation) operation).getEditPart();
-			
+			EditPart ep = ((CreateEditPoliciesOperation) operation)
+					.getEditPart();
 
 			if (ep instanceof ComponentStoryNodeEditPart) {
 				EObject element = ((IGraphicalEditPart) ep)
 						.resolveSemanticElement();
 				return element instanceof ComponentStoryNode;
 			}
-			
-//			else if (ep instanceof SinglePortVariableEditPart) {
-//				EObject element = ((IGraphicalEditPart) ep)
-//						.resolveSemanticElement();
-//				return element instanceof SinglePortVariable;
-//			}
+
+			else if (ep instanceof SinglePortVariableEditPart) {
+				EObject element = ((IGraphicalEditPart) ep)
+						.resolveSemanticElement();
+				return element instanceof SinglePortVariable;
+			}
 		}
 		return false;
 	}

@@ -2,11 +2,12 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.p
 
 import org.eclipse.draw2d.AncestorListener;
 import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -14,11 +15,13 @@ import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.storydriven.core.impl.CorePackageImpl;
 
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraint;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortPositionConstraintType;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl;
 
 public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 		NotifyingGraphicalEditPolicy implements AncestorListener {
@@ -46,8 +49,8 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 		parent.add(firstLabel);
 		parent.add(lastLabel);
 
-		updatePosition();
 		updateText();
+		updatePosition();
 
 	}
 
@@ -63,12 +66,28 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 	public void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
 		SinglePortVariable modelElement = getModelElement();
-		Object notificationElement = notification.getNotifier();
 
-		if (modelElement != null && modelElement == notificationElement)
+		EList<Object> relevantFeatures = new BasicEList<Object>();
+		relevantFeatures.add(CorePackageImpl.eINSTANCE.getNamedElement_Name());
+		relevantFeatures.add(ComponentstorypatternPackageImpl.eINSTANCE
+				.getMultiPortPositionConstraint_PositionConstraintType());
+		relevantFeatures.add(ComponentstorypatternPackageImpl.eINSTANCE
+				.getSinglePortVariable_PositionConstraints());
+
+		if (relevantFeatures.contains(notification.getFeature())) {
+			// update listeners
+			if (modelElement != null) {
+				for (MultiPortPositionConstraint constraint : modelElement
+						.getPositionConstraints()) {
+					removeNotificationListener(constraint);
+					addNotificationListener(constraint);
+				}
+			}
+
 			updateText();
-	}
+		}
 
+	}
 
 	private void updatePosition() {
 
@@ -77,77 +96,102 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 		Point hostPosition = hostFigure.getBounds().getTopLeft();
 		hostFigure.translateToAbsolute(hostPosition);
 
-		Point centerPosition = hostPosition;
-		Point topPosition = hostPosition;
-		Point bottomPosition = hostPosition;
+		// NORTH/SOUTH: counted from center of Component(Part)Variable
+		// EAST/WEST: counted from top to bottom
+		Point firstPosition = new Point(hostPosition);
+		Point secondPosition = new Point(hostPosition);
+		Point thirdPosition = new Point(hostPosition);
 
-		parent.translateToRelative(centerPosition);
-		parent.translateToRelative(topPosition);
-		parent.translateToRelative(bottomPosition);
-		
-		WrappingLabel topLabel = getTopLabel();
-		WrappingLabel centerLabel = getCenterLabel();
-		WrappingLabel bottomLabel = getBottomLabel();
+		parent.translateToRelative(secondPosition);
+		parent.translateToRelative(firstPosition);
+		parent.translateToRelative(thirdPosition);
 
-		topLabel.setSize(topLabel.getPreferredSize());
-		centerLabel.setSize(centerLabel.getPreferredSize());
-		bottomLabel.setSize(bottomLabel.getPreferredSize());
+		// NORTH/SOUTH: counted from center of Component(Part)Variable
+		// EAST/WEST: counted from top to bottom
+		WrappingLabel firstLabel = getFirstLabel();
+		WrappingLabel thirdLabel = getThirdLabel();
+		WrappingLabel secondLabel = getSecondLabel();
+
+		firstLabel.setSize(firstLabel.getPreferredSize());
+		secondLabel.setSize(secondLabel.getPreferredSize());
+		thirdLabel.setSize(thirdLabel.getPreferredSize());
 
 		BorderItemLocator locator = findBorderItemLocator(hostFigure);
 
+		int positionPadding = hostFigure.getBounds().height / 3;
+		int paddingWE = 13;
+		int paddingNS = 8;
+
 		// use WEST as default
 		int side = PositionConstants.WEST;
-		int padding = 10;
 		if (locator != null) {
 			side = locator.getCurrentSideOfParent();
 		}
 
 		// position the label
 		if (side == PositionConstants.NORTH) {
-			centerPosition.y -= centerLabel.getSize().height + padding;
-			centerPosition.x += (hostFigure.getBounds().width - centerLabel
+			secondPosition.y -= secondLabel.getSize().height + paddingNS
+					+ positionPadding +2;
+			secondPosition.x += (hostFigure.getBounds().width - secondLabel
 					.getSize().width) / 2;
 
-			// compute positions for first
+			
+			firstPosition.y -= firstLabel.getSize().height + paddingNS;
+			firstPosition.x += (hostFigure.getBounds().width - firstLabel
+					.getSize().width) / 2;
 
-			// compute positions for last
+			
+			thirdPosition.y -= thirdLabel.getSize().height + paddingNS
+					+ 2*positionPadding;
+			thirdPosition.x += (hostFigure.getBounds().width - thirdLabel
+					.getSize().width) / 2;
 		}
 		if (side == PositionConstants.SOUTH) {
-			centerPosition.y += hostFigure.getBounds().height + padding;
-			centerPosition.x += (hostFigure.getBounds().width - centerLabel
+			secondPosition.y += hostFigure.getBounds().height + paddingNS + positionPadding;
+			secondPosition.x += (hostFigure.getBounds().width - secondLabel
 					.getSize().width) / 2;
 
-			// compute positions for first
+			firstPosition.y += hostFigure.getBounds().height + paddingNS;
+			firstPosition.x += (hostFigure.getBounds().width - firstLabel
+					.getSize().width) / 2;
 
-			// compute positions for last
+			thirdPosition.y += hostFigure.getBounds().height + paddingNS
+					+ 2*positionPadding;
+			thirdPosition.x += (hostFigure.getBounds().width - thirdLabel
+					.getSize().width) / 2;
 		}
+
 		if (side == PositionConstants.WEST) {
-			centerPosition.x -= centerLabel.getSize().width + padding;
-			centerPosition.y += (hostFigure.getBounds().height - centerLabel
-					.getSize().height) / 2;
+			secondPosition.x -= secondLabel.getSize().width + paddingWE;
+			secondPosition.y += (hostFigure.getBounds().height - secondLabel
+					.getSize().height) / 2 - 1;
 
-			// compute positions for first
-			// constraintFirstPosition.x = namePosition.x;
-			// constraintFirstPosition.y = namePosition.y + 10;
-			//
-			// // compute positions for last
-			// constraintFirstPosition.x = namePosition.x;
-			// constraintFirstPosition.y = namePosition.y - 10;
+			firstPosition.x -= firstLabel.getSize().width + paddingWE;
+			firstPosition.y += (hostFigure.getBounds().height - firstLabel
+					.getSize().height) / 2 - positionPadding;
 
+			thirdPosition.x -= thirdLabel.getSize().width + paddingWE;
+			thirdPosition.y += (hostFigure.getBounds().height - thirdLabel
+					.getSize().height) / 2 + positionPadding;
 		}
+
 		if (side == PositionConstants.EAST) {
-			centerPosition.x += hostFigure.getBounds().width + padding;
-			centerPosition.y += (hostFigure.getBounds().height - centerLabel
-					.getSize().height) / 2;
+			secondPosition.x += hostFigure.getBounds().width + paddingWE;
+			secondPosition.y += (hostFigure.getBounds().height - secondLabel
+					.getSize().height) / 2 - 2;
 
-			// compute positions for first
+			firstPosition.x +=  hostFigure.getBounds().width + paddingWE;
+			firstPosition.y += (hostFigure.getBounds().height - firstLabel
+					.getSize().height) / 2 - positionPadding;
 
-			// compute positions for last
+			thirdPosition.x +=  hostFigure.getBounds().width + paddingWE;
+			thirdPosition.y += (hostFigure.getBounds().height - thirdLabel
+					.getSize().height) / 2 + positionPadding;
 		}
 
-		topLabel.setLocation(topPosition);
-		centerLabel.setLocation(centerPosition);
-		bottomLabel.setLocation(bottomPosition);
+		firstLabel.setLocation(firstPosition);
+		secondLabel.setLocation(secondPosition);
+		thirdLabel.setLocation(thirdPosition);
 
 	}
 
@@ -172,18 +216,23 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 			nameLabel.setText(modelElement.getName());
 		}
 
+		firstLabel.setSize(firstLabel.getPreferredSize());
+		nameLabel.setSize(nameLabel.getPreferredSize());
+		lastLabel.setSize(lastLabel.getPreferredSize());
+
 		updatePosition();
 
 	}
 
-	protected WrappingLabel getTopLabel() {
+	protected WrappingLabel getFirstLabel() {
 		SinglePortVariable modelElement = getModelElement();
 
 		if (getPostionConstraint(modelElement,
 				MultiPortPositionConstraintType.FIRST) != null)
 			return firstLabel;
-		
-		if (!(modelElement.getName() == null || modelElement.getName().equals("")))
+
+		if (!(modelElement.getName() == null || modelElement.getName().equals(
+				"")))
 			return nameLabel;
 
 		if (getPostionConstraint(modelElement,
@@ -193,7 +242,7 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 		return firstLabel;
 	}
 
-	protected WrappingLabel getCenterLabel() {
+	protected WrappingLabel getSecondLabel() {
 		SinglePortVariable modelElement = getModelElement();
 
 		if (getPostionConstraint(modelElement,
@@ -207,15 +256,16 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 		return nameLabel;
 
 	}
-	
-	protected WrappingLabel getBottomLabel() {
+
+	protected WrappingLabel getThirdLabel() {
 		SinglePortVariable modelElement = getModelElement();
-		
+
 		if (getPostionConstraint(modelElement,
 				MultiPortPositionConstraintType.LAST) != null)
 			return lastLabel;
 
-		if (!(modelElement.getName() == null || modelElement.getName().equals("")))
+		if (!(modelElement.getName() == null || modelElement.getName().equals("")) && getPostionConstraint(modelElement,
+				MultiPortPositionConstraintType.FIRST) != null)
 			return nameLabel;
 
 		return lastLabel;
