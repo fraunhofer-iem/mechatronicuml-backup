@@ -44,7 +44,7 @@
       <details key="constraints" value="SameBindingOperatorAsParent SameBindingSemanticsAsParent ValidTypeOfPortVariable"/>
     </eAnnotations>
     <eAnnotations source="http://www.muml.org/emf/OCLFilter">
-      <details key="choices" value="if self.eContainer().oclIsKindOf(PartVariable)&#xD;&#xA;then self.eContainer().oclAsType(PartVariable).dataType.oclAsType(muml::component::ComponentPart).portParts.portType&#xD;&#xA;else&#xD;&#xA;&#x9;self.eContainer().oclAsType(ComponentVariable).type.ports&#xD;&#xA;endif"/>
+      <details key="choices" value="if self.eContainer().oclIsKindOf(PartVariable)&#xD;&#xA;then self.eContainer().oclAsType(PartVariable).componentPartType.portParts.portType&#xD;&#xA;else&#xD;&#xA;&#x9;self.eContainer().oclAsType(ComponentVariable).type.ports&#xD;&#xA;endif"/>
       <details key="feature" value="dataType"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"

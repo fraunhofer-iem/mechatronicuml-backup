@@ -8,7 +8,9 @@ import java.util.Iterator;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -77,6 +79,11 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	public static String FILTER_ANNOTATION = "http://www.muml.org/emf/OCLFilter";
 
 	/**
+	 * The key for the details entry to reference a feature by name.
+	 */
+	public static String FEATURE_KEY = "feature";
+	
+	/**
 	 * The key for the details entry to use for choices.
 	 */
 	public static String CHOICES_KEY = "choices";
@@ -122,15 +129,14 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	public Collection<?> getChoiceOfValues(Object object) {
 		if (object instanceof EObject && feature != null) {
 			EObject element = (EObject) object;
-			EAnnotation oclAnnotation = ((EStructuralFeature) feature).getEAnnotation(FILTER_ANNOTATION);
-
+			
 			// (1) Generate choices using the "choices" key:
 			Collection<?> choices = null;
-			if (oclAnnotation != null && oclAnnotation.getDetails().containsKey(CHOICES_KEY)) {
-				String ocl = oclAnnotation.getDetails().get(CHOICES_KEY);
+			String choicesOcl = findDetailValue(element.eClass(), CHOICES_KEY);
+			if (!choicesOcl.isEmpty()) {
 				Object result = null;
 				try {
-					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> choicesQuery = createQuery(element.eClass(), ocl);
+					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> choicesQuery = createQuery(element.eClass(), choicesOcl);
 					result = choicesQuery.evaluate(object);
 				} catch (ParserException e) {
 					e.printStackTrace();
@@ -151,7 +157,6 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 					}
 				}
 
-
 				try {
 					checkResult(choices);
 				} catch (RuntimeException e) {
@@ -163,15 +168,15 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 			}
 			
 			// Generate all choices of correct type
-			if (choices == null || (choices.isEmpty() && oclAnnotation != null && "true".equalsIgnoreCase(oclAnnotation.getDetails().get(ALLOW_EMPTY_KEY)))) {
+			if (choices == null || (choices.isEmpty() && "true".equalsIgnoreCase(findDetailValue(element.eClass(), ALLOW_EMPTY_KEY)))) {
 				choices = super.getChoiceOfValues(object);
 			}
 
 			// (2) Filter generated choices using the "filter" key:
-			if (oclAnnotation != null && oclAnnotation.getDetails().containsKey(FILTER_KEY)) {
-				String ocl = oclAnnotation.getDetails().get(FILTER_KEY);
+			String filterOcl = findDetailValue(element.eClass(), FILTER_KEY);
+			if (!filterOcl.isEmpty()) {
 				try {
-					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> filterQuery = createQuery(element.eClass(), ocl);
+					Query<org.eclipse.emf.ecore.EClassifier, ?, ?> filterQuery = createQuery(element.eClass(), filterOcl);
 					for (Object choice : new ArrayList<Object>(choices)) {
 						if (!Boolean.TRUE.equals(filterQuery.evaluate(choice))) {
 							choices.remove(choice);
@@ -187,7 +192,37 @@ public class OCLItemPropertyDescriptor extends ItemPropertyDescriptor {
 	
 		return super.getChoiceOfValues(object);
 	}
-	
+
+	protected String findDetailValue(EClass eClass, String key) {
+		String value = getDetailValue(feature, key);
+		if (value != null) {
+			return value;
+		}
+		if (feature.getName().equals(getDetailValue(eClass, FEATURE_KEY))) {
+			value = getDetailValue(eClass, key);
+		}
+		if (value != null) {
+			return value;
+		}
+		for (EClass eSuperClass : eClass.getEAllSuperTypes()) {
+			if (feature.getName().equals(getDetailValue(eSuperClass, FEATURE_KEY))) {
+				value = getDetailValue(eSuperClass, key);
+			}
+			if (value != null) {
+				return value;
+			}
+		}
+		return "";
+	}
+
+	protected String getDetailValue(EModelElement modelElement, String key) {
+		EAnnotation annotation = modelElement.getEAnnotation(FILTER_ANNOTATION);
+		if (annotation != null && annotation.getDetails().containsKey(key)) {
+			return annotation.getDetails().get(key);
+		}
+		return null;
+	}
+
 	/**
 	 * Parse OCL expression and create Query.
 	 * 

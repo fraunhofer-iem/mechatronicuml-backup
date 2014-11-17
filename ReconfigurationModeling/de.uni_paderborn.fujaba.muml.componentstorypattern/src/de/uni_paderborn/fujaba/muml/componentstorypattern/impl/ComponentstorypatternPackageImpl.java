@@ -1017,7 +1017,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (portVariableEClass, 
 		   source, 
 		   new String[] {
-			 "choices", "if self.eContainer().oclIsKindOf(PartVariable)\r\nthen self.eContainer().oclAsType(PartVariable).dataType.oclAsType(muml::component::ComponentPart).portParts.portType\r\nelse\r\n\tself.eContainer().oclAsType(ComponentVariable).type.ports\r\nendif",
+			 "choices", "if self.eContainer().oclIsKindOf(PartVariable)\r\nthen self.eContainer().oclAsType(PartVariable).componentPartType.portParts.portType\r\nelse\r\n\tself.eContainer().oclAsType(ComponentVariable).type.ports\r\nendif",
 			 "feature", "dataType"
 		   });	
 		addAnnotation

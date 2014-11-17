@@ -62,22 +62,12 @@
     </classes>
     <classes>
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/PortVariable"/>
-      <properties tooltip="" initializeOCLExpression="">
-        <genFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/behavior/TypedNamedElement/dataType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.6"/>
       <superClasses href="#//@packages.0/@classes.1"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.0"/>
     </classes>
     <classes>
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable"/>
-      <properties initializeOCLExpression="">
-        <genFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/behavior/TypedNamedElement/dataType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.6"/>
       <superClasses href="#//@packages.0/@classes.1"/>
     </classes>
