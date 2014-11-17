@@ -160,32 +160,4 @@ public abstract class PortVariableEditor
 
 	}
 
-	/**
-	 * @generated
-	 */
-	@Override
-	protected void addDataType_GeneralTab_Editor(String category, boolean front) {
-
-		category = "de.uni_paderborn.fujaba.properties.category.null";
-		front = true;
-		super.addDataType_GeneralTab_Editor(category, front);
-
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDataType_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-				.getTypedNamedElement_DataType();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The data type of this element.");
-
-		return editor;
-
-	}
-
 }
