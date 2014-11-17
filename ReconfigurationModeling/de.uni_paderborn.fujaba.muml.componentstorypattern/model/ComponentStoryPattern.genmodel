@@ -31,12 +31,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//ComponentVariable/type"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ComponentStoryPattern.ecore#//PortVariable">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PortVariable/type"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PortVariable/portType"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PortVariable/connectorVariables"/>
     </genClasses>
     <genClasses ecoreClass="ComponentStoryPattern.ecore#//PartVariable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PartVariable/type"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PartVariable/componentPartType"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ComponentStoryPattern.ecore#//ConnectorVariable">
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//ConnectorVariable/portVariables"/>

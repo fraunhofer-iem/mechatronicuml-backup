@@ -302,14 +302,14 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 */
 	protected static final String PORT_VARIABLE__VALID_TYPE_OF_PORT_VARIABLE__EEXPRESSION = "if self.eContainer().oclIsKindOf(ComponentVariable) then\r\n" +
 		"\tif not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
-		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::Component).ports->includes(self.type.oclAsType(muml::component::Port))\r\n" +
+		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::Component).ports->includes(self.dataType.oclAsType(muml::component::Port))\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +
 		"else\r\n" +
 		"\tif self.eContainer().oclIsKindOf(PartVariable) then\r\n" +
-		"\t\tif not self.eContainer().oclAsType(PartVariable).type.oclIsUndefined() then\r\n" +
-		"\t\t\tself.eContainer().oclAsType(PartVariable).type.oclAsType(muml::component::ComponentPart).componentType.oclAsType(muml::component::Component).ports->includes(self.type.oclAsType(muml::component::Port))\r\n" +
+		"\t\tif not self.eContainer().oclAsType(PartVariable).dataType.oclIsUndefined() then\r\n" +
+		"\t\t\tself.eContainer().oclAsType(PartVariable).dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(muml::component::Component).ports->includes(self.dataType.oclAsType(muml::component::Port))\r\n" +
 		"\t\telse\r\n" +
 		"\t\t\tfalse\r\n" +
 		"\t\tendif\r\n" +
@@ -400,7 +400,7 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 */
 	protected static final String PART_VARIABLE__VALID_TYPE_OF_PART_VARIABLE__EEXPRESSION = "if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
 		"\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n" +
-		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedComponentParts->includes(self.type.oclAsType(muml::component::ComponentPart))\r\n" +
+		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(muml::component::ComponentPart))\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +

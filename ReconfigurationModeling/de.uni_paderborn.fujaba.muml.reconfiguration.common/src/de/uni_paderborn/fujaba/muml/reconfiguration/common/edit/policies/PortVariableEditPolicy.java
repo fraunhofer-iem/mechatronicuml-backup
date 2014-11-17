@@ -11,7 +11,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 public class PortVariableEditPolicy extends PortTypeEditPolicy {
 	@Override
 	public void handleNotificationEvent(Notification notification) {
-		if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE
+		if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__PORT_TYPE
 				.equals(notification.getFeature())) {
 			refreshArrow();
 			refreshPortType();
@@ -24,7 +24,7 @@ public class PortVariableEditPolicy extends PortTypeEditPolicy {
 		EObject element = getSemanticElement();
 		if (element != null) {
 			return (Port) element
-					.eGet(ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE);
+					.eGet(ComponentstorypatternPackage.Literals.PORT_VARIABLE__PORT_TYPE);
 		}
 		return null;
 	}

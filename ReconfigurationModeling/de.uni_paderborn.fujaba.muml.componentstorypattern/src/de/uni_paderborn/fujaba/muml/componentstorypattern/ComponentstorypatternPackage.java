@@ -946,13 +946,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int PORT_VARIABLE__CONNECTORS = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_VARIABLE__TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+	int PORT_VARIABLE__DATA_TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_VARIABLE__PORT_TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Connector Variables</b></em>' reference list.
@@ -961,7 +970,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_VARIABLE__CONNECTOR_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
+	int PORT_VARIABLE__CONNECTOR_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Port Variable</em>' class.
@@ -970,7 +979,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 3;
+	int PORT_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1226,22 +1235,31 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int PART_VARIABLE__BINDING_STATE = COMPONENT_STORY_PATTERN_VARIABLE__BINDING_STATE;
 
 	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_VARIABLE__DATA_TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Port Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART_VARIABLE__PORT_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
+	int PART_VARIABLE__PORT_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Component Part Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART_VARIABLE__TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+	int PART_VARIABLE__COMPONENT_PART_TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Part Variable</em>' class.
@@ -1250,7 +1268,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PART_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
+	int PART_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2400,13 +2418,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int SINGLE_PORT_VARIABLE__CONNECTORS = PORT_VARIABLE__CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_PORT_VARIABLE__TYPE = PORT_VARIABLE__TYPE;
+	int SINGLE_PORT_VARIABLE__DATA_TYPE = PORT_VARIABLE__DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__PORT_TYPE = PORT_VARIABLE__PORT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Connector Variables</b></em>' reference list.
@@ -2707,13 +2734,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int MULTI_PORT_VARIABLE__CONNECTORS = PORT_VARIABLE__CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_PORT_VARIABLE__TYPE = PORT_VARIABLE__TYPE;
+	int MULTI_PORT_VARIABLE__DATA_TYPE = PORT_VARIABLE__DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__PORT_TYPE = PORT_VARIABLE__PORT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Connector Variables</b></em>' reference list.
@@ -3242,6 +3278,15 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int FADING_COMPONENT_PART_VARIABLE__BINDING_STATE = PART_VARIABLE__BINDING_STATE;
 
 	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_PART_VARIABLE__DATA_TYPE = PART_VARIABLE__DATA_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Port Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3251,13 +3296,13 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int FADING_COMPONENT_PART_VARIABLE__PORT_VARIABLES = PART_VARIABLE__PORT_VARIABLES;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Component Part Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FADING_COMPONENT_PART_VARIABLE__TYPE = PART_VARIABLE__TYPE;
+	int FADING_COMPONENT_PART_VARIABLE__COMPONENT_PART_TYPE = PART_VARIABLE__COMPONENT_PART_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Applied Fading Function</b></em>' reference.
@@ -3531,6 +3576,15 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int COMPONENT_PART_VARIABLE__BINDING_STATE = PART_VARIABLE__BINDING_STATE;
 
 	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PART_VARIABLE__DATA_TYPE = PART_VARIABLE__DATA_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Port Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3540,13 +3594,13 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int COMPONENT_PART_VARIABLE__PORT_VARIABLES = PART_VARIABLE__PORT_VARIABLES;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Component Part Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART_VARIABLE__TYPE = PART_VARIABLE__TYPE;
+	int COMPONENT_PART_VARIABLE__COMPONENT_PART_TYPE = PART_VARIABLE__COMPONENT_PART_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Trigger Embedded Component Expressions</b></em>' containment reference.
@@ -4005,15 +4059,15 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EClass getPortVariable();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable#getPortType <em>Port Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable#getType()
+	 * @return the meta object for the reference '<em>Port Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable#getPortType()
 	 * @see #getPortVariable()
 	 * @generated
 	 */
-	EReference getPortVariable_Type();
+	EReference getPortVariable_PortType();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable#getConnectorVariables <em>Connector Variables</em>}'.
@@ -4048,15 +4102,15 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EReference getPartVariable_PortVariables();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getComponentPartType <em>Component Part Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getType()
+	 * @return the meta object for the reference '<em>Component Part Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getComponentPartType()
 	 * @see #getPartVariable()
 	 * @generated
 	 */
-	EReference getPartVariable_Type();
+	EReference getPartVariable_ComponentPartType();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable <em>Connector Variable</em>}'.
@@ -4481,12 +4535,12 @@ public interface ComponentstorypatternPackage extends EPackage {
 		EClass PORT_VARIABLE = eINSTANCE.getPortVariable();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Port Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT_VARIABLE__TYPE = eINSTANCE.getPortVariable_Type();
+		EReference PORT_VARIABLE__PORT_TYPE = eINSTANCE.getPortVariable_PortType();
 
 		/**
 		 * The meta object literal for the '<em><b>Connector Variables</b></em>' reference list feature.
@@ -4515,12 +4569,12 @@ public interface ComponentstorypatternPackage extends EPackage {
 		EReference PART_VARIABLE__PORT_VARIABLES = eINSTANCE.getPartVariable_PortVariables();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Component Part Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PART_VARIABLE__TYPE = eINSTANCE.getPartVariable_Type();
+		EReference PART_VARIABLE__COMPONENT_PART_TYPE = eINSTANCE.getPartVariable_ComponentPartType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ConnectorVariableImpl <em>Connector Variable</em>}' class.

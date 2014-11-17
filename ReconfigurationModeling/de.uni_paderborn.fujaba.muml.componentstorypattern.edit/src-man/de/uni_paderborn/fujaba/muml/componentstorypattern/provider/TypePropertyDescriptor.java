@@ -30,7 +30,7 @@ public class TypePropertyDescriptor extends ItemPropertyDescriptor {
 		if (object instanceof SinglePortVariable) {
 			SinglePortVariable singlePortVariable = (SinglePortVariable) object;
 			if ((singlePortVariable).getMultiPortVariable() != null) {
-				return Collections.singletonList(singlePortVariable.getMultiPortVariable().getType());
+				return Collections.singletonList(singlePortVariable.getMultiPortVariable().getPortType());
 			}
 		}
 

@@ -2,12 +2,15 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -17,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,14 +29,25 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PartVariableImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PartVariableImpl#getPortVariables <em>Port Variables</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PartVariableImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PartVariableImpl#getComponentPartType <em>Component Part Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl implements PartVariable {
+	/**
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType dataType;
+
 	/**
 	 * The cached value of the '{@link #getPortVariables() <em>Port Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -44,14 +59,14 @@ public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl
 	protected EList<PortVariable> portVariables;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached setting delegate for the '{@link #getComponentPartType() <em>Component Part Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getComponentPartType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ComponentPart type;
+	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_PART_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentstorypatternPackage.Literals.PART_VARIABLE__COMPONENT_PART_TYPE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,6 +92,44 @@ public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DataType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (DataType)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.PART_VARIABLE__DATA_TYPE, oldDataType, dataType));
+			}
+		}
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType basicGetDataType() {
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataType(DataType newDataType) {
+		DataType oldDataType = dataType;
+		dataType = newDataType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.PART_VARIABLE__DATA_TYPE, oldDataType, dataType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<PortVariable> getPortVariables() {
 		if (portVariables == null) {
 			portVariables = new EObjectContainmentEList<PortVariable>(PortVariable.class, this, ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES);
@@ -89,16 +142,8 @@ public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentPart getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (ComponentPart)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.PART_VARIABLE__TYPE, oldType, type));
-			}
-		}
-		return type;
+	public ComponentPart getComponentPartType() {
+		return (ComponentPart)COMPONENT_PART_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -106,20 +151,8 @@ public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentPart basicGetType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(ComponentPart newType) {
-		ComponentPart oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.PART_VARIABLE__TYPE, oldType, type));
+	public ComponentPart basicGetComponentPartType() {
+		return (ComponentPart)COMPONENT_PART_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -144,11 +177,14 @@ public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ComponentstorypatternPackage.PART_VARIABLE__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
 			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
 				return getPortVariables();
-			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+			case ComponentstorypatternPackage.PART_VARIABLE__COMPONENT_PART_TYPE:
+				if (resolve) return getComponentPartType();
+				return basicGetComponentPartType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,12 +198,12 @@ public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ComponentstorypatternPackage.PART_VARIABLE__DATA_TYPE:
+				setDataType((DataType)newValue);
+				return;
 			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
 				getPortVariables().clear();
 				getPortVariables().addAll((Collection<? extends PortVariable>)newValue);
-				return;
-			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
-				setType((ComponentPart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,11 +217,11 @@ public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ComponentstorypatternPackage.PART_VARIABLE__DATA_TYPE:
+				setDataType((DataType)null);
+				return;
 			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
 				getPortVariables().clear();
-				return;
-			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
-				setType((ComponentPart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -199,12 +235,46 @@ public abstract class PartVariableImpl extends ComponentStoryPatternVariableImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ComponentstorypatternPackage.PART_VARIABLE__DATA_TYPE:
+				return dataType != null;
 			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
 				return portVariables != null && !portVariables.isEmpty();
-			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
-				return type != null;
+			case ComponentstorypatternPackage.PART_VARIABLE__COMPONENT_PART_TYPE:
+				return COMPONENT_PART_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TypedNamedElement.class) {
+			switch (derivedFeatureID) {
+				case ComponentstorypatternPackage.PART_VARIABLE__DATA_TYPE: return BehaviorPackage.TYPED_NAMED_ELEMENT__DATA_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TypedNamedElement.class) {
+			switch (baseFeatureID) {
+				case BehaviorPackage.TYPED_NAMED_ELEMENT__DATA_TYPE: return ComponentstorypatternPackage.PART_VARIABLE__DATA_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //PartVariableImpl

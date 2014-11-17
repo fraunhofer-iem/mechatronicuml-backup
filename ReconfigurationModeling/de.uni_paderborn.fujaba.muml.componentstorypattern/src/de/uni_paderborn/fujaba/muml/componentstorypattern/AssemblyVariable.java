@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getAssemblyVariable()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExistingConnectorBetweenPortVariableTypes='if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExistingConnectorBetweenPortVariableTypes='if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.dataType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n'"
  * @generated
  */
 public interface AssemblyVariable extends ConnectorVariable {
@@ -33,7 +33,7 @@ public interface AssemblyVariable extends ConnectorVariable {
 	 * @see #setType(AssemblyConnector)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getAssemblyVariable_Type()
 	 * @model required="true"
-	 *        annotation="http://www.muml.org/emf/OCLFilter choices='let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : Collection(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector)),\r\n\tportVariableTypes: Collection(component::Port) = self.portVariables.type->excluding(null)\r\nin\r\n\tassemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(component::AssemblyConnector).portParts.portType->includes(p)))'"
+	 *        annotation="http://www.muml.org/emf/OCLFilter choices='let this : ComponentVariable = self.eContainer().oclAsType(ComponentVariable),\r\n\tassemblyConnectors : Collection(connector::Connector) = this.type.oclAsType(component::StructuredComponent).connectors->select(oclIsTypeOf(component::AssemblyConnector)),\r\n\tportVariableTypes: Collection(component::Port) = self.portVariables.portType->excluding(null)\r\nin\r\n\tassemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(component::AssemblyConnector).portParts.portType->includes(p)))'"
 	 * @generated
 	 */
 	AssemblyConnector getType();

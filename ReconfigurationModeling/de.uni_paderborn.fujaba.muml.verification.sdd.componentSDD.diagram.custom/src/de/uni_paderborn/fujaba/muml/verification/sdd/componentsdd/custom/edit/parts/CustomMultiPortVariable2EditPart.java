@@ -30,7 +30,7 @@ public class CustomMultiPortVariable2EditPart extends
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
 		super.handleNotificationEvent(notification);
-		if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE
+		if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__PORT_TYPE
 				.equals(notification.getFeature())) {
 			updateSinglePortVariableTypes();
 		}
@@ -42,7 +42,7 @@ public class CustomMultiPortVariable2EditPart extends
 		if (multiPortVariable != null)
 			for (SinglePortVariable singlePortVariable : multiPortVariable
 					.getSubPortVariables()) {
-				singlePortVariable.setType(multiPortVariable.getType());
+				singlePortVariable.setDataType(multiPortVariable.getPortType());
 			}
 	}
 }

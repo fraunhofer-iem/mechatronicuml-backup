@@ -2,6 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +33,8 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PortVariableImpl#getConnectors <em>Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PortVariableImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PortVariableImpl#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PortVariableImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PortVariableImpl#getConnectorVariables <em>Connector Variables</em>}</li>
  * </ul>
  * </p>
@@ -49,14 +53,24 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 	protected EList<Connector> connectors;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected Port type;
+	protected DataType dataType;
+
+	/**
+	 * The cached setting delegate for the '{@link #getPortType() <em>Port Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PORT_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentstorypatternPackage.Literals.PORT_VARIABLE__PORT_TYPE).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getConnectorVariables() <em>Connector Variables</em>}' reference list.
@@ -104,16 +118,16 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (Port)eResolveProxy(oldType);
-			if (type != oldType) {
+	public DataType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (DataType)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.PORT_VARIABLE__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.PORT_VARIABLE__DATA_TYPE, oldDataType, dataType));
 			}
 		}
-		return type;
+		return dataType;
 	}
 
 	/**
@@ -121,8 +135,8 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port basicGetType() {
-		return type;
+	public DataType basicGetDataType() {
+		return dataType;
 	}
 
 	/**
@@ -130,11 +144,29 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(Port newType) {
-		Port oldType = type;
-		type = newType;
+	public void setDataType(DataType newDataType) {
+		DataType oldDataType = dataType;
+		dataType = newDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.PORT_VARIABLE__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.PORT_VARIABLE__DATA_TYPE, oldDataType, dataType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Port getPortType() {
+		return (Port)PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Port basicGetPortType() {
+		return (Port)PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -186,9 +218,12 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 		switch (featureID) {
 			case ComponentstorypatternPackage.PORT_VARIABLE__CONNECTORS:
 				return getConnectors();
-			case ComponentstorypatternPackage.PORT_VARIABLE__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+			case ComponentstorypatternPackage.PORT_VARIABLE__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
+			case ComponentstorypatternPackage.PORT_VARIABLE__PORT_TYPE:
+				if (resolve) return getPortType();
+				return basicGetPortType();
 			case ComponentstorypatternPackage.PORT_VARIABLE__CONNECTOR_VARIABLES:
 				return getConnectorVariables();
 		}
@@ -208,8 +243,8 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 				getConnectors().clear();
 				getConnectors().addAll((Collection<? extends Connector>)newValue);
 				return;
-			case ComponentstorypatternPackage.PORT_VARIABLE__TYPE:
-				setType((Port)newValue);
+			case ComponentstorypatternPackage.PORT_VARIABLE__DATA_TYPE:
+				setDataType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,8 +261,8 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 			case ComponentstorypatternPackage.PORT_VARIABLE__CONNECTORS:
 				getConnectors().clear();
 				return;
-			case ComponentstorypatternPackage.PORT_VARIABLE__TYPE:
-				setType((Port)null);
+			case ComponentstorypatternPackage.PORT_VARIABLE__DATA_TYPE:
+				setDataType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,8 +278,10 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 		switch (featureID) {
 			case ComponentstorypatternPackage.PORT_VARIABLE__CONNECTORS:
 				return connectors != null && !connectors.isEmpty();
-			case ComponentstorypatternPackage.PORT_VARIABLE__TYPE:
-				return type != null;
+			case ComponentstorypatternPackage.PORT_VARIABLE__DATA_TYPE:
+				return dataType != null;
+			case ComponentstorypatternPackage.PORT_VARIABLE__PORT_TYPE:
+				return PORT_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentstorypatternPackage.PORT_VARIABLE__CONNECTOR_VARIABLES:
 				return CONNECTOR_VARIABLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
@@ -264,6 +301,12 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 				default: return -1;
 			}
 		}
+		if (baseClass == TypedNamedElement.class) {
+			switch (derivedFeatureID) {
+				case ComponentstorypatternPackage.PORT_VARIABLE__DATA_TYPE: return BehaviorPackage.TYPED_NAMED_ELEMENT__DATA_TYPE;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -277,6 +320,12 @@ public abstract class PortVariableImpl extends ComponentStoryPatternVariableImpl
 		if (baseClass == ConnectorEndpoint.class) {
 			switch (baseFeatureID) {
 				case ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS: return ComponentstorypatternPackage.PORT_VARIABLE__CONNECTORS;
+				default: return -1;
+			}
+		}
+		if (baseClass == TypedNamedElement.class) {
+			switch (baseFeatureID) {
+				case BehaviorPackage.TYPED_NAMED_ELEMENT__DATA_TYPE: return ComponentstorypatternPackage.PORT_VARIABLE__DATA_TYPE;
 				default: return -1;
 			}
 		}

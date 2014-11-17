@@ -39,11 +39,12 @@
     <genPackage href="ComponentSDD.genmodel#//componentsdd"/>
     <classes>
       <genClass href="ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram"/>
-      <properties category="//@packages.0/@classes.0/@propertyCategories.0" initializeOCLExpression="">
+      <properties category="//@packages.0/@classes.0/@propertyCategories.1" initializeOCLExpression="">
         <genFeature href="ComponentSDD.genmodel#//componentsdd/ComponentStoryDecisionDiagram/invariantSDD"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
+      <propertyCategories title="Booleans"/>
       <propertyCategories title="Booleans" properties="//@packages.0/@classes.0/@properties.0"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#//@packages.1/@classes.22"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#//@packages.0/@classes.0"/>
@@ -65,6 +66,10 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <superClasses href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.propsheet#//@packages.0/@classes.10"/>
+    </classes>
+    <classes>
+      <genClass href="ComponentSDD.genmodel#//componentsdd/InitialNode"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#//@packages.0/@classes.1"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

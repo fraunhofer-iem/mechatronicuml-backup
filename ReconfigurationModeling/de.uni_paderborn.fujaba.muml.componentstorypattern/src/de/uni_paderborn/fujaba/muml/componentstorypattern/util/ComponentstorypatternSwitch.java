@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.util;
 
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -120,6 +121,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				T result = casePortVariable(portVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(portVariable);
 				if (result == null) result = caseConnectorEndpoint(portVariable);
+				if (result == null) result = caseTypedNamedElement(portVariable);
 				if (result == null) result = caseNamedElement(portVariable);
 				if (result == null) result = caseCommentableElement(portVariable);
 				if (result == null) result = caseExtendableElement(portVariable);
@@ -130,6 +132,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				PartVariable partVariable = (PartVariable)theEObject;
 				T result = casePartVariable(partVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(partVariable);
+				if (result == null) result = caseTypedNamedElement(partVariable);
 				if (result == null) result = caseNamedElement(partVariable);
 				if (result == null) result = caseCommentableElement(partVariable);
 				if (result == null) result = caseExtendableElement(partVariable);
@@ -177,6 +180,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				if (result == null) result = casePortVariable(singlePortVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(singlePortVariable);
 				if (result == null) result = caseConnectorEndpoint(singlePortVariable);
+				if (result == null) result = caseTypedNamedElement(singlePortVariable);
 				if (result == null) result = caseNamedElement(singlePortVariable);
 				if (result == null) result = caseCommentableElement(singlePortVariable);
 				if (result == null) result = caseExtendableElement(singlePortVariable);
@@ -189,6 +193,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				if (result == null) result = casePortVariable(multiPortVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(multiPortVariable);
 				if (result == null) result = caseConnectorEndpoint(multiPortVariable);
+				if (result == null) result = caseTypedNamedElement(multiPortVariable);
 				if (result == null) result = caseNamedElement(multiPortVariable);
 				if (result == null) result = caseCommentableElement(multiPortVariable);
 				if (result == null) result = caseExtendableElement(multiPortVariable);
@@ -209,6 +214,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				T result = caseFadingComponentPartVariable(fadingComponentPartVariable);
 				if (result == null) result = casePartVariable(fadingComponentPartVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(fadingComponentPartVariable);
+				if (result == null) result = caseTypedNamedElement(fadingComponentPartVariable);
 				if (result == null) result = caseNamedElement(fadingComponentPartVariable);
 				if (result == null) result = caseCommentableElement(fadingComponentPartVariable);
 				if (result == null) result = caseExtendableElement(fadingComponentPartVariable);
@@ -220,6 +226,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				T result = caseComponentPartVariable(componentPartVariable);
 				if (result == null) result = casePartVariable(componentPartVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(componentPartVariable);
+				if (result == null) result = caseTypedNamedElement(componentPartVariable);
 				if (result == null) result = caseNamedElement(componentPartVariable);
 				if (result == null) result = caseCommentableElement(componentPartVariable);
 				if (result == null) result = caseExtendableElement(componentPartVariable);
@@ -524,6 +531,21 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnectorEndpoint(ConnectorEndpoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypedNamedElement(TypedNamedElement object) {
 		return null;
 	}
 

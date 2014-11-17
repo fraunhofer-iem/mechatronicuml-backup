@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -45,7 +46,8 @@ public class PortVariableItemProvider
 			super.getPropertyDescriptors(object);
 
 			addConnectorsPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
+			addDataTypePropertyDescriptor(object);
+			addPortTypePropertyDescriptor(object);
 			addConnectorVariablesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -74,22 +76,44 @@ public class PortVariableItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortVariable_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortVariable_type_feature", "_UI_PortVariable_type"),
-				 ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE,
+				 getString("_UI_TypedNamedElement_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElement_dataType_feature", "_UI_TypedNamedElement_type"),
+				 BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE,
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortVariable_portType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortVariable_portType_feature", "_UI_PortVariable_type"),
+				 ComponentstorypatternPackage.Literals.PORT_VARIABLE__PORT_TYPE,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
