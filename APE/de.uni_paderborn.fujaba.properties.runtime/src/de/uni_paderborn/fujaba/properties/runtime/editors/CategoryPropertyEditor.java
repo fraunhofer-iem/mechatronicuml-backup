@@ -378,9 +378,11 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	@Override
 	protected Collection<Control> getControls() {
 		List<Control> controls = new ArrayList<Control>();
-		controls.add(section);
-		controls.add(childrenComposite);
+		if (childrenComposite != null) {
+			controls.add(childrenComposite);
+		}
 		if (section != null) {
+			controls.add(section);
 			for (Control control : section.getChildren()) {
 				controls.add(control);
 			}
