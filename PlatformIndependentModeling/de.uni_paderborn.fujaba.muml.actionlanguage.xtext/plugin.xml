@@ -2,6 +2,7 @@
 <?eclipse version="3.0"?>
 
 <plugin>
+   <extension-point id="ScopeProvider" name="de.uni_paderborn.fujaba.muml.actionlanguage.ScopeProvider" schema="schema/ScopeProvider.exsd"/>
 
 
 

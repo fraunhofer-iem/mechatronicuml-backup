@@ -47,8 +47,8 @@ import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
  * on how and when to use it 
  *
  */
-public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
-	private List<TypedNamedElement> typedNamedElementList;
+public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider implements IActionLanguageScopeProvider {
+	protected List<TypedNamedElement> typedNamedElementList;
 	private List<DataType> typeList;
 	private List<Operation> operationList;
 	private List<MessageType> messageTypeList;
@@ -123,9 +123,9 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		if (!setScopeSwitch(object)) {
 			throw new IllegalArgumentException("scope not found for object: " + object);
 		}
-	}	
+	}
 	
-	private boolean setScopeSwitch(EObject object) {
+	protected boolean setScopeSwitch(EObject object) {
 		if (object instanceof StateEvent) {
 			setScopeForEObject((StateEvent) object);
 		} else if (object instanceof Transition) {
@@ -141,7 +141,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		} else if (object instanceof Variable) {
 			setScopeForEObject((Variable) object);
 		} else if (object instanceof RealtimeStatechart) {
-			setScopeForRTSC((RealtimeStatechart) object); 
+			setScopeForRTSC((RealtimeStatechart) object);
 		} else if (object != null) {
 			setScopeSwitch(object.eContainer());
 		} else {
