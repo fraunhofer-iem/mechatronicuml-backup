@@ -125,7 +125,7 @@ public class OCLFilterPlugin extends AbstractUIPlugin {
 	public static boolean shouldGenerate(GenModel genModel) {
 		for (GenPackage genPackage : genModel.getGenPackages()) {
 			EPackage ePackage = genPackage.getEcorePackage();
-			if (containsAnnotation(ePackage)) {
+			if (shouldGenerate(ePackage)) {
 				return true;
 			}
 		}
@@ -135,13 +135,13 @@ public class OCLFilterPlugin extends AbstractUIPlugin {
 	public static boolean shouldGenerate(EPackage ePackage) {
 		for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 			if (eClassifier instanceof EClass) {
-				if (containsAnnotation((EClass) eClassifier)) {
+				if (shouldGenerate((EClass) eClassifier)) {
 					return true;
 				}
 			}
 		}
 		for (EPackage subPackage : ePackage.getESubpackages()) {
-			if (containsAnnotation(subPackage)) {
+			if (shouldGenerate(subPackage)) {
 				return true;
 			}
 		}
