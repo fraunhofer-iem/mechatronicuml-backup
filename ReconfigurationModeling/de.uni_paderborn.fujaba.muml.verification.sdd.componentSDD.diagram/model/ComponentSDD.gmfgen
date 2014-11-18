@@ -694,10 +694,11 @@
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/partVariables"/>
       </modelFacet>
       <labels
-          visualID="5035"
+          visualID="5044"
           editPartClassName="WrappingLabel4EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy"
-          notationViewFactoryClassName="FadingComponentPartVariableLabelViewFactory">
+          notationViewFactoryClassName="FadingComponentPartVariableLabelViewFactory"
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -714,7 +715,7 @@
       </labels>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5036"
+          visualID="5045"
           editPartClassName="WrappingLabel5EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy"
           notationViewFactoryClassName="FadingComponentPartVariableLabelViewFactory"
@@ -728,7 +729,7 @@
             parser="//@labelParsers/@implementations.0"/>
       </labels>
       <labels
-          visualID="5041"
+          visualID="5046"
           editPartClassName="WrappingLabel7EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
           notationViewFactoryClassName="FadingComponentPartVariableLabelViewFactory">
@@ -1925,11 +1926,11 @@
       <expressions
           body="if&#xD;&#xA;&#x9;self.bindingState = storydiagrams::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.dataType.name&#xD;&#xA;endif"/>
       <expressions
-          body="''"/>
+          body="let&#xD;&#xA;&#x9;expressions : Collection(componentstorypattern::TriggerEmbeddedComponentExpression) = self.triggerEmbeddedComponentExpressions->select(oclIsTypeOf(componentsdd::EvaluateComponentSDDExpression))&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;expressions->isEmpty()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;expressions->iterate(t : componentstorypattern::TriggerEmbeddedComponentExpression; s : String = '[' | s+t.oclAsType(componentsdd::EvaluateComponentSDDExpression).componentSDD.name+' ')+']'&#xD;&#xA;&#x9;endif"/>
       <expressions
           body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9; self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
       <expressions
-          body="let compName : String = if self.dataType.componentType.name.oclIsUndefined() then 'null' else&#x9;self.dataType.componentType.name endif in&#xD;&#xA;let partName : String = if self.dataType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.dataType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+          body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
       <expressions
           body="if self.appliedFadingFunction.oclIsUndefined()&#xD;&#xA;then ''&#xD;&#xA;else&#xD;&#xA;&#x9;self.appliedFadingFunction.name&#xD;&#xA;endif"/>
       <expressions
@@ -2015,7 +2016,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.0/@modelFacet"
-        className="FadingComponentPartVariableLabelExpressionLabelParser5035"
+        className="FadingComponentPartVariableLabelExpressionLabelParser5044"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
@@ -2023,7 +2024,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.8/@labels.2/@modelFacet"
-        className="FadingComponentPartVariableLabelExpressionLabelParser5041"
+        className="FadingComponentPartVariableLabelExpressionLabelParser5046"
         viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>

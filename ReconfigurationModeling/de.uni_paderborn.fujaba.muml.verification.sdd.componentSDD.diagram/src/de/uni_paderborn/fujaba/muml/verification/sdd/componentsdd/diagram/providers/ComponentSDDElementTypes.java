@@ -107,6 +107,7 @@ public class ComponentSDDElementTypes {
 	 * @generated
 	 */
 	public static final IElementType FadingComponentPartVariable_3009 = getElementType("de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.diagram.FadingComponentPartVariable_3009"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */

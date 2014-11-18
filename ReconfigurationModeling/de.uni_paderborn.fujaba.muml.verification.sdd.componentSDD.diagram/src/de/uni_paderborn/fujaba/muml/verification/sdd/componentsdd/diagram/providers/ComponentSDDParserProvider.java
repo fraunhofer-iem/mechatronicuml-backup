@@ -190,15 +190,15 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getFadingComponentPartVariableLabel_5035Parser() {
-		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5035();
+	private IParser getFadingComponentPartVariableLabel_5044Parser() {
+		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5044();
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getFadingComponentPartVariableLabel_5041Parser() {
-		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5041();
+	private IParser getFadingComponentPartVariableLabel_5046Parser() {
+		return new de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.parsers.FadingComponentPartVariableLabelExpressionLabelParser5046();
 	}
 
 	/**
@@ -284,9 +284,9 @@ public class ComponentSDDParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.UnderlinedLabel4EditPart.VISUAL_ID:
 			return getSinglePortVariableLabel_5032Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-			return getFadingComponentPartVariableLabel_5035Parser();
+			return getFadingComponentPartVariableLabel_5044Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
-			return getFadingComponentPartVariableLabel_5041Parser();
+			return getFadingComponentPartVariableLabel_5046Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:
 			return getAssemblyVariableName_6001Parser();
 		case de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:

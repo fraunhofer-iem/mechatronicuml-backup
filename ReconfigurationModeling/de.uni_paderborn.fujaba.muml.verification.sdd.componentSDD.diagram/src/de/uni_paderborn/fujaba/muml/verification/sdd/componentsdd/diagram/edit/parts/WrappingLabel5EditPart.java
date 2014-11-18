@@ -69,7 +69,7 @@ public class WrappingLabel5EditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5036;
+	public static final int VISUAL_ID = 5045;
 
 	/**
 	 * MUML FIX, see code comments.

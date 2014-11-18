@@ -127,13 +127,13 @@
       visualID="3009"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'FadingComponentPartVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'partVariables')">
     <nodeLabelTraces
-        visualID="5035"
+        visualID="5044"
         queryText="true"/>
     <nodeLabelTraces
-        visualID="5036"
+        visualID="5045"
         queryText="true"/>
     <nodeLabelTraces
-        visualID="5041"
+        visualID="5046"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces

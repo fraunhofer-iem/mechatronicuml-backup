@@ -1006,20 +1006,20 @@ public class ComponentSDDViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5035 = createLabel(
+		Node label5044 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
-		Node label5036 = createLabel(
+		Node label5045 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
-		label5036.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5045.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5036 = (Location) label5036.getLayoutConstraint();
-		location5036.setX(0);
-		location5036.setY(5);
-		Node label5041 = createLabel(
+		Location location5045 = (Location) label5045.getLayoutConstraint();
+		location5045.setX(0);
+		location5045.setY(5);
+		Node label5046 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));

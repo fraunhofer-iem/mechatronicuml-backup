@@ -399,7 +399,6 @@ public class FadingComponentPartVariableEditPart extends
 		 * @generated
 		 */
 		private WrappingLabel fFigureFadingComponentVariableNameFigure;
-
 		/**
 		 * @generated
 		 */

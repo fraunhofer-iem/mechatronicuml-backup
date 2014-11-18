@@ -495,7 +495,7 @@ public class ComponentSDDNavigatorLabelProvider extends LabelProvider implements
 		} else {
 			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5035); //$NON-NLS-1$
+							"Parser was not found for label " + 5044); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

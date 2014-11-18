@@ -559,11 +559,12 @@
                       <domainMetaElement
                           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//FadingComponentPartVariable"/>
                       <labelMappings
-                          xsi:type="gmfmap:ExpressionLabelMapping">
+                          xsi:type="gmfmap:ExpressionLabelMapping"
+                          readOnly="true">
                         <diagramLabel
                             href="ComponentStoryDiagram.gmfgraph#FadingComponentVariableNameLabel"/>
                         <viewExpression
-                            body="let compName : String = if self.dataType.componentType.name.oclIsUndefined() then 'null' else&#x9;self.dataType.componentType.name endif in&#xD;&#xA;let partName : String = if self.dataType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.dataType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+                            body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
                       </labelMappings>
                       <labelMappings
                           readOnly="true">

@@ -70,7 +70,7 @@ public class WrappingLabel7EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5041;
+	public static final int VISUAL_ID = 5046;
 
 	/**
 	 * MUML FIX, see code comments.
