@@ -72,7 +72,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_97JDQWKdEeS-2sR8iwsrMg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../../RailCab.fujaba#_97H1IGKdEeS-2sR8iwsrMg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_97JDQmKdEeS-2sR8iwsrMg" points="[0, 4, 404, 15]$[0, 55, 404, 66]$[-404, 55, 0, 66]$[-404, 3, 0, 14]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_97JDQmKdEeS-2sR8iwsrMg" points="[0, 4, 401, 15]$[0, 55, 401, 66]$[-402, 55, -1, 66]$[-402, 3, -1, 14]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_97Zh8GKdEeS-2sR8iwsrMg" id="(0.45652173913043476,0.9452054794520548)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_97aJAGKdEeS-2sR8iwsrMg" id="(0.6057692307692307,0.7666666666666667)"/>
   </edges>
