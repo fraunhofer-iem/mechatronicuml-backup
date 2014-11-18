@@ -11,7 +11,8 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.componentstorypattern;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.actionlanguage.xtext;bundle-version="0.4.0",
  com.google.inject;bundle-version="3.0.0",
- org.eclipse.xtext
+ org.eclipse.xtext,
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD;bundle-version="0.4.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies,
  de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext
