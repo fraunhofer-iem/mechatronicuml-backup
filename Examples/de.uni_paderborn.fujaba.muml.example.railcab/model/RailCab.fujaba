@@ -7526,5 +7526,26 @@
       <edges xmi:id="_-gCi0G9QEeSItej-K-U2zQ" sourceNode="_yaa00G9QEeSItej-K-U2zQ" targetNode="_8E4H8G9QEeSItej-K-U2zQ"/>
       <edges xmi:id="__eYaYG9QEeSItej-K-U2zQ" sourceNode="_yaa00G9QEeSItej-K-U2zQ" targetNode="_8_8CAG9QEeSItej-K-U2zQ" type="Low"/>
     </modelElements>
+    <modelElements xsi:type="componentsdd:ComponentStoryDecisionDiagram" xmi:id="_l0MesG9REeSItej-K-U2zQ" name="isCoordinator" reconfigurableComponent="_RbW-QPhpEeOQsfT56fxzVQ">
+      <nodes xsi:type="componentsdd:InitialNode" xmi:id="_oDfAwG9REeSItej-K-U2zQ" outgoingEdges="_4nWbsG9REeSItej-K-U2zQ"/>
+      <nodes xsi:type="componentsdd:ComponentStoryPatternNode" xmi:id="_q95jcG9REeSItej-K-U2zQ" outgoingEdges="_6t_YEG9REeSItej-K-U2zQ _7kJkAG9REeSItej-K-U2zQ" incomingEdges="_4nWbsG9REeSItej-K-U2zQ" name="componentStoryPatternNode">
+        <pattern xmi:id="_q95jcW9REeSItej-K-U2zQ" name="componentStoryPattern">
+          <thisVariable xmi:id="_q95jcm9REeSItej-K-U2zQ" name="this" bindingState="BOUND" type="_RbW-QPhpEeOQsfT56fxzVQ">
+            <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_sUC3AG9REeSItej-K-U2zQ" name="cc" dataType="_P32scPuQEeO8xJIX1d2eag">
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_yKzPAG9REeSItej-K-U2zQ" name="" connectors="_13WZQG9REeSItej-K-U2zQ" dataType="_kag9cO6FEeOKI4bZ_bxwuQ"/>
+            </partVariables>
+            <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_vvfDIG9REeSItej-K-U2zQ" name="ps" dataType="_hhfcoPuQEeO8xJIX1d2eag">
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_zxKI0G9REeSItej-K-U2zQ" name="" connectors="_13WZQG9REeSItej-K-U2zQ" dataType="_-yiEIPh3EeOdcfcso3gQlg"/>
+            </partVariables>
+            <connectorVariables xsi:type="componentstorypattern:AssemblyVariable" xmi:id="_13WZQG9REeSItej-K-U2zQ" name="" connectorEndpoints="_zxKI0G9REeSItej-K-U2zQ _yKzPAG9REeSItej-K-U2zQ" type="_zCbuYPuREeO8xJIX1d2eag"/>
+          </thisVariable>
+        </pattern>
+      </nodes>
+      <nodes xsi:type="sdd:LeafNode" xmi:id="_5eZYcG9REeSItej-K-U2zQ" incomingEdges="_6t_YEG9REeSItej-K-U2zQ"/>
+      <nodes xsi:type="sdd:LeafNode" xmi:id="_5yojEG9REeSItej-K-U2zQ" incomingEdges="_7kJkAG9REeSItej-K-U2zQ" value="false"/>
+      <edges xmi:id="_4nWbsG9REeSItej-K-U2zQ" sourceNode="_oDfAwG9REeSItej-K-U2zQ" targetNode="_q95jcG9REeSItej-K-U2zQ"/>
+      <edges xmi:id="_6t_YEG9REeSItej-K-U2zQ" sourceNode="_q95jcG9REeSItej-K-U2zQ" targetNode="_5eZYcG9REeSItej-K-U2zQ"/>
+      <edges xmi:id="_7kJkAG9REeSItej-K-U2zQ" sourceNode="_q95jcG9REeSItej-K-U2zQ" targetNode="_5yojEG9REeSItej-K-U2zQ" type="Low"/>
+    </modelElements>
   </categories>
 </modelinstance:RootNode>
