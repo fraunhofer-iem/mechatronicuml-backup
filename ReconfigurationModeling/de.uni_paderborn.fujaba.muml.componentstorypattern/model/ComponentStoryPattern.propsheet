@@ -100,11 +100,6 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties>
-        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable/multiPortVariable"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
       <propertyCategories title="Lists" properties="//@packages.0/@classes.8/@properties.0"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.3">
