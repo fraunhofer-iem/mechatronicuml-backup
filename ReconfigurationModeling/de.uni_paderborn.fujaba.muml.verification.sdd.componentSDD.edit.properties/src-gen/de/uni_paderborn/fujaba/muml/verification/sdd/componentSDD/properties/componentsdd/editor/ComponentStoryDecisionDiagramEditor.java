@@ -23,13 +23,8 @@ public class ComponentStoryDecisionDiagramEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addInvariantSDD_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
+			addInvariantSDD_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -90,7 +85,7 @@ public class ComponentStoryDecisionDiagramEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
+							"property.tab.general", "property.tab.general",
 							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);

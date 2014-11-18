@@ -73,6 +73,11 @@
              type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#EvaluateComponentSDDExpression">
        </propertyEditor>
     
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.componentsdd.editor.InitialNodeEditor$Factory"
+             type="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0#InitialNode">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 
