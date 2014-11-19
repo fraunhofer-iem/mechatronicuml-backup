@@ -42,11 +42,10 @@
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.xtext.common.types.ui"/>
       <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
-      <import plugin="org.eclipse.compare"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.compare" version="3.0.2" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.pm.common" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.swplatform.oslanguage" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.compare" version="3.5.501" match="greaterOrEqual"/>
    </requires>
 
    <plugin
