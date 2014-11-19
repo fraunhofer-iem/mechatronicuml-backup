@@ -1,17 +1,22 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies;
 
+import org.eclipse.draw2d.Label;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.CorePackage;
+import org.eclipse.gef.EditPart;
 
-import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy;
+import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
+import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomPortTypeEditPolicy;
 
-public class PortVariableEditPolicy extends PortTypeEditPolicy {
+public class PortVariableEditPolicy extends CustomPortTypeEditPolicy {
+	protected org.eclipse.draw2d.Label label = new Label();
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		if (BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE
@@ -31,14 +36,14 @@ public class PortVariableEditPolicy extends PortTypeEditPolicy {
 		}
 		return null;
 	}
-	
+
 	@Override
 	protected boolean isMulti() {
 		if (getSemanticElement() instanceof SinglePortVariable
 				&& ((SinglePortVariable) getSemanticElement())
 						.getMultiPortVariable() != null)
 			return false;
-		
+
 		return super.isMulti();
 	}
 }

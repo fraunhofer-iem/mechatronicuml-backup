@@ -23,6 +23,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 public class CustomPortTypeEditPolicy extends PortTypeEditPolicy {
 
+	protected org.eclipse.draw2d.Label label = new Label();
+
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		EStructuralFeature feature = null;
@@ -38,10 +40,11 @@ public class CustomPortTypeEditPolicy extends PortTypeEditPolicy {
 				|| containingClass == ValuetypePackage.Literals.CARDINALITY
 				|| feature == ComponentPackage.Literals.DIRECTED_TYPED_PORT__OPTIONAL) {
 			refreshArrow();
-			// } else if (notification.getFeature() == C){
+
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES
-				|| notification.getFeature() == ComponentPackage.Literals.DIRECTED_TYPED_PORT__KIND) {
+				|| notification.getFeature() == ComponentPackage.Literals.DIRECTED_TYPED_PORT__KIND
+				|| notification.getFeature() == ComponentPackage.Literals.PORT_PART__PORT_TYPE) {
 			refreshPortType();
 		}
 		super.handleNotificationEvent(notification);
@@ -55,11 +58,15 @@ public class CustomPortTypeEditPolicy extends PortTypeEditPolicy {
 		addNotificationListener(getPort());
 	}
 
+	//XXX clean up
 	protected void refreshPortType() {
 		EObject port = getPort();
 
 		PortKind portKind = PortKind.DISCRETE;
 		PortType portType = PortType.NONE;
+
+		if (getPortFigure().getChildren().contains(label))
+			getPortFigure().remove(label);
 
 		if (port != null) {
 			if (ComponentPackage.Literals.DISCRETE_PORT.isSuperTypeOf(port
@@ -80,20 +87,17 @@ public class CustomPortTypeEditPolicy extends PortTypeEditPolicy {
 				portType = getInternalReconfigurationCommunicationPortKind(((InternalReconfigurationCommunicationPort) port));
 			} else if (ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT
 					.isSuperTypeOf(port.eClass())) {
-				org.eclipse.draw2d.Label label = new Label();
 				label.setText("RM");
 				EditPart editPart = getHost();
 				if (editPart instanceof ReconfigurationMessagePortEditPart) {
 					((ReconfigurationMessagePortEditPart) editPart)
 							.getPrimaryShape().add(label);
 				} else if (editPart instanceof PortPartEditPart) {
-					((PortPartEditPart) editPart)
-							.getPrimaryShape().add(label);
+					((PortPartEditPart) editPart).getPrimaryShape().add(label);
 				}
-		
+
 			} else if (ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT
 					.isSuperTypeOf(port.eClass())) {
-				org.eclipse.draw2d.Label label = new Label();
 				label.setText("RE");
 				EditPart editPart = getHost();
 				if (editPart instanceof ReconfigurationExecutionPortEditPart) {
@@ -103,18 +107,10 @@ public class CustomPortTypeEditPolicy extends PortTypeEditPolicy {
 					((PortPartEditPart) editPart).getPrimaryShape().add(label);
 				}
 
-			}
-			else if (ProtocolinstantiationPackage.Literals.BROADCAST_PORT
+			} else if (ProtocolinstantiationPackage.Literals.BROADCAST_PORT
 					.isSuperTypeOf(port.eClass())) {
-				org.eclipse.draw2d.Label label = new Label();
 				label.setText("B");
-				EditPart editPart = getHost();
-				if (editPart instanceof BroadcastPortEditPart) {
-					((BroadcastPortEditPart) editPart)
-							.getPrimaryShape().add(label);
-				} else if (editPart instanceof PortPartEditPart) {
-					((PortPartEditPart) editPart).getPrimaryShape().add(label);
-				}
+				getPortFigure().add(label);
 
 			}
 		}
