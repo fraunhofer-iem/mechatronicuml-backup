@@ -37,7 +37,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_DgHBeWUHEeS2Zodb8JPC8A"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../../../RailCab.fujaba#_lSNGkPuWEeO2po0ALlWq5g"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DgHBbGUHEeS2Zodb8JPC8A" x="96" y="12"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DgHBbGUHEeS2Zodb8JPC8A" x="68" y="12"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_DgHBemUHEeS2Zodb8JPC8A" type="3032" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_DgHBfGUHEeS2Zodb8JPC8A" type="5060"/>
@@ -163,7 +163,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_DgHB02UHEeS2Zodb8JPC8A"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../../../RailCab.fujaba#_lSNGn_uWEeO2po0ALlWq5g"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DgHBxmUHEeS2Zodb8JPC8A" x="36" y="228"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DgHBxmUHEeS2Zodb8JPC8A" x="8" y="228"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../RailCab.fujaba#_lSNGdfuWEeO2po0ALlWq5g"/>
