@@ -24,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameBindingOperatorAsComponentVariable='if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif' ValidTypeOfPartVariable='if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedComponentParts->includes(self.dataType.oclAsType(muml::component::ComponentPart))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tfalse\r\nendif'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameBindingOperatorAsComponentVariable ValidTypeOfPartVariable'"
- *        annotation="http://www.muml.org/emf/OCLFilter choices='let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts' feature='dataType'"
  * @generated
  */
 public interface PartVariable extends ComponentStoryPatternVariable, TypedNamedElement {

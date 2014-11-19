@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
  * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getFadingComponentPartVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AppliedFadingFunctionIsContainedInType=' let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1' NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode='if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n\tthen self.appliedFadingFunction.oclIsUndefined()\r\nelse true\r\nendif'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AppliedFadingFunctionIsContainedInTyp NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode'"
+ *        annotation="http://www.muml.org/emf/OCLFilter choices='let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))' feature='dataType'"
  * @generated
  */
 public interface FadingComponentPartVariable extends PartVariable {
@@ -39,7 +40,7 @@ public interface FadingComponentPartVariable extends PartVariable {
 	 * @return the value of the '<em>Applied Fading Function</em>' reference.
 	 * @see #setAppliedFadingFunction(FadingFunction)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getFadingComponentPartVariable_AppliedFadingFunction()
-	 * @model
+	 * @model annotation="http://www.muml.org/emf/OCLFilter choices='self.componentPartType.componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction'"
 	 * @generated
 	 */
 	FadingFunction getAppliedFadingFunction();

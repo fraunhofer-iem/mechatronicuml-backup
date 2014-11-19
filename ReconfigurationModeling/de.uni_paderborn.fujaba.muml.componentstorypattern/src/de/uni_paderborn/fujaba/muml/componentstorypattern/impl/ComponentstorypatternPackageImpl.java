@@ -1021,13 +1021,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 			 "feature", "dataType"
 		   });	
 		addAnnotation
-		  (partVariableEClass, 
-		   source, 
-		   new String[] {
-			 "choices", "let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts",
-			 "feature", "dataType"
-		   });	
-		addAnnotation
 		  (getAssemblyVariable_Type(), 
 		   source, 
 		   new String[] {
@@ -1038,6 +1031,26 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "choices", "let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).type,\r\n\tinnerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),\r\n\tdelegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))\r\nin\r\n\tdelegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"
+		   });	
+		addAnnotation
+		  (fadingComponentPartVariableEClass, 
+		   source, 
+		   new String[] {
+			 "choices", "let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))",
+			 "feature", "dataType"
+		   });	
+		addAnnotation
+		  (getFadingComponentPartVariable_AppliedFadingFunction(), 
+		   source, 
+		   new String[] {
+			 "choices", "self.componentPartType.componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction"
+		   });	
+		addAnnotation
+		  (componentPartVariableEClass, 
+		   source, 
+		   new String[] {
+			 "choices", "let \r\n\tcomponent : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)\r\nin\r\n\tcomponent.embeddedComponentParts->select(p | not p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))",
+			 "feature", "dataType"
 		   });
 	}
 

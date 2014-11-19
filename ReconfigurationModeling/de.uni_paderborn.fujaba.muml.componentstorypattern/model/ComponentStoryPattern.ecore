@@ -70,10 +70,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="SameBindingOperatorAsComponentVariable ValidTypeOfPartVariable"/>
     </eAnnotations>
-    <eAnnotations source="http://www.muml.org/emf/OCLFilter">
-      <details key="choices" value="let &#xD;&#xA;&#x9;component : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)&#xD;&#xA;in&#xD;&#xA;&#x9;component.embeddedComponentParts"/>
-      <details key="feature" value="dataType"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
         eType="#//PortVariable" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentPartType" lowerBound="1"
@@ -163,10 +159,22 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="AppliedFadingFunctionIsContainedInTyp NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode"/>
     </eAnnotations>
+    <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+      <details key="choices" value="let &#xD;&#xA;&#x9;component : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)&#xD;&#xA;in&#xD;&#xA;&#x9;component.embeddedComponentParts->select(p | p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))"/>
+      <details key="feature" value="dataType"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="appliedFadingFunction"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//FadingFunction"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//FadingFunction">
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+        <details key="choices" value="self.componentPartType.componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentPartVariable" eSuperTypes="#//PartVariable">
+    <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+      <details key="choices" value="let &#xD;&#xA;&#x9;component : component::StructuredComponent = self.eContainer().oclAsType(ComponentVariable).type.oclAsType(component::StructuredComponent)&#xD;&#xA;in&#xD;&#xA;&#x9;component.embeddedComponentParts->select(p | not p.componentType.oclIsTypeOf(reconfiguration::FadingComponent))"/>
+      <details key="feature" value="dataType"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEmbeddedComponentExpressions"
         eType="#//TriggerEmbeddedComponentExpression" containment="true"/>
   </eClassifiers>
