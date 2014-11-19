@@ -410,11 +410,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_wqSx82UGEeS2Zodb8JPC8A"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../../../RailCab.fujaba#_lSNGc_uWEeO2po0ALlWq5g"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wqSx5mUGEeS2Zodb8JPC8A" width="1803" height="1660"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wqSx5mUGEeS2Zodb8JPC8A" width="1263" height="1192"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../RailCab.fujaba#_lSNGcvuWEeO2po0ALlWq5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wqSx4WUGEeS2Zodb8JPC8A" y="2" width="2220" height="1811"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wqSx4WUGEeS2Zodb8JPC8A" y="2" width="1320" height="1307"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_vgTcsfuXEeO2po0ALlWq5g"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../RailCab.fujaba#_lSNGcvuWEeO2po0ALlWq5g"/>
