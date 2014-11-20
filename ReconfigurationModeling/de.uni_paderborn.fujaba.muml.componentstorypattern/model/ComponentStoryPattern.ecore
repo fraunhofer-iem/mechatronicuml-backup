@@ -112,7 +112,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DelegationConnector">
       <eAnnotations source="http://www.muml.org/emf/OCLFilter">
-        <details key="choices" value="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).type,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"/>
+        <details key="choices" value="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
