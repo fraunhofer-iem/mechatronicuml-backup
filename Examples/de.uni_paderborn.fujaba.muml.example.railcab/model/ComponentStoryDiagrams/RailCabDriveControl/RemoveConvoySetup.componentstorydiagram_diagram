@@ -3,9 +3,9 @@
   <children xmi:type="notation:Shape" xmi:id="_vrS2AB4YEeSyhrsYkwOsSg" type="2003" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_vrS2Ah4YEeSyhrsYkwOsSg" type="5011"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_vrS2Ax4YEeSyhrsYkwOsSg" type="7001"/>
-    <element xmi:type="sda:Activity" href="../RailCab.fujaba#_vrJFAB4YEeSyhrsYkwOsSg"/>
+    <element xmi:type="sda:Activity" href="../../RailCab.fujaba#_vrJFAB4YEeSyhrsYkwOsSg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vrS2AR4YEeSyhrsYkwOsSg" x="216" y="108"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_uvVkER4YEeSyhrsYkwOsSg"/>
-  <element xmi:type="componentstorydiagram:ComponentStoryRule" href="../RailCab.fujaba#_uul9MB4YEeSyhrsYkwOsSg"/>
+  <element xmi:type="componentstorydiagram:ComponentStoryRule" href="../../RailCab.fujaba#_uul9MB4YEeSyhrsYkwOsSg"/>
 </notation:Diagram>
