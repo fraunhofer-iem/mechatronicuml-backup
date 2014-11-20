@@ -5,6 +5,8 @@ import org.eclipse.gmf.runtime.notation.View;
 
 
 
+
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
@@ -30,7 +32,7 @@ public class CustomMultiPortVariable2EditPart extends
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
 		super.handleNotificationEvent(notification);
-		if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__PORT_TYPE
+		if (BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE
 				.equals(notification.getFeature())) {
 			updateSinglePortVariableTypes();
 		}

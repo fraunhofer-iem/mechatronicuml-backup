@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.p
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
@@ -28,7 +29,7 @@ public class CustomMultiPortVariableEditPart extends MultiPortVariableEditPart {
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
 		super.handleNotificationEvent(notification);
-		if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__PORT_TYPE
+		if (BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE
 				.equals(notification.getFeature())) {
 			updateSinglePortVariableTypes();
 		}
