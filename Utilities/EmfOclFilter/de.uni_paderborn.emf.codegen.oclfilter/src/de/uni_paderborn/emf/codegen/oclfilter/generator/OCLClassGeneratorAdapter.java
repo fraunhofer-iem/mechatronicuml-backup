@@ -30,7 +30,7 @@ public class OCLClassGeneratorAdapter extends GenClassGeneratorAdapter {
 	public boolean canGenerateEdit(Object object) {
 		if (super.canGenerateEdit(object) && object instanceof GenClass) {
 			GenClass genClass = (GenClass) object;
-			return OCLFilterPlugin.containsAnnotation(genClass.getEcoreClass());
+			return OCLFilterPlugin.shouldGenerate(genClass.getEcoreClass());
 		}
 		return false;
 	}
@@ -58,7 +58,7 @@ public class OCLClassGeneratorAdapter extends GenClassGeneratorAdapter {
 		// Default Code generation
 		super.generateItemProvider(genClass, monitor);
 		
-		if (OCLFilterPlugin.containsAnnotation(genClass.getEcoreClass())) {
+		if (OCLFilterPlugin.shouldGenerate(genClass.getEcoreClass())) {
 
 			// Find out filename of generated item provider
 			String targetPath = genClass.getGenModel().getEditDirectory();
