@@ -1,9 +1,11 @@
 eclipse.preferences.version=1
+encoding//model/ComponentStoryDecisionDiagrams/ConvoyCoordination/ConvoyOrder.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/ConvoyDisabled.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/ConvoyOrder.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/IsCoordinator.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/IsMember.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/IsStandalone.componentsdd_diagram=UTF-8
+encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/ValidConvoyState.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDiagrams/ConvoyCoordination/AddConvoyMemberAtPos.componentstorydiagram_diagram=UTF-8
 encoding//model/ComponentStoryDiagrams/OperationStrategy/ApplyCoordinationStrategy.componentstorydiagram_diagram=UTF-8
 encoding//model/ComponentStoryDiagrams/OperationStrategy/ApplyMemberStrategy.componentstorydiagram_diagram=UTF-8
