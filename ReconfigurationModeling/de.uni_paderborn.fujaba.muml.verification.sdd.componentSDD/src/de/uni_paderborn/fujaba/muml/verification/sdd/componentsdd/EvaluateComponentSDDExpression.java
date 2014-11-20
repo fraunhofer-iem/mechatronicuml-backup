@@ -37,6 +37,7 @@ public interface EvaluateComponentSDDExpression extends TriggerEmbeddedComponent
 	 * @see #setComponentSDD(ComponentStoryDecisionDiagram)
 	 * @see de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentsddPackage#getEvaluateComponentSDDExpression_ComponentSDD()
 	 * @model required="true"
+	 *        annotation="http://www.muml.org/emf/OCLFilter choices='let\r\n\tcategory : modelinstance::ModelElementCategory =self.eContainer()->closure(eContainer())->select(oclIsTypeOf(modelinstance::ModelElementCategory))->any(true).oclAsType(modelinstance::ModelElementCategory),\r\n\tcsdds : Collection(core::ExtendableElement) = category.modelElements->select(oclIsTypeOf(componentsdd::ComponentStoryDecisionDiagram))\r\nin\r\n\tcsdds->select(csdd | csdd.oclAsType(componentsdd::ComponentStoryDecisionDiagram).reconfigurableComponent = self.eContainer().oclAsType(componentstorypattern::ComponentPartVariable).componentPartType.componentType)'"
 	 * @generated
 	 */
 	ComponentStoryDecisionDiagram getComponentSDD();

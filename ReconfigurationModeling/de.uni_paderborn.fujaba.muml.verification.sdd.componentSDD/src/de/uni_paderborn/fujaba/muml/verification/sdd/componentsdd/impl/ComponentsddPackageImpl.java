@@ -307,6 +307,8 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://www.muml.org/emf/OCLFilter
+		createOCLFilterAnnotations();
 	}
 
 	/**
@@ -347,6 +349,22 @@ public class ComponentsddPackageImpl extends EPackageImpl implements Componentsd
 		   new String[] {
 			 "noNegativeVariables", "let\r\n\tpartVariables : OrderedSet(componentstorypattern::PartVariable) = pattern.thisVariable.partVariables,\r\n\tconnectorVariables : OrderedSet(componentstorypattern::ConnectorVariable) = pattern.thisVariable.connectorVariables,\r\n\tportVariable : OrderedSet(componentstorypattern::ComponentStoryPatternVariable) = partVariables->collect(portVariables)->asOrderedSet()\r\nin\r\n\tportVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingSemantics = storydiagrams::patterns::BindingSemantics::MANDATORY)",
 			 "noVariableModifications", "let\r\n\tpartVariables : OrderedSet(componentstorypattern::PartVariable) = pattern.thisVariable.partVariables,\r\n\tconnectorVariables : OrderedSet(componentstorypattern::ConnectorVariable) = pattern.thisVariable.connectorVariables,\r\n\tportVariable : OrderedSet(componentstorypattern::ComponentStoryPatternVariable) = partVariables->collect(portVariables)->asOrderedSet()\r\nin\r\n\tportVariable->union(partVariables)->union(connectorVariables)->forAll(cV | cV.bindingOperator = storydiagrams::patterns::BindingOperator::CHECK_ONLY)"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.muml.org/emf/OCLFilter</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLFilterAnnotations() {
+		String source = "http://www.muml.org/emf/OCLFilter";	
+		addAnnotation
+		  (getEvaluateComponentSDDExpression_ComponentSDD(), 
+		   source, 
+		   new String[] {
+			 "choices", "let\r\n\tcategory : modelinstance::ModelElementCategory =self.eContainer()->closure(eContainer())->select(oclIsTypeOf(modelinstance::ModelElementCategory))->any(true).oclAsType(modelinstance::ModelElementCategory),\r\n\tcsdds : Collection(core::ExtendableElement) = category.modelElements->select(oclIsTypeOf(componentsdd::ComponentStoryDecisionDiagram))\r\nin\r\n\tcsdds->select(csdd | csdd.oclAsType(componentsdd::ComponentStoryDecisionDiagram).reconfigurableComponent = self.eContainer().oclAsType(componentstorypattern::ComponentPartVariable).componentPartType.componentType)"
 		   });
 	}
 

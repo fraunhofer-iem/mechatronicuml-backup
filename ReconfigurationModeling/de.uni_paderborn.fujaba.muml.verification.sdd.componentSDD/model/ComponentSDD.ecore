@@ -28,7 +28,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EvaluateComponentSDDExpression" eSuperTypes="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//TriggerEmbeddedComponentExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentSDD" lowerBound="1"
-        eType="#//ComponentStoryDecisionDiagram"/>
+        eType="#//ComponentStoryDecisionDiagram">
+      <eAnnotations source="http://www.muml.org/emf/OCLFilter">
+        <details key="choices" value="let&#xD;&#xA;&#x9;category : modelinstance::ModelElementCategory =self.eContainer()->closure(eContainer())->select(oclIsTypeOf(modelinstance::ModelElementCategory))->any(true).oclAsType(modelinstance::ModelElementCategory),&#xD;&#xA;&#x9;csdds : Collection(core::ExtendableElement) = category.modelElements->select(oclIsTypeOf(componentsdd::ComponentStoryDecisionDiagram))&#xD;&#xA;in&#xD;&#xA;&#x9;csdds->select(csdd | csdd.oclAsType(componentsdd::ComponentStoryDecisionDiagram).reconfigurableComponent = self.eContainer().oclAsType(componentstorypattern::ComponentPartVariable).componentPartType.componentType)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding"
         containment="true"/>
