@@ -1,11 +1,15 @@
 eclipse.preferences.version=1
 encoding//model/ComponentStoryDecisionDiagrams/ConvoyCoordination/ConvoyOrder.componentsdd_diagram=UTF-8
+encoding//model/ComponentStoryDecisionDiagrams/OperationStrategy/InCoordinatorMode.componentsdd_diagram=UTF-8
+encoding//model/ComponentStoryDecisionDiagrams/OperationStrategy/InMemberMode.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/ConvoyDisabled.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/ConvoyOrder.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/IsCoordinator.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/IsMember.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/IsStandalone.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/RailCabDriveControl/ValidConvoyState.componentsdd_diagram=UTF-8
+encoding//model/ComponentStoryDecisionDiagrams/RefGen/IsFirst.componentsdd_diagram=UTF-8
+encoding//model/ComponentStoryDecisionDiagrams/RefGen/IsLast.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/VelocityController/InConvoyCtrl.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/VelocityController/InStandaloneCtrl.componentsdd_diagram=UTF-8
 encoding//model/ComponentStoryDecisionDiagrams/VelocityController/ValidCtrl.componentsdd_diagram=UTF-8
