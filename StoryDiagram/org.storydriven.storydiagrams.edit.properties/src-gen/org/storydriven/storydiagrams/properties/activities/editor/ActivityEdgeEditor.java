@@ -35,6 +35,10 @@ public class ActivityEdgeEditor
 			addGuard_GeneralTab_Editor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addGuardExpression_GeneralTab_Editor(null, true);
+		}
+
 	}
 
 	/**
@@ -103,6 +107,30 @@ public class ActivityEdgeEditor
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addGuardExpression_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createGuardExpression_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createGuardExpression_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.activities.ActivitiesPackage.eINSTANCE
+				.getActivityEdge_GuardExpression();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+				adapterFactory, feature);
+
+		editor.setTooltipMessage("Points to an expression in case the transition guard is BOOL. The expression has to evaulate to a boolean value.");
+
+		return editor;
+
+	}
+
 	//
 	// instantiation
 	//
@@ -136,7 +164,8 @@ public class ActivityEdgeEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 
