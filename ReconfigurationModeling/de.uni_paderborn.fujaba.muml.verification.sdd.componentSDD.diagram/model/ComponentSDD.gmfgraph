@@ -1,80 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="componentSDD">
-  <figures
-      name="Default">
-    <descriptors
-        name="CSDDInitialNodeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="StartNodeFigureContainerRectangle"
-          outline="false"
-          fill="false">
-        <layout
-            xsi:type="gmfgraph:GridLayout"
-            equalWidth="false"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="InitialNodeInvariantLabel"
-            text="">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              verticalAlignment="BEGINNING"/>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="componentSDD">
+  <figures name="Default">
+    <descriptors name="CSDDInitialNodeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="StartNodeFigureContainerRectangle" outline="false" fill="false">
+        <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+        <children xsi:type="gmfgraph:Label" name="InitialNodeInvariantLabel" text="">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING"/>
         </children>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="InitialNodeCSDDNameLabel"
-            text="">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
+        <children xsi:type="gmfgraph:Label" name="InitialNodeCSDDNameLabel" text="">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true"/>
         </children>
-        <children
-            xsi:type="gmfgraph:Ellipse"
-            name="StartNodeEllipse">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"/>
-          <foregroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="black"/>
-          <backgroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="black"/>
-          <maximumSize
-              dx="15"
-              dy="15"/>
-          <minimumSize
-              dx="15"
-              dy="15"/>
-          <preferredSize
-              dx="15"
-              dy="15"/>
+        <children xsi:type="gmfgraph:Ellipse" name="StartNodeEllipse">
+          <layoutData xsi:type="gmfgraph:GridLayoutData"/>
+          <foregroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+          <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
+          <maximumSize dx="15" dy="15"/>
+          <minimumSize dx="15" dy="15"/>
+          <preferredSize dx="15" dy="15"/>
         </children>
       </actualFigure>
-      <accessors
-          accessor="getFigureInitialNodeInvariantLabel"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      <accessors
-          accessor="getFigureInitialNodeCSDDNameLabel"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureInitialNodeInvariantLabel" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureInitialNodeCSDDNameLabel" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
-  <nodes
-      name="CSDDInitialNode"
-      figure="CSDDInitialNodeFigure"/>
-  <labels
-      name="CSDDInitialNodeInvariantLabel"
-      figure="CSDDInitialNodeFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels
-      name="CSDDInitialNodeCSDDNameLabel"
-      figure="CSDDInitialNodeFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <nodes name="CSDDInitialNode" figure="CSDDInitialNodeFigure"/>
+  <labels name="CSDDInitialNodeInvariantLabel" figure="CSDDInitialNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="CSDDInitialNodeCSDDNameLabel" figure="CSDDInitialNodeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
 </gmfgraph:Canvas>

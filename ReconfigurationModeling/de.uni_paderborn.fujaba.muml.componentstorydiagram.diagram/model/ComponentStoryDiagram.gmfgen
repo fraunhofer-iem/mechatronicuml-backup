@@ -1336,6 +1336,15 @@
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.26">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable/type"/>
+          </initializers>
+        </modelElementInitializer>
         <sourceMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
@@ -1366,8 +1375,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.26"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.27"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.27"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.28"/>
     </links>
     <links
         visualID="4005"
@@ -1393,6 +1402,15 @@
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/connectorVariables"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.29">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable/type"/>
+          </initializers>
+        </modelElementInitializer>
         <sourceMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
@@ -1423,8 +1441,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.28"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.29"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.30"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.31"/>
     </links>
     <links
         visualID="4006"
@@ -1924,11 +1942,15 @@
       <expressions
           body="if self.deadline.oclIsUndefined() then ''&#xD;&#xA;else&#xD;&#xA;let lowerBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).lowerBound.oclAsType(muml::valuetype::TimeValue).toString(), &#xD;&#xA;&#x9;upperBound: String = self.deadline.oclAsType(muml::realtimestatechart::Deadline).upperBound.oclAsType(muml::valuetype::TimeValue).toString() in&#xD;&#xA;'['+lowerBound+'; '+upperBound+']'&#xD;&#xA;endif"/>
       <expressions
+          body="let this : componentstorypattern::ComponentVariable = self.eContainer().oclAsType(ComponentVariable),&#xD;&#xA;&#x9;assemblyConnectors : Collection(muml::connector::Connector) = this.type.oclAsType(muml::component::StructuredComponent).connectors->select(oclIsTypeOf(muml::component::AssemblyConnector)),&#xD;&#xA;&#x9;portVariableTypes: Collection(muml::component::Port) = self.portVariables.portType->excluding(null),&#xD;&#xA;&#x9;connector : muml::component::AssemblyConnector = assemblyConnectors->select(aC | portVariableTypes->forAll(p | aC.oclAsType(muml::component::AssemblyConnector).portParts.portType->includes(p)))->any(true).oclAsType(muml::component::AssemblyConnector)&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;not connector.oclIsUndefined()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;connector&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif"/>
+      <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
+      <expressions
+          body="let outerPort : muml::component::Port = self.portVariables->select(eContainer().oclIsTypeOf(ComponentVariable))->at(1).portType,&#xD;&#xA;&#x9;innerPort : muml::component::Port = self.portVariables.portType->excluding(outerPort)->at(1),&#xD;&#xA;&#x9;delegationConnectorsOuter : OrderedSet(muml::connector::Connector) = outerPort.connectors->select(oclIsTypeOf(muml::component::DelegationConnector))&#xD;&#xA;in&#xD;&#xA;&#x9;delegationConnectorsOuter->select(dC | dC.oclAsType(muml::component::DelegationConnector).portPart.portType = innerPort)->any(true).oclAsType(muml::component::DelegationConnector)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
@@ -2023,7 +2045,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.3/@labels.0/@modelFacet"
         className="MultiPortOrderConstraintLabelExpressionLabelParser6006"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.30">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.32">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
     </implementations>

@@ -99,6 +99,44 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_AssemblyVariable_4002(
+			de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
+					.getExpression(
+							17,
+							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+									.getAssemblyVariable(), null).evaluate(
+							instance);
+			instance.setType((de.uni_paderborn.fujaba.muml.component.AssemblyConnector) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_DelegationVariable_4003(
+			de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.expressions.ComponentSDDOCLFactory
+					.getExpression(
+							20,
+							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+									.getDelegationVariable(), null).evaluate(
+							instance);
+			instance.setType((de.uni_paderborn.fujaba.muml.component.DelegationConnector) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDDiagramEditorPlugin
 				.getInstance().getElementInitializers();

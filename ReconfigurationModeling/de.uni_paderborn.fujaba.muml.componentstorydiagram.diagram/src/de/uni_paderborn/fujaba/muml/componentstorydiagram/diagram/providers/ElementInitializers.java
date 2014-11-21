@@ -260,6 +260,44 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_AssemblyVariable_4004(
+			de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+					.getExpression(
+							26,
+							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+									.getAssemblyVariable(), null).evaluate(
+							instance);
+			instance.setType((de.uni_paderborn.fujaba.muml.component.AssemblyConnector) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_DelegationVariable_4005(
+			de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+					.getExpression(
+							29,
+							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+									.getDelegationVariable(), null).evaluate(
+							instance);
+			instance.setType((de.uni_paderborn.fujaba.muml.component.DelegationConnector) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 				.getInstance().getElementInitializers();

@@ -111,6 +111,8 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 		getContainer().getConnectorVariables().add(newElement);
 		newElement.getConnectorEndpoints().add(getSource());
 		newElement.getConnectorEndpoints().add(getTarget());
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ElementInitializers
+				.getInstance().init_AssemblyVariable_4004(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
