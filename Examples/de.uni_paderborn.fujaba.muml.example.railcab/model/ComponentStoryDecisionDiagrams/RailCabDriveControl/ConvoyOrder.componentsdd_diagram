@@ -58,7 +58,7 @@
                 <children xmi:type="notation:DecorationNode" xmi:id="_Z76VNWqHEeSpW9kj4Guewg" type="5040"/>
                 <styles xmi:type="notation:LineTypeStyle" xmi:id="_Z8NQIGqHEeSpW9kj4Guewg"/>
                 <element xmi:type="componentstorypattern:ComponentPartVariable" href="../../RailCab.fujaba#_Z7wkMGqHEeSpW9kj4Guewg"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z76VMWqHEeSpW9kj4Guewg" x="88" y="10" width="109" height="107"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z76VMWqHEeSpW9kj4Guewg" x="70" y="11" width="145" height="107"/>
               </children>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_x0iLoGqREeSjNZ-6dYuDIQ" type="3007" fontName="Segoe UI" lineColor="0">
