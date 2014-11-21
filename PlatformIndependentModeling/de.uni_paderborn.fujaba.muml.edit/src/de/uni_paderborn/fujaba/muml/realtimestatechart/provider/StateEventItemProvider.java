@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
  * @generated
  */
 public class StateEventItemProvider
-	extends EventItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends EventItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

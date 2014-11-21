@@ -35,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.SelectorTypePr
  * @generated
  */
 public class SynchronizationChannelItemProvider extends
-		NamedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+		NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

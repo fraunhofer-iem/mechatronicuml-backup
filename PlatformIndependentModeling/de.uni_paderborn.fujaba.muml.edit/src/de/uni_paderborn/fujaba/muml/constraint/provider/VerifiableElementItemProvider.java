@@ -41,13 +41,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  * @generated
  */
 public class VerifiableElementItemProvider
-	extends ExtendableElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExtendableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

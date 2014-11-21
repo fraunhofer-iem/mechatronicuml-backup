@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  * @generated
  */
 public class CoordinationProtocolInstanceItemProvider
-	extends NamedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

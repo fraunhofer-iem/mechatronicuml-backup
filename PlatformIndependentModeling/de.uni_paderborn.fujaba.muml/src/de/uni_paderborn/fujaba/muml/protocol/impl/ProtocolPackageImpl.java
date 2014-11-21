@@ -281,6 +281,15 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions() {
+		return (EReference)coordinationProtocolEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRole() {
 		return roleEClass;
 	}
@@ -383,6 +392,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		coordinationProtocolEClass = createEClass(COORDINATION_PROTOCOL);
 		createEReference(coordinationProtocolEClass, COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL);
 		createEReference(coordinationProtocolEClass, COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS);
+		createEReference(coordinationProtocolEClass, COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS);
 
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__COORDINATION_PROTOCOL);
@@ -452,6 +462,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		initEClass(coordinationProtocolEClass, CoordinationProtocol.class, "CoordinationProtocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationProtocol_GmfCoordinationProtocol(), this.getCoordinationProtocol(), null, "gmfCoordinationProtocol", null, 0, 1, CoordinationProtocol.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationProtocol_GmfMessageBuffers(), theConnectorPackage.getMessageBuffer(), null, "gmfMessageBuffers", null, 0, -1, CoordinationProtocol.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions(), this.getConnectorQualityOfServiceAssumptions(), null, "gmfConnectorQualityOfServiceAssumptions", null, 1, 1, CoordinationProtocol.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_CoordinationProtocol(), this.getAbstractCoordinationSpecification(), this.getAbstractCoordinationSpecification_Roles(), "coordinationProtocol", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -553,6 +564,12 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "derivation", "roles->collect(receiverMessageBuffer)->asOrderedSet()"
+		   });	
+		addAnnotation
+		  (getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.roleConnector.connectorQualityOfServiceAssumptions"
 		   });	
 		addAnnotation
 		  (roleEClass, 

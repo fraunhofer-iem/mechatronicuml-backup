@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
  * @generated
  */
 public class StaticAtomicComponentItemProvider
-	extends AtomicComponentItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends AtomicComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
  * @generated
  */
 public class DelegationConnectorItemProvider
-	extends PortConnectorItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends PortConnectorItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

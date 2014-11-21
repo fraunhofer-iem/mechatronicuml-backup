@@ -42,7 +42,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDe
  * @generated
  */
 public class DiscretePortItemProvider
-	extends PortItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends PortItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
  * @generated
  */
 public class ContinuousPortItemProvider
-	extends DirectedTypedPortItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends DirectedTypedPortItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

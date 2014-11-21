@@ -43,7 +43,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDe
  * @generated
  */
 public class ComponentPartItemProvider
-	extends NamedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

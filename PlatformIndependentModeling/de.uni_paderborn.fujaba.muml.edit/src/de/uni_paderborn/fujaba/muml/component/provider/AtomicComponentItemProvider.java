@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
  * @generated
  */
 public class AtomicComponentItemProvider
-	extends ComponentItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends ComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

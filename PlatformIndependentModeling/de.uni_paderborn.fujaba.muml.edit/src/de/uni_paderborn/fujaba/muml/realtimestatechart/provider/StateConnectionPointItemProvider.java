@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
  * @generated
  */
 public class StateConnectionPointItemProvider
-	extends VertexItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends VertexItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

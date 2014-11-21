@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
  * @generated
  */
 public class ContinuousPortInstanceItemProvider
-	extends PortInstanceItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends PortInstanceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

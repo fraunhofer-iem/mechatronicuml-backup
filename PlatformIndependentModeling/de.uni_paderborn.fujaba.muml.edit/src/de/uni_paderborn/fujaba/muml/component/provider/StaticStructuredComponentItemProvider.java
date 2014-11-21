@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
  * @generated
  */
 public class StaticStructuredComponentItemProvider
-	extends StructuredComponentItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends StructuredComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

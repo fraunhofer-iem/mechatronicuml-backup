@@ -27,6 +27,7 @@ import org.storydriven.core.provider.NamedElementItemProvider;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
@@ -37,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDe
  * @generated
  */
 public class MessageBufferItemProvider
-	extends NamedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -201,6 +202,7 @@ public class MessageBufferItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE);
+			childrenFeatures.add(ConnectorPackage.Literals.MESSAGE_BUFFER__GMF_MESSAGE_TYPES);
 		}
 		return childrenFeatures;
 	}
@@ -260,6 +262,7 @@ public class MessageBufferItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case ConnectorPackage.MESSAGE_BUFFER__GMF_MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -281,6 +284,11 @@ public class MessageBufferItemProvider
 			(createChildParameter
 				(ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE,
 				 ValuetypeFactory.eINSTANCE.createNaturalNumber()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ConnectorPackage.Literals.MESSAGE_BUFFER__GMF_MESSAGE_TYPES,
+				 MsgtypeFactory.eINSTANCE.createMessageType()));
 	}
 
 	/**

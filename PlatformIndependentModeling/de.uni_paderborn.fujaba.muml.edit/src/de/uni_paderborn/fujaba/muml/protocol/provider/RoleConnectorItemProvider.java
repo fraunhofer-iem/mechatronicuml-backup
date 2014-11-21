@@ -41,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  * @generated
  */
 public class RoleConnectorItemProvider
-	extends ConnectorItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends ConnectorItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.ClockPropertyD
  * @generated
  */
 public class EntryOrExitEventItemProvider
-	extends StateEventItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends StateEventItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

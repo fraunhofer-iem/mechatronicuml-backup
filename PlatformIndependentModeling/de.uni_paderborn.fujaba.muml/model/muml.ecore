@@ -991,7 +991,17 @@
           <details key="derivation" value="roles->collect(receiverMessageBuffer)->asOrderedSet()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the inner hexagon of a Real-Time Coordination Protocol."/>
+          <details key="documentation" value="This derived reference only exists because GMF needs it to display the MessageBuffer within the coordination protocol rectangle."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="gmfConnectorQualityOfServiceAssumptions"
+          lowerBound="1" eType="#//protocol/ConnectorQualityOfServiceAssumptions"
+          changeable="false" volatile="true" transient="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.roleConnector.connectorQualityOfServiceAssumptions"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived reference only exists because GMF needs it to display the ConnectorQualityOfServiceAssumption within the coordination protocol rectangle."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

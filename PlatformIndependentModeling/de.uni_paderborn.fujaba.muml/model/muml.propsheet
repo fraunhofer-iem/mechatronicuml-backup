@@ -822,8 +822,9 @@
     </classes>
     <classes superClasses="//@packages.9/@classes.0 //@packages.4/@classes.2">
       <genClass href="muml.genmodel#//muml/component/Port"/>
-      <properties>
+      <properties tooltip="" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/component/Port/component"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="false"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>

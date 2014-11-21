@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.protocol.impl;
 
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -26,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.CoordinationProtocolImpl#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.CoordinationProtocolImpl#getGmfMessageBuffers <em>Gmf Message Buffers</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.CoordinationProtocolImpl#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +53,16 @@ public class CoordinationProtocolImpl extends AbstractCoordinationSpecificationI
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate GMF_MESSAGE_BUFFERS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getGmfConnectorQualityOfServiceAssumptions() <em>Gmf Connector Quality Of Service Assumptions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGmfConnectorQualityOfServiceAssumptions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,6 +121,29 @@ public class CoordinationProtocolImpl extends AbstractCoordinationSpecificationI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ConnectorQualityOfServiceAssumptions getGmfConnectorQualityOfServiceAssumptions() {
+		return (ConnectorQualityOfServiceAssumptions)GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGmfConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions newGmfConnectorQualityOfServiceAssumptions, NotificationChain msgs) {
+		// TODO: implement this method to set the contained 'Gmf Connector Quality Of Service Assumptions' containment reference
+		// -> this method is automatically invoked to keep the containment relationship in synch
+		// -> do not modify other features
+		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -116,6 +151,8 @@ public class CoordinationProtocolImpl extends AbstractCoordinationSpecificationI
 				return basicSetGmfCoordinationProtocol(null, msgs);
 			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS:
 				return ((InternalEList<?>)getGmfMessageBuffers()).basicRemove(otherEnd, msgs);
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				return basicSetGmfConnectorQualityOfServiceAssumptions(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -132,6 +169,8 @@ public class CoordinationProtocolImpl extends AbstractCoordinationSpecificationI
 				return getGmfCoordinationProtocol();
 			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS:
 				return getGmfMessageBuffers();
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				return getGmfConnectorQualityOfServiceAssumptions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,6 +187,8 @@ public class CoordinationProtocolImpl extends AbstractCoordinationSpecificationI
 				return GMF_COORDINATION_PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS:
 				return GMF_MESSAGE_BUFFERS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
+				return GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

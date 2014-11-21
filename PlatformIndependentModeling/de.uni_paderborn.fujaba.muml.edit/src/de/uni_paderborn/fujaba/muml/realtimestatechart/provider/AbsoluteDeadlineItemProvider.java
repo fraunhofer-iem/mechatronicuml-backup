@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.ClockPropertyD
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class AbsoluteDeadlineItemProvider extends DeadlineItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class AbsoluteDeadlineItemProvider extends DeadlineItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

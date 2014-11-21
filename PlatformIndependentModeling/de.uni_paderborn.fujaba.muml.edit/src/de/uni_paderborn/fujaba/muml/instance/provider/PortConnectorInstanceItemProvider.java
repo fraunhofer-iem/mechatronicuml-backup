@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
  * @generated
  */
 public class PortConnectorInstanceItemProvider
-	extends ConnectorInstanceItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends ConnectorInstanceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfMessageBuffers <em>Gmf Message Buffers</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,7 +55,7 @@ public interface CoordinationProtocol extends AbstractCoordinationSpecification 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This derived reference only exists because GMF needs it to visualize the inner hexagon of a Real-Time Coordination Protocol.
+	 * This derived reference only exists because GMF needs it to display the MessageBuffer within the coordination protocol rectangle.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Gmf Message Buffers</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol_GmfMessageBuffers()
@@ -63,5 +64,20 @@ public interface CoordinationProtocol extends AbstractCoordinationSpecification 
 	 * @generated
 	 */
 	EList<MessageBuffer> getGmfMessageBuffers();
+
+	/**
+	 * Returns the value of the '<em><b>Gmf Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived reference only exists because GMF needs it to display the ConnectorQualityOfServiceAssumption within the coordination protocol rectangle.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Gmf Connector Quality Of Service Assumptions</em>' containment reference.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions()
+	 * @model containment="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.roleConnector.connectorQualityOfServiceAssumptions'"
+	 * @generated
+	 */
+	ConnectorQualityOfServiceAssumptions getGmfConnectorQualityOfServiceAssumptions();
 
 } // CoordinationProtocol

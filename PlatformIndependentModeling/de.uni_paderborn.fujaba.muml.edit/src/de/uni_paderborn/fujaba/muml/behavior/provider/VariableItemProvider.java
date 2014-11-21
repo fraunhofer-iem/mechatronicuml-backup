@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * @generated
  */
 public class VariableItemProvider
-	extends TypedNamedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	extends TypedNamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

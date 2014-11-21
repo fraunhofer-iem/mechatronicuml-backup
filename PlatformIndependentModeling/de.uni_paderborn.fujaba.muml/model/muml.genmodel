@@ -181,6 +181,7 @@
       <genClasses ecoreClass="muml.ecore#//protocol/CoordinationProtocol">
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
         <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/CoordinationProtocol/gmfMessageBuffers"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/CoordinationProtocol/gmfConnectorQualityOfServiceAssumptions"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/Role">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/coordinationProtocol"/>
