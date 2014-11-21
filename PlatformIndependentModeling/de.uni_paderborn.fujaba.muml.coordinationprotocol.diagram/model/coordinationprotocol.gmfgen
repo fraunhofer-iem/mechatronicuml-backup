@@ -61,7 +61,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.13">
+              value="//@expressionProviders/@providers.0/@expressions.16">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -169,7 +169,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.14">
+              value="//@expressionProviders/@providers.0/@expressions.17">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -224,7 +224,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.15">
+              value="//@expressionProviders/@providers.0/@expressions.18">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -302,7 +302,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.16">
+              value="//@expressionProviders/@providers.0/@expressions.19">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -330,6 +330,91 @@
         </modelFacet>
       </labels>
     </childNodes>
+    <childNodes
+        visualID="3011"
+        editPartClassName="ConnectorQualityOfServiceAssumptionsEditPart"
+        itemSemanticEditPolicyClassName="ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy"
+        notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsViewFactory"
+        canonicalEditPolicyClassName="ConnectorQualityOfServiceAssumptionsCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ConnectorQualityOfServiceAssumptionsGraphicalNodeEditPolicy"
+        createCommandClassName="ConnectorQualityOfServiceAssumptionsCreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ConnectorQualityOfServiceAssumptionsEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="QualityOfServiceAssumptionsFigureDescriptor"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class QualityOfServiceAssumptionsFigureDescriptor extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMsgLossLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMinDelayLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMaxDelayLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public QualityOfServiceAssumptionsFigureDescriptor() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticheadlinelabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticheadlinelabel0.setText(&quot;role connector quality of service assumptions:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticheadlinelabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticheadlinelabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticheadlinelabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticheadlinelabel0.horizontalIndent = 0;&#xA;constraintStaticheadlinelabel0.horizontalSpan = 2;&#xA;constraintStaticheadlinelabel0.verticalSpan = 1;&#xA;constraintStaticheadlinelabel0.grabExcessHorizontalSpace = true;&#xA;constraintStaticheadlinelabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticheadlinelabel0, constraintStaticheadlinelabel0);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticmsglossdescriptonlabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticmsglossdescriptonlabel0.setText(&quot;message loss possible:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticmsglossdescriptonlabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticmsglossdescriptonlabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalIndent = 0;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalSpan = 1;&#xA;constraintStaticmsglossdescriptonlabel0.verticalSpan = 1;&#xA;constraintStaticmsglossdescriptonlabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticmsglossdescriptonlabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticmsglossdescriptonlabel0, constraintStaticmsglossdescriptonlabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMsgLossLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMsgLossLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMsgLossLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMsgLossLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMsgLossLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMsgLossLabel.horizontalIndent = 0;&#xA;constraintFFigureMsgLossLabel.horizontalSpan = 1;&#xA;constraintFFigureMsgLossLabel.verticalSpan = 1;&#xA;constraintFFigureMsgLossLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMsgLossLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMsgLossLabel, constraintFFigureMsgLossLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticminDelayDescriptionLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticminDelayDescriptionLabel0.setText(&quot;minDelay:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticminDelayDescriptionLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticminDelayDescriptionLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalIndent = 0;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalSpan = 1;&#xA;constraintStaticminDelayDescriptionLabel0.verticalSpan = 1;&#xA;constraintStaticminDelayDescriptionLabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticminDelayDescriptionLabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticminDelayDescriptionLabel0, constraintStaticminDelayDescriptionLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMinDelayLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMinDelayLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMinDelayLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMinDelayLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMinDelayLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMinDelayLabel.horizontalIndent = 0;&#xA;constraintFFigureMinDelayLabel.horizontalSpan = 1;&#xA;constraintFFigureMinDelayLabel.verticalSpan = 1;&#xA;constraintFFigureMinDelayLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMinDelayLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMinDelayLabel, constraintFFigureMinDelayLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticmaxDelayDescriptionLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticmaxDelayDescriptionLabel0.setText(&quot;maxDelay:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticmaxDelayDescriptionLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticmaxDelayDescriptionLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalIndent = 0;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalSpan = 1;&#xA;constraintStaticmaxDelayDescriptionLabel0.verticalSpan = 1;&#xA;constraintStaticmaxDelayDescriptionLabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticmaxDelayDescriptionLabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticmaxDelayDescriptionLabel0, constraintStaticmaxDelayDescriptionLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMaxDelayLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMaxDelayLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMaxDelayLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMaxDelayLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMaxDelayLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMaxDelayLabel.horizontalIndent = 0;&#xA;constraintFFigureMaxDelayLabel.horizontalSpan = 1;&#xA;constraintFFigureMaxDelayLabel.verticalSpan = 1;&#xA;constraintFFigureMaxDelayLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMaxDelayLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMaxDelayLabel, constraintFFigureMaxDelayLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMsgLossLabel() {&#xA;&#x9;&#x9;return fFigureMsgLossLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMinDelayLabel() {&#xA;&#x9;&#x9;return fFigureMinDelayLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMaxDelayLabel() {&#xA;&#x9;&#x9;return fFigureMaxDelayLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfConnectorQualityOfServiceAssumptions"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfConnectorQualityOfServiceAssumptions"/>
+      </modelFacet>
+      <labels
+          visualID="5014"
+          editPartClassName="ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart"
+          itemSemanticEditPolicyClassName="ConnectorQualityOfServiceAssumptionsMessageLossPossibleItemSemanticEditPolicy"
+          notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsMessageLossPossibleViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureMsgLossLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.2"/>
+      </labels>
+      <labels
+          visualID="5015"
+          editPartClassName="WrappingLabelEditPart"
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
+          notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsLabelViewFactory"
+          readOnly="true"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureMinDelayLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;CustomWrappedLabelUpdateEditPolicy&quot;"
+            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"/>
+      </labels>
+      <labels
+          visualID="5016"
+          editPartClassName="WrappingLabel3EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsLabelViewFactory"
+          readOnly="true"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureMaxDelayLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;CustomWrappedLabelUpdateEditPolicy&quot;"
+            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.4"/>
+      </labels>
+    </childNodes>
     <topLevelNodes
         visualID="2005"
         editPartClassName="CoordinationProtocolEditPart"
@@ -347,6 +432,10 @@
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="&quot;CustomUpdateRole&quot;"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomCoordinationProtocolUpdateEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
@@ -473,7 +562,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.12">
+              value="//@expressionProviders/@providers.0/@expressions.15">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -533,7 +622,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.10">
+                  value="//@expressionProviders/@providers.0/@expressions.13">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
               </initializers>
@@ -546,12 +635,13 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.11"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
     </links>
     <links
         visualID="4008"
         editPartClassName="DiscreteInteractionEndpointReceiverMessageBufferEditPart"
         itemSemanticEditPolicyClassName="DiscreteInteractionEndpointReceiverMessageBufferItemSemanticEditPolicy"
+        notationViewFactoryClassName="DiscreteInteractionEndpointReceiverMessageBufferViewFactory"
         createCommandClassName="DiscreteInteractionEndpointReceiverMessageBufferCreateCommand"
         reorientCommandClassName="DiscreteInteractionEndpointReceiverMessageBufferReorientCommand">
       <diagramRunTimeClass
@@ -567,13 +657,34 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
       </modelFacet>
     </links>
+    <links
+        visualID="4009"
+        editPartClassName="RoleConnectorConnectorQualityOfServiceAssumptionsEditPart"
+        itemSemanticEditPolicyClassName="RoleConnectorConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy"
+        notationViewFactoryClassName="RoleConnectorConnectorQualityOfServiceAssumptionsViewFactory"
+        createCommandClassName="RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand"
+        reorientCommandClassName="RoleConnectorConnectorQualityOfServiceAssumptionsReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="RoleConnectorQoSAConnectorConnectionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RoleConnectorQoSAConnectorConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RoleConnectorQoSAConnectorConnectionFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+      </modelFacet>
+    </links>
     <compartments
         visualID="7005"
         editPartClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"
         itemSemanticEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentViewFactory"
         canonicalEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.4"
         title="CoordinationProtocolContainerCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -706,6 +817,9 @@
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.2"/>
     <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.4"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
     <childReferences
@@ -807,6 +921,35 @@
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.3"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.4"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.4"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -874,6 +1017,12 @@
       <expressions
           body="self.bufferSize"/>
       <expressions
+          body="self.messageLossPossible.toString()"/>
+      <expressions
+          body="''"/>
+      <expressions
+          body="''"/>
+      <expressions
           body="''"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
@@ -902,6 +1051,30 @@
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5014"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.4/@labels.1/@modelFacet"
+        className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5015"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.4/@labels.2/@modelFacet"
+        className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5016"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
     </implementations>
   </labelParsers>
   <contextMenus

@@ -293,8 +293,42 @@
           </compartments>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/CoordinationProtocol/gmfConnectorQualityOfServiceAssumptions"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions"/>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MsgLossLabel"/>
+            <viewExpression
+                body="self.messageLossPossible.toString()"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MinDelayLabel"/>
+            <viewExpression
+                body="''"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MaxDelayLabel"/>
+            <viewExpression
+                body="''"/>
+          </labelMappings>
+          <diagramNode
+              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#QualityOfServiceAssumptionsNode"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2">
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3">
         <compartment
             href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolContainerCompartment"/>
       </compartments>
@@ -353,6 +387,13 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+  </links>
+  <links>
+    <diagramLink
+        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnectorQoSAConnectorConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
   </links>
   <diagram>
     <diagramCanvas

@@ -152,6 +152,11 @@ public class MumlVisualIDRegistry {
 					.getMessageBuffer().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID;
 			}
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getConnectorQualityOfServiceAssumptions().isSuperTypeOf(
+							domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID;
+			}
 			break;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartment2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
@@ -222,6 +227,17 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			break;
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -230,6 +246,9 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -304,6 +323,7 @@ public class MumlVisualIDRegistry {
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

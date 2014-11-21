@@ -118,6 +118,27 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser getConnectorQualityOfServiceAssumptionsLabel_5014Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5014();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorQualityOfServiceAssumptionsLabel_5015Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5015();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser getConnectorQualityOfServiceAssumptionsLabel_5016Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5016();
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
@@ -130,6 +151,12 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getMessageBufferLabel_5013Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
 			return getMessageTypeName_5010Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart.VISUAL_ID:
+			return getConnectorQualityOfServiceAssumptionsLabel_5014Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+			return getConnectorQualityOfServiceAssumptionsLabel_5015Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+			return getConnectorQualityOfServiceAssumptionsLabel_5016Parser();
 		}
 		return null;
 	}

@@ -3,6 +3,11 @@
 <plugin>
 
     
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">

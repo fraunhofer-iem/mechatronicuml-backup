@@ -401,6 +401,26 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4009(
+				de.uni_paderborn.fujaba.muml.protocol.RoleConnector source,
+				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target,
+				View sourceView, View targetView) {
+			if (source != null) {
+				if (source.getConnectorQualityOfServiceAssumptions() != null) {
+					return false;
+				}
+				if (source == target) {
+					return false;
+				}
+			}
+
+			return canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(
+					source, target, sourceView, targetView);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistAbstractCoordinationSpecificationRoles_4007(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
 				de.uni_paderborn.fujaba.muml.protocol.Role target,
@@ -443,7 +463,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									11,
+									14,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -486,7 +506,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									11,
+									14,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -533,6 +553,26 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public java.lang.String getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4008(
 				de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target,
+				View sourceView, View targetView) {
+			return null;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(
+				de.uni_paderborn.fujaba.muml.protocol.RoleConnector source,
+				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target,
+				View sourceView, View targetView) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4009(
+				de.uni_paderborn.fujaba.muml.protocol.RoleConnector source,
+				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target,
 				View sourceView, View targetView) {
 			return null;
 		}

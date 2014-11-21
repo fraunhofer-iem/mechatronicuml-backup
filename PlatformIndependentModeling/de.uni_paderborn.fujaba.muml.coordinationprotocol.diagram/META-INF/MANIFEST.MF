@@ -54,6 +54,9 @@ Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.properties.runtime;visibility:=reexport,
  org.storydriven.core.edit.properties;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport
+ de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport,
+ org.eclipse.core.commands,
+ org.eclipse.ocl.examples.impactanalyzer,
+ org.eclipse.ocl.examples.eventmanager
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

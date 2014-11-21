@@ -49,6 +49,11 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentItemSem
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.MessageBuffer2CreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3011 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.ConnectorQualityOfServiceAssumptionsCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

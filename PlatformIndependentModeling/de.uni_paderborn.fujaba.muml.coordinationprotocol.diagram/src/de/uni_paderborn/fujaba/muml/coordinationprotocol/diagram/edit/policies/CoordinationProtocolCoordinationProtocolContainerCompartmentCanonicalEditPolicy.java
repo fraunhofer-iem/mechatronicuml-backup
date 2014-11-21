@@ -83,6 +83,9 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getCoordinationProtocol_GmfMessageBuffers());
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+							.getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -120,7 +123,8 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 						.asList(new Integer[] {
 								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID });
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -156,9 +160,14 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 	private boolean isMyDiagramElement(View view) {
 		int visualID = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
-		return visualID == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID;
+		switch (visualID) {
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

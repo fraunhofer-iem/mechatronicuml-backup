@@ -81,16 +81,23 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ConnectorQualityOfServiceAssumptions_3011 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.ConnectorQualityOfServiceAssumptions_3011"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
 	public static final IElementType AbstractCoordinationSpecificationRoles_4007 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.AbstractCoordinationSpecificationRoles_4007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType RoleConnector_4006 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleConnector_4006"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType DiscreteInteractionEndpointReceiverMessageBuffer_4008 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.DiscreteInteractionEndpointReceiverMessageBuffer_4008"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType RoleConnectorConnectorQualityOfServiceAssumptions_4009 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleConnectorConnectorQualityOfServiceAssumptions_4009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -161,6 +168,11 @@ public class MumlElementTypes {
 							.getMessageType());
 
 			elements.put(
+					ConnectorQualityOfServiceAssumptions_3011,
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+							.getConnectorQualityOfServiceAssumptions());
+
+			elements.put(
 					AbstractCoordinationSpecificationRoles_4007,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getAbstractCoordinationSpecification_Roles());
@@ -174,6 +186,11 @@ public class MumlElementTypes {
 					DiscreteInteractionEndpointReceiverMessageBuffer_4008,
 					de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 							.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
+
+			elements.put(
+					RoleConnectorConnectorQualityOfServiceAssumptions_4009,
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+							.getRoleConnector_ConnectorQualityOfServiceAssumptions());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -197,11 +214,14 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Role_3006);
 			KNOWN_ELEMENT_TYPES.add(MessageBuffer_3010);
 			KNOWN_ELEMENT_TYPES.add(MessageType_3009);
+			KNOWN_ELEMENT_TYPES.add(ConnectorQualityOfServiceAssumptions_3011);
 			KNOWN_ELEMENT_TYPES
 					.add(AbstractCoordinationSpecificationRoles_4007);
 			KNOWN_ELEMENT_TYPES.add(RoleConnector_4006);
 			KNOWN_ELEMENT_TYPES
 					.add(DiscreteInteractionEndpointReceiverMessageBuffer_4008);
+			KNOWN_ELEMENT_TYPES
+					.add(RoleConnectorConnectorQualityOfServiceAssumptions_4009);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -223,12 +243,16 @@ public class MumlElementTypes {
 			return MessageBuffer_3010;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3009;
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return ConnectorQualityOfServiceAssumptions_3011;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
 			return AbstractCoordinationSpecificationRoles_4007;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return RoleConnector_4006;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
 			return DiscreteInteractionEndpointReceiverMessageBuffer_4008;
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return RoleConnectorConnectorQualityOfServiceAssumptions_4009;
 		}
 		return null;
 	}

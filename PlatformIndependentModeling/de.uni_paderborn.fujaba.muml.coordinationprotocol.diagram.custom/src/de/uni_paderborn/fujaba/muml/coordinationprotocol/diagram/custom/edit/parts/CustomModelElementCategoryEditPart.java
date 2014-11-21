@@ -25,9 +25,9 @@ public class CustomModelElementCategoryEditPart extends ModelElementCategoryEdit
 			protected EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
 					Domain2Notation domain2NotationMap) {
 				EditPart sourceEditPart = super.getSourceEditPart(descriptor, domain2NotationMap);
-				// Begin added to fix #542
+				// Begin added to fix #542				
 				if (/*descriptor.getVisualID() == CoordinationProtocolRolesEditPart.VISUAL_ID &&*/ sourceEditPart != null && sourceEditPart.getModel() instanceof View) {
-					View sourceView = (View) sourceEditPart.getModel();
+					View sourceView = (View) sourceEditPart.getModel();					
 					String wrongHint = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 							.getType(CoordinationProtocolEditPart.VISUAL_ID);
 					String rightHint = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry

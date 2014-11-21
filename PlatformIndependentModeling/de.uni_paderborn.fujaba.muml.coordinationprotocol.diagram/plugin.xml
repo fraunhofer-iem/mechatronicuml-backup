@@ -212,8 +212,8 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Coordination Protocol"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3005,3006,3010,3009"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4007,4006,4008"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3005,3006,3010,3009,3011"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4007,4006,4008,4009"/>
       </viewProvider>
    </extension>
 
@@ -225,13 +225,13 @@
             <method name="getType()" value="Coordination Protocol"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2005,3005,3006,3010,3009"/>
+            <method name="getType()" value="2005,3005,3006,3010,3009,3011"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4007,4006,4008"/>
+            <method name="getType()" value="4007,4006,4008,4009"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5005,5006,5012,5013,5010"/>
+            <method name="getType()" value="5005,5006,5012,5013,5010,5014,5015,5016"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7005,7008"/>
@@ -271,6 +271,11 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart" id="MessageType_3009"/>
          <context elements="MessageType_3009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assistants.MumlModelingAssistantProviderOfConnectorQualityOfServiceAssumptionsEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart" id="ConnectorQualityOfServiceAssumptions_3011"/>
+         <context elements="ConnectorQualityOfServiceAssumptions_3011"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -351,6 +356,16 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.ConnectorQualityOfServiceAssumptions_3011"
+               name="%metatype.name.ConnectorQualityOfServiceAssumptions_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConnectorQualityOfServiceAssumptions"
+               edithelper="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers.ConnectorQualityOfServiceAssumptionsEditHelper">
+            <param name="semanticHint" value="3011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.AbstractCoordinationSpecificationRoles_4007"
                name="%metatype.name.AbstractCoordinationSpecificationRoles_4007"
@@ -378,6 +393,15 @@
             <param name="semanticHint" value="4008"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleConnectorConnectorQualityOfServiceAssumptions_4009"
+               name="%metatype.name.RoleConnectorConnectorQualityOfServiceAssumptions_4009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4009"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -396,9 +420,11 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.MessageBuffer_3010"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.MessageType_3009"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.ConnectorQualityOfServiceAssumptions_3011"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.AbstractCoordinationSpecificationRoles_4007"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleConnector_4006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.DiscreteInteractionEndpointReceiverMessageBuffer_4008"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleConnectorConnectorQualityOfServiceAssumptions_4009"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

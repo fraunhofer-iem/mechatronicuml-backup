@@ -145,7 +145,7 @@ public class ElementInitializers {
 
 			Object value_2 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							12,
+							15,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getCoordinationProtocol(), null).evaluate(
 							instance);
@@ -164,7 +164,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							13,
+							16,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getCoordinationProtocol(), null).evaluate(
 							instance);
@@ -216,7 +216,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							14,
+							17,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getRole(), null).evaluate(instance);
 			instance.setName((String) value_1);
@@ -234,7 +234,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							15,
+							18,
 							de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 									.getMessageBuffer(), null).evaluate(
 							instance);
@@ -253,7 +253,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							16,
+							19,
 							de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 									.getMessageType(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -274,7 +274,7 @@ public class ElementInitializers {
 			instance.setConnectorQualityOfServiceAssumptions(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							10,
+							13,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getConnectorQualityOfServiceAssumptions(),
 							null).evaluate(newInstance_0_0);

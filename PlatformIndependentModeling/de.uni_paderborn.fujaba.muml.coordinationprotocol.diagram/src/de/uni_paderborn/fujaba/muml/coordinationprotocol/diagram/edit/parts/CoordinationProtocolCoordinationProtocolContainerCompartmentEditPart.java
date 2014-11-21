@@ -149,6 +149,9 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentEditPar
 			if (type == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3010) {
 				return this;
 			}
+			if (type == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3011) {
+				return this;
+			}
 			return getParent().getTargetEditPart(request);
 		}
 		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {

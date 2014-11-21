@@ -335,12 +335,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3011_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_RoleConnector_4006_target;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_RoleConnector_4006_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RoleConnector_4006_outgoinglinks;
 
 	/**
 	 * @generated
@@ -361,6 +371,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4008_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4009_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4009_source;
 
 	/**
 	 * @generated

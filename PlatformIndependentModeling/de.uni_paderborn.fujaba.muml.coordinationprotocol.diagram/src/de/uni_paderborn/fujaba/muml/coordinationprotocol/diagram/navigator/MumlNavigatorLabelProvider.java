@@ -107,6 +107,9 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.fujaba.de/muml/connector/0.4.0?MessageBuffer", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3010); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.fujaba.de/muml/protocol/0.4.0?ConnectorQualityOfServiceAssumptions", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3011); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?RoleConnector", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4006); //$NON-NLS-1$
@@ -116,6 +119,9 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/connector/0.4.0?DiscreteInteractionEndpoint?receiverMessageBuffer", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4008); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?RoleConnector?connectorQualityOfServiceAssumptions", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4009); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -184,12 +190,16 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 			return getMessageType_3009Text(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID:
 			return getMessageBuffer_3010Text(view);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return getConnectorQualityOfServiceAssumptions_3011Text(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4006Text(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
 			return getAbstractCoordinationSpecificationRoles_4007Text(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
 			return getDiscreteInteractionEndpointReceiverMessageBuffer_4008Text(view);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return getRoleConnectorConnectorQualityOfServiceAssumptions_4009Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -319,6 +329,28 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
+	private String getConnectorQualityOfServiceAssumptions_3011Text(View view) {
+		IParser parser = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3011,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 5014); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getRoleConnector_4006Text(View view) {
 		de.uni_paderborn.fujaba.muml.protocol.RoleConnector domainModelElement = (de.uni_paderborn.fujaba.muml.protocol.RoleConnector) view
 				.getElement();
@@ -344,6 +376,14 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getDiscreteInteractionEndpointReceiverMessageBuffer_4008Text(
+			View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRoleConnectorConnectorQualityOfServiceAssumptions_4009Text(
 			View view) {
 		return ""; //$NON-NLS-1$
 	}

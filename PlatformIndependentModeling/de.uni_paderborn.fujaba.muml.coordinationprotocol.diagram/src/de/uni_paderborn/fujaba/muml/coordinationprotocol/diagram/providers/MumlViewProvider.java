@@ -153,6 +153,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
 					if (domainElement == null
 							|| visualID != de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
@@ -170,7 +171,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				|| de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID == visualID;
+				|| de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID == visualID
+				|| de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -245,6 +247,10 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return createMessageType_3009(domainElement, containerView, index,
 					persisted, preferencesHint);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return createConnectorQualityOfServiceAssumptions_3011(
+					domainElement, containerView, index, persisted,
+					preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -269,6 +275,9 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID:
 			return createDiscreteInteractionEndpointReceiverMessageBuffer_4008(
+					containerView, index, persisted, preferencesHint);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
+			return createRoleConnectorConnectorQualityOfServiceAssumptions_4009(
 					containerView, index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -528,6 +537,61 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
+	public Node createConnectorQualityOfServiceAssumptions_3011(
+			EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5014 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart.VISUAL_ID));
+		Node label5015 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		Node label5016 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
 	public Edge createAbstractCoordinationSpecificationRoles_4007(
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -650,6 +714,59 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createRoleConnectorConnectorQualityOfServiceAssumptions_4009(
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint

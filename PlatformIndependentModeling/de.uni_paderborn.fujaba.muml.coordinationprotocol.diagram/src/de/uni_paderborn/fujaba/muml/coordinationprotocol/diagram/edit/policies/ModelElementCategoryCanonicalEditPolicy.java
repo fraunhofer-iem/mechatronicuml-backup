@@ -351,6 +351,14 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
+						.getConnectorQualityOfServiceAssumptions_3011ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
