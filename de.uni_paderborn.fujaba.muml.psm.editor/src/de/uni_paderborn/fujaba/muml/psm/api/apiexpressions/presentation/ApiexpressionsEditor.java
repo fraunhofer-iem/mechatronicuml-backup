@@ -137,6 +137,7 @@ import de.uni_paderborn.fujaba.muml.psm.provider.PsmItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.provider.RealtimestatechartparameterItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.provider.RealtimestatechartparameterbindingItemProviderAdapterFactory;
+import de.uni_paderborn.fujaba.muml.swplatform.provider.SwplatformItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -715,7 +716,7 @@ public class ApiexpressionsEditor
 		adapterFactory.addAdapterFactory(new ConnectorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ValuetypeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BehaviorItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new de.uni_paderborn.fujaba.muml.swplatform.provider.SwplatformItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SwplatformItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

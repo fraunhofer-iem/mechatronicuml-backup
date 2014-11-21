@@ -2,6 +2,12 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
+
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
@@ -30,11 +36,7 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.TimeParameter;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +119,7 @@ public class RealtimestatechartparameterPackageImpl extends EPackageImpl impleme
 		HwplatforminstancePackage.eINSTANCE.eClass();
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
-		de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.eINSTANCE.eClass();
+		SwplatformPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);

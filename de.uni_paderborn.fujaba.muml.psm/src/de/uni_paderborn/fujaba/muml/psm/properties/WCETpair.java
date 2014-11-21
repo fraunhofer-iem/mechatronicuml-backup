@@ -2,11 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
-
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

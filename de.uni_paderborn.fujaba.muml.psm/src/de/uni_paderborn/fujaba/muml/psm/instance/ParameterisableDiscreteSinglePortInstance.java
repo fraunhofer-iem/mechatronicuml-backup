@@ -2,11 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.instance;
 
-import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimeStatechartParameterBinding;
-
 import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimeStatechartParameterBinding;
 
 /**
  * <!-- begin-user-doc -->

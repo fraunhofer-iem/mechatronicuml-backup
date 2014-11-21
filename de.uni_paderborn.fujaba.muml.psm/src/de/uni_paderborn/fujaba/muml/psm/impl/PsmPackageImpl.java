@@ -2,6 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -27,10 +32,7 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
+import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,7 +101,7 @@ public class PsmPackageImpl extends EPackageImpl implements PsmPackage {
 		HwplatforminstancePackage.eINSTANCE.eClass();
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
-		de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.eINSTANCE.eClass();
+		SwplatformPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);

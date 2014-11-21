@@ -2,6 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.instance.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -27,10 +32,7 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
+import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,7 +101,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		HwplatforminstancePackage.eINSTANCE.eClass();
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
-		de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.eINSTANCE.eClass();
+		SwplatformPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);
@@ -216,7 +218,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage_1 = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
+		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
 		RealtimestatechartparameterbindingPackage theRealtimestatechartparameterbindingPackage = (RealtimestatechartparameterbindingPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI);
 
 		// Create type parameters
@@ -224,7 +226,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		parameterisableDiscreteSinglePortInstanceEClass.getESuperTypes().add(theInstancePackage_1.getDiscreteSinglePortInstance());
+		parameterisableDiscreteSinglePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscreteSinglePortInstance());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(parameterisableDiscreteSinglePortInstanceEClass, ParameterisableDiscreteSinglePortInstance.class, "ParameterisableDiscreteSinglePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

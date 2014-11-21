@@ -7,20 +7,22 @@ modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype ModelInstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
-modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.1.0');
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
-modeltype PSMInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.1.0');
-modeltype PSMRealtimeStateChart uses psm::realtimestatechart::realtimestatechartparameterbinding('http://www.fujaba.de/muml/psm/0.1.0');
+modeltype PSMInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PSMRealtimeStateChart uses psm::realtimestatechart::realtimestatechartparameterbinding('http://www.fujaba.de/muml/psm/0.4.0/');
 
 //modeltype PSMPackage uses psm('http://www.fujaba.de/muml/psm/0.1.0');
-modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.1.0');
+modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype Codegen uses codegen('http://www.fujaba.de/muml/psm/codegen/0.1.0');
-  
 modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype ResourceInstance uses hardware::hwresourceinstance('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype Resource uses hardware::hwresource('http://www.fujaba.de/muml/hardware/1.0/');
+
+
+
 
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 

@@ -2,10 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter;
 
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.ParameterizedRealtimeStatechart;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.ParameterizedRealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->

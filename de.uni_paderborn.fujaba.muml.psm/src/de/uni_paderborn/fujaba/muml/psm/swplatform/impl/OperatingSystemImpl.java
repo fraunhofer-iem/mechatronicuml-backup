@@ -2,33 +2,26 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.swplatform.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.Import;
-
-import de.uni_paderborn.fujaba.muml.psm.swplatform.APIRepository;
-import de.uni_paderborn.fujaba.muml.psm.swplatform.EnumerationDataType;
-import de.uni_paderborn.fujaba.muml.psm.swplatform.OperatingSystem;
-import de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
-
 import org.storydriven.core.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.Import;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.APIRepository;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.EnumerationDataType;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.OperatingSystem;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformPackage;
 
 /**
  * <!-- begin-user-doc -->

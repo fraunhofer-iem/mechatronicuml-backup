@@ -2,17 +2,17 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.util;
 
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
-
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.APICallExpression;
+import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage;
+import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ContinuousPortExpression;
+import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.EnumerationValueExpression;
 
 /**
  * <!-- begin-user-doc -->

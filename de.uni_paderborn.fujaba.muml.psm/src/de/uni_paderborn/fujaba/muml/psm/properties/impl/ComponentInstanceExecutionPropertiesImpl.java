@@ -2,28 +2,23 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-
-import de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties;
-import de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair;
-import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
-import de.uni_paderborn.fujaba.muml.psm.properties.WCETpair;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties;
+import de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair;
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
+import de.uni_paderborn.fujaba.muml.psm.properties.WCETpair;
 
 /**
  * <!-- begin-user-doc -->

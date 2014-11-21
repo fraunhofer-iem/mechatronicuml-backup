@@ -2,11 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties;
 
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

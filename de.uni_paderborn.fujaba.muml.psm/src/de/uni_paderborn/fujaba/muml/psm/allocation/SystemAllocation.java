@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.psm.allocation;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.core.ExtendableElement;
 
 /**

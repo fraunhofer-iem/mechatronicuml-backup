@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.apiexpressions;
 
-import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
-
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
 
 /**
  * <!-- begin-user-doc -->

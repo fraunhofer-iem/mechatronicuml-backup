@@ -2,10 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.APICallExpression;
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +13,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
+
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.APICallExpression;
+import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage;
+import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +42,7 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	 * @generated
 	 * @ordered
 	 */
-	protected de.uni_paderborn.fujaba.muml.swplatform.APICommand apiCommand;
+	protected APICommand apiCommand;
 
 	/**
 	 * The cached value of the '{@link #getParameterBindings() <em>Parameter Bindings</em>}' containment reference list.
@@ -75,10 +78,10 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.swplatform.APICommand getApiCommand() {
+	public APICommand getApiCommand() {
 		if (apiCommand != null && apiCommand.eIsProxy()) {
 			InternalEObject oldApiCommand = (InternalEObject)apiCommand;
-			apiCommand = (de.uni_paderborn.fujaba.muml.swplatform.APICommand)eResolveProxy(oldApiCommand);
+			apiCommand = (APICommand)eResolveProxy(oldApiCommand);
 			if (apiCommand != oldApiCommand) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApiexpressionsPackage.API_CALL_EXPRESSION__API_COMMAND, oldApiCommand, apiCommand));
@@ -92,7 +95,7 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.swplatform.APICommand basicGetApiCommand() {
+	public APICommand basicGetApiCommand() {
 		return apiCommand;
 	}
 
@@ -101,8 +104,8 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setApiCommand(de.uni_paderborn.fujaba.muml.swplatform.APICommand newApiCommand) {
-		de.uni_paderborn.fujaba.muml.swplatform.APICommand oldApiCommand = apiCommand;
+	public void setApiCommand(APICommand newApiCommand) {
+		APICommand oldApiCommand = apiCommand;
 		apiCommand = newApiCommand;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApiexpressionsPackage.API_CALL_EXPRESSION__API_COMMAND, oldApiCommand, apiCommand));
@@ -161,7 +164,7 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ApiexpressionsPackage.API_CALL_EXPRESSION__API_COMMAND:
-				setApiCommand((de.uni_paderborn.fujaba.muml.swplatform.APICommand)newValue);
+				setApiCommand((APICommand)newValue);
 				return;
 			case ApiexpressionsPackage.API_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				getParameterBindings().clear();
@@ -180,7 +183,7 @@ public class APICallExpressionImpl extends ExpressionImpl implements APICallExpr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ApiexpressionsPackage.API_CALL_EXPRESSION__API_COMMAND:
-				setApiCommand((de.uni_paderborn.fujaba.muml.swplatform.APICommand)null);
+				setApiCommand((APICommand)null);
 				return;
 			case ApiexpressionsPackage.API_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				getParameterBindings().clear();

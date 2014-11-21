@@ -2,6 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.expressions.ExpressionsPackage;
+
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
@@ -31,12 +38,7 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.core.expressions.ExpressionsPackage;
+import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,7 +121,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		HwplatforminstancePackage.eINSTANCE.eClass();
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
-		de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.eINSTANCE.eClass();
+		SwplatformPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);
@@ -298,9 +300,9 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
-		de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage theSwplatformPackage = (de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.eNS_URI);
+		SwplatformPackage theSwplatformPackage = (SwplatformPackage)EPackage.Registry.INSTANCE.getEPackage(SwplatformPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
-		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage_1 = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
+		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -320,7 +322,7 @@ public class ApiexpressionsPackageImpl extends EPackageImpl implements Apiexpres
 		initEReference(getEnumerationValueExpression_EnumValue(), theSwplatformPackage.getEnumerationValue(), null, "enumValue", null, 1, 1, EnumerationValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(continuousPortExpressionEClass, ContinuousPortExpression.class, "ContinuousPortExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContinuousPortExpression_ContinuousPort(), theInstancePackage_1.getContinuousPortInstance(), null, "continuousPort", null, 1, 1, ContinuousPortExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContinuousPortExpression_ContinuousPort(), theInstancePackage.getContinuousPortInstance(), null, "continuousPort", null, 1, 1, ContinuousPortExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

@@ -2,26 +2,21 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.ParameterizedRealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter;
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.ParameterizedRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -40,7 +40,7 @@ public interface ApiPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/psm/api/0.1.0/";
+	String eNS_URI = "http://www.fujaba.de/muml/psm/api/0.4.0/";
 
 	/**
 	 * The package namespace name.
@@ -59,43 +59,43 @@ public interface ApiPackage extends EPackage {
 	ApiPackage eINSTANCE = de.uni_paderborn.fujaba.muml.psm.api.impl.ApiPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.api.impl.APITESTImpl <em>APITEST</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.api.impl.CoolClasImpl <em>Cool Clas</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.api.impl.APITESTImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.api.impl.ApiPackageImpl#getAPITEST()
+	 * @see de.uni_paderborn.fujaba.muml.psm.api.impl.CoolClasImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.api.impl.ApiPackageImpl#getCoolClas()
 	 * @generated
 	 */
-	int APITEST = 0;
+	int COOL_CLAS = 0;
 
 	/**
-	 * The number of structural features of the '<em>APITEST</em>' class.
+	 * The number of structural features of the '<em>Cool Clas</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APITEST_FEATURE_COUNT = 0;
+	int COOL_CLAS_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>APITEST</em>' class.
+	 * The number of operations of the '<em>Cool Clas</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APITEST_OPERATION_COUNT = 0;
+	int COOL_CLAS_OPERATION_COUNT = 0;
 
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.api.APITEST <em>APITEST</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.api.CoolClas <em>Cool Clas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>APITEST</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.api.APITEST
+	 * @return the meta object for class '<em>Cool Clas</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.api.CoolClas
 	 * @generated
 	 */
-	EClass getAPITEST();
+	EClass getCoolClas();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -121,14 +121,14 @@ public interface ApiPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.api.impl.APITESTImpl <em>APITEST</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.api.impl.CoolClasImpl <em>Cool Clas</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.api.impl.APITESTImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.api.impl.ApiPackageImpl#getAPITEST()
+		 * @see de.uni_paderborn.fujaba.muml.psm.api.impl.CoolClasImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.api.impl.ApiPackageImpl#getCoolClas()
 		 * @generated
 		 */
-		EClass APITEST = eINSTANCE.getAPITEST();
+		EClass COOL_CLAS = eINSTANCE.getCoolClas();
 
 	}
 

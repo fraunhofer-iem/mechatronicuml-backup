@@ -2,6 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
@@ -28,10 +33,7 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
+import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,7 +109,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		HwplatforminstancePackage.eINSTANCE.eClass();
 		HwresourcePackage.eINSTANCE.eClass();
 		HwresourceinstancePackage.eINSTANCE.eClass();
-		de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.eINSTANCE.eClass();
+		SwplatformPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		PsmPackageImpl thePsmPackage = (PsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) instanceof PsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PsmPackage.eNS_URI) : PsmPackage.eINSTANCE);
@@ -257,7 +259,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		// Obtain other dependent packages
 		RealtimestatechartparameterPackage theRealtimestatechartparameterPackage = (RealtimestatechartparameterPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterPackage.eNS_URI);
 		RealtimestatechartparameterbindingPackage theRealtimestatechartparameterbindingPackage = (RealtimestatechartparameterbindingPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI);
-		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage theRealtimestatechartPackage_1 = (de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eNS_URI);
+		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage theRealtimestatechartPackage = (de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eNS_URI);
 		ActionlanguagePackage theActionlanguagePackage = (ActionlanguagePackage)EPackage.Registry.INSTANCE.getEPackage(ActionlanguagePackage.eNS_URI);
 
 		// Add subpackages
@@ -269,7 +271,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		parameterizedRealtimeStatechartEClass.getESuperTypes().add(theRealtimestatechartPackage_1.getRealtimeStatechart());
+		parameterizedRealtimeStatechartEClass.getESuperTypes().add(theRealtimestatechartPackage.getRealtimeStatechart());
 		apiCallEClass.getESuperTypes().add(theActionlanguagePackage.getOperationCall());
 
 		// Initialize classes, features, and operations; add parameters

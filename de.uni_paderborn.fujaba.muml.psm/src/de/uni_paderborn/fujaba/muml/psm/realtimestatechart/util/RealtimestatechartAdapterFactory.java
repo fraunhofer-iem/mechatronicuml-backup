@@ -2,26 +2,21 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.util;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
-
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.*;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
-
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.APICall;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.ParameterizedRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 
 /**
  * <!-- begin-user-doc -->

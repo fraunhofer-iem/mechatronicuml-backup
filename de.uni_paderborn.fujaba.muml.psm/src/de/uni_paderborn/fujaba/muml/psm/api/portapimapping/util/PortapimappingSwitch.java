@@ -2,16 +2,16 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.portapimapping.util;
 
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.MappingRepository;
+import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortApiMapping;
+import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingPackage;
 
 /**
  * <!-- begin-user-doc -->

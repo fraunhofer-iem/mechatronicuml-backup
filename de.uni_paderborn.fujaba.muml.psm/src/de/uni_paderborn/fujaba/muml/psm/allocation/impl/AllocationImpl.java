@@ -2,21 +2,16 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.allocation.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
-
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-
-import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
-import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.impl.ExtendableElementImpl;
+
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
+import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
 
 /**
  * <!-- begin-user-doc -->

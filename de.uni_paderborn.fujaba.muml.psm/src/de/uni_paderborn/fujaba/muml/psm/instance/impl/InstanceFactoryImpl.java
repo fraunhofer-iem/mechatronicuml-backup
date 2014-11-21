@@ -2,15 +2,15 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.instance.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.instance.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.psm.instance.InstanceFactory;
+import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.psm.instance.ParameterisableDiscreteSinglePortInstance;
 
 /**
  * <!-- begin-user-doc -->

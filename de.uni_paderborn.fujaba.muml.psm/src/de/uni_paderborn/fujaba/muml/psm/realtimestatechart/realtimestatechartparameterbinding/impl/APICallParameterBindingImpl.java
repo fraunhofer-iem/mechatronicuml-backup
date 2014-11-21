@@ -2,13 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.Operation;
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.APICallParameterBinding;
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
@@ -31,6 +24,13 @@ import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.util.ExtendableElementOperations;
+
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.APICallParameterBinding;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
