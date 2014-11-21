@@ -21,6 +21,7 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)element.getAdapter(EObject.class);		
 		TimeValue maxDelay = quosa.getMaxMessageDelay();
 		Expression maxDelayExpr  = maxDelay.getValue();
+		// serialize the expression to a string that can be displayed by the label
 		if(maxDelayExpr != null)			
 		{
 			String expressionText = null;
@@ -35,6 +36,8 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 			if(expressionText !=null)
 				printString= expressionText;
 		}		
+		//add the time unit to the displayed string
+		printString += " "+maxDelay.getUnit().toString();
 		return printString;
 	}
 

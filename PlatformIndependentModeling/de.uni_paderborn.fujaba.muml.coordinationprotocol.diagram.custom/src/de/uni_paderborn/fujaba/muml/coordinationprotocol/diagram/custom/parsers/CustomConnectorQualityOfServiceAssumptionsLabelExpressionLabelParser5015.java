@@ -21,6 +21,7 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)element.getAdapter(EObject.class);
 		TimeValue minDelay = quosa.getMinMessageDelay();
 		Expression minDelayExpr  = minDelay.getValue();
+		// serialize the expression to a string that can be displayed by the label
 		if(minDelayExpr != null)			
 		{
 			String expressionText = null;
@@ -35,6 +36,8 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 			if(expressionText !=null)
 				printString= expressionText;
 		}		
+		//add the time unit to the displayed string
+		printString += " "+minDelay.getUnit().toString();
 		return printString;
 	}
 	

@@ -229,12 +229,7 @@ public class MessageBufferName2EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
-			return null;
-		}
-		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes
-				.getImage(parserElement.eClass());
+		return null;
 	}
 
 	/**

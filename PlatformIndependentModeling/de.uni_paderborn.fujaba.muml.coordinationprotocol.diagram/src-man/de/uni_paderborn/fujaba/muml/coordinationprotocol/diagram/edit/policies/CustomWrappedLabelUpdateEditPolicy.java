@@ -23,7 +23,7 @@ public class CustomWrappedLabelUpdateEditPolicy extends NotifyingGraphicalEditPo
 				TimeValue tMin = quosa.getMinMessageDelay();
 				if(tMin!=null)				
 					addNotificationListener(tMin);				
-			}		
+			}
 	}
 
 	@Override

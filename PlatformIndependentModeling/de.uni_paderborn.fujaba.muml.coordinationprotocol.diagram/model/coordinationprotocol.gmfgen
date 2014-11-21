@@ -236,8 +236,7 @@
           visualID="5012"
           editPartClassName="MessageBufferName2EditPart"
           itemSemanticEditPolicyClassName="MessageBufferName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageBufferNameViewFactory"
-          elementIcon="true">
+          notationViewFactoryClassName="MessageBufferNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -255,8 +254,7 @@
           visualID="5013"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageBufferLabelViewFactory"
-          elementIcon="true">
+          notationViewFactoryClassName="MessageBufferLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -314,8 +312,7 @@
           visualID="5010"
           editPartClassName="MessageTypeNameEditPart"
           itemSemanticEditPolicyClassName="MessageTypeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageTypeNameViewFactory"
-          elementIcon="true">
+          notationViewFactoryClassName="MessageTypeNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -360,8 +357,7 @@
           visualID="5014"
           editPartClassName="ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart"
           itemSemanticEditPolicyClassName="ConnectorQualityOfServiceAssumptionsMessageLossPossibleItemSemanticEditPolicy"
-          notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsMessageLossPossibleViewFactory"
-          elementIcon="true">
+          notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsMessageLossPossibleViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -377,8 +373,7 @@
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
           notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsLabelViewFactory"
-          readOnly="true"
-          elementIcon="true">
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -398,8 +393,7 @@
           editPartClassName="WrappingLabel3EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
           notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsLabelViewFactory"
-          readOnly="true"
-          elementIcon="true">
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
