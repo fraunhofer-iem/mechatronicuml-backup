@@ -2,9 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.apiexpressions;
 
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,12 +38,12 @@ public interface APICallExpression extends Expression {
 	 * The APICommand to which this expression belongs.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Api Command</em>' reference.
-	 * @see #setApiCommand(de.uni_paderborn.fujaba.muml.swplatform.APICommand)
+	 * @see #setApiCommand(APICommand)
 	 * @see de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage#getAPICallExpression_ApiCommand()
 	 * @model required="true"
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.muml.swplatform.APICommand getApiCommand();
+	APICommand getApiCommand();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.APICallExpression#getApiCommand <em>Api Command</em>}' reference.
@@ -51,7 +53,7 @@ public interface APICallExpression extends Expression {
 	 * @see #getApiCommand()
 	 * @generated
 	 */
-	void setApiCommand(de.uni_paderborn.fujaba.muml.swplatform.APICommand value);
+	void setApiCommand(APICommand value);
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Bindings</b></em>' containment reference list.

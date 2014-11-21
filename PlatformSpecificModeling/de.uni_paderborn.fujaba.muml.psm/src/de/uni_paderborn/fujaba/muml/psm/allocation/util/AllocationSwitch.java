@@ -2,14 +2,14 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.allocation.util;
 
-import de.uni_paderborn.fujaba.muml.psm.allocation.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.ExtendableElement;
+
+import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
+import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
+import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 
 /**
  * <!-- begin-user-doc -->

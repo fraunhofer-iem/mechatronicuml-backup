@@ -2,14 +2,15 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.util;
 
-import de.uni_paderborn.fujaba.muml.psm.properties.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties;
+import de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair;
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
+import de.uni_paderborn.fujaba.muml.psm.properties.WCETpair;
 
 /**
  * <!-- begin-user-doc -->

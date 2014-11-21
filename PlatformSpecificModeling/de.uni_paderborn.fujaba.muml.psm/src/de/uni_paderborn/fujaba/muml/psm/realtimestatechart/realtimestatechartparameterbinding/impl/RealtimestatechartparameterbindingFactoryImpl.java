@@ -2,15 +2,16 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.APICallParameterBinding;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingFactory;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.TimeParameterBinding;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,18 +2,15 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.TimeParameterBinding;
-
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.TimeParameterBinding;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

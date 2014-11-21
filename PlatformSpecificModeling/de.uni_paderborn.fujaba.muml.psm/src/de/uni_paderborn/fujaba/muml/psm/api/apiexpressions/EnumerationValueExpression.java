@@ -4,6 +4,8 @@ package de.uni_paderborn.fujaba.muml.psm.api.apiexpressions;
 
 import org.storydriven.core.expressions.Expression;
 
+import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Enumeration Value Expression</b></em>'.
@@ -33,12 +35,12 @@ public interface EnumerationValueExpression extends Expression {
 	 * The EnumerationValue to which this expression belongs.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Enum Value</em>' reference.
-	 * @see #setEnumValue(de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue)
+	 * @see #setEnumValue(EnumerationValue)
 	 * @see de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage#getEnumerationValueExpression_EnumValue()
 	 * @model required="true"
 	 * @generated
 	 */
-	de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue getEnumValue();
+	EnumerationValue getEnumValue();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.EnumerationValueExpression#getEnumValue <em>Enum Value</em>}' reference.
@@ -48,6 +50,6 @@ public interface EnumerationValueExpression extends Expression {
 	 * @see #getEnumValue()
 	 * @generated
 	 */
-	void setEnumValue(de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue value);
+	void setEnumValue(EnumerationValue value);
 
 } // EnumerationValueExpression

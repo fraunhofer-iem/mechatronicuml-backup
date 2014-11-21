@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.swplatform;
 
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

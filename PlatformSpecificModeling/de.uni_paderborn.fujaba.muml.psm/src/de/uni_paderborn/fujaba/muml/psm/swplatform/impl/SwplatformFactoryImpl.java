@@ -2,15 +2,20 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.swplatform.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.swplatform.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.psm.swplatform.APICommand;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.APIRepository;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.EnumerationDataType;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.EnumerationValue;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.OperatingSystem;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformFactory;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformPackage;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.TimeConstraint;
 
 /**
  * <!-- begin-user-doc -->

@@ -24,6 +24,11 @@ public interface ApiFactory extends EFactory {
 
 
 
+
+
+
+
+
 	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->

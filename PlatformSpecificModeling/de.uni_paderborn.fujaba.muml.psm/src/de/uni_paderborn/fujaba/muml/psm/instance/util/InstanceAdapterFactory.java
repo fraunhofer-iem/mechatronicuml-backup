@@ -2,26 +2,22 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.instance.util;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
-
-import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
-import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.instance.PortInstance;
-
-import de.uni_paderborn.fujaba.muml.psm.instance.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
+import de.uni_paderborn.fujaba.muml.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.psm.instance.ParameterisableDiscreteSinglePortInstance;
 
 /**
  * <!-- begin-user-doc -->

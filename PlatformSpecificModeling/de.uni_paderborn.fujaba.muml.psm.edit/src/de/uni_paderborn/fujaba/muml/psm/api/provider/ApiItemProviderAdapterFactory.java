@@ -72,26 +72,26 @@ public class ApiItemProviderAdapterFactory extends ApiAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.api.APITEST} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.api.CoolClas} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APITESTItemProvider apitestItemProvider;
+	protected CoolClasItemProvider coolClasItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.api.APITEST}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.api.CoolClas}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPITESTAdapter() {
-		if (apitestItemProvider == null) {
-			apitestItemProvider = new APITESTItemProvider(this);
+	public Adapter createCoolClasAdapter() {
+		if (coolClasItemProvider == null) {
+			coolClasItemProvider = new CoolClasItemProvider(this);
 		}
 
-		return apitestItemProvider;
+		return coolClasItemProvider;
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class ApiItemProviderAdapterFactory extends ApiAdapterFactory implements 
 	 * @generated
 	 */
 	public void dispose() {
-		if (apitestItemProvider != null) apitestItemProvider.dispose();
+		if (coolClasItemProvider != null) coolClasItemProvider.dispose();
 	}
 
 }

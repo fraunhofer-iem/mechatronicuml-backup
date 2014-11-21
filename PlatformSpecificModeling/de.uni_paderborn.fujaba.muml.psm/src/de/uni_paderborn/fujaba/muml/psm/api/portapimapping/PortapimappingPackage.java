@@ -5,7 +5,6 @@ package de.uni_paderborn.fujaba.muml.psm.api.portapimapping;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.storydriven.core.CorePackage;
 
 /**

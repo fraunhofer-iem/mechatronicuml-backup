@@ -2,15 +2,17 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.properties.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties;
+import de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair;
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
+import de.uni_paderborn.fujaba.muml.psm.properties.WCETpair;
 
 /**
  * <!-- begin-user-doc -->

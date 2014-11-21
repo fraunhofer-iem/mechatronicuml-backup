@@ -2,20 +2,23 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.swplatform.util;
 
-import de.uni_paderborn.fujaba.muml.psm.swplatform.*;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.psm.swplatform.APICommand;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.APIRepository;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.Constraint;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.EnumerationDataType;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.EnumerationValue;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.OperatingSystem;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformPackage;
+import de.uni_paderborn.fujaba.muml.psm.swplatform.TimeConstraint;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

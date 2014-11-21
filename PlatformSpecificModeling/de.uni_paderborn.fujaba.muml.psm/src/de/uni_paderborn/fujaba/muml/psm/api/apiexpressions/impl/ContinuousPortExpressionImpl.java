@@ -2,19 +2,15 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
-
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage;
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ContinuousPortExpression;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.expressions.impl.ExpressionImpl;
+
+import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
+import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage;
+import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ContinuousPortExpression;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,15 +2,14 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.api.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.psm.api.ApiFactory;
+import de.uni_paderborn.fujaba.muml.psm.api.ApiPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +55,6 @@ public class ApiFactoryImpl extends EFactoryImpl implements ApiFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -64,6 +62,7 @@ public class ApiFactoryImpl extends EFactoryImpl implements ApiFactory {
 
 
 
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

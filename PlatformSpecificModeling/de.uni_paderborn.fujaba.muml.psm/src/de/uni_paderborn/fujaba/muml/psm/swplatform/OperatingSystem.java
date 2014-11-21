@@ -2,12 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.swplatform;
 
-import de.uni_paderborn.fujaba.muml.psm.Import;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.psm.Import;
 
 /**
  * <!-- begin-user-doc -->

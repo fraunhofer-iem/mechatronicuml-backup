@@ -2,14 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.swplatform;
 
-import de.uni_paderborn.fujaba.muml.types.TypesPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.storydriven.core.CorePackage;
+
+import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->

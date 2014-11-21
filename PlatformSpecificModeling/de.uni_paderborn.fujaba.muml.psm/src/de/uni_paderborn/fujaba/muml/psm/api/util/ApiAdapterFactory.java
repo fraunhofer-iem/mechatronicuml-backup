@@ -2,14 +2,12 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.util;
 
-import de.uni_paderborn.fujaba.muml.psm.api.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.psm.api.ApiPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,16 +87,16 @@ public class ApiAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.api.APITEST <em>APITEST</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.api.CoolClas <em>Cool Clas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.psm.api.APITEST
+	 * @see de.uni_paderborn.fujaba.muml.psm.api.CoolClas
 	 * @generated
 	 */
-	public Adapter createAPITESTAdapter() {
+	public Adapter createCoolClasAdapter() {
 		return null;
 	}
 

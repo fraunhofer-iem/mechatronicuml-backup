@@ -3,10 +3,10 @@ import de.uni_paderborn.fujaba.muml.software.transform._blackbox.TimeUnitLibUnit
 library StateChartLibrary;
 
 modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype API uses psm::api('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype API uses api('http://www.fujaba.de/muml/psm/api/0.4.0/');
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
-modeltype PortMappingModel uses psm::api::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype ApiExpessions uses psm::api::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PortMappingModel uses api::portapimapping('http://www.fujaba.de/muml/psm/api/0.4.0/');
+modeltype ApiExpessions uses api::apiexpressions('http://www.fujaba.de/muml/psm/api/0.4.0/');
 
 modeltype APIInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype APIStateChart uses psm::realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
@@ -16,6 +16,7 @@ modeltype Muml uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype Actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 modeltype Core uses core('http://www.storydriven.org/core/0.3.1');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
 
 -- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
 helper storeRealtimeStatechart(inout rtsc : Muml::realtimestatechart::RealtimeStatechart, inout rootStateChart : Muml::realtimestatechart::RealtimeStatechart){

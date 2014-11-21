@@ -2,12 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.util;
 
-import de.uni_paderborn.fujaba.muml.psm.api.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import de.uni_paderborn.fujaba.muml.psm.api.ApiPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,12 +65,14 @@ public class ApiSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		
+			
 			default: return defaultCase(theEObject);
 		}
 	}
 
 
+
+	
 
 	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.

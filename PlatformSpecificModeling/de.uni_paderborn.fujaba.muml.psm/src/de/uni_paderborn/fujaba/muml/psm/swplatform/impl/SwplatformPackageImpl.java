@@ -2,6 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.swplatform.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
+
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
@@ -38,12 +45,6 @@ import de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformPackage;
 import de.uni_paderborn.fujaba.muml.psm.swplatform.TimeConstraint;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->

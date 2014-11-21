@@ -2,15 +2,16 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.portapimapping.impl;
 
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.MappingRepository;
+import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortApiMapping;
+import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingFactory;
+import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingPackage;
 
 /**
  * <!-- begin-user-doc -->

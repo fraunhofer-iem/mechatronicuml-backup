@@ -2,25 +2,19 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.api.portapimapping.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.impl.CommentableElementImpl;
 
+import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
 import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.MappingRepository;
 import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortApiMapping;
 import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.storydriven.core.expressions.Expression;
-
-import org.storydriven.core.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc -->
