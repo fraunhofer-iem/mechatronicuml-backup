@@ -61,7 +61,7 @@ when {self.type.eClass() = AtomicComponent.oclAsType(EClass) or self.type.eClass
 }
 
 mapping componentstorypattern::PartVariable ::createStructuredComponentInstance() : ObjectVariable
-when {self.type.componentType.eClass() = StaticStructuredComponent.oclAsType(EClass) or self.type.componentType.eClass() = ReconfigurableStructuredComponent.oclAsType(EClass)}{
+when {self.componentPartType.componentType.eClass() = StaticStructuredComponent.oclAsType(EClass) or self.componentPartType.componentType.eClass() = ReconfigurableStructuredComponent.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
@@ -72,7 +72,7 @@ when {self.type.componentType.eClass() = StaticStructuredComponent.oclAsType(ECl
 }
 
 mapping componentstorypattern::PartVariable ::createAtomicComponentInstance() : ObjectVariable 
-when {self.type.componentType.eClass() = StaticAtomicComponent.oclAsType(EClass) or self.type.componentType.eClass() = ReconfigurableAtomicComponent.oclAsType(EClass)}{
+when {self.componentPartType.componentType.eClass() = StaticAtomicComponent.oclAsType(EClass) or self.componentPartType.componentType.eClass() = ReconfigurableAtomicComponent.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);	
 	name := self.name;
@@ -88,7 +88,7 @@ mapping componentstorypattern::PortVariable :: createPortInstance() : ObjectVari
    componentstorypattern::PortVariable :: createHybridPortInstance;
 
 mapping componentstorypattern::SinglePortVariable :: createDiscreteSinglePortInstance() : ObjectVariable
- when{self.type.eClass() = DiscretePort.oclAsType(EClass)}{
+ when{self.portType.eClass() = DiscretePort.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
@@ -100,7 +100,7 @@ mapping componentstorypattern::SinglePortVariable :: createDiscreteSinglePortIns
 
 
 mapping componentstorypattern::MultiPortVariable:: createDiscreteMultiPortInstance() : ObjectVariable
-when{self.type.eClass() = DiscretePort.oclAsType(EClass)}
+when{self.portType.eClass() = DiscretePort.oclAsType(EClass)}
 {
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
@@ -112,7 +112,7 @@ when{self.type.eClass() = DiscretePort.oclAsType(EClass)}
 }
 
 mapping componentstorypattern::PortVariable :: createContinousPortInstance() : ObjectVariable
- when{self.type.eClass() = ContinuousPort.oclAsType(EClass)}{
+ when{self.portType.eClass() = ContinuousPort.oclAsType(EClass)}{
 	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
     _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
@@ -123,7 +123,7 @@ mapping componentstorypattern::PortVariable :: createContinousPortInstance() : O
 }
 
 mapping componentstorypattern::PortVariable :: createHybridPortInstance() : ObjectVariable
- when{self.type.eClass() = HybridPort.oclAsType(EClass)}{
+ when{self.portType.eClass() = HybridPort.oclAsType(EClass)}{
 	name := self.name;
 	classifier := HybridPortInstance.oclAsType(EClass);
    	_bindingState := self._bindingState;
@@ -251,11 +251,11 @@ mapping PartVariable :: createCreateTextualExpression() : TextualExpression merg
 	
 	var containingCompStoryPattern :=self->closure(c | c.container())[ComponentStoryPattern]->any(true);
 	
-	var componentType := self.type.componentType.map createComponentType(containingCompStoryPattern);
+	var componentType := self.componentPartType.componentType.map createComponentType(containingCompStoryPattern);
 	
-	var componentPart := self.type.map createComponentPart(containingCompStoryPattern);
+	var componentPart := self.componentPartType.map createComponentPart(containingCompStoryPattern);
 
-	expressionText := ""+embeddedCIC.name+".componentInstances->select{cI | cI.componentPart ="+componentPart.name+"}->size() < "+self.type.cardinality.upperBound.value.toString();
+	expressionText := ""+embeddedCIC.name+".componentInstances->select{cI | cI.componentPart ="+componentPart.name+"}->size() < "+self.componentPartType.cardinality.upperBound.value.toString();
 }
 
 
@@ -263,35 +263,35 @@ mapping PartVariable :: createDestroyTextualExpression() : TextualExpression mer
 	var embeddedCIC := self.container().oclAsType(ComponentVariable).map createEmbeddedCIC();
 	var containingCompStoryPattern :=self->closure(c | c.container())[ComponentStoryPattern]->any(true);
 	
-	var componentType := self.type.componentType.map createComponentType(containingCompStoryPattern);
+	var componentType := self.componentPartType.componentType.map createComponentType(containingCompStoryPattern);
 	
-	var componentPart := self.type.map createComponentPart(containingCompStoryPattern);
+	var componentPart := self.componentPartType.map createComponentPart(containingCompStoryPattern);
 	
-	expressionText := ""+embeddedCIC.name+".componentInstances->select{cI | cI.componentPart ="+componentPart.name+"}->size() > "+self.type.cardinality.lowerBound.value.toString();
+	expressionText := ""+embeddedCIC.name+".componentInstances->select{cI | cI.componentPart ="+componentPart.name+"}->size() > "+self.componentPartType.cardinality.lowerBound.value.toString();
 }
 
 
 mapping PortVariable :: createCreateTextualExpression() : TextualExpression merges ComponentStoryPatternVariable::setToOcl when{self.bindingOperator = BindingOperator::CREATE}{
-    assert fatal (self.type.oclIsKindOf(DiscretePort)) with log ("Non-discrete Ports cannot be created/destroyed.");
+    assert fatal (self.portType.oclIsKindOf(DiscretePort)) with log ("Non-discrete Ports cannot be created/destroyed.");
 	
 	var containingCompStoryPattern :=self->closure(c | c.container())[ComponentStoryPattern]->any(true);
 	var componentInstance := self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance();
-	var portType := self.type.map createPortType(containingCompStoryPattern);
+	var portType := self.portType.map createPortType(containingCompStoryPattern);
 
 	//number of Port Instances that have portType as portType < portType.upperBound
-	expressionText := ""+componentInstance.name+".portInstances->select{pI | pI.portType = "+portType.name+"}->size() < "+self.type.oclAsType(DiscretePort).cardinality.upperBound.value.toString();
+	expressionText := ""+componentInstance.name+".portInstances->select{pI | pI.portType = "+portType.name+"}->size() < "+self.portType.oclAsType(DiscretePort).cardinality.upperBound.value.toString();
 }
 
 
 mapping PortVariable :: createDestroyTextualExpression() : TextualExpression merges ComponentStoryPatternVariable::setToOcl when{self.bindingOperator = BindingOperator::DESTROY}{
-	assert fatal (self.type.oclIsKindOf(DiscretePort)) with log ("Non-discrete Ports cannot be created/destroyed.");
+	assert fatal (self.portType.oclIsKindOf(DiscretePort)) with log ("Non-discrete Ports cannot be created/destroyed.");
 	
 	var containingCompStoryPattern :=self->closure(c | c.container())[ComponentStoryPattern]->any(true);
 	var componentInstance := self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance();
-	var portType := self.type.map createPortType(containingCompStoryPattern);
+	var portType := self.portType.map createPortType(containingCompStoryPattern);
 
 	//number of Port Instances that have portType as portType > portType.lowerBound
-	expressionText := ""+componentInstance.name+".portInstances->select{pI | pI.portType = "+portType.name+"}->size() > "+self.type.oclAsType(DiscretePort).cardinality.lowerBound.value.toString();
+	expressionText := ""+componentInstance.name+".portInstances->select{pI | pI.portType = "+portType.name+"}->size() > "+self.portType.oclAsType(DiscretePort).cardinality.lowerBound.value.toString();
 	
 }
 

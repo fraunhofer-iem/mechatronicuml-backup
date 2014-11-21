@@ -62,11 +62,11 @@ mapping PartVariable:: createPartVariableEquivalence(in compStoryPattern : compo
 	container._variable += componentInstance;
 	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.map createEmbeddedCIC(), componentInstance, getComponentInstancesReference());
 	
-	var componentType := self.type.componentType.map createComponentType(compStoryPattern);
+	var componentType := self.componentPartType.componentType.map createComponentType(compStoryPattern);
 	container._variable += componentType;
 	container._linkVariable += map createLinkVaribale(componentInstance, componentType, getComponentTypeReference(ComponentInstance.oclAsType(EClass)));
 	
-	var componentPart := self.type.map createComponentPart(compStoryPattern);
+	var componentPart := self.componentPartType.map createComponentPart(compStoryPattern);
 	container._variable += componentPart;
 	container._linkVariable += map createLinkVaribale(componentInstance, componentPart, getComponentPartReference());
 	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.type.map createComponentType(compStoryPattern), componentPart, getEmbeddedComponentPartsReference());
@@ -89,10 +89,10 @@ mapping MultiPortVariable :: createMultiPortVariableEquivalence(in compStoryPatt
 	var componentInstance := self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance();
 	container.linkVariable += map createLinkVaribale(componentInstance, portInstance, getPortInstancesReference(componentInstance.classifier));
 	
-	var portType : ObjectVariable := self.type.map createPortType(compStoryPattern);
+	var portType : ObjectVariable := self.portType.map createPortType(compStoryPattern);
 	container.variable += portType;
 	container.linkVariable += map createLinkVaribale(portInstance, portType, getPortTypeReference(portInstance.classifier));
-	container.linkVariable += map createLinkVaribale(portType, self.type.component.map createComponentType(compStoryPattern), getComponentReference(self.type.map createPortType(compStoryPattern).classifier));
+	container.linkVariable += map createLinkVaribale(portType, self.portType.component.map createComponentType(compStoryPattern), getComponentReference(self.portType.map createPortType(compStoryPattern).classifier));
 	
 	//Don't create parts for multiports. Parts for the embedded singleport should be sufficient, because MultiPortInstances are never created or destroyed and don't have connectors
 	
@@ -111,17 +111,17 @@ mapping SinglePortVariable :: createSinglePortVariableEquivalence(in compStoryPa
 	var componentInstance := self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance();
 	container.linkVariable += map createLinkVaribale(componentInstance, portInstance, getPortInstancesReference(componentInstance.classifier));
 	
-	var portType : ObjectVariable := self.type.map createPortType(compStoryPattern);
+	var portType : ObjectVariable := self.portType.map createPortType(compStoryPattern);
 	container.variable += portType;
 	container.linkVariable += map createLinkVaribale(portInstance, portType, getPortTypeReference(portInstance.classifier));
-	container.linkVariable += map createLinkVaribale(portType, self.type.component.map createComponentType(compStoryPattern), getComponentReference(self.type.map createPortType(compStoryPattern).classifier));
+	container.linkVariable += map createLinkVaribale(portType, self.portType.component.map createComponentType(compStoryPattern), getComponentReference(self.portType.map createPortType(compStoryPattern).classifier));
 	
 	if(createPortPart){
-		var portPart : ObjectVariable := self.type.map createPortPart(compStoryPattern);
+		var portPart : ObjectVariable := self.portType.map createPortPart(compStoryPattern);
 		container.variable += portPart;
 		container.linkVariable += map createLinkVaribale(portInstance, portPart, getPortPartReference(portInstance.classifier));
 		container.linkVariable += map createLinkVaribale(portPart, portType, getPortTypeReference(portPart.classifier));
-		container.linkVariable += map createLinkVaribale(portPart, self.type.component.map createComponentType(compStoryPattern), getComponentPartReference(portPart.classifier));
+		container.linkVariable += map createLinkVaribale(portPart, self.portType.component.map createComponentType(compStoryPattern), getComponentPartReference(portPart.classifier));
 	};
 	
 	self.connectorVariables->forEach(c){
@@ -148,7 +148,7 @@ mapping ConnectorVariable :: createConnectorVariableEquivalences(in compStoryPat
 	switch {	
 		case (self.oclIsTypeOf(AssemblyVariable)) {
 			self.portVariables->forEach(pV){
-				var portPart := pV.type.map createPortPart(compStoryPattern);
+				var portPart := pV.portType.map createPortPart(compStoryPattern);
 				container.variable += portPart;
 				container.linkVariable += map createLinkVaribale(connectorType, portPart, getConnectorEndpointsReference(connectorType.classifier));
 			};	
@@ -156,13 +156,13 @@ mapping ConnectorVariable :: createConnectorVariableEquivalences(in compStoryPat
 		case (self.oclIsTypeOf(DelegationVariable)) {
 		//there is only a 1 ref to port and a 1 ref to port part. so we have to search the equivalent target variables. Try to late resolve if non part was ever created create link to the portType representing the port ref
 			var portTypeVariable := compStoryPattern.thisVariable.portVariables->select(pV | self.oclAsType(DelegationVariable).connectorEndpoints->includes(pV))->first();
-			var portType := portTypeVariable.type.map createPortType(compStoryPattern);
+			var portType := portTypeVariable.portType.map createPortType(compStoryPattern);
 			container.variable += portType;
 			
 			container.linkVariable += map createLinkVaribale(connectorType, portType, getPortReference(connectorType.classifier));
 			//we know that there are only two connector endpoints
 			var portPartVariable := self.oclAsType(DelegationVariable).portVariables->excluding(portTypeVariable)->any(true);
-			var portPart := portPartVariable.type.map createPortPart(compStoryPattern);
+			var portPart := portPartVariable.portType.map createPortPart(compStoryPattern);
 			container.variable += portPart;
 			container.linkVariable += map createLinkVaribale(connectorType, portPart, getPortPartReference(connectorType.classifier));
 			}
