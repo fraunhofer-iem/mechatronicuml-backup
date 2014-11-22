@@ -469,6 +469,46 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_AZgHaECsEeOU7es34rv27w"/>
         </children>
         <children xmi:type="notation:DecorationNode" xmi:id="_AZgHaUCsEeOU7es34rv27w" type="7033">
+          <children xmi:type="notation:Shape" xmi:id="_i6J88HJmEeSUj-2PlgD-kA" type="3037" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i6J88nJmEeSUj-2PlgD-kA" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../ConvoyCoordinationProtocol.fujaba#_D35Z8GR7EeKP2f27tWrwPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6J88XJmEeSUj-2PlgD-kA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_i6J883JmEeSUj-2PlgD-kA" type="3037" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i6J89XJmEeSUj-2PlgD-kA" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../ConvoyCoordinationProtocol.fujaba#_GMAxoGR7EeKP2f27tWrwPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6J89HJmEeSUj-2PlgD-kA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_i6J89nJmEeSUj-2PlgD-kA" type="3037" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i6J8-HJmEeSUj-2PlgD-kA" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../ConvoyCoordinationProtocol.fujaba#_HofWsGR7EeKP2f27tWrwPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6J893JmEeSUj-2PlgD-kA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_i6J8-XJmEeSUj-2PlgD-kA" type="3037" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i6KkAHJmEeSUj-2PlgD-kA" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../ConvoyCoordinationProtocol.fujaba#_I7B8oGR7EeKP2f27tWrwPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6J8-nJmEeSUj-2PlgD-kA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_i6KkAXJmEeSUj-2PlgD-kA" type="3037" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i6KkA3JmEeSUj-2PlgD-kA" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../ConvoyCoordinationProtocol.fujaba#_J-VMsGR7EeKP2f27tWrwPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6KkAnJmEeSUj-2PlgD-kA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_i6KkB3JmEeSUj-2PlgD-kA" type="3037" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i6KkCXJmEeSUj-2PlgD-kA" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../ConvoyCoordinationProtocol.fujaba#_MpdWMGR7EeKP2f27tWrwPA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6KkCHJmEeSUj-2PlgD-kA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_i6KkCnJmEeSUj-2PlgD-kA" type="3037" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i6KkDHJmEeSUj-2PlgD-kA" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../ConvoyCoordinationProtocol.fujaba#_ngHycGSCEeKKctqRpH_8DA"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6KkC3JmEeSUj-2PlgD-kA"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_i6KkDXJmEeSUj-2PlgD-kA" type="3037" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_i6KkD3JmEeSUj-2PlgD-kA" type="5054"/>
+            <element xmi:type="realtimestatechart:SynchronizationChannel" href="../ConvoyCoordinationProtocol.fujaba#_FHNcgHbhEeKvcqjVQl9Zxg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i6KkDnJmEeSUj-2PlgD-kA"/>
+          </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_AZgHakCsEeOU7es34rv27w"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_AZgHa0CsEeOU7es34rv27w"/>
         </children>
@@ -608,7 +648,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Af5DQECsEeOU7es34rv27w" type="4003" source="_AavdgECsEeOU7es34rv27w" target="_Aavdj0CsEeOU7es34rv27w" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Af_J4ECsEeOU7es34rv27w" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Af_J4UCsEeOU7es34rv27w" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Af_J4UCsEeOU7es34rv27w" x="196" y="-55"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_Af_J4kCsEeOU7es34rv27w" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Af_J40CsEeOU7es34rv27w" x="-10" y="20"/>
@@ -762,7 +802,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_AiFboECsEeOU7es34rv27w" type="4003" source="_Ab4tP0CsEeOU7es34rv27w" target="_Ab4tXUCsEeOU7es34rv27w" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_AiFbo0CsEeOU7es34rv27w" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_AiFbpECsEeOU7es34rv27w" x="89" y="325"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_AiFbpECsEeOU7es34rv27w" x="16" y="-27"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_AiFbpUCsEeOU7es34rv27w" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_AiFbpkCsEeOU7es34rv27w" x="-10" y="20"/>
@@ -795,7 +835,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_AiqDYECsEeOU7es34rv27w" type="4003" source="_Ab-zvECsEeOU7es34rv27w" target="_Ab-zrUCsEeOU7es34rv27w" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_AiqDY0CsEeOU7es34rv27w" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_AiqDZECsEeOU7es34rv27w" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_AiqDZECsEeOU7es34rv27w" y="19"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_AiqDZUCsEeOU7es34rv27w" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_AiqDZkCsEeOU7es34rv27w" x="-10" y="20"/>
