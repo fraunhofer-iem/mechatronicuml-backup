@@ -529,166 +529,155 @@ earliest[sender] == MAX_BUFFER_SIZE-1 ? (earliest[sender] = 0) : earliest[sender
 		</transition>
 	</template>
 	<template>
-		<name>MumlElement_peerComponentRTSC</name>
-		<parameter> const componentInstance componentInstanceID, const discretePortInstance discretePortInstanceID </parameter>
-		<declaration>
-Message msg;
-
-</declaration>
-		<location id="id2" x="40" y="80">
-			<name x="30" y="50">MumlElement_peerComponentRTSC_IDLE</name>
-		</location>
-		<location id="id3" x="190" y="80">
-			<name x="180" y="50">MumlElement_Initial_ACTIVE_IN_MumlElement_peerComponentRTSC</name>
-		</location>
-		<init ref="id3"/>
-	</template>
-	<template>
 		<name>MumlElement_peer1</name>
 		<parameter> const componentInstance componentInstanceID, const discretePortInstance discretePortInstanceID </parameter>
 		<declaration>
 Message msg;
 
 </declaration>
-		<location id="id4" x="595" y="-246">
+		<location id="id2" x="595" y="-246">
 			<name x="585" y="-276">MumlElement_NoAssignment2_ACTIVE_IN_MumlElement_peer1</name>
 		</location>
-		<location id="id5" x="102" y="-246">
+		<location id="id3" x="102" y="-246">
 			<name x="-59" y="-297">MumlElement_MasterProposed2_ACTIVE_IN_MumlElement_peer1</name>
 			<label kind="invariant" x="-42" y="-280">MumlElement_c02[discretePortInstanceID] &lt;= 100</label>
 		</location>
-		<location id="id6" x="102" y="127">
+		<location id="id4" x="102" y="127">
 			<name x="92" y="97">MumlElement_StartingMaster2_ACTIVE_IN_MumlElement_peer1</name>
 		</location>
-		<location id="id7" x="102" y="331">
+		<location id="id5" x="102" y="331">
 			<name x="92" y="301">MumlElement_WaitForSlaveFinish2_ACTIVE_IN_MumlElement_peer1</name>
 			<label kind="invariant" x="92" y="346">MumlElement_c02[discretePortInstanceID] &lt;= 100</label>
 		</location>
-		<location id="id8" x="1130" y="-246">
+		<location id="id6" x="1130" y="-246">
 			<name x="1120" y="-276">MumlElement_AcceptSlave2_ACTIVE_IN_MumlElement_peer1</name>
 			<urgent/>
 		</location>
-		<location id="id9" x="1309" y="340">
+		<location id="id7" x="1309" y="340">
 			<name x="1299" y="310">MumlElement_WaitForMasterFinish2_ACTIVE_IN_MumlElement_peer1</name>
 			<label kind="invariant" x="1299" y="355">MumlElement_c02[discretePortInstanceID] &lt;= 700</label>
 		</location>
-		<location id="id10" x="688" y="807">
+		<location id="id8" x="688" y="807">
 			<name x="348" y="816">MumlElement_Failed6_ACTIVE_IN_MumlElement_peer1</name>
 		</location>
-		<location id="id11" x="69" y="803">
+		<location id="id9" x="69" y="803">
 			<name x="-68" y="833">MumlElement_Master2_ACTIVE_IN_MumlElement_peer1</name>
 		</location>
-		<location id="id12" x="1317" y="739">
+		<location id="id10" x="1317" y="739">
 			<name x="1307" y="709">MumlElement_Slave2_ACTIVE_IN_MumlElement_peer1</name>
 		</location>
-		<location id="id13" x="1130" y="0">
+		<location id="id11" x="1130" y="0">
 			<name x="1120" y="-30">MumlElement_StartingSlave2_ACTIVE_IN_MumlElement_peer1</name>
 		</location>
-		<location id="id14" x="102" y="-17">
+		<location id="id12" x="102" y="-17">
 			<name x="92" y="-47">INTERMEDIATE25_ACTIVE_IN_MumlElement_peer1</name>
 			<label kind="invariant" x="92" y="-2">RELATIVE10[discretePortInstanceID] &lt;= 50</label>
 		</location>
-		<location id="id15" x="1130" y="-153">
+		<location id="id13" x="1130" y="-153">
 			<name x="1120" y="-183">INTERMEDIATE26_ACTIVE_IN_MumlElement_peer1</name>
 			<label kind="invariant" x="1120" y="-138">RELATIVE10[discretePortInstanceID] &lt;= 50</label>
 		</location>
-		<location id="id16" x="935" y="-246" color="#ffffff">
+		<location id="id14" x="935" y="-246" color="#ffffff">
 			<name x="925" y="-276">INTERMEDIATE</name>
 			<committed/>
 		</location>
-		<location id="id17" x="357" y="-365" color="#ffffff">
+		<location id="id15" x="357" y="-365" color="#ffffff">
 			<name x="347" y="-395">INTERMEDIATE0</name>
 			<committed/>
 		</location>
-		<location id="id18" x="340" y="-144" color="#ffffff">
+		<location id="id16" x="340" y="-144" color="#ffffff">
 			<name x="330" y="-174">INTERMEDIATE1</name>
 			<committed/>
 		</location>
-		<location id="id19" x="331" y="59" color="#ffffff">
+		<location id="id17" x="331" y="59" color="#ffffff">
 			<name x="321" y="29">INTERMEDIATE2</name>
 			<committed/>
 		</location>
-		<location id="id20" x="306" y="238" color="#ffffff">
+		<location id="id18" x="306" y="238" color="#ffffff">
 			<name x="296" y="208">INTERMEDIATE3</name>
 			<committed/>
 		</location>
-		<location id="id21" x="1028" y="340" color="#ffffff">
+		<location id="id19" x="1028" y="340" color="#ffffff">
 			<name x="1018" y="310">INTERMEDIATE4</name>
 			<committed/>
 		</location>
-		<location id="id22" x="1045" y="484" color="#ffffff">
+		<location id="id20" x="1045" y="484" color="#ffffff">
 			<name x="1035" y="454">INTERMEDIATE5</name>
 			<committed/>
 		</location>
-		<location id="id23" x="348" y="-246" color="#ffffff">
+		<location id="id21" x="348" y="-246" color="#ffffff">
 			<name x="338" y="-276">INTERMEDIATE6</name>
 			<committed/>
 		</location>
-		<location id="id24" x="490" y="680" color="#ffffff">
+		<location id="id22" x="490" y="680" color="#ffffff">
 			<name x="480" y="650">INTERMEDIATE7</name>
 			<committed/>
 		</location>
-		<location id="id25" x="1054" y="-340" color="#ffffff">
+		<location id="id23" x="1054" y="-340" color="#ffffff">
 			<name x="1044" y="-370">INTERMEDIATE8</name>
 			<committed/>
 		</location>
-		<location id="id26" x="190" y="680" color="#ffffff">
+		<location id="id24" x="190" y="680" color="#ffffff">
 			<name x="180" y="650">INTERMEDIATE9</name>
 			<committed/>
 		</location>
-		<location id="id27" x="17" y="238" color="#ffffff">
+		<location id="id25" x="17" y="238" color="#ffffff">
 			<name x="-93" y="204">INTERMEDIATE10</name>
 			<committed/>
 		</location>
-		<location id="id28" x="102" y="238" color="#ffffff">
+		<location id="id26" x="102" y="238" color="#ffffff">
 			<name x="92" y="208">INTERMEDIATE11</name>
 			<committed/>
 		</location>
-		<location id="id29" x="68" y="629" color="#ffffff">
+		<location id="id27" x="68" y="629" color="#ffffff">
 			<name x="58" y="599">INTERMEDIATE12</name>
 			<committed/>
 		</location>
-		<location id="id30" x="1139" y="221" color="#ffffff">
+		<location id="id28" x="1139" y="221" color="#ffffff">
 			<name x="1129" y="191">INTERMEDIATE13</name>
 			<committed/>
 		</location>
-		<location id="id31" x="1309" y="51" color="#ffffff">
+		<location id="id29" x="1309" y="51" color="#ffffff">
 			<name x="1299" y="21">INTERMEDIATE14</name>
 			<committed/>
 		</location>
-		<location id="id32" x="1317" y="646" color="#ffffff">
+		<location id="id30" x="1317" y="646" color="#ffffff">
 			<name x="1307" y="616">INTERMEDIATE15</name>
 			<committed/>
 		</location>
-		<location id="id33" x="782" y="807" color="#ffffff">
-			<name x="772" y="777">INTERMEDIATE16</name>
-			<committed/>
-		</location>
-		<init ref="id4"/>
+		<init ref="id2"/>
 		<transition>
-			<source ref="id10"/>
-			<target ref="id10"/>
+			<source ref="id3"/>
+			<target ref="id2"/>
+			<label kind="guard" x="120" y="-442">MumlElement_c02[discretePortInstanceID] &gt;= 100</label>
+			<label kind="assignment" x="119" y="-425">MumlElement_masterPossible2[discretePortInstanceID] = false</label>
+			<nail x="102" y="-408"/>
+			<nail x="595" y="-408"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
 			<label kind="guard" x="476" y="858">peer1_finished &amp;&amp; peer2_finished</label>
 			<nail x="603" y="858"/>
 			<nail x="688" y="858"/>
 		</transition>
 		<transition>
-			<source ref="id12"/>
-			<target ref="id12"/>
+			<source ref="id10"/>
+			<target ref="id10"/>
 			<label kind="guard" x="1385" y="748">peer1_finished &amp;&amp; peer2_finished</label>
 			<nail x="1368" y="790"/>
 			<nail x="1377" y="731"/>
 		</transition>
 		<transition>
-			<source ref="id11"/>
-			<target ref="id11"/>
+			<source ref="id9"/>
+			<target ref="id9"/>
 			<label kind="guard" x="127" y="782">peer1_finished &amp;&amp; peer2_finished</label>
 			<nail x="119" y="833"/>
 			<nail x="119" y="773"/>
 		</transition>
 		<transition>
-			<source ref="id5"/>
-			<target ref="id14"/>
+			<source ref="id3"/>
+			<target ref="id12"/>
 			<label kind="guard" x="280" y="275">receive(discretePortInstanceID, MumlElement_confirm) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="280" y="290">hurry?</label>
 			<label kind="assignment" x="280" y="305">RELATIVE10[discretePortInstanceID] = 0,
@@ -696,29 +685,29 @@ msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][
 consume(discretePortInstanceID, MumlElement_confirm)</label>
 		</transition>
 		<transition>
-			<source ref="id14"/>
-			<target ref="id6"/>
+			<source ref="id12"/>
+			<target ref="id4"/>
 			<label kind="select" x="0" y="34">choice : int[0,1]</label>
 			<label kind="guard" x="205" y="275">RELATIVE10[discretePortInstanceID] &gt;= 50 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="205" y="305">MumlElement_masterStarted2[discretePortInstanceID] = choice</label>
 		</transition>
 		<transition>
-			<source ref="id8"/>
-			<target ref="id15"/>
+			<source ref="id6"/>
+			<target ref="id13"/>
 			<label kind="guard" x="355" y="350">not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="355" y="365">hurry?</label>
 			<label kind="assignment" x="355" y="380">RELATIVE10[discretePortInstanceID] = 0</label>
 		</transition>
 		<transition>
-			<source ref="id15"/>
-			<target ref="id13"/>
+			<source ref="id13"/>
+			<target ref="id11"/>
 			<label kind="select" x="1139" y="-93">choice0 : int[0,1]</label>
 			<label kind="guard" x="430" y="350">RELATIVE10[discretePortInstanceID] &gt;= 50 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="430" y="380">MumlElement_slaveStarted2[discretePortInstanceID] = choice0</label>
 		</transition>
 		<transition>
-			<source ref="id4"/>
-			<target ref="id16"/>
+			<source ref="id2"/>
+			<target ref="id14"/>
 			<label kind="guard" x="306" y="-178">not MumlElement_slavePossible2[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_youSlave) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="239" y="299">hurry?</label>
 			<label kind="assignment" x="238" y="272">MumlElement_c02[discretePortInstanceID] = 0,
@@ -729,8 +718,8 @@ intermediateLocationSemaphore++</label>
 			<nail x="799" y="-178"/>
 		</transition>
 		<transition>
-			<source ref="id5"/>
-			<target ref="id17"/>
+			<source ref="id3"/>
+			<target ref="id15"/>
 			<label kind="guard" x="450" y="-374">receive(discretePortInstanceID, MumlElement_youSlave) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="130" y="365">hurry?</label>
 			<label kind="assignment" x="130" y="380">MumlElement_c02[discretePortInstanceID] = 0,
@@ -739,8 +728,8 @@ consume(discretePortInstanceID, MumlElement_youSlave),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id5"/>
-			<target ref="id18"/>
+			<source ref="id3"/>
+			<target ref="id16"/>
 			<label kind="guard" x="-153" y="-195">receive(discretePortInstanceID, MumlElement_cannotSlave) and MumlElement_c02[discretePortInstanceID] &gt;= 50 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="55" y="380">MumlElement_c02[discretePortInstanceID] = 0,
 msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_cannotSlave]].messages[0],
@@ -749,8 +738,8 @@ consume(discretePortInstanceID, MumlElement_cannotSlave),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id7"/>
-			<target ref="id19"/>
+			<source ref="id5"/>
+			<target ref="id17"/>
 			<label kind="guard" x="430" y="50">receive(discretePortInstanceID, MumlElement_cannotSlave) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="430" y="65">hurry?</label>
 			<label kind="assignment" x="425" y="119">MumlElement_c02[discretePortInstanceID] = 0,
@@ -760,8 +749,8 @@ consume(discretePortInstanceID, MumlElement_cannotSlave),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id7"/>
-			<target ref="id20"/>
+			<source ref="id5"/>
+			<target ref="id18"/>
 			<label kind="guard" x="430" y="125">not MumlElement_masterStarted2[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_slaveReady) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="430" y="140">hurry?</label>
 			<label kind="assignment" x="212" y="297">MumlElement_c02[discretePortInstanceID] = 0,
@@ -770,8 +759,8 @@ consume(discretePortInstanceID, MumlElement_slaveReady),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id9"/>
-			<target ref="id21"/>
+			<source ref="id7"/>
+			<target ref="id19"/>
 			<label kind="guard" x="430" y="350">receive(discretePortInstanceID, MumlElement_cannotMaster) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="430" y="365">hurry?</label>
 			<label kind="assignment" x="430" y="380">MumlElement_c02[discretePortInstanceID] = 0,
@@ -781,8 +770,8 @@ consume(discretePortInstanceID, MumlElement_cannotMaster),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id9"/>
-			<target ref="id22"/>
+			<source ref="id7"/>
+			<target ref="id20"/>
 			<label kind="guard" x="430" y="425">not MumlElement_slaveStarted2[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_masterReady) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="430" y="440">hurry?</label>
 			<label kind="assignment" x="416" y="425">MumlElement_c02[discretePortInstanceID] = 0,
@@ -791,23 +780,23 @@ consume(discretePortInstanceID, MumlElement_masterReady),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id4"/>
-			<target ref="id23"/>
+			<source ref="id2"/>
+			<target ref="id21"/>
 			<label kind="guard" x="355" y="350">MumlElement_masterPossible2[discretePortInstanceID] and MumlElement_c02[discretePortInstanceID] &gt;= 50 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="355" y="380">MumlElement_c02[discretePortInstanceID] = 0,
 sendMumlElement_youSlave(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id4"/>
-			<target ref="id24"/>
+			<source ref="id2"/>
+			<target ref="id22"/>
 			<label kind="guard" x="280" y="350">not MumlElement_masterPossible2[discretePortInstanceID] and not MumlElement_slavePossible2[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="280" y="365">hurry?</label>
 			<label kind="assignment" x="280" y="380">intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id4"/>
-			<target ref="id25"/>
+			<source ref="id2"/>
+			<target ref="id23"/>
 			<label kind="guard" x="603" y="-323">MumlElement_slavePossible2[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_youSlave) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="205" y="365">hurry?</label>
 			<label kind="assignment" x="205" y="380">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_youSlave]].messages[0],
@@ -816,14 +805,14 @@ sendMumlElement_confirm(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id4"/>
-			<target ref="id26"/>
+			<source ref="id2"/>
+			<target ref="id24"/>
 			<label kind="guard" x="170" y="578">not MumlElement_masterPossible2[discretePortInstanceID] and MumlElement_c02[discretePortInstanceID] &gt;= 10000 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="300" y="593">intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id6"/>
-			<target ref="id27"/>
+			<source ref="id4"/>
+			<target ref="id25"/>
 			<label kind="guard" x="-20" y="425">not MumlElement_masterStarted2[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="-20" y="440">hurry?</label>
 			<label kind="assignment" x="-263" y="119">MumlElement_c02[discretePortInstanceID] = 0,
@@ -832,8 +821,8 @@ sendMumlElement_cannotMaster(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id6"/>
-			<target ref="id28"/>
+			<source ref="id4"/>
+			<target ref="id26"/>
 			<label kind="guard" x="355" y="125">MumlElement_masterStarted2[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="355" y="140">hurry?</label>
 			<label kind="assignment" x="355" y="155">MumlElement_c02[discretePortInstanceID] = 0,
@@ -841,8 +830,8 @@ sendMumlElement_masterReady(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id7"/>
-			<target ref="id29"/>
+			<source ref="id5"/>
+			<target ref="id27"/>
 			<label kind="guard" x="505" y="125">MumlElement_masterStarted2[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_slaveReady) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="505" y="140">hurry?</label>
 			<label kind="assignment" x="505" y="155">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_slaveReady]].messages[0],
@@ -850,8 +839,8 @@ consume(discretePortInstanceID, MumlElement_slaveReady),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id13"/>
-			<target ref="id30"/>
+			<source ref="id11"/>
+			<target ref="id28"/>
 			<label kind="guard" x="580" y="275">MumlElement_slaveStarted2[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="580" y="290">hurry?</label>
 			<label kind="assignment" x="580" y="305">MumlElement_c02[discretePortInstanceID] = 0,
@@ -859,8 +848,8 @@ sendMumlElement_slaveReady(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id13"/>
-			<target ref="id31"/>
+			<source ref="id11"/>
+			<target ref="id29"/>
 			<label kind="guard" x="561" y="416">not MumlElement_slaveStarted2[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="580" y="365">hurry?</label>
 			<label kind="assignment" x="580" y="380">MumlElement_c02[discretePortInstanceID] = 0,
@@ -869,8 +858,8 @@ sendMumlElement_cannotSlave(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id9"/>
-			<target ref="id32"/>
+			<source ref="id7"/>
+			<target ref="id30"/>
 			<label kind="guard" x="986" y="510">MumlElement_slaveStarted2[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_masterReady) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="505" y="515">hurry?</label>
 			<label kind="assignment" x="505" y="530">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_masterReady]].messages[0],
@@ -878,125 +867,94 @@ consume(discretePortInstanceID, MumlElement_masterReady),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id10"/>
-			<target ref="id33"/>
-			<label kind="guard" x="430" y="575">receive(discretePortInstanceID, MumlElement_youSlave) and not intermediateLocationSemaphore</label>
-			<label kind="synchronisation" x="430" y="590">hurry?</label>
-			<label kind="assignment" x="705" y="824">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_youSlave]].messages[0],
-consume(discretePortInstanceID, MumlElement_youSlave),
-sendMumlElement_cannotSlave(discretePortInstanceID),
-intermediateLocationSemaphore++</label>
-		</transition>
-		<transition>
-			<source ref="id16"/>
-			<target ref="id4"/>
+			<source ref="id14"/>
+			<target ref="id2"/>
 			<label kind="assignment" x="205" y="305">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id17"/>
-			<target ref="id4"/>
+			<source ref="id15"/>
+			<target ref="id2"/>
 			<label kind="assignment" x="130" y="305">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id18"/>
-			<target ref="id4"/>
+			<source ref="id16"/>
+			<target ref="id2"/>
 			<label kind="assignment" x="55" y="305">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id19"/>
-			<target ref="id4"/>
+			<source ref="id17"/>
+			<target ref="id2"/>
 			<label kind="assignment" x="355" y="80">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id20"/>
-			<target ref="id4"/>
+			<source ref="id18"/>
+			<target ref="id2"/>
 			<label kind="assignment" x="355" y="155">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id21"/>
-			<target ref="id4"/>
+			<source ref="id19"/>
+			<target ref="id2"/>
 			<label kind="assignment" x="756" y="-51">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id22"/>
-			<target ref="id4"/>
+			<source ref="id20"/>
+			<target ref="id2"/>
 			<label kind="assignment" x="355" y="305">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id23"/>
-			<target ref="id5"/>
+			<source ref="id21"/>
+			<target ref="id3"/>
 			<label kind="assignment" x="355" y="455">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id24"/>
-			<target ref="id10"/>
+			<source ref="id22"/>
+			<target ref="id8"/>
 			<label kind="assignment" x="280" y="530">intermediateLocationSemaphore--,
 peer1_finished = true</label>
 		</transition>
 		<transition>
-			<source ref="id25"/>
-			<target ref="id8"/>
+			<source ref="id23"/>
+			<target ref="id6"/>
 			<label kind="assignment" x="280" y="455">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id26"/>
-			<target ref="id10"/>
+			<source ref="id24"/>
+			<target ref="id8"/>
 			<label kind="assignment" x="130" y="530">intermediateLocationSemaphore--,
 peer1_finished = true</label>
 		</transition>
 		<transition>
-			<source ref="id27"/>
-			<target ref="id7"/>
+			<source ref="id25"/>
+			<target ref="id5"/>
 			<label kind="assignment" x="127" y="306">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id28"/>
-			<target ref="id7"/>
+			<source ref="id26"/>
+			<target ref="id5"/>
 			<label kind="assignment" x="505" y="80">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id29"/>
-			<target ref="id11"/>
+			<source ref="id27"/>
+			<target ref="id9"/>
 			<label kind="assignment" x="-34" y="705">intermediateLocationSemaphore--,
 peer1_finished = true</label>
 		</transition>
 		<transition>
-			<source ref="id30"/>
-			<target ref="id9"/>
+			<source ref="id28"/>
+			<target ref="id7"/>
 			<label kind="assignment" x="505" y="380">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id31"/>
-			<target ref="id9"/>
+			<source ref="id29"/>
+			<target ref="id7"/>
 			<label kind="assignment" x="505" y="455">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id32"/>
-			<target ref="id12"/>
+			<source ref="id30"/>
+			<target ref="id10"/>
 			<label kind="assignment" x="580" y="380">intermediateLocationSemaphore--,
 peer1_finished = true</label>
 		</transition>
-		<transition>
-			<source ref="id33"/>
-			<target ref="id10"/>
-			<label kind="assignment" x="430" y="605">intermediateLocationSemaphore--</label>
-			<nail x="731" y="782"/>
-		</transition>
-	</template>
-	<template>
-		<name>MumlElement_peer2ComponentRTSC</name>
-		<parameter> const componentInstance componentInstanceID, const discretePortInstance discretePortInstanceID </parameter>
-		<declaration>
-Message msg;
-
-</declaration>
-		<location id="id34" x="40" y="80">
-			<name x="30" y="50">MumlElement_peer2ComponentRTSC_IDLE</name>
-		</location>
-		<location id="id35" x="190" y="80">
-			<name x="180" y="50">MumlElement_Initial0_ACTIVE_IN_MumlElement_peer2ComponentRTSC</name>
-		</location>
-		<init ref="id35"/>
 	</template>
 	<template>
 		<name>MumlElement_peer21</name>
@@ -1005,145 +963,149 @@ Message msg;
 Message msg;
 
 </declaration>
-		<location id="id36" x="190" y="80">
-			<name x="180" y="50">MumlElement_NoAssignment3_ACTIVE_IN_MumlElement_peer21</name>
+		<location id="id31" x="527" y="-68">
+			<name x="517" y="-98">MumlElement_NoAssignment3_ACTIVE_IN_MumlElement_peer21</name>
 		</location>
-		<location id="id37" x="190" y="230">
-			<name x="180" y="200">MumlElement_MasterProposed3_ACTIVE_IN_MumlElement_peer21</name>
-			<label kind="invariant" x="180" y="245">MumlElement_c03[discretePortInstanceID] &lt;= 100</label>
+		<location id="id32" x="68" y="-68">
+			<name x="58" y="-98">MumlElement_MasterProposed3_ACTIVE_IN_MumlElement_peer21</name>
+			<label kind="invariant" x="58" y="-53">MumlElement_c03[discretePortInstanceID] &lt;= 100</label>
 		</location>
-		<location id="id38" x="40" y="230">
-			<name x="30" y="200">MumlElement_StartingMaster3_ACTIVE_IN_MumlElement_peer21</name>
+		<location id="id33" x="68" y="263">
+			<name x="58" y="233">MumlElement_StartingMaster3_ACTIVE_IN_MumlElement_peer21</name>
 		</location>
-		<location id="id39" x="340" y="80">
-			<name x="330" y="50">MumlElement_WaitForSlaveFinish3_ACTIVE_IN_MumlElement_peer21</name>
-			<label kind="invariant" x="330" y="95">MumlElement_c03[discretePortInstanceID] &lt;= 100</label>
+		<location id="id34" x="1105" y="323">
+			<name x="1095" y="293">MumlElement_WaitForSlaveFinish3_ACTIVE_IN_MumlElement_peer21</name>
+			<label kind="invariant" x="1095" y="338">MumlElement_c03[discretePortInstanceID] &lt;= 100</label>
 		</location>
-		<location id="id40" x="340" y="230">
+		<location id="id35" x="340" y="230">
 			<name x="330" y="200">MumlElement_AcceptSlave3_ACTIVE_IN_MumlElement_peer21</name>
 			<urgent/>
 		</location>
-		<location id="id41" x="340" y="380">
+		<location id="id36" x="340" y="380">
 			<name x="330" y="350">MumlElement_WaitForMasterFinish3_ACTIVE_IN_MumlElement_peer21</name>
 			<label kind="invariant" x="330" y="395">MumlElement_c03[discretePortInstanceID] &lt;= 700</label>
 		</location>
-		<location id="id42" x="486" y="863">
+		<location id="id37" x="486" y="863">
 			<name x="476" y="833">MumlElement_Failed7_ACTIVE_IN_MumlElement_peer21</name>
 		</location>
-		<location id="id43" x="59" y="816">
+		<location id="id38" x="59" y="816">
 			<name x="49" y="786">MumlElement_Master3_ACTIVE_IN_MumlElement_peer21</name>
 		</location>
-		<location id="id44" x="1045" y="816">
+		<location id="id39" x="1045" y="816">
 			<name x="1035" y="786">MumlElement_Slave3_ACTIVE_IN_MumlElement_peer21</name>
 		</location>
-		<location id="id45" x="490" y="230">
+		<location id="id40" x="490" y="230">
 			<name x="480" y="200">MumlElement_StartingSlave3_ACTIVE_IN_MumlElement_peer21</name>
 		</location>
-		<location id="id46" x="490" y="380">
+		<location id="id41" x="490" y="380">
 			<name x="480" y="350">INTERMEDIATE27_ACTIVE_IN_MumlElement_peer21</name>
 			<label kind="invariant" x="480" y="395">RELATIVE11[discretePortInstanceID] &lt;= 50</label>
 		</location>
-		<location id="id47" x="490" y="530">
+		<location id="id42" x="490" y="530">
 			<name x="480" y="500">INTERMEDIATE28_ACTIVE_IN_MumlElement_peer21</name>
 			<label kind="invariant" x="480" y="545">RELATIVE11[discretePortInstanceID] &lt;= 50</label>
 		</location>
-		<location id="id48" x="340" y="530" color="#ffffff">
+		<location id="id43" x="340" y="530" color="#ffffff">
 			<name x="330" y="500">INTERMEDIATE17</name>
 			<committed/>
 		</location>
-		<location id="id49" x="190" y="530" color="#ffffff">
-			<name x="180" y="500">INTERMEDIATE18</name>
+		<location id="id44" x="280" y="-68" color="#ffffff">
+			<name x="270" y="-98">INTERMEDIATE18</name>
 			<committed/>
 		</location>
-		<location id="id50" x="40" y="530" color="#ffffff">
-			<name x="30" y="500">INTERMEDIATE19</name>
+		<location id="id45" x="280" y="-144" color="#ffffff">
+			<name x="270" y="-174">INTERMEDIATE19</name>
 			<committed/>
 		</location>
-		<location id="id51" x="640" y="80" color="#ffffff">
-			<name x="630" y="50">INTERMEDIATE20</name>
+		<location id="id46" x="646" y="51" color="#ffffff">
+			<name x="636" y="21">INTERMEDIATE20</name>
 			<committed/>
 		</location>
-		<location id="id52" x="640" y="230" color="#ffffff">
+		<location id="id47" x="640" y="230" color="#ffffff">
 			<name x="630" y="200">INTERMEDIATE21</name>
 			<committed/>
 		</location>
-		<location id="id53" x="640" y="380" color="#ffffff">
+		<location id="id48" x="640" y="380" color="#ffffff">
 			<name x="630" y="350">INTERMEDIATE22</name>
 			<committed/>
 		</location>
-		<location id="id54" x="640" y="530" color="#ffffff">
+		<location id="id49" x="640" y="530" color="#ffffff">
 			<name x="630" y="500">INTERMEDIATE23</name>
 			<committed/>
 		</location>
-		<location id="id55" x="640" y="680" color="#ffffff">
-			<name x="630" y="650">INTERMEDIATE24</name>
+		<location id="id50" x="272" y="17" color="#ffffff">
+			<name x="262" y="-13">INTERMEDIATE24</name>
 			<committed/>
 		</location>
-		<location id="id56" x="484" y="765" color="#ffffff">
+		<location id="id51" x="484" y="765" color="#ffffff">
 			<name x="474" y="735">INTERMEDIATE25</name>
 			<committed/>
 		</location>
-		<location id="id57" x="340" y="680" color="#ffffff">
+		<location id="id52" x="340" y="680" color="#ffffff">
 			<name x="330" y="650">INTERMEDIATE26</name>
 			<committed/>
 		</location>
-		<location id="id58" x="289" y="756" color="#ffffff">
+		<location id="id53" x="289" y="756" color="#ffffff">
 			<name x="279" y="726">INTERMEDIATE27</name>
 			<committed/>
 		</location>
-		<location id="id59" x="40" y="680" color="#ffffff">
+		<location id="id54" x="40" y="680" color="#ffffff">
 			<name x="30" y="650">INTERMEDIATE28</name>
 			<committed/>
 		</location>
-		<location id="id60" x="790" y="80" color="#ffffff">
+		<location id="id55" x="790" y="80" color="#ffffff">
 			<name x="780" y="50">INTERMEDIATE29</name>
 			<committed/>
 		</location>
-		<location id="id61" x="59" y="705" color="#ffffff">
+		<location id="id56" x="59" y="705" color="#ffffff">
 			<name x="49" y="675">INTERMEDIATE30</name>
 			<committed/>
 		</location>
-		<location id="id62" x="790" y="380" color="#ffffff">
+		<location id="id57" x="790" y="380" color="#ffffff">
 			<name x="780" y="350">INTERMEDIATE31</name>
 			<committed/>
 		</location>
-		<location id="id63" x="790" y="530" color="#ffffff">
+		<location id="id58" x="790" y="530" color="#ffffff">
 			<name x="780" y="500">INTERMEDIATE32</name>
 			<committed/>
 		</location>
-		<location id="id64" x="1045" y="680" color="#ffffff">
+		<location id="id59" x="1045" y="680" color="#ffffff">
 			<name x="1035" y="650">INTERMEDIATE33</name>
 			<committed/>
 		</location>
-		<location id="id65" x="790" y="830" color="#ffffff">
-			<name x="780" y="800">INTERMEDIATE34</name>
-			<committed/>
-		</location>
-		<init ref="id36"/>
+		<init ref="id31"/>
 		<transition>
-			<source ref="id44"/>
-			<target ref="id44"/>
+			<source ref="id32"/>
+			<target ref="id31"/>
+			<label kind="guard" x="86" y="-238">MumlElement_c03[discretePortInstanceID] &gt;= 50</label>
+			<label kind="assignment" x="86" y="-204">MumlElement_masterPossible3[discretePortInstanceID] = false</label>
+			<nail x="68" y="-204"/>
+			<nail x="527" y="-204"/>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id39"/>
 			<label kind="guard" x="1029" y="833">peer1_finished &amp;&amp; peer2_finished</label>
 			<nail x="1011" y="867"/>
 			<nail x="1088" y="867"/>
 		</transition>
 		<transition>
-			<source ref="id42"/>
-			<target ref="id42"/>
+			<source ref="id37"/>
+			<target ref="id37"/>
 			<label kind="guard" x="460" y="858">peer1_finished &amp;&amp; peer2_finished</label>
 			<nail x="442" y="901"/>
 			<nail x="535" y="884"/>
 		</transition>
 		<transition>
-			<source ref="id43"/>
-			<target ref="id43"/>
+			<source ref="id38"/>
+			<target ref="id38"/>
 			<label kind="guard" x="35" y="841">peer1_finished &amp;&amp; peer2_finished</label>
 			<nail x="17" y="875"/>
 			<nail x="102" y="875"/>
 		</transition>
 		<transition>
-			<source ref="id37"/>
-			<target ref="id46"/>
+			<source ref="id32"/>
+			<target ref="id41"/>
 			<label kind="guard" x="280" y="275">receive(discretePortInstanceID, MumlElement_confirm) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="280" y="290">hurry?</label>
 			<label kind="assignment" x="280" y="305">RELATIVE11[discretePortInstanceID] = 0,
@@ -1151,29 +1113,29 @@ msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][
 consume(discretePortInstanceID, MumlElement_confirm)</label>
 		</transition>
 		<transition>
-			<source ref="id46"/>
-			<target ref="id38"/>
+			<source ref="id41"/>
+			<target ref="id33"/>
 			<label kind="select" x="205" y="260">choice1 : int[0,1]</label>
 			<label kind="guard" x="205" y="275">RELATIVE11[discretePortInstanceID] &gt;= 50 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="205" y="305">MumlElement_masterStarted3[discretePortInstanceID] = choice1</label>
 		</transition>
 		<transition>
-			<source ref="id40"/>
-			<target ref="id47"/>
+			<source ref="id35"/>
+			<target ref="id42"/>
 			<label kind="guard" x="355" y="350">not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="355" y="365">hurry?</label>
 			<label kind="assignment" x="355" y="380">RELATIVE11[discretePortInstanceID] = 0</label>
 		</transition>
 		<transition>
-			<source ref="id47"/>
-			<target ref="id45"/>
+			<source ref="id42"/>
+			<target ref="id40"/>
 			<label kind="select" x="430" y="335">choice2 : int[0,1]</label>
 			<label kind="guard" x="430" y="350">RELATIVE11[discretePortInstanceID] &gt;= 50 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="430" y="380">MumlElement_slaveStarted3[discretePortInstanceID] = choice2</label>
 		</transition>
 		<transition>
-			<source ref="id36"/>
-			<target ref="id48"/>
+			<source ref="id31"/>
+			<target ref="id43"/>
 			<label kind="guard" x="205" y="275">not MumlElement_slavePossible3[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_youSlave) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="205" y="290">hurry?</label>
 			<label kind="assignment" x="205" y="305">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1183,8 +1145,8 @@ sendMumlElement_cannotSlave(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id37"/>
-			<target ref="id49"/>
+			<source ref="id32"/>
+			<target ref="id44"/>
 			<label kind="guard" x="130" y="350">receive(discretePortInstanceID, MumlElement_youSlave) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="130" y="365">hurry?</label>
 			<label kind="assignment" x="130" y="380">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1193,8 +1155,8 @@ consume(discretePortInstanceID, MumlElement_youSlave),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id37"/>
-			<target ref="id50"/>
+			<source ref="id32"/>
+			<target ref="id45"/>
 			<label kind="guard" x="55" y="350">receive(discretePortInstanceID, MumlElement_cannotSlave) and MumlElement_c03[discretePortInstanceID] &gt;= 50 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="55" y="380">MumlElement_c03[discretePortInstanceID] = 0,
 msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_cannotSlave]].messages[0],
@@ -1203,8 +1165,8 @@ consume(discretePortInstanceID, MumlElement_cannotSlave),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id39"/>
-			<target ref="id51"/>
+			<source ref="id34"/>
+			<target ref="id46"/>
 			<label kind="guard" x="663" y="246">receive(discretePortInstanceID, MumlElement_cannotSlave) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="430" y="65">hurry?</label>
 			<label kind="assignment" x="430" y="80">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1214,8 +1176,8 @@ consume(discretePortInstanceID, MumlElement_cannotSlave),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id39"/>
-			<target ref="id52"/>
+			<source ref="id34"/>
+			<target ref="id47"/>
 			<label kind="guard" x="430" y="125">not MumlElement_masterStarted3[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_slaveReady) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="430" y="140">hurry?</label>
 			<label kind="assignment" x="430" y="155">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1224,8 +1186,8 @@ consume(discretePortInstanceID, MumlElement_slaveReady),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id41"/>
-			<target ref="id53"/>
+			<source ref="id36"/>
+			<target ref="id48"/>
 			<label kind="guard" x="430" y="350">receive(discretePortInstanceID, MumlElement_cannotMaster) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="430" y="365">hurry?</label>
 			<label kind="assignment" x="430" y="380">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1235,8 +1197,8 @@ consume(discretePortInstanceID, MumlElement_cannotMaster),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id41"/>
-			<target ref="id54"/>
+			<source ref="id36"/>
+			<target ref="id49"/>
 			<label kind="guard" x="430" y="425">not MumlElement_slaveStarted3[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_masterReady) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="430" y="440">hurry?</label>
 			<label kind="assignment" x="430" y="455">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1245,23 +1207,23 @@ consume(discretePortInstanceID, MumlElement_masterReady),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id36"/>
-			<target ref="id55"/>
+			<source ref="id31"/>
+			<target ref="id50"/>
 			<label kind="guard" x="355" y="350">MumlElement_masterPossible3[discretePortInstanceID] and MumlElement_c03[discretePortInstanceID] &gt;= 50 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="355" y="380">MumlElement_c03[discretePortInstanceID] = 0,
 sendMumlElement_youSlave(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id36"/>
-			<target ref="id56"/>
+			<source ref="id31"/>
+			<target ref="id51"/>
 			<label kind="guard" x="280" y="350">not MumlElement_masterPossible3[discretePortInstanceID] and not MumlElement_slavePossible3[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="280" y="365">hurry?</label>
 			<label kind="assignment" x="280" y="380">intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id36"/>
-			<target ref="id57"/>
+			<source ref="id31"/>
+			<target ref="id52"/>
 			<label kind="guard" x="205" y="350">MumlElement_slavePossible3[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_youSlave) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="205" y="365">hurry?</label>
 			<label kind="assignment" x="205" y="380">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_youSlave]].messages[0],
@@ -1270,14 +1232,14 @@ sendMumlElement_confirm(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id36"/>
-			<target ref="id58"/>
+			<source ref="id31"/>
+			<target ref="id53"/>
 			<label kind="guard" x="130" y="350">not MumlElement_masterPossible3[discretePortInstanceID] and MumlElement_c03[discretePortInstanceID] &gt;= 10000 and not intermediateLocationSemaphore</label>
 			<label kind="assignment" x="130" y="380">intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id38"/>
-			<target ref="id59"/>
+			<source ref="id33"/>
+			<target ref="id54"/>
 			<label kind="guard" x="-20" y="425">not MumlElement_masterStarted3[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="-20" y="440">hurry?</label>
 			<label kind="assignment" x="-20" y="455">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1286,8 +1248,8 @@ sendMumlElement_cannotMaster(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id38"/>
-			<target ref="id60"/>
+			<source ref="id33"/>
+			<target ref="id55"/>
 			<label kind="guard" x="355" y="125">MumlElement_masterStarted3[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="355" y="140">hurry?</label>
 			<label kind="assignment" x="355" y="155">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1295,8 +1257,8 @@ sendMumlElement_masterReady(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id39"/>
-			<target ref="id61"/>
+			<source ref="id34"/>
+			<target ref="id56"/>
 			<label kind="guard" x="505" y="125">MumlElement_masterStarted3[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_slaveReady) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="505" y="140">hurry?</label>
 			<label kind="assignment" x="505" y="155">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_slaveReady]].messages[0],
@@ -1304,8 +1266,8 @@ consume(discretePortInstanceID, MumlElement_slaveReady),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id45"/>
-			<target ref="id62"/>
+			<source ref="id40"/>
+			<target ref="id57"/>
 			<label kind="guard" x="637" y="263">MumlElement_slaveStarted3[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="580" y="290">hurry?</label>
 			<label kind="assignment" x="580" y="305">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1313,8 +1275,8 @@ sendMumlElement_slaveReady(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id45"/>
-			<target ref="id63"/>
+			<source ref="id40"/>
+			<target ref="id58"/>
 			<label kind="guard" x="580" y="350">not MumlElement_slaveStarted3[discretePortInstanceID] and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="580" y="365">hurry?</label>
 			<label kind="assignment" x="580" y="380">MumlElement_c03[discretePortInstanceID] = 0,
@@ -1323,8 +1285,8 @@ sendMumlElement_cannotSlave(discretePortInstanceID),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id41"/>
-			<target ref="id64"/>
+			<source ref="id36"/>
+			<target ref="id59"/>
 			<label kind="guard" x="505" y="500">MumlElement_slaveStarted3[discretePortInstanceID] and receive(discretePortInstanceID, MumlElement_masterReady) and not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="505" y="515">hurry?</label>
 			<label kind="assignment" x="505" y="530">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_masterReady]].messages[0],
@@ -1332,121 +1294,106 @@ consume(discretePortInstanceID, MumlElement_masterReady),
 intermediateLocationSemaphore++</label>
 		</transition>
 		<transition>
-			<source ref="id42"/>
-			<target ref="id65"/>
-			<label kind="guard" x="430" y="575">receive(discretePortInstanceID, MumlElement_youSlave) and not intermediateLocationSemaphore</label>
-			<label kind="synchronisation" x="430" y="590">hurry?</label>
-			<label kind="assignment" x="430" y="605">msg = buffers[discretePortInstanceID][buffer_assignment[discretePortInstanceID][MumlElement_youSlave]].messages[0],
-consume(discretePortInstanceID, MumlElement_youSlave),
-sendMumlElement_cannotSlave(discretePortInstanceID),
-intermediateLocationSemaphore++</label>
-		</transition>
-		<transition>
-			<source ref="id48"/>
-			<target ref="id36"/>
+			<source ref="id43"/>
+			<target ref="id31"/>
 			<label kind="assignment" x="205" y="305">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id49"/>
-			<target ref="id36"/>
+			<source ref="id44"/>
+			<target ref="id31"/>
 			<label kind="assignment" x="130" y="305">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id50"/>
-			<target ref="id36"/>
+			<source ref="id45"/>
+			<target ref="id31"/>
 			<label kind="assignment" x="55" y="305">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id51"/>
-			<target ref="id36"/>
+			<source ref="id46"/>
+			<target ref="id31"/>
 			<label kind="assignment" x="355" y="80">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id52"/>
-			<target ref="id36"/>
+			<source ref="id47"/>
+			<target ref="id31"/>
 			<label kind="assignment" x="355" y="155">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id53"/>
-			<target ref="id36"/>
+			<source ref="id48"/>
+			<target ref="id31"/>
 			<label kind="assignment" x="355" y="230">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id54"/>
-			<target ref="id36"/>
+			<source ref="id49"/>
+			<target ref="id31"/>
 			<label kind="assignment" x="355" y="305">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id55"/>
-			<target ref="id37"/>
+			<source ref="id50"/>
+			<target ref="id32"/>
 			<label kind="assignment" x="355" y="455">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id56"/>
-			<target ref="id42"/>
+			<source ref="id51"/>
+			<target ref="id37"/>
 			<label kind="assignment" x="280" y="530">intermediateLocationSemaphore--,
 peer2_finished = true</label>
 		</transition>
 		<transition>
-			<source ref="id57"/>
-			<target ref="id40"/>
+			<source ref="id52"/>
+			<target ref="id35"/>
 			<label kind="assignment" x="280" y="455">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id58"/>
-			<target ref="id42"/>
-			<label kind="assignment" x="130" y="530">intermediateLocationSemaphore--,
+			<source ref="id53"/>
+			<target ref="id37"/>
+			<label kind="assignment" x="127" y="552">intermediateLocationSemaphore--,
 peer2_finished = true</label>
 		</transition>
 		<transition>
-			<source ref="id59"/>
-			<target ref="id39"/>
+			<source ref="id54"/>
+			<target ref="id34"/>
 			<label kind="assignment" x="130" y="380">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id60"/>
-			<target ref="id39"/>
+			<source ref="id55"/>
+			<target ref="id34"/>
 			<label kind="assignment" x="505" y="80">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id61"/>
-			<target ref="id43"/>
+			<source ref="id56"/>
+			<target ref="id38"/>
 			<label kind="assignment" x="355" y="305">intermediateLocationSemaphore--,
 peer2_finished = true</label>
 		</transition>
 		<transition>
-			<source ref="id62"/>
-			<target ref="id41"/>
+			<source ref="id57"/>
+			<target ref="id36"/>
 			<label kind="assignment" x="505" y="380">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id63"/>
-			<target ref="id41"/>
+			<source ref="id58"/>
+			<target ref="id36"/>
 			<label kind="assignment" x="505" y="455">intermediateLocationSemaphore--</label>
 		</transition>
 		<transition>
-			<source ref="id64"/>
-			<target ref="id44"/>
+			<source ref="id59"/>
+			<target ref="id39"/>
 			<label kind="assignment" x="580" y="380">intermediateLocationSemaphore--,
 peer2_finished = true</label>
-		</transition>
-		<transition>
-			<source ref="id65"/>
-			<target ref="id42"/>
-			<label kind="assignment" x="430" y="605">intermediateLocationSemaphore--</label>
 		</transition>
 	</template>
 	<template>
 		<name>UrgencyProvider</name>
 		<declaration>
 </declaration>
-		<location id="id66" x="40" y="80">
+		<location id="id60" x="40" y="80">
 			<name x="30" y="50">idle</name>
 		</location>
-		<init ref="id66"/>
+		<init ref="id60"/>
 		<transition>
-			<source ref="id66"/>
-			<target ref="id66"/>
+			<source ref="id60"/>
+			<target ref="id60"/>
 			<label kind="guard" x="-20" y="50">not intermediateLocationSemaphore</label>
 			<label kind="synchronisation" x="-20" y="65">hurry!</label>
 			<nail x="10" y="50"/>

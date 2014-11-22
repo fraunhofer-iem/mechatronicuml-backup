@@ -648,14 +648,6 @@
           </expressions>
         </action>
       </transitions>
-      <transitions xmi:id="_ZO3CkFuMEeSOLv8Gt-ZLrQ" priority="1" target="_uSz14HawEeOh__JNCv2_1A" source="_uSz14HawEeOh__JNCv2_1A">
-        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_bM9uAFuMEeSOLv8Gt-ZLrQ" kind="TRIGGER">
-          <message xmi:id="_bhM4oFuMEeSOLv8Gt-ZLrQ" instanceOf="_BG8KoHauEeOh__JNCv2_1A"/>
-        </events>
-        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_cNk2cFuMEeSOLv8Gt-ZLrQ">
-          <message xmi:id="_ccAUAFuMEeSOLv8Gt-ZLrQ" instanceOf="_CL95AHauEeOh__JNCv2_1A"/>
-        </events>
-      </transitions>
       <transitions xmi:id="_FYdDYFuNEeSOLv8Gt-ZLrQ" priority="5" target="_uSz14HawEeOh__JNCv2_1A" source="_RTDXcnavEeOh__JNCv2_1A">
         <clockConstraints xmi:id="_Hn7ysFuNEeSOLv8Gt-ZLrQ" clock="_j7X9cHavEeOh__JNCv2_1A" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_IGKm0FuNEeSOLv8Gt-ZLrQ">
@@ -666,10 +658,25 @@
           <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_MxREAVuNEeSOLv8Gt-ZLrQ" typedNamedElement="_lAtN0HavEeOh__JNCv2_1A"/>
         </guard>
       </transitions>
-      <states xmi:id="_RTDXcnavEeOh__JNCv2_1A" name="NoAssignment" outgoingTransitions="_9sBbkHawEeOh__JNCv2_1A _INVowHayEeOh__JNCv2_1A _4MTSgFuJEeSOLv8Gt-ZLrQ _6eTbAHazEeOh__JNCv2_1A _FYdDYFuNEeSOLv8Gt-ZLrQ" incomingTransitions="_W1T0MHaxEeOh__JNCv2_1A _6sVscHayEeOh__JNCv2_1A _xyWiEHa0EeOh__JNCv2_1A _0XDQMHd0EeOvXvgZJk5CuQ _CjA_oHd1EeOvXvgZJk5CuQ _4MTSgFuJEeSOLv8Gt-ZLrQ _vVo-YFuKEeSOLv8Gt-ZLrQ" initial="true">
+      <transitions xmi:id="_WAhKIHI8EeSKmYbKH6xlmA" priority="4" target="_RTDXcnavEeOh__JNCv2_1A" source="_85jSQHavEeOh__JNCv2_1A">
+        <clockConstraints xmi:id="_YKj_0HI8EeSKmYbKH6xlmA" clock="_j7X9cHavEeOh__JNCv2_1A" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_YgJOQHI8EeSKmYbKH6xlmA">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_ZDsnQHI8EeSKmYbKH6xlmA" value="100"/>
+          </bound>
+        </clockConstraints>
+        <action xmi:id="_ap3T0HI8EeSKmYbKH6xlmA" name="masterPossible := false;">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_cg5t8HI8EeSKmYbKH6xlmA">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_cg5t8XI8EeSKmYbKH6xlmA" assignOperator=":=">
+              <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_cg5t8nI8EeSKmYbKH6xlmA" value="false"/>
+              <lhs_typedNamedElementExpression xmi:id="_cg5t83I8EeSKmYbKH6xlmA" typedNamedElement="_lAtN0HavEeOh__JNCv2_1A"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <states xmi:id="_RTDXcnavEeOh__JNCv2_1A" name="NoAssignment" outgoingTransitions="_9sBbkHawEeOh__JNCv2_1A _INVowHayEeOh__JNCv2_1A _4MTSgFuJEeSOLv8Gt-ZLrQ _6eTbAHazEeOh__JNCv2_1A _FYdDYFuNEeSOLv8Gt-ZLrQ" incomingTransitions="_W1T0MHaxEeOh__JNCv2_1A _6sVscHayEeOh__JNCv2_1A _xyWiEHa0EeOh__JNCv2_1A _0XDQMHd0EeOvXvgZJk5CuQ _CjA_oHd1EeOvXvgZJk5CuQ _4MTSgFuJEeSOLv8Gt-ZLrQ _vVo-YFuKEeSOLv8Gt-ZLrQ _WAhKIHI8EeSKmYbKH6xlmA" initial="true">
         <entryEvent xmi:id="_DRgS0HawEeOh__JNCv2_1A" clockResets="_j7X9cHavEeOh__JNCv2_1A"/>
       </states>
-      <states xmi:id="_85jSQHavEeOh__JNCv2_1A" name="MasterProposed" outgoingTransitions="_W1T0MHaxEeOh__JNCv2_1A _vVo-YFuKEeSOLv8Gt-ZLrQ _ns1K8HaxEeOh__JNCv2_1A" incomingTransitions="_9sBbkHawEeOh__JNCv2_1A">
+      <states xmi:id="_85jSQHavEeOh__JNCv2_1A" name="MasterProposed" outgoingTransitions="_W1T0MHaxEeOh__JNCv2_1A _vVo-YFuKEeSOLv8Gt-ZLrQ _ns1K8HaxEeOh__JNCv2_1A _WAhKIHI8EeSKmYbKH6xlmA" incomingTransitions="_9sBbkHawEeOh__JNCv2_1A">
         <entryEvent xmi:id="_FjxQYHawEeOh__JNCv2_1A" clockResets="_j7X9cHavEeOh__JNCv2_1A"/>
         <invariants xmi:id="_yRqREHawEeOh__JNCv2_1A" clock="_j7X9cHavEeOh__JNCv2_1A">
           <bound xmi:id="_zLh4UHawEeOh__JNCv2_1A" unit="MILLISECONDS">
@@ -708,7 +715,7 @@
           </bound>
         </invariants>
       </states>
-      <states xmi:id="_uSz14HawEeOh__JNCv2_1A" name="Failed" outgoingTransitions="_ZO3CkFuMEeSOLv8Gt-ZLrQ" incomingTransitions="_INVowHayEeOh__JNCv2_1A _ZO3CkFuMEeSOLv8Gt-ZLrQ _FYdDYFuNEeSOLv8Gt-ZLrQ" final="true"/>
+      <states xmi:id="_uSz14HawEeOh__JNCv2_1A" name="Failed" incomingTransitions="_INVowHayEeOh__JNCv2_1A _FYdDYFuNEeSOLv8Gt-ZLrQ" final="true"/>
       <states xmi:id="_0O-I8HbJEeOth4KXtc7iXA" name="Master" incomingTransitions="_4x0pEHbJEeOth4KXtc7iXA" final="true"/>
       <states xmi:id="_PcEMYHbKEeOth4KXtc7iXA" name="Slave" incomingTransitions="_hrpiQHbKEeOth4KXtc7iXA" final="true"/>
       <states xmi:id="_vSV1oHdzEeOvXvgZJk5CuQ" name="StartingSlave" outgoingTransitions="_JpaTQHa0EeOh__JNCv2_1A _Wy5SAHa0EeOh__JNCv2_1A" incomingTransitions="_0O7rcHdzEeOvXvgZJk5CuQ">
@@ -921,14 +928,6 @@
           </expressions>
         </action>
       </transitions>
-      <transitions xmi:id="_NfOLoFuMEeSOLv8Gt-ZLrQ" priority="1" target="_Nw_a0nd9EeOvXvgZJk5CuQ" source="_Nw_a0nd9EeOvXvgZJk5CuQ">
-        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_QVMTMFuMEeSOLv8Gt-ZLrQ" kind="TRIGGER">
-          <message xmi:id="_QwvmwFuMEeSOLv8Gt-ZLrQ" instanceOf="_BG8KoHauEeOh__JNCv2_1A"/>
-        </events>
-        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_T5x0QFuMEeSOLv8Gt-ZLrQ">
-          <message xmi:id="_UJcA4FuMEeSOLv8Gt-ZLrQ" instanceOf="_CL95AHauEeOh__JNCv2_1A"/>
-        </events>
-      </transitions>
       <transitions xmi:id="_OttikFuNEeSOLv8Gt-ZLrQ" priority="5" target="_Nw_a0nd9EeOvXvgZJk5CuQ" source="_Nw_auHd9EeOvXvgZJk5CuQ">
         <clockConstraints xmi:id="_PT4xwFuNEeSOLv8Gt-ZLrQ" clock="_Nw_a3Xd9EeOvXvgZJk5CuQ" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_Pxq58FuNEeSOLv8Gt-ZLrQ">
@@ -939,10 +938,25 @@
           <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_SPauwVuNEeSOLv8Gt-ZLrQ" typedNamedElement="_Nw_aUHd9EeOvXvgZJk5CuQ"/>
         </guard>
       </transitions>
-      <states xmi:id="_Nw_auHd9EeOvXvgZJk5CuQ" name="NoAssignment" outgoingTransitions="_Nw_aVnd9EeOvXvgZJk5CuQ _Nw_acnd9EeOvXvgZJk5CuQ _Tccp8FuKEeSOLv8Gt-ZLrQ _Nw_agHd9EeOvXvgZJk5CuQ _OttikFuNEeSOLv8Gt-ZLrQ" incomingTransitions="_Nw_aXXd9EeOvXvgZJk5CuQ _Nw_aeHd9EeOvXvgZJk5CuQ _Nw_alHd9EeOvXvgZJk5CuQ _Nw_arnd9EeOvXvgZJk5CuQ _Nw_as3d9EeOvXvgZJk5CuQ _Tccp8FuKEeSOLv8Gt-ZLrQ _cB3noFuKEeSOLv8Gt-ZLrQ" initial="true">
+      <transitions xmi:id="_iRa7EHI8EeSKmYbKH6xlmA" priority="4" target="_Nw_auHd9EeOvXvgZJk5CuQ" source="_Nw_aund9EeOvXvgZJk5CuQ">
+        <clockConstraints xmi:id="_js8d4HI8EeSKmYbKH6xlmA" clock="_Nw_a3Xd9EeOvXvgZJk5CuQ" operator="GREATER_OR_EQUAL">
+          <bound xmi:id="_kXNi4HI8EeSKmYbKH6xlmA">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_k6vGsHI8EeSKmYbKH6xlmA" value="100"/>
+          </bound>
+        </clockConstraints>
+        <action xmi:id="_lruewHI8EeSKmYbKH6xlmA" name="masterPossible := false;">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_nNU0YHI8EeSKmYbKH6xlmA">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nNU0YXI8EeSKmYbKH6xlmA" assignOperator=":=">
+              <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_nNU0YnI8EeSKmYbKH6xlmA" value="false"/>
+              <lhs_typedNamedElementExpression xmi:id="_nNU0Y3I8EeSKmYbKH6xlmA" typedNamedElement="_Nw_aUHd9EeOvXvgZJk5CuQ"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <states xmi:id="_Nw_auHd9EeOvXvgZJk5CuQ" name="NoAssignment" outgoingTransitions="_Nw_aVnd9EeOvXvgZJk5CuQ _Nw_acnd9EeOvXvgZJk5CuQ _Tccp8FuKEeSOLv8Gt-ZLrQ _Nw_agHd9EeOvXvgZJk5CuQ _OttikFuNEeSOLv8Gt-ZLrQ" incomingTransitions="_Nw_aXXd9EeOvXvgZJk5CuQ _Nw_aeHd9EeOvXvgZJk5CuQ _Nw_alHd9EeOvXvgZJk5CuQ _Nw_arnd9EeOvXvgZJk5CuQ _Nw_as3d9EeOvXvgZJk5CuQ _Tccp8FuKEeSOLv8Gt-ZLrQ _cB3noFuKEeSOLv8Gt-ZLrQ _iRa7EHI8EeSKmYbKH6xlmA" initial="true">
         <entryEvent xmi:id="_Nw_auXd9EeOvXvgZJk5CuQ" clockResets="_Nw_a3Xd9EeOvXvgZJk5CuQ"/>
       </states>
-      <states xmi:id="_Nw_aund9EeOvXvgZJk5CuQ" name="MasterProposed" outgoingTransitions="_Nw_aXXd9EeOvXvgZJk5CuQ _cB3noFuKEeSOLv8Gt-ZLrQ _Nw_aYHd9EeOvXvgZJk5CuQ" incomingTransitions="_Nw_aVnd9EeOvXvgZJk5CuQ">
+      <states xmi:id="_Nw_aund9EeOvXvgZJk5CuQ" name="MasterProposed" outgoingTransitions="_Nw_aXXd9EeOvXvgZJk5CuQ _cB3noFuKEeSOLv8Gt-ZLrQ _Nw_aYHd9EeOvXvgZJk5CuQ _iRa7EHI8EeSKmYbKH6xlmA" incomingTransitions="_Nw_aVnd9EeOvXvgZJk5CuQ">
         <entryEvent xmi:id="_Nw_au3d9EeOvXvgZJk5CuQ" clockResets="_Nw_a3Xd9EeOvXvgZJk5CuQ"/>
         <invariants xmi:id="_Nw_avHd9EeOvXvgZJk5CuQ" clock="_Nw_a3Xd9EeOvXvgZJk5CuQ">
           <bound xmi:id="_Nw_avXd9EeOvXvgZJk5CuQ" unit="MILLISECONDS">
@@ -981,7 +995,7 @@
           </bound>
         </invariants>
       </states>
-      <states xmi:id="_Nw_a0nd9EeOvXvgZJk5CuQ" name="Failed" outgoingTransitions="_NfOLoFuMEeSOLv8Gt-ZLrQ" incomingTransitions="_Nw_acnd9EeOvXvgZJk5CuQ _NfOLoFuMEeSOLv8Gt-ZLrQ _OttikFuNEeSOLv8Gt-ZLrQ" final="true"/>
+      <states xmi:id="_Nw_a0nd9EeOvXvgZJk5CuQ" name="Failed" incomingTransitions="_Nw_acnd9EeOvXvgZJk5CuQ _OttikFuNEeSOLv8Gt-ZLrQ" final="true"/>
       <states xmi:id="_Nw_a03d9EeOvXvgZJk5CuQ" name="Master" incomingTransitions="_Nw_aoHd9EeOvXvgZJk5CuQ" final="true"/>
       <states xmi:id="_Nw_a1Hd9EeOvXvgZJk5CuQ" name="Slave" incomingTransitions="_Nw_apHd9EeOvXvgZJk5CuQ" final="true"/>
       <states xmi:id="_Nw_a1Xd9EeOvXvgZJk5CuQ" name="StartingSlave" outgoingTransitions="_Nw_ahnd9EeOvXvgZJk5CuQ _Nw_akHd9EeOvXvgZJk5CuQ" incomingTransitions="_Nw_aqHd9EeOvXvgZJk5CuQ">
