@@ -31,7 +31,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGow_h2EeOdcfcso3gQlg" y="5"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_ulGoxPh2EeOdcfcso3gQlg" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGoxfh2EeOdcfcso3gQlg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGoxfh2EeOdcfcso3gQlg" x="71" y="-36"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../../RailCab.fujaba#_KlzIwPh2EeOdcfcso3gQlg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ulGowfh2EeOdcfcso3gQlg" x="217" y="72"/>
