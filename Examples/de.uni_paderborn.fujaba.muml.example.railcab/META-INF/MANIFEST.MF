@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RailCab Model
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.railcab
+Bundle-Version: 1.0.0.qualifier
