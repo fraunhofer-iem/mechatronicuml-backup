@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_HldHQMOmEeKt4K__LJLJ8w" type="Coordination Protocol" name="SectionEntryProtocol.coordinationprotocol_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connector="http://www.fujaba.de/muml/connector/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_HldHQMOmEeKt4K__LJLJ8w" type="Coordination Protocol" name="SectionEntryProtocol.coordinationprotocol_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_JgwWUMOmEeKt4K__LJLJ8w" type="2005" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_JgzZoMOmEeKt4K__LJLJ8w" type="7005">
       <children xmi:type="notation:Shape" xmi:id="_JmfK4MOmEeKt4K__LJLJ8w" type="3005" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_JmfK4sOmEeKt4K__LJLJ8w" type="5005"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../SectionEntry.fujaba#_Jft0gMOmEeKt4K__LJLJ8w"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JmfK4cOmEeKt4K__LJLJ8w" x="67" y="6"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JmfK4cOmEeKt4K__LJLJ8w" x="235" y="18"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_Jmfx8MOmEeKt4K__LJLJ8w" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_Jmfx8sOmEeKt4K__LJLJ8w" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_Jmfx88OmEeKt4K__LJLJ8w" y="5"/>
         </children>
         <element xmi:type="protocol:Role" href="../SectionEntry.fujaba#_JgQnEMOmEeKt4K__LJLJ8w"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jmfx8cOmEeKt4K__LJLJ8w" x="19" y="66"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jmfx8cOmEeKt4K__LJLJ8w" x="187" y="78"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_JmgZAMOmEeKt4K__LJLJ8w" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_JmgZAsOmEeKt4K__LJLJ8w" type="5006">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_JmgZA8OmEeKt4K__LJLJ8w" y="5"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_JmgZA8OmEeKt4K__LJLJ8w" x="-36" y="36"/>
         </children>
         <element xmi:type="protocol:Role" href="../SectionEntry.fujaba#_JgTDUcOmEeKt4K__LJLJ8w"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JmgZAcOmEeKt4K__LJLJ8w" x="175" y="66"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JmgZAcOmEeKt4K__LJLJ8w" x="343" y="78"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_fbVGcHI2EeSKmYbKH6xlmA" type="3010" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fbVtgHI2EeSKmYbKH6xlmA" type="5012"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fbVtgXI2EeSKmYbKH6xlmA" type="5013"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fbVtgnI2EeSKmYbKH6xlmA" type="7008">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fbVtg3I2EeSKmYbKH6xlmA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fbVthHI2EeSKmYbKH6xlmA"/>
+        </children>
+        <element xmi:type="connector:MessageBuffer" href="../SectionEntry.fujaba#_aVfFgMOrEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fbVGcXI2EeSKmYbKH6xlmA" x="31" y="198"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_fbVthXI2EeSKmYbKH6xlmA" type="3010" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fbVth3I2EeSKmYbKH6xlmA" type="5012"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fbVtiHI2EeSKmYbKH6xlmA" type="5013"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_fbVtiXI2EeSKmYbKH6xlmA" type="7008">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fbVtinI2EeSKmYbKH6xlmA"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fbVti3I2EeSKmYbKH6xlmA"/>
+        </children>
+        <element xmi:type="connector:MessageBuffer" href="../SectionEntry.fujaba#_rED7oMOrEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fbVthnI2EeSKmYbKH6xlmA" x="307" y="234"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../SectionEntry.fujaba#_Jft0gMOmEeKt4K__LJLJ8w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JgwWUcOmEeKt4K__LJLJ8w" x="60" y="96" width="253" height="145"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JgwWUcOmEeKt4K__LJLJ8w" x="180" y="72" width="589" height="421"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_HldHQcOmEeKt4K__LJLJ8w"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../SectionEntry.fujaba#_HgnqkMOmEeKt4K__LJLJ8w"/>

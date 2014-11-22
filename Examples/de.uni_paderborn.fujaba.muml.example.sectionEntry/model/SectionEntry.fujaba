@@ -23,8 +23,8 @@
       </roles>
       <roles xmi:id="_JgTDUcOmEeKt4K__LJLJ8w" connectors="_JgURccOmEeKt4K__LJLJ8w" behavior="_fu8LkMOtEeKtesZp-51dtg" name="section" senderMessageTypes="_dKpmsMOpEeKt4K__LJLJ8w _iauZMMOpEeKt4K__LJLJ8w _Z94IsMOpEeKt4K__LJLJ8w _ZDb5sMOpEeKt4K__LJLJ8w _XTIZsMOpEeKt4K__LJLJ8w" receiverMessageTypes="_bgwQsMOpEeKt4K__LJLJ8w _eYAxsMOpEeKt4K__LJLJ8w _YL9fIMOpEeKt4K__LJLJ8w">
         <cardinality xmi:id="_JgTqYMOmEeKt4K__LJLJ8w">
-          <lowerBound xmi:id="_JgTqYcOmEeKt4K__LJLJ8w"/>
-          <upperBound xmi:id="_JgURcMOmEeKt4K__LJLJ8w"/>
+          <lowerBound xmi:id="_iFdxcHI2EeSKmYbKH6xlmA"/>
+          <upperBound xmi:id="_iFeYgHI2EeSKmYbKH6xlmA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_rED7oMOrEeKt4K__LJLJ8w" name="buffer1" messageType="_bgwQsMOpEeKt4K__LJLJ8w _eYAxsMOpEeKt4K__LJLJ8w _YL9fIMOpEeKt4K__LJLJ8w">
           <bufferSize xmi:id="_rcS1cMOrEeKt4K__LJLJ8w"/>
@@ -33,7 +33,7 @@
       <roleConnector xmi:id="_JgURccOmEeKt4K__LJLJ8w" connectorEndpoints="_JgQnEMOmEeKt4K__LJLJ8w _JgTDUcOmEeKt4K__LJLJ8w">
         <connectorQualityOfServiceAssumptions xmi:id="_JgWGoMOmEeKt4K__LJLJ8w" comment="">
           <minMessageDelay xmi:id="_JrzvwMOmEeKt4K__LJLJ8w" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_5jAKEMOuEeKtesZp-51dtg" value="20"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_jsO68HI2EeSKmYbKH6xlmA" value="10"/>
           </minMessageDelay>
           <maxMessageDelay xmi:id="_Jy7EYMOmEeKt4K__LJLJ8w" unit="MILLISECONDS">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_4SngQMOuEeKtesZp-51dtg" value="20"/>
@@ -63,7 +63,7 @@
       <roleConnector xmi:id="_7NW8GM0PEeKgKa329oIpmg" connectorEndpoints="_7NW8EM0PEeKgKa329oIpmg _7NW8FM0PEeKgKa329oIpmg">
         <connectorQualityOfServiceAssumptions xmi:id="_7NW8Gc0PEeKgKa329oIpmg" comment="">
           <minMessageDelay xmi:id="_lt1qAM0QEeKgKa329oIpmg" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_9hXvoM0bEeKxKMJSVpn_4A" value="5"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_C8MMUHI2EeSKmYbKH6xlmA" value="3"/>
           </minMessageDelay>
           <maxMessageDelay xmi:id="_ly5JIM0QEeKgKa329oIpmg" unit="MILLISECONDS">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_9GACQM0bEeKxKMJSVpn_4A" value="5"/>
@@ -2011,7 +2011,7 @@
       <transitions xmi:id="_fDNLgM20EeKxKMJSVpn_4A" priority="1" target="_fCWBYc0bEeKxKMJSVpn_4A" source="_c_iqoM20EeKxKMJSVpn_4A" urgent="false">
         <clockConstraints xmi:id="_9aM_IM20EeKxKMJSVpn_4A" clock="_lvhSgM20EeKxKMJSVpn_4A" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_-40SMM20EeKxKMJSVpn_4A" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_-40SMc20EeKxKMJSVpn_4A" value="550"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_LtVR0HI2EeSKmYbKH6xlmA" value="20"/>
           </bound>
         </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_A0mCYM21EeKxKMJSVpn_4A" kind="TRIGGER">
@@ -2030,7 +2030,7 @@
       <states xmi:id="_c_iqoM20EeKxKMJSVpn_4A" name="WaitForSection" outgoingTransitions="_fDNLgM20EeKxKMJSVpn_4A" incomingTransitions="_ealsUM20EeKxKMJSVpn_4A">
         <invariants xmi:id="_tvTMgM20EeKxKMJSVpn_4A" clock="_lvhSgM20EeKxKMJSVpn_4A">
           <bound xmi:id="_vFcgEM20EeKxKMJSVpn_4A" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_vZYIsM20EeKxKMJSVpn_4A" value="550"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_JopdQHI2EeSKmYbKH6xlmA" value="20"/>
           </bound>
         </invariants>
       </states>
@@ -2048,7 +2048,7 @@
       <transitions xmi:id="_yaSfgM21EeKxKMJSVpn_4A" priority="1" target="_rFb_0c0bEeKxKMJSVpn_4A" source="_WRr2EM21EeKxKMJSVpn_4A" urgent="false">
         <clockConstraints xmi:id="_6DCZkM21EeKxKMJSVpn_4A" clock="_XcqbcM21EeKxKMJSVpn_4A" operator="GREATER_OR_EQUAL">
           <bound xmi:id="_7Rw2gM21EeKxKMJSVpn_4A" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_7Rw2gc21EeKxKMJSVpn_4A" value="400"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_Qy1zEHI2EeSKmYbKH6xlmA" value="4"/>
           </bound>
         </clockConstraints>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_-Y0uEM21EeKxKMJSVpn_4A">
@@ -2075,7 +2075,7 @@
         </entryEvent>
         <invariants xmi:id="_pC4rQM21EeKxKMJSVpn_4A" clock="_XcqbcM21EeKxKMJSVpn_4A">
           <bound xmi:id="_qOKLkM21EeKxKMJSVpn_4A" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_qOKLkc21EeKxKMJSVpn_4A" value="500"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_PE3OUHI2EeSKmYbKH6xlmA" value="5"/>
           </bound>
         </invariants>
       </states>
