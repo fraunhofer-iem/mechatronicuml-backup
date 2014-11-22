@@ -57,7 +57,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WoPlsfuREeO8xJIX1d2eag"/>
     </children>
     <element xmi:type="reconfiguration:ReconfigurableAtomicComponent" href="../../../RailCab.fujaba#_ebUwcPhwEeOlYcxv1LeTzQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r2JvIfh2EeOdcfcso3gQlg" x="180" y="156" width="229" height="193"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r2JvIfh2EeOdcfcso3gQlg" x="192" y="156" width="229" height="193"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_r1_-Ifh2EeOdcfcso3gQlg"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../../../RailCab.fujaba#_zEShsO5uEeOKI4bZ_bxwuQ"/>
