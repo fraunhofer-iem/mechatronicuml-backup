@@ -311,8 +311,8 @@
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_uz92IPR7EeOKmIQk3FL8KA" name="ConvoyCoordination">
       <roles xmi:id="_uz92IfR7EeOKmIQk3FL8KA" connectors="_uz92LfR7EeOKmIQk3FL8KA" behavior="_yyN0YPR7EeOKmIQk3FL8KA" name="coordinator" senderMessageTypes="_wvJwdPR7EeOKmIQk3FL8KA _wvJwc_R7EeOKmIQk3FL8KA _wvJwePR7EeOKmIQk3FL8KA _wvJwdvR7EeOKmIQk3FL8KA _wvJwdfR7EeOKmIQk3FL8KA _wvJwd_R7EeOKmIQk3FL8KA _wvJwcfR7EeOKmIQk3FL8KA" receiverMessageTypes="_wvJwgfR7EeOKmIQk3FL8KA _wvJwgvR7EeOKmIQk3FL8KA _wvJwfvR7EeOKmIQk3FL8KA _wvJwf_R7EeOKmIQk3FL8KA _wvJwfPR7EeOKmIQk3FL8KA _wvJwffR7EeOKmIQk3FL8KA" adaptationBehavior="_yyN0bvR7EeOKmIQk3FL8KA" subroleBehavior="_yyN1ZvR7EeOKmIQk3FL8KA">
         <cardinality xmi:id="_uz92IvR7EeOKmIQk3FL8KA">
-          <lowerBound xmi:id="_BZVL0FMQEeS30sDV1VCZQA" value="0"/>
-          <upperBound xmi:id="_BZVL0VMQEeS30sDV1VCZQA" value="10"/>
+          <lowerBound xmi:id="_fQHFYHJsEeSUj-2PlgD-kA" value="0"/>
+          <upperBound xmi:id="_fQHFYXJsEeSUj-2PlgD-kA" value="10"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_uz92JfR7EeOKmIQk3FL8KA" name="buffer" messageType="_wvJwgfR7EeOKmIQk3FL8KA _wvJwgvR7EeOKmIQk3FL8KA _wvJwfvR7EeOKmIQk3FL8KA _wvJwf_R7EeOKmIQk3FL8KA _wvJwfPR7EeOKmIQk3FL8KA _wvJwffR7EeOKmIQk3FL8KA">
           <bufferSize xmi:id="_uz92JvR7EeOKmIQk3FL8KA" value="10"/>
@@ -1661,9 +1661,41 @@
       </states>
       <clocks xmi:id="_FekRneo8EeO-8csd75FEHw" name="c2"/>
     </modelElements>
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yyN0YPR7EeOKmIQk3FL8KA" name="ProfileTransmission_coordinator" behavioralElement="_uz92IfR7EeOKmIQk3FL8KA">
-      <operations xmi:id="_yyN0YfR7EeOKmIQk3FL8KA" name="isMemberPossible" returnType="_hm9EU7iwEeKp46K0r5yxrg"/>
-      <operations xmi:id="_yyN0YvR7EeOKmIQk3FL8KA" name="calculateProfiles" returnType="_hm9EU7iwEeKp46K0r5yxrg"/>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yyN0YPR7EeOKmIQk3FL8KA" name="ConvoyCoordination_coordinator" behavioralElement="_uz92IfR7EeOKmIQk3FL8KA">
+      <operations xmi:id="_yyN0YfR7EeOKmIQk3FL8KA" name="isMemberPossible" returnType="_hm9EU7iwEeKp46K0r5yxrg">
+        <implementations xsi:type="actionlanguage:Block" xmi:id="_4QXIsHJqEeSUj-2PlgD-kA">
+          <expressions xsi:type="actionlanguage:LocalVariableDeclarationStatement" xmi:id="_4QXIsXJqEeSUj-2PlgD-kA">
+            <variable xmi:id="_4QXIsnJqEeSUj-2PlgD-kA" name="result" dataType="_hm9EU7iwEeKp46K0r5yxrg">
+              <initializeExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_4QXIs3JqEeSUj-2PlgD-kA" dataType="_hm9EVriwEeKp46K0r5yxrg">
+                <range xmi:id="_4QXItHJqEeSUj-2PlgD-kA"/>
+              </initializeExpression>
+            </variable>
+          </expressions>
+          <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_4QXItXJqEeSUj-2PlgD-kA">
+            <expression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4QXItnJqEeSUj-2PlgD-kA" typedNamedElement="_4QXIsnJqEeSUj-2PlgD-kA"/>
+          </expressions>
+        </implementations>
+      </operations>
+      <operations xmi:id="_yyN0YvR7EeOKmIQk3FL8KA" name="calculateProfiles" returnType="_hm9EU7iwEeKp46K0r5yxrg">
+        <implementations xsi:type="actionlanguage:Block" xmi:id="_i4DR4HJrEeSUj-2PlgD-kA">
+          <expressions xsi:type="actionlanguage:LocalVariableDeclarationStatement" xmi:id="_i4DR4XJrEeSUj-2PlgD-kA">
+            <variable xmi:id="_i4DR4nJrEeSUj-2PlgD-kA" name="result" dataType="_hm9EU7iwEeKp46K0r5yxrg">
+              <initializeExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_i4DR43JrEeSUj-2PlgD-kA" dataType="_hm9EVriwEeKp46K0r5yxrg">
+                <range xmi:id="_i4DR5HJrEeSUj-2PlgD-kA"/>
+              </initializeExpression>
+            </variable>
+          </expressions>
+          <expressions xsi:type="actionlanguage:Assignment" xmi:id="_i4DR5XJrEeSUj-2PlgD-kA" assignOperator=":=">
+            <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_i4DR5nJrEeSUj-2PlgD-kA" dataType="_hm9EVriwEeKp46K0r5yxrg">
+              <range xmi:id="_i4DR53JrEeSUj-2PlgD-kA"/>
+            </rhs_assignExpression>
+            <lhs_typedNamedElementExpression xmi:id="_i4DR6HJrEeSUj-2PlgD-kA" typedNamedElement="_yyN0ZvR7EeOKmIQk3FL8KA"/>
+          </expressions>
+          <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_i4DR6XJrEeSUj-2PlgD-kA">
+            <expression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_i4DR6nJrEeSUj-2PlgD-kA" typedNamedElement="_i4DR4nJrEeSUj-2PlgD-kA"/>
+          </expressions>
+        </implementations>
+      </operations>
       <variables xmi:id="_yyN0Y_R7EeOKmIQk3FL8KA" name="n" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       <variables xmi:id="_yyN0ZPR7EeOKmIQk3FL8KA" name="memberPossible" dataType="_hm9EU7iwEeKp46K0r5yxrg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN0ZfR7EeOKmIQk3FL8KA" value="false"/>
@@ -1691,22 +1723,11 @@
             </variables>
             <transitions xmi:id="_yyN0ePR7EeOKmIQk3FL8KA" priority="2" target="_yyN1RPR7EeOKmIQk3FL8KA" source="_yyN1QPR7EeOKmIQk3FL8KA">
               <synchronization xmi:id="_yyN0efR7EeOKmIQk3FL8KA" syncChannel="_yyXlnvR7EeOKmIQk3FL8KA" kind="RECEIVE"/>
-              <action xmi:id="_yyN0evR7EeOKmIQk3FL8KA" name="memberPossible := false">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_yyN0e_R7EeOKmIQk3FL8KA">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN0fPR7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN0ffR7EeOKmIQk3FL8KA" value="false"/>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN0fvR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0ZPR7EeOKmIQk3FL8KA"/>
-                  </expressions>
-                </expressions>
-              </action>
-            </transitions>
-            <transitions xmi:id="_yyN0f_R7EeOKmIQk3FL8KA" priority="1" target="_yyN1RPR7EeOKmIQk3FL8KA" source="_yyN1QPR7EeOKmIQk3FL8KA">
-              <synchronization xmi:id="_yyN0gPR7EeOKmIQk3FL8KA" syncChannel="_yyXlnvR7EeOKmIQk3FL8KA" kind="RECEIVE"/>
-              <action xmi:id="_yyN0gfR7EeOKmIQk3FL8KA" name="memberPossible := true">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_yyN0gvR7EeOKmIQk3FL8KA">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN0g_R7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN0hPR7EeOKmIQk3FL8KA" value="true"/>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN0hfR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0ZPR7EeOKmIQk3FL8KA"/>
+              <action xmi:id="_yyN0evR7EeOKmIQk3FL8KA" name="memberPossible := isMemberPossible() ;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_pILBkHJqEeSUj-2PlgD-kA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_pILBkXJqEeSUj-2PlgD-kA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_pILBknJqEeSUj-2PlgD-kA" operation="_yyN0YfR7EeOKmIQk3FL8KA"/>
+                    <lhs_typedNamedElementExpression xmi:id="_pILBk3JqEeSUj-2PlgD-kA" typedNamedElement="_yyN0ZPR7EeOKmIQk3FL8KA"/>
                   </expressions>
                 </expressions>
               </action>
@@ -1725,15 +1746,11 @@
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_yyN0j_R7EeOKmIQk3FL8KA" value="500"/>
                 </lowerBound>
               </relativeDeadline>
-              <action xmi:id="_yyN0kPR7EeOKmIQk3FL8KA" name="">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_yyN0kfR7EeOKmIQk3FL8KA">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN0kvR7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN0k_R7EeOKmIQk3FL8KA" value="false"/>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN0lPR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0Z_R7EeOKmIQk3FL8KA"/>
-                  </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN0lfR7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN0lvR7EeOKmIQk3FL8KA" value="0"/>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN0l_R7EeOKmIQk3FL8KA" typedNamedElement="_yyN0ZvR7EeOKmIQk3FL8KA"/>
+              <action xmi:id="_yyN0kPR7EeOKmIQk3FL8KA" name="changed := calculateProfiles() ;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_XMitAHJrEeSUj-2PlgD-kA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_XMitAXJrEeSUj-2PlgD-kA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_XMitAnJrEeSUj-2PlgD-kA" operation="_yyN0YvR7EeOKmIQk3FL8KA"/>
+                    <lhs_typedNamedElementExpression xmi:id="_XMitA3JrEeSUj-2PlgD-kA" typedNamedElement="_yyN0Z_R7EeOKmIQk3FL8KA"/>
                   </expressions>
                 </expressions>
               </action>
@@ -1745,44 +1762,18 @@
               </guard>
             </transitions>
             <transitions xmi:id="_yyN0nPR7EeOKmIQk3FL8KA" priority="1" target="_yyN1VvR7EeOKmIQk3FL8KA" source="_yyN1SvR7EeOKmIQk3FL8KA" clockResets="_yyN1Y_R7EeOKmIQk3FL8KA">
-              <synchronization xmi:id="_yyN0nfR7EeOKmIQk3FL8KA" syncChannel="_yyXloPR7EeOKmIQk3FL8KA"/>
-              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_yyN0nvR7EeOKmIQk3FL8KA" operator="EQUAL">
-                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN0n_R7EeOKmIQk3FL8KA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
-                <rightExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_yyN0oPR7EeOKmIQk3FL8KA">
-                  <position xmi:id="_yyN0ofR7EeOKmIQk3FL8KA" kind="LAST"/>
-                </rightExpression>
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_sOgq8HJrEeSUj-2PlgD-kA" operator="EQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sOgq8XJrEeSUj-2PlgD-kA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_sOgq8nJrEeSUj-2PlgD-kA" value="null"/>
               </guard>
-              <action xmi:id="_yyN0ovR7EeOKmIQk3FL8KA" name="newProfile := getProfile(allProfiles, tmpSubRole)">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_yyN0o_R7EeOKmIQk3FL8KA">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN0pPR7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_yyN0pfR7EeOKmIQk3FL8KA" callee="_uuWq1_STEeOKmIQk3FL8KA">
-                      <ownedParameterBindings xmi:id="_yyN0pvR7EeOKmIQk3FL8KA" parameter="_uuWqu_STEeOKmIQk3FL8KA">
-                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN0p_R7EeOKmIQk3FL8KA" typedNamedElement="_yyN0avR7EeOKmIQk3FL8KA"/>
-                      </ownedParameterBindings>
-                      <ownedParameterBindings xmi:id="_yyN0qPR7EeOKmIQk3FL8KA" parameter="_uuWqvfSTEeOKmIQk3FL8KA">
-                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN0qfR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
-                      </ownedParameterBindings>
-                    </rhs_assignExpression>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN0qvR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0aPR7EeOKmIQk3FL8KA"/>
-                  </expressions>
-                </expressions>
-              </action>
             </transitions>
             <transitions xmi:id="_yyN0q_R7EeOKmIQk3FL8KA" priority="2" target="_yyN1UvR7EeOKmIQk3FL8KA" source="_yyN1SvR7EeOKmIQk3FL8KA">
               <synchronization xmi:id="_yyN0rPR7EeOKmIQk3FL8KA" syncChannel="_yyXlo_R7EeOKmIQk3FL8KA">
                 <selectorExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN0rfR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
               </synchronization>
-              <guard xsi:type="sdcec:LogicalExpression" xmi:id="_yyN0rvR7EeOKmIQk3FL8KA">
-                <leftExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_yyN0r_R7EeOKmIQk3FL8KA" operator="UNEQUAL">
-                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN0sPR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
-                  <rightExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_yyN0sfR7EeOKmIQk3FL8KA">
-                    <position xmi:id="_yyN0svR7EeOKmIQk3FL8KA" kind="LAST"/>
-                  </rightExpression>
-                </leftExpression>
-                <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_yyN0s_R7EeOKmIQk3FL8KA" operator="UNEQUAL">
-                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN0tPR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
-                  <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN0tfR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0cvR7EeOKmIQk3FL8KA"/>
-                </rightExpression>
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_VqrcMHJsEeSUj-2PlgD-kA" operator="UNEQUAL">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_VqrcMXJsEeSUj-2PlgD-kA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_VqrcMnJsEeSUj-2PlgD-kA" typedNamedElement="_yyN0cvR7EeOKmIQk3FL8KA"/>
               </guard>
               <action xmi:id="_yyN0tvR7EeOKmIQk3FL8KA" name="newProfile := getProfile(allProfiles, tmpSubRole)">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_yyN0t_R7EeOKmIQk3FL8KA">
@@ -1860,6 +1851,14 @@
             </transitions>
             <transitions xmi:id="_yyN05PR7EeOKmIQk3FL8KA" priority="1" target="_yyN1P_R7EeOKmIQk3FL8KA" source="_yyN1VvR7EeOKmIQk3FL8KA">
               <synchronization xmi:id="_yyN05fR7EeOKmIQk3FL8KA" syncChannel="_yyXlpfR7EeOKmIQk3FL8KA" kind="RECEIVE"/>
+              <action xmi:id="_HxcQ8HJrEeSUj-2PlgD-kA" name="curSubRole := null;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_JllvIHJrEeSUj-2PlgD-kA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_JllvIXJrEeSUj-2PlgD-kA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_JllvInJrEeSUj-2PlgD-kA" value="null"/>
+                    <lhs_typedNamedElementExpression xmi:id="_JllvI3JrEeSUj-2PlgD-kA" typedNamedElement="_yyN0cvR7EeOKmIQk3FL8KA"/>
+                  </expressions>
+                </expressions>
+              </action>
             </transitions>
             <transitions xmi:id="_yyN05vR7EeOKmIQk3FL8KA" priority="1" target="_yyN1QPR7EeOKmIQk3FL8KA" source="_yyN1P_R7EeOKmIQk3FL8KA" clockResets="_yyN1Y_R7EeOKmIQk3FL8KA">
               <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_yyN05_R7EeOKmIQk3FL8KA">
@@ -1929,11 +1928,12 @@
               </action>
             </transitions>
             <transitions xmi:id="_yyN1EPR7EeOKmIQk3FL8KA" priority="3" target="_yyN1SvR7EeOKmIQk3FL8KA" source="_yyN1SvR7EeOKmIQk3FL8KA">
+              <synchronization xmi:id="_0fFaAHJrEeSUj-2PlgD-kA" syncChannel="_yyXloPR7EeOKmIQk3FL8KA"/>
               <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_yyN1EfR7EeOKmIQk3FL8KA" operator="EQUAL">
                 <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN1EvR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
                 <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_yyN1E_R7EeOKmIQk3FL8KA" typedNamedElement="_yyN0cvR7EeOKmIQk3FL8KA"/>
               </guard>
-              <action xmi:id="_yyN1FPR7EeOKmIQk3FL8KA" name="tmpSubRole := tmpSubRole.next">
+              <action xmi:id="_yyN1FPR7EeOKmIQk3FL8KA" name="newProfile := getProfile(allProfiles, tmpSubRole); tmpSubRole := tmpSubRole.next;">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_yyN1FfR7EeOKmIQk3FL8KA">
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN1FvR7EeOKmIQk3FL8KA" assignOperator=":=">
                     <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_yyN1F_R7EeOKmIQk3FL8KA">
@@ -1942,51 +1942,16 @@
                     </rhs_assignExpression>
                     <lhs_typedNamedElementExpression xmi:id="_yyN1GvR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
                   </expressions>
-                </expressions>
-              </action>
-            </transitions>
-            <transitions xmi:id="_yyN1G_R7EeOKmIQk3FL8KA" priority="2" target="_yyN1RfR7EeOKmIQk3FL8KA" source="_yyN1RvR7EeOKmIQk3FL8KA">
-              <synchronization xmi:id="_yyN1HPR7EeOKmIQk3FL8KA" syncChannel="_yyXlofR7EeOKmIQk3FL8KA" kind="RECEIVE"/>
-              <relativeDeadline xmi:id="_yyN1HfR7EeOKmIQk3FL8KA">
-                <upperBound xmi:id="_yyN1HvR7EeOKmIQk3FL8KA" unit="MILLISECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1H_R7EeOKmIQk3FL8KA" value="500"/>
-                </upperBound>
-                <lowerBound xmi:id="_yyN1IPR7EeOKmIQk3FL8KA" unit="MILLISECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1IfR7EeOKmIQk3FL8KA" value="500"/>
-                </lowerBound>
-              </relativeDeadline>
-              <action xmi:id="_yyN1IvR7EeOKmIQk3FL8KA" name="changed := false; newRailCabPosition := 1">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_yyN1I_R7EeOKmIQk3FL8KA">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN1JPR7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1JfR7EeOKmIQk3FL8KA" value="false"/>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN1JvR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0Z_R7EeOKmIQk3FL8KA"/>
-                  </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN1J_R7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1KPR7EeOKmIQk3FL8KA" value="1"/>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN1KfR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0ZvR7EeOKmIQk3FL8KA"/>
-                  </expressions>
-                </expressions>
-              </action>
-            </transitions>
-            <transitions xmi:id="_yyN1KvR7EeOKmIQk3FL8KA" priority="3" target="_yyN1RfR7EeOKmIQk3FL8KA" source="_yyN1RvR7EeOKmIQk3FL8KA">
-              <synchronization xmi:id="_yyN1K_R7EeOKmIQk3FL8KA" syncChannel="_yyXlofR7EeOKmIQk3FL8KA" kind="RECEIVE"/>
-              <relativeDeadline xmi:id="_yyN1LPR7EeOKmIQk3FL8KA">
-                <upperBound xmi:id="_yyN1LfR7EeOKmIQk3FL8KA" unit="MILLISECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1LvR7EeOKmIQk3FL8KA" value="500"/>
-                </upperBound>
-                <lowerBound xmi:id="_yyN1L_R7EeOKmIQk3FL8KA" unit="MILLISECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1MPR7EeOKmIQk3FL8KA" value="500"/>
-                </lowerBound>
-              </relativeDeadline>
-              <action xmi:id="_yyN1MfR7EeOKmIQk3FL8KA" name="changed := true; newRailCabPosition := 1">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_yyN1MvR7EeOKmIQk3FL8KA">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN1M_R7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1NPR7EeOKmIQk3FL8KA" value="true"/>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN1NfR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0Z_R7EeOKmIQk3FL8KA"/>
-                  </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_yyN1NvR7EeOKmIQk3FL8KA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1N_R7EeOKmIQk3FL8KA" value="1"/>
-                    <lhs_typedNamedElementExpression xmi:id="_yyN1OPR7EeOKmIQk3FL8KA" typedNamedElement="_yyN0ZvR7EeOKmIQk3FL8KA"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_JpUjIHJsEeSUj-2PlgD-kA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_JpUjIXJsEeSUj-2PlgD-kA" callee="_uuWq1_STEeOKmIQk3FL8KA">
+                      <ownedParameterBindings xmi:id="_JpUjInJsEeSUj-2PlgD-kA" parameter="_uuWqu_STEeOKmIQk3FL8KA">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_JpUjI3JsEeSUj-2PlgD-kA" typedNamedElement="_yyN0avR7EeOKmIQk3FL8KA"/>
+                      </ownedParameterBindings>
+                      <ownedParameterBindings xmi:id="_JpVKMHJsEeSUj-2PlgD-kA" parameter="_uuWqvfSTEeOKmIQk3FL8KA">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_JpVKMXJsEeSUj-2PlgD-kA" typedNamedElement="_yyN0c_R7EeOKmIQk3FL8KA"/>
+                      </ownedParameterBindings>
+                    </rhs_assignExpression>
+                    <lhs_typedNamedElementExpression xmi:id="_JpVKMnJsEeSUj-2PlgD-kA" typedNamedElement="_yyN0aPR7EeOKmIQk3FL8KA"/>
                   </expressions>
                 </expressions>
               </action>
@@ -2002,16 +1967,16 @@
               </action>
             </transitions>
             <states xmi:id="_yyN1P_R7EeOKmIQk3FL8KA" name="Idle" outgoingTransitions="_yyN05vR7EeOKmIQk3FL8KA" incomingTransitions="_yyN0zvR7EeOKmIQk3FL8KA _yyN05PR7EeOKmIQk3FL8KA _yyN1OfR7EeOKmIQk3FL8KA"/>
-            <states xmi:id="_yyN1QPR7EeOKmIQk3FL8KA" name="HandleNewMember" outgoingTransitions="_yyN0f_R7EeOKmIQk3FL8KA _yyN0ePR7EeOKmIQk3FL8KA" incomingTransitions="_yyN05vR7EeOKmIQk3FL8KA">
+            <states xmi:id="_yyN1QPR7EeOKmIQk3FL8KA" name="HandleNewMember" outgoingTransitions="_yyN0ePR7EeOKmIQk3FL8KA" incomingTransitions="_yyN05vR7EeOKmIQk3FL8KA">
               <invariants xmi:id="_yyN1QfR7EeOKmIQk3FL8KA" clock="_yyN1Y_R7EeOKmIQk3FL8KA">
                 <bound xmi:id="_yyN1QvR7EeOKmIQk3FL8KA" unit="MILLISECONDS">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1Q_R7EeOKmIQk3FL8KA" value="10"/>
                 </bound>
               </invariants>
             </states>
-            <states xmi:id="_yyN1RPR7EeOKmIQk3FL8KA" name="NewQuery" outgoingTransitions="_yyN0hvR7EeOKmIQk3FL8KA _yyN09_R7EeOKmIQk3FL8KA" incomingTransitions="_yyN0f_R7EeOKmIQk3FL8KA _yyN0ePR7EeOKmIQk3FL8KA" urgent="true"/>
-            <states xmi:id="_yyN1RfR7EeOKmIQk3FL8KA" name="Calculate" outgoingTransitions="_yyN0mPR7EeOKmIQk3FL8KA _yyN0yfR7EeOKmIQk3FL8KA" incomingTransitions="_yyN0ifR7EeOKmIQk3FL8KA _yyN1G_R7EeOKmIQk3FL8KA _yyN1KvR7EeOKmIQk3FL8KA" urgent="true"/>
-            <states xmi:id="_yyN1RvR7EeOKmIQk3FL8KA" name="NewMember" outgoingTransitions="_yyN0ifR7EeOKmIQk3FL8KA _yyN1G_R7EeOKmIQk3FL8KA _yyN1KvR7EeOKmIQk3FL8KA" incomingTransitions="_yyN0hvR7EeOKmIQk3FL8KA">
+            <states xmi:id="_yyN1RPR7EeOKmIQk3FL8KA" name="NewQuery" outgoingTransitions="_yyN0hvR7EeOKmIQk3FL8KA _yyN09_R7EeOKmIQk3FL8KA" incomingTransitions="_yyN0ePR7EeOKmIQk3FL8KA" urgent="true"/>
+            <states xmi:id="_yyN1RfR7EeOKmIQk3FL8KA" name="Calculate" outgoingTransitions="_yyN0mPR7EeOKmIQk3FL8KA _yyN0yfR7EeOKmIQk3FL8KA" incomingTransitions="_yyN0ifR7EeOKmIQk3FL8KA" urgent="true"/>
+            <states xmi:id="_yyN1RvR7EeOKmIQk3FL8KA" name="NewMember" outgoingTransitions="_yyN0ifR7EeOKmIQk3FL8KA" incomingTransitions="_yyN0hvR7EeOKmIQk3FL8KA">
               <invariants xmi:id="_yyN1R_R7EeOKmIQk3FL8KA" clock="_yyN1Y_R7EeOKmIQk3FL8KA">
                 <bound xmi:id="_yyN1SPR7EeOKmIQk3FL8KA" unit="MILLISECONDS">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_yyN1SfR7EeOKmIQk3FL8KA" value="1000"/>
@@ -2265,9 +2230,8 @@
       </states>
       <clocks xmi:id="_yyXlpvR7EeOKmIQk3FL8KA" name="c_inv"/>
     </modelElements>
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yyXlp_R7EeOKmIQk3FL8KA" name="ProfileTransmission_member" behavioralElement="_uz92J_R7EeOKmIQk3FL8KA">
-      <operations xmi:id="_yyXlqPR7EeOKmIQk3FL8KA" name="calulateDesiredPosition" returnType="_hm9EVriwEeKp46K0r5yxrg"/>
-      <variables xmi:id="_yyXlqfR7EeOKmIQk3FL8KA" name="numOfProfiles" dataType="_hm9EVriwEeKp46K0r5yxrg">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yyXlp_R7EeOKmIQk3FL8KA" name="ConvoyCoordination_member" behavioralElement="_uz92J_R7EeOKmIQk3FL8KA">
+      <variables xmi:id="_yyXlqfR7EeOKmIQk3FL8KA" name="numOfProfiles" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyXlqvR7EeOKmIQk3FL8KA" value="5"/>
       </variables>
       <variables xmi:id="_yyXlq_R7EeOKmIQk3FL8KA" name="entryPosition" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
@@ -2349,9 +2313,6 @@
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_yyXl2_R7EeOKmIQk3FL8KA" kind="TRIGGER">
           <message xmi:id="_yyXl3PR7EeOKmIQk3FL8KA" instanceOf="_wvJwdvR7EeOKmIQk3FL8KA"/>
         </events>
-        <action xmi:id="_yyXl3fR7EeOKmIQk3FL8KA" name="">
-          <expressions xsi:type="actionlanguage:Block" xmi:id="_yyXl3vR7EeOKmIQk3FL8KA"/>
-        </action>
       </transitions>
       <transitions xmi:id="_yyXl3_R7EeOKmIQk3FL8KA" priority="2" target="_yyXmJ_R7EeOKmIQk3FL8KA" source="_yyXmH_R7EeOKmIQk3FL8KA">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_yyXl4PR7EeOKmIQk3FL8KA" kind="TRIGGER">
