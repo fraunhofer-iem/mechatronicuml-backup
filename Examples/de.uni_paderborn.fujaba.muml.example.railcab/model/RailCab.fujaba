@@ -290,8 +290,8 @@
       </roles>
       <roles xmi:id="_EDhPd-o8EeO-8csd75FEHw" connectors="_EDhPfeo8EeO-8csd75FEHw" behavior="_FekRT-o8EeO-8csd75FEHw" name="section" senderMessageTypes="_cSf79uo8EeO-8csd75FEHw _cSf7-Oo8EeO-8csd75FEHw _cSf79Oo8EeO-8csd75FEHw _cSf78-o8EeO-8csd75FEHw _cSf78eo8EeO-8csd75FEHw" receiverMessageTypes="_cSf79eo8EeO-8csd75FEHw _cSf79-o8EeO-8csd75FEHw _cSf78uo8EeO-8csd75FEHw">
         <cardinality xmi:id="_EDhPeOo8EeO-8csd75FEHw">
-          <lowerBound xmi:id="_EDhPeeo8EeO-8csd75FEHw"/>
-          <upperBound xmi:id="_EDhPeuo8EeO-8csd75FEHw"/>
+          <lowerBound xmi:id="_yLrAAHI2EeSKmYbKH6xlmA"/>
+          <upperBound xmi:id="_yLrnEHI2EeSKmYbKH6xlmA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_EDhPe-o8EeO-8csd75FEHw" name="buffer" messageType="_cSf79eo8EeO-8csd75FEHw _cSf79-o8EeO-8csd75FEHw _cSf78uo8EeO-8csd75FEHw">
           <bufferSize xmi:id="_EDhPfOo8EeO-8csd75FEHw"/>
@@ -300,7 +300,7 @@
       <roleConnector xmi:id="_EDhPfeo8EeO-8csd75FEHw" connectorEndpoints="_EDhPceo8EeO-8csd75FEHw _EDhPd-o8EeO-8csd75FEHw">
         <connectorQualityOfServiceAssumptions xmi:id="_EDhPfuo8EeO-8csd75FEHw" comment="">
           <minMessageDelay xmi:id="_EDhPf-o8EeO-8csd75FEHw" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_EDhPgOo8EeO-8csd75FEHw" value="20"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_0ovfYHI2EeSKmYbKH6xlmA" value="10"/>
           </minMessageDelay>
           <maxMessageDelay xmi:id="_EDhPgeo8EeO-8csd75FEHw" unit="MILLISECONDS">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_EDhPguo8EeO-8csd75FEHw" value="20"/>
