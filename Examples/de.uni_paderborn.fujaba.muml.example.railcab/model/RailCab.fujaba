@@ -6514,11 +6514,11 @@
       <ports xsi:type="component:ContinuousPort" xmi:id="_QC2bYO5yEeOKI4bZ_bxwuQ" name="curDist" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       <ports xsi:type="component:ContinuousPort" xmi:id="_RMMpEO5yEeOKI4bZ_bxwuQ" name="force" dataType="_hm9EVriwEeKp46K0r5yxrg" kind="OUT"/>
     </modelElements>
-    <modelElements xsi:type="reconfiguration:ReconfigurableStructuredComponent" xmi:id="_y35J0O6BEeOKI4bZ_bxwuQ" name="ConvoyCoordination">
+    <modelElements xsi:type="reconfiguration:ReconfigurableStructuredComponent" xmi:id="_y35J0O6BEeOKI4bZ_bxwuQ" name="ConvoyCoordination" componentKind="hybrid component">
       <ports xsi:type="reconfiguration:ReconfigurationMessagePort" xmi:id="_338jUO6BEeOKI4bZ_bxwuQ" connectors="_34IwrO6BEeOKI4bZ_bxwuQ" name="reconfMsg">
         <cardinality xmi:id="_338jUe6BEeOKI4bZ_bxwuQ">
-          <lowerBound xmi:id="_338jUu6BEeOKI4bZ_bxwuQ"/>
-          <upperBound xmi:id="_338jU-6BEeOKI4bZ_bxwuQ"/>
+          <lowerBound xmi:id="_Lubu8HI_EeS_esiL4hAvaw"/>
+          <upperBound xmi:id="_Lubu8XI_EeS_esiL4hAvaw"/>
         </cardinality>
       </ports>
       <ports xsi:type="reconfiguration:ReconfigurationExecutionPort" xmi:id="_34Cp8O6BEeOKI4bZ_bxwuQ" connectors="_34O3MO6BEeOKI4bZ_bxwuQ" name="reconfExec">
@@ -6703,11 +6703,11 @@
         </cardinality>
       </ports>
     </modelElements>
-    <modelElements xsi:type="reconfiguration:ReconfigurableStructuredComponent" xmi:id="_RbW-QPhpEeOQsfT56fxzVQ" name="RailCabDriveControl">
+    <modelElements xsi:type="reconfiguration:ReconfigurableStructuredComponent" xmi:id="_RbW-QPhpEeOQsfT56fxzVQ" name="RailCabDriveControl" componentKind="hybrid component">
       <ports xsi:type="reconfiguration:ReconfigurationMessagePort" xmi:id="_U3ixQPhpEeOQsfT56fxzVQ" connectors="_U3ixZPhpEeOQsfT56fxzVQ" name="reconfMsg">
         <cardinality xmi:id="_U3ixQfhpEeOQsfT56fxzVQ">
-          <lowerBound xmi:id="_U3ixQvhpEeOQsfT56fxzVQ"/>
-          <upperBound xmi:id="_U3ixQ_hpEeOQsfT56fxzVQ"/>
+          <lowerBound xmi:id="_9EqpMHI-EeS_esiL4hAvaw"/>
+          <upperBound xmi:id="_9EqpMXI-EeS_esiL4hAvaw"/>
         </cardinality>
       </ports>
       <ports xsi:type="reconfiguration:ReconfigurationExecutionPort" xmi:id="_U3ixRPhpEeOQsfT56fxzVQ" connectors="_U3ixZfhpEeOQsfT56fxzVQ" name="reconfExec">
@@ -6756,8 +6756,8 @@
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_j1mAYPqXEeO0_ZLnPp6sSA" connectors="_oCISQPqXEeO0_ZLnPp6sSA" name="requestor" senderMessageTypes="_lIjSsI9PEeOh26Tom612Wg _n6Vd0I9PEeOh26Tom612Wg" receiverMessageTypes="_m5UFsI9PEeOh26Tom612Wg _o2b5sI9PEeOh26Tom612Wg _qFu-YI9PEeOh26Tom612Wg _rgMKMI9PEeOh26Tom612Wg" refinedRole="_UQABMI9PEeOh26Tom612Wg">
         <cardinality xmi:id="_OVur4PqfEeO0_ZLnPp6sSA">
-          <lowerBound xmi:id="_x0_fgFOkEeSaVK1gfdE5pA" value="0"/>
-          <upperBound xmi:id="_x0_fgVOkEeSaVK1gfdE5pA"/>
+          <lowerBound xmi:id="_-hXQsHI-EeS_esiL4hAvaw" value="0"/>
+          <upperBound xmi:id="_-hXQsXI-EeS_esiL4hAvaw"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_pIy_YPqXEeO0_ZLnPp6sSA" connectors="_r89wIPqXEeO0_ZLnPp6sSA" name="requestee" senderMessageTypes="_m5UFsI9PEeOh26Tom612Wg _o2b5sI9PEeOh26Tom612Wg _qFu-YI9PEeOh26Tom612Wg _rgMKMI9PEeOh26Tom612Wg" receiverMessageTypes="_lIjSsI9PEeOh26Tom612Wg _n6Vd0I9PEeOh26Tom612Wg" refinedRole="_UQABNI9PEeOh26Tom612Wg">
@@ -6765,7 +6765,7 @@
           <lowerBound xmi:id="_qvQtAAUCEeSn_-l-OlOxjg" value="0"/>
           <upperBound xmi:id="_qvQtAQUCEeSn_-l-OlOxjg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_PMxooPqfEeO0_ZLnPp6sSA" messageType="_lIjSsI9PEeOh26Tom612Wg _n6Vd0I9PEeOh26Tom612Wg">
+        <receiverMessageBuffer xmi:id="_PMxooPqfEeO0_ZLnPp6sSA" name="buffer" messageType="_lIjSsI9PEeOh26Tom612Wg _n6Vd0I9PEeOh26Tom612Wg">
           <bufferSize xmi:id="_PMxoofqfEeO0_ZLnPp6sSA"/>
         </receiverMessageBuffer>
       </ports>
@@ -6774,7 +6774,7 @@
           <lowerBound xmi:id="_AYP48fuSEeO8xJIX1d2eag" value="0"/>
           <upperBound xmi:id="_AYP48vuSEeO8xJIX1d2eag" value="10"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_AYsk4PuSEeO8xJIX1d2eag" messageType="_VpUQMuo2EeO-8csd75FEHw">
+        <receiverMessageBuffer xmi:id="_AYsk4PuSEeO8xJIX1d2eag" name="buffer" messageType="_VpUQMuo2EeO-8csd75FEHw">
           <bufferSize xmi:id="_AYsk4fuSEeO8xJIX1d2eag"/>
         </receiverMessageBuffer>
       </ports>
@@ -6786,8 +6786,8 @@
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_jPs4oPuVEeO2po0ALlWq5g" connectors="_rQtFMPuWEeO2po0ALlWq5g" name="section1" senderMessageTypes="_cSf79eo8EeO-8csd75FEHw _cSf79-o8EeO-8csd75FEHw _cSf78uo8EeO-8csd75FEHw" receiverMessageTypes="_cSf79uo8EeO-8csd75FEHw _cSf7-Oo8EeO-8csd75FEHw _cSf79Oo8EeO-8csd75FEHw _cSf78-o8EeO-8csd75FEHw _cSf78eo8EeO-8csd75FEHw" refinedRole="_EDhPceo8EeO-8csd75FEHw">
         <cardinality xmi:id="_olvJMPuVEeO2po0ALlWq5g">
-          <lowerBound xmi:id="_YourYFOkEeSaVK1gfdE5pA"/>
-          <upperBound xmi:id="_YourYVOkEeSaVK1gfdE5pA"/>
+          <lowerBound xmi:id="_EDe1cHI_EeS_esiL4hAvaw"/>
+          <upperBound xmi:id="_EDe1cXI_EeS_esiL4hAvaw"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_omewEPuVEeO2po0ALlWq5g" name="buffer" messageType="_cSf79uo8EeO-8csd75FEHw _cSf7-Oo8EeO-8csd75FEHw _cSf79Oo8EeO-8csd75FEHw _cSf78-o8EeO-8csd75FEHw _cSf78eo8EeO-8csd75FEHw">
           <bufferSize xmi:id="_omewEfuVEeO2po0ALlWq5g"/>
@@ -7060,8 +7060,8 @@
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_vkOG4Ph3EeOdcfcso3gQlg" name="MemberControl" behavior="_EUAnEPuWEeO2po0ALlWq5g">
       <ports xsi:type="component:DiscretePort" xmi:id="_xXEkkPh3EeOdcfcso3gQlg" name="speedProvider" behavior="_zGJ3UVOiEeSaVK1gfdE5pA" senderMessageTypes="_9L8i8FOfEeSaVK1gfdE5pA" refinedRole="_ncvrkFOfEeSaVK1gfdE5pA">
         <cardinality xmi:id="_zFjaYFOiEeSaVK1gfdE5pA">
-          <lowerBound xmi:id="_zPFJ0FOiEeSaVK1gfdE5pA"/>
-          <upperBound xmi:id="_zPFJ0VOiEeSaVK1gfdE5pA"/>
+          <lowerBound xmi:id="_tmd10HI-EeS_esiL4hAvaw"/>
+          <upperBound xmi:id="_tmec4HI-EeS_esiL4hAvaw"/>
         </cardinality>
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_zjNsAPh3EeOdcfcso3gQlg" name="member" behavior="_EUJxAPuWEeO2po0ALlWq5g" senderMessageTypes="_wvJwgfR7EeOKmIQk3FL8KA _wvJwgvR7EeOKmIQk3FL8KA _wvJwfvR7EeOKmIQk3FL8KA _wvJwf_R7EeOKmIQk3FL8KA _wvJwfPR7EeOKmIQk3FL8KA _wvJwffR7EeOKmIQk3FL8KA" receiverMessageTypes="_wvJwdPR7EeOKmIQk3FL8KA _wvJwc_R7EeOKmIQk3FL8KA _wvJwePR7EeOKmIQk3FL8KA _wvJwdvR7EeOKmIQk3FL8KA _wvJwdfR7EeOKmIQk3FL8KA _wvJwd_R7EeOKmIQk3FL8KA _wvJwcfR7EeOKmIQk3FL8KA" refinedRole="_uz92J_R7EeOKmIQk3FL8KA">
@@ -7069,7 +7069,7 @@
           <lowerBound xmi:id="_EZN3MPuWEeO2po0ALlWq5g"/>
           <upperBound xmi:id="_EZN3MfuWEeO2po0ALlWq5g"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_ET22EPuWEeO2po0ALlWq5g" messageType="_wvJwdPR7EeOKmIQk3FL8KA _wvJwc_R7EeOKmIQk3FL8KA _wvJwePR7EeOKmIQk3FL8KA _wvJwdvR7EeOKmIQk3FL8KA _wvJwdfR7EeOKmIQk3FL8KA _wvJwd_R7EeOKmIQk3FL8KA _wvJwcfR7EeOKmIQk3FL8KA">
+        <receiverMessageBuffer xmi:id="_ET22EPuWEeO2po0ALlWq5g" name="buffer" messageType="_wvJwdPR7EeOKmIQk3FL8KA _wvJwc_R7EeOKmIQk3FL8KA _wvJwePR7EeOKmIQk3FL8KA _wvJwdvR7EeOKmIQk3FL8KA _wvJwdfR7EeOKmIQk3FL8KA _wvJwd_R7EeOKmIQk3FL8KA _wvJwcfR7EeOKmIQk3FL8KA">
           <bufferSize xmi:id="_ET22EfuWEeO2po0ALlWq5g" value="10"/>
         </receiverMessageBuffer>
       </ports>
@@ -7078,7 +7078,7 @@
           <lowerBound xmi:id="_LSLTEPuWEeO2po0ALlWq5g"/>
           <upperBound xmi:id="_LSLTEfuWEeO2po0ALlWq5g"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_G7Ev8PuWEeO2po0ALlWq5g" messageType="_VpUQMeo2EeO-8csd75FEHw">
+        <receiverMessageBuffer xmi:id="_G7Ev8PuWEeO2po0ALlWq5g" name="buffer" messageType="_VpUQMeo2EeO-8csd75FEHw">
           <bufferSize xmi:id="_G7Ev8fuWEeO2po0ALlWq5g"/>
         </receiverMessageBuffer>
       </ports>
