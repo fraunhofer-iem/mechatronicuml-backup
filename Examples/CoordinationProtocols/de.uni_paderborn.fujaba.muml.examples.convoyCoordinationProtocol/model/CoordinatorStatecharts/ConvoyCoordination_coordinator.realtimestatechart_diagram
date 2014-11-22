@@ -247,7 +247,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_AaveJECsEeOU7es34rv27w"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../ConvoyCoordinationProtocol.fujaba#_N-bKYPRMEeK0h5bDo3RUAg"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AaveF0CsEeOU7es34rv27w" x="200" y="-21"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AaveF0CsEeOU7es34rv27w" x="200" y="-9" width="108" height="67"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../ConvoyCoordinationProtocol.fujaba#_B9qscGR8EeKP2f27tWrwPA"/>
@@ -453,7 +453,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_Ab-zykCsEeOU7es34rv27w"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../ConvoyCoordinationProtocol.fujaba#_5J7sUGSDEeKKctqRpH_8DA"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ab-zvUCsEeOU7es34rv27w" x="632" y="474"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ab-zvUCsEeOU7es34rv27w" x="776" y="474"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../ConvoyCoordinationProtocol.fujaba#_fKWk4GSDEeKKctqRpH_8DA"/>
@@ -477,11 +477,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_AZgHbkCsEeOU7es34rv27w"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../ConvoyCoordinationProtocol.fujaba#_sybRUGCXEeK08IWBu_4Dfg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AZgHYUCsEeOU7es34rv27w" height="1174"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AZgHYUCsEeOU7es34rv27w" height="1392"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../ConvoyCoordinationProtocol.fujaba#_i8FJMWCVEeK08IWBu_4Dfg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AZaAwkCsEeOU7es34rv27w" x="-432" y="480" height="1417"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AZaAwkCsEeOU7es34rv27w" x="-432" y="480" height="1501"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_AX-dYUCsEeOU7es34rv27w"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../ConvoyCoordinationProtocol.fujaba#_i8FJMWCVEeK08IWBu_4Dfg"/>
@@ -806,13 +806,13 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Ai2QoECsEeOU7es34rv27w" type="4003" source="_Ab-zrUCsEeOU7es34rv27w" target="_Ab-zvECsEeOU7es34rv27w" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Ai2Qo0CsEeOU7es34rv27w" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Ai2QpECsEeOU7es34rv27w" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Ai2QpECsEeOU7es34rv27w" x="-8" y="21"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_Ai2QpUCsEeOU7es34rv27w" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Ai2QpkCsEeOU7es34rv27w" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_Ai2QoUCsEeOU7es34rv27w" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../ConvoyCoordinationProtocol.fujaba#_jVyXoGSQEeKKctqRpH_8DA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ai2QokCsEeOU7es34rv27w" points="[28, 14, -17, -9]$[-18, -9, -63, -32]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ai2QokCsEeOU7es34rv27w" points="[28, 6, -436, 17]$[212, 49, -252, 60]$[392, 6, -72, 17]"/>
   </edges>
 </notation:Diagram>

@@ -57,12 +57,12 @@
   </categories>
   <categories xmi:id="_ijwlQGCUEeK08IWBu_4Dfg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_RgHooGCVEeK08IWBu_4Dfg" name="ProfileTransmission">
-      <roles xmi:id="_RgHooWCVEeK08IWBu_4Dfg" connectors="_RgHoqWCVEeK08IWBu_4Dfg" behavior="_fKWk4GSDEeKKctqRpH_8DA" name="coordinator" senderMessageTypes="_oSL9AGSMEeKKctqRpH_8DA _JsgiYGCVEeK08IWBu_4Dfg _7r3HcGSMEeKKctqRpH_8DA _u3NwQGSMEeKKctqRpH_8DA _sj7fAGSMEeKKctqRpH_8DA _16TYgGSMEeKKctqRpH_8DA _4ZMAUGSNEeKKctqRpH_8DA" receiverMessageTypes="_cRrjEGSNEeKKctqRpH_8DA _yyoAcGSNEeKKctqRpH_8DA _SUUiEGSNEeKKctqRpH_8DA _T9W8cGSNEeKKctqRpH_8DA _OEz0sGSNEeKKctqRpH_8DA _QqsR0GSNEeKKctqRpH_8DA" adaptationBehavior="_B9qscGR8EeKP2f27tWrwPA" roleAndAdaptationBehavior="_i8FJMWCVEeK08IWBu_4Dfg">
+      <roles xmi:id="_RgHooWCVEeK08IWBu_4Dfg" connectors="_RgHoqWCVEeK08IWBu_4Dfg" behavior="_i8FJMWCVEeK08IWBu_4Dfg" name="coordinator" senderMessageTypes="_oSL9AGSMEeKKctqRpH_8DA _JsgiYGCVEeK08IWBu_4Dfg _7r3HcGSMEeKKctqRpH_8DA _u3NwQGSMEeKKctqRpH_8DA _sj7fAGSMEeKKctqRpH_8DA _16TYgGSMEeKKctqRpH_8DA _4ZMAUGSNEeKKctqRpH_8DA" receiverMessageTypes="_cRrjEGSNEeKKctqRpH_8DA _yyoAcGSNEeKKctqRpH_8DA _SUUiEGSNEeKKctqRpH_8DA _T9W8cGSNEeKKctqRpH_8DA _OEz0sGSNEeKKctqRpH_8DA _QqsR0GSNEeKKctqRpH_8DA" adaptationBehavior="_B9qscGR8EeKP2f27tWrwPA" subroleBehavior="_fKWk4GSDEeKKctqRpH_8DA">
         <cardinality xmi:id="_RgHoomCVEeK08IWBu_4Dfg">
-          <lowerBound xmi:id="_RgHoo2CVEeK08IWBu_4Dfg"/>
-          <upperBound xmi:id="_RgHopGCVEeK08IWBu_4Dfg" value="10"/>
+          <lowerBound xmi:id="_o_jSEHJfEeSUj-2PlgD-kA"/>
+          <upperBound xmi:id="_o_jSEXJfEeSUj-2PlgD-kA" value="10"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_T_dw8MLiEeKElo7BVGwZsA" messageType="_cRrjEGSNEeKKctqRpH_8DA _yyoAcGSNEeKKctqRpH_8DA _SUUiEGSNEeKKctqRpH_8DA _T9W8cGSNEeKKctqRpH_8DA _OEz0sGSNEeKKctqRpH_8DA _QqsR0GSNEeKKctqRpH_8DA">
+        <receiverMessageBuffer xmi:id="_T_dw8MLiEeKElo7BVGwZsA" name="" messageType="_cRrjEGSNEeKKctqRpH_8DA _yyoAcGSNEeKKctqRpH_8DA _SUUiEGSNEeKKctqRpH_8DA _T9W8cGSNEeKKctqRpH_8DA _OEz0sGSNEeKKctqRpH_8DA _QqsR0GSNEeKKctqRpH_8DA">
           <bufferSize xmi:id="_VuA9cMLiEeKElo7BVGwZsA" value="10"/>
         </receiverMessageBuffer>
       </roles>
@@ -71,7 +71,7 @@
           <lowerBound xmi:id="_RgHop2CVEeK08IWBu_4Dfg"/>
           <upperBound xmi:id="_RgHoqGCVEeK08IWBu_4Dfg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_ZkSEYMLiEeKElo7BVGwZsA" messageType="_oSL9AGSMEeKKctqRpH_8DA _JsgiYGCVEeK08IWBu_4Dfg _7r3HcGSMEeKKctqRpH_8DA _u3NwQGSMEeKKctqRpH_8DA _sj7fAGSMEeKKctqRpH_8DA _16TYgGSMEeKKctqRpH_8DA _4ZMAUGSNEeKKctqRpH_8DA">
+        <receiverMessageBuffer xmi:id="_ZkSEYMLiEeKElo7BVGwZsA" name="" messageType="_oSL9AGSMEeKKctqRpH_8DA _JsgiYGCVEeK08IWBu_4Dfg _7r3HcGSMEeKKctqRpH_8DA _u3NwQGSMEeKKctqRpH_8DA _sj7fAGSMEeKKctqRpH_8DA _16TYgGSMEeKKctqRpH_8DA _4ZMAUGSNEeKKctqRpH_8DA">
           <bufferSize xmi:id="_aV1dIMLiEeKElo7BVGwZsA" value="10"/>
         </receiverMessageBuffer>
       </roles>
@@ -114,7 +114,7 @@
     </modelElements>
   </categories>
   <categories xmi:id="_i8FJMGCVEeK08IWBu_4Dfg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_i8FJMWCVEeK08IWBu_4Dfg" name="ProfileTransmission_coordinator">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_i8FJMWCVEeK08IWBu_4Dfg" name="ProfileTransmission_coordinator" behavioralElement="_RgHooWCVEeK08IWBu_4Dfg">
       <operations xmi:id="_HtVboGSVEeKKctqRpH_8DA" name="isMemberPossible" returnType="_V_elUWCUEeK08IWBu_4Dfg"/>
       <operations xmi:id="_LOGzsGSVEeKKctqRpH_8DA" name="calculateProfiles" returnType="_V_elUWCUEeK08IWBu_4Dfg"/>
       <variables xmi:id="_SmO1oGSGEeKKctqRpH_8DA" name="n" dataType="_V_elVGCUEeK08IWBu_4Dfg"/>
@@ -124,7 +124,6 @@
       <variables xmi:id="_yIQmEGSTEeKKctqRpH_8DA" name="newRailCabPosition" dataType="_V_elVGCUEeK08IWBu_4Dfg"/>
       <variables xmi:id="_1ZqFYGSTEeKKctqRpH_8DA" name="changed" dataType="_V_elUWCUEeK08IWBu_4Dfg"/>
       <variables xmi:id="_3Jay0GSTEeKKctqRpH_8DA" name="newProfile" dataType="_PKXC4MRFEeKovq4g5K7Xxw"/>
-      <variables xmi:id="_FVqPEGSUEeKKctqRpH_8DA" name="currentProfiles"/>
       <variables xmi:id="_KT8uAGSUEeKKctqRpH_8DA" name="allProfiles" dataType="_PKXC4cRFEeKovq4g5K7Xxw"/>
       <variables xmi:id="_g5qPQGSXEeKKctqRpH_8DA" name="i" dataType="_V_elVGCUEeK08IWBu_4Dfg"/>
       <states xmi:id="_sybRUGCXEeK08IWBu_4Dfg" name="ProfileTransmission_Coordinator_Main" initial="true">
@@ -506,19 +505,13 @@
               </invariants>
             </states>
             <states xmi:id="_J0wPsHafEeKvcqjVQl9Zxg" name="UpdateRequired" outgoingTransitions="_3SS4wHasEeKvcqjVQl9Zxg _36ndAHasEeKvcqjVQl9Zxg" incomingTransitions="_mlOfMGR8EeKP2f27tWrwPA" urgent="true"/>
-            <states xmi:id="_N-bKYPRMEeK0h5bDo3RUAg" name="Initialize" outgoingTransitions="_YDhyIPRMEeK0h5bDo3RUAg" initial="true">
-              <invariants xmi:id="_UkqekPRMEeK0h5bDo3RUAg" clock="_xf6EEGR8EeKP2f27tWrwPA">
-                <bound xmi:id="_WQOogPRMEeK0h5bDo3RUAg" unit="MILLISECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_WQqtYPRMEeK0h5bDo3RUAg" value="0"/>
-                </bound>
-              </invariants>
-            </states>
+            <states xmi:id="_N-bKYPRMEeK0h5bDo3RUAg" name="Initialize" outgoingTransitions="_YDhyIPRMEeK0h5bDo3RUAg" initial="true" urgent="true"/>
             <clocks xmi:id="_xf6EEGR8EeKP2f27tWrwPA" name="c1"/>
             <clocks xmi:id="_VjIowHanEeKvcqjVQl9Zxg" name="c2"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_5S_18GCXEeK08IWBu_4Dfg" priority="2">
-          <embeddedStatechart xmi:id="_fKWk4GSDEeKKctqRpH_8DA" name="Coordinator_subRole" behavioralElement="_RgHooWCVEeK08IWBu_4Dfg">
+          <embeddedStatechart xmi:id="_fKWk4GSDEeKKctqRpH_8DA" name="Coordinator_subRole">
             <variables xmi:id="_7zYLEGSUEeKKctqRpH_8DA" name="newPos" dataType="_V_elVGCUEeK08IWBu_4Dfg">
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_57948PRcEeK0h5bDo3RUAg" value="1"/>
             </variables>
@@ -646,7 +639,11 @@
                 </selectorExpression>
               </synchronization>
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_MmCz0GSREeKKctqRpH_8DA">
-                <message xmi:id="_MmCz0WSREeKKctqRpH_8DA" instanceOf="_4ZMAUGSNEeKKctqRpH_8DA"/>
+                <message xmi:id="_MmCz0WSREeKKctqRpH_8DA" instanceOf="_4ZMAUGSNEeKKctqRpH_8DA">
+                  <parameterBinding xmi:id="_vKnioHJeEeSUj-2PlgD-kA" parameter="_OUmGsGSZEeKKctqRpH_8DA">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_wTB8MHJeEeSUj-2PlgD-kA" typedNamedElement="_3Jay0GSTEeKKctqRpH_8DA"/>
+                  </parameterBinding>
+                </message>
               </events>
             </transitions>
             <states xmi:id="_siPzEGSDEeKKctqRpH_8DA" name="Idle" outgoingTransitions="_-M7FEGSDEeKKctqRpH_8DA" initial="true">
@@ -709,7 +706,7 @@
         <channels xmi:id="_J-VMsGR7EeKP2f27tWrwPA" name="requestPosition"/>
         <channels xmi:id="_L9V3EGR7EeKP2f27tWrwPA" name="enterAt"/>
         <channels xmi:id="_MpdWMGR7EeKP2f27tWrwPA" name="sendNewProfile" selectorType="_RgHooWCVEeK08IWBu_4Dfg"/>
-        <channels xmi:id="_ngHycGSCEeKKctqRpH_8DA" name="finished" selectorType="_RgHopWCVEeK08IWBu_4Dfg"/>
+        <channels xmi:id="_ngHycGSCEeKKctqRpH_8DA" name="finished" selectorType="_RgHooWCVEeK08IWBu_4Dfg"/>
         <channels xmi:id="_FHNcgHbhEeKvcqjVQl9Zxg" name="convoy"/>
       </states>
       <clocks xmi:id="_6BvXsGR7EeKP2f27tWrwPA" name="c_inv"/>
