@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1" xmi:id="_D1BwwAJSEeKsot-FPTx42A" type="Realtimestatechart" name="Benutzerwünsche_out.realtimestatechart_diagram" measurementUnit="Pixel">
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_D1BwwQJSEeKsot-FPTx42A"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../VernetzterPruefstand.fujaba#_qAiK0HpQEeGB3c_CrLx2_A"/>
-</notation:Diagram>
