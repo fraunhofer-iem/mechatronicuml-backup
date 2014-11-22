@@ -301,7 +301,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String RECONFIGURATION_PORT__RECONFIGURATION_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION = "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\r\n" +
+	protected static final String RECONFIGURATION_PORT__RECONFIGURATION_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION = "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(muml::component::StructuredComponent))\r\n" +
 		"\timplies self.behavior.oclIsUndefined()";
 
 	/**
@@ -892,8 +892,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 		"(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2) -- two reconfiguration ports\r\n" +
 		"or \r\n" +
 		"((self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 1) and -- or one reconfiguration port and one port part\r\n" +
-		"(self.connectorEndpoints -> select(oclIsKindOf(component::PortPart)) -> size() = 1) and \r\n" +
-		"(self.connectorEndpoints -> any(oclIsKindOf(component::PortPart)).oclAsType(component::PortPart).portType.oclIsKindOf(ReconfigurationPort))) -- that is typed over a reconfiguration port";
+		"(self.connectorEndpoints -> select(oclIsKindOf(muml::component::PortPart)) -> size() = 1) and \r\n" +
+		"(self.connectorEndpoints -> any(oclIsKindOf(muml::component::PortPart)).oclAsType(muml::component::PortPart).portType.oclIsKindOf(ReconfigurationPort))) -- that is typed over a reconfiguration port";
 
 	/**
 	 * Validates the OnlyConnectReconfigurationPorts constraint of '<em>Port Assembly Connector</em>'.

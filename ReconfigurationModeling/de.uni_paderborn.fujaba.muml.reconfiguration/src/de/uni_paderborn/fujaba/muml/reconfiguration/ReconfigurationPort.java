@@ -21,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationPort()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReconfigurationPortRequiresMessageTypes='self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' ReconfigurationPortAtStructuredComponentHasNoBehavior='(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\r\n\timplies self.behavior.oclIsUndefined()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReconfigurationPortRequiresMessageTypes='self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' ReconfigurationPortAtStructuredComponentHasNoBehavior='(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(muml::component::StructuredComponent))\r\n\timplies self.behavior.oclIsUndefined()'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior'"
  * @generated
  */

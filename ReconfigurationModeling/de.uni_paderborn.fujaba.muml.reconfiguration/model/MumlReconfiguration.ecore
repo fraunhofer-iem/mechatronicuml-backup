@@ -62,7 +62,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="ReconfigurationPortRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
-      <details key="ReconfigurationPortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))&#xD;&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
+      <details key="ReconfigurationPortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(muml::component::StructuredComponent))&#xD;&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior"/>
@@ -510,7 +510,7 @@
       <details key="constraints" value="OnlyConnectReconfigurationPorts"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="OnlyConnectReconfigurationPorts" value="-- A reconfiguration Port Assembly may only connect reconfiguration ports or a port part typed by a reconfiguration port.&#xD;&#xA;(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2) -- two reconfiguration ports&#xD;&#xA;or &#xD;&#xA;((self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 1) and -- or one reconfiguration port and one port part&#xD;&#xA;(self.connectorEndpoints -> select(oclIsKindOf(component::PortPart)) -> size() = 1) and &#xD;&#xA;(self.connectorEndpoints -> any(oclIsKindOf(component::PortPart)).oclAsType(component::PortPart).portType.oclIsKindOf(ReconfigurationPort))) -- that is typed over a reconfiguration port"/>
+      <details key="OnlyConnectReconfigurationPorts" value="-- A reconfiguration Port Assembly may only connect reconfiguration ports or a port part typed by a reconfiguration port.&#xD;&#xA;(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2) -- two reconfiguration ports&#xD;&#xA;or &#xD;&#xA;((self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 1) and -- or one reconfiguration port and one port part&#xD;&#xA;(self.connectorEndpoints -> select(oclIsKindOf(muml::component::PortPart)) -> size() = 1) and &#xD;&#xA;(self.connectorEndpoints -> any(oclIsKindOf(muml::component::PortPart)).oclAsType(muml::component::PortPart).portType.oclIsKindOf(ReconfigurationPort))) -- that is typed over a reconfiguration port"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortDelegationConnector"
