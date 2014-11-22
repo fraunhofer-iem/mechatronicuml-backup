@@ -1696,16 +1696,13 @@
           </expressions>
         </implementations>
       </operations>
-      <variables xmi:id="_yyN0Y_R7EeOKmIQk3FL8KA" name="n" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       <variables xmi:id="_yyN0ZPR7EeOKmIQk3FL8KA" name="memberPossible" dataType="_hm9EU7iwEeKp46K0r5yxrg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN0ZfR7EeOKmIQk3FL8KA" value="false"/>
       </variables>
       <variables xmi:id="_yyN0ZvR7EeOKmIQk3FL8KA" name="newRailCabPosition" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       <variables xmi:id="_yyN0Z_R7EeOKmIQk3FL8KA" name="changed" dataType="_hm9EU7iwEeKp46K0r5yxrg"/>
       <variables xmi:id="_yyN0aPR7EeOKmIQk3FL8KA" name="newProfile" dataType="_Xl73APSAEeOKmIQk3FL8KA"/>
-      <variables xmi:id="_yyN0afR7EeOKmIQk3FL8KA" name="currentProfiles" dataType="_Xl73BvSAEeOKmIQk3FL8KA"/>
       <variables xmi:id="_yyN0avR7EeOKmIQk3FL8KA" name="allProfiles" dataType="_Xl73AfSAEeOKmIQk3FL8KA"/>
-      <variables xmi:id="_yyN0a_R7EeOKmIQk3FL8KA" name="i" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       <states xmi:id="_yyN0bPR7EeOKmIQk3FL8KA" name="ConvoyCoordination_Coordinator_Main" initial="true">
         <embeddedRegions xmi:id="_yyN0bfR7EeOKmIQk3FL8KA" priority="1">
           <embeddedStatechart xmi:id="_yyN0bvR7EeOKmIQk3FL8KA" name="Coordinator_adaptation">
@@ -1715,7 +1712,7 @@
             </operations>
             <variables xmi:id="_yyN0cvR7EeOKmIQk3FL8KA" name="curSubRole" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
             <variables xmi:id="_yyN0c_R7EeOKmIQk3FL8KA" name="tmpSubRole" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
-            <variables xmi:id="_yyN0dPR7EeOKmIQk3FL8KA" name="maxNumMembers" dataType="_hm9EVriwEeKp46K0r5yxrg">
+            <variables xmi:id="_yyN0dPR7EeOKmIQk3FL8KA" name="maxNumMembers" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yyN0dfR7EeOKmIQk3FL8KA" value="3"/>
             </variables>
             <variables xmi:id="_yyN0dvR7EeOKmIQk3FL8KA" name="members" dataType="_hm9EVriwEeKp46K0r5yxrg">
@@ -2228,7 +2225,6 @@
         <channels xmi:id="_yyXlpPR7EeOKmIQk3FL8KA" name="finished" selectorType="_uz92J_R7EeOKmIQk3FL8KA"/>
         <channels xmi:id="_yyXlpfR7EeOKmIQk3FL8KA" name="convoy"/>
       </states>
-      <clocks xmi:id="_yyXlpvR7EeOKmIQk3FL8KA" name="c_inv"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yyXlp_R7EeOKmIQk3FL8KA" name="ConvoyCoordination_member" behavioralElement="_uz92J_R7EeOKmIQk3FL8KA">
       <variables xmi:id="_yyXlqfR7EeOKmIQk3FL8KA" name="numOfProfiles" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
