@@ -2,6 +2,8 @@ package de.uni_paderborn.fujaba.muml.ontology.edit.properties.dialog;
 
 import java.util.HashSet;
 
+import javax.xml.ws.FaultAction;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -56,11 +58,14 @@ public class OntologyDialog extends TitleAreaDialog {
 	private Button infoButton;
 
 	private Button showallCheckbox;
+	
+	private String projectName;
 
-	public OntologyDialog(Shell parentShell) {
+	public OntologyDialog(Shell parentShell, final String projectName) {
 		super(parentShell);
 		this.title = "Select an Ontology Entity";
 		this.ontologyUtils = new OWLOntologyUtil();
+		this.projectName = projectName;
 
 	}
 
@@ -255,6 +260,12 @@ public class OntologyDialog extends TitleAreaDialog {
 
 		this.viewer.setInput(ontologyUtils.getloadedOntologies());
         this.viewer.addSelectionChangedListener(new TreeViewerSelectionChangedListener());
+        
+       /**
+        * FIXME: move this into ontology loader
+        */
+        ontologyUtils.getProjectPrefernces(projectName);
+        
 
 		// this.viewer.setComparator(new
 		// SelectOntologyEntityViewerComparator());

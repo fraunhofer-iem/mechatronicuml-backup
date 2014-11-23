@@ -161,7 +161,8 @@ public class OntologyPropertyEditor extends
 		ontologyButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				OntologyDialog diag = new OntologyDialog(parentComposite.getShell());
+				String projectName = getElement().eResource().getURI().segment(1);
+				OntologyDialog diag = new OntologyDialog(parentComposite.getShell(),projectName);
 				int status = diag.open();
 				if(status == SWT.OK){
 					OntologyPropertyEditor.this.getFeature();
