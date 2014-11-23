@@ -258,14 +258,10 @@ public class OntologyDialog extends TitleAreaDialog {
 
 		this.viewer.setLabelProvider(new OntologyLabelProvider());
 
-		this.viewer.setInput(ontologyUtils.getloadedOntologies());
+		this.viewer.setInput(ontologyUtils.getloadedOntologies(projectName));
         this.viewer.addSelectionChangedListener(new TreeViewerSelectionChangedListener());
         
-       /**
-        * FIXME: move this into ontology loader
-        */
-        ontologyUtils.getProjectPrefernces(projectName);
-        
+     
 
 		// this.viewer.setComparator(new
 		// SelectOntologyEntityViewerComparator());
