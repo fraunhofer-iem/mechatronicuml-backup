@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ontology Properties
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.ontology.edit.properties; singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.properties.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.storydriven.core,
+ de.uni_paderborn.fujaba.modelinstance,
+ de.uni_paderborn.fujaba.muml,
+ de.uni_paderborn.fujaba.muml.ontology.edit,
+ de.uni_paderborn.fujaba.muml.ontology,
+ org.storydriven.core.edit,
+ org.storydriven.core.edit.properties,
+ de.uni_paderborn.fujaba.muml.edit,
+ de.uni_paderborn.fujaba.muml.edit.properties,
+ de.uni_paderborn.fujaba.modelinstance.edit,
+ de.uni_paderborn.fujaba.modelinstance.edit.properties,
+ de.uni_paderborn.fujaba.muml.common,
+ org.eclipse.core.resources,
+ org.eclipse.jface
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.ontology.properties.metamodel, de.uni_paderborn.fujaba.muml.ontology.properties.constraint,
+ de.uni_paderborn.fujaba.muml.ontology.properties.ontology.editor,
+ de.uni_paderborn.fujaba.muml.ontology.properties.tabs
+Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT 
+Import-Package: org.eclipse.emf.edit.ui.provider
+Bundle-ClassPath: libs/owlapi-distribution-4.0.0.jar,
+ .

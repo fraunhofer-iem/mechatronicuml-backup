@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler>
+    <customTransformations uri="/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="ontology.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.ontology.edit.properties" name="Ontology Properties" vendor="Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT " version="0.4.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.storydriven.core</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.ontology.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.ontology.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.ontology</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.common</requiredBundles>
+  </plugin>
+  <tabs id="property.tab.ontology" name="Ontology" afterTab=""/>
+  <packages>
+    <genPackage href="ontology.genmodel#//ontology"/>
+    <classes>
+      <genClass href="ontology.genmodel#//ontology/OntologyExtension"/>
+      <properties tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="ontology.genmodel#//ontology/OntologyExtension/ontologyReference"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ontology.edit.properties.custom.OntologyPropertyEditor"/>
+      </properties>
+      <properties tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(muml::component::Port)"/>
+        </creationOppositeConstraint>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.2"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
