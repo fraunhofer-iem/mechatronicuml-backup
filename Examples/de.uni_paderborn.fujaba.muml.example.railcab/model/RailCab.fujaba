@@ -71,6 +71,7 @@
       <messageTypes xmi:id="_LkSRoGjBEeSJccZJNeJaVg" name="addConvoyMemberAtPos">
         <parameters xmi:id="_NfKp8GjBEeSJccZJNeJaVg" name="pos" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       </messageTypes>
+      <messageTypes xmi:id="_VceSsHPNEeS2jMQrzOH4MA" name="enableConvoyBuildUp"/>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_A0CcwHauEeOh__JNCv2_1A" name="ConvoyEntry">
       <messageTypes xmi:id="_BG8KoHauEeOh__JNCv2_1A" name="youSlave"/>
@@ -7539,6 +7540,52 @@
           </componentStoryPattern>
         </ownedActivityNode>
         <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_WqmnMHGzEeSVlfOmyWLx7A" name="final" incoming="_YefmsHGzEeSVlfOmyWLx7A _ae4xIHGzEeSVlfOmyWLx7A"/>
+      </activity>
+    </modelElements>
+    <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_swC8UHPMEeS2jMQrzOH4MA" reconfiguredComponent="_ebUwcPhwEeOlYcxv1LeTzQ">
+      <signature xmi:id="_7fHY0HPMEeS2jMQrzOH4MA" name="enableConvoyBuildUp"/>
+      <activity xmi:id="_u6jFAHPMEeS2jMQrzOH4MA" name="activity">
+        <ownedActivityEdge xmi:id="_-v2JwHPMEeS2jMQrzOH4MA" target="_xYsicHPMEeS2jMQrzOH4MA" source="_wX07UHPMEeS2jMQrzOH4MA"/>
+        <ownedActivityEdge xmi:id="_ATrUAHPNEeS2jMQrzOH4MA" target="__VfNcHPMEeS2jMQrzOH4MA" source="_xYsicHPMEeS2jMQrzOH4MA"/>
+        <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_wX07UHPMEeS2jMQrzOH4MA" name="init" outgoing="_-v2JwHPMEeS2jMQrzOH4MA"/>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_xYsicHPMEeS2jMQrzOH4MA" name="Create Port Instances" outgoing="_ATrUAHPNEeS2jMQrzOH4MA" incoming="_-v2JwHPMEeS2jMQrzOH4MA">
+          <componentStoryPattern xmi:id="_xYsicXPMEeS2jMQrzOH4MA" name="componentStoryPattern">
+            <thisVariable xmi:id="_xYsicnPMEeS2jMQrzOH4MA" name="this" bindingState="BOUND" type="_ebUwcPhwEeOlYcxv1LeTzQ">
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_0zGMwHPMEeS2jMQrzOH4MA" name="" bindingOperator="CREATE" dataType="_YETnMPh0EeOAKLom6jxr8Q"/>
+            </thisVariable>
+          </componentStoryPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="__VfNcHPMEeS2jMQrzOH4MA" name="final" incoming="_ATrUAHPNEeS2jMQrzOH4MA"/>
+      </activity>
+    </modelElements>
+    <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_IJojoHPNEeS2jMQrzOH4MA" reconfiguredComponent="_RbW-QPhpEeOQsfT56fxzVQ">
+      <signature xmi:id="_KB2CcHPNEeS2jMQrzOH4MA" name="enableConvoyMode"/>
+      <activity xmi:id="_LjliAHPNEeS2jMQrzOH4MA" name="activity">
+        <ownedActivityEdge xmi:id="_VBccYHP1EeSVBu1w64eiwg" target="_Myb6wHPNEeS2jMQrzOH4MA" source="_MYjbIHPNEeS2jMQrzOH4MA"/>
+        <ownedActivityEdge xmi:id="_W-kQYHP1EeSVBu1w64eiwg" target="__l-ZUHP0EeSVBu1w64eiwg" source="_Myb6wHPNEeS2jMQrzOH4MA"/>
+        <ownedActivityEdge xmi:id="_ZfPdYHP1EeSVBu1w64eiwg" target="_XU4eoHP1EeSVBu1w64eiwg" source="__l-ZUHP0EeSVBu1w64eiwg"/>
+        <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_MYjbIHPNEeS2jMQrzOH4MA" name="init" outgoing="_VBccYHP1EeSVBu1w64eiwg"/>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_Myb6wHPNEeS2jMQrzOH4MA" name="componentStoryNode" outgoing="_W-kQYHP1EeSVBu1w64eiwg" incoming="_VBccYHP1EeSVBu1w64eiwg">
+          <componentStoryPattern xmi:id="_Myb6wXPNEeS2jMQrzOH4MA" name="componentStoryPattern">
+            <thisVariable xmi:id="_Myb6wnPNEeS2jMQrzOH4MA" name="this" bindingState="BOUND" type="_RbW-QPhpEeOQsfT56fxzVQ">
+              <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_NfOIQHPNEeS2jMQrzOH4MA" name="os" dataType="_oBVHwPh4EeOdcfcso3gQlg">
+                <triggerEmbeddedComponentExpressions xsi:type="componentstorydiagram:SendReconfigurationMessageExpression" xmi:id="_RJPi8HPNEeS2jMQrzOH4MA" reconfigurationMessageType="_VceSsHPNEeS2jMQrzOH4MA"/>
+              </partVariables>
+            </thisVariable>
+          </componentStoryPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="__l-ZUHP0EeSVBu1w64eiwg" name="Create Port Instance and Delegation" outgoing="_ZfPdYHP1EeSVBu1w64eiwg" incoming="_W-kQYHP1EeSVBu1w64eiwg">
+          <componentStoryPattern xmi:id="__l-ZUXP0EeSVBu1w64eiwg" name="componentStoryPattern">
+            <thisVariable xmi:id="__l-ZUnP0EeSVBu1w64eiwg" name="this" bindingState="BOUND" type="_RbW-QPhpEeOQsfT56fxzVQ">
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_GFk6AHP1EeSVBu1w64eiwg" name="" bindingOperator="CREATE" connectors="_N4HpQHP1EeSVBu1w64eiwg" dataType="_Tw2JwPh7EeOdcfcso3gQlg"/>
+              <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_BxcyYHP1EeSVBu1w64eiwg" name="os" bindingState="BOUND" dataType="_oBVHwPh4EeOdcfcso3gQlg">
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_F3SmYHP1EeSVBu1w64eiwg" name="" bindingOperator="CREATE" connectors="_N4HpQHP1EeSVBu1w64eiwg" dataType="_YETnMPh0EeOAKLom6jxr8Q"/>
+              </partVariables>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_N4HpQHP1EeSVBu1w64eiwg" name="" bindingOperator="CREATE" connectorEndpoints="_GFk6AHP1EeSVBu1w64eiwg _F3SmYHP1EeSVBu1w64eiwg" type="_YfJr8Ph7EeOdcfcso3gQlg"/>
+            </thisVariable>
+          </componentStoryPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_XU4eoHP1EeSVBu1w64eiwg" name="final" incoming="_ZfPdYHP1EeSVBu1w64eiwg"/>
       </activity>
     </modelElements>
   </categories>
