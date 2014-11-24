@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol;
 
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
-import org.eclipse.emf.common.util.EList;
 
 
 /**

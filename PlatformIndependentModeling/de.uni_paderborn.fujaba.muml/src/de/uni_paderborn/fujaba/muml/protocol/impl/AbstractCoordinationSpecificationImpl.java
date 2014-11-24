@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol.impl;
 
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,6 +18,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;

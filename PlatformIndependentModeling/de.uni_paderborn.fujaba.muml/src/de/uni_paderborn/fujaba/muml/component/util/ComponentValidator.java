@@ -13,9 +13,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
-import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -1659,7 +1657,7 @@ public class ComponentValidator extends MumlValidator {
 		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())\r\n" +
 		"implies \r\n" +
 		"let ports : OrderedSet(Port) = OrderedSet { portPart.portType, port } in\r\n" +
-		"(ports->forAll(oclIsKindOf(component::DiscretePort)) or ports->forAll(oclIsKindOf(component::DirectedTypedPort)))\r\n" +
+		"(ports->forAll(oclIsKindOf(connector::DiscreteInteractionEndpoint)) or ports->forAll(oclIsKindOf(component::DirectedTypedPort)))\r\n" +
 		"-- author: bingo, cgerking, see MUML #880";
 
 	/**

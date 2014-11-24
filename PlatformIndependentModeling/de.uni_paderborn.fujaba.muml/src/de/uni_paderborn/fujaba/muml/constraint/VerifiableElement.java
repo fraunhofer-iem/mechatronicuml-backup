@@ -13,7 +13,6 @@
 package de.uni_paderborn.fujaba.muml.constraint;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.ExtendableElement;
 
 /**
