@@ -7,6 +7,7 @@ import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.Conn
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MumlEditPartFactory;
+import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -26,7 +27,9 @@ public class CustomProtocolEditPartFactory extends MumlEditPartFactory {
 			case CoordinationProtocol2EditPart.VISUAL_ID:
 				return new CustomCoordinationProtocol2EditPart(view);
 			case ModelElementCategoryEditPart.VISUAL_ID:
-				return new CustomModelElementCategoryEditPart(view);							
+				return new CustomModelElementCategoryEditPart(view);
+			case RoleConnectorEditPart.VISUAL_ID:
+				return new CustomRoleConnectorEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

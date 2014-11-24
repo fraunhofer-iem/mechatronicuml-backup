@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.storydriven.core.expressions.ExpressionsPackage;
+
 import de.uni_paderborn.fujaba.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
@@ -30,7 +33,8 @@ public class CustomWrappedLabelUpdateEditPolicy extends NotifyingGraphicalEditPo
 	public void handleNotificationEvent(Notification notification) {
 		// TODO Auto-generated method stub
 		super.handleNotificationEvent(notification);
-		updateListeners();
+		if(ExpressionsPackage.Literals.EXPRESSION.isSuperTypeOf(((EStructuralFeature)notification.getFeature()).getEContainingClass()))
+			updateListeners();
 		this.getHost().refresh();
 	}
 }

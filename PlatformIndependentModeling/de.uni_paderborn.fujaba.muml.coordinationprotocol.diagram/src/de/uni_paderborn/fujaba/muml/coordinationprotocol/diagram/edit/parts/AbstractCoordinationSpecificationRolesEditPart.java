@@ -126,6 +126,18 @@ public class AbstractCoordinationSpecificationRolesEditPart extends
 
 			this.add(fFigureRolePatternLabel);
 
+			PolylineConnectionEx rolePatternFigure0 = new PolylineConnectionEx();
+
+			rolePatternFigure0.setLineStyle(Graphics.LINE_DASH);
+
+			this.add(rolePatternFigure0);
+
+			WrappingLabel rolePatternLabel1 = new WrappingLabel();
+
+			rolePatternLabel1.setText("");
+
+			rolePatternFigure0.add(rolePatternLabel1);
+
 		}
 
 		/**
