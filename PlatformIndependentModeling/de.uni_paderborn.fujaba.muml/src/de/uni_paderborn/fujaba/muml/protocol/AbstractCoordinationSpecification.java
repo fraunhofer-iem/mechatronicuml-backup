@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol;
 
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
@@ -22,6 +23,9 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoleConnector <em>Role Connector</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfAbstractCoordinationSpecification <em>Gmf Abstract Coordination Specification</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfMessageBuffers <em>Gmf Message Buffers</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,5 +80,51 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 	 * @generated
 	 */
 	void setRoleConnector(RoleConnector value);
+
+	/**
+	 * Returns the value of the '<em><b>Gmf Abstract Coordination Specification</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived reference only exists because GMF needs it to visualize the inner hexagon of a Real-Time Coordination Protocol.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Gmf Abstract Coordination Specification</em>' containment reference.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification()
+	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self'"
+	 * @generated
+	 */
+	AbstractCoordinationSpecification getGmfAbstractCoordinationSpecification();
+
+	/**
+	 * Returns the value of the '<em><b>Gmf Message Buffers</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived reference only exists because GMF needs it to display the MessageBuffer within the coordination protocol rectangle.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Gmf Message Buffers</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification_GmfMessageBuffers()
+	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='roles->collect(receiverMessageBuffer)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<MessageBuffer> getGmfMessageBuffers();
+
+	/**
+	 * Returns the value of the '<em><b>Gmf Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived reference only exists because GMF needs it to display the ConnectorQualityOfServiceAssumption within the coordination protocol rectangle.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Gmf Connector Quality Of Service Assumptions</em>' containment reference.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions()
+	 * @model containment="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.roleConnector.connectorQualityOfServiceAssumptions'"
+	 * @generated
+	 */
+	ConnectorQualityOfServiceAssumptions getGmfConnectorQualityOfServiceAssumptions();
 
 } // AbstractCoordinationSpecification

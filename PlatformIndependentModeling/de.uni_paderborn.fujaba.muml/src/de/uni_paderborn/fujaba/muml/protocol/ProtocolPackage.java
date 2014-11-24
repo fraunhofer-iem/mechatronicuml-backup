@@ -140,13 +140,40 @@ public interface ProtocolPackage extends EPackage {
 	int ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Abstract Coordination Specification</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_SPECIFICATION__GMF_ABSTRACT_COORDINATION_SPECIFICATION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Message Buffers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_SPECIFICATION__GMF_MESSAGE_BUFFERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Coordination Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -412,13 +439,13 @@ public interface ProtocolPackage extends EPackage {
 	int COORDINATION_PROTOCOL__ROLE_CONNECTOR = ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR;
 
 	/**
-	 * The feature id for the '<em><b>Gmf Coordination Protocol</b></em>' containment reference.
+	 * The feature id for the '<em><b>Gmf Abstract Coordination Specification</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 0;
+	int COORDINATION_PROTOCOL__GMF_ABSTRACT_COORDINATION_SPECIFICATION = ABSTRACT_COORDINATION_SPECIFICATION__GMF_ABSTRACT_COORDINATION_SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>Gmf Message Buffers</b></em>' containment reference list.
@@ -427,7 +454,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 1;
+	int COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS = ABSTRACT_COORDINATION_SPECIFICATION__GMF_MESSAGE_BUFFERS;
 
 	/**
 	 * The feature id for the '<em><b>Gmf Connector Quality Of Service Assumptions</b></em>' containment reference.
@@ -436,7 +463,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 2;
+	int COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Protocol</em>' class.
@@ -445,7 +472,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_FEATURE_COUNT = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 3;
+	int COORDINATION_PROTOCOL_FEATURE_COUNT = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1519,6 +1546,39 @@ public interface ProtocolPackage extends EPackage {
 	EReference getAbstractCoordinationSpecification_RoleConnector();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfAbstractCoordinationSpecification <em>Gmf Abstract Coordination Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Gmf Abstract Coordination Specification</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfAbstractCoordinationSpecification()
+	 * @see #getAbstractCoordinationSpecification()
+	 * @generated
+	 */
+	EReference getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfMessageBuffers <em>Gmf Message Buffers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Gmf Message Buffers</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfMessageBuffers()
+	 * @see #getAbstractCoordinationSpecification()
+	 * @generated
+	 */
+	EReference getAbstractCoordinationSpecification_GmfMessageBuffers();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Gmf Connector Quality Of Service Assumptions</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfConnectorQualityOfServiceAssumptions()
+	 * @see #getAbstractCoordinationSpecification()
+	 * @generated
+	 */
+	EReference getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector <em>Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1570,39 +1630,6 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCoordinationProtocol();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Gmf Coordination Protocol</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfCoordinationProtocol()
-	 * @see #getCoordinationProtocol()
-	 * @generated
-	 */
-	EReference getCoordinationProtocol_GmfCoordinationProtocol();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfMessageBuffers <em>Gmf Message Buffers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Gmf Message Buffers</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfMessageBuffers()
-	 * @see #getCoordinationProtocol()
-	 * @generated
-	 */
-	EReference getCoordinationProtocol_GmfMessageBuffers();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Gmf Connector Quality Of Service Assumptions</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfConnectorQualityOfServiceAssumptions()
-	 * @see #getCoordinationProtocol()
-	 * @generated
-	 */
-	EReference getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.protocol.Role <em>Role</em>}'.
@@ -1739,6 +1766,30 @@ public interface ProtocolPackage extends EPackage {
 		EReference ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR = eINSTANCE.getAbstractCoordinationSpecification_RoleConnector();
 
 		/**
+		 * The meta object literal for the '<em><b>Gmf Abstract Coordination Specification</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_COORDINATION_SPECIFICATION__GMF_ABSTRACT_COORDINATION_SPECIFICATION = eINSTANCE.getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Gmf Message Buffers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_COORDINATION_SPECIFICATION__GMF_MESSAGE_BUFFERS = eINSTANCE.getAbstractCoordinationSpecification_GmfMessageBuffers();
+
+		/**
+		 * The meta object literal for the '<em><b>Gmf Connector Quality Of Service Assumptions</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = eINSTANCE.getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl <em>Role Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1781,30 +1832,6 @@ public interface ProtocolPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocol();
-
-		/**
-		 * The meta object literal for the '<em><b>Gmf Coordination Protocol</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocol_GmfCoordinationProtocol();
-
-		/**
-		 * The meta object literal for the '<em><b>Gmf Message Buffers</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COORDINATION_PROTOCOL__GMF_MESSAGE_BUFFERS = eINSTANCE.getCoordinationProtocol_GmfMessageBuffers();
-
-		/**
-		 * The meta object literal for the '<em><b>Gmf Connector Quality Of Service Assumptions</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = eINSTANCE.getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl <em>Role</em>}' class.

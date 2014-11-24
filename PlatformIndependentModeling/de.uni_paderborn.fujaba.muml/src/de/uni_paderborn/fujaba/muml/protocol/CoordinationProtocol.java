@@ -19,14 +19,6 @@ import org.eclipse.emf.common.util.EList;
  * A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination protocols. Constraints specify certain properties the coordination specified by the protocol has to fullfill.
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfMessageBuffers <em>Gmf Message Buffers</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}</li>
- * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CoordinationProtocolNamesMustBeUnique'"
@@ -34,50 +26,5 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface CoordinationProtocol extends AbstractCoordinationSpecification {
-	/**
-	 * Returns the value of the '<em><b>Gmf Coordination Protocol</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This derived reference only exists because GMF needs it to visualize the inner hexagon of a Real-Time Coordination Protocol.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Gmf Coordination Protocol</em>' containment reference.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol_GmfCoordinationProtocol()
-	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self'"
-	 * @generated
-	 */
-	CoordinationProtocol getGmfCoordinationProtocol();
-
-	/**
-	 * Returns the value of the '<em><b>Gmf Message Buffers</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This derived reference only exists because GMF needs it to display the MessageBuffer within the coordination protocol rectangle.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Gmf Message Buffers</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol_GmfMessageBuffers()
-	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='roles->collect(receiverMessageBuffer)->asOrderedSet()'"
-	 * @generated
-	 */
-	EList<MessageBuffer> getGmfMessageBuffers();
-
-	/**
-	 * Returns the value of the '<em><b>Gmf Connector Quality Of Service Assumptions</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This derived reference only exists because GMF needs it to display the ConnectorQualityOfServiceAssumption within the coordination protocol rectangle.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Gmf Connector Quality Of Service Assumptions</em>' containment reference.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions()
-	 * @model containment="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.roleConnector.connectorQualityOfServiceAssumptions'"
-	 * @generated
-	 */
-	ConnectorQualityOfServiceAssumptions getGmfConnectorQualityOfServiceAssumptions();
 
 } // CoordinationProtocol

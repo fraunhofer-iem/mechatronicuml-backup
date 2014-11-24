@@ -963,20 +963,9 @@
           <details key="documentation" value="Each coordination protocol has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful protocol with more than two roles. If a useful protocol exists with more than 2 roles, then change cardinality to 1..*"/>
         </eAnnotations>
       </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="#//protocol/AbstractCoordinationSpecification">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination protocols. Constraints specify certain properties the coordination specified by the protocol has to fullfill."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="CoordinationProtocolNamesMustBeUnique"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CoordinationProtocolNamesMustBeUnique" value="-- Coordination Protocols must have unique names&#xD;&#xA;CoordinationProtocol.allInstances()->isUnique(name)"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="gmfCoordinationProtocol"
-          eType="#//protocol/CoordinationProtocol" changeable="false" volatile="true"
-          transient="true" derived="true" containment="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="gmfAbstractCoordinationSpecification"
+          eType="#//protocol/AbstractCoordinationSpecification" changeable="false"
+          volatile="true" transient="true" derived="true" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self"/>
         </eAnnotations>
@@ -1004,6 +993,17 @@
           <details key="documentation" value="This derived reference only exists because GMF needs it to display the ConnectorQualityOfServiceAssumption within the coordination protocol rectangle."/>
         </eAnnotations>
       </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="#//protocol/AbstractCoordinationSpecification">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination protocols. Constraints specify certain properties the coordination specified by the protocol has to fullfill."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CoordinationProtocolNamesMustBeUnique"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CoordinationProtocolNamesMustBeUnique" value="-- Coordination Protocols must have unique names&#xD;&#xA;CoordinationProtocol.allInstances()->isUnique(name)"/>
+      </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//connector/DiscreteInteractionEndpoint #//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
