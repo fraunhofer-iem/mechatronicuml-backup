@@ -73,6 +73,7 @@
       </messageTypes>
       <messageTypes xmi:id="_VceSsHPNEeS2jMQrzOH4MA" name="enableConvoyBuildUp"/>
       <messageTypes xmi:id="_oTRVkHP5EeSHw7AsWgY3fg" name="applyMemberStrategy"/>
+      <messageTypes xmi:id="_cSI6cHQDEeSHw7AsWgY3fg" name="disableConvoyBuildUp"/>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_A0CcwHauEeOh__JNCv2_1A" name="ConvoyEntry">
       <messageTypes xmi:id="_BG8KoHauEeOh__JNCv2_1A" name="youSlave"/>
@@ -7713,6 +7714,137 @@
           </componentStoryPattern>
         </ownedActivityNode>
         <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_UouLoHP7EeSHw7AsWgY3fg" name="final" incoming="_XEVScHP7EeSHw7AsWgY3fg _XvCcUHP7EeSHw7AsWgY3fg"/>
+      </activity>
+    </modelElements>
+    <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_9_ZY4HP7EeSHw7AsWgY3fg" reconfiguredComponent="_OE_0UO6CEeOKI4bZ_bxwuQ">
+      <signature xmi:id="__IcroHP7EeSHw7AsWgY3fg" name="createMemberPortsAfter">
+        <parameters xmi:id="_d8u4MHP8EeSHw7AsWgY3fg" name="c" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+        <parameters xmi:id="_iah5MHP8EeSHw7AsWgY3fg" name="p" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
+        <returnParameters xmi:id="_AvQRYHP8EeSHw7AsWgY3fg" name="cPort" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+        <returnParameters xmi:id="_Ci2V8HP8EeSHw7AsWgY3fg" name="pPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
+      </signature>
+      <activity xmi:id="_Fr_RIHP8EeSHw7AsWgY3fg" name="activity">
+        <ownedActivityEdge xmi:id="_Hbz-EHP-EeSHw7AsWgY3fg" target="_GYLBsHP8EeSHw7AsWgY3fg" source="_GAhWsHP8EeSHw7AsWgY3fg"/>
+        <ownedActivityEdge xmi:id="_H8sdkHP-EeSHw7AsWgY3fg" target="_PJHdcHP9EeSHw7AsWgY3fg" source="_GYLBsHP8EeSHw7AsWgY3fg"/>
+        <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_GAhWsHP8EeSHw7AsWgY3fg" name="init" outgoing="_Hbz-EHP-EeSHw7AsWgY3fg"/>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_GYLBsHP8EeSHw7AsWgY3fg" name="Create Ports" outgoing="_H8sdkHP-EeSHw7AsWgY3fg" incoming="_Hbz-EHP-EeSHw7AsWgY3fg">
+          <componentStoryPattern xmi:id="_GYLBsXP8EeSHw7AsWgY3fg" name="componentStoryPattern">
+            <thisVariable xmi:id="_GYLBsnP8EeSHw7AsWgY3fg" name="this" bindingState="BOUND" type="_OE_0UO6CEeOKI4bZ_bxwuQ">
+              <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_KHP7gHP8EeSHw7AsWgY3fg" name="" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ" subPortVariables="_KixZ4HP8EeSHw7AsWgY3fg _K1hWwHP8EeSHw7AsWgY3fg _K-5VMHP8EeSHw7AsWgY3fg">
+                <orderConstraints xmi:id="_qr4rYHP8EeSHw7AsWgY3fg" srcSubPortVariable="_KixZ4HP8EeSHw7AsWgY3fg" tgtSubPortVariable="_K1hWwHP8EeSHw7AsWgY3fg"/>
+                <orderConstraints xmi:id="_sOrT0HP8EeSHw7AsWgY3fg" srcSubPortVariable="_K1hWwHP8EeSHw7AsWgY3fg" tgtSubPortVariable="_K-5VMHP8EeSHw7AsWgY3fg"/>
+                <orderConstraints xmi:id="_xzcj8HP8EeSHw7AsWgY3fg" srcSubPortVariable="_KixZ4HP8EeSHw7AsWgY3fg" tgtSubPortVariable="_K-5VMHP8EeSHw7AsWgY3fg"/>
+              </portVariables>
+              <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_KLRf4HP8EeSHw7AsWgY3fg" name="" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ" subPortVariables="_LH9xoHP8EeSHw7AsWgY3fg _LRC1IHP8EeSHw7AsWgY3fg _LiACQHP8EeSHw7AsWgY3fg">
+                <orderConstraints xmi:id="_9GVNcHP8EeSHw7AsWgY3fg" srcSubPortVariable="_LH9xoHP8EeSHw7AsWgY3fg" tgtSubPortVariable="_LRC1IHP8EeSHw7AsWgY3fg"/>
+                <orderConstraints xmi:id="_CbLLMHP9EeSHw7AsWgY3fg" srcSubPortVariable="_LRC1IHP8EeSHw7AsWgY3fg" tgtSubPortVariable="_LiACQHP8EeSHw7AsWgY3fg"/>
+                <orderConstraints xmi:id="_GhKwMHP9EeSHw7AsWgY3fg" srcSubPortVariable="_LH9xoHP8EeSHw7AsWgY3fg" tgtSubPortVariable="_LiACQHP8EeSHw7AsWgY3fg"/>
+              </portVariables>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_KixZ4HP8EeSHw7AsWgY3fg" name="p" bindingState="BOUND" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ" multiPortVariable="_KHP7gHP8EeSHw7AsWgY3fg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_K1hWwHP8EeSHw7AsWgY3fg" name="newP" bindingOperator="CREATE" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ" multiPortVariable="_KHP7gHP8EeSHw7AsWgY3fg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_K-5VMHP8EeSHw7AsWgY3fg" name="" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ" multiPortVariable="_KHP7gHP8EeSHw7AsWgY3fg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_LH9xoHP8EeSHw7AsWgY3fg" name="c" bindingState="BOUND" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ" multiPortVariable="_KLRf4HP8EeSHw7AsWgY3fg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_LRC1IHP8EeSHw7AsWgY3fg" name="newC" bindingOperator="CREATE" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ" multiPortVariable="_KLRf4HP8EeSHw7AsWgY3fg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_LiACQHP8EeSHw7AsWgY3fg" name="" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ" multiPortVariable="_KLRf4HP8EeSHw7AsWgY3fg"/>
+            </thisVariable>
+          </componentStoryPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_PJHdcHP9EeSHw7AsWgY3fg" name="final" incoming="_H8sdkHP-EeSHw7AsWgY3fg"/>
+      </activity>
+    </modelElements>
+    <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_XATmsHP-EeSHw7AsWgY3fg" reconfiguredComponent="_y35J0O6BEeOKI4bZ_bxwuQ">
+      <signature xmi:id="_aEr9sHP-EeSHw7AsWgY3fg" name="instantiate1Member"/>
+      <activity xmi:id="_crdysHP-EeSHw7AsWgY3fg" name="activity">
+        <ownedActivityEdge xmi:id="_w3R50HQAEeSHw7AsWgY3fg" target="_1b3KMHP-EeSHw7AsWgY3fg" source="_1xbxkHP-EeSHw7AsWgY3fg"/>
+        <ownedActivityEdge xmi:id="_xarh0HQAEeSHw7AsWgY3fg" target="_tgSv4HQAEeSHw7AsWgY3fg" source="_1b3KMHP-EeSHw7AsWgY3fg"/>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_1b3KMHP-EeSHw7AsWgY3fg" name="componentStoryNode" outgoing="_xarh0HQAEeSHw7AsWgY3fg" incoming="_w3R50HQAEeSHw7AsWgY3fg">
+          <componentStoryPattern xmi:id="_1b3KMXP-EeSHw7AsWgY3fg" name="componentStoryPattern">
+            <thisVariable xmi:id="_1b3KMnP-EeSHw7AsWgY3fg" name="this" bindingOperator="CREATE" bindingState="BOUND" type="_y35J0O6BEeOKI4bZ_bxwuQ">
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_-VqccHP-EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_4kItQHP_EeSHw7AsWgY3fg" dataType="_XpxO0O6FEeOKI4bZ_bxwuQ"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_-haZcHP-EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_9HvbUHP_EeSHw7AsWgY3fg" dataType="_ZVV_0O6FEeOKI4bZ_bxwuQ"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_-yYNoHP-EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_seE6YHP_EeSHw7AsWgY3fg" dataType="_kag9cO6FEeOKI4bZ_bxwuQ"/>
+              <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="__-s20HP-EeSHw7AsWgY3fg" name="" dataType="_bkfX8O6FEeOKI4bZ_bxwuQ" subPortVariables="_AhW38HP_EeSHw7AsWgY3fg"/>
+              <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_AMFykHP_EeSHw7AsWgY3fg" name="" dataType="_hWucUO6FEeOKI4bZ_bxwuQ" subPortVariables="_An6L4HP_EeSHw7AsWgY3fg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_AhW38HP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_D3xksHQAEeSHw7AsWgY3fg" dataType="_bkfX8O6FEeOKI4bZ_bxwuQ" multiPortVariable="__-s20HP-EeSHw7AsWgY3fg"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_An6L4HP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_qTHesHP_EeSHw7AsWgY3fg" dataType="_hWucUO6FEeOKI4bZ_bxwuQ" multiPortVariable="_AMFykHP_EeSHw7AsWgY3fg"/>
+              <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_46IA0HP-EeSHw7AsWgY3fg" name="cm" bindingOperator="CREATE" dataType="_yd930O6KEeO-LsFH58kjnA">
+                <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_6YTPAHP-EeSHw7AsWgY3fg" name="" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ" subPortVariables="_8MDEkHP-EeSHw7AsWgY3fg"/>
+                <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_7TN_IHP-EeSHw7AsWgY3fg" name="" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ" subPortVariables="_8V3u8HP-EeSHw7AsWgY3fg"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_7qIDQHP-EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_4kItQHP_EeSHw7AsWgY3fg" dataType="_dSy0MO6CEeOKI4bZ_bxwuQ"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_8A49cHP-EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_9HvbUHP_EeSHw7AsWgY3fg" dataType="_f4o1EO6CEeOKI4bZ_bxwuQ"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_8MDEkHP-EeSHw7AsWgY3fg" name="c1" bindingOperator="CREATE" connectors="_D3xksHQAEeSHw7AsWgY3fg" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ" multiPortVariable="_6YTPAHP-EeSHw7AsWgY3fg"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_8V3u8HP-EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_lcoQ4HP_EeSHw7AsWgY3fg" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ" multiPortVariable="_7TN_IHP-EeSHw7AsWgY3fg"/>
+              </partVariables>
+              <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_5BRKoHP-EeSHw7AsWgY3fg" name="rg1" bindingOperator="CREATE" dataType="_2O-rUO6KEeO-LsFH58kjnA">
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_9XVL8HP-EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_lcoQ4HP_EeSHw7AsWgY3fg" dataType="_C5W68O6FEeOKI4bZ_bxwuQ"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_9hcKMHP-EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_qTHesHP_EeSHw7AsWgY3fg" dataType="_FpmN8O6FEeOKI4bZ_bxwuQ"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_EmT7IHP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectors="_seE6YHP_EeSHw7AsWgY3fg" dataType="_H5mhsO6FEeOKI4bZ_bxwuQ"/>
+              </partVariables>
+              <connectorVariables xsi:type="componentstorypattern:AssemblyVariable" xmi:id="_lcoQ4HP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_8V3u8HP-EeSHw7AsWgY3fg _9XVL8HP-EeSHw7AsWgY3fg" type="_Qov8gO8cEeOgFIvanw5ruQ"/>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_qTHesHP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_An6L4HP_EeSHw7AsWgY3fg _9hcKMHP-EeSHw7AsWgY3fg" type="_P0HHcO8EEeOoIPzCC8d2Xg"/>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_seE6YHP_EeSHw7AsWgY3fg" name="" connectorEndpoints="_-yYNoHP-EeSHw7AsWgY3fg _EmT7IHP_EeSHw7AsWgY3fg" type="_9QUnIO6KEeO-LsFH58kjnA"/>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_4kItQHP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_-VqccHP-EeSHw7AsWgY3fg _7qIDQHP-EeSHw7AsWgY3fg" type="_tb7rcO8FEeO15qrX0ik20g"/>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_9HvbUHP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_-haZcHP-EeSHw7AsWgY3fg _8A49cHP-EeSHw7AsWgY3fg" type="_aH0L4O8EEeOoIPzCC8d2Xg"/>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_D3xksHQAEeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_AhW38HP_EeSHw7AsWgY3fg _8MDEkHP-EeSHw7AsWgY3fg" type="_GcT1kO6LEeO-LsFH58kjnA"/>
+            </thisVariable>
+          </componentStoryPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_1xbxkHP-EeSHw7AsWgY3fg" name="init" outgoing="_w3R50HQAEeSHw7AsWgY3fg"/>
+        <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_tgSv4HQAEeSHw7AsWgY3fg" name="final" incoming="_xarh0HQAEeSHw7AsWgY3fg"/>
+      </activity>
+    </modelElements>
+    <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_6lcoQHQAEeSHw7AsWgY3fg" reconfiguredComponent="_BXanEO6FEeOKI4bZ_bxwuQ">
+      <signature xmi:id="_WupHkHQBEeSHw7AsWgY3fg" name="initWithCurPos"/>
+      <activity xmi:id="_8TPm0HQAEeSHw7AsWgY3fg" name="activity">
+        <ownedActivityEdge xmi:id="_S6guoHQBEeSHw7AsWgY3fg" target="_9FFTcHQAEeSHw7AsWgY3fg" source="_8sFkoHQAEeSHw7AsWgY3fg"/>
+        <ownedActivityEdge xmi:id="_TQ-G0HQBEeSHw7AsWgY3fg" target="_QxVboHQBEeSHw7AsWgY3fg" source="_9FFTcHQAEeSHw7AsWgY3fg"/>
+        <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_8sFkoHQAEeSHw7AsWgY3fg" name="init" outgoing="_S6guoHQBEeSHw7AsWgY3fg"/>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_9FFTcHQAEeSHw7AsWgY3fg" name="Initialize Port Instances" outgoing="_TQ-G0HQBEeSHw7AsWgY3fg" incoming="_S6guoHQBEeSHw7AsWgY3fg">
+          <componentStoryPattern xmi:id="_9FFTcXQAEeSHw7AsWgY3fg" name="componentStoryPattern">
+            <thisVariable xmi:id="_9FFTcnQAEeSHw7AsWgY3fg" name="this" bindingOperator="CREATE" bindingState="BOUND" type="_BXanEO6FEeOKI4bZ_bxwuQ">
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_BzimoHQBEeSHw7AsWgY3fg" name="" bindingOperator="CREATE" dataType="_C5W68O6FEeOKI4bZ_bxwuQ"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_B99G4HQBEeSHw7AsWgY3fg" name="" bindingOperator="CREATE" dataType="_FpmN8O6FEeOKI4bZ_bxwuQ"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_CLo9kHQBEeSHw7AsWgY3fg" name="" bindingOperator="CREATE" dataType="_H5mhsO6FEeOKI4bZ_bxwuQ"/>
+            </thisVariable>
+          </componentStoryPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_QxVboHQBEeSHw7AsWgY3fg" name="final" incoming="_TQ-G0HQBEeSHw7AsWgY3fg"/>
+      </activity>
+    </modelElements>
+    <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_ezfHwHQBEeSHw7AsWgY3fg" reconfiguredComponent="_RbW-QPhpEeOQsfT56fxzVQ">
+      <signature xmi:id="_gGWd0HQBEeSHw7AsWgY3fg" name="disableConvoyMode"/>
+      <activity xmi:id="_iQQwoHQBEeSHw7AsWgY3fg" name="activity">
+        <ownedActivityEdge xmi:id="_rKvGYHQDEeSHw7AsWgY3fg" target="_jJPnEHQBEeSHw7AsWgY3fg" source="_iyes4HQBEeSHw7AsWgY3fg"/>
+        <ownedActivityEdge xmi:id="_rm2aoHQDEeSHw7AsWgY3fg" target="_hCOlUHQDEeSHw7AsWgY3fg" source="_jJPnEHQBEeSHw7AsWgY3fg"/>
+        <ownedActivityEdge xmi:id="_sETysHQDEeSHw7AsWgY3fg" target="_nu_YQHQDEeSHw7AsWgY3fg" source="_hCOlUHQDEeSHw7AsWgY3fg"/>
+        <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_iyes4HQBEeSHw7AsWgY3fg" name="init" outgoing="_rKvGYHQDEeSHw7AsWgY3fg"/>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_jJPnEHQBEeSHw7AsWgY3fg" name="Delete Port Instances and Delegations of this" outgoing="_rm2aoHQDEeSHw7AsWgY3fg" incoming="_rKvGYHQDEeSHw7AsWgY3fg">
+          <componentStoryPattern xmi:id="_jJPnEXQBEeSHw7AsWgY3fg" name="componentStoryPattern">
+            <thisVariable xmi:id="_jJPnEnQBEeSHw7AsWgY3fg" name="this" bindingState="BOUND" type="_RbW-QPhpEeOQsfT56fxzVQ">
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_vTVlYHQBEeSHw7AsWgY3fg" name="" bindingOperator="DESTROY" connectors="_MESy0HQDEeSHw7AsWgY3fg" dataType="_pIy_YPqXEeO0_ZLnPp6sSA"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_vY_hcHQBEeSHw7AsWgY3fg" name="" bindingOperator="DESTROY" connectors="_JReF4HQDEeSHw7AsWgY3fg" dataType="_j1mAYPqXEeO0_ZLnPp6sSA"/>
+              <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_veWikHQBEeSHw7AsWgY3fg" name="" bindingOperator="DESTROY" connectors="_HfzT8HQDEeSHw7AsWgY3fg" dataType="_Tw2JwPh7EeOdcfcso3gQlg"/>
+              <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_mpmIYHQBEeSHw7AsWgY3fg" name="os" dataType="_oBVHwPh4EeOdcfcso3gQlg">
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_pqQdAHQBEeSHw7AsWgY3fg" name="" connectors="_MESy0HQDEeSHw7AsWgY3fg" dataType="_dd_WwPh2EeOdcfcso3gQlg"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_pwp_8HQBEeSHw7AsWgY3fg" name="" connectors="_JReF4HQDEeSHw7AsWgY3fg" dataType="_jhvQoPhwEeOlYcxv1LeTzQ"/>
+                <portVariables xsi:type="componentstorypattern:SinglePortVariable" xmi:id="_p13QEHQBEeSHw7AsWgY3fg" name="" connectors="_HfzT8HQDEeSHw7AsWgY3fg" dataType="_YETnMPh0EeOAKLom6jxr8Q"/>
+              </partVariables>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_HfzT8HQDEeSHw7AsWgY3fg" name="" bindingOperator="DESTROY" connectorEndpoints="_veWikHQBEeSHw7AsWgY3fg _p13QEHQBEeSHw7AsWgY3fg" type="_YfJr8Ph7EeOdcfcso3gQlg"/>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_JReF4HQDEeSHw7AsWgY3fg" name="" bindingSemantics="OPTIONAL" bindingOperator="DESTROY" connectorEndpoints="_vY_hcHQBEeSHw7AsWgY3fg _pwp_8HQBEeSHw7AsWgY3fg" type="_oCISQPqXEeO0_ZLnPp6sSA"/>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_MESy0HQDEeSHw7AsWgY3fg" name="" bindingSemantics="OPTIONAL" bindingOperator="DESTROY" connectorEndpoints="_vTVlYHQBEeSHw7AsWgY3fg _pqQdAHQBEeSHw7AsWgY3fg" type="_r89wIPqXEeO0_ZLnPp6sSA"/>
+            </thisVariable>
+          </componentStoryPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_hCOlUHQDEeSHw7AsWgY3fg" name="Trigger OperationStrategy" outgoing="_sETysHQDEeSHw7AsWgY3fg" incoming="_rm2aoHQDEeSHw7AsWgY3fg">
+          <componentStoryPattern xmi:id="_hCYWUHQDEeSHw7AsWgY3fg" name="componentStoryPattern">
+            <thisVariable xmi:id="_hCYWUXQDEeSHw7AsWgY3fg" name="this" bindingState="BOUND" type="_RbW-QPhpEeOQsfT56fxzVQ">
+              <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_irj6oHQDEeSHw7AsWgY3fg" name="os" bindingState="BOUND" dataType="_oBVHwPh4EeOdcfcso3gQlg">
+                <triggerEmbeddedComponentExpressions xsi:type="componentstorydiagram:SendReconfigurationMessageExpression" xmi:id="_kWhnoHQDEeSHw7AsWgY3fg" reconfigurationMessageType="_cSI6cHQDEeSHw7AsWgY3fg"/>
+              </partVariables>
+            </thisVariable>
+          </componentStoryPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_nu_YQHQDEeSHw7AsWgY3fg" name="final" incoming="_sETysHQDEeSHw7AsWgY3fg"/>
       </activity>
     </modelElements>
   </categories>
