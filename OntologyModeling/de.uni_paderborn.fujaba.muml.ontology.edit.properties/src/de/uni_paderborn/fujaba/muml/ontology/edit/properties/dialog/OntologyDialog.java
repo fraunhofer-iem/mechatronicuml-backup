@@ -5,6 +5,7 @@ import java.util.HashSet;
 import javax.xml.ws.FaultAction;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -225,6 +226,10 @@ public class OntologyDialog extends TitleAreaDialog {
 						OWL_FILE_EXTENSION);
 				if (file == null) {
 					return;
+				}
+				else{
+					ontologyUtils.addOntologyFile(URI.createPlatformResourceURI(file.getFullPath().toString(), true).toString());
+					viewer.refresh();
 				}
 			}
 		});

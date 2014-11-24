@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.muml.ontology.edit.properties.parser;
 
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -11,6 +13,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.URIUtil;
 import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.osgi.service.prefs.BackingStoreException;
 import org.osgi.service.prefs.Preferences;
@@ -59,15 +62,29 @@ public class OWLOntologyUtil {
 		} catch (OWLOntologyCreationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
 
 	private void loadOntology(String filePath)
-			throws OWLOntologyCreationException {
+			throws OWLOntologyCreationException, URISyntaxException {
 		OWLOntology ontology;
-		File path = new File(filePath);
-		ontology = ontologyManager.loadOntologyFromOntologyDocument(path);
+		File file;
+
+		if (filePath.startsWith("platform:")) {
+			URI uri = URIUtil.fromString(filePath);
+			IRI iri = IRI.create(uri);
+			ontology = ontologyManager.loadOntologyFromOntologyDocument(iri);
+
+		} else {
+			file = new File(filePath);
+			ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
+
+		}
+
 		loadedOntologies.add(ontology);
 
 	}
@@ -84,6 +101,9 @@ public class OWLOntologyUtil {
 					loadOntology(path);
 				} catch (OWLOntologyCreationException e) {
 					// TODO Maybe remove the non valid ontology
+					e.printStackTrace();
+				} catch (URISyntaxException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -119,7 +139,7 @@ public class OWLOntologyUtil {
 			String[] paths = ontologiesPaths.toArray(new String[0]);
 			projectNode.put(PREFERENCE_LOADED_ONTOLOGY, convert(paths));
 			try {
-				projectNode.sync();
+				projectNode.flush();
 			} catch (BackingStoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

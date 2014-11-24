@@ -6,11 +6,13 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
@@ -82,80 +84,10 @@ public class OntologyPropertyEditor extends
 		label = toolkit.createLabel(parent, getLabelText());
 		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
 
-//		// List container
-//		listContainer = new Composite(parent, SWT.NONE);
-//		GridLayout listContainerLayout = new GridLayout(2, false);
-//		listContainerLayout.marginWidth = listContainerLayout.marginHeight = 0;
-//		listContainer.setLayout(listContainerLayout);
-//		listContainer
-//				.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-//
-//		ontologyButton=toolkit.createButton(listContainer, "hi");
-//		ontologyButton.setAlignment(SWT.CENTER);
-//		ontologyButton.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
-//
-////		org.eclipse.swt.widgets.Table table = toolkit.createTable(
-////			listContainer, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
-////
-////		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-////		tableGridData.minimumWidth = 120;
-////		table.setLayoutData(tableGridData);
-////		table.addFocusListener(new FocusAdapter() {
-////
-////			@Override
-////			public void focusLost(FocusEvent e) {
-////				List<Object> selectionList = Collections.singletonList(input);
-////				RuntimePlugin.setCurrentEditorSelection(selectionList);
-////			}
-////
-////		});
-////
-////		tableViewer = new TableViewer(table);
-////		tableViewer.setContentProvider(ArrayContentProvider.getInstance());
-////		tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(
-////				adapterFactory));
-////	//	tableViewer.addSelectionChangedListener(selectionChangedListener);
-////		tableViewer.addDoubleClickListener(new IDoubleClickListener() {
-////			@Override
-////			public void doubleClick(DoubleClickEvent event) {
-////				if (selection != null) {
-////					RuntimePlugin.showEditElementDialog(adapterFactory,
-////							element, feature, selection);
-////				}
-////			}
-////		});
-//
-//		// Button container and buttons
-//		Composite buttonContainer = toolkit.createComposite(listContainer);
-//
-//		
-//		buttonContainer.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false,
-//				false));
-//		buttonContainer.setLayout(new RowLayout(SWT.VERTICAL));
-//
-//		buttonCreate = toolkit.createButton(buttonContainer, "", SWT.NONE);
-//		buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
-//				12, 12));
-//		buttonCreate.addSelectionListener(new SelectionAdapter() {
-//			public void widgetSelected(SelectionEvent e) {
-//				//add();
-//			}
-//		});
-//
-//		buttonRemove = toolkit.createButton(buttonContainer, "", SWT.NONE);
-//		buttonRemove.setImage(RuntimePlugin.getImage(
-//				RuntimePlugin.IMAGE_REMOVE, 12, 12));
-//		buttonRemove.addSelectionListener(new SelectionAdapter() {
-//			public void widgetSelected(SelectionEvent e) {
-//				//remove();
-//			}
-//		});
-//
-//		// Set initial selection
-//		//tableViewer.setInput(value);
-//	//	tableViewer.setSelection(new StructuredSelection());
 
 		ontologyButton = toolkit.createButton(parent,getOntologyString(), SWT.PUSH);
+		ontologyButton.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false));
+
 		ontologyButton.setSize(200, 20);
 		
 		ontologyButton.addSelectionListener(new SelectionAdapter() {
@@ -164,7 +96,7 @@ public class OntologyPropertyEditor extends
 				String projectName = getElement().eResource().getURI().segment(1);
 				OntologyDialog dialog = new OntologyDialog(parentComposite.getShell(),projectName);
 				int status = dialog.open();
-				if(status == SWT.OK){
+				if(status == IDialogConstants.OK_ID){
 					setValue(dialog.getResult().getIRI().toString());
 				}
 			}
@@ -195,6 +127,16 @@ public class OntologyPropertyEditor extends
 			
 		}
 		return ontologyRefernce;
+	}
+
+	@Override
+	protected void handleNotificationEvent(Notification notification) {
+		// TODO Auto-generated method stub
+		super.handleNotificationEvent(notification);
+		if(notification.getFeature() == feature){
+			ontologyButton.setText(getOntologyString());
+			RuntimePlugin.revalidateLayout(ontologyButton);
+		}
 	}
 	
 	
