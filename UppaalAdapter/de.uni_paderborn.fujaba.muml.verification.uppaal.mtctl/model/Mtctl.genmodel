@@ -7,6 +7,7 @@
     usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
     operationReflection="true" importOrganizing="true">
   <foreignModel>Mtctl.ecore</foreignModel>
+  <foreignModel>../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Mtctl" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal"
       disposableProviderFactory="true" ecorePackage="Mtctl.ecore#/">
     <genClasses ecoreClass="Mtctl.ecore#//PropertyRepository">
