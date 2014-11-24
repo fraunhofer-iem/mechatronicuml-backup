@@ -112,7 +112,8 @@ public class ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPol
 
 		StringBuilder builder = new StringBuilder();
 		builder.append("[");
-		builder.append(exp.getComponentSDD().getName());
+		if(exp.getComponentSDD() != null)
+			builder.append(exp.getComponentSDD().getName());
 		builder.append(getParameterBindingsString(exp.getParameterBindings()));
 		builder.append("]");
 
@@ -225,77 +226,5 @@ public class ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPol
 
 		return null;
 	}
-
-	// if
-	// self.triggerEmbeddedComponentExpressions.oclIsUndefined()
-	// then
-	// ''
-	// else
-	// let
-	// component : reconfiguration::ReconfigurableComponent =
-	// self.componentPartType.componentType.oclAsType(reconfiguration::ReconfigurableComponent),
-	// rePort : reconfiguration::ReconfigurationExecutionPort =
-	// component.ports->select(oclIsTypeOf(reconfiguration::ReconfigurationExecutionPort))->select(name
-	// =
-	// 'reconfExec')->any(true).oclAsType(reconfiguration::ReconfigurationExecutionPort),
-	// mType : msgtype::MessageType =
-	// self.triggerEmbeddedComponentExpressions->select(oclIsTypeOf(componentstorydiagram::SendReconfigurationMessageExpression))->any(true)
-	// .oclAsType(componentstorydiagram::SendReconfigurationMessageExpression).reconfigurationMessageType,
-	// entry : reconfiguration::ReconfigurationExecutionPortInterfaceEntry =
-	// rePort.interfaceEntries->select(messageType = mType)->any(true),
-	// paramBindings : OrderedSet(behavior::ParameterBinding) =
-	// self.triggerEmbeddedComponentExpressions.oclAsType(componentstorydiagram::SendReconfigurationMessageExpression).parameterBindings,
-	// returnValuesString : String = if
-	// entry.returnValues.oclIsUndefined()
-	// then
-	// ''
-	// else
-	// entry.returnValues->iterate(r : behavior::Parameter; s : String =
-	// '('|s+r.name+
-	// if
-	// not (entry.returnValues->indexOf(r) = entry.returnValues->size())
-	// then
-	// ', '
-	// else
-	// ''
-	// endif
-	// )+') := '
-	// endif
-	// in
-	// --string for return values
-	// returnValuesString
-	// +
-	// --name of message type
-	// mType.name
-	// +
-	// --parameterBindings (currently only LiteralExpressions or
-	// TypedNamedElementExpressions are supported)
-	// paramBindings->iterate(pB : behavior::ParameterBinding; s: String = '('|
-	// s+pB.parameter.name +' := '+
-	// if
-	// pB.value.oclIsTypeOf(core::expressions::common::LiteralExpression)
-	// then
-	// pB.value.oclAsType(core::expressions::common::LiteralExpression).value
-	// else
-	// if
-	// pB.value.oclIsTypeOf(actionlanguage::TypedNamedElementExpression)
-	// then
-	// pB.value.oclAsType(actionlanguage::TypedNamedElementExpression).typedNamedElement.name
-	// else
-	// ''
-	// endif
-	// endif
-	// +
-	// if
-	// paramBindings->indexOf(pB) = paramBindings->size()
-	// then
-	// ''
-	// else
-	// ', '
-	// endif
-	// )
-	// +
-	// ')'
-	// endif
 
 }
