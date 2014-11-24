@@ -107,6 +107,9 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.EditPolicyRoles.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_LABEL_ROLE,
+				new de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

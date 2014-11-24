@@ -152,6 +152,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentStoryPatternVariableEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.EditPolicyRoles.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_LABEL_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
@@ -1944,7 +1948,7 @@
       <expressions
           body="if&#xD;&#xA;&#x9;self.bindingState = storydiagrams::patterns::BindingState::BOUND&#xD;&#xA;then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;':'+self.dataType.name&#xD;&#xA;endif"/>
       <expressions
-          body="let&#xD;&#xA;&#x9;expressions : Collection(componentstorypattern::TriggerEmbeddedComponentExpression) = self.triggerEmbeddedComponentExpressions->select(oclIsTypeOf(componentsdd::EvaluateComponentSDDExpression))&#xD;&#xA;in&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;expressions->isEmpty()&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;expressions->iterate(t : componentstorypattern::TriggerEmbeddedComponentExpression; s : String = '[' | s+t.oclAsType(componentsdd::EvaluateComponentSDDExpression).componentSDD.name+' ')+']'&#xD;&#xA;&#x9;endif"/>
+          body="--implemented by de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies.ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPolicy&#xD;&#xA;''"/>
       <expressions
           body="let compName : String = if self.componentPartType.componentType.name.oclIsUndefined() then 'null' else&#x9; self.componentPartType.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPartType.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPartType.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
       <expressions
