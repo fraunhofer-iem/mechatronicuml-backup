@@ -6,7 +6,7 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5016;
+import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 /**
@@ -14,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * @author sthiele2
  *
  */
-public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5016 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5016 {
+public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022 {
 
 	public String getPrintString(IAdaptable element, int flags) {
 		String printString = "";
