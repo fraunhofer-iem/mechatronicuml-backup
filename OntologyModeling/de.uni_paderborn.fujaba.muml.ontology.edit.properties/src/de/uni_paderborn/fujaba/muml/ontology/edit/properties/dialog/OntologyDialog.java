@@ -59,13 +59,11 @@ public class OntologyDialog extends TitleAreaDialog {
 
 	private Button showallCheckbox;
 	
-	private String projectName;
 
 	public OntologyDialog(Shell parentShell, final String projectName) {
 		super(parentShell);
 		this.title = "Select an Ontology Entity";
-		this.ontologyUtils = new OWLOntologyUtil();
-		this.projectName = projectName;
+		this.ontologyUtils = new OWLOntologyUtil(projectName);
 
 	}
 
@@ -258,7 +256,7 @@ public class OntologyDialog extends TitleAreaDialog {
 
 		this.viewer.setLabelProvider(new OntologyLabelProvider());
 
-		this.viewer.setInput(ontologyUtils.getloadedOntologies(projectName));
+		this.viewer.setInput(ontologyUtils.getloadedOntologies());
         this.viewer.addSelectionChangedListener(new TreeViewerSelectionChangedListener());
         
      

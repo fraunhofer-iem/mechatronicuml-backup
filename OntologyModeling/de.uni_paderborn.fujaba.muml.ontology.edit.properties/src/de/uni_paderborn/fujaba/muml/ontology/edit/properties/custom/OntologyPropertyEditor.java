@@ -162,10 +162,10 @@ public class OntologyPropertyEditor extends
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				String projectName = getElement().eResource().getURI().segment(1);
-				OntologyDialog diag = new OntologyDialog(parentComposite.getShell(),projectName);
-				int status = diag.open();
+				OntologyDialog dialog = new OntologyDialog(parentComposite.getShell(),projectName);
+				int status = dialog.open();
 				if(status == SWT.OK){
-					OntologyPropertyEditor.this.getFeature();
+					setValue(dialog.getResult().getIRI().toString());
 				}
 			}
 		});
