@@ -1,11 +1,7 @@
 #!/bin/bash
 ##
-## Shell Script Buckinster Test Commando generation
-## Orignal Script by
-## Author: Benjamin
-## Last-Modification-Date: 2014-05-14
-## under https://sdqweb.ipd.kit.edu/wiki/Palladio_Build_Infrastructure
-## modified by Andreas for our Buckminster/Jenkins installation
+## Shell Script Buckinster Test Commando generation @adann
+## for our Buckminster/Jenkins installation
 ## creates a build_command.txt for buckminster to execute the JUnit tests
 ## 
 ## Steps to execute this script in jenkins:
@@ -36,5 +32,8 @@ while read filename
 do
  directory=`dirname $filename | xargs -I{} basename {}`
  name=`basename $filename`
- echo "junit -t 120 -l'$directory/$name' -o 'output/junit/$name.xml'"  >> build_command.txt
+if [[ $name != *ui* ]] 
+then
+        echo "junit -t 120 -l '$directory/$name' -o 'output/junit/$name.xml'"  >> build_command.txt
+fi
 done
