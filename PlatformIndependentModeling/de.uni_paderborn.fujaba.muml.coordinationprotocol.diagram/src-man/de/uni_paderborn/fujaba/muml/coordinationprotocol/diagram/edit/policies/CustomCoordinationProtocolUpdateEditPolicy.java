@@ -24,7 +24,16 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * @author sthiele2 
  */
 public class CustomCoordinationProtocolUpdateEditPolicy extends NotifyingGraphicalEditPolicy{
-	
+	@Override
+	public void activate() {
+		super.activate();
+		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy.getRegisteredEditPolicies(getSemanticElement());
+		for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
+				.hasNext();) {
+			CanonicalEditPolicy nextEditPolicy = it.next();
+			nextEditPolicy.refresh();
+		}
+	}
 	@Override
 	protected void addListeners() {
 		CoordinationProtocol protocol = (CoordinationProtocol)getSemanticElement();
@@ -46,13 +55,13 @@ public class CustomCoordinationProtocolUpdateEditPolicy extends NotifyingGraphic
 		super.handleNotificationEvent(notification);		
 		EStructuralFeature feature = (EStructuralFeature) notification.getFeature();	
 		
-		if (feature == ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLES || feature == ProtocolPackage.Literals.COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS
+		if (feature == ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLES || feature == ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS
 				|| feature == ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY
 				|| feature == ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY
 				|| ExpressionsPackage.Literals.EXPRESSION.isSuperTypeOf(feature.getEContainingClass())
 				) {
 			updateListeners();
-		}		
+		}
 		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy.getRegisteredEditPolicies(getSemanticElement());
 		for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
 				.hasNext();) {

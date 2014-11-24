@@ -64,13 +64,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabel3EditPart extends CompartmentEditPart implements
+public class WrappingLabel4EditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5021;
+	public static final int VISUAL_ID = 5022;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -123,7 +123,7 @@ public class WrappingLabel3EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public WrappingLabel3EditPart(View view) {
+	public WrappingLabel4EditPart(View view) {
 		super(view);
 	}
 
@@ -345,7 +345,7 @@ public class WrappingLabel3EditPart extends CompartmentEditPart implements
 							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3014,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

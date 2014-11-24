@@ -159,7 +159,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CoordinationProtocol_3005(
+	public void init_CoordinationProtocol_3015(
 			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
@@ -229,7 +229,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_MessageBuffer_3010(
+	public void init_MessageBuffer_3013(
 			de.uni_paderborn.fujaba.muml.connector.MessageBuffer instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory

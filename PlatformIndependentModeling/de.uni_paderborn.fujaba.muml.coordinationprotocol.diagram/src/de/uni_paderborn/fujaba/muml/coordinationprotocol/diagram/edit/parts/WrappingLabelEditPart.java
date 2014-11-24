@@ -70,7 +70,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5015;
+	public static final int VISUAL_ID = 5019;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -139,8 +139,6 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 				new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
 				new DefaultNodeLabelDragPolicy());
-		installEditPolicy(
-				"CustomWrappedLabelUpdateEditPolicy", new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy()); //$NON-NLS-1$
 	}
 
 	/**
@@ -278,7 +276,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
@@ -342,7 +340,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3011,
+							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3013,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));

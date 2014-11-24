@@ -76,16 +76,16 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getCoordinationProtocol_GmfCoordinationProtocol());
+							.getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getAbstractCoordinationSpecification_Roles());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getCoordinationProtocol_GmfMessageBuffers());
+							.getAbstractCoordinationSpecification_GmfMessageBuffers());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getCoordinationProtocol_GmfConnectorQualityOfServiceAssumptions());
+							.getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -123,7 +123,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 						.asList(new Integer[] {
 								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
@@ -163,7 +163,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return true;
 		}

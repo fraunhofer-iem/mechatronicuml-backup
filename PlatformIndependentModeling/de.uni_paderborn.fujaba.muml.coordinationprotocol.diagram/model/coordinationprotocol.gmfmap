@@ -161,7 +161,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/CoordinationProtocol"/>
@@ -248,7 +248,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/CoordinationProtocol/gmfMessageBuffers"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/MessageBuffer"/>
@@ -296,7 +296,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/CoordinationProtocol/gmfConnectorQualityOfServiceAssumptions"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/gmfConnectorQualityOfServiceAssumptions"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions"/>

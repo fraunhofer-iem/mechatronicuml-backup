@@ -45,7 +45,7 @@ public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 	 */
 	public ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3011);
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3014);
 	}
 
 	/**

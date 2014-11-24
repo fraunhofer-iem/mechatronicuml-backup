@@ -65,7 +65,8 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationProtocol_3005 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_3005"); //$NON-NLS-1$
+	public static final IElementType CoordinationProtocol_3015 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_3015"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -73,7 +74,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageBuffer_3010 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.MessageBuffer_3010"); //$NON-NLS-1$
+	public static final IElementType MessageBuffer_3013 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.MessageBuffer_3013"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -81,7 +82,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConnectorQualityOfServiceAssumptions_3011 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.ConnectorQualityOfServiceAssumptions_3011"); //$NON-NLS-1$
+	public static final IElementType ConnectorQualityOfServiceAssumptions_3014 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.ConnectorQualityOfServiceAssumptions_3014"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -148,7 +149,7 @@ public class MumlElementTypes {
 							.getCoordinationProtocol());
 
 			elements.put(
-					CoordinationProtocol_3005,
+					CoordinationProtocol_3015,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getCoordinationProtocol());
 
@@ -158,7 +159,7 @@ public class MumlElementTypes {
 							.getRole());
 
 			elements.put(
-					MessageBuffer_3010,
+					MessageBuffer_3013,
 					de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 							.getMessageBuffer());
 
@@ -168,7 +169,7 @@ public class MumlElementTypes {
 							.getMessageType());
 
 			elements.put(
-					ConnectorQualityOfServiceAssumptions_3011,
+					ConnectorQualityOfServiceAssumptions_3014,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getConnectorQualityOfServiceAssumptions());
 
@@ -210,11 +211,11 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
 			KNOWN_ELEMENT_TYPES.add(CoordinationProtocol_2005);
-			KNOWN_ELEMENT_TYPES.add(CoordinationProtocol_3005);
+			KNOWN_ELEMENT_TYPES.add(CoordinationProtocol_3015);
 			KNOWN_ELEMENT_TYPES.add(Role_3006);
-			KNOWN_ELEMENT_TYPES.add(MessageBuffer_3010);
+			KNOWN_ELEMENT_TYPES.add(MessageBuffer_3013);
 			KNOWN_ELEMENT_TYPES.add(MessageType_3009);
-			KNOWN_ELEMENT_TYPES.add(ConnectorQualityOfServiceAssumptions_3011);
+			KNOWN_ELEMENT_TYPES.add(ConnectorQualityOfServiceAssumptions_3014);
 			KNOWN_ELEMENT_TYPES
 					.add(AbstractCoordinationSpecificationRoles_4007);
 			KNOWN_ELEMENT_TYPES.add(RoleConnector_4006);
@@ -236,15 +237,15 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
 			return CoordinationProtocol_2005;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
-			return CoordinationProtocol_3005;
+			return CoordinationProtocol_3015;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 			return Role_3006;
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID:
-			return MessageBuffer_3010;
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID:
+			return MessageBuffer_3013;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3009;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
-			return ConnectorQualityOfServiceAssumptions_3011;
+			return ConnectorQualityOfServiceAssumptions_3014;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
 			return AbstractCoordinationSpecificationRoles_4007;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:

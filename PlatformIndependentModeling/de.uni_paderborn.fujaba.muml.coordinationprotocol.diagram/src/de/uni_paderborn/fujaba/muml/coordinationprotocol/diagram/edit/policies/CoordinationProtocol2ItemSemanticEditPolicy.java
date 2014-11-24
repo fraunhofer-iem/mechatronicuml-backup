@@ -45,7 +45,7 @@ public class CoordinationProtocol2ItemSemanticEditPolicy
 	 */
 	public CoordinationProtocol2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_3005);
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_3015);
 	}
 
 	/**

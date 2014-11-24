@@ -322,7 +322,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
-						.getCoordinationProtocol_3005ContainedLinks(view));
+						.getCoordinationProtocol_3015ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -335,10 +335,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
-						.getMessageBuffer_3010ContainedLinks(view));
+						.getMessageBuffer_3013ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -354,7 +354,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
-						.getConnectorQualityOfServiceAssumptions_3011ContainedLinks(view));
+						.getConnectorQualityOfServiceAssumptions_3014ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

@@ -38,16 +38,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class MessageBuffer2ItemSemanticEditPolicy
+public class MessageBufferItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public MessageBuffer2ItemSemanticEditPolicy() {
+	public MessageBufferItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3010);
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3013);
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class MessageBuffer2ItemSemanticEditPolicy
 			Node node = (Node) nit.next();
 			switch (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 					.getVisualID(node)) {
-			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartment2EditPart.VISUAL_ID:
+			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit
 						.hasNext();) {
 					Node cnode = (Node) cit.next();

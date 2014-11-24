@@ -301,7 +301,7 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getChildrenByType(
 					connectedViews,
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID));
+							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getChildrenByType(
@@ -314,25 +314,6 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.NavigatorGroupName_CoordinationProtocol_3005_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(
 					Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
@@ -388,17 +369,17 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.NavigatorGroupName_MessageBuffer_3010_incominglinks,
+					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.NavigatorGroupName_MessageBuffer_3013_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartment2EditPart.VISUAL_ID));
+							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(
 					connectedViews,
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
@@ -421,7 +402,7 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3011_incominglinks,
+					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3014_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(
@@ -432,6 +413,25 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 					incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.NavigatorGroupName_CoordinationProtocol_3015_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}
@@ -523,7 +523,7 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 			connectedViews = getLinksTargetByType(
 					Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBuffer2EditPart.VISUAL_ID));
+							.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(

@@ -47,7 +47,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3011;
+	public static final int VISUAL_ID = 3014;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -155,18 +155,18 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart) {
-			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart) {
+			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureMsgLossLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart) {
-			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureMinDelayLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart) {
 			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureMinDelayLabel());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart) {
+			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureMaxDelayLabel());
 			return true;
 		}
@@ -177,13 +177,13 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart) {
 			return true;
 		}
 		return false;
@@ -311,7 +311,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 	}
 
 	/**

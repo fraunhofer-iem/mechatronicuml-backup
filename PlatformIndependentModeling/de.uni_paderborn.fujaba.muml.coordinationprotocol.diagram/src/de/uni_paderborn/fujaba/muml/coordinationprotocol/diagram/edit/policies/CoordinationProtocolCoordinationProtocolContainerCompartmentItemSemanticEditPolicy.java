@@ -34,7 +34,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentItemSem
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_3005 == req
+		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_3015 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.CoordinationProtocol2CreateCommand(
 					req));
@@ -44,12 +44,12 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentItemSem
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.RoleCreateCommand(
 					req));
 		}
-		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3010 == req
+		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3013 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.MessageBuffer2CreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.MessageBufferCreateCommand(
 					req));
 		}
-		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3011 == req
+		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3014 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.ConnectorQualityOfServiceAssumptionsCreateCommand(
 					req));

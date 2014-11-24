@@ -295,7 +295,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String MessageBufferMessageBufferCompartment2EditPart_title;
+	public static String MessageBufferMessageBufferCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -315,11 +315,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocol_3005_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Role_3006_incominglinks;
 
 	/**
@@ -330,12 +325,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageBuffer_3010_incominglinks;
+	public static String NavigatorGroupName_MessageBuffer_3013_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3011_incominglinks;
+	public static String NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3014_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationProtocol_3015_outgoinglinks;
 
 	/**
 	 * @generated

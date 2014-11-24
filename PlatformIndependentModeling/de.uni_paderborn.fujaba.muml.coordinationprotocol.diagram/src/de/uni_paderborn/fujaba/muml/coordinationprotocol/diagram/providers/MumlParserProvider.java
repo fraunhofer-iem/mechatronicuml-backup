@@ -35,20 +35,20 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser coordinationProtocolName_5005Parser;
+	private IParser coordinationProtocolName_5023Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCoordinationProtocolName_5005Parser() {
-		if (coordinationProtocolName_5005Parser == null) {
+	private IParser getCoordinationProtocolName_5023Parser() {
+		if (coordinationProtocolName_5023Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser(
 					features);
-			coordinationProtocolName_5005Parser = parser;
+			coordinationProtocolName_5023Parser = parser;
 		}
-		return coordinationProtocolName_5005Parser;
+		return coordinationProtocolName_5023Parser;
 	}
 
 	/**
@@ -73,27 +73,27 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser messageBufferName_5012Parser;
+	private IParser messageBufferName_5018Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getMessageBufferName_5012Parser() {
-		if (messageBufferName_5012Parser == null) {
+	private IParser getMessageBufferName_5018Parser() {
+		if (messageBufferName_5018Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser(
 					features);
-			messageBufferName_5012Parser = parser;
+			messageBufferName_5018Parser = parser;
 		}
-		return messageBufferName_5012Parser;
+		return messageBufferName_5018Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getMessageBufferLabel_5013Parser() {
-		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5013();
+	private IParser getMessageBufferLabel_5019Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5019();
 	}
 
 	/**
@@ -118,22 +118,22 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getConnectorQualityOfServiceAssumptionsLabel_5014Parser() {
-		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5014();
+	private IParser getConnectorQualityOfServiceAssumptionsLabel_5020Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020();
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getConnectorQualityOfServiceAssumptionsLabel_5015Parser() {
-		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5015();
+	private IParser getConnectorQualityOfServiceAssumptionsLabel_5021Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021();
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getConnectorQualityOfServiceAssumptionsLabel_5016Parser() {
-		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5016();
+	private IParser getConnectorQualityOfServiceAssumptionsLabel_5022Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022();
 	}
 
 	/**
@@ -142,21 +142,21 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
-			return getCoordinationProtocolName_5005Parser();
+			return getCoordinationProtocolName_5023Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
 			return getRoleName_5006Parser();
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferName2EditPart.VISUAL_ID:
-			return getMessageBufferName_5012Parser();
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getMessageBufferLabel_5013Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferNameEditPart.VISUAL_ID:
+			return getMessageBufferName_5018Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+			return getMessageBufferLabel_5019Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
 			return getMessageTypeName_5010Parser();
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsMessageLossPossibleEditPart.VISUAL_ID:
-			return getConnectorQualityOfServiceAssumptionsLabel_5014Parser();
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getConnectorQualityOfServiceAssumptionsLabel_5015Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+			return getConnectorQualityOfServiceAssumptionsLabel_5020Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-			return getConnectorQualityOfServiceAssumptionsLabel_5016Parser();
+			return getConnectorQualityOfServiceAssumptionsLabel_5021Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
+			return getConnectorQualityOfServiceAssumptionsLabel_5022Parser();
 		}
 		return null;
 	}
