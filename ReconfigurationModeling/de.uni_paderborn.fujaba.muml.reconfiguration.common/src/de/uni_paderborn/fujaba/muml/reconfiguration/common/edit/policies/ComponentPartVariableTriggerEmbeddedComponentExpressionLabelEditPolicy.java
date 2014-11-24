@@ -99,7 +99,8 @@ public class ComponentPartVariableTriggerEmbeddedComponentExpressionLabelEditPol
 		StringBuilder builder = new StringBuilder();
 
 		builder.append(getReturnParametersString(exp));
-		builder.append(exp.getReconfigurationMessageType().getName());
+		if(exp.getReconfigurationMessageType() != null)
+			builder.append(exp.getReconfigurationMessageType().getName());
 		builder.append(getParameterBindingsString(exp.getParameterBindings()));
 
 		label.setText(builder.toString());
