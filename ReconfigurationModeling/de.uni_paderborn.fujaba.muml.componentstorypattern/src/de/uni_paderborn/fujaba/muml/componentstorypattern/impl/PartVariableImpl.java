@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -16,6 +14,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;

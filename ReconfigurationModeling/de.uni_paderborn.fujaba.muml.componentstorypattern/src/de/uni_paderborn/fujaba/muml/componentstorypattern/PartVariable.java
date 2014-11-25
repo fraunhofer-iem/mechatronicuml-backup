@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern;
 
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import org.eclipse.emf.common.util.EList;
 
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 
 /**

@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.util;
 
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -12,6 +10,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.expressions.Expression;
 
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;

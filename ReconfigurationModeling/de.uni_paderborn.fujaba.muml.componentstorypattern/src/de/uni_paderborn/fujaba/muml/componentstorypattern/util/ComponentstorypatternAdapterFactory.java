@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.util;
 
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -13,6 +11,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.expressions.Expression;
 
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;

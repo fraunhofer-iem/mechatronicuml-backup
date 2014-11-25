@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -14,6 +13,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
@@ -989,6 +989,12 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "ExistingConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsTypeOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif"
+		   });	
+		addAnnotation
+		  (multiPortVariableEClass, 
+		   source, 
+		   new String[] {
+			 "MultiPortCreatedOnlyIfParentCreated", "-- Multi Port Variables may only be created if their parent is created as well\r\nif(self.bindingOperator = storydiagrams::patterns::BindingOperator::CREATE and self.eContainer().oclIsKindOf(ComponentStoryPatternVariable)) then\r\n\tself.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE\r\nelse\r\n\ttrue\r\nendif"
 		   });	
 		addAnnotation
 		  (getMultiPortVariable_GmfSubPortVariables(), 

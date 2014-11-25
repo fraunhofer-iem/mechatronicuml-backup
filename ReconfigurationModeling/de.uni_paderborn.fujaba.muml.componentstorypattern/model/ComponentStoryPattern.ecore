@@ -123,6 +123,9 @@
         eType="#//MultiPortPositionConstraint" containment="true" eOpposite="#//MultiPortPositionConstraint/subPortVariable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiPortVariable" eSuperTypes="#//PortVariable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="MultiPortCreatedOnlyIfParentCreated" value="-- Multi Port Variables may only be created if their parent is created as well&#xD;&#xA;if(self.bindingOperator = storydiagrams::patterns::BindingOperator::CREATE and self.eContainer().oclIsKindOf(ComponentStoryPatternVariable)) then&#xD;&#xA;&#x9;self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subPortVariables" upperBound="-1"
         eType="#//SinglePortVariable" eOpposite="#//SinglePortVariable/multiPortVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
