@@ -16,7 +16,9 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.muml.reconfiguration.edit,
  de.uni_paderborn.fujaba.muml.reconfiguration,
- de.uni_paderborn.fujaba.muml.edit.properties
+ de.uni_paderborn.fujaba.muml.edit.properties,
+ org.storydriven.storydiagrams.edit,
+ org.storydriven.storydiagrams.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.properties.metamodel, de.uni_paderborn.fujaba.muml.reconfiguration.properties.constraint,
