@@ -1869,13 +1869,13 @@ public class TestAutomataGeneration {
 	 * @return
 	 */
 	protected RealtimeStatechart searchRtsc(RealtimeStatechart rtsc, String name) {
-		if (rtsc.getName() == name)
+		if (rtsc.getName().equals(name))
 			return rtsc;
 		for (State curState : rtsc.getStates()) {
 			if (curState.getEmbeddedRegions() != null)
 				for (Region curRegion : curState.getEmbeddedRegions()) {
 					if (curRegion.getEmbeddedStatechart() != null) {
-						if (curRegion.getEmbeddedStatechart().getName() == name)
+						if (curRegion.getEmbeddedStatechart().getName().equals(name))
 							return curRegion.getEmbeddedStatechart();
 					} else
 						return searchRtsc(curRegion.getEmbeddedStatechart(),
