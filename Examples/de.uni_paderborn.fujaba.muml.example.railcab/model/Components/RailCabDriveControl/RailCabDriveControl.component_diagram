@@ -47,6 +47,20 @@
           <element xmi:type="component:PortPart" href="../../RailCab.fujaba#_aZlwYPuREeO8xJIX1d2eag"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zotO7fuSEeO8xJIX1d2eag" x="132" y="143"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_A92kQHSPEeSCfN0RxbcB5A" type="3022" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_A93LUHSPEeSCfN0RxbcB5A" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_A93LUXSPEeSCfN0RxbcB5A" x="-60" y="-3"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../../RailCab.fujaba#_A9xrwHSPEeSCfN0RxbcB5A"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A92kQXSPEeSCfN0RxbcB5A" x="144" y="-12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_A93LUnSPEeSCfN0RxbcB5A" type="3022" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_A93LVHSPEeSCfN0RxbcB5A" type="5034">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_A93LVXSPEeSCfN0RxbcB5A" x="36" y="-1"/>
+          </children>
+          <element xmi:type="component:PortPart" href="../../RailCab.fujaba#_A9xrwXSPEeSCfN0RxbcB5A"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A93LU3SPEeSCfN0RxbcB5A" x="192" y="-12"/>
+        </children>
         <element xmi:type="component:ComponentPart" href="../../RailCab.fujaba#_oBVHwPh4EeOdcfcso3gQlg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zotOwfuSEeO8xJIX1d2eag" x="86" y="7" width="363" height="171"/>
       </children>
