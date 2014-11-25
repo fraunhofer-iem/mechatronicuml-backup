@@ -50,6 +50,8 @@ encoding//model/Components/RailCabDriveControl/OperationStrategy/OperationStrate
 encoding//model/Components/RailCabDriveControl/OperationStrategy/OperationStrategy.realtimestatechart_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/PositionSensor.component_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/RailCabDriveControl.component_diagram=UTF-8
+encoding//model/Components/RailCabDriveControl/RailCabDriveControl_Executor_RTSC.realtimestatechart_diagram=UTF-8
+encoding//model/Components/RailCabDriveControl/RailCabDriveControl_Manager_RTSC.realtimestatechart_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/SpeedSensor.component_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/VelocityController/ConvoyDrive.component_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/VelocityController/ConvoyFading.component_diagram=UTF-8
