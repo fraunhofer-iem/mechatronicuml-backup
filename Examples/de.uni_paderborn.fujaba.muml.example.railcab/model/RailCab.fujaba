@@ -6349,15 +6349,60 @@
     <modelElements xsi:type="reconfiguration:ReconfigurableStructuredComponent" xmi:id="_Aj7rwO5xEeOKI4bZ_bxwuQ" name="VelocityController" componentKind="hybrid component">
       <ports xsi:type="reconfiguration:ReconfigurationMessagePort" xmi:id="_Dm1cEO5xEeOKI4bZ_bxwuQ" connectors="_DnSIAO5xEeOKI4bZ_bxwuQ" name="reconfMsg">
         <cardinality xmi:id="_Dm1cEe5xEeOKI4bZ_bxwuQ">
-          <lowerBound xmi:id="_Dm1cEu5xEeOKI4bZ_bxwuQ"/>
-          <upperBound xmi:id="_Dm1cE-5xEeOKI4bZ_bxwuQ"/>
+          <lowerBound xmi:id="_DoKkgHSGEeSqM9pIlQqUBw"/>
+          <upperBound xmi:id="_DoKkgXSGEeSqM9pIlQqUBw"/>
         </cardinality>
+        <interfaceEntries xmi:id="_yaLOgHSFEeSqM9pIlQqUBw" description="RailCab travels at high speed." messageType="_dZh2ELi6EeKp46K0r5yxrg"/>
+        <interfaceEntries xmi:id="_4mu3YHSFEeSqM9pIlQqUBw" description="RailCab travels at normal speed." messageType="_e16UgLi6EeKp46K0r5yxrg"/>
+        <interfaceEntries xmi:id="_99Q3MHSFEeSqM9pIlQqUBw" description="Distance sensor broken." messageType="_gGi18Li6EeKp46K0r5yxrg" reconfigurationMessageType="REQUEST">
+          <expectedResponseTime xmi:id="_CM0A0HSGEeSqM9pIlQqUBw">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_DTO2UHSGEeSqM9pIlQqUBw" value="250"/>
+          </expectedResponseTime>
+        </interfaceEntries>
       </ports>
       <ports xsi:type="reconfiguration:ReconfigurationExecutionPort" xmi:id="_Dm-mAO5xEeOKI4bZ_bxwuQ" connectors="_DnSIAe5xEeOKI4bZ_bxwuQ" name="reconfExec">
         <cardinality xmi:id="_Dm-mAe5xEeOKI4bZ_bxwuQ">
-          <lowerBound xmi:id="_tERa0O6AEeOKI4bZ_bxwuQ"/>
-          <upperBound xmi:id="_tERa0e6AEeOKI4bZ_bxwuQ"/>
+          <lowerBound xmi:id="_RNv3IHSLEeSCfN0RxbcB5A"/>
+          <upperBound xmi:id="_RNv3IXSLEeSCfN0RxbcB5A"/>
         </cardinality>
+        <interfaceEntries xmi:id="_ppitEHSKEeSCfN0RxbcB5A" description="The VelocityController operates as a convoy member and considers the distance to the preceding RailCab." messageType="_B-C74Li7EeKp46K0r5yxrg">
+          <timeForDecision xmi:id="_zT5SgHSKEeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_0hXyQHSKEeSCfN0RxbcB5A" value="20"/>
+          </timeForDecision>
+          <timeForExecutionPhase xsi:type="reconfiguration:ExecutionTimingSpecificationThreePhase" xmi:id="_255I0HSKEeSCfN0RxbcB5A">
+            <timeForSetup xmi:id="_45khkHSKEeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_51_tkHSKEeSCfN0RxbcB5A" value="10"/>
+            </timeForSetup>
+            <timeForFading xmi:id="_6VKV0HSKEeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_62WXUHSKEeSCfN0RxbcB5A" value="50"/>
+            </timeForFading>
+            <timeForTeardown xmi:id="_7UGqUHSKEeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_77okYHSKEeSCfN0RxbcB5A" value="5"/>
+            </timeForTeardown>
+          </timeForExecutionPhase>
+          <minimumCommitTime xmi:id="_8zVBYHSKEeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_9vThcHSKEeSCfN0RxbcB5A" value="200"/>
+          </minimumCommitTime>
+        </interfaceEntries>
+        <interfaceEntries xmi:id="_-62ukHSKEeSCfN0RxbcB5A" description="The VelocityController operates as standalone or coordinator RailCab and will control speed solely based on a reference speed." messageType="_C9kfMLi7EeKp46K0r5yxrg">
+          <timeForDecision xmi:id="_JXqrsHSLEeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_J_kZMHSLEeSCfN0RxbcB5A" value="20"/>
+          </timeForDecision>
+          <timeForExecutionPhase xsi:type="reconfiguration:ExecutionTimingSpecificationThreePhase" xmi:id="_K19OoHSLEeSCfN0RxbcB5A">
+            <timeForSetup xmi:id="_LI7N8HSLEeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_MG-KkHSLEeSCfN0RxbcB5A" value="10"/>
+            </timeForSetup>
+            <timeForFading xmi:id="_Mq7zQHSLEeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_NXIx8HSLEeSCfN0RxbcB5A" value="50"/>
+            </timeForFading>
+            <timeForTeardown xmi:id="_N9JpEHSLEeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_Ohg6YHSLEeSCfN0RxbcB5A" value="5"/>
+            </timeForTeardown>
+          </timeForExecutionPhase>
+          <minimumCommitTime xmi:id="_P3q1AHSLEeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_RDgWAHSLEeSCfN0RxbcB5A" value="200"/>
+          </minimumCommitTime>
+        </interfaceEntries>
       </ports>
       <ports xsi:type="component:ContinuousPort" xmi:id="_19nsAO5-EeOKI4bZ_bxwuQ" connectors="_yFoRUO5_EeOKI4bZ_bxwuQ _LRomwO6AEeOKI4bZ_bxwuQ" name="refSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       <ports xsi:type="component:ContinuousPort" xmi:id="_852eUO5-EeOKI4bZ_bxwuQ" connectors="_QHrvsO6AEeOKI4bZ_bxwuQ _SE1Y4O6AEeOKI4bZ_bxwuQ" name="curSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
@@ -6407,6 +6452,8 @@
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_x0CVkO6AEeOKI4bZ_bxwuQ" connectorEndpoints="_QMmhZO5_EeOKI4bZ_bxwuQ _VYq9oe5_EeOKI4bZ_bxwuQ"/>
       <controller xsi:type="reconfiguration:RuleBasedReconfigurationController" xmi:id="_DnIXAO5xEeOKI4bZ_bxwuQ" name="VelocityController_reconfController">
         <executor xmi:id="_DnIXAe5xEeOKI4bZ_bxwuQ">
+          <specificationEntries xmi:id="_aFAoMHSKEeSCfN0RxbcB5A" reconfigurationRule="_1ChMEF0TEeSFHL4TxJ3n2Q" id="1"/>
+          <specificationEntries xmi:id="_i6TN4HSKEeSCfN0RxbcB5A" reconfigurationRule="_6o1jwGW4EeS0Pukr93HjHA" id="2"/>
           <ports xsi:type="reconfiguration:InternalReconfigurationCommunicationPort" xmi:id="_DnIXAu5xEeOKI4bZ_bxwuQ" connectors="_DnIXG-5xEeOKI4bZ_bxwuQ" name="events">
             <cardinality xmi:id="_DnIXA-5xEeOKI4bZ_bxwuQ">
               <lowerBound xmi:id="_DnIXBO5xEeOKI4bZ_bxwuQ"/>
@@ -6427,6 +6474,15 @@
           </ports>
         </executor>
         <manager xmi:id="_DnIXDu5xEeOKI4bZ_bxwuQ">
+          <specificationEntries xmi:id="_J1tr4HSGEeSqM9pIlQqUBw" messageType="_B-C74Li7EeKp46K0r5yxrg" structuralCondition="_lveakHFxEeSVioZazDBeBw" reconfigurationRule="_1ChMEF0TEeSFHL4TxJ3n2Q" invokePlanner="true" blockable="true">
+            <timeForPlanning xmi:id="_9k7S4HSJEeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_-TVRAHSJEeSCfN0RxbcB5A" value="10"/>
+            </timeForPlanning>
+          </specificationEntries>
+          <specificationEntries xmi:id="_AvE6sHSKEeSCfN0RxbcB5A" messageType="_C9kfMLi7EeKp46K0r5yxrg" structuralCondition="_j0xL8HFyEeSVioZazDBeBw" reconfigurationRule="_6o1jwGW4EeS0Pukr93HjHA"/>
+          <specificationEntries xmi:id="_OV-OMHSKEeSCfN0RxbcB5A" treat="false" propagate="true" messageType="_gGi18Li6EeKp46K0r5yxrg"/>
+          <specificationEntries xmi:id="_TAsQ4HSKEeSCfN0RxbcB5A" treat="false" propagate="true" messageType="_dZh2ELi6EeKp46K0r5yxrg"/>
+          <specificationEntries xmi:id="_WVEywHSKEeSCfN0RxbcB5A" treat="false" propagate="true" messageType="_e16UgLi6EeKp46K0r5yxrg"/>
           <ports xsi:type="reconfiguration:InternalReconfigurationCommunicationPort" xmi:id="_DnIXD-5xEeOKI4bZ_bxwuQ" connectors="_DnIXG-5xEeOKI4bZ_bxwuQ" name="executor">
             <cardinality xmi:id="_DnIXEO5xEeOKI4bZ_bxwuQ">
               <lowerBound xmi:id="_DnIXEe5xEeOKI4bZ_bxwuQ"/>
