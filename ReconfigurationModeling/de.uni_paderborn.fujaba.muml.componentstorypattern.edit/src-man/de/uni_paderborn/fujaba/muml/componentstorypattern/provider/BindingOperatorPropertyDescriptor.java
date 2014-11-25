@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -29,7 +28,10 @@ public class BindingOperatorPropertyDescriptor extends ItemPropertyDescriptor {
 	public Collection<?> getChoiceOfValues(Object object) {
 		
 		if (object instanceof MultiPortVariable){
-			return Collections.singletonList(BindingOperator.CHECK_ONLY);
+			ArrayList<Object> result = new ArrayList<Object>();
+			result.add(BindingOperator.CHECK_ONLY);
+			result.add(BindingOperator.CREATE);
+			return result;
 		}
 		
 		// originalObjects must not be changed; therefore we create another ArrayList and copy the elements.
