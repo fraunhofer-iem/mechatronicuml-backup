@@ -2494,6 +2494,24 @@
       <variables xmi:id="_vosxAGKgEeS-2sR8iwsrMg" name="minDistance" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_xns0UGKgEeS-2sR8iwsrMg" value="1"/>
       </variables>
+      <variables xmi:id="_EkE3gHSkEeSlCdM66-7ACQ" name="numRequestorPorts" dataType="_hm9EVriwEeKp46K0r5yxrg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_KrDc0HSkEeSlCdM66-7ACQ" value="0"/>
+      </variables>
+      <variables xmi:id="_K3jAsHSkEeSlCdM66-7ACQ" name="maxNumRequestorPorts" dataType="_hm9EVriwEeKp46K0r5yxrg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_On9-UHSkEeSlCdM66-7ACQ" value="1"/>
+      </variables>
+      <variables xmi:id="_vNGdcHSkEeSlCdM66-7ACQ" name="convoyEntryId" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_zyFEgHSkEeSlCdM66-7ACQ" value="1711"/>
+      </variables>
+      <variables xmi:id="_0AGSYHSkEeSlCdM66-7ACQ" name="peerRoleID" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_28yF8HSkEeSlCdM66-7ACQ" value="1712"/>
+      </variables>
+      <variables xmi:id="_IA_oAGUGEeS2Zodb8JPC8A" name="numRequesteePorts" dataType="_hm9EVriwEeKp46K0r5yxrg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_LSnJwGUGEeS2Zodb8JPC8A" value="0"/>
+      </variables>
+      <variables xmi:id="_NTmxIGUGEeS2Zodb8JPC8A" name="maxNumRequesteePorts" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_PcUxIGUGEeS2Zodb8JPC8A" value="1"/>
+      </variables>
       <states xmi:id="_Qg9Cw_qeEeO0_ZLnPp6sSA" name="Main" initial="true">
         <embeddedRegions xmi:id="_AXUA0FOiEeSaVK1gfdE5pA" priority="4">
           <embeddedStatechart xmi:id="_AXUA0VOiEeSaVK1gfdE5pA" name="SpeedTransmission_sender_speedProvider" behavioralElement="_KlzIwPh2EeOdcfcso3gQlg">
@@ -2548,9 +2566,15 @@
                     <parameters xmi:id="_zbPJIGAcEeSy7YZm1PHpMA" name="reqPort" dataType="_Tw2JwPh7EeOdcfcso3gQlg"/>
                   </operations>
                   <transitions xmi:id="_YnxRMGAdEeSy7YZm1PHpMA" priority="1" target="_Waln8GAdEeSy7YZm1PHpMA" source="_qcOmwmAcEeSy7YZm1PHpMA" clockResets="_5cQ3cGAcEeSy7YZm1PHpMA">
-                    <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_nskGEGAdEeSy7YZm1PHpMA" operator="EQUAL">
-                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_nskGEWAdEeSy7YZm1PHpMA" typedNamedElement="_VNxsAGAcEeSy7YZm1PHpMA"/>
-                      <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_nskGEmAdEeSy7YZm1PHpMA" value="false"/>
+                    <guard xsi:type="sdcec:LogicalExpression" xmi:id="_OTgaIHS4EeSuyMyECM6THg">
+                      <leftExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_OTgaIXS4EeSuyMyECM6THg" operator="EQUAL">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_OTqLIHS4EeSuyMyECM6THg" typedNamedElement="_VNxsAGAcEeSy7YZm1PHpMA"/>
+                        <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_OTqLIXS4EeSuyMyECM6THg" value="false"/>
+                      </leftExpression>
+                      <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_OTqLInS4EeSuyMyECM6THg">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_OTqLI3S4EeSuyMyECM6THg" typedNamedElement="_EkE3gHSkEeSlCdM66-7ACQ"/>
+                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_OTqLJHS4EeSuyMyECM6THg" typedNamedElement="_K3jAsHSkEeSlCdM66-7ACQ"/>
+                      </rightExpression>
                     </guard>
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_xoRhQGAdEeSy7YZm1PHpMA">
                       <message xmi:id="_ykrfIGAdEeSy7YZm1PHpMA" instanceOf="_ez07IF9qEeSjUsAdueGXzg">
@@ -2729,7 +2753,7 @@
                       <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_aSNAcmAiEeSy7YZm1PHpMA" value="false"/>
                     </guard>
                   </transitions>
-                  <transitions xmi:id="_b4awUGAiEeSy7YZm1PHpMA" priority="2" target="_qcOmwmAcEeSy7YZm1PHpMA" source="_5gv8kGAhEeSy7YZm1PHpMA">
+                  <transitions xmi:id="_b4awUGAiEeSy7YZm1PHpMA" priority="2" target="_vGaPgHS4EeSuyMyECM6THg" source="_5gv8kGAhEeSy7YZm1PHpMA">
                     <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_fDygIGAiEeSy7YZm1PHpMA" operator="EQUAL">
                       <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fDygIWAiEeSy7YZm1PHpMA" typedNamedElement="_TepQsGAcEeSy7YZm1PHpMA"/>
                       <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fDygImAiEeSy7YZm1PHpMA" value="true"/>
@@ -2764,7 +2788,10 @@
                       </expressions>
                     </action>
                   </transitions>
-                  <states xmi:id="_qcOmwmAcEeSy7YZm1PHpMA" name="Idle" outgoingTransitions="_YnxRMGAdEeSy7YZm1PHpMA" incomingTransitions="__7rVcGAdEeSy7YZm1PHpMA _ct__YGAgEeSy7YZm1PHpMA _yrNBEGAhEeSy7YZm1PHpMA _b4awUGAiEeSy7YZm1PHpMA" initial="true">
+                  <transitions xmi:id="_1YiU4HS4EeSuyMyECM6THg" priority="1" target="_qcOmwmAcEeSy7YZm1PHpMA" source="_vGaPgHS4EeSuyMyECM6THg">
+                    <synchronization xmi:id="_4B_qcHS4EeSuyMyECM6THg" syncChannel="__RK-AHSkEeSlCdM66-7ACQ"/>
+                  </transitions>
+                  <states xmi:id="_qcOmwmAcEeSy7YZm1PHpMA" name="Idle" outgoingTransitions="_YnxRMGAdEeSy7YZm1PHpMA" incomingTransitions="__7rVcGAdEeSy7YZm1PHpMA _ct__YGAgEeSy7YZm1PHpMA _yrNBEGAhEeSy7YZm1PHpMA _1YiU4HS4EeSuyMyECM6THg" initial="true">
                     <entryEvent xmi:id="_9OnHsGAcEeSy7YZm1PHpMA">
                       <action xmi:id="_NHed0GAdEeSy7YZm1PHpMA" name="resetAddr">
                         <expressions xsi:type="actionlanguage:Block" xmi:id="_WG8TMGAdEeSy7YZm1PHpMA">
@@ -2834,6 +2861,7 @@
                       </action>
                     </entryEvent>
                   </states>
+                  <states xmi:id="_vGaPgHS4EeSuyMyECM6THg" name="Trigger Req" outgoingTransitions="_1YiU4HS4EeSuyMyECM6THg" incomingTransitions="_b4awUGAiEeSy7YZm1PHpMA" urgent="true"/>
                   <clocks xmi:id="_5cQ3cGAcEeSy7YZm1PHpMA" name="c"/>
                 </embeddedStatechart>
               </embeddedRegions>
@@ -2843,12 +2871,6 @@
                   <operations xmi:id="_YyWP4GAlEeSy7YZm1PHpMA" name="createConnector" returnType="_hm9EUriwEeKp46K0r5yxrg">
                     <parameters xmi:id="_kuEBsGAqEeSVOOiFz-_Tiw" name="reqPort" dataType="_Tw2JwPh7EeOdcfcso3gQlg"/>
                   </operations>
-                  <variables xmi:id="_IA_oAGUGEeS2Zodb8JPC8A" name="numOfPorts" dataType="_hm9EVriwEeKp46K0r5yxrg">
-                    <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_LSnJwGUGEeS2Zodb8JPC8A" value="0"/>
-                  </variables>
-                  <variables xmi:id="_NTmxIGUGEeS2Zodb8JPC8A" name="maxNumPorts" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
-                    <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_PcUxIGUGEeS2Zodb8JPC8A" value="1"/>
-                  </variables>
                   <transitions xmi:id="_9lTaUGAlEeSy7YZm1PHpMA" priority="1" target="_6P92MGAlEeSy7YZm1PHpMA" source="_RAs4gWAlEeSy7YZm1PHpMA">
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DHPY4GAmEeSy7YZm1PHpMA" kind="TRIGGER">
                       <message xmi:id="_D5FFgGAmEeSy7YZm1PHpMA" instanceOf="_ez07IF9qEeSjUsAdueGXzg"/>
@@ -3654,6 +3676,11 @@
             <clocks xmi:id="_H8lc32UbEeSC9fIvMvldiA" name="c2"/>
           </embeddedStatechart>
         </embeddedRegions>
+        <channels xmi:id="__RK-AHSkEeSlCdM66-7ACQ" name="startInstantiation"/>
+        <channels xmi:id="_BkqDkHSlEeSlCdM66-7ACQ" name="becomeCoord"/>
+        <channels xmi:id="_C59poHSlEeSlCdM66-7ACQ" name="addMember"/>
+        <channels xmi:id="_D79SIHSlEeSlCdM66-7ACQ" name="becomeMember"/>
+        <channels xmi:id="_GQfgkHSlEeSlCdM66-7ACQ" name="started" selectorType="_hm9EU7iwEeKp46K0r5yxrg"/>
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_EUAnEPuWEeO2po0ALlWq5g" name="MemberControl" behavioralElement="_vkOG4Ph3EeOdcfcso3gQlg">
@@ -13595,8 +13622,8 @@
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_PPvA8Ph5EeOdcfcso3gQlg" connectors="_TwqkMPqXEeOBjpYLfaZdCA" name="peer" senderMessageTypes="_Dy8d4HauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _BG8KoHauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA" receiverMessageTypes="_Dy8d4HauEeOh__JNCv2_1A _CL95AHauEeOh__JNCv2_1A _BG8KoHauEeOh__JNCv2_1A _-iU6AHbHEeOth4KXtc7iXA _qG47IHbIEeOth4KXtc7iXA _spWQ0HbIEeOth4KXtc7iXA" refinedRole="_jk3pUHasEeOh__JNCv2_1A">
         <cardinality xmi:id="_EUo24PqeEeO0_ZLnPp6sSA">
-          <lowerBound xmi:id="_nhnyQFOkEeSaVK1gfdE5pA" value="0"/>
-          <upperBound xmi:id="_nhnyQVOkEeSaVK1gfdE5pA"/>
+          <lowerBound xmi:id="_jzztIHSoEeSlCdM66-7ACQ" value="0"/>
+          <upperBound xmi:id="_jzztIXSoEeSlCdM66-7ACQ"/>
         </cardinality>
       </ports>
       <ports xsi:type="protocolinstantiation:BroadcastPort" xmi:id="_Tw2JwPh7EeOdcfcso3gQlg" connectors="_YfJr8Ph7EeOdcfcso3gQlg" name="protocolInst" kind="PROTOCOL_INSTANTIATION">
@@ -13679,9 +13706,9 @@
         <portParts xmi:id="_pT5i4Ph4EeOdcfcso3gQlg" connectors="_TwqkMPqXEeOBjpYLfaZdCA" portType="_iZRzwPhwEeOlYcxv1LeTzQ"/>
         <portParts xmi:id="_pUDT4Ph4EeOdcfcso3gQlg" connectors="_oCISQPqXEeO0_ZLnPp6sSA" portType="_jhvQoPhwEeOlYcxv1LeTzQ"/>
         <portParts xmi:id="_pUDT4fh4EeOdcfcso3gQlg" connectors="_YfJr8Ph7EeOdcfcso3gQlg" portType="_YETnMPh0EeOAKLom6jxr8Q"/>
-        <portParts xmi:id="_pUDT4vh4EeOdcfcso3gQlg" connectors="_SK0RoPqgEeO0_ZLnPp6sSA" portType="_KlzIwPh2EeOdcfcso3gQlg" coordinationProtocolPart="_cMvnYnSjEeSlCdM66-7ACQ"/>
+        <portParts xmi:id="_pUDT4vh4EeOdcfcso3gQlg" connectors="_SK0RoPqgEeO0_ZLnPp6sSA" portType="_KlzIwPh2EeOdcfcso3gQlg" coordinationProtocolPart="_dDugcHSoEeSlCdM66-7ACQ"/>
         <portParts xmi:id="_pUDT4_h4EeOdcfcso3gQlg" connectors="_r89wIPqXEeO0_ZLnPp6sSA" portType="_dd_WwPh2EeOdcfcso3gQlg"/>
-        <portParts xmi:id="_aZlwYPuREeO8xJIX1d2eag" connectors="_sxfUwPuREeO8xJIX1d2eag" portType="_WoA8MPuREeO8xJIX1d2eag" coordinationProtocolPart="_cMvnY3SjEeSlCdM66-7ACQ"/>
+        <portParts xmi:id="_aZlwYPuREeO8xJIX1d2eag" connectors="_sxfUwPuREeO8xJIX1d2eag" portType="_WoA8MPuREeO8xJIX1d2eag" coordinationProtocolPart="_dDugcXSoEeSlCdM66-7ACQ"/>
         <portParts xmi:id="_A9xrwHSPEeSCfN0RxbcB5A" portType="_huP1AHSLEeSCfN0RxbcB5A"/>
         <portParts xmi:id="_A9xrwXSPEeSCfN0RxbcB5A" portType="_ifrR8HSLEeSCfN0RxbcB5A"/>
       </embeddedComponentParts>
@@ -13690,7 +13717,7 @@
           <lowerBound xmi:id="_-f9igPqdEeO0_ZLnPp6sSA"/>
           <upperBound xmi:id="_-f9igfqdEeO0_ZLnPp6sSA"/>
         </cardinality>
-        <portParts xmi:id="_18GSwPqXEeO0_ZLnPp6sSA" connectors="_SK0RoPqgEeO0_ZLnPp6sSA _nVNx8PuUEeO2po0ALlWq5g _cZt4QPuVEeO2po0ALlWq5g" portType="_L2T48Ph3EeOdcfcso3gQlg" coordinationProtocolPart="_cMvnYnSjEeSlCdM66-7ACQ"/>
+        <portParts xmi:id="_18GSwPqXEeO0_ZLnPp6sSA" connectors="_SK0RoPqgEeO0_ZLnPp6sSA _nVNx8PuUEeO2po0ALlWq5g _cZt4QPuVEeO2po0ALlWq5g" portType="_L2T48Ph3EeOdcfcso3gQlg" coordinationProtocolPart="_dDugcHSoEeSlCdM66-7ACQ"/>
         <portParts xmi:id="_18GSwfqXEeO0_ZLnPp6sSA" connectors="_0PzZEPuUEeO2po0ALlWq5g" portType="_PEg6UPh3EeOdcfcso3gQlg"/>
         <portParts xmi:id="_18GSwvqXEeO0_ZLnPp6sSA" connectors="_rQtFMPuWEeO2po0ALlWq5g" portType="_Wb1GIPh3EeOdcfcso3gQlg"/>
         <portParts xmi:id="_18GSw_qXEeO0_ZLnPp6sSA" connectors="_sqHvMPuWEeO2po0ALlWq5g" portType="_fdXYEPh3EeOdcfcso3gQlg"/>
@@ -13702,8 +13729,8 @@
         </cardinality>
         <portParts xmi:id="_Q69IMPuQEeO8xJIX1d2eag" portType="_338jUO6BEeOKI4bZ_bxwuQ"/>
         <portParts xmi:id="_Q69IMfuQEeO8xJIX1d2eag" portType="_34Cp8O6BEeOKI4bZ_bxwuQ"/>
-        <portParts xmi:id="_Q69IMvuQEeO8xJIX1d2eag" connectors="_sxfUwPuREeO8xJIX1d2eag" portType="_XpxO0O6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_cMvnY3SjEeSlCdM66-7ACQ"/>
-        <portParts xmi:id="_Q69IM_uQEeO8xJIX1d2eag" connectors="_nVNx8PuUEeO2po0ALlWq5g" portType="_ZVV_0O6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_cMvnYnSjEeSlCdM66-7ACQ"/>
+        <portParts xmi:id="_Q69IMvuQEeO8xJIX1d2eag" connectors="_sxfUwPuREeO8xJIX1d2eag" portType="_XpxO0O6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_dDugcXSoEeSlCdM66-7ACQ"/>
+        <portParts xmi:id="_Q69IM_uQEeO8xJIX1d2eag" connectors="_nVNx8PuUEeO2po0ALlWq5g" portType="_ZVV_0O6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_dDugcHSoEeSlCdM66-7ACQ"/>
         <portParts xmi:id="_Q7GSIPuQEeO8xJIX1d2eag" connectors="_gnG7MPuUEeO2po0ALlWq5g" portType="_bkfX8O6FEeOKI4bZ_bxwuQ"/>
         <portParts xmi:id="_Q7GSIfuQEeO8xJIX1d2eag" connectors="_C62_oPuSEeO8xJIX1d2eag" portType="_hWucUO6FEeOKI4bZ_bxwuQ"/>
         <portParts xmi:id="_Q7GSIvuQEeO8xJIX1d2eag" connectors="_zCbuYPuREeO8xJIX1d2eag" portType="_kag9cO6FEeOKI4bZ_bxwuQ"/>
@@ -13713,7 +13740,7 @@
           <lowerBound xmi:id="_PcetwAUBEeSn_-l-OlOxjg" value="0"/>
           <upperBound xmi:id="_PcetwQUBEeSn_-l-OlOxjg"/>
         </cardinality>
-        <portParts xmi:id="_ZLsPUPuQEeO8xJIX1d2eag" connectors="_cZt4QPuVEeO2po0ALlWq5g" portType="_xXEkkPh3EeOdcfcso3gQlg" coordinationProtocolPart="_cMvnYnSjEeSlCdM66-7ACQ"/>
+        <portParts xmi:id="_ZLsPUPuQEeO8xJIX1d2eag" connectors="_cZt4QPuVEeO2po0ALlWq5g" portType="_xXEkkPh3EeOdcfcso3gQlg" coordinationProtocolPart="_dDugcHSoEeSlCdM66-7ACQ"/>
         <portParts xmi:id="_ZL2AUPuQEeO8xJIX1d2eag" connectors="_dhKMAPuWEeO2po0ALlWq5g" portType="_zjNsAPh3EeOdcfcso3gQlg"/>
         <portParts xmi:id="_ZL2AUfuQEeO8xJIX1d2eag" connectors="_gBroAPuWEeO2po0ALlWq5g" portType="_08yHAPh3EeOdcfcso3gQlg"/>
         <portParts xmi:id="_ZL2AUvuQEeO8xJIX1d2eag" connectors="_H2HRUPuVEeO2po0ALlWq5g" portType="_3tX_UPh3EeOdcfcso3gQlg"/>
@@ -13774,8 +13801,8 @@
       <connectors xsi:type="component:DelegationConnector" xmi:id="_gBroAPuWEeO2po0ALlWq5g" connectorEndpoints="_2YtJ0PuVEeO2po0ALlWq5g _ZL2AUfuQEeO8xJIX1d2eag"/>
       <connectors xsi:type="component:DelegationConnector" xmi:id="_rQtFMPuWEeO2po0ALlWq5g" connectorEndpoints="_jPs4oPuVEeO2po0ALlWq5g _18GSwvqXEeO0_ZLnPp6sSA"/>
       <connectors xsi:type="component:DelegationConnector" xmi:id="_sqHvMPuWEeO2po0ALlWq5g" connectorEndpoints="_rPL3sPuVEeO2po0ALlWq5g _18GSw_qXEeO0_ZLnPp6sSA"/>
-      <coordinationProtocolParts xmi:id="_cMvnYnSjEeSlCdM66-7ACQ" coordinationProtocol="_ncl6kFOfEeSaVK1gfdE5pA" portParts="_pUDT4vh4EeOdcfcso3gQlg _18GSwPqXEeO0_ZLnPp6sSA _Q69IM_uQEeO8xJIX1d2eag _ZLsPUPuQEeO8xJIX1d2eag"/>
-      <coordinationProtocolParts xmi:id="_cMvnY3SjEeSlCdM66-7ACQ" coordinationProtocol="_BdVtYFOlEeSaVK1gfdE5pA" portParts="_aZlwYPuREeO8xJIX1d2eag _Q69IMvuQEeO8xJIX1d2eag"/>
+      <coordinationProtocolParts xmi:id="_dDugcHSoEeSlCdM66-7ACQ" coordinationProtocol="_ncl6kFOfEeSaVK1gfdE5pA" portParts="_pUDT4vh4EeOdcfcso3gQlg _18GSwPqXEeO0_ZLnPp6sSA _Q69IM_uQEeO8xJIX1d2eag _ZLsPUPuQEeO8xJIX1d2eag"/>
+      <coordinationProtocolParts xmi:id="_dDugcXSoEeSlCdM66-7ACQ" coordinationProtocol="_BdVtYFOlEeSaVK1gfdE5pA" portParts="_aZlwYPuREeO8xJIX1d2eag _Q69IMvuQEeO8xJIX1d2eag"/>
       <controller xsi:type="reconfiguration:RuleBasedReconfigurationController" xmi:id="_U3ixSPhpEeOQsfT56fxzVQ" name="RailCabDriveControl_reconfController">
         <executor xmi:id="_U3ixSfhpEeOQsfT56fxzVQ" behavior="_XZhwCHSjEeSlCdM66-7ACQ">
           <specificationEntries xmi:id="_YvzDQB4bEeSyhrsYkwOsSg" reconfigurationRule="_uul9MB4YEeSyhrsYkwOsSg" id="4"/>
@@ -14978,7 +15005,7 @@
               </partVariables>
               <connectorVariables xsi:type="componentstorypattern:AssemblyVariable" xmi:id="_lcoQ4HP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_8V3u8HP-EeSHw7AsWgY3fg _9XVL8HP-EeSHw7AsWgY3fg" type="_Qov8gO8cEeOgFIvanw5ruQ"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_qTHesHP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_An6L4HP_EeSHw7AsWgY3fg _9hcKMHP-EeSHw7AsWgY3fg" type="_P0HHcO8EEeOoIPzCC8d2Xg"/>
-              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_seE6YHP_EeSHw7AsWgY3fg" name="" connectorEndpoints="_-yYNoHP-EeSHw7AsWgY3fg _EmT7IHP_EeSHw7AsWgY3fg" type="_9QUnIO6KEeO-LsFH58kjnA"/>
+              <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_seE6YHP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_-yYNoHP-EeSHw7AsWgY3fg _EmT7IHP_EeSHw7AsWgY3fg" type="_9QUnIO6KEeO-LsFH58kjnA"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_4kItQHP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_-VqccHP-EeSHw7AsWgY3fg _7qIDQHP-EeSHw7AsWgY3fg" type="_tb7rcO8FEeO15qrX0ik20g"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_9HvbUHP_EeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_-haZcHP-EeSHw7AsWgY3fg _8A49cHP-EeSHw7AsWgY3fg" type="_aH0L4O8EEeOoIPzCC8d2Xg"/>
               <connectorVariables xsi:type="componentstorypattern:DelegationVariable" xmi:id="_D3xksHQAEeSHw7AsWgY3fg" name="" bindingOperator="CREATE" connectorEndpoints="_AhW38HP_EeSHw7AsWgY3fg _8MDEkHP-EeSHw7AsWgY3fg" type="_GcT1kO6LEeO-LsFH58kjnA"/>

@@ -281,7 +281,7 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qTRPsnP_EeSHw7AsWgY3fg" points="[15, -6, -288, 0]$[297, -3, -6, 3]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qTRPtXP_EeSHw7AsWgY3fg" id="(0.2,0.6666666666666666)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_seOEUHP_EeSHw7AsWgY3fg" type="4005" source="_-yYNoXP-EeSHw7AsWgY3fg" target="_EmT7IXP_EeSHw7AsWgY3fg" lineColor="0">
+  <edges xmi:type="notation:Connector" xmi:id="_seOEUHP_EeSHw7AsWgY3fg" type="4005" source="_-yYNoXP-EeSHw7AsWgY3fg" target="_EmT7IXP_EeSHw7AsWgY3fg" lineColor="49152">
     <children xmi:type="notation:DecorationNode" xmi:id="_seOEU3P_EeSHw7AsWgY3fg" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_seOEVHP_EeSHw7AsWgY3fg" y="40"/>
     </children>
