@@ -76,6 +76,12 @@
       <messageTypes xmi:id="_cSI6cHQDEeSHw7AsWgY3fg" name="disableConvoyBuildUp"/>
       <messageTypes xmi:id="_EYQPkHSEEeSqM9pIlQqUBw" name="leaveConvoy"/>
       <messageTypes xmi:id="_vHI20HSNEeSCfN0RxbcB5A" name="applyCoordinationStrategy"/>
+      <messageTypes xmi:id="_DyFJ8HSQEeSCfN0RxbcB5A" name="stopCoordination"/>
+      <messageTypes xmi:id="_IDFsIHSQEeSCfN0RxbcB5A" name="createFirstMemberPorts"/>
+      <messageTypes xmi:id="_Jro-UHSQEeSCfN0RxbcB5A" name="createMemberPortsAfter">
+        <parameters xmi:id="_LpvCsHSQEeSCfN0RxbcB5A" name="c" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+        <parameters xmi:id="_R4aLcHSQEeSCfN0RxbcB5A" name="p" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
+      </messageTypes>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_A0CcwHauEeOh__JNCv2_1A" name="ConvoyEntry">
       <messageTypes xmi:id="_BG8KoHauEeOh__JNCv2_1A" name="youSlave"/>
@@ -6583,20 +6589,22 @@
           <upperBound xmi:id="_yd930-6KEeO-LsFH58kjnA"/>
         </cardinality>
         <portParts xmi:id="_0-8m0O6KEeO-LsFH58kjnA" connectors="_GcT1kO6LEeO-LsFH58kjnA" portType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
-        <portParts xmi:id="_0-8m0e6KEeO-LsFH58kjnA" connectors="_Qov8gO8cEeOgFIvanw5ruQ" portType="_aUiTUO6CEeOKI4bZ_bxwuQ" coordinationProtocolPart="_ovvmAHSEEeSqM9pIlQqUBw"/>
+        <portParts xmi:id="_0-8m0e6KEeO-LsFH58kjnA" connectors="_Qov8gO8cEeOgFIvanw5ruQ" portType="_aUiTUO6CEeOKI4bZ_bxwuQ" coordinationProtocolPart="_m2f5gHSREeSCfN0RxbcB5A"/>
         <portParts xmi:id="_0-8m0u6KEeO-LsFH58kjnA" connectors="_tb7rcO8FEeO15qrX0ik20g" portType="_dSy0MO6CEeOKI4bZ_bxwuQ"/>
         <portParts xmi:id="_0-8m0-6KEeO-LsFH58kjnA" connectors="_aH0L4O8EEeOoIPzCC8d2Xg" portType="_f4o1EO6CEeOKI4bZ_bxwuQ"/>
+        <portParts xmi:id="_m2AKQHSREeSCfN0RxbcB5A" portType="_ACUToHSQEeSCfN0RxbcB5A"/>
+        <portParts xmi:id="_m2AxUHSREeSCfN0RxbcB5A" portType="_Aa39kHSQEeSCfN0RxbcB5A"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_2O-rUO6KEeO-LsFH58kjnA" name="refGen" componentType="_BXanEO6FEeOKI4bZ_bxwuQ">
         <cardinality xmi:id="_2PIcUO6KEeO-LsFH58kjnA">
           <lowerBound xmi:id="_n_UKYO8IEeOVLMt-YZuZhA"/>
           <upperBound xmi:id="_n_UKYe8IEeOVLMt-YZuZhA" infinity="true"/>
         </cardinality>
-        <portParts xmi:id="_3A-I8O6KEeO-LsFH58kjnA" connectors="_Qov8gO8cEeOgFIvanw5ruQ" portType="_C5W68O6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_ovvmAHSEEeSqM9pIlQqUBw"/>
+        <portParts xmi:id="_3A-I8O6KEeO-LsFH58kjnA" connectors="_Qov8gO8cEeOgFIvanw5ruQ" portType="_C5W68O6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_m2f5gHSREeSCfN0RxbcB5A"/>
         <portParts xmi:id="_3A-I8e6KEeO-LsFH58kjnA" connectors="_P0HHcO8EEeOoIPzCC8d2Xg" portType="_FpmN8O6FEeOKI4bZ_bxwuQ"/>
         <portParts xmi:id="_3A-I8u6KEeO-LsFH58kjnA" connectors="_9QUnIO6KEeO-LsFH58kjnA" portType="_H5mhsO6FEeOKI4bZ_bxwuQ"/>
-        <portParts xmi:id="_3A-I8-6KEeO-LsFH58kjnA" connectors="_TeJJMO8EEeOoIPzCC8d2Xg" portType="_QPsC4O6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_ovwNEHSEEeSqM9pIlQqUBw"/>
-        <portParts xmi:id="_3A-I9O6KEeO-LsFH58kjnA" connectors="_TeJJMO8EEeOoIPzCC8d2Xg" portType="_Rm8wwO6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_ovwNEHSEEeSqM9pIlQqUBw"/>
+        <portParts xmi:id="_3A-I8-6KEeO-LsFH58kjnA" connectors="_TeJJMO8EEeOoIPzCC8d2Xg" portType="_QPsC4O6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_m2f5gXSREeSCfN0RxbcB5A"/>
+        <portParts xmi:id="_3A-I9O6KEeO-LsFH58kjnA" connectors="_TeJJMO8EEeOoIPzCC8d2Xg" portType="_Rm8wwO6FEeOKI4bZ_bxwuQ" coordinationProtocolPart="_m2f5gXSREeSCfN0RxbcB5A"/>
       </embeddedComponentParts>
       <connectors xsi:type="reconfiguration:ReconfigurationPortAssemblyConnector" xmi:id="_34Iwq-6BEeOKI4bZ_bxwuQ" connectorEndpoints="_34Iwn-6BEeOKI4bZ_bxwuQ _34Iwku6BEeOKI4bZ_bxwuQ"/>
       <connectors xsi:type="reconfiguration:ReconfigurationPortDelegationConnector" xmi:id="_34IwrO6BEeOKI4bZ_bxwuQ" connectorEndpoints="_34Iwo-6BEeOKI4bZ_bxwuQ _338jUO6BEeOKI4bZ_bxwuQ"/>
@@ -6608,8 +6616,8 @@
       <connectors xsi:type="component:DelegationConnector" xmi:id="_aH0L4O8EEeOoIPzCC8d2Xg" connectorEndpoints="_0-8m0-6KEeO-LsFH58kjnA _ZVV_0O6FEeOKI4bZ_bxwuQ"/>
       <connectors xsi:type="component:DelegationConnector" xmi:id="_tb7rcO8FEeO15qrX0ik20g" connectorEndpoints="_0-8m0u6KEeO-LsFH58kjnA _XpxO0O6FEeOKI4bZ_bxwuQ"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_Qov8gO8cEeOgFIvanw5ruQ" connectorEndpoints="_0-8m0e6KEeO-LsFH58kjnA _3A-I8O6KEeO-LsFH58kjnA"/>
-      <coordinationProtocolParts xmi:id="_ovvmAHSEEeSqM9pIlQqUBw" coordinationProtocol="_TM2KIFOnEeSDPNki4Dv8rg" portParts="_0-8m0e6KEeO-LsFH58kjnA _3A-I8O6KEeO-LsFH58kjnA"/>
-      <coordinationProtocolParts xmi:id="_ovwNEHSEEeSqM9pIlQqUBw" coordinationProtocol="_abCkQFOpEeSDPNki4Dv8rg" portParts="_3A-I8-6KEeO-LsFH58kjnA _3A-I9O6KEeO-LsFH58kjnA"/>
+      <coordinationProtocolParts xmi:id="_m2f5gHSREeSCfN0RxbcB5A" coordinationProtocol="_TM2KIFOnEeSDPNki4Dv8rg" portParts="_0-8m0e6KEeO-LsFH58kjnA _3A-I8O6KEeO-LsFH58kjnA"/>
+      <coordinationProtocolParts xmi:id="_m2f5gXSREeSCfN0RxbcB5A" coordinationProtocol="_abCkQFOpEeSDPNki4Dv8rg" portParts="_3A-I8-6KEeO-LsFH58kjnA _3A-I9O6KEeO-LsFH58kjnA"/>
       <controller xsi:type="reconfiguration:RuleBasedReconfigurationController" xmi:id="_34IwkO6BEeOKI4bZ_bxwuQ" name="ConvoyCoordination_reconfController">
         <executor xmi:id="_34Iwke6BEeOKI4bZ_bxwuQ">
           <specificationEntries xmi:id="_yWOYEHSEEeSqM9pIlQqUBw" reconfigurationRule="_Dgg2IGmKEeSbsbbH1osIGg" id="1"/>
@@ -6689,6 +6697,56 @@
           <lowerBound xmi:id="_rwYHIFOjEeSaVK1gfdE5pA"/>
           <upperBound xmi:id="_rwhREFOjEeSaVK1gfdE5pA"/>
         </cardinality>
+      </ports>
+      <ports xsi:type="reconfiguration:ReconfigurationMessagePort" xmi:id="_ACUToHSQEeSCfN0RxbcB5A" name="reconfMsg" senderMessageTypes="_DyFJ8HSQEeSCfN0RxbcB5A">
+        <cardinality xmi:id="_ACU6sHSQEeSCfN0RxbcB5A">
+          <lowerBound xmi:id="_1B9vIHSQEeSCfN0RxbcB5A"/>
+          <upperBound xmi:id="_1B-WMHSQEeSCfN0RxbcB5A"/>
+        </cardinality>
+        <interfaceEntries xmi:id="_XL5eUHSQEeSCfN0RxbcB5A" description="RailCab stops being convoy coordinator." messageType="_DyFJ8HSQEeSCfN0RxbcB5A" reconfigurationMessageType="REQUEST">
+          <expectedResponseTime xmi:id="_z0EYoHSQEeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_01FJsHSQEeSCfN0RxbcB5A" value="250"/>
+          </expectedResponseTime>
+        </interfaceEntries>
+      </ports>
+      <ports xsi:type="reconfiguration:ReconfigurationExecutionPort" xmi:id="_Aa39kHSQEeSCfN0RxbcB5A" name="reconfExec" receiverMessageTypes="_IDFsIHSQEeSCfN0RxbcB5A _Jro-UHSQEeSCfN0RxbcB5A">
+        <cardinality xmi:id="_Aa4koHSQEeSCfN0RxbcB5A">
+          <lowerBound xmi:id="_kvUKkHSREeSCfN0RxbcB5A"/>
+          <upperBound xmi:id="_kvUKkXSREeSCfN0RxbcB5A"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_8dVUgHSQEeSCfN0RxbcB5A" name="buffer" messageType="_IDFsIHSQEeSCfN0RxbcB5A _Jro-UHSQEeSCfN0RxbcB5A">
+          <bufferSize xmi:id="_-2mR8HSQEeSCfN0RxbcB5A" infinity="true"/>
+        </receiverMessageBuffer>
+        <interfaceEntries xmi:id="__g3W8HSQEeSCfN0RxbcB5A" description="Creates new port instances for dealing with an additional member driving at first position." messageType="_IDFsIHSQEeSCfN0RxbcB5A">
+          <timeForDecision xmi:id="_NyhesHSREeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_OKLJsHSREeSCfN0RxbcB5A" value="5"/>
+          </timeForDecision>
+          <timeForExecutionPhase xsi:type="reconfiguration:ExecutionTimingSpecificationSinglePhase" xmi:id="_O0y0AHSREeSCfN0RxbcB5A">
+            <timeForExecution xmi:id="_PDGVwHSREeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_PgVrYHSREeSCfN0RxbcB5A" value="5"/>
+            </timeForExecution>
+          </timeForExecutionPhase>
+          <minimumCommitTime xmi:id="_OSVnMHSREeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_OrdR0HSREeSCfN0RxbcB5A" value="500"/>
+          </minimumCommitTime>
+          <returnValues xmi:id="_FKVg4HSREeSCfN0RxbcB5A" name="cPort" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+          <returnValues xmi:id="_KAvPIHSREeSCfN0RxbcB5A" name="pPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
+        </interfaceEntries>
+        <interfaceEntries xmi:id="_QwJGYHSREeSCfN0RxbcB5A" description="Creates new port instances for dealing with an additional member driving behind the RailCab whose corresponding port instances are given as parameters." messageType="_Jro-UHSQEeSCfN0RxbcB5A">
+          <timeForDecision xmi:id="_iuHu4HSREeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_jGMQoHSREeSCfN0RxbcB5A" value="5"/>
+          </timeForDecision>
+          <timeForExecutionPhase xsi:type="reconfiguration:ExecutionTimingSpecificationSinglePhase" xmi:id="_jvwLAHSREeSCfN0RxbcB5A">
+            <timeForExecution xmi:id="_j45f8HSREeSCfN0RxbcB5A">
+              <value xsi:type="sdcec:LiteralExpression" xmi:id="_kTuawHSREeSCfN0RxbcB5A" value="5"/>
+            </timeForExecution>
+          </timeForExecutionPhase>
+          <minimumCommitTime xmi:id="_jOi7YHSREeSCfN0RxbcB5A">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_jlElAHSREeSCfN0RxbcB5A" value="500"/>
+          </minimumCommitTime>
+          <returnValues xmi:id="_VhQE8HSREeSCfN0RxbcB5A" name="cPort" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+          <returnValues xmi:id="_XT7jgHSREeSCfN0RxbcB5A" name="pPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
+        </interfaceEntries>
       </ports>
     </modelElements>
     <modelElements xsi:type="reconfiguration:ReconfigurableAtomicComponent" xmi:id="_BXanEO6FEeOKI4bZ_bxwuQ" name="RefGen" behavior="_BbBd0AUEEeSn_-l-OlOxjg">

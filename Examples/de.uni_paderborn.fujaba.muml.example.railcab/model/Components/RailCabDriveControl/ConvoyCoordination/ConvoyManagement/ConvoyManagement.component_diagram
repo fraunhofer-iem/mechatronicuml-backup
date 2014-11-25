@@ -42,6 +42,14 @@
       <element xmi:type="component:DiscretePort" href="../../../../RailCab.fujaba#_f4o1EO6CEeOKI4bZ_bxwuQ"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TTWrA-8DEeOkfud6pZP9gQ" x="397" y="144"/>
     </children>
+    <children xmi:type="notation:Shape" xmi:id="_ACWv4HSQEeSCfN0RxbcB5A" type="3076" fontName="Segoe UI" lineColor="0">
+      <element xmi:type="reconfiguration:ReconfigurationMessagePort" href="../../../../RailCab.fujaba#_ACUToHSQEeSCfN0RxbcB5A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ACWv4XSQEeSCfN0RxbcB5A" x="84" y="-12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Aa5LsHSQEeSCfN0RxbcB5A" type="3077" fontName="Segoe UI" lineColor="0">
+      <element xmi:type="reconfiguration:ReconfigurationExecutionPort" href="../../../../RailCab.fujaba#_Aa39kHSQEeSCfN0RxbcB5A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Aa5LsXSQEeSCfN0RxbcB5A" x="120" y="-12"/>
+    </children>
     <element xmi:type="reconfiguration:ReconfigurableAtomicComponent" href="../../../../RailCab.fujaba#_OE_0UO6CEeOKI4bZ_bxwuQ"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SVvBk-8CEeOkfud6pZP9gQ" x="348" y="168" width="265" height="217"/>
   </children>
