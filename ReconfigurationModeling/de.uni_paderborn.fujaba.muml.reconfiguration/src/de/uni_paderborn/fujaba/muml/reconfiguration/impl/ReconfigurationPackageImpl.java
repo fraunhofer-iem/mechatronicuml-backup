@@ -889,7 +889,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReconfigurationRule_Wcet() {
+	public EReference getReconfigurationRule_Signature() {
 		return (EReference)reconfigurationRuleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -898,17 +898,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReconfigurationRule_Signature() {
-		return (EReference)reconfigurationRuleEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getReconfigurationRule_Name() {
-		return (EAttribute)reconfigurationRuleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)reconfigurationRuleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1015,8 +1006,17 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getExecutorSpecificationEntry_Wcet() {
+		return (EReference)executorSpecificationEntryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getExecutorSpecificationEntry_Id() {
-		return (EAttribute)executorSpecificationEntryEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)executorSpecificationEntryEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1218,11 +1218,11 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		executorSpecificationEntryEClass = createEClass(EXECUTOR_SPECIFICATION_ENTRY);
 		createEReference(executorSpecificationEntryEClass, EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR);
 		createEReference(executorSpecificationEntryEClass, EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE);
+		createEReference(executorSpecificationEntryEClass, EXECUTOR_SPECIFICATION_ENTRY__WCET);
 		createEAttribute(executorSpecificationEntryEClass, EXECUTOR_SPECIFICATION_ENTRY__ID);
 
 		reconfigurationRuleEClass = createEClass(RECONFIGURATION_RULE);
 		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__RECONFIGURED_COMPONENT);
-		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__WCET);
 		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__SIGNATURE);
 		createEAttribute(reconfigurationRuleEClass, RECONFIGURATION_RULE__NAME);
 
@@ -1415,11 +1415,11 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(executorSpecificationEntryEClass, ExecutorSpecificationEntry.class, "ExecutorSpecificationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExecutorSpecificationEntry_Executor(), this.getExecutor(), this.getExecutor_SpecificationEntries(), "executor", null, 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExecutorSpecificationEntry_ReconfigurationRule(), this.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecutorSpecificationEntry_Wcet(), theValuetypePackage.getTimeValue(), null, "wcet", null, 0, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExecutorSpecificationEntry_Id(), ecorePackage.getEInt(), "id", "0", 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationRuleEClass, ReconfigurationRule.class, "ReconfigurationRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationRule_ReconfiguredComponent(), this.getReconfigurableComponent(), null, "reconfiguredComponent", null, 1, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReconfigurationRule_Wcet(), theValuetypePackage.getTimeValue(), null, "wcet", null, 0, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRule_Signature(), this.getSignature(), this.getSignature_ReconfigurationRule(), "signature", null, 1, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReconfigurationRule_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ReconfigurationRule.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 

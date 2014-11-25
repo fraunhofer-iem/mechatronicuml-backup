@@ -421,6 +421,12 @@
         <details key="documentation" value="The reconfiguration rule specified by this entry."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The worst-case execution time of the reconfiguration rule that is associated&#xD;&#xA;to this specification entry. The worst-case &#xD;&#xA;execution time defines an upper bound on how long the execution of this&#xD;&#xA;reconfiguration rule may take."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0" iD="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -437,12 +443,6 @@
         lowerBound="1" eType="#//ReconfigurableComponent">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The component on which the reconfiguration rule is to be applied."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
-        containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The worst-case execution time of this reconfiguration rule. The worst-case &#xD;&#xA;execution time defines an upper bound on how long the execution of this&#xD;&#xA;reconfiguration rule may take."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"

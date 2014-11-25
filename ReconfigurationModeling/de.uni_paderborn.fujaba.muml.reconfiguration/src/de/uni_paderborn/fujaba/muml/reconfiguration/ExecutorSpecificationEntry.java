@@ -8,6 +8,8 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.storydriven.core.ExtendableElement;
 
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Executor Specification Entry</b></em>'.
@@ -23,6 +25,7 @@ import org.storydriven.core.ExtendableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getExecutor <em>Executor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getId <em>Id</em>}</li>
  * </ul>
  * </p>
@@ -91,6 +94,34 @@ public interface ExecutorSpecificationEntry extends ExtendableElement {
 	 * @generated
 	 */
 	void setReconfigurationRule(ReconfigurationRule value);
+
+	/**
+	 * Returns the value of the '<em><b>Wcet</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The worst-case execution time of the reconfiguration rule that is associated
+	 * to this specification entry. The worst-case 
+	 * execution time defines an upper bound on how long the execution of this
+	 * reconfiguration rule may take.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Wcet</em>' containment reference.
+	 * @see #setWcet(TimeValue)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_Wcet()
+	 * @model containment="true"
+	 * @generated
+	 */
+	TimeValue getWcet();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getWcet <em>Wcet</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Wcet</em>' containment reference.
+	 * @see #getWcet()
+	 * @generated
+	 */
+	void setWcet(TimeValue value);
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

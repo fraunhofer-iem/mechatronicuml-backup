@@ -26,7 +26,6 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule} object.
@@ -119,7 +118,6 @@ public class ReconfigurationRuleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__WCET);
 			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__SIGNATURE);
 		}
 		return childrenFeatures;
@@ -167,7 +165,6 @@ public class ReconfigurationRuleItemProvider
 			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -195,11 +192,6 @@ public class ReconfigurationRuleItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__WCET,
-				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter

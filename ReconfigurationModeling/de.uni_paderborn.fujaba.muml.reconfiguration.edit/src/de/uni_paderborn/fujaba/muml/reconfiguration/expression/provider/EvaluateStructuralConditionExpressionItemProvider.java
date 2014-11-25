@@ -3,34 +3,25 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression;
-import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.core.CorePackage;
-
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
-
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-
 import org.storydriven.storydiagrams.calls.CallsFactory;
+
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression} object.

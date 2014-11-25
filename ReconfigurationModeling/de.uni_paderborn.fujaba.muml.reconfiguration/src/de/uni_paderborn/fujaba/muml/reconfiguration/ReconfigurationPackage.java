@@ -5464,13 +5464,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Wcet</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTOR_SPECIFICATION_ENTRY__WCET = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__ID = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EXECUTOR_SPECIFICATION_ENTRY__ID = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Executor Specification Entry</em>' class.
@@ -5479,7 +5488,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -5698,22 +5707,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_RULE__RECONFIGURED_COMPONENT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Wcet</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_RULE__WCET = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Signature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__SIGNATURE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int RECONFIGURATION_RULE__SIGNATURE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5722,7 +5722,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int RECONFIGURATION_RULE__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -5731,7 +5731,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int RECONFIGURATION_RULE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -8074,17 +8074,6 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getReconfigurationRule_ReconfiguredComponent();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getWcet <em>Wcet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Wcet</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getWcet()
-	 * @see #getReconfigurationRule()
-	 * @generated
-	 */
-	EReference getReconfigurationRule_Wcet();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getSignature <em>Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8221,6 +8210,17 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExecutorSpecificationEntry_ReconfigurationRule();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getWcet <em>Wcet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Wcet</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getWcet()
+	 * @see #getExecutorSpecificationEntry()
+	 * @generated
+	 */
+	EReference getExecutorSpecificationEntry_Wcet();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getId <em>Id</em>}'.
@@ -8873,14 +8873,6 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RECONFIGURATION_RULE__RECONFIGURED_COMPONENT = eINSTANCE.getReconfigurationRule_ReconfiguredComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Wcet</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECONFIGURATION_RULE__WCET = eINSTANCE.getReconfigurationRule_Wcet();
-
-		/**
 		 * The meta object literal for the '<em><b>Signature</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8993,6 +8985,14 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = eINSTANCE.getExecutorSpecificationEntry_ReconfigurationRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Wcet</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTOR_SPECIFICATION_ENTRY__WCET = eINSTANCE.getExecutorSpecificationEntry_Wcet();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.

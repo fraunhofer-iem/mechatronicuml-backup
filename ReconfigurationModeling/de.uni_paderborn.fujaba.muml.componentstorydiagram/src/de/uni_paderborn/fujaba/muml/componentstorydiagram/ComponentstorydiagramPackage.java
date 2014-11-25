@@ -107,15 +107,6 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int COMPONENT_STORY_RULE__RECONFIGURED_COMPONENT = ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Wcet</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_RULE__WCET = ReconfigurationPackage.RECONFIGURATION_RULE__WCET;
-
-	/**
 	 * The feature id for the '<em><b>Signature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

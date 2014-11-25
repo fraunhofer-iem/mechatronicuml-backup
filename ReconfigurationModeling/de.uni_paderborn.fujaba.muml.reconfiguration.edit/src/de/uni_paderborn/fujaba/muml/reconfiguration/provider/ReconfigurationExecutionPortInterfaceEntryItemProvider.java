@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -17,6 +16,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;

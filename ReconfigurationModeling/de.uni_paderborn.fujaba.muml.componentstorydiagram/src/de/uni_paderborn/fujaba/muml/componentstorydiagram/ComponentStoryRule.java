@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
-
 import org.storydriven.storydiagrams.activities.Activity;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 
 /**
  * <!-- begin-user-doc -->

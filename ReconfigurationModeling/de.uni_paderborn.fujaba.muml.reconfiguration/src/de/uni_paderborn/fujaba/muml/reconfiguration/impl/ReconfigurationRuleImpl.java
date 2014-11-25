@@ -18,7 +18,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getReconfiguredComponent <em>Reconfigured Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getSignature <em>Signature</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -46,16 +44,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 	 * @ordered
 	 */
 	protected ReconfigurableComponent reconfiguredComponent;
-
-	/**
-	 * The cached value of the '{@link #getWcet() <em>Wcet</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWcet()
-	 * @generated
-	 * @ordered
-	 */
-	protected TimeValue wcet;
 
 	/**
 	 * The cached value of the '{@link #getSignature() <em>Signature</em>}' containment reference.
@@ -139,49 +127,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeValue getWcet() {
-		return wcet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetWcet(TimeValue newWcet, NotificationChain msgs) {
-		TimeValue oldWcet = wcet;
-		wcet = newWcet;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__WCET, oldWcet, newWcet);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setWcet(TimeValue newWcet) {
-		if (newWcet != wcet) {
-			NotificationChain msgs = null;
-			if (wcet != null)
-				msgs = ((InternalEObject)wcet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_RULE__WCET, null, msgs);
-			if (newWcet != null)
-				msgs = ((InternalEObject)newWcet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_RULE__WCET, null, msgs);
-			msgs = basicSetWcet(newWcet, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__WCET, newWcet, newWcet));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Signature getSignature() {
 		return signature;
 	}
@@ -253,8 +198,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
-				return basicSetWcet(null, msgs);
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				return basicSetSignature(null, msgs);
 		}
@@ -272,8 +215,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				if (resolve) return getReconfiguredComponent();
 				return basicGetReconfiguredComponent();
-			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
-				return getWcet();
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				return getSignature();
 			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
@@ -294,9 +235,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				setReconfiguredComponent((ReconfigurableComponent)newValue);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
-				setWcet((TimeValue)newValue);
-				return;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				setSignature((Signature)newValue);
 				return;
@@ -315,9 +253,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				setReconfiguredComponent((ReconfigurableComponent)null);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
-				setWcet((TimeValue)null);
-				return;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				setSignature((Signature)null);
 				return;
@@ -335,8 +270,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				return reconfiguredComponent != null;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
-				return wcet != null;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				return signature != null;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:

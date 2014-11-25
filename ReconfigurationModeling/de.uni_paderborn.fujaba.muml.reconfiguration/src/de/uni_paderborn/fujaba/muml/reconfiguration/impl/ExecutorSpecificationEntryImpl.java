@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#getExecutor <em>Executor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
@@ -44,6 +46,16 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 	 * @ordered
 	 */
 	protected ReconfigurationRule reconfigurationRule;
+
+	/**
+	 * The cached value of the '{@link #getWcet() <em>Wcet</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWcet()
+	 * @generated
+	 * @ordered
+	 */
+	protected TimeValue wcet;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -167,6 +179,49 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TimeValue getWcet() {
+		return wcet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetWcet(TimeValue newWcet, NotificationChain msgs) {
+		TimeValue oldWcet = wcet;
+		wcet = newWcet;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET, oldWcet, newWcet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWcet(TimeValue newWcet) {
+		if (newWcet != wcet) {
+			NotificationChain msgs = null;
+			if (wcet != null)
+				msgs = ((InternalEObject)wcet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET, null, msgs);
+			if (newWcet != null)
+				msgs = ((InternalEObject)newWcet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET, null, msgs);
+			msgs = basicSetWcet(newWcet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET, newWcet, newWcet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int getId() {
 		return id;
 	}
@@ -209,6 +264,8 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 		switch (featureID) {
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR:
 				return basicSetExecutor(null, msgs);
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET:
+				return basicSetWcet(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,6 +297,8 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				if (resolve) return getReconfigurationRule();
 				return basicGetReconfigurationRule();
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET:
+				return getWcet();
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__ID:
 				return getId();
 		}
@@ -260,6 +319,9 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 				return;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				setReconfigurationRule((ReconfigurationRule)newValue);
+				return;
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET:
+				setWcet((TimeValue)newValue);
 				return;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__ID:
 				setId((Integer)newValue);
@@ -282,6 +344,9 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				setReconfigurationRule((ReconfigurationRule)null);
 				return;
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET:
+				setWcet((TimeValue)null);
+				return;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -301,6 +366,8 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 				return getExecutor() != null;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				return reconfigurationRule != null;
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__WCET:
+				return wcet != null;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__ID:
 				return id != ID_EDEFAULT;
 		}
