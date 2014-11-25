@@ -34,6 +34,8 @@ encoding//model/ComponentStoryDiagrams/RefGen/initWithCurPos.componentstorydiagr
 encoding//model/ComponentStoryDiagrams/VelocityController/SwitchToConvoy.componentstorydiagram_diagram=UTF-8
 encoding//model/ComponentStoryDiagrams/VelocityController/SwitchToStandalone.componentstorydiagram_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/ConvoyCoordination/ConvoyCoordination.component_diagram=UTF-8
+encoding//model/Components/RailCabDriveControl/ConvoyCoordination/ConvoyCoordination_Executor_RTSC.realtimestatechart_diagram=UTF-8
+encoding//model/Components/RailCabDriveControl/ConvoyCoordination/ConvoyCoordination_Manager_RTSC.realtimestatechart_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/ConvoyCoordination/ConvoyManagement/ConvoyManagement.component_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/ConvoyCoordination/ConvoyManagement/ConvoyManagement.realtimestatechart_diagram=UTF-8
 encoding//model/Components/RailCabDriveControl/ConvoyCoordination/RefGen/RefGen.component_diagram=UTF-8
