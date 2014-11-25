@@ -7,6 +7,7 @@
   <genModel href="MumlReconfiguration.genmodel#/"/>
   <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <referencedGenerators href="../../org.storydriven.storydiagrams/model/storydiagrams.propsheet#/"/>
   <plugin id="de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
@@ -22,6 +23,8 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+    <requiredBundles>org.storydriven.storydiagrams.edit</requiredBundles>
+    <requiredBundles>org.storydriven.storydiagrams.edit.properties</requiredBundles>
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
   <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
@@ -262,6 +265,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
+      <properties tooltip="" initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutorSpecificationEntry/wcet"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
     <classes>
@@ -345,6 +353,7 @@
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/expression/ActivityCallExpression"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.1/@classes.0"/>
+      <superClasses href="../../org.storydriven.storydiagrams/model/storydiagrams.propsheet#//@packages.2/@classes.0"/>
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/expression/ReconfigurationRuleCallExpression"/>
