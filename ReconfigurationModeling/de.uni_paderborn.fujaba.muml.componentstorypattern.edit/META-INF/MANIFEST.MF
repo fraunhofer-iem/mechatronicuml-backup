@@ -22,5 +22,6 @@ Require-Bundle: org.eclipse.ocl.ecore,
  de.uni_paderborn.fujaba.muml.reconfiguration;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.reconfiguration.edit;visibility:=reexport,
  org.storydriven.storydiagrams;visibility:=reexport,
- org.storydriven.storydiagrams.edit;visibility:=reexport
+ org.storydriven.storydiagrams.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy

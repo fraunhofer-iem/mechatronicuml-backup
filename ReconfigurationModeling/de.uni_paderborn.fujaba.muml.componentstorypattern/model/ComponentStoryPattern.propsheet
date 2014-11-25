@@ -39,8 +39,9 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
-      <properties>
+      <properties tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="let&#xD;&#xA;&#x9;parents : OrderedSet(OclAny) = self.eContainer()->closure(eContainer())->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;not parents->select(oclIsTypeOf(componentstorydiagram::ComponentStoryNode))->isEmpty()"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>

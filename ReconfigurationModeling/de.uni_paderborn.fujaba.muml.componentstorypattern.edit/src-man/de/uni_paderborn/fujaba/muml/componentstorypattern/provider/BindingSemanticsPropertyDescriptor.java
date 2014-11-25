@@ -8,12 +8,15 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
+import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryPatternNode;
 
 public class BindingSemanticsPropertyDescriptor extends ItemPropertyDescriptor {
 	public BindingSemanticsPropertyDescriptor(AdapterFactory adapterFactory,
@@ -35,6 +38,19 @@ public class BindingSemanticsPropertyDescriptor extends ItemPropertyDescriptor {
 		
 		if (object instanceof MultiPortVariable){
 			return Collections.singletonList(BindingSemantics.MANDATORY);
+		}
+		
+		if (object instanceof ComponentStoryPatternVariable){
+			EObject container = ((ComponentStoryPatternVariable) object).eContainer();
+			while(container != null){
+				if(container instanceof ComponentStoryPatternNode){
+					List<Object> bindingSemantics = new ArrayList<Object>();
+					bindingSemantics.add(BindingSemantics.MANDATORY);
+					bindingSemantics.add(BindingSemantics.OPTIONAL);
+					return bindingSemantics;
+				}
+				container = container.eContainer();
+			}
 		}
 		
 		// originalObjects must not be changed; therefore we create another ArrayList and copy the elements.
