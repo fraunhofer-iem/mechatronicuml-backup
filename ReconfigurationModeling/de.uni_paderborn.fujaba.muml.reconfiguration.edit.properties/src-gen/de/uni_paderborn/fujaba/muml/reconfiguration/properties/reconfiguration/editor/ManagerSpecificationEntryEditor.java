@@ -62,6 +62,10 @@ public class ManagerSpecificationEntryEditor
 					true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addTimeForPlanning_GeneralTab_Editor(null, false);
+		}
+
 	}
 
 	/**
@@ -228,6 +232,30 @@ public class ManagerSpecificationEntryEditor
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addTimeForPlanning_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createTimeForPlanning_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForPlanning_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getManagerSpecificationEntry_TimeForPlanning();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory, feature);
+
+		editor.setTooltipMessage("If a planner should be invoke, then the time for planning denotes the maximum\ntime that the planner may run before returning a result.");
+
+		return editor;
+
+	}
+
 	//
 	// instantiation
 	//
@@ -263,6 +291,7 @@ public class ManagerSpecificationEntryEditor
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
+							"property.tab.general",
 							"property.tab.documentation",
 							"property.tab.extensions"}).contains(tab);
 		}

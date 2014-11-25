@@ -232,6 +232,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
+      <properties initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/timeForPlanning"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
       <propertyCategories title="Booleans" properties="//@packages.1/@classes.17/@properties.0 //@packages.1/@classes.17/@properties.1 //@packages.1/@classes.17/@properties.5 //@packages.1/@classes.17/@properties.6"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
