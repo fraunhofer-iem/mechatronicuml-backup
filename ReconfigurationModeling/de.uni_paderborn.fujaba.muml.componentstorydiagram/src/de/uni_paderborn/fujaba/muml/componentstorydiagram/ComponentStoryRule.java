@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule#getActivity <em>Activity</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule#isConstructor <em>Constructor</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,5 +54,32 @@ public interface ComponentStoryRule extends ReconfigurationRule {
 	 * @generated
 	 */
 	void setActivity(Activity value);
+
+	/**
+	 * Returns the value of the '<em><b>Constructor</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines whether this ComponentStoryRule is a constructor (true) or not (false). A constructor may be invoked when a component instance
+	 * is created. In a constructor, all variables need to have binding operator CREATE.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Constructor</em>' attribute.
+	 * @see #setConstructor(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryRule_Constructor()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isConstructor();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule#isConstructor <em>Constructor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Constructor</em>' attribute.
+	 * @see #isConstructor()
+	 * @generated
+	 */
+	void setConstructor(boolean value);
 
 } // ComponentStoryRule

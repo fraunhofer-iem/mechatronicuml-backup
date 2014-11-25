@@ -134,13 +134,22 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	int COMPONENT_STORY_RULE__ACTIVITY = ReconfigurationPackage.RECONFIGURATION_RULE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Constructor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STORY_RULE__CONSTRUCTOR = ReconfigurationPackage.RECONFIGURATION_RULE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Component Story Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_RULE_FEATURE_COUNT = ReconfigurationPackage.RECONFIGURATION_RULE_FEATURE_COUNT + 1;
+	int COMPONENT_STORY_RULE_FEATURE_COUNT = ReconfigurationPackage.RECONFIGURATION_RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1169,6 +1178,17 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	EReference getComponentStoryRule_Activity();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule#isConstructor <em>Constructor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Constructor</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule#isConstructor()
+	 * @see #getComponentStoryRule()
+	 * @generated
+	 */
+	EAttribute getComponentStoryRule_Constructor();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode <em>Component Story Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1302,6 +1322,13 @@ public interface ComponentstorydiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_STORY_RULE__ACTIVITY = eINSTANCE.getComponentStoryRule_Activity();
+		/**
+		 * The meta object literal for the '<em><b>Constructor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_STORY_RULE__CONSTRUCTOR = eINSTANCE.getComponentStoryRule_Constructor();
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentStoryNodeImpl <em>Component Story Node</em>}' class.
 		 * <!-- begin-user-doc -->

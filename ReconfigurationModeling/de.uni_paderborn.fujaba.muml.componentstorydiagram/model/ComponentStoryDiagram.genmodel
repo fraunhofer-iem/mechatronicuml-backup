@@ -10,6 +10,7 @@
       disposableProviderFactory="true" ecorePackage="ComponentStoryDiagram.ecore#/">
     <genClasses ecoreClass="ComponentStoryDiagram.ecore#//ComponentStoryRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//ComponentStoryRule/activity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentStoryDiagram.ecore#//ComponentStoryRule/constructor"/>
     </genClasses>
     <genClasses ecoreClass="ComponentStoryDiagram.ecore#//ComponentStoryNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//ComponentStoryNode/componentStoryPattern"/>

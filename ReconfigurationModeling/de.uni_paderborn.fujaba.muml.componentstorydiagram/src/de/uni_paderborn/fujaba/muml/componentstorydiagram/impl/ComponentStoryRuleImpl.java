@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentStoryRuleImpl#getActivity <em>Activity</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentStoryRuleImpl#isConstructor <em>Constructor</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +37,25 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 	 * @ordered
 	 */
 	protected Activity activity;
+
+	/**
+	 * The default value of the '{@link #isConstructor() <em>Constructor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isConstructor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CONSTRUCTOR_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isConstructor() <em>Constructor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isConstructor()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean constructor = CONSTRUCTOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,6 +124,27 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isConstructor() {
+		return constructor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConstructor(boolean newConstructor) {
+		boolean oldConstructor = constructor;
+		constructor = newConstructor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.COMPONENT_STORY_RULE__CONSTRUCTOR, oldConstructor, constructor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -123,6 +164,8 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 		switch (featureID) {
 			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				return getActivity();
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__CONSTRUCTOR:
+				return isConstructor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -137,6 +180,9 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 		switch (featureID) {
 			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				setActivity((Activity)newValue);
+				return;
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__CONSTRUCTOR:
+				setConstructor((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,6 +199,9 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				setActivity((Activity)null);
 				return;
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__CONSTRUCTOR:
+				setConstructor(CONSTRUCTOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -167,8 +216,26 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 		switch (featureID) {
 			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				return activity != null;
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__CONSTRUCTOR:
+				return constructor != CONSTRUCTOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (constructor: ");
+		result.append(constructor);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ComponentStoryRuleImpl

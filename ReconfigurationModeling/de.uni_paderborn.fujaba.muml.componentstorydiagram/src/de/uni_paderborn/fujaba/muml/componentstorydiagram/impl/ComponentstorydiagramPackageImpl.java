@@ -150,6 +150,15 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentStoryRule_Constructor() {
+		return (EAttribute)componentStoryRuleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComponentStoryNode() {
 		return componentStoryNodeEClass;
 	}
@@ -256,6 +265,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		// Create classes and their features
 		componentStoryRuleEClass = createEClass(COMPONENT_STORY_RULE);
 		createEReference(componentStoryRuleEClass, COMPONENT_STORY_RULE__ACTIVITY);
+		createEAttribute(componentStoryRuleEClass, COMPONENT_STORY_RULE__CONSTRUCTOR);
 
 		componentStoryNodeEClass = createEClass(COMPONENT_STORY_NODE);
 		createEReference(componentStoryNodeEClass, COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN);
@@ -314,6 +324,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentStoryRuleEClass, ComponentStoryRule.class, "ComponentStoryRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentStoryRule_Activity(), theActivitiesPackage.getActivity(), null, "activity", null, 1, 1, ComponentStoryRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentStoryRule_Constructor(), ecorePackage.getEBoolean(), "constructor", "false", 0, 1, ComponentStoryRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentStoryNodeEClass, ComponentStoryNode.class, "ComponentStoryNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentStoryNode_ComponentStoryPattern(), theComponentstorypatternPackage.getComponentStoryPattern(), null, "componentStoryPattern", null, 1, 1, ComponentStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

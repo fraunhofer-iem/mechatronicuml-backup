@@ -18,8 +18,8 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  de.uni_paderborn.fujaba.muml.componentstorydiagram.edit,
  de.uni_paderborn.fujaba.muml.reconfiguration,
  de.uni_paderborn.fujaba.muml.reconfiguration.edit,
- de.uni_paderborn.fujaba.muml.edit.properties,
- de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties,
+ de.uni_paderborn.fujaba.muml.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.metamodel, de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.constraint,

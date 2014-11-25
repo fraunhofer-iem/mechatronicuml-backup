@@ -33,6 +33,11 @@
     <genPackage href="ComponentStoryDiagram.genmodel#//componentstorydiagram"/>
     <classes>
       <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryRule"/>
+      <properties>
+        <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryRule/constructor"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
       <superClasses href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#//@packages.1/@classes.20"/>
     </classes>
     <classes>
