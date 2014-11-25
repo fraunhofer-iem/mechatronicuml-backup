@@ -353,6 +353,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
+      <properties initializeOCLExpression="">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/expression/ReconfigurationRuleCallExpression/parameterBindings"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.1/@classes.0"/>
     </classes>
     <classes>
