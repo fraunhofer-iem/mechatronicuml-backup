@@ -151,7 +151,7 @@
         </children>
         <children xmi:type="notation:Shape" xmi:id="_WWeX6PufEeO2po0ALlWq5g" type="3076" fontName="Segoe UI" lineColor="0">
           <element xmi:type="reconfiguration:ReconfigurationMessagePort" href="../../../RailCab.fujaba#_DnIXF-5xEeOKI4bZ_bxwuQ"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WWeX6fufEeO2po0ALlWq5g"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WWeX6fufEeO2po0ALlWq5g" x="48" y="43"/>
         </children>
         <element xmi:type="reconfiguration:Manager" href="../../../RailCab.fujaba#_DnIXDu5xEeOKI4bZ_bxwuQ"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WWeX4fufEeO2po0ALlWq5g" x="134" y="16"/>
