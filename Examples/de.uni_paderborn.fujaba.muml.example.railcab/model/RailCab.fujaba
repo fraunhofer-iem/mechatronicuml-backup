@@ -2768,15 +2768,22 @@
                         </parameterBinding>
                       </message>
                     </events>
-                    <action xmi:id="_fEPMEGAiEeSy7YZm1PHpMA" name="mutex := false; ownPort := createRequestorPort();">
+                    <action xmi:id="_fEPMEGAiEeSy7YZm1PHpMA" name="mutex := false; ownPort := createRequestorPort(); numRequestorPorts++;">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_IFos4GAjEeSy7YZm1PHpMA">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_IFos5mAjEeSy7YZm1PHpMA" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_IFos52AjEeSy7YZm1PHpMA" value="false"/>
+                          <lhs_typedNamedElementExpression xmi:id="_IFos6GAjEeSy7YZm1PHpMA" typedNamedElement="_VNxsAGAcEeSy7YZm1PHpMA"/>
+                        </expressions>
                         <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ZG0EUHS7EeSuyMyECM6THg" assignOperator=":=">
                           <rhs_assignExpression xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_ZG0EUXS7EeSuyMyECM6THg" reconfigurationRule="_QZCRYHP2EeSVBu1w64eiwg"/>
                           <lhs_typedNamedElementExpression xmi:id="_IFos5WAjEeSy7YZm1PHpMA" typedNamedElement="_L4c7YGAcEeSy7YZm1PHpMA"/>
                         </expressions>
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_IFos5mAjEeSy7YZm1PHpMA" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_IFos52AjEeSy7YZm1PHpMA" value="false"/>
-                          <lhs_typedNamedElementExpression xmi:id="_IFos6GAjEeSy7YZm1PHpMA" typedNamedElement="_VNxsAGAcEeSy7YZm1PHpMA"/>
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_UIUO8XVIEeS0mceow7d0lg" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_UIUO8nVIEeS0mceow7d0lg">
+                            <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_UIUO83VIEeS0mceow7d0lg" typedNamedElement="_IA_oAGUGEeS2Zodb8JPC8A"/>
+                            <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_UIUO9HVIEeS0mceow7d0lg" value="1"/>
+                          </rhs_assignExpression>
+                          <lhs_typedNamedElementExpression xmi:id="_UIUO9XVIEeS0mceow7d0lg" typedNamedElement="_IA_oAGUGEeS2Zodb8JPC8A"/>
                         </expressions>
                       </expressions>
                     </action>
@@ -2860,7 +2867,6 @@
               </embeddedRegions>
               <embeddedRegions xmi:id="_RAjHgGAlEeSy7YZm1PHpMA" priority="2">
                 <embeddedStatechart xmi:id="_RAs4gGAlEeSy7YZm1PHpMA" name="reactor">
-                  <operations xmi:id="_Uymc0GAlEeSy7YZm1PHpMA" name="createRequesteePort" returnType="_Tw2JwPh7EeOdcfcso3gQlg"/>
                   <operations xmi:id="_YyWP4GAlEeSy7YZm1PHpMA" name="createConnector" returnType="_hm9EUriwEeKp46K0r5yxrg">
                     <parameters xmi:id="_kuEBsGAqEeSVOOiFz-_Tiw" name="reqPort" dataType="_Tw2JwPh7EeOdcfcso3gQlg"/>
                   </operations>
@@ -3046,11 +3052,18 @@
                         </parameterBinding>
                       </message>
                     </events>
-                    <action xmi:id="_P_Wo4GAoEeSy7YZm1PHpMA" name="ownPort := createRequesteePort( ) ">
-                      <expressions xsi:type="actionlanguage:Block" xmi:id="_gFqIoGApEeSPHJQHTHnHow">
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_gFqIoWApEeSPHJQHTHnHow" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_gFqIomApEeSPHJQHTHnHow" operation="_Uymc0GAlEeSy7YZm1PHpMA"/>
-                          <lhs_typedNamedElementExpression xmi:id="_gFqIo2ApEeSPHJQHTHnHow" typedNamedElement="_L4c7YGAcEeSy7YZm1PHpMA"/>
+                    <action xmi:id="_P_Wo4GAoEeSy7YZm1PHpMA" name="ownPort := createRequesteePort( ); numRequesteePorts++;">
+                      <expressions xsi:type="actionlanguage:Block" xmi:id="_qNNCcHVIEeS0mceow7d0lg">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ECAdQHVJEeS0mceow7d0lg" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_ECAdQXVJEeS0mceow7d0lg" reconfigurationRule="_gpj5kHP2EeSVBu1w64eiwg"/>
+                          <lhs_typedNamedElementExpression xmi:id="_ECAdQnVJEeS0mceow7d0lg" typedNamedElement="_L4c7YGAcEeSy7YZm1PHpMA"/>
+                        </expressions>
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_qNNCdHVIEeS0mceow7d0lg" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_qNNCdXVIEeS0mceow7d0lg">
+                            <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_qNNCdnVIEeS0mceow7d0lg" typedNamedElement="_IA_oAGUGEeS2Zodb8JPC8A"/>
+                            <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_qNNCd3VIEeS0mceow7d0lg" value="1"/>
+                          </rhs_assignExpression>
+                          <lhs_typedNamedElementExpression xmi:id="_qNNCeHVIEeS0mceow7d0lg" typedNamedElement="_IA_oAGUGEeS2Zodb8JPC8A"/>
                         </expressions>
                       </expressions>
                     </action>
