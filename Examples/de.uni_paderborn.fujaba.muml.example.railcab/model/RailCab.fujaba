@@ -643,10 +643,10 @@
       <transitions xmi:id="_0O7rcHdzEeOvXvgZJk5CuQ" priority="2" target="_vSV1oHdzEeOvXvgZJk5CuQ" source="__8cbgHavEeOh__JNCv2_1A">
         <relativeDeadline xmi:id="_kvnRcHbpEeOvXvgZJk5CuQ">
           <upperBound xmi:id="_lHtoYHbpEeOvXvgZJk5CuQ" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_mm7YYHbpEeOvXvgZJk5CuQ" value="50"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_3OnmIHVPEeS0mceow7d0lg" value="600"/>
           </upperBound>
           <lowerBound xmi:id="_mrPQoHbpEeOvXvgZJk5CuQ" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_oSydQHbpEeOvXvgZJk5CuQ" value="50"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_4HNbAHVPEeS0mceow7d0lg" value="600"/>
           </lowerBound>
         </relativeDeadline>
       </transitions>
@@ -923,10 +923,10 @@
       <transitions xmi:id="_Nw_aqHd9EeOvXvgZJk5CuQ" priority="2" target="_Nw_a1Xd9EeOvXvgZJk5CuQ" source="_Nw_azHd9EeOvXvgZJk5CuQ">
         <relativeDeadline xmi:id="_Nw_aqXd9EeOvXvgZJk5CuQ">
           <upperBound xmi:id="_Nw_aqnd9EeOvXvgZJk5CuQ" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_Nw_aq3d9EeOvXvgZJk5CuQ" value="50"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_EQUh4HVQEeS0mceow7d0lg" value="600"/>
           </upperBound>
           <lowerBound xmi:id="_Nw_arHd9EeOvXvgZJk5CuQ" unit="MILLISECONDS">
-            <value xsi:type="sdcec:LiteralExpression" xmi:id="_Nw_arXd9EeOvXvgZJk5CuQ" value="50"/>
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_FHWQgHVQEeS0mceow7d0lg" value="600"/>
           </lowerBound>
         </relativeDeadline>
       </transitions>
