@@ -1735,7 +1735,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_h0vGUGUbEeSC9fIvMvldiA" type="4003" source="_hG6XIWUbEeSC9fIvMvldiA" target="_hG6XEmUbEeSC9fIvMvldiA" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_h0vGU2UbEeSC9fIvMvldiA" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_h0vGVGUbEeSC9fIvMvldiA" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_h0vGVGUbEeSC9fIvMvldiA" x="-14" y="-38"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_h0vGVWUbEeSC9fIvMvldiA" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_h0vGVmUbEeSC9fIvMvldiA" x="-10" y="20"/>

@@ -180,7 +180,7 @@
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../RailCab.fujaba#_p_orgI9REeOh26Tom612Wg"/>
   <edges xmi:type="notation:Connector" xmi:id="_GzlYAI9SEeOh26Tom612Wg" type="4003" source="_MlJG8I9SEeOh26Tom612Wg" target="_FYsHUI9SEeOh26Tom612Wg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_GzlYA49SEeOh26Tom612Wg" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_GzlYBI9SEeOh26Tom612Wg" x="-5" y="-16"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GzlYBI9SEeOh26Tom612Wg" x="-24" y="-37"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_GzlYBY9SEeOh26Tom612Wg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_GzlYBo9SEeOh26Tom612Wg" x="-10" y="20"/>

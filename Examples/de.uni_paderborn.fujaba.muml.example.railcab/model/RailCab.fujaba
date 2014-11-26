@@ -107,7 +107,10 @@
       <messageTypes xmi:id="_spWQ0HbIEeOth4KXtc7iXA" name="slaveReady"/>
     </modelElements>
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_ieNMUI9PEeOh26Tom612Wg" name="ProtocolInstantiation_Repo">
-      <messageTypes xmi:id="_lIjSsI9PEeOh26Tom612Wg" name="protocolInstantiationRequest"/>
+      <messageTypes xmi:id="_lIjSsI9PEeOh26Tom612Wg" name="protocolInstantiationRequest">
+        <parameters xmi:id="_oDf04HVREeS0mceow7d0lg" name="protocolID" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+        <parameters xmi:id="_qR1UsHVREeS0mceow7d0lg" name="roleID" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      </messageTypes>
       <messageTypes xmi:id="_m5UFsI9PEeOh26Tom612Wg" name="confirmInstantiation"/>
       <messageTypes xmi:id="_n6Vd0I9PEeOh26Tom612Wg" name="finalize"/>
       <messageTypes xmi:id="_o2b5sI9PEeOh26Tom612Wg" name="completed"/>
@@ -1066,7 +1069,14 @@
       <variables xmi:id="_Wu160I9SEeOh26Tom612Wg" name="reqRoleID" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       <transitions xmi:id="_GzJTII9SEeOh26Tom612Wg" priority="1" target="_FYPbYI9SEeOh26Tom612Wg" source="_Mk2MAI9SEeOh26Tom612Wg" clockResets="__sQHgI_WEeOh26Tom612Wg">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_HtT1UI9SEeOh26Tom612Wg">
-          <message xmi:id="_Iz-icI9SEeOh26Tom612Wg" instanceOf="_lIjSsI9PEeOh26Tom612Wg"/>
+          <message xmi:id="_Iz-icI9SEeOh26Tom612Wg" instanceOf="_lIjSsI9PEeOh26Tom612Wg">
+            <parameterBinding xmi:id="_xo8sMHVREeS0mceow7d0lg" parameter="_oDf04HVREeS0mceow7d0lg">
+              <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_0sf8wHVREeS0mceow7d0lg" typedNamedElement="_TXj18I9SEeOh26Tom612Wg"/>
+            </parameterBinding>
+            <parameterBinding xmi:id="_05qPAHVREeS0mceow7d0lg" parameter="_qR1UsHVREeS0mceow7d0lg">
+              <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_3C8PsHVREeS0mceow7d0lg" typedNamedElement="_Wu160I9SEeOh26Tom612Wg"/>
+            </parameterBinding>
+          </message>
         </events>
       </transitions>
       <transitions xmi:id="_RxpoEI9SEeOh26Tom612Wg" priority="1" target="_Mk2MAI9SEeOh26Tom612Wg" source="_p_orgY9REeOh26Tom612Wg" urgent="false"/>
@@ -2500,7 +2510,7 @@
       <variables xmi:id="_K3jAsHSkEeSlCdM66-7ACQ" name="maxNumRequestorPorts" dataType="_hm9EVriwEeKp46K0r5yxrg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_On9-UHSkEeSlCdM66-7ACQ" value="1"/>
       </variables>
-      <variables xmi:id="_vNGdcHSkEeSlCdM66-7ACQ" name="convoyEntryId" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
+      <variables xmi:id="_vNGdcHSkEeSlCdM66-7ACQ" name="convoyEntryID" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_zyFEgHSkEeSlCdM66-7ACQ" value="1711"/>
       </variables>
       <variables xmi:id="_0AGSYHSkEeSlCdM66-7ACQ" name="peerRoleID" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
@@ -3504,10 +3514,19 @@
             <variables xmi:id="_G-QMFWUbEeSC9fIvMvldiA" name="reqRoleID" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
             <transitions xmi:id="_G-QMFmUbEeSC9fIvMvldiA" priority="1" target="_G-QMLWUbEeSC9fIvMvldiA" source="_G-QMMWUbEeSC9fIvMvldiA" clockResets="_G-QMPWUbEeSC9fIvMvldiA">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_G-QMF2UbEeSC9fIvMvldiA">
-                <message xmi:id="_G-QMGGUbEeSC9fIvMvldiA" instanceOf="_lIjSsI9PEeOh26Tom612Wg"/>
+                <message xmi:id="_G-QMGGUbEeSC9fIvMvldiA" instanceOf="_lIjSsI9PEeOh26Tom612Wg">
+                  <parameterBinding xmi:id="_CqF5AHVSEeS0mceow7d0lg" parameter="_oDf04HVREeS0mceow7d0lg">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_iOt9YHVSEeS0mceow7d0lg" typedNamedElement="_vNGdcHSkEeSlCdM66-7ACQ"/>
+                  </parameterBinding>
+                  <parameterBinding xmi:id="_ilzAoHVSEeS0mceow7d0lg" parameter="_qR1UsHVREeS0mceow7d0lg">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_kGf-YHVSEeS0mceow7d0lg" typedNamedElement="_0AGSYHSkEeSlCdM66-7ACQ"/>
+                  </parameterBinding>
+                </message>
               </events>
             </transitions>
-            <transitions xmi:id="_G-QMGWUbEeSC9fIvMvldiA" priority="1" target="_G-QMMWUbEeSC9fIvMvldiA" source="_G-QMLGUbEeSC9fIvMvldiA" urgent="false"/>
+            <transitions xmi:id="_G-QMGWUbEeSC9fIvMvldiA" priority="1" target="_G-QMMWUbEeSC9fIvMvldiA" source="_G-QMLGUbEeSC9fIvMvldiA">
+              <synchronization xmi:id="_vLrN8HVQEeS0mceow7d0lg" syncChannel="__RK-AHSkEeSlCdM66-7ACQ" kind="RECEIVE"/>
+            </transitions>
             <transitions xmi:id="_G-QMGmUbEeSC9fIvMvldiA" priority="1" target="_G-QMMmUbEeSC9fIvMvldiA" source="_G-QMLWUbEeSC9fIvMvldiA">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_G-QMG2UbEeSC9fIvMvldiA" kind="TRIGGER">
                 <message xmi:id="_G-QMHGUbEeSC9fIvMvldiA" instanceOf="_qFu-YI9PEeOh26Tom612Wg"/>
@@ -3550,6 +3569,13 @@
             <states xmi:id="_G-QMMmUbEeSC9fIvMvldiA" name="Aborted" incomingTransitions="_G-QMGmUbEeSC9fIvMvldiA" final="true"/>
             <states xmi:id="_G-QMM2UbEeSC9fIvMvldiA" name="NotSupported" incomingTransitions="_G-QMHWUbEeSC9fIvMvldiA" final="true"/>
             <states xmi:id="_G-QMNGUbEeSC9fIvMvldiA" name="AwaitCreation" outgoingTransitions="_G-QMI2UbEeSC9fIvMvldiA" incomingTransitions="_G-QMIGUbEeSC9fIvMvldiA">
+              <entryEvent xmi:id="_2-BeAHVSEeS0mceow7d0lg">
+                <action xmi:id="_3TxEgHVSEeS0mceow7d0lg" name="createPeerPort()">
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_6K30gHVSEeS0mceow7d0lg">
+                    <expressions xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="__QOS0HVUEeS0mceow7d0lg" reconfigurationRule="_uDztoHP1EeSVBu1w64eiwg"/>
+                  </expressions>
+                </action>
+              </entryEvent>
               <invariants xmi:id="_G-QMNWUbEeSC9fIvMvldiA" clock="_G-QMPWUbEeSC9fIvMvldiA">
                 <bound xmi:id="_G-QMNmUbEeSC9fIvMvldiA" unit="MILLISECONDS">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_G-QMN2UbEeSC9fIvMvldiA" value="300"/>
