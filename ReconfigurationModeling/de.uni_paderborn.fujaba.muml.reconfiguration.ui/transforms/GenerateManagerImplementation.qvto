@@ -721,8 +721,11 @@ mapping ReconfigurationMessagePortInterfaceEntry::generateChildMessage(inout roo
 	var reconfRule : ReconfigurationRule := manager.getReconfigurationRuleAssociatedToMsgType(self.messageType);
 	var executionTime : Integer := 0;
 	
-	if(not reconfRule.oclIsUndefined() and not reconfRule.wcet.oclIsUndefined()) then{
-		executionTime := reconfRule.wcet.value.parseInteger();
+	var executors : OrderedSet(Executor) := category.objects()[Executor]->asOrderedSet();
+	var executorEntry : ExecutorSpecificationEntry := executors.specificationEntries->select(reconfigurationRule = reconfRule)->any(true);
+	
+	if(not reconfRule.oclIsUndefined() and not executorEntry.wcet.oclIsUndefined()) then{
+		executionTime := executorEntry.wcet.value.parseInteger();
 	} endif;
 	
 	var beta : Integer := self.expectedResponseTime.value.parseInteger() - executionTime;
