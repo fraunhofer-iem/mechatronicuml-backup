@@ -20,7 +20,7 @@
                     </children>
                     <children xmi:type="notation:DecorationNode" xmi:id="_46IA1XP-EeSHw7AsWgY3fg" type="5018"/>
                     <children xmi:type="notation:DecorationNode" xmi:id="_46IA1nP-EeSHw7AsWgY3fg" type="5063"/>
-                    <children xmi:type="notation:Shape" xmi:id="_6YTPAXP-EeSHw7AsWgY3fg" type="3016" fontName="Segoe UI" lineColor="0">
+                    <children xmi:type="notation:Shape" xmi:id="_6YTPAXP-EeSHw7AsWgY3fg" type="3016" fontColor="49152" fontName="Segoe UI" lineColor="49152">
                       <children xmi:type="notation:DecorationNode" xmi:id="_6YTPA3P-EeSHw7AsWgY3fg" type="5021">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_6YTPBHP-EeSHw7AsWgY3fg" y="5"/>
                       </children>
@@ -39,10 +39,11 @@
                         <styles xmi:type="notation:SortingStyle" xmi:id="_6YTPCnP-EeSHw7AsWgY3fg"/>
                         <styles xmi:type="notation:FilteringStyle" xmi:id="_6YTPC3P-EeSHw7AsWgY3fg"/>
                       </children>
+                      <styles xmi:type="notation:LineTypeStyle" xmi:id="_WiDi8HVHEeS0mceow7d0lg"/>
                       <element xmi:type="componentstorypattern:MultiPortVariable" href="../../RailCab.fujaba#_6YTPAHP-EeSHw7AsWgY3fg"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6YTPAnP-EeSHw7AsWgY3fg" x="-28" y="32"/>
                     </children>
-                    <children xmi:type="notation:Shape" xmi:id="_7TXJEHP-EeSHw7AsWgY3fg" type="3016" fontName="Segoe UI" lineColor="0">
+                    <children xmi:type="notation:Shape" xmi:id="_7TXJEHP-EeSHw7AsWgY3fg" type="3016" fontColor="49152" fontName="Segoe UI" lineColor="49152">
                       <children xmi:type="notation:DecorationNode" xmi:id="_7TXJEnP-EeSHw7AsWgY3fg" type="5021">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_7TXJE3P-EeSHw7AsWgY3fg" y="5"/>
                       </children>
@@ -61,6 +62,7 @@
                         <styles xmi:type="notation:SortingStyle" xmi:id="_7TXJGXP-EeSHw7AsWgY3fg"/>
                         <styles xmi:type="notation:FilteringStyle" xmi:id="_7TXJGnP-EeSHw7AsWgY3fg"/>
                       </children>
+                      <styles xmi:type="notation:LineTypeStyle" xmi:id="_XnlAkHVHEeS0mceow7d0lg"/>
                       <element xmi:type="componentstorypattern:MultiPortVariable" href="../../RailCab.fujaba#_7TN_IHP-EeSHw7AsWgY3fg"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7TXJEXP-EeSHw7AsWgY3fg" x="31" y="103"/>
                     </children>
@@ -191,7 +193,7 @@
                   <element xmi:type="componentstorypattern:SinglePortVariable" href="../../RailCab.fujaba#_-yYNoHP-EeSHw7AsWgY3fg"/>
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-yYNonP-EeSHw7AsWgY3fg" x="-18" y="276"/>
                 </children>
-                <children xmi:type="notation:Shape" xmi:id="__-s20XP-EeSHw7AsWgY3fg" type="3019" fontName="Segoe UI" lineColor="0">
+                <children xmi:type="notation:Shape" xmi:id="__-s20XP-EeSHw7AsWgY3fg" type="3019" fontColor="49152" fontName="Segoe UI" lineColor="49152">
                   <children xmi:type="notation:DecorationNode" xmi:id="__-s203P-EeSHw7AsWgY3fg" type="5025">
                     <layoutConstraint xmi:type="notation:Location" xmi:id="__-s21HP-EeSHw7AsWgY3fg" y="5"/>
                   </children>
@@ -210,10 +212,11 @@
                     <styles xmi:type="notation:SortingStyle" xmi:id="__-s22nP-EeSHw7AsWgY3fg"/>
                     <styles xmi:type="notation:FilteringStyle" xmi:id="__-s223P-EeSHw7AsWgY3fg"/>
                   </children>
+                  <styles xmi:type="notation:LineTypeStyle" xmi:id="_VzCg0HVHEeS0mceow7d0lg"/>
                   <element xmi:type="componentstorypattern:MultiPortVariable" href="../../RailCab.fujaba#__-s20HP-EeSHw7AsWgY3fg"/>
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="__-s20nP-EeSHw7AsWgY3fg" x="-28" y="108"/>
                 </children>
-                <children xmi:type="notation:Shape" xmi:id="_AMFykXP_EeSHw7AsWgY3fg" type="3019" fontName="Segoe UI" lineColor="0">
+                <children xmi:type="notation:Shape" xmi:id="_AMFykXP_EeSHw7AsWgY3fg" type="3019" fontColor="49152" fontName="Segoe UI" lineColor="49152">
                   <children xmi:type="notation:DecorationNode" xmi:id="_AMFyk3P_EeSHw7AsWgY3fg" type="5025">
                     <layoutConstraint xmi:type="notation:Location" xmi:id="_AMFylHP_EeSHw7AsWgY3fg" y="5"/>
                   </children>
@@ -232,6 +235,7 @@
                     <styles xmi:type="notation:SortingStyle" xmi:id="_AMFymnP_EeSHw7AsWgY3fg"/>
                     <styles xmi:type="notation:FilteringStyle" xmi:id="_AMFym3P_EeSHw7AsWgY3fg"/>
                   </children>
+                  <styles xmi:type="notation:LineTypeStyle" xmi:id="_YoGCYHVHEeS0mceow7d0lg"/>
                   <element xmi:type="componentstorypattern:MultiPortVariable" href="../../RailCab.fujaba#_AMFykHP_EeSHw7AsWgY3fg"/>
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AMFyknP_EeSHw7AsWgY3fg" x="-28" y="312"/>
                 </children>

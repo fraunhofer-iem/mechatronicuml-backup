@@ -146,7 +146,7 @@
                     </children>
                     <children xmi:type="notation:DecorationNode" xmi:id="_2qKhonQEEeSHw7AsWgY3fg" type="5018"/>
                     <children xmi:type="notation:DecorationNode" xmi:id="_2qKho3QEEeSHw7AsWgY3fg" type="5063"/>
-                    <children xmi:type="notation:Shape" xmi:id="_DzB1UHQFEeSHw7AsWgY3fg" type="3016" fontName="Segoe UI" lineColor="0">
+                    <children xmi:type="notation:Shape" xmi:id="_DzB1UHQFEeSHw7AsWgY3fg" type="3016" fontColor="49152" fontName="Segoe UI" lineColor="49152">
                       <children xmi:type="notation:DecorationNode" xmi:id="_DzB1UnQFEeSHw7AsWgY3fg" type="5021">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_DzB1U3QFEeSHw7AsWgY3fg" y="5"/>
                       </children>
@@ -165,10 +165,11 @@
                         <styles xmi:type="notation:SortingStyle" xmi:id="_DzB1WXQFEeSHw7AsWgY3fg"/>
                         <styles xmi:type="notation:FilteringStyle" xmi:id="_DzB1WnQFEeSHw7AsWgY3fg"/>
                       </children>
+                      <styles xmi:type="notation:LineTypeStyle" xmi:id="_hIOQYHVHEeS0mceow7d0lg"/>
                       <element xmi:type="componentstorypattern:MultiPortVariable" href="../../RailCab.fujaba#_Dy4EUHQFEeSHw7AsWgY3fg"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DzB1UXQFEeSHw7AsWgY3fg" x="-28" y="66"/>
                     </children>
-                    <children xmi:type="notation:Shape" xmi:id="_D4PFcXQFEeSHw7AsWgY3fg" type="3016" fontName="Segoe UI" lineColor="0">
+                    <children xmi:type="notation:Shape" xmi:id="_D4PFcXQFEeSHw7AsWgY3fg" type="3016" fontColor="49152" fontName="Segoe UI" lineColor="49152">
                       <children xmi:type="notation:DecorationNode" xmi:id="_D4PFc3QFEeSHw7AsWgY3fg" type="5021">
                         <layoutConstraint xmi:type="notation:Location" xmi:id="_D4PFdHQFEeSHw7AsWgY3fg" y="5"/>
                       </children>
@@ -187,6 +188,7 @@
                         <styles xmi:type="notation:SortingStyle" xmi:id="_D4PFenQFEeSHw7AsWgY3fg"/>
                         <styles xmi:type="notation:FilteringStyle" xmi:id="_D4PFe3QFEeSHw7AsWgY3fg"/>
                       </children>
+                      <styles xmi:type="notation:LineTypeStyle" xmi:id="_gaWdwHVHEeS0mceow7d0lg"/>
                       <element xmi:type="componentstorypattern:MultiPortVariable" href="../../RailCab.fujaba#_D4PFcHQFEeSHw7AsWgY3fg"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D4PFcnQFEeSHw7AsWgY3fg" x="-28" y="24"/>
                     </children>
