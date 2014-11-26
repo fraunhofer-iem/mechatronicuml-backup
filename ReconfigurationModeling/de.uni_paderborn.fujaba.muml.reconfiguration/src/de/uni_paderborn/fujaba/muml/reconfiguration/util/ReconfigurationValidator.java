@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
@@ -458,9 +459,11 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MANAGER__PROPAGATED_MESSAGE_MUST_APPEAR_IN_RM_PORT__EEXPRESSION = "self.reconfigurationController.structuredComponent.ports -> any(oclIsKindOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType -- messages in RM Port\r\n" +
-		"= \r\n" +
-		"self.specificationEntries -> select(propagate = true).messageType -- message propagated in manager specification";
+	protected static final String MANAGER__PROPAGATED_MESSAGE_MUST_APPEAR_IN_RM_PORT__EEXPRESSION = "let\r\n" +
+		"\trmTypes : OrderedSet(msgtype::MessageType) = self.reconfigurationController.structuredComponent.ports -> any(oclIsKindOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType->asOrderedSet(), -- messages in RM Port\r\n" +
+		"\tpropTypes: OrderedSet(msgtype::MessageType) = self.specificationEntries -> select(propagate = true).messageType->asOrderedSet() -- message propagated in manager specification\r\n" +
+		"in\r\n" +
+		"\trmTypes->includesAll(propTypes) and propTypes->includesAll(rmTypes)";
 
 	/**
 	 * Validates the PropagatedMessageMustAppearInRMPort constraint of '<em>Manager</em>'.
