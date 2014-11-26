@@ -2867,9 +2867,6 @@
               </embeddedRegions>
               <embeddedRegions xmi:id="_RAjHgGAlEeSy7YZm1PHpMA" priority="2">
                 <embeddedStatechart xmi:id="_RAs4gGAlEeSy7YZm1PHpMA" name="reactor">
-                  <operations xmi:id="_YyWP4GAlEeSy7YZm1PHpMA" name="createConnector" returnType="_hm9EUriwEeKp46K0r5yxrg">
-                    <parameters xmi:id="_kuEBsGAqEeSVOOiFz-_Tiw" name="reqPort" dataType="_Tw2JwPh7EeOdcfcso3gQlg"/>
-                  </operations>
                   <transitions xmi:id="_9lTaUGAlEeSy7YZm1PHpMA" priority="1" target="_6P92MGAlEeSy7YZm1PHpMA" source="_RAs4gWAlEeSy7YZm1PHpMA">
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DHPY4GAmEeSy7YZm1PHpMA" kind="TRIGGER">
                       <message xmi:id="_D5FFgGAmEeSy7YZm1PHpMA" instanceOf="_ez07IF9qEeSjUsAdueGXzg"/>
@@ -3100,16 +3097,11 @@
                       <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_b4lOwWAqEeSVOOiFz-_Tiw" typedNamedElement="_TepQsGAcEeSy7YZm1PHpMA"/>
                       <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_b4lOwmAqEeSVOOiFz-_Tiw" value="true"/>
                     </guard>
-                    <action xmi:id="_b5LEoGAqEeSVOOiFz-_Tiw" name="createConnector(partnerPort); mutex := false;">
-                      <expressions xsi:type="actionlanguage:Block" xmi:id="_8yK68GAqEeSVOOiFz-_Tiw">
-                        <expressions xsi:type="actionlanguage:OperationCall" xmi:id="_8yK68WAqEeSVOOiFz-_Tiw" operation="_YyWP4GAlEeSy7YZm1PHpMA">
-                          <parameterBinding xmi:id="_8yK68mAqEeSVOOiFz-_Tiw" parameter="_kuEBsGAqEeSVOOiFz-_Tiw">
-                            <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_8yK682AqEeSVOOiFz-_Tiw" typedNamedElement="_FUA-AGAcEeSy7YZm1PHpMA"/>
-                          </parameterBinding>
-                        </expressions>
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_8yK69GAqEeSVOOiFz-_Tiw" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8yK69WAqEeSVOOiFz-_Tiw" value="false"/>
-                          <lhs_typedNamedElementExpression xmi:id="_8yK69mAqEeSVOOiFz-_Tiw" typedNamedElement="_VNxsAGAcEeSy7YZm1PHpMA"/>
+                    <action xmi:id="_b5LEoGAqEeSVOOiFz-_Tiw" name="mutex := false;">
+                      <expressions xsi:type="actionlanguage:Block" xmi:id="_ZFWpUHVLEeS0mceow7d0lg">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ZFWpUXVLEeS0mceow7d0lg" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_ZFWpUnVLEeS0mceow7d0lg" value="false"/>
+                          <lhs_typedNamedElementExpression xmi:id="_ZFWpU3VLEeS0mceow7d0lg" typedNamedElement="_VNxsAGAcEeSy7YZm1PHpMA"/>
                         </expressions>
                       </expressions>
                     </action>
