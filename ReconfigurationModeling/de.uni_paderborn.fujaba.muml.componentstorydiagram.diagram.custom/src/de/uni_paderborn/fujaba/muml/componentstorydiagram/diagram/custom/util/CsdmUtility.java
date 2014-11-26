@@ -129,6 +129,10 @@ public class CsdmUtility {
 	public static String getSignature(ComponentStoryRule componentStoryRule) {
 
 		Component component = componentStoryRule.getReconfiguredComponent();
+		
+		String constructor = "";
+		if(componentStoryRule.isConstructor())
+			constructor = "Constructor: ";
 
 		String type = "";
 		String name = "";
@@ -214,7 +218,7 @@ public class CsdmUtility {
 			}
 		}
 
-		return type + "::" + name + "(" + parameters + ") : ("
+		return constructor + type + "::" + name + "(" + parameters + ") : ("
 				+ resultParameters + ")";
 	}
 
