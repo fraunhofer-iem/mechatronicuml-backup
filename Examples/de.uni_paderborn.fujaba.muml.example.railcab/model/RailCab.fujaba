@@ -14851,7 +14851,9 @@
       </activity>
     </modelElements>
     <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_QZCRYHP2EeSVBu1w64eiwg" reconfiguredComponent="_ebUwcPhwEeOlYcxv1LeTzQ">
-      <signature xmi:id="_R9wzgHP2EeSVBu1w64eiwg" name="createRequestorPort"/>
+      <signature xmi:id="_R9wzgHP2EeSVBu1w64eiwg" name="createRequestorPort">
+        <returnParameters xmi:id="_H_yPgHVLEeS0mceow7d0lg" name="rPort" dataType="_jhvQoPhwEeOlYcxv1LeTzQ"/>
+      </signature>
       <activity xmi:id="_TaTC8HP2EeSVBu1w64eiwg" name="activity">
         <ownedActivityEdge xmi:id="_arXc0HP2EeSVBu1w64eiwg" target="_UDDsEHP2EeSVBu1w64eiwg" source="_Tva-YHP2EeSVBu1w64eiwg"/>
         <ownedActivityEdge xmi:id="_bMZGQHP2EeSVBu1w64eiwg" target="_aAXYAHP2EeSVBu1w64eiwg" source="_UDDsEHP2EeSVBu1w64eiwg"/>
@@ -14867,7 +14869,9 @@
       </activity>
     </modelElements>
     <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_gpj5kHP2EeSVBu1w64eiwg" reconfiguredComponent="_ebUwcPhwEeOlYcxv1LeTzQ">
-      <signature xmi:id="_h2eYoHP2EeSVBu1w64eiwg" name="createRequesteePort"/>
+      <signature xmi:id="_h2eYoHP2EeSVBu1w64eiwg" name="createRequesteePort">
+        <returnParameters xmi:id="_89F-IHVKEeS0mceow7d0lg" name="rPort" dataType="_dd_WwPh2EeOdcfcso3gQlg"/>
+      </signature>
       <activity xmi:id="_jIv40HP2EeSVBu1w64eiwg" name="activity">
         <ownedActivityEdge xmi:id="_tpf6wHP2EeSVBu1w64eiwg" target="_kEQe0HP2EeSVBu1w64eiwg" source="_juY8gHP2EeSVBu1w64eiwg"/>
         <ownedActivityEdge xmi:id="_uJ7uUHP2EeSVBu1w64eiwg" target="_kgXzEHP2EeSVBu1w64eiwg" source="_kEQe0HP2EeSVBu1w64eiwg"/>
