@@ -236,7 +236,7 @@
                     </children>
                     <styles xmi:type="notation:LineTypeStyle" xmi:id="_2qKhpHQEEeSHw7AsWgY3fg"/>
                     <element xmi:type="componentstorypattern:ComponentPartVariable" href="../../RailCab.fujaba#_2qAwoHQEEeSHw7AsWgY3fg"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2qAwonQEEeSHw7AsWgY3fg" x="254" y="226" width="293" height="123"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2qAwonQEEeSHw7AsWgY3fg" x="252" y="226" width="293" height="123"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_25ohAXQEEeSHw7AsWgY3fg" type="3014" fontColor="49152" fontName="Segoe UI" lineColor="49152">
                     <children xmi:type="notation:DecorationNode" xmi:id="_25ohA3QEEeSHw7AsWgY3fg" type="5017">
