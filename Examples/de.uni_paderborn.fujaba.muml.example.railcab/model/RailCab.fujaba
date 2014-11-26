@@ -3488,18 +3488,11 @@
             <states xmi:id="_nEVNwmUaEeSC9fIvMvldiA" name="Master" incomingTransitions="_nEVNcmUaEeSC9fIvMvldiA" final="true"/>
             <states xmi:id="_nEVNw2UaEeSC9fIvMvldiA" name="Slave" incomingTransitions="_nEVNdmUaEeSC9fIvMvldiA" final="true"/>
             <states xmi:id="_nEVNxGUaEeSC9fIvMvldiA" name="StartingSlave" outgoingTransitions="_nEVNWGUaEeSC9fIvMvldiA _nEVNYmUaEeSC9fIvMvldiA" incomingTransitions="_nEVNemUaEeSC9fIvMvldiA">
-              <entryEvent xmi:id="_nEVNxWUaEeSC9fIvMvldiA">
-                <action xmi:id="_nEVNxmUaEeSC9fIvMvldiA" name="slaveStarted := INT&lt;0,1>;">
-                  <expressions xsi:type="actionlanguage:Block" xmi:id="_nEVNx2UaEeSC9fIvMvldiA">
-                    <expressions xsi:type="actionlanguage:Assignment" xmi:id="_nEVNyGUaEeSC9fIvMvldiA" assignOperator=":=">
-                      <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_nEVNyWUaEeSC9fIvMvldiA" dataType="_hm9EVriwEeKp46K0r5yxrg">
-                        <range xmi:id="_nEVNymUaEeSC9fIvMvldiA"/>
-                      </rhs_assignExpression>
-                      <lhs_typedNamedElementExpression xmi:id="_nEVNy2UaEeSC9fIvMvldiA" typedNamedElement="_nEVNJ2UaEeSC9fIvMvldiA"/>
-                    </expressions>
-                  </expressions>
-                </action>
-              </entryEvent>
+              <invariants xmi:id="_P9decHVQEeS0mceow7d0lg" clock="_nEVNzGUaEeSC9fIvMvldiA">
+                <bound xmi:id="_QemcoHVQEeS0mceow7d0lg">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_Rg-foHVQEeS0mceow7d0lg" value="600"/>
+                </bound>
+              </invariants>
             </states>
             <states xmi:id="_HJHQwHVMEeS0mceow7d0lg" name="init" outgoingTransitions="_N47-wHVMEeS0mceow7d0lg" initial="true" urgent="true"/>
             <clocks xmi:id="_nEVNzGUaEeSC9fIvMvldiA" name="c0"/>
