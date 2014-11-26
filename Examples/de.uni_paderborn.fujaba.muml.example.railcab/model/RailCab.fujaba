@@ -3595,12 +3595,27 @@
         </embeddedRegions>
         <embeddedRegions xmi:id="_H8lckGUbEeSC9fIvMvldiA" priority="10">
           <embeddedStatechart xmi:id="_H8lckWUbEeSC9fIvMvldiA" name="Requestee_role_requestee" behavioralElement="_dd_WwPh2EeOdcfcso3gQlg">
-            <operations xmi:id="_H8lckmUbEeSC9fIvMvldiA" name="isSupported" comment="This function needs to be implemented by an implementing component." returnType="_hm9EU7iwEeKp46K0r5yxrg">
-              <implementations xsi:type="actionlanguage:Block" xmi:id="_H8lck2UbEeSC9fIvMvldiA">
-                <expressions xsi:type="actionlanguage:LocalVariableDeclarationStatement" xmi:id="_H8lclGUbEeSC9fIvMvldiA">
-                  <variable xmi:id="_H8lclWUbEeSC9fIvMvldiA" name="tmp" dataType="_hm9EU7iwEeKp46K0r5yxrg">
-                    <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_H8lclmUbEeSC9fIvMvldiA" value="false"/>
-                  </variable>
+            <operations xmi:id="_H8lckmUbEeSC9fIvMvldiA" name="isSupported" comment="" returnType="_hm9EU7iwEeKp46K0r5yxrg">
+              <implementations xsi:type="actionlanguage:Block" xmi:id="_sSYBYHVXEeS-AeMNWs68Zw">
+                <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_sSYBYXVXEeS-AeMNWs68Zw">
+                  <ifCondition xsi:type="sdcec:LogicalExpression" xmi:id="_sSYBYnVXEeS-AeMNWs68Zw">
+                    <leftExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_sSYBY3VXEeS-AeMNWs68Zw" operator="EQUAL">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sSYBZHVXEeS-AeMNWs68Zw" typedNamedElement="_H8lcl2UbEeSC9fIvMvldiA"/>
+                      <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sSYBZXVXEeS-AeMNWs68Zw" typedNamedElement="_vNGdcHSkEeSlCdM66-7ACQ"/>
+                    </leftExpression>
+                    <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_sSYBZnVXEeS-AeMNWs68Zw" operator="EQUAL">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sSYBZ3VXEeS-AeMNWs68Zw" typedNamedElement="_H8lcmGUbEeSC9fIvMvldiA"/>
+                      <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_sSYBaHVXEeS-AeMNWs68Zw" typedNamedElement="_0AGSYHSkEeSlCdM66-7ACQ"/>
+                    </rightExpression>
+                  </ifCondition>
+                  <ifBlock xmi:id="_sSYBaXVXEeS-AeMNWs68Zw">
+                    <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_sSYBanVXEeS-AeMNWs68Zw">
+                      <expression xsi:type="sdcec:LiteralExpression" xmi:id="_sSYBa3VXEeS-AeMNWs68Zw" value="true"/>
+                    </expressions>
+                  </ifBlock>
+                </expressions>
+                <expressions xsi:type="actionlanguage:ReturnStatement" xmi:id="_sSYBbHVXEeS-AeMNWs68Zw">
+                  <expression xsi:type="sdcec:LiteralExpression" xmi:id="_sSYBbXVXEeS-AeMNWs68Zw" value="false"/>
                 </expressions>
               </implementations>
               <parameters xmi:id="_H8lcl2UbEeSC9fIvMvldiA" name="protocolID" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
@@ -3614,13 +3629,18 @@
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_H8lcnmUbEeSC9fIvMvldiA" kind="TRIGGER">
                 <message xmi:id="_H8lcn2UbEeSC9fIvMvldiA" instanceOf="_lIjSsI9PEeOh26Tom612Wg"/>
               </events>
-              <action xmi:id="_H8lcoGUbEeSC9fIvMvldiA" name="supported := INT&lt;0, 1>;">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_H8lcoWUbEeSC9fIvMvldiA">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_H8lcomUbEeSC9fIvMvldiA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_H8lco2UbEeSC9fIvMvldiA" dataType="_hm9EVriwEeKp46K0r5yxrg">
-                      <range xmi:id="_H8lcpGUbEeSC9fIvMvldiA"/>
+              <action xmi:id="_H8lcoGUbEeSC9fIvMvldiA" name="supported := isSupported(protocolInstantiationRequest.protocolID, protocolInstantiationRequest.roleID);">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_8Xfq0HVXEeS-AeMNWs68Zw">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_8Xfq0XVXEeS-AeMNWs68Zw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_8Xfq0nVXEeS-AeMNWs68Zw" operation="_H8lckmUbEeSC9fIvMvldiA">
+                      <parameterBinding xmi:id="_8Xfq03VXEeS-AeMNWs68Zw" parameter="_H8lcl2UbEeSC9fIvMvldiA">
+                        <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_8Xfq1HVXEeS-AeMNWs68Zw" messageType="_lIjSsI9PEeOh26Tom612Wg" parameter="_oDf04HVREeS0mceow7d0lg"/>
+                      </parameterBinding>
+                      <parameterBinding xmi:id="_8Xfq1XVXEeS-AeMNWs68Zw" parameter="_H8lcmGUbEeSC9fIvMvldiA">
+                        <value xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_8Xfq1nVXEeS-AeMNWs68Zw" messageType="_lIjSsI9PEeOh26Tom612Wg" parameter="_qR1UsHVREeS0mceow7d0lg"/>
+                      </parameterBinding>
                     </rhs_assignExpression>
-                    <lhs_typedNamedElementExpression xmi:id="_H8lcpWUbEeSC9fIvMvldiA" typedNamedElement="_H8lcmWUbEeSC9fIvMvldiA"/>
+                    <lhs_typedNamedElementExpression xmi:id="_8Xfq13VXEeS-AeMNWs68Zw" typedNamedElement="_H8lcmWUbEeSC9fIvMvldiA"/>
                   </expressions>
                 </expressions>
               </action>
@@ -3638,9 +3658,7 @@
               <action xmi:id="_H8lcrWUbEeSC9fIvMvldiA" name="success := INT&lt;0, 1>;">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_H8lcrmUbEeSC9fIvMvldiA">
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_H8lcr2UbEeSC9fIvMvldiA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_H8lcsGUbEeSC9fIvMvldiA" dataType="_hm9EVriwEeKp46K0r5yxrg">
-                      <range xmi:id="_H8lcsWUbEeSC9fIvMvldiA"/>
-                    </rhs_assignExpression>
+                    <rhs_assignExpression xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_6qpSAHVYEeSLJIytxjzkIg" reconfigurationRule="_uDztoHP1EeSVBu1w64eiwg"/>
                     <lhs_typedNamedElementExpression xmi:id="_H8lcsmUbEeSC9fIvMvldiA" typedNamedElement="_H8lcmmUbEeSC9fIvMvldiA"/>
                   </expressions>
                 </expressions>
