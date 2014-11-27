@@ -4355,8 +4355,6 @@
         </embeddedRegions>
         <embeddedRegions xmi:id="_aTSSoGUREeS2Zodb8JPC8A" priority="3">
           <embeddedStatechart xmi:id="_aTSSoWUREeS2Zodb8JPC8A" name="internal behavior">
-            <operations xmi:id="_gIbHwGUWEeSC9fIvMvldiA" name="isFirst" returnType="_hm9EU7iwEeKp46K0r5yxrg"/>
-            <operations xmi:id="_jnSbUGUWEeSC9fIvMvldiA" name="isLast" returnType="_hm9EU7iwEeKp46K0r5yxrg"/>
             <transitions xmi:id="_ekV7UGUVEeSC9fIvMvldiA" priority="1" target="_m3ZcMG8REeS4MqETt3DR_Q" source="_aTSSomUREeS2Zodb8JPC8A">
               <clockConstraints xmi:id="_my_-0GUVEeSC9fIvMvldiA" clock="_lHcb8GUVEeSC9fIvMvldiA" operator="EQUAL">
                 <bound xmi:id="_p0Ct8GUVEeSC9fIvMvldiA">
@@ -4366,11 +4364,11 @@
               <action xmi:id="_a7GmIG8NEeS4MqETt3DR_Q" name="_first := isFirst() ; _last := isLast();">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_a7GmIW8NEeS4MqETt3DR_Q">
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_a7GmIm8NEeS4MqETt3DR_Q" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_a7GmI28NEeS4MqETt3DR_Q" operation="_gIbHwGUWEeSC9fIvMvldiA"/>
+                    <rhs_assignExpression xsi:type="expression:EvaluateStructuralConditionExpression" xmi:id="_JdyIYHYYEeSmgoRxUBQeTA" structuralCondition="_tvl_4HF-EeS9z6ZImkcyfA"/>
                     <lhs_typedNamedElementExpression xmi:id="_a7GmJG8NEeS4MqETt3DR_Q" typedNamedElement="_1CeSEGUREeS2Zodb8JPC8A"/>
                   </expressions>
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_a7GmJW8NEeS4MqETt3DR_Q" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:OperationCall" xmi:id="_a7GmJm8NEeS4MqETt3DR_Q" operation="_jnSbUGUWEeSC9fIvMvldiA"/>
+                    <rhs_assignExpression xsi:type="expression:EvaluateStructuralConditionExpression" xmi:id="_NRVSgHYYEeSmgoRxUBQeTA" structuralCondition="_DPNjIHF_EeS9z6ZImkcyfA"/>
                     <lhs_typedNamedElementExpression xmi:id="_a7GmJ28NEeS4MqETt3DR_Q" typedNamedElement="_2_cVEGUREeS2Zodb8JPC8A"/>
                   </expressions>
                 </expressions>
@@ -9659,7 +9657,7 @@
               </entryEvent>
             </states>
             <states xmi:id="_pAHYuXYWEeSmgoRxUBQeTA" name="Propagated" outgoingTransitions="_pAHYu3YWEeSmgoRxUBQeTA _pAHYvXYWEeSmgoRxUBQeTA" incomingTransitions="_pAt1lXYWEeSmgoRxUBQeTA _pAt1n3YWEeSmgoRxUBQeTA _pAt1pHYWEeSmgoRxUBQeTA" urgent="true"/>
-            <states xmi:id="_pAHYunYWEeSmgoRxUBQeTA" name="AwaitReply" outgoingTransitions="_pAHYv3YWEeSmgoRxUBQeTA _pARJoHYWEeSmgoRxUBQeTA _pARJpXYWEeSmgoRxUBQeTA" incomingTransitions="_pAHYvXYWEeSmgoRxUBQeTA"/>
+            <states xmi:id="_pAHYunYWEeSmgoRxUBQeTA" name="AwaitReply" outgoingTransitions="_pARJpXYWEeSmgoRxUBQeTA _pARJoHYWEeSmgoRxUBQeTA _pAHYv3YWEeSmgoRxUBQeTA" incomingTransitions="_pAHYvXYWEeSmgoRxUBQeTA"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_pARJqnYWEeSmgoRxUBQeTA" priority="1">
@@ -9766,7 +9764,7 @@
                 </expressions>
               </action>
             </transitions>
-            <states xmi:id="_pARJrXYWEeSmgoRxUBQeTA" name="Idle" outgoingTransitions="_pARJuHYWEeSmgoRxUBQeTA _pBwXd3YWEeSmgoRxUBQeTA _pBwXgHYWEeSmgoRxUBQeTA" incomingTransitions="_pARJyHYWEeSmgoRxUBQeTA _pARJzHYWEeSmgoRxUBQeTA _pARJ0HYWEeSmgoRxUBQeTA _pARJ3XYWEeSmgoRxUBQeTA" initial="true">
+            <states xmi:id="_pARJrXYWEeSmgoRxUBQeTA" name="Idle" outgoingTransitions="_pBwXd3YWEeSmgoRxUBQeTA _pARJuHYWEeSmgoRxUBQeTA _pBwXgHYWEeSmgoRxUBQeTA" incomingTransitions="_pARJyHYWEeSmgoRxUBQeTA _pARJzHYWEeSmgoRxUBQeTA _pARJ0HYWEeSmgoRxUBQeTA _pARJ3XYWEeSmgoRxUBQeTA" initial="true">
               <entryEvent xmi:id="_pARJrnYWEeSmgoRxUBQeTA">
                 <action xmi:id="_pARJr3YWEeSmgoRxUBQeTA" name="entry">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_pARJsHYWEeSmgoRxUBQeTA">
@@ -9779,9 +9777,9 @@
               </entryEvent>
             </states>
             <states xmi:id="_pARJtHYWEeSmgoRxUBQeTA" name="Request" outgoingTransitions="_pARJ0nYWEeSmgoRxUBQeTA _pARJ2HYWEeSmgoRxUBQeTA" incomingTransitions="_pBwXd3YWEeSmgoRxUBQeTA _pBwXgHYWEeSmgoRxUBQeTA"/>
-            <states xmi:id="_pARJtXYWEeSmgoRxUBQeTA" name="ExecuteReconf" outgoingTransitions="_pARJvnYWEeSmgoRxUBQeTA _pARJw3YWEeSmgoRxUBQeTA" incomingTransitions="_pARJuHYWEeSmgoRxUBQeTA _pARJ0nYWEeSmgoRxUBQeTA"/>
+            <states xmi:id="_pARJtXYWEeSmgoRxUBQeTA" name="ExecuteReconf" outgoingTransitions="_pARJw3YWEeSmgoRxUBQeTA _pARJvnYWEeSmgoRxUBQeTA" incomingTransitions="_pARJuHYWEeSmgoRxUBQeTA _pARJ0nYWEeSmgoRxUBQeTA"/>
             <states xmi:id="_pARJtnYWEeSmgoRxUBQeTA" name="WaitForConfirm" outgoingTransitions="_pARJ3XYWEeSmgoRxUBQeTA" incomingTransitions="_pARJ2HYWEeSmgoRxUBQeTA"/>
-            <states xmi:id="_pARJt3YWEeSmgoRxUBQeTA" name="Finished" outgoingTransitions="_pARJyHYWEeSmgoRxUBQeTA _pARJzHYWEeSmgoRxUBQeTA _pARJ0HYWEeSmgoRxUBQeTA" incomingTransitions="_pARJvnYWEeSmgoRxUBQeTA _pARJw3YWEeSmgoRxUBQeTA" urgent="true"/>
+            <states xmi:id="_pARJt3YWEeSmgoRxUBQeTA" name="Finished" outgoingTransitions="_pARJzHYWEeSmgoRxUBQeTA _pARJyHYWEeSmgoRxUBQeTA _pARJ0HYWEeSmgoRxUBQeTA" incomingTransitions="_pARJvnYWEeSmgoRxUBQeTA _pARJw3YWEeSmgoRxUBQeTA" urgent="true"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_pARJ4HYWEeSmgoRxUBQeTA" priority="3">
@@ -10041,14 +10039,14 @@
                 </action>
               </entryEvent>
             </states>
-            <states xmi:id="_pARJ73YWEeSmgoRxUBQeTA" name="Plan" outgoingTransitions="_pAa6oHYWEeSmgoRxUBQeTA _pAa6o3YWEeSmgoRxUBQeTA" incomingTransitions="_pAkEonYWEeSmgoRxUBQeTA _pAkE5XYWEeSmgoRxUBQeTA _pAkE-XYWEeSmgoRxUBQeTA _pAt1knYWEeSmgoRxUBQeTA" urgent="true"/>
+            <states xmi:id="_pARJ73YWEeSmgoRxUBQeTA" name="Plan" outgoingTransitions="_pAa6o3YWEeSmgoRxUBQeTA _pAa6oHYWEeSmgoRxUBQeTA" incomingTransitions="_pAkEonYWEeSmgoRxUBQeTA _pAkE5XYWEeSmgoRxUBQeTA _pAkE-XYWEeSmgoRxUBQeTA _pAt1knYWEeSmgoRxUBQeTA" urgent="true"/>
             <states xmi:id="_pARJ8HYWEeSmgoRxUBQeTA" name="Execute" outgoingTransitions="_pAa6pXYWEeSmgoRxUBQeTA _pAa6qHYWEeSmgoRxUBQeTA" incomingTransitions="_pAa6oHYWEeSmgoRxUBQeTA"/>
-            <states xmi:id="_pARJ8XYWEeSmgoRxUBQeTA" name="Success" outgoingTransitions="_pAa6q3YWEeSmgoRxUBQeTA _pAa6r3YWEeSmgoRxUBQeTA" incomingTransitions="_pAa6qHYWEeSmgoRxUBQeTA" urgent="true"/>
-            <states xmi:id="_pARJ8nYWEeSmgoRxUBQeTA" name="Fail" outgoingTransitions="_pAa6sXYWEeSmgoRxUBQeTA _pAa6tXYWEeSmgoRxUBQeTA" incomingTransitions="_pAa6o3YWEeSmgoRxUBQeTA _pAa6pXYWEeSmgoRxUBQeTA _pAkEoHYWEeSmgoRxUBQeTA _pAkE43YWEeSmgoRxUBQeTA _pAkE93YWEeSmgoRxUBQeTA _pAt1kHYWEeSmgoRxUBQeTA"/>
-            <states xmi:id="_pAkEknYWEeSmgoRxUBQeTA" name="CheckBecomeCoordinator" outgoingTransitions="_pAkEoHYWEeSmgoRxUBQeTA _pAkEonYWEeSmgoRxUBQeTA" incomingTransitions="_pAkEk3YWEeSmgoRxUBQeTA" urgent="true"/>
-            <states xmi:id="_pAkEsnYWEeSmgoRxUBQeTA" name="CheckNewMember" outgoingTransitions="_pAkE43YWEeSmgoRxUBQeTA _pAkE5XYWEeSmgoRxUBQeTA" incomingTransitions="_pAkE1nYWEeSmgoRxUBQeTA" urgent="true"/>
-            <states xmi:id="_pAkE6XYWEeSmgoRxUBQeTA" name="CheckBecomeMember" outgoingTransitions="_pAkE93YWEeSmgoRxUBQeTA _pAkE-XYWEeSmgoRxUBQeTA" incomingTransitions="_pAkE6nYWEeSmgoRxUBQeTA" urgent="true"/>
-            <states xmi:id="_pAkFCXYWEeSmgoRxUBQeTA" name="CheckNoConvoyMode" outgoingTransitions="_pAt1kHYWEeSmgoRxUBQeTA _pAt1knYWEeSmgoRxUBQeTA" incomingTransitions="_pAkFCnYWEeSmgoRxUBQeTA" urgent="true"/>
+            <states xmi:id="_pARJ8XYWEeSmgoRxUBQeTA" name="Success" outgoingTransitions="_pAa6r3YWEeSmgoRxUBQeTA _pAa6q3YWEeSmgoRxUBQeTA" incomingTransitions="_pAa6qHYWEeSmgoRxUBQeTA" urgent="true"/>
+            <states xmi:id="_pARJ8nYWEeSmgoRxUBQeTA" name="Fail" outgoingTransitions="_pAa6tXYWEeSmgoRxUBQeTA _pAa6sXYWEeSmgoRxUBQeTA" incomingTransitions="_pAa6o3YWEeSmgoRxUBQeTA _pAa6pXYWEeSmgoRxUBQeTA _pAkEoHYWEeSmgoRxUBQeTA _pAkE43YWEeSmgoRxUBQeTA _pAkE93YWEeSmgoRxUBQeTA _pAt1kHYWEeSmgoRxUBQeTA"/>
+            <states xmi:id="_pAkEknYWEeSmgoRxUBQeTA" name="CheckBecomeCoordinator" outgoingTransitions="_pAkEonYWEeSmgoRxUBQeTA _pAkEoHYWEeSmgoRxUBQeTA" incomingTransitions="_pAkEk3YWEeSmgoRxUBQeTA" urgent="true"/>
+            <states xmi:id="_pAkEsnYWEeSmgoRxUBQeTA" name="CheckNewMember" outgoingTransitions="_pAkE5XYWEeSmgoRxUBQeTA _pAkE43YWEeSmgoRxUBQeTA" incomingTransitions="_pAkE1nYWEeSmgoRxUBQeTA" urgent="true"/>
+            <states xmi:id="_pAkE6XYWEeSmgoRxUBQeTA" name="CheckBecomeMember" outgoingTransitions="_pAkE-XYWEeSmgoRxUBQeTA _pAkE93YWEeSmgoRxUBQeTA" incomingTransitions="_pAkE6nYWEeSmgoRxUBQeTA" urgent="true"/>
+            <states xmi:id="_pAkFCXYWEeSmgoRxUBQeTA" name="CheckNoConvoyMode" outgoingTransitions="_pAt1knYWEeSmgoRxUBQeTA _pAt1kHYWEeSmgoRxUBQeTA" incomingTransitions="_pAkFCnYWEeSmgoRxUBQeTA" urgent="true"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_pAa6t3YWEeSmgoRxUBQeTA" priority="4">
@@ -10281,24 +10279,24 @@
                       </action>
                     </entryEvent>
                   </states>
-                  <states xmi:id="_pAa6zHYWEeSmgoRxUBQeTA" name="DeliverMsg" outgoingTransitions="_pAa6z3YWEeSmgoRxUBQeTA _pAa60XYWEeSmgoRxUBQeTA _pAa603YWEeSmgoRxUBQeTA" incomingTransitions="_pA2_knYWEeSmgoRxUBQeTA _pBAwhnYWEeSmgoRxUBQeTA _pBKho3YWEeSmgoRxUBQeTA _pBTreXYWEeSmgoRxUBQeTA _pBmmaXYWEeSmgoRxUBQeTA _pBwXdXYWEeSmgoRxUBQeTA" urgent="true"/>
-                  <states xmi:id="_pAa6zXYWEeSmgoRxUBQeTA" name="AwaitReply" outgoingTransitions="_pAa61XYWEeSmgoRxUBQeTA _pAa62nYWEeSmgoRxUBQeTA" incomingTransitions="_pAa60XYWEeSmgoRxUBQeTA"/>
-                  <states xmi:id="_pAa6znYWEeSmgoRxUBQeTA" name="AwaitParentReply" outgoingTransitions="_pAa633YWEeSmgoRxUBQeTA _pAa65HYWEeSmgoRxUBQeTA" incomingTransitions="_pAa603YWEeSmgoRxUBQeTA"/>
-                  <states xmi:id="_pA2_gHYWEeSmgoRxUBQeTA" name="ReceivedMsgBecomeCoordinator" outgoingTransitions="_pA2_jHYWEeSmgoRxUBQeTA _pA2_knYWEeSmgoRxUBQeTA" incomingTransitions="_pA2_hHYWEeSmgoRxUBQeTA">
+                  <states xmi:id="_pAa6zHYWEeSmgoRxUBQeTA" name="DeliverMsg" outgoingTransitions="_pAa603YWEeSmgoRxUBQeTA _pAa60XYWEeSmgoRxUBQeTA _pAa6z3YWEeSmgoRxUBQeTA" incomingTransitions="_pA2_knYWEeSmgoRxUBQeTA _pBAwhnYWEeSmgoRxUBQeTA _pBKho3YWEeSmgoRxUBQeTA _pBTreXYWEeSmgoRxUBQeTA _pBmmaXYWEeSmgoRxUBQeTA _pBwXdXYWEeSmgoRxUBQeTA" urgent="true"/>
+                  <states xmi:id="_pAa6zXYWEeSmgoRxUBQeTA" name="AwaitReply" outgoingTransitions="_pAa62nYWEeSmgoRxUBQeTA _pAa61XYWEeSmgoRxUBQeTA" incomingTransitions="_pAa60XYWEeSmgoRxUBQeTA"/>
+                  <states xmi:id="_pAa6znYWEeSmgoRxUBQeTA" name="AwaitParentReply" outgoingTransitions="_pAa65HYWEeSmgoRxUBQeTA _pAa633YWEeSmgoRxUBQeTA" incomingTransitions="_pAa603YWEeSmgoRxUBQeTA"/>
+                  <states xmi:id="_pA2_gHYWEeSmgoRxUBQeTA" name="ReceivedMsgBecomeCoordinator" outgoingTransitions="_pA2_knYWEeSmgoRxUBQeTA _pA2_jHYWEeSmgoRxUBQeTA" incomingTransitions="_pA2_hHYWEeSmgoRxUBQeTA">
                     <invariants xmi:id="_pA2_gXYWEeSmgoRxUBQeTA" clock="_pAa6wXYWEeSmgoRxUBQeTA">
                       <bound xmi:id="_pA2_gnYWEeSmgoRxUBQeTA" unit="MILLISECONDS">
                         <value xsi:type="sdcec:LiteralExpression" xmi:id="_pA2_g3YWEeSmgoRxUBQeTA" value="450"/>
                       </bound>
                     </invariants>
                   </states>
-                  <states xmi:id="_pA2_lHYWEeSmgoRxUBQeTA" name="ReceivedMsgNewMember" outgoingTransitions="_pBAwgHYWEeSmgoRxUBQeTA _pBAwhnYWEeSmgoRxUBQeTA" incomingTransitions="_pA2_mHYWEeSmgoRxUBQeTA">
+                  <states xmi:id="_pA2_lHYWEeSmgoRxUBQeTA" name="ReceivedMsgNewMember" outgoingTransitions="_pBAwhnYWEeSmgoRxUBQeTA _pBAwgHYWEeSmgoRxUBQeTA" incomingTransitions="_pA2_mHYWEeSmgoRxUBQeTA">
                     <invariants xmi:id="_pA2_lXYWEeSmgoRxUBQeTA" clock="_pAa6wXYWEeSmgoRxUBQeTA">
                       <bound xmi:id="_pA2_lnYWEeSmgoRxUBQeTA" unit="MILLISECONDS">
                         <value xsi:type="sdcec:LiteralExpression" xmi:id="_pA2_l3YWEeSmgoRxUBQeTA" value="490"/>
                       </bound>
                     </invariants>
                   </states>
-                  <states xmi:id="_pBKhgHYWEeSmgoRxUBQeTA" name="ReceivedMsgBecomeMember" outgoingTransitions="_pBKhnXYWEeSmgoRxUBQeTA _pBKho3YWEeSmgoRxUBQeTA" incomingTransitions="_pBKhhHYWEeSmgoRxUBQeTA">
+                  <states xmi:id="_pBKhgHYWEeSmgoRxUBQeTA" name="ReceivedMsgBecomeMember" outgoingTransitions="_pBKho3YWEeSmgoRxUBQeTA _pBKhnXYWEeSmgoRxUBQeTA" incomingTransitions="_pBKhhHYWEeSmgoRxUBQeTA">
                     <invariants xmi:id="_pBKhgXYWEeSmgoRxUBQeTA" clock="_pAa6wXYWEeSmgoRxUBQeTA">
                       <bound xmi:id="_pBKhgnYWEeSmgoRxUBQeTA" unit="MILLISECONDS">
                         <value xsi:type="sdcec:LiteralExpression" xmi:id="_pBKhg3YWEeSmgoRxUBQeTA" value="450"/>
@@ -10307,7 +10305,7 @@
                   </states>
                   <states xmi:id="_pBTrcHYWEeSmgoRxUBQeTA" name="ReceivedMsgDrivingAtHighSpeed" outgoingTransitions="_pBTreXYWEeSmgoRxUBQeTA" incomingTransitions="_pBTrcXYWEeSmgoRxUBQeTA"/>
                   <states xmi:id="_pBmmYHYWEeSmgoRxUBQeTA" name="ReceivedMsgDrivingAtNormalSpeed" outgoingTransitions="_pBmmaXYWEeSmgoRxUBQeTA" incomingTransitions="_pBmmYXYWEeSmgoRxUBQeTA"/>
-                  <states xmi:id="_pBwXYHYWEeSmgoRxUBQeTA" name="ReceivedMsgDistanceSensorFailure" outgoingTransitions="_pBwXb3YWEeSmgoRxUBQeTA _pBwXdXYWEeSmgoRxUBQeTA" incomingTransitions="_pBwXZHYWEeSmgoRxUBQeTA">
+                  <states xmi:id="_pBwXYHYWEeSmgoRxUBQeTA" name="ReceivedMsgDistanceSensorFailure" outgoingTransitions="_pBwXdXYWEeSmgoRxUBQeTA _pBwXb3YWEeSmgoRxUBQeTA" incomingTransitions="_pBwXZHYWEeSmgoRxUBQeTA">
                     <invariants xmi:id="_pBwXYXYWEeSmgoRxUBQeTA" clock="_pAa6wXYWEeSmgoRxUBQeTA">
                       <bound xmi:id="_pBwXYnYWEeSmgoRxUBQeTA" unit="MILLISECONDS">
                         <value xsi:type="sdcec:LiteralExpression" xmi:id="_pBwXY3YWEeSmgoRxUBQeTA" value="250"/>
