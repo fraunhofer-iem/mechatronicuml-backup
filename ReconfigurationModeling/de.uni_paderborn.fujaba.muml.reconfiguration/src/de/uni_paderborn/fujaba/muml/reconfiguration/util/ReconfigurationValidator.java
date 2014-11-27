@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
-import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
@@ -583,7 +582,47 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExecutorSpecificationEntry(ExecutorSpecificationEntry executorSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(executorSpecificationEntry, diagnostics, context);
+		if (!validate_NoCircularContainment(executorSpecificationEntry, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(executorSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(executorSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(executorSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(executorSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(executorSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(executorSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(executorSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(executorSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExecutorSpecificationEntry_UniqueIDofSpecificationEntryInExecutor(executorSpecificationEntry, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the UniqueIDofSpecificationEntryInExecutor constraint of '<em>Executor Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EXECUTOR_SPECIFICATION_ENTRY__UNIQUE_IDOF_SPECIFICATION_ENTRY_IN_EXECUTOR__EEXPRESSION = "-- The ID of an ExecutorSpecificationEntry must be unique inside the executor's specification.\r\n" +
+		"self.executor.specificationEntries -> select(entry : ExecutorSpecificationEntry | entry.id = self.id) -> size() = 1";
+
+	/**
+	 * Validates the UniqueIDofSpecificationEntryInExecutor constraint of '<em>Executor Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExecutorSpecificationEntry_UniqueIDofSpecificationEntryInExecutor(ExecutorSpecificationEntry executorSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.EXECUTOR_SPECIFICATION_ENTRY,
+				 executorSpecificationEntry,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueIDofSpecificationEntryInExecutor",
+				 EXECUTOR_SPECIFICATION_ENTRY__UNIQUE_IDOF_SPECIFICATION_ENTRY_IN_EXECUTOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

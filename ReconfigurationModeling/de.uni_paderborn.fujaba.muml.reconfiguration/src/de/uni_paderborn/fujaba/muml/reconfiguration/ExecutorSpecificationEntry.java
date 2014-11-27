@@ -31,7 +31,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueIDofSpecificationEntryInExecutor='-- The ID of an ExecutorSpecificationEntry must be unique inside the executor\'s specification.\r\nself.executor.specificationEntries -> select(entry : ExecutorSpecificationEntry | entry.id = self.id) -> size() = 1'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueIDofSpecificationEntryInExecutor'"
  * @generated
  */
 public interface ExecutorSpecificationEntry extends ExtendableElement {
@@ -140,7 +141,7 @@ public interface ExecutorSpecificationEntry extends ExtendableElement {
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(int)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_Id()
-	 * @model default="0" id="true" required="true"
+	 * @model default="0" required="true"
 	 * @generated
 	 */
 	int getId();

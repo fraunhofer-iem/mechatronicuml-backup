@@ -1416,7 +1416,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEReference(getExecutorSpecificationEntry_Executor(), this.getExecutor(), this.getExecutor_SpecificationEntries(), "executor", null, 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExecutorSpecificationEntry_ReconfigurationRule(), this.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExecutorSpecificationEntry_Wcet(), theValuetypePackage.getTimeValue(), null, "wcet", null, 0, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getExecutorSpecificationEntry_Id(), ecorePackage.getEInt(), "id", "0", 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExecutorSpecificationEntry_Id(), ecorePackage.getEInt(), "id", "0", 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationRuleEClass, ReconfigurationRule.class, "ReconfigurationRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationRule_ReconfiguredComponent(), this.getReconfigurableComponent(), null, "reconfiguredComponent", null, 1, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1499,6 +1499,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "constraints", "NotTreatAndPropagate InvokePlannerOnlyForTreatedMessage TimeForPlanningRequiresToInvokePlanner OnlyBlockTreatedMessage"
 		   });	
 		addAnnotation
+		  (executorSpecificationEntryEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueIDofSpecificationEntryInExecutor"
+		   });	
+		addAnnotation
 		  (reconfigurationPortAssemblyConnectorEClass, 
 		   source, 
 		   new String[] {
@@ -1574,6 +1580,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "(self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort)"
+		   });	
+		addAnnotation
+		  (executorSpecificationEntryEClass, 
+		   source, 
+		   new String[] {
+			 "UniqueIDofSpecificationEntryInExecutor", "-- The ID of an ExecutorSpecificationEntry must be unique inside the executor\'s specification.\r\nself.executor.specificationEntries -> select(entry : ExecutorSpecificationEntry | entry.id = self.id) -> size() = 1"
 		   });	
 		addAnnotation
 		  (getReconfigurationRule_Name(), 

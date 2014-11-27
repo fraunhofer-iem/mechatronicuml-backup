@@ -409,6 +409,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An ExecutorSpecificationEntry defines a ReconfigurationRule and an ID for the&#xD;&#xA;reconfiguration rule."/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="UniqueIDofSpecificationEntryInExecutor" value="-- The ID of an ExecutorSpecificationEntry must be unique inside the executor's specification.&#xD;&#xA;self.executor.specificationEntries -> select(entry : ExecutorSpecificationEntry | entry.id = self.id) -> size() = 1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniqueIDofSpecificationEntryInExecutor"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="executor" lowerBound="1"
         eType="#//Executor" eOpposite="#//Executor/specificationEntries">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -428,7 +434,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0" iD="true">
+        defaultValueLiteral="0">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The ID of this entry. In one executor specification, the IDs of the entries must&#xD;&#xA;be uniquely identifying. Specification entries of different executors, however, &#xD;&#xA;may use the same IDs."/>
       </eAnnotations>
