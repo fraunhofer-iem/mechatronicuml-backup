@@ -2279,7 +2279,7 @@
         <channels xmi:id="_yyXlofR7EeOKmIQk3FL8KA" name="requestPosition"/>
         <channels xmi:id="_yyXlovR7EeOKmIQk3FL8KA" name="enterAt"/>
         <channels xmi:id="_yyXlo_R7EeOKmIQk3FL8KA" name="sendNewProfile" selectorType="_uz92IfR7EeOKmIQk3FL8KA"/>
-        <channels xmi:id="_yyXlpPR7EeOKmIQk3FL8KA" name="finished" selectorType="_uz92J_R7EeOKmIQk3FL8KA"/>
+        <channels xmi:id="_yyXlpPR7EeOKmIQk3FL8KA" name="finished" selectorType="_uz92IfR7EeOKmIQk3FL8KA"/>
         <channels xmi:id="_yyXlpfR7EeOKmIQk3FL8KA" name="convoy"/>
       </states>
     </modelElements>
@@ -5178,8 +5178,8 @@
               <channels xmi:id="_wyG1wFOmEeSDPNki4Dv8rg" name="entrySuccess"/>
               <channels xmi:id="_wyG1wVOmEeSDPNki4Dv8rg" name="requestPosition"/>
               <channels xmi:id="_wyG1wlOmEeSDPNki4Dv8rg" name="enterAt"/>
-              <channels xmi:id="_wyG1w1OmEeSDPNki4Dv8rg" name="sendNewProfile" selectorType="_uz92IfR7EeOKmIQk3FL8KA"/>
-              <channels xmi:id="_wyG1xFOmEeSDPNki4Dv8rg" name="finished" selectorType="_uz92J_R7EeOKmIQk3FL8KA"/>
+              <channels xmi:id="_wyG1w1OmEeSDPNki4Dv8rg" name="sendNewProfile" selectorType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+              <channels xmi:id="_wyG1xFOmEeSDPNki4Dv8rg" name="finished" selectorType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
               <channels xmi:id="_wyG1xVOmEeSDPNki4Dv8rg" name="convoy"/>
             </states>
             <clocks xmi:id="_wyG1xlOmEeSDPNki4Dv8rg" name="c_inv"/>
