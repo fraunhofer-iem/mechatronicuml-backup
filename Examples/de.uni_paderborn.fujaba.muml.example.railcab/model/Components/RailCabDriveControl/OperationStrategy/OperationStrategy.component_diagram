@@ -7,7 +7,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGotfh2EeOdcfcso3gQlg" x="-36" y="24"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_ulGotvh2EeOdcfcso3gQlg" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGot_h2EeOdcfcso3gQlg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGot_h2EeOdcfcso3gQlg" x="-60" y="-12"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../../RailCab.fujaba#_iZRzwPhwEeOlYcxv1LeTzQ"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ulGos_h2EeOdcfcso3gQlg" x="-12" y="12"/>
@@ -17,7 +17,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGou_h2EeOdcfcso3gQlg" x="-60" y="24"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_ulGovPh2EeOdcfcso3gQlg" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGovfh2EeOdcfcso3gQlg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGovfh2EeOdcfcso3gQlg" x="-96" y="-24"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../../RailCab.fujaba#_jhvQoPhwEeOlYcxv1LeTzQ"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ulGoufh2EeOdcfcso3gQlg" x="-12" y="120"/>
@@ -41,7 +41,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGoyfh2EeOdcfcso3gQlg" x="-48" y="24"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_ulGoyvh2EeOdcfcso3gQlg" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGoy_h2EeOdcfcso3gQlg" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ulGoy_h2EeOdcfcso3gQlg" x="-96" y="24"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../../RailCab.fujaba#_dd_WwPh2EeOdcfcso3gQlg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ulGox_h2EeOdcfcso3gQlg" x="-12" y="156"/>
