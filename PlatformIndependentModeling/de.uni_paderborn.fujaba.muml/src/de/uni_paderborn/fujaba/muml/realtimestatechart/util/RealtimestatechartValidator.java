@@ -1026,31 +1026,30 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String SYNCHRONIZATION_CHANNEL__VALID_SELECTOR_TYPE__EEXPRESSION = "-- The selector type must be of type BOOLEAN, BYTE , SHORT, INT or of type role iff this RTSC is a multi-role RTSC, or of type port iff this RTSC is a multi-port RTSC \r\n" +
-		"let parentRtsc : realtimestatechart::RealtimeStatechart = self.state.parentStatechart in\n\r" +
-		"\n" +
-		"let behavElement : behavior::BehavioralElement = if (parentRtsc->isEmpty()) then null else parentRtsc.behavioralElement endif in\n\r" +
-		"\n" +
+		"let parentRtsc : realtimestatechart::RealtimeStatechart = self.state.parentStatechart in\r\n" +
+		"\r\n" +
+		"let behavElement : behavior::BehavioralElement = if (parentRtsc->isEmpty()) then null else parentRtsc.behavioralElement endif in\r\n" +
+		"\r\n" +
 		"let selectorTypeIsValidPrimitiveType : Boolean = if (not self.selectorType.oclIsUndefined()) then \r\n" +
 		"self.selectorType.oclIsKindOf(types::PrimitiveDataType) \r\n" +
 		"and (self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BOOLEAN \r\n" +
 		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BYTE \r\n" +
 		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT \r\n" +
 		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::SHORT\r\n" +
-		")\n" +
+		")\r\n" +
 		"else true endif in \r\n" +
-		"\n" +
-		"if self.selectorType.oclIsUndefined() then\n" +
-		"\ttrue\n" +
-		"else \n" +
-		"\tif behavElement.oclIsUndefined() then \n" +
-		"\t\tselectorTypeIsValidPrimitiveType\n" +
-		"\telse \n" +
-		"\tselectorTypeIsValidPrimitiveType \n" +
-		"\t\tor (if behavElement.oclIsKindOf(protocol::Role) then behavElement.oclAsType(protocol::Role).multiRole and self.selectorType.oclIsKindOf(protocol::Role) else false endif)\n" +
-		"\t\tor (if behavElement.oclIsKindOf(component::DiscretePort) then behavElement.oclAsType(component::DiscretePort).multiPort and self.selectorType.oclIsKindOf(component::Port) else false endif)\n" +
+		"\r\n" +
+		"if self.selectorType.oclIsUndefined() then\r\n" +
+		"\ttrue\r\n" +
+		"else \r\n" +
+		"\tif behavElement.oclIsUndefined() then \r\n" +
+		"\t\tselectorTypeIsValidPrimitiveType\r\n" +
+		"\telse \r\n" +
+		"\tselectorTypeIsValidPrimitiveType \r\n" +
+		"\t\tor (if behavElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) then behavElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and self.selectorType.oclIsKindOf(connector::DiscreteInteractionEndpoint) else false endif)\r\n" +
 		"\tendif \r\n" +
 		"endif\n" +
-		"-- adann, xell";
+		"-- adann, xell, chris227";
 
 	/**
 	 * Validates the ValidSelectorType constraint of '<em>Synchronization Channel</em>'.
