@@ -89,7 +89,6 @@
       <messageTypes xmi:id="_VceSsHPNEeS2jMQrzOH4MA" name="enableConvoyBuildUp"/>
       <messageTypes xmi:id="_oTRVkHP5EeSHw7AsWgY3fg" name="applyMemberStrategy"/>
       <messageTypes xmi:id="_cSI6cHQDEeSHw7AsWgY3fg" name="disableConvoyBuildUp"/>
-      <messageTypes xmi:id="_EYQPkHSEEeSqM9pIlQqUBw" name="leaveConvoy"/>
       <messageTypes xmi:id="_vHI20HSNEeSCfN0RxbcB5A" name="applyCoordinationStrategy"/>
       <messageTypes xmi:id="_DyFJ8HSQEeSCfN0RxbcB5A" name="stopCoordination"/>
       <messageTypes xmi:id="_IDFsIHSQEeSCfN0RxbcB5A" name="createFirstMemberPorts"/>
@@ -13937,7 +13936,7 @@
           </ports>
         </executor>
         <manager xmi:id="_34Iwnu6BEeOKI4bZ_bxwuQ" behavior="_ql5JKHShEeSlCdM66-7ACQ">
-          <specificationEntries xmi:id="_pPL7EHSEEeSqM9pIlQqUBw" treat="false" messageType="_EYQPkHSEEeSqM9pIlQqUBw"/>
+          <specificationEntries xmi:id="_pPL7EHSEEeSqM9pIlQqUBw" treat="false" messageType="_DyFJ8HSQEeSCfN0RxbcB5A"/>
           <specificationEntries xmi:id="_s-2DsHSEEeSqM9pIlQqUBw" messageType="_LkSRoGjBEeSJccZJNeJaVg" reconfigurationRule="_Dgg2IGmKEeSbsbbH1osIGg"/>
           <ports xsi:type="reconfiguration:InternalReconfigurationCommunicationPort" xmi:id="_34Iwn-6BEeOKI4bZ_bxwuQ" connectors="_34Iwq-6BEeOKI4bZ_bxwuQ" name="executor" behavior="_qmCTMXShEeSlCdM66-7ACQ" senderMessageTypes="_qlvYJ3ShEeSlCdM66-7ACQ _qlvYMHShEeSlCdM66-7ACQ _qlvYLnShEeSlCdM66-7ACQ" receiverMessageTypes="_qlvYJHShEeSlCdM66-7ACQ _qlvYJXShEeSlCdM66-7ACQ">
             <cardinality xmi:id="_34IwoO6BEeOKI4bZ_bxwuQ">
