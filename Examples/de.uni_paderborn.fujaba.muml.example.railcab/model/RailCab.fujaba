@@ -14365,7 +14365,7 @@
               <value xsi:type="sdcec:LiteralExpression" xmi:id="_1UYZUHWXEeSWTJ30Zm7hmA" value="5"/>
             </wcet>
           </specificationEntries>
-          <specificationEntries xmi:id="_3iwVYHWXEeSWTJ30Zm7hmA" reconfigurationRule="_IJojoHPNEeS2jMQrzOH4MA" id="4">
+          <specificationEntries xmi:id="_3iwVYHWXEeSWTJ30Zm7hmA" reconfigurationRule="_IJojoHPNEeS2jMQrzOH4MA" id="5">
             <wcet xmi:id="_5cmy8HWXEeSWTJ30Zm7hmA">
               <value xsi:type="sdcec:LiteralExpression" xmi:id="_6Ty5oHWXEeSWTJ30Zm7hmA" value="5"/>
             </wcet>
