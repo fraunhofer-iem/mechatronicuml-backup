@@ -342,7 +342,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../RailCab.fujaba#_EUAnEPuWEeO2po0ALlWq5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LG-oY3AFEeSlc6R2eK2nwA" width="2016" height="1188"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LG-oY3AFEeSlc6R2eK2nwA" x="12" y="24" width="2016" height="1188"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_2a53UfuXEeO2po0ALlWq5g"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../RailCab.fujaba#_EUAnEPuWEeO2po0ALlWq5g"/>
