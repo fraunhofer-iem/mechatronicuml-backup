@@ -99,6 +99,7 @@ encoding//model/Protocols/StrategyExchange/StrategyExchange_sender.realtimestate
 encoding//model/RailCab.fujaba=UTF-8
 encoding//model/Storydiagrams/addProfile.storydiagrams_diagram=UTF-8
 encoding//model/Storydiagrams/createProfileList.storydiagrams_diagram=UTF-8
+encoding//model/Storydiagrams/createProfileListCM.storydiagrams_diagram=UTF-8
 encoding//model/Storydiagrams/createSubRoleInstance.storydiagrams_diagram=UTF-8
 encoding//model/Storydiagrams/deleteIterator.storydiagrams_diagram=UTF-8
 encoding//model/Storydiagrams/deleteSRProfiles.storydiagrams_diagram=UTF-8

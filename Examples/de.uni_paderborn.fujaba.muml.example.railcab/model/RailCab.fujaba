@@ -5384,16 +5384,19 @@
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_4bh8wHidEeSg3v-XthdrOg" kind="TRIGGER">
                       <message xmi:id="_4bh8wXidEeSg3v-XthdrOg" instanceOf="_wvJwffR7EeOKmIQk3FL8KA"/>
                     </events>
-                    <action xmi:id="_4bh8wnidEeSg3v-XthdrOg" name="createProfileList(allProfiles, self)">
+                    <action xmi:id="_4bh8wnidEeSg3v-XthdrOg" name="createProfileListCM(allProfiles, self,curPPort)">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_4bh8w3idEeSg3v-XthdrOg">
-                        <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_4bh8xHidEeSg3v-XthdrOg" callee="_uuWqo_STEeOKmIQk3FL8KA">
-                          <ownedParameterBindings xmi:id="_4bh8xXidEeSg3v-XthdrOg" parameter="_uuWqp_STEeOKmIQk3FL8KA">
+                        <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_4bh8xHidEeSg3v-XthdrOg" callee="_OIJUAHiwEeSM8KwkAFk8ZA">
+                          <ownedParameterBindings xmi:id="_4bh8xXidEeSg3v-XthdrOg" parameter="_OIJUBHiwEeSM8KwkAFk8ZA">
                             <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh8xnidEeSg3v-XthdrOg" typedNamedElement="_4bh71nidEeSg3v-XthdrOg"/>
                           </ownedParameterBindings>
-                          <ownedParameterBindings xmi:id="_4bh8x3idEeSg3v-XthdrOg" parameter="_uuWqqfSTEeOKmIQk3FL8KA">
+                          <ownedParameterBindings xmi:id="_4bh8x3idEeSg3v-XthdrOg" parameter="_OIJUBniwEeSM8KwkAFk8ZA">
                             <valueExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_4bh8yHidEeSg3v-XthdrOg">
                               <position xmi:id="_4bh8yXidEeSg3v-XthdrOg"/>
                             </valueExpression>
+                          </ownedParameterBindings>
+                          <ownedParameterBindings xmi:id="_E5mO4HiyEeSM8KwkAFk8ZA" parameter="_QnDmcHiwEeSM8KwkAFk8ZA">
+                            <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_N3ev4HiyEeSM8KwkAFk8ZA" typedNamedElement="_OssXEHimEeSg3v-XthdrOg"/>
                           </ownedParameterBindings>
                         </expressions>
                       </expressions>
@@ -14053,6 +14056,52 @@
       </ownedActivityNode>
       <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_uuWrAfSTEeOKmIQk3FL8KA" name="final" incoming="_uuWq-PSTEeOKmIQk3FL8KA">
         <returnValues xsi:type="expr:TextualExpression" xmi:id="_uuWrAvSTEeOKmIQk3FL8KA" expressionText="" language="OCL" languageVersion="1.0"/>
+      </ownedActivityNode>
+    </modelElements>
+    <modelElements xsi:type="sda:Activity" xmi:id="_OIJUAHiwEeSM8KwkAFk8ZA" inParameter="_OIJUBHiwEeSM8KwkAFk8ZA _OIJUBniwEeSM8KwkAFk8ZA _QnDmcHiwEeSM8KwkAFk8ZA" name="createProfileListCM">
+      <annotation xmi:id="_OIJUAXiwEeSM8KwkAFk8ZA" source="http://www.storydriven.org/storydiagrams/types">
+        <details xmi:id="_OIJUAniwEeSM8KwkAFk8ZA" key="http://www.fujaba.de/muml/examples/profiles/0.3.2" value="true"/>
+        <details xmi:id="_OIJUA3iwEeSM8KwkAFk8ZA" key="http://www.fujaba.de/muml/runtime/0.4.0" value="true"/>
+      </annotation>
+      <containedParameters xmi:id="_OIJUBHiwEeSM8KwkAFk8ZA" name="store">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+      </containedParameters>
+      <containedParameters xmi:id="_OIJUBniwEeSM8KwkAFk8ZA" name="role">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+      </containedParameters>
+      <containedParameters xmi:id="_QnDmcHiwEeSM8KwkAFk8ZA" name="secondRole">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
+      </containedParameters>
+      <ownedActivityEdge xmi:id="_OIJUCHiwEeSM8KwkAFk8ZA" target="_OIJUC3iwEeSM8KwkAFk8ZA" source="_OIJUCniwEeSM8KwkAFk8ZA"/>
+      <ownedActivityEdge xmi:id="_OIJUCXiwEeSM8KwkAFk8ZA" target="_OIJUEniwEeSM8KwkAFk8ZA" source="_OIJUC3iwEeSM8KwkAFk8ZA"/>
+      <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_OIJUCniwEeSM8KwkAFk8ZA" name="init" outgoing="_OIJUCHiwEeSM8KwkAFk8ZA"/>
+      <ownedActivityNode xsi:type="sda:ModifyingStoryNode" xmi:id="_OIJUC3iwEeSM8KwkAFk8ZA" name="Create List" outgoing="_OIJUCXiwEeSM8KwkAFk8ZA" incoming="_OIJUCHiwEeSM8KwkAFk8ZA">
+        <ownedRule xmi:id="_OIJUDHiwEeSM8KwkAFk8ZA" comment="">
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_OIJUDXiwEeSM8KwkAFk8ZA" name="store" bindingState="BOUND" outgoingLink="_OIJUEHiwEeSM8KwkAFk8ZA">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_OIJUDniwEeSM8KwkAFk8ZA" name="r" incomingLink="_OIJUEHiwEeSM8KwkAFk8ZA" outgoingLink="_OIJUEXiwEeSM8KwkAFk8ZA _ojFFQHixEeSM8KwkAFk8ZA" bindingOperator="CREATE">
+            <classifier href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_OIJUD3iwEeSM8KwkAFk8ZA" name="role" bindingState="BOUND" incomingLink="_OIJUEXiwEeSM8KwkAFk8ZA">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeDiscreteInteractionEndpointInstance"/>
+          </variable>
+          <variable xsi:type="sdp:ObjectVariable" xmi:id="_iih4EHixEeSM8KwkAFk8ZA" name="secondRole" bindingState="BOUND" incomingLink="_ojFFQHixEeSM8KwkAFk8ZA">
+            <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//RuntimeDiscreteInteractionEndpointInstance"/>
+          </variable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_OIJUEHiwEeSM8KwkAFk8ZA" name="store_2_r" bindingOperator="CREATE" source="_OIJUDXiwEeSM8KwkAFk8ZA" target="_OIJUDniwEeSM8KwkAFk8ZA">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_OIJUEXiwEeSM8KwkAFk8ZA" name="r_2_role" bindingOperator="CREATE" source="_OIJUDniwEeSM8KwkAFk8ZA" target="_OIJUD3iwEeSM8KwkAFk8ZA">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
+          </linkVariable>
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ojFFQHixEeSM8KwkAFk8ZA" bindingOperator="CREATE" source="_OIJUDniwEeSM8KwkAFk8ZA" target="_iih4EHixEeSM8KwkAFk8ZA">
+            <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/secondInstance"/>
+          </linkVariable>
+        </ownedRule>
+      </ownedActivityNode>
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_OIJUEniwEeSM8KwkAFk8ZA" name="final" incoming="_OIJUCXiwEeSM8KwkAFk8ZA">
+        <returnValues xsi:type="expr:TextualExpression" xmi:id="_OIJUE3iwEeSM8KwkAFk8ZA" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNode>
     </modelElements>
   </categories>
