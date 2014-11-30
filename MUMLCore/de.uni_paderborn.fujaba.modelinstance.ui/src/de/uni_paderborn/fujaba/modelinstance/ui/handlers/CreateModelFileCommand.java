@@ -19,7 +19,7 @@ public class CreateModelFileCommand extends AbstractCreateFileCommand {
 
 	@Override
 	protected String getExtension() {
-		return "fujaba";
+		return "muml";
 	}
 
 	@Override

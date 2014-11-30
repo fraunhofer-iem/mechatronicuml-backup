@@ -65,7 +65,7 @@
       <consoleFactory
             class="org.fujaba.commons.console.ProcessConsoleFactory"
             icon="icons/console/default.png"
-            label="Fujaba">
+            label="MechatronicUML">
       </consoleFactory>
    </extension>
    <extension

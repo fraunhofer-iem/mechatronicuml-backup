@@ -17,8 +17,11 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      
-      <parser class="de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba"/>
+      <parser class="de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="muml"/>
    </extension>
 
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser class="de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba"/>
+   </extension>
 </plugin>

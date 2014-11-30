@@ -212,7 +212,7 @@ public abstract class AbstractFujabaDiagramNewWizard extends Wizard implements
 		ResourceLocationProvider rloc = new ResourceLocationProvider(selection);
 
 		DiagramModelSelectionPage domainModelSelectionPage = new DiagramModelSelectionPage(
-				"domain", rloc, editingDomain.getResourceSet(), "fujaba", diagramInformation); //$NON-NLS-1$ //$NON-NLS-2$
+				"domain", rloc, editingDomain.getResourceSet(), "muml", diagramInformation); //$NON-NLS-1$ //$NON-NLS-2$
 		domainModelSelectionPage.initialize();
 
 		domainModelSelectionPage.setTitle("Select Domain Model");

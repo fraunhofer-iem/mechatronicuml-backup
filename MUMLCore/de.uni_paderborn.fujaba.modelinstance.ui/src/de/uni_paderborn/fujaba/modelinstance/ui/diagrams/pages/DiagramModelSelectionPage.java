@@ -116,7 +116,7 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 	 */
 	@Override
 	public void addExtensions() {
-		List<URI> uris = rloc.getSelectedURIs("fujaba"); //$NON-NLS-1$
+		List<URI> uris = rloc.getSelectedURIs("muml"); //$NON-NLS-1$
 		// uris.add(URI
 		//				.createURI("platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore")); //$NON-NLS-1$
 		predefinedModelExtension = new PredefinedModelExtension(this, uris);

@@ -43,7 +43,7 @@
         point="org.eclipse.ui.commands">
      <category
            id="de.uni_paderborn.fujaba"
-           name="Fujaba">
+           name="MechatronicUML">
      </category>
      <command
            categoryId="de.uni_paderborn.fujaba"

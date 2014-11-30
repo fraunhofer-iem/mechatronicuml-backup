@@ -4,7 +4,7 @@
    <extension-point id="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation" name="DiagramInformation" schema="schema/diagraminformation.exsd"/>
    <extension-point id="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer" name="Modelinitializer" schema="schema/modelinitializer.exsd"/>
   <extension point="org.eclipse.ui.newWizards" >
-    <category name="Fujaba" id="de.uni_paderborn.fujaba" />
+    <category name="MechatronicUML" id="de.uni_paderborn.fujaba" />
     <category name="Diagrams" id="de.uni_paderborn.fujaba.diagrams"
          parentCategory="de.uni_paderborn.fujaba"/>
 
@@ -27,7 +27,7 @@
         <menu
               icon="icons/newfujabamodel.gif"
               id="de.uni_paderborn.fujaba"
-              label="Fujaba">
+              label="MechatronicUML">
            <command
                  commandId="de.uni_paderborn.fujaba.core.ui.command.newmodel"
                  icon="icons/newfujabamodel.gif"
@@ -77,8 +77,16 @@
            ifEmpty="false"
            operator="and">
 	       <adapt type="org.eclipse.core.resources.IResource">
-	          <test property="org.eclipse.core.resources.name" 
-	                value="*.fujaba"/>
+           <or>
+              <test
+                    property="org.eclipse.core.resources.name"
+                    value="*.muml">
+              </test>
+              <test
+                    property="org.eclipse.core.resources.name"
+                    value="*.fujaba">
+              </test>
+           </or>
 	       </adapt>
 	    </iterate>
      </definition>
@@ -87,14 +95,14 @@
         point="org.eclipse.ui.commands">
      <category
            id="de.uni_paderborn.fujaba"
-           name="Fujaba">
+           name="MechatronicUML">
      </category>
      <command
            categoryId="de.uni_paderborn.fujaba"
            defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateModelFileCommand"
-           description="Create new Fujaba Model"
+           description="Create new MechatronicUML Model"
            id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
-           name="Create new Fujaba Model">
+           name="Create new MechatronicUML Model">
      </command>
   </extension>
 

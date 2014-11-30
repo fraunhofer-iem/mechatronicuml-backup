@@ -32,7 +32,7 @@
             id="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditorID"
             name="%_UI_ModelinstanceEditor_label"
             icon="icons/full/obj16/ModelinstanceModelFile.gif"
-            extensions="fujaba"
+            extensions="fujaba,muml"
             class="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditor"
             contributorClass="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceActionBarContributor">
       </editor>

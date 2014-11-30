@@ -242,7 +242,7 @@
       </view>
       <category
             id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.Fujaba"
-            name="Fujaba">
+            name="MechatronicUML">
       </category>
    </extension -->
 </plugin>

@@ -48,7 +48,7 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 	// The plug-in ID
 	public static final String ID = "de.uni_paderborn.fujaba.muml.modelwizard"; //$NON-NLS-1$
 
-	public static final String FUJABA_MODEL_EXTENSION = "fujaba";
+	public static final String FUJABA_MODEL_EXTENSION = "muml";
 
 	public static final String DIAGRAM_INFORMATION_EXTENSION_POINT_ID = "de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation";
 	public static final String MODEL_INITIALIZER_EXTENSION_POINT_ID = "de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer";

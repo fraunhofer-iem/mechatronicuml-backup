@@ -6,7 +6,7 @@
     usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core">
   <foreignModel>modelinstance.ecore</foreignModel>
   <genPackages prefix="Modelinstance" basePackage="de.uni_paderborn.fujaba" resource="XMI"
-      disposableProviderFactory="true" fileExtensions="fujaba" ecorePackage="modelinstance.ecore#/">
+      disposableProviderFactory="true" fileExtensions="muml" ecorePackage="modelinstance.ecore#/">
     <genClasses ecoreClass="modelinstance.ecore#//RootNode">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/categories"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/ecoreDataTypes"/>

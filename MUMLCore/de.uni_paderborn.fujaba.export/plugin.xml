@@ -5,7 +5,7 @@
          point="org.eclipse.ui.exportWizards">
       <category
             id="de.uni_paderborn.fujaba.export"
-            name="Fujaba">
+            name="MechatronicUML">
       </category>
       <wizard
             category="de.uni_paderborn.fujaba.export"
