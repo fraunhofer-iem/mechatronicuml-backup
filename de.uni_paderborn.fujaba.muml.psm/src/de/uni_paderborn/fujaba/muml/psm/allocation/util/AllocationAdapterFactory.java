@@ -2,15 +2,16 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.allocation.util;
 
+import de.uni_paderborn.fujaba.muml.psm.allocation.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
-import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
-import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
-import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

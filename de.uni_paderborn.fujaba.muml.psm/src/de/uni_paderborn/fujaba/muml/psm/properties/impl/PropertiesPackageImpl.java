@@ -2,40 +2,65 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
+
 import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationPackageImpl;
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage;
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.impl.ApiexpressionsPackageImpl;
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingPackage;
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.impl.PortapimappingPackageImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
+
+import de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.impl.PsmPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
+
 import de.uni_paderborn.fujaba.muml.psm.instance.impl.InstancePackageImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
+
+import de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties;
 import de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.muml.psm.properties.WCETpair;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.impl.RealtimestatechartPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
+
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,9 +151,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
 		RealtimestatechartparameterPackageImpl theRealtimestatechartparameterPackage = (RealtimestatechartparameterPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterPackage.eNS_URI) instanceof RealtimestatechartparameterPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterPackage.eNS_URI) : RealtimestatechartparameterPackage.eINSTANCE);
 		RealtimestatechartparameterbindingPackageImpl theRealtimestatechartparameterbindingPackage = (RealtimestatechartparameterbindingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) instanceof RealtimestatechartparameterbindingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) : RealtimestatechartparameterbindingPackage.eINSTANCE);
+		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		ApiexpressionsPackageImpl theApiexpressionsPackage = (ApiexpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) instanceof ApiexpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) : ApiexpressionsPackage.eINSTANCE);
-		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePropertiesPackage.createPackageContents();
@@ -137,9 +162,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		theRealtimestatechartPackage.createPackageContents();
 		theRealtimestatechartparameterPackage.createPackageContents();
 		theRealtimestatechartparameterbindingPackage.createPackageContents();
+		theInstancePackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
 		theApiexpressionsPackage.createPackageContents();
-		theInstancePackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePropertiesPackage.initializePackageContents();
@@ -148,9 +173,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		theRealtimestatechartPackage.initializePackageContents();
 		theRealtimestatechartparameterPackage.initializePackageContents();
 		theRealtimestatechartparameterbindingPackage.initializePackageContents();
+		theInstancePackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
-		theInstancePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePropertiesPackage.freeze();
@@ -327,7 +352,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
+		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage_1 = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
 		HwvaluetypePackage theHwvaluetypePackage = (HwvaluetypePackage)EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI);
@@ -340,7 +365,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentInstanceExecutionPropertiesEClass, ComponentInstanceExecutionProperties.class, "ComponentInstanceExecutionProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentInstanceExecutionProperties_ComponentInstance(), theInstancePackage.getComponentInstance(), null, "componentInstance", null, 1, 1, ComponentInstanceExecutionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstanceExecutionProperties_ComponentInstance(), theInstancePackage_1.getComponentInstance(), null, "componentInstance", null, 1, 1, ComponentInstanceExecutionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstanceExecutionProperties_Wcet(), this.getWCETpair(), null, "wcet", null, 0, -1, ComponentInstanceExecutionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstanceExecutionProperties_CodeMem(), this.getMemoryPair(), null, "codeMem", null, 0, -1, ComponentInstanceExecutionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstanceExecutionProperties_RamMem(), this.getMemoryPair(), null, "ramMem", null, 0, -1, ComponentInstanceExecutionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

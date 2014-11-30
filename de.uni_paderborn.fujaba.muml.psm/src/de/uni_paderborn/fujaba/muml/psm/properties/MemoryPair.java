@@ -2,10 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

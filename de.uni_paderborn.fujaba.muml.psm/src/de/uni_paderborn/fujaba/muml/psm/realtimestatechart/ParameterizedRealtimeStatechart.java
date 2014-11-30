@@ -2,10 +2,11 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart;
 
-import org.eclipse.emf.common.util.EList;
-
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter;
+
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

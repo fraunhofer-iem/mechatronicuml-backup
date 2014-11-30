@@ -61,7 +61,7 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EAnnotation> annotations;
+	protected EList<EAnnotation> annotation;
 
 	/**
 	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
@@ -71,7 +71,7 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Extension> extensions;
+	protected EList<Extension> extension;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -178,10 +178,10 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * @generated
 	 */
 	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATION);
+		if (annotation == null) {
+			annotation = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATION);
 		}
-		return annotations;
+		return annotation;
 	}
 
 	/**
@@ -190,10 +190,10 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * @generated
 	 */
 	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
+		if (extension == null) {
+			extension = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
 		}
-		return extensions;
+		return extension;
 	}
 
 	/**
@@ -531,9 +531,9 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATION:
-				return annotations != null && !annotations.isEmpty();
+				return annotation != null && !annotation.isEmpty();
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSION:
-				return extensions != null && !extensions.isEmpty();
+				return extension != null && !extension.isEmpty();
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__COMMENT:
