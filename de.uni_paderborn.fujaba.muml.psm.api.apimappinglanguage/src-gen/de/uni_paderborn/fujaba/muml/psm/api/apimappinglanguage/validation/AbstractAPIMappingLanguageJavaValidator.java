@@ -13,10 +13,10 @@ public class AbstractAPIMappingLanguageJavaValidator extends de.uni_paderborn.fu
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/psm/api/portapimapping/0.4.0/"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/psm/portapimapping/0.4.0/"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/psm/0.4.0/"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.storydriven.org/core/expressions/0.3.1"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/psm/api/apiexpressions/0.4.0/"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/psm/apiexpressions/0.4.0/"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/behavior/0.4.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/actionlanguage/0.4.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.fujaba.de/muml/valuetype/0.4.0"));

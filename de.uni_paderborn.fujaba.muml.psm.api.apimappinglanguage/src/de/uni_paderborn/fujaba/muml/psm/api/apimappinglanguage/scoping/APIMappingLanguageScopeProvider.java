@@ -18,10 +18,10 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.APICallExpression;
-import de.uni_paderborn.fujaba.muml.psm.swplatform.APICommand;
-import de.uni_paderborn.fujaba.muml.psm.swplatform.EnumerationValue;
-import de.uni_paderborn.fujaba.muml.psm.swplatform.SwplatformPackage;
+import de.uni_paderborn.fujaba.muml.psm.apiexpressions.APICallExpression;
+import de.uni_paderborn.fujaba.muml.swplatform.APICommand;
+import de.uni_paderborn.fujaba.muml.swplatform.EnumerationValue;
+import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
