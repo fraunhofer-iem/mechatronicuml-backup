@@ -756,7 +756,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_ERsExXYdEeSmgoRxUBQeTA"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../../../../RailCab.fujaba#_dfWRgVOjEeSaVK1gfdE5pA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ERsEuHYdEeSmgoRxUBQeTA" width="1647" height="2711"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ERsEuHYdEeSmgoRxUBQeTA" width="1647" height="2778"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../../RailCab.fujaba#_dfWRgFOjEeSaVK1gfdE5pA"/>
@@ -1131,7 +1131,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_cM7T0HikEeSg3v-XthdrOg" type="4003" source="_TpOp4HijEeSg3v-XthdrOg" target="_YbAhYHikEeSg3v-XthdrOg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_cM7T03ikEeSg3v-XthdrOg" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_cM7T1HikEeSg3v-XthdrOg" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cM7T1HikEeSg3v-XthdrOg" x="51" y="-12"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_cM7T1XikEeSg3v-XthdrOg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_cM7T1nikEeSg3v-XthdrOg" x="-10" y="20"/>
@@ -1143,7 +1143,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_coWrkHikEeSg3v-XthdrOg" type="4003" source="_We2MIHijEeSg3v-XthdrOg" target="_YbAhYHikEeSg3v-XthdrOg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_coWrk3ikEeSg3v-XthdrOg" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_coWrlHikEeSg3v-XthdrOg" x="5" y="19"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_coWrlHikEeSg3v-XthdrOg" x="68" y="21"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_coWrlXikEeSg3v-XthdrOg" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_coWrlnikEeSg3v-XthdrOg" x="-10" y="20"/>
