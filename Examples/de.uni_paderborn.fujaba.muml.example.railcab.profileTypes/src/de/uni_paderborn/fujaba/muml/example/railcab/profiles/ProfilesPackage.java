@@ -232,13 +232,22 @@ public interface ProfilesPackage extends EPackage {
 	int ROLE_PROFILES__ROLE_INSTANCE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Second Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_PROFILES__SECOND_INSTANCE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Role Profiles</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_PROFILES_FEATURE_COUNT = 3;
+	int ROLE_PROFILES_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Role Profiles</em>' class.
@@ -367,6 +376,17 @@ public interface ProfilesPackage extends EPackage {
 	EReference getRoleProfiles_RoleInstance();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.RoleProfiles#getSecondInstance <em>Second Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Second Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.example.railcab.profiles.RoleProfiles#getSecondInstance()
+	 * @see #getRoleProfiles()
+	 * @generated
+	 */
+	EReference getRoleProfiles_SecondInstance();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,6 +506,14 @@ public interface ProfilesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE_PROFILES__ROLE_INSTANCE = eINSTANCE.getRoleProfiles_RoleInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Second Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE_PROFILES__SECOND_INSTANCE = eINSTANCE.getRoleProfiles_SecondInstance();
 
 	}
 

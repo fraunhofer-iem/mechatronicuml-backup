@@ -20,5 +20,6 @@
         eType="#//Profile"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentProfile" eType="#//Profile"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roleInstance" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.runtime/model/RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secondInstance" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.runtime/model/RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
   </eClassifiers>
 </ecore:EPackage>

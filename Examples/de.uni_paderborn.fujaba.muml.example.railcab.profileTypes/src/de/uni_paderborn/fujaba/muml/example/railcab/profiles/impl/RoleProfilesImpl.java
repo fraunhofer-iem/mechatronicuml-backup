@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.impl.RoleProfilesImpl#getAllProfiles <em>All Profiles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.impl.RoleProfilesImpl#getCurrentProfile <em>Current Profile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.impl.RoleProfilesImpl#getRoleInstance <em>Role Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.impl.RoleProfilesImpl#getSecondInstance <em>Second Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +68,16 @@ public class RoleProfilesImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @ordered
 	 */
 	protected RuntimeDiscreteInteractionEndpointInstance roleInstance;
+
+	/**
+	 * The cached value of the '{@link #getSecondInstance() <em>Second Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecondInstance()
+	 * @generated
+	 * @ordered
+	 */
+	protected RuntimeDiscreteInteractionEndpointInstance secondInstance;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,6 +191,44 @@ public class RoleProfilesImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RuntimeDiscreteInteractionEndpointInstance getSecondInstance() {
+		if (secondInstance != null && secondInstance.eIsProxy()) {
+			InternalEObject oldSecondInstance = (InternalEObject)secondInstance;
+			secondInstance = (RuntimeDiscreteInteractionEndpointInstance)eResolveProxy(oldSecondInstance);
+			if (secondInstance != oldSecondInstance) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProfilesPackage.ROLE_PROFILES__SECOND_INSTANCE, oldSecondInstance, secondInstance));
+			}
+		}
+		return secondInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeDiscreteInteractionEndpointInstance basicGetSecondInstance() {
+		return secondInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSecondInstance(RuntimeDiscreteInteractionEndpointInstance newSecondInstance) {
+		RuntimeDiscreteInteractionEndpointInstance oldSecondInstance = secondInstance;
+		secondInstance = newSecondInstance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProfilesPackage.ROLE_PROFILES__SECOND_INSTANCE, oldSecondInstance, secondInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -191,6 +240,9 @@ public class RoleProfilesImpl extends MinimalEObjectImpl.Container implements Ro
 			case ProfilesPackage.ROLE_PROFILES__ROLE_INSTANCE:
 				if (resolve) return getRoleInstance();
 				return basicGetRoleInstance();
+			case ProfilesPackage.ROLE_PROFILES__SECOND_INSTANCE:
+				if (resolve) return getSecondInstance();
+				return basicGetSecondInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,6 +266,9 @@ public class RoleProfilesImpl extends MinimalEObjectImpl.Container implements Ro
 			case ProfilesPackage.ROLE_PROFILES__ROLE_INSTANCE:
 				setRoleInstance((RuntimeDiscreteInteractionEndpointInstance)newValue);
 				return;
+			case ProfilesPackage.ROLE_PROFILES__SECOND_INSTANCE:
+				setSecondInstance((RuntimeDiscreteInteractionEndpointInstance)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -235,6 +290,9 @@ public class RoleProfilesImpl extends MinimalEObjectImpl.Container implements Ro
 			case ProfilesPackage.ROLE_PROFILES__ROLE_INSTANCE:
 				setRoleInstance((RuntimeDiscreteInteractionEndpointInstance)null);
 				return;
+			case ProfilesPackage.ROLE_PROFILES__SECOND_INSTANCE:
+				setSecondInstance((RuntimeDiscreteInteractionEndpointInstance)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -253,6 +311,8 @@ public class RoleProfilesImpl extends MinimalEObjectImpl.Container implements Ro
 				return currentProfile != null;
 			case ProfilesPackage.ROLE_PROFILES__ROLE_INSTANCE:
 				return roleInstance != null;
+			case ProfilesPackage.ROLE_PROFILES__SECOND_INSTANCE:
+				return secondInstance != null;
 		}
 		return super.eIsSet(featureID);
 	}

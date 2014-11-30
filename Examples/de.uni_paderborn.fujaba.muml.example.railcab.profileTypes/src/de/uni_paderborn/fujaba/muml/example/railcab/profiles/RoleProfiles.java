@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.RoleProfiles#getAllProfiles <em>All Profiles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.RoleProfiles#getCurrentProfile <em>Current Profile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.RoleProfiles#getRoleInstance <em>Role Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.RoleProfiles#getSecondInstance <em>Second Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -94,5 +95,31 @@ public interface RoleProfiles extends EObject {
 	 * @generated
 	 */
 	void setRoleInstance(RuntimeDiscreteInteractionEndpointInstance value);
+
+	/**
+	 * Returns the value of the '<em><b>Second Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Second Instance</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Second Instance</em>' reference.
+	 * @see #setSecondInstance(RuntimeDiscreteInteractionEndpointInstance)
+	 * @see de.uni_paderborn.fujaba.muml.example.railcab.profiles.ProfilesPackage#getRoleProfiles_SecondInstance()
+	 * @model
+	 * @generated
+	 */
+	RuntimeDiscreteInteractionEndpointInstance getSecondInstance();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.example.railcab.profiles.RoleProfiles#getSecondInstance <em>Second Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Second Instance</em>' reference.
+	 * @see #getSecondInstance()
+	 * @generated
+	 */
+	void setSecondInstance(RuntimeDiscreteInteractionEndpointInstance value);
 
 } // RoleProfiles

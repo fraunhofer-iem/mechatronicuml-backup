@@ -228,6 +228,15 @@ public class ProfilesPackageImpl extends EPackageImpl implements ProfilesPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoleProfiles_SecondInstance() {
+		return (EReference)roleProfilesEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProfilesFactory getProfilesFactory() {
 		return (ProfilesFactory)getEFactoryInstance();
 	}
@@ -266,6 +275,7 @@ public class ProfilesPackageImpl extends EPackageImpl implements ProfilesPackage
 		createEReference(roleProfilesEClass, ROLE_PROFILES__ALL_PROFILES);
 		createEReference(roleProfilesEClass, ROLE_PROFILES__CURRENT_PROFILE);
 		createEReference(roleProfilesEClass, ROLE_PROFILES__ROLE_INSTANCE);
+		createEReference(roleProfilesEClass, ROLE_PROFILES__SECOND_INSTANCE);
 	}
 
 	/**
@@ -316,6 +326,7 @@ public class ProfilesPackageImpl extends EPackageImpl implements ProfilesPackage
 		initEReference(getRoleProfiles_AllProfiles(), this.getProfile(), null, "allProfiles", null, 0, -1, RoleProfiles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleProfiles_CurrentProfile(), this.getProfile(), null, "currentProfile", null, 0, 1, RoleProfiles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleProfiles_RoleInstance(), theRuntimePackage.getRuntimeDiscreteInteractionEndpointInstance(), null, "roleInstance", null, 0, 1, RoleProfiles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleProfiles_SecondInstance(), theRuntimePackage.getRuntimeDiscreteInteractionEndpointInstance(), null, "secondInstance", null, 0, 1, RoleProfiles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
