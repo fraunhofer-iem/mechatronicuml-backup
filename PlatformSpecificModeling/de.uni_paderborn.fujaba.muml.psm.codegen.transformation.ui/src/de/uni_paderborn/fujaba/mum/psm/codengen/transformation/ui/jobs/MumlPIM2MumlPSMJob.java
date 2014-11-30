@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.mum.psm.codengen.transformation.ui.jobs;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Collections;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -19,7 +18,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.MappingRepository;
+import de.uni_paderborn.fujaba.muml.psm.portapimapping.MappingRepository;
 
 public class MumlPIM2MumlPSMJob extends Job {
 

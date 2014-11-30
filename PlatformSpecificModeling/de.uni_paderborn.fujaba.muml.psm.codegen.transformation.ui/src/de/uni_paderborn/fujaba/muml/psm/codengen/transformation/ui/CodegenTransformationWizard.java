@@ -18,11 +18,9 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.DialogSettings;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -44,8 +42,8 @@ import de.uni_paderborn.fujaba.mum.psm.codengen.transformation.ui.jobs.MumlPSM2C
 import de.uni_paderborn.fujaba.muml.pm.common.xtext.FujabaResourceServiceProvider;
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 import de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.ui.internal.APIMappingLanguageActivator;
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.MappingRepository;
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingFactory;
+import de.uni_paderborn.fujaba.muml.psm.portapimapping.MappingRepository;
+import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingFactory;
 
 public class CodegenTransformationWizard extends Wizard implements INewWizard {
 
