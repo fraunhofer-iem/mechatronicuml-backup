@@ -327,7 +327,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_DpVO9WUHEeS2Zodb8JPC8A"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../../../RailCab.fujaba#_m8k9u_uWEeO2po0ALlWq5g"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DpVO6GUHEeS2Zodb8JPC8A" x="8" y="210"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DpVO6GUHEeS2Zodb8JPC8A" x="8" y="198"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../RailCab.fujaba#_m8k9kfuWEeO2po0ALlWq5g"/>

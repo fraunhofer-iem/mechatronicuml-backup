@@ -4210,7 +4210,9 @@
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_lSNGcvuWEeO2po0ALlWq5g" name="DriveLogic" behavioralElement="_J0cH0Ph3EeOdcfcso3gQlg">
-      <variables xmi:id="_GeR_ElOiEeSaVK1gfdE5pA" name="speed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      <variables xmi:id="_GeR_ElOiEeSaVK1gfdE5pA" name="speed" dataType="_hm9EVriwEeKp46K0r5yxrg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GUGFgHiHEeSg3v-XthdrOg" value="0"/>
+      </variables>
       <states xmi:id="_lSNGc_uWEeO2po0ALlWq5g" name="Main" initial="true">
         <embeddedRegions xmi:id="_lSNGdPuWEeO2po0ALlWq5g" priority="1">
           <embeddedStatechart xmi:id="_lSNGdfuWEeO2po0ALlWq5g" name="railcab_role_section1" behavioralElement="_Wb1GIPh3EeOdcfcso3gQlg">
