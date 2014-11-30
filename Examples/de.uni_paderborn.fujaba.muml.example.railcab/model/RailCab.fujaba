@@ -4957,6 +4957,7 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_dfWRgFOjEeSaVK1gfdE5pA" name="ConvoyManagement" behavioralElement="_OE_0UO6CEeOKI4bZ_bxwuQ">
       <variables xmi:id="_MXNtcHimEeSg3v-XthdrOg" name="curCPort" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+      <variables xmi:id="_4bh73XidEeSg3v-XthdrOg" name="curSubRole" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
       <variables xmi:id="_OssXEHimEeSg3v-XthdrOg" name="curPPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
       <variables xmi:id="_4bh733idEeSg3v-XthdrOg" name="maxNumMembers" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_4bh74HidEeSg3v-XthdrOg" value="3"/>
@@ -5048,7 +5049,6 @@
                   <operations xmi:id="_4bh723idEeSg3v-XthdrOg" name="createSubRoleInstance" returnType="_uz92J_R7EeOKmIQk3FL8KA">
                     <parameters xmi:id="_4bh73HidEeSg3v-XthdrOg" name="multiRoleInstance" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
                   </operations>
-                  <variables xmi:id="_4bh73XidEeSg3v-XthdrOg" name="curSubRole" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
                   <variables xmi:id="_4bh73nidEeSg3v-XthdrOg" name="tmpCPort" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
                   <transitions xmi:id="_4bh743idEeSg3v-XthdrOg" priority="2" target="_4bh8hHidEeSg3v-XthdrOg" source="_4bh8gHidEeSg3v-XthdrOg">
                     <synchronization xmi:id="_4bh75HidEeSg3v-XthdrOg" syncChannel="_4bh9G3idEeSg3v-XthdrOg" kind="RECEIVE"/>
@@ -5551,15 +5551,15 @@
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_WnoG9XieEeSg3v-XthdrOg" kind="TRIGGER">
                 <message xmi:id="_WnoG9nieEeSg3v-XthdrOg" instanceOf="_-bCkkFOlEeSDPNki4Dv8rg"/>
               </events>
-              <action xmi:id="_WnoG93ieEeSg3v-XthdrOg" name="{assign msg params}">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_WnoG-HieEeSg3v-XthdrOg">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_WnoG-XieEeSg3v-XthdrOg" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_WnoG-nieEeSg3v-XthdrOg" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_MjK5EGKdEeS-2sR8iwsrMg"/>
-                    <lhs_typedNamedElementExpression xmi:id="_WnoG-3ieEeSg3v-XthdrOg" typedNamedElement="_WnoG8nieEeSg3v-XthdrOg"/>
+              <action xmi:id="_WnoG93ieEeSg3v-XthdrOg" name="newMaxSpeed := updateStrategy.maxSpeed; newMinDistance := updateStrategy.minDistance;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_KW994HivEeSM8KwkAFk8ZA">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_KW994XivEeSM8KwkAFk8ZA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_KW994nivEeSM8KwkAFk8ZA" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_MjK5EGKdEeS-2sR8iwsrMg"/>
+                    <lhs_typedNamedElementExpression xmi:id="_KW9943ivEeSM8KwkAFk8ZA" typedNamedElement="_WnoG8nieEeSg3v-XthdrOg"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_WnoG_HieEeSg3v-XthdrOg" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_WnoG_XieEeSg3v-XthdrOg" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_O-fsAGKdEeS-2sR8iwsrMg"/>
-                    <lhs_typedNamedElementExpression xmi:id="_WnoG_nieEeSg3v-XthdrOg" typedNamedElement="_WnoG83ieEeSg3v-XthdrOg"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_KW995HivEeSM8KwkAFk8ZA" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_KW995XivEeSM8KwkAFk8ZA" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_O-fsAGKdEeS-2sR8iwsrMg"/>
+                    <lhs_typedNamedElementExpression xmi:id="_KW995nivEeSM8KwkAFk8ZA" typedNamedElement="_WnoG83ieEeSg3v-XthdrOg"/>
                   </expressions>
                 </expressions>
               </action>
@@ -5751,7 +5751,7 @@
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_I9E-UHilEeSg3v-XthdrOg">
                   <expressions xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_vGwrIHilEeSg3v-XthdrOg" reconfigurationRule="_HFxZcHP6EeSHw7AsWgY3fg">
                     <parameterBindings xmi:id="_UIf4cHimEeSg3v-XthdrOg" parameter="_Mq1kgHP6EeSHw7AsWgY3fg">
-                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_WiWrwHimEeSg3v-XthdrOg" typedNamedElement="_MXNtcHimEeSg3v-XthdrOg"/>
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_U_JdgHivEeSM8KwkAFk8ZA" typedNamedElement="_4bh73XidEeSg3v-XthdrOg"/>
                     </parameterBindings>
                     <parameterBindings xmi:id="_WxmosHimEeSg3v-XthdrOg" parameter="_QrUXYHP6EeSHw7AsWgY3fg">
                       <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_YkwoYHimEeSg3v-XthdrOg" typedNamedElement="_OssXEHimEeSg3v-XthdrOg"/>
@@ -5786,7 +5786,7 @@
                       <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_iBBugHimEeSg3v-XthdrOg" typedNamedElement="_DOgHYHikEeSg3v-XthdrOg"/>
                     </parameterBindings>
                     <parameterBindings xmi:id="_iOVKsHimEeSg3v-XthdrOg" parameter="_AvQRYHP8EeSHw7AsWgY3fg">
-                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_kItzwHimEeSg3v-XthdrOg" typedNamedElement="_MXNtcHimEeSg3v-XthdrOg"/>
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_c-138HivEeSM8KwkAFk8ZA" typedNamedElement="_4bh73XidEeSg3v-XthdrOg"/>
                     </parameterBindings>
                     <parameterBindings xmi:id="_kW0hMHimEeSg3v-XthdrOg" parameter="_Ci2V8HP8EeSHw7AsWgY3fg">
                       <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_mSuNMHimEeSg3v-XthdrOg" typedNamedElement="_OssXEHimEeSg3v-XthdrOg"/>
