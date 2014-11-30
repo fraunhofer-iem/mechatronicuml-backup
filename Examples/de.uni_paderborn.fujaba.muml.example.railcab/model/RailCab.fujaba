@@ -4957,6 +4957,8 @@
       <clocks xmi:id="_uuRGgFOhEeSaVK1gfdE5pA" name="c"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_dfWRgFOjEeSaVK1gfdE5pA" name="ConvoyManagement" behavioralElement="_OE_0UO6CEeOKI4bZ_bxwuQ">
+      <variables xmi:id="_MXNtcHimEeSg3v-XthdrOg" name="curCPort" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+      <variables xmi:id="_OssXEHimEeSg3v-XthdrOg" name="curPPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
       <states xmi:id="_dfWRgVOjEeSaVK1gfdE5pA" name="ConvoyManagement_Main" initial="true">
         <embeddedRegions xmi:id="_n4q1wFOjEeSaVK1gfdE5pA" priority="1">
           <embeddedStatechart xmi:id="_n4q1wVOjEeSaVK1gfdE5pA" name="SpeedTransmission_sender_speedProvider" behavioralElement="_f4o1EO6CEeOKI4bZ_bxwuQ">
@@ -5709,7 +5711,16 @@
                 <message xmi:id="_E7FIgHilEeSg3v-XthdrOg" instanceOf="_qlvYKHShEeSlCdM66-7ACQ"/>
               </events>
               <action xmi:id="_HqOPUHilEeSg3v-XthdrOg" name="[curCPort, curPPort] := createFirstMemberPorts();">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_I9E-UHilEeSg3v-XthdrOg"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_I9E-UHilEeSg3v-XthdrOg">
+                  <expressions xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_vGwrIHilEeSg3v-XthdrOg" reconfigurationRule="_HFxZcHP6EeSHw7AsWgY3fg">
+                    <parameterBindings xmi:id="_UIf4cHimEeSg3v-XthdrOg" parameter="_Mq1kgHP6EeSHw7AsWgY3fg">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_WiWrwHimEeSg3v-XthdrOg" typedNamedElement="_MXNtcHimEeSg3v-XthdrOg"/>
+                    </parameterBindings>
+                    <parameterBindings xmi:id="_WxmosHimEeSg3v-XthdrOg" parameter="_QrUXYHP6EeSHw7AsWgY3fg">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_YkwoYHimEeSg3v-XthdrOg" typedNamedElement="_OssXEHimEeSg3v-XthdrOg"/>
+                    </parameterBindings>
+                  </expressions>
+                </expressions>
               </action>
             </transitions>
             <transitions xmi:id="_9XO8kHikEeSg3v-XthdrOg" priority="3" target="_xhVCYXigEeSg3v-XthdrOg" source="_ZPeEMHikEeSg3v-XthdrOg">
@@ -5721,7 +5732,22 @@
                 <message xmi:id="_Vk_hEHilEeSg3v-XthdrOg" instanceOf="_qlvYKHShEeSlCdM66-7ACQ"/>
               </events>
               <action xmi:id="_SRfI8HilEeSg3v-XthdrOg" name="[curCPort, curPPort] := createMemberPortsAfter(ccPort, ppPort);">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_VTruoHilEeSg3v-XthdrOg"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_VTruoHilEeSg3v-XthdrOg">
+                  <expressions xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_cNgQsHimEeSg3v-XthdrOg" reconfigurationRule="_9_ZY4HP7EeSHw7AsWgY3fg">
+                    <parameterBindings xmi:id="_dFnkcHimEeSg3v-XthdrOg" parameter="_d8u4MHP8EeSHw7AsWgY3fg">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_f61eEHimEeSg3v-XthdrOg" typedNamedElement="_9FcecHijEeSg3v-XthdrOg"/>
+                    </parameterBindings>
+                    <parameterBindings xmi:id="_gG2g0HimEeSg3v-XthdrOg" parameter="_iah5MHP8EeSHw7AsWgY3fg">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_iBBugHimEeSg3v-XthdrOg" typedNamedElement="_DOgHYHikEeSg3v-XthdrOg"/>
+                    </parameterBindings>
+                    <parameterBindings xmi:id="_iOVKsHimEeSg3v-XthdrOg" parameter="_AvQRYHP8EeSHw7AsWgY3fg">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_kItzwHimEeSg3v-XthdrOg" typedNamedElement="_MXNtcHimEeSg3v-XthdrOg"/>
+                    </parameterBindings>
+                    <parameterBindings xmi:id="_kW0hMHimEeSg3v-XthdrOg" parameter="_Ci2V8HP8EeSHw7AsWgY3fg">
+                      <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_mSuNMHimEeSg3v-XthdrOg" typedNamedElement="_OssXEHimEeSg3v-XthdrOg"/>
+                    </parameterBindings>
+                  </expressions>
+                </expressions>
               </action>
             </transitions>
             <states xmi:id="_xhVCYXigEeSg3v-XthdrOg" name="Idle" outgoingTransitions="_pE3FAHijEeSg3v-XthdrOg _pjcecHijEeSg3v-XthdrOg" incomingTransitions="_rGvAsHikEeSg3v-XthdrOg _40GvoHikEeSg3v-XthdrOg _6zXRoHikEeSg3v-XthdrOg _9XO8kHikEeSg3v-XthdrOg" initial="true">
