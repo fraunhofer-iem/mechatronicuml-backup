@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding;
 
-import org.storydriven.core.expressions.Expression;
-
 import de.uni_paderborn.fujaba.muml.behavior.Operation;
+
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->

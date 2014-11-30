@@ -7,7 +7,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsFactory;
+import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartFactory;
 

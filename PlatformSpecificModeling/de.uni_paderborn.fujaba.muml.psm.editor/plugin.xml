@@ -22,7 +22,6 @@
       </wizard>
    </extension>
 
-null
    <extension point="org.eclipse.ui.editors">
       <!-- @generated psm -->
       <editor
@@ -51,10 +50,6 @@ null
       </wizard>
    </extension>
 
-null
-null
-null
-null
    <extension point="org.eclipse.ui.editors">
       <!-- @generated psm -->
       <editor
@@ -83,11 +78,6 @@ null
       </wizard>
    </extension>
 
-null
-null
-null
-null
-null
    <extension point="org.eclipse.ui.editors">
       <!-- @generated psm -->
       <editor
@@ -100,11 +90,6 @@ null
       </editor>
    </extension>
 
-null
-null
-null
-null
-null
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated psm -->
       <category
@@ -121,11 +106,6 @@ null
       </wizard>
    </extension>
 
-null
-null
-null
-null
-null
    <extension point="org.eclipse.ui.editors">
       <!-- @generated psm -->
       <editor
@@ -154,11 +134,6 @@ null
       </wizard>
    </extension>
 
-null
-null
-null
-null
-null
    <extension point="org.eclipse.ui.editors">
       <!-- @generated psm -->
       <editor
@@ -187,11 +162,6 @@ null
       </wizard>
    </extension>
 
-null
-null
-null
-null
-null
    <extension point="org.eclipse.ui.editors">
       <!-- @generated psm -->
       <editor
@@ -201,72 +171,6 @@ null
             extensions="realtimestatechartparameterbinding"
             class="de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingEditor"
             contributorClass="de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.presentation.RealtimestatechartparameterbindingActionBarContributor">
-      </editor>
-   </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated psm -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="de.uni_paderborn.fujaba.muml.psm.api.portapimapping.presentation.PortapimappingModelWizardID"
-            name="%_UI_PortapimappingModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.api.portapimapping.presentation.PortapimappingModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/PortapimappingModelFile.gif">
-         <description>%_UI_PortapimappingModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-null
-null
-null
-null
-null
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated psm -->
-      <editor
-            id="de.uni_paderborn.fujaba.muml.psm.api.portapimapping.presentation.PortapimappingEditorID"
-            name="%_UI_PortapimappingEditor_label"
-            icon="icons/full/obj16/PortapimappingModelFile.gif"
-            extensions="portapimapping"
-            class="de.uni_paderborn.fujaba.muml.psm.api.portapimapping.presentation.PortapimappingEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.api.portapimapping.presentation.PortapimappingActionBarContributor">
-      </editor>
-   </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated psm -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.presentation.ApiexpressionsModelWizardID"
-            name="%_UI_ApiexpressionsModelWizard_label"
-            class="de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.presentation.ApiexpressionsModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ApiexpressionsModelFile.gif">
-         <description>%_UI_ApiexpressionsModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-null
-null
-null
-null
-null
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated psm -->
-      <editor
-            id="de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.presentation.ApiexpressionsEditorID"
-            name="%_UI_ApiexpressionsEditor_label"
-            icon="icons/full/obj16/ApiexpressionsModelFile.gif"
-            extensions="apiexpressions"
-            class="de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.presentation.ApiexpressionsEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.presentation.ApiexpressionsActionBarContributor">
       </editor>
    </extension>
 
@@ -286,11 +190,6 @@ null
       </wizard>
    </extension>
 
-null
-null
-null
-null
-null
    <extension point="org.eclipse.ui.editors">
       <!-- @generated psm -->
       <editor
@@ -300,6 +199,62 @@ null
             extensions="instance"
             class="de.uni_paderborn.fujaba.muml.psm.instance.presentation.InstanceEditor"
             contributorClass="de.uni_paderborn.fujaba.muml.psm.instance.presentation.InstanceActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated psm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingModelWizardID"
+            name="%_UI_PortapimappingModelWizard_label"
+            class="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PortapimappingModelFile.gif">
+         <description>%_UI_PortapimappingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated psm -->
+      <editor
+            id="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingEditorID"
+            name="%_UI_PortapimappingEditor_label"
+            icon="icons/full/obj16/PortapimappingModelFile.gif"
+            extensions="portapimapping"
+            class="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingEditor"
+            contributorClass="de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation.PortapimappingActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated psm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsModelWizardID"
+            name="%_UI_ApiexpressionsModelWizard_label"
+            class="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ApiexpressionsModelFile.gif">
+         <description>%_UI_ApiexpressionsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated psm -->
+      <editor
+            id="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsEditorID"
+            name="%_UI_ApiexpressionsEditor_label"
+            icon="icons/full/obj16/ApiexpressionsModelFile.gif"
+            extensions="apiexpressions"
+            class="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsEditor"
+            contributorClass="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsActionBarContributor">
       </editor>
    </extension>
 

@@ -155,120 +155,6 @@
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>
-  <eSubpackages name="api" nsURI="http://www.fujaba.de/muml/psm/api/0.4.0/" nsPrefix="api">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The software package contains the meta-model for specification a software platform. It can be used to describe the API of a concrete target platform.&#xD;&#xA;This package itself does not contain any class. Instead it contains more subpackages for different viewpoints."/>
-    </eAnnotations>
-    <eSubpackages name="portapimapping" nsURI="http://www.fujaba.de/muml/psm/api/portapimapping/0.4.0/"
-        nsPrefix="portapimapping">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This package describes the informations that are needed to model a mapping from continuouse ports in MechatronicUML to api-commands. The ports of a continuourse component can be mapped to an expression, which can e.g. be a call of an api-command."/>
-      </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="PortApiMapping" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents the mapping of a muml-model. The continuous port from that model will be mapped to an expression, that should be executet, when the continuours ports send/recieve values."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1"
-            eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ContinuousPortInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The continuous port, that will be mapped to an expression."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="execCommand" lowerBound="1"
-            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-            containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The command to which a continuous port will be mapped. This command is executed each time, the continuous port is queried."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
-            eType="#//api/portapimapping/MappingRepository" eOpposite="#//api/portapimapping/MappingRepository/portApiMappings">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The repository to which the mapping belongs."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="initCommand" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-            containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A optional command which has to be executed before any other api-command can be executed. For example some sonsors and actuators require an initial api-command."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="MappingRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class orders the mappings of a port. It is used to declare port mappings that assign api-commands to a conutinous port."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="portApiMappings" upperBound="-1"
-            eType="#//api/portapimapping/PortApiMapping" containment="true" eOpposite="#//api/portapimapping/PortApiMapping/repository">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The mapping of a port, that assigns a api-command to a continuous port."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-            eType="#//Import" containment="true"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="apiexpressions" nsURI="http://www.fujaba.de/muml/psm/api/apiexpressions/0.4.0/"
-        nsPrefix="apiexpressions">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This package contains all expressions, which are used to model a call of an api-command with actual parameters."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-      </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="APICallExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="ParameterBindingForEveryParameter"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents an api call. It has an actual parameter for each formal parameter of an api-command. Inside an actual parameter a concrete value will be mapped to the formal parameters of an api-command from the swplatform-package."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="apiCommand" lowerBound="1"
-            eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.ecore#//APICommand">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The APICommand to which this expression belongs."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings"
-            upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding"
-            containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The mapping where an actual parameter will be bound to a formal parameter."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EnumerationValueExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents an EnumerationValue at runtime. At runtime the Enumeration is bound to one of its possible values. This means, that a concrete EnumerationValue will be mapped to the Enumeration from the swplatform-package."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="enumValue" lowerBound="1"
-            eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.ecore#//EnumerationValue">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The EnumerationValue to which this expression belongs."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OnlyInPortsAllowed"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents an expression, that contains a continuous port instance. In that way an api-command of an actuator can access the new value of the actuator."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="OnlyInPortsAllowed" value="self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN"/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="continuousPort" lowerBound="1"
-            eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ContinuousPortInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The continuous port instance that belongs to the expression."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
   <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/psm/instance/0.4.0/"
       nsPrefix="instance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -289,6 +175,115 @@
           containment="true" eOpposite="#//realtimestatechart/realtimestatechartparameterbinding/RealtimeStatechartParameterBinding/portInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The parameter bindings for each parameter of the statechart of the port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="portapimapping" nsURI="http://www.fujaba.de/muml/psm/portapimapping/0.4.0/"
+      nsPrefix="portapimapping">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package describes the informations that are needed to model a mapping from continuouse ports in MechatronicUML to api-commands. The ports of a continuourse component can be mapped to an expression, which can e.g. be a call of an api-command."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="PortApiMapping" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents the mapping of a muml-model. The continuous port from that model will be mapped to an expression, that should be executet, when the continuours ports send/recieve values."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ContinuousPortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The continuous port, that will be mapped to an expression."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="execCommand" lowerBound="1"
+          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The command to which a continuous port will be mapped. This command is executed each time, the continuous port is queried."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+          eType="#//portapimapping/MappingRepository" eOpposite="#//portapimapping/MappingRepository/portApiMappings">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The repository to which the mapping belongs."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initCommand" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A optional command which has to be executed before any other api-command can be executed. For example some sonsors and actuators require an initial api-command."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MappingRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class orders the mappings of a port. It is used to declare port mappings that assign api-commands to a conutinous port."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portApiMappings" upperBound="-1"
+          eType="#//portapimapping/PortApiMapping" containment="true" eOpposite="#//portapimapping/PortApiMapping/repository">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The mapping of a port, that assigns a api-command to a continuous port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+          eType="#//Import" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="apiexpressions" nsURI="http://www.fujaba.de/muml/psm/apiexpressions/0.4.0/"
+      nsPrefix="apiexpressions">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package contains all expressions, which are used to model a call of an api-command with actual parameters."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="APICallExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ParameterBindingForEveryParameter"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an api call. It has an actual parameter for each formal parameter of an api-command. Inside an actual parameter a concrete value will be mapped to the formal parameters of an api-command from the swplatform-package."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="apiCommand" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.ecore#//APICommand">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The APICommand to which this expression belongs."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The mapping where an actual parameter will be bound to a formal parameter."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumerationValueExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an EnumerationValue at runtime. At runtime the Enumeration is bound to one of its possible values. This means, that a concrete EnumerationValue will be mapped to the Enumeration from the swplatform-package."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="enumValue" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.ecore#//EnumerationValue">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The EnumerationValue to which this expression belongs."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="OnlyInPortsAllowed"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an expression, that contains a continuous port instance. In that way an api-command of an actuator can access the new value of the actuator."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="OnlyInPortsAllowed" value="self.continuousPort.portType.oclAsType(component::DirectedTypedPort).kind = component::PortDirectionKind::IN"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="continuousPort" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ContinuousPortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The continuous port instance that belongs to the expression."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

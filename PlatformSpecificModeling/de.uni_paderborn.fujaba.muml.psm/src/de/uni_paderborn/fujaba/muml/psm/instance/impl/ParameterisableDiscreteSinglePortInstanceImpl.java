@@ -2,20 +2,25 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.instance.impl;
 
+import de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.psm.instance.ParameterisableDiscreteSinglePortInstance;
+
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimeStatechartParameterBinding;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl;
-import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.psm.instance.ParameterisableDiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimeStatechartParameterBinding;
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
 
 /**
  * <!-- begin-user-doc -->

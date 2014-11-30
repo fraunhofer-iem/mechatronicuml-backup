@@ -79,43 +79,40 @@
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Api" basePackage="de.uni_paderborn.fujaba.muml.psm"
-        disposableProviderFactory="true" ecorePackage="psm.ecore#//api">
-      <nestedGenPackages prefix="Portapimapping" basePackage="de.uni_paderborn.fujaba.muml.psm.api"
-          disposableProviderFactory="true" ecorePackage="psm.ecore#//api/portapimapping">
-        <genClasses ecoreClass="psm.ecore#//api/portapimapping/PortApiMapping">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/PortApiMapping/port"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/PortApiMapping/execCommand"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/PortApiMapping/repository"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/PortApiMapping/initCommand"/>
-        </genClasses>
-        <genClasses ecoreClass="psm.ecore#//api/portapimapping/MappingRepository">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/MappingRepository/portApiMappings"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/portapimapping/MappingRepository/imports"/>
-        </genClasses>
-      </nestedGenPackages>
-      <nestedGenPackages prefix="Apiexpressions" basePackage="de.uni_paderborn.fujaba.muml.psm.api"
-          disposableProviderFactory="true" ecorePackage="psm.ecore#//api/apiexpressions">
-        <genClasses ecoreClass="psm.ecore#//api/apiexpressions/APICallExpression">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference psm.ecore#//api/apiexpressions/APICallExpression/apiCommand"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//api/apiexpressions/APICallExpression/parameterBindings"/>
-        </genClasses>
-        <genClasses ecoreClass="psm.ecore#//api/apiexpressions/EnumerationValueExpression">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference psm.ecore#//api/apiexpressions/EnumerationValueExpression/enumValue"/>
-        </genClasses>
-        <genClasses ecoreClass="psm.ecore#//api/apiexpressions/ContinuousPortExpression">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference psm.ecore#//api/apiexpressions/ContinuousPortExpression/continuousPort"/>
-        </genClasses>
-      </nestedGenPackages>
-    </nestedGenPackages>
     <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.psm"
         disposableProviderFactory="true" ecorePackage="psm.ecore#//instance">
       <genClasses ecoreClass="psm.ecore#//instance/ParameterisableDiscreteSinglePortInstance">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//instance/ParameterisableDiscreteSinglePortInstance/bindings"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Portapimapping" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//portapimapping">
+      <genClasses ecoreClass="psm.ecore#//portapimapping/PortApiMapping">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/port"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/execCommand"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/repository"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/PortApiMapping/initCommand"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//portapimapping/MappingRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/MappingRepository/portApiMappings"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//portapimapping/MappingRepository/imports"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Apiexpressions" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//apiexpressions">
+      <genClasses ecoreClass="psm.ecore#//apiexpressions/APICallExpression">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//apiexpressions/APICallExpression/apiCommand"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//apiexpressions/APICallExpression/parameterBindings"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//apiexpressions/EnumerationValueExpression">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//apiexpressions/EnumerationValueExpression/enumValue"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//apiexpressions/ContinuousPortExpression">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//apiexpressions/ContinuousPortExpression/continuousPort"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

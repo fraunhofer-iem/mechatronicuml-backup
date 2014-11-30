@@ -57,33 +57,25 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated psm -->
       <package
-            uri="http://www.fujaba.de/muml/psm/api/portapimapping/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingPackage"
-            genModel="model/psm.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated psm -->
-      <package
-            uri="http://www.fujaba.de/muml/psm/api/apiexpressions/0.4.0/"
-            class="de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage"
-            genModel="model/psm.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated psm -->
-      <package
             uri="http://www.fujaba.de/muml/psm/instance/0.4.0/"
             class="de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage"
             genModel="model/psm.genmodel"/>
    </extension>
-   <extension
-         point="org.eclipse.emf.ecore.generated_package">
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
       <package
-            class="de.uni_paderborn.fujaba.muml.psm.api.ApiPackage"
-            genModel="model/psm.genmodel"
-            uri="http://www.fujaba.de/muml/psm/api/0.4.0/">
-      </package>
+            uri="http://www.fujaba.de/muml/psm/portapimapping/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/apiexpressions/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage"
+            genModel="model/psm.genmodel"/>
    </extension>
 
 </plugin>

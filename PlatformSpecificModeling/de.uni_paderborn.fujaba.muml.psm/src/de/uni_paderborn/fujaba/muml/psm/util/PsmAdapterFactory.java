@@ -2,13 +2,14 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.util;
 
+import de.uni_paderborn.fujaba.muml.psm.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.psm.Import;
-import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

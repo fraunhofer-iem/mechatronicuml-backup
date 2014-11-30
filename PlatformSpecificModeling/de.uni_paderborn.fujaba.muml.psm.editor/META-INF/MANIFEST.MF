@@ -9,19 +9,16 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.presentation,
- de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.presentation,
- de.uni_paderborn.fujaba.muml.psm.api.portapimapping.presentation,
- de.uni_paderborn.fujaba.muml.psm.api.presentation,
+ de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation,
  de.uni_paderborn.fujaba.muml.psm.instance.presentation,
+ de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation,
  de.uni_paderborn.fujaba.muml.psm.presentation,
  de.uni_paderborn.fujaba.muml.psm.properties.presentation,
  de.uni_paderborn.fujaba.muml.psm.realtimestatechart.presentation,
  de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.presentation,
- de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.presentation,
- de.uni_paderborn.fujaba.muml.psm.swplatform.presentation
+ de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.psm.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
@@ -29,5 +26,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.core.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.hardware.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.swplatform.edit;visibility:=reexport
+ de.uni_paderborn.fujaba.muml.swplatform.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.psm;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.psm.edit;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

@@ -2,37 +2,61 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.instance.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
+
 import de.uni_paderborn.fujaba.muml.psm.PsmPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationPackageImpl;
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.ApiexpressionsPackage;
-import de.uni_paderborn.fujaba.muml.psm.api.apiexpressions.impl.ApiexpressionsPackageImpl;
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortapimappingPackage;
-import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.impl.PortapimappingPackageImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
+
+import de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.impl.PsmPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.psm.instance.ParameterisableDiscreteSinglePortInstance;
+
+import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
+
+import de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortapimappingPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.impl.RealtimestatechartPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimestatechartparameterPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimestatechartparameterbindingPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -218,7 +242,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
+		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage_1 = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
 		RealtimestatechartparameterbindingPackage theRealtimestatechartparameterbindingPackage = (RealtimestatechartparameterbindingPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI);
 
 		// Create type parameters
@@ -226,7 +250,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		parameterisableDiscreteSinglePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscreteSinglePortInstance());
+		parameterisableDiscreteSinglePortInstanceEClass.getESuperTypes().add(theInstancePackage_1.getDiscreteSinglePortInstance());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(parameterisableDiscreteSinglePortInstanceEClass, ParameterisableDiscreteSinglePortInstance.class, "ParameterisableDiscreteSinglePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
