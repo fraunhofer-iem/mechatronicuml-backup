@@ -611,6 +611,28 @@
             <element xmi:type="realtimestatechart:Region" href="../../../../RailCab.fujaba#_WnoG8HieEeSg3v-XthdrOg"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZzJAsXieEeSg3v-XthdrOg"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_uQ5MYHigEeSg3v-XthdrOg" type="3042" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_uQ5MYnigEeSg3v-XthdrOg" type="5063"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_uQ5MY3igEeSg3v-XthdrOg" type="5064"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_uQ5MZHigEeSg3v-XthdrOg" type="5065"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_uQ5MZXigEeSg3v-XthdrOg" type="7037">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_uQ5MZnigEeSg3v-XthdrOg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_uQ5MZ3igEeSg3v-XthdrOg"/>
+            </children>
+            <element xmi:type="realtimestatechart:Region" href="../../../../RailCab.fujaba#_uQ0T4HigEeSg3v-XthdrOg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uQ5MYXigEeSg3v-XthdrOg"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_xhVpcHigEeSg3v-XthdrOg" type="3042" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_xhVpcnigEeSg3v-XthdrOg" type="5063"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_xhVpc3igEeSg3v-XthdrOg" type="5064"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_xhVpdHigEeSg3v-XthdrOg" type="5065"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_xhVpdXigEeSg3v-XthdrOg" type="7037">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_xhVpdnigEeSg3v-XthdrOg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_xhVpd3igEeSg3v-XthdrOg"/>
+            </children>
+            <element xmi:type="realtimestatechart:Region" href="../../../../RailCab.fujaba#_xhUbUHigEeSg3v-XthdrOg"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xhVpcXigEeSg3v-XthdrOg"/>
+          </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_ERsEvnYdEeSmgoRxUBQeTA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_ERsEv3YdEeSmgoRxUBQeTA"/>
         </children>

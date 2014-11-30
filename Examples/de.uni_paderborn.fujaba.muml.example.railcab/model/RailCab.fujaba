@@ -5595,6 +5595,16 @@
             <clocks xmi:id="_WnoHB3ieEeSg3v-XthdrOg" name="c2"/>
           </embeddedStatechart>
         </embeddedRegions>
+        <embeddedRegions xmi:id="_uQ0T4HigEeSg3v-XthdrOg" priority="6">
+          <embeddedStatechart xmi:id="_uQ1iAHigEeSg3v-XthdrOg" name="RMPort RTSC" behavioralElement="_ACUToHSQEeSCfN0RxbcB5A">
+            <states xmi:id="_uQ1iAXigEeSg3v-XthdrOg" name="Idle" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_xhUbUHigEeSg3v-XthdrOg" priority="7">
+          <embeddedStatechart xmi:id="_xhVCYHigEeSg3v-XthdrOg" name="RE Port RTSC" behavioralElement="_Aa39kHSQEeSCfN0RxbcB5A">
+            <states xmi:id="_xhVCYXigEeSg3v-XthdrOg" name="Idle" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_K4CGMFOlEeSaVK1gfdE5pA" name="StrategyExchange_sender" behavioralElement="_BdVtYVOlEeSaVK1gfdE5pA">
@@ -14318,23 +14328,26 @@
           <upperBound xmi:id="_rwhREFOjEeSaVK1gfdE5pA"/>
         </cardinality>
       </ports>
-      <ports xsi:type="reconfiguration:ReconfigurationMessagePort" xmi:id="_ACUToHSQEeSCfN0RxbcB5A" name="reconfMsg" senderMessageTypes="_DyFJ8HSQEeSCfN0RxbcB5A">
+      <ports xsi:type="reconfiguration:ReconfigurationMessagePort" xmi:id="_ACUToHSQEeSCfN0RxbcB5A" name="reconfMsg" behavior="_uQ1iAHigEeSg3v-XthdrOg" senderMessageTypes="_DyFJ8HSQEeSCfN0RxbcB5A" receiverMessageTypes="_qlvYJHShEeSlCdM66-7ACQ _qlvYJXShEeSlCdM66-7ACQ _qlvYJnShEeSlCdM66-7ACQ">
         <cardinality xmi:id="_ACU6sHSQEeSCfN0RxbcB5A">
-          <lowerBound xmi:id="_5_kp0HVaEeSLJIytxjzkIg"/>
-          <upperBound xmi:id="_5_kp0XVaEeSLJIytxjzkIg"/>
+          <lowerBound xmi:id="_RNB_IHihEeSg3v-XthdrOg"/>
+          <upperBound xmi:id="_RNDNQHihEeSg3v-XthdrOg"/>
         </cardinality>
+        <receiverMessageBuffer xmi:id="_NwvecHihEeSg3v-XthdrOg" name="buffer" messageType="_qlvYJHShEeSlCdM66-7ACQ _qlvYJXShEeSlCdM66-7ACQ _qlvYJnShEeSlCdM66-7ACQ">
+          <bufferSize xmi:id="_OPczsHihEeSg3v-XthdrOg" infinity="true"/>
+        </receiverMessageBuffer>
         <interfaceEntries xmi:id="_XL5eUHSQEeSCfN0RxbcB5A" description="RailCab stops being convoy coordinator." messageType="_DyFJ8HSQEeSCfN0RxbcB5A" reconfigurationMessageType="REQUEST">
           <expectedResponseTime xmi:id="_z0EYoHSQEeSCfN0RxbcB5A">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_01FJsHSQEeSCfN0RxbcB5A" value="250"/>
           </expectedResponseTime>
         </interfaceEntries>
       </ports>
-      <ports xsi:type="reconfiguration:ReconfigurationExecutionPort" xmi:id="_Aa39kHSQEeSCfN0RxbcB5A" name="reconfExec" receiverMessageTypes="_IDFsIHSQEeSCfN0RxbcB5A _Jro-UHSQEeSCfN0RxbcB5A">
+      <ports xsi:type="reconfiguration:ReconfigurationExecutionPort" xmi:id="_Aa39kHSQEeSCfN0RxbcB5A" name="reconfExec" behavior="_xhVCYHigEeSg3v-XthdrOg" senderMessageTypes="_qlvYKXShEeSlCdM66-7ACQ _qlvYMnShEeSlCdM66-7ACQ" receiverMessageTypes="_IDFsIHSQEeSCfN0RxbcB5A _Jro-UHSQEeSCfN0RxbcB5A _qlvYKHShEeSlCdM66-7ACQ _qlvYKXShEeSlCdM66-7ACQ">
         <cardinality xmi:id="_Aa4koHSQEeSCfN0RxbcB5A">
           <lowerBound xmi:id="_5aeYsHVaEeSLJIytxjzkIg"/>
           <upperBound xmi:id="_5aeYsXVaEeSLJIytxjzkIg"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_8dVUgHSQEeSCfN0RxbcB5A" name="buffer" messageType="_IDFsIHSQEeSCfN0RxbcB5A _Jro-UHSQEeSCfN0RxbcB5A">
+        <receiverMessageBuffer xmi:id="_8dVUgHSQEeSCfN0RxbcB5A" name="buffer" messageType="_IDFsIHSQEeSCfN0RxbcB5A _Jro-UHSQEeSCfN0RxbcB5A _qlvYKHShEeSlCdM66-7ACQ _qlvYKXShEeSlCdM66-7ACQ">
           <bufferSize xmi:id="_-2mR8HSQEeSCfN0RxbcB5A" infinity="true"/>
         </receiverMessageBuffer>
         <interfaceEntries xmi:id="__g3W8HSQEeSCfN0RxbcB5A" description="Creates new port instances for dealing with an additional member driving at first position." messageType="_IDFsIHSQEeSCfN0RxbcB5A">
