@@ -5049,7 +5049,7 @@
                     <parameters xmi:id="_4bh73HidEeSg3v-XthdrOg" name="multiRoleInstance" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
                   </operations>
                   <variables xmi:id="_4bh73XidEeSg3v-XthdrOg" name="curSubRole" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
-                  <variables xmi:id="_4bh73nidEeSg3v-XthdrOg" name="tmpSubRole" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
+                  <variables xmi:id="_4bh73nidEeSg3v-XthdrOg" name="tmpCPort" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
                   <transitions xmi:id="_4bh743idEeSg3v-XthdrOg" priority="2" target="_4bh8hHidEeSg3v-XthdrOg" source="_4bh8gHidEeSg3v-XthdrOg">
                     <synchronization xmi:id="_4bh75HidEeSg3v-XthdrOg" syncChannel="_4bh9G3idEeSg3v-XthdrOg" kind="RECEIVE"/>
                     <action xmi:id="_4bh75XidEeSg3v-XthdrOg" name="memberPossible := isMemberPossible() ;">
@@ -5091,9 +5091,9 @@
                     </guard>
                   </transitions>
                   <transitions xmi:id="_4bh7_XidEeSg3v-XthdrOg" priority="1" target="_4bh8lnidEeSg3v-XthdrOg" source="_4bh8inidEeSg3v-XthdrOg" clockResets="_4bh8o3idEeSg3v-XthdrOg">
-                    <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_4bh7_nidEeSg3v-XthdrOg" operator="EQUAL">
-                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh7_3idEeSg3v-XthdrOg" typedNamedElement="_4bh73nidEeSg3v-XthdrOg"/>
-                      <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_4bh8AHidEeSg3v-XthdrOg" value="null"/>
+                    <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_q8pFAHiuEeSM8KwkAFk8ZA" operator="EQUAL">
+                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_q8pFAXiuEeSM8KwkAFk8ZA" typedNamedElement="_4bh73nidEeSg3v-XthdrOg"/>
+                      <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_q8pFAniuEeSM8KwkAFk8ZA" value="null"/>
                     </guard>
                   </transitions>
                   <transitions xmi:id="_4bh8AXidEeSg3v-XthdrOg" priority="2" target="_4bh8knidEeSg3v-XthdrOg" source="_4bh8inidEeSg3v-XthdrOg">
@@ -5104,7 +5104,7 @@
                       <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh8BXidEeSg3v-XthdrOg" typedNamedElement="_4bh73nidEeSg3v-XthdrOg"/>
                       <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh8BnidEeSg3v-XthdrOg" typedNamedElement="_4bh73XidEeSg3v-XthdrOg"/>
                     </guard>
-                    <action xmi:id="_4bh8B3idEeSg3v-XthdrOg" name="newProfile := getProfile(allProfiles, tmpSubRole)">
+                    <action xmi:id="_4bh8B3idEeSg3v-XthdrOg" name="newProfile := getProfile(allProfiles, tmpCPort)">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_4bh8CHidEeSg3v-XthdrOg">
                         <expressions xsi:type="actionlanguage:Assignment" xmi:id="_4bh8CXidEeSg3v-XthdrOg" assignOperator=":=">
                           <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_4bh8CnidEeSg3v-XthdrOg" callee="_uuWq1_STEeOKmIQk3FL8KA">
@@ -5124,7 +5124,7 @@
                     <synchronization xmi:id="_4bh8EXidEeSg3v-XthdrOg" syncChannel="_4bh9IXidEeSg3v-XthdrOg" kind="RECEIVE">
                       <selectorExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh8EnidEeSg3v-XthdrOg" typedNamedElement="_4bh73nidEeSg3v-XthdrOg"/>
                     </synchronization>
-                    <action xmi:id="_4bh8E3idEeSg3v-XthdrOg" name="tmpSubRole := tmpSubRole.next">
+                    <action xmi:id="_4bh8E3idEeSg3v-XthdrOg" name="tmpCPort := tmpCPort.next">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_4bh8FHidEeSg3v-XthdrOg">
                         <expressions xsi:type="actionlanguage:Assignment" xmi:id="_4bh8FXidEeSg3v-XthdrOg" assignOperator=":=">
                           <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_4bh8FnidEeSg3v-XthdrOg">
@@ -5216,13 +5216,13 @@
                   </transitions>
                   <transitions xmi:id="_4bh8XnidEeSg3v-XthdrOg" priority="2" target="_4bh8inidEeSg3v-XthdrOg" source="_4bh8nnidEeSg3v-XthdrOg" clockResets="_4bh8pHidEeSg3v-XthdrOg">
                     <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh8X3idEeSg3v-XthdrOg" typedNamedElement="_4bh71HidEeSg3v-XthdrOg"/>
-                    <action xmi:id="_4bh8YHidEeSg3v-XthdrOg" name="tmpSubRole := first">
-                      <expressions xsi:type="actionlanguage:Block" xmi:id="_4bh8YXidEeSg3v-XthdrOg">
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_4bh8YnidEeSg3v-XthdrOg" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_4bh8Y3idEeSg3v-XthdrOg">
-                            <position xmi:id="_4bh8ZHidEeSg3v-XthdrOg" kind="FIRST"/>
+                    <action xmi:id="_4bh8YHidEeSg3v-XthdrOg" name="tmpCPort := first">
+                      <expressions xsi:type="actionlanguage:Block" xmi:id="_dHeE8HiuEeSM8KwkAFk8ZA">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_dHeE8XiuEeSM8KwkAFk8ZA" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_dHeE8niuEeSM8KwkAFk8ZA">
+                            <position xmi:id="_dHeE83iuEeSM8KwkAFk8ZA" kind="FIRST"/>
                           </rhs_assignExpression>
-                          <lhs_typedNamedElementExpression xmi:id="_4bh8ZXidEeSg3v-XthdrOg" typedNamedElement="_4bh73nidEeSg3v-XthdrOg"/>
+                          <lhs_typedNamedElementExpression xmi:id="_dHeE9HiuEeSM8KwkAFk8ZA" typedNamedElement="_4bh73nidEeSg3v-XthdrOg"/>
                         </expressions>
                       </expressions>
                     </action>
@@ -5233,7 +5233,7 @@
                       <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh8aXidEeSg3v-XthdrOg" typedNamedElement="_4bh73nidEeSg3v-XthdrOg"/>
                       <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh8anidEeSg3v-XthdrOg" typedNamedElement="_4bh73XidEeSg3v-XthdrOg"/>
                     </guard>
-                    <action xmi:id="_4bh8a3idEeSg3v-XthdrOg" name="newProfile := getProfile(allProfiles, tmpSubRole); tmpSubRole := tmpSubRole.next;">
+                    <action xmi:id="_4bh8a3idEeSg3v-XthdrOg" name="newProfile := getProfile(allProfiles, tmpCPort); tmpCPort := tmpCPort.next;">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_4bh8bHidEeSg3v-XthdrOg">
                         <expressions xsi:type="actionlanguage:Assignment" xmi:id="_4bh8bXidEeSg3v-XthdrOg" assignOperator=":=">
                           <rhs_assignExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_4bh8bnidEeSg3v-XthdrOg">
