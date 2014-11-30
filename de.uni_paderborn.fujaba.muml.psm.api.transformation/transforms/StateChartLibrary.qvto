@@ -2,11 +2,11 @@ import de.uni_paderborn.fujaba.muml.software.transform._blackbox.TimeUnitLibUnit
 
 library StateChartLibrary;
 
-modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype API uses api('http://www.fujaba.de/muml/psm/api/0.4.0/');
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
-modeltype PortMappingModel uses api::portapimapping('http://www.fujaba.de/muml/psm/api/0.4.0/');
-modeltype ApiExpessions uses api::apiexpressions('http://www.fujaba.de/muml/psm/api/0.4.0/');
+
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype APIInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype APIStateChart uses psm::realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');

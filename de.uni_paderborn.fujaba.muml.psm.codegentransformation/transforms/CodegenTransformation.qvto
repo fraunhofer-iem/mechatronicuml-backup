@@ -12,7 +12,6 @@ modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.
 modeltype PSMInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype PSMRealtimeStateChart uses psm::realtimestatechart::realtimestatechartparameterbinding('http://www.fujaba.de/muml/psm/0.4.0/');
 
-//modeltype PSMPackage uses psm('http://www.fujaba.de/muml/psm/0.1.0');
 modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype Codegen uses codegen('http://www.fujaba.de/muml/psm/codegen/0.1.0');
 modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.0/');

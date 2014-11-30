@@ -1,10 +1,10 @@
 library APIBindingLibrary;
 
-modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype API uses api('http://www.fujaba.de/muml/psm/api/0.4.0/');
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
-modeltype PortMappingModel uses api::portapimapping('http://www.fujaba.de/muml/psm/api/0.4.0/');
-modeltype ApiExpessions uses api::apiexpressions('http://www.fujaba.de/muml/psm/api/0.4.0/');
+
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype APIInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype APIStateChart uses psm::realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
@@ -24,8 +24,8 @@ property timeBetweenApiExecsName : String = "TimeBetweenApiExececutions";
 * Creates the ParameterBinding for a ParametriableDiscreteSinglePortInstance
 * These ParameterBindings containts the API-Calls and TimeConstraints for the StateCharts of the "sensor/actuator" component
 **/
-helper createPortBindingParameter(in mappingRepository:API::portapimapping::MappingRepository, inout newPortInstance:PSM::instance::ParameterisableDiscreteSinglePortInstance, in oldPortInstance:Muml::instance::ContinuousPortInstance){
-	var portMapping : API::portapimapping::PortApiMapping;
+helper createPortBindingParameter(in mappingRepository:PortMappingModel::MappingRepository, inout newPortInstance:PSM::instance::ParameterisableDiscreteSinglePortInstance, in oldPortInstance:Muml::instance::ContinuousPortInstance){
+	var portMapping : PortMappingModel::PortApiMapping;
 	portMapping := mappingRepository.portApiMappings->select(mapp|mapp.port = oldPortInstance)->any(true);
 	//portMapping:=API::portapimapping::PortApiMapping.allInstances()->select(mapp|mapp.port.name = oldPortInstance.name and mapp.port.componentInstance.name=oldPortInstance.componentInstance.name)->any(true);
 	var apiSignature:APIStateChart::realtimestatechartparameter::APICallParameter;

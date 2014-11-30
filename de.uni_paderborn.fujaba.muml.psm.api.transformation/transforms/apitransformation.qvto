@@ -2,11 +2,11 @@ import StateChartLibrary;
 import APIBindingLibrary;
 
 transformation apitransformation(inout muml : Modelinstance, in mapp : PortMappingModel);
-modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype API uses api('http://www.fujaba.de/muml/psm/api/0.4.0/');
 modeltype SoftPlattform uses swplatform('http://www.fujaba.de/muml/swplatform/0.4.0/');
-modeltype PortMappingModel uses api::portapimapping('http://www.fujaba.de/muml/psm/api/0.4.0/');
-modeltype ApiExpessions uses api::apiexpressions('http://www.fujaba.de/muml/psm/api/0.4.0/');
+
+modeltype PSM uses psm('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype PortMappingModel uses psm::portapimapping('http://www.fujaba.de/muml/psm/0.4.0/');
+modeltype ApiExpessions uses psm::apiexpressions('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype APIInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype APIStateChart uses psm::realtimestatechart('http://www.fujaba.de/muml/psm/0.4.0/');
@@ -35,7 +35,7 @@ property apiMessageRepository:Muml::msgtype::MessageTypeRepository = object Muml
 };
 
 //the Mapping Repsitory which is created
-property apiMappingRepository:API::portapimapping::MappingRepository = null;
+property apiMappingRepository:PortMappingModel::MappingRepository = null;
 
 //the fujaba RootNode
 property  rootNode : Modelinstance::RootNode = null;
@@ -44,7 +44,7 @@ main() {
 	// Muml::instance::AtomicComponentInstance.allInstances();
  	rootNode := muml.rootObjects()[RootNode]->any(true);
  	rootNode.settingUpTheStage();
- 	apiMappingRepository:=mapp.rootObjects()[API::portapimapping::MappingRepository]->any(true);
+ 	apiMappingRepository:=mapp.rootObjects()[PortMappingModel::MappingRepository]->any(true);
  	//change Components
  	Muml::component::AtomicComponent.allInstances()->map ChangeAtomicComponent();
  	 Muml::component::StructuredComponent.allInstances()->map ChangeHybridStructuredComponent2StructuredDiscreteComponent();
