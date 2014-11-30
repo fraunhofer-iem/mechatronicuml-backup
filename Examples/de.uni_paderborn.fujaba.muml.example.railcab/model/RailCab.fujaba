@@ -4956,8 +4956,7 @@
       <clocks xmi:id="_uuRGgFOhEeSaVK1gfdE5pA" name="c"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_dfWRgFOjEeSaVK1gfdE5pA" name="ConvoyManagement" behavioralElement="_OE_0UO6CEeOKI4bZ_bxwuQ">
-      <variables xmi:id="_MXNtcHimEeSg3v-XthdrOg" name="curCPort" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
-      <variables xmi:id="_4bh73XidEeSg3v-XthdrOg" name="curSubRole" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
+      <variables xmi:id="_4bh73XidEeSg3v-XthdrOg" name="curCPort" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
       <variables xmi:id="_OssXEHimEeSg3v-XthdrOg" name="curPPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
       <variables xmi:id="_4bh733idEeSg3v-XthdrOg" name="maxNumMembers" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_4bh74HidEeSg3v-XthdrOg" value="3"/>
@@ -5149,7 +5148,7 @@
                         <value xsi:type="sdcec:LiteralExpression" xmi:id="_4bh8InidEeSg3v-XthdrOg" value="200"/>
                       </bound>
                     </clockConstraints>
-                    <action xmi:id="_4bh8I3idEeSg3v-XthdrOg" name="deleteSRProfiles(curSubRole,allProfiles); members := members-1">
+                    <action xmi:id="_4bh8I3idEeSg3v-XthdrOg" name="deleteSRProfiles(curCPort,allProfiles); members := members-1; curCPort := null;">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_4bh8JHidEeSg3v-XthdrOg">
                         <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_4bh8JXidEeSg3v-XthdrOg" callee="_uuWq7_STEeOKmIQk3FL8KA">
                           <ownedParameterBindings xmi:id="_4bh8JnidEeSg3v-XthdrOg" parameter="_uuWq8_STEeOKmIQk3FL8KA">
@@ -5175,7 +5174,7 @@
                   </transitions>
                   <transitions xmi:id="_4bh8NXidEeSg3v-XthdrOg" priority="1" target="_4bh8f3idEeSg3v-XthdrOg" source="_4bh8lnidEeSg3v-XthdrOg">
                     <synchronization xmi:id="_4bh8NnidEeSg3v-XthdrOg" syncChannel="_4bh9InidEeSg3v-XthdrOg" kind="RECEIVE"/>
-                    <action xmi:id="_4bh8N3idEeSg3v-XthdrOg" name="curSubRole := null;">
+                    <action xmi:id="_4bh8N3idEeSg3v-XthdrOg" name="curCPort := null;">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_4bh8OHidEeSg3v-XthdrOg">
                         <expressions xsi:type="actionlanguage:Assignment" xmi:id="_4bh8OXidEeSg3v-XthdrOg" assignOperator=":=">
                           <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_4bh8OnidEeSg3v-XthdrOg" value="null"/>
@@ -5198,7 +5197,7 @@
                     <guard xsi:type="sdcec:UnaryExpression" xmi:id="_4bh8U3idEeSg3v-XthdrOg">
                       <enclosedExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_4bh8VHidEeSg3v-XthdrOg" typedNamedElement="_4bh71HidEeSg3v-XthdrOg"/>
                     </guard>
-                    <action xmi:id="_4bh8VXidEeSg3v-XthdrOg" name="newProfile := getProfile(allProfiles, curSubRole)">
+                    <action xmi:id="_4bh8VXidEeSg3v-XthdrOg" name="newProfile := getProfile(allProfiles, curCPort)">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_4bh8VnidEeSg3v-XthdrOg">
                         <expressions xsi:type="actionlanguage:Assignment" xmi:id="_4bh8V3idEeSg3v-XthdrOg" assignOperator=":=">
                           <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_4bh8WHidEeSg3v-XthdrOg" callee="_uuWq1_STEeOKmIQk3FL8KA">
