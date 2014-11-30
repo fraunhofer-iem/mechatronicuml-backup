@@ -3654,7 +3654,7 @@
             </transitions>
             <transitions xmi:id="_H8lcq2UbEeSC9fIvMvldiA" priority="2" target="_H8lc1mUbEeSC9fIvMvldiA" source="_H8lczGUbEeSC9fIvMvldiA" clockResets="_H8lc32UbEeSC9fIvMvldiA" urgent="false">
               <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_H8lcrGUbEeSC9fIvMvldiA" typedNamedElement="_H8lcmWUbEeSC9fIvMvldiA"/>
-              <action xmi:id="_H8lcrWUbEeSC9fIvMvldiA" name="success := INT&lt;0, 1>;">
+              <action xmi:id="_H8lcrWUbEeSC9fIvMvldiA" name="success := createPeerPort();">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_H8lcrmUbEeSC9fIvMvldiA">
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_H8lcr2UbEeSC9fIvMvldiA" assignOperator=":=">
                     <rhs_assignExpression xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_6qpSAHVYEeSLJIytxjzkIg" reconfigurationRule="_uDztoHP1EeSVBu1w64eiwg"/>
@@ -3807,7 +3807,7 @@
                   </expressions>
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_QCAbpHiPEeSg3v-XthdrOg" assignOperator=":=">
                     <rhs_assignExpression xsi:type="sdcec:UnaryExpression" xmi:id="_QCAbpXiPEeSg3v-XthdrOg">
-                      <enclosedExpression xsi:type="sdcec:LiteralExpression" xmi:id="_QCAbpniPEeSg3v-XthdrOg" value="true"/>
+                      <enclosedExpression xsi:type="expression:EvaluateStructuralConditionExpression" xmi:id="_uUlh8HiSEeSg3v-XthdrOg" structuralCondition="_eHozkHF-EeS9z6ZImkcyfA"/>
                     </rhs_assignExpression>
                     <lhs_typedNamedElementExpression xmi:id="_QCAbp3iPEeSg3v-XthdrOg" typedNamedElement="_wmeeUHiNEeSg3v-XthdrOg"/>
                   </expressions>
@@ -3823,7 +3823,7 @@
                   </expressions>
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_ZFE-pHiPEeSg3v-XthdrOg" assignOperator=":=">
                     <rhs_assignExpression xsi:type="sdcec:UnaryExpression" xmi:id="_ZFE-pXiPEeSg3v-XthdrOg">
-                      <enclosedExpression xsi:type="sdcec:LiteralExpression" xmi:id="_ZFE-pniPEeSg3v-XthdrOg" value="true"/>
+                      <enclosedExpression xsi:type="expression:EvaluateStructuralConditionExpression" xmi:id="_zYmOYHiSEeSg3v-XthdrOg" structuralCondition="_K4NxUHF-EeS9z6ZImkcyfA"/>
                     </rhs_assignExpression>
                     <lhs_typedNamedElementExpression xmi:id="_ZFE-p3iPEeSg3v-XthdrOg" typedNamedElement="_wmeeUHiNEeSg3v-XthdrOg"/>
                   </expressions>
@@ -3894,7 +3894,9 @@
                 <message xmi:id="_GNHIMHiREeSg3v-XthdrOg" instanceOf="_qlvYKHShEeSlCdM66-7ACQ"/>
               </events>
               <action xmi:id="_HwMrkHiREeSg3v-XthdrOg" name="applyCoordinationStrategy()">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_I6oeYHiREeSg3v-XthdrOg"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_I6oeYHiREeSg3v-XthdrOg">
+                  <expressions xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_FgkgYHiTEeSg3v-XthdrOg" reconfigurationRule="_2piKAF0PEeSFHL4TxJ3n2Q"/>
+                </expressions>
               </action>
             </transitions>
             <transitions xmi:id="_yVYv0HiQEeSg3v-XthdrOg" priority="3" target="_3_o-AHb9EeSg3v-XthdrOg" source="_m7V1wHiNEeSg3v-XthdrOg">
@@ -3906,7 +3908,9 @@
                 <message xmi:id="_Pei3UHiREeSg3v-XthdrOg" instanceOf="_qlvYKHShEeSlCdM66-7ACQ"/>
               </events>
               <action xmi:id="_MTROIHiREeSg3v-XthdrOg" name="applyMemberStrategy()">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_M8QgwHiREeSg3v-XthdrOg"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_M8QgwHiREeSg3v-XthdrOg">
+                  <expressions xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_OloncHiTEeSg3v-XthdrOg" reconfigurationRule="_x50WcGW-EeS5ftsnMSKF0A"/>
+                </expressions>
               </action>
             </transitions>
             <transitions xmi:id="_5C7l4HiQEeSg3v-XthdrOg" priority="4" target="_3_o-AHb9EeSg3v-XthdrOg" source="_m7V1wHiNEeSg3v-XthdrOg">
@@ -3918,7 +3922,9 @@
                 <message xmi:id="_UjnTsHiREeSg3v-XthdrOg" instanceOf="_qlvYKHShEeSlCdM66-7ACQ"/>
               </events>
               <action xmi:id="_VoWuMHiREeSg3v-XthdrOg" name="disableConvoyBuildUp()">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_WUhQoHiREeSg3v-XthdrOg"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_WUhQoHiREeSg3v-XthdrOg">
+                  <expressions xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_QyAYYHiTEeSg3v-XthdrOg" reconfigurationRule="_8ZvJAHQDEeSHw7AsWgY3fg"/>
+                </expressions>
               </action>
             </transitions>
             <transitions xmi:id="_7iv3QHiQEeSg3v-XthdrOg" priority="5" target="_3_o-AHb9EeSg3v-XthdrOg" source="_m7V1wHiNEeSg3v-XthdrOg">
@@ -3930,7 +3936,9 @@
                 <message xmi:id="_kajXMHiREeSg3v-XthdrOg" instanceOf="_qlvYKHShEeSlCdM66-7ACQ"/>
               </events>
               <action xmi:id="_ZN6foHiREeSg3v-XthdrOg" name="enableConvoyBuildUp()">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_aA_iYHiREeSg3v-XthdrOg"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_aA_iYHiREeSg3v-XthdrOg">
+                  <expressions xsi:type="expression:ReconfigurationRuleCallExpression" xmi:id="_TIoRgHiTEeSg3v-XthdrOg" reconfigurationRule="_swC8UHPMEeS2jMQrzOH4MA"/>
+                </expressions>
               </action>
             </transitions>
             <states xmi:id="_3_o-AHb9EeSg3v-XthdrOg" name="Idle" outgoingTransitions="_rZI2wHiNEeSg3v-XthdrOg _r43fsHiNEeSg3v-XthdrOg _sXswwHiNEeSg3v-XthdrOg _syUQMHiNEeSg3v-XthdrOg" incomingTransitions="_qCdFwHiPEeSg3v-XthdrOg _pL3mkHiQEeSg3v-XthdrOg _tMj00HiQEeSg3v-XthdrOg _yVYv0HiQEeSg3v-XthdrOg _5C7l4HiQEeSg3v-XthdrOg _7iv3QHiQEeSg3v-XthdrOg" initial="true">
