@@ -18,14 +18,7 @@ import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//insta
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore" as actionlanguage
 
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//instance" as psminstance
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//realtimestatechart/realtimestatechartparameterbinding" as realtimestatechartparameterbinding
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//realtimestatechart/realtimestatechartparameter" as realtimestatechartparameter
 import "platform:/resource/de.uni_paderborn.fujaba.muml.swplatform/model/swplatform.ecore" as swplatform
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//api/portapimapping" as portapimapping
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//properties" as properties
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//api/apiexpressions" as apiexpressions
-import "platform:/resource/de.uni_paderborn.fujaba.muml.psm/model/psm.ecore#//allocation" as allocation
 
 
 
