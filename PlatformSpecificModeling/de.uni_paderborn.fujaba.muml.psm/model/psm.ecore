@@ -1,45 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psm" nsURI="http://www.fujaba.de/muml/psm/0.4.0/" nsPrefix="psm">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="This package provides all Classes for modeling a platform-specific model."/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Import">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is necessary to allow the import of models within Xtext editors."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The URI of the imported model."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eSubpackages name="allocation" nsURI="http://www.fujaba.de/muml/psm/allocation/0.4.0/"
       nsPrefix="allocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introdused."/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="SystemAllocation" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an allocation of a Component Instance Configuration to a Hardware Platform Instance Configuration."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocations" lowerBound="1"
-          upperBound="-1" eType="#//allocation/Allocation" containment="true"/>
+          upperBound="-1" eType="#//allocation/Allocation" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The different allocations that have been defined for this System Allocation."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Allocation" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents an allocation of exactly one Component Instance to exactly one Resource Instance."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The allocated Component Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The allocated Resource Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="properties" nsURI="http://www.fujaba.de/muml/psm/properties/0.4.0/"
       nsPrefix="properties">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides classes to annotate component with non-functional requirements."/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceExecutionProperties">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class defines a mapping between a Component Instances and its execution requirements, e.g., memory consumption."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Component Instance that requires the non-functional requirements."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" upperBound="-1"
-          eType="#//properties/WCETpair" containment="true"/>
+          eType="#//properties/WCETpair" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Component Instance's WCET on different Resource Instances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="codeMem" upperBound="-1"
-          eType="#//properties/MemoryPair" containment="true"/>
+          eType="#//properties/MemoryPair" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Component Instance's memory consumption on different Resource Instances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ramMem" upperBound="-1"
-          eType="#//properties/MemoryPair" containment="true"/>
+          eType="#//properties/MemoryPair" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Component Instance's required RAM on different Resource Instances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WCETpair">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Worst-Case-Execution Time of a Component Instance, if its allocated to a specific Resource Instance."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="amount" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The amount of the WCET."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The used Resource Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MemoryPair">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The amount of required memory of a Component Instance, if its allocated to a specific Resource Instance."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="amount" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The required amount of memory."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The used Resource Instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/psm/realtimestatechart/0.4.0/"
