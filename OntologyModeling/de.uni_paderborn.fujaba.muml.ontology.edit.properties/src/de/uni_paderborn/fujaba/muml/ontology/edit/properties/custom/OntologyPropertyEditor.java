@@ -36,6 +36,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.uni_paderborn.fujaba.muml.ontology.OntologyExtension;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.dialog.OntologyDialog;
+import de.uni_paderborn.fujaba.muml.ontology.edit.properties.dialog.OntologyDialogFactory;
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
 import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 
@@ -45,7 +46,7 @@ public class OntologyPropertyEditor extends
 	protected Label label;
 	protected Composite listContainer;
 	protected String currentValue = "";
-//	protected TableViewer tableViewer;
+	// protected TableViewer tableViewer;
 	protected Button ontologyButton;
 
 	protected EObject selection;
@@ -84,47 +85,49 @@ public class OntologyPropertyEditor extends
 		label = toolkit.createLabel(parent, getLabelText());
 		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
 
-
-		ontologyButton = toolkit.createButton(parent,getOntologyString(), SWT.PUSH);
-		ontologyButton.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false));
+		ontologyButton = toolkit.createButton(parent, getOntologyString(),
+				SWT.PUSH);
+		ontologyButton.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false,
+				false));
 
 		ontologyButton.setSize(200, 20);
-		
+
 		ontologyButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				String projectName = getElement().eResource().getURI().segment(1);
-				OntologyDialog dialog = new OntologyDialog(parentComposite.getShell(),projectName);
+				OntologyDialog dialog = OntologyDialogFactory.getInstance()
+						.createOntologyDialog(parentComposite.getShell(),
+								getElement().eContainer());
 				int status = dialog.open();
-				if(status == IDialogConstants.OK_ID){
+				if (status == IDialogConstants.OK_ID) {
 					setValue(dialog.getResult().getIRI().toString());
 				}
 			}
 		});
-		
+
 	}
 
 	@Override
 	protected Collection<Control> getControls() {
 		List<Control> controls = new ArrayList<Control>();
 		controls.add(ontologyButton);
-		
+
 		return controls;
 	}
-	
-	private String getOntologyString(){
-		String ontologyRefernce ="";
-		if(this.getElement() instanceof OntologyExtension){
-			ontologyRefernce = ((OntologyExtension) element).getOntologyReference();
-			if(ontologyRefernce!=null && !ontologyRefernce.isEmpty()){
+
+	private String getOntologyString() {
+		String ontologyRefernce = "";
+		if (this.getElement() instanceof OntologyExtension) {
+			ontologyRefernce = ((OntologyExtension) element)
+					.getOntologyReference();
+			if (ontologyRefernce != null && !ontologyRefernce.isEmpty()) {
 				int splittNumber = ontologyRefernce.lastIndexOf("#");
 				String name = ontologyRefernce.substring(splittNumber);
-				ontologyRefernce = name+" - " +ontologyRefernce;
+				ontologyRefernce = name + " - " + ontologyRefernce;
+			} else {
+				ontologyRefernce = "No valid Ontology Entity";
 			}
-			else{
-				ontologyRefernce="No valid Ontology Entity";
-			}
-			
+
 		}
 		return ontologyRefernce;
 	}
@@ -133,16 +136,10 @@ public class OntologyPropertyEditor extends
 	protected void handleNotificationEvent(Notification notification) {
 		// TODO Auto-generated method stub
 		super.handleNotificationEvent(notification);
-		if(notification.getFeature() == feature){
+		if (notification.getFeature() == feature) {
 			ontologyButton.setText(getOntologyString());
 			RuntimePlugin.revalidateLayout(ontologyButton);
 		}
 	}
-	
-	
-	
-	
-	
-	
 
 }

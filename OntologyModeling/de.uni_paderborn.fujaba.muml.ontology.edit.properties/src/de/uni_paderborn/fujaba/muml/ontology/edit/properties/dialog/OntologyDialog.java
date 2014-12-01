@@ -1,18 +1,11 @@
 package de.uni_paderborn.fujaba.muml.ontology.edit.properties.dialog;
 
-import java.util.HashSet;
-
-import javax.xml.ws.FaultAction;
-
-import org.eclipse.core.resources.IFile;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
+import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
@@ -29,28 +22,18 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLEntity;
 
-import com.clarkparsia.owlapi.explanation.util.OntologyUtils;
-
-import de.uni_paderborn.fujaba.common.Messages;
-import de.uni_paderborn.fujaba.common.ui.FileSelector;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.parser.OWLOntologyUtil;
 
-public class OntologyDialog extends TitleAreaDialog {
-
-	private static final String OWL_FILE_EXTENSION = "owl";
-	private static final String IMPORT_ONTOLOGY_DIALOG_DESCRIPTION = "Select the OWL resource that should be imported.";
-	private static final String IMPORT_ONTOLOGY_BUTTON_TEXT = "Import Ontology...";
-	private static final String IMPORT_ONTOLOGY_DIALOG_LABEL_CONTENT = "Select OWL Resource";
-	// private static final String DESCRIPTION =
-	// "Right click on an Ontology Entity to see the information";
+public abstract class OntologyDialog extends TitleAreaDialog {
 
 	private String title;
 	private String description;
 	private OWLOntologyUtil ontologyUtils;
 	private TreeViewer viewer;
-	
-	private OWLClass ontologyClass;
+
+	private OWLEntity ontologyClass;
 
 	protected AdapterFactoryEditingDomain domain;
 
@@ -60,12 +43,24 @@ public class OntologyDialog extends TitleAreaDialog {
 
 	private Button showallCheckbox;
 	
+	private IContentProvider contentProvider;
 
-	public OntologyDialog(Shell parentShell, final String projectName) {
+	private Object input;
+	
+	public OntologyDialog(Shell parentShell, final OWLOntologyUtil owlOntologyUtil, final IContentProvider contentProvider, final Object input) {
 		super(parentShell);
 		this.title = "Select an Ontology Entity";
-		this.ontologyUtils = new OWLOntologyUtil(projectName);
+		this.ontologyUtils = owlOntologyUtil;
+		this.contentProvider = contentProvider;
+		this.input = input;
+	}
 
+	public OWLOntologyUtil getOntologyUtils() {
+		return ontologyUtils;
+	}
+
+	public TreeViewer getViewer() {
+		return viewer;
 	}
 
 	@Override
@@ -83,7 +78,7 @@ public class OntologyDialog extends TitleAreaDialog {
 		createSeparator(area);
 		refreshMetaDataInformation();
 		// disableButtons();
-		
+
 		return area;
 	}
 
@@ -100,7 +95,7 @@ public class OntologyDialog extends TitleAreaDialog {
 		this.createControlButtons(controlsComposite);
 
 		this.createEnhancedButtons(composite);
-		
+
 	}
 
 	private void createSeparator(final Composite area) {
@@ -210,30 +205,7 @@ public class OntologyDialog extends TitleAreaDialog {
 		// });
 	}
 
-	private void createEnhancedButtons(final Composite parent) {
-		final Composite composite = new Composite(parent, SWT.NONE);
-		GridLayoutFactory.fillDefaults().numColumns(2).applyTo(composite);
-		GridDataFactory.fillDefaults().applyTo(composite);
-
-		final Button importButton = new Button(composite, SWT.PUSH);
-		importButton.setText(IMPORT_ONTOLOGY_BUTTON_TEXT);
-		importButton.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(final SelectionEvent e) {
-
-				IFile file = FileSelector.selectFile(getShell(),
-						IMPORT_ONTOLOGY_DIALOG_DESCRIPTION, null, null,
-						OWL_FILE_EXTENSION);
-				if (file == null) {
-					return;
-				}
-				else{
-					ontologyUtils.addOntologyFile(URI.createPlatformResourceURI(file.getFullPath().toString(), true).toString());
-					viewer.refresh();
-				}
-			}
-		});
-	}
+	protected abstract void createEnhancedButtons(final Composite parent);
 
 	public void setWindowTitle(final String title) {
 		this.title = title;
@@ -257,26 +229,16 @@ public class OntologyDialog extends TitleAreaDialog {
 
 		this.viewer = new TreeViewer(tree);
 		this.viewer.setAutoExpandLevel(3);
-		this.viewer.setContentProvider(new OntologyClassTreeContentProvider());
+		this.viewer.setContentProvider(this.contentProvider);
 
 		this.viewer.setLabelProvider(new OntologyLabelProvider());
 
-		this.viewer.setInput(ontologyUtils.getloadedOntologies());
-        this.viewer.addSelectionChangedListener(new TreeViewerSelectionChangedListener());
-        
-     
+		this.viewer.setInput(this.input);
+		this.viewer
+				.addSelectionChangedListener(new TreeViewerSelectionChangedListener());
 
-		// this.viewer.setComparator(new
-		// SelectOntologyEntityViewerComparator());
-		// this.viewer.addFilter(new OntologyEntityViewerFilter());
-		//
-		// addTreeViewerListeners();
-		//
-		// filterText.addKeyListener(new TreeViewerKeyAdapter(filterText));
 	}
-	
-	
-	
+
 	@Override
 	protected Control createButtonBar(Composite parent) {
 		// TODO Auto-generated method stub
@@ -286,48 +248,47 @@ public class OntologyDialog extends TitleAreaDialog {
 	}
 
 	protected void checkStatus(final IStructuredSelection selection) {
-        boolean editEnabled = false;
-        boolean removeEnabled = false;
-        boolean infoEnabled = false;
-        boolean okEnabled = false;
+		boolean editEnabled = false;
+		boolean removeEnabled = false;
+		boolean infoEnabled = false;
+		boolean okEnabled = false;
 
-        // check selection
-        if (selection.isEmpty()) {
-            this.ontologyClass = null;
-        } else if (selection.size() == 1) {
-            final Object selected = selection.getFirstElement();
+		// check selection
+		if (selection.isEmpty()) {
+			this.ontologyClass = null;
+		} else if (selection.size() == 1) {
+			final Object selected = selection.getFirstElement();
 
-            // store data type + repository
-            if (selected instanceof OWLClass) {
-                this.ontologyClass = (OWLClass) selected;
+			// store data type + repository
+			if (selected instanceof OWLClass) {
+				this.ontologyClass = (OWLClass) selected;
 
-                editEnabled = true;
-                removeEnabled = true;
-                infoEnabled = true;
-                okEnabled = true;
-            } 
-        } 
+				editEnabled = true;
+				removeEnabled = true;
+				infoEnabled = true;
+				okEnabled = true;
+			}
+		}
 
-        this.editButton.setEnabled(editEnabled);
-        this.removeButton.setEnabled(removeEnabled);
-        this.infoButton.setEnabled(infoEnabled);
-        this.showallCheckbox.setEnabled(true);
-        this.getButton(OK).setEnabled(okEnabled);
-    }
-	
-	public OWLClass getResult(){
+		this.editButton.setEnabled(editEnabled);
+		this.removeButton.setEnabled(removeEnabled);
+		this.infoButton.setEnabled(infoEnabled);
+		this.showallCheckbox.setEnabled(true);
+		this.getButton(OK).setEnabled(okEnabled);
+	}
+
+	public OWLEntity getResult() {
 		return this.ontologyClass;
 	}
-	
-	private final class TreeViewerSelectionChangedListener implements ISelectionChangedListener {
-        @Override
-        public void selectionChanged(final SelectionChangedEvent event) {
-        	OntologyDialog.this.checkStatus((IStructuredSelection) OntologyDialog.this.viewer
-                            .getSelection());
-        }
-    }
-	
-	
-	
+
+	private final class TreeViewerSelectionChangedListener implements
+			ISelectionChangedListener {
+		@Override
+		public void selectionChanged(final SelectionChangedEvent event) {
+			OntologyDialog.this
+					.checkStatus((IStructuredSelection) OntologyDialog.this.viewer
+							.getSelection());
+		}
+	}
 
 }
