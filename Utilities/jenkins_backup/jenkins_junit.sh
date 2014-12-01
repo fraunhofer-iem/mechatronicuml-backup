@@ -32,7 +32,7 @@ while read filename
 do
  directory=`dirname $filename | xargs -I{} basename {}`
  name=`basename $filename`
-if [[ $name != *ui* ]] 
+if [[ $name != *.ui* ]] 
 then
         echo "junit -t 120 -l '$directory/$name' -o 'output/junit/$name.xml'"  >> build_command.txt
 fi
