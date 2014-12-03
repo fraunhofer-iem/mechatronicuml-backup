@@ -212,7 +212,7 @@ public class EmbeddedSinglePortVariableExternalLabelsEditPolicy extends
 
 			if (getPostionConstraint(modelElement,
 					MultiPortPositionConstraintType.LAST) != null)
-				lastLabel.setText(GUILLEMET_CLOSE+"«last»"+GUILLEMET_OPEN);
+				lastLabel.setText(GUILLEMET_CLOSE+"last"+GUILLEMET_OPEN);
 			else
 				lastLabel.setText("");
 
