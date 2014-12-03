@@ -22,3 +22,35 @@
 [query public getIdentifierVariableName (msgT: MessageType) : String = 
 'MESSAGE_'+msgT.getName().toUpperCase()/]
 
+[query public getStructName(msgType : MessageType) : String = 
+	msgType.getName() + msgType.repository.getName() +'Message'
+/]
+
+[**
+ * This query returns the Protobuf-Embedded-C specific Unmarshallaing-function name for a given
+ * message type. This function is not defined by the middleware, but by the protobuf-files, 
+ * which are generated during the code generation process.
+ * It returns only the name for the function, you have to add brackets and parameters
+ * 
+ * @param msgT a message type
+ * @return the protobuf unmarshalling function
+*/]
+[query public getUnmarshallingMethodName (msgT: MessageType) : String = 
+msgT.getVariableName()+'_read_delimited_from'/]
+
+[**
+ * This query returns the Protobuf-Embedded-C specific marshallaing-function name for a given
+ * message type. This function is not defined by the middleware, but by the protobuf-files, 
+ * which are generated during the code generation process.
+ * It returns only the name for the function, you have to add brackets and parameters
+ * 
+ * @param msgT a message type
+ * @return the protobuf marshalling function
+*/]
+[query public getMarshallingMethodName (msgT: MessageType) : String = 
+msgT.getVariableName()+'_write_delimited_to'/]
+
+
+[query public getMethodName(op : Operation) : String =
+	op.getName()	
+/]

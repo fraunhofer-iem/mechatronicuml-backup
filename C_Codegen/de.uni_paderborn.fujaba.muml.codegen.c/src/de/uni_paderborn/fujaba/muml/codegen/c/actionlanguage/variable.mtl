@@ -23,7 +23,7 @@
 	// attribute declarations
 [for (variable : Variable | rtsc.allAvailableVariables)]
 	[if rtsc.variables->includes(variable)]
-	inner [variable.dataType.getTypeName() /] [variable.name/][if not variable.initializeExpression.oclIsUndefined()](start=[generateExpression(variable.initializeExpression, false, '') /])[/if];
+	inner [variable.dataType.getTypeName() /] [variable.name/][if not variable.initializeExpression.oclIsUndefined()](start=[generateExpression(variable.initializeExpression, '') /])[/if];
 	[else]
 	outer [variable.dataType.getTypeName() /] [variable.name/];
 	[/if]

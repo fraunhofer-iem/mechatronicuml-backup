@@ -25,6 +25,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::Message]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::operations]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::ContinuousPorts]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::CIC]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::nxtOSEK::files::make_nxtOSEK]
 
@@ -46,18 +47,14 @@
 DeclareTask(Task_Main);
 DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
-[comment]
-[for (ci : ComponentInstance | aRootNode.eAllContents(ComponentInstance))]
-	[if ci.oclIsKindOf(AtomicComponentInstance)]
-DeclareTask([ci.getTaskName()/]);
-	[/if]
+[for (ci: ComponentInstance | CIs) ? (ci.oclIsKindOf(AtomicComponentInstance) and (ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
+DeclareTask([ci.getTaskName()/])
 [/for]
-[/comment]
+
 
 [comment create variable for every used component instance/]
-//variables for component instances
-
-		[generateComponentVariables(CIs)/]
+//variable for middleware
+Middleware* mw;
 
 
 [comment OSEK methods/]
@@ -75,15 +72,24 @@ void ecrobot_device_terminate()
 }
 TASK(Task_initModel){
 	[comment create model/]
+	[comment generateInstanceConfiguration(CIs)/]
+	[for (ci : ComponentInstance | CIs) ? (ci.oclIsKindOf(AtomicComponentInstance))]
+		[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
+			[ci.oclAsType(AtomicComponentInstance).generateInstanceCreation(path)/]
+		[/if]
+	[/for]
 
-	[generateInstanceConfiguration(CIs)/]
-
-	//initialize model
-
-		[for (ci : ComponentInstance | CIs)]
-			[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-				[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
-			[/if]		
+		[comment set hybrid port functions/]
+[for (partInstance : ComponentInstance | CIs) ? (partInstance.oclIsKindOf(AtomicComponentInstance))]
+	[for (port : PortInstance | partInstance.portInstances)]
+			[if (port.oclIsTypeOf(HybridPortInstance))]
+				[if (port.portType.oclAsType(HybridPort).inPort)]
+					mw->[partInstance.getVariableName()/]->getterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getReadMethod()/];
+				[else]
+					mw->[partInstance.getVariableName()/]->setterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getWriteMethod()/];
+				[/if]
+			[/if]
+		[/for]
 [/for]
 
 ChainTask(Task_Main);
@@ -104,6 +110,15 @@ TASK(Task_Main){
 
 ChainTask(Task_MsgExchange);
 }
+
+[for (ci: ComponentInstance | CIs) ? (ci.oclIsKindOf(AtomicComponentInstance) and (ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
+TASK([ci.getTaskName()/]){
+	[ci.componentType.getProcessMethodName()/](mw->[ci.getVariableName()/]);
+
+	//terminate and wait for reactivation
+	TerminateTask();
+}
+[/for]
 
 TASK(Task_MsgExchange){
 [comment currently the message exchange is executed inside of the structured components. Will be changed, if using several tasks for components/]
@@ -127,12 +142,20 @@ ChainTask(Task_Main);
 #include "ecrobot_interface.h"
 
 
+[if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
+#include "continuousComponents/ContImplementations.h"
+[/if]
 //including all files for used Components
-[for (comp : Component | CIs.componentType)]
-	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+		[for (comp : Component | CIs.componentType) ? (comp.oclIsKindOf(AtomicComponent))]
+		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.getFileName(true, false)/]"
-	[/if]
-[/for]
+		[/if]
+		[/for]
+		[for (comp : Component | CIs.componentType) ? (comp.oclIsKindOf(AtomicComponent))]
+		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+#include "[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getFileName(true, false)/]"
+		[/if]
+		[/for]
 [/template]
 
 

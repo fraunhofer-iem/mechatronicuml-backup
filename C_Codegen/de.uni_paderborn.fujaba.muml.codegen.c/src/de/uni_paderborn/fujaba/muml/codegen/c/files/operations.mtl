@@ -21,7 +21,7 @@
  */]
 [template public generateOperationFiles(CIs : OrderedSet(ComponentInstance), path : String)]
 [let atomics : Sequence(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
-[let allOperations : Sequence(Operation) = atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)]
+[let allOperations : Set(Operation) = atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()]
 	[generateOperationHeader(allOperations, path)/]
 	[generateOperationClass(allOperations, path)/]
 [/let]
@@ -34,7 +34,7 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationHeader(allOperations : Sequence(Operation), path : String)]
+[template public generateOperationHeader(allOperations : Set(Operation), path : String)]
 
 [file (path+'operations/operations.h', false, 'UTF-8')]
 #ifndef OPERATIONS_H_
@@ -59,7 +59,7 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template public generateOperationClass(allOperations : Sequence(Operation), path : String)]
+[template public generateOperationClass(allOperations : Set(Operation), path : String)]
 
 [file (path+'operations/operations.c', false, 'UTF-8')]
 #include "operations.h"
@@ -80,7 +80,7 @@
 /**[/protected]**/
 [else]
 	[operation.returnType.getTypeName()/] ret;
-	[generateExpression(operation.implementations->at(1), false, '')/]
+	[generateExpression(operation.implementations->at(1),'')/]
 	return ret;
 [/if]
 

@@ -13,6 +13,7 @@
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::queries::middlewareQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
 
 
@@ -278,11 +279,19 @@
 	rtsc : RealtimeStatechart = transition.eContainer(RealtimeStatechart);
 }]
 	
-	[comment Trigger events /]
-	[if (not transition.triggerMessageEvent.oclIsUndefined())]
-		[for (msg : Message | transition.triggerMessageEvent.message)]		
-				Event* [getReceiveMsgVariableName(msg.instanceOf,transition)/] = DiscretePort_receiveEvent([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature);
-		[/for]
+[comment Trigger events /]
+	[if (not transition.triggerMessageEvent.oclIsUndefined())]	
+	[let msg: Message = transition.triggerMessageEvent.message]
+		MiddlewareMessage* mwMsg = Port_receiveMessage([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent),[msg.instanceOf.getIdentifierVariableName()/]);				
+		
+		[if msg.instanceOf.parameters->size() > 0]
+			struct [msg.instanceOf.getTypeName()/] *  msg = ([msg.instanceOf.getTypeName()/]*) malloc(sizeof(struct [msg.instanceOf.getTypeName()/]));
+			[msg.instanceOf.getUnmarshallingMethodName()/](mwMsg->_mumlMsg, msg, 0);
+			[comment do something with the message/]
+		[/if]
+//printf("received message of type %d",mwMsg->_msgID );
+				fflush(stdout);		
+	[/let]
 	[/if]
 
 	[comment Exit actions/]	
@@ -300,9 +309,8 @@
 		[if (exp.oclIsKindOf(OperationCall))]
 			[getOperationMethodCall(exp.oclAsType(OperationCall))/];
 		[else]
-			[generateExpression(exp, false, '')/];
+			[generateExpression(exp, '')/];
 		[/if]
-	
 	[/for]
 
 	[/if]
@@ -316,40 +324,44 @@
 	[comment Raise events/]	
 		[if (not transition.raiseMessageEvent.oclIsUndefined())]	
 			[for (msg : Message | transition.raiseMessageEvent.message)]
-				[for (port : Port | component.ports)]
-			[if (port.oclIsKindOf(DiscretePort))]
-			[let dPort : DiscretePort = port.oclAsType(DiscretePort)]
-			[if (dPort.isDiscreteOutPort or dPort.isDiscreteInOutPort)]	
-					[for (msgType : MessageType | dPort.senderMessageTypes)]
-						[if (msgType.name = msg.instanceOf.name)]
-							Event *[getSendMsgVariableName(msgType,transition)/] = Event_create([getVariableName(msgType)/].signature, [getVariableName(msgType)/].name 
-							[if (not msg.parameterBinding->at(1).oclIsUndefined())]
-								[if (msg.parameterBinding->at(1).parameter.getType() = 'double')]
-									,[msg.parameterBinding->at(1).value.generateExpression(true,'')/]
-								[else]
-									#warning message parameter skipped. Please use only one double value!
-								[/if]
-							[else]
-								,0.0
-							[/if]);
-							DiscretePort_sendEvent([getGetterName(dPort)/](stateChart->parentComponent), [getSendMsgVariableName(msgType,transition)/]);
-						[/if]
+				[if msg.instanceOf.parameters->size() > 0]
+					//create new Parameter struct for [msg.instanceOf.getStructName()/]
+					struct [msg.instanceOf.getStructName()/] *  msg = ([msg.instanceOf.getTypeName()/]*) malloc(sizeof(struct [msg.instanceOf.getTypeName()/]));
+					[comment parameter binding to message parameters/]
+					[for (pb : ParameterBinding | msg.parameterBinding)]
+						msg->_[pb.parameter.getName()/] = [generateExpression(pb.value, '')/];
 					[/for]
 				[/if]
-				[/let]
-				[/if]
-				[/for]
-			[/for]
+
+				//send Message
+				MW_sendMessage(MW_getTargetPortIDforIdentifier(stateChart->parentComponent->[getVariableName(getPortForRegion(transition.statechart.parentRegion))/]->ID),[msg.instanceOf.getIdentifierVariableName()/],[if msg.instanceOf.parameters->size() > 0] msg[else]NULL[/if]);
+				//printf("sent message of type %d",[msg.instanceOf.getIdentifierVariableName()/] );
+				fflush(stdout);			
+[/for]
+
 		[else]
 			// nothing to do			
 		[/if]
 
 		[comment release Trigger events /]
-//release all created events
-	[if (not transition.triggerMessageEvent.oclIsUndefined())]
-		[for (msg : Message | transition.triggerMessageEvent.message)]		
-				Event_destroy([getReceiveMsgVariableName(msg.instanceOf,transition)/]);
-		[/for]
+//release all created received events
+	[if (not transition.triggerMessageEvent.oclIsUndefined())]	
+	[let msg: Message = transition.triggerMessageEvent.message]	
+		[if msg.instanceOf.parameters->size() > 0]
+		free(msg);
+		[/if]
+		free(mwMsg);
+
+	[/let]
+	[/if]	
+		[comment release Trigger events /]
+//release all created sent events
+	[if (not transition.raiseMessageEvent.oclIsUndefined())]	
+	[let msg: Message = transition.raiseMessageEvent.message]	
+		[if msg.instanceOf.parameters->size() > 0]
+		free(msg);
+		[/if]
+	[/let]
 	[/if]	
 	[comment State change /]	
 	// change the state
@@ -386,9 +398,7 @@
 		[comment checks for trigger events /]	
 		[if (transition.triggerMessageEvent->size()>0)]	
 		[for (msg : Message | transition.triggerMessageEvent.message) separator(' && ')]			
-			
-			DiscretePort_eventExists([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature)
-
+			Port_doesMessageExist([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [msg.instanceOf.getIdentifierVariableName()/])
 		[/for]
 		[/if]
 
@@ -450,7 +460,7 @@ if (1){
  * @param transition the transition 
 */]
 [template private getClockConstraint(rtsc : RealtimeStatechart, transition : Transition) post(cdtbeautifier())]
-	[for (clockCons : ClockConstraint | transition.clockConstraints) separator (' && ')]Clock_getTime(stateChart->[clockCons.clock.getVariableName()/])[clockCons.operator.getOpSymbol()/][clockCons.bound.value.generateExpression(true, '')/][/for]
+	[for (clockCons : ClockConstraint | transition.clockConstraints) separator (' && ')]Clock_getTime(stateChart->[clockCons.clock.getVariableName()/])[clockCons.operator.getOpSymbol()/][clockCons.bound.value.generateExpression('')/][/for]
 [/template]
 
 
@@ -469,7 +479,7 @@ if (1){
 */]
 [template public getGuardExpression(expression : Expression)]
 [if expression.oclIsKindOf(ComparisonExpression) or expression.oclIsKindOf(LogicalExpression)]
-	[generateExpression(expression, true, '')/]
+	[generateExpression(expression,'')/]
 [elseif expression.oclIsKindOf(Block)]
 	[expression.oclAsType(Block).expressions->at(1).getGuardExpression()/]
 [elseif expression.oclIsKindOf(LiteralExpression)]
@@ -496,7 +506,7 @@ if (1){
 	[else]				
 		[if (not state.entryEvent.action.oclIsUndefined())]
 			[for (exp : Expression | state.entryEvent.action.expressions)]
-				[generateExpression(exp, false, '')/];
+				[generateExpression(exp,'')/];
 			[/for]
 		[/if]				
 		
@@ -533,7 +543,7 @@ if (1){
 		// nothing to do
 	[else]
 		[if (not (state.exitEvent.action.oclIsUndefined()))]
-			[generateExpression(state.exitEvent.action.expressions->at(1), false, '')/]
+			[generateExpression(state.exitEvent.action.expressions->at(1), '')/]
 		[/if]
 		[for (clock : Clock | state.exitEvent.clockResets)]
 			Clock_reset(stateChart->[getVariableName(clock)/]);

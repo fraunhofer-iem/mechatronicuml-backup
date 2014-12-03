@@ -23,6 +23,8 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::Message]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::operations]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::ContinuousPorts]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::CIC]
+
 
 [**
  * Generates a main file. This file contains code to create, initialize
@@ -33,52 +35,62 @@
 [comment create 'main.c'/]
 [file(path+'main.c',false,'UTF-8')]
 //general includes
+#include "Middleware/MiddlewareCore.h"
 #include <stdio.h>
 #include <stdlib.h>
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
 #include "continuousComponents/ContImplementations.h"
 [/if]
 //including all files for used Components
-		[for (comp : Component | CIs.componentType)]
+		[for (comp : Component | CIs.componentType) ? (comp.oclIsKindOf(AtomicComponent))]
 		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.getFileName(true, false)/]"
 		[/if]
 		[/for]
+		[for (comp : Component | CIs.componentType) ? (comp.oclIsKindOf(AtomicComponent))]
+		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
+#include "[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getFileName(true, false)/]"
+		[/if]
+		[/for]
+
 [comment create variable for every used component instance/]
 //variables for component instances
-[generateComponentVariables(CIs)/]
+[comment generateComponentVariables(CIs)/]
 
+Middleware* mw;
 
 int main(){
+//create and  initialize middleware object
+ Middleware_create();
 	[comment create model/]
-	[generateInstanceConfiguration(CIs)/]
-
-	//initialize model
-	[for (ci : ComponentInstance | CIs)]
+	[comment generateInstanceConfiguration(CIs)/]
+	[for (ci : ComponentInstance | CIs) ? (ci.oclIsKindOf(AtomicComponentInstance))]
 		[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-			[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
+			[ci.oclAsType(AtomicComponentInstance).generateInstanceCreation(path)/]
 		[/if]
 	[/for]
+
+		[comment set hybrid port functions/]
+[for (partInstance : ComponentInstance | CIs) ? (partInstance.oclIsKindOf(AtomicComponentInstance))]
+	[for (port : PortInstance | partInstance.portInstances)]
+			[if (port.oclIsTypeOf(HybridPortInstance))]
+				[if (port.portType.oclAsType(HybridPort).inPort)]
+					mw->[partInstance.getVariableName()/]->getterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getReadMethod()/];
+				[else]
+					mw->[partInstance.getVariableName()/]->setterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getWriteMethod()/];
+				[/if]
+			[/if]
+		[/for]
+[/for]
 
 
 while (1){
 	[comment execution of model/]
-[for (ci : ComponentInstance | CIs)]
-		[if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined() and ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT)))]
-			[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
-		[/if]
-[/for]
-[comment workaround, will replaced by new message implementation/]
-[let ci : ComponentInstance = CIs->at(1)]
-[if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined() and ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT)))]
-	//workaround, will replaced by new message implementation
-	[for (conInst : ConnectorInstance | ci.parentCIC.portConnectorInstances)]
-		[if (conInst.connectorEndpointInstances->at(1).type.oclIsKindOf(DiscretePort))]
-		DiscreteConnection_transfer([conInst.getVariableName()/]);
+	[for (ci : ComponentInstance | CIs)? (ci.oclIsKindOf(AtomicComponentInstance))]
+		[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+			[ci.componentType.getProcessMethodName()/](mw->[ci.getVariableName()/]);
 		[/if]
 	[/for]
-[/if]
-[/let]
 }
 }
 [/file]
@@ -90,11 +102,14 @@ while (1){
 
 [template private includes(CIs : OrderedSet(ComponentInstance))]
 //general includes
+#include "Middleware/MiddlewareCore.h"
 #include <stdio.h>
 #include <stdlib.h>
+[if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
 #include "continuousComponents/ContImplementations.h"
+[/if]
 //including all files for used Components
-		[for (comp : Component | CIs.componentType)]
+		[for (comp : Component | CIs.componentType) ? (comp.oclIsKindOf(AtomicComponent))]
 		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.getFileName(true, false)/]"
 		[/if]
@@ -118,72 +133,5 @@ while (1){
 
 
 
-[**
- * Generates code to instanciate a given component instance configuration.
- * (based on the component type files). Before using this template, it is necessary to
- * call 'generateTypeFiles' and 'generateRTSCFiles'!
- * @param modelElementCategory
- */]
-[template public generateInstanceConfiguration(CIs : OrderedSet(ComponentInstance))]
-[for (ci : ComponentInstance | CIs)]
-[if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined() and ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT)))]
-//instantiate components of [ci.getName()/]
-	[ci.getVariableName()/] = [getCreateMethodName(ci)/]();
-	[ci.configurateInstance()/]
-
-[/if]
-[/for]
-
-[comment workaround, will replaced by new message implementation/]
-[let ci : ComponentInstance = CIs->at(1)]
-[if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined() and ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT)))]
-
-	//workaround, will replaced by new message implementation
-[for (conInst : ConnectorInstance | ci.parentCIC.portConnectorInstances)]
-	[if (conInst.connectorEndpointInstances->at(1).type.oclIsKindOf(DiscretePort))]
-		[if conInst.connectorEndpointInstances->at(1).connectorInstances->size()>1]
-	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([getVariablePath(getTargetPortInstance(conInst.connectorEndpointInstances->at(1).connectorInstances->at(1),conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)))/],[getVariablePath(getTargetPortInstance(conInst.connectorEndpointInstances->at(1).connectorInstances->at(2),conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)))/], [conInst.isBidirectional()/]);
-		[else]
-	//DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([getVariablePath(conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance))/],[getVariablePath(getTargetPortInstance(conInst,conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)))/], [conInst.isBidirectional()/]);
-
-		[/if]
-		[/if]
-[/for]
-[/if]
-[/let]
-[/template]
 
 
-[template private configurateInstance(cInst : ComponentInstance) ? (oclIsKindOf(StructuredComponentInstance))post(trim())]
-[for (cPart : ComponentPart | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->collect(componentPart)->asSet())]
-	[for (partInstance : ComponentInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->select(componentPart = cPart))]
-		[if ((partInstance.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (partInstance.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-		//instantiate components of [cInst.getName()/]
-		[partInstance.getVariableName()/] = [partInstance.getCreateMethodName()/]();
-		[getAddMethodName(cInst.componentType, partInstance.componentPart)/]([cInst.getVariableName()/], [partInstance.getVariableName()/]);
-		[configurateInstance(partInstance)/]
-		[if (partInstance.oclIsKindOf(AtomicComponentInstance))]
-		[for (port : PortInstance | partInstance.portInstances)]
-			[if (port.oclIsTypeOf(HybridPortInstance))]
-				[if (port.portType.oclAsType(HybridPort).inPort)]
-					[partInstance.getVariableName()/]->getterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getReadMethod()/];
-				[else]
-					[partInstance.getVariableName()/]->setterOf_[port.portType.oclAsType(HybridPort).getName()/] = [port.oclAsType(HybridPortInstance).getContinuousPortInstance().getWriteMethod()/];
-				[/if]
-			[/if]
-		[/for]
-		[/if]
-		[/if]
-	[/for]
-[/for]
-[if cInst.oclIsKindOf(StructuredComponentInstance)]
-[for (conInst : ConnectorInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.portConnectorInstances)]
-	[if (conInst.connectorEndpointInstances->at(1).type.oclIsKindOf(DiscretePort))]
-	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([getVariablePath(conInst.getSourcePort())/],[getVariablePath(conInst.getTargetPort())/], [conInst.isBidirectional()/]);
-
-	DiscreteConnectionList_add([cInst.getVariableName()/]->connectorList,[conInst.getVariableName()/]);
-	[/if]
-[/for]
-[/if]
-
-[/template]

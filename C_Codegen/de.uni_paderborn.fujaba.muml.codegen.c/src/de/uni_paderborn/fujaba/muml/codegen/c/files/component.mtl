@@ -101,12 +101,10 @@
 			[getInitializeMethodName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/](component->stateChart);	
 		[/if]
 	
-		[for (port : Port | component.ports)]
-			[if (port.oclIsKindOf(DiscretePort))]
-				DiscretePort_initialize(component->[getVariableName(port)/]);
-	 				
-			[/if]
-		[/for]
+			[comment Initialization of Ports/]
+			[for (port : Port | component.ports) ? (port.oclIsTypeOf(DiscretePort))]
+				component->[port.getVariableName()/] = NULL;
+			[/for]
 	}
 [/template]
 
@@ -117,39 +115,23 @@
  * @param statechart
 */]
 [template public constructor (component : Component) post(cdtbeautifier())]
-	[getClassName(component)/]* [getCreateMethodName(component)/]() {
+	[getClassName(component)/]* [getCreateMethodName(component)/](void) {
 		
 		[getClassName(component)/]* component = ([getClassName(component)/]*)malloc(sizeof([getClassName(component)/]));
 
 		if(component != NULL){
 			
-			[comment component.generatePorts()/]
 			[comment Initialization of Ports/]
 			[for (port : Port | component.ports) ? (port.oclIsTypeOf(DiscretePort))]
 				component->[port.getVariableName()/] = NULL;
 			[/for]
-			[for (port : Port | component.ports) ? (port.oclIsKindOf(DiscretePort))]
-					[if (port.oclAsType(DiscretePort).isDiscreteInPort or port.oclAsType(DiscretePort).isDiscreteInOutPort) ]
-						const sign_t eventSignaturesOf[getVariableName(port).toUpperFirst() + '[]'/] = {			
-							[for (messageType : MessageType | port.oclAsType(DiscretePort).receiverMessageTypes) separator (',')]
-								[getVariableName(messageType)/].signature
-							[/for]
-						};	
-					[/if]
-					[if (port.oclAsType(DiscretePort).isDiscreteOutPort or port.oclAsType(DiscretePort).isDiscreteInOutPort)]
-						const sign_t cachedEventSignaturesOf[getVariableName(port).toUpperFirst() + '[]'/] = {			
-							[for (messageType : MessageType | port.oclAsType(DiscretePort).senderMessageTypes) separator (',')]
-								[getVariableName(messageType)/].signature
-							[/for]
-						};	
-					[/if]		
-			[/for]
+			
 
 
 		
 			[comment Initialization of StateMachine /]	
 			[if (component.oclIsKindOf(AtomicComponent))]
-				component->stateChart = [getCreateMethodName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/](component);
+				component->stateChart = NULL;
 			[/if]	
 
 			[comment Initialization of SubComponents /]	
@@ -159,30 +141,7 @@
 			[/for]
 			[/if]	
 
-			[comment Initialization of Ports/]	
-			[for (port : Port | component.ports)]
-				[if (port.oclIsKindOf(DiscretePort))]
-					component->[getVariableName(port)/] = [getCreateMethodName(port)/]([if port.oclAsType(DiscretePort).receiverMessageBuffer.oclIsUndefined()->size()=0]5[else][port.oclAsType(DiscretePort).receiverMessageBuffer.getMessageBufferSize()/][/if], 
-					[if (port.oclAsType(DiscretePort).isDiscreteInOutPort)]
-						[port.oclAsType(DiscretePort).senderMessageTypes->size()/], cachedEventSignaturesOf[getVariableName(port).toUpperFirst()/],
-						[if port.oclAsType(DiscretePort).receiverMessageBuffer.oclIsUndefined()->size()=0]5[else][port.oclAsType(DiscretePort).receiverMessageBuffer.getMessageBufferSize()/][/if],
-						[port.oclAsType(DiscretePort).receiverMessageTypes->size()/], eventSignaturesOf[getVariableName(port).toUpperFirst()/]
-
-					[elseif (port.oclAsType(DiscretePort).isDiscreteInPort)]
-							0, NULL, [port.oclAsType(DiscretePort).receiverMessageBuffer.getMessageBufferSize()/], [port.oclAsType(DiscretePort).receiverMessageTypes->size()/], eventSignaturesOf[getVariableName(port).toUpperFirst()/]
-
-					[elseif (port.oclAsType(DiscretePort).isDiscreteOutPort)]
-							[port.oclAsType(DiscretePort).senderMessageTypes->size()/], cachedEventSignaturesOf[getVariableName(port).toUpperFirst()/],5, 0, NULL
-
-					[/if]
-					);
-					
-				[/if]
-			[/for]	
-
-			[if component.oclIsKindOf(StructuredComponent)]
-				component->connectorList = DiscreteConnectionList_create();
-			[/if]
+			
 
 			} 	
 		 else {
@@ -347,41 +306,13 @@
 
 	[for (port : Port | component.ports)]
 	[if (port.oclIsKindOf(DiscretePort))]
-		[getClassName(port)/]* [getGetterName(port)/]([getClassName(component)/]* component) {
+		Port* [getGetterName(port)/]([getClassName(component)/]* component) {
 			return component->[getVariableName(port)/];
 		}
 	[/if]
 	[/for]
 [/template]
 
-
-
-
-
-[template private generatePorts(component : Component) post (trim())]
-MessageID** msgIDs;
-MessageBuffer* buffer;
-MessageBuffer** allBuffers
-[for (compPort : Port | component.ports) ? (compPort.oclIsTypeOf(DiscretePort))]
-[let port : DiscretePort = compPort.oclAsType(DiscretePort)]
-component->[port.getVariableName()/] = NULL;
-[if (port.isDiscreteInOutPort or port.isDiscreteInPort)]
-allBuffers = (MessageBuffer**) malloc([port.receiverMessageBuffer->size()/]* sizeof(MessageBuffer*));
-[for (inBuffer : MessageBuffer | port.receiverMessageBuffer)]
-	//create list of supported MessageIDs
-	msgIDs = (MessageID**) malloc([inBuffer.messageType->size()/]* sizeof(MessageID*));
-	[for (msgType : MessageType | inBuffer.messageType)]
-		msgIDs['['/][i-1/][']'/] = [msgType.name/] //will be replaced by ID
-	[/for]
-
-	buffer = MessageBuffer_create([inBuffer.bufferSize/], [inBuffer.messageType->size()/], msgIDs);
-	allBuffers['['/][i-1/][']'/] = buffer;
-[/for]
-component->[port.getVariableName()/] = Port_create(/*Port-ID*/, [port.receiverMessageBuffer->size()/], allBuffers);
-[/if]
-[/let]
-[/for]
-[/template]
 
 [**
  * Generates the queue methods for multiparts.

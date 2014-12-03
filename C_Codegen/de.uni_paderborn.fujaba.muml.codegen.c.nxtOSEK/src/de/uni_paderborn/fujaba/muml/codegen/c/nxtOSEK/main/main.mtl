@@ -32,6 +32,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::nxtOSEK::files::OIL]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::LocalMiddleware]
 
+
 [template public generate(cic: ComponentInstanceConfiguration)]
 [comment @main/]
 
@@ -61,7 +62,7 @@
 
 
 [comment create message file/]
-[generateMessageFiles(CIs,path)/]
+[generateProtobufMessageFile(CIs, path)/]
 
 [comment craeate files for RTSCs/]
 [generateRTSCFiles(CIs,path)/]

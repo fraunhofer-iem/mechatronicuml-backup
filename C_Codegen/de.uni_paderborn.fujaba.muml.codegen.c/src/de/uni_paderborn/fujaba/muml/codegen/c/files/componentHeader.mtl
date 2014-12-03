@@ -66,27 +66,14 @@
 	// Library
 	#include "../lib/types.h"
 	[if (component.eAllContents(DiscretePort)->size()>0)]
-		#include "../lib/ports/discretePort.h"
-		#include "../msg/messages.h"
+		#include "../lib/port.h"
+		#include "../messages/Messages.h"
 
 	[/if]
 	[if (component.ports.eAllContents(HybridPort)->size() > 0)]
 		#include "continuousComponents/ContImplementations.h"	
 	[/if]
-	[if component.oclIsKindOf(StructuredComponent)]	
-	[if (component.oclAsType(StructuredComponent).connectors->size() > 0)]
-		#include "../lib/discreteConnection.h"
-		#include "../lib/discreteConnectionList.h"
-	[/if]	
 
-
-	// Generated implementation
-	
-	[for (subComponent : Component | component.oclAsType(StructuredComponent).embeddedComponentParts.componentType->asSet())]
-		#include "../[getFileName(subComponent, true)/]"	
-	[/for]
-
-	[/if]
 	[if (component.oclIsKindOf(AtomicComponent))]
 	[let rtsc : RealtimeStatechart = component.oclAsType(AtomicComponent).behavior]
 		//#include "../[getFileName(rtsc, true,false)/]"	
@@ -133,10 +120,9 @@ struct [getClassName(component)/] {
 		[/if]
 	
 		[comment list all ports of the component/]
-		[for (port : Port | component.ports)]
-			[if (port.oclIsTypeOf(DiscretePort))]
-				DiscretePort* [getVariableName(port)/]; /**< A Pointer to the Component's Port: [port.getName()/] */
-			[/if]
+		[comment list all ports of the component/]
+		[for (port : Port | component.ports) ? (port.oclIsTypeOf(DiscretePort))]
+				Port* [getVariableName(port)/]; /**< A Pointer to the Component's Port: [port.getName()/] */
 		[/for]
 
 		[if component.oclIsKindOf(AtomicComponent)]
@@ -153,10 +139,7 @@ struct [getClassName(component)/] {
 			
 		[/if]
 		
-		[comment if structured comp, list all port connectors/]
-		[if component.oclIsKindOf(StructuredComponent)]
-		DiscreteConnectionList * connectorList; /**< A Pointer to the list of port connectors of the component*/
-		[/if]
+		
 
 		[comment add list pointer/]
 		[component.getClassName()/] * next;/**< A Pointer to the next component part, if this component ist part of a multipart in the CIC */

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="main" name="de.uni_paderborn.fujaba.muml.codegen.c">
-    <property name="ECLIPSE_HOME" value="../../../../../../Applications/eclipseCodegen"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Applications/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
@@ -32,12 +32,12 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.5.1.201409021433.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.10.1.v20140901-1055.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.10.0.v20140901-1055.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.actionlanguage_0.4.0.201410221347.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.storydriven.core_1.0.1.201410221344.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.actionlanguage_0.4.0.201411121346.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml_0.4.0.201411121346.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.common_0.4.0.201411121344.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.modelinstance_0.4.0.201411121344.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.storydriven.core_1.0.1.201411121344.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_2.0.1.v20140910-1354.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.modelinstance_0.4.0.201410221344.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml_0.4.0.201410221347.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.common_0.4.0.201410221344.jar"/>
     </path>
 
     <path id="de.uni_paderborn.fujaba.muml.codegen.c.classpath">

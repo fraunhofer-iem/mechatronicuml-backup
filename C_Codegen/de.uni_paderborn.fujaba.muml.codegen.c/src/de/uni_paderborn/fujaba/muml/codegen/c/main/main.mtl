@@ -61,7 +61,7 @@
 
 
 [comment create message file/]
-[generateMessageFiles(CIs, path)/]
+[generateProtobufMessageFile(CIs, path)/]
 
 [comment craeate files for RTSCs/]
 [generateRTSCFiles(CIs, path)/]
@@ -87,7 +87,7 @@
  * @param modelElementCategory
  */]
 [template public generateTypeFiles(CIs : OrderedSet(ComponentInstance), path : String)]
-[for (component : Component | CIs.componentType)]
+[for (component : Component | CIs.componentType) ? (component.oclIsKindOf(AtomicComponent))]
 [if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 [generate_ComponentHeader(component, path)/]
 [generate_ComponentClass(component, path)/]

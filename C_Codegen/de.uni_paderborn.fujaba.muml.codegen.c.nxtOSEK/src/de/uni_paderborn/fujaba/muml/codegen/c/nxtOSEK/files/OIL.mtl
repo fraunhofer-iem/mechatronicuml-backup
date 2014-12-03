@@ -75,7 +75,9 @@ CPU ATMEL_AT91SAM7S256
       STACKSIZE = 512;
     };
 
-[comment @TODO generate task declarations for dynamic generated tasks/]
+[for (ci: ComponentInstance | CIs) ? (ci.oclIsKindOf(AtomicComponentInstance) and (ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
+	[generateOSEKTask(ci)/]
+[/for]
 
 };
 

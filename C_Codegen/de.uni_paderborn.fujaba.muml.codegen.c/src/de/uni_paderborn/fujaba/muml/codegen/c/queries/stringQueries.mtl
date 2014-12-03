@@ -11,7 +11,7 @@
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
-[import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
+[import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [**
  * The documentation of the query generateElement.
  * @param anOclAny
@@ -22,6 +22,16 @@
 	if (mb.bufferSize.toString() = '*') then '20' else mb.bufferSize endif
 /]
 
+[**
+ * returns the C-type name for a given MessageType
+ * @param msgT the message type
+ * @return C-type for a the given message type
+*/]
+[query public getTypeName (msgT: MessageType) : String = 
+msgT.getVariableName()+'_Message'/]
+
+[query public getBufferName (mb : MessageBuffer, pi : DiscretePortInstance) : String = 
+getName(mb.name) + pi.componentInstance.getName() /]
 
 [query public getWriteMethod (cpi : ContinuousPortInstance) : String = 
 	'write_'+cpi.getName()+'_of'+cpi.componentInstance.componentType.getVariableName()+'_'+cpi.componentInstance.getName()
@@ -49,9 +59,6 @@
 	getClassName(component) + '_addTo_'+getName(cPart)
 /]
 
-[query public getValue(binding : ParameterBinding) : String =
-	binding.value.generateExpression(false, '')
-/]
 
 [query public getExecutionVerifierName(rtsc : RealtimeStatechart) : String =
 	rtsc.getName()+'_isExecutable'
@@ -299,7 +306,7 @@ getName(channel.name)
 */]
 [query public getClassName(port : Port) : String = 
 	if (port.oclIsTypeOf(DiscretePort)) then
-		'DiscretePort'
+		'Port'
 	else
 		'#warning Continous ports not supported!'
 	endif
@@ -725,12 +732,38 @@ if (type.name = 'BOOLEAN') then 'false' else
 
 /]
 
-[query public getDefaultValue(var : Variable) : String = 
-	if (var.initializeExpression.oclIsUndefined()) then
-		getDefaultValue(var.dataType)
-	else
-		generateExpression(var.initializeExpression, true, '')
+[query public getTypeNameForProtoBuf(type : DataType) : String = 
+	if (type.name = 'BOOLEAN') then 'bool' else 
+	if (type.name = 'BYTE') then 'bool' else
+	if (type.name = 'DOUBLE') then 'double' else
+	if (type.name = 'INT') then 'int32' else
+	if (type.name = 'LONG') then 'int64' else
+	if (type.name = 'SHORT') then 'int32' else
+	if (type.name = 'VOID') then 'void' else
+	'TYPE UNDIFINED'
 	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+[query public getNumberOfMessageBuffers (port : DiscretePort) : String = 
+if (port.receiverMessageBuffer->size().toString() <> '*') then
+port.receiverMessageBuffer->size().toString()
+else
+'10'
+endif
+/]
+
+[query public getSizeOfMessageBuffer (msgBuffer : MessageBuffer) : String = 
+if (msgBuffer.bufferSize.toString() <> '*') then
+msgBuffer.bufferSize.toString()
+else
+'5'
+endif
 /]
 
 [query public getVariablePathRecursive(ci : ComponentInstance, path : String) : String = 

@@ -12,8 +12,6 @@
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
 
-[import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
-[import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
 
 
 [query public getRTSC(comp : AtomicComponent) : RealtimeStatechart =
@@ -29,7 +27,7 @@ if (dpi.portConnectorInstances.connectorEndpointInstances->at(1) = dpi) then
 	endif
 else
 	if (dpi.portConnectorInstances.connectorEndpointInstances->at(1).connectorInstances->size()>1) then
-		getTargetPortInstance(dpi.portConnectorInstances->at(2), dpi.portConnectorInstances.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance))
+		getTargetPortInstance(dpi.portConnectorInstances->at(1), dpi.portConnectorInstances.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance))
 	else
 		dpi.portConnectorInstances.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance)
 	endif
@@ -308,5 +306,25 @@ ac.componentType.oclAsType(AtomicComponent).behavior.eAllContents(Operation)->as
 		region.embeddedStatechart.behavioralElement.oclAsType(DiscretePort)
 	endif
 /]
+[**
+ * computes all messages, that are used in the whole codegen-model (the complete system)
+ * @param codegen a codegen-model
+ * @return Set of all messages used in the given codegen model
+*/]
+[query public getAllUsedMessages (CIs : OrderedSet(ComponentInstance)) : Set(MessageType) = 
+let receiverMessages:Set(MessageType) = CIs.eAllContents(AtomicComponentInstance).portInstances->asSet()->filter(DiscretePortInstance)->collect(receiverMessageTypes)->asSet() in
+let senderMessages:Set(MessageType) = CIs.eAllContents(AtomicComponentInstance).portInstances->asSet()->filter(DiscretePortInstance)->collect(senderMessageTypes)->asSet() in
+receiverMessages->union(senderMessages)->asOrderedSet()
+ /]
+
+
+[**
+ * computes an (ordered) set of all DiscretePortInstances of a given codegen-model (the complete system)
+ * @param codegen the codegen-model
+ * @return Set of all DiscretePortInstances
+*/]
+[query public getAllDiscretePortInstances (CIs : OrderedSet(ComponentInstance)) : Set(DiscretePortInstance) = 
+CIs->collect(portInstances)->asOrderedSet() /]
+
 
 

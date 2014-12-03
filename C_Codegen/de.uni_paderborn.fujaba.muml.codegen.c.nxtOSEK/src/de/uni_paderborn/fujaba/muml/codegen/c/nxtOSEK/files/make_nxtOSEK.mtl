@@ -17,17 +17,15 @@
 # Targets
 TARGET = nxtOSEKImpl
 TARGET_SOURCES := \
-		lib/syncChannel.c\
-		lib/discreteConnection.c\
-		lib/discreteConnectionList.c\
-		lib/event.c\
-		lib/eventQueue.c\
-		lib/ports/discretePort.c\
-		msg/messages.c\
+		lib/port.c\
+		lib/MessageBuffer.c\
+		lib/NetworkMessageBuffer.c\
+		lib/NetworkInterface.c\
+		messages/Messages.c\
 		operations/operations.c\
 		[for (comp : Component | CIs.componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))]		RTSCs/[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].c\
 [/if][/for]
-		[for (comp : Component | CIs.componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))]		components/[comp.getClassName().toLowerFirst()/].c\
+		[for (comp : Component | CIs.componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT) and comp.oclIsKindOf(AtomicComponent))]		components/[comp.getClassName().toLowerFirst()/].c\
 [/for]
 		main.c
 

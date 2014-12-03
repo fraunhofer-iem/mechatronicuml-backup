@@ -58,7 +58,8 @@
 */]
 [template public includes (comp:Component, rtsc : RealtimeStatechart) post(trim())]
 #include "../lib/clock.h"
-#include "../lib/syncChannel.h"
+#include "../lib/MiddlewareTypes.h"
+#include "../Middleware/MiddlewareCore.h"
 #include "../[comp.getFileName(true)/]"
 [if (rtsc.eAllContents(Operation)->size() > 0)]#include "../operations/operations.h"[/if]
 [/template]
