@@ -103,12 +103,12 @@ TASK(Task_Main){
 	*/
 [for (ci : ComponentInstance | CIs)]
 	[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-		[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
+		ActivateTask([ci.getTasName()/]);
 	[/if]
 [/for]
 
 
-ChainTask(Task_MsgExchange);
+ActivateTask(Task_MsgExchange);
 }
 
 [for (ci: ComponentInstance | CIs) ? (ci.oclIsKindOf(AtomicComponentInstance) and (ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
@@ -121,7 +121,7 @@ TASK([ci.getTaskName()/]){
 [/for]
 
 TASK(Task_MsgExchange){
-[comment currently the message exchange is executed inside of the structured components. Will be changed, if using several tasks for components/]
+
 
 ChainTask(Task_Main);
 }
