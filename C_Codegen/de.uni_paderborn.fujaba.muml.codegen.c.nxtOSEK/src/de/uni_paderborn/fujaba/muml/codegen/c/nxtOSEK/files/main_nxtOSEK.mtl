@@ -103,7 +103,7 @@ TASK(Task_Main){
 	*/
 [for (ci : ComponentInstance | CIs)]
 	[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
-		ActivateTask([ci.getTasName()/]);
+		ActivateTask([ci.getTaskName()/]);
 	[/if]
 [/for]
 
