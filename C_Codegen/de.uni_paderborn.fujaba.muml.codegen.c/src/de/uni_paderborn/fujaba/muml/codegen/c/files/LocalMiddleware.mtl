@@ -301,16 +301,19 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 			nwMsg->_mumlMsg_len = 0;
 			break;
 	}
-	if (targetPort != NULL){
-		Port_addMessage(MW_getPortforIdentifier(targetPort), nwMsg);
-		printf("send message of type %d to port %d\n", id, targetPort);
+	Port *p = MW_getPortforIdentifier(targetPort);
+	if (p != NULL){
+		Port_addMessage(p, nwMsg);
+		
 		fflush(stdout);
 		return true;
 	}
 	else
 		return false;
 
+
 }
+
 
 /*
  * calls the receive-message of the middleware and delivers all messages to the correct buffers
