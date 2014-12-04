@@ -38,7 +38,7 @@
 [template public generateNXTOSEKMainFile(CIs : OrderedSet(ComponentInstance), path: String)]
 [comment create 'main.c'/]
 [file(path+'/main.c',false,'UTF-8')]
-[includes(CIs)/]
+[nxtOSEKincludes(CIs)/]
 
 
 
@@ -48,7 +48,7 @@ DeclareTask(Task_Main);
 DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
 [for (ci: ComponentInstance | CIs) ? (ci.oclIsKindOf(AtomicComponentInstance) and (ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
-DeclareTask([ci.getTaskName()/])
+DeclareTask([ci.getTaskName()/]);
 [/for]
 
 
@@ -101,10 +101,8 @@ TASK(Task_Main){
 	/* currently only the main task is used to execute the behavior
 	*  later, we will use one task per atomic component
 	*/
-[for (ci : ComponentInstance | CIs)]
-	[if ((ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (ci.componentType.componentKind = ComponentKind::HYBRID_COMPONENT))]
+[for (ci: ComponentInstance | CIs) ? (ci.oclIsKindOf(AtomicComponentInstance) and (ci.componentType.componentKind = ComponentKind::SOFTWARE_COMPONENT))]
 		ActivateTask([ci.getTaskName()/]);
-	[/if]
 [/for]
 
 
@@ -132,7 +130,7 @@ ChainTask(Task_Main);
 
 
 
-[template private includes(CIs : OrderedSet(ComponentInstance))]
+[template private nxtOSEKincludes(CIs : OrderedSet(ComponentInstance))]
 //general includes
 #include <stdio.h>
 #include <stdlib.h>
