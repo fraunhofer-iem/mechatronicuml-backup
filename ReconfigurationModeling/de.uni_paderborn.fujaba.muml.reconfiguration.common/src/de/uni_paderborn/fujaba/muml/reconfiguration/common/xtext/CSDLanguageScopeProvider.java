@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.common.xtext;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.emf.common.util.TreeIterator;
@@ -35,18 +36,18 @@ public class CSDLanguageScopeProvider extends ActionLanguageScopeProvider {
 
 	public void setScopeForEObject(ComponentStoryNode componentStoryNode) {
 
+		HashSet<ActivityNode> seen = new HashSet<ActivityNode>();
 		List<ActivityNode> todo = new ArrayList<ActivityNode>();
 		todo.add(componentStoryNode);
 		ActivityNode node;
 		typedNamedElementList = new ArrayList<TypedNamedElement>();
 		while (!todo.isEmpty()) {
 			node = todo.remove(0);
-			// XXX this causes an infinite loop if the csd contains loops
-			// however, this is only a preliminary solution, since the edge
-			// expressions should be interpreted
-			// if this is done there must not be infinite loops in the csd
+			seen.add(node);
+			
 			for (ActivityEdge edge : node.getIncomings()) {
-				todo.add(edge.getSource());
+				if(!seen.contains(edge.getSource()))
+					todo.add(edge.getSource());
 			}
 			if (node == componentStoryNode) {
 				continue;
