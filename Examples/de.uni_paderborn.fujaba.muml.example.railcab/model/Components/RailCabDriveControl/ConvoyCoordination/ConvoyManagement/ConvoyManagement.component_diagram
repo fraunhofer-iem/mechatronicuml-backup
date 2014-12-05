@@ -17,7 +17,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_TTWq-e8DEeOkfud6pZP9gQ" y="5"/>
       </children>
       <children xmi:type="notation:DecorationNode" xmi:id="_TTWq-u8DEeOkfud6pZP9gQ" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_TTWq--8DEeOkfud6pZP9gQ" y="5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_TTWq--8DEeOkfud6pZP9gQ" x="-84" y="47"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../../../../RailCab.fujaba#_aUiTUO6CEeOKI4bZ_bxwuQ"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TTWq9-8DEeOkfud6pZP9gQ" x="132" y="205"/>
