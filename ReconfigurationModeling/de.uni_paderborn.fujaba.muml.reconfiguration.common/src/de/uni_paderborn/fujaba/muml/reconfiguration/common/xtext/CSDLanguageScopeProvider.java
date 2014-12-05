@@ -21,7 +21,8 @@ import de.uni_paderborn.fujaba.muml.verification.sdd.PatternNode;
 import de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.ComponentStoryDecisionDiagram;
 
 /**
- * Tmp Workaround class to support setting of ParameterBinding values in CSD and CSDD diagrams
+ * Tmp Workaround class to support setting of ParameterBinding values in CSD and
+ * CSDD diagrams
  */
 public class CSDLanguageScopeProvider extends ActionLanguageScopeProvider {
 
@@ -40,6 +41,10 @@ public class CSDLanguageScopeProvider extends ActionLanguageScopeProvider {
 		typedNamedElementList = new ArrayList<TypedNamedElement>();
 		while (!todo.isEmpty()) {
 			node = todo.remove(0);
+			// XXX this causes an infinite loop if the csd contains loops
+			// however, this is only a preliminary solution, since the edge
+			// expressions should be interpreted
+			// if this is done there must not be infinite loops in the csd
 			for (ActivityEdge edge : node.getIncomings()) {
 				todo.add(edge.getSource());
 			}
