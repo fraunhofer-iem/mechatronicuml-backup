@@ -14636,13 +14636,14 @@
       </ports>
       <ports xsi:type="reconfiguration:ReconfigurationExecutionPort" xmi:id="_Aa39kHSQEeSCfN0RxbcB5A" name="reconfExec" behavior="_xhVCYHigEeSg3v-XthdrOg" senderMessageTypes="_qlvYKXShEeSlCdM66-7ACQ _qlvYMnShEeSlCdM66-7ACQ" receiverMessageTypes="_IDFsIHSQEeSCfN0RxbcB5A _Jro-UHSQEeSCfN0RxbcB5A _qlvYKHShEeSlCdM66-7ACQ _qlvYKXShEeSlCdM66-7ACQ">
         <cardinality xmi:id="_Aa4koHSQEeSCfN0RxbcB5A">
-          <lowerBound xmi:id="_5aeYsHVaEeSLJIytxjzkIg"/>
-          <upperBound xmi:id="_5aeYsXVaEeSLJIytxjzkIg"/>
+          <lowerBound xmi:id="_NgCckHxdEeSD-L58ibcuaw"/>
+          <upperBound xmi:id="_NgCckXxdEeSD-L58ibcuaw"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_8dVUgHSQEeSCfN0RxbcB5A" name="buffer" messageType="_IDFsIHSQEeSCfN0RxbcB5A _Jro-UHSQEeSCfN0RxbcB5A _qlvYKHShEeSlCdM66-7ACQ _qlvYKXShEeSlCdM66-7ACQ">
           <bufferSize xmi:id="_-2mR8HSQEeSCfN0RxbcB5A" infinity="true"/>
         </receiverMessageBuffer>
         <interfaceEntries xmi:id="__g3W8HSQEeSCfN0RxbcB5A" description="Creates new port instances for dealing with an additional member driving at first position." messageType="_IDFsIHSQEeSCfN0RxbcB5A">
+          <extension xsi:type="sda:OperationExtension" xmi:id="_EYiskHxdEeSD-L58ibcuaw"/>
           <timeForDecision xmi:id="_NyhesHSREeSCfN0RxbcB5A">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_OKLJsHSREeSCfN0RxbcB5A" value="5"/>
           </timeForDecision>
@@ -14654,8 +14655,8 @@
           <minimumCommitTime xmi:id="_OSVnMHSREeSCfN0RxbcB5A">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_OrdR0HSREeSCfN0RxbcB5A" value="500"/>
           </minimumCommitTime>
-          <returnValues xmi:id="_FKVg4HSREeSCfN0RxbcB5A" name="cPort" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
-          <returnValues xmi:id="_KAvPIHSREeSCfN0RxbcB5A" name="pPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
+          <returnValues xmi:id="_FKVg4HSREeSCfN0RxbcB5A" name="embC" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+          <returnValues xmi:id="_KAvPIHSREeSCfN0RxbcB5A" name="embP" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
         </interfaceEntries>
         <interfaceEntries xmi:id="_QwJGYHSREeSCfN0RxbcB5A" description="Creates new port instances for dealing with an additional member driving behind the RailCab whose corresponding port instances are given as parameters." messageType="_Jro-UHSQEeSCfN0RxbcB5A">
           <timeForDecision xmi:id="_iuHu4HSREeSCfN0RxbcB5A">
@@ -14669,8 +14670,8 @@
           <minimumCommitTime xmi:id="_jOi7YHSREeSCfN0RxbcB5A">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_jlElAHSREeSCfN0RxbcB5A" value="500"/>
           </minimumCommitTime>
-          <returnValues xmi:id="_VhQE8HSREeSCfN0RxbcB5A" name="cPort" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
-          <returnValues xmi:id="_XT7jgHSREeSCfN0RxbcB5A" name="pPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
+          <returnValues xmi:id="_VhQE8HSREeSCfN0RxbcB5A" name="embC" dataType="_R2X0MO6CEeOKI4bZ_bxwuQ"/>
+          <returnValues xmi:id="_XT7jgHSREeSCfN0RxbcB5A" name="embP" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
         </interfaceEntries>
       </ports>
     </modelElements>
@@ -15810,6 +15811,7 @@
         <ownedActivityEdge xmi:id="_Jvm3wHGwEeSVlfOmyWLx7A" target="_GgSuAHGuEeSVlfOmyWLx7A" source="_24ZMEHGtEeSVlfOmyWLx7A"/>
         <ownedActivityEdge xmi:id="_YefmsHGzEeSVlfOmyWLx7A" target="_WqmnMHGzEeSVlfOmyWLx7A" source="_MNdaQHGwEeSVlfOmyWLx7A"/>
         <ownedActivityEdge xmi:id="_ae4xIHGzEeSVlfOmyWLx7A" target="_WqmnMHGzEeSVlfOmyWLx7A" source="_GgSuAHGuEeSVlfOmyWLx7A"/>
+        <ownedActivityEdge xmi:id="_2mw-wHxcEeSD-L58ibcuaw" target="_MNdaQHGwEeSVlfOmyWLx7A" source="_Gy2TEHGtEeSVlfOmyWLx7A"/>
         <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_fjBeoGmKEeSbsbbH1osIGg" name="init" outgoing="_kNUDgGmKEeSbsbbH1osIGg"/>
         <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_gZU0gGmKEeSbsbbH1osIGg" name="Get first RefGen" outgoing="_U-O_UGmMEeSbsbbH1osIGg" incoming="_kNUDgGmKEeSbsbbH1osIGg">
           <componentStoryPattern xmi:id="_gZU0gWmKEeSbsbbH1osIGg" name="componentStoryPattern">
@@ -15851,11 +15853,11 @@
             </thisVariable>
           </componentStoryPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_Gy2TEHGtEeSVlfOmyWLx7A" name="Create Embedded Ports" incoming="_aWpC0HGtEeSVlfOmyWLx7A">
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_Gy2TEHGtEeSVlfOmyWLx7A" name="Create Embedded Ports" outgoing="_2mw-wHxcEeSD-L58ibcuaw" incoming="_aWpC0HGtEeSVlfOmyWLx7A">
           <componentStoryPattern xmi:id="_GzAEEHGtEeSVlfOmyWLx7A" name="componentStoryPattern">
             <thisVariable xmi:id="_GzAEEXGtEeSVlfOmyWLx7A" name="this" bindingState="BOUND" type="_y35J0O6BEeOKI4bZ_bxwuQ">
               <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_JZoIEHGtEeSVlfOmyWLx7A" name="cm" bindingState="BOUND" dataType="_yd930O6KEeO-LsFH58kjnA">
-                <triggerEmbeddedComponentExpressions xsi:type="componentstorydiagram:SendReconfigurationMessageExpression" xmi:id="_OKUP4HGtEeSVlfOmyWLx7A"/>
+                <triggerEmbeddedComponentExpressions xsi:type="componentstorydiagram:SendReconfigurationMessageExpression" xmi:id="_OKUP4HGtEeSVlfOmyWLx7A" reconfigurationMessageType="_Jro-UHSQEeSCfN0RxbcB5A"/>
               </partVariables>
             </thisVariable>
           </componentStoryPattern>
@@ -15865,7 +15867,9 @@
         <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_24ZMEHGtEeSVlfOmyWLx7A" name="Create Embedded Ports" outgoing="_Jvm3wHGwEeSVlfOmyWLx7A" incoming="_Dy1CMHGuEeSVlfOmyWLx7A">
           <componentStoryPattern xmi:id="_24iWAHGtEeSVlfOmyWLx7A" name="componentStoryPattern">
             <thisVariable xmi:id="_24iWAXGtEeSVlfOmyWLx7A" name="this" bindingState="BOUND" type="_y35J0O6BEeOKI4bZ_bxwuQ">
-              <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="__1K50HGtEeSVlfOmyWLx7A" name="cm" bindingState="BOUND" dataType="_yd930O6KEeO-LsFH58kjnA"/>
+              <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="__1K50HGtEeSVlfOmyWLx7A" name="cm" bindingState="BOUND" dataType="_yd930O6KEeO-LsFH58kjnA">
+                <triggerEmbeddedComponentExpressions xsi:type="componentstorydiagram:SendReconfigurationMessageExpression" xmi:id="_m45-wHxcEeSD-L58ibcuaw" reconfigurationMessageType="_IDFsIHSQEeSCfN0RxbcB5A"/>
+              </partVariables>
             </thisVariable>
           </componentStoryPattern>
         </ownedActivityNode>
@@ -15917,7 +15921,7 @@
             </thisVariable>
           </componentStoryPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_MNdaQHGwEeSVlfOmyWLx7A" name="componentStoryNode" outgoing="_YefmsHGzEeSVlfOmyWLx7A">
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_MNdaQHGwEeSVlfOmyWLx7A" name="componentStoryNode" outgoing="_YefmsHGzEeSVlfOmyWLx7A" incoming="_2mw-wHxcEeSD-L58ibcuaw">
           <componentStoryPattern xmi:id="_MNdaQXGwEeSVlfOmyWLx7A" name="componentStoryPattern">
             <thisVariable xmi:id="_MNdaQnGwEeSVlfOmyWLx7A" name="this" bindingState="BOUND" type="_y35J0O6BEeOKI4bZ_bxwuQ">
               <portVariables xsi:type="componentstorypattern:MultiPortVariable" xmi:id="_v94wsHGwEeSVlfOmyWLx7A" name="" dataType="_bkfX8O6FEeOKI4bZ_bxwuQ" subPortVariables="_1v5LkHGwEeSVlfOmyWLx7A _2DYIQHGwEeSVlfOmyWLx7A _2Rqb4HGwEeSVlfOmyWLx7A">
