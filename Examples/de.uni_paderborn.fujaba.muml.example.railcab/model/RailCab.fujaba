@@ -15805,13 +15805,13 @@
         <ownedActivityEdge xmi:id="_ZjK-gHGtEeSVlfOmyWLx7A" target="_YdiMIHGtEeSVlfOmyWLx7A" source="_XCDRMGmMEeSbsbbH1osIGg" guard="FAILURE"/>
         <ownedActivityEdge xmi:id="_aWpC0HGtEeSVlfOmyWLx7A" target="_Gy2TEHGtEeSVlfOmyWLx7A" source="_YdiMIHGtEeSVlfOmyWLx7A"/>
         <ownedActivityEdge xmi:id="_kQRaYHGtEeSVlfOmyWLx7A" target="_dht3sHGtEeSVlfOmyWLx7A" source="_Tlj8MGmMEeSbsbbH1osIGg" guard="ELSE"/>
-        <ownedActivityEdge xmi:id="_rLKv8HGtEeSVlfOmyWLx7A" target="_Tlj8MGmMEeSbsbbH1osIGg" source="_XCDRMGmMEeSbsbbH1osIGg" guard="SUCCESS"/>
         <ownedActivityEdge xmi:id="_wNtcwHGtEeSVlfOmyWLx7A" target="_YdiMIHGtEeSVlfOmyWLx7A" source="_dht3sHGtEeSVlfOmyWLx7A" guard="ELSE"/>
         <ownedActivityEdge xmi:id="_Dy1CMHGuEeSVlfOmyWLx7A" target="_24ZMEHGtEeSVlfOmyWLx7A" source="_dht3sHGtEeSVlfOmyWLx7A"/>
         <ownedActivityEdge xmi:id="_Jvm3wHGwEeSVlfOmyWLx7A" target="_GgSuAHGuEeSVlfOmyWLx7A" source="_24ZMEHGtEeSVlfOmyWLx7A"/>
         <ownedActivityEdge xmi:id="_YefmsHGzEeSVlfOmyWLx7A" target="_WqmnMHGzEeSVlfOmyWLx7A" source="_MNdaQHGwEeSVlfOmyWLx7A"/>
         <ownedActivityEdge xmi:id="_ae4xIHGzEeSVlfOmyWLx7A" target="_WqmnMHGzEeSVlfOmyWLx7A" source="_GgSuAHGuEeSVlfOmyWLx7A"/>
         <ownedActivityEdge xmi:id="_2mw-wHxcEeSD-L58ibcuaw" target="_MNdaQHGwEeSVlfOmyWLx7A" source="_Gy2TEHGtEeSVlfOmyWLx7A"/>
+        <ownedActivityEdge xmi:id="_b9S64HxeEeSgo_HRkrDy2Q" target="_Tlj8MGmMEeSbsbbH1osIGg" source="_XCDRMGmMEeSbsbbH1osIGg" guard="SUCCESS"/>
         <ownedActivityNode xsi:type="sda:InitialNode" xmi:id="_fjBeoGmKEeSbsbbH1osIGg" name="init" outgoing="_kNUDgGmKEeSbsbbH1osIGg"/>
         <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_gZU0gGmKEeSbsbbH1osIGg" name="Get first RefGen" outgoing="_U-O_UGmMEeSbsbbH1osIGg" incoming="_kNUDgGmKEeSbsbbH1osIGg">
           <componentStoryPattern xmi:id="_gZU0gWmKEeSbsbbH1osIGg" name="componentStoryPattern">
@@ -15830,8 +15830,8 @@
             </thisVariable>
           </componentStoryPattern>
         </ownedActivityNode>
-        <ownedActivityNode xsi:type="sda:JunctionNode" xmi:id="_Tlj8MGmMEeSbsbbH1osIGg" name="junction" outgoing="_Iq53UHGhEeSVlfOmyWLx7A _kQRaYHGtEeSVlfOmyWLx7A" incoming="_U-O_UGmMEeSbsbbH1osIGg _rLKv8HGtEeSVlfOmyWLx7A"/>
-        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_XCDRMGmMEeSbsbbH1osIGg" name="Get next RefGen" outgoing="_ZjK-gHGtEeSVlfOmyWLx7A _rLKv8HGtEeSVlfOmyWLx7A" incoming="_Iq53UHGhEeSVlfOmyWLx7A">
+        <ownedActivityNode xsi:type="sda:JunctionNode" xmi:id="_Tlj8MGmMEeSbsbbH1osIGg" name="junction" outgoing="_Iq53UHGhEeSVlfOmyWLx7A _kQRaYHGtEeSVlfOmyWLx7A" incoming="_U-O_UGmMEeSbsbbH1osIGg _b9S64HxeEeSgo_HRkrDy2Q"/>
+        <ownedActivityNode xsi:type="componentstorydiagram:ComponentStoryNode" xmi:id="_XCDRMGmMEeSbsbbH1osIGg" name="Get next RefGen" outgoing="_ZjK-gHGtEeSVlfOmyWLx7A _b9S64HxeEeSgo_HRkrDy2Q" incoming="_Iq53UHGhEeSVlfOmyWLx7A">
           <componentStoryPattern xmi:id="_XCDRMWmMEeSbsbbH1osIGg" name="componentStoryPattern">
             <thisVariable xmi:id="_XCDRMmmMEeSbsbbH1osIGg" name="this" bindingState="BOUND" type="_y35J0O6BEeOKI4bZ_bxwuQ">
               <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_josooGmMEeSbsbbH1osIGg" name="cm" bindingState="BOUND" dataType="_yd930O6KEeO-LsFH58kjnA">
@@ -15857,7 +15857,14 @@
           <componentStoryPattern xmi:id="_GzAEEHGtEeSVlfOmyWLx7A" name="componentStoryPattern">
             <thisVariable xmi:id="_GzAEEXGtEeSVlfOmyWLx7A" name="this" bindingState="BOUND" type="_y35J0O6BEeOKI4bZ_bxwuQ">
               <partVariables xsi:type="componentstorypattern:ComponentPartVariable" xmi:id="_JZoIEHGtEeSVlfOmyWLx7A" name="cm" bindingState="BOUND" dataType="_yd930O6KEeO-LsFH58kjnA">
-                <triggerEmbeddedComponentExpressions xsi:type="componentstorydiagram:SendReconfigurationMessageExpression" xmi:id="_OKUP4HGtEeSVlfOmyWLx7A" reconfigurationMessageType="_Jro-UHSQEeSCfN0RxbcB5A"/>
+                <triggerEmbeddedComponentExpressions xsi:type="componentstorydiagram:SendReconfigurationMessageExpression" xmi:id="_OKUP4HGtEeSVlfOmyWLx7A" reconfigurationMessageType="_Jro-UHSQEeSCfN0RxbcB5A">
+                  <parameterBindings xmi:id="_4DipUHxdEeSgUuOkp8-nhA" parameter="_LpvCsHSQEeSCfN0RxbcB5A">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_SlvVoHxeEeSgo_HRkrDy2Q" typedNamedElement="_RhNOMGqREeSX8fXHk3MwTA"/>
+                  </parameterBindings>
+                  <parameterBindings xmi:id="_Tltk4HxeEeSgo_HRkrDy2Q" parameter="_R4aLcHSQEeSCfN0RxbcB5A">
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_VsWhQHxeEeSgo_HRkrDy2Q" typedNamedElement="_WttvUGqREeSX8fXHk3MwTA"/>
+                  </parameterBindings>
+                </triggerEmbeddedComponentExpressions>
               </partVariables>
             </thisVariable>
           </componentStoryPattern>
