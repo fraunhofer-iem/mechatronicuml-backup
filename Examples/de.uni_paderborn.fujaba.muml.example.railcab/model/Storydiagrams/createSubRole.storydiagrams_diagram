@@ -158,7 +158,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_zWQM5XJKEeSUj-2PlgD-kA"/>
             </children>
             <element xmi:type="sdp:ObjectVariable" href="../RailCab.fujaba#_gxay9O5kEeO0hMrCmuqTKA"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zWQM5nJKEeSUj-2PlgD-kA" x="1470" y="4"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zWQM5nJKEeSUj-2PlgD-kA" x="1470" y="9"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_zWQM53JKEeSUj-2PlgD-kA" type="3005" fontName="Segoe UI">
             <children xmi:type="notation:DecorationNode" xmi:id="_zWQM6HJKEeSUj-2PlgD-kA" type="5008"/>

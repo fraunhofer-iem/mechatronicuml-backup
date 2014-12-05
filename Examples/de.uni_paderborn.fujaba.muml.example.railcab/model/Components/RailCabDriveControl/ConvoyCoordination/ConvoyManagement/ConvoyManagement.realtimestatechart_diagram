@@ -850,7 +850,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../../RailCab.fujaba#_dfWRgFOjEeSaVK1gfdE5pA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ERsEs3YdEeSmgoRxUBQeTA" height="2977"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ERsEs3YdEeSmgoRxUBQeTA" y="24" height="2977"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_dfWRg1OjEeSaVK1gfdE5pA"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../../RailCab.fujaba#_dfWRgFOjEeSaVK1gfdE5pA"/>
