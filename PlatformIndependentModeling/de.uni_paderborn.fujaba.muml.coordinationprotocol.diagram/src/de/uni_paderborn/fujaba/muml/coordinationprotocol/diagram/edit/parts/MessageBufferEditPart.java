@@ -355,7 +355,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 2;
-			layoutThis.makeColumnsEqualWidth = true;
+			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),

@@ -66,7 +66,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType CoordinationProtocol_3015 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_3015"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -79,6 +78,10 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType MessageType_3009 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.MessageType_3009"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Parameter_3016 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Parameter_3016"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -169,6 +172,11 @@ public class MumlElementTypes {
 							.getMessageType());
 
 			elements.put(
+					Parameter_3016,
+					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+							.getParameter());
+
+			elements.put(
 					ConnectorQualityOfServiceAssumptions_3014,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getConnectorQualityOfServiceAssumptions());
@@ -215,6 +223,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Role_3006);
 			KNOWN_ELEMENT_TYPES.add(MessageBuffer_3013);
 			KNOWN_ELEMENT_TYPES.add(MessageType_3009);
+			KNOWN_ELEMENT_TYPES.add(Parameter_3016);
 			KNOWN_ELEMENT_TYPES.add(ConnectorQualityOfServiceAssumptions_3014);
 			KNOWN_ELEMENT_TYPES
 					.add(AbstractCoordinationSpecificationRoles_4007);
@@ -244,6 +253,8 @@ public class MumlElementTypes {
 			return MessageBuffer_3013;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3009;
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return Parameter_3016;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return ConnectorQualityOfServiceAssumptions_3014;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:

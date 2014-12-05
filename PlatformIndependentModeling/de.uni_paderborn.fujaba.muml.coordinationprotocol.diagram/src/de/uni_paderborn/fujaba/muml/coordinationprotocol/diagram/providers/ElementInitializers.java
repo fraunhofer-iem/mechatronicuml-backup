@@ -145,7 +145,7 @@ public class ElementInitializers {
 
 			Object value_2 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							15,
+							17,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getCoordinationProtocol(), null).evaluate(
 							instance);
@@ -164,7 +164,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							16,
+							18,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getCoordinationProtocol(), null).evaluate(
 							instance);
@@ -216,7 +216,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							17,
+							19,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getRole(), null).evaluate(instance);
 			instance.setName((String) value_1);
@@ -234,7 +234,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							18,
+							20,
 							de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 									.getMessageBuffer(), null).evaluate(
 							instance);
@@ -253,9 +253,27 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							19,
+							21,
 							de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 									.getMessageType(), null).evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_Parameter_3016(
+			de.uni_paderborn.fujaba.muml.behavior.Parameter instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							22,
+							de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+									.getParameter(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
@@ -274,7 +292,7 @@ public class ElementInitializers {
 			instance.setConnectorQualityOfServiceAssumptions(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							13,
+							15,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getConnectorQualityOfServiceAssumptions(),
 							null).evaluate(newInstance_0_0);

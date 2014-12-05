@@ -43,10 +43,6 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements
 		}
 		// END: Added for MUML #912
 
-		if (element instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup) {
-			return ((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlNavigatorGroup) element)
-					.getGroupName();
-		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
 	}

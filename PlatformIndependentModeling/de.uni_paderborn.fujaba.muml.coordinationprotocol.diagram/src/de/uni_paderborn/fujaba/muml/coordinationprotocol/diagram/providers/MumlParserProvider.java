@@ -118,6 +118,13 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser getParameterLabel_5024Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ParameterLabelExpressionLabelParser5024();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser getConnectorQualityOfServiceAssumptionsLabel_5020Parser() {
 		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020();
 	}
@@ -151,6 +158,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getMessageBufferLabel_5019Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
 			return getMessageTypeName_5010Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+			return getParameterLabel_5024Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptionsLabel_5020Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:

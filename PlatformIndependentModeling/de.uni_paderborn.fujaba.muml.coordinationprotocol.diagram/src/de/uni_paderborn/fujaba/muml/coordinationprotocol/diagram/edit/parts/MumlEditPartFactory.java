@@ -77,6 +77,14 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart(
 						view);
 
+			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart(
+						view);
+
 			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart(
 						view);
@@ -99,6 +107,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 
 			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:

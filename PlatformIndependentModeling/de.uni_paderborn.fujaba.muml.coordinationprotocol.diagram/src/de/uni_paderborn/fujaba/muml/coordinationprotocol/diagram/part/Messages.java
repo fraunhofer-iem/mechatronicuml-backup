@@ -300,92 +300,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String MessageTypeMessageTypesCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ModelElementCategory_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_CoordinationProtocol_2005_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_3006_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_3006_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageBuffer_3013_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConnectorQualityOfServiceAssumptions_3014_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_CoordinationProtocol_3015_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnector_4006_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnector_4006_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnector_4006_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4007_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4007_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4008_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteInteractionEndpointReceiverMessageBuffer_4008_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4009_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnectorConnectorQualityOfServiceAssumptions_4009_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**
 	 * @generated

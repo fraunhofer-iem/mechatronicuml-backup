@@ -12,7 +12,9 @@ Export-Package: de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.c
  de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers,
  de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part,
- de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers,
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.helpers,
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions
 Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.ui.navigator,
  org.eclipse.ui.navigator.resources,

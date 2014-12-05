@@ -44,6 +44,8 @@ public class MumlDiagramUpdater {
 			return getCoordinationProtocolCoordinationProtocolContainerCompartment_7005SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID:
 			return getMessageBufferMessageBufferCompartment_7009SemanticChildren(view);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart.VISUAL_ID:
+			return getMessageTypeParametersCompartment_7010SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -170,6 +172,37 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlNodeDescriptor> getMessageTypeParametersCompartment_7010SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		de.uni_paderborn.fujaba.muml.msgtype.MessageType modelElement = (de.uni_paderborn.fujaba.muml.msgtype.MessageType) containerView
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getParameters().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.muml.behavior.Parameter childElement = (de.uni_paderborn.fujaba.muml.behavior.Parameter) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getContainedLinks(
 			View view) {
 		switch (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
@@ -186,6 +219,8 @@ public class MumlDiagramUpdater {
 			return getMessageBuffer_3013ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3009ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return getParameter_3016ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptions_3014ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
@@ -211,6 +246,8 @@ public class MumlDiagramUpdater {
 			return getMessageBuffer_3013IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3009IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return getParameter_3016IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptions_3014IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
@@ -236,6 +273,8 @@ public class MumlDiagramUpdater {
 			return getMessageBuffer_3013OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getMessageType_3009OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return getParameter_3016OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID:
 			return getConnectorQualityOfServiceAssumptions_3014OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
@@ -302,6 +341,14 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getMessageType_3009ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getParameter_3016ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -385,6 +432,14 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getParameter_3016IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getConnectorQualityOfServiceAssumptions_3014IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions modelElement = (de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions) view
@@ -454,6 +509,14 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getMessageType_3009OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getParameter_3016OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

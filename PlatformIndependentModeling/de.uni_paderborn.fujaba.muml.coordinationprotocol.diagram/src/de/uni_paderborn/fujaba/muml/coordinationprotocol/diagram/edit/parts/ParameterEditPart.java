@@ -15,40 +15,38 @@ package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts;
 import java.util.Collection;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
-import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
 
 /**
  * @generated
  */
-public class MessageTypeEditPart extends ShapeNodeEditPart {
+public class ParameterEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3009;
+	public static final int VISUAL_ID = 3016;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -86,7 +84,7 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public MessageTypeEditPart(View view) {
+	public ParameterEditPart(View view) {
 		super(view);
 	}
 
@@ -94,14 +92,10 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MessageTypeItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.ParameterItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -120,16 +114,23 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-
-		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
-					if (child instanceof ITextAwareEditPart) {
-						return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlTextSelectionEditPolicy();
-					}
+				EditPolicy result = child
+						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new NonResizableEditPolicy();
 				}
-				return super.createChildEditPolicy(child);
+				return result;
+			}
+
+			protected Command getMoveChildrenCommand(Request request) {
+				return null;
+			}
+
+			protected Command getCreateCommand(CreateRequest request) {
+				return null;
 			}
 		};
 		return lep;
@@ -139,32 +140,23 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new MessageTypeFigure();
+		return primaryShape = new ParameterFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public MessageTypeFigure getPrimaryShape() {
-		return (MessageTypeFigure) primaryShape;
+	public ParameterFigure getPrimaryShape() {
+		return (ParameterFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart) {
-			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureMessageTypeNameLabelFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureParametersCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart) {
+			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureParameterLabel());
 			return true;
 		}
 		return false;
@@ -174,14 +166,7 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureParametersCompartmentFigure();
-			pane.remove(((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart) {
 			return true;
 		}
 		return false;
@@ -211,9 +196,6 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart) {
-			return getPrimaryShape().getFigureParametersCompartmentFigure();
-		}
 		return getContentPane();
 	}
 
@@ -226,6 +208,18 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
 
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		EditPolicy result = super.getPrimaryDragEditPolicy();
+		if (result instanceof ResizableEditPolicy) {
+			ResizableEditPolicy ep = (ResizableEditPolicy) result;
+			ep.setResizeDirections(PositionConstants.NONE);
+		}
 		return result;
 	}
 
@@ -312,55 +306,23 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public EditPart getTargetEditPart(Request request) {
-		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
-					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.Parameter_3016) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart.VISUAL_ID));
-			}
-		}
-		return super.getTargetEditPart(request);
-	}
-
-	/**
-	 * @generated
-	 */
-	public class MessageTypeFigure extends RectangleFigure {
+	public class ParameterFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureMessageTypeNameLabelFigure;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureParametersCompartmentFigure;
+		private WrappingLabel fFigureParameterLabel;
 
 		/**
 		 * @generated
 		 */
-		public MessageTypeFigure() {
-
-			ToolbarLayout layoutThis = new ToolbarLayout();
-			layoutThis.setStretchMinorAxis(true);
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
-			layoutThis.setSpacing(0);
-			layoutThis.setVertical(false);
-
-			this.setLayoutManager(layoutThis);
-
+		public ParameterFigure() {
 			this.setFill(false);
 			this.setOutline(false);
 			createContents();
@@ -371,45 +333,19 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureMessageTypeNameLabelFigure = new WrappingLabel();
+			fFigureParameterLabel = new WrappingLabel();
 
-			fFigureMessageTypeNameLabelFigure.setText("");
+			fFigureParameterLabel.setText("");
 
-			this.add(fFigureMessageTypeNameLabelFigure);
-
-			WrappingLabel openingParenthesesLabelFigure0 = new WrappingLabel();
-
-			openingParenthesesLabelFigure0.setText("(");
-
-			this.add(openingParenthesesLabelFigure0);
-
-			fFigureParametersCompartmentFigure = new RectangleFigure();
-
-			fFigureParametersCompartmentFigure.setFill(false);
-			fFigureParametersCompartmentFigure.setOutline(false);
-
-			this.add(fFigureParametersCompartmentFigure);
-
-			WrappingLabel closingParenthesesLabelFigure0 = new WrappingLabel();
-
-			closingParenthesesLabelFigure0.setText(")");
-
-			this.add(closingParenthesesLabelFigure0);
+			this.add(fFigureParameterLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureMessageTypeNameLabelFigure() {
-			return fFigureMessageTypeNameLabelFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureParametersCompartmentFigure() {
-			return fFigureParametersCompartmentFigure;
+		public WrappingLabel getFigureParameterLabel() {
+			return fFigureParameterLabel;
 		}
 
 	}
