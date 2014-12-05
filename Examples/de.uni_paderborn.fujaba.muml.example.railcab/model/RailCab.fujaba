@@ -5014,16 +5014,21 @@
       <variables xmi:id="_4bh73XidEeSg3v-XthdrOg" name="curCPort" dataType="_uz92IfR7EeOKmIQk3FL8KA"/>
       <variables xmi:id="_OssXEHimEeSg3v-XthdrOg" name="curPPort" dataType="_aUiTUO6CEeOKI4bZ_bxwuQ"/>
       <variables xmi:id="_4bh733idEeSg3v-XthdrOg" name="maxNumMembers" dataType="_hm9EVriwEeKp46K0r5yxrg" constant="true">
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_4bh74HidEeSg3v-XthdrOg" value="3"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8XpPEHyaEeSgTeWUASugdw" value="10"/>
       </variables>
       <variables xmi:id="_4bh74XidEeSg3v-XthdrOg" name="members" dataType="_hm9EVriwEeKp46K0r5yxrg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_4bh74nidEeSg3v-XthdrOg" value="0"/>
       </variables>
       <variables xmi:id="_4bh71nidEeSg3v-XthdrOg" name="allProfiles" dataType="_Xl73AfSAEeOKmIQk3FL8KA"/>
+      <variables xmi:id="_VqFrE3yYEeSgTeWUASugdw" name="convoySpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      <variables xmi:id="_VqFrFnyYEeSgTeWUASugdw" name="updateProfiles" dataType="_hm9EU7iwEeKp46K0r5yxrg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VqFrF3yYEeSgTeWUASugdw" value="false"/>
+      </variables>
+      <variables xmi:id="_VqFrFHyYEeSgTeWUASugdw" name="ownMaxSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
+      <variables xmi:id="_VqFrFXyYEeSgTeWUASugdw" name="minDistance" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
       <states xmi:id="_dfWRgVOjEeSaVK1gfdE5pA" name="ConvoyManagement_Main" initial="true">
         <embeddedRegions xmi:id="_n4q1wFOjEeSaVK1gfdE5pA" priority="1">
           <embeddedStatechart xmi:id="_n4q1wVOjEeSaVK1gfdE5pA" name="SpeedTransmission_sender_speedProvider" behavioralElement="_f4o1EO6CEeOKI4bZ_bxwuQ">
-            <variables xmi:id="_n4q1wlOjEeSaVK1gfdE5pA" name="speed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
             <transitions xmi:id="_n4q1w1OjEeSaVK1gfdE5pA" priority="1" target="_n4q1y1OjEeSaVK1gfdE5pA" source="_n4q1y1OjEeSaVK1gfdE5pA">
               <clockConstraints xmi:id="_n4q1xFOjEeSaVK1gfdE5pA" clock="_n4q10FOjEeSaVK1gfdE5pA" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_n4q1xVOjEeSaVK1gfdE5pA">
@@ -5033,7 +5038,7 @@
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_n4q1x1OjEeSaVK1gfdE5pA">
                 <message xmi:id="_n4q1yFOjEeSaVK1gfdE5pA" instanceOf="_9L8i8FOfEeSaVK1gfdE5pA">
                   <parameterBinding xmi:id="_n4q1yVOjEeSaVK1gfdE5pA" parameter="_BxB3sFOgEeSaVK1gfdE5pA">
-                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_n4q1ylOjEeSaVK1gfdE5pA" typedNamedElement="_n4q1wlOjEeSaVK1gfdE5pA"/>
+                    <value xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_vZ_F0HyaEeSgTeWUASugdw" typedNamedElement="_VqFrE3yYEeSgTeWUASugdw"/>
                   </parameterBinding>
                 </message>
               </events>
@@ -5144,6 +5149,14 @@
                       <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_q8pFAXiuEeSM8KwkAFk8ZA" typedNamedElement="_4bh73nidEeSg3v-XthdrOg"/>
                       <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_q8pFAniuEeSM8KwkAFk8ZA" value="null"/>
                     </guard>
+                    <action xmi:id="_1a0m4HyaEeSgTeWUASugdw" name="updateProfiles := true;">
+                      <expressions xsi:type="actionlanguage:Block" xmi:id="_2z22YHyaEeSgTeWUASugdw">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2z22YXyaEeSgTeWUASugdw" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_2z22YnyaEeSgTeWUASugdw" value="true"/>
+                          <lhs_typedNamedElementExpression xmi:id="_2z22Y3yaEeSgTeWUASugdw" typedNamedElement="_VqFrFnyYEeSgTeWUASugdw"/>
+                        </expressions>
+                      </expressions>
+                    </action>
                   </transitions>
                   <transitions xmi:id="_4bh8AXidEeSg3v-XthdrOg" priority="2" target="_4bh8knidEeSg3v-XthdrOg" source="_4bh8inidEeSg3v-XthdrOg">
                     <synchronization xmi:id="_4bh8AnidEeSg3v-XthdrOg" syncChannel="_4bh9IHidEeSg3v-XthdrOg">
@@ -5597,21 +5610,19 @@
         </embeddedRegions>
         <embeddedRegions xmi:id="_WnoG8HieEeSg3v-XthdrOg" priority="5">
           <embeddedStatechart xmi:id="_WnoG8XieEeSg3v-XthdrOg" name="StrategyExchange_receiver_strategy" behavioralElement="_dSy0MO6CEeOKI4bZ_bxwuQ">
-            <variables xmi:id="_WnoG8nieEeSg3v-XthdrOg" name="newMaxSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
-            <variables xmi:id="_WnoG83ieEeSg3v-XthdrOg" name="newMinDistance" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
             <transitions xmi:id="_WnoG9HieEeSg3v-XthdrOg" priority="1" target="_WnoHA3ieEeSg3v-XthdrOg" source="_WnoHAnieEeSg3v-XthdrOg" clockResets="_WnoHB3ieEeSg3v-XthdrOg">
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_WnoG9XieEeSg3v-XthdrOg" kind="TRIGGER">
                 <message xmi:id="_WnoG9nieEeSg3v-XthdrOg" instanceOf="_-bCkkFOlEeSDPNki4Dv8rg"/>
               </events>
-              <action xmi:id="_WnoG93ieEeSg3v-XthdrOg" name="newMaxSpeed := updateStrategy.maxSpeed; newMinDistance := updateStrategy.minDistance;">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_KW994HivEeSM8KwkAFk8ZA">
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_KW994XivEeSM8KwkAFk8ZA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_KW994nivEeSM8KwkAFk8ZA" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_MjK5EGKdEeS-2sR8iwsrMg"/>
-                    <lhs_typedNamedElementExpression xmi:id="_KW9943ivEeSM8KwkAFk8ZA" typedNamedElement="_WnoG8nieEeSg3v-XthdrOg"/>
+              <action xmi:id="_WnoG93ieEeSg3v-XthdrOg" name="ownMaxSpeed := updateStrategy.maxSpeed; minDistance := updateStrategy.minDistance;">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_feF0YHybEeSgTeWUASugdw">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_feF0YXybEeSgTeWUASugdw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_feF0YnybEeSgTeWUASugdw" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_MjK5EGKdEeS-2sR8iwsrMg"/>
+                    <lhs_typedNamedElementExpression xmi:id="_feF0Y3ybEeSgTeWUASugdw" typedNamedElement="_VqFrFHyYEeSgTeWUASugdw"/>
                   </expressions>
-                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_KW995HivEeSM8KwkAFk8ZA" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_KW995XivEeSM8KwkAFk8ZA" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_O-fsAGKdEeS-2sR8iwsrMg"/>
-                    <lhs_typedNamedElementExpression xmi:id="_KW995nivEeSM8KwkAFk8ZA" typedNamedElement="_WnoG83ieEeSg3v-XthdrOg"/>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_feF0ZHybEeSgTeWUASugdw" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_feF0ZXybEeSgTeWUASugdw" messageType="_-bCkkFOlEeSDPNki4Dv8rg" parameter="_O-fsAGKdEeS-2sR8iwsrMg"/>
+                    <lhs_typedNamedElementExpression xmi:id="_feF0ZnybEeSgTeWUASugdw" typedNamedElement="_VqFrFXyYEeSgTeWUASugdw"/>
                   </expressions>
                 </expressions>
               </action>
@@ -5888,12 +5899,6 @@
         <embeddedRegions xmi:id="_VqFrEHyYEeSgTeWUASugdw" priority="8">
           <embeddedStatechart xmi:id="_VqFrEXyYEeSgTeWUASugdw" name="ProfileDistribution_profileProvider_profileProvider" behavioralElement="_aUiTUO6CEeOKI4bZ_bxwuQ">
             <variables xmi:id="_VqFrEnyYEeSgTeWUASugdw" name="newConvoySpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
-            <variables xmi:id="_VqFrE3yYEeSgTeWUASugdw" name="convoySpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
-            <variables xmi:id="_VqFrFHyYEeSgTeWUASugdw" name="ownMaxSpeed" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
-            <variables xmi:id="_VqFrFXyYEeSgTeWUASugdw" name="minDistance" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
-            <variables xmi:id="_VqFrFnyYEeSgTeWUASugdw" name="updateProfiles" dataType="_hm9EU7iwEeKp46K0r5yxrg">
-              <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VqFrF3yYEeSgTeWUASugdw" value="false"/>
-            </variables>
             <states xmi:id="_VqFrGXyYEeSgTeWUASugdw" name="ProfileProvider_Main" initial="true">
               <embeddedRegions xmi:id="_VqFrGnyYEeSgTeWUASugdw" priority="1">
                 <embeddedStatechart xmi:id="_VqFrG3yYEeSgTeWUASugdw" name="adaptation_ProfileProvider">
