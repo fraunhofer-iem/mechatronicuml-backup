@@ -13,6 +13,9 @@
     <descriptors name="RolePatternFigure">
       <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RolePatternFigure" lineKind="LINE_DASH">
         <children xsi:type="gmfgraph:Label" name="RolePatternLabel"/>
+        <children xsi:type="gmfgraph:PolylineConnection" name="RolePatternFigure" lineKind="LINE_DASH">
+          <children xsi:type="gmfgraph:Label" name="RolePatternLabel"/>
+        </children>
       </actualFigure>
       <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
