@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart;
+import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeMessageTypesCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart;
@@ -30,6 +31,8 @@ public class CustomProtocolEditPartFactory extends MumlEditPartFactory {
 				return new CustomModelElementCategoryEditPart(view);
 			case RoleConnectorEditPart.VISUAL_ID:
 				return new CustomRoleConnectorEditPart(view);
+			case MessageTypeMessageTypesCompartmentEditPart.VISUAL_ID:
+				return new CustomMessageTypeMessageTypesCompartmentEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

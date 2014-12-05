@@ -35,7 +35,6 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.part.Activator;
-import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.utilities.batch.BatchDiagramCreationWizard;
 
@@ -58,8 +57,9 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 			GraphicalEditPart editPart = (GraphicalEditPart) iter.next();
 
 			// add StaticStructuredComponent to list
-			if (editPart instanceof RoleEditPart) {
-				Role role = (Role) ((View) editPart.getModel()).getElement();
+			EObject element = ((View) editPart.getModel()).getElement();
+			if (element instanceof Role) {
+				Role role = (Role) element;
 				createRoleRTSC(role, window.getShell(),
 						editPart.getEditingDomain());
 			}
