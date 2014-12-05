@@ -23,6 +23,9 @@
     <nodeLabelTraces
         visualID="5010"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7010"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3013"
@@ -55,6 +58,13 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/protocol/0.4.0' and _eClass_.name = 'CoordinationProtocol') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/protocol/0.4.0' and _eClass_.name = 'AbstractCoordinationSpecification') and _containmentMF_.name = 'gmfAbstractCoordinationSpecification')">
     <nodeLabelTraces
         visualID="5023"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3016"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/behavior/0.4.0' and _eClass_.name = 'Parameter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/msgtype/0.4.0' and _eClass_.name = 'MessageType') and _containmentMF_.name = 'parameters')">
+    <nodeLabelTraces
+        visualID="5024"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces
