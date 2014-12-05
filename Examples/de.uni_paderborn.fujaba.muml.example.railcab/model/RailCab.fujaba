@@ -5972,7 +5972,15 @@
                 </lowerBound>
               </relativeDeadline>
               <action xmi:id="_6TSLoHyPEeSgTeWUASugdw" name="createSubRole();">
-                <expressions xsi:type="actionlanguage:Block" xmi:id="_7kKksHyPEeSgTeWUASugdw"/>
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_7kKksHyPEeSgTeWUASugdw">
+                  <expressions xsi:type="expression:ActivityCallExpression" xmi:id="_pa188HyREeSgTeWUASugdw" callee="_gxay0e5kEeO0hMrCmuqTKA">
+                    <ownedParameterBindings xmi:id="_pa188XyREeSgTeWUASugdw" parameter="_gxay1e5kEeO0hMrCmuqTKA">
+                      <valueExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_pa188nyREeSgTeWUASugdw">
+                        <position xmi:id="_pa1883yREeSgTeWUASugdw"/>
+                      </valueExpression>
+                    </ownedParameterBindings>
+                  </expressions>
+                </expressions>
               </action>
             </transitions>
             <states xmi:id="_il-QoGKXEeS-2sR8iwsrMg" name="Idle" outgoingTransitions="_gRuEIGUKEeS2Zodb8JPC8A _1EvqMHyPEeSgTeWUASugdw" incomingTransitions="_hJW2wGUKEeS2Zodb8JPC8A _1EvqMHyPEeSgTeWUASugdw" initial="true">
@@ -6049,7 +6057,16 @@
               <action xmi:id="_pAfDkHyOEeSgTeWUASugdw" name="tmpProfile := getProfile(allProfiles, self);">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_rKk8kHyOEeSgTeWUASugdw">
                   <expressions xsi:type="actionlanguage:Assignment" xmi:id="_rKk8kXyOEeSgTeWUASugdw" assignOperator=":=">
-                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_rKk8knyOEeSgTeWUASugdw" value="null"/>
+                    <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_-6IJAHyREeSgTeWUASugdw" callee="_uuWq1_STEeOKmIQk3FL8KA">
+                      <ownedParameterBindings xmi:id="_-6IJAXyREeSgTeWUASugdw" parameter="_uuWqu_STEeOKmIQk3FL8KA">
+                        <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-6IJAnyREeSgTeWUASugdw" typedNamedElement="_Ccrt8HyLEeSgTeWUASugdw"/>
+                      </ownedParameterBindings>
+                      <ownedParameterBindings xmi:id="_-6IJA3yREeSgTeWUASugdw" parameter="_uuWqvfSTEeOKmIQk3FL8KA">
+                        <valueExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_M_7mEHySEeSgTeWUASugdw">
+                          <position xmi:id="_M_7mEXySEeSgTeWUASugdw"/>
+                        </valueExpression>
+                      </ownedParameterBindings>
+                    </rhs_assignExpression>
                     <lhs_typedNamedElementExpression xmi:id="_rKk8k3yOEeSgTeWUASugdw" typedNamedElement="_y-5U8GUKEeS2Zodb8JPC8A"/>
                   </expressions>
                 </expressions>
