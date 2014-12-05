@@ -5019,6 +5019,7 @@
       <variables xmi:id="_4bh74XidEeSg3v-XthdrOg" name="members" dataType="_hm9EVriwEeKp46K0r5yxrg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_4bh74nidEeSg3v-XthdrOg" value="0"/>
       </variables>
+      <variables xmi:id="_4bh71nidEeSg3v-XthdrOg" name="allProfiles" dataType="_Xl73AfSAEeOKmIQk3FL8KA"/>
       <states xmi:id="_dfWRgVOjEeSaVK1gfdE5pA" name="ConvoyManagement_Main" initial="true">
         <embeddedRegions xmi:id="_n4q1wFOjEeSaVK1gfdE5pA" priority="1">
           <embeddedStatechart xmi:id="_n4q1wVOjEeSaVK1gfdE5pA" name="SpeedTransmission_sender_speedProvider" behavioralElement="_f4o1EO6CEeOKI4bZ_bxwuQ">
@@ -5090,7 +5091,6 @@
             <variables xmi:id="_4bh703idEeSg3v-XthdrOg" name="newRailCabPosition" dataType="_hm9EVriwEeKp46K0r5yxrg"/>
             <variables xmi:id="_4bh71HidEeSg3v-XthdrOg" name="changed" dataType="_hm9EU7iwEeKp46K0r5yxrg"/>
             <variables xmi:id="_4bh71XidEeSg3v-XthdrOg" name="newProfile" dataType="_Xl73APSAEeOKmIQk3FL8KA"/>
-            <variables xmi:id="_4bh71nidEeSg3v-XthdrOg" name="allProfiles" dataType="_Xl73AfSAEeOKmIQk3FL8KA"/>
             <states xmi:id="_4bh713idEeSg3v-XthdrOg" name="ConvoyCoordination_Coordinator_Main" initial="true">
               <embeddedRegions xmi:id="_4bh72HidEeSg3v-XthdrOg" priority="1">
                 <embeddedStatechart xmi:id="_4bh72XidEeSg3v-XthdrOg" name="Coordinator_adaptation">
@@ -5894,7 +5894,6 @@
             <variables xmi:id="_VqFrFnyYEeSgTeWUASugdw" name="updateProfiles" dataType="_hm9EU7iwEeKp46K0r5yxrg">
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_VqFrF3yYEeSgTeWUASugdw" value="false"/>
             </variables>
-            <variables xmi:id="_VqFrGHyYEeSgTeWUASugdw" name="allProfiles" dataType="_Xl73AfSAEeOKmIQk3FL8KA"/>
             <states xmi:id="_VqFrGXyYEeSgTeWUASugdw" name="ProfileProvider_Main" initial="true">
               <embeddedRegions xmi:id="_VqFrGnyYEeSgTeWUASugdw" priority="1">
                 <embeddedStatechart xmi:id="_VqFrG3yYEeSgTeWUASugdw" name="adaptation_ProfileProvider">
@@ -6005,7 +6004,7 @@
                         <expressions xsi:type="actionlanguage:Assignment" xmi:id="_VqFrbXyYEeSgTeWUASugdw" assignOperator=":=">
                           <rhs_assignExpression xsi:type="expression:ActivityCallExpression" xmi:id="_VqFrbnyYEeSgTeWUASugdw" callee="_uuWq1_STEeOKmIQk3FL8KA">
                             <ownedParameterBindings xmi:id="_VqFrb3yYEeSgTeWUASugdw" parameter="_uuWqu_STEeOKmIQk3FL8KA">
-                              <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_VqFrcHyYEeSgTeWUASugdw" typedNamedElement="_VqFrGHyYEeSgTeWUASugdw"/>
+                              <valueExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_VqFrcHyYEeSgTeWUASugdw" typedNamedElement="_4bh71nidEeSg3v-XthdrOg"/>
                             </ownedParameterBindings>
                             <ownedParameterBindings xmi:id="_VqFrcXyYEeSgTeWUASugdw" parameter="_uuWqvfSTEeOKmIQk3FL8KA">
                               <valueExpression xsi:type="actionlanguage:DiscreteInteractionEndpointReference" xmi:id="_VqFrcnyYEeSgTeWUASugdw">
