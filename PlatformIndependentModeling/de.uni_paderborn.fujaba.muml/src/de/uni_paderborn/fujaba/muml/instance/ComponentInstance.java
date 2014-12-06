@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getComponentPart <em>Component Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getParentCIC <em>Parent CIC</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#isTopLevel <em>Top Level</em>}</li>
  * </ul>
  * </p>
  *
@@ -144,5 +145,21 @@ public interface ComponentInstance extends NamedElement {
 	 * @generated
 	 */
 	void setParentCIC(ComponentInstanceConfiguration value);
+
+	/**
+	 * Returns the value of the '<em><b>Top Level</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A component instance is considered to be a top-level component instance if it is not embedded in a structured component instance.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Top Level</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstance_TopLevel()
+	 * @model default="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.parentCIC.parentStructuredComponentInstance.oclIsUndefined()'"
+	 * @generated
+	 */
+	boolean isTopLevel();
 
 } // ComponentInstance

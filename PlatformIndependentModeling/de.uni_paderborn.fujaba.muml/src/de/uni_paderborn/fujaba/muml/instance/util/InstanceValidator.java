@@ -311,33 +311,31 @@ public class InstanceValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the PortInstanceMustDelegateToEmbeddedCIC constraint of '<em>Port Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String PORT_INSTANCE__PORT_INSTANCE_MUST_DELEGATE_TO_EMBEDDED_CIC__EEXPRESSION = "-- PortInstance at Structured Component must delegate to embedded CIC\n" +
-		"(componentInstance.oclIsKindOf(StructuredComponentInstance) and not self.oclIsKindOf(connector::DiscreteMultiInteractionEndpointInstance)) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance))->isEmpty()";
-
-	/**
 	 * Validates the PortInstanceMustDelegateToEmbeddedCIC constraint of '<em>Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(InstancePackage.Literals.PORT_INSTANCE,
-				 portInstance,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "PortInstanceMustDelegateToEmbeddedCIC",
-				 PORT_INSTANCE__PORT_INSTANCE_MUST_DELEGATE_TO_EMBEDDED_CIC__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "PortInstanceMustDelegateToEmbeddedCIC", getObjectLabel(portInstance, context) },
+						 new Object[] { portInstance },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -742,6 +740,7 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String DISCRETE_SINGLE_PORT_INSTANCE__PORT_INSTANCE_NEEDS_DELEGATION_TO_PARENT_OR_ASSEMBLY__EEXPRESSION = "-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.\n" +
+		"(not self.componentInstance.topLevel) implies (\n" +
 		"not portConnectorInstances->select(\n" +
 		"\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n" +
 		"\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n" +
@@ -749,7 +748,8 @@ public class InstanceValidator extends MumlValidator {
 		")->isEmpty() or\n" +
 		"not portConnectorInstances->select(\n" +
 		"\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n" +
-		")->isEmpty()";
+		")->isEmpty()\n" +
+		")";
 
 	/**
 	 * Validates the PortInstanceNeedsDelegationToParentOrAssembly constraint of '<em>Discrete Single Port Instance</em>'.

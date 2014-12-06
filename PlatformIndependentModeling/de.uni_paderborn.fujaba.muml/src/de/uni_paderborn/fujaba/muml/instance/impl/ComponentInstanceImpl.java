@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -37,6 +38,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getComponentPart <em>Component Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getParentCIC <em>Parent CIC</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#isTopLevel <em>Top Level</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,6 +74,16 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 	 * @ordered
 	 */
 	protected ComponentPart componentPart;
+
+	/**
+	 * The cached setting delegate for the '{@link #isTopLevel() <em>Top Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTopLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TOP_LEVEL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__TOP_LEVEL).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,6 +241,15 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isTopLevel() {
+		return (Boolean)TOP_LEVEL__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -291,6 +312,8 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 				return basicGetComponentPart();
 			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
 				return getParentCIC();
+			case InstancePackage.COMPONENT_INSTANCE__TOP_LEVEL:
+				return isTopLevel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -361,6 +384,8 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 				return componentPart != null;
 			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
 				return getParentCIC() != null;
+			case InstancePackage.COMPONENT_INSTANCE__TOP_LEVEL:
+				return TOP_LEVEL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

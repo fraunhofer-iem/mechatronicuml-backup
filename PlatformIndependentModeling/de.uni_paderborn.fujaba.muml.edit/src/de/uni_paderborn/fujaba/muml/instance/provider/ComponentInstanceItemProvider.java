@@ -64,6 +64,7 @@ public class ComponentInstanceItemProvider
 			addPortInstancesPropertyDescriptor(object);
 			addComponentPartPropertyDescriptor(object);
 			addParentCICPropertyDescriptor(object);
+			addTopLevelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -186,6 +187,28 @@ public class ComponentInstanceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Top Level feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTopLevelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInstance_topLevel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_topLevel_feature", "_UI_ComponentInstance_type"),
+				 InstancePackage.Literals.COMPONENT_INSTANCE__TOP_LEVEL,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -252,6 +275,9 @@ public class ComponentInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInstance.class)) {
+			case InstancePackage.COMPONENT_INSTANCE__TOP_LEVEL:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

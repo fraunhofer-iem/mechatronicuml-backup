@@ -620,6 +620,16 @@
           <details key="documentation" value="The component instance configuration that contains this component instance."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="topLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.parentCIC.parentStructuredComponentInstance.oclIsUndefined()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A component instance is considered to be a top-level component instance if it is not embedded in a structured component instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PortConnectorInstance" abstract="true"
         eSuperTypes="#//connector/ConnectorInstance">
@@ -661,7 +671,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="PortInstanceMustReferencePortType" value="-- The type of a port instance must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined()) then&#xD;&#xA;self.type.oclIsKindOf(component::Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
-        <details key="PortInstanceMustDelegateToEmbeddedCIC" value="-- PortInstance at Structured Component must delegate to embedded CIC&#xA;(componentInstance.oclIsKindOf(StructuredComponentInstance) and not self.oclIsKindOf(connector::DiscreteMultiInteractionEndpointInstance)) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance))->isEmpty()"/>
+        <details key="PortInstanceMustDelegateToEmbeddedCIC"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
           eType="#//component/Port" changeable="false" volatile="true" transient="true"
@@ -862,7 +872,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="PortInstanceNotMultipleAssemblyConnectorInstances" value="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->size() &lt;= 1"/>
         <details key="PortInstanceNotMultipleDelegationConnectorInstances" value="-- PortInstance must have not have multiple Delegation Connector Instances per directiond assigned.&#xD;&#xA;let delegationInstances : Set(instance::DelegationConnectorInstance) = portConnectorInstances->select(oclIsKindOf(instance::DelegationConnectorInstance)).oclAsType(instance::DelegationConnectorInstance)->asSet() in&#xD;&#xA;let incoming : Set(instance::DelegationConnectorInstance) = delegationInstances->select(di | di.portInstances->forAll(pi |pi = self or pi.componentInstance->closure(p | if p.oclIsKindOf(instance::StructuredComponentInstance) then p.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else OrderedSet { p } endif)->includes(self.componentInstance))) in&#xD;&#xA;let outgoing : Set(instance::DelegationConnectorInstance) = delegationInstances->select(di | di.portInstances->forAll(pi |pi = self or self.componentInstance->closure(p | if p.oclIsKindOf(instance::StructuredComponentInstance) then p.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else OrderedSet { p } endif)->includes(pi.componentInstance))) in&#xD;&#xA;incoming->size() &lt;= 1 and outgoing->size() &lt;= 1"/>
-        <details key="PortInstanceNeedsDelegationToParentOrAssembly" value="-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclIsKindOf(StructuredComponentInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)&#xA;)->isEmpty() or&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->isEmpty()"/>
+        <details key="PortInstanceNeedsDelegationToParentOrAssembly" value="-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.&#xA;(not self.componentInstance.topLevel) implies (&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclIsKindOf(StructuredComponentInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)&#xA;)->isEmpty() or&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->isEmpty()&#xA;)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceNeedsDelegationToParentOrAssembly"/>

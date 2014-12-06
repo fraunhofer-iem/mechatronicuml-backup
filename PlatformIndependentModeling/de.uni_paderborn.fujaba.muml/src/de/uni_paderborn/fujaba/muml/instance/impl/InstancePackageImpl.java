@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.instance.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -300,6 +301,15 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 */
 	public EReference getComponentInstance_ParentCIC() {
 		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentInstance_TopLevel() {
+		return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -650,6 +660,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PORT_INSTANCES);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_PART);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PARENT_CIC);
+		createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__TOP_LEVEL);
 
 		portConnectorInstanceEClass = createEClass(PORT_CONNECTOR_INSTANCE);
 		createEReference(portConnectorInstanceEClass, PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE);
@@ -762,6 +773,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getComponentInstance_PortInstances(), this.getPortInstance(), this.getPortInstance_ComponentInstance(), "portInstances", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_ComponentPart(), theComponentPackage.getComponentPart(), null, "componentPart", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_ParentCIC(), this.getComponentInstanceConfiguration(), this.getComponentInstanceConfiguration_ComponentInstances(), "parentCIC", null, 1, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentInstance_TopLevel(), ecorePackage.getEBoolean(), "topLevel", "true", 0, 1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(portConnectorInstanceEClass, PortConnectorInstance.class, "PortConnectorInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortConnectorInstance_PortConnectorType(), theComponentPackage.getPortConnector(), null, "portConnectorType", null, 0, 1, PortConnectorInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -920,6 +932,12 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "AllPortsAreInitialized", "-- All ContinuousPorts, HybridPorts and DiscretePorts, with  a lowerBound>0, must be initialized\nlet discretePorts : Set(component::DiscretePort) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->asOrderedSet() endif in\nlet nonDiscretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->reject(port| port.oclIsKindOf(component::DiscretePort)) endif in\nlet portsWichShallBeInitialized : Set(component::Port) = nonDiscretePorts->union(discretePorts->select(discretePort| discretePort.cardinality.lowerBound.value > 0 or discretePort.cardinality.lowerBound.infinity)) in\nself.portInstances->forAll(portInstance| portsWichShallBeInitialized->exists(port| port = portInstance.type))\n-- adann"
 		   });	
 		addAnnotation
+		  (getComponentInstance_TopLevel(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.parentCIC.parentStructuredComponentInstance.oclIsUndefined()"
+		   });	
+		addAnnotation
 		  (portConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
@@ -942,7 +960,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "PortInstanceMustReferencePortType", "-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif",
-			 "PortInstanceMustDelegateToEmbeddedCIC", "-- PortInstance at Structured Component must delegate to embedded CIC\n(componentInstance.oclIsKindOf(StructuredComponentInstance) and not self.oclIsKindOf(connector::DiscreteMultiInteractionEndpointInstance)) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance))->isEmpty()"
+			 "PortInstanceMustDelegateToEmbeddedCIC", null
 		   });	
 		addAnnotation
 		  (getPortInstance_PortType(), 
@@ -1046,7 +1064,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   new String[] {
 			 "PortInstanceNotMultipleAssemblyConnectorInstances", "-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.\nportConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->size() <= 1",
 			 "PortInstanceNotMultipleDelegationConnectorInstances", "-- PortInstance must have not have multiple Delegation Connector Instances per directiond assigned.\r\nlet delegationInstances : Set(instance::DelegationConnectorInstance) = portConnectorInstances->select(oclIsKindOf(instance::DelegationConnectorInstance)).oclAsType(instance::DelegationConnectorInstance)->asSet() in\r\nlet incoming : Set(instance::DelegationConnectorInstance) = delegationInstances->select(di | di.portInstances->forAll(pi |pi = self or pi.componentInstance->closure(p | if p.oclIsKindOf(instance::StructuredComponentInstance) then p.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else OrderedSet { p } endif)->includes(self.componentInstance))) in\r\nlet outgoing : Set(instance::DelegationConnectorInstance) = delegationInstances->select(di | di.portInstances->forAll(pi |pi = self or self.componentInstance->closure(p | if p.oclIsKindOf(instance::StructuredComponentInstance) then p.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else OrderedSet { p } endif)->includes(pi.componentInstance))) in\r\nincoming->size() <= 1 and outgoing->size() <= 1",
-			 "PortInstanceNeedsDelegationToParentOrAssembly", "-- PortInstance needs a Delegation Connector Instance to the parent component\'s port or an Assembly Connector Instance to a port within this CIC.\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\n)->isEmpty() or\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->isEmpty()"
+			 "PortInstanceNeedsDelegationToParentOrAssembly", "-- PortInstance needs a Delegation Connector Instance to the parent component\'s port or an Assembly Connector Instance to a port within this CIC.\n(not self.componentInstance.topLevel) implies (\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\n)->isEmpty() or\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->isEmpty()\n)"
 		   });	
 		addAnnotation
 		  (getDiscreteMultiPortInstance_GmfSubPortInstances(), 
