@@ -171,11 +171,11 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String COMPONENT_INSTANCE__ALL_PORTS_ARE_INITIALIZED__EEXPRESSION = "-- All ContinuousPorts, HybridPorts and DiscretePorts, with  a lowerBound>0, must be initialized\n" +
-		"let discretePorts : Set(component::DiscretePort) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->asOrderedSet() endif in\n" +
-		"let nonDiscretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->reject(port| port.oclIsKindOf(component::DiscretePort)) endif in\n" +
-		"let portsWichShallBeInitialized : Set(component::Port) = nonDiscretePorts->union(discretePorts->select(discretePort| discretePort.cardinality.lowerBound.value > 0 or discretePort.cardinality.lowerBound.infinity)) in\n" +
-		"self.portInstances->forAll(portInstance| portsWichShallBeInitialized->exists(port| port = portInstance.type))\n" +
-		"-- adann";
+		"let discretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port|port.oclIsKindOf(connector::DiscreteInteractionEndpoint)).oclAsType(component::Port)->asOrderedSet() endif in\n" +
+		"let nonDiscretePorts : Set(component::Port) = if (self.componentType.oclIsUndefined()) then OrderedSet {} else self.componentType.ports->select(port| port.oclIsKindOf(component::DirectedTypedPort)) endif in\n" +
+		"let portsWhichShallBeInitialized : Set(component::Port) = nonDiscretePorts -> select(port | not(port.oclAsType(component::DirectedTypedPort).optional))->union(discretePorts->select(discretePort| discretePort.oclAsType(connector::DiscreteInteractionEndpoint).cardinality.lowerBound.value > 0 or discretePort.oclAsType(connector::DiscreteInteractionEndpoint).cardinality.lowerBound.infinity)) in\n" +
+		"portsWhichShallBeInitialized -> forAll(port | self.portInstances -> exists(portInstance | portInstance.type = port))\n" +
+		"-- adann,chris227";
 
 	/**
 	 * Validates the AllPortsAreInitialized constraint of '<em>Component Instance</em>'.
