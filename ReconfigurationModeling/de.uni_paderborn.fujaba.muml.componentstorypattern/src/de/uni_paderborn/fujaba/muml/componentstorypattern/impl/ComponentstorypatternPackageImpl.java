@@ -908,13 +908,25 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (connectorVariableEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "MustNotConnectCreateAndDestroyPorts SameBindingOperatorAsPortVariable ExistingConnectorBetweenPortVariableTypes"
+			 "constraints", "MustNotConnectCreateAndDestroyPorts SameBindingOperatorAsPortVariable"
+		   });	
+		addAnnotation
+		  (assemblyVariableEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ExistingConnectorBetweenPortVariableTypes"
+		   });	
+		addAnnotation
+		  (delegationVariableEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ExistingDelegationConnectorBetweenPortVariableTypes"
 		   });	
 		addAnnotation
 		  (fadingComponentPartVariableEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AppliedFadingFunctionIsContainedInTyp NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode"
+			 "constraints", "AppliedFadingFunctionIsContainedInType NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode"
 		   });
 	}
 
@@ -988,7 +1000,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (delegationVariableEClass, 
 		   source, 
 		   new String[] {
-			 "ExistingConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsTypeOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif"
+			 "ExistingDelegationConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsTypeOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif"
 		   });	
 		addAnnotation
 		  (multiPortVariableEClass, 

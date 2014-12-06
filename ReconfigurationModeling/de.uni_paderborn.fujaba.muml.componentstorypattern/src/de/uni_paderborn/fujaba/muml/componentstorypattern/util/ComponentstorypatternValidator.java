@@ -445,7 +445,6 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(connectorVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConnectorVariable_MustNotConnectCreateAndDestroyPorts(connectorVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConnectorVariable_SameBindingOperatorAsPortVariable(connectorVariable, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectorVariable_ExistingConnectorBetweenPortVariableTypes(connectorVariable, diagnostics, context);
 		return result;
 	}
 
@@ -524,34 +523,6 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the ExistingConnectorBetweenPortVariableTypes constraint of '<em>Connector Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConnectorVariable_ExistingConnectorBetweenPortVariableTypes(ConnectorVariable connectorVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ExistingConnectorBetweenPortVariableTypes", getObjectLabel(connectorVariable, context) },
-						 new Object[] { connectorVariable },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -568,8 +539,43 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConnectorVariable_MustNotConnectCreateAndDestroyPorts(assemblyVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConnectorVariable_SameBindingOperatorAsPortVariable(assemblyVariable, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectorVariable_ExistingConnectorBetweenPortVariableTypes(assemblyVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyVariable_ExistingConnectorBetweenPortVariableTypes(assemblyVariable, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ExistingConnectorBetweenPortVariableTypes constraint of '<em>Assembly Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_VARIABLE__EXISTING_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION = "if not self.type.oclIsUndefined() then\r\n" +
+		"\tlet selfPorts = self.portVariables.dataType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n" +
+		"\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\n" +
+		"else\r\n" +
+		"\t\tfalse\r\n" +
+		"endif\r\n" +
+		"";
+
+	/**
+	 * Validates the ExistingConnectorBetweenPortVariableTypes constraint of '<em>Assembly Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyVariable_ExistingConnectorBetweenPortVariableTypes(AssemblyVariable assemblyVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentstorypatternPackage.Literals.ASSEMBLY_VARIABLE,
+				 assemblyVariable,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ExistingConnectorBetweenPortVariableTypes",
+				 ASSEMBLY_VARIABLE__EXISTING_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -589,8 +595,51 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConnectorVariable_MustNotConnectCreateAndDestroyPorts(delegationVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConnectorVariable_SameBindingOperatorAsPortVariable(delegationVariable, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectorVariable_ExistingConnectorBetweenPortVariableTypes(delegationVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationVariable_ExistingDelegationConnectorBetweenPortVariableTypes(delegationVariable, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ExistingDelegationConnectorBetweenPortVariableTypes constraint of '<em>Delegation Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_VARIABLE__EXISTING_DELEGATION_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION = "if not self.type.oclIsUndefined() then\r\n" +
+		"\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |\r\n" +
+		"\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n" +
+		"      then cE.oclAsType(muml::component::PortPart).portType\r\n" +
+		"\t  else \r\n" +
+		"\t  \tif cE.oclIsTypeOf(muml::component::Port)\r\n" +
+		"\t  \tthen cE.oclAsType(muml::component::Port)\r\n" +
+		"\t  \telse  null\r\n" +
+		"\t  \tendif\r\n" +
+		"\t  endif)\r\n" +
+		"\tin \r\n" +
+		"\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\n" +
+		"else\r\n" +
+		"\t\tfalse\r\n" +
+		"endif";
+
+	/**
+	 * Validates the ExistingDelegationConnectorBetweenPortVariableTypes constraint of '<em>Delegation Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationVariable_ExistingDelegationConnectorBetweenPortVariableTypes(DelegationVariable delegationVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentstorypatternPackage.Literals.DELEGATION_VARIABLE,
+				 delegationVariable,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ExistingDelegationConnectorBetweenPortVariableTypes",
+				 DELEGATION_VARIABLE__EXISTING_DELEGATION_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -661,37 +710,39 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fadingComponentPartVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePartVariable_SameBindingOperatorAsComponentVariable(fadingComponentPartVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePartVariable_ValidTypeOfPartVariable(fadingComponentPartVariable, diagnostics, context);
-		if (result || diagnostics != null) result &= validateFadingComponentPartVariable_AppliedFadingFunctionIsContainedInTyp(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFadingComponentPartVariable_AppliedFadingFunctionIsContainedInType(fadingComponentPartVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateFadingComponentPartVariable_NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode(fadingComponentPartVariable, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the AppliedFadingFunctionIsContainedInTyp constraint of '<em>Fading Component Part Variable</em>'.
+	 * The cached validation expression for the AppliedFadingFunctionIsContainedInType constraint of '<em>Fading Component Part Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFadingComponentPartVariable_AppliedFadingFunctionIsContainedInTyp(FadingComponentPartVariable fadingComponentPartVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "AppliedFadingFunctionIsContainedInTyp", getObjectLabel(fadingComponentPartVariable, context) },
-						 new Object[] { fadingComponentPartVariable },
-						 context));
-			}
-			return false;
-		}
-		return true;
+	protected static final String FADING_COMPONENT_PART_VARIABLE__APPLIED_FADING_FUNCTION_IS_CONTAINED_IN_TYPE__EEXPRESSION = " let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n" +
+		"\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1";
+
+	/**
+	 * Validates the AppliedFadingFunctionIsContainedInType constraint of '<em>Fading Component Part Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFadingComponentPartVariable_AppliedFadingFunctionIsContainedInType(FadingComponentPartVariable fadingComponentPartVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentstorypatternPackage.Literals.FADING_COMPONENT_PART_VARIABLE,
+				 fadingComponentPartVariable,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AppliedFadingFunctionIsContainedInType",
+				 FADING_COMPONENT_PART_VARIABLE__APPLIED_FADING_FUNCTION_IS_CONTAINED_IN_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

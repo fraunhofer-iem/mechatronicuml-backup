@@ -17,7 +17,8 @@ import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getDelegationVariable()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExistingConnectorBetweenPortVariableTypes='if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsTypeOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExistingDelegationConnectorBetweenPortVariableTypes='if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsTypeOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ExistingDelegationConnectorBetweenPortVariableTypes'"
  * @generated
  */
 public interface DelegationVariable extends ConnectorVariable {
