@@ -11291,7 +11291,11 @@
                       <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_VPMSaXi0EeSM8KwkAFk8ZA" typedNamedElement="_VPHZ73i0EeSM8KwkAFk8ZA"/>
                     </guard>
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_VPIoBXi0EeSM8KwkAFk8ZA">
-                      <message xmi:id="_VPIoBni0EeSM8KwkAFk8ZA" instanceOf="_LkSRoGjBEeSJccZJNeJaVg"/>
+                      <message xmi:id="_VPIoBni0EeSM8KwkAFk8ZA" instanceOf="_LkSRoGjBEeSJccZJNeJaVg">
+                        <parameterBinding xmi:id="_tN1l0H0zEeSBivLYFk8tFw" parameter="_NfKp8GjBEeSJccZJNeJaVg">
+                          <value xsi:type="sdcec:LiteralExpression" xmi:id="_t76MwH0zEeSBivLYFk8tFw" value="1"/>
+                        </parameterBinding>
+                      </message>
                     </events>
                     <action xmi:id="_VPIoB3i0EeSM8KwkAFk8ZA" name="Assign Vars">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_VPIoCHi0EeSM8KwkAFk8ZA">
@@ -12265,7 +12269,11 @@
             <transitions xmi:id="_b0pcFni3EeSM8KwkAFk8ZA" priority="2" target="_bz7DUHi3EeSM8KwkAFk8ZA" source="_bz6cRHi3EeSM8KwkAFk8ZA" clockResets="_bz6cQ3i3EeSM8KwkAFk8ZA">
               <synchronization xmi:id="_b0pcF3i3EeSM8KwkAFk8ZA" syncChannel="_b0o1AHi3EeSM8KwkAFk8ZA" kind="RECEIVE"/>
               <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_b0pcGHi3EeSM8KwkAFk8ZA">
-                <message xmi:id="_b0pcGXi3EeSM8KwkAFk8ZA" instanceOf="_LkSRoGjBEeSJccZJNeJaVg"/>
+                <message xmi:id="_b0pcGXi3EeSM8KwkAFk8ZA" instanceOf="_LkSRoGjBEeSJccZJNeJaVg">
+                  <parameterBinding xmi:id="_ZRpkMH0zEeSBivLYFk8tFw" parameter="_NfKp8GjBEeSJccZJNeJaVg">
+                    <value xsi:type="sdcec:LiteralExpression" xmi:id="_al0h0H0zEeSBivLYFk8tFw" value="1"/>
+                  </parameterBinding>
+                </message>
               </events>
               <action xmi:id="_b0pcGni3EeSM8KwkAFk8ZA" name="Assign Vars">
                 <expressions xsi:type="actionlanguage:Block" xmi:id="_b0pcG3i3EeSM8KwkAFk8ZA">
@@ -13380,7 +13388,14 @@
                       <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_b0r4Vni3EeSM8KwkAFk8ZA" typedNamedElement="_b0rRQHi3EeSM8KwkAFk8ZA"/>
                     </guard>
                     <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_b0r4V3i3EeSM8KwkAFk8ZA">
-                      <message xmi:id="_b0r4WHi3EeSM8KwkAFk8ZA" instanceOf="_Jro-UHSQEeSCfN0RxbcB5A"/>
+                      <message xmi:id="_b0r4WHi3EeSM8KwkAFk8ZA" instanceOf="_Jro-UHSQEeSCfN0RxbcB5A">
+                        <parameterBinding xmi:id="_ksTpoH0zEeSBivLYFk8tFw" parameter="_R4aLcHSQEeSCfN0RxbcB5A">
+                          <value xsi:type="sdcec:LiteralExpression" xmi:id="_lzeGAH0zEeSBivLYFk8tFw" value="null"/>
+                        </parameterBinding>
+                        <parameterBinding xmi:id="_l9pVsH0zEeSBivLYFk8tFw" parameter="_LpvCsHSQEeSCfN0RxbcB5A">
+                          <value xsi:type="sdcec:LiteralExpression" xmi:id="_m7JfwH0zEeSBivLYFk8tFw" value="null"/>
+                        </parameterBinding>
+                      </message>
                     </events>
                     <action xmi:id="_b0r4WXi3EeSM8KwkAFk8ZA" name="Assign Vars">
                       <expressions xsi:type="actionlanguage:Block" xmi:id="_b0r4Wni3EeSM8KwkAFk8ZA">
