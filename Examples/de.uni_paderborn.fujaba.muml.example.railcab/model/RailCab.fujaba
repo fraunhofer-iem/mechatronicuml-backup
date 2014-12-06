@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:componentsdd="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0" xmlns:componentstorydiagram="http://www.fujaba.de/muml/componentstorydiagram/0.4.0" xmlns:componentstorypattern="http://www.fujaba.de/muml/componentstorypattern/0.4.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:expression="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:protocolinstantiation="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:reconfiguration="http://www.fujaba.de/muml/reconfiguration/0.3.18" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:sdd="http://www.fujaba.de/muml/verification/sdd/0.4.0" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:structdatatype="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hm9EULiwEeKp46K0r5yxrg">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:componentsdd="http://www.fujaba.de/muml/verification/sdd/componentsdd/0.4.0" xmlns:componentstorydiagram="http://www.fujaba.de/muml/componentstorydiagram/0.4.0" xmlns:componentstorypattern="http://www.fujaba.de/muml/componentstorypattern/0.4.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expr="http://www.storydriven.org/core/expressions/0.3.1" xmlns:expression="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:protocolinstantiation="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:reconfiguration="http://www.fujaba.de/muml/reconfiguration/0.3.18" xmlns:sda="http://www.storydriven.org/storydiagrams/activities/0.2.1" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:sdd="http://www.fujaba.de/muml/verification/sdd/0.4.0" xmlns:sdp="http://www.storydriven.org/storydiagrams/patterns/0.2.1" xmlns:structdatatype="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hm9EULiwEeKp46K0r5yxrg">
   <categories xmi:id="_hm9EUbiwEeKp46K0r5yxrg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EUriwEeKp46K0r5yxrg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EU7iwEeKp46K0r5yxrg" name="BOOLEAN" primitiveType="BOOLEAN"/>
@@ -15988,7 +15988,56 @@
       <ports xsi:type="component:ContinuousPort" xmi:id="_VrD7EPh4EeOdcfcso3gQlg" name="distance" dataType="_hm9EVriwEeKp46K0r5yxrg" kind="OUT"/>
     </modelElements>
   </categories>
-  <categories xmi:id="_3n2a8AUAEeSn_-l-OlOxjg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_3n2a8AUAEeSn_-l-OlOxjg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_RqJx4H00EeSBivLYFk8tFw" name="root-cic">
+      <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_v9Yf0H00EeSBivLYFk8tFw" name="standaoneRC" componentType="_RbW-QPhpEeOQsfT56fxzVQ">
+        <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_x1MWAH00EeSBivLYFk8tFw" name="refDistProvider" type="_64P0EPuREeO8xJIX1d2eag"/>
+        <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_x1QncH00EeSBivLYFk8tFw" name="coordinator" type="_LNRFQPuTEeO8xJIX1d2eag"/>
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_x1R1kH00EeSBivLYFk8tFw" name="section11" connectorInstances="_x1kJg300EeSBivLYFk8tFw" type="_jPs4oPuVEeO2po0ALlWq5g"/>
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_x1TDsH00EeSBivLYFk8tFw" name="section21" connectorInstances="_x1kJhH00EeSBivLYFk8tFw" type="_rPL3sPuVEeO2po0ALlWq5g"/>
+        <embeddedCIC xmi:id="_x1kJcH00EeSBivLYFk8tFw" name="RailCabDriveControl">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_x1kJcX00EeSBivLYFk8tFw" name="strategy" componentType="_ebUwcPhwEeOlYcxv1LeTzQ" componentPart="_oBVHwPh4EeOdcfcso3gQlg">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ZZyhoH01EeSBivLYFk8tFw" name="speedProvider" connectorInstances="_eDc0YH01EeSBivLYFk8tFw" type="_KlzIwPh2EeOdcfcso3gQlg"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_x1kJcn00EeSBivLYFk8tFw" name="drive" componentType="_J0cH0Ph3EeOdcfcso3gQlg" componentPart="_05ci8PqXEeO0_ZLnPp6sSA">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_x1kJc300EeSBivLYFk8tFw" name="section11" connectorInstances="_x1kJg300EeSBivLYFk8tFw" type="_Wb1GIPh3EeOdcfcso3gQlg"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_x1kJdH00EeSBivLYFk8tFw" name="maxSpeed1" connectorInstances="_eDc0YH01EeSBivLYFk8tFw" type="_L2T48Ph3EeOdcfcso3gQlg"/>
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_x1kJdX00EeSBivLYFk8tFw" name="refSpeed" connectorInstances="_x1kJgX00EeSBivLYFk8tFw" type="_PEg6UPh3EeOdcfcso3gQlg"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_x1kJdn00EeSBivLYFk8tFw" name="section21" connectorInstances="_x1kJhH00EeSBivLYFk8tFw" type="_fdXYEPh3EeOdcfcso3gQlg"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_x1kJd300EeSBivLYFk8tFw" name="sp" componentType="_JiUAkPh4EeOdcfcso3gQlg" componentPart="_trIH8PuQEeO8xJIX1d2eag">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_x1kJeH00EeSBivLYFk8tFw" name="speed" connectorInstances="_x1kJgn00EeSBivLYFk8tFw" type="_LjJ28Ph4EeOdcfcso3gQlg"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_x1kJeX00EeSBivLYFk8tFw" name="ctrl" componentType="_Aj7rwO5xEeOKI4bZ_bxwuQ" componentPart="_oawagPuQEeO8xJIX1d2eag">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_x1kJen00EeSBivLYFk8tFw" name="curSpeed" connectorInstances="_x1kJgn00EeSBivLYFk8tFw _DstUsH02EeSBivLYFk8tFw" type="_852eUO5-EeOKI4bZ_bxwuQ"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_x1kJe300EeSBivLYFk8tFw" name="force" connectorInstances="_x1kJgH00EeSBivLYFk8tFw" type="_aBe70O5_EeOKI4bZ_bxwuQ"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_x1kJfH00EeSBivLYFk8tFw" name="refSpeed" connectorInstances="_x1kJgX00EeSBivLYFk8tFw _C-Vy0H02EeSBivLYFk8tFw" type="_19nsAO5-EeOKI4bZ_bxwuQ"/>
+            <embeddedCIC xmi:id="_x1kJfX00EeSBivLYFk8tFw" name="VelocityController">
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_x1kJfn00EeSBivLYFk8tFw" name="fade" componentType="_NDoGoO5xEeOKI4bZ_bxwuQ" componentPart="_U06JQO5_EeOKI4bZ_bxwuQ">
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_x1kJf300EeSBivLYFk8tFw" name="force" connectorInstances="_x1kJgH00EeSBivLYFk8tFw" type="_WBmHMO5xEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_20zOIH01EeSBivLYFk8tFw" name="C1" connectorInstances="_I6scgH02EeSBivLYFk8tFw" type="_SQudoO5xEeOKI4bZ_bxwuQ"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_y7sOkH01EeSBivLYFk8tFw" name="A1" componentType="_tpvdMO5xEeOKI4bZ_bxwuQ" componentPart="_Jy-s4O5_EeOKI4bZ_bxwuQ">
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_1dSooH01EeSBivLYFk8tFw" name="refSpeed" connectorInstances="_C-Vy0H02EeSBivLYFk8tFw" type="_yNxpEO5xEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_1dZ9YH01EeSBivLYFk8tFw" name="curSpeed" connectorInstances="_DstUsH02EeSBivLYFk8tFw" type="_0SyNwO5xEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_1dbLgH01EeSBivLYFk8tFw" name="force" connectorInstances="_I6scgH02EeSBivLYFk8tFw" type="_15SRgO5xEeOKI4bZ_bxwuQ"/>
+              </componentInstances>
+              <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_x1kJgH00EeSBivLYFk8tFw" type="_v8C5MO6AEeOKI4bZ_bxwuQ" connectorEndpointInstances="_x1kJf300EeSBivLYFk8tFw _x1kJe300EeSBivLYFk8tFw"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_I6scgH02EeSBivLYFk8tFw" type="_w3kGQO6AEeOKI4bZ_bxwuQ" connectorEndpointInstances="_1dbLgH01EeSBivLYFk8tFw _20zOIH01EeSBivLYFk8tFw"/>
+            </embeddedCIC>
+          </componentInstances>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_x1kJgX00EeSBivLYFk8tFw" type="_0PzZEPuUEeO2po0ALlWq5g" connectorEndpointInstances="_x1kJfH00EeSBivLYFk8tFw _x1kJdX00EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_x1kJgn00EeSBivLYFk8tFw" type="_4G60kPuUEeO2po0ALlWq5g" connectorEndpointInstances="_x1kJeH00EeSBivLYFk8tFw _x1kJen00EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_x1kJg300EeSBivLYFk8tFw" type="_rQtFMPuWEeO2po0ALlWq5g" connectorEndpointInstances="_x1kJc300EeSBivLYFk8tFw _x1R1kH00EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_x1kJhH00EeSBivLYFk8tFw" type="_sqHvMPuWEeO2po0ALlWq5g" connectorEndpointInstances="_x1kJdn00EeSBivLYFk8tFw _x1TDsH00EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_eDc0YH01EeSBivLYFk8tFw" type="_SK0RoPqgEeO0_ZLnPp6sSA" connectorEndpointInstances="_ZZyhoH01EeSBivLYFk8tFw _x1kJdH00EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_C-Vy0H02EeSBivLYFk8tFw" type="_LRomwO6AEeOKI4bZ_bxwuQ" connectorEndpointInstances="_x1kJfH00EeSBivLYFk8tFw _1dSooH01EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_DstUsH02EeSBivLYFk8tFw" type="_QHrvsO6AEeOKI4bZ_bxwuQ" connectorEndpointInstances="_x1kJen00EeSBivLYFk8tFw _1dZ9YH01EeSBivLYFk8tFw"/>
+          <coordinationProtocolInstances xmi:id="_eEFtkH01EeSBivLYFk8tFw" name="" portInstances="_ZZyhoH01EeSBivLYFk8tFw _x1kJdH00EeSBivLYFk8tFw" coordinationProtocolPart="_TSgjQHi0EeSM8KwkAFk8ZA" coordinationProtocol="_ncl6kFOfEeSaVK1gfdE5pA"/>
+        </embeddedCIC>
+      </componentInstances>
+    </modelElements>
+  </categories>
   <categories xmi:id="_woN9EAUFEeSn_-l-OlOxjg" key="org.storydriven.storydiagrams.activities.category" name="activities">
     <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_woN9EQUFEeSn_-l-OlOxjg" reconfiguredComponent="_RbW-QPhpEeOQsfT56fxzVQ">
       <signature xmi:id="_woN9EgUFEeSn_-l-OlOxjg" name="becomeCoordinator"/>
