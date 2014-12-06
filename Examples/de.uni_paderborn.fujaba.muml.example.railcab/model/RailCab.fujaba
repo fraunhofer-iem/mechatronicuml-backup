@@ -15989,7 +15989,7 @@
     </modelElements>
   </categories>
   <categories xmi:id="_3n2a8AUAEeSn_-l-OlOxjg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
-    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_RqJx4H00EeSBivLYFk8tFw" name="root-cic">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_RqJx4H00EeSBivLYFk8tFw" name="StandaloneRC-CIC">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_v9Yf0H00EeSBivLYFk8tFw" name="standaoneRC" componentType="_RbW-QPhpEeOQsfT56fxzVQ">
         <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_x1MWAH00EeSBivLYFk8tFw" name="refDistProvider" type="_64P0EPuREeO8xJIX1d2eag"/>
         <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_x1QncH00EeSBivLYFk8tFw" name="coordinator" type="_LNRFQPuTEeO8xJIX1d2eag"/>
@@ -16037,7 +16037,7 @@
         </embeddedCIC>
       </componentInstances>
     </modelElements>
-    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_iXr0QH02EeSBivLYFk8tFw" name="root-cic">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_iXr0QH02EeSBivLYFk8tFw" name="MemberRC-CIC">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_jaIvwH02EeSBivLYFk8tFw" name="member" componentType="_RbW-QPhpEeOQsfT56fxzVQ">
         <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_kpcbgH02EeSBivLYFk8tFw" name="refDistProvider" type="_64P0EPuREeO8xJIX1d2eag"/>
         <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_kpgF4H02EeSBivLYFk8tFw" name="coordinator" type="_LNRFQPuTEeO8xJIX1d2eag"/>
@@ -16104,7 +16104,7 @@
       <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_YIr-wH04EeSBivLYFk8tFw" type="_gBroAPuWEeO2po0ALlWq5g" connectorEndpointInstances="_WH1hUH04EeSBivLYFk8tFw _3JGNsH02EeSBivLYFk8tFw"/>
       <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_eBUmEH04EeSBivLYFk8tFw" type="_dhKMAPuWEeO2po0ALlWq5g" connectorEndpointInstances="_cF4NEH04EeSBivLYFk8tFw _3JE_kH02EeSBivLYFk8tFw"/>
     </modelElements>
-    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_ydVXQH04EeSBivLYFk8tFw" name="root-cic">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_ydVXQH04EeSBivLYFk8tFw" name="CoordinatorRC-CIC">
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_zs-aMH04EeSBivLYFk8tFw" name="Coordinator" componentType="_RbW-QPhpEeOQsfT56fxzVQ">
         <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_0H2YUH04EeSBivLYFk8tFw" name="refDistProvider" type="_64P0EPuREeO8xJIX1d2eag" subInteractionEndpointInstances="_7_k3oH06EeSBivLYFk8tFw"/>
         <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_0H9GAH04EeSBivLYFk8tFw" name="coordinator" type="_LNRFQPuTEeO8xJIX1d2eag" subInteractionEndpointInstances="_3dhBsH06EeSBivLYFk8tFw"/>
