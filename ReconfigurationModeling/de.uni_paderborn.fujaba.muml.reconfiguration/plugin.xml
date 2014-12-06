@@ -30,4 +30,13 @@
             class="de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated MumlReconfiguration -->
+      <package
+            uri="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0"
+            class="de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage"
+            genModel="model/MumlReconfiguration.genmodel"/>
+   </extension>
+
 </plugin>

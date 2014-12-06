@@ -26,5 +26,6 @@ Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.properties.metamode
  de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor,
  de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor,
  de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.editor,
+ de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor,
  de.uni_paderborn.fujaba.muml.reconfiguration.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

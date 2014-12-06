@@ -30,6 +30,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.Discov
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolInstantiationPortSpecification;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.impl.ReconfInstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
@@ -140,18 +142,21 @@ public class ProtocolinstantiationPackageImpl extends EPackageImpl implements Pr
 		ReconfigurationPackageImpl theReconfigurationPackage = (ReconfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) instanceof ReconfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) : ReconfigurationPackage.eINSTANCE);
 		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
 		StructdatatypePackageImpl theStructdatatypePackage = (StructdatatypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI) instanceof StructdatatypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI) : StructdatatypePackage.eINSTANCE);
+		ReconfInstancePackageImpl theReconfInstancePackage = (ReconfInstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfInstancePackage.eNS_URI) instanceof ReconfInstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfInstancePackage.eNS_URI) : ReconfInstancePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theProtocolinstantiationPackage.createPackageContents();
 		theReconfigurationPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
 		theStructdatatypePackage.createPackageContents();
+		theReconfInstancePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theProtocolinstantiationPackage.initializePackageContents();
 		theReconfigurationPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
 		theStructdatatypePackage.initializePackageContents();
+		theReconfInstancePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theProtocolinstantiationPackage.freeze();

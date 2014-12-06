@@ -722,4 +722,57 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="reconfInstance" nsURI="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0"
+      nsPrefix="reconfInstance">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package defines instances for reconfigurable components, the corresponding reconfiguration ports, and the reconfiguration controllers."/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponentInstance" abstract="true"
+        eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/PortInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpointInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePortInstance"
+        eSuperTypes="#//reconfInstance/ReconfigurationPortInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPortInstance"
+        eSuperTypes="#//reconfInstance/ReconfigurationPortInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InternalReconfigurationCommunicationPortInstance"
+        eSuperTypes="#//reconfInstance/ReconfigurationPortInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationControllerInstance"
+        abstract="true" eSuperTypes="#//reconfInstance/ControllerInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ControllerInstance" abstract="true"
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RuleBasedReconfigurationControllerInstance"
+        eSuperTypes="#//reconfInstance/ReconfigurationControllerInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="managerInstance" lowerBound="1"
+          eType="#//reconfInstance/ManagerInstance" containment="true" eOpposite="#//reconfInstance/ManagerInstance/reconfigurationControllerInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executorInstance" lowerBound="1"
+          eType="#//reconfInstance/ExecutorInstance" containment="true" eOpposite="#//reconfInstance/ExecutorInstance/reconfigurationControllerInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ManagerInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="manager" lowerBound="1"
+          eType="#//Manager"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationControllerInstance"
+          eType="#//reconfInstance/RuleBasedReconfigurationControllerInstance" eOpposite="#//reconfInstance/RuleBasedReconfigurationControllerInstance/managerInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
+          eType="#//reconfInstance/ReconfigurationPortInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutorInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executor" lowerBound="1"
+          eType="#//Executor"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationControllerInstance"
+          eType="#//reconfInstance/RuleBasedReconfigurationControllerInstance" eOpposite="#//reconfInstance/RuleBasedReconfigurationControllerInstance/executorInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
+          eType="#//reconfInstance/ReconfigurationPortInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableAtomicComponentInstance"
+        eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AtomicComponentInstance"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponentInstance"
+        eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/StructuredComponentInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="controllerInstance" eType="#//reconfInstance/ControllerInstance"/>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>

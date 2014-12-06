@@ -203,6 +203,51 @@
              type="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18#Reference">
        </propertyEditor>
     
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationPortInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationMessagePortInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationMessagePortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurationExecutionPortInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurationExecutionPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.InternalReconfigurationCommunicationPortInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#InternalReconfigurationCommunicationPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.RuleBasedReconfigurationControllerInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#RuleBasedReconfigurationControllerInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ManagerInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ManagerInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ExecutorInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ExecutorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurableAtomicComponentInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurableAtomicComponentInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ReconfigurableStructuredComponentInstanceEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/reconfInstance/0.4.0#ReconfigurableStructuredComponentInstance">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 

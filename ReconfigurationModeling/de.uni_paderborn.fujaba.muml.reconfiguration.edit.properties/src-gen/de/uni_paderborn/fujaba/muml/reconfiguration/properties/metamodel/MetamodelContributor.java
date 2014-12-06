@@ -31,6 +31,9 @@ public class MetamodelContributor
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory());
 
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.provider.ReconfInstanceItemProviderAdapterFactory());
+
 	}
 
 }

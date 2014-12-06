@@ -9,8 +9,10 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider,
+ de.uni_paderborn.fujaba.muml.reconfiguration.instance.provider,
  de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.provider,
  de.uni_paderborn.fujaba.muml.reconfiguration.provider,
+ de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.provider,
  de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.reconfiguration;visibility:=reexport,
