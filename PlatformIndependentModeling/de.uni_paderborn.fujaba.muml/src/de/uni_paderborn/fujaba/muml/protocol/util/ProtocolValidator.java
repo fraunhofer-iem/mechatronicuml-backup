@@ -353,7 +353,7 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresMessageTypes(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior(role, diagnostics, context);
@@ -418,44 +418,6 @@ public class ProtocolValidator extends MumlValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ROLE__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION = "-- Each receiver message type should be assigned to exactly one buffer\r\n" +
-		"self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))";
-
-	/**
-	 * Validates the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", getObjectLabel(role, context) },
-						 new Object[] { role },
-						 context));
-			}
-			return false;
-		}
-		return connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
 	}
 
 	/**

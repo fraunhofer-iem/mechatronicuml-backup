@@ -1011,12 +1011,11 @@
         <details key="documentation" value="This class represents a role of a coordination protocol."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior"/>
+        <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="RoleRequiresBehavior" value="-- Role requires behavior&#xA;not self.behavior.oclIsUndefined()"/>
         <details key="RoleRequiresMessageTypes" value="-- Role requires message types to be set&#xA;self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
-        <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
         <details key="MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior" value="-- adaptationBehavior and subroleBehavior should be set if and only if this is a multirole&#xD;&#xA;(self.multiRole = not self.adaptationBehavior.oclIsUndefined())&#xD;&#xA;and self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
