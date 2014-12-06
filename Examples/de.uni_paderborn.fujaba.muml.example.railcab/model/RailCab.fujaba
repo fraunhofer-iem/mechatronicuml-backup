@@ -16104,6 +16104,95 @@
       <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_YIr-wH04EeSBivLYFk8tFw" type="_gBroAPuWEeO2po0ALlWq5g" connectorEndpointInstances="_WH1hUH04EeSBivLYFk8tFw _3JGNsH02EeSBivLYFk8tFw"/>
       <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_eBUmEH04EeSBivLYFk8tFw" type="_dhKMAPuWEeO2po0ALlWq5g" connectorEndpointInstances="_cF4NEH04EeSBivLYFk8tFw _3JE_kH02EeSBivLYFk8tFw"/>
     </modelElements>
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_ydVXQH04EeSBivLYFk8tFw" name="root-cic">
+      <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_zs-aMH04EeSBivLYFk8tFw" name="Coordinator" componentType="_RbW-QPhpEeOQsfT56fxzVQ">
+        <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_0H2YUH04EeSBivLYFk8tFw" name="refDistProvider" type="_64P0EPuREeO8xJIX1d2eag" subInteractionEndpointInstances="_7_k3oH06EeSBivLYFk8tFw"/>
+        <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_0H9GAH04EeSBivLYFk8tFw" name="coordinator" type="_LNRFQPuTEeO8xJIX1d2eag" subInteractionEndpointInstances="_3dhBsH06EeSBivLYFk8tFw"/>
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_0H-UIH04EeSBivLYFk8tFw" name="section11" connectorInstances="_0ITEU304EeSBivLYFk8tFw" type="_jPs4oPuVEeO2po0ALlWq5g"/>
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_0H_iQH04EeSBivLYFk8tFw" name="section21" connectorInstances="_0ITEVH04EeSBivLYFk8tFw" type="_rPL3sPuVEeO2po0ALlWq5g"/>
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_3dhBsH06EeSBivLYFk8tFw" name="D1" connectorInstances="_4j73MH06EeSBivLYFk8tFw" type="_LNRFQPuTEeO8xJIX1d2eag" multiInteractionEndpointInstance="_0H9GAH04EeSBivLYFk8tFw"/>
+        <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_7_k3oH06EeSBivLYFk8tFw" name="D2" connectorInstances="_89U5UH06EeSBivLYFk8tFw" type="_64P0EPuREeO8xJIX1d2eag" multiInteractionEndpointInstance="_0H2YUH04EeSBivLYFk8tFw"/>
+        <embeddedCIC xmi:id="_0ITEQH04EeSBivLYFk8tFw" name="RailCabDriveControl">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_0ITEQX04EeSBivLYFk8tFw" name="os" componentType="_ebUwcPhwEeOlYcxv1LeTzQ" componentPart="_oBVHwPh4EeOdcfcso3gQlg">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_fT9AsH06EeSBivLYFk8tFw" name="D1" connectorInstances="_iFLLIH06EeSBivLYFk8tFw" type="_WoA8MPuREeO8xJIX1d2eag"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_0ITEQn04EeSBivLYFk8tFw" name="dl" componentType="_J0cH0Ph3EeOdcfcso3gQlg" componentPart="_05ci8PqXEeO0_ZLnPp6sSA">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_0ITEQ304EeSBivLYFk8tFw" name="maxSpeed1" connectorInstances="_pHU_QH06EeSBivLYFk8tFw" type="_L2T48Ph3EeOdcfcso3gQlg"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_0ITERH04EeSBivLYFk8tFw" name="section11" connectorInstances="_0ITEU304EeSBivLYFk8tFw" type="_Wb1GIPh3EeOdcfcso3gQlg"/>
+            <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_0ITERX04EeSBivLYFk8tFw" name="refSpeed" connectorInstances="_0ITEUn04EeSBivLYFk8tFw" type="_PEg6UPh3EeOdcfcso3gQlg"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_0ITERn04EeSBivLYFk8tFw" name="section21" connectorInstances="_0ITEVH04EeSBivLYFk8tFw" type="_fdXYEPh3EeOdcfcso3gQlg"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_0ITER304EeSBivLYFk8tFw" name="sp" componentType="_JiUAkPh4EeOdcfcso3gQlg" componentPart="_trIH8PuQEeO8xJIX1d2eag">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_0ITESH04EeSBivLYFk8tFw" name="speed" connectorInstances="_0ITEUX04EeSBivLYFk8tFw" type="_LjJ28Ph4EeOdcfcso3gQlg"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_0ITESX04EeSBivLYFk8tFw" name="vc1" componentType="_Aj7rwO5xEeOKI4bZ_bxwuQ" componentPart="_oawagPuQEeO8xJIX1d2eag">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_0ITESn04EeSBivLYFk8tFw" name="refSpeed" connectorInstances="_0ITEUn04EeSBivLYFk8tFw _d0B7gH05EeSBivLYFk8tFw" type="_19nsAO5-EeOKI4bZ_bxwuQ"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_0ITES304EeSBivLYFk8tFw" name="curSpeed" connectorInstances="_0ITEUX04EeSBivLYFk8tFw _azp6wH05EeSBivLYFk8tFw" type="_852eUO5-EeOKI4bZ_bxwuQ"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_0ITETH04EeSBivLYFk8tFw" name="force" connectorInstances="_0ITEUH04EeSBivLYFk8tFw" type="_aBe70O5_EeOKI4bZ_bxwuQ"/>
+            <embeddedCIC xmi:id="_0ITETX04EeSBivLYFk8tFw" name="VelocityController">
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_0ITETn04EeSBivLYFk8tFw" name="f" componentType="_NDoGoO5xEeOKI4bZ_bxwuQ" componentPart="_U06JQO5_EeOKI4bZ_bxwuQ">
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_0ITET304EeSBivLYFk8tFw" name="force" connectorInstances="_0ITEUH04EeSBivLYFk8tFw" type="_WBmHMO5xEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_TF8oMH05EeSBivLYFk8tFw" name="standalone" connectorInstances="_V80usH05EeSBivLYFk8tFw" type="_SQudoO5xEeOKI4bZ_bxwuQ"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_JxokMH05EeSBivLYFk8tFw" name="sd" componentType="_tpvdMO5xEeOKI4bZ_bxwuQ" componentPart="_Jy-s4O5_EeOKI4bZ_bxwuQ">
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_KdMCoH05EeSBivLYFk8tFw" name="refSpeed" connectorInstances="_d0B7gH05EeSBivLYFk8tFw" type="_yNxpEO5xEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_KdN30H05EeSBivLYFk8tFw" name="curSpeed" connectorInstances="_azp6wH05EeSBivLYFk8tFw" type="_0SyNwO5xEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_KdOe4H05EeSBivLYFk8tFw" name="force" connectorInstances="_V80usH05EeSBivLYFk8tFw" type="_15SRgO5xEeOKI4bZ_bxwuQ"/>
+              </componentInstances>
+              <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_0ITEUH04EeSBivLYFk8tFw" type="_v8C5MO6AEeOKI4bZ_bxwuQ" connectorEndpointInstances="_0ITET304EeSBivLYFk8tFw _0ITETH04EeSBivLYFk8tFw"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_V80usH05EeSBivLYFk8tFw" type="_w3kGQO6AEeOKI4bZ_bxwuQ" connectorEndpointInstances="_KdOe4H05EeSBivLYFk8tFw _TF8oMH05EeSBivLYFk8tFw"/>
+            </embeddedCIC>
+          </componentInstances>
+          <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_i6gtIH05EeSBivLYFk8tFw" name="cc" componentType="_y35J0O6BEeOKI4bZ_bxwuQ" componentPart="_P32scPuQEeO8xJIX1d2eag">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jVtbYH05EeSBivLYFk8tFw" name="receiver1" connectorInstances="_jWJgTH05EeSBivLYFk8tFw _iFLLIH06EeSBivLYFk8tFw" type="_XpxO0O6FEeOKI4bZ_bxwuQ"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jVy68H05EeSBivLYFk8tFw" name="speedProvider1" connectorInstances="_jWJgSn05EeSBivLYFk8tFw _pHU_QH06EeSBivLYFk8tFw" type="_ZVV_0O6FEeOKI4bZ_bxwuQ"/>
+            <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_jV0wIH05EeSBivLYFk8tFw" name="coordinator" type="_bkfX8O6FEeOKI4bZ_bxwuQ" subInteractionEndpointInstances="_jV1-QH05EeSBivLYFk8tFw"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jV1-QH05EeSBivLYFk8tFw" name="coordinator1" connectorInstances="_x4J7sH06EeSBivLYFk8tFw _4j73MH06EeSBivLYFk8tFw" type="_bkfX8O6FEeOKI4bZ_bxwuQ" multiInteractionEndpointInstance="_jV0wIH05EeSBivLYFk8tFw"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jV3zcH05EeSBivLYFk8tFw" name="refDistProvider1" connectorInstances="_jWJgS305EeSBivLYFk8tFw _89U5UH06EeSBivLYFk8tFw" type="_hWucUO6FEeOKI4bZ_bxwuQ" multiInteractionEndpointInstance="_jV6PsH05EeSBivLYFk8tFw"/>
+            <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_jV6PsH05EeSBivLYFk8tFw" name="refDistProvider" type="_hWucUO6FEeOKI4bZ_bxwuQ" subInteractionEndpointInstances="_jV3zcH05EeSBivLYFk8tFw"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_jV8r8H05EeSBivLYFk8tFw" name="curPos" connectorInstances="_6ftc0H05EeSBivLYFk8tFw _FvAKUH07EeSBivLYFk8tFw" type="_kag9cO6FEeOKI4bZ_bxwuQ"/>
+            <embeddedCIC xmi:id="_jWJgQH05EeSBivLYFk8tFw" name="ConvoyCoordination">
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_jWJgQX05EeSBivLYFk8tFw" name="cm" componentType="_OE_0UO6CEeOKI4bZ_bxwuQ" componentPart="_yd930O6KEeO-LsFH58kjnA">
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jWJgQn05EeSBivLYFk8tFw" name="speedProvider1" connectorInstances="_jWJgSn05EeSBivLYFk8tFw" type="_f4o1EO6CEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_jWJgQ305EeSBivLYFk8tFw" name="profileProvider" type="_aUiTUO6CEeOKI4bZ_bxwuQ" subInteractionEndpointInstances="_jWJgRX05EeSBivLYFk8tFw"/>
+                <portInstances xsi:type="instance:DiscreteMultiPortInstance" xmi:id="_jWJgRH05EeSBivLYFk8tFw" name="coordinator" type="_R2X0MO6CEeOKI4bZ_bxwuQ" subInteractionEndpointInstances="_t6LqQH06EeSBivLYFk8tFw"/>
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jWJgRX05EeSBivLYFk8tFw" name="profileProvider1" connectorInstances="_jWJgTX05EeSBivLYFk8tFw" type="_aUiTUO6CEeOKI4bZ_bxwuQ" multiInteractionEndpointInstance="_jWJgQ305EeSBivLYFk8tFw"/>
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jWJgRn05EeSBivLYFk8tFw" name="strategy1" connectorInstances="_jWJgTH05EeSBivLYFk8tFw" type="_dSy0MO6CEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_t6LqQH06EeSBivLYFk8tFw" name="D1" connectorInstances="_x4J7sH06EeSBivLYFk8tFw" type="_R2X0MO6CEeOKI4bZ_bxwuQ" multiInteractionEndpointInstance="_jWJgRH05EeSBivLYFk8tFw"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_jWJgR305EeSBivLYFk8tFw" name="rg1" componentType="_BXanEO6FEeOKI4bZ_bxwuQ" componentPart="_2O-rUO6KEeO-LsFH58kjnA">
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jWJgSH05EeSBivLYFk8tFw" name="profileReceiver1" connectorInstances="_jWJgTX05EeSBivLYFk8tFw" type="_C5W68O6FEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_jWJgSX05EeSBivLYFk8tFw" name="refDistProvider1" connectorInstances="_jWJgS305EeSBivLYFk8tFw" type="_FpmN8O6FEeOKI4bZ_bxwuQ"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_AhRhMH07EeSBivLYFk8tFw" name="curPos" connectorInstances="_FvAKUH07EeSBivLYFk8tFw" type="_H5mhsO6FEeOKI4bZ_bxwuQ"/>
+              </componentInstances>
+              <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_jWJgSn05EeSBivLYFk8tFw" type="_aH0L4O8EEeOoIPzCC8d2Xg" connectorEndpointInstances="_jVy68H05EeSBivLYFk8tFw _jWJgQn05EeSBivLYFk8tFw"/>
+              <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_jWJgS305EeSBivLYFk8tFw" type="_P0HHcO8EEeOoIPzCC8d2Xg" connectorEndpointInstances="_jWJgSX05EeSBivLYFk8tFw _jV3zcH05EeSBivLYFk8tFw"/>
+              <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_jWJgTH05EeSBivLYFk8tFw" type="_tb7rcO8FEeO15qrX0ik20g" connectorEndpointInstances="_jWJgRn05EeSBivLYFk8tFw _jVtbYH05EeSBivLYFk8tFw"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_jWJgTX05EeSBivLYFk8tFw" type="_Qov8gO8cEeOgFIvanw5ruQ" connectorEndpointInstances="_jWJgSH05EeSBivLYFk8tFw _jWJgRX05EeSBivLYFk8tFw"/>
+              <coordinationProtocolInstances xmi:id="_jXarkH05EeSBivLYFk8tFw" name="" portInstances="_jWJgQ305EeSBivLYFk8tFw _jWJgSH05EeSBivLYFk8tFw" coordinationProtocolPart="_dlQlIHyIEeSgTeWUASugdw" coordinationProtocol="_TM2KIFOnEeSDPNki4Dv8rg"/>
+            </embeddedCIC>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_0PxIwH05EeSBivLYFk8tFw" name="ps" componentType="_9GYEUPh3EeOdcfcso3gQlg" componentPart="_hhfcoPuQEeO8xJIX1d2eag">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_0r6SMH05EeSBivLYFk8tFw" name="position" connectorInstances="_6ftc0H05EeSBivLYFk8tFw" type="_-yiEIPh3EeOdcfcso3gQlg"/>
+          </componentInstances>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_0ITEUX04EeSBivLYFk8tFw" type="_4G60kPuUEeO2po0ALlWq5g" connectorEndpointInstances="_0ITESH04EeSBivLYFk8tFw _0ITES304EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_0ITEUn04EeSBivLYFk8tFw" type="_0PzZEPuUEeO2po0ALlWq5g" connectorEndpointInstances="_0ITERX04EeSBivLYFk8tFw _0ITESn04EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_0ITEU304EeSBivLYFk8tFw" type="_rQtFMPuWEeO2po0ALlWq5g" connectorEndpointInstances="_0ITERH04EeSBivLYFk8tFw _0H-UIH04EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_0ITEVH04EeSBivLYFk8tFw" type="_sqHvMPuWEeO2po0ALlWq5g" connectorEndpointInstances="_0ITERn04EeSBivLYFk8tFw _0H_iQH04EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_azp6wH05EeSBivLYFk8tFw" type="_QHrvsO6AEeOKI4bZ_bxwuQ" connectorEndpointInstances="_0ITES304EeSBivLYFk8tFw _KdN30H05EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_d0B7gH05EeSBivLYFk8tFw" type="_LRomwO6AEeOKI4bZ_bxwuQ" connectorEndpointInstances="_0ITESn04EeSBivLYFk8tFw _KdMCoH05EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_6ftc0H05EeSBivLYFk8tFw" type="_zCbuYPuREeO8xJIX1d2eag" connectorEndpointInstances="_0r6SMH05EeSBivLYFk8tFw _jV8r8H05EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_iFLLIH06EeSBivLYFk8tFw" type="_sxfUwPuREeO8xJIX1d2eag" connectorEndpointInstances="_jVtbYH05EeSBivLYFk8tFw _fT9AsH06EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_pHU_QH06EeSBivLYFk8tFw" type="_nVNx8PuUEeO2po0ALlWq5g" connectorEndpointInstances="_jVy68H05EeSBivLYFk8tFw _0ITEQ304EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_x4J7sH06EeSBivLYFk8tFw" type="_GcT1kO6LEeO-LsFH58kjnA" connectorEndpointInstances="_jV1-QH05EeSBivLYFk8tFw _t6LqQH06EeSBivLYFk8tFw"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_FvAKUH07EeSBivLYFk8tFw" type="_9QUnIO6KEeO-LsFH58kjnA" connectorEndpointInstances="_jV8r8H05EeSBivLYFk8tFw _AhRhMH07EeSBivLYFk8tFw"/>
+          <coordinationProtocolInstances xmi:id="_pH_toH06EeSBivLYFk8tFw" name="" portInstances="_fT9AsH06EeSBivLYFk8tFw _jVtbYH05EeSBivLYFk8tFw" coordinationProtocolPart="_TSgjQXi0EeSM8KwkAFk8ZA" coordinationProtocol="_BdVtYFOlEeSaVK1gfdE5pA"/>
+          <coordinationProtocolInstances xmi:id="_pIA7wH06EeSBivLYFk8tFw" name="" portInstances="_0ITEQ304EeSBivLYFk8tFw _jVy68H05EeSBivLYFk8tFw" coordinationProtocolPart="_TSgjQHi0EeSM8KwkAFk8ZA" coordinationProtocol="_ncl6kFOfEeSaVK1gfdE5pA"/>
+        </embeddedCIC>
+      </componentInstances>
+      <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_4j73MH06EeSBivLYFk8tFw" type="_gnG7MPuUEeO2po0ALlWq5g" connectorEndpointInstances="_3dhBsH06EeSBivLYFk8tFw _jV1-QH05EeSBivLYFk8tFw"/>
+      <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_89U5UH06EeSBivLYFk8tFw" type="_C62_oPuSEeO8xJIX1d2eag" connectorEndpointInstances="_7_k3oH06EeSBivLYFk8tFw _jV3zcH05EeSBivLYFk8tFw"/>
+    </modelElements>
   </categories>
   <categories xmi:id="_woN9EAUFEeSn_-l-OlOxjg" key="org.storydriven.storydiagrams.activities.category" name="activities">
     <modelElements xsi:type="componentstorydiagram:ComponentStoryRule" xmi:id="_woN9EQUFEeSn_-l-OlOxjg" reconfiguredComponent="_RbW-QPhpEeOQsfT56fxzVQ">
