@@ -8,7 +8,7 @@
           <children xmi:type="notation:Shape" xmi:id="_krLg4H02EeSBivLYFk8tFw" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_krLg4n02EeSBivLYFk8tFw" type="5028"/>
             <element xmi:type="instance:AtomicComponentInstance" href="../../RailCab.fujaba#_kpvWcX02EeSBivLYFk8tFw"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krLg4X02EeSBivLYFk8tFw" x="225" y="51" width="277" height="109"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_krLg4X02EeSBivLYFk8tFw" x="213" y="51" width="277" height="109"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_krLg4302EeSBivLYFk8tFw" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_krLg5X02EeSBivLYFk8tFw" type="5028"/>

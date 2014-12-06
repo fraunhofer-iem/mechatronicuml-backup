@@ -146,7 +146,7 @@
           <children xmi:type="notation:Shape" xmi:id="_eEPekH01EeSBivLYFk8tFw" type="3035" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_eEPekn01EeSBivLYFk8tFw" type="5047"/>
             <element xmi:type="instance:CoordinationProtocolInstance" href="../../RailCab.fujaba#_eEFtkH01EeSBivLYFk8tFw"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eEPekX01EeSBivLYFk8tFw" x="405" y="27"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eEPekX01EeSBivLYFk8tFw" x="393" y="27"/>
           </children>
         </children>
         <element xmi:type="instance:ComponentInstanceConfiguration" href="../../RailCab.fujaba#_x1kJcH00EeSBivLYFk8tFw"/>
