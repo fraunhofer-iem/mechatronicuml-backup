@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
@@ -31,7 +29,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -106,9 +103,6 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * This is the initial object creation page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected PropertiesModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
@@ -148,9 +142,6 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Returns the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
@@ -170,13 +161,9 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Create a new model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)propertiesPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = propertiesFactory.create(eClass);
+		EObject rootObject = propertiesFactory.createPropertyGenerator();
 		return rootObject;
 	}
 
@@ -331,47 +318,22 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * This is the page where the type of object to create is selected.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public class PropertiesModelWizardInitialObjectCreationPage extends WizardPage {
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+
 		protected Combo initialObjectField;
 
-		/**
-		 * @generated
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 */
 		protected List<String> encodings;
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
 		protected Combo encodingField;
 
 		/**
 		 * Pass in the selection.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
 		 */
 		public PropertiesModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
 		public void createControl(Composite parent) {
 			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
@@ -439,11 +401,6 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 			setControl(composite);
 		}
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
 		protected ModifyListener validator =
 			new ModifyListener() {
 				public void modifyText(ModifyEvent e) {
@@ -451,20 +408,11 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 				}
 			};
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
 		protected boolean validatePage() {
 			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
 		}
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+
 		@Override
 		public void setVisible(boolean visible) {
 			super.setVisible(visible);
@@ -480,11 +428,7 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 			}
 		}
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+
 		public String getInitialObjectName() {
 			String label = initialObjectField.getText();
 
@@ -496,20 +440,12 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 			return null;
 		}
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
 		public String getEncoding() {
 			return encodingField.getText();
 		}
 
 		/**
 		 * Returns the label for the specified type name.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
 		 */
 		protected String getLabel(String typeName) {
 			try {
@@ -521,11 +457,6 @@ public class PropertiesModelWizard extends Wizard implements INewWizard {
 			return typeName;
 		}
 
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
