@@ -31,7 +31,7 @@
       <editor
             id="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditorID"
             name="%_UI_ModelinstanceEditor_label"
-            icon="icons/full/obj16/ModelinstanceModelFile.gif"
+            icon="icons/full/obj16/muml.png"
             extensions="fujaba,muml"
             class="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditor"
             contributorClass="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceActionBarContributor">

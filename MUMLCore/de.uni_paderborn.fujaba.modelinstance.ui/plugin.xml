@@ -11,7 +11,7 @@
     <wizard
            category="de.uni_paderborn.fujaba"
            class="de.uni_paderborn.fujaba.modelinstance.ui.model.FujabaModelNewWizard"
-           icon="icons/newfujabamodel.gif"
+           icon="icons/muml.png"
            id="de.uni_paderborn.fujaba.muml.modelwizard.FujabaNewModelWizardID"
            name="MechatronicUML Model">
          <description>
@@ -25,12 +25,12 @@
      <menuContribution
            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
         <menu
-              icon="icons/newfujabamodel.gif"
+              icon="icons/muml.png"
               id="de.uni_paderborn.fujaba"
               label="MechatronicUML">
            <command
                  commandId="de.uni_paderborn.fujaba.core.ui.command.newmodel"
-                 icon="icons/newfujabamodel.gif"
+                 icon="icons/muml.png"
                  id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
                  label="Create new MechatronicUML Model"
                  style="push">
