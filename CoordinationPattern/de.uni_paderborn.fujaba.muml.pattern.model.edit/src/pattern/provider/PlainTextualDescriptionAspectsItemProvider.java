@@ -392,7 +392,7 @@ public class PlainTextualDescriptionAspectsItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return Pattern2EditPlugin.INSTANCE;
+		return PatternEditPlugin.INSTANCE;
 	}
 
 }

@@ -235,15 +235,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCoordinationPattern_GmfCoordinationPattern() {
-		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getPlainTextualDescriptionAspects() {
 		return plainTextualDescriptionAspectsEClass;
 	}
@@ -411,7 +402,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__PATTERN_PARAMETERS);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__COMBINEABLE_PATTERNS);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ALTERNATIVE_PATTERNS);
-		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__GMF_COORDINATION_PATTERN);
 
 		plainTextualDescriptionAspectsEClass = createEClass(PLAIN_TEXTUAL_DESCRIPTION_ASPECTS);
 		createEAttribute(plainTextualDescriptionAspectsEClass, PLAIN_TEXTUAL_DESCRIPTION_ASPECTS__OVERVIEW);
@@ -479,7 +469,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getCoordinationPattern_PatternParameters(), theBehaviorPackage.getParameter(), null, "patternParameters", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_CombineablePatterns(), this.getCoordinationPattern(), null, "combineablePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_AlternativePatterns(), this.getCoordinationPattern(), null, "alternativePatterns", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationPattern_GmfCoordinationPattern(), this.getCoordinationPattern(), null, "gmfCoordinationPattern", null, 0, 1, CoordinationPattern.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(plainTextualDescriptionAspectsEClass, PlainTextualDescriptionAspects.class, "PlainTextualDescriptionAspects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlainTextualDescriptionAspects_Overview(), ecorePackage.getEString(), "overview", null, 1, 1, PlainTextualDescriptionAspects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -542,12 +531,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "UniquePatternNames", "CoordinationPattern.allInstances()->isUnique(name)"
-		   });	
-		addAnnotation
-		  (getCoordinationPattern_GmfCoordinationPattern(), 
-		   source, 
-		   new String[] {
-			 "derivation", "self"
 		   });
 	}
 

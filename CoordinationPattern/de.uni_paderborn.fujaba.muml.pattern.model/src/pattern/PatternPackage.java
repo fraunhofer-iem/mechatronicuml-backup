@@ -396,6 +396,33 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN__ROLE_CONNECTOR = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Abstract Coordination Specification</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN__GMF_ABSTRACT_COORDINATION_SPECIFICATION = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__GMF_ABSTRACT_COORDINATION_SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Message Buffers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN__GMF_MESSAGE_BUFFERS = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__GMF_MESSAGE_BUFFERS;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS;
+
+	/**
 	 * The feature id for the '<em><b>Description Aspects</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,22 +468,13 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN__ALTERNATIVE_PATTERNS = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Gmf Coordination Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COORDINATION_PATTERN__GMF_COORDINATION_PATTERN = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Coordination Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN_FEATURE_COUNT = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 6;
+	int COORDINATION_PATTERN_FEATURE_COUNT = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1106,17 +1124,6 @@ public interface PatternPackage extends EPackage {
 	EReference getCoordinationPattern_AlternativePatterns();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link pattern.CoordinationPattern#getGmfCoordinationPattern <em>Gmf Coordination Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Gmf Coordination Pattern</em>'.
-	 * @see pattern.CoordinationPattern#getGmfCoordinationPattern()
-	 * @see #getCoordinationPattern()
-	 * @generated
-	 */
-	EReference getCoordinationPattern_GmfCoordinationPattern();
-
-	/**
 	 * Returns the meta object for class '{@link pattern.PlainTextualDescriptionAspects <em>Plain Textual Description Aspects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1369,14 +1376,6 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COORDINATION_PATTERN__ALTERNATIVE_PATTERNS = eINSTANCE.getCoordinationPattern_AlternativePatterns();
-
-		/**
-		 * The meta object literal for the '<em><b>Gmf Coordination Pattern</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COORDINATION_PATTERN__GMF_COORDINATION_PATTERN = eINSTANCE.getCoordinationPattern_GmfCoordinationPattern();
 
 		/**
 		 * The meta object literal for the '{@link pattern.impl.PlainTextualDescriptionAspectsImpl <em>Plain Textual Description Aspects</em>}' class.

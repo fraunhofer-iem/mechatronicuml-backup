@@ -40,7 +40,6 @@ import pattern.PlainTextualDescriptionAspects;
  *   <li>{@link pattern.impl.CoordinationPatternImpl#getPatternParameters <em>Pattern Parameters</em>}</li>
  *   <li>{@link pattern.impl.CoordinationPatternImpl#getCombineablePatterns <em>Combineable Patterns</em>}</li>
  *   <li>{@link pattern.impl.CoordinationPatternImpl#getAlternativePatterns <em>Alternative Patterns</em>}</li>
- *   <li>{@link pattern.impl.CoordinationPatternImpl#getGmfCoordinationPattern <em>Gmf Coordination Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -212,31 +211,6 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationPattern getGmfCoordinationPattern() {
-		// TODO: implement this method to return the 'Gmf Coordination Pattern' containment reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGmfCoordinationPattern(CoordinationPattern newGmfCoordinationPattern, NotificationChain msgs) {
-		// TODO: implement this method to set the contained 'Gmf Coordination Pattern' containment reference
-		// -> this method is automatically invoked to keep the containment relationship in synch
-		// -> do not modify other features
-		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -261,8 +235,6 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 				return ((InternalEList<?>)getLegalConfigurations()).basicRemove(otherEnd, msgs);
 			case PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS:
 				return ((InternalEList<?>)getPatternParameters()).basicRemove(otherEnd, msgs);
-			case PatternPackage.COORDINATION_PATTERN__GMF_COORDINATION_PATTERN:
-				return basicSetGmfCoordinationPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -285,8 +257,6 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 				return getCombineablePatterns();
 			case PatternPackage.COORDINATION_PATTERN__ALTERNATIVE_PATTERNS:
 				return getAlternativePatterns();
-			case PatternPackage.COORDINATION_PATTERN__GMF_COORDINATION_PATTERN:
-				return getGmfCoordinationPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -368,8 +338,6 @@ public class CoordinationPatternImpl extends AbstractCoordinationSpecificationIm
 				return combineablePatterns != null && !combineablePatterns.isEmpty();
 			case PatternPackage.COORDINATION_PATTERN__ALTERNATIVE_PATTERNS:
 				return alternativePatterns != null && !alternativePatterns.isEmpty();
-			case PatternPackage.COORDINATION_PATTERN__GMF_COORDINATION_PATTERN:
-				return getGmfCoordinationPattern() != null;
 		}
 		return super.eIsSet(featureID);
 	}

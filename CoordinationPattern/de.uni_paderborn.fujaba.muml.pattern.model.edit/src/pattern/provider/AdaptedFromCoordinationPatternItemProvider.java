@@ -137,7 +137,7 @@ public class AdaptedFromCoordinationPatternItemProvider extends ExtensionItemPro
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return Pattern2EditPlugin.INSTANCE;
+		return PatternEditPlugin.INSTANCE;
 	}
 
 }

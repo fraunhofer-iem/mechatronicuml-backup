@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler/>
+  <genModel href="pattern.genmodel#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.pattern.model.edit.properties" name="Properties" vendor="" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.pattern.model</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.pattern.model.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+  <packages>
+    <genPackage href="pattern.genmodel#//pattern"/>
+    <classes>
+      <genClass href="pattern.genmodel#//pattern/AdaptedFromCoordinationPattern"/>
+      <properties tooltip="" category="//@packages.0/@classes.0/@propertyCategories.0" initializeOCLExpression="">
+        <genFeature href="pattern.genmodel#//pattern/AdaptedFromCoordinationPattern/adaptedPattern"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.0"/>
+    </classes>
+    <classes>
+      <genClass href="pattern.genmodel#//pattern/CoordinationPattern"/>
+      <properties category="//@packages.0/@classes.1/@propertyCategories.0">
+        <genFeature href="pattern.genmodel#//pattern/CoordinationPattern/combineablePatterns"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.0/@classes.1/@propertyCategories.0">
+        <genFeature href="pattern.genmodel#//pattern/CoordinationPattern/alternativePatterns"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.0 //@packages.0/@classes.1/@properties.1"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.5/@classes.0"/>
+    </classes>
+    <classes>
+      <genClass href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects"/>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/overview"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/context"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/problem"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/solution"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/structure"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/behavior"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/examples"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/consequences"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/combineability"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/variants"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="pattern.genmodel#//pattern/PlainTextualDescriptionAspects/alternatives"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="pattern.genmodel#//pattern/LegalConfiguration"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>

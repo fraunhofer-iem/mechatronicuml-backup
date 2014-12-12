@@ -25,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link pattern.CoordinationPattern#getPatternParameters <em>Pattern Parameters</em>}</li>
  *   <li>{@link pattern.CoordinationPattern#getCombineablePatterns <em>Combineable Patterns</em>}</li>
  *   <li>{@link pattern.CoordinationPattern#getAlternativePatterns <em>Alternative Patterns</em>}</li>
- *   <li>{@link pattern.CoordinationPattern#getGmfCoordinationPattern <em>Gmf Coordination Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -121,20 +120,5 @@ public interface CoordinationPattern extends AbstractCoordinationSpecification {
 	 * @generated
 	 */
 	EList<CoordinationPattern> getAlternativePatterns();
-
-	/**
-	 * Returns the value of the '<em><b>Gmf Coordination Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Pattern.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Gmf Coordination Pattern</em>' containment reference.
-	 * @see pattern.PatternPackage#getCoordinationPattern_GmfCoordinationPattern()
-	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self'"
-	 * @generated
-	 */
-	CoordinationPattern getGmfCoordinationPattern();
 
 } // CoordinationPattern

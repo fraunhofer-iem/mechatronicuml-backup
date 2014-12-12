@@ -3,6 +3,7 @@
 package pattern.provider;
 
 import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceEditPlugin;
+
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
@@ -12,19 +13,19 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.storydriven.core.provider.CoreEditPlugin;
 
 /**
- * This is the central singleton for the Pattern2 edit plugin.
+ * This is the central singleton for the Pattern edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class Pattern2EditPlugin extends EMFPlugin {
+public final class PatternEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final Pattern2EditPlugin INSTANCE = new Pattern2EditPlugin();
+	public static final PatternEditPlugin INSTANCE = new PatternEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -40,7 +41,7 @@ public final class Pattern2EditPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pattern2EditPlugin() {
+	public PatternEditPlugin() {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,

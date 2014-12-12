@@ -120,7 +120,6 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__DESCRIPTION_ASPECTS);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_PARAMETERS);
-			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__GMF_COORDINATION_PATTERN);
 		}
 		return childrenFeatures;
 	}
@@ -179,7 +178,6 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 			case PatternPackage.COORDINATION_PATTERN__DESCRIPTION_ASPECTS:
 			case PatternPackage.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS:
 			case PatternPackage.COORDINATION_PATTERN__PATTERN_PARAMETERS:
-			case PatternPackage.COORDINATION_PATTERN__GMF_COORDINATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -226,7 +224,7 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return Pattern2EditPlugin.INSTANCE;
+		return PatternEditPlugin.INSTANCE;
 	}
 
 }

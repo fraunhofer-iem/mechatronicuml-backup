@@ -192,7 +192,7 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return Pattern2EditPlugin.INSTANCE;
+		return PatternEditPlugin.INSTANCE;
 	}
 
 }

@@ -7,10 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.pattern.model.pattern,
- de.uni_paderborn.fujaba.muml.pattern.model.pattern.impl,
- de.uni_paderborn.fujaba.muml.pattern.model.pattern.util,
- pattern,
+Export-Package: pattern,
  pattern.impl,
  pattern.util
 Require-Bundle: org.eclipse.core.runtime,
