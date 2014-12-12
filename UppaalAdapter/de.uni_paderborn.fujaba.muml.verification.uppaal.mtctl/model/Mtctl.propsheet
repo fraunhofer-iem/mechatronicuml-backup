@@ -12,7 +12,7 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui</requiredBundles>
   </plugin>
-  <tabs id="property.tab.mtctl" name="Mtctl" afterTab=""/>
+  <tabs id="mtctl" name="Mtctl" afterTab=""/>
   <packages>
     <genPackage href="Mtctl.genmodel#//mtctl/BooleanLogic"/>
     <classes superClasses="//@packages.3/@classes.2">
@@ -116,7 +116,7 @@
     <genPackage href="Mtctl.genmodel#//mtctl"/>
     <classes>
       <genClass href="Mtctl.genmodel#//mtctl/PropertyRepository"/>
-      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+      <properties tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Mtctl.genmodel#//mtctl/PropertyRepository/properties"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor"/>
       </properties>
