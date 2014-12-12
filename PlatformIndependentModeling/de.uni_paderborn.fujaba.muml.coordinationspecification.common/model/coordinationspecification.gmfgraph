@@ -23,14 +23,14 @@
       <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="CoordinationProtocolContainerFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="CoordinationProtocolContainerFigure"/>
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="CoordinatinoProtocolContainerRectangle"/>
     </descriptors>
     <descriptors name="CoordinationProtocolContainerCompartmentFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="CoordinationProtocolContainerCompartmentFigure" outline="false" fill="false"/>
     </descriptors>
     <descriptors name="MessageBuffferFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MessageBufferRectangle">
-        <layout xsi:type="gmfgraph:GridLayout" numColumns="2"/>
+        <layout xsi:type="gmfgraph:GridLayout" numColumns="2" equalWidth="false"/>
         <children xsi:type="gmfgraph:Label" name="MessageBufferStaticHeadLabel" text="message buffer information:">
           <layoutData xsi:type="gmfgraph:GridLayoutData" horizontalAlignment="BEGINNING" horizontalSpan="2"/>
         </children>
@@ -102,6 +102,22 @@
     <descriptors name="RoleConnectorQoSAConnectorConnectionFigure">
       <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleConnectorQoSAConnectorConnection" lineKind="LINE_DASH"/>
     </descriptors>
+    <descriptors name="VerificationConstraintRepositoryFigureDescriptor">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="VerificationConstraintRepository">
+        <children xsi:type="gmfgraph:InvisibleRectangle" name="VerificationConstraintRepositoryCompartment"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="VerificationConstraintFigureDescriptor">
+      <actualFigure xsi:type="gmfgraph:InvisibleRectangle" name="VerificationConstraintRectangle">
+        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" forceSingleLine="true" majorAlignment="FILL" majorSpacing="0" minorSpacing="0"/>
+        <children xsi:type="gmfgraph:Label" name="VerfificationConstraintLabel" text=""/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="CoordinationPatternFigure">
+      <actualFigure xsi:type="gmfgraph:Polygon" name="PatternPolygon"/>
+    </descriptors>
   </figures>
   <nodes name="CoordinationProtocol">
     <figure href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
@@ -117,6 +133,7 @@
   <nodes name="MessageBuffferNode" figure="MessageBuffferFigure"/>
   <nodes name="MessageTypeNode" figure="MessageTypeFigure"/>
   <nodes name="QualityOfServiceAssumptionsNode" figure="QualityOfServiceAssumptionsFigureDescriptor"/>
+  <nodes name="CoordinationPatternNode" figure="CoordinationPatternFigure"/>
   <connections name="RoleConnector" figure="RoleConnectorFigure"/>
   <connections name="RolePattern">
     <figure href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#RolePatternFigure"/>
