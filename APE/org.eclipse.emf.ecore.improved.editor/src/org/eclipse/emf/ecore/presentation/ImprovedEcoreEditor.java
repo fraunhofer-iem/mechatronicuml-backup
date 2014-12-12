@@ -28,6 +28,7 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
@@ -86,8 +87,7 @@ public class ImprovedEcoreEditor extends
 		};
 	};
 
-	// Default sorter is alphabetically; so just perfect for us!
-	protected ViewerSorter sorter = new ViewerSorter() {
+	protected ViewerComparator sorter = new ViewerComparator() {
 		public int compare(Viewer viewer, Object e1, Object e2) {
 			// Do not sort resources
 			if (e1 instanceof Resource && e2 instanceof Resource) {
@@ -97,15 +97,18 @@ public class ImprovedEcoreEditor extends
 				EClass eClass1 = ((EObject) e1).eClass();
 				EClass eClass2 = ((EObject) e2).eClass();
 				if (eClass1 != eClass2) {
-					return getEClassNumber(eClass1) - getEClassNumber(eClass2);
+					return (getEClassNumber(eClass1) - getEClassNumber(eClass2)) * 10 + eClass1.getName().compareTo(eClass2.getName());
 				}
 			}
+			
+			// Default sorter is alphabetically; so just perfect for us!
 			return super.compare(viewer, e1, e2);
 		}
 
 		private int getEClassNumber(EClass eClass) {
-			EClass array[] = { EcorePackage.Literals.EANNOTATION,
+			EClass array[] = {
 					EcorePackage.Literals.EGENERIC_TYPE,
+					EcorePackage.Literals.EANNOTATION,
 					EcorePackage.Literals.ESTRUCTURAL_FEATURE };
 
 			int counter = 0;
@@ -208,7 +211,9 @@ public class ImprovedEcoreEditor extends
 				}
 
 			});
+
 		}
+		
 
 	}
 
@@ -610,9 +615,9 @@ public class ImprovedEcoreEditor extends
 				.valueOf(markDerived).toString());
 	}
 
-	public void setSorter(ViewerSorter sorter) {
+	public void setSorter(ViewerComparator sorter) {
 		ISelection selection = selectionViewer.getSelection();
-		selectionViewer.setSorter(sorter);
+		selectionViewer.setComparator(sorter);
 		selectionViewer.setSelection(selection);
 	}
 
