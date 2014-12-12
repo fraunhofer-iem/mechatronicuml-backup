@@ -23,7 +23,7 @@ public abstract class DataTypeEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 

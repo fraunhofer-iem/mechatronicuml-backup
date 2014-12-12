@@ -56,7 +56,8 @@ public class RelativeDeadlineEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -23,11 +23,11 @@ public abstract class PortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addComponent_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 

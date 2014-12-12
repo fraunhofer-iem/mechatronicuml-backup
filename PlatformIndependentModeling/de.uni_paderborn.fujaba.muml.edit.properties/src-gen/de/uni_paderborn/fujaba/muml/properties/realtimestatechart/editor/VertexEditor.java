@@ -27,19 +27,19 @@ public abstract class VertexEditor
 				"de.uni_paderborn.fujaba.properties.category.Transitions",
 				"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addOutgoingTransitions_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Transitions",
 					true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addIncomingTransitions_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Transitions",
 					true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 

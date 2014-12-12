@@ -23,7 +23,7 @@ public class HybridPortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addSamplingInterval_GeneralTab_Editor(null, false);
 		}
 
@@ -84,9 +84,13 @@ public class HybridPortEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "general", "general",
-							"general", "general", "general", "documentation",
-							"extensions", "general", "general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.general",
+							"property.tab.documentation",
+							"property.tab.extensions", "property.tab.general",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

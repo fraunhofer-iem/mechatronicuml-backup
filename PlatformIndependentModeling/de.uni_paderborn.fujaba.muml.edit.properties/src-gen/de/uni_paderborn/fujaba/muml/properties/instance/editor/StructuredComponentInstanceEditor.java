@@ -23,7 +23,7 @@ public class StructuredComponentInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addEmbeddedCIC_GeneralTab_Editor(null, false);
 		}
 
@@ -84,8 +84,10 @@ public class StructuredComponentInstanceEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "general", "general",
-							"general", "general", "general", "extensions"})
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}

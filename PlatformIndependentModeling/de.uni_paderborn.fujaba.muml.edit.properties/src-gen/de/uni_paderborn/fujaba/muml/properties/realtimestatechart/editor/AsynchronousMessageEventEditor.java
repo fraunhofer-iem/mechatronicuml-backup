@@ -23,7 +23,7 @@ public class AsynchronousMessageEventEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addMessage_GeneralTab_Editor(null, false);
 		}
 
@@ -82,7 +82,8 @@ public class AsynchronousMessageEventEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

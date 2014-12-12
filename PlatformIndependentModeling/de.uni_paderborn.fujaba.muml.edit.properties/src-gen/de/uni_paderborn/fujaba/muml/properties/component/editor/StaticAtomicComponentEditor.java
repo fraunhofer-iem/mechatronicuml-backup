@@ -56,9 +56,11 @@ public class StaticAtomicComponentEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "general", "extensions",
-							"general", "general", "documentation", "general"})
-					.contains(tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.extensions",
+							"property.tab.general", "property.tab.general",
+							"property.tab.documentation",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -23,7 +23,7 @@ public abstract class EventEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addKind_GeneralTab_Editor(null, true);
 		}
 

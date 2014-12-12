@@ -23,7 +23,7 @@ public class AbsoluteDeadlineEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addClock_GeneralTab_Editor(null, true);
 		}
 
@@ -82,7 +82,8 @@ public class AbsoluteDeadlineEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "general", "general"})
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general"})
 					.contains(tab);
 		}
 	}

@@ -26,12 +26,12 @@ public class MessageTypeRepositoryEditor
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addMessageTypes_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 
@@ -114,8 +114,10 @@ public class MessageTypeRepositoryEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "documentation",
-							"extensions", "general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation",
+							"property.tab.extensions", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

@@ -23,7 +23,7 @@ public abstract class StateConnectionPointEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addState_GeneralTab_Editor(null, true);
 		}
 

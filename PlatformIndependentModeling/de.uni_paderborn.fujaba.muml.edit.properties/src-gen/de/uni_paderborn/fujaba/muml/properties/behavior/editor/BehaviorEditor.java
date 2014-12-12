@@ -26,16 +26,16 @@ public abstract class BehaviorEditor
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addBehavioralElement_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addOperations_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addVariables_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}

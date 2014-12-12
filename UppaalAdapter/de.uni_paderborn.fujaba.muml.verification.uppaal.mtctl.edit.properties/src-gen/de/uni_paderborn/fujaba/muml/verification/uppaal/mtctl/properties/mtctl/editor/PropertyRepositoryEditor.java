@@ -23,7 +23,7 @@ public class PropertyRepositoryEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "mtctl".equals(getTab())) {
+		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
 			addProperties_MtctlTab_Editor(null, true);
 		}
 
@@ -79,8 +79,8 @@ public class PropertyRepositoryEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{"mtctl"})
-					.contains(tab);
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.mtctl"}).contains(tab);
 		}
 	}
 

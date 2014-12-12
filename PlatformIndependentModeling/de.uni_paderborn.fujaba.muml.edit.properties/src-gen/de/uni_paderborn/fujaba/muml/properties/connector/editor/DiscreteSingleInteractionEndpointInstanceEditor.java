@@ -23,15 +23,15 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addMultiInteractionEndpointInstance_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addNext_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addPrevious_GeneralTab_Editor(null, true);
 		}
 

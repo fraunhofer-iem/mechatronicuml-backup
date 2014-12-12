@@ -28,6 +28,7 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.2"/>
     </classes>
     <classes>
       <genClass href="pattern.genmodel#//pattern/CoordinationPattern"/>
@@ -104,6 +105,8 @@
     </classes>
     <classes>
       <genClass href="pattern.genmodel#//pattern/LegalConfiguration"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

@@ -12,7 +12,7 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui</requiredBundles>
   </plugin>
-  <tabs id="mtctl" name="Mtctl" afterTab=""/>
+  <tabs id="property.tab.mtctl" name="Mtctl" afterTab=""/>
   <packages>
     <genPackage href="Mtctl.genmodel#//mtctl/BooleanLogic"/>
     <classes superClasses="//@packages.3/@classes.2">

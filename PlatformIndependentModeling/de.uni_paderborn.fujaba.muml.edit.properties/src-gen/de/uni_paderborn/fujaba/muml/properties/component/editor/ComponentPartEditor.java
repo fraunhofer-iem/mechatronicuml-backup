@@ -23,15 +23,15 @@ public class ComponentPartEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addComponentType_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addParentComponent_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCardinality_GeneralTab_Editor(null, true);
 		}
 
@@ -140,8 +140,10 @@ public class ComponentPartEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "general", "general",
-							"documentation", "extensions", "general"})
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.documentation",
+							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}
 	}

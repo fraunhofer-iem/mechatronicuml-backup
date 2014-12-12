@@ -4,6 +4,6 @@ public class ConstraintTabElementFilter
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.filter.ElementFilter {
 	public ConstraintTabElementFilter() {
-		super("constraint");
+		super("property.tab.constraint");
 	}
 }

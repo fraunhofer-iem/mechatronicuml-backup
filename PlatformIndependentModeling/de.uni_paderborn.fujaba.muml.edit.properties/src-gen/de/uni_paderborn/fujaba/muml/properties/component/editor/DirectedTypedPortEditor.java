@@ -26,21 +26,21 @@ public abstract class DirectedTypedPortEditor
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addKind_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addOptional_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addInitializeExpression_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDataType_GeneralTab_Editor(null, true);
 		}
 

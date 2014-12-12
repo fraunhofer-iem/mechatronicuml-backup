@@ -56,8 +56,10 @@ public class EntryPointEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"general", "general", "general",
-							"documentation", "extensions", "general"})
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.documentation",
+							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}
 	}

@@ -56,7 +56,8 @@ public class IntervalSetExprEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"mtctl", "mtctl"}).contains(tab);
+					new java.lang.String[]{"property.tab.mtctl",
+							"property.tab.mtctl"}).contains(tab);
 		}
 	}
 

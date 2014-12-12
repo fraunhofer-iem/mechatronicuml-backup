@@ -4,6 +4,6 @@ public class MtctlTabElementFilter
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.filter.ElementFilter {
 	public MtctlTabElementFilter() {
-		super("mtctl");
+		super("property.tab.mtctl");
 	}
 }

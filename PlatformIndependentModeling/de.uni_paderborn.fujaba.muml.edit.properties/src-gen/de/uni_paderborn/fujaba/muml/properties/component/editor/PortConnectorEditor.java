@@ -23,7 +23,7 @@ public abstract class PortConnectorEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "general".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addParentComponent_GeneralTab_Editor(null, true);
 		}
 
