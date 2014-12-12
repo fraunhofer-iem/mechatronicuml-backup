@@ -11,7 +11,7 @@
 «ELSE-»
              category="extra"
 «ENDIF-»
-             id="property.tab.«iD»"
+             id="«iD»"
              label="%tab.«iD»"/>
 «ENDAROUND»
 
