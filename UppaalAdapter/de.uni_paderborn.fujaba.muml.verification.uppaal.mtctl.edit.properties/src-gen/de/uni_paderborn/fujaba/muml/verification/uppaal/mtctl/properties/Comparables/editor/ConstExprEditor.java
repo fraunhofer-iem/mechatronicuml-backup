@@ -23,7 +23,7 @@ public class ConstExprEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
+		if (getTab() == null || "mtctl".equals(getTab())) {
 			addTimeUnit_MtctlTab_Editor(null, true);
 		}
 
@@ -80,8 +80,7 @@ public class ConstExprEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.mtctl",
-							"property.tab.mtctl"}).contains(tab);
+					new java.lang.String[]{"mtctl", "mtctl"}).contains(tab);
 		}
 	}
 
