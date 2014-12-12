@@ -26,11 +26,11 @@ public class CoordinationProtocolPartEditor
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addCoordinationProtocol_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addPortParts_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
@@ -115,10 +115,8 @@ public class CoordinationProtocolPartEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions"}).contains(tab);
+					new java.lang.String[]{"general", "general",
+							"documentation", "extensions"}).contains(tab);
 		}
 	}
 

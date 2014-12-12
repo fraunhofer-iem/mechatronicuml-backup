@@ -23,7 +23,7 @@ public class StaticStructuredComponentEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addConnectors_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
@@ -84,12 +84,10 @@ public class StaticStructuredComponentEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"general", "general",
+							"documentation", "extensions", "general", "general"})
+					.contains(tab);
 		}
 	}
 

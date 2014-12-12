@@ -23,15 +23,15 @@ public class ClockConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addBound_GeneralTab_Editor(null, false);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addClock_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addOperator_GeneralTab_Editor(null, true);
 		}
 
@@ -134,9 +134,8 @@ public class ClockConstraintEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+					new java.lang.String[]{"general", "general", "general",
+							"extensions"}).contains(tab);
 		}
 	}
 

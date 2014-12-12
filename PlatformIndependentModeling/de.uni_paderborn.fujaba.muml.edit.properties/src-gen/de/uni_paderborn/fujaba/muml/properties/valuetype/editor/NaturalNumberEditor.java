@@ -26,11 +26,11 @@ public class NaturalNumberEditor
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addValue_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addInfinity_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
@@ -113,8 +113,7 @@ public class NaturalNumberEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+					new java.lang.String[]{"general", "general"}).contains(tab);
 		}
 	}
 

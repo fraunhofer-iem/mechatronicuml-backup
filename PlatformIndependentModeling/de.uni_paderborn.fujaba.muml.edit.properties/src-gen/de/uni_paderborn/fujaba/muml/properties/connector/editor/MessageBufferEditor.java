@@ -26,24 +26,24 @@ public class MessageBufferEditor
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addBufferSize_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addMessageType_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addDiscreteInteractionEndpoint_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addBufferOverflowAvoidanceStrategy_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 
@@ -115,7 +115,7 @@ public class MessageBufferEditor
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
 
-		editor.setTooltipMessage("The role that contains this message buffer.");
+		editor.setTooltipMessage("The role that contains this message buffer. The lower bound is 0, but semantically has to be 1. This is due to the derived containment feature CoordinationProtocol.gmfMessageBuffers.");
 
 		return editor;
 
@@ -196,13 +196,10 @@ public class MessageBufferEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"general", "general",
+							"general", "general", "documentation",
+							"extensions", "general"}).contains(tab);
 		}
 	}
 

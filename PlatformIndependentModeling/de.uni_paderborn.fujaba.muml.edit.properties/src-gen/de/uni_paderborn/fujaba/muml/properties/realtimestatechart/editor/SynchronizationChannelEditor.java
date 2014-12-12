@@ -23,15 +23,15 @@ public class SynchronizationChannelEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addState_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addSelectorType_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 
@@ -136,10 +136,8 @@ public class SynchronizationChannelEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
+					new java.lang.String[]{"general", "general",
+							"documentation", "extensions", "general"})
 					.contains(tab);
 		}
 	}

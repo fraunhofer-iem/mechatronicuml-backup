@@ -23,11 +23,11 @@ public abstract class AbstractCoordinationSpecificationEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addVerificationConstraintRepositories_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
+		if (getTab() == null || "documentation".equals(getTab())) {
 			addComment_DocumentationTab_Editor(null, true);
 		}
 

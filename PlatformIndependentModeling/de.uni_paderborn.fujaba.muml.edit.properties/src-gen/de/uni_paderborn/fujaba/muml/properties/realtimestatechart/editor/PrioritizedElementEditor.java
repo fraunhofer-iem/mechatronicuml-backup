@@ -23,7 +23,7 @@ public abstract class PrioritizedElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addPriority_GeneralTab_Editor(null, true);
 		}
 

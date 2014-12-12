@@ -23,7 +23,7 @@ public class ClockEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addStatechart_GeneralTab_Editor(null, true);
 		}
 
@@ -84,8 +84,7 @@ public class ClockEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
+					new java.lang.String[]{"general", "general", "extensions"})
 					.contains(tab);
 		}
 	}

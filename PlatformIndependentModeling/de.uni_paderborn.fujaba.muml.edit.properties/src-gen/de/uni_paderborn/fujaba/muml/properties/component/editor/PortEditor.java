@@ -23,11 +23,11 @@ public abstract class PortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addComponent_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 
@@ -49,6 +49,33 @@ public abstract class PortEditor
 				.getPort_Component();
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
+
+		{
+			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+					.createOCLExpression("false", feature, getEClass());
+			editor.registerOCLAdapter(expression,
+					new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+						@Override
+						public void notifyChanged(
+								org.eclipse.emf.common.notify.Notification notification) {
+							editor.updateVisibility(true, true);
+						}
+					});
+			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+					.createQuery(expression);
+			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+
+				@Override
+				public boolean select(Object object) {
+					return object != null
+							&& Boolean.TRUE.equals(query.evaluate(object));
+				}
+
+			};
+			if (filter != null) {
+				editor.addVisibilityFilter(filter);
+			}
+		}
 
 		editor.setTooltipMessage("The component, this port belongs to. Theoretically the bounds\nshould be 1..1, but that would prevent the possibility for\nComponentPart.portsDerived to be a containment reference\n(see ComponentPart.portsDerived)");
 

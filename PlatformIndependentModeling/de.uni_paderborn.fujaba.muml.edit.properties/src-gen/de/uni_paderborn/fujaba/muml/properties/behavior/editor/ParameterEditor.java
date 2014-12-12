@@ -23,11 +23,11 @@ public class ParameterEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addDataType_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 
@@ -108,9 +108,8 @@ public class ParameterEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+					new java.lang.String[]{"documentation", "extensions",
+							"general", "general"}).contains(tab);
 		}
 	}
 

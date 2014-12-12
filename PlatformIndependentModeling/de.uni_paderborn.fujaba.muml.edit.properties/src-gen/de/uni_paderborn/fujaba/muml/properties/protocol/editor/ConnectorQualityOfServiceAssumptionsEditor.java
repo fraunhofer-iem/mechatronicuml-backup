@@ -30,19 +30,19 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 				"de.uni_paderborn.fujaba.properties.category.Message Delay",
 				"Message Delay", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addMinMessageDelay_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Message Delay",
 					false);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addMaxMessageDelay_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Message Delay",
 					false);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addMessageLossPossible_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
@@ -153,10 +153,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions"}).contains(tab);
+					new java.lang.String[]{"general", "general", "general",
+							"documentation", "extensions"}).contains(tab);
 		}
 	}
 

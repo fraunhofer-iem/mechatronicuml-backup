@@ -23,7 +23,7 @@ public abstract class VerifiableElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addVerificationConstraintRepositories_GeneralTab_Editor(null, true);
 		}
 

@@ -23,11 +23,11 @@ public class DoEventEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addAction_GeneralTab_Editor(null, false);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addPeriod_GeneralTab_Editor(null, false);
 		}
 
@@ -108,8 +108,7 @@ public class DoEventEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general"})
+					new java.lang.String[]{"general", "general", "general"})
 					.contains(tab);
 		}
 	}

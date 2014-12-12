@@ -56,9 +56,8 @@ public class CoordinationProtocolEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.documentation"}).contains(tab);
+					new java.lang.String[]{"general", "extensions", "general",
+							"documentation"}).contains(tab);
 		}
 	}
 

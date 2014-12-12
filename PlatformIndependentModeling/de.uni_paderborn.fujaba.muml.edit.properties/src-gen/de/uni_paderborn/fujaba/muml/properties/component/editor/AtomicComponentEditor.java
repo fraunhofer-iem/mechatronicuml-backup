@@ -23,28 +23,28 @@ public abstract class AtomicComponentEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addVerificationConstraintRepositories_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
+		if (getTab() == null || "extensions".equals(getTab())) {
 			addExtension_ExtensionsTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addPorts_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addComponentKind_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
+		if (getTab() == null || "documentation".equals(getTab())) {
 			addComment_DocumentationTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addName_GeneralTab_Editor(null, true);
 		}
 

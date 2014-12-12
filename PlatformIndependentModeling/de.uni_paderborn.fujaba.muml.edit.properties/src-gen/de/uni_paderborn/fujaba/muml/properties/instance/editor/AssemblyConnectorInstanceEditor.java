@@ -56,10 +56,8 @@ public class AssemblyConnectorInstanceEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions"}).contains(tab);
+					new java.lang.String[]{"general", "general",
+							"documentation", "extensions"}).contains(tab);
 		}
 	}
 

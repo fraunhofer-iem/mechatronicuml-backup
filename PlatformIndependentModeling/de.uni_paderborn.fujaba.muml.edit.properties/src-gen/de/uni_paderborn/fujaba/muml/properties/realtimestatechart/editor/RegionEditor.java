@@ -23,11 +23,11 @@ public class RegionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addParentState_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
+		if (getTab() == null || "general".equals(getTab())) {
 			addPriority_GeneralTab_Editor(null, true);
 		}
 
@@ -110,10 +110,8 @@ public class RegionEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
-					.contains(tab);
+					new java.lang.String[]{"general", "documentation",
+							"extensions", "general"}).contains(tab);
 		}
 	}
 
