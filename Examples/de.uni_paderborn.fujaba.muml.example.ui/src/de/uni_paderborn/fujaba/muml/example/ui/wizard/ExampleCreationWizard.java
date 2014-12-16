@@ -9,9 +9,7 @@
 package de.uni_paderborn.fujaba.muml.example.ui.wizard;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -46,6 +44,8 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
 import de.uni_paderborn.fujaba.muml.example.ui.util.CopyUtil;
+import de.uni_paderborn.fujaba.muml.example.ui.util.UnzipUtil;
+
 
 public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 
@@ -253,7 +253,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 						space.intValue());
 
 				CopyUtil.copyDirectory(sourceFile, targetProjectFolderFile);
-				;
+				
 			} finally {
 				monitor.done();
 			}
@@ -399,10 +399,8 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 				if (zipPath != null) {
 					URL url = FileLocator.find(bundle, new Path(zipPath), null);//$NON-NLS-1$
 					try {
-						files.add(new File(FileLocator.resolve(url).toURI()));
-					} catch (URISyntaxException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
+						files.add(new File(FileLocator.resolve(url).getPath()));
+					}  catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
@@ -410,9 +408,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 					URL url = FileLocator.find(bundle, new Path(folderPath),
 							null);//$NON-NLS-1$
 					try {
-						files.add(new File(FileLocator.resolve(url).toURI()));
-					} catch (URISyntaxException e) {
-						e.printStackTrace();
+						files.add(new File(FileLocator.resolve(url).getPath()));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}

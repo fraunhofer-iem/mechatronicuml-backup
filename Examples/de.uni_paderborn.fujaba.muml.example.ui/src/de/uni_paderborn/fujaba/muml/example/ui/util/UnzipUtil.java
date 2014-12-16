@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.example.ui.wizard;
+package de.uni_paderborn.fujaba.muml.example.ui.util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,7 +12,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-
+ 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
