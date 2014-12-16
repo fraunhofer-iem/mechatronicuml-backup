@@ -11,11 +11,10 @@
             projectPageDescription="%muml.example.railcab.projectPage.desc"
             projectName="%muml.example.railcab.projectName"
             name="%muml.example.railcab.name">
-             <project
+             <source
              	bundle = "%bundle@de.uni_paderborn.fujaba.muml.example.railcab"
             	path = "%folder@de.uni_paderborn.fujaba.muml.example.railcab"
-            	>
-           </project>
+            	/>
              <description>
                 %muml.example.railcab.desc
              </description>

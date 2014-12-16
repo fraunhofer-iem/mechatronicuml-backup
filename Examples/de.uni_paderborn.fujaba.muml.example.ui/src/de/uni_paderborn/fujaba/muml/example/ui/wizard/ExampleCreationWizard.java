@@ -94,7 +94,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	/**
 	 * The list of files containing the project contents (directory or zip file)
 	 */
-	private File[] parentProjectContentsFiles;
+	private File[] sourceExampleContentsFiles;
 
 	/**
 	 * The list of formats to be applied to the user supplied name
@@ -346,7 +346,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	 * @return The projectZipURL field value
 	 */
 	private File[] getProjectZipURL() {
-		return parentProjectContentsFiles;
+		return sourceExampleContentsFiles;
 	}
 
 	/**
@@ -377,17 +377,17 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 		List<String> nameFormatsL = new ArrayList<String>();
 		List<File> files = new ArrayList<File>();
 
-		IConfigurationElement[] projectElements = config.getChildren("project"); //$NON-NLS-1$
+		IConfigurationElement[] exampleElements = config.getChildren("source"); //$NON-NLS-1$
 
 		Bundle[] bundles = FrameworkUtil.getBundle(this.getClass())
 				.getBundleContext().getBundles();
 
-		for (int i = 0; i < projectElements.length; i++) {
+		for (int i = 0; i < exampleElements.length; i++) {
 
-			String bundleName = projectElements[i].getAttribute("bundle");//$NON-NLS-1$
+			String bundleName = exampleElements[i].getAttribute("bundle");//$NON-NLS-1$
 			
 			//use empty String as folderPath if the whole bundle/project contents should be copied
-			String path = projectElements[i].getAttribute("path");//$NON-NLS-1$
+			String path = exampleElements[i].getAttribute("path");//$NON-NLS-1$
 
 			Bundle bundle = null;
 
@@ -410,17 +410,17 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 				}
 				
 			}
-			if (projectElements[i].getAttribute("nameFormat") == null) { //$NON-NLS-1$
+			if (exampleElements[i].getAttribute("nameFormat") == null) { //$NON-NLS-1$
 				nameFormatsL.add("{0}"); //$NON-NLS-1$
 			} else {
-				nameFormatsL.add(projectElements[i].getAttribute("nameFormat")); //$NON-NLS-1$
+				nameFormatsL.add(exampleElements[i].getAttribute("nameFormat")); //$NON-NLS-1$
 			}
 		}
 
-		parentProjectContentsFiles = new File[files.size()];
-		files.toArray(parentProjectContentsFiles);
-		assert parentProjectContentsFiles.length > 0;
-		assert parentProjectContentsFiles.length == nameFormats.length;
+		sourceExampleContentsFiles = new File[files.size()];
+		files.toArray(sourceExampleContentsFiles);
+		assert sourceExampleContentsFiles.length > 0;
+		assert sourceExampleContentsFiles.length == nameFormats.length;
 
 		nameFormats = new String[nameFormatsL.size()];
 		nameFormatsL.toArray(nameFormats);
