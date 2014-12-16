@@ -10,18 +10,12 @@ package de.uni_paderborn.fujaba.muml.example.ui.wizard;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
-import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import org.eclipse.core.resources.IProject;
@@ -51,17 +45,9 @@ import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
+import de.uni_paderborn.fujaba.muml.example.ui.util.CopyUtil;
 
-	// /**
-	// * Java Nature
-	// */
-	//	private static final String ORG_ECLIPSE_JDT_CORE_JAVANATURE = "org.eclipse.jdt.core.javanature"; //$NON-NLS-1$
-	//
-	// /**
-	// * PDE Nature
-	// */
-	//	private static final String ORG_ECLIPSE_PDE_PLUGIN_NATURE = "org.eclipse.pde.PluginNature"; //$NON-NLS-1$
+public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 
 	/**
 	 * Monitor string shown when creating project
@@ -101,9 +87,9 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	private String pageProjectName;
 
 	/**
-	 * The list of paths pointing to the location of the project archives
+	 * The list of files containing the project contents (directory or zip file)
 	 */
-	private URL[] projectZipURL;
+	private File[] parentProjectContentsFiles;
 
 	/**
 	 * The list of formats to be applied to the user supplied name
@@ -169,8 +155,8 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 								/*
 								 * Copy plug-in project code
 								 */
-								extractProject(projectFolderFile,
-										getProjectZipURL()[i],
+								createProjectContents(getProjectZipURL()[i],
+										projectFolderFile,
 										new SubProgressMonitor(monitor, 100));
 
 								if (monitor.isCanceled()) {
@@ -194,15 +180,6 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 							project.open(monitor);
 
 							renameProject(project, projectName);
-
-							// Add Java and PDE natures
-							// XXX no java nature for us
-							// IProjectDescription desc = workspace
-							// .newProjectDescription(project.getName());
-							// desc.setNatureIds(new String[] {
-							// ORG_ECLIPSE_PDE_PLUGIN_NATURE,
-							// ORG_ECLIPSE_JDT_CORE_JAVANATURE});
-							// project.setDescription(desc, monitor);
 
 							monitor.worked(10);
 							if (monitor.isCanceled()) {
@@ -240,141 +217,49 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	}
 
 	/**
-	 * Unzip the project archive to the specified folder
-	 * 
-	 * @param projectFolderFile
-	 *            The folder where to unzip the project archive
+	 * @param sourceFile
+	 *            The file containing the project contents (directory or zip)
+	 * @param targetProjectFolderFile
+	 *            The file the project contents is copied to
 	 * @param monitor
-	 *            Monitor to display progress and/or cancel operation
-	 * @throws IOException
-	 * @throws IOException
 	 * @throws InterruptedException
-	 * @throws FileNotFoundException
-	 * 
-	 * @throws FileNotFoundException
-	 * @throws InterruptedException
+	 * @throws IOException
 	 */
-	private void extractProject(File projectFolderFile, URL url,
-			IProgressMonitor monitor) throws FileNotFoundException,
-			IOException, InterruptedException {
+	private void createProjectContents(File sourceFile,
+			File targetProjectFolderFile, IProgressMonitor monitor)
+			throws InterruptedException, IOException {
+		if (sourceFile.isFile() && sourceFile.getPath().endsWith("zip")) {
 
-		/*
-		 * Get project archive
-		 */
-		// URL urlZip = PdeUiPlugin.getDefault().find();
-		// URL urlZipLocal = Platform.asLocalURL(urlZip);
-		URL urlZipLocal = FileLocator.toFileURL(url);
+			ZipFile zipFile = new ZipFile(sourceFile.getPath());
 
-		/*
-		 * Walk each element and unzip
-		 */
-		ZipFile zipFile = new ZipFile(urlZipLocal.getPath());
+			try {
+				monitor.beginTask(
+						ResourceManager.getI18NString(KEY_UNZIPPING_PROJECT),
+						zipFile.size());
 
-		try {
-			/*
-			 * Allow for a hundred work units
-			 */
-			monitor.beginTask(
-					ResourceManager.getI18NString(KEY_UNZIPPING_PROJECT),
-					zipFile.size());
-
-			unzip(zipFile, projectFolderFile, monitor);
-		} finally {
-			zipFile.close();
-			monitor.done();
-		}
-	}
-
-	/**
-	 * Unzips the platform formatted zip file to specified folder
-	 * 
-	 * @param zipFile
-	 *            The platform formatted zip file
-	 * @param projectFolderFile
-	 *            The folder where to unzip the project archive
-	 * @param monitor
-	 *            Monitor to display progress and/or cancel operation
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 * @throws InterruptedException
-	 */
-	private void unzip(ZipFile zipFile, File projectFolderFile,
-			IProgressMonitor monitor) throws IOException,
-			FileNotFoundException, InterruptedException {
-
-		Enumeration<? extends ZipEntry> e = zipFile.entries();
-
-		while (e.hasMoreElements()) {
-			ZipEntry zipEntry = (ZipEntry) e.nextElement();
-			File file = new File(projectFolderFile, zipEntry.getName());
-
-			if (false == zipEntry.isDirectory()) {
-
-				/*
-				 * Copy files (and make sure parent directory exist)
-				 */
-				File parentFile = file.getParentFile();
-				if (null != parentFile && false == parentFile.exists()) {
-					parentFile.mkdirs();
-				}
-
-				Path path = new Path(file.getPath());
-				if (path.getFileExtension().equals("java")) { //$NON-NLS-1$
-					InputStreamReader is = null;
-					OutputStreamWriter os = null;
-
-					try {
-						is = new InputStreamReader(
-								zipFile.getInputStream(zipEntry), "ISO-8859-1"); //$NON-NLS-1$
-						os = new OutputStreamWriter(new FileOutputStream(file),
-								ResourcesPlugin.getEncoding());
-						char[] buffer = new char[102400];
-						while (true) {
-							int len = is.read(buffer);
-							if (len < 0)
-								break;
-							os.write(buffer, 0, len);
-						}
-					} finally {
-						if (null != is) {
-							is.close();
-						}
-						if (null != os) {
-							os.close();
-						}
-					}
-				} else {
-					InputStream is = null;
-					OutputStream os = null;
-
-					try {
-						is = zipFile.getInputStream(zipEntry);
-						os = new FileOutputStream(file);
-
-						byte[] buffer = new byte[102400];
-						while (true) {
-							int len = is.read(buffer);
-							if (len < 0)
-								break;
-							os.write(buffer, 0, len);
-						}
-					} finally {
-						if (null != is) {
-							is.close();
-						}
-						if (null != os) {
-							os.close();
-						}
-					}
-				}
+				UnzipUtil.unzip(zipFile, targetProjectFolderFile, monitor);
+			} finally {
+				monitor.done();
 			}
 
-			monitor.worked(1);
-
-			if (monitor.isCanceled()) {
-				throw new InterruptedException();
-			}
 		}
+
+		else if (sourceFile.isDirectory()) {
+			try {
+				Long space = sourceFile.getTotalSpace();
+
+				monitor.beginTask(
+						ResourceManager.getI18NString(KEY_UNZIPPING_PROJECT),
+						space.intValue());
+
+				CopyUtil.copyDirectory(sourceFile, targetProjectFolderFile);
+				;
+			} finally {
+				monitor.done();
+			}
+
+		}
+
 	}
 
 	/**
@@ -399,7 +284,6 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	 * 
 	 * @see WizardNewProjectCreationPage#WizardNewProjectCreationPage(String)
 	 */
-	// XXX
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 
 		wizardNewProjectCreationPage = new WizardNewProjectCreationPage(
@@ -456,8 +340,8 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	 * 
 	 * @return The projectZipURL field value
 	 */
-	private URL[] getProjectZipURL() {
-		return projectZipURL;
+	private File[] getProjectZipURL() {
+		return parentProjectContentsFiles;
 	}
 
 	/**
@@ -486,7 +370,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 		pageProjectName = config.getAttribute("projectName"); //$NON-NLS-1$
 
 		List<String> nameFormatsL = new ArrayList<String>();
-		List<URL> zipURLs = new ArrayList<URL>();
+		List<File> files = new ArrayList<File>();
 
 		IConfigurationElement[] projectElements = config.getChildren("project"); //$NON-NLS-1$
 
@@ -496,7 +380,10 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 		for (int i = 0; i < projectElements.length; i++) {
 
 			String bundleName = projectElements[i].getAttribute("bundle");//$NON-NLS-1$
-			String zipPath = projectElements[i].getAttribute("zipPath");
+			String zipPath = projectElements[i].getAttribute("zipPath");//$NON-NLS-1$
+			
+			//use empty String as folderPath if the whole bundle/project contents should be copied
+			String folderPath = projectElements[i].getAttribute("folderPath");//$NON-NLS-1$
 
 			Bundle bundle = null;
 
@@ -509,10 +396,28 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 				}
 			}
 			if (bundle != null) {
-				URL url = FileLocator
-						.find(bundle,
-								new Path(zipPath), null);//$NON-NLS-1$
-				zipURLs.add(url);
+				if (zipPath != null) {
+					URL url = FileLocator.find(bundle, new Path(zipPath), null);//$NON-NLS-1$
+					try {
+						files.add(new File(FileLocator.resolve(url).toURI()));
+					} catch (URISyntaxException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				else if (folderPath != null) {
+					URL url = FileLocator.find(bundle, new Path(folderPath),
+							null);//$NON-NLS-1$
+					try {
+						files.add(new File(FileLocator.resolve(url).toURI()));
+					} catch (URISyntaxException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+
+				}
 			}
 			if (projectElements[i].getAttribute("nameFormat") == null) { //$NON-NLS-1$
 				nameFormatsL.add("{0}"); //$NON-NLS-1$
@@ -521,13 +426,14 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 			}
 		}
 
-		projectZipURL = new URL[zipURLs.size()];
-		zipURLs.toArray(projectZipURL);
-		assert projectZipURL.length > 0;
+		parentProjectContentsFiles = new File[files.size()];
+		files.toArray(parentProjectContentsFiles);
+		assert parentProjectContentsFiles.length > 0;
+		assert parentProjectContentsFiles.length == nameFormats.length;
+
 		nameFormats = new String[nameFormatsL.size()];
 		nameFormatsL.toArray(nameFormats);
 		assert nameFormats.length > 0;
-		assert projectZipURL.length == nameFormats.length;
 
 	}
 

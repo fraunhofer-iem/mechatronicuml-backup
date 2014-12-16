@@ -13,5 +13,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %Plugin.providerName
 Export-Package: de.uni_paderborn.fujaba.muml.example.ui,
+ de.uni_paderborn.fujaba.muml.example.ui.util,
  de.uni_paderborn.fujaba.muml.example.ui.wizard
 Bundle-Localization: plugin
