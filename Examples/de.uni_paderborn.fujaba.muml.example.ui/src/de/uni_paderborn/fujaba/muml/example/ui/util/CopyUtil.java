@@ -6,12 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-/**
- * This utility class implements a method for copying a whole directory
- * to a new location in the file system.
- * @author www.codejava.net
- *
- */
 
 public class CopyUtil {
 	

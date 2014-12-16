@@ -2,7 +2,7 @@
 // http://git.eclipse.org/c/gmf-runtime/org.eclipse.gmf-runtime.git/tree/org.eclipse.gmf.examples.runtime.ui.pde/src/org/eclipse/gmf/examples/runtime/ui/pde/internal/wizards/ProjectUnzipperNewWizard.java
 // due to its weak extensibility
 
-// Alternative to this implementation could be similar to
+// Alternative to this, the implementation could be similar to
 // org.eclipse.pde.internal.ui.views.plugins.ImportActionGroup
 // However, the associated packages have access restrictions. So, we can't use them here directly
 
@@ -62,7 +62,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	/**
 	 * Monitor string shown when copying the project contents
 	 */
-	private static String KEY_COPYING_PROJECT = "Copying project contents"; //$NON-NLS-1$
+	private static String COPYING_PROJECT = "Copying project contents"; //$NON-NLS-1$
 
 	/**
 	 * The single page provided by this base implementation. It provides all the
@@ -254,7 +254,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 				Long space = sourceFile.getTotalSpace();
 
 				monitor.beginTask(
-						KEY_COPYING_PROJECT,
+						COPYING_PROJECT,
 						space.intValue());
 
 				CopyUtil.copyDirectory(sourceFile, targetProjectFolderFile);
@@ -385,10 +385,9 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 		for (int i = 0; i < projectElements.length; i++) {
 
 			String bundleName = projectElements[i].getAttribute("bundle");//$NON-NLS-1$
-			String zipPath = projectElements[i].getAttribute("zipPath");//$NON-NLS-1$
 			
 			//use empty String as folderPath if the whole bundle/project contents should be copied
-			String folderPath = projectElements[i].getAttribute("folderPath");//$NON-NLS-1$
+			String path = projectElements[i].getAttribute("path");//$NON-NLS-1$
 
 			Bundle bundle = null;
 
@@ -401,24 +400,15 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 				}
 			}
 			if (bundle != null) {
-				if (zipPath != null) {
-					URL url = FileLocator.find(bundle, new Path(zipPath), null);//$NON-NLS-1$
+				if (path != null) {
+					URL url = FileLocator.find(bundle, new Path(path), null);//$NON-NLS-1$
 					try {
 						files.add(new File(FileLocator.resolve(url).getPath()));
 					}  catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
-				else if (folderPath != null) {
-					URL url = FileLocator.find(bundle, new Path(folderPath),
-							null);//$NON-NLS-1$
-					try {
-						files.add(new File(FileLocator.resolve(url).getPath()));
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-
-				}
+				
 			}
 			if (projectElements[i].getAttribute("nameFormat") == null) { //$NON-NLS-1$
 				nameFormatsL.add("{0}"); //$NON-NLS-1$

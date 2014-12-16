@@ -13,7 +13,7 @@
             name="%muml.example.railcab.name">
              <project
              	bundle = "%bundle@de.uni_paderborn.fujaba.muml.example.railcab"
-            	folderPath = "%folder@de.uni_paderborn.fujaba.muml.example.railcab"
+            	path = "%folder@de.uni_paderborn.fujaba.muml.example.railcab"
             	>
            </project>
              <description>
