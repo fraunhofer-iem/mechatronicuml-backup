@@ -6,11 +6,12 @@
       <wizard
             category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
             class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
             id="de.uni_paderborn.fujaba.muml.example.ui.RailCabCreationWizard"
-            projectPageTitle="%muml.example.railcab.projectPage.title"
-            projectPageDescription="%muml.example.railcab.projectPage.desc"
+            name="%muml.example.railcab.name"
             projectName="%muml.example.railcab.projectName"
-            name="%muml.example.railcab.name">
+            projectPageDescription="%muml.example.railcab.projectPage.desc"
+            projectPageTitle="%muml.example.railcab.projectPage.title">
              <source
              	bundle = "%bundle@de.uni_paderborn.fujaba.muml.example.railcab"
             	path = "%folder@de.uni_paderborn.fujaba.muml.example.railcab"
