@@ -58,6 +58,11 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	 * Monitor string shown when unzipping the project
 	 */
 	private static String KEY_UNZIPPING_PROJECT = "monitor.unzippingProject"; //$NON-NLS-1$
+	
+	/**
+	 * Monitor string shown when copying the project contents
+	 */
+	private static String KEY_COPYING_PROJECT = "Copying project contents"; //$NON-NLS-1$
 
 	/**
 	 * The single page provided by this base implementation. It provides all the
@@ -249,7 +254,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 				Long space = sourceFile.getTotalSpace();
 
 				monitor.beginTask(
-						ResourceManager.getI18NString(KEY_UNZIPPING_PROJECT),
+						KEY_COPYING_PROJECT,
 						space.intValue());
 
 				CopyUtil.copyDirectory(sourceFile, targetProjectFolderFile);
