@@ -20,7 +20,6 @@
    <requires>
       <import plugin="de.uni_paderborn.fujaba.muml.example.ui" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.storydriven.core"/>
       <import plugin="de.uni_paderborn.fujaba.muml"/>
@@ -29,6 +28,7 @@
       <import plugin="org.eclipse.core.runtime" version="3.10.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.9.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.10.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ocl.examples.ui"/>
    </requires>
 
    <plugin
@@ -39,13 +39,6 @@
 
    <plugin
          id="de.uni_paderborn.fujaba.muml.example.railcab.profileTypes"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.example.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
