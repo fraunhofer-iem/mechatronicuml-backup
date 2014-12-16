@@ -46,7 +46,6 @@ import org.osgi.framework.FrameworkUtil;
 import de.uni_paderborn.fujaba.muml.example.ui.util.CopyUtil;
 import de.uni_paderborn.fujaba.muml.example.ui.util.UnzipUtil;
 
-
 public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 
 	/**
@@ -58,7 +57,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 	 * Monitor string shown when unzipping the project
 	 */
 	private static String KEY_UNZIPPING_PROJECT = "monitor.unzippingProject"; //$NON-NLS-1$
-	
+
 	/**
 	 * Monitor string shown when copying the project contents
 	 */
@@ -253,16 +252,21 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 			try {
 				Long space = sourceFile.getTotalSpace();
 
-				monitor.beginTask(
-						COPYING_PROJECT,
-						space.intValue());
+				monitor.beginTask(COPYING_PROJECT, space.intValue());
 
-				CopyUtil.copyDirectory(sourceFile, targetProjectFolderFile, monitor);
-				
+				CopyUtil.copyDirectory(sourceFile, targetProjectFolderFile,
+						monitor);
+
 			} finally {
 				monitor.done();
 			}
 
+		}
+
+		else {
+			throw new IllegalArgumentException(
+					"Path attribute should specify a path to a .zip file or to a folder containing the contents of the project that is to be created."
+					+ "The Path has to be specified relative to its bundle/project");
 		}
 
 	}
@@ -385,8 +389,9 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 		for (int i = 0; i < exampleElements.length; i++) {
 
 			String bundleName = exampleElements[i].getAttribute("bundle");//$NON-NLS-1$
-			
-			//use empty String as folderPath if the whole bundle/project contents should be copied
+
+			// use empty String as folderPath if the whole bundle/project
+			// contents should be copied
 			String path = exampleElements[i].getAttribute("path");//$NON-NLS-1$
 
 			Bundle bundle = null;
@@ -404,11 +409,11 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 					URL url = FileLocator.find(bundle, new Path(path), null);//$NON-NLS-1$
 					try {
 						files.add(new File(FileLocator.resolve(url).getPath()));
-					}  catch (IOException e) {
+					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
-				
+
 			}
 			if (exampleElements[i].getAttribute("nameFormat") == null) { //$NON-NLS-1$
 				nameFormatsL.add("{0}"); //$NON-NLS-1$
