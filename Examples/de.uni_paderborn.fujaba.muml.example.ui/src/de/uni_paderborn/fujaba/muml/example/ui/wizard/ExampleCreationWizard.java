@@ -257,7 +257,7 @@ public class ExampleCreationWizard extends ProjectUnzipperNewWizard {
 						COPYING_PROJECT,
 						space.intValue());
 
-				CopyUtil.copyDirectory(sourceFile, targetProjectFolderFile);
+				CopyUtil.copyDirectory(sourceFile, targetProjectFolderFile, monitor);
 				
 			} finally {
 				monitor.done();
