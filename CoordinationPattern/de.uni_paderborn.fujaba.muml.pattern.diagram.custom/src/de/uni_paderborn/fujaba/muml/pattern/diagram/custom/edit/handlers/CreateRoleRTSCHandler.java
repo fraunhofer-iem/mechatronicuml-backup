@@ -51,6 +51,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		// get and process current selection
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 
+		
 		// collect all StaticStructureComponents from the selection
 		Iterator iter = ((IStructuredSelection) selection).iterator();
 		while (iter.hasNext()) {
