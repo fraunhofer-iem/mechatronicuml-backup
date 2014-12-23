@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="emf.migraton.feature"
+         id="emf.migration.feature"
          version="0.0.0"/>
 
    <requires>
