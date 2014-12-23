@@ -28,6 +28,7 @@ public class MigrateHandler extends AbstractHandler {
 		};
 
 		// Start the Job
+  		job.setUser(true);
 		job.schedule();
 		
 		return null;

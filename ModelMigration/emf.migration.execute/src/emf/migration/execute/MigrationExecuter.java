@@ -74,48 +74,57 @@ public class MigrationExecuter {
 		initializeMonitor.beginTask("Initializing...", 3);
 		try {
 			IProgressMonitor loadMonitor = new SubProgressMonitor(initializeMonitor, 1);
-			loadMonitor.beginTask("Loading Models...", migratorURIs.size());
-			for (URI uri : migratorURIs) {
-				Resource resource = resourceSet.getResource(uri, true);
-				if (resource != null) {
-					for (EObject contents : resource.getContents()) {
-						if (contents instanceof Migrator) {
-							migrators.add((Migrator) contents);
+			try {
+				loadMonitor.beginTask("Loading Models...", migratorURIs.size());
+				for (URI uri : migratorURIs) {
+					Resource resource = resourceSet.getResource(uri, true);
+					if (resource != null) {
+						for (EObject contents : resource.getContents()) {
+							if (contents instanceof Migrator) {
+								migrators.add((Migrator) contents);
+							}
 						}
 					}
+					loadMonitor.worked(1);
 				}
-				loadMonitor.worked(1);
+			} finally {
+				loadMonitor.done();
 			}
-			loadMonitor.done();
 
 			IProgressMonitor resolveMonitor = new SubProgressMonitor(initializeMonitor, 1);
-			resolveMonitor.beginTask("Resolving Proxies...", resourceSet.getResources().size());
-			  List<Resource> resources = resourceSet.getResources();
-			for (int i = 0; i < resources.size(); ++i) {
-				EcoreUtil.resolveAll(resources.get(i));
-				resolveMonitor.worked(1);
-		    }
-		    resolveMonitor.done();
+			try {
+				resolveMonitor.beginTask("Resolving Proxies...", resourceSet.getResources().size());
+				  List<Resource> resources = resourceSet.getResources();
+				for (int i = 0; i < resources.size(); ++i) {
+					EcoreUtil.resolveAll(resources.get(i));
+					resolveMonitor.worked(1);
+			    }
+			} finally {
+				resolveMonitor.done();
+			}
 			
 			IProgressMonitor prepareMonitor = new SubProgressMonitor(initializeMonitor, 1);
-			prepareMonitor.beginTask("Preparing efficient migration...", migrators.size());
-			for (Migrator migrator : migrators) {
-				for (EPackage p : migrator.getSourcePackages()) {
-					nsUriToEPackage.put(p.getNsURI(), p);
-				}
-				for (EPackage p : migrator.getTargetPackages()) {
-					nsUriToEPackage.put(p.getNsURI(), p);
-				}
-				for (Mapping mapping : migrator.getMappings()) {
-					EClass sourceEClass = mapping.getSourceClass();
-					if (!mappings.containsKey(sourceEClass)) {
-						mappings.put(sourceEClass, new ArrayList<Mapping>());
+			try {
+				prepareMonitor.beginTask("Preparing efficient migration...", migrators.size());
+				for (Migrator migrator : migrators) {
+					for (EPackage p : migrator.getSourcePackages()) {
+						nsUriToEPackage.put(p.getNsURI(), p);
 					}
-					mappings.get(sourceEClass).add(mapping);		
+					for (EPackage p : migrator.getTargetPackages()) {
+						nsUriToEPackage.put(p.getNsURI(), p);
+					}
+					for (Mapping mapping : migrator.getMappings()) {
+						EClass sourceEClass = mapping.getSourceClass();
+						if (!mappings.containsKey(sourceEClass)) {
+							mappings.put(sourceEClass, new ArrayList<Mapping>());
+						}
+						mappings.get(sourceEClass).add(mapping);		
+					}
+					prepareMonitor.worked(1);
 				}
-				prepareMonitor.worked(1);
+			} finally {
+				prepareMonitor.done();
 			}
-			prepareMonitor.done();
 	
 		} finally {
 			initializeMonitor.done();
