@@ -62,6 +62,7 @@ public class MigratorItemProvider
 
 			addSourcePackagesPropertyDescriptor(object);
 			addTargetPackagesPropertyDescriptor(object);
+			addReleasePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -102,6 +103,28 @@ public class MigratorItemProvider
 				 getString("_UI_Migrator_targetPackages_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Migrator_targetPackages_feature", "_UI_Migrator_type"),
 				 MigrationPackage.Literals.MIGRATOR__TARGET_PACKAGES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Release feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReleasePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Migrator_release_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Migrator_release_feature", "_UI_Migrator_type"),
+				 MigrationPackage.Literals.MIGRATOR__RELEASE,
 				 true,
 				 false,
 				 true,

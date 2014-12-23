@@ -7,8 +7,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import migration.Constraint;
 import migration.CreateClass;
@@ -21,6 +23,8 @@ import migration.OclExpression;
 import migration.SetFeatureInitializer;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -50,6 +54,9 @@ import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.options.ParsingOptions;
 
+import emf.migration.release.Release;
+import emf.migration.release.ReleaseSet;
+
 public class MigrationExecuter {
     public static org.eclipse.ocl.ecore.OCL OCL_ECORE = OCL.newInstance(EcoreEnvironmentFactory.INSTANCE);
 	protected ResourceSet resourceSet = new ResourceSetImpl();
@@ -58,104 +65,188 @@ public class MigrationExecuter {
 	protected Map<String, EPackage> nsUriToEPackage = new HashMap<String, EPackage>();
 	protected Map<EClass, List<Mapping>> mappings = new HashMap<EClass, List<Mapping>>();
 	protected Map<OclExpression, Query<EClassifier, ?, ?>> expressions = new HashMap<OclExpression, Query<EClassifier, ?, ?>>();
+	protected IProgressMonitor monitor;
 	
-	
-	public MigrationExecuter(List<URI> migratorURIs) {
-		for (URI uri : migratorURIs) {
-			Resource resource = resourceSet.getResource(uri, true);
-			if (resource != null) {
-				for (EObject contents : resource.getContents()) {
-					if (contents instanceof Migrator) {
-						migrators.add((Migrator) contents);
+	public MigrationExecuter(List<URI> migratorURIs, IProgressMonitor monitor) {
+		this.monitor = monitor;
+		monitor.beginTask("Migration", 2);
+		IProgressMonitor initializeMonitor = new SubProgressMonitor(monitor, 1);
+		initializeMonitor.beginTask("Initializing...", 3);
+		try {
+			IProgressMonitor loadMonitor = new SubProgressMonitor(initializeMonitor, 1);
+			loadMonitor.beginTask("Loading Models...", migratorURIs.size());
+			for (URI uri : migratorURIs) {
+				Resource resource = resourceSet.getResource(uri, true);
+				if (resource != null) {
+					for (EObject contents : resource.getContents()) {
+						if (contents instanceof Migrator) {
+							migrators.add((Migrator) contents);
+						}
 					}
 				}
+				loadMonitor.worked(1);
 			}
-		}
-		EcoreUtil.resolveAll(resourceSet);
-		for (Migrator migrator : migrators) {
-			for (EPackage p : migrator.getSourcePackages()) {
-				nsUriToEPackage.put(p.getNsURI(), p);
-			}
-			for (EPackage p : migrator.getTargetPackages()) {
-				nsUriToEPackage.put(p.getNsURI(), p);
-			}
-			for (Mapping mapping : migrator.getMappings()) {
-				EClass sourceEClass = mapping.getSourceClass();
-				if (!mappings.containsKey(sourceEClass)) {
-					mappings.put(sourceEClass, new ArrayList<Mapping>());
+			loadMonitor.done();
+	
+			IProgressMonitor resolveMonitor = new SubProgressMonitor(initializeMonitor, 1);
+			resolveMonitor.beginTask("Resolving Proxies...", resourceSet.getResources().size());
+		    for (Resource resource : resourceSet.getResources()) {
+		    	EcoreUtil.resolveAll(resource);
+		    	resolveMonitor.worked(1);
+		    }
+		    resolveMonitor.done();
+			
+			IProgressMonitor prepareMonitor = new SubProgressMonitor(initializeMonitor, 1);
+			prepareMonitor.beginTask("Preparing efficient migration...", migrators.size());
+			for (Migrator migrator : migrators) {
+				for (EPackage p : migrator.getSourcePackages()) {
+					nsUriToEPackage.put(p.getNsURI(), p);
 				}
-				mappings.get(sourceEClass).add(mapping);		
+				for (EPackage p : migrator.getTargetPackages()) {
+					nsUriToEPackage.put(p.getNsURI(), p);
+				}
+				for (Mapping mapping : migrator.getMappings()) {
+					EClass sourceEClass = mapping.getSourceClass();
+					if (!mappings.containsKey(sourceEClass)) {
+						mappings.put(sourceEClass, new ArrayList<Mapping>());
+					}
+					mappings.get(sourceEClass).add(mapping);		
+				}
+				prepareMonitor.worked(1);
 			}
+			prepareMonitor.done();
+	
+		} finally {
+			initializeMonitor.done();
 		}
 	}
 
 	public void execute(ISelection selection) {
-		EPackage.Registry delegate = resourceSet.getPackageRegistry();
-		resourceSet.setPackageRegistry(new EPackageRegistryImpl(delegate) {
-			private static final long serialVersionUID = 1L;
-			  public EPackage getEPackage(String nsURI){
-				  EPackage p = nsUriToEPackage.get(nsURI);
-				  if (p != null) {
-					  return p;
+		IProgressMonitor executeMonitor = new SubProgressMonitor(monitor, 1);
+		try {
+			EPackage.Registry delegate = resourceSet.getPackageRegistry();
+			resourceSet.setPackageRegistry(new EPackageRegistryImpl(delegate) {
+				private static final long serialVersionUID = 1L;
+				  public EPackage getEPackage(String nsURI){
+					  EPackage p = nsUriToEPackage.get(nsURI);
+					  if (p != null) {
+						  return p;
+					  }
+					  EPackage pack = super.getEPackage(nsURI);
+					  if (pack != null) {
+						  throw new UnsupportedOperationException("No Migrator found for Package \"" + pack.getName() + "\".");
+					  }
+					  return pack;
 				  }
-
-				  //return EcorePackage.eINSTANCE;
-				  EPackage pack = super.getEPackage(nsURI);
-				  if (pack != null) {
-					  throw new UnsupportedOperationException("No Migrator found for Package \"" + pack.getName() + "\".");
-				  }
-				  return pack;
-			  }
-		});
-		resourceSet.getLoadOptions().put(
-				XMLResource.OPTION_MISSING_PACKAGE_HANDLER,
-				new XMLResource.MissingPackageHandler() {
-					@Override
-					public EPackage getPackage(String nsURI) {
-						return nsUriToEPackage.get(nsURI);
+			});
+			resourceSet.getLoadOptions().put(
+					XMLResource.OPTION_MISSING_PACKAGE_HANDLER,
+					new XMLResource.MissingPackageHandler() {
+						@Override
+						public EPackage getPackage(String nsURI) {
+							return nsUriToEPackage.get(nsURI);
+						}
+					});
+	
+			List<Resource> initialResources = new ArrayList<Resource>(resourceSet.getResources());
+	
+			List<Release> releases = null;
+			Release currentRelease = null;
+			do {
+				List<Resource> resources = new ArrayList<Resource>();
+		
+				if (selection instanceof IStructuredSelection) {
+					Iterator<?> iterator = ((IStructuredSelection) selection)
+							.iterator();
+					while (iterator.hasNext()) {
+						Object object = iterator.next();
+						if (object instanceof IFile) {
+							IFile iFile = (IFile) object;
+							Map<String, Object> m = resourceSet
+									.getResourceFactoryRegistry()
+									.getExtensionToFactoryMap();
+							m.put(iFile.getFileExtension(), xmiFactory);
+							URI uri = URI.createPlatformResourceURI(iFile.getFullPath()
+									.toString(), true);
+							resources.add(resourceSet.getResource(uri, true));
+						}
 					}
-				});
-
-		List<Resource> resources = new ArrayList<Resource>();
-
-		if (selection instanceof IStructuredSelection) {
-			Iterator<?> iterator = ((IStructuredSelection) selection)
-					.iterator();
-			while (iterator.hasNext()) {
-				Object object = iterator.next();
-				if (object instanceof IFile) {
-					IFile iFile = (IFile) object;
-					Map<String, Object> m = resourceSet
-							.getResourceFactoryRegistry()
-							.getExtensionToFactoryMap();
-					m.put(iFile.getFileExtension(), xmiFactory);
-					URI uri = URI.createPlatformResourceURI(iFile.getFullPath()
-							.toString(), true);
-					resources.add(resourceSet.getResource(uri, true));
 				}
-			}
-		}
-		if (!resources.isEmpty()) {
-			execute(resources);
-			for (Resource resource : resources) {
-				resourceSet.getResources().remove(resource);
-			}
+	
+				// Search for releases that could have an impact on our files
+				if (releases == null) {
+					releases = new ArrayList<Release>();
+					Set<ReleaseSet> releaseSets = new LinkedHashSet<ReleaseSet>();
+					for (Resource resource : resources) {
+						for (EObject content : resource.getContents()) {
+							for (Mapping mapping : mappings.get(content.eClass())) {
+								if (mapping.getMigrator() != null && mapping.getMigrator().getRelease() != null) {
+									Release release = mapping.getMigrator().getRelease();
+									if (release.getReleaseSet() != null) {
+										releaseSets.add(release.getReleaseSet());
+									}
+								}
+							}
+						}
+					}
+					for (ReleaseSet releaseSet : releaseSets) {
+						releases.addAll(releaseSet.getReleases());
+					}
+					if (releases.isEmpty()) {
+						break;
+					}
+					executeMonitor.beginTask("Migrating...", releases.size());
+				}
+	
+				// Get the first release and process it
+				currentRelease = releases.get(0);
+				releases.remove(0);
+				executeMonitor.subTask("Migrating Release " + getReleaseLabel(currentRelease));
+				
+				if (!resources.isEmpty()) {
+					if (!execute(resources, currentRelease)) {
+						continue;
+					}
+				}
+				for (Resource resource : resourceSet.getResources()) {
+					if (!initialResources.contains(resource)) {
+						resourceSet.getResources().remove(resource);
+					}
+				}
+				executeMonitor.worked(1);
+			} while (!releases.isEmpty());
+		} finally {
+			executeMonitor.done();
 		}
 	}
 
-	public void execute(List<Resource> resources) {
-		MigrationCopier copier = new MigrationCopier();
+	protected String getReleaseLabel(Release currentRelease) {
+		StringBuffer buf = new StringBuffer();
+		if (currentRelease.getReleaseSet() != null && currentRelease.getReleaseSet().getName() != null) {
+			buf.append(currentRelease.getReleaseSet().getName());
+		}
+		buf.append(' ');
+		if (currentRelease.getName() != null) {
+			buf.append(currentRelease.getName());
+		}
+		return buf.toString();
+	}
+
+	protected boolean execute(List<Resource> resources, Release release) {
+		MigrationCopier copier = new MigrationCopier(release);
 
 		List<Resource> targetResources = new ArrayList<Resource>();
 		ResourceSet targetResourceSet = new ResourceSetImpl();
 		targetResourceSet.setResourceFactoryRegistry(resourceSet.getResourceFactoryRegistry());
 		
 		for (Resource sourceResource : resources) {
-			Resource targetResource = targetResourceSet.createResource(sourceResource.getURI());
-			targetResources.add(targetResource);
 			Collection<EObject> copies = copier.copyAll(sourceResource.getContents());
-			copier.copyIds((XMIResource) sourceResource, (XMIResource) targetResource);
-			targetResource.getContents().addAll(copies);
+			if (copier.isEmpty()) {
+				Resource targetResource = targetResourceSet.createResource(sourceResource.getURI());
+				targetResources.add(targetResource);
+				copier.copyIds((XMIResource) sourceResource, (XMIResource) targetResource);
+				targetResource.getContents().addAll(copies);
+			}
 		}
 		copier.copyReferences();
 
@@ -166,6 +257,8 @@ public class MigrationExecuter {
 				e.printStackTrace();
 			}
 		}
+		
+		return !copier.isEmpty();
 	}
 
 	public class UuidXMIFactoryImpl extends XMIResourceFactoryImpl {
@@ -182,6 +275,12 @@ public class MigrationExecuter {
 
 	public class MigrationCopier extends LinkedHashMap<EObject, EObject> {
 		private static final long serialVersionUID = 1L;
+
+		protected Release release;
+		
+		public MigrationCopier(Release release) {
+			this.release = release; 
+		}
 
 		public <T> Collection<T> copyAll(Collection<? extends T> eObjects) {
 			Collection<T> result = new ArrayList<T>(eObjects.size());
@@ -379,6 +478,37 @@ public class MigrationExecuter {
 				}
 			}
 		}
+		
+
+		protected Mapping findMapping(EObject source, boolean executable, boolean superTypes) {
+			List<Mapping> mappings = findMappings(source, executable, superTypes);
+			if (mappings != null && !mappings.isEmpty()) {
+				return mappings.get(0);
+			}
+			return null;
+		}
+
+		protected List<Mapping> findMappings(EObject source, boolean executable, boolean superTypes) {
+			List<EClass> types = new ArrayList<EClass>();
+			types.add(source.eClass());
+			if (superTypes) {
+				types.addAll(source.eClass().getEAllSuperTypes());
+			}
+			List<Mapping> foundMappings = new ArrayList<Mapping>();
+			for (EClass type : types) {
+				List<Mapping> mappings = MigrationExecuter.this.mappings.get(type);
+				if (mappings != null) {
+					for (Mapping mapping : mappings) {
+						if (mapping.getMigrator().getRelease() == release) {
+							if (!executable || checkConstraints(mapping, source)) {
+								foundMappings.add(mapping);
+							}
+						}
+					}
+				}
+			}
+			return foundMappings;
+		}
 	}
 
 	protected boolean checkConstraints(CreateClass createClass, EObject source) {
@@ -435,30 +565,4 @@ public class MigrationExecuter {
 		return expressions.get(expression);
 	}
 
-	protected Mapping findMapping(EObject source, boolean executable, boolean superTypes) {
-		List<Mapping> mappings = findMappings(source, executable, superTypes);
-		if (mappings != null && !mappings.isEmpty()) {
-			return mappings.get(0);
-		}
-		return null;
-	}
-	protected List<Mapping> findMappings(EObject source, boolean executable, boolean superTypes) {
-		List<EClass> types = new ArrayList<EClass>();
-		types.add(source.eClass());
-		if (superTypes) {
-			types.addAll(source.eClass().getEAllSuperTypes());
-		}
-		List<Mapping> foundMappings = new ArrayList<Mapping>();
-		for (EClass type : types) {
-			List<Mapping> mappings = this.mappings.get(type);
-			if (mappings != null) {
-				for (Mapping mapping : mappings) {
-					if (!executable || checkConstraints(mapping, source)) {
-						foundMappings.add(mapping);
-					}
-				}
-			}
-		}
-		return foundMappings;
-	}
 }

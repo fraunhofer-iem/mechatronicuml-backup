@@ -21,7 +21,7 @@ import org.osgi.framework.BundleContext;
  */
 public class ExecutePlugin extends AbstractUIPlugin {
 	public static final String MIGRATOR_EXTENSION_POINT_ID = "emf.migration.migrator";
-
+	
 	private static List<URI> migrators = null;
 
 	public static List<URI> getMigrators() {
@@ -31,12 +31,13 @@ public class ExecutePlugin extends AbstractUIPlugin {
 					.getConfigurationElementsFor(MIGRATOR_EXTENSION_POINT_ID);
 	
 			for (IConfigurationElement e : config) {
-				URI uri = URI.createPlatformPluginURI(e.getContributor().getName() + "/" + e.getAttribute("migrator"), false);
+				URI uri = URI.createPlatformPluginURI(e.getContributor().getName() + "/" + e.getAttribute("file"), false);
 				migrators.add(uri);
 			}
 		}
 		return migrators;
 	}
+	
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "emf.migration.execute"; //$NON-NLS-1$

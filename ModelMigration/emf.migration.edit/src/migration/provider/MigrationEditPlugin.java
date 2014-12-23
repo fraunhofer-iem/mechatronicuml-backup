@@ -2,6 +2,7 @@
  */
 package migration.provider;
 
+import emf.migration.release.provider.ReleaseEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -40,6 +41,7 @@ public final class MigrationEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,
+		     ReleaseEditPlugin.INSTANCE,
 		   });
 	}
 

@@ -2,6 +2,7 @@
  */
 package migration.impl;
 
+import emf.migration.release.ReleasePackage;
 import migration.Constraint;
 import migration.CreateClass;
 import migration.CreateInitializer;
@@ -141,6 +142,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
+		ReleasePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theMigrationPackage.createPackageContents();
@@ -200,6 +202,15 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 	 */
 	public EReference getMigrator_Mappings() {
 		return (EReference)migratorEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMigrator_Release() {
+		return (EReference)migratorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -450,6 +461,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		createEReference(migratorEClass, MIGRATOR__SOURCE_PACKAGES);
 		createEReference(migratorEClass, MIGRATOR__TARGET_PACKAGES);
 		createEReference(migratorEClass, MIGRATOR__MAPPINGS);
+		createEReference(migratorEClass, MIGRATOR__RELEASE);
 
 		oclExpressionEClass = createEClass(OCL_EXPRESSION);
 		createEAttribute(oclExpressionEClass, OCL_EXPRESSION__OCL);
@@ -509,6 +521,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 
 		// Obtain other dependent packages
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		ReleasePackage theReleasePackage = (ReleasePackage)EPackage.Registry.INSTANCE.getEPackage(ReleasePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -528,6 +541,7 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		initEReference(getMigrator_SourcePackages(), theEcorePackage.getEPackage(), null, "sourcePackages", null, 0, -1, Migrator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMigrator_TargetPackages(), theEcorePackage.getEPackage(), null, "targetPackages", null, 0, -1, Migrator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMigrator_Mappings(), this.getMapping(), this.getMapping_Migrator(), "mappings", null, 0, -1, Migrator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMigrator_Release(), theReleasePackage.getRelease(), null, "release", null, 1, 1, Migrator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oclExpressionEClass, OclExpression.class, "OclExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOclExpression_Ocl(), theEcorePackage.getEString(), "ocl", null, 0, 1, OclExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

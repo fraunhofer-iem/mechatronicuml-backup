@@ -11,5 +11,6 @@ Export-Package: migration,
  migration.impl,
  migration.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ emf.migration.release;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -2,12 +2,14 @@
  */
 package migration.impl;
 
+import emf.migration.release.Release;
 import java.util.Collection;
 
 import migration.Mapping;
 import migration.MigrationPackage;
 import migration.Migrator;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -32,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link migration.impl.MigratorImpl#getSourcePackages <em>Source Packages</em>}</li>
  *   <li>{@link migration.impl.MigratorImpl#getTargetPackages <em>Target Packages</em>}</li>
  *   <li>{@link migration.impl.MigratorImpl#getMappings <em>Mappings</em>}</li>
+ *   <li>{@link migration.impl.MigratorImpl#getRelease <em>Release</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +71,16 @@ public class MigratorImpl extends MinimalEObjectImpl.Container implements Migrat
 	 * @ordered
 	 */
 	protected EList<Mapping> mappings;
+
+	/**
+	 * The cached value of the '{@link #getRelease() <em>Release</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelease()
+	 * @generated
+	 * @ordered
+	 */
+	protected Release release;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,6 +142,44 @@ public class MigratorImpl extends MinimalEObjectImpl.Container implements Migrat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Release getRelease() {
+		if (release != null && release.eIsProxy()) {
+			InternalEObject oldRelease = (InternalEObject)release;
+			release = (Release)eResolveProxy(oldRelease);
+			if (release != oldRelease) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MigrationPackage.MIGRATOR__RELEASE, oldRelease, release));
+			}
+		}
+		return release;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Release basicGetRelease() {
+		return release;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRelease(Release newRelease) {
+		Release oldRelease = release;
+		release = newRelease;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MigrationPackage.MIGRATOR__RELEASE, oldRelease, release));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -166,6 +218,9 @@ public class MigratorImpl extends MinimalEObjectImpl.Container implements Migrat
 				return getTargetPackages();
 			case MigrationPackage.MIGRATOR__MAPPINGS:
 				return getMappings();
+			case MigrationPackage.MIGRATOR__RELEASE:
+				if (resolve) return getRelease();
+				return basicGetRelease();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,6 +246,9 @@ public class MigratorImpl extends MinimalEObjectImpl.Container implements Migrat
 				getMappings().clear();
 				getMappings().addAll((Collection<? extends Mapping>)newValue);
 				return;
+			case MigrationPackage.MIGRATOR__RELEASE:
+				setRelease((Release)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -212,6 +270,9 @@ public class MigratorImpl extends MinimalEObjectImpl.Container implements Migrat
 			case MigrationPackage.MIGRATOR__MAPPINGS:
 				getMappings().clear();
 				return;
+			case MigrationPackage.MIGRATOR__RELEASE:
+				setRelease((Release)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -230,6 +291,8 @@ public class MigratorImpl extends MinimalEObjectImpl.Container implements Migrat
 				return targetPackages != null && !targetPackages.isEmpty();
 			case MigrationPackage.MIGRATOR__MAPPINGS:
 				return mappings != null && !mappings.isEmpty();
+			case MigrationPackage.MIGRATOR__RELEASE:
+				return release != null;
 		}
 		return super.eIsSet(featureID);
 	}

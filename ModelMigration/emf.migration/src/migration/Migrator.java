@@ -2,6 +2,7 @@
  */
 package migration;
 
+import emf.migration.release.Release;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>{@link migration.Migrator#getSourcePackages <em>Source Packages</em>}</li>
  *   <li>{@link migration.Migrator#getTargetPackages <em>Target Packages</em>}</li>
  *   <li>{@link migration.Migrator#getMappings <em>Mappings</em>}</li>
+ *   <li>{@link migration.Migrator#getRelease <em>Release</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,5 +77,31 @@ public interface Migrator extends EObject {
 	 * @generated
 	 */
 	EList<Mapping> getMappings();
+
+	/**
+	 * Returns the value of the '<em><b>Release</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Release</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Release</em>' reference.
+	 * @see #setRelease(Release)
+	 * @see migration.MigrationPackage#getMigrator_Release()
+	 * @model required="true"
+	 * @generated
+	 */
+	Release getRelease();
+
+	/**
+	 * Sets the value of the '{@link migration.Migrator#getRelease <em>Release</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Release</em>' reference.
+	 * @see #getRelease()
+	 * @generated
+	 */
+	void setRelease(Release value);
 
 } // Migrator

@@ -8,15 +8,17 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Migrator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePackages" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetPackages" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
         eType="#//Mapping" containment="true" eOpposite="#//Mapping/migrator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release" lowerBound="1"
+        eType="ecore:EClass ../../emf.migration.release/model/release.ecore#//Release"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OclExpression" abstract="true">
-    <eOperations name="getContext" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ocl" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getContext" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ocl" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreateClass" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -25,8 +27,8 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="NoAbstractTarget" value="not targetClass.abstract"/>
     </eAnnotations>
-    <eOperations name="getSourceClass" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eOperations name="getSourceClass" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="featureInitializers" upperBound="-1"
         eType="#//FeatureInitializer" containment="true" eOpposite="#//FeatureInitializer/embeddingCreateClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
@@ -40,7 +42,7 @@
       <details key="NoTargetForAbstractSourceAllowed" value="sourceClass.abstract implies targetClass.oclIsUndefined()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceClass" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="migrator" lowerBound="1"
         eType="#//Migrator" eOpposite="#//Migrator/mappings"/>
   </eClassifiers>
@@ -53,28 +55,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="embeddingCreateClass" lowerBound="1"
         eType="#//CreateClass" eOpposite="#//CreateClass/featureInitializers"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetFeature" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IdentityFeatureInitializer" eSuperTypes="#//FeatureInitializer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceFeature" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SetFeatureInitializer" eSuperTypes="#//FeatureInitializer #//OclExpression">
-    <eOperations name="getContext" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+    <eOperations name="getContext" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="Mapping mapping = getMapping();&#xA;if (mapping != null) {&#xA;&#x9;return mapping.getSourceClass();&#xA;}&#xA;return null;"/>
       </eAnnotations>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreateInitializer" eSuperTypes="#//CreateClass #//FeatureInitializer">
-    <eOperations name="getSourceClass" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+    <eOperations name="getSourceClass" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="Mapping mapping = getMapping();&#xA;if (mapping != null) {&#xA;&#x9;return mapping.getSourceClass();&#xA;}&#xA;return null;"/>
       </eAnnotations>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//OclExpression">
-    <eOperations name="getContext" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+    <eOperations name="getContext" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="return getEmbeddingCreateClass().getSourceClass();"/>
       </eAnnotations>

@@ -96,13 +96,22 @@ public interface MigrationPackage extends EPackage {
 	int MIGRATOR__MAPPINGS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Release</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIGRATOR__RELEASE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Migrator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MIGRATOR_FEATURE_COUNT = 3;
+	int MIGRATOR_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Migrator</em>' class.
@@ -688,6 +697,17 @@ public interface MigrationPackage extends EPackage {
 	EReference getMigrator_Mappings();
 
 	/**
+	 * Returns the meta object for the reference '{@link migration.Migrator#getRelease <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Release</em>'.
+	 * @see migration.Migrator#getRelease()
+	 * @see #getMigrator()
+	 * @generated
+	 */
+	EReference getMigrator_Release();
+
+	/**
 	 * Returns the meta object for class '{@link migration.OclExpression <em>Ocl Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,6 +1013,14 @@ public interface MigrationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MIGRATOR__MAPPINGS = eINSTANCE.getMigrator_Mappings();
+
+		/**
+		 * The meta object literal for the '<em><b>Release</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MIGRATOR__RELEASE = eINSTANCE.getMigrator_Release();
 
 		/**
 		 * The meta object literal for the '{@link migration.impl.OclExpressionImpl <em>Ocl Expression</em>}' class.
