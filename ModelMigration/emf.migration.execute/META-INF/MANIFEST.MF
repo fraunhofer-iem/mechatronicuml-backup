@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMF Migration Execute
+Bundle-SymbolicName: emf.migration.execute;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: emf.migration.execute.ExecutePlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.core.resources,
+ emf.migration,
+ org.eclipse.ocl.ecore;bundle-version="3.3.100"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: emf.migration.execute

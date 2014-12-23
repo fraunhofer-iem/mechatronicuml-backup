@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/emf.migration/src" modelPluginID="emf.migration"
+    modelName="Migration" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>migration.ecore</foreignModel>
+  <genPackages prefix="Migration" disposableProviderFactory="true" ecorePackage="migration.ecore#/">
+    <genClasses ecoreClass="migration.ecore#//Migrator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference migration.ecore#//Migrator/sourcePackages"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference migration.ecore#//Migrator/targetPackages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference migration.ecore#//Migrator/mappings"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="migration.ecore#//OclExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute migration.ecore#//OclExpression/ocl"/>
+      <genOperations ecoreOperation="migration.ecore#//OclExpression/getContext"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="migration.ecore#//CreateClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference migration.ecore#//CreateClass/targetClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference migration.ecore#//CreateClass/featureInitializers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference migration.ecore#//CreateClass/constraints"/>
+      <genOperations ecoreOperation="migration.ecore#//CreateClass/getSourceClass"/>
+    </genClasses>
+    <genClasses ecoreClass="migration.ecore#//Mapping">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference migration.ecore#//Mapping/sourceClass"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference migration.ecore#//Mapping/migrator"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="migration.ecore#//FeatureInitializer">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference migration.ecore#//FeatureInitializer/embeddingCreateClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference migration.ecore#//FeatureInitializer/targetFeature"/>
+      <genOperations ecoreOperation="migration.ecore#//FeatureInitializer/getMapping"/>
+    </genClasses>
+    <genClasses ecoreClass="migration.ecore#//IdentityFeatureInitializer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference migration.ecore#//IdentityFeatureInitializer/sourceFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="migration.ecore#//SetFeatureInitializer">
+      <genOperations ecoreOperation="migration.ecore#//SetFeatureInitializer/getContext"/>
+    </genClasses>
+    <genClasses ecoreClass="migration.ecore#//CreateInitializer">
+      <genOperations ecoreOperation="migration.ecore#//CreateInitializer/getSourceClass"/>
+    </genClasses>
+    <genClasses ecoreClass="migration.ecore#//Constraint">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference migration.ecore#//Constraint/embeddingCreateClass"/>
+      <genOperations ecoreOperation="migration.ecore#//Constraint/getContext"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

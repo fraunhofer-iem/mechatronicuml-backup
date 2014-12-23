@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="">
+  <reconciler/>
+  <genModel href="migration.genmodel#/"/>
+  <plugin id="emf.migration.edit.properties" name="Properties" vendor="ok" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>emf.migration</requiredBundles>
+    <requiredBundles>emf.migration.edit</requiredBundles>
+  </plugin>
+  <tabs id="migration" name="Migration" afterTab=""/>
+  <packages>
+    <genPackage href="migration.genmodel#//migration"/>
+    <classes>
+      <genClass href="migration.genmodel#//migration/Migrator"/>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.0/@propertyCategories.0">
+        <genFeature href="migration.genmodel#//migration/Migrator/sourcePackages"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.0/@propertyCategories.0">
+        <genFeature href="migration.genmodel#//migration/Migrator/targetPackages"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.0 //@packages.0/@classes.0/@properties.1"/>
+    </classes>
+    <classes>
+      <genClass href="migration.genmodel#//migration/OclExpression"/>
+      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="migration.genmodel#//migration/OclExpression/ocl"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="migration.genmodel#//migration/CreateClass"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="migration.genmodel#//migration/CreateClass/targetClass"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.2">
+      <genClass href="migration.genmodel#//migration/Mapping"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="migration.genmodel#//migration/Mapping/sourceClass"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="migration.genmodel#//migration/FeatureInitializer"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="migration.genmodel#//migration/FeatureInitializer/targetFeature"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.4">
+      <genClass href="migration.genmodel#//migration/IdentityFeatureInitializer"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="migration.genmodel#//migration/IdentityFeatureInitializer/sourceFeature"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.1 //@packages.0/@classes.4">
+      <genClass href="migration.genmodel#//migration/SetFeatureInitializer"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.4 //@packages.0/@classes.2">
+      <genClass href="migration.genmodel#//migration/CreateInitializer"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.1">
+      <genClass href="migration.genmodel#//migration/Constraint"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
