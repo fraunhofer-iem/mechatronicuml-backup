@@ -87,12 +87,13 @@ public class MigrationExecuter {
 				loadMonitor.worked(1);
 			}
 			loadMonitor.done();
-	
+
 			IProgressMonitor resolveMonitor = new SubProgressMonitor(initializeMonitor, 1);
 			resolveMonitor.beginTask("Resolving Proxies...", resourceSet.getResources().size());
-		    for (Resource resource : resourceSet.getResources()) {
-		    	EcoreUtil.resolveAll(resource);
-		    	resolveMonitor.worked(1);
+			  List<Resource> resources = resourceSet.getResources();
+			for (int i = 0; i < resources.size(); ++i) {
+				EcoreUtil.resolveAll(resources.get(i));
+				resolveMonitor.worked(1);
 		    }
 		    resolveMonitor.done();
 			
@@ -208,7 +209,7 @@ public class MigrationExecuter {
 						continue;
 					}
 				}
-				for (Resource resource : resourceSet.getResources()) {
+				for (Resource resource : new ArrayList<Resource>(resourceSet.getResources())) {
 					if (!initialResources.contains(resource)) {
 						resourceSet.getResources().remove(resource);
 					}
@@ -241,11 +242,12 @@ public class MigrationExecuter {
 		
 		for (Resource sourceResource : resources) {
 			Collection<EObject> copies = copier.copyAll(sourceResource.getContents());
-			if (copier.isEmpty()) {
+			if (!copier.isEmpty()) {
 				Resource targetResource = targetResourceSet.createResource(sourceResource.getURI());
-				targetResources.add(targetResource);
-				copier.copyIds((XMIResource) sourceResource, (XMIResource) targetResource);
+				((XMIResource) targetResource).setEncoding(((XMIResource) sourceResource).getEncoding());
 				targetResource.getContents().addAll(copies);
+				copier.copyIds((XMIResource) sourceResource, (XMIResource) targetResource);
+				targetResources.add(targetResource);
 			}
 		}
 		copier.copyReferences();
