@@ -2,6 +2,7 @@
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
 <rm:locator searchPathRef="default" failOnError="false"/>
 <rm:locator searchPathRef="APE" failOnError="false"/>
+<rm:locator searchPathRef="ModelMigration" failOnError="false"/>
 <rm:locator searchPathRef="MUMLCore" failOnError="false"/>
 <rm:locator searchPathRef="PlatformIndependentModeling" failOnError="false"/>
 <rm:locator searchPathRef="VerificationCore" failOnError="false"/>
