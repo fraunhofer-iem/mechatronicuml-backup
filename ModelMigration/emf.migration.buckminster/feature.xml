@@ -20,4 +20,15 @@
          id="emf.migraton.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import plugin="org.junit"/>
+   </requires>
+
+   <plugin
+         id="emf.migration.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>
