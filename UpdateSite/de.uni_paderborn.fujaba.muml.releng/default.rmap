@@ -48,6 +48,17 @@
     </rm:provider>
 </rm:searchPath>
 
+
+<rm:searchPath name="ModelMigration">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+	<rm:property key="buckminster.source" value="false"/>
+    	 <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="file:///data/jenkins/jobs/ModelMigration/lastSuccessful/archive/targetPlatform/">
+      </rm:uri>
+    </rm:provider>
+</rm:searchPath>
+  
+ 
  
 <rm:searchPath name="APE">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
