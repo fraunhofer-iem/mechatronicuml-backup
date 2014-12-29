@@ -74,64 +74,57 @@ public class MigrationExecuter {
 		initializeMonitor.beginTask("Initializing...", 3);
 		try {
 			IProgressMonitor loadMonitor = new SubProgressMonitor(initializeMonitor, 1);
-			try {
-				loadMonitor.beginTask("Loading Models...", migratorURIs.size());
-				for (URI uri : migratorURIs) {
-					Resource resource = resourceSet.getResource(uri, true);
-					if (resource != null) {
-						for (EObject contents : resource.getContents()) {
-							if (contents instanceof Migrator) {
-								migrators.add((Migrator) contents);
-							}
+			loadMonitor.beginTask("Loading Models...", migratorURIs.size());
+			for (URI uri : migratorURIs) {
+				Resource resource = resourceSet.getResource(uri, true);
+				if (resource != null) {
+					for (EObject contents : resource.getContents()) {
+						if (contents instanceof Migrator) {
+							migrators.add((Migrator) contents);
 						}
 					}
-					loadMonitor.worked(1);
 				}
-			} finally {
-				loadMonitor.done();
+				loadMonitor.worked(1);
 			}
+			loadMonitor.done();
 
 			IProgressMonitor resolveMonitor = new SubProgressMonitor(initializeMonitor, 1);
-			try {
-				resolveMonitor.beginTask("Resolving Proxies...", resourceSet.getResources().size());
-				  List<Resource> resources = resourceSet.getResources();
-				for (int i = 0; i < resources.size(); ++i) {
-					EcoreUtil.resolveAll(resources.get(i));
-					resolveMonitor.worked(1);
-			    }
-			} finally {
-				resolveMonitor.done();
-			}
+			resolveMonitor.beginTask("Resolving Proxies...", resourceSet.getResources().size());
+			  List<Resource> resources = resourceSet.getResources();
+			for (int i = 0; i < resources.size(); ++i) {
+				EcoreUtil.resolveAll(resources.get(i));
+				resolveMonitor.worked(1);
+		    }
+			resolveMonitor.done();
 			
 			IProgressMonitor prepareMonitor = new SubProgressMonitor(initializeMonitor, 1);
-			try {
-				prepareMonitor.beginTask("Preparing efficient migration...", migrators.size());
-				for (Migrator migrator : migrators) {
-					for (EPackage p : migrator.getSourcePackages()) {
-						nsUriToEPackage.put(p.getNsURI(), p);
-					}
-					for (EPackage p : migrator.getTargetPackages()) {
-						nsUriToEPackage.put(p.getNsURI(), p);
-					}
-					for (Mapping mapping : migrator.getMappings()) {
-						EClass sourceEClass = mapping.getSourceClass();
-						if (!mappings.containsKey(sourceEClass)) {
-							mappings.put(sourceEClass, new ArrayList<Mapping>());
-						}
-						mappings.get(sourceEClass).add(mapping);		
-					}
-					prepareMonitor.worked(1);
+			prepareMonitor.beginTask("Preparing efficient migration...", migrators.size());
+			for (Migrator migrator : migrators) {
+				for (EPackage p : migrator.getSourcePackages()) {
+					nsUriToEPackage.put(p.getNsURI(), p);
 				}
-			} finally {
-				prepareMonitor.done();
+				for (EPackage p : migrator.getTargetPackages()) {
+					nsUriToEPackage.put(p.getNsURI(), p);
+				}
+				for (Mapping mapping : migrator.getMappings()) {
+					EClass sourceEClass = mapping.getSourceClass();
+					if (!mappings.containsKey(sourceEClass)) {
+						mappings.put(sourceEClass, new ArrayList<Mapping>());
+					}
+					mappings.get(sourceEClass).add(mapping);		
+				}
+				prepareMonitor.worked(1);
 			}
+			prepareMonitor.done();
 	
 		} finally {
 			initializeMonitor.done();
 		}
 	}
 
-	public void execute(ISelection selection) {
+	public List<Release> execute(ISelection selection) {
+		List<Release> migratedReleases = new ArrayList<Release>();
+		
 		IProgressMonitor executeMonitor = new SubProgressMonitor(monitor, 1);
 		try {
 			EPackage.Registry delegate = resourceSet.getPackageRegistry();
@@ -149,14 +142,14 @@ public class MigrationExecuter {
 					  return pack;
 				  }
 			});
-			resourceSet.getLoadOptions().put(
-					XMLResource.OPTION_MISSING_PACKAGE_HANDLER,
-					new XMLResource.MissingPackageHandler() {
-						@Override
-						public EPackage getPackage(String nsURI) {
-							return nsUriToEPackage.get(nsURI);
-						}
-					});
+//			resourceSet.getLoadOptions().put(
+//					XMLResource.OPTION_MISSING_PACKAGE_HANDLER,
+//					new XMLResource.MissingPackageHandler() {
+//						@Override
+//						public EPackage getPackage(String nsURI) {
+//							return nsUriToEPackage.get(nsURI);
+//						}
+//					});
 	
 			List<Resource> initialResources = new ArrayList<Resource>(resourceSet.getResources());
 	
@@ -189,11 +182,14 @@ public class MigrationExecuter {
 					Set<ReleaseSet> releaseSets = new LinkedHashSet<ReleaseSet>();
 					for (Resource resource : resources) {
 						for (EObject content : resource.getContents()) {
-							for (Mapping mapping : mappings.get(content.eClass())) {
-								if (mapping.getMigrator() != null && mapping.getMigrator().getRelease() != null) {
-									Release release = mapping.getMigrator().getRelease();
-									if (release.getReleaseSet() != null) {
-										releaseSets.add(release.getReleaseSet());
+							List<Mapping> classMappings = mappings.get(content.eClass());
+							if (classMappings != null) {
+								for (Mapping mapping : classMappings) {
+									if (mapping.getMigrator() != null && mapping.getMigrator().getRelease() != null) {
+										Release release = mapping.getMigrator().getRelease();
+										if (release.getReleaseSet() != null) {
+											releaseSets.add(release.getReleaseSet());
+										}
 									}
 								}
 							}
@@ -214,7 +210,9 @@ public class MigrationExecuter {
 				executeMonitor.subTask("Migrating Release " + getReleaseLabel(currentRelease));
 				
 				if (!resources.isEmpty()) {
-					if (!execute(resources, currentRelease)) {
+					if (execute(resources, currentRelease)) {
+						migratedReleases.add(currentRelease);
+					} else {
 						continue;
 					}
 				}
@@ -228,6 +226,8 @@ public class MigrationExecuter {
 		} finally {
 			executeMonitor.done();
 		}
+		
+		return migratedReleases;
 	}
 
 	protected String getReleaseLabel(Release currentRelease) {

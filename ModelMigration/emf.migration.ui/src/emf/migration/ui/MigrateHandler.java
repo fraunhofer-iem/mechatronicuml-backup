@@ -1,4 +1,6 @@
 package emf.migration.ui;
+import java.util.List;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -6,10 +8,14 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import emf.migration.execute.ExecutePlugin;
 import emf.migration.execute.MigrationExecuter;
+import emf.migration.release.Release;
+import emf.migration.release.ReleaseSet;
 
 
 public class MigrateHandler extends AbstractHandler {
@@ -21,9 +27,42 @@ public class MigrateHandler extends AbstractHandler {
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				MigrationExecuter executer = new MigrationExecuter(ExecutePlugin.getMigrators(), monitor);
-				executer.execute(HandlerUtil.getCurrentSelection(event));
+				
+				final List<Release> migratedReleases = executer.execute(HandlerUtil.getCurrentSelection(event));
+				final Shell shell = HandlerUtil.getActiveShell(event);
+
+				shell.getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						showMessage(shell, migratedReleases);
+					}
+				});
+				
 				monitor.done();
+				
 				return Status.OK_STATUS;
+			}
+
+			private void showMessage(Shell shell, List<Release> migratedReleases) {
+				String message = "Selected model(s) are already up-to-date.";
+				if (!migratedReleases.isEmpty()) {
+					StringBuffer buf = new StringBuffer();
+					buf.append("Migration successful. The following migrations have been applied:\n");
+					for (Release release : migratedReleases) {
+						buf.append(" * ");
+						ReleaseSet set = release.getReleaseSet();
+						if (set != null && set.getName() != null && !set.getName().isEmpty()) {
+							buf.append(set.getName());
+							buf.append(" ");
+						}
+						if (release.getName() != null && !release.getName().isEmpty()) {
+							buf.append(release.getName());
+						} else {
+							buf.append("<unnamed>");
+						}
+					}
+					message = buf.toString();
+				}
+				MessageDialog.openInformation(shell, "Migration results", message);
 			}
 		};
 
