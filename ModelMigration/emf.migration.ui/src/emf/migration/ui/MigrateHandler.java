@@ -49,16 +49,7 @@ public class MigrateHandler extends AbstractHandler {
 					buf.append("Migration successful. The following migrations have been applied:\n");
 					for (Release release : migratedReleases) {
 						buf.append(" * ");
-						ReleaseSet set = release.getReleaseSet();
-						if (set != null && set.getName() != null && !set.getName().isEmpty()) {
-							buf.append(set.getName());
-							buf.append(" ");
-						}
-						if (release.getName() != null && !release.getName().isEmpty()) {
-							buf.append(release.getName());
-						} else {
-							buf.append("<unnamed>");
-						}
+						buf.append(MigrationExecuter.getReleaseLabel(release));
 					}
 					message = buf.toString();
 				}

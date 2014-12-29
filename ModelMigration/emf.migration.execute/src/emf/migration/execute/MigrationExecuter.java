@@ -182,14 +182,28 @@ public class MigrationExecuter {
 					Set<ReleaseSet> releaseSets = new LinkedHashSet<ReleaseSet>();
 					for (Resource resource : resources) {
 						for (EObject content : resource.getContents()) {
+							List<Migrator> migrators = new ArrayList<Migrator>();
+							if (content.eClass() != null && content.eClass().getEPackage() != null) {
+								EPackage p = content.eClass().getEPackage();
+								for (Migrator m : this.migrators) {
+									if (m.getSourcePackages().contains(p)) {
+										migrators.add(m);
+									}
+								}
+							}
 							List<Mapping> classMappings = mappings.get(content.eClass());
 							if (classMappings != null) {
 								for (Mapping mapping : classMappings) {
-									if (mapping.getMigrator() != null && mapping.getMigrator().getRelease() != null) {
-										Release release = mapping.getMigrator().getRelease();
-										if (release.getReleaseSet() != null) {
-											releaseSets.add(release.getReleaseSet());
-										}
+									if (mapping.getMigrator() != null) {
+										migrators.add(mapping.getMigrator());
+									}
+								}
+							}
+							for (Migrator migrator : migrators) {
+								Release release = migrator.getRelease();
+								if (release != null) {
+									if (release.getReleaseSet() != null) {
+										releaseSets.add(release.getReleaseSet());
 									}
 								}
 							}
@@ -230,14 +244,16 @@ public class MigrationExecuter {
 		return migratedReleases;
 	}
 
-	protected String getReleaseLabel(Release currentRelease) {
+	public static String getReleaseLabel(Release release) {
 		StringBuffer buf = new StringBuffer();
-		if (currentRelease.getReleaseSet() != null && currentRelease.getReleaseSet().getName() != null) {
-			buf.append(currentRelease.getReleaseSet().getName());
+		if (release.getReleaseSet() != null && release.getReleaseSet().getName() != null) {
+			buf.append(release.getReleaseSet().getName());
 		}
 		buf.append(' ');
-		if (currentRelease.getName() != null) {
-			buf.append(currentRelease.getName());
+		if (release.getName() != null && !release.getName().isEmpty()) {
+			buf.append(release.getName());
+		} else {
+			buf.append("<unnamed>");
 		}
 		return buf.toString();
 	}
@@ -284,15 +300,17 @@ public class MigrationExecuter {
 		}
 	}
 
-	public class MigrationCopier extends LinkedHashMap<EObject, EObject> {
-		private static final long serialVersionUID = 1L;
-
+	public class MigrationCopier {
 		protected Release release;
+		protected LinkedHashMap<EObject, EObject> copies = new LinkedHashMap<EObject, EObject>();
+		protected List<EObject> uncopied = new ArrayList<EObject>();
 		
 		public MigrationCopier(Release release) {
 			this.release = release; 
 		}
-
+		public boolean isEmpty() {
+			return copies.isEmpty();
+		}
 		public <T> Collection<T> copyAll(Collection<? extends T> eObjects) {
 			Collection<T> result = new ArrayList<T>(eObjects.size());
 			for (Object object : eObjects) {
@@ -306,8 +324,8 @@ public class MigrationExecuter {
 		}
 
 		public void copyIds(XMIResource sourceResource, XMIResource targetResource) {
-			for (EObject source : keySet()) {
-				EObject target = get(source);
+			for (EObject source : copies.keySet()) {
+				EObject target = copies.get(source);
 				String id = sourceResource.getID(source);
 				targetResource.setID(target, id);
 			}	
@@ -330,15 +348,30 @@ public class MigrationExecuter {
 			}
 
 			if (target != null) {
-				put(source, target);
+				copies.put(source, target);
 				for (Mapping mapping : findMappings(source, true, true)) {
 					execute(mapping, source, target);
 				}
 				return target;
 			}
+			
+			// No mappings found - We return source, but we try to migrate contents.
+			if (source.eClass() != null) {
+				uncopied.add(source);
+				for (EReference reference : source.eClass().getEAllReferences()) {
+					if (reference.isContainment()) {
+						migrateFeature(source, reference);
+					}
+				}
+			}
 			return source;
 		}
 
+		private void migrateFeature(EObject source, EStructuralFeature feature) {
+			List<Object> originalValues = readFeature(source, feature);
+			List<Object> migratedValues = migrate(originalValues, feature);
+			writeFeature(source, feature, migratedValues);			
+		}
 		public void execute(CreateClass createClass, EObject source, EObject target) {
 			for (FeatureInitializer initializer : createClass.getFeatureInitializers()) {
 				EStructuralFeature targetFeature = initializer.getTargetFeature();
@@ -367,10 +400,12 @@ public class MigrationExecuter {
 		}
 
 		protected boolean canExecute(FeatureInitializer initializer, EObject source, EObject target) {
-			EStructuralFeature targetFeature = initializer.getTargetFeature();
-			return targetFeature != null && targetFeature.isChangeable() && !targetFeature.isDerived();
+			return isValidFeature(initializer.getTargetFeature());
 		}
 
+		protected boolean isValidFeature(EStructuralFeature targetFeature) {
+			return targetFeature != null && targetFeature.isChangeable() && !targetFeature.isDerived();
+		}
 		protected void executeCreate(CreateInitializer create, EObject source, EObject target) {
 			if (!checkConstraints(create, source)) {
 				return;
@@ -454,7 +489,7 @@ public class MigrationExecuter {
 							targetValues.add(index++, target);
 						}
 					} else if (!targetReference.isContainment() && !targetReference.isContainer()) {
-						Object copyValue = get(value);
+						Object copyValue = copies.get(value);
 						boolean isBidirectional = targetReference.getEOpposite() != null;
 						if (isBidirectional && targetValues.contains(copyValue)) {
 							// Move implemented by remove & add.
@@ -476,7 +511,7 @@ public class MigrationExecuter {
 		}
 
 		public void copyReferences() {
-			for (Map.Entry<EObject, EObject> entry : entrySet()) {
+			for (Map.Entry<EObject, EObject> entry : copies.entrySet()) {
 				EObject source = entry.getKey();
 				EObject target = entry.getValue();
 				for (Mapping mapping : findMappings(source, true, true)) {
@@ -485,6 +520,13 @@ public class MigrationExecuter {
 						if (canExecute(initializer, source, target) && isCrossReference(targetFeature) && !(initializer instanceof CreateInitializer)) {
 							execute(initializer, source, target);
 						}
+					}
+				}
+			}
+			for (EObject source : uncopied) {
+				for (EReference reference : source.eClass().getEAllReferences()) {
+					if (isCrossReference(reference) && isValidFeature(reference)) {
+						migrateFeature(source, reference);
 					}
 				}
 			}
