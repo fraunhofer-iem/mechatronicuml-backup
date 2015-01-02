@@ -447,7 +447,7 @@
 				}
 			}
 			else [/if][/if][/if] [/for]
-if (1){
+if (0){
 	//dummy
 }
 [/template]

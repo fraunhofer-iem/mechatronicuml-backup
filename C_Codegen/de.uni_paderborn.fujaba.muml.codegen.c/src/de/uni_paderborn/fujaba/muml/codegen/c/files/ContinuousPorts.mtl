@@ -25,14 +25,15 @@
 [/template]
 
 
-[template private includes(cic : ComponentInstanceConfiguration)]
+[template private includesCont(CIs : OrderedSet(ComponentInstance))]
 
 #include "../lib/types.h"
+#include "../operations/operations.h"
 [/template]
 
 [template public generateContinuousPortHeaderFile(CIs : OrderedSet(ComponentInstance), path : String)]
 [file (path +'continuousComponents/ContImplementations.h',false, 'UTF-8')]
-
+[includesCont(CIs)/]
 
 [for (ci: ComponentInstance | CIs) ? (ci.componentType.componentKind = ComponentKind::CONTINUOUS_COMPONENT)]
 [for (port : PortInstance | ci.portInstances) ? (oclIsKindOf(ContinuousPortInstance))]
