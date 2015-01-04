@@ -42,7 +42,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.jface.viewers.ISelection;
@@ -299,10 +298,20 @@ public class MigrationExecuter {
 			};
 		}
 	}
+	
+	public class SourceToTarget {
+		public SourceToTarget(EObject source, EObject target) {
+			this.source = source;
+			this.target = target;
+		}
+		public EObject source;
+		public EObject target;
+	}
 
 	public class MigrationCopier {
 		protected Release release;
 		protected LinkedHashMap<EObject, EObject> copies = new LinkedHashMap<EObject, EObject>();
+		protected Map<CreateInitializer, SourceToTarget> created = new LinkedHashMap<CreateInitializer, SourceToTarget>();
 		protected List<EObject> uncopied = new ArrayList<EObject>();
 		
 		public MigrationCopier(Release release) {
@@ -411,11 +420,12 @@ public class MigrationExecuter {
 				return;
 			}
 			List<Object> targetValues = readFeature(target, create.getTargetFeature());
-			EObject created = EcoreUtil.create(create.getTargetClass());
+			EObject newObject = EcoreUtil.create(create.getTargetClass());
+			created.put(create, new SourceToTarget(source, newObject));
 			for (FeatureInitializer initializer : create.getFeatureInitializers()) {
-				execute(initializer, source, created);
+				execute(initializer, source, newObject);
 			}
-			targetValues.add(created);
+			targetValues.add(newObject);
 			writeFeature(target, create.getTargetFeature(), targetValues);
 		}
 
@@ -523,6 +533,18 @@ public class MigrationExecuter {
 					}
 				}
 			}
+			for (Map.Entry<CreateInitializer, SourceToTarget> entry : created.entrySet()) {
+				CreateInitializer create = entry.getKey();
+				EObject source = entry.getValue().source;
+				EObject target = entry.getValue().target;
+				for (FeatureInitializer initializer : create.getFeatureInitializers()) {
+					EStructuralFeature targetFeature = initializer.getTargetFeature();
+					if (canExecute(initializer, source, target) && isCrossReference(targetFeature) && !(initializer instanceof CreateInitializer)) {
+						execute(initializer, source, target);
+					}
+				}
+			}
+
 			for (EObject source : uncopied) {
 				for (EReference reference : source.eClass().getEAllReferences()) {
 					if (isCrossReference(reference) && isValidFeature(reference)) {
