@@ -1,0 +1,111 @@
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+modeltype PatternPackage uses pattern('http://www.fujaba.de/muml/pattern/0.3.18');
+
+transformation TransformPatternToProtocol(inout input : ModelInstancePackage);
+
+main()
+{ 
+// get the input parameters. There is exactly one root and exactly one coordination pattern
+	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
+	var bindings : Set(ParameterBinding) := input.rootObjects()[ParameterBinding];
+	createProtocol(thePattern, theRootNode, bindings);
+}
+
+ // this helper method will be put into an extra transformation later --> Transformation steps
+helper bindParameters(protocol : CoordinationProtocol, bindings : Set(ParameterBinding))
+{
+	
+}
+helper createProtocol(pattern : CoordinationPattern, root : RootNode, bindings : Set(ParameterBinding))
+{
+	var newProtocol : CoordinationProtocol := new CoordinationProtocol(pattern);
+	pattern.roles->forEach(role)
+	{
+		var newRole := new Role(role,newProtocol);		
+		role.receiverMessageBuffer->forEach(buffer)
+		{
+			newRole.receiverMessageBuffer += new MessageBuffer(buffer,newRole);
+		};
+		newProtocol.roles+= newRole;
+	};
+	bindParameters(newProtocol, bindings);
+	var protocolCategory : ModelElementCategory := getProtocolCategory(root);
+	protocolCategory.modelElements +=newProtocol;
+}
+
+query getProtocolCategory(in theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
+}
+
+helper copyMessageBuffer(protocol : CoordinationProtocol, pattern : CoordinationPattern)
+{
+	protocol.verificationConstraintRepositories
+}
+
+constructor muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository(rep : muml::constraint::VerificationConstraintRepository)
+{
+	
+}
+constructor CoordinationProtocol::CoordinationProtocol(pattern : CoordinationPattern) {	
+	name:=pattern.name;	
+	comment := pattern.comment;
+	
+}
+constructor MessageBuffer::MessageBuffer(buffer : MessageBuffer, sourceRole : Role)
+{
+	name := buffer.name;
+	bufferSize := new NaturalNumber(buffer.bufferSize);
+	comment := buffer.comment;
+	buffer.messageType->forEach(type)
+	{
+		messageType+= type;
+	};
+	bufferOverflowAvoidanceStrategy := buffer.bufferOverflowAvoidanceStrategy;
+	discreteInteractionEndpoint := sourceRole;
+	
+}
+constructor Role::Role(roleToCopy : Role, protocol : CoordinationProtocol)
+{
+	// behavior is missing --> maybe we can use the existing transformation for copying the role to port properties
+	//roleconnector is read only
+	name :=  roleToCopy.name;
+	// no new objects, since it is a reference to a given message type!
+	senderMessageTypes := roleToCopy.senderMessageTypes; 
+	receiverMessageTypes := roleToCopy.receiverMessageTypes;
+	comment := roleToCopy.comment;
+	// role 
+	coordinationProtocol := protocol;
+	
+	cardinality := new Cardinality(roleToCopy.cardinality);
+	
+}
+constructor Cardinality::Cardinality(c :Cardinality)
+{
+	lowerBound := new NaturalNumber(c.lowerBound);
+	upperBound := new NaturalNumber(c.upperBound);
+}
+
+constructor NaturalNumber::NaturalNumber(nn : NaturalNumber)
+{
+	value := nn.value;
+	infinity := nn.infinity;	
+}
+
+
+
+
+
+
+
+
+
