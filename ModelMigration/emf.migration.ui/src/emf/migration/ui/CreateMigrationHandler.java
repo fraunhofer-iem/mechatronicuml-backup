@@ -14,7 +14,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-
 public class CreateMigrationHandler extends AbstractHandler {
 
 	@Override
