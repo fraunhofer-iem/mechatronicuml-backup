@@ -671,7 +671,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="PortInstanceMustReferencePortType" value="-- The type of a port instance must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined()) then&#xD;&#xA;self.type.oclIsKindOf(component::Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
-        <details key="PortInstanceMustDelegateToEmbeddedCIC"/>
+        <details key="PortInstanceMustDelegateToEmbeddedCIC" value=""/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
           eType="#//component/Port" changeable="false" volatile="true" transient="true"
@@ -995,10 +995,10 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="gmfConnectorQualityOfServiceAssumptions"
-          lowerBound="1" eType="#//protocol/ConnectorQualityOfServiceAssumptions"
-          changeable="false" volatile="true" transient="true" derived="true" containment="true">
+          eType="#//protocol/ConnectorQualityOfServiceAssumptions" changeable="false"
+          volatile="true" transient="true" derived="true" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.roleConnector.connectorQualityOfServiceAssumptions"/>
+          <details key="derivation" value="if self.roleConnector.connectorQualityOfServiceAssumptions.oclIsInvalid() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;self.roleConnector.connectorQualityOfServiceAssumptions&#xD;&#xA;endif"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This derived reference only exists because GMF needs it to display the ConnectorQualityOfServiceAssumption within the coordination protocol rectangle."/>

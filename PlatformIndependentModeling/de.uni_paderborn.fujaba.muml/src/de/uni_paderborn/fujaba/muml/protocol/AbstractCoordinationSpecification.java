@@ -121,8 +121,8 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Gmf Connector Quality Of Service Assumptions</em>' containment reference.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions()
-	 * @model containment="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.roleConnector.connectorQualityOfServiceAssumptions'"
+	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.roleConnector.connectorQualityOfServiceAssumptions.oclIsInvalid() then\r\n\tnull\r\nelse\r\n\tself.roleConnector.connectorQualityOfServiceAssumptions\r\nendif'"
 	 * @generated
 	 */
 	ConnectorQualityOfServiceAssumptions getGmfConnectorQualityOfServiceAssumptions();

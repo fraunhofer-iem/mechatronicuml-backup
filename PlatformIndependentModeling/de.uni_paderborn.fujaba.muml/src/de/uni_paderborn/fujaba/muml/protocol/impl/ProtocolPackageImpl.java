@@ -460,7 +460,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		initEReference(getAbstractCoordinationSpecification_RoleConnector(), this.getRoleConnector(), this.getRoleConnector_CoordinationProtocol(), "roleConnector", null, 1, 1, AbstractCoordinationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification(), this.getAbstractCoordinationSpecification(), null, "gmfAbstractCoordinationSpecification", null, 0, 1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCoordinationSpecification_GmfMessageBuffers(), theConnectorPackage.getMessageBuffer(), null, "gmfMessageBuffers", null, 0, -1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions(), this.getConnectorQualityOfServiceAssumptions(), null, "gmfConnectorQualityOfServiceAssumptions", null, 1, 1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions(), this.getConnectorQualityOfServiceAssumptions(), null, "gmfConnectorQualityOfServiceAssumptions", null, 0, 1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationProtocolEClass, CoordinationProtocol.class, "CoordinationProtocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -563,7 +563,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.roleConnector.connectorQualityOfServiceAssumptions"
+			 "derivation", "if self.roleConnector.connectorQualityOfServiceAssumptions.oclIsInvalid() then\r\n\tnull\r\nelse\r\n\tself.roleConnector.connectorQualityOfServiceAssumptions\r\nendif"
 		   });	
 		addAnnotation
 		  (coordinationProtocolEClass, 

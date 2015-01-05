@@ -197,7 +197,6 @@ public class MessageBufferItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE);
-			childrenFeatures.add(ConnectorPackage.Literals.MESSAGE_BUFFER__GMF_MESSAGE_TYPES);
 		}
 		return childrenFeatures;
 	}
@@ -254,10 +253,10 @@ public class MessageBufferItemProvider
 		switch (notification.getFeatureID(MessageBuffer.class)) {
 			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_OVERFLOW_AVOIDANCE_STRATEGY:
+			case ConnectorPackage.MESSAGE_BUFFER__GMF_MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
-			case ConnectorPackage.MESSAGE_BUFFER__GMF_MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -279,11 +278,6 @@ public class MessageBufferItemProvider
 			(createChildParameter
 				(ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE,
 				 ValuetypeFactory.eINSTANCE.createNaturalNumber()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConnectorPackage.Literals.MESSAGE_BUFFER__GMF_MESSAGE_TYPES,
-				 MsgtypeFactory.eINSTANCE.createMessageType()));
 	}
 
 	/**

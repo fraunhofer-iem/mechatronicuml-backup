@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PortInstanceMustReferencePortType PortInstanceMustDelegateToEmbeddedCIC'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortInstanceMustReferencePortType='-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif' PortInstanceMustDelegateToEmbeddedCIC='null'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortInstanceMustReferencePortType='-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif' PortInstanceMustDelegateToEmbeddedCIC=''"
  * @generated
  */
 public interface PortInstance extends ConnectorEndpointInstance {

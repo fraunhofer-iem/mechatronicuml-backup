@@ -121,6 +121,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//instance/ComponentInstance/componentPart"/>
         <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/ComponentInstance/parentCIC"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//instance/ComponentInstance/topLevel"/>
       </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//instance/PortConnectorInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/PortConnectorInstance/portConnectorType"/>
@@ -177,9 +178,9 @@
       <genClasses image="false" ecoreClass="muml.ecore#//protocol/AbstractCoordinationSpecification">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
-        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
-        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
-        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfConnectorQualityOfServiceAssumptions"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfConnectorQualityOfServiceAssumptions"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/CoordinationProtocol"/>
       <genClasses ecoreClass="muml.ecore#//protocol/Role">
@@ -464,7 +465,7 @@
             ecoreFeature="ecore:EReference muml.ecore#//connector/MessageBuffer/messageType"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//connector/MessageBuffer/bufferOverflowAvoidanceStrategy"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//connector/MessageBuffer/gmfMessageTypes"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//connector/MessageBuffer/gmfMessageTypes"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Valuetype" basePackage="de.uni_paderborn.fujaba.muml"
