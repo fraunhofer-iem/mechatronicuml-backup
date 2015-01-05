@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_bQI5YJRZEeSZM-zEIRk3lw" type="Component" name="OvertakeeVehicle.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_bQI5YpRZEeSZM-zEIRk3lw" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_bQI5ZJRZEeSZM-zEIRk3lw" type="5021"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_bQI5ZZRZEeSZM-zEIRk3lw" type="7005"/>
+    <element xmi:type="component:StaticStructuredComponent" href="../fraunhoferDemo.muml#_dUMqkJRTEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bQI5Y5RZEeSZM-zEIRk3lw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_bQI5YZRZEeSZM-zEIRk3lw"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.muml#_FB0TTZJ7EeSSMde45fnrcg"/>
+</notation:Diagram>
