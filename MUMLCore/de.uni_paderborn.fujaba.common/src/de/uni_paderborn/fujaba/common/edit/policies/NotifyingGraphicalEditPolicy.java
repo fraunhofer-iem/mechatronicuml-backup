@@ -9,8 +9,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
@@ -80,13 +79,7 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	 * @return The host edit part's editing domain.
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
-		if (getHost() instanceof GraphicalEditPart) {
-			return ((GraphicalEditPart) getHost()).getEditingDomain();
-		}
-		if (getHost() instanceof ConnectionEditPart) {
-			return ((ConnectionEditPart) getHost()).getEditingDomain();
-		}
-		return null;	
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
 	/**
