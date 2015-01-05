@@ -29,7 +29,7 @@ public class GeneratePropertiesHandler extends AbstractHandler{
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		Shell shell = HandlerUtil.getActiveWorkbenchWindow(event).getShell();
 		PropertiesModelWizard wizard = new PropertiesModelWizard();
-		
+		 
 		ISelection sel = HandlerUtil.getCurrentSelection(event);
 		IStructuredSelection ssel = new StructuredSelection();
 		if (sel instanceof IStructuredSelection) {
