@@ -30,7 +30,7 @@ import org.storydriven.core.NamedElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageTypeRepository()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageType='self.messageTypes->notEmpty()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageType='-- A MessageTypeRepository must contain at least one MessageType.\r\nself.messageTypes->notEmpty()'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneMessageType'"
  * @generated
  */

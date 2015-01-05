@@ -340,13 +340,13 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		   source, 
 		   new String[] {
 			 "UniqueParameterNames", "-- Parameter names must be unique\r\nself.parameters->isUnique(name)",
-			 "repositoryMustBeSet", "not self.repository.oclIsUndefined()"
+			 "repositoryMustBeSet", "-- A MessageType must be contained in a MessageTypeRepository.\r\nnot self.repository.oclIsUndefined()"
 		   });	
 		addAnnotation
 		  (messageTypeRepositoryEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneMessageType", "self.messageTypes->notEmpty()"
+			 "AtLeastOneMessageType", "-- A MessageTypeRepository must contain at least one MessageType.\r\nself.messageTypes->notEmpty()"
 		   });
 	}
 

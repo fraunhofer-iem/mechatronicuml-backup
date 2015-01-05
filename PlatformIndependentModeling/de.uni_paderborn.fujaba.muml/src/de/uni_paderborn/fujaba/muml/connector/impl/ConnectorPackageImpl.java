@@ -845,7 +845,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		  (messageBufferEClass, 
 		   source, 
 		   new String[] {
-			 "DiscreteInteractionEndpointMustBeSet", "not self.discreteInteractionEndpoint.oclIsInvalid()"
+			 "DiscreteInteractionEndpointMustBeSet", "-- A MessageBuffer must  refer to a DiscreteInteractionEndpoint.\r\nnot self.discreteInteractionEndpoint.oclIsInvalid()"
 		   });	
 		addAnnotation
 		  (getMessageBuffer_GmfMessageTypes(), 

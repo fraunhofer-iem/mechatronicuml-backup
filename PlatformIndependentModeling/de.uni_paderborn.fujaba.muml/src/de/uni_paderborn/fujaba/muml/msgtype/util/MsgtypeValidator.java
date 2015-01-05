@@ -156,7 +156,8 @@ public class MsgtypeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MESSAGE_TYPE__REPOSITORY_MUST_BE_SET__EEXPRESSION = "not self.repository.oclIsUndefined()";
+	protected static final String MESSAGE_TYPE__REPOSITORY_MUST_BE_SET__EEXPRESSION = "-- A MessageType must be contained in a MessageTypeRepository.\r\n" +
+		"not self.repository.oclIsUndefined()";
 
 	/**
 	 * Validates the repositoryMustBeSet constraint of '<em>Message Type</em>'.
@@ -204,7 +205,8 @@ public class MsgtypeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MESSAGE_TYPE_REPOSITORY__AT_LEAST_ONE_MESSAGE_TYPE__EEXPRESSION = "self.messageTypes->notEmpty()";
+	protected static final String MESSAGE_TYPE_REPOSITORY__AT_LEAST_ONE_MESSAGE_TYPE__EEXPRESSION = "-- A MessageTypeRepository must contain at least one MessageType.\r\n" +
+		"self.messageTypes->notEmpty()";
 
 	/**
 	 * Validates the AtLeastOneMessageType constraint of '<em>Message Type Repository</em>'.

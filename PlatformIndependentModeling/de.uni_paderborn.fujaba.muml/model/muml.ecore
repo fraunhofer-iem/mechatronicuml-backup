@@ -262,7 +262,7 @@
         <details key="documentation" value="This class represents a delegation connector. A delegation connector &#xD;&#xA;connects a port of a structured component type and a port part of &#xD;&#xA;component part the structured component contains.&#xD;&#xA;The delegation has no behavior. In a running system, the port of the structured&#xD;&#xA;component and the port of the component part will be the same object like &#xD;&#xA;interfaces of classes where interface and class are the same object at runtime."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="DelegateToEmbeddedPort DelegationBetweenDirectedTypedPortsRequiresSameDataType DelegationBetweenDiscretePortsOrDirectedTypedPorts DelegationBetweenDiscretePortsEqualMessageTypes ValidPortDirections DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
+        <details key="constraints" value="DelegationOnlyBetweenSameDiscreteInteractionEndpoints DelegateToEmbeddedPort DelegationBetweenDirectedTypedPortsRequiresSameDataType DelegationBetweenDiscretePortsOrDirectedTypedPorts DelegationBetweenDiscretePortsEqualMessageTypes ValidPortDirections DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="DelegationBetweenDirectedTypedPortsRequiresSameDataType" value="-- Delegation between DirectedTypedPorts requires same Data Type&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and portPart.portType.oclIsKindOf(component::DirectedTypedPort) and port.oclIsKindOf(component::DirectedTypedPort))&#xD;&#xA;implies &#xD;&#xA;portPart.portType.oclAsType(component::DirectedTypedPort).dataType = port.oclAsType(component::DirectedTypedPort).dataType&#xD;&#xA;-- author: bingo, cgerking, see MUML #879"/>
@@ -872,7 +872,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="PortInstanceNotMultipleAssemblyConnectorInstances" value="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->size() &lt;= 1"/>
         <details key="PortInstanceNotMultipleDelegationConnectorInstances" value="-- PortInstance must have not have multiple Delegation Connector Instances per directiond assigned.&#xD;&#xA;let delegationInstances : Set(instance::DelegationConnectorInstance) = portConnectorInstances->select(oclIsKindOf(instance::DelegationConnectorInstance)).oclAsType(instance::DelegationConnectorInstance)->asSet() in&#xD;&#xA;let incoming : Set(instance::DelegationConnectorInstance) = delegationInstances->select(di | di.portInstances->forAll(pi |pi = self or pi.componentInstance->closure(p | if p.oclIsKindOf(instance::StructuredComponentInstance) then p.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else OrderedSet { p } endif)->includes(self.componentInstance))) in&#xD;&#xA;let outgoing : Set(instance::DelegationConnectorInstance) = delegationInstances->select(di | di.portInstances->forAll(pi |pi = self or self.componentInstance->closure(p | if p.oclIsKindOf(instance::StructuredComponentInstance) then p.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else OrderedSet { p } endif)->includes(pi.componentInstance))) in&#xD;&#xA;incoming->size() &lt;= 1 and outgoing->size() &lt;= 1"/>
-        <details key="PortInstanceNeedsDelegationToParentOrAssembly" value="-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.&#xA;(not self.componentInstance.topLevel) implies (&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclIsKindOf(StructuredComponentInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)&#xA;)->isEmpty() or&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->isEmpty()&#xA;)"/>
+        <details key="PortInstanceNeedsDelegationToParentOrAssembly" value="&#xA;-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclIsKindOf(StructuredComponentInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)&#xA;)->isEmpty() or&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->isEmpty()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceNeedsDelegationToParentOrAssembly"/>
@@ -1971,7 +1971,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="UniqueParameterNames" value="-- Parameter names must be unique&#xD;&#xA;self.parameters->isUnique(name)"/>
-        <details key="repositoryMustBeSet" value="not self.repository.oclIsUndefined()"/>
+        <details key="repositoryMustBeSet" value="-- A MessageType must be contained in a MessageTypeRepository.&#xD;&#xA;not self.repository.oclIsUndefined()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UniqueParameterNames repositoryMustBeSet"/>
@@ -1991,7 +1991,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AtLeastOneMessageType" value="self.messageTypes->notEmpty()"/>
+        <details key="AtLeastOneMessageType" value="-- A MessageTypeRepository must contain at least one MessageType.&#xD;&#xA;self.messageTypes->notEmpty()"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A MessageTypeRepository contains a set of message types which are then used&#xD;&#xA;by discrete interaction endpoints and their behavior specifications. Message type&#xD;&#xA;repositories enable to group message types logically, but have no semantics for&#xD;&#xA;the MechatronicUML model."/>
@@ -2305,7 +2305,7 @@
         <details key="constraints" value="DiscreteInteractionEndpointMustBeSet"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="DiscreteInteractionEndpointMustBeSet" value="not self.discreteInteractionEndpoint.oclIsInvalid()"/>
+        <details key="DiscreteInteractionEndpointMustBeSet" value="-- A MessageBuffer must  refer to a DiscreteInteractionEndpoint.&#xD;&#xA;not self.discreteInteractionEndpoint.oclIsInvalid()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bufferSize" lowerBound="1"
           eType="#//valuetype/NaturalNumber" containment="true">

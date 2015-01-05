@@ -445,7 +445,8 @@ public class ConnectorValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT_MUST_BE_SET__EEXPRESSION = "not self.discreteInteractionEndpoint.oclIsInvalid()";
+	protected static final String MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT_MUST_BE_SET__EEXPRESSION = "-- A MessageBuffer must  refer to a DiscreteInteractionEndpoint.\r\n" +
+		"not self.discreteInteractionEndpoint.oclIsInvalid()";
 
 	/**
 	 * Validates the DiscreteInteractionEndpointMustBeSet constraint of '<em>Message Buffer</em>'.

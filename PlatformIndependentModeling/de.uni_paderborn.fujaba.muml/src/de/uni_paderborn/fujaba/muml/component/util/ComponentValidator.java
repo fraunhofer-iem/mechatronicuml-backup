@@ -1571,6 +1571,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationOnlyBetweenSameDiscreteInteractionEndpoints(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegateToEmbeddedPort(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDirectedTypedPortsRequiresSameDataType(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsOrDirectedTypedPorts(delegationConnector, diagnostics, context);
@@ -1579,6 +1580,42 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameRoles(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(delegationConnector, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the DelegationOnlyBetweenSameDiscreteInteractionEndpoints constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR__DELEGATION_ONLY_BETWEEN_SAME_DISCRETE_INTERACTION_ENDPOINTS__EEXPRESSION = "-- Delegations may only connect Ports of the same kind\r\n" +
+		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())\r\n" +
+		"implies (\r\n" +
+		"\t(port.oclIsKindOf(connector::DiscreteInteractionEndpoint))\r\n" +
+		"\timplies\r\n" +
+		"\t(port.eClass() = portPart.portType.eClass())\r\n" +
+		")\r\n" +
+		"-- author: chris227, see MUML #1043";
+
+	/**
+	 * Validates the DelegationOnlyBetweenSameDiscreteInteractionEndpoints constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnector_DelegationOnlyBetweenSameDiscreteInteractionEndpoints(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
+				 delegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegationOnlyBetweenSameDiscreteInteractionEndpoints",
+				 DELEGATION_CONNECTOR__DELEGATION_ONLY_BETWEEN_SAME_DISCRETE_INTERACTION_ENDPOINTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getMessageBuffer()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DiscreteInteractionEndpointMustBeSet'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DiscreteInteractionEndpointMustBeSet='not self.discreteInteractionEndpoint.oclIsInvalid()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DiscreteInteractionEndpointMustBeSet='-- A MessageBuffer must  refer to a DiscreteInteractionEndpoint.\r\nnot self.discreteInteractionEndpoint.oclIsInvalid()'"
  * @generated
  */
 public interface MessageBuffer extends NamedElement, CommentableElement {
