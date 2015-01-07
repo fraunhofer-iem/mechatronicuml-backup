@@ -16,15 +16,15 @@
 [file (path+'makefile', false, 'UTF-8')]
 
 RTSC = [for (comp : Component | CIs.componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
-COMP = [for (comp : Component | CIs.componentType)][if (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
-LIB = [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]ContImplementations.o[/if] syncChannel.o discreteConnection.o discreteConnectionList.o event.o eventQueue.o discretePort.o messages.o
+COMP = [for (comp : Component | CIs.componentType)][if ((componentKind=ComponentKind::SOFTWARE_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
+LIB = [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]ContImplementations.o[/if] port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o
 
 CC = gcc
 CFLAGS = -c
 all: app
 
-app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (CIs.eAllContents(Operation)->size() > 0)]operations.o[/if] 
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (CIs.eAllContents(Operation)->size() > 0)]operations.o[/if]  -o app
+app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (CIs.eAllContents(Operation)->size() > 0)]operations.o[/if] MiddlewareCore.o
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (CIs.eAllContents(Operation)->size() > 0)]operations.o[/if] MiddlewareCore.o  -o app
 [for (comp : Component | CIs.componentType)? (componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent))]
 [let rtsc : RealtimeStatechart = comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
 [rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,false)/]
@@ -39,20 +39,18 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (CIs.eAllContents(Operation)->siz
 ContImplementations.o: continuousComponents/ContImplementations.c
 	$(CC) $(CFLAGS) continuousComponents/ContImplementations.c
 [/if]
-syncChannel.o: lib/syncChannel.c
-	$(CC) $(CFLAGS) lib/syncChannel.c
-discreteConnection.o: lib/discreteConnection.c
-	$(CC) $(CFLAGS) lib/discreteConnection.c
-discreteConnectionList.o: lib/discreteConnectionList.c
-	$(CC) $(CFLAGS) lib/discreteConnectionList.c
-discretePort.o: lib/ports/discretePort.c
-	$(CC) $(CFLAGS) lib/ports/discretePort.c
-event.o: lib/event.c
-	$(CC) $(CFLAGS) lib/event.c
-eventQueue.o: lib/eventQueue.c
-	$(CC) $(CFLAGS) lib/eventQueue.c
-messages.o: msg/messages.c
-	$(CC) $(CFLAGS) msg/messages.c
+port.o: lib/port.c
+	$(CC) $(CFLAGS) lib/port.c
+MessageBuffer.o: lib/MessageBuffer.c
+	$(CC) $(CFLAGS) lib/MessageBuffer.c
+NetworkMessageBuffer.o: lib/NetworkMessageBuffer.c
+	$(CC) $(CFLAGS) lib/NetworkMessageBuffer.c
+NetworkInterface.o: lib/NetworkInterface.c
+	$(CC) $(CFLAGS) lib/NetworkInterface.c
+Messages.o: messages/Messages.c
+	$(CC) $(CFLAGS) messages/Messages.c
+MiddlewareCore.o: Middleware/MiddlewareCore.c
+	$(CC) $(CFLAGS) Middleware/MiddlewareCore.c
 [if (CIs.eAllContents(Operation)->size() > 0)]operations.o: operations/operations.c
 	$(CC) $(CFLAGS) operations/operations.c
 [/if]
