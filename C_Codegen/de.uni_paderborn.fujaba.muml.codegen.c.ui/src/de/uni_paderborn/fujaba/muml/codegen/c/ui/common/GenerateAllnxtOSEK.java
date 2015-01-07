@@ -10,11 +10,13 @@
  *******************************************************************************/
 package de.uni_paderborn.fujaba.muml.codegen.c.ui.common;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -80,6 +82,7 @@ public class GenerateAllnxtOSEK {
 		this.modelURI = modelURI;
 		this.targetFolder = targetFolder;
 		this.arguments = arguments;
+		
 	}
 
 	/**
@@ -116,8 +119,8 @@ public class GenerateAllnxtOSEK {
 				Diagram diagImpl = (Diagram) modelResource.getContents().get(0);
 
 				ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)diagImpl.getElement();
-
 				generateCIC(monitor, cic);
+				
 				/*
 				monitor.subTask("Copying library to target folders...");
 
@@ -135,18 +138,18 @@ public class GenerateAllnxtOSEK {
 						for (ExtendableElement me : mec.getModelElements()){
 							ComponentInstanceConfiguration cic = (ComponentInstanceConfiguration)me;
 
-								monitor.subTask("generating "+cic.getName()+"...");
-								de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
-								monitor.worked(++monitorCounter);
-								
-								monitor.subTask("Copying library to target folder...");
-								File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
-								this.copyFolder(sourceFolder, target);
-								monitor.worked(++monitorCounter);
-								
-								String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
-								gen0.setGenerationID(generationID);
-								gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+							monitor.subTask("generating "+cic.getName()+"...");
+							de.uni_paderborn.fujaba.muml.codegen.c.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
+							monitor.worked(++monitorCounter);
+							
+							monitor.subTask("Copying library to target folder...");
+							File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
+							this.copyFolder(sourceFolder, target);
+							monitor.worked(++monitorCounter);
+							
+							String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+							gen0.setGenerationID(generationID);
+							gen0.doGenerate(BasicMonitor.toMonitor(monitor));
 
 						}
 					}
@@ -160,6 +163,38 @@ public class GenerateAllnxtOSEK {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public void generateCIC(IProgressMonitor monitor,
+			ComponentInstanceConfiguration cic) throws IOException {
+		//System.out.println(cic.getName());
+
+		monitor.subTask("generating "+cic.getName()+"...");
+		de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
+		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK", "de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
+		gen0.setGenerationID(generationID);
+		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+		monitor.worked(1);
+		try {	
+			URL resources = FileLocator.toFileURL(Platform.getBundle(de.uni_paderborn.fujaba.muml.codegen.c.Activator.PLUGIN_ID).getEntry("resources"));
+			File sourceFolder = new File(resources.toURI());
+			Resource resource = new ResourceSetImpl().getResource(this.modelURI, true);
+
+		monitor.subTask("Copying library to target folder...");
+		File target = new File(targetFolder.getLocationURI().toString().substring(5) + File.separator + cic.getName());
+		this.copyFolder(sourceFolder, target);
+		monitor.worked(1);
+		
+		 //run protobuf-message-gen
+		String command = "java -jar " + target + File.separator + "messages" + File.separator + "protoc-1.0M4.jar -I=" + target + File.separator + "messages" + " --c_out=" + target + File.separator + "messages" + File.separator + " Messages.proto"; 
+		
+		String output = executeCommand(command);
+		System.out.println(output);
+		
+		}
+		catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -241,15 +276,28 @@ public class GenerateAllnxtOSEK {
 	        output.close();
 	    }
 	}
-	public void generateCIC(IProgressMonitor monitor,
-			ComponentInstanceConfiguration cic) throws IOException {
-		System.out.println(cic.getName());
-
-		monitor.subTask("generating "+cic.getName()+"...");
-		de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.main.Main gen0 = new de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK.main.Main(cic, targetFolder.getLocation().toFile(), arguments);
-		String generationID = org.eclipse.acceleo.engine.utils.AcceleoLaunchingUtil.computeUIProjectID("de.uni_paderborn.fujaba.muml.codegen.c", "de.uni_paderborn.fujaba.muml.codegen.c.main.Main", modelURI.toString(), targetFolder.getFullPath().toString(), new ArrayList<String>());
-		gen0.setGenerationID(generationID);
-		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
-		monitor.worked(1);
+	
+	private String executeCommand(String command) {
+		 
+		StringBuffer output = new StringBuffer();
+ 
+		Process p;
+		try {
+			p = Runtime.getRuntime().exec(command);
+			p.waitFor();
+			BufferedReader reader = 
+                            new BufferedReader(new InputStreamReader(p.getInputStream()));
+ 
+                        String line = "";			
+			while ((line = reader.readLine())!= null) {
+				output.append(line + "\n");
+			}
+ 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+ 
+		return output.toString();
+ 
 	}
 }
