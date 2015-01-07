@@ -1,0 +1,15 @@
+# Copy/rename this file to lookup.properties
+# For each project/bundle name several lookups can be specified via
+# a comma separated list.
+#
+# Syntax:
+# project1 = /path/to/lookup/location1, \
+#	/path/to/lookup/location2, \
+#	...
+#	/path/to/lookup/locationN
+# project2 = ...
+#
+# Concrete example:
+# de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.lpsolve = /home/marcus/workspace/trunk/PlatformSpecificModeling/de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp
+# de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j = /home/marcus/workspace/trunk/PlatformSpecificModeling/de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp
+de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.lpsolve = /home/marcus/workspace/trunk/PlatformSpecificModeling/de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp
