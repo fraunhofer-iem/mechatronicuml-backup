@@ -63,6 +63,8 @@
 
 [comment create message file/]
 [generateProtobufMessageFile(CIs, path)/]
+[comment create header for using protobuf/]
+[generateProtobufNewHeader(CIs,path)/]
 
 [comment craeate files for RTSCs/]
 [generateRTSCFiles(CIs,path)/]

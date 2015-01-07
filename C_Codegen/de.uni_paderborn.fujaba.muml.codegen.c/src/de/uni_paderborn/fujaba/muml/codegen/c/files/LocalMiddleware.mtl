@@ -56,6 +56,7 @@
 #include "GlobalIdentifier.h"
 #include "../lib/NetworkMessageBuffer.h"
 #include "../lib/NetworkInterface.h"
+#include "../messages/messages_types.h" 
 #include <string.h>
 
 //import all needed ComponentHeaders
@@ -386,6 +387,11 @@ switch (portID) {
  * @details In this file the GlobalIdentifiers are specified via preprocessor macros
  * 			 These GlobalIdentifiers are equal for all ECUs
  */
+
+		[comment generate typedefs for all messages with parameters/]
+		[for (msg : MessageType | getAllUsedMessages(CIs))? (msg.parameters->size() > 0)]
+			typedef struct [msg.getTypeName()/] [msg.getTypeName()/] ;
+		[/for]
 		[comment generate IDs for messages/]
 		//Define MessageType IDs
 		[for (msg : MessageType | getAllUsedMessages(CIs))]

@@ -28,7 +28,7 @@
  * @return C-type for a the given message type
 */]
 [query public getTypeName (msgT: MessageType) : String = 
-msgT.getVariableName()+'_Message'/]
+msgT.getName() + msgT.repository.getName() +'Message'/]
 
 [query public getBufferName (mb : MessageBuffer, pi : DiscretePortInstance) : String = 
 getName(mb.name) + pi.componentInstance.getName() /]
