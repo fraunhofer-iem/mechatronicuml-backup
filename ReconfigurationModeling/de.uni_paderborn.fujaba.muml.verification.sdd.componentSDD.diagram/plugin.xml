@@ -44,7 +44,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/ComponentsddDiagramFile.gif"
-  	     category="org.eclipse.ui.Examples"
+  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
   	     class="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.verification.sdd.componentsdd.diagram.part.ComponentSDDCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
