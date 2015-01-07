@@ -58,7 +58,8 @@
 [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]
 [generateContinuousPortFiles(CIs, path)/]
 [/if]
-
+[comment generate file for OS variable/]
+[generateOSFileDummy(path, 'C99')/]
 
 [comment create message file/]
 [generateProtobufMessageFile(CIs, path)/]

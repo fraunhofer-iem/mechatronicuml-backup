@@ -41,7 +41,7 @@
 [template public generateMiddlewareCoreFiles(CIs : OrderedSet(ComponentInstance), path : String)]
 [generateMiddlewareCoreHeader(CIs, path)/]
 [generateMiddlewareCoreClass(CIs, path)/]
-[generateOSFileDummy(path)/]
+
 [generateGlobalIdentifierFiles(CIs, path)/]
 [/template]
 
@@ -387,11 +387,6 @@ switch (portID) {
  * @details In this file the GlobalIdentifiers are specified via preprocessor macros
  * 			 These GlobalIdentifiers are equal for all ECUs
  */
-
-		[comment generate typedefs for all messages with parameters/]
-		[for (msg : MessageType | getAllUsedMessages(CIs))? (msg.parameters->size() > 0)]
-			typedef struct [msg.getTypeName()/] [msg.getTypeName()/] ;
-		[/for]
 		[comment generate IDs for messages/]
 		//Define MessageType IDs
 		[for (msg : MessageType | getAllUsedMessages(CIs))]
@@ -406,8 +401,8 @@ switch (portID) {
 [/file]
 [/template]
 
-[template private generateOSFileDummy(path: String)]
+[template public generateOSFileDummy(path: String, OS:String)]
 [file(path+'/OS.h',false,'UTF-8')]
-#define C99
+#define [OS/]
 [/file]
 [/template]

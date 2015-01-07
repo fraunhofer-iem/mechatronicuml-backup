@@ -55,6 +55,8 @@
  */]
 [template public generateNXTOSEK(CIs : OrderedSet(ComponentInstance), path : String)]
 
+[comment generate file for OS variable/]
+[generateOSFileDummy(path, 'NXTOSEK')/]
 [comment create files for every component type/]
 [generateTypeFiles(CIs, path)/]
 
