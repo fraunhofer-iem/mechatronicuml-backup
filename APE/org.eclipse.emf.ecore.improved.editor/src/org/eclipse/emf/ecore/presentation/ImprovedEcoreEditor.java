@@ -495,7 +495,7 @@ public class ImprovedEcoreEditor extends
 				.getPreferencesValue("inheritanceMode",
 						InheritanceMode.NONE.toString())));
 		setMarkAbstractClasses(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
-				.getPreferencesValue("markAbstractClasses", Boolean.FALSE.toString())));
+				.getPreferencesValue("markAbstractClasses", Boolean.TRUE.toString())));
 		
 		
 		toolBarManager.update(true);
