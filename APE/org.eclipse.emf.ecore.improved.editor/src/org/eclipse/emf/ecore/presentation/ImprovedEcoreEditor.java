@@ -30,12 +30,13 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
@@ -43,6 +44,8 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
@@ -232,7 +235,7 @@ public class ImprovedEcoreEditor extends
 	}
 
 	protected Composite createPageContainer(final Composite parent) {
-		GridLayout layout = new GridLayout(2, false);
+		GridLayout layout = new GridLayout(3, false);
 		layout.horizontalSpacing = 0;
 		layout.verticalSpacing = 0;
 		layout.marginWidth = 0;
@@ -290,9 +293,9 @@ public class ImprovedEcoreEditor extends
 					searchbox.removeModifyListener(modifyListener);
 					searchbox.setText("");
 					searchbox.addModifyListener(modifyListener);
-					searchbox.setForeground(parent.getDisplay().getSystemColor(
-							SWT.COLOR_BLACK));
 				}
+				searchbox.setForeground(parent.getDisplay().getSystemColor(
+						SWT.COLOR_BLACK));
 			}
 
 			public void focusLost(FocusEvent e) {
@@ -300,15 +303,29 @@ public class ImprovedEcoreEditor extends
 					searchbox.removeModifyListener(modifyListener);
 					searchbox.setText(DEFAULT_SEARCH_TEXT);
 					searchbox.addModifyListener(modifyListener);
-					searchbox.setForeground(parent.getDisplay().getSystemColor(
-							SWT.COLOR_GRAY));
 				}
+				searchbox.setForeground(parent.getDisplay().getSystemColor(
+						SWT.COLOR_GRAY));
 			}
 
 		});
 		searchbox
 				.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		searchbox.addModifyListener(modifyListener);
+		
+		final Label clear = new Label(parent, 0);
+		clear.setBackground(parent.getDisplay().getSystemColor(SWT.COLOR_WHITE));
+		clear.setLayoutData(new GridData(SWT.END, SWT.CENTER, false, false));
+		ImageDescriptor clearImageDescriptor = ImprovedEcoreEditorPlugin.getImageDescriptor("icons/clear.gif");
+		clear.setImage(clearImageDescriptor.createImage());
+		clear.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				searchbox.setText("");
+				searchbox.setFocus();
+			}
+		});
+		
 		toolBarManager = new ToolBarManager(SWT.FLAT);
 		ToolBar toolBar = toolBarManager.createControl(parent);
 		toolBar.setLayoutData(new GridData(SWT.END, SWT.FILL, false, false));
@@ -317,7 +334,7 @@ public class ImprovedEcoreEditor extends
 		// set a FillLayout)
 		Composite pageContainer = new Composite(parent, 0);
 		pageContainer.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-				true, 2, 1));
+				true, 3, 1));
 		return pageContainer;
 	}
 
