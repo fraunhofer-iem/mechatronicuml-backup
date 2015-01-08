@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="de.uni_paderborn.fujaba.muml.example.ui.BlindOvertakingCreationWizard"
+            name="Blind Overtaking"
+            projectName="de.uni_paderborn.fujaba.muml.example.blindOvertaking"
+            projectPageDescription="Create a plug-in containing the Blind Overtaking example models"
+            projectPageTitle="Blind Overtaking Example">
+         <source bundle="de.uni_paderborn.fujaba.muml.example.blindOvertaking" path="model" />
+         <description>
+            Create the Models of the Blind Overtaking Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

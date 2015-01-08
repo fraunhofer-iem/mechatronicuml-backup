@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="de.uni_paderborn.fujaba.muml.example.ui.SectionEntryCreationWizard"
+            name="Section Entry"
+            projectName="de.uni_paderborn.fujaba.muml.example.sectionEntry"
+            projectPageDescription="Create a plug-in containing the Section Entry example models"
+            projectPageTitle="Section Entry Example">
+         <source bundle="de.uni_paderborn.fujaba.muml.example.sectionEntry" path="model" />
+         <description>
+            Create the Models of the Section Entry Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

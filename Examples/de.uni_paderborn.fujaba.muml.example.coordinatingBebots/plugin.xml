@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/de.uni_paderborn.fujaba.muml.example"
+            class="de.uni_paderborn.fujaba.muml.example.ui.wizard.ExampleCreationWizard"
+            icon="images/muml.png"
+            id="de.uni_paderborn.fujaba.muml.example.ui.CoordinatingBebotsCreationWizard"
+            name="Coordinating Bebots"
+            projectName="de.uni_paderborn.fujaba.muml.example.coordinatingBebots"
+            projectPageDescription="Create a plug-in containing the Coordinating Bebots example models"
+            projectPageTitle="Coordinating Bebots Example">
+         <source bundle="de.uni_paderborn.fujaba.muml.example.coordinatingBebots" path="model" />
+         <description>
+            Create the Models of the Coordinating Bebots Example
+         </description>
+      </wizard>
+   </extension>
+</plugin>

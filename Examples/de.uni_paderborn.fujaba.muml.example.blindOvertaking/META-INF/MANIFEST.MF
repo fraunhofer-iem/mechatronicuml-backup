@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: BlindOvertaking
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.blindOvertaking
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.blindOvertaking;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Require-Bundle: de.uni_paderborn.fujaba.muml.example.ui;bundle-version="0.4.0"
+Bundle-ActivationPolicy: lazy
