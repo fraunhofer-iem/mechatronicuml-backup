@@ -55,6 +55,7 @@ public class XMIProxyChange extends CompositeChange {
 		Set<Resource> saveResources = new LinkedHashSet<Resource>();
 		for (Resource currentResource : resourceSet.getResources()) {
 			if (currentResource == resource) {
+				saveResources.add(resource);
 				continue;
 			}
 			TreeIterator<EObject> it = EcoreUtil.getAllContents(currentResource, true);
