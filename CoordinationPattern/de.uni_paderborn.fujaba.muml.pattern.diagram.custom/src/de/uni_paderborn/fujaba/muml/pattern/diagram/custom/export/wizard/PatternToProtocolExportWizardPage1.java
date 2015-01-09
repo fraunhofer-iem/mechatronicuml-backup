@@ -1,9 +1,10 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
+import org.eclipse.jface.dialogs.IPageChangedListener;
+import org.eclipse.jface.dialogs.PageChangedEvent;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
@@ -34,12 +35,12 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  *
  */
 public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
-		implements IWizardPage, SelectionListener {
+		implements IWizardPage, SelectionListener, IPageChangedListener {
 
 	HashMap<Parameter, Text> parameterToTextfieldHashMap = new HashMap<Parameter, Text>();
 	Combo legalConfigurationCombo;
 	FormToolkit toolkit;
-	Combo patternSelectionCombo;
+	// Combo patternSelectionCombo;
 	Composite parameterBindingComp;
 
 	public PatternToProtocolExportWizardPage1(String pageName,
@@ -47,19 +48,7 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 		super(pageName);
 		this.toolkit = toolkit;
 		this.setTitle("Step 1: Selection of a Coordination Pattern");
-	}
 
-	public Combo getPatternSelectionCombobox() {
-		return patternSelectionCombo;
-	}
-
-	private ArrayList<CoordinationPattern> getPatternList() {
-		return ((ExportWizardPatternToProtocol) this.getWizard())
-				.getPatternList();
-	}
-
-	public int getSelectedPattern() {
-		return patternSelectionCombo.getSelectionIndex();
 	}
 
 	@Override
@@ -73,22 +62,22 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 		// mainSelection.setLayout(new GridLayout());
 		Composite mainComposite = toolkit.createComposite(parent);
 		mainComposite.setLayout(new GridLayout());
-		Section patternSelectionsection = toolkit.createSection(mainComposite,
-				sectionStyle);
-		patternSelectionsection.setText("Select a Coordination Pattern");
-		patternSelectionsection.setLayout(new GridLayout());
-		Composite patternSelectionComp = toolkit
-				.createComposite(patternSelectionsection);
-		patternSelectionComp.setLayout(new GridLayout());
-		patternSelectionsection.setClient(patternSelectionComp);
-		patternSelectionCombo = new Combo(patternSelectionComp, SWT.Selection);
-		patternSelectionCombo.setLayoutData(new GridData());
-
-		// getPatternList().
-		for (CoordinationPattern pattern : this.getPatternList()) {
-			patternSelectionCombo.add(pattern.getName());
-		}
-
+		/*
+		 * Section patternSelectionsection =
+		 * toolkit.createSection(mainComposite, sectionStyle);
+		 * patternSelectionsection.setText("Select a Coordination Pattern");
+		 * patternSelectionsection.setLayout(new GridLayout()); Composite
+		 * patternSelectionComp = toolkit
+		 * .createComposite(patternSelectionsection);
+		 * patternSelectionComp.setLayout(new GridLayout());
+		 * patternSelectionsection.setClient(patternSelectionComp);
+		 * patternSelectionCombo = new Combo(patternSelectionComp,
+		 * SWT.Selection); patternSelectionCombo.setLayoutData(new GridData());
+		 * 
+		 * // getPatternList(). for (CoordinationPattern pattern :
+		 * this.getPatternList()) {
+		 * patternSelectionCombo.add(pattern.getName()); }
+		 */
 		// create ui part for selecting the legal configuration
 		Section configurationSelection = toolkit.createSection(mainComposite,
 				sectionStyle);
@@ -103,7 +92,7 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 		legalConfigurationCombo = new Combo(configComposite, SWT.Selection);
 
 		legalConfigurationCombo.addSelectionListener(this);
-		patternSelectionCombo.addSelectionListener(this);
+		// patternSelectionCombo.addSelectionListener(this);
 
 		parameterBindingComp = toolkit.createComposite(mainComposite);
 		parameterBindingComp.setLayout(new GridLayout(2, false));
@@ -125,45 +114,13 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 	@Override
 	public void widgetSelected(SelectionEvent e) {
 		// TODO Auto-generated method stub
-		int selectedPatternIndex = patternSelectionCombo.getSelectionIndex();
-		CoordinationPattern selectedPattern = null;
-		if (selectedPatternIndex >= 0) {
-			selectedPattern = this.getPatternList().get(selectedPatternIndex);
-		}
+
+		CoordinationPattern selectedPattern = ((PatternToProtocolExportSourcePage) this
+				.getWizard().getPage(
+						ExportWizardPatternToProtocol.SELECTPATTERN))
+				.getSelectedPattern();
+
 		if (selectedPattern != null) {
-			if (e.getSource() == patternSelectionCombo) {
-				legalConfigurationCombo.removeAll();
-				for (LegalConfiguration configuration : selectedPattern
-						.getLegalConfigurations()) {
-					legalConfigurationCombo.add(configuration.getName());
-				}
-				legalConfigurationCombo.add("No legal configuration selected!");
-				legalConfigurationCombo.select(legalConfigurationCombo
-						.getItemCount() - 1);
-				// delete old children
-				Control[] children = parameterBindingComp.getChildren();
-				for (Control child : children) {
-					child.dispose();
-				}
-				parameterToTextfieldHashMap = new HashMap<Parameter, Text>();
-				for (Parameter parameter : selectedPattern
-						.getPatternParameters()) {
-					Label l = toolkit.createLabel(parameterBindingComp,
-							parameter.getName());
-					l.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-							| GridData.HORIZONTAL_ALIGN_FILL
-							| GridData.GRAB_HORIZONTAL));
-					Text t = toolkit.createText(parameterBindingComp, "");
-					t.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-							| GridData.HORIZONTAL_ALIGN_FILL
-							| GridData.GRAB_HORIZONTAL));
-					parameterToTextfieldHashMap.put(parameter, t);
-				}
-				parameterBindingComp.layout();
-				parameterBindingComp.redraw();
-				this.getControl().redraw();
-				this.getShell().redraw();
-			}
 			if (e.getSource() == legalConfigurationCombo) {
 				int lcIndex = legalConfigurationCombo.getSelectionIndex();
 				if (lcIndex != legalConfigurationCombo.getItemCount() - 1
@@ -200,4 +157,46 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 
 	}
 
+	@Override
+	public void pageChanged(PageChangedEvent event) {
+		// TODO Auto-generated method stub
+		CoordinationPattern selectedPattern = ((PatternToProtocolExportSourcePage) this
+				.getWizard().getPage(
+						ExportWizardPatternToProtocol.SELECTPATTERN))
+				.getSelectedPattern();
+
+		if (selectedPattern != null && event.getSelectedPage() == this) {
+			legalConfigurationCombo.removeAll();
+			for (LegalConfiguration configuration : selectedPattern
+					.getLegalConfigurations()) {
+				legalConfigurationCombo.add(configuration.getName());
+			}
+			legalConfigurationCombo.add("No legal configuration selected!");
+			legalConfigurationCombo.select(legalConfigurationCombo
+					.getItemCount() - 1);
+			// delete old children
+			Control[] children = parameterBindingComp.getChildren();
+			for (Control child : children) {
+				child.dispose();
+			}
+			parameterToTextfieldHashMap = new HashMap<Parameter, Text>();
+			for (Parameter parameter : selectedPattern.getPatternParameters()) {
+				Label l = toolkit.createLabel(parameterBindingComp,
+						parameter.getName());
+				l.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
+						| GridData.HORIZONTAL_ALIGN_FILL
+						| GridData.GRAB_HORIZONTAL));
+				Text t = toolkit.createText(parameterBindingComp, "");
+				t.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
+						| GridData.HORIZONTAL_ALIGN_FILL
+						| GridData.GRAB_HORIZONTAL));
+				parameterToTextfieldHashMap.put(parameter, t);
+			}
+			parameterBindingComp.layout();
+			parameterBindingComp.redraw();
+			this.getControl().redraw();
+			this.getShell().redraw();
+
+		}
+	}
 }

@@ -1,39 +1,35 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.jface.dialogs.IPageChangeProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.wizard.IWizardContainer;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
+import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.ide.IDE;
-import org.storydriven.core.ExtendableElement;
 
 import pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.export.operation.AbstractFujabaExportOperation;
 import de.uni_paderborn.fujaba.export.operation.IFujabaExportOperation;
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
-import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportTargetPage;
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceImpl;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
 
 /**
  * 
@@ -43,103 +39,31 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
 public class ExportWizardPatternToProtocol extends
 		de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard {
 
-	private static final String patternModelElementCategoryKey = "pattern.category";
-	ArrayList<CoordinationPattern> patternList = new ArrayList<CoordinationPattern>();
+	public static final String SELECTPATTERN = "SelectSource";
+	public static final String BINDPARAMETERS = "BINDPARAMETERS";
 
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
 
-		initialSelection = currentSelection;
-		List<?> selectedResources = IDE
-				.computeSelectedResources(currentSelection);
-		if (!selectedResources.isEmpty()) {
-			initialSelection = new StructuredSelection(selectedResources);
-		}
-		setNeedsProgressMonitor(true);
-
-		// try to infer editing domain from initial selection
-
-		for (Object element : initialSelection.toArray()) {
-			EObject eObject = null;
-			if (element instanceof IAdaptable) {
-				IAdaptable adaptable = (IAdaptable) element;
-				eObject = (EObject) adaptable.getAdapter(EObject.class);
-			}
-			if (element instanceof EObject) {
-				eObject = (EObject) element;
-			}
-
-			if (eObject != null) {
-				// cases that the RootNode or a ModelElementCategory is
-				// seleceted
-				if (eObject instanceof RootNode) {
-					RootNode root = (RootNode) eObject;
-					this.findCoordinationPattern(root);
-				} else if (eObject instanceof ModelElementCategory) {
-					ModelElementCategory category = (ModelElementCategory) eObject;
-					if (category.getKey()
-							.equals(patternModelElementCategoryKey)) {
-						this.findCoordinationPatternfromPatternModelElementCategory(category);
-					} else {
-						this.findCoordinationPattern((RootNode) category
-								.eContainer());
-					}
-				} else {
-					EObject iterator = eObject;
-					while (iterator != null && !(iterator instanceof RootNode)) {
-						iterator = iterator.eContainer();
-					}
-					if (iterator != null) {
-						this.findCoordinationPattern((RootNode) iterator);
-					}
-				}
-			}
-			if (element instanceof ModelinstanceResourceImpl) {
-				ModelinstanceResourceImpl res = (ModelinstanceResourceImpl) element;
-				RootNode root = (RootNode) res.getContents().get(0);
-				this.findCoordinationPattern(root);
-			}
-
-			if (eObject != null) {
-				editingDomain = AdapterFactoryEditingDomain
-						.getEditingDomainFor(eObject);
-				if (editingDomain != null) {
-					break;
-				}
-			}
-		}
-
-		// create default editing domain, if none was found
-		if (editingDomain == null) {
-			editingDomain = WorkspaceEditingDomainFactory.INSTANCE
-					.createEditingDomain();
-		}
+		super.init(workbench, currentSelection);
 
 	}
 
-	private void findCoordinationPatternfromPatternModelElementCategory(
-			ModelElementCategory category) {
-		for (ExtendableElement pattern : category.getModelElements()) {
-			patternList.add((CoordinationPattern) pattern);
-		}
-	}
-
-	private void findCoordinationPattern(RootNode root) {
-		EList<ModelElementCategory> categories = root.getCategories();
-		for (ModelElementCategory category : categories) {
-			if (category.getKey().equals(patternModelElementCategoryKey)) {
-				findCoordinationPatternfromPatternModelElementCategory(category);
-			}
-		}
+	@Override
+	public void setContainer(IWizardContainer wizardContainer) {
+		// TODO Auto-generated method stub
+		super.setContainer(wizardContainer);
+		if (wizardContainer != null)
+			((IPageChangeProvider) this.getContainer())
+					.addPageChangedListener((PatternToProtocolExportWizardPage1) this
+							.getPage(BINDPARAMETERS));
 	}
 
 	public void addPages() {
-		addPage(new PatternToProtocolExportWizardPage1("Page 1", toolkit));
-		addPage(new PatternToProtocolExportWizardPage2("Page 2", toolkit));
 
-	}
+		addPage(new PatternToProtocolExportSourcePage(SELECTPATTERN, toolkit,
+				this.getResourceSet(), initialSelection));
+		addPage(new PatternToProtocolExportWizardPage1(BINDPARAMETERS, toolkit));
 
-	public ArrayList<CoordinationPattern> getPatternList() {
-		return this.patternList;
 	}
 
 	@Override
@@ -158,33 +82,43 @@ public class ExportWizardPatternToProtocol extends
 				return Status.OK_STATUS;
 			}
 		};
-		
+
 	}
-	
-	public boolean performFinish()
-	{
-		super.performFinish();
-		System.out.println("Finished Pressed!!");
-		 TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE
-				 	.createEditingDomain(this.getResourceSet());
-		 transformPatternToProtocol(domain, this.getPatternList().get(((PatternToProtocolExportWizardPage1)this.getPages()[0]).getSelectedPattern()));
+
+	public boolean performFinish() {
+		super.performFinish();		
+		TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE
+				.createEditingDomain(new ResourceSetImpl());
+		ICommandProxy cmd = new ICommandProxy(
+				new PatternToProtocoTransformationCommand(domain,((PatternToProtocolExportSourcePage) this
+						.getPage(SELECTPATTERN)).getSelectedPattern()));
+		cmd.execute();
+		/*TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE
+				.createEditingDomain(this.getResourceSet());
+		
+		transformPatternToProtocol(domain,
+				((PatternToProtocolExportSourcePage) this
+						.getPage(SELECTPATTERN)).getSelectedPattern());
+		*/
 		return true;
 	}
-	
-	private static void transformPatternToProtocol(
-			EditingDomain editingDomain, CoordinationPattern pattern) 
-	{
+
+	private static void transformPatternToProtocol(EditingDomain editingDomain,
+			CoordinationPattern pattern) {
+
 		
 		ModelExtent inputExtent = new BasicModelExtent(
-				Arrays.asList(new EObject[] { pattern,pattern.eContainer().eContainer() }));
+				Arrays.asList(new EObject[] { pattern }));
 
 		final List<ModelExtent> modelExtents = Arrays
 				.asList(new ModelExtent[] { inputExtent });
 
 		// Load QVTO script
 		final TransformationExecutor transformationExecutor = Activator
-				.getInstance().getTransformationExecutor(
-						"/ExampleProject/transforms/TransformPatternToProtocol.qvto", false);
+				.getInstance()
+				.getTransformationExecutor(Activator.TRANSFORM_PATTERN_TO_PROTOCOL
+						,
+						false);
 
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);
@@ -196,5 +130,43 @@ public class ExportWizardPatternToProtocol extends
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
+	}
+	
+	class PatternToProtocoTransformationCommand extends AbstractTransactionalCommand
+	{
+		CoordinationPattern source=null;
+	
+		public PatternToProtocoTransformationCommand(TransactionalEditingDomain editingDomain, CoordinationPattern source)
+		{
+		    super(editingDomain, "Transform pattern to Protocol", null);
+		    this.source = source;		  
+		}
+
+		@Override
+		protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
+				IAdaptable info) throws ExecutionException {
+			URI transformationURI = URI
+					.createPlatformPluginURI(
+							Activator.TRANSFORM_PATTERN_TO_PROTOCOL,
+							true);
+			// create executor and execution context
+			TransformationExecutor executor = new TransformationExecutor(
+					transformationURI);
+			ExecutionContextImpl context = new ExecutionContextImpl();
+
+			// create model extent
+			BasicModelExtent modelExtent = new BasicModelExtent();
+			modelExtent.add(source);
+
+			// execute transformation
+			ExecutionDiagnostic result = executor.execute(context, modelExtent);
+			if (result.getSeverity() != ExecutionDiagnostic.OK) {
+				String message = "QVT-O ERROR on rule transformation. Message was:"
+						+ result.getMessage();
+				return CommandResult.newErrorCommandResult(message);
+			}
+
+			return CommandResult.newOKCommandResult();
+		}		
 	}
 }
