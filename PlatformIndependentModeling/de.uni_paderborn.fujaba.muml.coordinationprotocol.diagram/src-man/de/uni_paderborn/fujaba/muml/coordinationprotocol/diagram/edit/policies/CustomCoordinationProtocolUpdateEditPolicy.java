@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumption
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
+import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
 
 /**
  * This policy is responsible for the correct refreshment of the
@@ -37,9 +38,15 @@ public class CustomCoordinationProtocolUpdateEditPolicy extends
 	@Override
 	protected void addListeners() {
 		CoordinationProtocol protocol = (CoordinationProtocol) getSemanticElement();
+		RoleConnector connector = protocol.getRoleConnector();
+		if (connector != null) {
+			this.addNotificationListener(connector);
+		}
+
 		addNotificationListener(protocol);
 		for (Role role : protocol.getRoles()) {
-			addNotificationListener(role);
+			if (role != null)
+				addNotificationListener(role);
 		}
 		ConnectorQualityOfServiceAssumptions quosa = protocol
 				.getGmfConnectorQualityOfServiceAssumptions();
@@ -56,12 +63,18 @@ public class CustomCoordinationProtocolUpdateEditPolicy extends
 				.getFeature();
 
 		if (feature == ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLES
-				|| feature == ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS
+				|| feature == ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR
 				|| feature == ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY
-				|| feature == ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY) {
+				|| feature == ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY
+				|| feature == ProtocolPackage.Literals.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS) {
 			updateListeners();
 		}
-		if (feature == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER) {
+		if (feature == ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLES
+				|| feature == ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR
+				|| feature == ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY
+				|| feature == ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY
+				|| feature == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER
+				|| feature == ProtocolPackage.Literals.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS) {
 			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 					.getRegisteredEditPolicies(getSemanticElement());
 			for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
