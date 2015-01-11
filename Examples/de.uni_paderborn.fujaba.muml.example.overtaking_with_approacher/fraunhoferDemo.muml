@@ -26,7 +26,7 @@
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_wXdqwJOQEeSZM-zEIRk3lw" name="overtakeeDriverRTSC" behavioralElement="_bDZ3QJOQEeSZM-zEIRk3lw">
       <states xmi:id="_wXdqwZOQEeSZM-zEIRk3lw" name="init" initial="true">
         <embeddedRegions xmi:id="_wefKoJRSEeSZM-zEIRk3lw" priority="1">
-          <embeddedStatechart xmi:id="_wefKoZRSEeSZM-zEIRk3lw" name="approverPortRTSC" behavioralElement="_DWz7gJRTEeSZM-zEIRk3lw">
+          <embeddedStatechart xmi:id="_wefKoZRSEeSZM-zEIRk3lw" name="velocitySetterPortRTSC" behavioralElement="_DWz7gJRTEeSZM-zEIRk3lw">
             <states xmi:id="_wefKopRSEeSZM-zEIRk3lw" name="init" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
@@ -83,7 +83,7 @@
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_tcHl0JRSEeSZM-zEIRk3lw" priority="3">
-          <embeddedStatechart xmi:id="_tcHl0ZRSEeSZM-zEIRk3lw" name="rqstPortRTSC" behavioralElement="_qJ-foJRSEeSZM-zEIRk3lw">
+          <embeddedStatechart xmi:id="_tcHl0ZRSEeSZM-zEIRk3lw" name="velocitySetterPortRTSC" behavioralElement="_qJ-foJRSEeSZM-zEIRk3lw">
             <states xmi:id="_tcHl0pRSEeSZM-zEIRk3lw" name="init" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
@@ -127,10 +127,10 @@
         </embeddedRegions>
       </states>
     </modelElements>
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_cGvZwJQjEeSZM-zEIRk3lw" name="rqstRoleRTSC" behavioralElement="_P1MlEJQiEeSZM-zEIRk3lw">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_cGvZwJQjEeSZM-zEIRk3lw" name="velocitySetterRoleRTSC" behavioralElement="_P1MlEJQiEeSZM-zEIRk3lw">
       <states xmi:id="_cGvZwZQjEeSZM-zEIRk3lw" name="init" initial="true"/>
     </modelElements>
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_dKEfAJQjEeSZM-zEIRk3lw" name="approverRoleRTSC" behavioralElement="_P1MlFJQiEeSZM-zEIRk3lw">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_dKEfAJQjEeSZM-zEIRk3lw" name="velocityGetterRoleRTSC" behavioralElement="_P1MlFJQiEeSZM-zEIRk3lw">
       <states xmi:id="_dKEfAZQjEeSZM-zEIRk3lw" name="init" initial="true"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Isl4wJQkEeSZM-zEIRk3lw" name="initiatorRoleRTSC" behavioralElement="_hBCUEZQkEeSZM-zEIRk3lw">
@@ -234,22 +234,19 @@
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
     </modelElements>
-    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_P1DbIJQiEeSZM-zEIRk3lw" name="RqstOvertake">
-      <roles xmi:id="_P1MlEJQiEeSZM-zEIRk3lw" connectors="_P1MlGJQiEeSZM-zEIRk3lw" behavior="_cGvZwJQjEeSZM-zEIRk3lw" name="rqstR" senderMessageTypes="_juviYJQiEeSZM-zEIRk3lw _pSA9sJQiEeSZM-zEIRk3lw" receiverMessageTypes="_mTjogJQiEeSZM-zEIRk3lw _oXeBAJQiEeSZM-zEIRk3lw">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_P1DbIJQiEeSZM-zEIRk3lw" name="VModeControl">
+      <roles xmi:id="_P1MlEJQiEeSZM-zEIRk3lw" connectors="_P1MlGJQiEeSZM-zEIRk3lw" behavior="_cGvZwJQjEeSZM-zEIRk3lw" name="VelocitySetter" senderMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
         <cardinality xmi:id="_P1MlEZQiEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_A-jPAJQkEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_A-tAAJQkEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_AMfasJncEeSlOsDDn13LAA"/>
+          <upperBound xmi:id="_AMfasZncEeSlOsDDn13LAA"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_9SBIUJQiEeSZM-zEIRk3lw" name="rqstRbuf" messageType="_mTjogJQiEeSZM-zEIRk3lw _oXeBAJQiEeSZM-zEIRk3lw">
-          <bufferSize xmi:id="__KMx8JQiEeSZM-zEIRk3lw" value="5"/>
-        </receiverMessageBuffer>
       </roles>
-      <roles xmi:id="_P1MlFJQiEeSZM-zEIRk3lw" connectors="_P1MlGJQiEeSZM-zEIRk3lw" behavior="_dKEfAJQjEeSZM-zEIRk3lw" name="approverR" senderMessageTypes="_mTjogJQiEeSZM-zEIRk3lw _oXeBAJQiEeSZM-zEIRk3lw" receiverMessageTypes="_juviYJQiEeSZM-zEIRk3lw _pSA9sJQiEeSZM-zEIRk3lw">
+      <roles xmi:id="_P1MlFJQiEeSZM-zEIRk3lw" connectors="_P1MlGJQiEeSZM-zEIRk3lw" behavior="_dKEfAJQjEeSZM-zEIRk3lw" name="VelocityGetter" receiverMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
         <cardinality xmi:id="_P1MlFZQiEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_uPoRwJQjEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_uPoRwZQjEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_SN05MJncEeSlOsDDn13LAA"/>
+          <upperBound xmi:id="_SN05MZncEeSlOsDDn13LAA"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_V48awJQjEeSZM-zEIRk3lw" name="approverRbuf" messageType="_juviYJQiEeSZM-zEIRk3lw _pSA9sJQiEeSZM-zEIRk3lw">
+        <receiverMessageBuffer xmi:id="_V48awJQjEeSZM-zEIRk3lw" name="getterRbuf" messageType="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
           <bufferSize xmi:id="_X7PpsJQjEeSZM-zEIRk3lw" value="5"/>
         </receiverMessageBuffer>
       </roles>
@@ -332,15 +329,13 @@
       <messageTypes xmi:id="_jMgl4JKfEeSSMde45fnrcg" name="overtake"/>
       <messageTypes xmi:id="_lJ5foJKfEeSSMde45fnrcg" name="save"/>
       <messageTypes xmi:id="_nDO_0JKfEeSSMde45fnrcg" name="unsave"/>
-      <messageTypes xmi:id="_juviYJQiEeSZM-zEIRk3lw" name="rqst"/>
-      <messageTypes xmi:id="_mTjogJQiEeSZM-zEIRk3lw" name="accept"/>
-      <messageTypes xmi:id="_oXeBAJQiEeSZM-zEIRk3lw" name="decline"/>
-      <messageTypes xmi:id="_pSA9sJQiEeSZM-zEIRk3lw" name="finish"/>
       <messageTypes xmi:id="_ruXrYJQiEeSZM-zEIRk3lw" name="initiate"/>
       <messageTypes xmi:id="_sp11IJQiEeSZM-zEIRk3lw" name="execute"/>
       <messageTypes xmi:id="_th9I4JQiEeSZM-zEIRk3lw" name="executed"/>
       <messageTypes xmi:id="_veCbEJQiEeSZM-zEIRk3lw" name="fixVelocity"/>
       <messageTypes xmi:id="_xib7wJQiEeSZM-zEIRk3lw" name="freeVelocity"/>
+      <messageTypes xmi:id="_z8GAEJnbEeSlOsDDn13LAA" name="setFast"/>
+      <messageTypes xmi:id="_1OxI4JnbEeSlOsDDn13LAA" name="setSlow"/>
     </modelElements>
   </categories>
   <categories xmi:id="_FB0TTJJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
@@ -358,12 +353,12 @@
           <value xsi:type="sdcec:LiteralExpression" xmi:id="_lKavAJRKEeSZM-zEIRk3lw" value="50"/>
         </samplingInterval>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_DWz7gJRTEeSZM-zEIRk3lw" name="approverP" behavior="_wefKoZRSEeSZM-zEIRk3lw" senderMessageTypes="_mTjogJQiEeSZM-zEIRk3lw _oXeBAJQiEeSZM-zEIRk3lw" receiverMessageTypes="_juviYJQiEeSZM-zEIRk3lw _pSA9sJQiEeSZM-zEIRk3lw" refinedRole="_P1MlFJQiEeSZM-zEIRk3lw">
+      <ports xsi:type="component:DiscretePort" xmi:id="_DWz7gJRTEeSZM-zEIRk3lw" name="velocityGetterP" behavior="_wefKoZRSEeSZM-zEIRk3lw" receiverMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA" refinedRole="_P1MlFJQiEeSZM-zEIRk3lw">
         <cardinality xmi:id="_DWz7gZRTEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_NSStMJRTEeSZM-zEIRk3lw"/>
           <upperBound xmi:id="_NSceMJRTEeSZM-zEIRk3lw"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_KpW8EJRTEeSZM-zEIRk3lw" name="approverPbuf" messageType="_juviYJQiEeSZM-zEIRk3lw _pSA9sJQiEeSZM-zEIRk3lw">
+        <receiverMessageBuffer xmi:id="_KpW8EJRTEeSZM-zEIRk3lw" name="velocityGetterPbuf" messageType="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
           <bufferSize xmi:id="_McXx0JRTEeSZM-zEIRk3lw" value="5"/>
         </receiverMessageBuffer>
       </ports>
@@ -435,14 +430,11 @@
           <upperBound xmi:id="_0wl10ZROEeSZM-zEIRk3lw"/>
         </cardinality>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_qJ-foJRSEeSZM-zEIRk3lw" name="rqstP" behavior="_tcHl0ZRSEeSZM-zEIRk3lw" senderMessageTypes="_juviYJQiEeSZM-zEIRk3lw _pSA9sJQiEeSZM-zEIRk3lw" receiverMessageTypes="_mTjogJQiEeSZM-zEIRk3lw _oXeBAJQiEeSZM-zEIRk3lw" refinedRole="_P1MlEJQiEeSZM-zEIRk3lw">
+      <ports xsi:type="component:DiscretePort" xmi:id="_qJ-foJRSEeSZM-zEIRk3lw" name="velocitySetterP" behavior="_tcHl0ZRSEeSZM-zEIRk3lw" senderMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA" refinedRole="_P1MlEJQiEeSZM-zEIRk3lw">
         <cardinality xmi:id="_qJ-foZRSEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_q24B4JRSEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_q24B4ZRSEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_fWj0kJndEeSlOsDDn13LAA"/>
+          <upperBound xmi:id="_fWj0kZndEeSlOsDDn13LAA"/>
         </cardinality>
-        <receiverMessageBuffer xmi:id="_-oZEkJRSEeSZM-zEIRk3lw" name="rqstPbuf" messageType="_mTjogJQiEeSZM-zEIRk3lw _oXeBAJQiEeSZM-zEIRk3lw">
-          <bufferSize xmi:id="_A2-cAJRTEeSZM-zEIRk3lw" value="5"/>
-        </receiverMessageBuffer>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_5PGVoJOXEeSZM-zEIRk3lw" name="overtakerCommunicator" behavior="_d_KZkJOXEeSZM-zEIRk3lw">
@@ -545,16 +537,16 @@
         </cardinality>
         <portParts xmi:id="_oYNxoJRTEeSZM-zEIRk3lw" connectors="_8OTyUJRTEeSZM-zEIRk3lw" portType="_AoaKoJRKEeSZM-zEIRk3lw"/>
         <portParts xmi:id="_oYXioJRTEeSZM-zEIRk3lw" connectors="__peRoJRTEeSZM-zEIRk3lw" portType="_E5QUwJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_oYXioZRTEeSZM-zEIRk3lw" connectors="_vTdQAJRUEeSZM-zEIRk3lw" portType="_DWz7gJRTEeSZM-zEIRk3lw" coordinationProtocolPart="_I7Hp4JRZEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_oYXioZRTEeSZM-zEIRk3lw" connectors="_vTdQAJRUEeSZM-zEIRk3lw" portType="_DWz7gJRTEeSZM-zEIRk3lw" coordinationProtocolPart="_yrtEUJndEeSlOsDDn13LAA"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_y4rfsJRTEeSZM-zEIRk3lw" name="communicator" componentType="_1f2csJOXEeSZM-zEIRk3lw">
         <cardinality xmi:id="_y4rfsZRTEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_1M3I0JRTEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_1NASwJRTEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_wcroAJndEeSlOsDDn13LAA"/>
+          <upperBound xmi:id="_wcroAZndEeSlOsDDn13LAA"/>
         </cardinality>
         <portParts xmi:id="_0okI8JRTEeSZM-zEIRk3lw" connectors="_z1a_UJRUEeSZM-zEIRk3lw" portType="_-B_QEJRLEeSZM-zEIRk3lw"/>
         <portParts xmi:id="_0okI8ZRTEeSZM-zEIRk3lw" connectors="_VMJ6gJRVEeSZM-zEIRk3lw" portType="_wCE4QJROEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_0okI8pRTEeSZM-zEIRk3lw" connectors="_vTdQAJRUEeSZM-zEIRk3lw" portType="_qJ-foJRSEeSZM-zEIRk3lw" coordinationProtocolPart="_I7Hp4JRZEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_0okI8pRTEeSZM-zEIRk3lw" connectors="_vTdQAJRUEeSZM-zEIRk3lw" portType="_qJ-foJRSEeSZM-zEIRk3lw" coordinationProtocolPart="_yrtEUJndEeSlOsDDn13LAA"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_2nodsJRTEeSZM-zEIRk3lw" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw">
         <cardinality xmi:id="_2nodsZRTEeSZM-zEIRk3lw">
@@ -575,7 +567,7 @@
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_vTdQAJRUEeSZM-zEIRk3lw" connectorEndpoints="_0okI8pRTEeSZM-zEIRk3lw _oYXioZRTEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:DelegationConnector" xmi:id="_z1a_UJRUEeSZM-zEIRk3lw" connectorEndpoints="_0okI8JRTEeSZM-zEIRk3lw _x1cEkJRUEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:DelegationConnector" xmi:id="_VMJ6gJRVEeSZM-zEIRk3lw" connectorEndpoints="_0okI8ZRTEeSZM-zEIRk3lw _PX75IJRVEeSZM-zEIRk3lw"/>
-      <coordinationProtocolParts xmi:id="_I7Hp4JRZEeSZM-zEIRk3lw" coordinationProtocol="_P1DbIJQiEeSZM-zEIRk3lw" portParts="_oYXioZRTEeSZM-zEIRk3lw _0okI8pRTEeSZM-zEIRk3lw"/>
+      <coordinationProtocolParts xmi:id="_yrtEUJndEeSlOsDDn13LAA" coordinationProtocol="_P1DbIJQiEeSZM-zEIRk3lw" portParts="_oYXioZRTEeSZM-zEIRk3lw _0okI8pRTEeSZM-zEIRk3lw"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_345mYJRVEeSZM-zEIRk3lw" name="OvertakerVehicle" componentKind="hybrid component">
       <ports xsi:type="component:DiscretePort" xmi:id="_cKwO4JRWEeSZM-zEIRk3lw" connectors="_nzt2EJRWEeSZM-zEIRk3lw" name="overtakerPDel" senderMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" receiverMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" refinedRole="_V7mUApKgEeSSMde45fnrcg">

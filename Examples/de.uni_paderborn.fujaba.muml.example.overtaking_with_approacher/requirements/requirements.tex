@@ -1,0 +1,17 @@
+\chapter{Basic requirements}
+\label{chap-basic-2}
+
+The scenario from Chapter \ref{chap-scenario-1} is modelled in \muml. From the model, we generate C code and deploy it to LEGO mindstorm robots representing the vehicles. The following is a list of our basic requirements:
+
+\begin{itemize}
+
+\item The vehicles drive by following a black line representing one lane. Therefore, there are two black lines for the two lanes.
+\item There are two modes of velocity for each vehicle: fast and slow. The mode changes periodically. 
+\item The road is divided in seven sections. Each vehicle knows the section number of the section where it is driving at the moment. When it drives in new section, it informs the section control by sending a message.  
+\item When the \textit{Overtaker} gets close to the \textit{Overtakee} it asks for permission for overtaking. The \textit{Overtakee} agrees if it is currently driving in slow mode.
+\item The overtaking needs to be approved also by the section control which checks the position of each vehicle, and agrees on overtaking if the \textit{Approacher} is at least two sections away from the \textit{Overtakee}.   
+\item The \textit{Overtaker} start the overtaking only if the \textit{Overtakee} and sections control approve the requests. 
+\item If the request is not approved, the \textit{Overtaker} has to change to slow mode. When the distance increases it may send new request
+\item During overtaking, the \textit{Overtakee} and the \textit{Approacher} drive in slow mode. 
+
+\end{itemize}
