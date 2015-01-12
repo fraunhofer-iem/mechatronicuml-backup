@@ -20,6 +20,8 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 		String printString = "";
 		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)element.getAdapter(EObject.class);		
 		TimeValue maxDelay = quosa.getMaxMessageDelay();
+		if(maxDelay==null)
+			return "";
 		Expression maxDelayExpr  = maxDelay.getValue();
 		// serialize the expression to a string that can be displayed by the label
 		if(maxDelayExpr != null)			

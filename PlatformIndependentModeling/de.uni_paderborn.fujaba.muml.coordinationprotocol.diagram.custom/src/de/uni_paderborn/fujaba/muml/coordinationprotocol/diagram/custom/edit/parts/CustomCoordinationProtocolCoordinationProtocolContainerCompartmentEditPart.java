@@ -17,6 +17,7 @@ public class CustomCoordinationProtocolCoordinationProtocolContainerCompartmentE
 	public CustomCoordinationProtocolCoordinationProtocolContainerCompartmentEditPart(
 			View view) {
 		super(view);
+		
 	}
 
 	@Override

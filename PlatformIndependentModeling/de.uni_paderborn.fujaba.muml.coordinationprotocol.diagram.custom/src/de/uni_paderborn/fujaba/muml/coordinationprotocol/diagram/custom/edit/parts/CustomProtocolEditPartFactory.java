@@ -33,6 +33,7 @@ public class CustomProtocolEditPartFactory extends MumlEditPartFactory {
 				return new CustomRoleConnectorEditPart(view);
 			case MessageTypeMessageTypesCompartmentEditPart.VISUAL_ID:
 				return new CustomMessageTypeMessageTypesCompartmentEditPart(view);
+			
 			}
 		}
 		return super.createEditPart(context, model);
