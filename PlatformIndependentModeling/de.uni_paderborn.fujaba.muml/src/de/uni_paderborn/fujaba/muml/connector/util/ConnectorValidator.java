@@ -362,9 +362,9 @@ public class ConnectorValidator extends EObjectValidator {
 	 */
 	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_LOWER_BOUND__EEXPRESSION = "-- The number of subInteractionEndpointInstances is too low with respect to the cardinality\n" +
 		"let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\n" +
-		"let lowerBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in\n" +
+		"let lowerBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.lowerBound.infinity) then -1 else discreteEndpoint.cardinality.lowerBound.value endif in\n" +
 		"if (lowerBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()>=lowerBoundOfsubInteractionEndpointInstance else true endif\n" +
-		"-- adann";
+		"-- adann ticket:937";
 
 	/**
 	 * Validates the NumberOfsubEndpointsCorrespondsToLowerBound constraint of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
@@ -395,9 +395,9 @@ public class ConnectorValidator extends EObjectValidator {
 	 */
 	protected static final String DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__NUMBER_OFSUB_ENDPOINTS_CORRESPONDS_TO_UPPER_BOUND__EEXPRESSION = "-- The number of subInteractionEndpointInstances is too high with respect to the cardinality\n" +
 		"let discreteEndpoint : connector::DiscreteInteractionEndpoint= if (self.type.oclIsUndefined() or (not self.type.oclIsKindOf(connector::DiscreteInteractionEndpoint))) then null else self.type.oclAsType(connector::DiscreteInteractionEndpoint) endif in\n" +
-		"let upperBoundOfsubInteractionEndpointInstance : Integer = if ( not discreteEndpoint.oclIsUndefined() and discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in\n" +
+		"let upperBoundOfsubInteractionEndpointInstance : Integer = if ( discreteEndpoint.oclIsUndefined() or discreteEndpoint.cardinality.upperBound.infinity) then -1 else discreteEndpoint.cardinality.upperBound.value endif in\n" +
 		"if (upperBoundOfsubInteractionEndpointInstance <>-1) then self.subInteractionEndpointInstances->size()<=upperBoundOfsubInteractionEndpointInstance else true endif\n" +
-		"-- adann";
+		"-- adann  ticket:937";
 
 	/**
 	 * Validates the NumberOfsubEndpointsCorrespondsToUpperBound constraint of '<em>Discrete Multi Interaction Endpoint Instance</em>'.

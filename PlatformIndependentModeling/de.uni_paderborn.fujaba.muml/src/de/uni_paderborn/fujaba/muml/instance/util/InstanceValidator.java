@@ -836,7 +836,7 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String STRUCTURED_COMPONENT_INSTANCE__NUMBER_OFEMBEDDED_COMPONENT_INSTANCES_CORRESPONDS_TO_LOWER_BOUND__EEXPRESSION = " -- Not all ComponentParts with a lowerBound > 0 are initialized\n" +
-		"let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n" +
+		"let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined() and self.componentType.oclIsKindOf(component::StructuredComponent)) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n" +
 		" let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\n" +
 		"componentParts->forAll(part| if (not part.cardinality.lowerBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()>=part.cardinality.lowerBound.value else true endif)\n" +
 		"-- adann";
@@ -869,10 +869,10 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String STRUCTURED_COMPONENT_INSTANCE__NUMBER_OFEMBEDDED_COMPONENT_INSTANCES_CORRESPONDS_TO_UPPER_BOUND__EEXPRESSION = " -- The number of initialized ComponentInstances does not corresponds to the specified upperBound\n" +
-		"let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined()) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n" +
+		"let componentParts : Set(component::ComponentPart) = if (not self.componentType.oclIsUndefined() and self.componentType.oclIsKindOf(component::StructuredComponent)) then self.componentType.oclAsType(component::StructuredComponent).embeddedComponentParts else OrderedSet{} endif in\n" +
 		"let componentInstances : Set(ComponentInstance) = if (not self.embeddedCIC.oclIsUndefined())  then self.embeddedCIC.componentInstances else OrderedSet{} endif in\n" +
 		"componentParts->forAll(part| if (not part.cardinality.upperBound.infinity) then componentInstances->select(ci | ci.componentPart = part)->size()<=part.cardinality.upperBound.value else true endif)\n" +
-		"-- adann";
+		"-- adann ticket:937";
 
 	/**
 	 * Validates the NumberOfembeddedComponentInstancesCorrespondsToUpperBound constraint of '<em>Structured Component Instance</em>'.
