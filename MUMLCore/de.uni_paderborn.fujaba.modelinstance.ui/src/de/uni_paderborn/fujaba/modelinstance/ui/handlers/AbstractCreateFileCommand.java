@@ -9,6 +9,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -46,19 +47,23 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 	}
 
 	public IFile create(Shell shell, ISelection selection) {
-		IResource workspaceResource = null;
+		IResource selectedResource = null;
 		if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
-			workspaceResource = (IResource) ((IStructuredSelection) selection)
-					.getFirstElement();
-
+			Object object = ((IStructuredSelection) selection).getFirstElement();
+			if (object instanceof IResource) {
+				selectedResource = (IResource) object;
+			} else if (object instanceof IAdaptable) {
+				selectedResource = (IResource) ((IAdaptable) object)
+						.getAdapter(IResource.class);
+			}
 		}
 
-		if (workspaceResource != null) {
+		if (selectedResource != null) {
 			URI selectedFileURI = URI.createPlatformResourceURI(
-					workspaceResource.getFullPath().toString(), true);
+					selectedResource.getFullPath().toString(), true);
 
 			URI trimmedURI = selectedFileURI;
-			if (workspaceResource instanceof IFile) {
+			if (selectedResource instanceof IFile) {
 				trimmedURI = trimmedURI.trimSegments(1);
 			}
 
