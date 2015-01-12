@@ -77,10 +77,17 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 
 		final Resource resource = role.eResource();
 		if (role.getBehavior() != null) {
+			MessageDialog.openInformation(shell, "RTSC already defined!",
+					"The selected Role: "+role.getName()+" already has a RTSC.");
 			return;
 		}
 
+		/**
+		 * Run the Transformation
+		 */
 		createRoleRTSCTransformation(editingDomain, role);
+		
+		
 		/**
 		 * Create the Role RTSC Diagram
 		 */
