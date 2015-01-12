@@ -85,22 +85,13 @@ public interface ModelinstancePackage extends EPackage {
 	int ROOT_NODE__CATEGORIES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Ecore Data Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOT_NODE__ECORE_DATA_TYPES = 1;
-
-	/**
 	 * The number of structural features of the '<em>Root Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_NODE_FEATURE_COUNT = 2;
+	int ROOT_NODE_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.modelinstance.impl.ModelElementCategoryImpl <em>Model Element Category</em>}' class.
@@ -168,17 +159,6 @@ public interface ModelinstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRootNode_Categories();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.modelinstance.RootNode#getEcoreDataTypes <em>Ecore Data Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Ecore Data Types</em>'.
-	 * @see de.uni_paderborn.fujaba.modelinstance.RootNode#getEcoreDataTypes()
-	 * @see #getRootNode()
-	 * @generated
-	 */
-	EReference getRootNode_EcoreDataTypes();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelinstance.ModelElementCategory <em>Model Element Category</em>}'.
@@ -262,14 +242,6 @@ public interface ModelinstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOT_NODE__CATEGORIES = eINSTANCE.getRootNode_Categories();
-
-		/**
-		 * The meta object literal for the '<em><b>Ecore Data Types</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOT_NODE__ECORE_DATA_TYPES = eINSTANCE.getRootNode_EcoreDataTypes();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.modelinstance.impl.ModelElementCategoryImpl <em>Model Element Category</em>}' class.

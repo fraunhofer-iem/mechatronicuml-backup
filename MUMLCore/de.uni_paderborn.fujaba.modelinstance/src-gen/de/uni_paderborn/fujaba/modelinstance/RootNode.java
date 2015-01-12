@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.RootNode#getCategories <em>Categories</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.modelinstance.RootNode#getEcoreDataTypes <em>Ecore Data Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,21 +50,5 @@ public interface RootNode extends EObject {
 	 * @generated
 	 */
 	EList<ModelElementCategory> getCategories();
-
-	/**
-	 * Returns the value of the '<em><b>Ecore Data Types</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EDataType}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Ecore Data Types</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ecore Data Types</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage#getRootNode_EcoreDataTypes()
-	 * @model
-	 * @generated
-	 */
-	EList<EDataType> getEcoreDataTypes();
 
 } // RootNode

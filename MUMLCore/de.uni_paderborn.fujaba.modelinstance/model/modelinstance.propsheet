@@ -24,12 +24,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties category="//@packages.0/@classes.0/@propertyCategories.0">
-        <genFeature href="modelinstance.genmodel#//modelinstance/RootNode/ecoreDataTypes"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.0 //@packages.0/@classes.0/@properties.1"/>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.0"/>
     </classes>
     <classes>
       <genClass href="modelinstance.genmodel#//modelinstance/ModelElementCategory"/>

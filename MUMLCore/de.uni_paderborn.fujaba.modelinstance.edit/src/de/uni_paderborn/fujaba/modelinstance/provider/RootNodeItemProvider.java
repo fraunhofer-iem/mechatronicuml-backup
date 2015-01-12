@@ -64,7 +64,6 @@ public class RootNodeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCategoriesPropertyDescriptor(object);
-			addEcoreDataTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,28 +85,6 @@ public class RootNodeItemProvider
 				 true,
 				 false,
 				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ecore Data Types feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEcoreDataTypesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RootNode_ecoreDataTypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RootNode_ecoreDataTypes_feature", "_UI_RootNode_type"),
-				 ModelinstancePackage.Literals.ROOT_NODE__ECORE_DATA_TYPES,
-				 true,
-				 false,
-				 true,
 				 null,
 				 null,
 				 null));

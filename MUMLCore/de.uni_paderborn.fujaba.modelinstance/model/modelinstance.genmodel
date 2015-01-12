@@ -9,7 +9,6 @@
       disposableProviderFactory="true" fileExtensions="muml" ecorePackage="modelinstance.ecore#/">
     <genClasses ecoreClass="modelinstance.ecore#//RootNode">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/categories"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelinstance.ecore#//RootNode/ecoreDataTypes"/>
     </genClasses>
     <genClasses ecoreClass="modelinstance.ecore#//ModelElementCategory">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference modelinstance.ecore#//ModelElementCategory/modelElements"/>

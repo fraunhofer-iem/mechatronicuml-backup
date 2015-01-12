@@ -139,15 +139,6 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRootNode_EcoreDataTypes() {
-		return (EReference)rootNodeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getModelElementCategory() {
 		return modelElementCategoryEClass;
 	}
@@ -209,7 +200,6 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		// Create classes and their features
 		rootNodeEClass = createEClass(ROOT_NODE);
 		createEReference(rootNodeEClass, ROOT_NODE__CATEGORIES);
-		createEReference(rootNodeEClass, ROOT_NODE__ECORE_DATA_TYPES);
 
 		modelElementCategoryEClass = createEClass(MODEL_ELEMENT_CATEGORY);
 		createEReference(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS);
@@ -252,7 +242,6 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		// Initialize classes and features; add operations and parameters
 		initEClass(rootNodeEClass, RootNode.class, "RootNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRootNode_Categories(), this.getModelElementCategory(), null, "categories", null, 0, -1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRootNode_EcoreDataTypes(), ecorePackage.getEDataType(), null, "ecoreDataTypes", null, 0, -1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelElementCategoryEClass, ModelElementCategory.class, "ModelElementCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelElementCategory_ModelElements(), theCorePackage.getExtendableElement(), null, "modelElements", null, 0, -1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

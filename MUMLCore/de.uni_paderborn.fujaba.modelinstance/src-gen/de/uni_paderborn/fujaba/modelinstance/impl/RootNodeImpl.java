@@ -30,7 +30,6 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.RootNodeImpl#getCategories <em>Categories</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.RootNodeImpl#getEcoreDataTypes <em>Ecore Data Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,16 +45,6 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 	 * @ordered
 	 */
 	protected EList<ModelElementCategory> categories;
-
-	/**
-	 * The cached value of the '{@link #getEcoreDataTypes() <em>Ecore Data Types</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEcoreDataTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EDataType> ecoreDataTypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,18 +82,6 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EDataType> getEcoreDataTypes() {
-		if (ecoreDataTypes == null) {
-			ecoreDataTypes = new EObjectResolvingEList<EDataType>(EDataType.class, this, ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES);
-		}
-		return ecoreDataTypes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -124,8 +101,6 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 		switch (featureID) {
 			case ModelinstancePackage.ROOT_NODE__CATEGORIES:
 				return getCategories();
-			case ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES:
-				return getEcoreDataTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,10 +118,6 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 				getCategories().clear();
 				getCategories().addAll((Collection<? extends ModelElementCategory>)newValue);
 				return;
-			case ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES:
-				getEcoreDataTypes().clear();
-				getEcoreDataTypes().addAll((Collection<? extends EDataType>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -162,9 +133,6 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 			case ModelinstancePackage.ROOT_NODE__CATEGORIES:
 				getCategories().clear();
 				return;
-			case ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES:
-				getEcoreDataTypes().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -179,8 +147,6 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 		switch (featureID) {
 			case ModelinstancePackage.ROOT_NODE__CATEGORIES:
 				return categories != null && !categories.isEmpty();
-			case ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES:
-				return ecoreDataTypes != null && !ecoreDataTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
