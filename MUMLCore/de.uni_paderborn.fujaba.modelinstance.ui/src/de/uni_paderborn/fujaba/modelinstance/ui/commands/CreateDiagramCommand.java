@@ -22,6 +22,7 @@ import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.util.StringStatics;
@@ -96,6 +97,8 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 		}
 
 		
+		boolean modelFileChanged = false;
+		
 		ModelElementCategory elementCategory = null;
 
 		if (!(element instanceof ExtendableElement)) {
@@ -111,6 +114,7 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 						elementCategory.getModelElements().add(
 								(ExtendableElement) diagramElement);
 						element = diagramElement;
+						modelFileChanged = true;
 					}
 				}
 			}
@@ -140,7 +144,11 @@ public class CreateDiagramCommand extends AbstractTransactionalCommand {
 
 		try {
 			Map<?, ?> saveOptions = DiagramEditorUtil.getSaveOptions();
-			modelResource.save(saveOptions);
+			if (modelFileChanged) {
+				modelResource.save(saveOptions);
+				DiagramEditorUtil.setCharset(WorkspaceSynchronizer
+						.getFile(modelResource));
+			}
 			diagramResource.save(saveOptions);
 		} catch (IOException e) {
 			FujabaNewwizardPlugin.getDefault().logError(
