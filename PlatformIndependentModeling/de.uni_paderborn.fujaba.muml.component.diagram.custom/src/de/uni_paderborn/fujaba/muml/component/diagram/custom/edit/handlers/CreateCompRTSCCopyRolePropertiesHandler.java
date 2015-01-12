@@ -5,6 +5,7 @@ import java.util.Iterator;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -32,12 +33,11 @@ public class CreateCompRTSCCopyRolePropertiesHandler extends AbstractHandler {
 		Iterator iter = ((IStructuredSelection) selection).iterator();
 		while (iter.hasNext()) {
 			GraphicalEditPart editPart = (GraphicalEditPart) iter.next();
-
+			EObject semanticElement = editPart.resolveSemanticElement();
 			// add StaticStructuredComponent to list
-			if (editPart instanceof AtomicComponent
-					&& ((AtomicComponent) editPart).getComponentKind() == ComponentKind.SOFTWARE_COMPONENT) {
-				AtomicComponent atomicComponent = (AtomicComponent) editPart
-						.resolveSemanticElement();
+			if (semanticElement instanceof AtomicComponent
+					&& ((AtomicComponent) semanticElement).getComponentKind() == ComponentKind.SOFTWARE_COMPONENT) {
+				AtomicComponent atomicComponent = (AtomicComponent) semanticElement;
 				for (Port port : atomicComponent.getPorts()) {
 					if (ComponentPackage.Literals.DISCRETE_PORT
 							.isSuperTypeOf(port.eClass())) {
