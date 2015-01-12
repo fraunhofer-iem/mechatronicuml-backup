@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.tests;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,6 +11,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 import org.junit.Test;
 
@@ -17,12 +19,11 @@ import de.uni_paderborn.fujaba.tests.resource.ProblemCollector;
 
 public abstract class NLSUnusedMessageTest {
 
-	private String[] pluginNames;
-	
-	public NLSUnusedMessageTest(String[] pluginNames) {
-		this.pluginNames = pluginNames;
-	}
+	private String pluginName;
 
+	public NLSUnusedMessageTest(String pluginName) {
+		this.pluginName = pluginName;
+	}
 
 	@Test
 	public void test() throws CoreException, IOException, URISyntaxException {
@@ -31,29 +32,30 @@ public abstract class NLSUnusedMessageTest {
 
 		Pattern regMessages = Pattern.compile("(.*)=(.*)");
 
-		for (String pluginName : pluginNames) {
-			File messageProperties = new File(Platform.getBundle(pluginName).getResource("messages.properties").toURI());
-			File srcFolder = new File(Platform.getBundle(pluginName).getResource("src").toURI());
-			LineIterator it = FileUtils
-					.lineIterator(messageProperties, "UTF-8");
-			try {
-				while (it.hasNext()) {
-					String line = it.nextLine();
-					Matcher m = regMessages.matcher(line);
-					if (line.matches(regMessages.toString())) {
-						String messageToLookFor = line.split("=")[0];
-						if (!searchRecursiveInJavaFiles(srcFolder, ".*"
-								+ messageToLookFor + ".*")) {
-							problems.add("Plugin:" + pluginName
-									+ " unused NLS Message: "
-									+ messageToLookFor + " not defined");
-						}
+		URL urlMessageProperties = Platform.getBundle(pluginName).getResource(
+				"messages.properties");
+		URL urlSrcFolder = Platform.getBundle(pluginName)
+				.getResource("src");
+		File messageProperties = new File(FileLocator.resolve(urlMessageProperties).toURI());
+		File srcFolder = new File(FileLocator.resolve(urlSrcFolder).toURI());
+		LineIterator it = FileUtils.lineIterator(messageProperties, "UTF-8");
+		try {
+			while (it.hasNext()) {
+				String line = it.nextLine();
+				if (line.matches(regMessages.toString())) {
+					String messageToLookFor = line.split("=")[0];
+					if (!searchRecursiveInJavaFiles(srcFolder, ".*"
+							+ messageToLookFor + ".*")) {
+						problems.add("Plugin:" + pluginName
+								+ " unused NLS Message: " + messageToLookFor
+								+ " not defined");
 					}
 				}
-			} finally {
-				LineIterator.closeQuietly(it);
 			}
+		} finally {
+			LineIterator.closeQuietly(it);
 		}
+
 		problems.fail();
 
 	}
