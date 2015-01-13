@@ -743,16 +743,17 @@ public class InstanceValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_SINGLE_PORT_INSTANCE__PORT_INSTANCE_NEEDS_DELEGATION_TO_PARENT_OR_ASSEMBLY__EEXPRESSION = "\n" +
-		"-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.\n" +
-		"not portConnectorInstances->select(\n" +
-		"\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n" +
-		"\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n" +
-		"\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\n" +
-		")->isEmpty() or\n" +
-		"not portConnectorInstances->select(\n" +
-		"\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n" +
-		")->isEmpty()";
+	protected static final String DISCRETE_SINGLE_PORT_INSTANCE__PORT_INSTANCE_NEEDS_DELEGATION_TO_PARENT_OR_ASSEMBLY__EEXPRESSION = "-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.\r\n" +
+		"(not self.componentInstance.topLevel) implies (\r\n" +
+		"not portConnectorInstances->select(\r\n" +
+		"\tci | ci.oclIsKindOf(DelegationConnectorInstance)\r\n" +
+		"\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\r\n" +
+		"\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\r\n" +
+		")->isEmpty() or\r\n" +
+		"not portConnectorInstances->select(\r\n" +
+		"\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\r\n" +
+		")->isEmpty()\r\n" +
+		")";
 
 	/**
 	 * Validates the PortInstanceNeedsDelegationToParentOrAssembly constraint of '<em>Discrete Single Port Instance</em>'.
