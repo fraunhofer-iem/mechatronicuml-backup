@@ -14564,18 +14564,18 @@
           <variable xsi:type="sdp:ObjectVariable" xmi:id="_x0TUgHyMEeSgTeWUASugdw" name="role" bindingState="BOUND" incomingLink="_-PEzIHyMEeSgTeWUASugdw">
             <classifier href="http://www.fujaba.de/muml/runtime/0.4.0#//SingleRoleInstance"/>
           </variable>
-          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_7Zd38HyMEeSgTeWUASugdw" source="_m-JqUHyMEeSgTeWUASugdw" target="_sFc7UHyMEeSgTeWUASugdw">
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_7Zd38HyMEeSgTeWUASugdw" name="l" source="_m-JqUHyMEeSgTeWUASugdw" target="_sFc7UHyMEeSgTeWUASugdw">
             <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//ProfileStore/roleProfiles"/>
           </linkVariable>
-          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_8s85EHyMEeSgTeWUASugdw" source="_sFc7UHyMEeSgTeWUASugdw" target="_vnnagHyMEeSgTeWUASugdw">
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_8s85EHyMEeSgTeWUASugdw" name="l" source="_sFc7UHyMEeSgTeWUASugdw" target="_vnnagHyMEeSgTeWUASugdw">
             <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/currentProfile"/>
           </linkVariable>
-          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_-PEzIHyMEeSgTeWUASugdw" source="_sFc7UHyMEeSgTeWUASugdw" target="_x0TUgHyMEeSgTeWUASugdw">
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_-PEzIHyMEeSgTeWUASugdw" name="l" source="_sFc7UHyMEeSgTeWUASugdw" target="_x0TUgHyMEeSgTeWUASugdw">
             <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/secondInstance"/>
           </linkVariable>
         </ownedRule>
       </ownedActivityNode>
-      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_GhMaUHyNEeSgTeWUASugdw" incoming="_INrxUHyNEeSgTeWUASugdw">
+      <ownedActivityNode xsi:type="sda:ActivityFinalNode" xmi:id="_GhMaUHyNEeSgTeWUASugdw" name="final" incoming="_INrxUHyNEeSgTeWUASugdw">
         <returnValues xsi:type="expr:TextualExpression" xmi:id="_GiI1gHyNEeSgTeWUASugdw" expressionText="" language="OCL" languageVersion="1.0"/>
       </ownedActivityNode>
     </modelElements>
@@ -14653,7 +14653,7 @@
           <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_OIJUEXiwEeSM8KwkAFk8ZA" name="r_2_role" bindingOperator="CREATE" source="_OIJUDniwEeSM8KwkAFk8ZA" target="_OIJUD3iwEeSM8KwkAFk8ZA">
             <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/roleInstance"/>
           </linkVariable>
-          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ojFFQHixEeSM8KwkAFk8ZA" bindingOperator="CREATE" source="_OIJUDniwEeSM8KwkAFk8ZA" target="_iih4EHixEeSM8KwkAFk8ZA">
+          <linkVariable xsi:type="sdp:LinkVariable" xmi:id="_ojFFQHixEeSM8KwkAFk8ZA" name="l" bindingOperator="CREATE" source="_OIJUDniwEeSM8KwkAFk8ZA" target="_iih4EHixEeSM8KwkAFk8ZA">
             <targetEnd href="http://www.fujaba.de/muml/examples/profiles/0.3.2#//RoleProfiles/secondInstance"/>
           </linkVariable>
         </ownedRule>
