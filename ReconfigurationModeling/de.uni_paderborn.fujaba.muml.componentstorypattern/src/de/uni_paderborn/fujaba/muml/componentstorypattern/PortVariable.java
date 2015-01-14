@@ -40,7 +40,7 @@ public interface PortVariable extends ComponentStoryPatternVariable, ConnectorEn
 	 * @return the value of the '<em>Port Type</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getPortVariable_PortType()
 	 * @model required="true" transient="true" changeable="false" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.dataType.oclAsType(muml::component::Port)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.dataType.oclAsType(component::Port)'"
 	 * @generated
 	 */
 	Port getPortType();

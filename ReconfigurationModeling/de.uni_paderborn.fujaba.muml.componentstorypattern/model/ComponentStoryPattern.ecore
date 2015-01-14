@@ -51,7 +51,7 @@
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"
         changeable="false" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.dataType.oclAsType(muml::component::Port)"/>
+        <details key="derivation" value="self.dataType.oclAsType(component::Port)"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
@@ -76,7 +76,7 @@
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart"
         changeable="false" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.dataType.oclAsType(muml::component::ComponentPart)"/>
+        <details key="derivation" value="self.dataType.oclAsType(component::ComponentPart)"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

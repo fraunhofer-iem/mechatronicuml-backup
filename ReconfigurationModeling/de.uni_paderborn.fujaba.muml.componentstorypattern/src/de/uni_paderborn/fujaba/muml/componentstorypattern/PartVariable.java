@@ -54,7 +54,7 @@ public interface PartVariable extends ComponentStoryPatternVariable, TypedNamedE
 	 * @return the value of the '<em>Component Part Type</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getPartVariable_ComponentPartType()
 	 * @model required="true" transient="true" changeable="false" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.dataType.oclAsType(muml::component::ComponentPart)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.dataType.oclAsType(component::ComponentPart)'"
 	 * @generated
 	 */
 	ComponentPart getComponentPartType();

@@ -956,7 +956,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (getPortVariable_PortType(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.dataType.oclAsType(muml::component::Port)"
+			 "derivation", "self.dataType.oclAsType(component::Port)"
 		   });	
 		addAnnotation
 		  (getPortVariable_ConnectorVariables(), 
@@ -975,7 +975,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (getPartVariable_ComponentPartType(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.dataType.oclAsType(muml::component::ComponentPart)"
+			 "derivation", "self.dataType.oclAsType(component::ComponentPart)"
 		   });	
 		addAnnotation
 		  (connectorVariableEClass, 
