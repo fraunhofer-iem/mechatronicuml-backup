@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getAssemblyVariable()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExistingConnectorBetweenPortVariableTypes='if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.dataType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExistingAssemblyConnectorBetweenPortVariableTypes='if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.portType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ExistingConnectorBetweenPortVariableTypes'"
  * @generated
  */

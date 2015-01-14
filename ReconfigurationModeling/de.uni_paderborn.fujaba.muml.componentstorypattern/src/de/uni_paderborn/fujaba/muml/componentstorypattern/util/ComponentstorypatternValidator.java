@@ -545,38 +545,31 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ExistingConnectorBetweenPortVariableTypes constraint of '<em>Assembly Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_VARIABLE__EXISTING_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION = "if not self.type.oclIsUndefined() then\r\n" +
-		"\tlet selfPorts = self.portVariables.dataType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n" +
-		"\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\n" +
-		"else\r\n" +
-		"\t\tfalse\r\n" +
-		"endif\r\n" +
-		"";
-
-	/**
 	 * Validates the ExistingConnectorBetweenPortVariableTypes constraint of '<em>Assembly Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateAssemblyVariable_ExistingConnectorBetweenPortVariableTypes(AssemblyVariable assemblyVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentstorypatternPackage.Literals.ASSEMBLY_VARIABLE,
-				 assemblyVariable,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ExistingConnectorBetweenPortVariableTypes",
-				 ASSEMBLY_VARIABLE__EXISTING_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ExistingConnectorBetweenPortVariableTypes", getObjectLabel(assemblyVariable, context) },
+						 new Object[] { assemblyVariable },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -607,15 +600,16 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DELEGATION_VARIABLE__EXISTING_DELEGATION_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION = "if not self.type.oclIsUndefined() then\r\n" +
-		"\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |\r\n" +
+		"\tlet selfPorts : OrderedSet(muml::component::Port) = self.portVariables.portType.oclAsType(muml::component::Port)->asOrderedSet(),\r\n" +
+		"\ttypePorts: OrderedSet(muml::component::Port) = self.type.connectorEndpoints->collect( cE |\r\n" +
 		"\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n" +
 		"      then cE.oclAsType(muml::component::PortPart).portType\r\n" +
 		"\t  else \r\n" +
-		"\t  \tif cE.oclIsTypeOf(muml::component::Port)\r\n" +
+		"\t  \tif cE.oclIsKindOf(muml::component::Port)\r\n" +
 		"\t  \tthen cE.oclAsType(muml::component::Port)\r\n" +
 		"\t  \telse  null\r\n" +
 		"\t  \tendif\r\n" +
-		"\t  endif)\r\n" +
+		"\t  endif)->asOrderedSet()\r\n" +
 		"\tin \r\n" +
 		"\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\n" +
 		"else\r\n" +

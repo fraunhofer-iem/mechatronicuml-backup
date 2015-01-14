@@ -994,13 +994,13 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (assemblyVariableEClass, 
 		   source, 
 		   new String[] {
-			 "ExistingConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.dataType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n"
+			 "ExistingAssemblyConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.portType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif\r\n"
 		   });	
 		addAnnotation
 		  (delegationVariableEClass, 
 		   source, 
 		   new String[] {
-			 "ExistingDelegationConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsTypeOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif"
+			 "ExistingDelegationConnectorBetweenPortVariableTypes", "if not self.type.oclIsUndefined() then\r\n\tlet selfPorts : OrderedSet(muml::component::Port) = self.portVariables.portType.oclAsType(muml::component::Port)->asOrderedSet(),\r\n\ttypePorts: OrderedSet(muml::component::Port) = self.type.connectorEndpoints->collect( cE |\r\n\t  if cE.oclIsTypeOf(muml::component::PortPart)\t\r\n      then cE.oclAsType(muml::component::PortPart).portType\r\n\t  else \r\n\t  \tif cE.oclIsKindOf(muml::component::Port)\r\n\t  \tthen cE.oclAsType(muml::component::Port)\r\n\t  \telse  null\r\n\t  \tendif\r\n\t  endif)->asOrderedSet()\r\n\tin \r\n\tselfPorts->intersection(typePorts)->size() = 2\t\t\r\nelse\r\n\t\tfalse\r\nendif"
 		   });	
 		addAnnotation
 		  (multiPortVariableEClass, 

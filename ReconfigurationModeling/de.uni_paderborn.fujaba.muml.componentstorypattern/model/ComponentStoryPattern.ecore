@@ -98,7 +98,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyVariable" eSuperTypes="#//ConnectorVariable">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="ExistingConnectorBetweenPortVariableTypes" value="if not self.type.oclIsUndefined() then&#xD;&#xA;&#x9;let selfPorts = self.portVariables.dataType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in &#xD;&#xA;&#x9;selfPorts->intersection(typePorts)->size() = 2&#x9;&#x9;&#xD;&#xA;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;endif&#xD;&#xA;"/>
+      <details key="ExistingAssemblyConnectorBetweenPortVariableTypes" value="if not self.type.oclIsUndefined() then&#xD;&#xA;&#x9;let selfPorts = self.portVariables.portType.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints.oclAsType(muml::component::PortPart).portType in &#xD;&#xA;&#x9;selfPorts->intersection(typePorts)->size() = 2&#x9;&#x9;&#xD;&#xA;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;endif&#xD;&#xA;"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="ExistingConnectorBetweenPortVariableTypes"/>
@@ -111,7 +111,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelegationVariable" eSuperTypes="#//ConnectorVariable">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="ExistingDelegationConnectorBetweenPortVariableTypes" value="if not self.type.oclIsUndefined() then&#xD;&#xA;&#x9;let selfPorts = self.portVariables.type.oclAsType(muml::component::Port), typePorts = self.type.connectorEndpoints->collect( cE |&#xD;&#xA;&#x9;  if cE.oclIsTypeOf(muml::component::PortPart)&#x9;&#xD;&#xA;      then cE.oclAsType(muml::component::PortPart).portType&#xD;&#xA;&#x9;  else &#xD;&#xA;&#x9;  &#x9;if cE.oclIsTypeOf(muml::component::Port)&#xD;&#xA;&#x9;  &#x9;then cE.oclAsType(muml::component::Port)&#xD;&#xA;&#x9;  &#x9;else  null&#xD;&#xA;&#x9;  &#x9;endif&#xD;&#xA;&#x9;  endif)&#xD;&#xA;&#x9;in &#xD;&#xA;&#x9;selfPorts->intersection(typePorts)->size() = 2&#x9;&#x9;&#xD;&#xA;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;endif"/>
+      <details key="ExistingDelegationConnectorBetweenPortVariableTypes" value="if not self.type.oclIsUndefined() then&#xD;&#xA;&#x9;let selfPorts : OrderedSet(muml::component::Port) = self.portVariables.portType.oclAsType(muml::component::Port)->asOrderedSet(),&#xD;&#xA;&#x9;typePorts: OrderedSet(muml::component::Port) = self.type.connectorEndpoints->collect( cE |&#xD;&#xA;&#x9;  if cE.oclIsTypeOf(muml::component::PortPart)&#x9;&#xD;&#xA;      then cE.oclAsType(muml::component::PortPart).portType&#xD;&#xA;&#x9;  else &#xD;&#xA;&#x9;  &#x9;if cE.oclIsKindOf(muml::component::Port)&#xD;&#xA;&#x9;  &#x9;then cE.oclAsType(muml::component::Port)&#xD;&#xA;&#x9;  &#x9;else  null&#xD;&#xA;&#x9;  &#x9;endif&#xD;&#xA;&#x9;  endif)->asOrderedSet()&#xD;&#xA;&#x9;in &#xD;&#xA;&#x9;selfPorts->intersection(typePorts)->size() = 2&#x9;&#x9;&#xD;&#xA;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;endif"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="ExistingDelegationConnectorBetweenPortVariableTypes"/>
