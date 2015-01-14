@@ -61,7 +61,7 @@ public class OperationExtensionOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.oclAsType(Callable).out->size() <= 1";
+	protected static final String NUMBER_OF_OUT_PARAMS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.oclAsType(calls::Callable).outParameter->size() <= 1";
 
 	/**
 	 * The cached OCL invariant for the '{@link #NumberOfOutParams(OperationExtension, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Number Of Out Params</em>}' invariant operation.

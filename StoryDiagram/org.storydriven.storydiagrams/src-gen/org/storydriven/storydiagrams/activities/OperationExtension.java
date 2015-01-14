@@ -155,7 +155,7 @@ public interface OperationExtension extends Extension, Callable {
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.oclAsType(Callable).out->size() <= 1'"
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.oclAsType(calls::Callable).outParameter->size() <= 1'"
 	 * @generated
 	 */
 	boolean NumberOfOutParams(DiagnosticChain diagnostics,

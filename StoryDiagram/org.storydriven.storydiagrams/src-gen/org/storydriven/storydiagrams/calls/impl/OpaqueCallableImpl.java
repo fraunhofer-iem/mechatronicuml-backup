@@ -65,6 +65,25 @@ public class OpaqueCallableImpl extends CallableImpl implements OpaqueCallable {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getInParameters() <em>In Parameter</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EParameter> inParameters;
+	/**
+	 * The cached value of the '{@link #getOutParameters() <em>Out Parameter</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EParameter> outParameters;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */

@@ -1463,8 +1463,9 @@ public class ActivitiesPackageImpl extends EPackageImpl implements
 		String source = "http://www.eclipse.org/uml2/1.1.0/GenModel";
 		addAnnotation(
 				getOperationExtension__NumberOfOutParams__DiagnosticChain_Map(),
-				source, new String[] { "body",
-						"self.oclAsType(Callable).out->size() <= 1" });
+				source,
+				new String[] { "body",
+						"self.oclAsType(calls::Callable).outParameter->size() <= 1" });
 	}
 
 	/**
