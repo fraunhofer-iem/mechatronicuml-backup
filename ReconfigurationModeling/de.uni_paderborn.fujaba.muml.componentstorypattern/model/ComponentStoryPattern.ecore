@@ -161,7 +161,7 @@
       <details key="documentation" value="A FadingComponentVariable refers to a FadingComponent and enables to &#xD;&#xA;specify a FadingFunction that needs to be carried out as part of the reconfiguration.&#xD;&#xA;FadingComponentVariables may only be contained in ControllerExchangeNodes."/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="AppliedFadingFunctionIsContainedInType" value=" let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in&#xD;&#xA;&#x9;self.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1"/>
+      <details key="AppliedFadingFunctionIsContainedInType" value=" let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in&#xD;&#xA; &#x9;if fadingFunction.oclIsUndefined()&#xD;&#xA; &#x9;then true&#xD;&#xA; &#x9;else&#xD;&#xA;&#x9;&#x9;self.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction&#xD;&#xA;&#x9;&#x9;->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1&#xD;&#xA;&#x9;endif"/>
       <details key="NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode"
           value="if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)&#xD;&#xA;&#x9;then self.appliedFadingFunction.oclIsUndefined()&#xD;&#xA;else true&#xD;&#xA;endif"/>
     </eAnnotations>

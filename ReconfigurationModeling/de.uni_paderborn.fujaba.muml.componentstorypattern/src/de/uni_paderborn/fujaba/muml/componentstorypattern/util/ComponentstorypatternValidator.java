@@ -717,7 +717,12 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String FADING_COMPONENT_PART_VARIABLE__APPLIED_FADING_FUNCTION_IS_CONTAINED_IN_TYPE__EEXPRESSION = " let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n" +
-		"\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1";
+		" \tif fadingFunction.oclIsUndefined()\r\n" +
+		" \tthen true\r\n" +
+		" \telse\r\n" +
+		"\t\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction\r\n" +
+		"\t\t->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1\r\n" +
+		"\tendif";
 
 	/**
 	 * Validates the AppliedFadingFunctionIsContainedInType constraint of '<em>Fading Component Part Variable</em>'.

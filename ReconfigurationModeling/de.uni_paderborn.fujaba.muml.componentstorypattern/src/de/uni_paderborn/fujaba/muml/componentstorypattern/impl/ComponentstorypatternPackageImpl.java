@@ -1018,7 +1018,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (fadingComponentPartVariableEClass, 
 		   source, 
 		   new String[] {
-			 "AppliedFadingFunctionIsContainedInType", " let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1",
+			 "AppliedFadingFunctionIsContainedInType", " let fadingFunction : reconfiguration::FadingFunction = self.appliedFadingFunction.oclAsType(reconfiguration::FadingFunction) in\r\n \tif fadingFunction.oclIsUndefined()\r\n \tthen true\r\n \telse\r\n\t\tself.dataType.oclAsType(muml::component::ComponentPart).componentType.oclAsType(reconfiguration::FadingComponent).fadingFunction\r\n\t\t->select(curFadingFunction : reconfiguration::FadingFunction| curFadingFunction = fadingFunction)->size()=1\r\n\tendif",
 			 "NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode", "if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n\tthen self.appliedFadingFunction.oclIsUndefined()\r\nelse true\r\nendif"
 		   });
 	}
