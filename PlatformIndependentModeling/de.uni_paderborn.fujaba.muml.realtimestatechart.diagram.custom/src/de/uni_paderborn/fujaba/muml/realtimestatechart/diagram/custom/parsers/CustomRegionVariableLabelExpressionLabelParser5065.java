@@ -21,7 +21,7 @@ public class CustomRegionVariableLabelExpressionLabelParser5065 extends
 		// TODO Auto-generated method stub
 		Region region = (Region) element.getAdapter(EObject.class);
 		RealtimeStatechart stateChart =  region.getEmbeddedStatechart();
-		EList<Variable> variableList = stateChart.getAllAvailableVariables();
+		EList<Variable> variableList = stateChart.getVariables();
 		EList<Operation> operationList = stateChart.getOperations();
 		EList<Clock> clockList = stateChart.getClocks();
 
