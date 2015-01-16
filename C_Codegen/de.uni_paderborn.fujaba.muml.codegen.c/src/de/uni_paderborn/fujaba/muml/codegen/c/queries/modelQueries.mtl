@@ -10,9 +10,7 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
-				'http://www.fujaba.de/muml/hardware/1.0/')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
 
 
 
@@ -67,37 +65,6 @@ else
 	endif
 endif
 /]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 [query public getContinuousPortInstance(hpi : HybridPortInstance) : ContinuousPortInstance =
 if (hpi.portConnectorInstances.connectorEndpointInstances->at(1) = hpi) then
@@ -328,35 +295,4 @@ receiverMessages->union(senderMessages)->asOrderedSet()
 [query public getAllDiscretePortInstances (CIs : OrderedSet(ComponentInstance)) : Set(DiscretePortInstance) = 
 CIs->collect(portInstances)->asOrderedSet() /]
 
-
-[**
- * computes all messages, that are used in the whole codegen-model (the complete system)
- * @param codegen a codegen-model
- * @return Set of all messages used in the given codegen model
-*/]
-[query public getAllUsedMessages (codegen: CodGenAllocation) : Set(MessageType) = 
-let receiverMessages:Set(MessageType) = codegen.eAllContents(RefinedStructuredResourceInstance).allocatedAtomicComponentInstances.portInstances.oclAsType(DiscretePortInstance)->collect(receiverMessageTypes)->asSet() in
-let senderMessages:Set(MessageType) = codegen.eAllContents(RefinedStructuredResourceInstance).allocatedAtomicComponentInstances.portInstances.oclAsType(DiscretePortInstance)->collect(senderMessageTypes)->asSet() in
-receiverMessages->union(senderMessages)->asOrderedSet()
- /]
-
-[**
- * computes all messages, that are used on a specific ECU.
- * this means all messages, which are sent or can be received by a given ECU
- * @param rsri the ECU
- * @return Set of all messages used in the given codegen model
-*/]
-[query public getAllUsedMessagesForECU (rsri: RefinedStructuredResourceInstance) : Set(MessageType) = 
-let receiverMessages:Set(MessageType) = rsri.allocatedAtomicComponentInstances.portInstances.oclAsType(DiscretePortInstance)->collect(receiverMessageTypes)->asSet() in
-let senderMessages:Set(MessageType) = rsri.allocatedAtomicComponentInstances.portInstances.oclAsType(DiscretePortInstance)->collect(senderMessageTypes)->asSet() in
-receiverMessages->union(senderMessages)->asOrderedSet()
- /]
-
-[**
- * computes an (ordered) set of all DiscretePortInstances of a given codegen-model (the complete system)
- * @param codegen the codegen-model
- * @return Set of all DiscretePortInstances
-*/]
-[query public getAllDiscretePortInstances (codegen: CodGenAllocation) : Set(DiscretePortInstance) = 
-codegen.eAllContents(ComponentInstance)->collect(portInstances)->asOrderedSet() /]
 

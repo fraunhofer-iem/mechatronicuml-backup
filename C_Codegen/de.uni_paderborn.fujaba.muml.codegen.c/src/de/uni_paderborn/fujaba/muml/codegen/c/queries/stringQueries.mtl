@@ -10,9 +10,7 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
-				'http://www.fujaba.de/muml/hardware/1.0/')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [**
  * The documentation of the query generateElement.
@@ -66,12 +64,7 @@ getName(mb.name) + pi.componentInstance.getName() /]
 	rtsc.getName()+'_isExecutable'
 /]
 
-[**
- * @param hardware port
-*/]
-[query public getName(port : HWPortInstance) : String = 
-	getName(port.name) 
-/]
+
 
 [**
  * @param syncChannel
@@ -103,14 +96,6 @@ getName(mb.name) + pi.componentInstance.getName() /]
 [query public getName(componentPart : ComponentPart) : String = 
 	getName(componentPart.name)
 /]
-
-[**
- * returns the IdentifierName (C-Macro definition) for a given RefinedStructuredResource (ECU)
- * @param rsri the RefinedStructuredResource
- * @return the IdentifierVarialbeName for the given RSRI
-*/]
-[query public getIdentifierVariableName (rsri: RefinedStructuredResourceInstance) : String = 
-'ECU_'+rsri.getName().toUpperCase()/]
 
 [query public getName(cInst : ComponentInstance) : String = 
 	getName(cInst.name)
@@ -550,9 +535,6 @@ getName(channel.name)
 
 /]
 
-[query public getName(rsri : RefinedStructuredResourceInstance) : String =
-	rsri.oclAsType(StructuredResourceInstance).name.getName().toLowerFirst()	
-/]
 
 
 
