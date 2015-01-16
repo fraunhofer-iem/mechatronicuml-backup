@@ -15187,7 +15187,6 @@
           <bufferSize xmi:id="_-2mR8HSQEeSCfN0RxbcB5A" infinity="true"/>
         </receiverMessageBuffer>
         <interfaceEntries xmi:id="__g3W8HSQEeSCfN0RxbcB5A" description="Creates new port instances for dealing with an additional member driving at first position." messageType="_IDFsIHSQEeSCfN0RxbcB5A">
-          <extension xsi:type="sda:OperationExtension" xmi:id="_EYiskHxdEeSD-L58ibcuaw"/>
           <timeForDecision xmi:id="_NyhesHSREeSCfN0RxbcB5A">
             <value xsi:type="sdcec:LiteralExpression" xmi:id="_OKLJsHSREeSCfN0RxbcB5A" value="5"/>
           </timeForDecision>
