@@ -10,7 +10,9 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
+				'http://www.fujaba.de/muml/hardware/1.0/')]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
@@ -54,3 +56,36 @@ msgT.getVariableName()+'_write_delimited_to'/]
 [query public getMethodName(op : Operation) : String =
 	op.getName()	
 /]
+
+[**
+ * returns the send-function-name for a given network interface
+ * this function can be used to send a message via this network interface.
+ * after calling this template, you have to add brackets and parameters to complete the signature for
+ * this function
+ * @param hwp the network interface
+ * @return the name of the send-function without brackets and parameters
+*/]
+[query public getSendMethodName (hwp: HWPort) : String = 
+'networkInterface_'+hwp.name.getName().toUpperFirst()+'_send'/]
+
+[**
+ * returns the receive-function-name for a given network interface
+ * this function can be used to receive a message via this network interface.
+ * after calling this template, you have to add brackets and parameters to complete the signature for
+ * this function
+ * @param hwp the network interface
+ * @return the name of the receive-function without brackets and parameters
+*/]
+[query public getReceiveMethodName (hwp: HWPort) : String = 
+'networkInterface_'+hwp.name.getName().toUpperFirst()+'_receive'/]
+
+[**
+ * returns the init-function-name for a given network interface
+ * this function can be used to initialize this network interface.
+ * after calling this template, you have to add brackets and parameters to complete the signature for
+ * this function
+ * @param hwp the network interface
+ * @return the name of the init-function without brackets and parameters
+*/]
+[query public getInitMethodName (hwp: HWPort) : String = 
+'networkInterface_'+hwp.name.getName().toUpperFirst()+'_init'/]
