@@ -44,6 +44,17 @@
             <element xmi:type="realtimestatechart:Region" href="fraunhoferDemo.muml#_PrSsQJRQEeSZM-zEIRk3lw"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PrcdQZRQEeSZM-zEIRk3lw"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_JT4-gJ6GEeSNj-oH_1Kb-Q" type="3042" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_JT4-gp6GEeSNj-oH_1Kb-Q" type="5063"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_JT4-g56GEeSNj-oH_1Kb-Q" type="5064"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_JT8B0J6GEeSNj-oH_1Kb-Q" type="5065"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_JT8B0Z6GEeSNj-oH_1Kb-Q" type="7037">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_JT8B0p6GEeSNj-oH_1Kb-Q"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_JT8B056GEeSNj-oH_1Kb-Q"/>
+            </children>
+            <element xmi:type="realtimestatechart:Region" href="fraunhoferDemo.muml#_JTv0kJ6GEeSNj-oH_1Kb-Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JT4-gZ6GEeSNj-oH_1Kb-Q"/>
+          </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_Q3Iml5RLEeSZM-zEIRk3lw"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_Q3ImmJRLEeSZM-zEIRk3lw"/>
         </children>
@@ -56,11 +67,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_Q3ImnpRLEeSZM-zEIRk3lw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="fraunhoferDemo.muml#_d_KZkZOXEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q3ImkZRLEeSZM-zEIRk3lw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q3ImkZRLEeSZM-zEIRk3lw" width="615" height="515"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="fraunhoferDemo.muml#_d_KZkJOXEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q2_co5RLEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q2_co5RLEeSZM-zEIRk3lw" width="661" height="613"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_d_LAoZOXEeSZM-zEIRk3lw"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="fraunhoferDemo.muml#_d_KZkJOXEeSZM-zEIRk3lw"/>

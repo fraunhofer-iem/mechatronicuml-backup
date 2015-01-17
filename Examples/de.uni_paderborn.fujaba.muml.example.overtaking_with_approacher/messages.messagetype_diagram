@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Az4cwJKHEeSSMde45fnrcg" type="Message Type" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:behavior="http://www.fujaba.de/muml/behavior/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Az4cwJKHEeSSMde45fnrcg" type="Message Type" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_NZVKQJKbEeSSMde45fnrcg" type="2008" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_NZY0oJKbEeSSMde45fnrcg" type="5017"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_NZeUMJKbEeSSMde45fnrcg" type="7010">
@@ -42,6 +42,11 @@
       <children xmi:type="notation:Shape" xmi:id="_h8Gt8JKfEeSSMde45fnrcg" type="3007" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_h8HVAJKfEeSSMde45fnrcg" type="5014"/>
         <children xmi:type="notation:BasicCompartment" xmi:id="_h8HVAZKfEeSSMde45fnrcg" type="7009">
+          <children xmi:type="notation:Shape" xmi:id="_PNiLEJ6JEeSNj-oH_1Kb-Q" type="3009" fontName="Segoe UI" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_PNiLEp6JEeSNj-oH_1Kb-Q" type="5016"/>
+            <element xmi:type="behavior:Parameter" href="fraunhoferDemo.muml#_PNP3MJ6JEeSNj-oH_1Kb-Q"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PNiLEZ6JEeSNj-oH_1Kb-Q"/>
+          </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_h8HVApKfEeSSMde45fnrcg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_h8HVA5KfEeSSMde45fnrcg"/>
         </children>
@@ -137,6 +142,24 @@
         </children>
         <element xmi:type="msgtype:MessageType" href="fraunhoferDemo.muml#_1OxI4JnbEeSlOsDDn13LAA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1OxI4pnbEeSlOsDDn13LAA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_fnKV0J6SEeSNj-oH_1Kb-Q" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fnKV0p6SEeSNj-oH_1Kb-Q" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_fnKV056SEeSNj-oH_1Kb-Q" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fnKV1J6SEeSNj-oH_1Kb-Q"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fnKV1Z6SEeSNj-oH_1Kb-Q"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="fraunhoferDemo.muml#_fnBL4J6SEeSNj-oH_1Kb-Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fnKV0Z6SEeSNj-oH_1Kb-Q"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_hONzMZ6SEeSNj-oH_1Kb-Q" type="3007" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_hONzM56SEeSNj-oH_1Kb-Q" type="5014"/>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_hONzNJ6SEeSNj-oH_1Kb-Q" type="7009">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_hONzNZ6SEeSNj-oH_1Kb-Q"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_hONzNp6SEeSNj-oH_1Kb-Q"/>
+        </children>
+        <element xmi:type="msgtype:MessageType" href="fraunhoferDemo.muml#_hONzMJ6SEeSNj-oH_1Kb-Q"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hONzMp6SEeSNj-oH_1Kb-Q"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_NZeUMZKbEeSSMde45fnrcg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_NZeUMpKbEeSSMde45fnrcg"/>

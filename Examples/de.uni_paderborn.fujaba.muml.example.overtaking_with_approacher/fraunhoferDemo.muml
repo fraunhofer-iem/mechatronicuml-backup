@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--muml metamodel version 0.3.2 (r2996)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_FB0TQJJ7EeSSMde45fnrcg">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_FB0TQJJ7EeSSMde45fnrcg">
   <categories xmi:id="_FB0TQZJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TQpJ7EeSSMde45fnrcg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TQ5J7EeSSMde45fnrcg" name="BOOLEAN" primitiveType="BOOLEAN"/>
@@ -56,16 +56,21 @@
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_50iXQJOSEeSZM-zEIRk3lw" name="controllerRoleRTSC" behavioralElement="_DCETQZOSEeSZM-zEIRk3lw">
       <states xmi:id="_50iXQZOSEeSZM-zEIRk3lw" name="init" initial="true"/>
     </modelElements>
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_bwVxkJOXEeSZM-zEIRk3lw" name="approacherCommunicatorRTSC" behavioralElement="_9YInkJOXEeSZM-zEIRk3lw">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_bwVxkJOXEeSZM-zEIRk3lw" name="approacherCommunicatorRTSC" behavioralElement="_ZJhDUJ6aEeSB5YpXOU2UeA">
       <states xmi:id="_bwVxkZOXEeSZM-zEIRk3lw" name="init" initial="true">
         <embeddedRegions xmi:id="_a3_gIJROEeSZM-zEIRk3lw" priority="1">
-          <embeddedStatechart xmi:id="_a3_gIZROEeSZM-zEIRk3lw" name="vehicleApproacherPortRTSC" behavioralElement="_1vqtMJROEeSZM-zEIRk3lw">
+          <embeddedStatechart xmi:id="_a3_gIZROEeSZM-zEIRk3lw" name="vehicleApproacherPortRTSC" behavioralElement="__agSAJ6aEeSB5YpXOU2UeA">
             <states xmi:id="_a3_gIpROEeSZM-zEIRk3lw" name="init" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_ZcNpMJRPEeSZM-zEIRk3lw" priority="2">
-          <embeddedStatechart xmi:id="_ZcNpMZRPEeSZM-zEIRk3lw" name="limitDrivingPortRTSC" behavioralElement="_kidk4JRPEeSZM-zEIRk3lw">
+          <embeddedStatechart xmi:id="_ZcNpMZRPEeSZM-zEIRk3lw" name="limitDrivingPortRTSC" behavioralElement="_zVXsMJ6aEeSB5YpXOU2UeA">
             <states xmi:id="_ZcNpMpRPEeSZM-zEIRk3lw" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_QziJcJ6SEeSNj-oH_1Kb-Q" priority="3">
+          <embeddedStatechart xmi:id="_QziJcZ6SEeSNj-oH_1Kb-Q" name="informApproacherPortRTSC" behavioralElement="_ioqeUJ6aEeSB5YpXOU2UeA">
+            <states xmi:id="_QziJcp6SEeSNj-oH_1Kb-Q" name="init" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
       </states>
@@ -87,6 +92,11 @@
             <states xmi:id="_tcHl0pRSEeSZM-zEIRk3lw" name="init" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
+        <embeddedRegions xmi:id="_KYBekJ6SEeSNj-oH_1Kb-Q" priority="4">
+          <embeddedStatechart xmi:id="_KYBekZ6SEeSNj-oH_1Kb-Q" name="informOvertakeePortRTSC">
+            <states xmi:id="_KYBekp6SEeSNj-oH_1Kb-Q" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_d_KZkJOXEeSZM-zEIRk3lw" name="overtakerCommunicatorRTSC" behavioralElement="_5PGVoJOXEeSZM-zEIRk3lw">
@@ -106,23 +116,108 @@
             <states xmi:id="_PrSsQpRQEeSZM-zEIRk3lw" name="init" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
+        <embeddedRegions xmi:id="_JTv0kJ6GEeSNj-oH_1Kb-Q" priority="4">
+          <embeddedStatechart xmi:id="_JTy34J6GEeSNj-oH_1Kb-Q" name="requestorPortRTSC" behavioralElement="_2RHRIJ6FEeSNj-oH_1Kb-Q">
+            <states xmi:id="_JT17MJ6GEeSNj-oH_1Kb-Q" name="init" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
       </states>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_TSZNgJOaEeSZM-zEIRk3lw" name="sectionControlRTSC" behavioralElement="_LUR84JOZEeSZM-zEIRk3lw">
+      <variables xmi:id="_ZxZOkJ6NEeSNj-oH_1Kb-Q" name="secIDapproacher" dataType="_FB0TRpJ7EeSSMde45fnrcg"/>
+      <variables xmi:id="_fmlgUJ6NEeSNj-oH_1Kb-Q" name="secIDovertakee" dataType="_FB0TRpJ7EeSSMde45fnrcg"/>
+      <variables xmi:id="_kMy2cJ6NEeSNj-oH_1Kb-Q" name="constNumSecDifference" dataType="_FB0TRpJ7EeSSMde45fnrcg" constant="true">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_Y7NikJ6PEeSNj-oH_1Kb-Q" value="2"/>
+      </variables>
+      <variables xmi:id="_m8YpMJ6NEeSNj-oH_1Kb-Q" name="secIDovertaker" dataType="_FB0TRpJ7EeSSMde45fnrcg"/>
       <states xmi:id="_TSZNgZOaEeSZM-zEIRk3lw" name="init" initial="true">
         <embeddedRegions xmi:id="_hyfpkJRNEeSZM-zEIRk3lw" priority="1">
           <embeddedStatechart xmi:id="_hyozgJRNEeSZM-zEIRk3lw" name="sectionOvertakeePortRTSC" behavioralElement="_uCcYQJRNEeSZM-zEIRk3lw">
-            <states xmi:id="_hyozgZRNEeSZM-zEIRk3lw" name="init" initial="true"/>
+            <transitions xmi:id="_9HsnEJ6IEeSNj-oH_1Kb-Q" priority="1" target="_hyozgZRNEeSZM-zEIRk3lw" source="_hyozgZRNEeSZM-zEIRk3lw">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_EizGsJ6JEeSNj-oH_1Kb-Q" kind="TRIGGER">
+                <message xmi:id="_FYeKcJ6JEeSNj-oH_1Kb-Q" instanceOf="_h8AAQJKfEeSSMde45fnrcg"/>
+              </events>
+              <action xmi:id="_ZVxJ4J6KEeSNj-oH_1Kb-Q" name="getSecIDovertakee">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_UKroQJ6OEeSNj-oH_1Kb-Q">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_UKroQZ6OEeSNj-oH_1Kb-Q" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_UKroQp6OEeSNj-oH_1Kb-Q" messageType="_h8AAQJKfEeSSMde45fnrcg" parameter="_PNP3MJ6JEeSNj-oH_1Kb-Q"/>
+                    <lhs_typedNamedElementExpression xmi:id="_UKroQ56OEeSNj-oH_1Kb-Q" typedNamedElement="_fmlgUJ6NEeSNj-oH_1Kb-Q"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_hyozgZRNEeSZM-zEIRk3lw" name="init" outgoingTransitions="_9HsnEJ6IEeSNj-oH_1Kb-Q" incomingTransitions="_9HsnEJ6IEeSNj-oH_1Kb-Q" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_kOcuoJRNEeSZM-zEIRk3lw" priority="2">
           <embeddedStatechart xmi:id="_kOcuoZRNEeSZM-zEIRk3lw" name="sectionOvertakerPortRTSC" behavioralElement="_tjyGUJRNEeSZM-zEIRk3lw">
-            <states xmi:id="_kOcuopRNEeSZM-zEIRk3lw" name="init" initial="true"/>
+            <transitions xmi:id="_l-e94J6KEeSNj-oH_1Kb-Q" priority="1" target="_kOcuopRNEeSZM-zEIRk3lw" source="_kOcuopRNEeSZM-zEIRk3lw">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_rVqd8J6KEeSNj-oH_1Kb-Q" kind="TRIGGER">
+                <message xmi:id="_r7g9AJ6KEeSNj-oH_1Kb-Q" instanceOf="_h8AAQJKfEeSSMde45fnrcg"/>
+              </events>
+              <action xmi:id="_yHQtkJ6KEeSNj-oH_1Kb-Q" name="getSecIDovertaker">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_X4pu0J6OEeSNj-oH_1Kb-Q">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_X4pu0Z6OEeSNj-oH_1Kb-Q" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_X4pu0p6OEeSNj-oH_1Kb-Q" messageType="_h8AAQJKfEeSSMde45fnrcg" parameter="_PNP3MJ6JEeSNj-oH_1Kb-Q"/>
+                    <lhs_typedNamedElementExpression xmi:id="_X4pu056OEeSNj-oH_1Kb-Q" typedNamedElement="_m8YpMJ6NEeSNj-oH_1Kb-Q"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_kOcuopRNEeSZM-zEIRk3lw" name="init" outgoingTransitions="_l-e94J6KEeSNj-oH_1Kb-Q" incomingTransitions="_l-e94J6KEeSNj-oH_1Kb-Q" initial="true"/>
           </embeddedStatechart>
         </embeddedRegions>
         <embeddedRegions xmi:id="_l4vGMJRNEeSZM-zEIRk3lw" priority="3">
-          <embeddedStatechart xmi:id="_l443MJRNEeSZM-zEIRk3lw" name="sectionApproacherPort" behavioralElement="_tKp0oJRNEeSZM-zEIRk3lw">
-            <states xmi:id="_l443MZRNEeSZM-zEIRk3lw" name="init" initial="true"/>
+          <embeddedStatechart xmi:id="_l443MJRNEeSZM-zEIRk3lw" name="sectionApproacherPortRTSC" behavioralElement="_tKp0oJRNEeSZM-zEIRk3lw">
+            <transitions xmi:id="_8kHuAJ6KEeSNj-oH_1Kb-Q" priority="1" target="_l443MZRNEeSZM-zEIRk3lw" source="_l443MZRNEeSZM-zEIRk3lw">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="__vAVoJ6KEeSNj-oH_1Kb-Q" kind="TRIGGER">
+                <message xmi:id="_AJhucJ6LEeSNj-oH_1Kb-Q" instanceOf="_h8AAQJKfEeSSMde45fnrcg"/>
+              </events>
+              <action xmi:id="_Bb0cwJ6LEeSNj-oH_1Kb-Q" name="getSecIDapproacher">
+                <expressions xsi:type="actionlanguage:Block" xmi:id="_e5UVMJ6OEeSNj-oH_1Kb-Q">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_e5UVMZ6OEeSNj-oH_1Kb-Q" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="actionlanguage:TriggerMessageExpression" xmi:id="_e5UVMp6OEeSNj-oH_1Kb-Q" messageType="_h8AAQJKfEeSSMde45fnrcg" parameter="_PNP3MJ6JEeSNj-oH_1Kb-Q"/>
+                    <lhs_typedNamedElementExpression xmi:id="_e5UVM56OEeSNj-oH_1Kb-Q" typedNamedElement="_ZxZOkJ6NEeSNj-oH_1Kb-Q"/>
+                  </expressions>
+                </expressions>
+              </action>
+            </transitions>
+            <states xmi:id="_l443MZRNEeSZM-zEIRk3lw" name="init" outgoingTransitions="_8kHuAJ6KEeSNj-oH_1Kb-Q" incomingTransitions="_8kHuAJ6KEeSNj-oH_1Kb-Q" initial="true"/>
+          </embeddedStatechart>
+        </embeddedRegions>
+        <embeddedRegions xmi:id="_u9ItMJ6FEeSNj-oH_1Kb-Q" priority="4">
+          <embeddedStatechart xmi:id="_u9LwgJ6FEeSNj-oH_1Kb-Q" name="controllerPortRTSC" behavioralElement="_oEiLwJ6HEeSNj-oH_1Kb-Q">
+            <transitions xmi:id="_9L1Y0J6LEeSNj-oH_1Kb-Q" priority="1" target="_5Z8bkJ6LEeSNj-oH_1Kb-Q" source="_u9Oz0J6FEeSNj-oH_1Kb-Q">
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_FNC2MJ6MEeSNj-oH_1Kb-Q" kind="TRIGGER">
+                <message xmi:id="_FszUUJ6MEeSNj-oH_1Kb-Q" instanceOf="_jMgl4JKfEeSSMde45fnrcg"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_-U2PUJ6LEeSNj-oH_1Kb-Q" priority="1" target="_u9Oz0J6FEeSNj-oH_1Kb-Q" source="_5Z8bkJ6LEeSNj-oH_1Kb-Q">
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_MKu5sJ6PEeSNj-oH_1Kb-Q" operator="GREATER">
+                <leftExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_MKu5sZ6PEeSNj-oH_1Kb-Q" operator="MINUS">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_MKu5sp6PEeSNj-oH_1Kb-Q" typedNamedElement="_fmlgUJ6NEeSNj-oH_1Kb-Q"/>
+                  <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_MKu5s56PEeSNj-oH_1Kb-Q" typedNamedElement="_ZxZOkJ6NEeSNj-oH_1Kb-Q"/>
+                </leftExpression>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_MKu5tJ6PEeSNj-oH_1Kb-Q" typedNamedElement="_kMy2cJ6NEeSNj-oH_1Kb-Q"/>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_vJYVQJ6MEeSNj-oH_1Kb-Q">
+                <message xmi:id="_va0DgJ6MEeSNj-oH_1Kb-Q" instanceOf="_lJ5foJKfEeSSMde45fnrcg"/>
+              </events>
+            </transitions>
+            <transitions xmi:id="_AX99oJ6MEeSNj-oH_1Kb-Q" priority="2" target="_u9Oz0J6FEeSNj-oH_1Kb-Q" source="_5Z8bkJ6LEeSNj-oH_1Kb-Q">
+              <guard xsi:type="sdcec:ComparisonExpression" xmi:id="_UqNncJ6PEeSNj-oH_1Kb-Q" operator="LESS_OR_EQUAL">
+                <leftExpression xsi:type="sdcec:ArithmeticExpression" xmi:id="_UqNncZ6PEeSNj-oH_1Kb-Q" operator="MINUS">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_UqNncp6PEeSNj-oH_1Kb-Q" typedNamedElement="_fmlgUJ6NEeSNj-oH_1Kb-Q"/>
+                  <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_UqNnc56PEeSNj-oH_1Kb-Q" typedNamedElement="_ZxZOkJ6NEeSNj-oH_1Kb-Q"/>
+                </leftExpression>
+                <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_UqNndJ6PEeSNj-oH_1Kb-Q" typedNamedElement="_kMy2cJ6NEeSNj-oH_1Kb-Q"/>
+              </guard>
+              <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_4QlxYJ6MEeSNj-oH_1Kb-Q">
+                <message xmi:id="_4ecnMJ6MEeSNj-oH_1Kb-Q" instanceOf="_nDO_0JKfEeSSMde45fnrcg"/>
+              </events>
+            </transitions>
+            <states xmi:id="_u9Oz0J6FEeSNj-oH_1Kb-Q" name="init" outgoingTransitions="_9L1Y0J6LEeSNj-oH_1Kb-Q" incomingTransitions="_-U2PUJ6LEeSNj-oH_1Kb-Q _AX99oJ6MEeSNj-oH_1Kb-Q" initial="true"/>
+            <states xmi:id="_5Z8bkJ6LEeSNj-oH_1Kb-Q" name="requested" outgoingTransitions="_-U2PUJ6LEeSNj-oH_1Kb-Q _AX99oJ6MEeSNj-oH_1Kb-Q" incomingTransitions="_9L1Y0J6LEeSNj-oH_1Kb-Q"/>
           </embeddedStatechart>
         </embeddedRegions>
       </states>
@@ -144,6 +239,12 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Far0YJQqEeSZM-zEIRk3lw" name="limiterRoleRTSC" behavioralElement="_nWrgIJQnEeSZM-zEIRk3lw">
       <states xmi:id="_Far0YZQqEeSZM-zEIRk3lw" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_xSEt0J6REeSNj-oH_1Kb-Q" name="informOvertakeeRoleRTSC" behavioralElement="_Oc_zEZ6WEeSB5YpXOU2UeA">
+      <states xmi:id="_xSEt0Z6REeSNj-oH_1Kb-Q" name="init" initial="true"/>
+    </modelElements>
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_9of38J6REeSNj-oH_1Kb-Q" name="informApproacherRoleRTSC" behavioralElement="_OdJkE56WEeSB5YpXOU2UeA">
+      <states xmi:id="_9of38Z6REeSNj-oH_1Kb-Q" name="init" initial="true"/>
     </modelElements>
   </categories>
   <categories xmi:id="_FB0TSpJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
@@ -318,6 +419,33 @@
         </connectorQualityOfServiceAssumptions>
       </roleConnector>
     </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Oc_zEJ6WEeSB5YpXOU2UeA" name="Inform">
+      <roles xmi:id="_Oc_zEZ6WEeSB5YpXOU2UeA" connectors="_OdJkF56WEeSB5YpXOU2UeA" behavior="_xSEt0J6REeSNj-oH_1Kb-Q" name="informOvertakee" senderMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
+        <cardinality xmi:id="_OdJkEJ6WEeSB5YpXOU2UeA">
+          <lowerBound xmi:id="_iNNYwJ6XEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_iNWisJ6XEeSB5YpXOU2UeA"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_OdJkE56WEeSB5YpXOU2UeA" connectors="_OdJkF56WEeSB5YpXOU2UeA" behavior="_9of38J6REeSNj-oH_1Kb-Q" name="informApproacher" receiverMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
+        <cardinality xmi:id="_OdJkFJ6WEeSB5YpXOU2UeA">
+          <lowerBound xmi:id="_wu12MJ6XEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_wu12MZ6XEeSB5YpXOU2UeA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_lNbBcJ6XEeSB5YpXOU2UeA" name="informApproacherRbuf" messageType="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
+          <bufferSize xmi:id="_nXJuEJ6XEeSB5YpXOU2UeA" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_OdJkF56WEeSB5YpXOU2UeA" connectorEndpoints="_Oc_zEZ6WEeSB5YpXOU2UeA _OdJkE56WEeSB5YpXOU2UeA">
+        <connectorQualityOfServiceAssumptions xmi:id="_OdSuAJ6WEeSB5YpXOU2UeA" comment="">
+          <minMessageDelay xmi:id="_Odlo8p6WEeSB5YpXOU2UeA" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_WHk5IJ6WEeSB5YpXOU2UeA" value="5"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_Odlo8J6WEeSB5YpXOU2UeA" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_XCBvMJ6WEeSB5YpXOU2UeA" value="500"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
   </categories>
   <categories xmi:id="_FB0TS5J7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
     <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_NXVmMJKbEeSSMde45fnrcg" name="OvertakingMessages">
@@ -325,7 +453,9 @@
       <messageTypes xmi:id="_dRjDUJKfEeSSMde45fnrcg" name="acceptOvertaking"/>
       <messageTypes xmi:id="_efL7IJKfEeSSMde45fnrcg" name="declineOvertaking"/>
       <messageTypes xmi:id="_ffloMJKfEeSSMde45fnrcg" name="finishOvertaking"/>
-      <messageTypes xmi:id="_h8AAQJKfEeSSMde45fnrcg" name="change"/>
+      <messageTypes xmi:id="_h8AAQJKfEeSSMde45fnrcg" name="change">
+        <parameters xmi:id="_PNP3MJ6JEeSNj-oH_1Kb-Q" name="secID" dataType="_FB0TRpJ7EeSSMde45fnrcg"/>
+      </messageTypes>
       <messageTypes xmi:id="_jMgl4JKfEeSSMde45fnrcg" name="overtake"/>
       <messageTypes xmi:id="_lJ5foJKfEeSSMde45fnrcg" name="save"/>
       <messageTypes xmi:id="_nDO_0JKfEeSSMde45fnrcg" name="unsave"/>
@@ -336,6 +466,8 @@
       <messageTypes xmi:id="_xib7wJQiEeSZM-zEIRk3lw" name="freeVelocity"/>
       <messageTypes xmi:id="_z8GAEJnbEeSlOsDDn13LAA" name="setFast"/>
       <messageTypes xmi:id="_1OxI4JnbEeSlOsDDn13LAA" name="setSlow"/>
+      <messageTypes xmi:id="_fnBL4J6SEeSNj-oH_1Kb-Q" name="finishedO"/>
+      <messageTypes xmi:id="_hONzMJ6SEeSNj-oH_1Kb-Q" name="startedO"/>
     </modelElements>
   </categories>
   <categories xmi:id="_FB0TTJJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
@@ -383,8 +515,8 @@
       </ports>
       <ports xsi:type="component:DiscretePort" xmi:id="_bKPb0JRQEeSZM-zEIRk3lw" name="initiatorP" behavior="_NGOHcZRQEeSZM-zEIRk3lw" senderMessageTypes="_ruXrYJQiEeSZM-zEIRk3lw _th9I4JQiEeSZM-zEIRk3lw" receiverMessageTypes="_sp11IJQiEeSZM-zEIRk3lw" refinedRole="_hBCUEZQkEeSZM-zEIRk3lw">
         <cardinality xmi:id="_bKZM0JRQEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_lTrJ8JRQEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_lT0T4JRQEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_NwuUMJ6cEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_NwuUMZ6cEeSB5YpXOU2UeA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_h-v1gJRQEeSZM-zEIRk3lw" name="initiatorPbuf" messageType="_sp11IJQiEeSZM-zEIRk3lw">
           <bufferSize xmi:id="_kZbvQJRQEeSZM-zEIRk3lw" value="5"/>
@@ -462,26 +594,21 @@
           <bufferSize xmi:id="_04wBYJRQEeSZM-zEIRk3lw" value="5"/>
         </receiverMessageBuffer>
       </ports>
-    </modelElements>
-    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_9YInkJOXEeSZM-zEIRk3lw" name="approacherCommunicator" behavior="_bwVxkJOXEeSZM-zEIRk3lw">
-      <ports xsi:type="component:DiscretePort" xmi:id="_1vqtMJROEeSZM-zEIRk3lw" name="vehicleApproacherP" behavior="_a3_gIZROEeSZM-zEIRk3lw" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
-        <cardinality xmi:id="_1vqtMZROEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_5pp2gJROEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_5pp2gZROEeSZM-zEIRk3lw"/>
+      <ports xsi:type="component:DiscretePort" xmi:id="_2RHRIJ6FEeSNj-oH_1Kb-Q" name="requestorP" behavior="_JTy34J6GEeSNj-oH_1Kb-Q" senderMessageTypes="_jMgl4JKfEeSSMde45fnrcg" receiverMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg" refinedRole="_DCAo4JOSEeSZM-zEIRk3lw">
+        <cardinality xmi:id="_2RNXwJ6FEeSNj-oH_1Kb-Q">
+          <lowerBound xmi:id="_cwruYJ6GEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_cwruYZ6GEeSNj-oH_1Kb-Q"/>
         </cardinality>
-      </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_kidk4JRPEeSZM-zEIRk3lw" name="limitDrivingP" behavior="_ZcNpMZRPEeSZM-zEIRk3lw" senderMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw" refinedRole="_nWrgJJQnEeSZM-zEIRk3lw">
-        <cardinality xmi:id="_kidk4ZRPEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_o4gYEJRPEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_o4gYEZRPEeSZM-zEIRk3lw"/>
-        </cardinality>
+        <receiverMessageBuffer xmi:id="_VLDZwJ6GEeSNj-oH_1Kb-Q" name="requestorPbuf" messageType="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg">
+          <bufferSize xmi:id="_a4AVgJ6GEeSNj-oH_1Kb-Q" value="5"/>
+        </receiverMessageBuffer>
       </ports>
     </modelElements>
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_LUR84JOZEeSZM-zEIRk3lw" name="sectionControl" behavior="_TSZNgJOaEeSZM-zEIRk3lw">
       <ports xsi:type="component:DiscretePort" xmi:id="_tKp0oJRNEeSZM-zEIRk3lw" name="sectionApproacherP" behavior="_l443MJRNEeSZM-zEIRk3lw" receiverMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgv0k5KjEeSSMde45fnrcg">
         <cardinality xmi:id="_tKp0oZRNEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_0K7ZcJRNEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_0LFKcJRNEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_5PiIEJ6bEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_5PiIEZ6bEeSB5YpXOU2UeA"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_66awQJRNEeSZM-zEIRk3lw" name="sectionApproacherPbuf" messageType="_h8AAQJKfEeSSMde45fnrcg">
           <bufferSize xmi:id="_9vHsgJRNEeSZM-zEIRk3lw" value="5"/>
@@ -503,6 +630,15 @@
         </cardinality>
         <receiverMessageBuffer xmi:id="_MISxgJROEeSZM-zEIRk3lw" name="sectionOvertakeePbuf" messageType="_h8AAQJKfEeSSMde45fnrcg">
           <bufferSize xmi:id="_N7X4sJROEeSZM-zEIRk3lw" value="5"/>
+        </receiverMessageBuffer>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_oEiLwJ6HEeSNj-oH_1Kb-Q" name="controllerP" behavior="_u9LwgJ6FEeSNj-oH_1Kb-Q" senderMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg" receiverMessageTypes="_jMgl4JKfEeSSMde45fnrcg" refinedRole="_DCETQZOSEeSZM-zEIRk3lw">
+        <cardinality xmi:id="_oElPEJ6HEeSNj-oH_1Kb-Q">
+          <lowerBound xmi:id="_JuQkUJ6cEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_JuaVUJ6cEeSB5YpXOU2UeA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_uYdA4J6HEeSNj-oH_1Kb-Q" name="controllerPbuf" messageType="_jMgl4JKfEeSSMde45fnrcg">
+          <bufferSize xmi:id="_wVD3gJ6HEeSNj-oH_1Kb-Q" value="5"/>
         </receiverMessageBuffer>
       </ports>
     </modelElements>
@@ -570,7 +706,7 @@
       <coordinationProtocolParts xmi:id="_yrtEUJndEeSlOsDDn13LAA" coordinationProtocol="_P1DbIJQiEeSZM-zEIRk3lw" portParts="_oYXioZRTEeSZM-zEIRk3lw _0okI8pRTEeSZM-zEIRk3lw"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_345mYJRVEeSZM-zEIRk3lw" name="OvertakerVehicle" componentKind="hybrid component">
-      <ports xsi:type="component:DiscretePort" xmi:id="_cKwO4JRWEeSZM-zEIRk3lw" connectors="_nzt2EJRWEeSZM-zEIRk3lw" name="overtakerPDel" senderMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" receiverMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" refinedRole="_V7mUApKgEeSSMde45fnrcg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_cKwO4JRWEeSZM-zEIRk3lw" connectors="_JWCeIJ6HEeSNj-oH_1Kb-Q" name="overtakerPDel" senderMessageTypes="_a_7mAJKfEeSSMde45fnrcg _ffloMJKfEeSSMde45fnrcg" receiverMessageTypes="_dRjDUJKfEeSSMde45fnrcg _efL7IJKfEeSSMde45fnrcg" refinedRole="_V7mUApKgEeSSMde45fnrcg">
         <cardinality xmi:id="_cKwO4ZRWEeSZM-zEIRk3lw">
           <lowerBound xmi:id="_n1ND0JRWEeSZM-zEIRk3lw"/>
           <upperBound xmi:id="_n1ND0ZRWEeSZM-zEIRk3lw"/>
@@ -579,103 +715,148 @@
           <bufferSize xmi:id="_lbah8JRWEeSZM-zEIRk3lw" value="5"/>
         </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_cpARIJRWEeSZM-zEIRk3lw" connectors="_sS6lQJRWEeSZM-zEIRk3lw" name="D2" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_cpARIJRWEeSZM-zEIRk3lw" connectors="_PjjJQJ6HEeSNj-oH_1Kb-Q" name="vehiclePDel" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
         <cardinality xmi:id="_cpARIZRWEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_sVKA8JRWEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_sVKA8ZRWEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_N_iY0J6HEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_N_iY0Z6HEeSNj-oH_1Kb-Q"/>
         </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_QqEscJ6HEeSNj-oH_1Kb-Q" connectors="_c5TCYJ6HEeSNj-oH_1Kb-Q" name="requestorPDel" senderMessageTypes="_jMgl4JKfEeSSMde45fnrcg" receiverMessageTypes="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg" refinedRole="_DCAo4JOSEeSZM-zEIRk3lw">
+        <cardinality xmi:id="_QqEscZ6HEeSNj-oH_1Kb-Q">
+          <lowerBound xmi:id="_cBTqcJ6HEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_cBTqcZ6HEeSNj-oH_1Kb-Q"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_Xzj3oJ6HEeSNj-oH_1Kb-Q" name="requestorPDelbuf" messageType="_lJ5foJKfEeSSMde45fnrcg _nDO_0JKfEeSSMde45fnrcg">
+          <bufferSize xmi:id="_Zui9oJ6HEeSNj-oH_1Kb-Q" value="5"/>
+        </receiverMessageBuffer>
       </ports>
       <embeddedComponentParts xmi:id="_7qtEEJRVEeSZM-zEIRk3lw" name="motorR" componentType="_65UR8JQqEeSZM-zEIRk3lw">
         <cardinality xmi:id="_7qtEEZRVEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_8Mjz8JRVEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_8Mtk8JRVEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_58ZaoJ6GEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_58ZaoZ6GEeSNj-oH_1Kb-Q"/>
         </cardinality>
         <portParts xmi:id="_Bhf4UJRWEeSZM-zEIRk3lw" connectors="_NaKvcJRWEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_8iLeoJRVEeSZM-zEIRk3lw" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw">
         <cardinality xmi:id="_8iLeoZRVEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_D4N4EJRWEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_D4N4EZRWEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_4ZGb4J6GEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_4ZGb4Z6GEeSNj-oH_1Kb-Q"/>
         </cardinality>
         <portParts xmi:id="_DHTYgJRWEeSZM-zEIRk3lw" connectors="_OF9ecJRWEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
       </embeddedComponentParts>
-      <embeddedComponentParts xmi:id="_8-SL0JRVEeSZM-zEIRk3lw" name="communicator" componentType="_5PGVoJOXEeSZM-zEIRk3lw">
-        <cardinality xmi:id="_8-SL0ZRVEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_IDflsJRWEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_IDflsZRWEeSZM-zEIRk3lw"/>
-        </cardinality>
-        <portParts xmi:id="_HzRYYJRWEeSZM-zEIRk3lw" connectors="_nzt2EJRWEeSZM-zEIRk3lw" portType="_L5yGUJRMEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_HzRYYZRWEeSZM-zEIRk3lw" connectors="_sS6lQJRWEeSZM-zEIRk3lw" portType="_pbVNwJROEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_HzRYYpRWEeSZM-zEIRk3lw" connectors="_V8TvoJRWEeSZM-zEIRk3lw" portType="_qBYPMJRQEeSZM-zEIRk3lw" coordinationProtocolPart="_sTOHQJRWEeSZM-zEIRk3lw"/>
-      </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_9cr_EJRVEeSZM-zEIRk3lw" name="driver" componentType="_BQCDAJOUEeSZM-zEIRk3lw">
         <cardinality xmi:id="_9cr_EZRVEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_wuS5gJRYEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_wuS5gZRYEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_gH2pEJ6HEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_gH2pEZ6HEeSNj-oH_1Kb-Q"/>
         </cardinality>
         <portParts xmi:id="_FgW6kJRWEeSZM-zEIRk3lw" connectors="_NaKvcJRWEeSZM-zEIRk3lw" portType="_SA7VoJRKEeSZM-zEIRk3lw"/>
         <portParts xmi:id="_FgW6kZRWEeSZM-zEIRk3lw" connectors="_OF9ecJRWEeSZM-zEIRk3lw" portType="_Ut7HYJRKEeSZM-zEIRk3lw"/>
         <portParts xmi:id="_FgW6kpRWEeSZM-zEIRk3lw" connectors="_SiO1cJRWEeSZM-zEIRk3lw" portType="_yJ8ggJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_FgW6k5RWEeSZM-zEIRk3lw" connectors="_V8TvoJRWEeSZM-zEIRk3lw" portType="_bKPb0JRQEeSZM-zEIRk3lw" coordinationProtocolPart="_sTOHQJRWEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_FgW6k5RWEeSZM-zEIRk3lw" connectors="_GdSIUJ6HEeSNj-oH_1Kb-Q" portType="_bKPb0JRQEeSZM-zEIRk3lw" coordinationProtocolPart="_c5WFsJ6HEeSNj-oH_1Kb-Q"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_JoEW0JRWEeSZM-zEIRk3lw" name="distance" componentType="_Vibi8JRJEeSZM-zEIRk3lw">
         <cardinality xmi:id="_JoEW0ZRWEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_Rcy3YJRWEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_Rcy3YZRWEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_3Om-sJ6GEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_3Om-sZ6GEeSNj-oH_1Kb-Q"/>
         </cardinality>
         <portParts xmi:id="_PVl6UJRWEeSZM-zEIRk3lw" connectors="_SiO1cJRWEeSZM-zEIRk3lw" portType="_o26EUJRJEeSZM-zEIRk3lw"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_8GCAoJ6GEeSNj-oH_1Kb-Q" name="communicator" componentType="_5PGVoJOXEeSZM-zEIRk3lw">
+        <cardinality xmi:id="_8GCAoZ6GEeSNj-oH_1Kb-Q">
+          <lowerBound xmi:id="_BcThwJ6HEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_BcThwZ6HEeSNj-oH_1Kb-Q"/>
+        </cardinality>
+        <portParts xmi:id="_-lRDMJ6GEeSNj-oH_1Kb-Q" connectors="_JWCeIJ6HEeSNj-oH_1Kb-Q" portType="_L5yGUJRMEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_-lRDMZ6GEeSNj-oH_1Kb-Q" connectors="_PjjJQJ6HEeSNj-oH_1Kb-Q" portType="_pbVNwJROEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_-lRDMp6GEeSNj-oH_1Kb-Q" connectors="_GdSIUJ6HEeSNj-oH_1Kb-Q" portType="_qBYPMJRQEeSZM-zEIRk3lw" coordinationProtocolPart="_c5WFsJ6HEeSNj-oH_1Kb-Q"/>
+        <portParts xmi:id="_-lRDM56GEeSNj-oH_1Kb-Q" connectors="_c5TCYJ6HEeSNj-oH_1Kb-Q" portType="_2RHRIJ6FEeSNj-oH_1Kb-Q"/>
       </embeddedComponentParts>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_NaKvcJRWEeSZM-zEIRk3lw" connectorEndpoints="_FgW6kJRWEeSZM-zEIRk3lw _Bhf4UJRWEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_OF9ecJRWEeSZM-zEIRk3lw" connectorEndpoints="_FgW6kZRWEeSZM-zEIRk3lw _DHTYgJRWEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_SiO1cJRWEeSZM-zEIRk3lw" connectorEndpoints="_PVl6UJRWEeSZM-zEIRk3lw _FgW6kpRWEeSZM-zEIRk3lw"/>
-      <connectors xsi:type="component:AssemblyConnector" xmi:id="_V8TvoJRWEeSZM-zEIRk3lw" connectorEndpoints="_HzRYYpRWEeSZM-zEIRk3lw _FgW6k5RWEeSZM-zEIRk3lw"/>
-      <connectors xsi:type="component:DelegationConnector" xmi:id="_nzt2EJRWEeSZM-zEIRk3lw" connectorEndpoints="_HzRYYJRWEeSZM-zEIRk3lw _cKwO4JRWEeSZM-zEIRk3lw"/>
-      <connectors xsi:type="component:DelegationConnector" xmi:id="_sS6lQJRWEeSZM-zEIRk3lw" connectorEndpoints="_HzRYYZRWEeSZM-zEIRk3lw _cpARIJRWEeSZM-zEIRk3lw"/>
-      <coordinationProtocolParts xmi:id="_sTOHQJRWEeSZM-zEIRk3lw" coordinationProtocol="_hBCUEJQkEeSZM-zEIRk3lw" portParts="_HzRYYpRWEeSZM-zEIRk3lw _FgW6k5RWEeSZM-zEIRk3lw"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_GdSIUJ6HEeSNj-oH_1Kb-Q" connectorEndpoints="_-lRDMp6GEeSNj-oH_1Kb-Q _FgW6k5RWEeSZM-zEIRk3lw"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_JWCeIJ6HEeSNj-oH_1Kb-Q" connectorEndpoints="_-lRDMJ6GEeSNj-oH_1Kb-Q _cKwO4JRWEeSZM-zEIRk3lw"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_PjjJQJ6HEeSNj-oH_1Kb-Q" connectorEndpoints="_-lRDMZ6GEeSNj-oH_1Kb-Q _cpARIJRWEeSZM-zEIRk3lw"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_c5TCYJ6HEeSNj-oH_1Kb-Q" connectorEndpoints="_-lRDM56GEeSNj-oH_1Kb-Q _QqEscJ6HEeSNj-oH_1Kb-Q"/>
+      <coordinationProtocolParts xmi:id="_c5WFsJ6HEeSNj-oH_1Kb-Q" coordinationProtocol="_hBCUEJQkEeSZM-zEIRk3lw" portParts="_FgW6k5RWEeSZM-zEIRk3lw _-lRDMp6GEeSNj-oH_1Kb-Q"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_uRWn4JRWEeSZM-zEIRk3lw" name="ApproacherVehicle" componentKind="hybrid component">
-      <ports xsi:type="component:DiscretePort" xmi:id="_HFO7wJRYEeSZM-zEIRk3lw" connectors="_OILaEJRYEeSZM-zEIRk3lw" name="vehicleApproacherPDel" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_HFO7wJRYEeSZM-zEIRk3lw" connectors="_Z8818J6bEeSB5YpXOU2UeA" name="vehicleApproacherPDel" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
         <cardinality xmi:id="_HFO7wZRYEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_OKQdsJRYEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_OKaOsJRYEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_ZILKEJ6bEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_ZILKEZ6bEeSB5YpXOU2UeA"/>
         </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_23pVkJ6ZEeSB5YpXOU2UeA" connectors="_anp_0J6bEeSB5YpXOU2UeA" name="informApproacherPDel" receiverMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q" refinedRole="_OdJkE56WEeSB5YpXOU2UeA">
+        <cardinality xmi:id="_23pVkZ6ZEeSB5YpXOU2UeA">
+          <lowerBound xmi:id="_DSwLYJ6aEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_DSwLYZ6aEeSB5YpXOU2UeA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_8jCLEJ6ZEeSB5YpXOU2UeA" name="informApproacherPbuf" messageType="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
+          <bufferSize xmi:id="_-kHSAJ6ZEeSB5YpXOU2UeA" value="5"/>
+        </receiverMessageBuffer>
       </ports>
       <embeddedComponentParts xmi:id="_x87hwJRWEeSZM-zEIRk3lw" name="motorR" componentType="_65UR8JQqEeSZM-zEIRk3lw">
         <cardinality xmi:id="_x87hwZRWEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_nrFzoJRYEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_nrFzoZRYEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_-Z-DEJ6PEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_-Z-DEZ6PEeSNj-oH_1Kb-Q"/>
         </cardinality>
         <portParts xmi:id="_6ezcMJRWEeSZM-zEIRk3lw" connectors="_Dj5YcJRXEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_yW6vEJRWEeSZM-zEIRk3lw" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw">
         <cardinality xmi:id="_yW6vEZRWEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_yW6vEpRWEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_yW6vE5RWEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_9iwHMJ6PEeSNj-oH_1Kb-Q"/>
+          <upperBound xmi:id="_9iwHMZ6PEeSNj-oH_1Kb-Q"/>
         </cardinality>
         <portParts xmi:id="_5HDmIJRWEeSZM-zEIRk3lw" connectors="_C9rtAJRXEeSZM-zEIRk3lw" portType="_u9MGEJRJEeSZM-zEIRk3lw"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_yyzZ0JRWEeSZM-zEIRk3lw" name="driver" componentType="_EGtqUJOWEeSZM-zEIRk3lw">
         <cardinality xmi:id="_yyzZ0ZRWEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_yyzZ0pRWEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_yyzZ05RWEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_mTr0AJ6ZEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_mTr0AZ6ZEeSB5YpXOU2UeA"/>
         </cardinality>
         <portParts xmi:id="_8ygkMJRWEeSZM-zEIRk3lw" connectors="_C9rtAJRXEeSZM-zEIRk3lw" portType="_bjdb0JRKEeSZM-zEIRk3lw"/>
         <portParts xmi:id="_8ygkMZRWEeSZM-zEIRk3lw" connectors="_Dj5YcJRXEeSZM-zEIRk3lw" portType="_dwFrcJRKEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_8ygkMpRWEeSZM-zEIRk3lw" connectors="_B-ikMJRXEeSZM-zEIRk3lw" portType="_uk1BsJRPEeSZM-zEIRk3lw" coordinationProtocolPart="_OIeVAJRYEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_8ygkMpRWEeSZM-zEIRk3lw" connectors="_WY9x0J6bEeSB5YpXOU2UeA" portType="_uk1BsJRPEeSZM-zEIRk3lw" coordinationProtocolPart="_PvQdcJ6cEeSB5YpXOU2UeA"/>
       </embeddedComponentParts>
-      <embeddedComponentParts xmi:id="_zMtuoJRWEeSZM-zEIRk3lw" name="communicator" componentType="_9YInkJOXEeSZM-zEIRk3lw">
-        <cardinality xmi:id="_zMtuoZRWEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_-ZQfkJRWEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_-ZQfkZRWEeSZM-zEIRk3lw"/>
+      <embeddedComponentParts xmi:id="_MPkx4J6ZEeSB5YpXOU2UeA" name="communicator" componentType="_ZJhDUJ6aEeSB5YpXOU2UeA">
+        <cardinality xmi:id="_MPkx4Z6ZEeSB5YpXOU2UeA">
+          <lowerBound xmi:id="_p22YwJ6ZEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_p22YwZ6ZEeSB5YpXOU2UeA"/>
         </cardinality>
-        <portParts xmi:id="_-C_UoJRWEeSZM-zEIRk3lw" connectors="_OILaEJRYEeSZM-zEIRk3lw" portType="_1vqtMJROEeSZM-zEIRk3lw"/>
-        <portParts xmi:id="_-C_UoZRWEeSZM-zEIRk3lw" connectors="_B-ikMJRXEeSZM-zEIRk3lw" portType="_kidk4JRPEeSZM-zEIRk3lw" coordinationProtocolPart="_OIeVAJRYEeSZM-zEIRk3lw"/>
+        <portParts xmi:id="_UYMz8J6bEeSB5YpXOU2UeA" connectors="_anp_0J6bEeSB5YpXOU2UeA" portType="_ioqeUJ6aEeSB5YpXOU2UeA"/>
+        <portParts xmi:id="_UYMz8Z6bEeSB5YpXOU2UeA" connectors="_WY9x0J6bEeSB5YpXOU2UeA" portType="_zVXsMJ6aEeSB5YpXOU2UeA" coordinationProtocolPart="_PvQdcJ6cEeSB5YpXOU2UeA"/>
+        <portParts xmi:id="_UYMz8p6bEeSB5YpXOU2UeA" connectors="_Z8818J6bEeSB5YpXOU2UeA" portType="__agSAJ6aEeSB5YpXOU2UeA"/>
       </embeddedComponentParts>
-      <connectors xsi:type="component:AssemblyConnector" xmi:id="_B-ikMJRXEeSZM-zEIRk3lw" connectorEndpoints="_8ygkMpRWEeSZM-zEIRk3lw _-C_UoZRWEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_C9rtAJRXEeSZM-zEIRk3lw" connectorEndpoints="_8ygkMJRWEeSZM-zEIRk3lw _5HDmIJRWEeSZM-zEIRk3lw"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_Dj5YcJRXEeSZM-zEIRk3lw" connectorEndpoints="_8ygkMZRWEeSZM-zEIRk3lw _6ezcMJRWEeSZM-zEIRk3lw"/>
-      <connectors xsi:type="component:AssemblyConnector" xmi:id="_OILaEJRYEeSZM-zEIRk3lw" connectorEndpoints="_-C_UoJRWEeSZM-zEIRk3lw _HFO7wJRYEeSZM-zEIRk3lw"/>
-      <coordinationProtocolParts xmi:id="_OIeVAJRYEeSZM-zEIRk3lw" coordinationProtocol="_nWhvIJQnEeSZM-zEIRk3lw" portParts="_8ygkMpRWEeSZM-zEIRk3lw _-C_UoZRWEeSZM-zEIRk3lw"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_WY9x0J6bEeSB5YpXOU2UeA" connectorEndpoints="_UYMz8Z6bEeSB5YpXOU2UeA _8ygkMpRWEeSZM-zEIRk3lw"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_Z8818J6bEeSB5YpXOU2UeA" connectorEndpoints="_UYMz8p6bEeSB5YpXOU2UeA _HFO7wJRYEeSZM-zEIRk3lw"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_anp_0J6bEeSB5YpXOU2UeA" connectorEndpoints="_UYMz8J6bEeSB5YpXOU2UeA _23pVkJ6ZEeSB5YpXOU2UeA"/>
+      <coordinationProtocolParts xmi:id="_PvQdcJ6cEeSB5YpXOU2UeA" coordinationProtocol="_nWhvIJQnEeSZM-zEIRk3lw" portParts="_8ygkMpRWEeSZM-zEIRk3lw _UYMz8Z6bEeSB5YpXOU2UeA"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_ZJhDUJ6aEeSB5YpXOU2UeA" name="approacherCommunicator" behavior="_bwVxkJOXEeSZM-zEIRk3lw">
+      <ports xsi:type="component:DiscretePort" xmi:id="_ioqeUJ6aEeSB5YpXOU2UeA" name="informApproacherP" behavior="_QziJcZ6SEeSNj-oH_1Kb-Q" receiverMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q" refinedRole="_OdJkE56WEeSB5YpXOU2UeA">
+        <cardinality xmi:id="_io0PUJ6aEeSB5YpXOU2UeA">
+          <lowerBound xmi:id="_y2RVYJ6aEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_y2RVYZ6aEeSB5YpXOU2UeA"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_n3y1oJ6aEeSB5YpXOU2UeA" name="informApproacherPbuf" messageType="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
+          <bufferSize xmi:id="_qLSiQJ6aEeSB5YpXOU2UeA" value="5"/>
+        </receiverMessageBuffer>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_zVXsMJ6aEeSB5YpXOU2UeA" name="limitDrivingP" behavior="_ZcNpMZRPEeSZM-zEIRk3lw" senderMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw" refinedRole="_nWrgJJQnEeSZM-zEIRk3lw">
+        <cardinality xmi:id="_zVg2IJ6aEeSB5YpXOU2UeA">
+          <lowerBound xmi:id="_52QmUJ6aEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_52QmUZ6aEeSB5YpXOU2UeA"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="__agSAJ6aEeSB5YpXOU2UeA" name="vehicleApproacherP" behavior="_a3_gIZROEeSZM-zEIRk3lw" senderMessageTypes="_h8AAQJKfEeSSMde45fnrcg" refinedRole="_sgumcJKjEeSSMde45fnrcg">
+        <cardinality xmi:id="__agSAZ6aEeSB5YpXOU2UeA">
+          <lowerBound xmi:id="_E_ngYJ6bEeSB5YpXOU2UeA"/>
+          <upperBound xmi:id="_E_ngYZ6bEeSB5YpXOU2UeA"/>
+        </cardinality>
+      </ports>
     </modelElements>
   </categories>
 </modelinstance:RootNode>

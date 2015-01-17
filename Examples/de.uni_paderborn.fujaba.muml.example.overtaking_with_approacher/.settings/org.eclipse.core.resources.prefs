@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
 encoding//Roles/conteollerRole.realtimestatechart_diagram=UTF-8
 encoding//Roles/executorRole.realtimestatechart_diagram=UTF-8
+encoding//Roles/informApproacherRole.realtimestatechart_diagram=UTF-8
+encoding//Roles/informOvertakeeRole.realtimestatechart_diagram=UTF-8
 encoding//Roles/initiatorRole.realtimestatechart_diagram=UTF-8
 encoding//Roles/limitDrivingRole.realtimestatechart_diagram=UTF-8
 encoding//Roles/limiterRole.realtimestatechart_diagram=UTF-8
@@ -26,6 +28,7 @@ encoding//component/sectionControl.component_diagram=UTF-8
 encoding/Allow.coordinationprotocol_diagram=UTF-8
 encoding/ChangeSection.coordinationprotocol_diagram=UTF-8
 encoding/Delegate.coordinationprotocol_diagram=UTF-8
+encoding/Inform.coordinationprotocol_diagram=UTF-8
 encoding/LimitVelocity.coordinationprotocol_diagram=UTF-8
 encoding/Overtake.coordinationprotocol_diagram=UTF-8
 encoding/VModeControl.coordinationprotocol_diagram=UTF-8
