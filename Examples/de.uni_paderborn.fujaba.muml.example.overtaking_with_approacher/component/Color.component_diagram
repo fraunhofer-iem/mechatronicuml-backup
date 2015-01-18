@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_2EDuUJ8OEeSDApXOK6N3KA" type="Component" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_7rqQAJ8OEeSDApXOK6N3KA" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_7rqQAp8OEeSDApXOK6N3KA" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_9nH3IZ8OEeSDApXOK6N3KA" type="3011" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9nH3I58OEeSDApXOK6N3KA" type="5013">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9nH3JJ8OEeSDApXOK6N3KA" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../fraunhoferDemo.muml#_9nH3IJ8OEeSDApXOK6N3KA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9nH3Ip8OEeSDApXOK6N3KA"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.muml#_7rgfAJ8OEeSDApXOK6N3KA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7rqQAZ8OEeSDApXOK6N3KA" x="204" y="160"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_2EDuUZ8OEeSDApXOK6N3KA"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.muml#_FB0TTZJ7EeSSMde45fnrcg"/>
+</notation:Diagram>

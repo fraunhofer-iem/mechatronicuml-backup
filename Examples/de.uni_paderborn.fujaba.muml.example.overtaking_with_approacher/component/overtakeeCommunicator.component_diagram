@@ -32,6 +32,13 @@
       <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.muml#_qJ-foJRSEeSZM-zEIRk3lw"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TFkHn5neEeSlOsDDn13LAA" x="349" y="60"/>
     </children>
+    <children xmi:type="notation:Shape" xmi:id="_whb90J8PEeSDApXOK6N3KA" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_whb90p8PEeSDApXOK6N3KA" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_whb9058PEeSDApXOK6N3KA" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.muml#_whV3MJ8PEeSDApXOK6N3KA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_whb90Z8PEeSDApXOK6N3KA" x="60" y="145"/>
+    </children>
     <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.muml#_1f2csJOXEeSZM-zEIRk3lw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_StoIsZneEeSlOsDDn13LAA" width="361" height="157"/>
   </children>
