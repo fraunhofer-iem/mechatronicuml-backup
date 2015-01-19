@@ -185,5 +185,6 @@
  * @param rtsc the (embedded) rtsc
 */]
 [query public isEnterable(rtsc : RealtimeStatechart) : Boolean =
-	rtsc.embedded and rtsc.parentRegion.parentState.getEntryPoints()->notEmpty()
+	-- rtsc.embedded and rtsc.parentRegion.parentState.getEntryPoints()->notEmpty()
+	rtsc.embedded
 /]
