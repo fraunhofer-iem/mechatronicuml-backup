@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-<extension
+  <extension
       point="org.eclipse.ui.menus">
    <menuContribution
          allPopups="false"
@@ -11,7 +11,7 @@
             name="beforeMumlUtilities"
             visible="true">
       </separator>
-        <command
+<!--        <command
                  commandId="de.uni_paderborn.fujaba.core.ui.command.modelrefresh"
                  disabledIcon="icons/refresh_nav_dis.gif"
                  icon="icons/refresh_nav.gif"
@@ -40,10 +40,11 @@
                  </iterate>
               </visibleWhen>
            </command>
+-->
    </menuContribution>
 </extension>
 
-
+<!--
   <extension
         point="org.eclipse.ui.commands">
 
@@ -62,5 +63,5 @@
            name="Refresh Models">
      </command>
   </extension>
-  
+-->  
 </plugin>
