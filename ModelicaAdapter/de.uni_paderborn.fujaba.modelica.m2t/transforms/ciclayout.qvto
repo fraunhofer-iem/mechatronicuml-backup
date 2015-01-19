@@ -13,13 +13,13 @@ transformation ciclayout(inout cicModel : INSTANCE)
 main() {
 	var dotInModel : DOT := DOT.createEmptyModel().oclAsType(DOT);
 	var ret : Status := new cic2graphviz(cicModel, dotInModel).transform();
-	assert fatal (ret.succeeded()) with log("ERR");
+	assert fatal (ret.succeeded()) with log("cic2graphviz failed");
 	log("nodes: " + dotInModel.objects()[DotNode]->size().toString());
 	var dotOutModel : DOT := DOT.createEmptyModel().oclAsType(DOT);
 	ret := new GraphvizDotLayouterTransformation(dotInModel, dotOutModel).transform();
-	assert fatal (ret.succeeded()) with log("ERR");
+	assert fatal (ret.succeeded()) with log("GraphvizDotLayouterTransformation failed");
 	log("nodes (plain): " + dotOutModel.objects()[DotNode]->size().toString());
 	ret := new dot2cicAnnotation(cicModel, dotInModel, dotOutModel).transform();
-	assert fatal (ret.succeeded()) with log("ERR");
+	assert fatal (ret.succeeded()) with log("dot2cicAnnotation failed");
 	log("transformation " + this.toString() + " finished");
 }
