@@ -747,7 +747,8 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String DISCRETE_SINGLE_PORT_INSTANCE__PORT_INSTANCE_NEEDS_DELEGATION_TO_PARENT_OR_ASSEMBLY__EEXPRESSION = "-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.\r\n" +
-		"(not self.componentInstance.topLevel) implies (\r\n" +
+		"\r\n" +
+		"if(self.componentInstance.oclIsInvalid() or self.componentInstance = null) then true else (not self.componentInstance.topLevel) implies (\r\n" +
 		"not portConnectorInstances->select(\r\n" +
 		"\tci | ci.oclIsKindOf(DelegationConnectorInstance)\r\n" +
 		"\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\r\n" +
@@ -756,7 +757,9 @@ public class InstanceValidator extends MumlValidator {
 		"not portConnectorInstances->select(\r\n" +
 		"\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\r\n" +
 		")->isEmpty()\r\n" +
-		")";
+		")\r\n" +
+		"endif\r\n" +
+		"";
 
 	/**
 	 * Validates the PortInstanceNeedsDelegationToParentOrAssembly constraint of '<em>Discrete Single Port Instance</em>'.
