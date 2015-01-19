@@ -99,6 +99,13 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser getMessageBufferLabel_5025Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5025();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser messageTypeName_5010Parser;
 
 	/**
@@ -156,6 +163,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getMessageBufferName_5018Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getMessageBufferLabel_5019Parser();
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+			return getMessageBufferLabel_5025Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
 			return getMessageTypeName_5010Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:

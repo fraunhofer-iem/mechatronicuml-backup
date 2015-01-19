@@ -64,13 +64,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabelEditPart extends CompartmentEditPart implements
+public class WrappingLabel6EditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5019;
+	public static final int VISUAL_ID = 5025;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -123,7 +123,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public WrappingLabelEditPart(View view) {
+	public WrappingLabel6EditPart(View view) {
 		super(view);
 	}
 
@@ -232,12 +232,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
-			return null;
-		}
-		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes
-				.getImage(parserElement.eClass());
+		return null;
 	}
 
 	/**
@@ -348,7 +343,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageBuffer_3013,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

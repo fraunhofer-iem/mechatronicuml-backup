@@ -224,6 +224,9 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferMessageBufferCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

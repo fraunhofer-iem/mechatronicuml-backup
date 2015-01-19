@@ -69,6 +69,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart(
 						view);
 
+			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart(
+						view);
+
 			case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart(
 						view);

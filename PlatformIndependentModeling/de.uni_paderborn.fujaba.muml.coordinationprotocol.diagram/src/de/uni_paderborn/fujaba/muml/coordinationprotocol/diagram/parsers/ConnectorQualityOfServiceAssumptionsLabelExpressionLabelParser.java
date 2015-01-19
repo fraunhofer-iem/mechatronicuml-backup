@@ -35,12 +35,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021
+public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser
 		extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021() {
+	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser() {
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						14,
+						15,
 						de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 								.getConnectorQualityOfServiceAssumptions(),
 						null).body();

@@ -21,7 +21,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 
-/**w
+/**
  * @generated
  */
 public class ModelElementCategoryEditPart extends DiagramEditPart {

@@ -175,6 +175,12 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 							.getFigureMessageBufferSizeLabel());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart) {
+			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureMessageBufferAvoidanceStrategyLabel());
+			return true;
+		}
 		return false;
 	}
 
@@ -186,6 +192,9 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart) {
 			return true;
 		}
 		return false;
@@ -347,6 +356,10 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureMessageBufferSizeLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureMessageBufferAvoidanceStrategyLabel;
 
 		/**
 		 * @generated
@@ -443,7 +456,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 
 			fFigureMessageBufferSizeLabel = new WrappingLabel();
 
-			fFigureMessageBufferSizeLabel.setText("Name:");
+			fFigureMessageBufferSizeLabel.setText("");
 
 			GridData constraintFFigureMessageBufferSizeLabel = new GridData();
 			constraintFFigureMessageBufferSizeLabel.verticalAlignment = GridData.CENTER;
@@ -455,6 +468,37 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			constraintFFigureMessageBufferSizeLabel.grabExcessVerticalSpace = false;
 			this.add(fFigureMessageBufferSizeLabel,
 					constraintFFigureMessageBufferSizeLabel);
+
+			WrappingLabel messageBufferStaticAvoidanceStrategyLabel0 = new WrappingLabel();
+
+			messageBufferStaticAvoidanceStrategyLabel0
+					.setText("avoidance strategy:");
+
+			GridData constraintMessageBufferStaticAvoidanceStrategyLabel0 = new GridData();
+			constraintMessageBufferStaticAvoidanceStrategyLabel0.verticalAlignment = GridData.CENTER;
+			constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalAlignment = GridData.BEGINNING;
+			constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalIndent = 0;
+			constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalSpan = 1;
+			constraintMessageBufferStaticAvoidanceStrategyLabel0.verticalSpan = 1;
+			constraintMessageBufferStaticAvoidanceStrategyLabel0.grabExcessHorizontalSpace = false;
+			constraintMessageBufferStaticAvoidanceStrategyLabel0.grabExcessVerticalSpace = false;
+			this.add(messageBufferStaticAvoidanceStrategyLabel0,
+					constraintMessageBufferStaticAvoidanceStrategyLabel0);
+
+			fFigureMessageBufferAvoidanceStrategyLabel = new WrappingLabel();
+
+			fFigureMessageBufferAvoidanceStrategyLabel.setText("");
+
+			GridData constraintFFigureMessageBufferAvoidanceStrategyLabel = new GridData();
+			constraintFFigureMessageBufferAvoidanceStrategyLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalIndent = 0;
+			constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalSpan = 1;
+			constraintFFigureMessageBufferAvoidanceStrategyLabel.verticalSpan = 1;
+			constraintFFigureMessageBufferAvoidanceStrategyLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageBufferAvoidanceStrategyLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageBufferAvoidanceStrategyLabel,
+					constraintFFigureMessageBufferAvoidanceStrategyLabel);
 
 			WrappingLabel messageTypesStaticLabel0 = new WrappingLabel();
 
@@ -485,6 +529,13 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		 */
 		public WrappingLabel getFigureMessageBufferSizeLabel() {
 			return fFigureMessageBufferSizeLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureMessageBufferAvoidanceStrategyLabel() {
+			return fFigureMessageBufferAvoidanceStrategyLabel;
 		}
 
 	}

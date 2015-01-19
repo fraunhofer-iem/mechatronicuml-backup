@@ -266,6 +266,13 @@
             <viewExpression
                 body="self.bufferSize"/>
           </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferAvoidanceStrategyLabel"/>
+            <viewExpression
+                body="if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)&#xD;&#xA;then 'Discard Incoming Messages' else 'Displace Oldest Messages' endif"/>
+          </labelMappings>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBuffferNode"/>
           <children
