@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
@@ -43,6 +44,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.SingleRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import de.uni_paderborn.fujaba.muml.runtime.util.RuntimeValidator;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -249,6 +251,15 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		// Initialize created meta-data
 		theRuntimePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theRuntimePackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return RuntimeValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theRuntimePackage.freeze();
@@ -926,6 +937,12 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });	
+		addAnnotation
+		  (runtimeBehavioralElementEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ElementMustNotContainMessageBuffers"
 		   });
 	}
 

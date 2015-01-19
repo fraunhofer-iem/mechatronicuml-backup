@@ -24,6 +24,7 @@ import org.storydriven.core.NamedElement;
  *
  * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeBehavioralElement()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ElementMustNotContainMessageBuffers'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ElementMustNotContainMessageBuffers='if(self.oclIsTypeOf(RuntimeComponentInstance) or self.oclIsTypeOf(MultiRoleInstance) or self.oclIsTypeOf(RuntimeDiscreteMultiPortInstance))\r\nthen messageBuffer->size() = 0\r\nelse true\r\nendif'"
  * @generated
  */

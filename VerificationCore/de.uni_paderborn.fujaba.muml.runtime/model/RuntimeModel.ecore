@@ -80,6 +80,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeBehavioralElement" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ElementMustNotContainMessageBuffers"/>
+    </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="ElementMustNotContainMessageBuffers" value="if(self.oclIsTypeOf(RuntimeComponentInstance) or self.oclIsTypeOf(MultiRoleInstance) or self.oclIsTypeOf(RuntimeDiscreteMultiPortInstance))&#xD;&#xA;then messageBuffer->size() = 0&#xD;&#xA;else true&#xD;&#xA;endif"/>
     </eAnnotations>

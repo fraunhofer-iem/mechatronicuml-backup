@@ -189,6 +189,15 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_COMPONENT_INSTANCE__PARENT_CIC = InstancePackage.COMPONENT_INSTANCE__PARENT_CIC;
 
 	/**
+	 * The feature id for the '<em><b>Top Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_COMPONENT_INSTANCE__TOP_LEVEL = InstancePackage.COMPONENT_INSTANCE__TOP_LEVEL;
+
+	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
