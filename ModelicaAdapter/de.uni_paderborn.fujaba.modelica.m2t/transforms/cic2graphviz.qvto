@@ -48,7 +48,7 @@ mapping ComponentInstanceConfiguration::cic2graphviz() : DotGraph
 	} endif;
 	subgraphs := self.componentInstances->map componentInstance2graph();
 	edges := self.portConnectorInstances->map connectorInstance2edges()->flatten();
-	edgeSettings := edgeSettings->select(null);
+	edgeSettings := OrderedSet{};
 }
 
 mapping ComponentInstanceConfiguration::structuredComponentInstancePortInstances2node() : Sequence(DotNode)
