@@ -36,10 +36,9 @@
                  style="push">
               <visibleWhen
                     checkEnabled="false">
-                 <iterate
-                       ifEmpty="true"
-                       operator="or">
-                 </iterate>
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IResource" />
+                    </iterate>	
               </visibleWhen>
            </command>
            <separator
@@ -69,28 +68,7 @@
         </menu>
      </menuContribution>
   </extension>
-  <extension
-        point="org.eclipse.core.expressions.definitions">
-     <definition
-           id="de.uni_paderborn.fujaba.expression.fujabafile">
-	    <iterate
-           ifEmpty="false"
-           operator="and">
-	       <adapt type="org.eclipse.core.resources.IResource">
-           <or>
-              <test
-                    property="org.eclipse.core.resources.name"
-                    value="*.muml">
-              </test>
-              <test
-                    property="org.eclipse.core.resources.name"
-                    value="*.fujaba">
-              </test>
-           </or>
-	       </adapt>
-	    </iterate>
-     </definition>
-  </extension>
+
   <extension
         point="org.eclipse.ui.commands">
      <category
