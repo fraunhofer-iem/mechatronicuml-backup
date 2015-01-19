@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.tests.NLSUnusedMessageTest;
 @RunWith(Parameterized.class)
 public class PimNLSUnusedMessageTest extends NLSUnusedMessageTest {
 
-	public PimNLSUnusedMessageTest(String[] pluginName) {
+	public PimNLSUnusedMessageTest(String pluginName) {
 		super(pluginName);
 	}
 	
