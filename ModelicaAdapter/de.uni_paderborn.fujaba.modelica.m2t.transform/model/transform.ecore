@@ -41,4 +41,15 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformationRootObject">
+    <eTypeParameters name="T"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eObject" lowerBound="1">
+      <eGenericType eTypeParameter="#//TransformationRootObject/T"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechartTransformationRootObject">
+    <eGenericSuperTypes eClassifier="#//TransformationRootObject">
+      <eTypeArguments eClassifier="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
 </ecore:EPackage>

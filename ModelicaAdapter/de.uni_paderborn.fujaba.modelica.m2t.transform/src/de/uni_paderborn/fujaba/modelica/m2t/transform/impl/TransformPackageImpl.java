@@ -4,10 +4,12 @@ package de.uni_paderborn.fujaba.modelica.m2t.transform.impl;
 
 import de.uni_paderborn.fujaba.modelica.m2t.transform.Entry;
 import de.uni_paderborn.fujaba.modelica.m2t.transform.Map;
+import de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject;
 import de.uni_paderborn.fujaba.modelica.m2t.transform.RegionInstance;
 import de.uni_paderborn.fujaba.modelica.m2t.transform.Root;
 import de.uni_paderborn.fujaba.modelica.m2t.transform.TransformFactory;
 import de.uni_paderborn.fujaba.modelica.m2t.transform.TransformPackage;
+import de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 
@@ -31,9 +33,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -72,6 +76,20 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 	 * @generated
 	 */
 	private EClass regionInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass transformationRootObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass realtimeStatechartTransformationRootObjectEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -259,6 +277,33 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTransformationRootObject() {
+		return transformationRootObjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTransformationRootObject_EObject() {
+		return (EReference)transformationRootObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRealtimeStatechartTransformationRootObject() {
+		return realtimeStatechartTransformationRootObjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TransformFactory getTransformFactory() {
 		return (TransformFactory)getEFactoryInstance();
 	}
@@ -297,6 +342,11 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		createEReference(regionInstanceEClass, REGION_INSTANCE__INSTANCE_OF);
 		createEAttribute(regionInstanceEClass, REGION_INSTANCE__EMBEDS_SINGLE_PORT_STATECHART);
 		createEAttribute(regionInstanceEClass, REGION_INSTANCE__EMBEDS_MULTI_PORT_STATECHART);
+
+		transformationRootObjectEClass = createEClass(TRANSFORMATION_ROOT_OBJECT);
+		createEReference(transformationRootObjectEClass, TRANSFORMATION_ROOT_OBJECT__EOBJECT);
+
+		realtimeStatechartTransformationRootObjectEClass = createEClass(REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT);
 	}
 
 	/**
@@ -327,11 +377,16 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
+		ETypeParameter transformationRootObjectEClass_T = addETypeParameter(transformationRootObjectEClass, "T");
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
 		regionInstanceEClass.getESuperTypes().add(theRealtimestatechartPackage.getRegion());
+		EGenericType g1 = createEGenericType(this.getTransformationRootObject());
+		EGenericType g2 = createEGenericType(theRealtimestatechartPackage.getRealtimeStatechart());
+		g1.getETypeArguments().add(g2);
+		realtimeStatechartTransformationRootObjectEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -351,6 +406,12 @@ public class TransformPackageImpl extends EPackageImpl implements TransformPacka
 		initEReference(getRegionInstance_InstanceOf(), theRealtimestatechartPackage.getRegion(), null, "instanceOf", null, 1, 1, RegionInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegionInstance_EmbedsSinglePortStatechart(), ecorePackage.getEBoolean(), "embedsSinglePortStatechart", null, 0, 1, RegionInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegionInstance_EmbedsMultiPortStatechart(), ecorePackage.getEBoolean(), "embedsMultiPortStatechart", null, 0, 1, RegionInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(transformationRootObjectEClass, TransformationRootObject.class, "TransformationRootObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		g1 = createEGenericType(transformationRootObjectEClass_T);
+		initEReference(getTransformationRootObject_EObject(), g1, null, "eObject", null, 1, 1, TransformationRootObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(realtimeStatechartTransformationRootObjectEClass, RealtimeStatechartTransformationRootObject.class, "RealtimeStatechartTransformationRootObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -164,6 +164,52 @@ public class TransformItemProviderAdapterFactory extends TransformAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TransformationRootObjectItemProvider transformationRootObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTransformationRootObjectAdapter() {
+		if (transformationRootObjectItemProvider == null) {
+			transformationRootObjectItemProvider = new TransformationRootObjectItemProvider(this);
+		}
+
+		return transformationRootObjectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RealtimeStatechartTransformationRootObjectItemProvider realtimeStatechartTransformationRootObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRealtimeStatechartTransformationRootObjectAdapter() {
+		if (realtimeStatechartTransformationRootObjectItemProvider == null) {
+			realtimeStatechartTransformationRootObjectItemProvider = new RealtimeStatechartTransformationRootObjectItemProvider(this);
+		}
+
+		return realtimeStatechartTransformationRootObjectItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -266,6 +312,8 @@ public class TransformItemProviderAdapterFactory extends TransformAdapterFactory
 		if (rootItemProvider != null) rootItemProvider.dispose();
 		if (entryItemProvider != null) entryItemProvider.dispose();
 		if (regionInstanceItemProvider != null) regionInstanceItemProvider.dispose();
+		if (transformationRootObjectItemProvider != null) transformationRootObjectItemProvider.dispose();
+		if (realtimeStatechartTransformationRootObjectItemProvider != null) realtimeStatechartTransformationRootObjectItemProvider.dispose();
 	}
 
 }

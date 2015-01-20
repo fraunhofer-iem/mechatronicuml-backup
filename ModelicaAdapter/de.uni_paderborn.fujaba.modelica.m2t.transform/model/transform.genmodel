@@ -26,5 +26,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute transform.ecore#//RegionInstance/embedsSinglePortStatechart"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute transform.ecore#//RegionInstance/embedsMultiPortStatechart"/>
     </genClasses>
+    <genClasses ecoreClass="transform.ecore#//TransformationRootObject">
+      <genTypeParameters ecoreTypeParameter="transform.ecore#//TransformationRootObject/T"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference transform.ecore#//TransformationRootObject/eObject"/>
+    </genClasses>
+    <genClasses ecoreClass="transform.ecore#//RealtimeStatechartTransformationRootObject"/>
   </genPackages>
 </genmodel:GenModel>

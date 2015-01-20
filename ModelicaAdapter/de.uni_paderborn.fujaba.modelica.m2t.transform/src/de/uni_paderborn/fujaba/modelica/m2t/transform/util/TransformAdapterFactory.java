@@ -90,6 +90,14 @@ public class TransformAdapterFactory extends AdapterFactoryImpl {
 				return createRegionInstanceAdapter();
 			}
 			@Override
+			public <T> Adapter caseTransformationRootObject(TransformationRootObject<T> object) {
+				return createTransformationRootObjectAdapter();
+			}
+			@Override
+			public Adapter caseRealtimeStatechartTransformationRootObject(RealtimeStatechartTransformationRootObject object) {
+				return createRealtimeStatechartTransformationRootObjectAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -178,6 +186,34 @@ public class TransformAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRegionInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject <em>Transformation Root Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject
+	 * @generated
+	 */
+	public Adapter createTransformationRootObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject <em>Realtime Statechart Transformation Root Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject
+	 * @generated
+	 */
+	public Adapter createRealtimeStatechartTransformationRootObjectAdapter() {
 		return null;
 	}
 

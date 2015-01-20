@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -297,7 +298,6 @@ public interface TransformPackage extends EPackage {
 	 */
 	int REGION_INSTANCE_FEATURE_COUNT = RealtimestatechartPackage.REGION_FEATURE_COUNT + 3;
 
-
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
 	 * <!-- begin-user-doc -->
@@ -478,6 +478,80 @@ public interface TransformPackage extends EPackage {
 	 */
 	int REGION_INSTANCE_OPERATION_COUNT = RealtimestatechartPackage.REGION_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.impl.TransformationRootObjectImpl <em>Transformation Root Object</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.impl.TransformationRootObjectImpl
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.impl.TransformPackageImpl#getTransformationRootObject()
+	 * @generated
+	 */
+	int TRANSFORMATION_ROOT_OBJECT = 4;
+
+	/**
+	 * The feature id for the '<em><b>EObject</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSFORMATION_ROOT_OBJECT__EOBJECT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Transformation Root Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSFORMATION_ROOT_OBJECT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Transformation Root Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSFORMATION_ROOT_OBJECT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.impl.RealtimeStatechartTransformationRootObjectImpl <em>Realtime Statechart Transformation Root Object</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.impl.RealtimeStatechartTransformationRootObjectImpl
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.impl.TransformPackageImpl#getRealtimeStatechartTransformationRootObject()
+	 * @generated
+	 */
+	int REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT = 5;
+
+	/**
+	 * The feature id for the '<em><b>EObject</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT__EOBJECT = TRANSFORMATION_ROOT_OBJECT__EOBJECT;
+
+	/**
+	 * The number of structural features of the '<em>Realtime Statechart Transformation Root Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT_FEATURE_COUNT = TRANSFORMATION_ROOT_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Realtime Statechart Transformation Root Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT_OPERATION_COUNT = TRANSFORMATION_ROOT_OBJECT_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.Map <em>Map</em>}'.
@@ -607,6 +681,37 @@ public interface TransformPackage extends EPackage {
 	EAttribute getRegionInstance_EmbedsMultiPortStatechart();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject <em>Transformation Root Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Transformation Root Object</em>'.
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject
+	 * @generated
+	 */
+	EClass getTransformationRootObject();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject#getEObject <em>EObject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>EObject</em>'.
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.TransformationRootObject#getEObject()
+	 * @see #getTransformationRootObject()
+	 * @generated
+	 */
+	EReference getTransformationRootObject_EObject();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject <em>Realtime Statechart Transformation Root Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Realtime Statechart Transformation Root Object</em>'.
+	 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject
+	 * @generated
+	 */
+	EClass getRealtimeStatechartTransformationRootObject();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -621,6 +726,7 @@ public interface TransformPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -731,6 +837,34 @@ public interface TransformPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REGION_INSTANCE__EMBEDS_MULTI_PORT_STATECHART = eINSTANCE.getRegionInstance_EmbedsMultiPortStatechart();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.impl.TransformationRootObjectImpl <em>Transformation Root Object</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.impl.TransformationRootObjectImpl
+		 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.impl.TransformPackageImpl#getTransformationRootObject()
+		 * @generated
+		 */
+		EClass TRANSFORMATION_ROOT_OBJECT = eINSTANCE.getTransformationRootObject();
+
+		/**
+		 * The meta object literal for the '<em><b>EObject</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSFORMATION_ROOT_OBJECT__EOBJECT = eINSTANCE.getTransformationRootObject_EObject();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.modelica.m2t.transform.impl.RealtimeStatechartTransformationRootObjectImpl <em>Realtime Statechart Transformation Root Object</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.impl.RealtimeStatechartTransformationRootObjectImpl
+		 * @see de.uni_paderborn.fujaba.modelica.m2t.transform.impl.TransformPackageImpl#getRealtimeStatechartTransformationRootObject()
+		 * @generated
+		 */
+		EClass REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT = eINSTANCE.getRealtimeStatechartTransformationRootObject();
 
 	}
 

@@ -58,6 +58,24 @@ public interface TransformFactory extends EFactory {
 	RegionInstance createRegionInstance();
 
 	/**
+	 * Returns a new object of class '<em>Transformation Root Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Transformation Root Object</em>'.
+	 * @generated
+	 */
+	<T> TransformationRootObject<T> createTransformationRootObject();
+
+	/**
+	 * Returns a new object of class '<em>Realtime Statechart Transformation Root Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Realtime Statechart Transformation Root Object</em>'.
+	 * @generated
+	 */
+	RealtimeStatechartTransformationRootObject createRealtimeStatechartTransformationRootObject();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -28,7 +28,7 @@ import org.storydriven.core.ExtendableElement;
  * @see de.uni_paderborn.fujaba.modelica.m2t.transform.TransformPackage
  * @generated
  */
-public class TransformSwitch<T> extends Switch<T> {
+public class TransformSwitch<T1> extends Switch<T1> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -70,33 +70,46 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	protected T doSwitch(int classifierID, EObject theEObject) {
+	protected T1 doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case TransformPackage.MAP: {
 				Map map = (Map)theEObject;
-				T result = caseMap(map);
+				T1 result = caseMap(map);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TransformPackage.ROOT: {
 				Root root = (Root)theEObject;
-				T result = caseRoot(root);
+				T1 result = caseRoot(root);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TransformPackage.ENTRY: {
 				Entry entry = (Entry)theEObject;
-				T result = caseEntry(entry);
+				T1 result = caseEntry(entry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TransformPackage.REGION_INSTANCE: {
 				RegionInstance regionInstance = (RegionInstance)theEObject;
-				T result = caseRegionInstance(regionInstance);
+				T1 result = caseRegionInstance(regionInstance);
 				if (result == null) result = caseRegion(regionInstance);
 				if (result == null) result = caseCommentableElement(regionInstance);
 				if (result == null) result = casePrioritizedElement(regionInstance);
 				if (result == null) result = caseExtendableElement(regionInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TransformPackage.TRANSFORMATION_ROOT_OBJECT: {
+				TransformationRootObject<?> transformationRootObject = (TransformationRootObject<?>)theEObject;
+				T1 result = caseTransformationRootObject(transformationRootObject);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TransformPackage.REALTIME_STATECHART_TRANSFORMATION_ROOT_OBJECT: {
+				RealtimeStatechartTransformationRootObject realtimeStatechartTransformationRootObject = (RealtimeStatechartTransformationRootObject)theEObject;
+				T1 result = caseRealtimeStatechartTransformationRootObject(realtimeStatechartTransformationRootObject);
+				if (result == null) result = caseTransformationRootObject(realtimeStatechartTransformationRootObject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,7 +128,7 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMap(Map object) {
+	public T1 caseMap(Map object) {
 		return null;
 	}
 
@@ -130,7 +143,7 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRoot(Root object) {
+	public T1 caseRoot(Root object) {
 		return null;
 	}
 
@@ -145,7 +158,7 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntry(Entry object) {
+	public T1 caseEntry(Entry object) {
 		return null;
 	}
 
@@ -160,7 +173,37 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRegionInstance(RegionInstance object) {
+	public T1 caseRegionInstance(RegionInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Transformation Root Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Transformation Root Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <T> T1 caseTransformationRootObject(TransformationRootObject<T> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Realtime Statechart Transformation Root Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Realtime Statechart Transformation Root Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseRealtimeStatechartTransformationRootObject(RealtimeStatechartTransformationRootObject object) {
 		return null;
 	}
 
@@ -175,7 +218,7 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExtendableElement(ExtendableElement object) {
+	public T1 caseExtendableElement(ExtendableElement object) {
 		return null;
 	}
 
@@ -190,7 +233,7 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCommentableElement(CommentableElement object) {
+	public T1 caseCommentableElement(CommentableElement object) {
 		return null;
 	}
 
@@ -205,7 +248,7 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePrioritizedElement(PrioritizedElement object) {
+	public T1 casePrioritizedElement(PrioritizedElement object) {
 		return null;
 	}
 
@@ -220,7 +263,7 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRegion(Region object) {
+	public T1 caseRegion(Region object) {
 		return null;
 	}
 
@@ -236,7 +279,7 @@ public class TransformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	public T defaultCase(EObject object) {
+	public T1 defaultCase(EObject object) {
 		return null;
 	}
 
