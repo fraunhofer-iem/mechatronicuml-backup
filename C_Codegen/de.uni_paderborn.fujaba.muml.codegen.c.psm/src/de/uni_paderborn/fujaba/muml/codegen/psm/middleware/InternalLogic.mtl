@@ -233,6 +233,6 @@ switch (portID) {
 [/template]
 
 [query public getNetworkInterfaceJava(my_ecu : RefinedStructuredResourceInstance , target_ecu : RefinedStructuredResourceInstance, codegen : CodGenAllocation) : HWPortInstance = 
-invoke('de.uni_paderborn.fujaba.muml.model.gen.c.helper.Routing','getNetworkInterface(de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation)', Sequence{my_ecu, target_ecu, codegen}) /]
+invoke('de.uni_paderborn.fujaba.muml.codegen.c.psm.helper.Routing','getNetworkInterface(de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation)', Sequence{my_ecu, target_ecu, codegen}) /]
 [query public getNextHopEcuJava( my_ecu : RefinedStructuredResourceInstance , target_ecu : RefinedStructuredResourceInstance, codegen : CodGenAllocation,) : RefinedStructuredResourceInstance = 
-invoke('de.uni_paderborn.fujaba.muml.model.gen.c.helper.Routing','getNextHopECU(de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation)', Sequence{my_ecu, target_ecu, codegen}) /]
+invoke('de.uni_paderborn.fujaba.muml.codegen.c.psm.helper.Routing','getNextHopECU(de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation)', Sequence{my_ecu, target_ecu, codegen}) /]

@@ -23,6 +23,14 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: de.uni_paderborn.fujaba.muml.codegen.psm,
+Export-Package: de.uni_paderborn.fujaba.muml.codegen.c.psm.helper,
+ de.uni_paderborn.fujaba.muml.codegen.psm,
  de.uni_paderborn.fujaba.muml.codegen.psm.main
+Bundle-ClassPath: .,
+ jgrapht-0.9.0/lib/jgraph-5.13.0.0.jar,
+ jgrapht-0.9.0/lib/jgrapht-core-0.9.0.jar,
+ jgrapht-0.9.0/lib/jgrapht-demo-0.9.0.jar,
+ jgrapht-0.9.0/lib/jgrapht-ext-0.9.0-uber.jar,
+ jgrapht-0.9.0/lib/jgrapht-ext-0.9.0.jar,
+ jgrapht-0.9.0/lib/jgraphx-2.0.0.1.jar
 

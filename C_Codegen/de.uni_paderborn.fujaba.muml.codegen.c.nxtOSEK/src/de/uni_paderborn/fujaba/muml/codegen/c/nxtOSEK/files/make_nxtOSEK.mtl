@@ -18,6 +18,8 @@
 TARGET = nxtOSEKImpl
 TARGET_SOURCES := \
 		Middleware/MiddlewareCore.c\
+		Middleware/MiddlewareInternalLogic.c\
+		Middleware/NetworkInterfaceImplementation.c\
 		continuousComponents/ContImplementations.c\
 		lib/port.c\
 		lib/MessageBuffer.c\

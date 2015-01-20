@@ -14,17 +14,18 @@
 [template public generateMakeFile(CIs : OrderedSet(ComponentInstance), path : String)]
 
 [file (path+'makefile', false, 'UTF-8')]
+[let atomics : Sequence(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
 
 RTSC = [for (comp : Component | CIs.componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
 COMP = [for (comp : Component | CIs.componentType)][if ((componentKind=ComponentKind::SOFTWARE_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
 LIB = [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]ContImplementations.o[/if] port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o
-
+MW = MiddlewareCore.o MiddlewareInternalLogic.o NetworkInterfaceImplementation.o
 CC = gcc
 CFLAGS = -c
 all: app
 
-app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (CIs.eAllContents(Operation)->size() > 0)]operations.o[/if] MiddlewareCore.o
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) [if (CIs.eAllContents(Operation)->size() > 0)]operations.o[/if] MiddlewareCore.o  -o app
+app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) [if (atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()->size() > 0)]operations.o[/if] 
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) [if (atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()->size() > 0)]operations.o[/if] -o app
 [for (comp : Component | CIs.componentType)? (componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent))]
 [let rtsc : RealtimeStatechart = comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)]
 [rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,false)/]
@@ -51,9 +52,14 @@ Messages.o: messages/Messages.c
 	$(CC) $(CFLAGS) messages/Messages.c
 MiddlewareCore.o: Middleware/MiddlewareCore.c
 	$(CC) $(CFLAGS) Middleware/MiddlewareCore.c
-[if (CIs.eAllContents(Operation)->size() > 0)]operations.o: operations/operations.c
+MiddlewareInternalLogic.o: Middleware/MiddlewareInternalLogic.c
+	$(CC) $(CFLAGS) Middleware/MiddlewareInternalLogic.c
+NetworkInterfaceImplementation.o: Middleware/NetworkInterfaceImplementation.c
+	$(CC) $(CFLAGS) Middleware/NetworkInterfaceImplementation.c
+[if (atomics.behavior.oclAsType(RealtimeStatechart).eAllContents(Operation)->asSet()->size() > 0)]operations.o: operations/operations.c
 	$(CC) $(CFLAGS) operations/operations.c
 [/if]
+[/let]
 
 clean:
 	rm -rf *o app

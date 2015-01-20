@@ -43,6 +43,21 @@
 [generateMiddlewareCoreClass(CIs, path)/]
 
 [generateGlobalIdentifierFiles(CIs, path)/]
+
+[comment generate dummy files, which needed for compatibility/]
+[file(path+'/MiddlewareInternalLogic.h',false,'UTF-8')]
+//this file is empty, since it's content is not needed for PIM->Code generation
+[/file]
+[file(path+'/NetworkInterfaceImplementation.h',false,'UTF-8')]
+//this file is empty, since it's content is not needed for PIM->Code generation
+[/file]
+[file(path+'/MiddlewareInternalLogic.c',false,'UTF-8')]
+//this file is empty, since it's content is not needed for PIM->Code generation
+[/file]
+[file(path+'/NetworkInterfaceImplementation.c',false,'UTF-8')]
+//this file is empty, since it's content is not needed for PIM->Code generation
+[/file]
+
 [/template]
 
 
@@ -402,7 +417,7 @@ switch (portID) {
 [/template]
 
 [template public generateOSFileDummy(path: String, OS:String)]
-[file(path+'/OS.h',false,'UTF-8')]
+[file(path+'Middleware/OS.h',false,'UTF-8')]
 #define [OS/]
 [/file]
 [/template]
