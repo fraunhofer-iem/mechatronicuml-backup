@@ -293,6 +293,6 @@ receiverMessages->union(senderMessages)->asOrderedSet()
  * @return Set of all DiscretePortInstances
 */]
 [query public getAllDiscretePortInstances (CIs : OrderedSet(ComponentInstance)) : Set(DiscretePortInstance) = 
-CIs->collect(portInstances)->asOrderedSet() /]
+CIs->collect(portInstances)->asOrderedSet()->filter(DiscretePortInstance) /]
 
 
