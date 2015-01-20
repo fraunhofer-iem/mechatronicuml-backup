@@ -1,0 +1,2364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="rtsc" nsURI="de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::rtsc" endHeaderPosition="459">
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Query" name="allSubstatecharts" visibility="Public" type="/3/OrderedSet(RealtimeStatechart)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="466" endPosition="985" value="&#xA;Returns an ordered set of all substatecharts.&#xA;It basically returns a forest which is constructed as follows:&#xA;selectSubstatecharts(rtsc) {&#xA;do&#xA;- select an arbitrary state &quot;s&quot; (which embeds regions)&#xA;- for rtsc in sortedByRegionPrioDESC(s)&#xA;- store rtsc&#xA;- selectSubStatecharts(rtsc)&#xA;while (there exists an unselected state);&#xA;}&#xA;Long story short: sort descending by region prio&#xA;and then depth-first preorder (according to the ocl spec)&#xA;@param rtsc the root rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the root rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="closure" eType="/3/OrderedSet(RealtimeStatechart)">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(RealtimeStatechart)">
+          <source xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(RealtimeStatechart)">
+            <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL/Annotations">
+              <details key="IMPLICIT_SET_CONVERSION" value="true"/>
+            </eAnnotations>
+            <part xsi:type="ocl.ecore:CollectionItem">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <item xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/allSubstatecharts/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </item>
+            </part>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
+        </source>
+        <body xsi:type="ocl.ecore:IteratorExp" name="sortedBy" eType="/3/Sequence(RealtimeStatechart)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(RealtimeStatechart)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Region)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(State)">
+                <source xsi:type="ocl.ecore:VariableExp" name="r" referredVariable="/0/allSubstatecharts/closure/r">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+              </source>
+              <body xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Region)">
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/allSubstatecharts/closure/sortedBy/collect/collect/temp1">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/allSubstatecharts/closure/sortedBy/collect/temp2">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/embeddedStatechart"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+            </iterator>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp3" referredVariable="/0/allSubstatecharts/closure/sortedBy/temp3">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//PrioritizedElement/priority"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer_Class/-.1"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp3">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </iterator>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="r">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </iterator>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="allSubstatechartsPostOrder" visibility="Public" type="/3/OrderedSet(OrderedSet(RealtimeStatechart))">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1262" endPosition="1601" value="&#xA;Returns an ordered set of all substatecharts.&#xA;Basically it returns a forest (if we would also append OrderedSet{rtsc}&#xA;it would be a tree) where each tree is represented in post order.&#xA;The i-th element of the returned list represents the nodes at&#xA;level size() - i + 1 (where 1 &lt;= i &lt;= size()).&#xA;@param rtsc the root rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the root rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:LetExp" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))">
+        <in xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))">
+            <source xsi:type="ocl.ecore:IteratorExp" name="closure" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))">
+              <source xsi:type="ocl.ecore:VariableExp" name="leaves" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))" referredVariable="/0/allSubstatechartsPostOrder/%.1/leaves"/>
+              <body xsi:type="ocl.ecore:LetExp" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))">
+                <in xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))" kind="OrderedSet">
+                  <part xsi:type="ocl.ecore:CollectionItem" eType="/3/OrderedSet(RealtimeStatechart)">
+                    <item xsi:type="ocl.ecore:LetExp" eType="/3/OrderedSet(RealtimeStatechart)">
+                      <in xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(RealtimeStatechart)">
+                        <source xsi:type="ocl.ecore:VariableExp" name="candidates" eType="/3/OrderedSet(RealtimeStatechart)" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates"/>
+                        <body xsi:type="ocl.ecore:OperationCallExp">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                          <source xsi:type="ocl.ecore:OperationCallExp">
+                            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                            <source xsi:type="ocl.ecore:VariableExp" name="parents" eType="/3/OrderedSet(RealtimeStatechart)" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents"/>
+                            <argument xsi:type="ocl.ecore:VariableExp" name="r" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/select/r">
+                              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                            </argument>
+                            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/includes"/>
+                          </source>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+                        </body>
+                        <iterator xsi:type="ocl.ecore:Variable" name="r">
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                        </iterator>
+                      </in>
+                      <variable xsi:type="ocl.ecore:Variable" name="parents" eType="/3/OrderedSet(RealtimeStatechart)">
+                        <initExpression xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(RealtimeStatechart)">
+                          <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(RealtimeStatechart)">
+                            <source xsi:type="ocl.ecore:VariableExp" name="candidates" eType="/3/OrderedSet(RealtimeStatechart)" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates"/>
+                            <body xsi:type="mtl:QueryInvocation" eType="/3/Set(RealtimeStatechart)" definition="/0/allParentStatecharts">
+                              <argument xsi:type="ocl.ecore:VariableExp" name="r" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents/%/collect/r">
+                                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                              </argument>
+                            </body>
+                            <iterator xsi:type="ocl.ecore:Variable" name="r">
+                              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                            </iterator>
+                          </source>
+                          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet"/>
+                        </initExpression>
+                      </variable>
+                    </item>
+                  </part>
+                </in>
+                <variable xsi:type="ocl.ecore:Variable" name="candidates" eType="/3/OrderedSet(RealtimeStatechart)">
+                  <initExpression xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(RealtimeStatechart)">
+                    <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(RealtimeStatechart)">
+                      <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(RealtimeStatechart)">
+                        <source xsi:type="ocl.ecore:VariableExp" name="level" eType="/3/OrderedSet(RealtimeStatechart)" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/%/closure/level"/>
+                        <body xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="temp3" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/select/temp4">
+                            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/embedded"/>
+                        </body>
+                        <iterator xsi:type="ocl.ecore:Variable" name="temp4">
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                        </iterator>
+                      </source>
+                      <body xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+                          <source xsi:type="ocl.ecore:PropertyCallExp">
+                            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+                            <source xsi:type="ocl.ecore:VariableExp" name="temp4" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/temp5">
+                              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                            </source>
+                            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+                      </body>
+                      <iterator xsi:type="ocl.ecore:Variable" name="temp5">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                      </iterator>
+                    </source>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet"/>
+                  </initExpression>
+                </variable>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="level" eType="/3/OrderedSet(RealtimeStatechart)"/>
+            </source>
+            <argument xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(RealtimeStatechart)">
+              <source xsi:type="ocl.ecore:VariableExp" name="leaves" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))" referredVariable="/0/allSubstatechartsPostOrder/%.1/leaves"/>
+              <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/at"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/prepend"/>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp5" eType="/3/OrderedSet(RealtimeStatechart)" referredVariable="/0/allSubstatechartsPostOrder/%.1/select/temp6"/>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/notEmpty"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp6" eType="/3/OrderedSet(RealtimeStatechart)"/>
+        </in>
+        <variable xsi:type="ocl.ecore:Variable" name="leaves" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))">
+          <initExpression xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))" kind="OrderedSet">
+            <part xsi:type="ocl.ecore:CollectionItem" eType="/3/OrderedSet(RealtimeStatechart)">
+              <item xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(RealtimeStatechart)">
+                <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(RealtimeStatechart)">
+                  <source xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(RealtimeStatechart)" definition="/0/allSubstatecharts">
+                    <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/allSubstatechartsPostOrder/rtsc">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                    </argument>
+                  </source>
+                  <body xsi:type="ocl.ecore:IteratorExp" name="forAll">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(State)">
+                      <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/temp8">
+                        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+                    </source>
+                    <body xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Region)">
+                        <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/forAll/temp7">
+                          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/embeddedRegions"/>
+                      </source>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/isEmpty"/>
+                    </body>
+                    <iterator xsi:type="ocl.ecore:Variable" name="temp7">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+                    </iterator>
+                  </body>
+                  <iterator xsi:type="ocl.ecore:Variable" name="temp8">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                  </iterator>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/asOrderedSet"/>
+              </item>
+            </part>
+          </initExpression>
+        </variable>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="isPortRTSC" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2827" endPosition="2903" value="&#xA;Returns true if the rtsc is a port statechart.&#xA;@param rtsc the rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isPortRTSC/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </source>
+        <argument xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#//RegionInstance"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isPortRTSC/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/11/RegionInstance">
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#//RegionInstance"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#//RegionInstance/embedsSinglePortStatechart"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="isMultiPortRTSC" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="3093" endPosition="3174" value="&#xA;Returns true if the rtsc is a multiport statechart.&#xA;@param rtsc the rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <source xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isMultiPortRTSC/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </source>
+        <argument xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#//RegionInstance"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isMultiPortRTSC/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/11/RegionInstance">
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#//RegionInstance"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#//RegionInstance/embedsMultiPortStatechart"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="isComponentRTSC" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="3368" endPosition="3449" value="&#xA;Returns true if the rtsc is a component statechart.&#xA;@param rtsc the rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isComponentRTSC/rtsc">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/embedded"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="allParentStatecharts" type="/3/Set(RealtimeStatechart)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="3547" endPosition="3729" value="&#xA;Returns a set of parent statecharts which (directly or indirectly)&#xA;embed the passed statechart rtsc. rtsc is not part of the returned set.&#xA;@param rtsc the (embedded) rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the (embedded) rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="closure" eType="/3/Set(RealtimeStatechart)">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(RealtimeStatechart)">
+          <source xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(RealtimeStatechart)">
+            <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL/Annotations">
+              <details key="IMPLICIT_SET_CONVERSION" value="true"/>
+            </eAnnotations>
+            <part xsi:type="ocl.ecore:CollectionItem">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <item xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/allParentStatecharts/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </item>
+            </part>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asSet"/>
+        </source>
+        <body xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          <condition xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="r" referredVariable="/0/allParentStatecharts/closure/r">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/embedded"/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="r" referredVariable="/0/allParentStatecharts/closure/r">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/parentStatechart"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:VariableExp" name="r" referredVariable="/0/allParentStatecharts/closure/r">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </elseExpression>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="r">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </iterator>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getParentPortStatechart" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="3970" endPosition="4100" value="&#xA;Returns the port statechart which (directly or indirectly) embeds&#xA;the statechart rtsc.&#xA;@param rtsc the (embedded) rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the (embedded) rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="any">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(RealtimeStatechart)">
+          <source xsi:type="mtl:QueryInvocation" eType="/3/Set(RealtimeStatechart)" definition="/0/allParentStatecharts">
+            <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getParentPortStatechart/rtsc">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+            </argument>
+          </source>
+          <argument xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(RealtimeStatechart)">
+            <part xsi:type="ocl.ecore:CollectionItem">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              <item xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getParentPortStatechart/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </item>
+            </part>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/union.1"/>
+        </source>
+        <body xsi:type="mtl:QueryInvocation" definition="/0/isPortRTSC">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getParentPortStatechart/any/temp9">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </argument>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="temp9">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </iterator>
+      </expression>
+      <type xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getExitPoints" visibility="Public" type="/3/Set(ExitPoint)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="4337" endPosition="4412" value="&#xA;Returns a set of exit points for the state.&#xA;@param state the state&#xA;&#xA;"/>
+        <parametersDocumentation name="state">
+          <body value=" the state"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="state">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(StateConnectionPoint)">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(StateConnectionPoint)">
+          <source xsi:type="ocl.ecore:VariableExp" name="state" referredVariable="/0/getExitPoints/state">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/connectionPoints"/>
+        </source>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getExitPoints/select/temp10">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint"/>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="/11/ExitPoint">
+            <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//ExitPoint"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="temp10">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint"/>
+        </iterator>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getEntryPoints" visibility="Public" type="/3/Set(EntryPoint)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="4540" endPosition="4616" value="&#xA;Returns a set of entry points for the state.&#xA;@param state the state&#xA;&#xA;"/>
+        <parametersDocumentation name="state">
+          <body value=" the state"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="state">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(EntryPoint)">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(EntryPoint)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(StateConnectionPoint)">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(StateConnectionPoint)">
+              <source xsi:type="ocl.ecore:VariableExp" name="state" referredVariable="/0/getEntryPoints/state">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State/connectionPoints"/>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getEntryPoints/%.1/collect/select/temp11">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/11/EntryPoint">
+                <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp11">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint"/>
+            </iterator>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/getEntryPoints/%.1/collect/temp12">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/11/EntryPoint">
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp12">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint"/>
+          </iterator>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asSet"/>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getEntryPoints" visibility="Public" type="/3/Set(EntryPoint)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="4791" endPosition="4867" value="&#xA;Returns a set of entry points for the state.&#xA;@param state the state&#xA;&#xA;"/>
+        <parametersDocumentation name="state">
+          <body value=" the state"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp" eType="/3/Set(EntryPoint)">
+        <condition xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getEntryPoints.1/rtsc">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/embedded"/>
+        </condition>
+        <thenExpression xsi:type="mtl:QueryInvocation" eType="/3/Set(EntryPoint)" definition="/0/getEntryPoints">
+          <argument xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getEntryPoints.1/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+          </argument>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(OclVoid)"/>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getRelevantEntryPointTransitions" visibility="Public" type="/3/OrderedSet(Transition)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="5046" endPosition="5177" value="&#xA;Returns all transitions leading from entrypoints to a state&#xA;which is contained in the passed rtsc.&#xA;@param rtsc the rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(Transition)">
+        <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(Transition)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="sortedBy" eType="/3/OrderedSet(EntryPoint)">
+            <source xsi:type="mtl:QueryInvocation" eType="/3/Set(EntryPoint)" definition="/0/getEntryPoints.1">
+              <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getRelevantEntryPointTransitions/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </argument>
+            </source>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getRelevantEntryPointTransitions/%.1/collect/sortedBy/temp13">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp13">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+            </iterator>
+          </source>
+          <body xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(Transition)" definition="/0/getRelevantEntryPointTransitions.1">
+            <argument xsi:type="ocl.ecore:VariableExp" name="entryPoint" referredVariable="/0/getRelevantEntryPointTransitions/%.1/collect/entryPoint">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getRelevantEntryPointTransitions/rtsc">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+            </argument>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="entryPoint">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+          </iterator>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)_Class/asOrderedSet"/>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getRelevantEntryPointTransitions" visibility="Public" type="/3/OrderedSet(Transition)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="5625" endPosition="5767" value="&#xA;Returns all transitions leading from the passed entry point to a state&#xA;which is contained in the passed rtsc.&#xA;@param rtsc the rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="entryPoint">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+      </parameter>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(Transition)">
+        <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(Transition)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Transition)">
+            <source xsi:type="ocl.ecore:VariableExp" name="entryPoint" referredVariable="/0/getRelevantEntryPointTransitions.1/entryPoint">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex/outgoingTransitions"/>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(State)">
+              <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/getRelevantEntryPointTransitions.1/rtsc">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/states"/>
+            </source>
+            <argument xsi:type="ocl.ecore:IfExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex"/>
+              <condition xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getRelevantEntryPointTransitions.1/%.1/select/temp14">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/11/EntryPoint">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+              </condition>
+              <thenExpression xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+                  <source xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getRelevantEntryPointTransitions.1/%.1/select/temp14">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/11/EntryPoint">
+                    <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint/state"/>
+              </thenExpression>
+              <elseExpression xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getRelevantEntryPointTransitions.1/%.1/select/temp14">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition/target"/>
+              </elseExpression>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/includes"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp14">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+          </iterator>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/asOrderedSet"/>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="isEnterable" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="6101" endPosition="6205" value="&#xA;Returns true if the rtsc's parent state contains an entry point&#xA;@param rtsc the (embedded) rtsc&#xA;&#xA;"/>
+        <parametersDocumentation name="rtsc">
+          <body value=" the (embedded) rtsc"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="rtsc">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isEnterable/rtsc">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/embedded"/>
+        </source>
+        <argument xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="mtl:QueryInvocation" eType="/3/Set(EntryPoint)" definition="/0/getEntryPoints">
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/isEnterable/rtsc">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart/parentRegion"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region/parentState"/>
+            </argument>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/notEmpty"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="allSubstatecharts" eType="/3/OrderedSet(RealtimeStatechart)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/allSubstatecharts"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="allSubstatechartsPostOrder" eType="/3/OrderedSet(OrderedSet(RealtimeStatechart))">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/allSubstatechartsPostOrder"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="isPortRTSC">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/isPortRTSC"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="isMultiPortRTSC">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/isMultiPortRTSC"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="isComponentRTSC">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/isComponentRTSC"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="allParentStatecharts" eType="/3/Set(RealtimeStatechart)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/allParentStatecharts"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getParentPortStatechart">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getParentPortStatechart"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getExitPoints" eType="/3/Set(ExitPoint)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getExitPoints"/>
+        <eParameters name="state">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getEntryPoints" eType="/3/Set(EntryPoint)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getEntryPoints"/>
+        <eParameters name="state">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getEntryPoints" eType="/3/Set(EntryPoint)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getEntryPoints.1"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getRelevantEntryPointTransitions" eType="/3/OrderedSet(Transition)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getRelevantEntryPointTransitions"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getRelevantEntryPointTransitions" eType="/3/OrderedSet(Transition)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getRelevantEntryPointTransitions.1"/>
+        <eParameters name="entryPoint">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+        </eParameters>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="isEnterable">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/isEnterable"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="State_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EntryPoint_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+      </eAnnotations>
+      <eOperations name="getRelevantEntryPointTransitions" eType="/3/OrderedSet(Transition)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getRelevantEntryPointTransitions.1"/>
+        <eParameters name="rtsc">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(RealtimeStatechart)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(OrderedSet(RealtimeStatechart))" instanceClassName="java.util.LinkedHashSet" elementType="/3/OrderedSet(RealtimeStatechart)"/>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(RealtimeStatechart)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(ExitPoint)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//ExitPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(EntryPoint)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Transition)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(State)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Region)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Region)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(RealtimeStatechart)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Region)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(RealtimeStatechart)" instanceClassName="org.eclipse.ocl.util.Bag">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(StateConnectionPoint)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//StateConnectionPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(EntryPoint)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(OclVoid)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(EntryPoint)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Transition)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="RegionInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#//RegionInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="ExitPoint">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//ExitPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="EntryPoint">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//EntryPoint"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/allSubstatecharts">
+      <details key="start" value="988"/>
+      <details key="end" value="1257"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/allSubstatecharts/%">
+      <details key="start" value="463"/>
+      <details key="end" value="987"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/allSubstatecharts/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/allSubstatecharts/rtsc">
+      <details key="start" value="1020"/>
+      <details key="end" value="1045"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/allSubstatecharts/closure">
+      <details key="start" value="1083"/>
+      <details key="end" value="1254"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/allSubstatecharts/closure/%">
+      <details key="start" value="1083"/>
+      <details key="end" value="1103"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/allSubstatecharts/closure/%/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/allSubstatecharts/closure/%/%/%/rtsc">
+      <details key="start" value="1083"/>
+      <details key="end" value="1087"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/allSubstatecharts/closure/sortedBy">
+      <details key="start" value="1140"/>
+      <details key="end" value="1251"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/allSubstatecharts/closure/sortedBy/collect">
+      <details key="start" value="1140"/>
+      <details key="end" value="1210"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/allSubstatecharts/closure/sortedBy/collect/collect">
+      <details key="start" value="1140"/>
+      <details key="end" value="1181"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/allSubstatecharts/closure/sortedBy/collect/collect/%">
+      <details key="start" value="1140"/>
+      <details key="end" value="1148"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/allSubstatecharts/closure/sortedBy/collect/collect/%/r">
+      <details key="start" value="1140"/>
+      <details key="end" value="1141"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/allSubstatecharts/closure/sortedBy/collect/collect/%.1">
+      <details key="start" value="1162"/>
+      <details key="end" value="1177"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/allSubstatecharts/closure/sortedBy/collect/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/allSubstatecharts/closure/sortedBy/collect/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/allSubstatecharts/closure/sortedBy/collect/%">
+      <details key="start" value="1191"/>
+      <details key="end" value="1209"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/allSubstatecharts/closure/sortedBy/collect/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/allSubstatecharts/closure/sortedBy/collect/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/allSubstatecharts/closure/sortedBy/%">
+      <details key="start" value="1225"/>
+      <details key="end" value="1247"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/allSubstatecharts/closure/sortedBy/%/%">
+      <details key="start" value="1226"/>
+      <details key="end" value="1247"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/allSubstatecharts/closure/sortedBy/%/%/%">
+      <details key="start" value="1226"/>
+      <details key="end" value="1238"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/allSubstatecharts/closure/sortedBy/%/%/%/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/allSubstatecharts/closure/sortedBy/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/allSubstatecharts/closure/r">
+      <details key="start" value="1113"/>
+      <details key="end" value="1135"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/allSubstatechartsPostOrder">
+      <details key="start" value="1604"/>
+      <details key="end" value="2822"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/allSubstatechartsPostOrder/%">
+      <details key="start" value="1259"/>
+      <details key="end" value="1603"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/allSubstatechartsPostOrder/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/allSubstatechartsPostOrder/rtsc">
+      <details key="start" value="1645"/>
+      <details key="end" value="1670"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/allSubstatechartsPostOrder/%.1">
+      <details key="start" value="1720"/>
+      <details key="end" value="2819"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/allSubstatechartsPostOrder/%.1/select">
+      <details key="start" value="1917"/>
+      <details key="end" value="2819"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/allSubstatechartsPostOrder/%.1/select/%">
+      <details key="start" value="1917"/>
+      <details key="end" value="2799"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure">
+      <details key="start" value="1917"/>
+      <details key="end" value="2775"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/leaves">
+      <details key="start" value="1917"/>
+      <details key="end" value="1923"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%">
+      <details key="start" value="2213"/>
+      <details key="end" value="2772"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%">
+      <details key="start" value="2374"/>
+      <details key="end" value="2772"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%">
+      <details key="start" value="2444"/>
+      <details key="end" value="2768"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/select">
+      <details key="start" value="2691"/>
+      <details key="end" value="2768"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/select/candidates">
+      <details key="start" value="2691"/>
+      <details key="end" value="2701"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/select/%">
+      <details key="start" value="2739"/>
+      <details key="end" value="2763"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/select/%/%">
+      <details key="start" value="2743"/>
+      <details key="end" value="2763"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/select/%/%/parents">
+      <details key="start" value="2743"/>
+      <details key="end" value="2750"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/select/%/%/r">
+      <details key="start" value="2761"/>
+      <details key="end" value="2762"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/select/r">
+      <details key="start" value="2710"/>
+      <details key="end" value="2732"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents">
+      <details key="start" value="2448"/>
+      <details key="end" value="2581"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents/%">
+      <details key="start" value="2495"/>
+      <details key="end" value="2581"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents/%/collect">
+      <details key="start" value="2495"/>
+      <details key="end" value="2565"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents/%/collect/candidates">
+      <details key="start" value="2495"/>
+      <details key="end" value="2505"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents/%/collect/%">
+      <details key="start" value="2540"/>
+      <details key="end" value="2564"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents/%/collect/%/r">
+      <details key="start" value="2540"/>
+      <details key="end" value="2541"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/%/%/%/parents/%/collect/r">
+      <details key="start" value="2515"/>
+      <details key="end" value="2537"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates">
+      <details key="start" value="2217"/>
+      <details key="end" value="2366"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%">
+      <details key="start" value="2266"/>
+      <details key="end" value="2366"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect">
+      <details key="start" value="2266"/>
+      <details key="end" value="2350"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/select">
+      <details key="start" value="2266"/>
+      <details key="end" value="2289"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/select/level">
+      <details key="start" value="2266"/>
+      <details key="end" value="2271"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/select/%">
+      <details key="start" value="2280"/>
+      <details key="end" value="2288"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/select/%/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/select/temp4">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/%">
+      <details key="start" value="2304"/>
+      <details key="end" value="2345"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/%/%">
+      <details key="start" value="2304"/>
+      <details key="end" value="2328"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/%/%/%">
+      <details key="start" value="2304"/>
+      <details key="end" value="2316"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/%/%/%/temp4">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/%/candidates/%/collect/temp5">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/allSubstatechartsPostOrder/%.1/select/%/closure/level">
+      <details key="start" value="1933"/>
+      <details key="end" value="1971"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/allSubstatechartsPostOrder/%.1/select/%/%">
+      <details key="start" value="2785"/>
+      <details key="end" value="2798"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/allSubstatechartsPostOrder/%.1/select/%/%/leaves">
+      <details key="start" value="2785"/>
+      <details key="end" value="2791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/allSubstatechartsPostOrder/%.1/select/%/%/%">
+      <details key="start" value="2796"/>
+      <details key="end" value="2797"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/allSubstatechartsPostOrder/%.1/select/%.1">
+      <details key="start" value="2808"/>
+      <details key="end" value="2818"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/allSubstatechartsPostOrder/%.1/select/%.1/temp5">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/allSubstatechartsPostOrder/%.1/select/temp6">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/allSubstatechartsPostOrder/%.1/leaves">
+      <details key="start" value="1724"/>
+      <details key="end" value="1911"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/allSubstatechartsPostOrder/%.1/leaves/%">
+      <details key="start" value="1807"/>
+      <details key="end" value="1911"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%">
+      <details key="start" value="1818"/>
+      <details key="end" value="1910"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select">
+      <details key="start" value="1818"/>
+      <details key="end" value="1894"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/%">
+      <details key="start" value="1818"/>
+      <details key="end" value="1842"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/%/rtsc">
+      <details key="start" value="1818"/>
+      <details key="end" value="1822"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/forAll">
+      <details key="start" value="1851"/>
+      <details key="end" value="1893"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/forAll/%">
+      <details key="start" value="1851"/>
+      <details key="end" value="1857"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/forAll/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/forAll/%.1">
+      <details key="start" value="1866"/>
+      <details key="end" value="1892"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/forAll/%.1/%">
+      <details key="start" value="1866"/>
+      <details key="end" value="1881"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/forAll/%.1/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/forAll/temp7">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/allSubstatechartsPostOrder/%.1/leaves/%/%/%/select/temp8">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/isPortRTSC">
+      <details key="start" value="2906"/>
+      <details key="end" value="3088"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/isPortRTSC/%">
+      <details key="start" value="2824"/>
+      <details key="end" value="2905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/isPortRTSC/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/isPortRTSC/rtsc">
+      <details key="start" value="2931"/>
+      <details key="end" value="2956"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/isPortRTSC/%.1">
+      <details key="start" value="2971"/>
+      <details key="end" value="3085"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/isPortRTSC/%.1/%">
+      <details key="start" value="2971"/>
+      <details key="end" value="3009"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/isPortRTSC/%.1/%/%">
+      <details key="start" value="2975"/>
+      <details key="end" value="3009"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/isPortRTSC/%.1/%/%/%">
+      <details key="start" value="2975"/>
+      <details key="end" value="2992"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/isPortRTSC/%.1/%/%/%/rtsc">
+      <details key="start" value="2975"/>
+      <details key="end" value="2979"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/isPortRTSC/%.1/%.1">
+      <details key="start" value="3015"/>
+      <details key="end" value="3085"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/isPortRTSC/%.1/%.1/%">
+      <details key="start" value="3015"/>
+      <details key="end" value="3058"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/isPortRTSC/%.1/%.1/%/%">
+      <details key="start" value="3015"/>
+      <details key="end" value="3032"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/isPortRTSC/%.1/%.1/%/%/rtsc">
+      <details key="start" value="3015"/>
+      <details key="end" value="3019"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/isPortRTSC/%.1/%.1/%/%.1">
+      <details key="start" value="3043"/>
+      <details key="end" value="3057"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/isMultiPortRTSC">
+      <details key="start" value="3177"/>
+      <details key="end" value="3363"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/isMultiPortRTSC/%">
+      <details key="start" value="3090"/>
+      <details key="end" value="3176"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/isMultiPortRTSC/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/isMultiPortRTSC/rtsc">
+      <details key="start" value="3207"/>
+      <details key="end" value="3232"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/isMultiPortRTSC/%.1">
+      <details key="start" value="3247"/>
+      <details key="end" value="3360"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/isMultiPortRTSC/%.1/%">
+      <details key="start" value="3247"/>
+      <details key="end" value="3285"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/isMultiPortRTSC/%.1/%/%">
+      <details key="start" value="3251"/>
+      <details key="end" value="3285"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/isMultiPortRTSC/%.1/%/%/%">
+      <details key="start" value="3251"/>
+      <details key="end" value="3268"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/isMultiPortRTSC/%.1/%/%/%/rtsc">
+      <details key="start" value="3251"/>
+      <details key="end" value="3255"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/isMultiPortRTSC/%.1/%.1">
+      <details key="start" value="3291"/>
+      <details key="end" value="3360"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/isMultiPortRTSC/%.1/%.1/%">
+      <details key="start" value="3291"/>
+      <details key="end" value="3334"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/isMultiPortRTSC/%.1/%.1/%/%">
+      <details key="start" value="3291"/>
+      <details key="end" value="3308"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/isMultiPortRTSC/%.1/%.1/%/%/rtsc">
+      <details key="start" value="3291"/>
+      <details key="end" value="3295"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/isMultiPortRTSC/%.1/%.1/%/%.1">
+      <details key="start" value="3319"/>
+      <details key="end" value="3333"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/isComponentRTSC">
+      <details key="start" value="3452"/>
+      <details key="end" value="3542"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/isComponentRTSC/%">
+      <details key="start" value="3365"/>
+      <details key="end" value="3451"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/isComponentRTSC/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/isComponentRTSC/rtsc">
+      <details key="start" value="3482"/>
+      <details key="end" value="3507"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/isComponentRTSC/%.1">
+      <details key="start" value="3522"/>
+      <details key="end" value="3539"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/isComponentRTSC/%.1/%">
+      <details key="start" value="3526"/>
+      <details key="end" value="3539"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/isComponentRTSC/%.1/%/rtsc">
+      <details key="start" value="3526"/>
+      <details key="end" value="3530"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/allParentStatecharts">
+      <details key="start" value="3732"/>
+      <details key="end" value="3965"/>
+      <details key="line" value="104"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/allParentStatecharts/%">
+      <details key="start" value="3544"/>
+      <details key="end" value="3731"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/allParentStatecharts/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/allParentStatecharts/rtsc">
+      <details key="start" value="3768"/>
+      <details key="end" value="3793"/>
+      <details key="line" value="104"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/allParentStatecharts/closure">
+      <details key="start" value="3824"/>
+      <details key="end" value="3962"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/allParentStatecharts/closure/%">
+      <details key="start" value="3824"/>
+      <details key="end" value="3837"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/allParentStatecharts/closure/%/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/allParentStatecharts/closure/%/%/%/rtsc">
+      <details key="start" value="3824"/>
+      <details key="end" value="3828"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/allParentStatecharts/closure/%.1">
+      <details key="start" value="3874"/>
+      <details key="end" value="3959"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/allParentStatecharts/closure/%.1/%">
+      <details key="start" value="3877"/>
+      <details key="end" value="3887"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/allParentStatecharts/closure/%.1/%/r">
+      <details key="start" value="3877"/>
+      <details key="end" value="3878"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/allParentStatecharts/closure/%.1/%.1">
+      <details key="start" value="3896"/>
+      <details key="end" value="3939"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/allParentStatecharts/closure/%.1/%.1/%">
+      <details key="start" value="3896"/>
+      <details key="end" value="3922"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/allParentStatecharts/closure/%.1/%.1/%/%">
+      <details key="start" value="3896"/>
+      <details key="end" value="3910"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/allParentStatecharts/closure/%.1/%.1/%/%/r">
+      <details key="start" value="3896"/>
+      <details key="end" value="3897"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/allParentStatecharts/closure/%.1/r">
+      <details key="start" value="3950"/>
+      <details key="end" value="3951"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/allParentStatecharts/closure/r">
+      <details key="start" value="3847"/>
+      <details key="end" value="3869"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/getParentPortStatechart">
+      <details key="start" value="4103"/>
+      <details key="end" value="4332"/>
+      <details key="line" value="119"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/getParentPortStatechart/%">
+      <details key="start" value="3967"/>
+      <details key="end" value="4102"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/getParentPortStatechart/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/getParentPortStatechart/rtsc">
+      <details key="start" value="4141"/>
+      <details key="end" value="4166"/>
+      <details key="line" value="119"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/getParentPortStatechart/any">
+      <details key="start" value="4245"/>
+      <details key="end" value="4329"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/getParentPortStatechart/any/%">
+      <details key="start" value="4245"/>
+      <details key="end" value="4310"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/getParentPortStatechart/any/%/%">
+      <details key="start" value="4245"/>
+      <details key="end" value="4272"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/getParentPortStatechart/any/%/%/rtsc">
+      <details key="start" value="4245"/>
+      <details key="end" value="4249"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/getParentPortStatechart/any/%/%.1">
+      <details key="start" value="4280"/>
+      <details key="end" value="4309"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/getParentPortStatechart/any/%/%.1/%/rtsc">
+      <details key="start" value="4304"/>
+      <details key="end" value="4308"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/getParentPortStatechart/any/%.1">
+      <details key="start" value="4316"/>
+      <details key="end" value="4328"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/getParentPortStatechart/any/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/getParentPortStatechart/any/temp9">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/getExitPoints">
+      <details key="start" value="4415"/>
+      <details key="end" value="4535"/>
+      <details key="line" value="128"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/getExitPoints/%">
+      <details key="start" value="4334"/>
+      <details key="end" value="4414"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/getExitPoints/%/state">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/getExitPoints/state">
+      <details key="start" value="4443"/>
+      <details key="end" value="4456"/>
+      <details key="line" value="128"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/getExitPoints/select">
+      <details key="start" value="4478"/>
+      <details key="end" value="4532"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/getExitPoints/select/%">
+      <details key="start" value="4478"/>
+      <details key="end" value="4500"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/getExitPoints/select/%/state">
+      <details key="start" value="4478"/>
+      <details key="end" value="4483"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/getExitPoints/select/%.1">
+      <details key="start" value="4509"/>
+      <details key="end" value="4531"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/getExitPoints/select/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/getExitPoints/select/%.1/%">
+      <details key="start" value="4521"/>
+      <details key="end" value="4530"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/getExitPoints/select/temp10">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/getEntryPoints">
+      <details key="start" value="4619"/>
+      <details key="end" value="4786"/>
+      <details key="line" value="136"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/getEntryPoints/%">
+      <details key="start" value="4537"/>
+      <details key="end" value="4618"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/getEntryPoints/%/state">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/getEntryPoints/state">
+      <details key="start" value="4648"/>
+      <details key="end" value="4661"/>
+      <details key="line" value="136"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/getEntryPoints/%.1">
+      <details key="start" value="4684"/>
+      <details key="end" value="4783"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/getEntryPoints/%.1/collect">
+      <details key="start" value="4684"/>
+      <details key="end" value="4774"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/getEntryPoints/%.1/collect/select">
+      <details key="start" value="4684"/>
+      <details key="end" value="4739"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/getEntryPoints/%.1/collect/select/%">
+      <details key="start" value="4684"/>
+      <details key="end" value="4706"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/getEntryPoints/%.1/collect/select/%/state">
+      <details key="start" value="4684"/>
+      <details key="end" value="4689"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/getEntryPoints/%.1/collect/select/%.1">
+      <details key="start" value="4715"/>
+      <details key="end" value="4738"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/getEntryPoints/%.1/collect/select/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/getEntryPoints/%.1/collect/select/%.1/%">
+      <details key="start" value="4727"/>
+      <details key="end" value="4737"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/getEntryPoints/%.1/collect/select/temp11">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/getEntryPoints/%.1/collect/%">
+      <details key="start" value="4752"/>
+      <details key="end" value="4773"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/getEntryPoints/%.1/collect/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/getEntryPoints/%.1/collect/%/%">
+      <details key="start" value="4762"/>
+      <details key="end" value="4772"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/getEntryPoints/%.1/collect/temp12">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/getEntryPoints.1">
+      <details key="start" value="4870"/>
+      <details key="end" value="5041"/>
+      <details key="line" value="145"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/getEntryPoints.1/%">
+      <details key="start" value="4788"/>
+      <details key="end" value="4869"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/getEntryPoints.1/%/state">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/getEntryPoints.1/rtsc">
+      <details key="start" value="4899"/>
+      <details key="end" value="4924"/>
+      <details key="line" value="145"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/getEntryPoints.1/%.1">
+      <details key="start" value="4947"/>
+      <details key="end" value="5038"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/getEntryPoints.1/%.1/%">
+      <details key="start" value="4950"/>
+      <details key="end" value="4963"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/getEntryPoints.1/%.1/%/rtsc">
+      <details key="start" value="4950"/>
+      <details key="end" value="4954"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/getEntryPoints.1/%.1/%.1">
+      <details key="start" value="4971"/>
+      <details key="end" value="5017"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/getEntryPoints.1/%.1/%.1/%">
+      <details key="start" value="4971"/>
+      <details key="end" value="5000"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/getEntryPoints.1/%.1/%.1/%/%">
+      <details key="start" value="4971"/>
+      <details key="end" value="4988"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/getEntryPoints.1/%.1/%.1/%/%/rtsc">
+      <details key="start" value="4971"/>
+      <details key="end" value="4975"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/getEntryPoints.1/%.1/%.2">
+      <details key="start" value="5026"/>
+      <details key="end" value="5031"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/getRelevantEntryPointTransitions">
+      <details key="start" value="5180"/>
+      <details key="end" value="5620"/>
+      <details key="line" value="158"/>
+    </eAnnotations>
+    <eAnnotations source="positions.191" references="/0/getRelevantEntryPointTransitions/%">
+      <details key="start" value="5043"/>
+      <details key="end" value="5179"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.192" references="/0/getRelevantEntryPointTransitions/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.193" references="/0/getRelevantEntryPointTransitions/rtsc">
+      <details key="start" value="5227"/>
+      <details key="end" value="5252"/>
+      <details key="line" value="158"/>
+    </eAnnotations>
+    <eAnnotations source="positions.194" references="/0/getRelevantEntryPointTransitions/%.1">
+      <details key="start" value="5474"/>
+      <details key="end" value="5617"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.195" references="/0/getRelevantEntryPointTransitions/%.1/collect">
+      <details key="start" value="5474"/>
+      <details key="end" value="5601"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.196" references="/0/getRelevantEntryPointTransitions/%.1/collect/sortedBy">
+      <details key="start" value="5474"/>
+      <details key="end" value="5511"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.197" references="/0/getRelevantEntryPointTransitions/%.1/collect/sortedBy/%">
+      <details key="start" value="5474"/>
+      <details key="end" value="5495"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.198" references="/0/getRelevantEntryPointTransitions/%.1/collect/sortedBy/%/rtsc">
+      <details key="start" value="5474"/>
+      <details key="end" value="5478"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.199" references="/0/getRelevantEntryPointTransitions/%.1/collect/sortedBy/%.1">
+      <details key="start" value="5506"/>
+      <details key="end" value="5510"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.200" references="/0/getRelevantEntryPointTransitions/%.1/collect/sortedBy/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/getRelevantEntryPointTransitions/%.1/collect/sortedBy/temp13">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/getRelevantEntryPointTransitions/%.1/collect/%">
+      <details key="start" value="5549"/>
+      <details key="end" value="5598"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/getRelevantEntryPointTransitions/%.1/collect/%/entryPoint">
+      <details key="start" value="5549"/>
+      <details key="end" value="5559"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/getRelevantEntryPointTransitions/%.1/collect/%/rtsc">
+      <details key="start" value="5593"/>
+      <details key="end" value="5597"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.205" references="/0/getRelevantEntryPointTransitions/%.1/collect/entryPoint">
+      <details key="start" value="5521"/>
+      <details key="end" value="5544"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.206" references="/0/getRelevantEntryPointTransitions.1">
+      <details key="start" value="5770"/>
+      <details key="end" value="6096"/>
+      <details key="line" value="172"/>
+    </eAnnotations>
+    <eAnnotations source="positions.207" references="/0/getRelevantEntryPointTransitions.1/%">
+      <details key="start" value="5622"/>
+      <details key="end" value="5769"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.208" references="/0/getRelevantEntryPointTransitions.1/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.209" references="/0/getRelevantEntryPointTransitions.1/entryPoint">
+      <details key="start" value="5817"/>
+      <details key="end" value="5840"/>
+      <details key="line" value="172"/>
+    </eAnnotations>
+    <eAnnotations source="positions.210" references="/0/getRelevantEntryPointTransitions.1/rtsc">
+      <details key="start" value="5842"/>
+      <details key="end" value="5867"/>
+      <details key="line" value="172"/>
+    </eAnnotations>
+    <eAnnotations source="positions.211" references="/0/getRelevantEntryPointTransitions.1/%.1">
+      <details key="start" value="5897"/>
+      <details key="end" value="6093"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.212" references="/0/getRelevantEntryPointTransitions.1/%.1/select">
+      <details key="start" value="5897"/>
+      <details key="end" value="6077"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.213" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%">
+      <details key="start" value="5897"/>
+      <details key="end" value="5927"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.214" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%/entryPoint">
+      <details key="start" value="5897"/>
+      <details key="end" value="5907"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1">
+      <details key="start" value="5939"/>
+      <details key="end" value="6074"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%">
+      <details key="start" value="5939"/>
+      <details key="end" value="5950"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.217" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%/rtsc">
+      <details key="start" value="5939"/>
+      <details key="end" value="5943"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.218" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1">
+      <details key="start" value="5965"/>
+      <details key="end" value="6070"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.219" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%">
+      <details key="start" value="5968"/>
+      <details key="end" value="5998"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.220" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%/%">
+      <details key="start" value="5968"/>
+      <details key="end" value="5974"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.221" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.222" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%/%.1">
+      <details key="start" value="5987"/>
+      <details key="end" value="5997"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.223" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%.1">
+      <details key="start" value="6008"/>
+      <details key="end" value="6042"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.224" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%.1/%">
+      <details key="start" value="6008"/>
+      <details key="end" value="6036"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.225" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%.1/%/%">
+      <details key="start" value="6008"/>
+      <details key="end" value="6014"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.226" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%.1/%/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.227" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%.1/%/%.1">
+      <details key="start" value="6025"/>
+      <details key="end" value="6035"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.228" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%.2">
+      <details key="start" value="6055"/>
+      <details key="end" value="6061"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.229" references="/0/getRelevantEntryPointTransitions.1/%.1/select/%.1/%.1/%.2/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.230" references="/0/getRelevantEntryPointTransitions.1/%.1/select/temp14">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.231" references="/0/isEnterable">
+      <details key="start" value="6208"/>
+      <details key="end" value="6353"/>
+      <details key="line" value="188"/>
+    </eAnnotations>
+    <eAnnotations source="positions.232" references="/0/isEnterable/%">
+      <details key="start" value="6098"/>
+      <details key="end" value="6207"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.233" references="/0/isEnterable/%/rtsc">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.234" references="/0/isEnterable/rtsc">
+      <details key="start" value="6234"/>
+      <details key="end" value="6259"/>
+      <details key="line" value="188"/>
+    </eAnnotations>
+    <eAnnotations source="positions.235" references="/0/isEnterable/%.1">
+      <details key="start" value="6274"/>
+      <details key="end" value="6350"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.236" references="/0/isEnterable/%.1/%">
+      <details key="start" value="6274"/>
+      <details key="end" value="6287"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.237" references="/0/isEnterable/%.1/%/rtsc">
+      <details key="start" value="6274"/>
+      <details key="end" value="6278"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.238" references="/0/isEnterable/%.1/%.1">
+      <details key="start" value="6292"/>
+      <details key="end" value="6350"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.239" references="/0/isEnterable/%.1/%.1/%">
+      <details key="start" value="6292"/>
+      <details key="end" value="6338"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.240" references="/0/isEnterable/%.1/%.1/%/%">
+      <details key="start" value="6292"/>
+      <details key="end" value="6321"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.241" references="/0/isEnterable/%.1/%.1/%/%/%">
+      <details key="start" value="6292"/>
+      <details key="end" value="6309"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.242" references="/0/isEnterable/%.1/%.1/%/%/%/rtsc">
+      <details key="start" value="6292"/>
+      <details key="end" value="6296"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

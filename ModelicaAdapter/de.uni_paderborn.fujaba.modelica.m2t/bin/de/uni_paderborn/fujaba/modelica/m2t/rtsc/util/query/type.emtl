@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="type" nsURI="de::uni_paderborn::fujaba::modelica::m2t::rtsc::util::query::type" endHeaderPosition="459">
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Query" name="getPrimitiveType">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="467" endPosition="568" value="&#xA;Returns the primitive datatype of the given&#xA;ArrayDataType&#xA;@param type the array data type&#xA;&#xA;"/>
+        <parametersDocumentation name="type">
+          <body value=" the array data type"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="type">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+        <source xsi:type="ocl.ecore:IteratorExp" name="any">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(DataType)">
+            <source xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(DataType)" definition="/0/getIntermediateDataTypes">
+              <argument xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/getPrimitiveType/type">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+              </argument>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getPrimitiveType/%.1/any/select/temp1">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/5/PrimitiveDataType">
+                <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+            </iterator>
+          </source>
+          <body xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+          </iterator>
+        </source>
+        <argument xsi:type="ocl.ecore:TypeExp" eType="/5/PrimitiveDataType">
+          <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+      </expression>
+      <type xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getType" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="767" endPosition="841" value="&#xA;Returns the corresponding modelica type&#xA;@param type the data type&#xA;&#xA;"/>
+        <parametersDocumentation name="type">
+          <body value=" the data type"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="type">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/getType/type">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="/5/ArrayDataType">
+            <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+        </condition>
+        <thenExpression xsi:type="mtl:QueryInvocation" definition="/0/_getType">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="mtl:QueryInvocation" definition="/0/getPrimitiveType">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/getType/type">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/5/ArrayDataType">
+                <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </argument>
+          </argument>
+        </thenExpression>
+        <elseExpression xsi:type="mtl:QueryInvocation" definition="/0/_getType">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/getType/type">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+          </argument>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getIntermediateArrayDataTypes" visibility="Public" type="/3/OrderedSet(ArrayDataType)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1035" endPosition="1135" value="&#xA;Returns an ordered set of all intermediate array data types&#xA;@param type the array data type&#xA;&#xA;"/>
+        <parametersDocumentation name="type">
+          <body value=" the array data type"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="type">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(DataType)">
+        <source xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(DataType)" definition="/0/getIntermediateDataTypes">
+          <argument xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/getIntermediateArrayDataTypes/type">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+          </argument>
+        </source>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getIntermediateArrayDataTypes/select/temp3">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="/5/ArrayDataType">
+            <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="temp3">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+        </iterator>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getIntermediateDataTypes" type="/3/OrderedSet(DataType)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1310" endPosition="1412" value="&#xA;Returns an ordered set containing all intermediate data types&#xA;@param type the array data type&#xA;&#xA;"/>
+        <parametersDocumentation name="type">
+          <body value=" the array data type"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="type">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(DataType)">
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(DataType)">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(ArrayDataType)">
+            <source xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(ArrayDataType)">
+              <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL/Annotations">
+                <details key="IMPLICIT_SET_CONVERSION" value="true"/>
+              </eAnnotations>
+              <part xsi:type="ocl.ecore:CollectionItem">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+                <item xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/getIntermediateDataTypes/type">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+                </item>
+              </part>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
+          </source>
+          <argument xsi:type="ocl.ecore:IteratorExp" name="closure" eType="/3/Set(DataType)">
+            <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(DataType)">
+              <source xsi:type="ocl.ecore:CollectionLiteralExp" eType="/3/Set(DataType)">
+                <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL/Annotations">
+                  <details key="IMPLICIT_SET_CONVERSION" value="true"/>
+                </eAnnotations>
+                <part xsi:type="ocl.ecore:CollectionItem">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                  <item xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/getIntermediateDataTypes/type">
+                      <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/5/DataType">
+                      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                  </item>
+                </part>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asSet"/>
+            </source>
+            <body xsi:type="ocl.ecore:IfExp">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+              <condition xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="t" referredVariable="/0/getIntermediateDataTypes/%.1/%/closure/t">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                </source>
+                <argument xsi:type="ocl.ecore:TypeExp" eType="/5/ArrayDataType">
+                  <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+              </condition>
+              <thenExpression xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="t" referredVariable="/0/getIntermediateDataTypes/%.1/%/closure/t">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/5/ArrayDataType">
+                    <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType/type"/>
+              </thenExpression>
+              <elseExpression xsi:type="ocl.ecore:VariableExp" name="t" referredVariable="/0/getIntermediateDataTypes/%.1/%/closure/t">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+              </elseExpression>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="t">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+            </iterator>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/union.1"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="_getType">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1710" endPosition="1829" value="&#xA;Returns the corresponding modelica type for the&#xA;given PrimitiveDataType&#xA;@param type the primitive data type&#xA;&#xA;"/>
+        <parametersDocumentation name="type">
+          <body value=" the primitive data type"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="type">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IfExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <condition xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/_getType/type">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="INT">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+        </condition>
+        <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Integer">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </thenExpression>
+        <elseExpression xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/_getType/type">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DOUBLE">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Real">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:IfExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <condition xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/_getType/type">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BOOLEAN">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+            </condition>
+            <thenExpression xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Boolean">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </thenExpression>
+            <elseExpression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toUpperFirst">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="type" referredVariable="/0/_getType/type">
+                    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+              </source>
+            </elseExpression>
+          </elseExpression>
+        </elseExpression>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="toUpperFirst">
+        <eAnnotations source="MTL"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="getPrimitiveType">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getPrimitiveType"/>
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getType">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getType"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getIntermediateArrayDataTypes" eType="/3/OrderedSet(ArrayDataType)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getIntermediateArrayDataTypes"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getIntermediateDataTypes" eType="/3/OrderedSet(DataType)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getIntermediateDataTypes"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="_getType">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/_getType"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ArrayDataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(ArrayDataType)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(DataType)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(ArrayDataType)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(DataType)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(ArrayDataType)" instanceClassName="org.eclipse.ocl.util.Bag">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="PrimitiveDataType">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//PrimitiveDataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="ArrayDataType">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="DataType">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//ArrayDataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/getPrimitiveType">
+      <details key="start" value="571"/>
+      <details key="end" value="762"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/getPrimitiveType/%">
+      <details key="start" value="464"/>
+      <details key="end" value="570"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/getPrimitiveType/%/type">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/getPrimitiveType/type">
+      <details key="start" value="603"/>
+      <details key="end" value="623"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/getPrimitiveType/%.1">
+      <details key="start" value="648"/>
+      <details key="end" value="759"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/getPrimitiveType/%.1/any">
+      <details key="start" value="648"/>
+      <details key="end" value="730"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/getPrimitiveType/%.1/any/select">
+      <details key="start" value="648"/>
+      <details key="end" value="719"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/getPrimitiveType/%.1/any/select/%">
+      <details key="start" value="648"/>
+      <details key="end" value="679"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/getPrimitiveType/%.1/any/select/%/type">
+      <details key="start" value="648"/>
+      <details key="end" value="652"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/getPrimitiveType/%.1/any/select/%.1">
+      <details key="start" value="688"/>
+      <details key="end" value="718"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/getPrimitiveType/%.1/any/select/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/getPrimitiveType/%.1/any/select/%.1/%">
+      <details key="start" value="700"/>
+      <details key="end" value="717"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/getPrimitiveType/%.1/any/select/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/getPrimitiveType/%.1/any/%">
+      <details key="start" value="725"/>
+      <details key="end" value="729"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/getPrimitiveType/%.1/any/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/getPrimitiveType/%.1/%">
+      <details key="start" value="741"/>
+      <details key="end" value="758"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/getType">
+      <details key="start" value="844"/>
+      <details key="end" value="1030"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/getType/%">
+      <details key="start" value="764"/>
+      <details key="end" value="843"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/getType/%/type">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/getType/type">
+      <details key="start" value="866"/>
+      <details key="end" value="881"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/getType/%.1">
+      <details key="start" value="895"/>
+      <details key="end" value="1027"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/getType/%.1/%">
+      <details key="start" value="898"/>
+      <details key="end" value="929"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/getType/%.1/%/type">
+      <details key="start" value="898"/>
+      <details key="end" value="902"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/getType/%.1/%/%">
+      <details key="start" value="915"/>
+      <details key="end" value="928"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/getType/%.1/%.1">
+      <details key="start" value="937"/>
+      <details key="end" value="996"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/getType/%.1/%.1/%">
+      <details key="start" value="937"/>
+      <details key="end" value="985"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/getType/%.1/%.1/%/%">
+      <details key="start" value="937"/>
+      <details key="end" value="966"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/getType/%.1/%.1/%/%/type">
+      <details key="start" value="937"/>
+      <details key="end" value="941"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/getType/%.1/%.1/%/%/%">
+      <details key="start" value="952"/>
+      <details key="end" value="965"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/getType/%.1/%.2">
+      <details key="start" value="1005"/>
+      <details key="end" value="1020"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/getType/%.1/%.2/type">
+      <details key="start" value="1005"/>
+      <details key="end" value="1009"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/getIntermediateArrayDataTypes">
+      <details key="start" value="1138"/>
+      <details key="end" value="1305"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/getIntermediateArrayDataTypes/%">
+      <details key="start" value="1032"/>
+      <details key="end" value="1137"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/getIntermediateArrayDataTypes/%/type">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/getIntermediateArrayDataTypes/type">
+      <details key="start" value="1182"/>
+      <details key="end" value="1202"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/getIntermediateArrayDataTypes/select">
+      <details key="start" value="1235"/>
+      <details key="end" value="1302"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/getIntermediateArrayDataTypes/select/%">
+      <details key="start" value="1235"/>
+      <details key="end" value="1266"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/getIntermediateArrayDataTypes/select/%/type">
+      <details key="start" value="1235"/>
+      <details key="end" value="1239"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/getIntermediateArrayDataTypes/select/%.1">
+      <details key="start" value="1275"/>
+      <details key="end" value="1301"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/getIntermediateArrayDataTypes/select/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/getIntermediateArrayDataTypes/select/%.1/%">
+      <details key="start" value="1287"/>
+      <details key="end" value="1300"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/getIntermediateArrayDataTypes/select/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/getIntermediateDataTypes">
+      <details key="start" value="1415"/>
+      <details key="end" value="1705"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/getIntermediateDataTypes/%">
+      <details key="start" value="1307"/>
+      <details key="end" value="1414"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/getIntermediateDataTypes/%/type">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/getIntermediateDataTypes/type">
+      <details key="start" value="1455"/>
+      <details key="end" value="1475"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/getIntermediateDataTypes/%.1">
+      <details key="start" value="1503"/>
+      <details key="end" value="1702"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/getIntermediateDataTypes/%.1/%">
+      <details key="start" value="1503"/>
+      <details key="end" value="1686"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/getIntermediateDataTypes/%.1/%/%">
+      <details key="start" value="1503"/>
+      <details key="end" value="1523"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/getIntermediateDataTypes/%.1/%/%/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/getIntermediateDataTypes/%.1/%/%/%/%/type">
+      <details key="start" value="1503"/>
+      <details key="end" value="1507"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/getIntermediateDataTypes/%.1/%/closure">
+      <details key="start" value="1534"/>
+      <details key="end" value="1683"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/getIntermediateDataTypes/%.1/%/closure/%">
+      <details key="start" value="1534"/>
+      <details key="end" value="1567"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/getIntermediateDataTypes/%.1/%/closure/%/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/getIntermediateDataTypes/%.1/%/closure/%/%/%/%">
+      <details key="start" value="1534"/>
+      <details key="end" value="1558"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/getIntermediateDataTypes/%.1/%/closure/%/%/%/%/type">
+      <details key="start" value="1534"/>
+      <details key="end" value="1538"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/getIntermediateDataTypes/%.1/%/closure/%/%/%/%/%">
+      <details key="start" value="1549"/>
+      <details key="end" value="1557"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1">
+      <details key="start" value="1584"/>
+      <details key="end" value="1679"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1/%">
+      <details key="start" value="1587"/>
+      <details key="end" value="1615"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1/%/t">
+      <details key="start" value="1587"/>
+      <details key="end" value="1588"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1/%/%">
+      <details key="start" value="1601"/>
+      <details key="end" value="1614"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1/%.1">
+      <details key="start" value="1625"/>
+      <details key="end" value="1656"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1/%.1/%">
+      <details key="start" value="1625"/>
+      <details key="end" value="1651"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1/%.1/%/t">
+      <details key="start" value="1625"/>
+      <details key="end" value="1626"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1/%.1/%/%">
+      <details key="start" value="1637"/>
+      <details key="end" value="1650"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/getIntermediateDataTypes/%.1/%/closure/%.1/t">
+      <details key="start" value="1669"/>
+      <details key="end" value="1670"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/getIntermediateDataTypes/%.1/%/closure/t">
+      <details key="start" value="1577"/>
+      <details key="end" value="1578"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/_getType">
+      <details key="start" value="1832"/>
+      <details key="end" value="2110"/>
+      <details key="line" value="62"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/_getType/%">
+      <details key="start" value="1707"/>
+      <details key="end" value="1831"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/_getType/%/type">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/_getType/type">
+      <details key="start" value="1856"/>
+      <details key="end" value="1871"/>
+      <details key="line" value="62"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/_getType/%.1">
+      <details key="start" value="1885"/>
+      <details key="end" value="2107"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/_getType/%.1/%">
+      <details key="start" value="1888"/>
+      <details key="end" value="1905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/_getType/%.1/%/%">
+      <details key="start" value="1888"/>
+      <details key="end" value="1897"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/_getType/%.1/%/%/type">
+      <details key="start" value="1888"/>
+      <details key="end" value="1892"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/_getType/%.1/%/%.1">
+      <details key="start" value="1900"/>
+      <details key="end" value="1905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/_getType/%.1/%.1">
+      <details key="start" value="1913"/>
+      <details key="end" value="1922"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/_getType/%.1/%.2">
+      <details key="start" value="1929"/>
+      <details key="end" value="2100"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/_getType/%.1/%.2/%">
+      <details key="start" value="1932"/>
+      <details key="end" value="1952"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/_getType/%.1/%.2/%/%">
+      <details key="start" value="1932"/>
+      <details key="end" value="1941"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/_getType/%.1/%.2/%/%/type">
+      <details key="start" value="1932"/>
+      <details key="end" value="1936"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/_getType/%.1/%.2/%/%.1">
+      <details key="start" value="1944"/>
+      <details key="end" value="1952"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/_getType/%.1/%.2/%.1">
+      <details key="start" value="1960"/>
+      <details key="end" value="1966"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/_getType/%.1/%.2/%.2">
+      <details key="start" value="1973"/>
+      <details key="end" value="2093"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/_getType/%.1/%.2/%.2/%">
+      <details key="start" value="1976"/>
+      <details key="end" value="1997"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/_getType/%.1/%.2/%.2/%/%">
+      <details key="start" value="1976"/>
+      <details key="end" value="1985"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/_getType/%.1/%.2/%.2/%/%/type">
+      <details key="start" value="1976"/>
+      <details key="end" value="1980"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/_getType/%.1/%.2/%.2/%/%.1">
+      <details key="start" value="1988"/>
+      <details key="end" value="1997"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/_getType/%.1/%.2/%.2/%.1">
+      <details key="start" value="2005"/>
+      <details key="end" value="2014"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/_getType/%.1/%.2/%.2/%.2">
+      <details key="start" value="2052"/>
+      <details key="end" value="2086"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/_getType/%.1/%.2/%.2/%.2/%">
+      <details key="start" value="2052"/>
+      <details key="end" value="2071"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/_getType/%.1/%.2/%.2/%.2/%/%">
+      <details key="start" value="2052"/>
+      <details key="end" value="2061"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/_getType/%.1/%.2/%.2/%.2/%/%/type">
+      <details key="start" value="2052"/>
+      <details key="end" value="2056"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

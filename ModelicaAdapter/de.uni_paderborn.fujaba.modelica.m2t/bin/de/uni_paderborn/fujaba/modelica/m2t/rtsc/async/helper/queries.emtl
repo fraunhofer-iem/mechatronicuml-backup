@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="queries" nsURI="de::uni_paderborn::fujaba::modelica::m2t::rtsc::async::helper::queries" endHeaderPosition="462">
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelica/m2t/transform/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+    </input>
+    <imports href="../../util/query/naming.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Query" name="getTypeParameters" visibility="Public" type="/3/OrderedSet(Parameter)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="547" endPosition="714" value="&#xA;Returns an OrderedSet of parameter bindings of type typeName&#xA;@param messageType the MessageType&#xA;@param typeName the type of the returned parameter bindings&#xA;&#xA;"/>
+        <parametersDocumentation name="messageType">
+          <body value=" the MessageType"/>
+        </parametersDocumentation>
+        <parametersDocumentation name="typeName">
+          <body value=" the type of the returned parameter bindings"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="messageType">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </parameter>
+      <parameter name="typeName">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="sortedBy" eType="/3/OrderedSet(Parameter)">
+        <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/OrderedSet(Parameter)">
+          <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/OrderedSet(Parameter)">
+            <source xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getTypeParameters/messageType">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType/parameters"/>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/getTypeParameters/sortedBy/select/temp1">
+                  <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+            </source>
+            <argument xsi:type="ocl.ecore:VariableExp" name="typeName" referredVariable="/0/getTypeParameters/typeName">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+          </iterator>
+        </source>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/getTypeParameters/sortedBy/temp2">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/behavior/0.4.0#//TypedNamedElement/dataType"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.storydriven.org/core/0.3.1#//NamedElement/name"/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+        </iterator>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getIntegerParameters" visibility="Public" type="/3/OrderedSet(Parameter)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="911" endPosition="1033" value="&#xA;Returns an OrderedSet of Integer parameters of an AsynchronousMessageEvent&#xA;@param ev the AsynchronousMessageEvent&#xA;&#xA;"/>
+        <parametersDocumentation name="ev">
+          <body value=" the AsynchronousMessageEvent"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="ev">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+      </parameter>
+      <expression xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(Parameter)" definition="/0/getTypeParameters">
+        <argument xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="ev" referredVariable="/0/getIntegerParameters/ev">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent/message"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message/instanceOf"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="INT">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getRealParameters" visibility="Public" type="/3/OrderedSet(Parameter)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1183" endPosition="1302" value="&#xA;Returns an OrderedSet of Real parameters of an AsynchronousMessageEvent&#xA;@param ev the AsynchronousMessageEvent&#xA;&#xA;"/>
+        <parametersDocumentation name="ev">
+          <body value=" the AsynchronousMessageEvent"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="ev">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+      </parameter>
+      <expression xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(Parameter)" definition="/0/getTypeParameters">
+        <argument xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="ev" referredVariable="/0/getRealParameters/ev">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent/message"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message/instanceOf"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DOUBLE">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getBooleanParameters" visibility="Public" type="/3/OrderedSet(Parameter)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1452" endPosition="1574" value="&#xA;Returns an OrderedSet of Boolean parameters of an AsynchronousMessageEvent&#xA;@param ev the AsynchronousMessageEvent&#xA;&#xA;"/>
+        <parametersDocumentation name="ev">
+          <body value=" the AsynchronousMessageEvent"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="ev">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+      </parameter>
+      <expression xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(Parameter)" definition="/0/getTypeParameters">
+        <argument xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="ev" referredVariable="/0/getBooleanParameters/ev">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent/message"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Message/instanceOf"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BOOLEAN">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getIntegerParameters" visibility="Public" type="/3/OrderedSet(Parameter)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1728" endPosition="1843" value="&#xA;Returns an OrderedSet of Integer parameters of the passed message type.&#xA;@param messageType the MessageType&#xA;&#xA;"/>
+        <parametersDocumentation name="messageType">
+          <body value=" the MessageType"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="messageType">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </parameter>
+      <expression xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(Parameter)" definition="/0/getTypeParameters">
+        <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getIntegerParameters.1/messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="INT">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getRealParameters" visibility="Public" type="/3/OrderedSet(Parameter)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1979" endPosition="2091" value="&#xA;Returns an OrderedSet of Real parameters of the passed message type.&#xA;@param messageType the MessageType&#xA;&#xA;"/>
+        <parametersDocumentation name="messageType">
+          <body value=" the MessageType"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="messageType">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </parameter>
+      <expression xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(Parameter)" definition="/0/getTypeParameters">
+        <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getRealParameters.1/messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DOUBLE">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getBooleanParameters" visibility="Public" type="/3/OrderedSet(Parameter)">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2227" endPosition="2342" value="&#xA;Returns an OrderedSet of Boolean parameters of the passed message type.&#xA;@param messageType the MessageType&#xA;&#xA;"/>
+        <parametersDocumentation name="messageType">
+          <body value=" the MessageType"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="messageType">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </parameter>
+      <expression xsi:type="mtl:QueryInvocation" eType="/3/OrderedSet(Parameter)" definition="/0/getTypeParameters">
+        <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getBooleanParameters.1/messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </argument>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BOOLEAN">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </expression>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getOutputDelegationPortName" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2482" endPosition="2603" value="&#xA;Returns the name for an output delegation port.&#xA;@param messageType the message type which is sent via this port&#xA;&#xA;"/>
+        <parametersDocumentation name="messageType">
+          <body value=" the message type which is sent via this port"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="messageType">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../../util/query/naming.emtl#/0/getName.2"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getOutputDelegationPortName/messageType">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          </argument>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_outputDelegationPort">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getInputDelegationPortName" visibility="Public">
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="2742" endPosition="2866" value="&#xA;Returns the name for an input delegation port.&#xA;@param messageType the message type which is retrieved via this port&#xA;&#xA;"/>
+        <parametersDocumentation name="messageType">
+          <body value=" the message type which is retrieved via this port"/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="messageType">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../../util/query/naming.emtl#/0/getName.2"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="messageType" referredVariable="/0/getInputDelegationPortName/messageType">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+          </argument>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="_inputDelegationPort">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="getTypeParameters" eType="/3/OrderedSet(Parameter)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getTypeParameters"/>
+        <eParameters name="messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </eParameters>
+        <eParameters name="typeName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getIntegerParameters" eType="/3/OrderedSet(Parameter)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getIntegerParameters"/>
+        <eParameters name="ev">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getRealParameters" eType="/3/OrderedSet(Parameter)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getRealParameters"/>
+        <eParameters name="ev">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getBooleanParameters" eType="/3/OrderedSet(Parameter)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getBooleanParameters"/>
+        <eParameters name="ev">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getIntegerParameters" eType="/3/OrderedSet(Parameter)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getIntegerParameters.1"/>
+        <eParameters name="messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getRealParameters" eType="/3/OrderedSet(Parameter)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getRealParameters.1"/>
+        <eParameters name="messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getBooleanParameters" eType="/3/OrderedSet(Parameter)">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getBooleanParameters.1"/>
+        <eParameters name="messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getOutputDelegationPortName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getOutputDelegationPortName"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getInputDelegationPortName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getInputDelegationPortName"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="messageType">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../../util/query/naming.emtl#/0/getName.2"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="namedElement">
+          <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//NamedElement"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AsynchronousMessageEvent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Region_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Transition_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Transition"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="State_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Vertex_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Vertex"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/0.3.1#//NamedElement"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Parameter)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//AsynchronousMessageEvent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/getTypeParameters">
+      <details key="start" value="717"/>
+      <details key="end" value="906"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/getTypeParameters/%">
+      <details key="start" value="544"/>
+      <details key="end" value="716"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/getTypeParameters/%/messageType">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/getTypeParameters/%/typeName">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/getTypeParameters/messageType">
+      <details key="start" value="749"/>
+      <details key="end" value="774"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/getTypeParameters/typeName">
+      <details key="start" value="776"/>
+      <details key="end" value="793"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/getTypeParameters/sortedBy">
+      <details key="start" value="822"/>
+      <details key="end" value="903"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/getTypeParameters/sortedBy/select">
+      <details key="start" value="822"/>
+      <details key="end" value="878"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/getTypeParameters/sortedBy/select/%">
+      <details key="start" value="822"/>
+      <details key="end" value="844"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/getTypeParameters/sortedBy/select/%/messageType">
+      <details key="start" value="822"/>
+      <details key="end" value="833"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/getTypeParameters/sortedBy/select/%.1">
+      <details key="start" value="853"/>
+      <details key="end" value="877"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/getTypeParameters/sortedBy/select/%.1/%">
+      <details key="start" value="853"/>
+      <details key="end" value="866"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/getTypeParameters/sortedBy/select/%.1/%/%">
+      <details key="start" value="853"/>
+      <details key="end" value="861"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/getTypeParameters/sortedBy/select/%.1/%/%/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/getTypeParameters/sortedBy/select/%.1/typeName">
+      <details key="start" value="869"/>
+      <details key="end" value="877"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/getTypeParameters/sortedBy/select/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/getTypeParameters/sortedBy/%">
+      <details key="start" value="889"/>
+      <details key="end" value="902"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/getTypeParameters/sortedBy/%/%">
+      <details key="start" value="889"/>
+      <details key="end" value="897"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/getTypeParameters/sortedBy/%/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/getTypeParameters/sortedBy/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/getIntegerParameters">
+      <details key="start" value="1036"/>
+      <details key="end" value="1178"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/getIntegerParameters/%">
+      <details key="start" value="908"/>
+      <details key="end" value="1035"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/getIntegerParameters/%/ev">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/getIntegerParameters/ev">
+      <details key="start" value="1071"/>
+      <details key="end" value="1100"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/getIntegerParameters/%.1">
+      <details key="start" value="1129"/>
+      <details key="end" value="1175"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/getIntegerParameters/%.1/%">
+      <details key="start" value="1129"/>
+      <details key="end" value="1150"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/getIntegerParameters/%.1/%/%">
+      <details key="start" value="1129"/>
+      <details key="end" value="1139"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/getIntegerParameters/%.1/%/%/ev">
+      <details key="start" value="1129"/>
+      <details key="end" value="1131"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/getIntegerParameters/%.1/%.1">
+      <details key="start" value="1169"/>
+      <details key="end" value="1174"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/getRealParameters">
+      <details key="start" value="1305"/>
+      <details key="end" value="1447"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/getRealParameters/%">
+      <details key="start" value="1180"/>
+      <details key="end" value="1304"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/getRealParameters/%/ev">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/getRealParameters/ev">
+      <details key="start" value="1337"/>
+      <details key="end" value="1366"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/getRealParameters/%.1">
+      <details key="start" value="1395"/>
+      <details key="end" value="1444"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/getRealParameters/%.1/%">
+      <details key="start" value="1395"/>
+      <details key="end" value="1416"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/getRealParameters/%.1/%/%">
+      <details key="start" value="1395"/>
+      <details key="end" value="1405"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/getRealParameters/%.1/%/%/ev">
+      <details key="start" value="1395"/>
+      <details key="end" value="1397"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/getRealParameters/%.1/%.1">
+      <details key="start" value="1435"/>
+      <details key="end" value="1443"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/getBooleanParameters">
+      <details key="start" value="1577"/>
+      <details key="end" value="1723"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/getBooleanParameters/%">
+      <details key="start" value="1449"/>
+      <details key="end" value="1576"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/getBooleanParameters/%/ev">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/getBooleanParameters/ev">
+      <details key="start" value="1612"/>
+      <details key="end" value="1641"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/getBooleanParameters/%.1">
+      <details key="start" value="1670"/>
+      <details key="end" value="1720"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/getBooleanParameters/%.1/%">
+      <details key="start" value="1670"/>
+      <details key="end" value="1691"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/getBooleanParameters/%.1/%/%">
+      <details key="start" value="1670"/>
+      <details key="end" value="1680"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/getBooleanParameters/%.1/%/%/ev">
+      <details key="start" value="1670"/>
+      <details key="end" value="1672"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/getBooleanParameters/%.1/%.1">
+      <details key="start" value="1710"/>
+      <details key="end" value="1719"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/getIntegerParameters.1">
+      <details key="start" value="1846"/>
+      <details key="end" value="1974"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/getIntegerParameters.1/%">
+      <details key="start" value="1725"/>
+      <details key="end" value="1845"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/getIntegerParameters.1/%/messageType">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/getIntegerParameters.1/messageType">
+      <details key="start" value="1881"/>
+      <details key="end" value="1906"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/getIntegerParameters.1/%.1">
+      <details key="start" value="1935"/>
+      <details key="end" value="1971"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/getIntegerParameters.1/%.1/messageType">
+      <details key="start" value="1935"/>
+      <details key="end" value="1946"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/getIntegerParameters.1/%.1/%">
+      <details key="start" value="1965"/>
+      <details key="end" value="1970"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/getRealParameters.1">
+      <details key="start" value="2094"/>
+      <details key="end" value="2222"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/getRealParameters.1/%">
+      <details key="start" value="1976"/>
+      <details key="end" value="2093"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/getRealParameters.1/%/messageType">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/getRealParameters.1/messageType">
+      <details key="start" value="2126"/>
+      <details key="end" value="2151"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/getRealParameters.1/%.1">
+      <details key="start" value="2180"/>
+      <details key="end" value="2219"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/getRealParameters.1/%.1/messageType">
+      <details key="start" value="2180"/>
+      <details key="end" value="2191"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/getRealParameters.1/%.1/%">
+      <details key="start" value="2210"/>
+      <details key="end" value="2218"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/getBooleanParameters.1">
+      <details key="start" value="2345"/>
+      <details key="end" value="2477"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/getBooleanParameters.1/%">
+      <details key="start" value="2224"/>
+      <details key="end" value="2344"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/getBooleanParameters.1/%/messageType">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/getBooleanParameters.1/messageType">
+      <details key="start" value="2380"/>
+      <details key="end" value="2405"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/getBooleanParameters.1/%.1">
+      <details key="start" value="2434"/>
+      <details key="end" value="2474"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/getBooleanParameters.1/%.1/messageType">
+      <details key="start" value="2434"/>
+      <details key="end" value="2445"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/getBooleanParameters.1/%.1/%">
+      <details key="start" value="2464"/>
+      <details key="end" value="2473"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/getOutputDelegationPortName">
+      <details key="start" value="2606"/>
+      <details key="end" value="2737"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/getOutputDelegationPortName/%">
+      <details key="start" value="2479"/>
+      <details key="end" value="2605"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/getOutputDelegationPortName/%/messageType">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/getOutputDelegationPortName/messageType">
+      <details key="start" value="2648"/>
+      <details key="end" value="2673"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/getOutputDelegationPortName/%.1">
+      <details key="start" value="2687"/>
+      <details key="end" value="2734"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/getOutputDelegationPortName/%.1/%">
+      <details key="start" value="2687"/>
+      <details key="end" value="2708"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/getOutputDelegationPortName/%.1/%/messageType">
+      <details key="start" value="2687"/>
+      <details key="end" value="2698"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/getOutputDelegationPortName/%.1/%.1">
+      <details key="start" value="2711"/>
+      <details key="end" value="2734"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/getInputDelegationPortName">
+      <details key="start" value="2869"/>
+      <details key="end" value="2998"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/getInputDelegationPortName/%">
+      <details key="start" value="2739"/>
+      <details key="end" value="2868"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/getInputDelegationPortName/%/messageType">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/getInputDelegationPortName/messageType">
+      <details key="start" value="2910"/>
+      <details key="end" value="2935"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/getInputDelegationPortName/%.1">
+      <details key="start" value="2949"/>
+      <details key="end" value="2995"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/getInputDelegationPortName/%.1/%">
+      <details key="start" value="2949"/>
+      <details key="end" value="2970"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/getInputDelegationPortName/%.1/%/messageType">
+      <details key="start" value="2949"/>
+      <details key="end" value="2960"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/getInputDelegationPortName/%.1/%.1">
+      <details key="start" value="2973"/>
+      <details key="end" value="2995"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

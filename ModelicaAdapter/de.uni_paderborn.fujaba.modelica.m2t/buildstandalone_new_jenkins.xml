@@ -65,11 +65,11 @@
 
     <!-- Change the value of the property SOURCE_FOLDERS to match the configuration of your project. -->
     <target name="compile">
-        <acceleoCompiler sourceFolder="${SOURCE_FOLDER}"
+        <!--<acceleoCompiler sourceFolder="${SOURCE_FOLDER}"
                          outputFolder="${OUTPUT_FOLDER}"
                          dependencies=""
                          binaryResource="false"
     					 packagesToRegister="de.uni_paderborn.fujaba.muml.MumlPackage;de.uni_paderborn.fujaba.muml.instance.InstancePackage;de.uni_paderborn.fujaba.muml.component.ComponentPackage;de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;org.storydriven.core.CorePackage;de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;de.uni_paderborn.fujaba.muml.types.TypesPackage;de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;de.uni_paderborn.fujaba.modelica.m2t.transform.TransformPackage;org.storydriven.core.expressions.ExpressionsPackage;org.storydriven.core.expressions.common.CommonExpressionsPackage">
-        </acceleoCompiler>
+        </acceleoCompiler>-->
     </target>
 </project>
