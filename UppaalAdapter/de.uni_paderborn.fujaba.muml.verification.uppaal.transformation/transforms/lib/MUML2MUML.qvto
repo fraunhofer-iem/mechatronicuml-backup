@@ -831,7 +831,6 @@ mapping mtctl::Sets::SubinstanceSetExpr :: SubinstanceSetExpr2SubinstanceSetExpr
    		 
 mapping modelinstance::RootNode :: RootNode2RootNode() : modelinstance::RootNode{
     	_categories := self._categories.map ModelElementCategory2ModelElementCategory();
-    	_ecoreDataTypes := self._ecoreDataTypes.map EDataType2EDataType();
    		 }
    		 
 mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElementCategory() : modelinstance::ModelElementCategory{
