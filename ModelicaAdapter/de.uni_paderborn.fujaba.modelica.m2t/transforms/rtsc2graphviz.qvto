@@ -25,17 +25,9 @@ main() {
     log("transformation finished");
 }
 
-// XXX/FIXME: in an ideal world, we would have a "consistent" input
 query RTSC::getRootRTSCs() : Set(RealtimeStatechart) {
-	return let rtscSet : Set(RealtimeStatechart)
-	=
-	self.rootObjects()[RealtimeStatechart]
-	in
-	if rtscSet->isEmpty() then
-		self.rootObjects()[Region]->collect(embeddedStatechart)->asSet()
-	else
-		rtscSet
-	endif;
+	return self.rootObjects()[RealtimeStatechartTransformationRootObject]
+		->collect(rtsc | rtsc.eObject.oclAsType(RealtimeStatechart))->asSet();
 }
 
 mapping RealtimeStatechart::rtsc2graphviz() : DotGraph

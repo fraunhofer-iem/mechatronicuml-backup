@@ -135,6 +135,7 @@
 */]
 [query public getEntryPoints(state : State) : Set(EntryPoint) =
 	state.connectionPoints->select(oclIsKindOf(EntryPoint))
+		->collect(oclAsType(EntryPoint))->asSet()
 /]
 
 [**

@@ -3,23 +3,26 @@ package de.uni_paderborn.fujaba.modelica.m2t.rtsc.transformation;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
-import org.storydriven.core.ExtendableElement;
 
+import de.uni_paderborn.fujaba.modelica.m2t.transform.RealtimeStatechartTransformationRootObject;
+import de.uni_paderborn.fujaba.modelica.m2t.transform.TransformFactory;
 import de.uni_paderborn.fujaba.modelica.m2t.transformation.QVToTransformationRunner;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 
 public class RealtimeStatechartTransformationRunner {
 	public static ModelExtent createModelExtent(RealtimeStatechart rtsc) {
-		List<ExtendableElement> rtscList = new ArrayList<ExtendableElement>();
-		// XXX: hacky
-		if (rtsc.getParentRegion() != null) {
-			rtscList.add(rtsc.getParentRegion());
-		} else {
-			rtscList.add(rtsc);
-		}
+		// use a dummy root element, otherwise the rtsc's eContainer
+		// is set to null
+		RealtimeStatechartTransformationRootObject root =
+				TransformFactory.eINSTANCE
+				.createRealtimeStatechartTransformationRootObject();
+		root.setEObject(rtsc);
+		List<EObject> rtscList = new ArrayList<EObject>();
+		rtscList.add(root);
 		return new BasicModelExtent(rtscList);
 	}
 	
