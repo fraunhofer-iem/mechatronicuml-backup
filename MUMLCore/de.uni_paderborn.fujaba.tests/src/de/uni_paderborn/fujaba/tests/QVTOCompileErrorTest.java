@@ -29,7 +29,7 @@ public class QVTOCompileErrorTest {
 	 */
 	@Test
 	public void test() {
-		for (File project : new File(".").listFiles()) {
+		for (File project : findWorkspaceLocation().listFiles()) {
 			if (project.isDirectory()) {
 				String bundleName = project.getName();
 				Bundle bundle = Platform.getBundle(bundleName);
@@ -38,6 +38,14 @@ public class QVTOCompileErrorTest {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Finds the path that contains all bundles.
+	 * @return The workspace location.
+	 */
+	private File findWorkspaceLocation() {
+		return new File("."); // This requires that the launch configuration sets ${workspace_loc} as working directory!
 	}
 
 	/**
