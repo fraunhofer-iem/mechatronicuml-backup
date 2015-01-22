@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Plugin.name
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.example.ui;singleton:=true
-Bundle-Version: 0.4.0.qualifier
+Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.example.ui.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.examples.runtime.ui.pde;bundle-version="1.7.0",

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Export Mechanism
 Bundle-SymbolicName: de.uni_paderborn.fujaba.export;singleton:=true
-Bundle-Version: 0.4.0.qualifier
+Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.export.ExportPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,

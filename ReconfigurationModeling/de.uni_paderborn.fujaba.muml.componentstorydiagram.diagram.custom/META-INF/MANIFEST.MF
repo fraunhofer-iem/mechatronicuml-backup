@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Custom
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom;singleton:=true
-Bundle-Version: 0.4.0.qualifier
+Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.Activator
 Require-Bundle: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram,
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.5.0",

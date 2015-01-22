@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Modelica Adapter
 Bundle-SymbolicName: de.uni_paderborn.fujaba.modelica.m2t
-Bundle-Version: 0.4.0.qualifier
+Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.modelica.m2t.Activator
 Bundle-Vendor: Fraunhofer IPT-EM, Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Require-Bundle: org.eclipse.core.runtime,
