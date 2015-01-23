@@ -12,7 +12,7 @@ The Fujaba Real-Time Tool Suite is implemented as a plug-in to the Eclipse frame
    </description>
 
    <copyright>
-Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
+      Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ http://www.eclipse.org/legal/epl-v10.html
    </copyright>
 
    <license url="license.html">
-Fujaba Licence Agreement
+      Fujaba Licence Agreement
 July 21, 2012
 
 This feature is free software; you can redistribute and/or modify it under the terms of the Eclipse Public License (EPL) as published by the Eclipse Foundation. You can access the full text of the license agreement under http://www.eclipse.org/legal/epl-v10.html
@@ -90,10 +90,6 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
 
    <includes
          id="de.uni_paderborn.fujaba.graphviz.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="de.uni_paderborn.fujaba.muml.cybertron.codegen.feature"
          version="0.0.0"/>
 
    <includes
