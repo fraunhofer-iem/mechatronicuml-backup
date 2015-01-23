@@ -30,14 +30,14 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_I7aIlKMlEeS4w6yhHCE-3w"/>
         </children>
         <element xmi:type="connector:MessageBuffer" href="../coordinatingBebots.muml#_gx-tYHYcEeOftqkRKcg6BA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I7aIjqMlEeS4w6yhHCE-3w" x="420" y="310"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I7aIjqMlEeS4w6yhHCE-3w" x="475" y="258"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_I7aIlaMlEeS4w6yhHCE-3w" type="3014" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_I7aIl6MlEeS4w6yhHCE-3w" type="5020"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_I7aImKMlEeS4w6yhHCE-3w" type="5021"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_I7aImaMlEeS4w6yhHCE-3w" type="5022"/>
         <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../coordinatingBebots.muml#_Txvn0F6PEeOU6dzb6wKMjg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I7aIlqMlEeS4w6yhHCE-3w" x="1147" y="318"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I7aIlqMlEeS4w6yhHCE-3w" x="1147" y="270"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../coordinatingBebots.muml#_Txr9cF6PEeOU6dzb6wKMjg"/>
