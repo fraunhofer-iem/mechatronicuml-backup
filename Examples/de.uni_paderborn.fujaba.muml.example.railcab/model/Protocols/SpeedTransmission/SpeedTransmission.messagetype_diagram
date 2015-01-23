@@ -9,15 +9,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_9MPd5FOfEeSaVK1gfdE5pA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_9MPd5VOfEeSaVK1gfdE5pA"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../../RailCab.fujaba#_9L8i8FOfEeSaVK1gfdE5pA"/>
+        <element xmi:type="msgtype:MessageType" href="../../RailCab.muml#_9L8i8FOfEeSaVK1gfdE5pA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9MPd4VOfEeSaVK1gfdE5pA"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_8tvkBFOfEeSaVK1gfdE5pA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_8tvkBVOfEeSaVK1gfdE5pA"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="../../RailCab.fujaba#_8s_9IFOfEeSaVK1gfdE5pA"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../../RailCab.muml#_8s_9IFOfEeSaVK1gfdE5pA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8tvkAVOfEeSaVK1gfdE5pA" x="215" y="187"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_78MyUVOfEeSaVK1gfdE5pA"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.fujaba#_SuoZoLi6EeKp46K0r5yxrg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.muml#_SuoZoLi6EeKp46K0r5yxrg"/>
 </notation:Diagram>

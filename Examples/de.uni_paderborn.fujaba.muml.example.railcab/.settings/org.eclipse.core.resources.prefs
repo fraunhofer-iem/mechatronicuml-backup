@@ -88,7 +88,7 @@ encoding//model/Protocols/ProtocolInstantiation/ProtocolInstantiation.coordinati
 encoding//model/Protocols/ProtocolInstantiation/ProtocolInstantiation.messagetype_diagram=UTF-8
 encoding//model/Protocols/ProtocolInstantiation/ProtocolInstantiation_Requestee.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/ProtocolInstantiation/ProtocolInstantiation_Requestor.realtimestatechart_diagram=UTF-8
-encoding//model/Protocols/SpeedTransmission/RailCab.coordinationprotocol_diagram=UTF-8
+encoding//model/Protocols/SpeedTransmission/SpeedTransmission.coordinationprotocol_diagram=UTF-8
 encoding//model/Protocols/SpeedTransmission/SpeedTransmission.messagetype_diagram=UTF-8
 encoding//model/Protocols/SpeedTransmission/SpeedTransmission_receiver.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/SpeedTransmission/SpeedTransmission_sender.realtimestatechart_diagram=UTF-8
@@ -100,7 +100,7 @@ encoding//model/Protocols/StrategyExchange/StrategyExchange.coordinationprotocol
 encoding//model/Protocols/StrategyExchange/StrategyExchange.messagetype_diagram=UTF-8
 encoding//model/Protocols/StrategyExchange/StrategyExchange_receiver.realtimestatechart_diagram=UTF-8
 encoding//model/Protocols/StrategyExchange/StrategyExchange_sender.realtimestatechart_diagram=UTF-8
-encoding//model/RailCab.fujaba=UTF-8
+encoding//model/RailCab.muml=UTF-8
 encoding//model/Storydiagrams/addProfile.storydiagrams_diagram=UTF-8
 encoding//model/Storydiagrams/createProfileList.storydiagrams_diagram=UTF-8
 encoding//model/Storydiagrams/createProfileListCM.storydiagrams_diagram=UTF-8

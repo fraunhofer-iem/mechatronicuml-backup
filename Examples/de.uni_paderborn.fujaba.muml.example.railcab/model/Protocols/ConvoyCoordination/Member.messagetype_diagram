@@ -6,9 +6,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_i2tW8fScEeOKmIQk3FL8KA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_i2tW8vScEeOKmIQk3FL8KA"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="../../RailCab.fujaba#_wvJwcPR7EeOKmIQk3FL8KA"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../../RailCab.muml#_wvJwcPR7EeOKmIQk3FL8KA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i2nQU_ScEeOKmIQk3FL8KA"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_i2nQUfScEeOKmIQk3FL8KA"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.fujaba#_SuoZoLi6EeKp46K0r5yxrg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.muml#_SuoZoLi6EeKp46K0r5yxrg"/>
 </notation:Diagram>

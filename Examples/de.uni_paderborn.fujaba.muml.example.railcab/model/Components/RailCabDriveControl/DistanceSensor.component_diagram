@@ -6,12 +6,12 @@
       <children xmi:type="notation:DecorationNode" xmi:id="_VrD7E_h4EeOdcfcso3gQlg" type="5013">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_VrD7FPh4EeOdcfcso3gQlg" y="5"/>
       </children>
-      <element xmi:type="component:ContinuousPort" href="../../RailCab.fujaba#_VrD7EPh4EeOdcfcso3gQlg"/>
+      <element xmi:type="component:ContinuousPort" href="../../RailCab.muml#_VrD7EPh4EeOdcfcso3gQlg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VrD7Evh4EeOdcfcso3gQlg"/>
     </children>
-    <element xmi:type="component:StaticAtomicComponent" href="../../RailCab.fujaba#_UNyEwPh4EeOdcfcso3gQlg"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../../RailCab.muml#_UNyEwPh4EeOdcfcso3gQlg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UNyEwvh4EeOdcfcso3gQlg" x="168" y="144" width="457" height="253"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TG9mofh4EeOdcfcso3gQlg"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.fujaba#_zEShsO5uEeOKI4bZ_bxwuQ"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../../RailCab.muml#_zEShsO5uEeOKI4bZ_bxwuQ"/>
 </notation:Diagram>

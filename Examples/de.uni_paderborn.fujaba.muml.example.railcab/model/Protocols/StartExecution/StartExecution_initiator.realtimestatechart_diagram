@@ -22,15 +22,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_GzM6tFOsEeSDPNki4Dv8rg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_GzM6tVOsEeSDPNki4Dv8rg"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../../RailCab.fujaba#_GqIeMVOsEeSDPNki4Dv8rg"/>
+        <element xmi:type="realtimestatechart:State" href="../../RailCab.muml#_GqIeMVOsEeSDPNki4Dv8rg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GzM6qFOsEeSDPNki4Dv8rg"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../RailCab.fujaba#_GqIeMFOsEeSDPNki4Dv8rg"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../RailCab.muml#_GqIeMFOsEeSDPNki4Dv8rg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GzM6o1OsEeSDPNki4Dv8rg" x="84" y="48" width="313" height="229"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_GqIeM1OsEeSDPNki4Dv8rg"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../RailCab.fujaba#_GqIeMFOsEeSDPNki4Dv8rg"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../RailCab.muml#_GqIeMFOsEeSDPNki4Dv8rg"/>
   <edges xmi:type="notation:Connector" xmi:id="_KUTC0FOsEeSDPNki4Dv8rg" type="4003" source="_GzM6p1OsEeSDPNki4Dv8rg" target="_GzM6p1OsEeSDPNki4Dv8rg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_KUTC01OsEeSDPNki4Dv8rg" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_KUTC1FOsEeSDPNki4Dv8rg" y="-20"/>
@@ -39,7 +39,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_KUTC1lOsEeSDPNki4Dv8rg" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_KUTC0VOsEeSDPNki4Dv8rg" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../../RailCab.fujaba#_KUAH4FOsEeSDPNki4Dv8rg"/>
+    <element xmi:type="realtimestatechart:Transition" href="../../RailCab.muml#_KUAH4FOsEeSDPNki4Dv8rg"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KUTC0lOsEeSDPNki4Dv8rg" points="[41, 0, 41, 0]$[103, 0, 103, 0]$[103, 40, 103, 40]$[9, 40, 9, 40]$[9, 30, 9, 30]"/>
   </edges>
 </notation:Diagram>
