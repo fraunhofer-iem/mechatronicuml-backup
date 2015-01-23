@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_3cL4kKMkEeS4w6yhHCE-3w" type="Coordination Protocol" name="Position%20Transmission.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_3cL4kqMkEeS4w6yhHCE-3w" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3cL4lKMkEeS4w6yhHCE-3w" type="7005"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../coordinatingBebots.muml#_bjqsAF6PEeOU6dzb6wKMjg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3cL4k6MkEeS4w6yhHCE-3w"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_3cL4kaMkEeS4w6yhHCE-3w"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../coordinatingBebots.muml#_VrQD8F6LEeOogaHLhp186w"/>
+</notation:Diagram>

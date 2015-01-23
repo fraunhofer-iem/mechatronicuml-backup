@@ -95,14 +95,14 @@
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Txr9cF6PEeOU6dzb6wKMjg" name="AllPositionsTransmission">
       <roles xmi:id="_TxtyoF6PEeOU6dzb6wKMjg" connectors="_TxvAwV6PEeOU6dzb6wKMjg" behavior="_zpT1MHYbEeOftqkRKcg6BA" name="sender" senderMessageTypes="_wrj_ILEKEeOUhpWh5pWHvw">
         <cardinality xmi:id="_TxuZsF6PEeOU6dzb6wKMjg">
-          <lowerBound xmi:id="_BxzQoOKKEeOeEuqrct640A"/>
-          <upperBound xmi:id="_BxzQoeKKEeOeEuqrct640A"/>
+          <lowerBound xmi:id="_WZjIoKMlEeS4w6yhHCE-3w"/>
+          <upperBound xmi:id="_WZjIoaMlEeS4w6yhHCE-3w"/>
         </cardinality>
       </roles>
       <roles xmi:id="_TxuZs16PEeOU6dzb6wKMjg" connectors="_TxvAwV6PEeOU6dzb6wKMjg" behavior="_45ptcHYbEeOftqkRKcg6BA" name="receiver" receiverMessageTypes="_wrj_ILEKEeOUhpWh5pWHvw">
         <cardinality xmi:id="_TxuZtF6PEeOU6dzb6wKMjg">
-          <lowerBound xmi:id="_-g-ZsOSlEeOYPtrECzbgPw"/>
-          <upperBound xmi:id="_-hCEEOSlEeOYPtrECzbgPw"/>
+          <lowerBound xmi:id="_V1jDsKMlEeS4w6yhHCE-3w"/>
+          <upperBound xmi:id="_V1jDsaMlEeS4w6yhHCE-3w"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_gx-tYHYcEeOftqkRKcg6BA" name="buffer1" messageType="_wrj_ILEKEeOUhpWh5pWHvw">
           <bufferSize xmi:id="_hfGSEHYcEeOftqkRKcg6BA"/>

@@ -22,15 +22,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_zw6SDXYbEeOftqkRKcg6BA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_zw6SDnYbEeOftqkRKcg6BA"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../../../coordinatingBebots.fujaba#_zpT1MXYbEeOftqkRKcg6BA"/>
+        <element xmi:type="realtimestatechart:State" href="../../../coordinatingBebots.muml#_zpT1MXYbEeOftqkRKcg6BA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zw6SAXYbEeOftqkRKcg6BA"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.fujaba#_zpT1MHYbEeOftqkRKcg6BA"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_zpT1MHYbEeOftqkRKcg6BA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zwxIEXYbEeOftqkRKcg6BA" width="709" height="229"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_zpT1M3YbEeOftqkRKcg6BA"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.fujaba#_zpT1MHYbEeOftqkRKcg6BA"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../../coordinatingBebots.muml#_zpT1MHYbEeOftqkRKcg6BA"/>
   <edges xmi:type="notation:Connector" xmi:id="_0DT0IHYcEeOftqkRKcg6BA" type="4003" source="_zw6SAHYbEeOftqkRKcg6BA" target="_zw6SAHYbEeOftqkRKcg6BA" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_0DT0I3YcEeOftqkRKcg6BA" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_0DT0JHYcEeOftqkRKcg6BA" x="-32" y="-245"/>
@@ -39,7 +39,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_0DT0JnYcEeOftqkRKcg6BA" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_0DT0IXYcEeOftqkRKcg6BA" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../../../coordinatingBebots.fujaba#_0C49YHYcEeOftqkRKcg6BA"/>
+    <element xmi:type="realtimestatechart:Transition" href="../../../coordinatingBebots.muml#_0C49YHYcEeOftqkRKcg6BA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0DT0InYcEeOftqkRKcg6BA" points="[25, 0, 25, 0]$[87, 0, 87, 0]$[87, 92, 87, 92]$[0, 92, 0, 92]$[0, 30, 0, 30]"/>
   </edges>
 </notation:Diagram>
