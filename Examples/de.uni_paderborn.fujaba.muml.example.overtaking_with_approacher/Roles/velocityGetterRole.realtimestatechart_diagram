@@ -1,5 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmi:id="_dKEfApQjEeSZM-zEIRk3lw" type="Real-Time Statechart" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_9qpB4KMDEeSbmbyTJYAEVw" type="2007" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_9qpB4qMDEeSbmbyTJYAEVw" type="5061"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_9qpB46MDEeSbmbyTJYAEVw" type="5062"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_9qpB5KMDEeSbmbyTJYAEVw" type="7030">
+      <children xmi:type="notation:Shape" xmi:id="_9qpB5aMDEeSbmbyTJYAEVw" type="3032" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_9qpB56MDEeSbmbyTJYAEVw" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9qpB6KMDEeSbmbyTJYAEVw" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9qpB6aMDEeSbmbyTJYAEVw" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9qpB6qMDEeSbmbyTJYAEVw"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9qpB66MDEeSbmbyTJYAEVw" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9qpB7KMDEeSbmbyTJYAEVw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9qpB7aMDEeSbmbyTJYAEVw"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9qpB7qMDEeSbmbyTJYAEVw" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9qpB76MDEeSbmbyTJYAEVw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9qpB8KMDEeSbmbyTJYAEVw"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_9qpB8aMDEeSbmbyTJYAEVw" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9qpB8qMDEeSbmbyTJYAEVw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9qpB86MDEeSbmbyTJYAEVw"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.muml#_dKEfAZQjEeSZM-zEIRk3lw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9qpB5qMDEeSbmbyTJYAEVw" x="38" y="118" width="113" height="113"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="__Pm0kaMDEeSbmbyTJYAEVw" type="3032" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="__Pm0k6MDEeSbmbyTJYAEVw" type="5060"/>
+        <children xmi:type="notation:DecorationNode" xmi:id="__Pm0lKMDEeSbmbyTJYAEVw" type="7031">
+          <styles xmi:type="notation:SortingStyle" xmi:id="__Pm0laMDEeSbmbyTJYAEVw" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="__Pm0lqMDEeSbmbyTJYAEVw"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="__Pm0l6MDEeSbmbyTJYAEVw" type="7032">
+          <styles xmi:type="notation:SortingStyle" xmi:id="__Pm0mKMDEeSbmbyTJYAEVw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="__Pm0maMDEeSbmbyTJYAEVw"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="__Pm0mqMDEeSbmbyTJYAEVw" type="7033">
+          <styles xmi:type="notation:SortingStyle" xmi:id="__Pm0m6MDEeSbmbyTJYAEVw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="__Pm0nKMDEeSbmbyTJYAEVw"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="__Pm0naMDEeSbmbyTJYAEVw" type="7034">
+          <styles xmi:type="notation:SortingStyle" xmi:id="__Pm0nqMDEeSbmbyTJYAEVw"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="__Pm0n6MDEeSbmbyTJYAEVw"/>
+        </children>
+        <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.muml#__Pm0kKMDEeSbmbyTJYAEVw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Pm0kqMDEeSbmbyTJYAEVw" x="386" y="118" width="124" height="115"/>
+      </children>
+    </children>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.muml#_dKEfAJQjEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9qpB4aMDEeSbmbyTJYAEVw" width="709" height="445"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_dKEfA5QjEeSZM-zEIRk3lw"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.muml#_dKEfAJQjEeSZM-zEIRk3lw"/>
+  <edges xmi:type="notation:Connector" xmi:id="_ArjOIKMEEeSbmbyTJYAEVw" type="4003" source="_9qpB5aMDEeSbmbyTJYAEVw" target="__Pm0kaMDEeSbmbyTJYAEVw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ArjOI6MEEeSbmbyTJYAEVw" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ArjOJKMEEeSbmbyTJYAEVw" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ArjOJaMEEeSbmbyTJYAEVw" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ArjOJqMEEeSbmbyTJYAEVw" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ArjOIaMEEeSbmbyTJYAEVw" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.muml#_ArZdIKMEEeSbmbyTJYAEVw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ArjOIqMEEeSbmbyTJYAEVw" points="[17, -5, -245, 0]$[252, -11, -10, -6]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ArsYEKMEEeSbmbyTJYAEVw" id="(0.8495575221238938,0.30973451327433627)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ArsYEaMEEeSbmbyTJYAEVw" id="(0.08064516129032258,0.2608695652173913)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_BIaJQaMEEeSbmbyTJYAEVw" type="4003" source="__Pm0kaMDEeSbmbyTJYAEVw" target="_9qpB5aMDEeSbmbyTJYAEVw" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BIaJRKMEEeSbmbyTJYAEVw" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BIaJRaMEEeSbmbyTJYAEVw" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BIaJRqMEEeSbmbyTJYAEVw" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BIaJR6MEEeSbmbyTJYAEVw" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_BIaJQqMEEeSbmbyTJYAEVw" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.muml#_BIaJQKMEEeSbmbyTJYAEVw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BIaJQ6MEEeSbmbyTJYAEVw" points="[-12, -5, 249, 0]$[-247, 6, 14, 11]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BIj6QKMEEeSbmbyTJYAEVw" id="(0.0967741935483871,0.8347826086956521)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BIj6QaMEEeSbmbyTJYAEVw" id="(0.8761061946902655,0.8053097345132744)"/>
+  </edges>
 </notation:Diagram>
