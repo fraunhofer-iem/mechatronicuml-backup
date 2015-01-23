@@ -22,7 +22,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_TMQ9Tc21EeKxKMJSVpn_4A"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_TMQ9Ts21EeKxKMJSVpn_4A"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../SectionEntry.fujaba#_rFb_0c0bEeKxKMJSVpn_4A"/>
+        <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_rFb_0c0bEeKxKMJSVpn_4A"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TMQ9Qc21EeKxKMJSVpn_4A" x="26" y="10"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_WRr2Ec21EeKxKMJSVpn_4A" type="3032" fontName="Segoe UI" lineColor="0">
@@ -30,7 +30,7 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_WRr2FM21EeKxKMJSVpn_4A" type="7031">
           <children xmi:type="notation:Shape" xmi:id="_sQ77oM21EeKxKMJSVpn_4A" type="3033" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_sQ77os21EeKxKMJSVpn_4A" type="5050"/>
-            <element xmi:type="realtimestatechart:EntryEvent" href="../SectionEntry.fujaba#_sQyKoM21EeKxKMJSVpn_4A"/>
+            <element xmi:type="realtimestatechart:EntryEvent" href="../SectionEntry.muml#_sQyKoM21EeKxKMJSVpn_4A"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sQ77oc21EeKxKMJSVpn_4A"/>
           </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_WRr2Fc21EeKxKMJSVpn_4A" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
@@ -48,15 +48,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_WRr2Hs21EeKxKMJSVpn_4A"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_WRr2H821EeKxKMJSVpn_4A"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../SectionEntry.fujaba#_WRr2EM21EeKxKMJSVpn_4A"/>
+        <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_WRr2EM21EeKxKMJSVpn_4A"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WRr2Es21EeKxKMJSVpn_4A" x="290" y="22"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.fujaba#_rFb_0M0bEeKxKMJSVpn_4A"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_rFb_0M0bEeKxKMJSVpn_4A"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TMHMQ821EeKxKMJSVpn_4A" x="72" y="36" width="493" height="217"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_rFlw0c0bEeKxKMJSVpn_4A"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.fujaba#_rFb_0M0bEeKxKMJSVpn_4A"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_rFb_0M0bEeKxKMJSVpn_4A"/>
   <edges xmi:type="notation:Connector" xmi:id="_x-LLQc21EeKxKMJSVpn_4A" type="4003" source="_TMQ9QM21EeKxKMJSVpn_4A" target="_WRr2Ec21EeKxKMJSVpn_4A" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_x-LLRM21EeKxKMJSVpn_4A" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_x-LLRc21EeKxKMJSVpn_4A" y="-20"/>
@@ -65,7 +65,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_x-LLR821EeKxKMJSVpn_4A" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_x-LLQs21EeKxKMJSVpn_4A" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../SectionEntry.fujaba#_x-LLQM21EeKxKMJSVpn_4A"/>
+    <element xmi:type="realtimestatechart:Transition" href="../SectionEntry.muml#_x-LLQM21EeKxKMJSVpn_4A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_x-LLQ821EeKxKMJSVpn_4A" points="[20, -2, -169, 8]$[175, -20, -14, -10]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x-eGMM21EeKxKMJSVpn_4A" id="(0.1044776119402985,0.15151515151515152)"/>
   </edges>
@@ -77,7 +77,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_yaSfh821EeKxKMJSVpn_4A" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_yaSfgs21EeKxKMJSVpn_4A" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../SectionEntry.fujaba#_yaSfgM21EeKxKMJSVpn_4A"/>
+    <element xmi:type="realtimestatechart:Transition" href="../SectionEntry.muml#_yaSfgM21EeKxKMJSVpn_4A"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yaSfg821EeKxKMJSVpn_4A" points="[0, 91, 327, 63]$[0, 124, 327, 96]$[-327, 124, 0, 96]$[-327, 40, 0, 12]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yavLcM21EeKxKMJSVpn_4A" id="(0.5746268656716418,0.08080808080808081)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yavLcc21EeKxKMJSVpn_4A" id="(0.35,0.8)"/>
