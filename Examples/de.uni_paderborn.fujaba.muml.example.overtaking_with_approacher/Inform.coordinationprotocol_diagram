@@ -36,11 +36,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_lOdjRp6XEeSB5YpXOU2UeA"/>
         </children>
         <element xmi:type="connector:MessageBuffer" href="fraunhoferDemo.muml#_lNbBcJ6XEeSB5YpXOU2UeA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lOdjQZ6XEeSB5YpXOU2UeA" x="389" y="6"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lOdjQZ6XEeSB5YpXOU2UeA" x="463" y="168"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="fraunhoferDemo.muml#_Oc_zEJ6WEeSB5YpXOU2UeA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OefA0Z6WEeSB5YpXOU2UeA" x="192" y="12" width="661" height="313"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OefA0Z6WEeSB5YpXOU2UeA" x="192" y="12" width="817" height="433"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_IjclwJ6WEeSB5YpXOU2UeA"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="fraunhoferDemo.muml#_FB0TSpJ7EeSSMde45fnrcg"/>

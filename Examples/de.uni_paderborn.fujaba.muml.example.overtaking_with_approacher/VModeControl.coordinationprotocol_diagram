@@ -40,7 +40,7 @@
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="fraunhoferDemo.muml#_P1DbIJQiEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P1WWFZQiEeSZM-zEIRk3lw" x="269" y="57"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P1WWFZQiEeSZM-zEIRk3lw" x="276" y="36"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_L1enMZQiEeSZM-zEIRk3lw"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="fraunhoferDemo.muml#_FB0TSpJ7EeSSMde45fnrcg"/>
