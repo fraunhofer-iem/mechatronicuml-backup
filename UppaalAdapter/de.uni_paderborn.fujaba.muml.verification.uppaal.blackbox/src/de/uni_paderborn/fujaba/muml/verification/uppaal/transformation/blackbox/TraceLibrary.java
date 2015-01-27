@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.TransformationJob;
@@ -14,7 +15,7 @@ public class TraceLibrary {
 
 	public TraceLibrary() {}
 	
-	public TraceRepository verifyta(NTA nta, PropertyRepository properties, Options options) {
+	public TraceRepository verifyta(NTA nta, PropertyRepository properties, Options options) throws Throwable {
 		
 		assert nta != null && properties != null;
 		
@@ -24,7 +25,12 @@ public class TraceLibrary {
 		if (monitor == null)
 			monitor = new NullProgressMonitor();
 		
-		uppaalJob.execute(monitor);
+		IStatus status = uppaalJob.execute(monitor);
+		
+		if (!status.isOK()) {
+			// propagate exception to QVTo
+			throw status.getException();
+		}
 		
 		return uppaalJob.getTraceRepository();
 		
