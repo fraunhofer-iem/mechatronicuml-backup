@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,10 +16,11 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
@@ -154,7 +154,7 @@ public class VerifyTAJob extends SynchronousJob {
 			String result = stringWriter.toString();
 			
 			if (exitCode != 0) {
-				return BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(new RuntimeException(result)));
+				return BasicDiagnostic.toIStatus(new BasicDiagnostic(org.eclipse.emf.common.util.Diagnostic.ERROR, "de.uni_paderborn.fujaba.muml.verification.uppaal.job", 0, result, null));
 			}
 						
 			if (monitor.isCanceled()) {
@@ -189,11 +189,18 @@ public class VerifyTAJob extends SynchronousJob {
 			
 			subMonitor.worked(10);
 			
-			List<Diagnostic> errors = resource.getErrors();
-			for(Diagnostic error : errors) {
-				return BasicDiagnostic.toIStatus(BasicDiagnostic.toDiagnostic(new RuntimeException(error.toString())));
+			
+			Diagnostic resourceDiagnostic = EcoreUtil.computeDiagnostic(resource, false);
+			status = BasicDiagnostic.toIStatus(resourceDiagnostic);
+			
+			if (!status.isOK()) {
+				BasicDiagnostic parseDiagnostic = new BasicDiagnostic("de.uni_paderborn.fujaba.muml.verification.uppaal.job", 0, "Parsing the UPPAAL diagnostic trace failed", null);
+				parseDiagnostic.merge(resourceDiagnostic);
+				
+				return BasicDiagnostic.toIStatus(parseDiagnostic);
 			}
-
+			
+			
 			assert !resource.getContents().isEmpty() && resource.getContents().get(0) instanceof TraceRepository;
 					
 			traceRepository = (TraceRepository) resource.getContents().get(0);

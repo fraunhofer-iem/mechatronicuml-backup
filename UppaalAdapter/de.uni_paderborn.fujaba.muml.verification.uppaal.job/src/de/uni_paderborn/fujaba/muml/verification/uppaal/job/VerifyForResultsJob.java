@@ -12,7 +12,6 @@ import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationOptionsProvider;
@@ -20,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.Verificat
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.VerificationPropertyResultAcceptor;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.results.PropertyResultRepository;
 
 public class VerifyForResultsJob extends SynchronousJob {
 	

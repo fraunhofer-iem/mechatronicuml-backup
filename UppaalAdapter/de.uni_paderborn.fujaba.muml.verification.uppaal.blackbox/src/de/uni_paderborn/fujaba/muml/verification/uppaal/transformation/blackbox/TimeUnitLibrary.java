@@ -2,8 +2,6 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox
 
 import java.util.concurrent.TimeUnit;
 
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-
 public class TimeUnitLibrary {
 
 	public TimeUnitLibrary() {}
