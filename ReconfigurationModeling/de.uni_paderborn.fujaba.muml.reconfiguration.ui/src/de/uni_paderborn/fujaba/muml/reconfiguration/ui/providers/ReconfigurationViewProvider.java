@@ -42,8 +42,6 @@ import de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlViewProvider
 public class ReconfigurationViewProvider extends MumlViewProvider implements
 		IViewProvider {
 
-	// TODO implement other 3 cases
-
 	// basically copied from
 	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/providers/MumlViewProvider.java
 	protected boolean provides(CreateNodeViewOperation op) {
@@ -89,7 +87,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 									// visual id from element type
 				}
 			} else {
-				// TODO ??
+			
 				if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 						.equals(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 								.getModelID(op.getContainerView()))) {
@@ -366,17 +364,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				node,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
-		// XXX .getType into ReconfigurationVisualIDRegistry
-		// createCompartment(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ControllerEditPart.VISUAL_ID),
-		// false, false, false, false);
 
-		// if
-		// (((de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent)
-		// domainElement)
-		// .getController() == null)
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
@@ -470,25 +458,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		// TODO create own label
-		// Node label5012 = createLabel(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
-		// label5012.setLayoutConstraint(NotationFactory.eINSTANCE
-		// .createLocation());
-		// Location location5012 = (Location) label5012.getLayoutConstraint();
-		// location5012.setX(0);
-		// location5012.setY(5);
-		// Node label5025 = createLabel(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-		// label5025.setLayoutConstraint(NotationFactory.eINSTANCE
-		// .createLocation());
-		// Location location5025 = (Location) label5025.getLayoutConstraint();
-		// location5025.setX(0);
-		// location5025.setY(5);
+
 		return node;
 	}
 
@@ -531,25 +501,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 
-		// TODO create own label
-		// Node label5012 = createLabel(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
-		// label5012.setLayoutConstraint(NotationFactory.eINSTANCE
-		// .createLocation());
-		// Location location5012 = (Location) label5012.getLayoutConstraint();
-		// location5012.setX(0);
-		// location5012.setY(5);
-		// Node label5025 = createLabel(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-		// label5025.setLayoutConstraint(NotationFactory.eINSTANCE
-		// .createLocation());
-		// Location location5025 = (Location) label5025.getLayoutConstraint();
-		// location5025.setX(0);
-		// location5025.setY(5);
+	
 		return node;
 	}
 	
@@ -592,25 +544,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 
-		// TODO create own label
-		// Node label5012 = createLabel(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
-		// label5012.setLayoutConstraint(NotationFactory.eINSTANCE
-		// .createLocation());
-		// Location location5012 = (Location) label5012.getLayoutConstraint();
-		// location5012.setX(0);
-		// location5012.setY(5);
-		// Node label5025 = createLabel(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-		// label5025.setLayoutConstraint(NotationFactory.eINSTANCE
-		// .createLocation());
-		// Location location5025 = (Location) label5025.getLayoutConstraint();
-		// location5025.setX(0);
-		// location5025.setY(5);
+
 		return node;
 	}
 
@@ -653,25 +587,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
 
-		// TODO create own label
-		// Node label5012 = createLabel(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
-		// label5012.setLayoutConstraint(NotationFactory.eINSTANCE
-		// .createLocation());
-		// Location location5012 = (Location) label5012.getLayoutConstraint();
-		// location5012.setX(0);
-		// location5012.setY(5);
-		// Node label5025 = createLabel(
-		// node,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-		// label5025.setLayoutConstraint(NotationFactory.eINSTANCE
-		// .createLocation());
-		// Location location5025 = (Location) label5025.getLayoutConstraint();
-		// location5025.setX(0);
-		// location5025.setY(5);
+
 		return node;
 	}
 
@@ -683,25 +599,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		rv.setElement(domainElement);
 		rv.setType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, rv, ViewUtil.APPEND, true);
-		//
-		// createCompartment(
-		// containerView,
-		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-		// .getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
-		// false, false, false, false);
 
-		// Node compartment = null;
-		// for (Object curView : containerView.getChildren()) {
-		// String type = ((Node) curView).getType();
-		// if (type == "7077")
-		// //==""+ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID)
-		// compartment = ((Node) curView);
-		// }
-		//
-		// if (compartment != null)
-		// ViewUtil.repositionChildAt(containerView, compartment,
-		// ViewUtil.APPEND);
 		return rv;
 	}
 
