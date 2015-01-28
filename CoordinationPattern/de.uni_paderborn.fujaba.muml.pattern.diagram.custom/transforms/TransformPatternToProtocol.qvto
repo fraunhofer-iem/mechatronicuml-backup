@@ -1,5 +1,3 @@
-import MUML2MUML;
-
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
@@ -17,15 +15,10 @@ transformation TransformPatternToProtocol(inout input : ModelInstancePackage);
 main()
 { 
 // get the input parameters. There is exactly one root and exactly one coordination pattern
-	
-	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern]->any(true);
-	var theRootNode : RootNode := thePattern.eContainer().eContainer().oclAsType(RootNode);
-	//var patternCategory : ModelElementCategory  :=theRootNode.categories-> select(c : ModelElementCategory | c.key = 'pattern.category') -> any(true);
-	//var thePattern := patternCategory.modelElements->any(true).oclAsType(CoordinationPattern);
+	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
 	var bindings : Set(ParameterBinding) := input.rootObjects()[ParameterBinding];
 	createProtocol(thePattern, theRootNode, bindings);
-
-	
 }
 
  // this helper method will be put into an extra transformation later --> Transformation steps
@@ -36,8 +29,6 @@ helper bindParameters(protocol : CoordinationProtocol, bindings : Set(ParameterB
 helper createProtocol(pattern : CoordinationPattern, root : RootNode, bindings : Set(ParameterBinding))
 {
 	var newProtocol : CoordinationProtocol := new CoordinationProtocol(pattern);
-	var connector : RoleConnector  := new RoleConnector(pattern.roleConnector.comment);
-	newProtocol.roleConnector := connector;
 	pattern.roles->forEach(role)
 	{
 		var newRole := new Role(role,newProtocol);		
@@ -46,38 +37,19 @@ helper createProtocol(pattern : CoordinationPattern, root : RootNode, bindings :
 			newRole.receiverMessageBuffer += new MessageBuffer(buffer,newRole);
 		};
 		newProtocol.roles+= newRole;
-		connector.connectorEndpoints+= newRole;
-		if(role.behavior != null)
-		{
-			var roleBehavior : Behavior := role.behavior.map Behavior2Behavior();
-			newRole.behavior := roleBehavior.oclAsType(RealtimeStatechart);
-			var rtscCategory := getRTSCCategory(root);
-			rtscCategory.modelElements+=roleBehavior.oclAsType(RealtimeStatechart);
-		}
 	};
-	
 	bindParameters(newProtocol, bindings);
 	var protocolCategory : ModelElementCategory := getProtocolCategory(root);
 	protocolCategory.modelElements +=newProtocol;
 }
-constructor ConnectorQualityOfServiceAssumptions::ConnectorQualityOfServiceAssumptions(patternqosa : ConnectorQualityOfServiceAssumptions)
-{
-	messageLossPossible := patternqosa.messageLossPossible;
-	comment := patternqosa.comment;
-	minMessageDelay	:= new TimeValue(patternqosa.minMessageDelay);
-	maxMessageDelay := new TimeValue(patternqosa.maxMessageDelay);
-}
 
-constructor TimeValue::TimeValue(valueToCopy : TimeValue)
-{
-	value := null;
-	unit := valueToCopy.unit;
-}
-constructor RoleConnector::RoleConnector(_comment : String) {
-	comment:=_comment;	
-}
 query getProtocolCategory(in theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
+}
+
+helper copyMessageBuffer(protocol : CoordinationProtocol, pattern : CoordinationPattern)
+{
+	protocol.verificationConstraintRepositories
 }
 
 constructor muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository(rep : muml::constraint::VerificationConstraintRepository)
@@ -99,7 +71,8 @@ constructor MessageBuffer::MessageBuffer(buffer : MessageBuffer, sourceRole : Ro
 		messageType+= type;
 	};
 	bufferOverflowAvoidanceStrategy := buffer.bufferOverflowAvoidanceStrategy;
-	discreteInteractionEndpoint := sourceRole;	
+	discreteInteractionEndpoint := sourceRole;
+	
 }
 constructor Role::Role(roleToCopy : Role, protocol : CoordinationProtocol)
 {
@@ -111,7 +84,7 @@ constructor Role::Role(roleToCopy : Role, protocol : CoordinationProtocol)
 	receiverMessageTypes := roleToCopy.receiverMessageTypes;
 	comment := roleToCopy.comment;
 	// role 
-	//coordinationProtocol := protocol;
+	coordinationProtocol := protocol;
 	
 	cardinality := new Cardinality(roleToCopy.cardinality);
 	
@@ -128,23 +101,11 @@ constructor NaturalNumber::NaturalNumber(nn : NaturalNumber)
 	infinity := nn.infinity;	
 }
 
--- return the RTSC category of the root node
-query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
-}
 
-mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
-    	_name := self._name;
-    	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
-    	//_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
-    	_operations := self._operations.map Operation2Operation();
-    	_variables := self._variables.map Variable2Variable();
-    	_parentRegion := self._parentRegion.map Region2Region();
-    	_transitions := self._transitions.map Transition2Transition();
-    	_states := self._states.map State2State();
-    	_clocks := self._clocks.map Clock2Clock();
-   		 }
+
+
+
+
+
 
 

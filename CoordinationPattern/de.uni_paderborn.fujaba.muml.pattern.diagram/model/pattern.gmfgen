@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram" diagramFileExtension="coordinationpattern_diagram" domainFileExtension="fujaba" dynamicTemplates="true" templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates" pluginDirectory="/de.uni_paderborn.fujaba.muml.coordinationpattern.diagram/src">
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.pattern.diagram" diagramFileExtension="coordinationpattern_diagram" domainFileExtension="fujaba" dynamicTemplates="true" templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates">
   <diagram visualID="1000" editPartClassName="ModelElementCategoryEditPart" itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy" canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy" iconProviderPriority="Low" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true">
     <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ModelElementCategoryEditHelper"/>
@@ -144,13 +144,13 @@
       <labels visualID="5009" editPartClassName="WrappingLabel4EditPart" itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy" notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsLabelViewFactory" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureMinDelayLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <behaviour xsi:type="gmfgen:CustomBehaviour" key="&quot;CustomLabelUpdateEditPolicy&quot;" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
+        <behaviour xsi:type="gmfgen:CustomBehaviour" key="&quot;CustomLabelUpdateEditPolicy&quot;" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.4"/>
       </labels>
       <labels visualID="5010" editPartClassName="WrappingLabel5EditPart" itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy" notationViewFactoryClassName="ConnectorQualityOfServiceAssumptionsLabelViewFactory" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureMaxDelayLabel" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <behaviour xsi:type="gmfgen:CustomBehaviour" key="&quot;CustomLabelUpdateEditPolicy&quot;" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
+        <behaviour xsi:type="gmfgen:CustomBehaviour" key="&quot;CustomLabelUpdateEditPolicy&quot;" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.5"/>
       </labels>
     </childNodes>
@@ -158,7 +158,7 @@
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="CoordinationPatternEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-      <behaviour xsi:type="gmfgen:CustomBehaviour" key="&quot;CustomPatternUpdateEditPolicy&quot;" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.edit.policies.CustomCoordinationPatternUpdateEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="&quot;CustomPatternUpdateEditPolicy&quot;" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.CustomCoordinationPatternUpdateEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.genmodel#//pattern/CoordinationPattern"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
@@ -312,14 +312,14 @@
       <noteFillColor xsi:type="gmfgen:GenConstantColor" name="yellow"/>
       <noteLineColor xsi:type="gmfgen:GenConstantColor" name="orange"/>
     </preferences>
-    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.general" name="Coordination Pattern Diagram Editor" parentCategory="de.uni_paderborn.fujaba.preferences">
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.appearance" name="Appearance" parentCategory="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.general" kind="Appearance"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.connections" name="Connections" parentCategory="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.general" kind="Connections"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.printing" name="Printing" parentCategory="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.general" kind="Printing"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.rulersAndGrid" name="Rulers And Grid" parentCategory="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.general" kind="RulersAndGrid"/>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.general" name="Coordination Pattern Diagram Editor" parentCategory="de.uni_paderborn.fujaba.preferences">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.appearance" name="Appearance" parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.connections" name="Connections" parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.printing" name="Printing" parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.pattern.diagram.rulersAndGrid" name="Rulers And Grid" parentCategory="de.uni_paderborn.fujaba.muml.pattern.diagram.general" kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin iD="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram" name="Coordination Pattern Diagram Editor" provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
+  <plugin name="Coordination Pattern Diagram Editor" provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
