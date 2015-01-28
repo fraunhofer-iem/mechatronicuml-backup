@@ -55,7 +55,8 @@ public class ReconfigurationElementTypes {
 	public static final IElementType ContinuousPort_3011 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.ContinuousPort_3011");
 	public static final IElementType FadingComponent_2079 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent_2079");
 	public static final IElementType BroadcastPort_3078 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.BroadcastPort_3078");
-
+	public static final IElementType CoordinationProtocolPart_3016 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolPart_3016");
+	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -133,6 +134,11 @@ public class ReconfigurationElementTypes {
 					ContinuousPort_3011,
 					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
+			
+			elements.put(
+					CoordinationProtocolPart_3016,
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+							.getCoordinationProtocolPart());
 
 			elements.put(
 					FadingComponent_2079,
@@ -171,6 +177,7 @@ public class ReconfigurationElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ComponentPart_3012);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3010);
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3013);
+			KNOWN_ELEMENT_TYPES.add(CoordinationProtocolPart_3016);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3011);
 			KNOWN_ELEMENT_TYPES.add(FadingComponent_2079);
 			KNOWN_ELEMENT_TYPES.add(BroadcastPort_3078);
@@ -203,9 +210,11 @@ public class ReconfigurationElementTypes {
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return DiscretePort_3010;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return DiscretePort_3010;
+			return HybridPort_3013;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-			return DiscretePort_3010;
+			return ContinuousPort_3011;
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
+			return CoordinationProtocolPart_3016;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.FadingComponentEditPart.VISUAL_ID:
 			return FadingComponent_2079;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.BroadcastPortEditPart.VISUAL_ID:
