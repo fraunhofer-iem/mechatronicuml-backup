@@ -48,7 +48,7 @@ def install(eclipseFile, distro_name, destination, configFile, platform):
     url, tag, uis = readConfigFile(configFile)
     destination += os.path.join(os.sep+distro_name + "-" + P2_DEST_SUFFIX[platform],  distro_name) 
     install_cmd = eclipseFile
-    install_cmd += " -application org.eclipse.equinox.p2.director -profile SDKProfile -profileProperties org.eclipse.update.install.features=true -roaming "
+    install_cmd += " -nosplash -application org.eclipse.equinox.p2.director -profile SDKProfile -profileProperties org.eclipse.update.install.features=true -roaming "
     install_cmd += P2_PLATFORM_OPTS[platform]
     install_cmd += " -destination {0}".format(destination)
     install_cmd += " -bundlepool {0}".format(destination)
