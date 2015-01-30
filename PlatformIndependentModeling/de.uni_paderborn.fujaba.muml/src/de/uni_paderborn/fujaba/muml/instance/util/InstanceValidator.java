@@ -319,10 +319,11 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String PORT_INSTANCE__PORT_INSTANCE_MUST_DELEGATE_TO_EMBEDDED_CIC__EEXPRESSION = "-- PortInstance at Structured Component must delegate to embedded CIC\r\n" +
-		"(componentInstance.oclIsKindOf(StructuredComponentInstance) and not self.oclIsKindOf(connector::DiscreteMultiInteractionEndpointInstance)) \r\n" +
+		"(componentInstance.oclIsKindOf(StructuredComponentInstance) and not self.oclIsKindOf(connector::DiscreteMultiInteractionEndpointInstance) and ( self.oclIsKindOf(HybridPortInstance) or self.oclIsKindOf(DiscretePortInstance) or self.oclIsKindOf(ContinuousPortInstance))) \r\n" +
 		"implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and \r\n" +
 		"\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance)\r\n" +
-		")->isEmpty()";
+		")->isEmpty()\r\n" +
+		"-- sthiele2: Exclude HybridPortInstance, DiscretePortInstance, ContinousPortInstance from the check";
 
 	/**
 	 * Validates the PortInstanceMustDelegateToEmbeddedCIC constraint of '<em>Port Instance</em>'.
