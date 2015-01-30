@@ -56,7 +56,7 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="MumlPresentation">
+         id="Coordination PatternPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -73,7 +73,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="MumlPresentationIDE">
+         id="Coordination PatternPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -83,7 +83,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="MumlRender">
+            id="Coordination PatternRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -212,7 +212,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Muml"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Coordination Pattern"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3003,3002,3004,3005,3006,3007"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002,4001,4003,4004"/>
       </viewProvider>
@@ -223,7 +223,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Muml"/>
+            <method name="getType()" value="Coordination Pattern"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2001,3003,3002,3004,3005,3006,3007"/>
@@ -613,7 +613,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.createDiagram"
-	            label="Create Muml Diagram"
+	            label="Create Coordination Pattern Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
@@ -656,10 +656,10 @@
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.coordinationpattern.diagram"
             editorId="de.uni_paderborn.fujaba.muml.pattern.diagram.part.CoordinationPatternDiagramEditorID"
-            editorName="Muml Editor"
+            editorName="Coordination Pattern Editor"
             fileExtension="coordinationpattern_diagram"
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.pattern.category"
-            modelId="Muml">
+            modelId="Coordination Pattern">
          <diagramElement
                packageNsURI="http://www.fujaba.de/modelinstance/0.4.0"
                className="ModelElementCategory">

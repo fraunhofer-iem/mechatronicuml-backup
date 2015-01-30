@@ -17,7 +17,7 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Muml"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Coordination Pattern"; //$NON-NLS-1$
 
 	/**
 	 * @generated
