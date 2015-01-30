@@ -3343,6 +3343,12 @@
             <upperBound xmi:id="_GR_O0ae9EeSK_8TqY1SjtQ"/>
           </cardinality>
         </hwports>
+        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_iy6psKhiEeSJj6cnB4p9sw" name="VirtualWifiPort" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
+          <cardinality xmi:id="_izEasKhiEeSJj6cnB4p9sw">
+            <lowerBound xmi:id="_ojBnIKhiEeSJj6cnB4p9sw"/>
+            <upperBound xmi:id="_ojBnIahiEeSJj6cnB4p9sw"/>
+          </cardinality>
+        </hwports>
         <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_OAr1UKe8EeSK_8TqY1SjtQ" name="Processor" family="Atmel AT91SAM7">
           <nbCores xmi:id="_OAr1Uae8EeSK_8TqY1SjtQ"/>
         </embeddedAtomicResources>
@@ -3424,6 +3430,12 @@
             <upperBound xmi:id="_dSpRs6e-EeSK_8TqY1SjtQ"/>
           </cardinality>
         </hwports>
+        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_t84AsKhiEeSJj6cnB4p9sw" name="VirtualWifiPort" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
+          <cardinality xmi:id="_t84AsahiEeSJj6cnB4p9sw">
+            <lowerBound xmi:id="_t84AsqhiEeSJj6cnB4p9sw"/>
+            <upperBound xmi:id="_t84As6hiEeSJj6cnB4p9sw"/>
+          </cardinality>
+        </hwports>
         <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_dSfgkKe-EeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
           <frequency xmi:id="_dSfgkae-EeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
         </embeddedAtomicResourceInstances>
@@ -3484,6 +3496,7 @@
         <hwPortParts xmi:id="_a4whtqfBEeSK_8TqY1SjtQ" communicationResource="_dSpRqKe-EeSK_8TqY1SjtQ"/>
         <hwPortParts xmi:id="_a4wht6fBEeSK_8TqY1SjtQ" communicationResource="_dSpRrKe-EeSK_8TqY1SjtQ"/>
         <hwPortParts xmi:id="_a4whuKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRsKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_w-OR0KhiEeSJj6cnB4p9sw" communicationResource="_t84AsKhiEeSJj6cnB4p9sw"/>
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_dqZi4KfBEeSK_8TqY1SjtQ" name="R2" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
         <cardinality xmi:id="_dqZi4afBEeSK_8TqY1SjtQ">
@@ -3499,6 +3512,7 @@
         <hwPortParts xmi:id="_eFHwBqfBEeSK_8TqY1SjtQ" communicationResource="_dSpRqKe-EeSK_8TqY1SjtQ"/>
         <hwPortParts xmi:id="_eFHwB6fBEeSK_8TqY1SjtQ" communicationResource="_dSpRrKe-EeSK_8TqY1SjtQ"/>
         <hwPortParts xmi:id="_eFHwCKfBEeSK_8TqY1SjtQ" connectors="_0TjEkKfCEeSK_8TqY1SjtQ" communicationResource="_dSpRsKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_w-0uwKhiEeSJj6cnB4p9sw" connectors="_al6WkKhjEeSJj6cnB4p9sw" communicationResource="_t84AsKhiEeSJj6cnB4p9sw"/>
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_rvOIgKfBEeSK_8TqY1SjtQ" name="Motor" resourceType="_IluhIKe_EeSK_8TqY1SjtQ">
         <cardinality xmi:id="_rvOIgafBEeSK_8TqY1SjtQ">
@@ -3534,221 +3548,247 @@
       <networkingHardwareParts xsi:type="hwplatform:LinkPart" xmi:id="_Y5SH0KfCEeSK_8TqY1SjtQ" communicationMedia="_u5rL8Ke5EeSK_8TqY1SjtQ" connectorEndpoints="_eFHwAqfBEeSK_8TqY1SjtQ _SUng8KfCEeSK_8TqY1SjtQ"/>
       <networkingHardwareParts xsi:type="hwplatform:LinkPart" xmi:id="_Z5IbQKfCEeSK_8TqY1SjtQ" communicationMedia="_u5rL8Ke5EeSK_8TqY1SjtQ" connectorEndpoints="_a4whs6fBEeSK_8TqY1SjtQ _RXr-oKfCEeSK_8TqY1SjtQ"/>
       <networkingHardwareParts xsi:type="hwplatform:Delegation" xmi:id="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpoints="_eFHwCKfBEeSK_8TqY1SjtQ __1O0gKfBEeSK_8TqY1SjtQ"/>
+      <networkingHardwareParts xsi:type="hwplatform:Delegation" xmi:id="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpoints="_w-0uwKhiEeSJj6cnB4p9sw _UUrCAKhjEeSJj6cnB4p9sw"/>
       <delegationPorts xmi:id="__1O0gKfBEeSK_8TqY1SjtQ" connectors="_0TjEkKfCEeSK_8TqY1SjtQ" name="D1-virtualBluetooth" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
         <cardinality xmi:id="__1O0gafBEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_D1XpIKfCEeSK_8TqY1SjtQ"/>
-          <upperBound xmi:id="_D1XpIafCEeSK_8TqY1SjtQ"/>
+          <lowerBound xmi:id="_Sqk3sKhjEeSJj6cnB4p9sw"/>
+          <upperBound xmi:id="_Sqk3sahjEeSJj6cnB4p9sw"/>
+        </cardinality>
+      </delegationPorts>
+      <delegationPorts xmi:id="_UUrCAKhjEeSJj6cnB4p9sw" connectors="_al6WkKhjEeSJj6cnB4p9sw" name="D1-virtualWifi" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
+        <cardinality xmi:id="_UUrCAahjEeSJj6cnB4p9sw">
+          <lowerBound xmi:id="_Zp2-AKhjEeSJj6cnB4p9sw"/>
+          <upperBound xmi:id="_ZqAvAKhjEeSJj6cnB4p9sw"/>
         </cardinality>
       </delegationPorts>
     </modelElements>
     <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_-b5NkKfCEeSK_8TqY1SjtQ">
-      <hwplatformInstances xmi:id="_A5kw8KfDEeSK_8TqY1SjtQ" name="Overtakee" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_A5kw8afDEeSK_8TqY1SjtQ" name="D1-virtualBluetooth.0" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <embeddedHPIC xmi:id="_A5kw8qfDEeSK_8TqY1SjtQ">
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_A5kw86fDEeSK_8TqY1SjtQ" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_A5kxBafDEeSK_8TqY1SjtQ _A5kxGqfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_A5kw9KfDEeSK_8TqY1SjtQ" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_A5kxAqfDEeSK_8TqY1SjtQ _A5kw_qfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_A5kw9afDEeSK_8TqY1SjtQ" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_A5kxBKfDEeSK_8TqY1SjtQ _A5kxEKfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_A5kw9qfDEeSK_8TqY1SjtQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_A5kxFafDEeSK_8TqY1SjtQ _A5kw-qfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_A5kw96fDEeSK_8TqY1SjtQ" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_A5kxBqfDEeSK_8TqY1SjtQ _A5kw_KfDEeSK_8TqY1SjtQ"/>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_A5kw-afDEeSK_8TqY1SjtQ" name="Distance.0.1" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kw-qfDEeSK_8TqY1SjtQ" name="distancehw-port" connectorInstances="_A5kw9qfDEeSK_8TqY1SjtQ" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
+      <hwplatformInstances xmi:id="_4sMNoKhjEeSJj6cnB4p9sw" name="Overtakee" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
+        <delegationPorts xmi:id="_4sMNoahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_4sMNqahjEeSJj6cnB4p9sw" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
+        <delegationPorts xmi:id="_4sMNoqhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_4sMNqqhjEeSJj6cnB4p9sw" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
+        <embeddedHPIC xmi:id="_4sMNo6hjEeSJj6cnB4p9sw">
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNpKhjEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNy6hjEeSJj6cnB4p9sw _4sMNtKhjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNpahjEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzKhjEeSJj6cnB4p9sw _4sMNw6hjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNpqhjEeSJj6cnB4p9sw" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNyKhjEeSJj6cnB4p9sw _4sMNrKhjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNp6hjEeSJj6cnB4p9sw" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNtahjEeSJj6cnB4p9sw _4sMNv6hjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNqKhjEeSJj6cnB4p9sw" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzahjEeSJj6cnB4p9sw _4sMNwahjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_4sMNqahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _4sMNrqhjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_4sMNqqhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _4sMNtqhjEeSJj6cnB4p9sw"/>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_4sMNq6hjEeSJj6cnB4p9sw" name="Line.0.1" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNrKhjEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_4sMNpqhjEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
           </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_A5kw-6fDEeSK_8TqY1SjtQ" name="Color.0.1" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kw_KfDEeSK_8TqY1SjtQ" name="colorhw-port" connectorInstances="_A5kw96fDEeSK_8TqY1SjtQ" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_A5kw_afDEeSK_8TqY1SjtQ" name="Motor.0.1" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kw_qfDEeSK_8TqY1SjtQ" name="motohw-port" connectorInstances="_A5kw9KfDEeSK_8TqY1SjtQ" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_A5kw_6fDEeSK_8TqY1SjtQ" name="R1.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxAKfDEeSK_8TqY1SjtQ" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxAafDEeSK_8TqY1SjtQ" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxAqfDEeSK_8TqY1SjtQ" name="inputPort1" connectorInstances="_A5kw9KfDEeSK_8TqY1SjtQ" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxA6fDEeSK_8TqY1SjtQ" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxBKfDEeSK_8TqY1SjtQ" name="inputPort2" connectorInstances="_A5kw9afDEeSK_8TqY1SjtQ" type="_a4whtafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxBafDEeSK_8TqY1SjtQ" name="inputPort4" connectorInstances="_A5kw86fDEeSK_8TqY1SjtQ" type="_a4whsafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxBqfDEeSK_8TqY1SjtQ" name="inputPort3" connectorInstances="_A5kw96fDEeSK_8TqY1SjtQ" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxB6fDEeSK_8TqY1SjtQ" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxCKfDEeSK_8TqY1SjtQ" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_A5kxCafDEeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_A5kxCqfDEeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_4sMNrahjEeSJj6cnB4p9sw" name="R2.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNrqhjEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_4sMNqahjEeSJj6cnB4p9sw" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNr6hjEeSJj6cnB4p9sw" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNsKhjEeSJj6cnB4p9sw" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNsahjEeSJj6cnB4p9sw" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNsqhjEeSJj6cnB4p9sw" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNs6hjEeSJj6cnB4p9sw" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNtKhjEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_4sMNpKhjEeSJj6cnB4p9sw" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNtahjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_4sMNp6hjEeSJj6cnB4p9sw" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNtqhjEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_4sMNqqhjEeSJj6cnB4p9sw" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNt6hjEeSJj6cnB4p9sw" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_4sMNuKhjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+              <frequency xmi:id="_4sMNuahjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
             </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_A5kxC6fDEeSK_8TqY1SjtQ" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_A5kxDKfDEeSK_8TqY1SjtQ" value="64.0" unit="KByte"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_4sMNuqhjEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_4sMNu6hjEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
             </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_A5kxDafDEeSK_8TqY1SjtQ" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_A5kxDqfDEeSK_8TqY1SjtQ" value="256.0" unit="KByte"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_4sMNvKhjEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_4sMNvahjEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
             </embeddedAtomicResourceInstances>
           </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_A5kxD6fDEeSK_8TqY1SjtQ" name="Line.0.1" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxEKfDEeSK_8TqY1SjtQ" name="linehw-port" connectorInstances="_A5kw9afDEeSK_8TqY1SjtQ" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_4sMNvqhjEeSJj6cnB4p9sw" name="Distance.0.1" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNv6hjEeSJj6cnB4p9sw" name="distancehw-port" connectorInstances="_4sMNp6hjEeSJj6cnB4p9sw" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
           </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_A5kxEafDEeSK_8TqY1SjtQ" name="R2.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxEqfDEeSK_8TqY1SjtQ" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxE6fDEeSK_8TqY1SjtQ" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxFKfDEeSK_8TqY1SjtQ" name="virtualBluetoothPort" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxFafDEeSK_8TqY1SjtQ" name="inputPort1" connectorInstances="_A5kw9qfDEeSK_8TqY1SjtQ" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxFqfDEeSK_8TqY1SjtQ" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxF6fDEeSK_8TqY1SjtQ" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxGKfDEeSK_8TqY1SjtQ" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxGafDEeSK_8TqY1SjtQ" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_A5kxGqfDEeSK_8TqY1SjtQ" name="inputPort4" connectorInstances="_A5kw86fDEeSK_8TqY1SjtQ" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_A5kxG6fDEeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_A5kxHKfDEeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_A5kxHafDEeSK_8TqY1SjtQ" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_A5kxHqfDEeSK_8TqY1SjtQ" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_A5kxH6fDEeSK_8TqY1SjtQ" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_A5kxIKfDEeSK_8TqY1SjtQ" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_4sMNwKhjEeSJj6cnB4p9sw" name="Color.0.1" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNwahjEeSJj6cnB4p9sw" name="colorhw-port" connectorInstances="_4sMNqKhjEeSJj6cnB4p9sw" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
           </resources>
-        </embeddedHPIC>
-      </hwplatformInstances>
-      <hwplatformInstances xmi:id="_SCSlYKfDEeSK_8TqY1SjtQ" name="Overtaker" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_SCSlYafDEeSK_8TqY1SjtQ" name="D1-virtualBluetooth.0" connectorInstances="_SCSlaKfDEeSK_8TqY1SjtQ" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <embeddedHPIC xmi:id="_SCSlYqfDEeSK_8TqY1SjtQ">
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_SCSlY6fDEeSK_8TqY1SjtQ" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_SCSldafDEeSK_8TqY1SjtQ _SCSlhqfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_SCSlZKfDEeSK_8TqY1SjtQ" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_SCSlc6fDEeSK_8TqY1SjtQ _SCSlbKfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_SCSlZafDEeSK_8TqY1SjtQ" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_SCSldKfDEeSK_8TqY1SjtQ _SCSlaqfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_SCSlZqfDEeSK_8TqY1SjtQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_SCSlh6fDEeSK_8TqY1SjtQ _SCSlkKfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_SCSlZ6fDEeSK_8TqY1SjtQ" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_SCSlcKfDEeSK_8TqY1SjtQ _SCSlbqfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_SCSlaKfDEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_SCSlYafDEeSK_8TqY1SjtQ _SCSlgqfDEeSK_8TqY1SjtQ"/>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_SCSlaafDEeSK_8TqY1SjtQ" name="Line.0.1" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlaqfDEeSK_8TqY1SjtQ" name="linehw-port" connectorInstances="_SCSlZafDEeSK_8TqY1SjtQ" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
+          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_4sMNwqhjEeSJj6cnB4p9sw" name="Motor.0.1" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNw6hjEeSJj6cnB4p9sw" name="motohw-port" connectorInstances="_4sMNpahjEeSJj6cnB4p9sw" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
           </resources>
-          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_SCSla6fDEeSK_8TqY1SjtQ" name="Motor.0.1" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlbKfDEeSK_8TqY1SjtQ" name="motohw-port" connectorInstances="_SCSlZKfDEeSK_8TqY1SjtQ" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_SCSlbafDEeSK_8TqY1SjtQ" name="Color.0.1" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlbqfDEeSK_8TqY1SjtQ" name="colorhw-port" connectorInstances="_SCSlZ6fDEeSK_8TqY1SjtQ" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_SCSlb6fDEeSK_8TqY1SjtQ" name="R1.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlcKfDEeSK_8TqY1SjtQ" name="inputPort3" connectorInstances="_SCSlZ6fDEeSK_8TqY1SjtQ" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlcafDEeSK_8TqY1SjtQ" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlcqfDEeSK_8TqY1SjtQ" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlc6fDEeSK_8TqY1SjtQ" name="inputPort1" connectorInstances="_SCSlZKfDEeSK_8TqY1SjtQ" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSldKfDEeSK_8TqY1SjtQ" name="inputPort2" connectorInstances="_SCSlZafDEeSK_8TqY1SjtQ" type="_a4whtafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSldafDEeSK_8TqY1SjtQ" name="inputPort4" connectorInstances="_SCSlY6fDEeSK_8TqY1SjtQ" type="_a4whsafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSldqfDEeSK_8TqY1SjtQ" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSld6fDEeSK_8TqY1SjtQ" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSleKfDEeSK_8TqY1SjtQ" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_SCSleafDEeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_SCSleqfDEeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_4sMNxKhjEeSJj6cnB4p9sw" name="R1.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNxahjEeSJj6cnB4p9sw" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNxqhjEeSJj6cnB4p9sw" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNx6hjEeSJj6cnB4p9sw" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNyKhjEeSJj6cnB4p9sw" name="inputPort2" connectorInstances="_4sMNpqhjEeSJj6cnB4p9sw" type="_a4whtafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNyahjEeSJj6cnB4p9sw" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNyqhjEeSJj6cnB4p9sw" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNy6hjEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_4sMNpKhjEeSJj6cnB4p9sw" type="_a4whsafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNzKhjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_4sMNpahjEeSJj6cnB4p9sw" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNzahjEeSJj6cnB4p9sw" name="inputPort3" connectorInstances="_4sMNqKhjEeSJj6cnB4p9sw" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNzqhjEeSJj6cnB4p9sw" name="VirtualWifiPort" type="_w-OR0KhiEeSJj6cnB4p9sw"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_4sMNz6hjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+              <frequency xmi:id="_4sMN0KhjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
             </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_SCSle6fDEeSK_8TqY1SjtQ" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_SCSlfKfDEeSK_8TqY1SjtQ" value="64.0" unit="KByte"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_4sMN0ahjEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_4sMN0qhjEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
             </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_SCSlfafDEeSK_8TqY1SjtQ" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_SCSlfqfDEeSK_8TqY1SjtQ" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_SCSlf6fDEeSK_8TqY1SjtQ" name="R2.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlgKfDEeSK_8TqY1SjtQ" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlgafDEeSK_8TqY1SjtQ" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlgqfDEeSK_8TqY1SjtQ" name="virtualBluetoothPort" connectorInstances="_SCSlaKfDEeSK_8TqY1SjtQ" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlg6fDEeSK_8TqY1SjtQ" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlhKfDEeSK_8TqY1SjtQ" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlhafDEeSK_8TqY1SjtQ" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlhqfDEeSK_8TqY1SjtQ" name="inputPort4" connectorInstances="_SCSlY6fDEeSK_8TqY1SjtQ" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlh6fDEeSK_8TqY1SjtQ" name="inputPort1" connectorInstances="_SCSlZqfDEeSK_8TqY1SjtQ" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSliKfDEeSK_8TqY1SjtQ" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_SCSliafDEeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_SCSliqfDEeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_SCSli6fDEeSK_8TqY1SjtQ" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_SCSljKfDEeSK_8TqY1SjtQ" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_SCSljafDEeSK_8TqY1SjtQ" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_SCSljqfDEeSK_8TqY1SjtQ" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_SCSlj6fDEeSK_8TqY1SjtQ" name="Distance.0.1" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_SCSlkKfDEeSK_8TqY1SjtQ" name="distancehw-port" connectorInstances="_SCSlZqfDEeSK_8TqY1SjtQ" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
-          </resources>
-        </embeddedHPIC>
-      </hwplatformInstances>
-      <hwplatformInstances xmi:id="_fdDhYKfDEeSK_8TqY1SjtQ" name="Approacher" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_fdDhYafDEeSK_8TqY1SjtQ" name="D1-virtualBluetooth.0" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <embeddedHPIC xmi:id="_fdDhYqfDEeSK_8TqY1SjtQ">
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_fdDhY6fDEeSK_8TqY1SjtQ" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_fdDhcqfDEeSK_8TqY1SjtQ _fdDhhqfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_fdDhZKfDEeSK_8TqY1SjtQ" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_fdDhbKfDEeSK_8TqY1SjtQ _fdDhfKfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_fdDhZafDEeSK_8TqY1SjtQ" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_fdDhb6fDEeSK_8TqY1SjtQ _fdDheqfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_fdDhZqfDEeSK_8TqY1SjtQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_fdDhg6fDEeSK_8TqY1SjtQ _fdDhgKfDEeSK_8TqY1SjtQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_fdDhZ6fDEeSK_8TqY1SjtQ" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_fdDhcafDEeSK_8TqY1SjtQ _fdDhfqfDEeSK_8TqY1SjtQ"/>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_fdDhaafDEeSK_8TqY1SjtQ" name="R1.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhaqfDEeSK_8TqY1SjtQ" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDha6fDEeSK_8TqY1SjtQ" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhbKfDEeSK_8TqY1SjtQ" name="inputPort1" connectorInstances="_fdDhZKfDEeSK_8TqY1SjtQ" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhbafDEeSK_8TqY1SjtQ" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhbqfDEeSK_8TqY1SjtQ" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhb6fDEeSK_8TqY1SjtQ" name="inputPort2" connectorInstances="_fdDhZafDEeSK_8TqY1SjtQ" type="_a4whtafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhcKfDEeSK_8TqY1SjtQ" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhcafDEeSK_8TqY1SjtQ" name="inputPort3" connectorInstances="_fdDhZ6fDEeSK_8TqY1SjtQ" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhcqfDEeSK_8TqY1SjtQ" name="inputPort4" connectorInstances="_fdDhY6fDEeSK_8TqY1SjtQ" type="_a4whsafBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_fdDhc6fDEeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_fdDhdKfDEeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_fdDhdafDEeSK_8TqY1SjtQ" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_fdDhdqfDEeSK_8TqY1SjtQ" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_fdDhd6fDEeSK_8TqY1SjtQ" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_fdDheKfDEeSK_8TqY1SjtQ" value="256.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_fdDheafDEeSK_8TqY1SjtQ" name="Line.0.1" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDheqfDEeSK_8TqY1SjtQ" name="linehw-port" connectorInstances="_fdDhZafDEeSK_8TqY1SjtQ" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_fdDhe6fDEeSK_8TqY1SjtQ" name="Motor.0.1" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhfKfDEeSK_8TqY1SjtQ" name="motohw-port" connectorInstances="_fdDhZKfDEeSK_8TqY1SjtQ" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_fdDhfafDEeSK_8TqY1SjtQ" name="Color.0.1" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhfqfDEeSK_8TqY1SjtQ" name="colorhw-port" connectorInstances="_fdDhZ6fDEeSK_8TqY1SjtQ" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_fdDhf6fDEeSK_8TqY1SjtQ" name="Distance.0.1" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhgKfDEeSK_8TqY1SjtQ" name="distancehw-port" connectorInstances="_fdDhZqfDEeSK_8TqY1SjtQ" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
-          </resources>
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_fdDhgafDEeSK_8TqY1SjtQ" name="R2.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhgqfDEeSK_8TqY1SjtQ" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhg6fDEeSK_8TqY1SjtQ" name="inputPort1" connectorInstances="_fdDhZqfDEeSK_8TqY1SjtQ" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhhKfDEeSK_8TqY1SjtQ" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhhafDEeSK_8TqY1SjtQ" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhhqfDEeSK_8TqY1SjtQ" name="inputPort4" connectorInstances="_fdDhY6fDEeSK_8TqY1SjtQ" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhh6fDEeSK_8TqY1SjtQ" name="virtualBluetoothPort" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhiKfDEeSK_8TqY1SjtQ" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhiafDEeSK_8TqY1SjtQ" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fdDhiqfDEeSK_8TqY1SjtQ" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_fdDhi6fDEeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_fdDhjKfDEeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_fdDhjafDEeSK_8TqY1SjtQ" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_fdDhjqfDEeSK_8TqY1SjtQ" value="64.0" unit="KByte"/>
-            </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_fdDhj6fDEeSK_8TqY1SjtQ" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_fdDhkKfDEeSK_8TqY1SjtQ" value="256.0" unit="KByte"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_4sMN06hjEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_4sMN1KhjEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
             </embeddedAtomicResourceInstances>
           </resources>
         </embeddedHPIC>
       </hwplatformInstances>
-      <hwplatformInstances xmi:id="_3dQyEKfDEeSK_8TqY1SjtQ" name="ServerInstance" hwplatformType="_rPkGIKfDEeSK_8TqY1SjtQ">
-        <embeddedHPIC xmi:id="_3dQyEafDEeSK_8TqY1SjtQ">
-          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_3dQyEqfDEeSK_8TqY1SjtQ" name="Brick.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyE6fDEeSK_8TqY1SjtQ" name="outputPortA" type="_0unah6fDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyFKfDEeSK_8TqY1SjtQ" name="outputPortC" type="_0unahqfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyFafDEeSK_8TqY1SjtQ" name="virtualBluetoothPort" type="_0unaiKfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyFqfDEeSK_8TqY1SjtQ" name="usbPort" type="_0unahKfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyF6fDEeSK_8TqY1SjtQ" name="inputPort1" type="_0unagqfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyGKfDEeSK_8TqY1SjtQ" name="inputPort4" type="_0unagafDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyGafDEeSK_8TqY1SjtQ" name="inputPort2" type="_0unahafDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyGqfDEeSK_8TqY1SjtQ" name="outputPortB" type="_0unagKfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_3dQyG6fDEeSK_8TqY1SjtQ" name="inputPort3" type="_0unag6fDEeSK_8TqY1SjtQ"/>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_3dQyHKfDEeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
-              <frequency xmi:id="_3dQyHafDEeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
+      <hwplatformInstances xmi:id="_-PAV8KhjEeSJj6cnB4p9sw" name="Overtaker" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
+        <delegationPorts xmi:id="_-PAV8ahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_-PAV-ahjEeSJj6cnB4p9sw" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
+        <delegationPorts xmi:id="_-PAV8qhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_-PAV-qhjEeSJj6cnB4p9sw" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
+        <embeddedHPIC xmi:id="_-PAV86hjEeSJj6cnB4p9sw">
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV9KhjEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWAahjEeSJj6cnB4p9sw _-PAWF6hjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV9ahjEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_6hjEeSJj6cnB4p9sw _-PAWDahjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV9qhjEeSJj6cnB4p9sw" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_ahjEeSJj6cnB4p9sw _-PAWE6hjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV96hjEeSJj6cnB4p9sw" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWGKhjEeSJj6cnB4p9sw _-PAWEahjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV-KhjEeSJj6cnB4p9sw" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWBKhjEeSJj6cnB4p9sw _-PAWD6hjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_-PAV-ahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV8ahjEeSJj6cnB4p9sw _-PAWFahjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_-PAV-qhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw _-PAWFqhjEeSJj6cnB4p9sw"/>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_-PAV-6hjEeSJj6cnB4p9sw" name="R1.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_KhjEeSJj6cnB4p9sw" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_ahjEeSJj6cnB4p9sw" name="inputPort2" connectorInstances="_-PAV9qhjEeSJj6cnB4p9sw" type="_a4whtafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_qhjEeSJj6cnB4p9sw" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_6hjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_-PAV9ahjEeSJj6cnB4p9sw" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWAKhjEeSJj6cnB4p9sw" name="VirtualWifiPort" type="_w-OR0KhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWAahjEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_-PAV9KhjEeSJj6cnB4p9sw" type="_a4whsafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWAqhjEeSJj6cnB4p9sw" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWA6hjEeSJj6cnB4p9sw" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWBKhjEeSJj6cnB4p9sw" name="inputPort3" connectorInstances="_-PAV-KhjEeSJj6cnB4p9sw" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWBahjEeSJj6cnB4p9sw" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_-PAWBqhjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+              <frequency xmi:id="_-PAWB6hjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
             </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_3dQyHqfDEeSK_8TqY1SjtQ" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_3dQyH6fDEeSK_8TqY1SjtQ" value="64.0" unit="KByte"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_-PAWCKhjEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_-PAWCahjEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
             </embeddedAtomicResourceInstances>
-            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_3dQyIKfDEeSK_8TqY1SjtQ" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
-              <memorySize xmi:id="_3dQyIafDEeSK_8TqY1SjtQ" value="256.0" unit="KByte"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_-PAWCqhjEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_-PAWC6hjEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_-PAWDKhjEeSJj6cnB4p9sw" name="Motor.0.1" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWDahjEeSJj6cnB4p9sw" name="motohw-port" connectorInstances="_-PAV9ahjEeSJj6cnB4p9sw" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
+          </resources>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-PAWDqhjEeSJj6cnB4p9sw" name="Color.0.1" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWD6hjEeSJj6cnB4p9sw" name="colorhw-port" connectorInstances="_-PAV-KhjEeSJj6cnB4p9sw" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
+          </resources>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-PAWEKhjEeSJj6cnB4p9sw" name="Distance.0.1" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWEahjEeSJj6cnB4p9sw" name="distancehw-port" connectorInstances="_-PAV96hjEeSJj6cnB4p9sw" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
+          </resources>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-PAWEqhjEeSJj6cnB4p9sw" name="Line.0.1" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWE6hjEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_-PAV9qhjEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_-PAWFKhjEeSJj6cnB4p9sw" name="R2.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWFahjEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_-PAV-ahjEeSJj6cnB4p9sw" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWFqhjEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_-PAV-qhjEeSJj6cnB4p9sw" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWF6hjEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_-PAV9KhjEeSJj6cnB4p9sw" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWGKhjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_-PAV96hjEeSJj6cnB4p9sw" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWGahjEeSJj6cnB4p9sw" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWGqhjEeSJj6cnB4p9sw" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWG6hjEeSJj6cnB4p9sw" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWHKhjEeSJj6cnB4p9sw" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWHahjEeSJj6cnB4p9sw" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAWHqhjEeSJj6cnB4p9sw" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_-PAWH6hjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+              <frequency xmi:id="_-PAWIKhjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_-PAWIahjEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_-PAWIqhjEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_-PAWI6hjEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_-PAWJKhjEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+        </embeddedHPIC>
+      </hwplatformInstances>
+      <hwplatformInstances xmi:id="_EDe2AKhkEeSJj6cnB4p9sw" name="Approacher" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
+        <delegationPorts xmi:id="_EDe2AahkEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_EDe2CahkEeSJj6cnB4p9sw" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
+        <delegationPorts xmi:id="_EDe2AqhkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_EDe2CqhkEeSJj6cnB4p9sw" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
+        <embeddedHPIC xmi:id="_EDe2A6hkEeSJj6cnB4p9sw">
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2BKhkEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FKhkEeSJj6cnB4p9sw _EDe2LahkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2BahkEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2F6hkEeSJj6cnB4p9sw _EDe2EKhkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2BqhkEeSJj6cnB4p9sw" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FqhkEeSJj6cnB4p9sw _EDe2DKhkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2B6hkEeSJj6cnB4p9sw" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2LqhkEeSJj6cnB4p9sw _EDe2EqhkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2CKhkEeSJj6cnB4p9sw" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2GKhkEeSJj6cnB4p9sw _EDe2DqhkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_EDe2CahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2AahkEeSJj6cnB4p9sw _EDe2JahkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_EDe2CqhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_EDe2AqhkEeSJj6cnB4p9sw _EDe2J6hkEeSJj6cnB4p9sw"/>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_EDe2C6hkEeSJj6cnB4p9sw" name="Line.0.1" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2DKhkEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_EDe2BqhkEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
+          </resources>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_EDe2DahkEeSJj6cnB4p9sw" name="Color.0.1" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2DqhkEeSJj6cnB4p9sw" name="colorhw-port" connectorInstances="_EDe2CKhkEeSJj6cnB4p9sw" type="_RXr-oKfCEeSK_8TqY1SjtQ"/>
+          </resources>
+          <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_EDe2D6hkEeSJj6cnB4p9sw" name="Motor.0.1" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2EKhkEeSJj6cnB4p9sw" name="motohw-port" connectorInstances="_EDe2BahkEeSJj6cnB4p9sw" type="_ueX2YKfBEeSK_8TqY1SjtQ"/>
+          </resources>
+          <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_EDe2EahkEeSJj6cnB4p9sw" name="Distance.0.1" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2EqhkEeSJj6cnB4p9sw" name="distancehw-port" connectorInstances="_EDe2B6hkEeSJj6cnB4p9sw" type="_SUng8KfCEeSK_8TqY1SjtQ"/>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_EDe2E6hkEeSJj6cnB4p9sw" name="R1.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2FKhkEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_EDe2BKhkEeSJj6cnB4p9sw" type="_a4whsafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2FahkEeSJj6cnB4p9sw" name="VirtualWifiPort" type="_w-OR0KhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2FqhkEeSJj6cnB4p9sw" name="inputPort2" connectorInstances="_EDe2BqhkEeSJj6cnB4p9sw" type="_a4whtafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2F6hkEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_EDe2BahkEeSJj6cnB4p9sw" type="_a4whsqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2GKhkEeSJj6cnB4p9sw" name="inputPort3" connectorInstances="_EDe2CKhkEeSJj6cnB4p9sw" type="_a4whs6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2GahkEeSJj6cnB4p9sw" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2GqhkEeSJj6cnB4p9sw" name="outputPortB" type="_a4whsKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2G6hkEeSJj6cnB4p9sw" name="usbPort" type="_a4whtKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2HKhkEeSJj6cnB4p9sw" name="outputPortA" type="_a4wht6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2HahkEeSJj6cnB4p9sw" name="outputPortC" type="_a4whtqfBEeSK_8TqY1SjtQ"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_EDe2HqhkEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+              <frequency xmi:id="_EDe2H6hkEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_EDe2IKhkEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_EDe2IahkEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_EDe2IqhkEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_EDe2I6hkEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_EDe2JKhkEeSJj6cnB4p9sw" name="R2.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2JahkEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_EDe2CahkEeSJj6cnB4p9sw" type="_eFHwCKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2JqhkEeSJj6cnB4p9sw" name="outputPortB" type="_eFHwAKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2J6hkEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_EDe2CqhkEeSJj6cnB4p9sw" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2KKhkEeSJj6cnB4p9sw" name="usbPort" type="_eFHwBKfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2KahkEeSJj6cnB4p9sw" name="inputPort3" type="_eFHwA6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2KqhkEeSJj6cnB4p9sw" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2K6hkEeSJj6cnB4p9sw" name="outputPortC" type="_eFHwBqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LKhkEeSJj6cnB4p9sw" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LahkEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_EDe2BKhkEeSJj6cnB4p9sw" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LqhkEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_EDe2B6hkEeSJj6cnB4p9sw" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_EDe2L6hkEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+              <frequency xmi:id="_EDe2MKhkEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_EDe2MahkEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_EDe2MqhkEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_EDe2M6hkEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_EDe2NKhkEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+          </resources>
+        </embeddedHPIC>
+      </hwplatformInstances>
+      <hwplatformInstances xmi:id="_HiiW0KhkEeSJj6cnB4p9sw" name="ServerInstance" hwplatformType="_rPkGIKfDEeSK_8TqY1SjtQ">
+        <delegationPorts xmi:id="_HiiW0ahkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="_HiiW0qhkEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_HiiW1ahkEeSJj6cnB4p9sw" type="_kUf7wKhjEeSJj6cnB4p9sw"/>
+        <embeddedHPIC xmi:id="_HiiW06hkEeSJj6cnB4p9sw">
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_HiiW1KhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0ahkEeSJj6cnB4p9sw _HiiW16hkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_HiiW1ahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0qhkEeSJj6cnB4p9sw _HiiW2ahkEeSJj6cnB4p9sw"/>
+          <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_HiiW1qhkEeSJj6cnB4p9sw" name="Brick.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW16hkEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW2KhkEeSJj6cnB4p9sw" name="inputPort4" type="_0unagafDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW2ahkEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_HiiW1ahkEeSJj6cnB4p9sw" type="_0unaiKfDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW2qhkEeSJj6cnB4p9sw" name="outputPortC" type="_0unahqfDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW26hkEeSJj6cnB4p9sw" name="outputPortA" type="_0unah6fDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW3KhkEeSJj6cnB4p9sw" name="inputPort1" type="_0unagqfDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW3ahkEeSJj6cnB4p9sw" name="outputPortB" type="_0unagKfDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW3qhkEeSJj6cnB4p9sw" name="inputPort3" type="_0unag6fDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW36hkEeSJj6cnB4p9sw" name="usbPort" type="_0unahKfDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW4KhkEeSJj6cnB4p9sw" name="inputPort2" type="_0unahafDEeSK_8TqY1SjtQ"/>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_HiiW4ahkEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+              <frequency xmi:id="_HiiW4qhkEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_HiiW46hkEeSJj6cnB4p9sw" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_HiiW5KhkEeSJj6cnB4p9sw" value="64.0" unit="KByte"/>
+            </embeddedAtomicResourceInstances>
+            <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_HiiW5ahkEeSJj6cnB4p9sw" name="FLAHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+              <memorySize xmi:id="_HiiW5qhkEeSJj6cnB4p9sw" value="256.0" unit="KByte"/>
             </embeddedAtomicResourceInstances>
           </resources>
         </embeddedHPIC>
@@ -3768,8 +3808,23 @@
         <hwPortParts xmi:id="_0unahafDEeSK_8TqY1SjtQ" communicationResource="_dSpRpKe-EeSK_8TqY1SjtQ"/>
         <hwPortParts xmi:id="_0unahqfDEeSK_8TqY1SjtQ" communicationResource="_dSpRqKe-EeSK_8TqY1SjtQ"/>
         <hwPortParts xmi:id="_0unah6fDEeSK_8TqY1SjtQ" communicationResource="_dSpRrKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unaiKfDEeSK_8TqY1SjtQ" communicationResource="_dSpRsKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unaiKfDEeSK_8TqY1SjtQ" connectors="_pKpLUKhjEeSJj6cnB4p9sw" communicationResource="_dSpRsKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_ztc4MKhiEeSJj6cnB4p9sw" connectors="_gSW8AKhjEeSJj6cnB4p9sw" communicationResource="_t84AsKhiEeSJj6cnB4p9sw"/>
       </embeddedPlatformParts>
+      <networkingHardwareParts xsi:type="hwplatform:Delegation" xmi:id="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpoints="_ztc4MKhiEeSJj6cnB4p9sw _eYQm0KhjEeSJj6cnB4p9sw"/>
+      <networkingHardwareParts xsi:type="hwplatform:Delegation" xmi:id="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpoints="_0unaiKfDEeSK_8TqY1SjtQ _kUf7wKhjEeSJj6cnB4p9sw"/>
+      <delegationPorts xmi:id="_eYQm0KhjEeSJj6cnB4p9sw" connectors="_gSW8AKhjEeSJj6cnB4p9sw" name="D1-virtualWifi" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
+        <cardinality xmi:id="_eYQm0ahjEeSJj6cnB4p9sw">
+          <lowerBound xmi:id="_iVNkkKhjEeSJj6cnB4p9sw"/>
+          <upperBound xmi:id="_iVNkkahjEeSJj6cnB4p9sw"/>
+        </cardinality>
+      </delegationPorts>
+      <delegationPorts xmi:id="_kUf7wKhjEeSJj6cnB4p9sw" connectors="_pKpLUKhjEeSJj6cnB4p9sw" name="D1-virtualBluetooth" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
+        <cardinality xmi:id="_kUf7wahjEeSJj6cnB4p9sw">
+          <lowerBound xmi:id="_oD1UQKhjEeSJj6cnB4p9sw"/>
+          <upperBound xmi:id="_oD1UQahjEeSJj6cnB4p9sw"/>
+        </cardinality>
+      </delegationPorts>
     </modelElements>
   </categories>
 </modelinstance:RootNode>

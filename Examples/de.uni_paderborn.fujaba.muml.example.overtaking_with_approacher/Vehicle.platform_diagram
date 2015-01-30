@@ -121,7 +121,7 @@
             <layoutConstraint xmi:type="notation:Location" xmi:id="_eFQ6B6fBEeSK_8TqY1SjtQ" y="5"/>
           </children>
           <element xmi:type="hwplatform:HWPortPart" href="fraunhoferDemo.muml#_eFHwBafBEeSK_8TqY1SjtQ"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eFQ6BafBEeSK_8TqY1SjtQ" x="96" y="153"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eFQ6BafBEeSK_8TqY1SjtQ" x="314" y="12"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_eFQ6CKfBEeSK_8TqY1SjtQ" type="3022" fontName="Segoe UI" lineColor="0">
           <children xmi:type="notation:DecorationNode" xmi:id="_eFQ6CqfBEeSK_8TqY1SjtQ" type="5053">
@@ -143,6 +143,13 @@
           </children>
           <element xmi:type="hwplatform:HWPortPart" href="fraunhoferDemo.muml#_eFHwCKfBEeSK_8TqY1SjtQ"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eFaq86fBEeSK_8TqY1SjtQ" x="12" y="153"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_OaVKgKhjEeSJj6cnB4p9sw" type="3022" fontName="Segoe UI" lineColor="0">
+          <children xmi:type="notation:DecorationNode" xmi:id="_OaVKgqhjEeSJj6cnB4p9sw" type="5053">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_OaVKg6hjEeSJj6cnB4p9sw" y="5"/>
+          </children>
+          <element xmi:type="hwplatform:HWPortPart" href="fraunhoferDemo.muml#_w-0uwKhiEeSJj6cnB4p9sw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OaVKgahjEeSJj6cnB4p9sw" x="72" y="153"/>
         </children>
         <element xmi:type="hwplatform:ResourcePart" href="fraunhoferDemo.muml#_dqZi4KfBEeSK_8TqY1SjtQ"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dqZi5afBEeSK_8TqY1SjtQ" x="33" y="50" width="326" height="165"/>
@@ -217,7 +224,14 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="__1X-c6fBEeSK_8TqY1SjtQ" y="5"/>
       </children>
       <element xmi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.muml#__1O0gKfBEeSK_8TqY1SjtQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__1X-cafBEeSK_8TqY1SjtQ" x="96" y="589"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__1X-cafBEeSK_8TqY1SjtQ" x="24" y="589"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_UVHt8KhjEeSJj6cnB4p9sw" type="3018" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_UVHt8qhjEeSJj6cnB4p9sw" type="5044">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_UVHt86hjEeSJj6cnB4p9sw" x="12" y="44"/>
+      </children>
+      <element xmi:type="hwplatform:DelegationHWPort" href="fraunhoferDemo.muml#_UUrCAKhjEeSJj6cnB4p9sw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UVHt8ahjEeSJj6cnB4p9sw" x="180" y="589"/>
     </children>
     <element xmi:type="hwplatform:HWPlatform" href="fraunhoferDemo.muml#_UnNrIafBEeSK_8TqY1SjtQ"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UuhNAafBEeSK_8TqY1SjtQ" x="24" width="1213" height="601"/>
@@ -268,5 +282,11 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_0TjEkqfCEeSK_8TqY1SjtQ" fontName="Segoe UI"/>
     <element xmi:type="hwplatform:Delegation" href="fraunhoferDemo.muml#_0TjEkKfCEeSK_8TqY1SjtQ"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0TjEk6fCEeSK_8TqY1SjtQ" points="[1, 12, -35, -328]$[39, 328, 3, -12]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_amEHkKhjEeSJj6cnB4p9sw" type="4028" source="_OaVKgKhjEeSJj6cnB4p9sw" target="_UVHt8KhjEeSJj6cnB4p9sw" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_amEHkahjEeSJj6cnB4p9sw" fontName="Segoe UI"/>
+    <element xmi:type="hwplatform:Delegation" href="fraunhoferDemo.muml#_al6WkKhjEeSJj6cnB4p9sw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_amEHkqhjEeSJj6cnB4p9sw" points="[3, 20, -58, -328]$[49, 348, -12, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_amEHk6hjEeSJj6cnB4p9sw" id="(0.4583333333333333,0.16666666666666666)"/>
   </edges>
 </notation:Diagram>
