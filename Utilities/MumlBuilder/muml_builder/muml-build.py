@@ -85,5 +85,5 @@ if __name__ == '__main__':
         createEclipseDistribution(os.path.abspath(options.eclipeFileLocation), re.escape(options.distributionName), os.path.abspath(options.destinationDir), os.path.abspath(options.configDir), options.platform)
     else:
         createEclipseDistribution(os.path.abspath(options.eclipeFileLocation), re.escape(options.distributionName), os.path.abspath(options.destinationDir), os.path.abspath(options.configDir))
-    exit(1)
+    exit(0)
     
