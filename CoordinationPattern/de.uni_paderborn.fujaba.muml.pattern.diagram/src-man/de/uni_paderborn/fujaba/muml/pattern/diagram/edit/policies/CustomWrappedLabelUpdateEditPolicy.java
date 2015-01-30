@@ -16,7 +16,7 @@ public class CustomWrappedLabelUpdateEditPolicy extends NotifyingGraphicalEditPo
 	protected void addListeners() 
 	{
 		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)this.getSemanticElement();
-		this.addNotificationListener(quosa);		
+		//this.addNotificationListener(quosa);		
 		if(quosa!=null)
 			{
 				addNotificationListener(quosa);
@@ -33,7 +33,7 @@ public class CustomWrappedLabelUpdateEditPolicy extends NotifyingGraphicalEditPo
 	public void handleNotificationEvent(Notification notification) {
 		// TODO Auto-generated method stub
 		super.handleNotificationEvent(notification);
-		if(ExpressionsPackage.Literals.EXPRESSION.isSuperTypeOf(((EStructuralFeature)notification.getFeature()).getEContainingClass()))
+		//if(ExpressionsPackage.Literals.EXPRESSION.isSuperTypeOf(((EStructuralFeature)notification.getFeature()).getEContainingClass()))
 			updateListeners();
 		this.getHost().refresh();
 	}
