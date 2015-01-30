@@ -1,0 +1,9 @@
+ import "fraunhoferDemo.muml"
+
+import "nxtOSEK.osdsl"
+
+MappingRepository:nxtOSEKMapping{
+	
+}
+
+

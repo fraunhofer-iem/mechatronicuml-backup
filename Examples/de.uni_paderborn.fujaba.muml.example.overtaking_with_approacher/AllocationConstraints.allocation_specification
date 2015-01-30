@@ -1,0 +1,59 @@
+runningExample {
+	
+	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
+	
+	
+	constraint differentLocation OvertakerDistributeCommAndDrv {
+		descriptors (first, second);
+		ocl self.allocateToDifferentECUs('overtakerCommunicator', 'overtakerDriver');
+	}
+	
+	constraint differentLocation OvertakeeDistributeCommAndDrv {
+		descriptors (first, second);
+		ocl self.allocateToDifferentECUs('overtakeeCommunicator', 'overtakeeDriver');
+	}
+	
+	constraint differentLocation OvertakeeDistributeCommAndDrv {
+		descriptors (first, second);
+		ocl self.allocateToDifferentECUs('approacherCommunicator', 'approacherDriver');
+	}
+	
+	
+    -- the underscore only works due to backward compatibility (see EssentialOCLLinkingService.getLinkedObjects(...))
+	context _'ocl'::String
+		-- converts the string's first character to uppercase
+		def: toUpperCaseFirst() : String
+		=
+		if self.size() = 0 then
+			self
+		else
+			self.at(1).toUpperCase() + if self.size() > 1 then self.substring(2, self.size()) else '' endif
+		endif
+
+-- alternative implementations
+
+	constraint requiredHardwareResourceInstance OvertakerComponentsToOvertakerPlatform {
+		descriptors (first, second);
+--		--ocl self.allocateToECUs('c1', Set{'e1', 'e2'});
+		ocl self.allocateEmbeddedToPlatformInstance('overtaker', 'Overtaker');
+	}
+	
+	constraint requiredHardwareResourceInstance OvertakeeComponentsToOvertakeePlatform {
+		descriptors (first, second);
+		ocl self.allocateEmbeddedToPlatformInstance('overtakee', 'Overtakee');
+	}
+	
+	constraint requiredHardwareResourceInstance ApproacherComponentsToApproacherPlatform {
+		descriptors (first, second);
+		ocl self.allocateEmbeddedToPlatformInstance('approacher', 'Approacher');
+	}
+
+	--constraint requiredHardwareResourceInstance OvertakerSensorsAndActors {
+	--	descriptors (first, second);
+	--	ocl self.allocateToECU('overtaker_lineFollower', 'overtaker_light')
+	--		->union(self.allocateToECU('overtaker_leftMotor', 'overtaker_motorL'))
+	--		->union(self.allocateToECU('overtaker_rightMotor', 'overtaker_motorR'))
+	--	;
+	--}
+	
+}

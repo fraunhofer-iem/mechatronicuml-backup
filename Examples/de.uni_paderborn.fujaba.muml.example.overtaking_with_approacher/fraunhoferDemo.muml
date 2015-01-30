@@ -2622,33 +2622,33 @@
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_VN3x0Z_GEeSYU6UyOlfnUQ" name="vehiclePDel1" connectorInstances="_VOUd3p_GEeSYU6UyOlfnUQ _oHnCgJ_HEeSYU6UyOlfnUQ" type="_cpARIJRWEeSZM-zEIRk3lw"/>
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_VN3x0p_GEeSYU6UyOlfnUQ" name="requestorPDel1" connectorInstances="_VOUd2Z_GEeSYU6UyOlfnUQ _pH1wcJ_HEeSYU6UyOlfnUQ" type="_QqEscJ6HEeSNj-oH_1Kb-Q"/>
         <embeddedCIC xmi:id="_VOUdwJ_GEeSYU6UyOlfnUQ" name="OvertakerVehicle">
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdwZ_GEeSYU6UyOlfnUQ" name="motorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_7qtEEJRVEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdwZ_GEeSYU6UyOlfnUQ" name="overtakerMotorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_7qtEEJRVEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUdwp_GEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_VOUd2J_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdw5_GEeSYU6UyOlfnUQ" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_8iLeoJRVEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdw5_GEeSYU6UyOlfnUQ" name="overtakerMotorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_8iLeoJRVEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUdxJ_GEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_VOUd3J_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdxZ_GEeSYU6UyOlfnUQ" name="driver" componentType="_BQCDAJOUEeSZM-zEIRk3lw" componentPart="_9cr_EJRVEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdxZ_GEeSYU6UyOlfnUQ" name="overtakerDriver" componentType="_BQCDAJOUEeSZM-zEIRk3lw" componentPart="_9cr_EJRVEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_VOUdxp_GEeSYU6UyOlfnUQ" name="distance" connectorInstances="_VOUd35_GEeSYU6UyOlfnUQ" type="_yJ8ggJRKEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_VOUdx5_GEeSYU6UyOlfnUQ" name="line" connectorInstances="_VOUd2p_GEeSYU6UyOlfnUQ" type="_-uUTQJ8PEeSDApXOK6N3KA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_VOUdyJ_GEeSYU6UyOlfnUQ" name="initiatorP1" connectorInstances="_VOUd15_GEeSYU6UyOlfnUQ" type="_bKPb0JRQEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_VOUdyZ_GEeSYU6UyOlfnUQ" name="velocityR" connectorInstances="_VOUd2J_GEeSYU6UyOlfnUQ" type="_SA7VoJRKEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_VOUdyp_GEeSYU6UyOlfnUQ" name="velocityL" connectorInstances="_VOUd3J_GEeSYU6UyOlfnUQ" type="_Ut7HYJRKEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdy5_GEeSYU6UyOlfnUQ" name="distance" componentType="_Vibi8JRJEeSZM-zEIRk3lw" componentPart="_JoEW0JRWEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdy5_GEeSYU6UyOlfnUQ" name="overtakerDistance" componentType="_Vibi8JRJEeSZM-zEIRk3lw" componentPart="_JoEW0JRWEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUdzJ_GEeSYU6UyOlfnUQ" name="distance" connectorInstances="_VOUd35_GEeSYU6UyOlfnUQ" type="_o26EUJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdzZ_GEeSYU6UyOlfnUQ" name="communicator" componentType="_5PGVoJOXEeSZM-zEIRk3lw" componentPart="_8GCAoJ6GEeSNj-oH_1Kb-Q">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdzZ_GEeSYU6UyOlfnUQ" name="overtakerCommunicator" componentType="_5PGVoJOXEeSZM-zEIRk3lw" componentPart="_8GCAoJ6GEeSNj-oH_1Kb-Q">
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_VOUdzp_GEeSYU6UyOlfnUQ" name="executorP1" connectorInstances="_VOUd15_GEeSYU6UyOlfnUQ" type="_qBYPMJRQEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_VOUdz5_GEeSYU6UyOlfnUQ" name="vehicleOvertakerP1" connectorInstances="_VOUd3p_GEeSYU6UyOlfnUQ" type="_pbVNwJROEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_VOUd0J_GEeSYU6UyOlfnUQ" name="color" connectorInstances="_VOUd25_GEeSYU6UyOlfnUQ" type="_CHWroJ8QEeSDApXOK6N3KA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_VOUd0Z_GEeSYU6UyOlfnUQ" name="overtakerP1" connectorInstances="_VOUd3Z_GEeSYU6UyOlfnUQ" type="_L5yGUJRMEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_VOUd0p_GEeSYU6UyOlfnUQ" name="requestorP1" connectorInstances="_VOUd2Z_GEeSYU6UyOlfnUQ" type="_2RHRIJ6FEeSNj-oH_1Kb-Q"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUd05_GEeSYU6UyOlfnUQ" name="line" componentType="_o9fgsJ8OEeSDApXOK6N3KA" componentPart="_JFErsJ8QEeSDApXOK6N3KA">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUd05_GEeSYU6UyOlfnUQ" name="overtakerLine" componentType="_o9fgsJ8OEeSDApXOK6N3KA" componentPart="_JFErsJ8QEeSDApXOK6N3KA">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUd1J_GEeSYU6UyOlfnUQ" name="lineLight" connectorInstances="_VOUd2p_GEeSYU6UyOlfnUQ" type="_rJ6U8J8OEeSDApXOK6N3KA"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUd1Z_GEeSYU6UyOlfnUQ" name="color" componentType="_7rgfAJ8OEeSDApXOK6N3KA" componentPart="_OmVU0J8QEeSDApXOK6N3KA">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUd1Z_GEeSYU6UyOlfnUQ" name="overtakerColor" componentType="_7rgfAJ8OEeSDApXOK6N3KA" componentPart="_OmVU0J8QEeSDApXOK6N3KA">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUd1p_GEeSYU6UyOlfnUQ" name="color" connectorInstances="_VOUd25_GEeSYU6UyOlfnUQ" type="_9nH3IJ8OEeSDApXOK6N3KA"/>
           </componentInstances>
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_VOUd15_GEeSYU6UyOlfnUQ" type="_GdSIUJ6HEeSNj-oH_1Kb-Q" connectorEndpointInstances="_VOUdzp_GEeSYU6UyOlfnUQ _VOUdyJ_GEeSYU6UyOlfnUQ"/>
@@ -2668,29 +2668,29 @@
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_zfVlMJ_GEeSYU6UyOlfnUQ" name="vehicleOvertakeePDel1" connectorInstances="_zfogOZ_GEeSYU6UyOlfnUQ _jqR7kJ_HEeSYU6UyOlfnUQ" type="_PX75IJRVEeSZM-zEIRk3lw"/>
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_zfVlMZ_GEeSYU6UyOlfnUQ" name="informOvertakeePDel1" connectorInstances="_zfogO5_GEeSYU6UyOlfnUQ _HXBE0J_IEeSYU6UyOlfnUQ" type="_zd2eQJ9UEeSDApXOK6N3KA"/>
         <embeddedCIC xmi:id="_zfogIJ_GEeSYU6UyOlfnUQ" name="OvertakeeVehicle">
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogIZ_GEeSYU6UyOlfnUQ" name="driver" componentType="_bDZ3QJOQEeSZM-zEIRk3lw" componentPart="_lG7nEJRTEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogIZ_GEeSYU6UyOlfnUQ" name="overtakeeDriver" componentType="_bDZ3QJOQEeSZM-zEIRk3lw" componentPart="_lG7nEJRTEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_zfogIp_GEeSYU6UyOlfnUQ" name="velocityR" connectorInstances="_zfogNp_GEeSYU6UyOlfnUQ" type="_E5QUwJRKEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_zfogI5_GEeSYU6UyOlfnUQ" name="lineOvertakee" connectorInstances="_zfogNZ_GEeSYU6UyOlfnUQ" type="_oLm7UJ8PEeSDApXOK6N3KA"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_zfogJJ_GEeSYU6UyOlfnUQ" name="velocityL" connectorInstances="_zfogOp_GEeSYU6UyOlfnUQ" type="_AoaKoJRKEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_zfogJZ_GEeSYU6UyOlfnUQ" name="velocityGetterP1" connectorInstances="_zfogN5_GEeSYU6UyOlfnUQ" type="_DWz7gJRTEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogJp_GEeSYU6UyOlfnUQ" name="communicator" componentType="_1f2csJOXEeSZM-zEIRk3lw" componentPart="_y4rfsJRTEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogJp_GEeSYU6UyOlfnUQ" name="overtakeeCommunicator" componentType="_1f2csJOXEeSZM-zEIRk3lw" componentPart="_y4rfsJRTEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_zfogJ5_GEeSYU6UyOlfnUQ" name="overtakeeP1" connectorInstances="_zfogOJ_GEeSYU6UyOlfnUQ" type="_-B_QEJRLEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_zfogKJ_GEeSYU6UyOlfnUQ" name="velocitySetterP1" connectorInstances="_zfogN5_GEeSYU6UyOlfnUQ" type="_qJ-foJRSEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_zfogKZ_GEeSYU6UyOlfnUQ" name="colorOvertakee" connectorInstances="_zfogNJ_GEeSYU6UyOlfnUQ" type="_whV3MJ8PEeSDApXOK6N3KA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_zfogKp_GEeSYU6UyOlfnUQ" name="vehicleOvertakeeP1" connectorInstances="_zfogOZ_GEeSYU6UyOlfnUQ" type="_wCE4QJROEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_zfogK5_GEeSYU6UyOlfnUQ" name="informOvertakee1" connectorInstances="_zfogO5_GEeSYU6UyOlfnUQ" type="_qw9moJ9UEeSDApXOK6N3KA"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogLJ_GEeSYU6UyOlfnUQ" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_2nodsJRTEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogLJ_GEeSYU6UyOlfnUQ" name="overtakeeMotorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_2nodsJRTEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogLZ_GEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_zfogNp_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogLp_GEeSYU6UyOlfnUQ" name="motorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_3UI-YJRTEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogLp_GEeSYU6UyOlfnUQ" name="overtakeeMotorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_3UI-YJRTEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogL5_GEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_zfogOp_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogMJ_GEeSYU6UyOlfnUQ" name="line" componentType="_o9fgsJ8OEeSDApXOK6N3KA" componentPart="_cfbBAJ8PEeSDApXOK6N3KA">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogMJ_GEeSYU6UyOlfnUQ" name="overtakeeLine" componentType="_o9fgsJ8OEeSDApXOK6N3KA" componentPart="_cfbBAJ8PEeSDApXOK6N3KA">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogMZ_GEeSYU6UyOlfnUQ" name="lineLight" connectorInstances="_zfogNZ_GEeSYU6UyOlfnUQ" type="_rJ6U8J8OEeSDApXOK6N3KA"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogMp_GEeSYU6UyOlfnUQ" name="color" componentType="_7rgfAJ8OEeSDApXOK6N3KA" componentPart="_dXM9kJ8PEeSDApXOK6N3KA">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogMp_GEeSYU6UyOlfnUQ" name="overtakeeColor" componentType="_7rgfAJ8OEeSDApXOK6N3KA" componentPart="_dXM9kJ8PEeSDApXOK6N3KA">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogM5_GEeSYU6UyOlfnUQ" name="color" connectorInstances="_zfogNJ_GEeSYU6UyOlfnUQ" type="_9nH3IJ8OEeSDApXOK6N3KA"/>
           </componentInstances>
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_zfogNJ_GEeSYU6UyOlfnUQ" type="_5K01gJ8PEeSDApXOK6N3KA" connectorEndpointInstances="_zfogM5_GEeSYU6UyOlfnUQ _zfogKZ_GEeSYU6UyOlfnUQ"/>
@@ -2714,28 +2714,28 @@
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_yb4usJ_HEeSYU6UyOlfnUQ" name="vehicleApproacherPDel1" connectorInstances="_ycVauJ_HEeSYU6UyOlfnUQ _E1EFcJ_IEeSYU6UyOlfnUQ" type="_HFO7wJRYEeSZM-zEIRk3lw"/>
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycCfsJ_HEeSYU6UyOlfnUQ" name="informApproacherPDel1" connectorInstances="_ycVat5_HEeSYU6UyOlfnUQ _HXBE0J_IEeSYU6UyOlfnUQ" type="_23pVkJ6ZEeSB5YpXOU2UeA"/>
         <embeddedCIC xmi:id="_ycVaoJ_HEeSYU6UyOlfnUQ" name="ApproacherVehicle">
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVaoZ_HEeSYU6UyOlfnUQ" name="motorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_x87hwJRWEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVaoZ_HEeSYU6UyOlfnUQ" name="approacherMotorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_x87hwJRWEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ycVaop_HEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_ycVas5_HEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVao5_HEeSYU6UyOlfnUQ" name="motorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_yW6vEJRWEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVao5_HEeSYU6UyOlfnUQ" name="approacherMotorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_yW6vEJRWEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ycVapJ_HEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_ycVatp_HEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVapZ_HEeSYU6UyOlfnUQ" name="driver" componentType="_EGtqUJOWEeSZM-zEIRk3lw" componentPart="_yyzZ0JRWEeSZM-zEIRk3lw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVapZ_HEeSYU6UyOlfnUQ" name="approacherDriver" componentType="_EGtqUJOWEeSZM-zEIRk3lw" componentPart="_yyzZ0JRWEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycVapp_HEeSYU6UyOlfnUQ" name="limiterP1" connectorInstances="_ycVatJ_HEeSYU6UyOlfnUQ" type="_uk1BsJRPEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_ycVap5_HEeSYU6UyOlfnUQ" name="velocityL" connectorInstances="_ycVatp_HEeSYU6UyOlfnUQ" type="_bjdb0JRKEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_ycVaqJ_HEeSYU6UyOlfnUQ" name="lineApproacher" connectorInstances="_ycVatZ_HEeSYU6UyOlfnUQ" type="_XX3b4J8QEeSDApXOK6N3KA"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_ycVaqZ_HEeSYU6UyOlfnUQ" name="velocityR" connectorInstances="_ycVas5_HEeSYU6UyOlfnUQ" type="_dwFrcJRKEeSZM-zEIRk3lw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVaqp_HEeSYU6UyOlfnUQ" name="communicator" componentType="_ZJhDUJ6aEeSB5YpXOU2UeA" componentPart="_MPkx4J6ZEeSB5YpXOU2UeA">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVaqp_HEeSYU6UyOlfnUQ" name="ApproacherCommunicator" componentType="_ZJhDUJ6aEeSB5YpXOU2UeA" componentPart="_MPkx4J6ZEeSB5YpXOU2UeA">
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycVaq5_HEeSYU6UyOlfnUQ" name="vehicleApproacherP1" connectorInstances="_ycVauJ_HEeSYU6UyOlfnUQ" type="__agSAJ6aEeSB5YpXOU2UeA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycVarJ_HEeSYU6UyOlfnUQ" name="limitDrivingP1" connectorInstances="_ycVatJ_HEeSYU6UyOlfnUQ" type="_zVXsMJ6aEeSB5YpXOU2UeA"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_ycVarZ_HEeSYU6UyOlfnUQ" name="colorApproacher" connectorInstances="_ycVauZ_HEeSYU6UyOlfnUQ" type="_amAy4J8QEeSDApXOK6N3KA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycVarp_HEeSYU6UyOlfnUQ" name="informApproacherP1" connectorInstances="_ycVat5_HEeSYU6UyOlfnUQ" type="_ioqeUJ6aEeSB5YpXOU2UeA"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVar5_HEeSYU6UyOlfnUQ" name="color" componentType="_7rgfAJ8OEeSDApXOK6N3KA" componentPart="_fhUPQJ8QEeSDApXOK6N3KA">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVar5_HEeSYU6UyOlfnUQ" name="approacherColor" componentType="_7rgfAJ8OEeSDApXOK6N3KA" componentPart="_fhUPQJ8QEeSDApXOK6N3KA">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ycVasJ_HEeSYU6UyOlfnUQ" name="color" connectorInstances="_ycVauZ_HEeSYU6UyOlfnUQ" type="_9nH3IJ8OEeSDApXOK6N3KA"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVasZ_HEeSYU6UyOlfnUQ" name="line" componentType="_o9fgsJ8OEeSDApXOK6N3KA" componentPart="_i0ZwoJ8QEeSDApXOK6N3KA">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVasZ_HEeSYU6UyOlfnUQ" name="approacherLine" componentType="_o9fgsJ8OEeSDApXOK6N3KA" componentPart="_i0ZwoJ8QEeSDApXOK6N3KA">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ycVasp_HEeSYU6UyOlfnUQ" name="lineLight" connectorInstances="_ycVatZ_HEeSYU6UyOlfnUQ" type="_rJ6U8J8OEeSDApXOK6N3KA"/>
           </componentInstances>
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_ycVas5_HEeSYU6UyOlfnUQ" type="_Dj5YcJRXEeSZM-zEIRk3lw" connectorEndpointInstances="_ycVaqZ_HEeSYU6UyOlfnUQ _ycVaop_HEeSYU6UyOlfnUQ"/>

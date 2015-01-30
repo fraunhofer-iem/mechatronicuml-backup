@@ -27,7 +27,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VQjSYZ_GEeSYU6UyOlfnUQ" x="51" y="35"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="fraunhoferDemo.muml#_VOUdw5_GEeSYU6UyOlfnUQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VQQXd5_GEeSYU6UyOlfnUQ" x="216" y="6"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VQQXd5_GEeSYU6UyOlfnUQ" x="249" y="3"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_VQQXeZ_GEeSYU6UyOlfnUQ" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_VQQXe5_GEeSYU6UyOlfnUQ" type="5028"/>
@@ -131,7 +131,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VRJvUZ_GEeSYU6UyOlfnUQ" x="24" y="-12"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="fraunhoferDemo.muml#_VOUd05_GEeSYU6UyOlfnUQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VQQXg5_GEeSYU6UyOlfnUQ" x="207" y="280"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VQQXg5_GEeSYU6UyOlfnUQ" x="249" y="279"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_VQQXhZ_GEeSYU6UyOlfnUQ" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_VQQXh5_GEeSYU6UyOlfnUQ" type="5028"/>
@@ -269,7 +269,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ziK2wZ_GEeSYU6UyOlfnUQ" x="36" y="35"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="fraunhoferDemo.muml#_zfogLJ_GEeSYU6UyOlfnUQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zh372p_GEeSYU6UyOlfnUQ" x="210" y="19"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zh372p_GEeSYU6UyOlfnUQ" x="285" y="15"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_zh373J_GEeSYU6UyOlfnUQ" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_zh373p_GEeSYU6UyOlfnUQ" type="5028"/>
@@ -403,7 +403,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yeHjc5_HEeSYU6UyOlfnUQ"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="fraunhoferDemo.muml#_ycVao5_HEeSYU6UyOlfnUQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yeHjV5_HEeSYU6UyOlfnUQ" x="230" y="381"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yeHjV5_HEeSYU6UyOlfnUQ" x="278" y="372"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_yeHjWZ_HEeSYU6UyOlfnUQ" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_yeHjW5_HEeSYU6UyOlfnUQ" type="5028"/>

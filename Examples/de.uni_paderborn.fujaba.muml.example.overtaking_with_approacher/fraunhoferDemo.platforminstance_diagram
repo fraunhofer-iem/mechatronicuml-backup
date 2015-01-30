@@ -19,7 +19,7 @@
       </children>
       <styles xmi:type="notation:BooleanValueStyle" xmi:id="_8NHWsKhjEeSJj6cnB4p9sw" name="isInline"/>
       <element xmi:type="hwplatforminstance:HWPlatformInstance" href="fraunhoferDemo.muml#_4sMNoKhjEeSJj6cnB4p9sw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4s8bkahjEeSJj6cnB4p9sw" x="36" y="84"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4s8bkahjEeSJj6cnB4p9sw" x="60" y="84"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_-PTQ5KhjEeSJj6cnB4p9sw" type="2004" fontName="Segoe UI" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_-PTQ5qhjEeSJj6cnB4p9sw" type="5096"/>
