@@ -15,14 +15,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
  */
 public class DiscreteInteractionEndpointReceiverMessageBufferItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DiscreteInteractionEndpointReceiverMessageBufferItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
+				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003);
 	}
 
 	/**

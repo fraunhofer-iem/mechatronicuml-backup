@@ -292,7 +292,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart.VISUAL_ID));
 	}
 

@@ -26,14 +26,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.ConnectorQualityOfServiceAssumptions_3007);
+				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3007);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
@@ -96,7 +96,7 @@ public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
 				.getElementType()) {
 			return null;
 		}
@@ -108,7 +108,7 @@ public class ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand(
 					req, req.getSource(), req.getTarget()));

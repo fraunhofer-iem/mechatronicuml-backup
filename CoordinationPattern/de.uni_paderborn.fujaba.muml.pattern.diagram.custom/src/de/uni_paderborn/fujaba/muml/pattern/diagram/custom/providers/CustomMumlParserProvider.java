@@ -6,10 +6,10 @@ import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.parsers.CustomConnect
 import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.parsers.CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5010;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel4EditPart;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel5EditPart;
-import de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternParserProvider;
+import de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider;
 
 
-public class CustomMumlParserProvider extends PatternParserProvider{
+public class CustomMumlParserProvider extends CoordinationPatternParserProvider{
 
 	protected IParser getParser(int visualID) {
 		switch (visualID) {

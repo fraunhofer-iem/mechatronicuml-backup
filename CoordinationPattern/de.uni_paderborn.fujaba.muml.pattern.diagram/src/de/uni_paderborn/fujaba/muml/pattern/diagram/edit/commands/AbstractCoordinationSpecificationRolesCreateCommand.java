@@ -58,11 +58,11 @@ public class AbstractCoordinationSpecificationRolesCreateCommand extends
 				.getSourceView(getRequest());
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
 				.canCreateAbstractCoordinationSpecificationRoles_4002(
 						getSource(), getTarget(), sourceView, targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
 					.getErrorAbstractCoordinationSpecificationRoles_4002(
 							getSource(), getTarget(), sourceView, targetView);

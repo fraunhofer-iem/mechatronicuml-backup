@@ -17,14 +17,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class MessageTypeItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageTypeItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.MessageType_3005);
+				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.MessageType_3005);
 	}
 
 	/**
@@ -55,13 +55,13 @@ public class MessageTypeItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+			switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.getVisualID(node)) {
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit
 						.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+					switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 							.getVisualID(cnode)) {
 					case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
 

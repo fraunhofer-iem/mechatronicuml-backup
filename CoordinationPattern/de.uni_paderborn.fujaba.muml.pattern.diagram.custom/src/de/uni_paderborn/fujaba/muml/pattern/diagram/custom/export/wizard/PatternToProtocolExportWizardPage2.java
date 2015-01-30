@@ -15,7 +15,7 @@ import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
-import pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 
 public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 		implements IWizardPage, SelectionListener {

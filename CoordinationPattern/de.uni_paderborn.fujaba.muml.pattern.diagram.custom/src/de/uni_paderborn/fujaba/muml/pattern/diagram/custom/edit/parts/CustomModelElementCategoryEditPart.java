@@ -8,7 +8,7 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternEditPart;
-import de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry;
+import de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry;
 
 public class CustomModelElementCategoryEditPart extends de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart {
 
@@ -27,9 +27,9 @@ public class CustomModelElementCategoryEditPart extends de.uni_paderborn.fujaba.
 				// Begin added to fix #542				
 				if (/*descriptor.getVisualID() == CoordinationProtocolRolesEditPart.VISUAL_ID &&*/ sourceEditPart != null && sourceEditPart.getModel() instanceof View) {
 					View sourceView = (View) sourceEditPart.getModel();					
-					String wrongHint = de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+					String wrongHint = MumlVisualIDRegistry
 							.getType(CoordinationPatternEditPart.VISUAL_ID);
-					String rightHint = PatternVisualIDRegistry
+					String rightHint = MumlVisualIDRegistry
 							.getType(CoordinationPattern2EditPart.VISUAL_ID);
 					if (wrongHint.equals(sourceView.getType())) {
 						TreeIterator<EObject> allContents = sourceView.eAllContents();

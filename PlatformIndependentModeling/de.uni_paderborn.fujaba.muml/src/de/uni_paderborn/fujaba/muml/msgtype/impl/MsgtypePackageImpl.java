@@ -29,6 +29,8 @@ import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypeFactory;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.msgtype.util.MsgtypeValidator;
+import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -118,6 +120,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
 		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
+		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMsgtypePackage.createPackageContents();
@@ -130,6 +133,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		theConnectorPackage.createPackageContents();
 		theValuetypePackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
+		thePatternPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMsgtypePackage.initializePackageContents();
@@ -142,6 +146,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		theConnectorPackage.initializePackageContents();
 		theValuetypePackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
+		thePatternPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

@@ -15,14 +15,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
  */
 public class AbstractCoordinationSpecificationRolesItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public AbstractCoordinationSpecificationRolesItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.AbstractCoordinationSpecificationRoles_4002);
+				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002);
 	}
 
 	/**

@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.common.utils.FujabaEcoreUtil;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
@@ -957,6 +958,11 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
 
 		newChildDescriptors.add
 			(createChildParameter

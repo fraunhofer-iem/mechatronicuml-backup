@@ -99,7 +99,7 @@ public class MessageBufferMessageBufferCompartmentEditPart extends
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry.TYPED_INSTANCE));
+						de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
@@ -126,7 +126,7 @@ public class MessageBufferMessageBufferCompartmentEditPart extends
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.MessageType_3005) {
+			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.MessageType_3005) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

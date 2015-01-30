@@ -36,7 +36,7 @@ public class ParameterLabelExpressionLabelParser5004 extends
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.PatternOCLFactory
+		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						9,
 						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -48,7 +48,7 @@ public class ParameterLabelExpressionLabelParser5004 extends
 	 */
 	public String getEditString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.PatternOCLFactory
+		Object result = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						10,
 						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE

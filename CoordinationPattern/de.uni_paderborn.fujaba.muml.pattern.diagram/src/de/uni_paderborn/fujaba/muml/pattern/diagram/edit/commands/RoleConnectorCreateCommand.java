@@ -80,11 +80,11 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 				.getSourceView(getRequest());
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateRoleConnector_4001(
 						getContainer(), getSource(), getTarget(), sourceView,
 						targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorRoleConnector_4001(
 							getContainer(), getSource(), getTarget(),
 							sourceView, targetView);

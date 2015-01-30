@@ -293,7 +293,7 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 	}
 

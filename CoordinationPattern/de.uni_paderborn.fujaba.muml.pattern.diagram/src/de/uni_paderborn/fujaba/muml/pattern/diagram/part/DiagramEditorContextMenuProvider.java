@@ -69,7 +69,7 @@ public class DiagramEditorContextMenuProvider extends
 						}
 					});
 		} catch (Exception e) {
-			de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError("Error building context menu", e);
 		}
 	}

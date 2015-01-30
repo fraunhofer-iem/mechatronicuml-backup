@@ -11,14 +11,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
  */
 public class RoleConnectorItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public RoleConnectorItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.RoleConnector_4001);
+				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001);
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class RoleConnectorItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.commands.RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -56,7 +56,7 @@ public class RoleConnectorItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4004 == req
 				.getElementType()) {
 			return null;
 		}

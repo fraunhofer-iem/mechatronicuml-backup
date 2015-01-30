@@ -36,7 +36,7 @@ public class MessageBufferLabelExpressionLabelParser5007 extends
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.PatternOCLFactory
+		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						11,
 						de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE

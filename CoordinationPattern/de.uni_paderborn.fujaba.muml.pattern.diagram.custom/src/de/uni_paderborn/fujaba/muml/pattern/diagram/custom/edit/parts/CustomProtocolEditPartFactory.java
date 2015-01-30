@@ -6,9 +6,9 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ModelElementCategoryEditPart;
-import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.PatternEditPartFactory;
+import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart;
-import de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry;
+import de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry;
 
 /**
  * Our customized EditPartFactory, which makes sure our overridden
@@ -17,13 +17,13 @@ import de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
  * @author bingo
  * 
  */
-public class CustomProtocolEditPartFactory extends PatternEditPartFactory {
+public class CustomProtocolEditPartFactory extends MumlEditPartFactory {
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (PatternVisualIDRegistry.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case CoordinationPattern2EditPart.VISUAL_ID:
 				return new CustomCoordinationProtocol2EditPart(view);
 			case ModelElementCategoryEditPart.VISUAL_ID:

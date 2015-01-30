@@ -100,7 +100,7 @@ public class CoordinationPatternPatternCompartmentEditPart extends
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry.TYPED_INSTANCE));
+						de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
@@ -127,16 +127,16 @@ public class CoordinationPatternPatternCompartmentEditPart extends
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.CoordinationPattern_3003) {
+			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_3003) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.Role_3002) {
+			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Role_3002) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.MessageBuffer_3004) {
+			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.MessageBuffer_3004) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.ConnectorQualityOfServiceAssumptions_3007) {
+			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.ConnectorQualityOfServiceAssumptions_3007) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -148,11 +148,11 @@ public class CoordinationPatternPatternCompartmentEditPart extends
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
 						if (elementType
-								.equals(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.RoleConnector_4001)
+								.equals(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001)
 								|| elementType
-										.equals(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.AbstractCoordinationSpecificationRoles_4002)
+										.equals(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002)
 								|| elementType
-										.equals(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003))
+										.equals(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.DiscreteInteractionEndpointReceiverMessageBuffer_4003))
 							return super.getTargetEditPart(request);
 					}
 				}

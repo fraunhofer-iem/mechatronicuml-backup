@@ -21,10 +21,10 @@ import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
-import pattern.CoordinationPattern;
-import pattern.LegalConfiguration;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 
 /**
  * First page of the export wizard for the Pattern-To-Protocol transformation.

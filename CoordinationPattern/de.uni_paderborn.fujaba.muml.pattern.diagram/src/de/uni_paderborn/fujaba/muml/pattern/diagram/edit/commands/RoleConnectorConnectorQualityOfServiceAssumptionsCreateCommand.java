@@ -58,11 +58,11 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsCreateCommand
 				.getSourceView(getRequest());
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+		if (!de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
 				.canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4004(
 						getSource(), getTarget(), sourceView, targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+			String errorMessage = de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
 					.getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4004(
 							getSource(), getTarget(), sourceView, targetView);

@@ -26,14 +26,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class CoordinationPattern2ItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CoordinationPattern2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.CoordinationPattern_3003);
+				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_3003);
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class CoordinationPattern2ItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
@@ -96,7 +96,7 @@ public class CoordinationPattern2ItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.commands.AbstractCoordinationSpecificationRolesCreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -109,7 +109,7 @@ public class CoordinationPattern2ItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
 				.getElementType()) {
 			return null;
 		}

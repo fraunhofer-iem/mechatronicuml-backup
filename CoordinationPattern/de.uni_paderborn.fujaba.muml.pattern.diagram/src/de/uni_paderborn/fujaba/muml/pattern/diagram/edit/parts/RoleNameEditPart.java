@@ -112,7 +112,7 @@ public class RoleNameEditPart extends LabelEditPart implements
 	 */
 	static {
 		registerSnapBackPosition(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleNameEditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
@@ -133,7 +133,7 @@ public class RoleNameEditPart extends LabelEditPart implements
 				new LabelDirectEditPolicy());
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternTextSelectionEditPolicy());
+				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlTextSelectionEditPolicy());
 	}
 
 	/**
@@ -362,11 +362,11 @@ public class RoleNameEditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternParserProvider
+			parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.Role_3002,
+							de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Role_3002,
 							getParserElement(),
-							de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleNameEditPart.VISUAL_ID));
 		}
 		return parser;
@@ -380,7 +380,7 @@ public class RoleNameEditPart extends LabelEditPart implements
 			setManager(new TextDirectEditManager(
 					this,
 					null,
-					de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.PatternEditPartFactory
+					de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MumlEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
 		return manager;

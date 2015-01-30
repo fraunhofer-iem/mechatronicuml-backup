@@ -119,7 +119,7 @@ public class MessageTypeNameEditPart extends CompartmentEditPart implements
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternTextSelectionEditPolicy());
+				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
 				new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
@@ -323,11 +323,11 @@ public class MessageTypeNameEditPart extends CompartmentEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternParserProvider
+			parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.MessageType_3005,
+							de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.MessageType_3005,
 							getParserElement(),
-							de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
 		}
 		return parser;
@@ -341,7 +341,7 @@ public class MessageTypeNameEditPart extends CompartmentEditPart implements
 			setManager(new TextDirectEditManager(
 					this,
 					null,
-					de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.PatternEditPartFactory
+					de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MumlEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
 		return manager;

@@ -28,14 +28,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class CoordinationPatternItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CoordinationPatternItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.CoordinationPattern_2001);
+				de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_2001);
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+			if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
@@ -91,19 +91,19 @@ public class CoordinationPatternItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+			switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.getVisualID(node)) {
 			case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternPatternCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit
 						.hasNext();) {
 					Node cnode = (Node) cit.next();
-					switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+					switch (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 							.getVisualID(cnode)) {
 					case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
 								.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										outgoingLink.getSource().getElement(),
@@ -138,7 +138,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
 								.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
-							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										incomingLink.getSource().getElement(),
@@ -166,7 +166,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 										incomingLink));
 								continue;
 							}
-							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(
 										incomingLink.getElement(), false);
@@ -179,7 +179,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
 								.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
-							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(
 										outgoingLink.getElement(), false);
@@ -188,7 +188,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 										outgoingLink));
 								continue;
 							}
-							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										outgoingLink.getSource().getElement(),
@@ -229,7 +229,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
 								.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
-							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.DiscreteInteractionEndpointReceiverMessageBufferEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										incomingLink.getSource().getElement(),
@@ -264,7 +264,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
 								.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
-							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							if (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleConnectorConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										incomingLink.getSource().getElement(),
@@ -317,7 +317,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.commands.AbstractCoordinationSpecificationRolesCreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -330,7 +330,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
+		if (de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4002 == req
 				.getElementType()) {
 			return null;
 		}

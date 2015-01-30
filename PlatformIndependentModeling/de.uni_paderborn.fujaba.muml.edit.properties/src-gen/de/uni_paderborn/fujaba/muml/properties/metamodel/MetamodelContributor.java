@@ -49,6 +49,9 @@ public class MetamodelContributor
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
 
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory());
+
 	}
 
 }

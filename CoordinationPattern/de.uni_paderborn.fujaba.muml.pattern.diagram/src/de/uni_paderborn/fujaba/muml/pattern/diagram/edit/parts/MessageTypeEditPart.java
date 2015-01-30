@@ -85,7 +85,7 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry.TYPED_INSTANCE));
+						de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -114,7 +114,7 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
 					if (child instanceof ITextAwareEditPart) {
-						return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternTextSelectionEditPolicy();
+						return new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlTextSelectionEditPolicy();
 					}
 				}
 				return super.createChildEditPolicy(child);
@@ -299,7 +299,7 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
 	}
 
@@ -313,8 +313,8 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.Parameter_3006) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+			if (type == de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Parameter_3006) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID));
 			}
 		}

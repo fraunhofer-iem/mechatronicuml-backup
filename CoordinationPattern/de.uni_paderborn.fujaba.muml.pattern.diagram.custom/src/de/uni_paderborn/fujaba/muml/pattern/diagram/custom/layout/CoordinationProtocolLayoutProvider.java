@@ -24,7 +24,7 @@ public class CoordinationProtocolLayoutProvider extends AbstractLayoutNodeProvid
 				View node = ((ILayoutNode) nodes.next()).getNode();
 				Diagram container = node.getDiagram();
 				if (container == null
-						|| !(container.getType().equals("Pattern"))) //$NON-NLS-1$
+						|| !(container.getType().equals("2001"))) //$NON-NLS-1$
 					return false;
 			}
 		} else {

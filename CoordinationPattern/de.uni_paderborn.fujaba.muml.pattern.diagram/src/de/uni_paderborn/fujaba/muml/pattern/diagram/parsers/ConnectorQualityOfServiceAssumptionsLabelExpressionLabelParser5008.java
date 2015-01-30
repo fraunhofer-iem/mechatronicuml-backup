@@ -36,7 +36,7 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.PatternOCLFactory
+		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						12,
 						de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE

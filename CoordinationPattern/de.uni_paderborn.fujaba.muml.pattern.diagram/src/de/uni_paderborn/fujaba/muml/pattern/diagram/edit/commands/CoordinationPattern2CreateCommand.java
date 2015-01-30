@@ -12,8 +12,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pattern.CoordinationPattern;
-
 /**
  * @generated
  */
@@ -56,7 +54,8 @@ public class CoordinationPattern2CreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(CoordinationPattern newElement,
+	protected void doConfigure(
+			de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

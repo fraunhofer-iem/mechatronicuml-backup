@@ -12,9 +12,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import pattern.CoordinationPattern;
-import pattern.PatternFactory;
-
 /**
  * @generated
  */
@@ -53,7 +50,7 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		CoordinationPattern newElement = PatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern newElement = de.uni_paderborn.fujaba.muml.pattern.PatternFactory.eINSTANCE
 				.createCoordinationPattern();
 
 		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
@@ -71,7 +68,8 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(CoordinationPattern newElement,
+	protected void doConfigure(
+			de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

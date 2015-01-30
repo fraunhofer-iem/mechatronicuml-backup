@@ -119,7 +119,7 @@ public class CoordinationPatternNameEditPart extends CompartmentEditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.PatternTextSelectionEditPolicy());
+				new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.MumlTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
 				new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
@@ -323,11 +323,11 @@ public class CoordinationPatternNameEditPart extends CompartmentEditPart
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternParserProvider
+			parser = de.uni_paderborn.fujaba.muml.pattern.diagram.providers.CoordinationPatternParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.pattern.diagram.providers.PatternElementTypes.CoordinationPattern_3003,
+							de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.CoordinationPattern_3003,
 							getParserElement(),
-							de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+							de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID));
 		}
 		return parser;
@@ -341,7 +341,7 @@ public class CoordinationPatternNameEditPart extends CompartmentEditPart
 			setManager(new TextDirectEditManager(
 					this,
 					null,
-					de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.PatternEditPartFactory
+					de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MumlEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
 		return manager;

@@ -62,9 +62,9 @@ public class MessageBufferMessageBufferCompartmentCanonicalEditPolicy extends
 	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
-		List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		for (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor d : childDescriptors) {
+		for (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -80,11 +80,11 @@ public class MessageBufferMessageBufferCompartmentCanonicalEditPolicy extends
 		if (!canonicalNodes) {
 			View containerView = (View) getHost().getModel();
 			List<View> childViews = containerView.getChildren();
-			List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor>();
+			List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor>();
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+				int visualID = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays
 						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID });
@@ -93,7 +93,7 @@ public class MessageBufferMessageBufferCompartmentCanonicalEditPolicy extends
 				if (childElement == null
 						|| childElement.eContainer() == containerView
 								.getElement() && visualIDs.contains(visualID)) {
-					result.add(new de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor(
+					result.add(new de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
 				}
@@ -103,7 +103,7 @@ public class MessageBufferMessageBufferCompartmentCanonicalEditPolicy extends
 		// End added
 
 		View viewObject = (View) getHost().getModel();
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternDiagramUpdater
+		return de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramUpdater
 				.getMessageBufferMessageBufferCompartment_7002SemanticChildren(viewObject);
 
 	}
@@ -121,7 +121,7 @@ public class MessageBufferMessageBufferCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -133,7 +133,7 @@ public class MessageBufferMessageBufferCompartmentCanonicalEditPolicy extends
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
+		List<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> childDescriptors = getSemanticChildrenViewDescriptors();
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -147,11 +147,11 @@ public class MessageBufferMessageBufferCompartmentCanonicalEditPolicy extends
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor next = descriptorsIterator
+			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor next = descriptorsIterator
 					.next();
-			String hint = de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+			String hint = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
@@ -180,8 +180,8 @@ public class MessageBufferMessageBufferCompartmentCanonicalEditPolicy extends
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternNodeDescriptor next : childDescriptors) {
-			String hint = de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry
+		for (de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlNodeDescriptor next : childDescriptors) {
+			String hint = de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 					.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(
 					next.getModelElement(), hint);

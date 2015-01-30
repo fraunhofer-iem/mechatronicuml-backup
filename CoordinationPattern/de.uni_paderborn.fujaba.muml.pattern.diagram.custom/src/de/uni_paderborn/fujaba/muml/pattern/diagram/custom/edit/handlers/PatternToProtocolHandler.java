@@ -14,7 +14,7 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 
 public class PatternToProtocolHandler extends AbstractHandler{
 

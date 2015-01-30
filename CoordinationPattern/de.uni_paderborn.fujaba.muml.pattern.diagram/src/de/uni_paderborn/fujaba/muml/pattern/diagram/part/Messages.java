@@ -23,107 +23,107 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String PatternCreationWizardTitle;
+	public static String MumlCreationWizardTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternCreationWizard_DiagramModelFilePageTitle;
+	public static String MumlCreationWizard_DiagramModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternCreationWizard_DiagramModelFilePageDescription;
+	public static String MumlCreationWizard_DiagramModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternCreationWizard_DomainModelFilePageTitle;
+	public static String MumlCreationWizard_DomainModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternCreationWizard_DomainModelFilePageDescription;
+	public static String MumlCreationWizard_DomainModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternCreationWizardOpenEditorError;
+	public static String MumlCreationWizardOpenEditorError;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternCreationWizardCreationError;
+	public static String MumlCreationWizardCreationError;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternCreationWizardPageExtensionError;
+	public static String MumlCreationWizardPageExtensionError;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+	public static String MumlDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+	public static String MumlDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditorUtil_CreateDiagramProgressTask;
+	public static String MumlDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditorUtil_CreateDiagramCommandLabel;
+	public static String MumlDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_isModifiable;
+	public static String MumlDocumentProvider_isModifiable;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_handleElementContentChanged;
+	public static String MumlDocumentProvider_handleElementContentChanged;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_IncorrectInputError;
+	public static String MumlDocumentProvider_IncorrectInputError;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_NoDiagramInResourceError;
+	public static String MumlDocumentProvider_NoDiagramInResourceError;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_DiagramLoadingError;
+	public static String MumlDocumentProvider_DiagramLoadingError;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_UnsynchronizedFileSaveError;
+	public static String MumlDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_SaveDiagramTask;
+	public static String MumlDocumentProvider_SaveDiagramTask;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_SaveNextResourceTask;
+	public static String MumlDocumentProvider_SaveNextResourceTask;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDocumentProvider_SaveAsOperation;
+	public static String MumlDocumentProvider_SaveAsOperation;
 
 	/**
 	 * @generated
@@ -148,87 +148,87 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_CreationPageName;
+	public static String MumlNewDiagramFileWizard_CreationPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_CreationPageTitle;
+	public static String MumlNewDiagramFileWizard_CreationPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_CreationPageDescription;
+	public static String MumlNewDiagramFileWizard_CreationPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_RootSelectionPageName;
+	public static String MumlNewDiagramFileWizard_RootSelectionPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_RootSelectionPageTitle;
+	public static String MumlNewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_RootSelectionPageDescription;
+	public static String MumlNewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+	public static String MumlNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
+	public static String MumlNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
+	public static String MumlNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_InitDiagramCommand;
+	public static String MumlNewDiagramFileWizard_InitDiagramCommand;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternNewDiagramFileWizard_IncorrectRootError;
+	public static String MumlNewDiagramFileWizard_IncorrectRootError;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SavingDeletedFile;
+	public static String CoordinationPatternDiagramEditor_SavingDeletedFile;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SaveAsErrorTitle;
+	public static String CoordinationPatternDiagramEditor_SaveAsErrorTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SaveAsErrorMessage;
+	public static String CoordinationPatternDiagramEditor_SaveAsErrorMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SaveErrorTitle;
+	public static String CoordinationPatternDiagramEditor_SaveErrorTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SaveErrorMessage;
+	public static String CoordinationPatternDiagramEditor_SaveErrorMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternElementChooserDialog_SelectModelElementTitle;
+	public static String MumlElementChooserDialog_SelectModelElementTitle;
 
 	/**
 	 * @generated
@@ -388,12 +388,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String PatternModelingAssistantProviderTitle;
+	public static String MumlModelingAssistantProviderTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternModelingAssistantProviderMessage;
+	public static String MumlModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	
 }

@@ -17,7 +17,7 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Pattern"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Muml"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -72,7 +72,7 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.pattern.diagram.part.PatternVisualIDRegistry.TYPED_INSTANCE));
+						de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 
