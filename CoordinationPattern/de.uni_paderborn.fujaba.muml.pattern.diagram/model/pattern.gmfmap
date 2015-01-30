@@ -424,7 +424,7 @@
     <diagramCanvas
         href="pattern.gmfgraph#PatternEditor"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.pattern.model/model/pattern.ecore#/"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//pattern"/>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette

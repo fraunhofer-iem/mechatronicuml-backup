@@ -810,7 +810,6 @@
     <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
-    <requiredPlugins>de.uni_paderborn.fujaba.muml.pattern.model.edit.properties</requiredPlugins>
   </plugin>
   <editor
       className="CoordinationPatternDiagramEditor"/>
