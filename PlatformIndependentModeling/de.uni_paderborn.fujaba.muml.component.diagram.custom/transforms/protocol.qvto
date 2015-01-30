@@ -18,22 +18,23 @@ main() {
 	components->forEach(component) {
 	
 		-- Disconnect invalid PortParts
-		component.embeddedComponentParts.portParts->select(p |
-			 // XXX: Workaround for #731; Essentially we are removing all PortPart->CoordinationProtocolParts connections and
-			 // 	 which leads to all CoordinationProtocolParts also being removed afterwards as they have no connections
-			 // 	 and then we recreate everything.
-			 //      If you remove the "true" and use "not p.isValid()" again, please retest #731.
-			 true
-			 -- not p.isValid()
-		)->forEach(pp) {
+		component.embeddedComponentParts.portParts->select(p | not p.isValid())->forEach(pp) {
 			pp.coordinationProtocolPart := null;
 		};
 		
 		-- Remove empty CoordinationProtocolParts
-		component.coordinationProtocolParts->select(portParts->isEmpty())->forEach(p) {
-			input.removeElement(p);
-		};
+		--var coordinationProtocolParts := component.coordinationProtocolParts;
+		--coordinationProtocolParts->select(portParts->isEmpty())->forEach(p) {
+		--	input.removeElement(p);
+		--};
 		
+		--coordinationProtocolParts->forEach(p) {
+		--	input.removeElement(p);
+		--};
+
+
+
+
 
 		-- Merge CoordinationProtocolParts that can reach each other
 		--component.coordinationProtocolParts->forEach(p, q) {
@@ -76,9 +77,10 @@ main() {
 }
 
 query PortPart::isValid() : Boolean {
-	return self.connectors[AssemblyConnector]->notEmpty() and self.refinedRole != null 
-	--XXX: maybe remove the following line? seems to make the workaround r4009 unnecessary!  
-	and self.allReachablePortParts().coordinationProtocolPart->asSet()->excluding(self.coordinationProtocolPart)->isEmpty();
+	return self.connectors[AssemblyConnector]->notEmpty() and self.refinedRole != null
+	-- commenting out the following line seems to make the workaround r4009 unnecessary!  
+	-- and self.allReachablePortParts().coordinationProtocolPart->asSet()->excluding(self.coordinationProtocolPart)->isEmpty();
+	;
 }
 
 query CoordinationProtocolPart::isReachable(p : CoordinationProtocolPart) : Boolean {
