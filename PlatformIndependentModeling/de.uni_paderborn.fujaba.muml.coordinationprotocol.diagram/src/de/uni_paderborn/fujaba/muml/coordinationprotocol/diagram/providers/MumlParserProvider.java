@@ -73,20 +73,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser messageBufferName_5018Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getMessageBufferName_5018Parser() {
-		if (messageBufferName_5018Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser(
-					features);
-			messageBufferName_5018Parser = parser;
-		}
-		return messageBufferName_5018Parser;
+	private IParser getMessageBufferLabel_5018Parser() {
+		return new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageBufferLabelExpressionLabelParser5018();
 	}
 
 	/**
@@ -160,7 +148,7 @@ public class MumlParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
 			return getRoleName_5006Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferNameEditPart.VISUAL_ID:
-			return getMessageBufferName_5018Parser();
+			return getMessageBufferLabel_5018Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getMessageBufferLabel_5019Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:

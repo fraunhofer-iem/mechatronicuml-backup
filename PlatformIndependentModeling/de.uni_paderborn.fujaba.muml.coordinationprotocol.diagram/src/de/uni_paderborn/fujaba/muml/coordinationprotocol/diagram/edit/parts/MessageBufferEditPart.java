@@ -166,19 +166,19 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferNameLabel());
+							.getFigureMessageBufferSizeLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart) {
 			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferSizeLabel());
+							.getFigureMessageBufferOverFlowAvoidanceStrategyLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart) {
 			((de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferAvoidanceStrategyLabel());
+							.getFigureMessageBufferNameLabel());
 			return true;
 		}
 		return false;
@@ -359,7 +359,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureMessageBufferAvoidanceStrategyLabel;
+		private WrappingLabel fFigureMessageBufferOverFlowAvoidanceStrategyLabel;
 
 		/**
 		 * @generated
@@ -373,6 +373,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
 					getMapMode().DPtoLP(8)));
+			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
 
@@ -381,23 +382,60 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			WrappingLabel messageBufferStaticHeadLabel0 = new WrappingLabel();
+			fFigureMessageBufferNameLabel = new WrappingLabel();
 
-			messageBufferStaticHeadLabel0
-					.setText("message buffer information:");
+			fFigureMessageBufferNameLabel.setText("");
+			fFigureMessageBufferNameLabel
+					.setForegroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_FORE);
+			fFigureMessageBufferNameLabel
+					.setBackgroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_BACK);
 
-			GridData constraintMessageBufferStaticHeadLabel0 = new GridData();
-			constraintMessageBufferStaticHeadLabel0.verticalAlignment = GridData.CENTER;
-			constraintMessageBufferStaticHeadLabel0.horizontalAlignment = GridData.BEGINNING;
-			constraintMessageBufferStaticHeadLabel0.horizontalIndent = 0;
-			constraintMessageBufferStaticHeadLabel0.horizontalSpan = 2;
-			constraintMessageBufferStaticHeadLabel0.verticalSpan = 1;
-			constraintMessageBufferStaticHeadLabel0.grabExcessHorizontalSpace = false;
-			constraintMessageBufferStaticHeadLabel0.grabExcessVerticalSpace = false;
-			this.add(messageBufferStaticHeadLabel0,
-					constraintMessageBufferStaticHeadLabel0);
+			GridData constraintFFigureMessageBufferNameLabel = new GridData();
+			constraintFFigureMessageBufferNameLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageBufferNameLabel.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureMessageBufferNameLabel.horizontalIndent = 0;
+			constraintFFigureMessageBufferNameLabel.horizontalSpan = 2;
+			constraintFFigureMessageBufferNameLabel.verticalSpan = 1;
+			constraintFFigureMessageBufferNameLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageBufferNameLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageBufferNameLabel,
+					constraintFFigureMessageBufferNameLabel);
+
+			fFigureMessageBufferSizeLabel = new WrappingLabel();
+
+			fFigureMessageBufferSizeLabel.setText("Name:");
+
+			GridData constraintFFigureMessageBufferSizeLabel = new GridData();
+			constraintFFigureMessageBufferSizeLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageBufferSizeLabel.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureMessageBufferSizeLabel.horizontalIndent = 0;
+			constraintFFigureMessageBufferSizeLabel.horizontalSpan = 2;
+			constraintFFigureMessageBufferSizeLabel.verticalSpan = 1;
+			constraintFFigureMessageBufferSizeLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageBufferSizeLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageBufferSizeLabel,
+					constraintFFigureMessageBufferSizeLabel);
+
+			fFigureMessageBufferOverFlowAvoidanceStrategyLabel = new WrappingLabel();
+
+			fFigureMessageBufferOverFlowAvoidanceStrategyLabel.setText("");
+
+			GridData constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel = new GridData();
+			constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.horizontalIndent = 0;
+			constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.horizontalSpan = 2;
+			constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.verticalSpan = 1;
+			constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageBufferOverFlowAvoidanceStrategyLabel,
+					constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel);
 
 			PolylineShape polyline10 = new PolylineShape();
+
+			polyline10.setFillXOR(true);
+			polyline10.setOutline(false);
+			polyline10.setLineWidth(2);
 
 			GridData constraintPolyline10 = new GridData();
 			constraintPolyline10.verticalAlignment = GridData.CENTER;
@@ -408,97 +446,6 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			constraintPolyline10.grabExcessHorizontalSpace = true;
 			constraintPolyline10.grabExcessVerticalSpace = false;
 			this.add(polyline10, constraintPolyline10);
-
-			WrappingLabel messageBufferStaticNameLabel0 = new WrappingLabel();
-
-			messageBufferStaticNameLabel0.setText("name:");
-
-			GridData constraintMessageBufferStaticNameLabel0 = new GridData();
-			constraintMessageBufferStaticNameLabel0.verticalAlignment = GridData.CENTER;
-			constraintMessageBufferStaticNameLabel0.horizontalAlignment = GridData.BEGINNING;
-			constraintMessageBufferStaticNameLabel0.horizontalIndent = 0;
-			constraintMessageBufferStaticNameLabel0.horizontalSpan = 1;
-			constraintMessageBufferStaticNameLabel0.verticalSpan = 1;
-			constraintMessageBufferStaticNameLabel0.grabExcessHorizontalSpace = false;
-			constraintMessageBufferStaticNameLabel0.grabExcessVerticalSpace = false;
-			this.add(messageBufferStaticNameLabel0,
-					constraintMessageBufferStaticNameLabel0);
-
-			fFigureMessageBufferNameLabel = new WrappingLabel();
-
-			fFigureMessageBufferNameLabel.setText("");
-
-			GridData constraintFFigureMessageBufferNameLabel = new GridData();
-			constraintFFigureMessageBufferNameLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureMessageBufferNameLabel.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureMessageBufferNameLabel.horizontalIndent = 0;
-			constraintFFigureMessageBufferNameLabel.horizontalSpan = 1;
-			constraintFFigureMessageBufferNameLabel.verticalSpan = 1;
-			constraintFFigureMessageBufferNameLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureMessageBufferNameLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureMessageBufferNameLabel,
-					constraintFFigureMessageBufferNameLabel);
-
-			WrappingLabel messageBufferStaticBufferSizeLabel0 = new WrappingLabel();
-
-			messageBufferStaticBufferSizeLabel0.setText("buffer size:");
-
-			GridData constraintMessageBufferStaticBufferSizeLabel0 = new GridData();
-			constraintMessageBufferStaticBufferSizeLabel0.verticalAlignment = GridData.CENTER;
-			constraintMessageBufferStaticBufferSizeLabel0.horizontalAlignment = GridData.BEGINNING;
-			constraintMessageBufferStaticBufferSizeLabel0.horizontalIndent = 0;
-			constraintMessageBufferStaticBufferSizeLabel0.horizontalSpan = 1;
-			constraintMessageBufferStaticBufferSizeLabel0.verticalSpan = 1;
-			constraintMessageBufferStaticBufferSizeLabel0.grabExcessHorizontalSpace = false;
-			constraintMessageBufferStaticBufferSizeLabel0.grabExcessVerticalSpace = false;
-			this.add(messageBufferStaticBufferSizeLabel0,
-					constraintMessageBufferStaticBufferSizeLabel0);
-
-			fFigureMessageBufferSizeLabel = new WrappingLabel();
-
-			fFigureMessageBufferSizeLabel.setText("");
-
-			GridData constraintFFigureMessageBufferSizeLabel = new GridData();
-			constraintFFigureMessageBufferSizeLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureMessageBufferSizeLabel.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureMessageBufferSizeLabel.horizontalIndent = 0;
-			constraintFFigureMessageBufferSizeLabel.horizontalSpan = 1;
-			constraintFFigureMessageBufferSizeLabel.verticalSpan = 1;
-			constraintFFigureMessageBufferSizeLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureMessageBufferSizeLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureMessageBufferSizeLabel,
-					constraintFFigureMessageBufferSizeLabel);
-
-			WrappingLabel messageBufferStaticAvoidanceStrategyLabel0 = new WrappingLabel();
-
-			messageBufferStaticAvoidanceStrategyLabel0
-					.setText("avoidance strategy:");
-
-			GridData constraintMessageBufferStaticAvoidanceStrategyLabel0 = new GridData();
-			constraintMessageBufferStaticAvoidanceStrategyLabel0.verticalAlignment = GridData.CENTER;
-			constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalAlignment = GridData.BEGINNING;
-			constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalIndent = 0;
-			constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalSpan = 1;
-			constraintMessageBufferStaticAvoidanceStrategyLabel0.verticalSpan = 1;
-			constraintMessageBufferStaticAvoidanceStrategyLabel0.grabExcessHorizontalSpace = false;
-			constraintMessageBufferStaticAvoidanceStrategyLabel0.grabExcessVerticalSpace = false;
-			this.add(messageBufferStaticAvoidanceStrategyLabel0,
-					constraintMessageBufferStaticAvoidanceStrategyLabel0);
-
-			fFigureMessageBufferAvoidanceStrategyLabel = new WrappingLabel();
-
-			fFigureMessageBufferAvoidanceStrategyLabel.setText("");
-
-			GridData constraintFFigureMessageBufferAvoidanceStrategyLabel = new GridData();
-			constraintFFigureMessageBufferAvoidanceStrategyLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalIndent = 0;
-			constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalSpan = 1;
-			constraintFFigureMessageBufferAvoidanceStrategyLabel.verticalSpan = 1;
-			constraintFFigureMessageBufferAvoidanceStrategyLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureMessageBufferAvoidanceStrategyLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureMessageBufferAvoidanceStrategyLabel,
-					constraintFFigureMessageBufferAvoidanceStrategyLabel);
 
 			WrappingLabel messageTypesStaticLabel0 = new WrappingLabel();
 
@@ -534,10 +481,27 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureMessageBufferAvoidanceStrategyLabel() {
-			return fFigureMessageBufferAvoidanceStrategyLabel;
+		public WrappingLabel getFigureMessageBufferOverFlowAvoidanceStrategyLabel() {
+			return fFigureMessageBufferOverFlowAvoidanceStrategyLabel;
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 255, 255, 100);
+
+	/**
+	 * @generated
+	 */
+	static final Color FFIGUREMESSAGEBUFFERNAMELABEL_FORE = new Color(null,
+			255, 0, 0);
+
+	/**
+	 * @generated
+	 */
+	static final Color FFIGUREMESSAGEBUFFERNAMELABEL_BACK = new Color(null, 0,
+			255, 0);
 
 }

@@ -61,7 +61,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.19">
+              value="//@expressionProviders/@providers.0/@expressions.20">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -169,7 +169,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.20">
+              value="//@expressionProviders/@providers.0/@expressions.21">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -212,7 +212,11 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="MessageBuffferFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MessageBuffferFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageBufferNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageBufferSizeLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageBufferAvoidanceStrategyLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MessageBuffferFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageBufferStaticHeadLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageBufferStaticHeadLabel0.setText(&quot;message buffer information:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageBufferStaticHeadLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageBufferStaticHeadLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMessageBufferStaticHeadLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageBufferStaticHeadLabel0.horizontalIndent = 0;&#xA;constraintMessageBufferStaticHeadLabel0.horizontalSpan = 2;&#xA;constraintMessageBufferStaticHeadLabel0.verticalSpan = 1;&#xA;constraintMessageBufferStaticHeadLabel0.grabExcessHorizontalSpace = false;&#xA;constraintMessageBufferStaticHeadLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageBufferStaticHeadLabel0, constraintMessageBufferStaticHeadLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape polyline10 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintPolyline10 = new org.eclipse.draw2d.GridData();&#xA;constraintPolyline10.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintPolyline10.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintPolyline10.horizontalIndent = 0;&#xA;constraintPolyline10.horizontalSpan = 2;&#xA;constraintPolyline10.verticalSpan = 1;&#xA;constraintPolyline10.grabExcessHorizontalSpace = true;&#xA;constraintPolyline10.grabExcessVerticalSpace = false;&#xA;this.add(polyline10, constraintPolyline10);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageBufferStaticNameLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageBufferStaticNameLabel0.setText(&quot;name:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageBufferStaticNameLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageBufferStaticNameLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMessageBufferStaticNameLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageBufferStaticNameLabel0.horizontalIndent = 0;&#xA;constraintMessageBufferStaticNameLabel0.horizontalSpan = 1;&#xA;constraintMessageBufferStaticNameLabel0.verticalSpan = 1;&#xA;constraintMessageBufferStaticNameLabel0.grabExcessHorizontalSpace = false;&#xA;constraintMessageBufferStaticNameLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageBufferStaticNameLabel0, constraintMessageBufferStaticNameLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMessageBufferNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageBufferNameLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageBufferNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageBufferNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageBufferNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMessageBufferNameLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageBufferNameLabel.horizontalSpan = 1;&#xA;constraintFFigureMessageBufferNameLabel.verticalSpan = 1;&#xA;constraintFFigureMessageBufferNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageBufferNameLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageBufferNameLabel, constraintFFigureMessageBufferNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageBufferStaticBufferSizeLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageBufferStaticBufferSizeLabel0.setText(&quot;buffer size:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageBufferStaticBufferSizeLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageBufferStaticBufferSizeLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMessageBufferStaticBufferSizeLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageBufferStaticBufferSizeLabel0.horizontalIndent = 0;&#xA;constraintMessageBufferStaticBufferSizeLabel0.horizontalSpan = 1;&#xA;constraintMessageBufferStaticBufferSizeLabel0.verticalSpan = 1;&#xA;constraintMessageBufferStaticBufferSizeLabel0.grabExcessHorizontalSpace = false;&#xA;constraintMessageBufferStaticBufferSizeLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageBufferStaticBufferSizeLabel0, constraintMessageBufferStaticBufferSizeLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMessageBufferSizeLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageBufferSizeLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageBufferSizeLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageBufferSizeLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalSpan = 1;&#xA;constraintFFigureMessageBufferSizeLabel.verticalSpan = 1;&#xA;constraintFFigureMessageBufferSizeLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageBufferSizeLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageBufferSizeLabel, constraintFFigureMessageBufferSizeLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageBufferStaticAvoidanceStrategyLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageBufferStaticAvoidanceStrategyLabel0.setText(&quot;avoidance strategy:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageBufferStaticAvoidanceStrategyLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageBufferStaticAvoidanceStrategyLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalIndent = 0;&#xA;constraintMessageBufferStaticAvoidanceStrategyLabel0.horizontalSpan = 1;&#xA;constraintMessageBufferStaticAvoidanceStrategyLabel0.verticalSpan = 1;&#xA;constraintMessageBufferStaticAvoidanceStrategyLabel0.grabExcessHorizontalSpace = false;&#xA;constraintMessageBufferStaticAvoidanceStrategyLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageBufferStaticAvoidanceStrategyLabel0, constraintMessageBufferStaticAvoidanceStrategyLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMessageBufferAvoidanceStrategyLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageBufferAvoidanceStrategyLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageBufferAvoidanceStrategyLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageBufferAvoidanceStrategyLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageBufferAvoidanceStrategyLabel.horizontalSpan = 1;&#xA;constraintFFigureMessageBufferAvoidanceStrategyLabel.verticalSpan = 1;&#xA;constraintFFigureMessageBufferAvoidanceStrategyLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageBufferAvoidanceStrategyLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageBufferAvoidanceStrategyLabel, constraintFFigureMessageBufferAvoidanceStrategyLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageTypesStaticLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageTypesStaticLabel0.setText(&quot;message types:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageTypesStaticLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageTypesStaticLabel0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageTypesStaticLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageTypesStaticLabel0.horizontalIndent = 0;&#xA;constraintMessageTypesStaticLabel0.horizontalSpan = 1;&#xA;constraintMessageTypesStaticLabel0.verticalSpan = 1;&#xA;constraintMessageTypesStaticLabel0.grabExcessHorizontalSpace = true;&#xA;constraintMessageTypesStaticLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageTypesStaticLabel0, constraintMessageTypesStaticLabel0);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageBufferNameLabel() {&#xA;&#x9;&#x9;return fFigureMessageBufferNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageBufferSizeLabel() {&#xA;&#x9;&#x9;return fFigureMessageBufferSizeLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageBufferAvoidanceStrategyLabel() {&#xA;&#x9;&#x9;return fFigureMessageBufferAvoidanceStrategyLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MessageBuffferFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageBufferNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageBufferSizeLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageBufferOverFlowAvoidanceStrategyLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MessageBuffferFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureMessageBufferNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageBufferNameLabel.setText(&quot;&quot;);&#xA;&#x9;fFigureMessageBufferNameLabel.setForegroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_FORE&#xA;);&#xA;&#x9;fFigureMessageBufferNameLabel.setBackgroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_BACK&#xA;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageBufferNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageBufferNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageBufferNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMessageBufferNameLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageBufferNameLabel.horizontalSpan = 2;&#xA;constraintFFigureMessageBufferNameLabel.verticalSpan = 1;&#xA;constraintFFigureMessageBufferNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageBufferNameLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageBufferNameLabel, constraintFFigureMessageBufferNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMessageBufferSizeLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageBufferSizeLabel.setText(&quot;Name:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageBufferSizeLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageBufferSizeLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageBufferSizeLabel.horizontalSpan = 2;&#xA;constraintFFigureMessageBufferSizeLabel.verticalSpan = 1;&#xA;constraintFFigureMessageBufferSizeLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageBufferSizeLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageBufferSizeLabel, constraintFFigureMessageBufferSizeLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMessageBufferOverFlowAvoidanceStrategyLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMessageBufferOverFlowAvoidanceStrategyLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.horizontalSpan = 2;&#xA;constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.verticalSpan = 1;&#xA;constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageBufferOverFlowAvoidanceStrategyLabel, constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape polyline10 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;polyline10.setFillXOR(true);&#xA;polyline10.setOutline(false);&#xA;polyline10.setLineWidth(2);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintPolyline10 = new org.eclipse.draw2d.GridData();&#xA;constraintPolyline10.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintPolyline10.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintPolyline10.horizontalIndent = 0;&#xA;constraintPolyline10.horizontalSpan = 2;&#xA;constraintPolyline10.verticalSpan = 1;&#xA;constraintPolyline10.grabExcessHorizontalSpace = true;&#xA;constraintPolyline10.grabExcessVerticalSpace = false;&#xA;this.add(polyline10, constraintPolyline10);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel messageTypesStaticLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;messageTypesStaticLabel0.setText(&quot;message types:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMessageTypesStaticLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintMessageTypesStaticLabel0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageTypesStaticLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintMessageTypesStaticLabel0.horizontalIndent = 0;&#xA;constraintMessageTypesStaticLabel0.horizontalSpan = 1;&#xA;constraintMessageTypesStaticLabel0.verticalSpan = 1;&#xA;constraintMessageTypesStaticLabel0.grabExcessHorizontalSpace = true;&#xA;constraintMessageTypesStaticLabel0.grabExcessVerticalSpace = false;&#xA;this.add(messageTypesStaticLabel0, constraintMessageTypesStaticLabel0);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageBufferNameLabel() {&#xA;&#x9;&#x9;return fFigureMessageBufferNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageBufferSizeLabel() {&#xA;&#x9;&#x9;return fFigureMessageBufferSizeLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageBufferOverFlowAvoidanceStrategyLabel() {&#xA;&#x9;&#x9;return fFigureMessageBufferOverFlowAvoidanceStrategyLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 255, 255, 100);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color FFIGUREMESSAGEBUFFERNAMELABEL_FORE = new org.eclipse.swt.graphics.Color(null, 255, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color FFIGUREMESSAGEBUFFERNAMELABEL_BACK = new org.eclipse.swt.graphics.Color(null, 0, 255, 0);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
@@ -224,7 +228,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.21">
+              value="//@expressionProviders/@providers.0/@expressions.22">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -241,30 +245,36 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureMessageBufferNameLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            getterName="getFigureMessageBufferSizeLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedForeground="true"
+              fixedBackground="true"/>
+        </viewmap>
         <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-        </modelFacet>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.2"/>
       </labels>
       <labels
           visualID="5019"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageBufferLabelViewFactory"
-          elementIcon="true">
+          notationViewFactoryClassName="MessageBufferLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureMessageBufferSizeLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            getterName="getFigureMessageBufferOverFlowAvoidanceStrategyLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedForeground="true"
+              fixedBackground="true"/>
+        </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.2"/>
+            parser="//@labelParsers/@implementations.3"/>
       </labels>
       <labels
           visualID="5025"
@@ -275,11 +285,16 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureMessageBufferAvoidanceStrategyLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            getterName="getFigureMessageBufferNameLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedForeground="true"
+              fixedBackground="true"/>
+        </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.3"/>
+            parser="//@labelParsers/@implementations.4"/>
       </labels>
     </childNodes>
     <childNodes
@@ -318,7 +333,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.22">
+              value="//@expressionProviders/@providers.0/@expressions.23">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -381,7 +396,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.23">
+              value="//@expressionProviders/@providers.0/@expressions.24">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -422,7 +437,11 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="QualityOfServiceAssumptionsFigureDescriptor"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class QualityOfServiceAssumptionsFigureDescriptor extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMsgLossLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMinDelayLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMaxDelayLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public QualityOfServiceAssumptionsFigureDescriptor() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticheadlinelabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticheadlinelabel0.setText(&quot;role connector quality of service assumptions:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticheadlinelabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticheadlinelabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticheadlinelabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticheadlinelabel0.horizontalIndent = 0;&#xA;constraintStaticheadlinelabel0.horizontalSpan = 2;&#xA;constraintStaticheadlinelabel0.verticalSpan = 1;&#xA;constraintStaticheadlinelabel0.grabExcessHorizontalSpace = true;&#xA;constraintStaticheadlinelabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticheadlinelabel0, constraintStaticheadlinelabel0);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticmsglossdescriptonlabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticmsglossdescriptonlabel0.setText(&quot;message loss possible:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticmsglossdescriptonlabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticmsglossdescriptonlabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalIndent = 0;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalSpan = 1;&#xA;constraintStaticmsglossdescriptonlabel0.verticalSpan = 1;&#xA;constraintStaticmsglossdescriptonlabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticmsglossdescriptonlabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticmsglossdescriptonlabel0, constraintStaticmsglossdescriptonlabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMsgLossLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMsgLossLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMsgLossLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMsgLossLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMsgLossLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMsgLossLabel.horizontalIndent = 0;&#xA;constraintFFigureMsgLossLabel.horizontalSpan = 1;&#xA;constraintFFigureMsgLossLabel.verticalSpan = 1;&#xA;constraintFFigureMsgLossLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMsgLossLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMsgLossLabel, constraintFFigureMsgLossLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticminDelayDescriptionLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticminDelayDescriptionLabel0.setText(&quot;minDelay:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticminDelayDescriptionLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticminDelayDescriptionLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalIndent = 0;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalSpan = 1;&#xA;constraintStaticminDelayDescriptionLabel0.verticalSpan = 1;&#xA;constraintStaticminDelayDescriptionLabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticminDelayDescriptionLabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticminDelayDescriptionLabel0, constraintStaticminDelayDescriptionLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMinDelayLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMinDelayLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMinDelayLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMinDelayLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMinDelayLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMinDelayLabel.horizontalIndent = 0;&#xA;constraintFFigureMinDelayLabel.horizontalSpan = 1;&#xA;constraintFFigureMinDelayLabel.verticalSpan = 1;&#xA;constraintFFigureMinDelayLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMinDelayLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMinDelayLabel, constraintFFigureMinDelayLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticmaxDelayDescriptionLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticmaxDelayDescriptionLabel0.setText(&quot;maxDelay:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticmaxDelayDescriptionLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticmaxDelayDescriptionLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalIndent = 0;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalSpan = 1;&#xA;constraintStaticmaxDelayDescriptionLabel0.verticalSpan = 1;&#xA;constraintStaticmaxDelayDescriptionLabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticmaxDelayDescriptionLabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticmaxDelayDescriptionLabel0, constraintStaticmaxDelayDescriptionLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMaxDelayLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMaxDelayLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMaxDelayLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMaxDelayLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMaxDelayLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMaxDelayLabel.horizontalIndent = 0;&#xA;constraintFFigureMaxDelayLabel.horizontalSpan = 1;&#xA;constraintFFigureMaxDelayLabel.verticalSpan = 1;&#xA;constraintFFigureMaxDelayLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMaxDelayLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMaxDelayLabel, constraintFFigureMaxDelayLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMsgLossLabel() {&#xA;&#x9;&#x9;return fFigureMsgLossLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMinDelayLabel() {&#xA;&#x9;&#x9;return fFigureMinDelayLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMaxDelayLabel() {&#xA;&#x9;&#x9;return fFigureMaxDelayLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class QualityOfServiceAssumptionsFigureDescriptor extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMsgLossLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMinDelayLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMaxDelayLabel; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public QualityOfServiceAssumptionsFigureDescriptor() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticheadlinelabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticheadlinelabel0.setText(&quot;role connector quality of service assumptions:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticheadlinelabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticheadlinelabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticheadlinelabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticheadlinelabel0.horizontalIndent = 0;&#xA;constraintStaticheadlinelabel0.horizontalSpan = 2;&#xA;constraintStaticheadlinelabel0.verticalSpan = 1;&#xA;constraintStaticheadlinelabel0.grabExcessHorizontalSpace = true;&#xA;constraintStaticheadlinelabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticheadlinelabel0, constraintStaticheadlinelabel0);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticmsglossdescriptonlabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticmsglossdescriptonlabel0.setText(&quot;message loss possible:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticmsglossdescriptonlabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticmsglossdescriptonlabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalIndent = 0;&#xA;constraintStaticmsglossdescriptonlabel0.horizontalSpan = 1;&#xA;constraintStaticmsglossdescriptonlabel0.verticalSpan = 1;&#xA;constraintStaticmsglossdescriptonlabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticmsglossdescriptonlabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticmsglossdescriptonlabel0, constraintStaticmsglossdescriptonlabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMsgLossLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMsgLossLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMsgLossLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMsgLossLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMsgLossLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMsgLossLabel.horizontalIndent = 0;&#xA;constraintFFigureMsgLossLabel.horizontalSpan = 1;&#xA;constraintFFigureMsgLossLabel.verticalSpan = 1;&#xA;constraintFFigureMsgLossLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMsgLossLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMsgLossLabel, constraintFFigureMsgLossLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticminDelayDescriptionLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticminDelayDescriptionLabel0.setText(&quot;minDelay:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticminDelayDescriptionLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticminDelayDescriptionLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalIndent = 0;&#xA;constraintStaticminDelayDescriptionLabel0.horizontalSpan = 1;&#xA;constraintStaticminDelayDescriptionLabel0.verticalSpan = 1;&#xA;constraintStaticminDelayDescriptionLabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticminDelayDescriptionLabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticminDelayDescriptionLabel0, constraintStaticminDelayDescriptionLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMinDelayLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMinDelayLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMinDelayLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMinDelayLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMinDelayLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMinDelayLabel.horizontalIndent = 0;&#xA;constraintFFigureMinDelayLabel.horizontalSpan = 1;&#xA;constraintFFigureMinDelayLabel.verticalSpan = 1;&#xA;constraintFFigureMinDelayLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMinDelayLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMinDelayLabel, constraintFFigureMinDelayLabel);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel staticmaxDelayDescriptionLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;staticmaxDelayDescriptionLabel0.setText(&quot;maxDelay:&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStaticmaxDelayDescriptionLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintStaticmaxDelayDescriptionLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalIndent = 0;&#xA;constraintStaticmaxDelayDescriptionLabel0.horizontalSpan = 1;&#xA;constraintStaticmaxDelayDescriptionLabel0.verticalSpan = 1;&#xA;constraintStaticmaxDelayDescriptionLabel0.grabExcessHorizontalSpace = false;&#xA;constraintStaticmaxDelayDescriptionLabel0.grabExcessVerticalSpace = false;&#xA;this.add(staticmaxDelayDescriptionLabel0, constraintStaticmaxDelayDescriptionLabel0);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMaxDelayLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureMaxDelayLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMaxDelayLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMaxDelayLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMaxDelayLabel.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureMaxDelayLabel.horizontalIndent = 0;&#xA;constraintFFigureMaxDelayLabel.horizontalSpan = 1;&#xA;constraintFFigureMaxDelayLabel.verticalSpan = 1;&#xA;constraintFFigureMaxDelayLabel.grabExcessHorizontalSpace = false;&#xA;constraintFFigureMaxDelayLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMaxDelayLabel, constraintFFigureMaxDelayLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMsgLossLabel() {&#xA;&#x9;&#x9;return fFigureMsgLossLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMinDelayLabel() {&#xA;&#x9;&#x9;return fFigureMinDelayLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMaxDelayLabel() {&#xA;&#x9;&#x9;return fFigureMaxDelayLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 255, 255, 100);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
@@ -444,7 +463,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.4"/>
+            parser="//@labelParsers/@implementations.5"/>
       </labels>
       <labels
           visualID="5021"
@@ -464,7 +483,7 @@
             editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.5"/>
+            parser="//@labelParsers/@implementations.6"/>
       </labels>
       <labels
           visualID="5022"
@@ -484,7 +503,7 @@
             editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.6"/>
+            parser="//@labelParsers/@implementations.7"/>
       </labels>
     </childNodes>
     <topLevelNodes
@@ -634,7 +653,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.18">
+              value="//@expressionProviders/@providers.0/@expressions.19">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -694,7 +713,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.16">
+                  value="//@expressionProviders/@providers.0/@expressions.17">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
               </initializers>
@@ -707,7 +726,7 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.17"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.18"/>
     </links>
     <links
         visualID="4008"
@@ -959,9 +978,11 @@
       <expressions
           body="if self.name.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;self.name&#xD;&#xA;endif"/>
       <expressions
-          body="self.bufferSize"/>
+          body="'size: '.concat(self.bufferSize.toString())"/>
       <expressions
           body="if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)&#xD;&#xA;then 'Discard Incoming Messages' else 'Displace Oldest Messages' endif"/>
+      <expressions
+          body="'message buffer: '.concat(self.name)"/>
       <expressions
           body="self.messageLossPossible.toString()"/>
       <expressions
@@ -991,7 +1012,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
@@ -1003,9 +1024,17 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
+        className="MessageBufferLabelExpressionLabelParser5018"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
         className="MessageBufferLabelExpressionLabelParser5019"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
     </implementations>
@@ -1013,7 +1042,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.2/@modelFacet"
         className="MessageBufferLabelExpressionLabelParser5025"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
     </implementations>
@@ -1021,7 +1050,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
         className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5020"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
     </implementations>
@@ -1029,7 +1058,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.1/@modelFacet"
         className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
     </implementations>
@@ -1037,7 +1066,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.2/@modelFacet"
         className="ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
     </implementations>

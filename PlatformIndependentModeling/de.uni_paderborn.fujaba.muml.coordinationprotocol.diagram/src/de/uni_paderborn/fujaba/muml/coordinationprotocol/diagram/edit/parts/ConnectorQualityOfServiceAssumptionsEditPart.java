@@ -345,6 +345,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
 					getMapMode().DPtoLP(8)));
+			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
 
@@ -479,5 +480,10 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 255, 255, 100);
 
 }

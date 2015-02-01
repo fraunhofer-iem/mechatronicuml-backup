@@ -253,25 +253,25 @@
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/MessageBuffer"/>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferDiagramLabel"/>
-            <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferSizeLabel"/>
             <viewExpression
-                body="self.bufferSize"/>
+                body="'size: '.concat(self.bufferSize.toString())"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferAvoidanceStrategyLabel"/>
+                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferOverflowAvoidanceStrategyLabel"/>
             <viewExpression
                 body="if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)&#xD;&#xA;then 'Discard Incoming Messages' else 'Displace Oldest Messages' endif"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferDiagramLabel"/>
+            <viewExpression
+                body="'message buffer: '.concat(self.name)"/>
           </labelMappings>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBuffferNode"/>

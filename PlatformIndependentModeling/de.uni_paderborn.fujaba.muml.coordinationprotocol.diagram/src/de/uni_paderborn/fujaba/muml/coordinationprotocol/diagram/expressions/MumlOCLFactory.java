@@ -47,7 +47,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression[24];
+		this.expressions = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression[25];
 		this.expressionBodies = new String[] {
 				"\'role1\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
@@ -60,8 +60,9 @@ public class MumlOCLFactory {
 				"1", //$NON-NLS-1$
 				"(\r\nif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' \'\r\n\tendif\r\n).concat(\r\n\tif self.name.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.name\r\n\tendif\r\n).concat(\r\n\tif self.dataType.name.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\t\' : \'.concat(self.dataType.name)\r\n\tendif\r\n).concat(\r\n\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\r\n\t\t\'\'\r\n\telse\r\n\t\t\',\'\r\n\tendif\r\n)\r\n\r\n", //$NON-NLS-1$
 				"if self.name.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tself.name\r\nendif", //$NON-NLS-1$
-				"self.bufferSize", //$NON-NLS-1$
+				"\'size: \'.concat(self.bufferSize.toString())", //$NON-NLS-1$
 				"if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)\r\nthen \'Discard Incoming Messages\' else \'Displace Oldest Messages\' endif", //$NON-NLS-1$
+				"\'message buffer: \'.concat(self.name)", //$NON-NLS-1$
 				"self.messageLossPossible.toString()", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
