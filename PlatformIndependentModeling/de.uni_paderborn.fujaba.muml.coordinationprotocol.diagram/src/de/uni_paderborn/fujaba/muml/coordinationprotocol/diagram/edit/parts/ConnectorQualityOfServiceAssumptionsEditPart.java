@@ -36,7 +36,10 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -339,7 +342,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 		public QualityOfServiceAssumptionsFigureDescriptor() {
 
 			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 2;
+			layoutThis.numColumns = 1;
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
@@ -359,6 +362,8 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 			staticheadlinelabel0
 					.setText("role connector quality of service assumptions:");
 
+			staticheadlinelabel0.setFont(STATICHEADLINELABEL0_FONT);
+
 			GridData constraintStaticheadlinelabel0 = new GridData();
 			constraintStaticheadlinelabel0.verticalAlignment = GridData.CENTER;
 			constraintStaticheadlinelabel0.horizontalAlignment = GridData.BEGINNING;
@@ -368,21 +373,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 			constraintStaticheadlinelabel0.grabExcessHorizontalSpace = true;
 			constraintStaticheadlinelabel0.grabExcessVerticalSpace = false;
 			this.add(staticheadlinelabel0, constraintStaticheadlinelabel0);
-
-			WrappingLabel staticmsglossdescriptonlabel0 = new WrappingLabel();
-
-			staticmsglossdescriptonlabel0.setText("message loss possible:");
-
-			GridData constraintStaticmsglossdescriptonlabel0 = new GridData();
-			constraintStaticmsglossdescriptonlabel0.verticalAlignment = GridData.CENTER;
-			constraintStaticmsglossdescriptonlabel0.horizontalAlignment = GridData.BEGINNING;
-			constraintStaticmsglossdescriptonlabel0.horizontalIndent = 0;
-			constraintStaticmsglossdescriptonlabel0.horizontalSpan = 1;
-			constraintStaticmsglossdescriptonlabel0.verticalSpan = 1;
-			constraintStaticmsglossdescriptonlabel0.grabExcessHorizontalSpace = false;
-			constraintStaticmsglossdescriptonlabel0.grabExcessVerticalSpace = false;
-			this.add(staticmsglossdescriptonlabel0,
-					constraintStaticmsglossdescriptonlabel0);
 
 			fFigureMsgLossLabel = new WrappingLabel();
 
@@ -398,21 +388,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 			constraintFFigureMsgLossLabel.grabExcessVerticalSpace = false;
 			this.add(fFigureMsgLossLabel, constraintFFigureMsgLossLabel);
 
-			WrappingLabel staticminDelayDescriptionLabel0 = new WrappingLabel();
-
-			staticminDelayDescriptionLabel0.setText("minDelay:");
-
-			GridData constraintStaticminDelayDescriptionLabel0 = new GridData();
-			constraintStaticminDelayDescriptionLabel0.verticalAlignment = GridData.CENTER;
-			constraintStaticminDelayDescriptionLabel0.horizontalAlignment = GridData.BEGINNING;
-			constraintStaticminDelayDescriptionLabel0.horizontalIndent = 0;
-			constraintStaticminDelayDescriptionLabel0.horizontalSpan = 1;
-			constraintStaticminDelayDescriptionLabel0.verticalSpan = 1;
-			constraintStaticminDelayDescriptionLabel0.grabExcessHorizontalSpace = false;
-			constraintStaticminDelayDescriptionLabel0.grabExcessVerticalSpace = false;
-			this.add(staticminDelayDescriptionLabel0,
-					constraintStaticminDelayDescriptionLabel0);
-
 			fFigureMinDelayLabel = new WrappingLabel();
 
 			fFigureMinDelayLabel.setText("");
@@ -426,21 +401,6 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 			constraintFFigureMinDelayLabel.grabExcessHorizontalSpace = false;
 			constraintFFigureMinDelayLabel.grabExcessVerticalSpace = false;
 			this.add(fFigureMinDelayLabel, constraintFFigureMinDelayLabel);
-
-			WrappingLabel staticmaxDelayDescriptionLabel0 = new WrappingLabel();
-
-			staticmaxDelayDescriptionLabel0.setText("maxDelay:");
-
-			GridData constraintStaticmaxDelayDescriptionLabel0 = new GridData();
-			constraintStaticmaxDelayDescriptionLabel0.verticalAlignment = GridData.CENTER;
-			constraintStaticmaxDelayDescriptionLabel0.horizontalAlignment = GridData.BEGINNING;
-			constraintStaticmaxDelayDescriptionLabel0.horizontalIndent = 0;
-			constraintStaticmaxDelayDescriptionLabel0.horizontalSpan = 1;
-			constraintStaticmaxDelayDescriptionLabel0.verticalSpan = 1;
-			constraintStaticmaxDelayDescriptionLabel0.grabExcessHorizontalSpace = false;
-			constraintStaticmaxDelayDescriptionLabel0.grabExcessVerticalSpace = false;
-			this.add(staticmaxDelayDescriptionLabel0,
-					constraintStaticmaxDelayDescriptionLabel0);
 
 			fFigureMaxDelayLabel = new WrappingLabel();
 
@@ -485,5 +445,12 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	 * @generated
 	 */
 	static final Color THIS_BACK = new Color(null, 255, 255, 100);
+
+	/**
+	 * @generated
+	 */
+	static final Font STATICHEADLINELABEL0_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

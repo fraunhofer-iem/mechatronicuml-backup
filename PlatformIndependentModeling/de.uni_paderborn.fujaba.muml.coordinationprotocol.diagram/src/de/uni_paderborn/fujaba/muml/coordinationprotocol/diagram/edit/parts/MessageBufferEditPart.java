@@ -41,7 +41,10 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -390,6 +393,9 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			fFigureMessageBufferNameLabel
 					.setBackgroundColor(FFIGUREMESSAGEBUFFERNAMELABEL_BACK);
 
+			fFigureMessageBufferNameLabel
+					.setFont(FFIGUREMESSAGEBUFFERNAMELABEL_FONT);
+
 			GridData constraintFFigureMessageBufferNameLabel = new GridData();
 			constraintFFigureMessageBufferNameLabel.verticalAlignment = GridData.CENTER;
 			constraintFFigureMessageBufferNameLabel.horizontalAlignment = GridData.BEGINNING;
@@ -503,5 +509,12 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 	 */
 	static final Color FFIGUREMESSAGEBUFFERNAMELABEL_BACK = new Color(null, 0,
 			255, 0);
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGUREMESSAGEBUFFERNAMELABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

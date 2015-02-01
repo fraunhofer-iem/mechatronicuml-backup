@@ -63,7 +63,7 @@ public class MumlOCLFactory {
 				"\'size: \'.concat(self.bufferSize.toString())", //$NON-NLS-1$
 				"if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)\r\nthen \'Discard Incoming Messages\' else \'Displace Oldest Messages\' endif", //$NON-NLS-1$
 				"\'message buffer: \'.concat(self.name)", //$NON-NLS-1$
-				"self.messageLossPossible.toString()", //$NON-NLS-1$
+				"if (self.messageLossPossible)\r\nthen \'Message Loss Possible\' else \'Message Loss NOT Possible\' endif", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$
 				"\'\'", //$NON-NLS-1$

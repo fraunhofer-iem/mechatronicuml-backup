@@ -337,7 +337,7 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MsgLossLabel"/>
             <viewExpression
-                body="self.messageLossPossible.toString()"/>
+                body="if (self.messageLossPossible)&#xD;&#xA;then 'Message Loss Possible' else 'Message Loss NOT Possible' endif"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"

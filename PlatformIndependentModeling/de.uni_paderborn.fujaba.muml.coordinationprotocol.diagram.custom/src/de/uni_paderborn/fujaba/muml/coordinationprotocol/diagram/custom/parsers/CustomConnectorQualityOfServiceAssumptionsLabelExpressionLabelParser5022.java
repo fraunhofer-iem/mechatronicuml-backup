@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022 {
 
 	public String getPrintString(IAdaptable element, int flags) {
-		String printString = "";
+		String printString = "MaxDelay: ";
 		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)element.getAdapter(EObject.class);		
 		TimeValue maxDelay = quosa.getMaxMessageDelay();
 		if(maxDelay==null)
@@ -36,7 +36,7 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 				expressionText = LanguageResource.serializeEObjectSafe(maxDelayExpr, maxDelay);
 			}
 			if(expressionText !=null)
-				printString= expressionText;
+				printString+= expressionText;
 		}		
 		//add the time unit to the displayed string
 		printString += " "+maxDelay.getUnit().toString();
