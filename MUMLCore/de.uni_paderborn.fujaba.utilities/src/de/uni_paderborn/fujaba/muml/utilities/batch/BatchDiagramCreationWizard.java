@@ -18,10 +18,12 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
@@ -50,7 +52,6 @@ import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.modelinstance.ui.commands.CreateDiagramCommand;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
-import de.uni_paderborn.fujaba.muml.utilities.UtilitiesPlugin;
 import de.uni_paderborn.fujaba.muml.utilities.ui.pages.DiagramHierarchyContentsSelectionPage;
 
 public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
@@ -100,9 +101,9 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 	}
 
 	protected DiagramHierarchyContentsSelectionPage createSelectionPage() {
+		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory(); 
 		DiagramHierarchyContentsSelectionPage selectionPage = new DiagramHierarchyContentsSelectionPage(
-				"diagram elements", null, null, UtilitiesPlugin.getDefault()
-						.getItemProvidersAdapterFactory());
+				"diagram elements", null, null, adapterFactory);
 
 		selectionPage.setTitle("Select source elements");
 		selectionPage
