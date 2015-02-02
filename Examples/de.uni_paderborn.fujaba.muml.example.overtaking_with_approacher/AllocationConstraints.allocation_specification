@@ -1,59 +1,96 @@
 runningExample {
 	
-	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
-	
-	
-	constraint differentLocation OvertakerDistributeCommAndDrv {
-		descriptors (first, second);
-		ocl self.allocateToDifferentECUs('overtakerCommunicator', 'overtakerDriver');
-	}
-	
-	constraint differentLocation OvertakeeDistributeCommAndDrv {
+		include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
+		
+		constraint differentLocation OvertakerDistributeCommAndDrv {
+			descriptors (first, second);
+			ocl self.allocateToDifferentECUs('overtakerCommunicator', 'overtakerDriver');
+		}
+		constraint differentLocation OvertakeeDistributeCommAndDrv {
 		descriptors (first, second);
 		ocl self.allocateToDifferentECUs('overtakeeCommunicator', 'overtakeeDriver');
-	}
-	
-	constraint differentLocation OvertakeeDistributeCommAndDrv {
+		}
+		constraint differentLocation ApproacherDistributeCommAndDrv {
 		descriptors (first, second);
 		ocl self.allocateToDifferentECUs('approacherCommunicator', 'approacherDriver');
+		}
+		
+	constraint requiredHardwareResourceInstance OvertakerMotorLSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerMotorL', 'overtakerMotor');
+	}
+	constraint requiredHardwareResourceInstance OvertakeeMotorLSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeMotorL', 'overtakeeMotor');
+	}
+	constraint requiredHardwareResourceInstance ApproacherMotorLSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherMotorL', 'approacherMotor');
+	}
+	constraint requiredHardwareResourceInstance OvertakerMotorRSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerMotorR', 'overtakerMotor');
+	}
+	constraint requiredHardwareResourceInstance OvertakeeMotorRSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeMotorR', 'overtakeeMotor');
+	}
+	constraint requiredHardwareResourceInstance ApproacherMotorRSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherMotorR', 'approacherMotor');
+	}
+		
+	constraint requiredHardwareResourceInstance OvertakerLineSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerLine', 'overtakerLine');
+	}
+	constraint requiredHardwareResourceInstance OvertakeeLineSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeLine', 'overtakeeLine');
+	}
+	constraint requiredHardwareResourceInstance ApproacherLineSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherLine', 'approacherLine');
+	}
+		
+	constraint requiredHardwareResourceInstance OvertakerDistanceSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerDistance', 'overtakerDistance');
+	}
+	constraint requiredHardwareResourceInstance OvertakeeDistanceSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeDistance', 'overtakeeDistance');
+	}
+	constraint requiredHardwareResourceInstance ApproacherDistanceSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherDistance', 'approacherDistance');
 	}
 	
-	
-    -- the underscore only works due to backward compatibility (see EssentialOCLLinkingService.getLinkedObjects(...))
-	context _'ocl'::String
-		-- converts the string's first character to uppercase
-		def: toUpperCaseFirst() : String
-		=
-		if self.size() = 0 then
-			self
-		else
-			self.at(1).toUpperCase() + if self.size() > 1 then self.substring(2, self.size()) else '' endif
-		endif
-
--- alternative implementations
-
+	constraint requiredHardwareResourceInstance OvertakerColorSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakerColor', 'overtakerColor');
+	}
+	constraint requiredHardwareResourceInstance OvertakeeColorSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('overtakeeColor', 'overtakeeColor');
+	}
+	constraint requiredHardwareResourceInstance ApproacherColorSensor {
+		descriptors (first, second);
+		ocl self.allocateToECU('approacherColor', 'approacherColor');
+	}
+		
+		
 	constraint requiredHardwareResourceInstance OvertakerComponentsToOvertakerPlatform {
 		descriptors (first, second);
---		--ocl self.allocateToECUs('c1', Set{'e1', 'e2'});
 		ocl self.allocateEmbeddedToPlatformInstance('overtaker', 'Overtaker');
 	}
-	
 	constraint requiredHardwareResourceInstance OvertakeeComponentsToOvertakeePlatform {
 		descriptors (first, second);
 		ocl self.allocateEmbeddedToPlatformInstance('overtakee', 'Overtakee');
 	}
-	
-	constraint requiredHardwareResourceInstance ApproacherComponentsToApproacherPlatform {
+	constraint requiredHardwareResourceInstance ApproacherComponentsToOvertakeePlatform {
 		descriptors (first, second);
 		ocl self.allocateEmbeddedToPlatformInstance('approacher', 'Approacher');
 	}
-
-	--constraint requiredHardwareResourceInstance OvertakerSensorsAndActors {
-	--	descriptors (first, second);
-	--	ocl self.allocateToECU('overtaker_lineFollower', 'overtaker_light')
-	--		->union(self.allocateToECU('overtaker_leftMotor', 'overtaker_motorL'))
-	--		->union(self.allocateToECU('overtaker_rightMotor', 'overtaker_motorR'))
-	--	;
-	--}
-	
+		
 }
