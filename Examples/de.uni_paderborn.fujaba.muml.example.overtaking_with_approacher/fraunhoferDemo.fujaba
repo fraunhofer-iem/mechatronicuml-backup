@@ -337,7 +337,7 @@
         <channels xmi:id="_tJIQgJ9XEeSDApXOK6N3KA" name="finishO"/>
       </states>
     </modelElements>
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_3ctPIJOQEeSZM-zEIRk3lw" name="appriacherDriverRTSC" behavioralElement="_EGtqUJOWEeSZM-zEIRk3lw">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_3ctPIJOQEeSZM-zEIRk3lw" name="approacherDriverRTSC" behavioralElement="_EGtqUJOWEeSZM-zEIRk3lw">
       <variables xmi:id="_FVxJYJ8FEeSDApXOK6N3KA" name="constVelFast" dataType="_FB0TRpJ7EeSSMde45fnrcg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_vC_jgJ8HEeSDApXOK6N3KA" value="18"/>
       </variables>
