@@ -246,11 +246,6 @@ public class OperationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 

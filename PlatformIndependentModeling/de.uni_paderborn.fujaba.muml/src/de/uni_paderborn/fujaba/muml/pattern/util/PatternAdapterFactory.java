@@ -87,10 +87,6 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 	protected PatternSwitch<Adapter> modelSwitch =
 		new PatternSwitch<Adapter>() {
 			@Override
-			public Adapter caseAdaptedFromCoordinationPattern(AdaptedFromCoordinationPattern object) {
-				return createAdaptedFromCoordinationPatternAdapter();
-			}
-			@Override
 			public Adapter caseCoordinationPattern(CoordinationPattern object) {
 				return createCoordinationPatternAdapter();
 			}
@@ -105,10 +101,6 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
-			}
-			@Override
-			public Adapter caseExtension(Extension object) {
-				return createExtensionAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -145,20 +137,6 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern <em>Adapted From Coordination Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern
-	 * @generated
-	 */
-	public Adapter createAdaptedFromCoordinationPatternAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern <em>Coordination Pattern</em>}'.
@@ -213,20 +191,6 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExtendableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.Extension <em>Extension</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.Extension
-	 * @generated
-	 */
-	public Adapter createExtensionAdapter() {
 		return null;
 	}
 

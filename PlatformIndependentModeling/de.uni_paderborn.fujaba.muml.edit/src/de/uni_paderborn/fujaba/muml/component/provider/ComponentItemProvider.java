@@ -259,11 +259,6 @@ public class ComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT__PORTS,
 				 ComponentFactory.eINSTANCE.createContinuousPort()));
 

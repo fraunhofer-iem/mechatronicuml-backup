@@ -71,268 +71,6 @@ public interface PatternPackage extends EPackage {
 	PatternPackage eINSTANCE = de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.AdaptedFromCoordinationPatternImpl <em>Adapted From Coordination Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.AdaptedFromCoordinationPatternImpl
-	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getAdaptedFromCoordinationPattern()
-	 * @generated
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN__EXTENSION = CorePackage.EXTENSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN__BASE = CorePackage.EXTENSION__BASE;
-
-	/**
-	 * The feature id for the '<em><b>Model Base</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
-
-	/**
-	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
-
-	/**
-	 * The feature id for the '<em><b>Adapted Pattern</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN__ADAPTED_PATTERN = CorePackage.EXTENSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Adapted From Coordination Pattern</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___ECLASS = CorePackage.EXTENSION___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___EIS_PROXY = CorePackage.EXTENSION___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___ERESOURCE = CorePackage.EXTENSION___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___ECONTAINER = CorePackage.EXTENSION___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___ECONTAINING_FEATURE = CorePackage.EXTENSION___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___ECONTAINMENT_FEATURE = CorePackage.EXTENSION___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___ECONTENTS = CorePackage.EXTENSION___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___EALL_CONTENTS = CorePackage.EXTENSION___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___ECROSS_REFERENCES = CorePackage.EXTENSION___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENSION___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___GET_ANNOTATION__STRING = CorePackage.EXTENSION___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENSION___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Adapted From Coordination Pattern</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTED_FROM_COORDINATION_PATTERN_OPERATION_COUNT = CorePackage.EXTENSION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl <em>Coordination Pattern</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,7 +78,7 @@ public interface PatternPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getCoordinationPattern()
 	 * @generated
 	 */
-	int COORDINATION_PATTERN = 1;
+	int COORDINATION_PATTERN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -431,6 +169,15 @@ public interface PatternPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PATTERN__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Adapted From Pattern</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN__ADAPTED_FROM_PATTERN = ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>Description Aspects</b></em>' containment reference.
@@ -674,7 +421,7 @@ public interface PatternPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getPlainTextualDescriptionAspects()
 	 * @generated
 	 */
-	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS = 2;
+	int PLAIN_TEXTUAL_DESCRIPTION_ASPECTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Overview</b></em>' attribute.
@@ -801,7 +548,7 @@ public interface PatternPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getLegalConfiguration()
 	 * @generated
 	 */
-	int LEGAL_CONFIGURATION = 3;
+	int LEGAL_CONFIGURATION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1046,27 +793,6 @@ public interface PatternPackage extends EPackage {
 	 */
 	int LEGAL_CONFIGURATION_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern <em>Adapted From Coordination Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Adapted From Coordination Pattern</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern
-	 * @generated
-	 */
-	EClass getAdaptedFromCoordinationPattern();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern#getAdaptedPattern <em>Adapted Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Adapted Pattern</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern#getAdaptedPattern()
-	 * @see #getAdaptedFromCoordinationPattern()
-	 * @generated
-	 */
-	EReference getAdaptedFromCoordinationPattern_AdaptedPattern();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern <em>Coordination Pattern</em>}'.
@@ -1319,24 +1045,6 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.AdaptedFromCoordinationPatternImpl <em>Adapted From Coordination Pattern</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.pattern.impl.AdaptedFromCoordinationPatternImpl
-		 * @see de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl#getAdaptedFromCoordinationPattern()
-		 * @generated
-		 */
-		EClass ADAPTED_FROM_COORDINATION_PATTERN = eINSTANCE.getAdaptedFromCoordinationPattern();
-
-		/**
-		 * The meta object literal for the '<em><b>Adapted Pattern</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ADAPTED_FROM_COORDINATION_PATTERN__ADAPTED_PATTERN = eINSTANCE.getAdaptedFromCoordinationPattern_AdaptedPattern();
-
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl <em>Coordination Pattern</em>}' class.
 		 * <!-- begin-user-doc -->

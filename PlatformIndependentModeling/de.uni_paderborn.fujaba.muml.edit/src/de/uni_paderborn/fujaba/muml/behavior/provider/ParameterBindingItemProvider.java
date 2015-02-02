@@ -208,11 +208,6 @@ public class ParameterBindingItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(BehaviorPackage.Literals.PARAMETER_BINDING__VALUE,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 

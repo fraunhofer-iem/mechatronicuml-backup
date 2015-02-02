@@ -85,14 +85,6 @@ public class PatternSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case PatternPackage.ADAPTED_FROM_COORDINATION_PATTERN: {
-				AdaptedFromCoordinationPattern adaptedFromCoordinationPattern = (AdaptedFromCoordinationPattern)theEObject;
-				T result = caseAdaptedFromCoordinationPattern(adaptedFromCoordinationPattern);
-				if (result == null) result = caseExtension(adaptedFromCoordinationPattern);
-				if (result == null) result = caseExtendableElement(adaptedFromCoordinationPattern);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case PatternPackage.COORDINATION_PATTERN: {
 				CoordinationPattern coordinationPattern = (CoordinationPattern)theEObject;
 				T result = caseCoordinationPattern(coordinationPattern);
@@ -121,21 +113,6 @@ public class PatternSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Adapted From Coordination Pattern</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Adapted From Coordination Pattern</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAdaptedFromCoordinationPattern(AdaptedFromCoordinationPattern object) {
-		return null;
 	}
 
 	/**
@@ -195,21 +172,6 @@ public class PatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extension</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extension</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtension(Extension object) {
 		return null;
 	}
 

@@ -219,11 +219,6 @@ public class MessageTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(MsgtypePackage.Literals.MESSAGE_TYPE__PARAMETERS,
 				 BehaviorFactory.eINSTANCE.createParameter()));
 	}

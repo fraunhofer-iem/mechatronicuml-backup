@@ -170,11 +170,6 @@ public class ActionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 

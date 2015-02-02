@@ -107,8 +107,6 @@ public class PatternValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case PatternPackage.ADAPTED_FROM_COORDINATION_PATTERN:
-				return validateAdaptedFromCoordinationPattern((AdaptedFromCoordinationPattern)value, diagnostics, context);
 			case PatternPackage.COORDINATION_PATTERN:
 				return validateCoordinationPattern((CoordinationPattern)value, diagnostics, context);
 			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS:
@@ -118,15 +116,6 @@ public class PatternValidator extends EObjectValidator {
 			default:
 				return true;
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAdaptedFromCoordinationPattern(AdaptedFromCoordinationPattern adaptedFromCoordinationPattern, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(adaptedFromCoordinationPattern, diagnostics, context);
 	}
 
 	/**

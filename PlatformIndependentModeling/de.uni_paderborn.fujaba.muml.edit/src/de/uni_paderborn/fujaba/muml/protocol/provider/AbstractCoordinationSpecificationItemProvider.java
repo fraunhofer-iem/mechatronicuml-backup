@@ -54,6 +54,7 @@ public class AbstractCoordinationSpecificationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addAdaptedFromPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +77,28 @@ public class AbstractCoordinationSpecificationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Adapted From Pattern feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAdaptedFromPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractCoordinationSpecification_adaptedFromPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractCoordinationSpecification_adaptedFromPattern_feature", "_UI_AbstractCoordinationSpecification_type"),
+				 ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -163,11 +186,6 @@ public class AbstractCoordinationSpecificationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
 
 		newChildDescriptors.add
 			(createChildParameter

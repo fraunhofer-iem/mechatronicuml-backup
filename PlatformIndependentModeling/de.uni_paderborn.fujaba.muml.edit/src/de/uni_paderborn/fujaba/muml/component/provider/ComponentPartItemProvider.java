@@ -314,11 +314,6 @@ public class ComponentPartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY,
 				 ValuetypeFactory.eINSTANCE.createCardinality()));
 

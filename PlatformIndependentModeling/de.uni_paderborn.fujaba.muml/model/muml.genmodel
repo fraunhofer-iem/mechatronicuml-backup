@@ -181,6 +181,8 @@
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfMessageBuffers"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/gmfConnectorQualityOfServiceAssumptions"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/adaptedFromPattern"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/CoordinationProtocol"/>
       <genClasses ecoreClass="muml.ecore#//protocol/Role">
@@ -538,10 +540,6 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//pattern">
-      <genClasses ecoreClass="muml.ecore#//pattern/AdaptedFromCoordinationPattern">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//pattern/AdaptedFromCoordinationPattern/adaptedPattern"/>
-      </genClasses>
       <genClasses ecoreClass="muml.ecore#//pattern/CoordinationPattern">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPattern/descriptionAspects"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//pattern/CoordinationPattern/legalConfigurations"/>

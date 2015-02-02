@@ -85,13 +85,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass adaptedFromCoordinationPatternEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass coordinationPatternEClass = null;
 
 	/**
@@ -211,24 +204,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PatternPackage.eNS_URI, thePatternPackage);
 		return thePatternPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAdaptedFromCoordinationPattern() {
-		return adaptedFromCoordinationPatternEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAdaptedFromCoordinationPattern_AdaptedPattern() {
-		return (EReference)adaptedFromCoordinationPatternEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -448,9 +423,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		adaptedFromCoordinationPatternEClass = createEClass(ADAPTED_FROM_COORDINATION_PATTERN);
-		createEReference(adaptedFromCoordinationPatternEClass, ADAPTED_FROM_COORDINATION_PATTERN__ADAPTED_PATTERN);
-
 		coordinationPatternEClass = createEClass(COORDINATION_PATTERN);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__DESCRIPTION_ASPECTS);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__LEGAL_CONFIGURATIONS);
@@ -500,24 +472,20 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		adaptedFromCoordinationPatternEClass.getESuperTypes().add(theCorePackage.getExtension());
 		coordinationPatternEClass.getESuperTypes().add(theProtocolPackage.getAbstractCoordinationSpecification());
 		legalConfigurationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		legalConfigurationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(adaptedFromCoordinationPatternEClass, AdaptedFromCoordinationPattern.class, "AdaptedFromCoordinationPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAdaptedFromCoordinationPattern_AdaptedPattern(), this.getCoordinationPattern(), null, "adaptedPattern", null, 1, -1, AdaptedFromCoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(coordinationPatternEClass, CoordinationPattern.class, "CoordinationPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationPattern_DescriptionAspects(), this.getPlainTextualDescriptionAspects(), null, "descriptionAspects", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_LegalConfigurations(), this.getLegalConfiguration(), this.getLegalConfiguration_CoordinationPattern(), "legalConfigurations", null, 0, -1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

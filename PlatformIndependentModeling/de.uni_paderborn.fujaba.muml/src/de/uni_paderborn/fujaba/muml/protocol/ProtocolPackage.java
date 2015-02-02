@@ -167,13 +167,22 @@ public interface ProtocolPackage extends EPackage {
 	int ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Adapted From Pattern</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Coordination Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -464,6 +473,15 @@ public interface ProtocolPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PROTOCOL__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Adapted From Pattern</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL__ADAPTED_FROM_PATTERN = ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Protocol</em>' class.
@@ -1579,6 +1597,17 @@ public interface ProtocolPackage extends EPackage {
 	EReference getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getAdaptedFromPattern <em>Adapted From Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Adapted From Pattern</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getAdaptedFromPattern()
+	 * @see #getAbstractCoordinationSpecification()
+	 * @generated
+	 */
+	EReference getAbstractCoordinationSpecification_AdaptedFromPattern();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector <em>Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1788,6 +1817,14 @@ public interface ProtocolPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = eINSTANCE.getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Adapted From Pattern</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN = eINSTANCE.getAbstractCoordinationSpecification_AdaptedFromPattern();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl <em>Role Connector</em>}' class.

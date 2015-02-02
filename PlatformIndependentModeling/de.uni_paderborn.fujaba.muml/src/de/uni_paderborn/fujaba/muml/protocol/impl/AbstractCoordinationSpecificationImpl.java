@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
@@ -22,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
@@ -42,6 +44,7 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getGmfAbstractCoordinationSpecification <em>Gmf Abstract Coordination Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getGmfMessageBuffers <em>Gmf Message Buffers</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getAdaptedFromPattern <em>Adapted From Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,6 +130,16 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getAdaptedFromPattern() <em>Adapted From Pattern</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdaptedFromPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CoordinationPattern> adaptedFromPattern;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,6 +309,18 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<CoordinationPattern> getAdaptedFromPattern() {
+		if (adaptedFromPattern == null) {
+			adaptedFromPattern = new EObjectResolvingEList<CoordinationPattern>(CoordinationPattern.class, this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN);
+		}
+		return adaptedFromPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -356,6 +381,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 				return getGmfMessageBuffers();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return getGmfConnectorQualityOfServiceAssumptions();
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN:
+				return getAdaptedFromPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -383,6 +410,10 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)newValue);
 				return;
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN:
+				getAdaptedFromPattern().clear();
+				getAdaptedFromPattern().addAll((Collection<? extends CoordinationPattern>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -406,6 +437,9 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)null);
+				return;
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN:
+				getAdaptedFromPattern().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -433,6 +467,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 				return GMF_MESSAGE_BUFFERS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN:
+				return adaptedFromPattern != null && !adaptedFromPattern.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

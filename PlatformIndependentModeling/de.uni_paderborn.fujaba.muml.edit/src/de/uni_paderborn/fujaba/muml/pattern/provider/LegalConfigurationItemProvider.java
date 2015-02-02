@@ -186,11 +186,6 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(PatternPackage.Literals.LEGAL_CONFIGURATION__PARAMETER_BINDINGS,
 				 BehaviorFactory.eINSTANCE.createParameterBinding()));
 	}

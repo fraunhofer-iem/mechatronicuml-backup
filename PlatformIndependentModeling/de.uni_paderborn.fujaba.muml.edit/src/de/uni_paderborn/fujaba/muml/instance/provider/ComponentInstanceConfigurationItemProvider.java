@@ -250,11 +250,6 @@ public class ComponentInstanceConfigurationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES,
 				 InstanceFactory.eINSTANCE.createStructuredComponentInstance()));
 

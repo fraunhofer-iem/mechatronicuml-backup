@@ -250,6 +250,15 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAbstractCoordinationSpecification_AdaptedFromPattern() {
+		return (EReference)abstractCoordinationSpecificationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoleConnector() {
 		return roleConnectorEClass;
 	}
@@ -396,6 +405,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		createEReference(abstractCoordinationSpecificationEClass, ABSTRACT_COORDINATION_SPECIFICATION__GMF_ABSTRACT_COORDINATION_SPECIFICATION);
 		createEReference(abstractCoordinationSpecificationEClass, ABSTRACT_COORDINATION_SPECIFICATION__GMF_MESSAGE_BUFFERS);
 		createEReference(abstractCoordinationSpecificationEClass, ABSTRACT_COORDINATION_SPECIFICATION__GMF_CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS);
+		createEReference(abstractCoordinationSpecificationEClass, ABSTRACT_COORDINATION_SPECIFICATION__ADAPTED_FROM_PATTERN);
 
 		coordinationProtocolEClass = createEClass(COORDINATION_PROTOCOL);
 
@@ -442,6 +452,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
+		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 
@@ -466,6 +477,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		initEReference(getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification(), this.getAbstractCoordinationSpecification(), null, "gmfAbstractCoordinationSpecification", null, 0, 1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCoordinationSpecification_GmfMessageBuffers(), theConnectorPackage.getMessageBuffer(), null, "gmfMessageBuffers", null, 0, -1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions(), this.getConnectorQualityOfServiceAssumptions(), null, "gmfConnectorQualityOfServiceAssumptions", null, 0, 1, AbstractCoordinationSpecification.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractCoordinationSpecification_AdaptedFromPattern(), thePatternPackage.getCoordinationPattern(), null, "adaptedFromPattern", null, 0, -1, AbstractCoordinationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationProtocolEClass, CoordinationProtocol.class, "CoordinationProtocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

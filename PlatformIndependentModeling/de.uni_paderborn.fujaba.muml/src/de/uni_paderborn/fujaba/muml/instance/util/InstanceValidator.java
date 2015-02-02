@@ -323,7 +323,7 @@ public class InstanceValidator extends MumlValidator {
 		"implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and \r\n" +
 		"\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance)\r\n" +
 		")->isEmpty()\r\n" +
-		"-- sthiele2: Exclude HybridPortInstance, DiscretePortInstance, ContinousPortInstance from the check";
+		"-- sthiele2: Check only HybridPortInstance, DiscretePortInstance, ContinousPortInstance ";
 
 	/**
 	 * Validates the PortInstanceMustDelegateToEmbeddedCIC constraint of '<em>Port Instance</em>'.

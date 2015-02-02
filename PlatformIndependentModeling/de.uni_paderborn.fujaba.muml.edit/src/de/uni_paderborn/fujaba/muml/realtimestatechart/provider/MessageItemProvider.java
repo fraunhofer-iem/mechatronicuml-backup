@@ -223,11 +223,6 @@ public class MessageItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING,
 				 BehaviorFactory.eINSTANCE.createParameterBinding()));
 	}

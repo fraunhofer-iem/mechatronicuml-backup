@@ -82,29 +82,6 @@ public class PatternItemProviderAdapterFactory extends PatternAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AdaptedFromCoordinationPatternItemProvider adaptedFromCoordinationPatternItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.pattern.AdaptedFromCoordinationPattern}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAdaptedFromCoordinationPatternAdapter() {
-		if (adaptedFromCoordinationPatternItemProvider == null) {
-			adaptedFromCoordinationPatternItemProvider = new AdaptedFromCoordinationPatternItemProvider(this);
-		}
-
-		return adaptedFromCoordinationPatternItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -272,7 +249,6 @@ public class PatternItemProviderAdapterFactory extends PatternAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
-		if (adaptedFromCoordinationPatternItemProvider != null) adaptedFromCoordinationPatternItemProvider.dispose();
 		if (coordinationPatternItemProvider != null) coordinationPatternItemProvider.dispose();
 		if (plainTextualDescriptionAspectsItemProvider != null) plainTextualDescriptionAspectsItemProvider.dispose();
 		if (legalConfigurationItemProvider != null) legalConfigurationItemProvider.dispose();

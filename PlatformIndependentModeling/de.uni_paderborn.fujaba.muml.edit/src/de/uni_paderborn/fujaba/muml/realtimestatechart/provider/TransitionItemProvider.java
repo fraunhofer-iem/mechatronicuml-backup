@@ -961,11 +961,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
 				 RealtimestatechartFactory.eINSTANCE.createSynchronization()));
 

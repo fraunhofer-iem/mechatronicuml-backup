@@ -339,11 +339,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.pattern.editor.AdaptedFromCoordinationPatternEditor$Factory"
-             type="http://www.fujaba.de/muml/pattern/0.3.18#AdaptedFromCoordinationPattern">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.pattern.editor.CoordinationPatternEditor$Factory"
              type="http://www.fujaba.de/muml/pattern/0.3.18#CoordinationPattern">
        </propertyEditor>

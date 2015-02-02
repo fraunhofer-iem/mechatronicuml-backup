@@ -441,11 +441,6 @@ public class RealtimeStatechartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(BehaviorPackage.Literals.BEHAVIOR__OPERATIONS,
 				 BehaviorFactory.eINSTANCE.createOperation()));
 

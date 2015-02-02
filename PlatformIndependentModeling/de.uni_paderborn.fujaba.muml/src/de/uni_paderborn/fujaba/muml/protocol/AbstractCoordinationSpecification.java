@@ -8,6 +8,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfAbstractCoordinationSpecification <em>Gmf Abstract Coordination Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfMessageBuffers <em>Gmf Message Buffers</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getAdaptedFromPattern <em>Adapted From Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -126,5 +128,20 @@ public interface AbstractCoordinationSpecification extends NamedElement, Comment
 	 * @generated
 	 */
 	ConnectorQualityOfServiceAssumptions getGmfConnectorQualityOfServiceAssumptions();
+
+	/**
+	 * Returns the value of the '<em><b>Adapted From Pattern</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todosd{document!}
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Adapted From Pattern</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification_AdaptedFromPattern()
+	 * @model
+	 * @generated
+	 */
+	EList<CoordinationPattern> getAdaptedFromPattern();
 
 } // AbstractCoordinationSpecification

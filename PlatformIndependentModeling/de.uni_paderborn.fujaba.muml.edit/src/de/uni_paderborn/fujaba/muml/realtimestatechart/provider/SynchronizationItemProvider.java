@@ -252,11 +252,6 @@ public class SynchronizationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 

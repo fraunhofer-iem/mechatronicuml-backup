@@ -300,11 +300,6 @@ public class ComponentInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
 				 InstanceFactory.eINSTANCE.createContinuousPortInstance()));
 

@@ -277,11 +277,6 @@ public class MessageBufferItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE,
 				 ValuetypeFactory.eINSTANCE.createNaturalNumber()));
 	}

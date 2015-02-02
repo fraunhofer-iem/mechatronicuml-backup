@@ -196,11 +196,6 @@ public class TimeValueItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 

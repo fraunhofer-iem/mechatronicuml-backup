@@ -32,15 +32,6 @@ public interface PatternFactory extends EFactory {
 	PatternFactory eINSTANCE = de.uni_paderborn.fujaba.muml.pattern.impl.PatternFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Adapted From Coordination Pattern</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Adapted From Coordination Pattern</em>'.
-	 * @generated
-	 */
-	AdaptedFromCoordinationPattern createAdaptedFromCoordinationPattern();
-
-	/**
 	 * Returns a new object of class '<em>Coordination Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

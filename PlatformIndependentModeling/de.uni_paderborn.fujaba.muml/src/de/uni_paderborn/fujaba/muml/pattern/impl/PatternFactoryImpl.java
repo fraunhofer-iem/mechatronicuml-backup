@@ -66,23 +66,12 @@ public class PatternFactoryImpl extends EFactoryImpl implements PatternFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PatternPackage.ADAPTED_FROM_COORDINATION_PATTERN: return createAdaptedFromCoordinationPattern();
 			case PatternPackage.COORDINATION_PATTERN: return createCoordinationPattern();
 			case PatternPackage.PLAIN_TEXTUAL_DESCRIPTION_ASPECTS: return createPlainTextualDescriptionAspects();
 			case PatternPackage.LEGAL_CONFIGURATION: return createLegalConfiguration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AdaptedFromCoordinationPattern createAdaptedFromCoordinationPattern() {
-		AdaptedFromCoordinationPatternImpl adaptedFromCoordinationPattern = new AdaptedFromCoordinationPatternImpl();
-		return adaptedFromCoordinationPattern;
 	}
 
 	/**

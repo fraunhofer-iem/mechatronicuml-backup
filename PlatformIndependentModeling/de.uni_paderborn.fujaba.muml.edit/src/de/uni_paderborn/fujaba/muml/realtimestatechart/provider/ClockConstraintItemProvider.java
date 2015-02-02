@@ -325,11 +325,6 @@ public class ClockConstraintItemProvider extends ExtendableElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 PatternFactory.eINSTANCE.createAdaptedFromCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
 				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
