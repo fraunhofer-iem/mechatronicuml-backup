@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_gkmq8KrGEeScJ-0YDJS4Tg" type="Hardware" name="ResourceRepository.resource_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_gkmq8arGEeScJ-0YDJS4Tg"/>
+  <element xmi:type="hwresource:ResourceRepository" href="../fraunhoferDemo.fujaba#_s8IWoae4EeSK_8TqY1SjtQ"/>
+</notation:Diagram>

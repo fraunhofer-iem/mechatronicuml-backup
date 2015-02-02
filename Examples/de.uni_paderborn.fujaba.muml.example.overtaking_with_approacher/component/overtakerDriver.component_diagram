@@ -1,48 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_4Jhn4JRLEeSZM-zEIRk3lw" type="Component" name="overtakerDriver.component_diagram" measurementUnit="Pixel">
-  <children xmi:type="notation:Shape" xmi:id="_4Jhn4pRLEeSZM-zEIRk3lw" type="2006" fontName="Segoe UI" lineColor="0">
-    <children xmi:type="notation:DecorationNode" xmi:id="_4Jhn5JRLEeSZM-zEIRk3lw" type="5028"/>
-    <children xmi:type="notation:Shape" xmi:id="_6KsRkJRPEeSZM-zEIRk3lw" type="3013" fontName="Segoe UI" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_6KsRkpRPEeSZM-zEIRk3lw" type="5024">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_6KsRk5RPEeSZM-zEIRk3lw" y="5"/>
-      </children>
-      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.muml#_SA7VoJRKEeSZM-zEIRk3lw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6KsRkZRPEeSZM-zEIRk3lw" x="325" y="48"/>
-    </children>
-    <children xmi:type="notation:Shape" xmi:id="_6KsRlJRPEeSZM-zEIRk3lw" type="3013" fontName="Segoe UI" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_6KsRlpRPEeSZM-zEIRk3lw" type="5024">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_6KsRl5RPEeSZM-zEIRk3lw" y="5"/>
-      </children>
-      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.muml#_Ut7HYJRKEeSZM-zEIRk3lw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6KsRlZRPEeSZM-zEIRk3lw" x="12" y="-12"/>
-    </children>
-    <children xmi:type="notation:Shape" xmi:id="_6KsRmJRPEeSZM-zEIRk3lw" type="3013" fontName="Segoe UI" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_6KsRmpRPEeSZM-zEIRk3lw" type="5024">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_6KsRm5RPEeSZM-zEIRk3lw" y="5"/>
-      </children>
-      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.muml#_yJ8ggJRKEeSZM-zEIRk3lw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6KsRmZRPEeSZM-zEIRk3lw" x="12" y="-12"/>
-    </children>
-    <children xmi:type="notation:Shape" xmi:id="_bKZM05RQEeSZM-zEIRk3lw" type="3010" fontName="Segoe UI" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_bKZM1ZRQEeSZM-zEIRk3lw" type="5012">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_bKZM1pRQEeSZM-zEIRk3lw" y="5"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_bKZM15RQEeSZM-zEIRk3lw" type="5025">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_bKZM2JRQEeSZM-zEIRk3lw" y="5"/>
-      </children>
-      <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.muml#_bKPb0JRQEeSZM-zEIRk3lw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bKZM1JRQEeSZM-zEIRk3lw"/>
-    </children>
-    <children xmi:type="notation:Shape" xmi:id="_-uaZ4J8PEeSDApXOK6N3KA" type="3013" fontName="Segoe UI" lineColor="0">
-      <children xmi:type="notation:DecorationNode" xmi:id="_-uaZ4p8PEeSDApXOK6N3KA" type="5024">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_-uaZ458PEeSDApXOK6N3KA" y="5"/>
-      </children>
-      <element xmi:type="component:HybridPort" href="../fraunhoferDemo.muml#_-uUTQJ8PEeSDApXOK6N3KA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-uaZ4Z8PEeSDApXOK6N3KA" x="36" y="97"/>
-    </children>
-    <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.muml#_BQCDAJOUEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Jhn45RLEeSZM-zEIRk3lw" x="60" y="72" width="337" height="109"/>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_PuWfgKrGEeScJ-0YDJS4Tg" type="Component" name="overtakerDriver.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_PuWfgqrGEeScJ-0YDJS4Tg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_PuWfhKrGEeScJ-0YDJS4Tg" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.fujaba#_BQCDAJOUEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PuWfg6rGEeScJ-0YDJS4Tg"/>
   </children>
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_4Jhn4ZRLEeSZM-zEIRk3lw"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.muml#_FB0TTZJ7EeSSMde45fnrcg"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_PuWfgarGEeScJ-0YDJS4Tg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TTZJ7EeSSMde45fnrcg"/>
 </notation:Diagram>

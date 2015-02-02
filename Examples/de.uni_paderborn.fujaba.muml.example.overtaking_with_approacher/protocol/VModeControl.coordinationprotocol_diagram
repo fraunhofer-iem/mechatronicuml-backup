@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_DOrsEKrBEeScJ-0YDJS4Tg" type="Coordination Protocol" name="VModeControl.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_DOrsEqrBEeScJ-0YDJS4Tg" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DOrsFKrBEeScJ-0YDJS4Tg" type="7005"/>
+    <element xmi:type="protocol:CoordinationProtocol" href="../fraunhoferDemo.fujaba#_P1DbIJQiEeSZM-zEIRk3lw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DOrsE6rBEeScJ-0YDJS4Tg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_DOrsEarBEeScJ-0YDJS4Tg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TSpJ7EeSSMde45fnrcg"/>
+</notation:Diagram>

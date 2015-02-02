@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r2996)-->
+<!--muml metamodel version 0.3.2 (r13960)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.0/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_FB0TQJJ7EeSSMde45fnrcg">
   <categories xmi:id="_FB0TQZJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TQpJ7EeSSMde45fnrcg" name="VOID"/>
@@ -161,44 +161,36 @@
       <states xmi:id="_f9MX8ZKkEeSSMde45fnrcg" name="init" outgoingTransitions="_KyjlQKMCEeSbmbyTJYAEVw _Jc6A8KMCEeSbmbyTJYAEVw" incomingTransitions="_KJbvwKMCEeSbmbyTJYAEVw _KyjlQKMCEeSbmbyTJYAEVw" initial="true">
         <entryEvent xmi:id="_0SKsEKMCEeSbmbyTJYAEVw">
           <action xmi:id="_0vW-YKMCEeSbmbyTJYAEVw" name="checkColor">
-            <expressions xsi:type="actionlanguage:Block" xmi:id="_fdjOcKe0EeSK_8TqY1SjtQ">
-              <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_fdjOcae0EeSK_8TqY1SjtQ">
-                <ifCondition xsi:type="sdcec:LogicalExpression" xmi:id="_fdjOcqe0EeSK_8TqY1SjtQ" operator="OR">
-                  <leftExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_fdjOc6e0EeSK_8TqY1SjtQ" operator="EQUAL">
-                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fdjOdKe0EeSK_8TqY1SjtQ" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
-                    <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fdjOdae0EeSK_8TqY1SjtQ" typedNamedElement="_5dUiUKMCEeSbmbyTJYAEVw"/>
-                  </leftExpression>
-                  <rightExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_fdjOdqe0EeSK_8TqY1SjtQ" operator="EQUAL">
-                    <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fdjOd6e0EeSK_8TqY1SjtQ" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
-                    <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fdjOeKe0EeSK_8TqY1SjtQ" typedNamedElement="_9iJpsKMCEeSbmbyTJYAEVw"/>
-                  </rightExpression>
+            <expressions xsi:type="actionlanguage:Block" xmi:id="_GPuB4KrGEeScJ-0YDJS4Tg">
+              <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_GPuB4arGEeScJ-0YDJS4Tg">
+                <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_GPuB4qrGEeScJ-0YDJS4Tg" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_GPuB46rGEeScJ-0YDJS4Tg" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
+                  <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_GPuB5KrGEeScJ-0YDJS4Tg" typedNamedElement="_5dUiUKMCEeSbmbyTJYAEVw"/>
                 </ifCondition>
-                <ifBlock xmi:id="_fdjOeae0EeSK_8TqY1SjtQ">
-                  <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_fdjOeqe0EeSK_8TqY1SjtQ">
-                    <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_fdjOe6e0EeSK_8TqY1SjtQ" operator="EQUAL">
-                      <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fdjOfKe0EeSK_8TqY1SjtQ" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
-                      <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_fdjOfae0EeSK_8TqY1SjtQ" typedNamedElement="_5dUiUKMCEeSbmbyTJYAEVw"/>
-                    </ifCondition>
-                    <ifBlock xmi:id="_fdjOfqe0EeSK_8TqY1SjtQ">
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fdjOf6e0EeSK_8TqY1SjtQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fdjOgKe0EeSK_8TqY1SjtQ" value="1"/>
-                        <lhs_typedNamedElementExpression xmi:id="_fdjOgae0EeSK_8TqY1SjtQ" typedNamedElement="_YmU3IKMCEeSbmbyTJYAEVw"/>
-                      </expressions>
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fdjOgqe0EeSK_8TqY1SjtQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fdjOg6e0EeSK_8TqY1SjtQ" value="true"/>
-                        <lhs_typedNamedElementExpression xmi:id="_fdjOhKe0EeSK_8TqY1SjtQ" typedNamedElement="_e4UZoKMCEeSbmbyTJYAEVw"/>
-                      </expressions>
-                    </ifBlock>
-                    <elseBlock xmi:id="_fdjOhae0EeSK_8TqY1SjtQ">
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fdjOhqe0EeSK_8TqY1SjtQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fdjOh6e0EeSK_8TqY1SjtQ" value="2"/>
-                        <lhs_typedNamedElementExpression xmi:id="_fdjOiKe0EeSK_8TqY1SjtQ" typedNamedElement="_YmU3IKMCEeSbmbyTJYAEVw"/>
-                      </expressions>
-                      <expressions xsi:type="actionlanguage:Assignment" xmi:id="_fdjOiae0EeSK_8TqY1SjtQ" assignOperator=":=">
-                        <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_fdjOiqe0EeSK_8TqY1SjtQ" value="true"/>
-                        <lhs_typedNamedElementExpression xmi:id="_fdjOi6e0EeSK_8TqY1SjtQ" typedNamedElement="_e4UZoKMCEeSbmbyTJYAEVw"/>
-                      </expressions>
-                    </elseBlock>
+                <ifBlock xmi:id="_GPuB5arGEeScJ-0YDJS4Tg">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_GPuB5qrGEeScJ-0YDJS4Tg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GPuB56rGEeScJ-0YDJS4Tg" value="1"/>
+                    <lhs_typedNamedElementExpression xmi:id="_GPuB6KrGEeScJ-0YDJS4Tg" typedNamedElement="_YmU3IKMCEeSbmbyTJYAEVw"/>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_GPuB6arGEeScJ-0YDJS4Tg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GPuB6qrGEeScJ-0YDJS4Tg" value="true"/>
+                    <lhs_typedNamedElementExpression xmi:id="_GPuB66rGEeScJ-0YDJS4Tg" typedNamedElement="_e4UZoKMCEeSbmbyTJYAEVw"/>
+                  </expressions>
+                </ifBlock>
+              </expressions>
+              <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_GPuB7KrGEeScJ-0YDJS4Tg">
+                <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_GPuB7arGEeScJ-0YDJS4Tg" operator="EQUAL">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_GPuB7qrGEeScJ-0YDJS4Tg" typedNamedElement="_MuAI0KMDEeSbmbyTJYAEVw"/>
+                  <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_GPuB76rGEeScJ-0YDJS4Tg" typedNamedElement="_9iJpsKMCEeSbmbyTJYAEVw"/>
+                </ifCondition>
+                <ifBlock xmi:id="_GPuB8KrGEeScJ-0YDJS4Tg">
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_GPuB8arGEeScJ-0YDJS4Tg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GPuB8qrGEeScJ-0YDJS4Tg" value="2"/>
+                    <lhs_typedNamedElementExpression xmi:id="_GPuB86rGEeScJ-0YDJS4Tg" typedNamedElement="_YmU3IKMCEeSbmbyTJYAEVw"/>
+                  </expressions>
+                  <expressions xsi:type="actionlanguage:Assignment" xmi:id="_GPuB9KrGEeScJ-0YDJS4Tg" assignOperator=":=">
+                    <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_GPuB9arGEeScJ-0YDJS4Tg" value="true"/>
+                    <lhs_typedNamedElementExpression xmi:id="_GPuB9qrGEeScJ-0YDJS4Tg" typedNamedElement="_e4UZoKMCEeSbmbyTJYAEVw"/>
                   </expressions>
                 </ifBlock>
               </expressions>
@@ -1682,10 +1674,10 @@
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_EacfYJQqEeSZM-zEIRk3lw" name="limitDrivingRoleRTSC" behavioralElement="_nWrgJJQnEeSZM-zEIRk3lw">
       <variables xmi:id="_GHEf0KL9EeSbmbyTJYAEVw" name="limit" dataType="_FB0TQ5J7EeSSMde45fnrcg">
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_HcT0cKL9EeSbmbyTJYAEVw" value="true"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_CS5HUKrDEeScJ-0YDJS4Tg" value="true"/>
       </variables>
       <variables xmi:id="_H18ccKL9EeSbmbyTJYAEVw" name="unlimit" dataType="_FB0TQ5J7EeSSMde45fnrcg">
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_JtE9MKL9EeSbmbyTJYAEVw" value="true"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_DTRmQKrDEeScJ-0YDJS4Tg" value="true"/>
       </variables>
       <transitions xmi:id="_AX1sIKL9EeSbmbyTJYAEVw" priority="1" target="_-kQ1sKL8EeSbmbyTJYAEVw" source="_EacfYZQqEeSZM-zEIRk3lw">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_KpqhQKL9EeSbmbyTJYAEVw" typedNamedElement="_GHEf0KL9EeSbmbyTJYAEVw"/>
@@ -1703,11 +1695,11 @@
       <states xmi:id="_-kQ1sKL8EeSbmbyTJYAEVw" name="fix" outgoingTransitions="_A7snIKL9EeSbmbyTJYAEVw" incomingTransitions="_AX1sIKL9EeSbmbyTJYAEVw"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_Far0YJQqEeSZM-zEIRk3lw" name="limiterRoleRTSC" behavioralElement="_nWrgIJQnEeSZM-zEIRk3lw">
-      <variables xmi:id="_aI_9EKL9EeSbmbyTJYAEVw" name="limit" dataType="_FB0TQ5J7EeSSMde45fnrcg">
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_bm8hwKL9EeSbmbyTJYAEVw" value="false"/>
-      </variables>
       <variables xmi:id="_cOzzAKL9EeSbmbyTJYAEVw" name="unlimit" dataType="_FB0TQ5J7EeSSMde45fnrcg">
-        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_eHz8AKL9EeSbmbyTJYAEVw" value="false"/>
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="__IeZwKrCEeScJ-0YDJS4Tg" value="false"/>
+      </variables>
+      <variables xmi:id="_aI_9EKL9EeSbmbyTJYAEVw" name="limit" dataType="_FB0TQ5J7EeSSMde45fnrcg">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_AZ3wMKrDEeScJ-0YDJS4Tg" value="false"/>
       </variables>
       <transitions xmi:id="_UH9AoKL9EeSbmbyTJYAEVw" priority="1" target="_SobHkKL9EeSbmbyTJYAEVw" source="_Far0YZQqEeSZM-zEIRk3lw">
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_VaWcoKL9EeSbmbyTJYAEVw" kind="TRIGGER">
@@ -2369,94 +2361,94 @@
     </modelElements>
     <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_nWhvIJQnEeSZM-zEIRk3lw" name="LimitVelocity">
       <verificationConstraintRepositories xsi:type="mtctl:PropertyRepository" xmi:id="_wwtv0KMIEeSwy6Dvtdi1ng">
-        <properties xmi:id="_wwtv0aMIEeSwy6Dvtdi1ng" comment="a deadlock never occurs">
-          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_wwtv0qMIEeSwy6Dvtdi1ng">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_wwtv06MIEeSwy6Dvtdi1ng">
-              <opd xsi:type="Predicates:DeadlockExpr" xmi:id="_wwtv1KMIEeSwy6Dvtdi1ng"/>
+        <properties xmi:id="_8mbTwKrCEeScJ-0YDJS4Tg" comment="a deadlock never occurs">
+          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_8mbTwarCEeScJ-0YDJS4Tg">
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_8mbTwqrCEeScJ-0YDJS4Tg">
+              <opd xsi:type="Predicates:DeadlockExpr" xmi:id="_8mbTw6rCEeScJ-0YDJS4Tg"/>
             </expr>
           </expression>
         </properties>
-        <properties xmi:id="_wwtv1aMIEeSwy6Dvtdi1ng" comment="a buffer overflow never occurs">
-          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_wwtv1qMIEeSwy6Dvtdi1ng">
-            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_wwtv16MIEeSwy6Dvtdi1ng">
-              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_wwtv2KMIEeSwy6Dvtdi1ng"/>
+        <properties xmi:id="_8mbTxKrCEeScJ-0YDJS4Tg" comment="a buffer overflow never occurs">
+          <expression xsi:type="Quantifiers:AGExpr" xmi:id="_8mbTxarCEeScJ-0YDJS4Tg">
+            <expr xsi:type="BooleanLogic:NotExpr" xmi:id="_8mbTxqrCEeScJ-0YDJS4Tg">
+              <opd xsi:type="Predicates:BufferOverflowExpr" xmi:id="_8mbTx6rCEeScJ-0YDJS4Tg"/>
             </expr>
           </expression>
         </properties>
-        <properties xmi:id="_wwtv2aMIEeSwy6Dvtdi1ng" comment="there is no transition that can never be fired">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_wwtv2qMIEeSwy6Dvtdi1ng">
-            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_wwtv26MIEeSwy6Dvtdi1ng">
-              <expr xsi:type="Predicates:TransitionFiringExpr" xmi:id="_wwtv3KMIEeSwy6Dvtdi1ng">
-                <transition xsi:type="Comparables:MumlElemExpr" xmi:id="_wwtv3aMIEeSwy6Dvtdi1ng" elem="_wwtv3qMIEeSwy6Dvtdi1ng"/>
+        <properties xmi:id="_8mbTyKrCEeScJ-0YDJS4Tg" comment="there is no transition that can never be fired">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_8mbTyarCEeScJ-0YDJS4Tg">
+            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_8mbTyqrCEeScJ-0YDJS4Tg">
+              <expr xsi:type="Predicates:TransitionFiringExpr" xmi:id="_8mbTy6rCEeScJ-0YDJS4Tg">
+                <transition xsi:type="Comparables:MumlElemExpr" xmi:id="_8mbTzKrCEeScJ-0YDJS4Tg" elem="_8mbTzarCEeScJ-0YDJS4Tg"/>
               </expr>
             </formula>
-            <var xmi:id="_wwtv3qMIEeSwy6Dvtdi1ng" name="t">
-              <set xsi:type="Sets:TransitionSetExpr" xmi:id="_wwtv36MIEeSwy6Dvtdi1ng"/>
+            <var xmi:id="_8mbTzarCEeScJ-0YDJS4Tg" name="t">
+              <set xsi:type="Sets:TransitionSetExpr" xmi:id="_8mbTzqrCEeScJ-0YDJS4Tg"/>
             </var>
           </expression>
         </properties>
-        <properties xmi:id="_wwtv4KMIEeSwy6Dvtdi1ng" comment="there is no state that can never be active">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_wwtv4aMIEeSwy6Dvtdi1ng">
-            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_wwtv4qMIEeSwy6Dvtdi1ng">
-              <expr xsi:type="Predicates:StateActiveExpr" xmi:id="_wwtv46MIEeSwy6Dvtdi1ng">
-                <state xsi:type="Comparables:MumlElemExpr" xmi:id="_wwtv5KMIEeSwy6Dvtdi1ng" elem="_wwtv5aMIEeSwy6Dvtdi1ng"/>
+        <properties xmi:id="_8mbTz6rCEeScJ-0YDJS4Tg" comment="there is no state that can never be active">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_8mbT0KrCEeScJ-0YDJS4Tg">
+            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_8mbT0arCEeScJ-0YDJS4Tg">
+              <expr xsi:type="Predicates:StateActiveExpr" xmi:id="_8mbT0qrCEeScJ-0YDJS4Tg">
+                <state xsi:type="Comparables:MumlElemExpr" xmi:id="_8mbT06rCEeScJ-0YDJS4Tg" elem="_8mbT1KrCEeScJ-0YDJS4Tg"/>
               </expr>
             </formula>
-            <var xmi:id="_wwtv5aMIEeSwy6Dvtdi1ng" name="s">
-              <set xsi:type="Sets:StateSetExpr" xmi:id="_wwtv5qMIEeSwy6Dvtdi1ng"/>
+            <var xmi:id="_8mbT1KrCEeScJ-0YDJS4Tg" name="s">
+              <set xsi:type="Sets:StateSetExpr" xmi:id="_8mbT1arCEeScJ-0YDJS4Tg"/>
             </var>
           </expression>
         </properties>
-        <properties xmi:id="_wwtv56MIEeSwy6Dvtdi1ng" comment="there is no message type that cannot possibly arrive in a buffer">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_wwtv6KMIEeSwy6Dvtdi1ng">
-            <formula xsi:type="Quantifiers:ExistenceQuantExpr" xmi:id="_wwtv6aMIEeSwy6Dvtdi1ng">
-              <formula xsi:type="Quantifiers:EFExpr" xmi:id="_wwtv6qMIEeSwy6Dvtdi1ng">
-                <expr xsi:type="Predicates:MessageInBufferExpr" xmi:id="_wwtv66MIEeSwy6Dvtdi1ng">
-                  <buffer xsi:type="Comparables:MumlElemExpr" xmi:id="_wwtv7KMIEeSwy6Dvtdi1ng" elem="_wwtv7qMIEeSwy6Dvtdi1ng"/>
-                  <message xsi:type="Comparables:MumlElemExpr" xmi:id="_wwtv7aMIEeSwy6Dvtdi1ng" elem="_wwtv8KMIEeSwy6Dvtdi1ng"/>
+        <properties xmi:id="_8mbT1qrCEeScJ-0YDJS4Tg" comment="there is no message type that cannot possibly arrive in a buffer">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_8mbT16rCEeScJ-0YDJS4Tg">
+            <formula xsi:type="Quantifiers:ExistenceQuantExpr" xmi:id="_8mbT2KrCEeScJ-0YDJS4Tg">
+              <formula xsi:type="Quantifiers:EFExpr" xmi:id="_8mbT2arCEeScJ-0YDJS4Tg">
+                <expr xsi:type="Predicates:MessageInBufferExpr" xmi:id="_8mbT2qrCEeScJ-0YDJS4Tg">
+                  <buffer xsi:type="Comparables:MumlElemExpr" xmi:id="_8mbT26rCEeScJ-0YDJS4Tg" elem="_8mbT3arCEeScJ-0YDJS4Tg"/>
+                  <message xsi:type="Comparables:MumlElemExpr" xmi:id="_8mbT3KrCEeScJ-0YDJS4Tg" elem="_8mbT36rCEeScJ-0YDJS4Tg"/>
                 </expr>
               </formula>
-              <var xmi:id="_wwtv7qMIEeSwy6Dvtdi1ng" name="b">
-                <set xsi:type="Sets:BufferSetExpr" xmi:id="_wwtv76MIEeSwy6Dvtdi1ng"/>
+              <var xmi:id="_8mbT3arCEeScJ-0YDJS4Tg" name="b">
+                <set xsi:type="Sets:BufferSetExpr" xmi:id="_8mbT3qrCEeScJ-0YDJS4Tg"/>
               </var>
             </formula>
-            <var xmi:id="_wwtv8KMIEeSwy6Dvtdi1ng" name="m">
-              <set xsi:type="Sets:MessageSetExpr" xmi:id="_wwtv8aMIEeSwy6Dvtdi1ng"/>
+            <var xmi:id="_8mbT36rCEeScJ-0YDJS4Tg" name="m">
+              <set xsi:type="Sets:MessageSetExpr" xmi:id="_8mbT4KrCEeScJ-0YDJS4Tg"/>
             </var>
           </expression>
         </properties>
-        <properties xmi:id="_wwtv8qMIEeSwy6Dvtdi1ng" comment="there is no message type that cannot possibly be in transit">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_wwtv86MIEeSwy6Dvtdi1ng">
-            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_wwtv9KMIEeSwy6Dvtdi1ng">
-              <expr xsi:type="Predicates:MessageInTransitExpr" xmi:id="_wwtv9aMIEeSwy6Dvtdi1ng">
-                <message xsi:type="Comparables:MumlElemExpr" xmi:id="_wwtv9qMIEeSwy6Dvtdi1ng" elem="_wwtv96MIEeSwy6Dvtdi1ng"/>
+        <properties xmi:id="_8mbT4arCEeScJ-0YDJS4Tg" comment="there is no message type that cannot possibly be in transit">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_8mbT4qrCEeScJ-0YDJS4Tg">
+            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_8mbT46rCEeScJ-0YDJS4Tg">
+              <expr xsi:type="Predicates:MessageInTransitExpr" xmi:id="_8mbT5KrCEeScJ-0YDJS4Tg">
+                <message xsi:type="Comparables:MumlElemExpr" xmi:id="_8mbT5arCEeScJ-0YDJS4Tg" elem="_8mbT5qrCEeScJ-0YDJS4Tg"/>
               </expr>
             </formula>
-            <var xmi:id="_wwtv96MIEeSwy6Dvtdi1ng" name="m">
-              <set xsi:type="Sets:MessageSetExpr" xmi:id="_wwtv-KMIEeSwy6Dvtdi1ng"/>
+            <var xmi:id="_8mbT5qrCEeScJ-0YDJS4Tg" name="m">
+              <set xsi:type="Sets:MessageSetExpr" xmi:id="_8mbT56rCEeScJ-0YDJS4Tg"/>
             </var>
           </expression>
         </properties>
-        <properties xmi:id="_wwtv-aMIEeSwy6Dvtdi1ng" comment="there is no buffer that is always empty">
-          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_wwtv-qMIEeSwy6Dvtdi1ng">
-            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_wwtv-6MIEeSwy6Dvtdi1ng">
-              <expr xsi:type="Predicates:ComparisonExpr" xmi:id="_wwtv_KMIEeSwy6Dvtdi1ng" op=">=">
-                <lhs xsi:type="Comparables:BufferMsgCountExpr" xmi:id="_wwtv_aMIEeSwy6Dvtdi1ng">
-                  <buffer xsi:type="Comparables:MumlElemExpr" xmi:id="_wwtv_qMIEeSwy6Dvtdi1ng" elem="_wwtwAKMIEeSwy6Dvtdi1ng"/>
+        <properties xmi:id="_8mbT6KrCEeScJ-0YDJS4Tg" comment="there is no buffer that is always empty">
+          <expression xsi:type="Quantifiers:UniversalQuantExpr" xmi:id="_8mbT6arCEeScJ-0YDJS4Tg">
+            <formula xsi:type="Quantifiers:EFExpr" xmi:id="_8mbT6qrCEeScJ-0YDJS4Tg">
+              <expr xsi:type="Predicates:ComparisonExpr" xmi:id="_8mbT66rCEeScJ-0YDJS4Tg" op=">=">
+                <lhs xsi:type="Comparables:BufferMsgCountExpr" xmi:id="_8mbT7KrCEeScJ-0YDJS4Tg">
+                  <buffer xsi:type="Comparables:MumlElemExpr" xmi:id="_8mbT7arCEeScJ-0YDJS4Tg" elem="_8mbT76rCEeScJ-0YDJS4Tg"/>
                 </lhs>
-                <rhs xsi:type="Comparables:ConstExpr" xmi:id="_wwtv_6MIEeSwy6Dvtdi1ng" val="1"/>
+                <rhs xsi:type="Comparables:ConstExpr" xmi:id="_8mbT7qrCEeScJ-0YDJS4Tg" val="1"/>
               </expr>
             </formula>
-            <var xmi:id="_wwtwAKMIEeSwy6Dvtdi1ng" name="b">
-              <set xsi:type="Sets:BufferSetExpr" xmi:id="_wwtwAaMIEeSwy6Dvtdi1ng"/>
+            <var xmi:id="_8mbT76rCEeScJ-0YDJS4Tg" name="b">
+              <set xsi:type="Sets:BufferSetExpr" xmi:id="_8mbT8KrCEeScJ-0YDJS4Tg"/>
             </var>
           </expression>
         </properties>
       </verificationConstraintRepositories>
       <roles xmi:id="_nWrgIJQnEeSZM-zEIRk3lw" connectors="_nWrgKJQnEeSZM-zEIRk3lw" behavior="_Far0YJQqEeSZM-zEIRk3lw" name="limiterR" receiverMessageTypes="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw">
         <cardinality xmi:id="_nWrgIZQnEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_x11UsJQpEeSZM-zEIRk3lw"/>
-          <upperBound xmi:id="_x13w8JQpEeSZM-zEIRk3lw"/>
+          <lowerBound xmi:id="_4w_6UKrCEeScJ-0YDJS4Tg"/>
+          <upperBound xmi:id="_4w_6UarCEeScJ-0YDJS4Tg"/>
         </cardinality>
         <receiverMessageBuffer xmi:id="_8o_VQJQpEeSZM-zEIRk3lw" name="limiterRbuf" messageType="_veCbEJQiEeSZM-zEIRk3lw _xib7wJQiEeSZM-zEIRk3lw">
           <bufferSize xmi:id="_-JfesJQpEeSZM-zEIRk3lw" value="5"/>
