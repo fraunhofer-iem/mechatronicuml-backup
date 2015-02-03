@@ -11,6 +11,9 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_jv9UBarDEeScJ-0YDJS4Tg" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_jv9UBqrDEeScJ-0YDJS4Tg" y="5"/>
         </children>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_n-L34KrXEeSKOswDMkFBbA">
+          <diagramLink xmi:type="notation:Diagram" href="../realtimestatechart/vehicleRoleRTSC.realtimestatechart_diagram#_zC_rIKrBEeScJ-0YDJS4Tg"/>
+        </styles>
         <element xmi:type="protocol:Role" href="../fraunhoferDemo.fujaba#_sgumcJKjEeSSMde45fnrcg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jv9UBKrDEeScJ-0YDJS4Tg" x="290" y="145"/>
       </children>
@@ -18,6 +21,9 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_jv9UCarDEeScJ-0YDJS4Tg" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_jv9UCqrDEeScJ-0YDJS4Tg" y="5"/>
         </children>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_7goj0KrXEeSKOswDMkFBbA">
+          <diagramLink xmi:type="notation:Diagram" href="../realtimestatechart/sectionRoleRTSC.realtimestatechart_diagram#_zECM8qrBEeScJ-0YDJS4Tg"/>
+        </styles>
         <element xmi:type="protocol:Role" href="../fraunhoferDemo.fujaba#_sgv0k5KjEeSSMde45fnrcg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jv9UCKrDEeScJ-0YDJS4Tg" x="870" y="145"/>
       </children>
