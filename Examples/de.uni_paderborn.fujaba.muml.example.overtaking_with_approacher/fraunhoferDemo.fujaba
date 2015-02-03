@@ -72,7 +72,20 @@
         </action>
       </transitions>
       <states xmi:id="_17zEoZKhEeSSMde45fnrcg" name="init" outgoingTransitions="_xMuXYKL9EeSbmbyTJYAEVw" incomingTransitions="_yOLNUKL9EeSbmbyTJYAEVw _zjJcMKL9EeSbmbyTJYAEVw" initial="true"/>
-      <states xmi:id="_tQcvEKL9EeSbmbyTJYAEVw" name="requested" outgoingTransitions="_yOLNUKL9EeSbmbyTJYAEVw _yqMa8KL9EeSbmbyTJYAEVw" incomingTransitions="_xMuXYKL9EeSbmbyTJYAEVw"/>
+      <states xmi:id="_tQcvEKL9EeSbmbyTJYAEVw" name="requested" outgoingTransitions="_yOLNUKL9EeSbmbyTJYAEVw _yqMa8KL9EeSbmbyTJYAEVw" incomingTransitions="_xMuXYKL9EeSbmbyTJYAEVw">
+        <entryEvent xmi:id="_F4EfkKvGEeS17_7FUkLEVQ">
+          <action xmi:id="_GKsgoKvGEeS17_7FUkLEVQ" name="choiceVel">
+            <expressions xsi:type="actionlanguage:Block" xmi:id="_MqZvAKvGEeS17_7FUkLEVQ">
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_MqZvAavGEeS17_7FUkLEVQ" assignOperator=":=">
+                <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_MqZvAqvGEeS17_7FUkLEVQ" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+                  <range xmi:id="_MqZvA6vGEeS17_7FUkLEVQ" lowerBound="14" upperBound="18"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_MqZvBKvGEeS17_7FUkLEVQ" typedNamedElement="_El2IMKL-EeSbmbyTJYAEVw"/>
+              </expressions>
+            </expressions>
+          </action>
+        </entryEvent>
+      </states>
       <states xmi:id="_vQJV8KL9EeSbmbyTJYAEVw" name="overtaking" outgoingTransitions="_zjJcMKL9EeSbmbyTJYAEVw" incomingTransitions="_yqMa8KL9EeSbmbyTJYAEVw"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_7MdtAJKhEeSSMde45fnrcg" name="overtakerRoleRTSC" behavioralElement="_V7mUApKgEeSSMde45fnrcg">
@@ -157,7 +170,7 @@
           </message>
         </events>
       </transitions>
-      <transitions xmi:id="_KyjlQKMCEeSbmbyTJYAEVw" priority="1" target="_f9MX8ZKkEeSSMde45fnrcg" source="_f9MX8ZKkEeSSMde45fnrcg">
+      <transitions xmi:id="_KyjlQKMCEeSbmbyTJYAEVw" priority="1" target="_f9MX8ZKkEeSSMde45fnrcg" source="_f9MX8ZKkEeSSMde45fnrcg" urgent="false">
         <action xmi:id="_B-efEKraEeSKOswDMkFBbA" name="colorChange">
           <expressions xsi:type="actionlanguage:Block" xmi:id="_NC5OwKraEeSKOswDMkFBbA">
             <expressions xsi:type="actionlanguage:Assignment" xmi:id="_NC5OwaraEeSKOswDMkFBbA" assignOperator=":=">
@@ -738,7 +751,7 @@
       <variables xmi:id="_ZXrtgKMAEeSbmbyTJYAEVw" name="unsave" dataType="_FB0TQ5J7EeSSMde45fnrcg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_a0bYUKMAEeSbmbyTJYAEVw" value="false"/>
       </variables>
-      <transitions xmi:id="_F3C_cKMAEeSbmbyTJYAEVw" priority="1" target="_EqzOwKMAEeSbmbyTJYAEVw" source="_fKmEMZOSEeSZM-zEIRk3lw">
+      <transitions xmi:id="_F3C_cKMAEeSbmbyTJYAEVw" priority="1" target="_EqzOwKMAEeSbmbyTJYAEVw" source="_fKmEMZOSEeSZM-zEIRk3lw" urgent="false">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_O5WtcKMAEeSbmbyTJYAEVw" typedNamedElement="_MuGW0KMAEeSbmbyTJYAEVw"/>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_J9epUKMAEeSbmbyTJYAEVw">
           <message xmi:id="_LWUrkKMAEeSbmbyTJYAEVw" instanceOf="_jMgl4JKfEeSSMde45fnrcg"/>
@@ -834,7 +847,20 @@
           <message xmi:id="__w00oKLqEeSbmbyTJYAEVw" instanceOf="_nDO_0JKfEeSSMde45fnrcg"/>
         </events>
       </transitions>
-      <states xmi:id="_50iXQZOSEeSZM-zEIRk3lw" name="init" outgoingTransitions="_2HBo0KLqEeSbmbyTJYAEVw" incomingTransitions="_3H-vgKLqEeSbmbyTJYAEVw _3yXJQKLqEeSbmbyTJYAEVw" initial="true"/>
+      <states xmi:id="_50iXQZOSEeSZM-zEIRk3lw" name="init" outgoingTransitions="_2HBo0KLqEeSbmbyTJYAEVw" incomingTransitions="_3H-vgKLqEeSbmbyTJYAEVw _3yXJQKLqEeSbmbyTJYAEVw" initial="true">
+        <entryEvent xmi:id="_6KDEIKvDEeS17_7FUkLEVQ">
+          <action xmi:id="_64p2kKvDEeS17_7FUkLEVQ" name="setSecID">
+            <expressions xsi:type="actionlanguage:Block" xmi:id="_FOVQ8KvEEeS17_7FUkLEVQ">
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_FOVQ8avEEeS17_7FUkLEVQ" assignOperator=":=">
+                <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_FOVQ8qvEEeS17_7FUkLEVQ" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+                  <range xmi:id="_FOVQ86vEEeS17_7FUkLEVQ" lowerBound="3" upperBound="5"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_FOVQ9KvEEeS17_7FUkLEVQ" typedNamedElement="_E5hz0KLrEeSbmbyTJYAEVw"/>
+              </expressions>
+            </expressions>
+          </action>
+        </entryEvent>
+      </states>
       <states xmi:id="_zhAo0KLqEeSbmbyTJYAEVw" name="requested" outgoingTransitions="_3H-vgKLqEeSbmbyTJYAEVw _3yXJQKLqEeSbmbyTJYAEVw" incomingTransitions="_2HBo0KLqEeSbmbyTJYAEVw"/>
     </modelElements>
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_bwVxkJOXEeSZM-zEIRk3lw" name="approacherCommunicatorRTSC" behavioralElement="_ZJhDUJ6aEeSB5YpXOU2UeA">
@@ -1717,7 +1743,7 @@
       <variables xmi:id="_1LFmMKMEEeSbmbyTJYAEVw" name="informFinish" dataType="_FB0TQ5J7EeSSMde45fnrcg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_3QVbcKMEEeSbmbyTJYAEVw" value="true"/>
       </variables>
-      <transitions xmi:id="_iX-FcKMEEeSbmbyTJYAEVw" priority="1" target="_g-WnIKMEEeSbmbyTJYAEVw" source="_cGvZwZQjEeSZM-zEIRk3lw">
+      <transitions xmi:id="_iX-FcKMEEeSbmbyTJYAEVw" priority="1" target="_g-WnIKMEEeSbmbyTJYAEVw" source="_cGvZwZQjEeSZM-zEIRk3lw" urgent="false">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="__IRoEKMEEeSbmbyTJYAEVw" typedNamedElement="_xmKt8KMEEeSbmbyTJYAEVw"/>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_rIaK4KMFEeSbmbyTJYAEVw">
           <message xmi:id="_rTojcKMFEeSbmbyTJYAEVw" instanceOf="_1OxI4JnbEeSlOsDDn13LAA"/>
@@ -1937,10 +1963,10 @@
           </expressions>
         </action>
       </transitions>
-      <transitions xmi:id="_3IHgIKLvEeSbmbyTJYAEVw" priority="1" target="_BUEzQKLvEeSbmbyTJYAEVw" source="_AvuwEKLvEeSbmbyTJYAEVw">
+      <transitions xmi:id="_3IHgIKLvEeSbmbyTJYAEVw" priority="1" target="_BUEzQKLvEeSbmbyTJYAEVw" source="_AvuwEKLvEeSbmbyTJYAEVw" urgent="false">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_eAoo4KLwEeSbmbyTJYAEVw" typedNamedElement="_aS3WoKLwEeSbmbyTJYAEVw"/>
       </transitions>
-      <transitions xmi:id="_z8T2AKLwEeSbmbyTJYAEVw" priority="2" target="_C07iAKLvEeSbmbyTJYAEVw" source="_AvuwEKLvEeSbmbyTJYAEVw">
+      <transitions xmi:id="_z8T2AKLwEeSbmbyTJYAEVw" priority="2" target="_C07iAKLvEeSbmbyTJYAEVw" source="_AvuwEKLvEeSbmbyTJYAEVw" urgent="false">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_6-BlQKLwEeSbmbyTJYAEVw" typedNamedElement="_4em8gKLwEeSbmbyTJYAEVw"/>
       </transitions>
       <transitions xmi:id="__J5IwKLwEeSbmbyTJYAEVw" priority="1" target="_DW3KYKLvEeSbmbyTJYAEVw" source="_C07iAKLvEeSbmbyTJYAEVw">
@@ -1964,7 +1990,26 @@
       </transitions>
       <states xmi:id="_JlgdwZQkEeSZM-zEIRk3lw" name="init" outgoingTransitions="_MnmV8KLvEeSbmbyTJYAEVw" incomingTransitions="__ol28KLwEeSbmbyTJYAEVw" initial="true"/>
       <states xmi:id="_AFsUkKLvEeSbmbyTJYAEVw" name="initiate" outgoingTransitions="_okT4cKLvEeSbmbyTJYAEVw" incomingTransitions="_MnmV8KLvEeSbmbyTJYAEVw"/>
-      <states xmi:id="_AvuwEKLvEeSbmbyTJYAEVw" name="allow" outgoingTransitions="_3IHgIKLvEeSbmbyTJYAEVw _z8T2AKLwEeSbmbyTJYAEVw" incomingTransitions="_okT4cKLvEeSbmbyTJYAEVw _2qTiwKLvEeSbmbyTJYAEVw"/>
+      <states xmi:id="_AvuwEKLvEeSbmbyTJYAEVw" name="allow" outgoingTransitions="_3IHgIKLvEeSbmbyTJYAEVw _z8T2AKLwEeSbmbyTJYAEVw" incomingTransitions="_okT4cKLvEeSbmbyTJYAEVw _2qTiwKLvEeSbmbyTJYAEVw">
+        <entryEvent xmi:id="__ihIMKvEEeS17_7FUkLEVQ">
+          <action xmi:id="__z5zIKvEEeS17_7FUkLEVQ" name="choice">
+            <expressions xsi:type="actionlanguage:Block" xmi:id="_KGFNkKvFEeS17_7FUkLEVQ">
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_KGFNkavFEeS17_7FUkLEVQ" assignOperator=":=">
+                <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_KGFNkqvFEeS17_7FUkLEVQ" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+                  <range xmi:id="_KGFNk6vFEeS17_7FUkLEVQ"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_KGFNlKvFEeS17_7FUkLEVQ" typedNamedElement="_4em8gKLwEeSbmbyTJYAEVw"/>
+              </expressions>
+              <expressions xsi:type="actionlanguage:Assignment" xmi:id="_KGFNlavFEeS17_7FUkLEVQ" assignOperator=":=">
+                <rhs_assignExpression xsi:type="actionlanguage:NondeterministicChoiceExpression" xmi:id="_KGFNlqvFEeS17_7FUkLEVQ" dataType="_FB0TRpJ7EeSSMde45fnrcg">
+                  <range xmi:id="_KGFNl6vFEeS17_7FUkLEVQ"/>
+                </rhs_assignExpression>
+                <lhs_typedNamedElementExpression xmi:id="_KGFNmKvFEeS17_7FUkLEVQ" typedNamedElement="_aS3WoKLwEeSbmbyTJYAEVw"/>
+              </expressions>
+            </expressions>
+          </action>
+        </entryEvent>
+      </states>
       <states xmi:id="_BUEzQKLvEeSbmbyTJYAEVw" name="unsave" outgoingTransitions="_2qTiwKLvEeSbmbyTJYAEVw" incomingTransitions="_3IHgIKLvEeSbmbyTJYAEVw">
         <entryEvent xmi:id="_AmffEKLwEeSbmbyTJYAEVw" clockResets="_8N01sKLvEeSbmbyTJYAEVw"/>
       </states>
@@ -1979,7 +2024,7 @@
       <variables xmi:id="_H18ccKL9EeSbmbyTJYAEVw" name="unlimit" dataType="_FB0TQ5J7EeSSMde45fnrcg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_DTRmQKrDEeScJ-0YDJS4Tg" value="true"/>
       </variables>
-      <transitions xmi:id="_AX1sIKL9EeSbmbyTJYAEVw" priority="1" target="_-kQ1sKL8EeSbmbyTJYAEVw" source="_EacfYZQqEeSZM-zEIRk3lw">
+      <transitions xmi:id="_AX1sIKL9EeSbmbyTJYAEVw" priority="1" target="_-kQ1sKL8EeSbmbyTJYAEVw" source="_EacfYZQqEeSZM-zEIRk3lw" urgent="false">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_KpqhQKL9EeSbmbyTJYAEVw" typedNamedElement="_GHEf0KL9EeSbmbyTJYAEVw"/>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_BwTT4KL9EeSbmbyTJYAEVw">
           <message xmi:id="_B8q78KL9EeSbmbyTJYAEVw" instanceOf="_veCbEJQiEeSZM-zEIRk3lw"/>
@@ -1995,7 +2040,7 @@
           </expressions>
         </action>
       </transitions>
-      <transitions xmi:id="_A7snIKL9EeSbmbyTJYAEVw" priority="1" target="_EacfYZQqEeSZM-zEIRk3lw" source="_-kQ1sKL8EeSbmbyTJYAEVw">
+      <transitions xmi:id="_A7snIKL9EeSbmbyTJYAEVw" priority="1" target="_EacfYZQqEeSZM-zEIRk3lw" source="_-kQ1sKL8EeSbmbyTJYAEVw" urgent="false">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_LP0iUKL9EeSbmbyTJYAEVw" typedNamedElement="_H18ccKL9EeSbmbyTJYAEVw"/>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_DGiHAKL9EeSbmbyTJYAEVw">
           <message xmi:id="_DSm0IKL9EeSbmbyTJYAEVw" instanceOf="_xib7wJQiEeSZM-zEIRk3lw"/>
@@ -2057,13 +2102,13 @@
       <variables xmi:id="_6MCtsKL7EeSbmbyTJYAEVw" name="informFinish" dataType="_FB0TQ5J7EeSSMde45fnrcg">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_8OEP0KL7EeSbmbyTJYAEVw" value="true"/>
       </variables>
-      <transitions xmi:id="_rv3_EKL7EeSbmbyTJYAEVw" priority="1" target="_qWfxUKL7EeSbmbyTJYAEVw" source="_xSEt0Z6REeSNj-oH_1Kb-Q">
+      <transitions xmi:id="_rv3_EKL7EeSbmbyTJYAEVw" priority="1" target="_qWfxUKL7EeSbmbyTJYAEVw" source="_xSEt0Z6REeSNj-oH_1Kb-Q" urgent="false">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_5MQrsKL7EeSbmbyTJYAEVw" typedNamedElement="_0CbrIKL7EeSbmbyTJYAEVw"/>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_tWTxYKL7EeSbmbyTJYAEVw">
           <message xmi:id="_tvV8cKL7EeSbmbyTJYAEVw" instanceOf="_hONzMJ6SEeSNj-oH_1Kb-Q"/>
         </events>
       </transitions>
-      <transitions xmi:id="_s2trUKL7EeSbmbyTJYAEVw" priority="1" target="_xSEt0Z6REeSNj-oH_1Kb-Q" source="_qWfxUKL7EeSbmbyTJYAEVw">
+      <transitions xmi:id="_s2trUKL7EeSbmbyTJYAEVw" priority="1" target="_xSEt0Z6REeSNj-oH_1Kb-Q" source="_qWfxUKL7EeSbmbyTJYAEVw" urgent="false">
         <guard xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_9PDLsKL7EeSbmbyTJYAEVw" typedNamedElement="_6MCtsKL7EeSbmbyTJYAEVw"/>
         <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_vG6MUKL7EeSbmbyTJYAEVw">
           <message xmi:id="_vRV6sKL7EeSbmbyTJYAEVw" instanceOf="_fnBL4J6SEeSNj-oH_1Kb-Q"/>
@@ -2540,8 +2585,8 @@
       </verificationConstraintRepositories>
       <roles xmi:id="_P1MlEJQiEeSZM-zEIRk3lw" connectors="_P1MlGJQiEeSZM-zEIRk3lw" behavior="_cGvZwJQjEeSZM-zEIRk3lw" name="VelocitySetter" senderMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
         <cardinality xmi:id="_P1MlEZQiEeSZM-zEIRk3lw">
-          <lowerBound xmi:id="_AMfasJncEeSlOsDDn13LAA"/>
-          <upperBound xmi:id="_AMfasZncEeSlOsDDn13LAA"/>
+          <lowerBound xmi:id="_hVsSUKvGEeS17_7FUkLEVQ"/>
+          <upperBound xmi:id="_hV2DUKvGEeS17_7FUkLEVQ"/>
         </cardinality>
       </roles>
       <roles xmi:id="_P1MlFJQiEeSZM-zEIRk3lw" connectors="_P1MlGJQiEeSZM-zEIRk3lw" behavior="_dKEfAJQjEeSZM-zEIRk3lw" name="VelocityGetter" receiverMessageTypes="_z8GAEJnbEeSlOsDDn13LAA _1OxI4JnbEeSlOsDDn13LAA">
@@ -2879,8 +2924,8 @@
       </verificationConstraintRepositories>
       <roles xmi:id="_Oc_zEZ6WEeSB5YpXOU2UeA" connectors="_OdJkF56WEeSB5YpXOU2UeA" behavior="_xSEt0J6REeSNj-oH_1Kb-Q" name="informOvertakee" senderMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
         <cardinality xmi:id="_OdJkEJ6WEeSB5YpXOU2UeA">
-          <lowerBound xmi:id="_iNNYwJ6XEeSB5YpXOU2UeA"/>
-          <upperBound xmi:id="_iNWisJ6XEeSB5YpXOU2UeA"/>
+          <lowerBound xmi:id="_fB9xoKvFEeS17_7FUkLEVQ"/>
+          <upperBound xmi:id="_fCHioKvFEeS17_7FUkLEVQ"/>
         </cardinality>
       </roles>
       <roles xmi:id="_OdJkE56WEeSB5YpXOU2UeA" connectors="_OdJkF56WEeSB5YpXOU2UeA" behavior="_9of38J6REeSNj-oH_1Kb-Q" name="informApproacher" receiverMessageTypes="_fnBL4J6SEeSNj-oH_1Kb-Q _hONzMJ6SEeSNj-oH_1Kb-Q">
