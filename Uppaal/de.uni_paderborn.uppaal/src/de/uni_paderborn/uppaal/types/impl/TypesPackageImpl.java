@@ -182,9 +182,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
-
 		// Obtain or create and register interdependencies
 		UppaalPackageImpl theUppaalPackage = (UppaalPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(UppaalPackage.eNS_URI) instanceof UppaalPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(UppaalPackage.eNS_URI) : UppaalPackage.eINSTANCE);
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
@@ -468,6 +465,15 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLibrary_Types() {
+		return (EReference)libraryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBuiltInType() {
 		return builtInTypeEEnum;
 	}
@@ -535,6 +541,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		createEReference(integerBoundsEClass, INTEGER_BOUNDS__UPPER_BOUND);
 
 		libraryEClass = createEClass(LIBRARY);
+		createEReference(libraryEClass, LIBRARY__TYPES);
 
 		// Create enums
 		builtInTypeEEnum = createEEnum(BUILT_IN_TYPE);
@@ -564,7 +571,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		DeclarationsPackage theDeclarationsPackage = (DeclarationsPackage)EPackage.Registry.INSTANCE.getEPackage(DeclarationsPackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
@@ -573,7 +580,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		typeEClass.getESuperTypes().add(theEcorePackage.getEClassifier());
+		typeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		predefinedTypeEClass.getESuperTypes().add(this.getType());
 		declaredTypeEClass.getESuperTypes().add(this.getType());
 		typeReferenceEClass.getESuperTypes().add(this.getTypeDefinition());
@@ -581,7 +588,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		scalarTypeSpecificationEClass.getESuperTypes().add(this.getTypeSpecification());
 		structTypeSpecificationEClass.getESuperTypes().add(this.getTypeSpecification());
 		rangeTypeSpecificationEClass.getESuperTypes().add(this.getTypeSpecification());
-		libraryEClass.getESuperTypes().add(theEcorePackage.getEPackage());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -619,6 +625,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		initEReference(getIntegerBounds_UpperBound(), theExpressionsPackage.getExpression(), null, "upperBound", null, 1, 1, IntegerBounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLibrary_Types(), this.getPredefinedType(), null, "types", null, 0, 1, Library.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(builtInTypeEEnum, BuiltInType.class, "BuiltInType");

@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.NamedElement;
 import de.uni_paderborn.uppaal.declarations.VariableContainer;
+import de.uni_paderborn.uppaal.templates.*;
 import de.uni_paderborn.uppaal.templates.AbstractTemplate;
 import de.uni_paderborn.uppaal.templates.Edge;
 import de.uni_paderborn.uppaal.templates.Location;

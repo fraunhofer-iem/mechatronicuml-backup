@@ -2,6 +2,8 @@
  */
 package de.uni_paderborn.uppaal.types.util;
 
+import de.uni_paderborn.uppaal.core.NamedElement;
+import de.uni_paderborn.uppaal.types.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -125,20 +127,8 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 				return createLibraryAdapter();
 			}
 			@Override
-			public Adapter caseEModelElement(EModelElement object) {
-				return createEModelElementAdapter();
-			}
-			@Override
-			public Adapter caseENamedElement(ENamedElement object) {
-				return createENamedElementAdapter();
-			}
-			@Override
-			public Adapter caseEClassifier(EClassifier object) {
-				return createEClassifierAdapter();
-			}
-			@Override
-			public Adapter caseEPackage(EPackage object) {
-				return createEPackageAdapter();
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -315,58 +305,16 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.uppaal.core.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.EModelElement
+	 * @see de.uni_paderborn.uppaal.core.NamedElement
 	 * @generated
 	 */
-	public Adapter createEModelElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.ENamedElement <em>ENamed Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.ENamedElement
-	 * @generated
-	 */
-	public Adapter createENamedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EClassifier <em>EClassifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.EClassifier
-	 * @generated
-	 */
-	public Adapter createEClassifierAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EPackage <em>EPackage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.EPackage
-	 * @generated
-	 */
-	public Adapter createEPackageAdapter() {
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 

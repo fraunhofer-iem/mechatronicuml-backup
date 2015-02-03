@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.uppaal.types.impl;
 
+import de.uni_paderborn.uppaal.types.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;

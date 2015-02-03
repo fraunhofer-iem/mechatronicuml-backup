@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.uppaal.types.impl;
 
+import de.uni_paderborn.uppaal.core.impl.NamedElementImpl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -34,7 +35,7 @@ import de.uni_paderborn.uppaal.types.TypesPackage;
  *
  * @generated
  */
-public abstract class TypeImpl extends EClassifierImpl implements Type {
+public abstract class TypeImpl extends NamedElementImpl implements Type {
 	/**
 	 * The cached value of the '{@link #getIndex() <em>Index</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

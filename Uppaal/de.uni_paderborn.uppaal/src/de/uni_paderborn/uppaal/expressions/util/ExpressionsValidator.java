@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.uppaal.declarations.util.DeclarationsValidator;
+import de.uni_paderborn.uppaal.expressions.*;
 import de.uni_paderborn.uppaal.expressions.ArithmeticExpression;
 import de.uni_paderborn.uppaal.expressions.ArithmeticOperator;
 import de.uni_paderborn.uppaal.expressions.AssignmentExpression;

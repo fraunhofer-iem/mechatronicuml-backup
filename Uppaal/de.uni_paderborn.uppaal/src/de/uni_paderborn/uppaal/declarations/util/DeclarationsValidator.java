@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.uppaal.core.util.CoreValidator;
+import de.uni_paderborn.uppaal.declarations.*;
 import de.uni_paderborn.uppaal.declarations.ArrayInitializer;
 import de.uni_paderborn.uppaal.declarations.CallType;
 import de.uni_paderborn.uppaal.declarations.ChannelVariableDeclaration;

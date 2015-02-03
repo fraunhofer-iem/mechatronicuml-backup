@@ -3,6 +3,7 @@
 package de.uni_paderborn.uppaal.types.provider;
 
 
+import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -28,7 +29,7 @@ import de.uni_paderborn.uppaal.types.TypesPackage;
  * @generated
  */
 public class TypeItemProvider
-	extends EClassifierItemProvider {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

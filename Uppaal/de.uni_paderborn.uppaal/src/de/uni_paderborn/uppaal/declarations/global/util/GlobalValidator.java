@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.uppaal.declarations.global.util;
 
+import de.uni_paderborn.uppaal.declarations.global.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
