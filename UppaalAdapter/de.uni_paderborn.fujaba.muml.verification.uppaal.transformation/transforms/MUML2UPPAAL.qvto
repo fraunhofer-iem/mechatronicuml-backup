@@ -109,14 +109,18 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		return object OrderedSet(DataType) {}
 		
 	}
-	
+
+	/**
+	create a list that contains the number of message buffers of each discrete port. Return the maximum value of this list.
+	*/
 	query getMaximalNumberOfBuffersPerDiscretePort() : Integer {
-	
-		return cicToVerify()
+		
+		var maximum := cicToVerify()
 			.discretePortInstances()
-			->receiverMessageBuffer
-			->collect(size())
-			->asOrderedSet()->last();
+			->receiverMessageBuffer.size()
+			->max();
+		log("getMaximalNumberOfBuffersPerDiscretePort: " + maximum.toString());
+		return maximum;
 	}
 	
 	
