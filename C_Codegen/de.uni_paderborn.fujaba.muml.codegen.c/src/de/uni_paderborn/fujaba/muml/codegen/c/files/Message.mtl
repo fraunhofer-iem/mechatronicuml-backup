@@ -30,7 +30,7 @@
 [file (path+'messages/Messages.proto', false, 'UTF-8')]
 //File: messages.proto
 [comment @TODO determine values for these constants/]
-//@max_string_length=32
+//@max_string_length=16
 //@max_repeated_length=100
 //@max_bytes_length=16
 
