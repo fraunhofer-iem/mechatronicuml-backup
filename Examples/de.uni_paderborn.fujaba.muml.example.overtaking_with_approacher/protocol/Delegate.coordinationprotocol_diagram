@@ -9,7 +9,7 @@
       </children>
       <children xmi:type="notation:Shape" xmi:id="_nJgV9avEEeS17_7FUkLEVQ" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_nJgV96vEEeS17_7FUkLEVQ" type="5006">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_nJgV-KvEEeS17_7FUkLEVQ" y="5"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_nJgV-KvEEeS17_7FUkLEVQ" x="35" y="31"/>
         </children>
         <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_oAV3UKvEEeS17_7FUkLEVQ">
           <diagramLink xmi:type="notation:Diagram" href="../realtimestatechart/initiatorRoleRTSC.realtimestatechart_diagram#_zDvSAqrBEeScJ-0YDJS4Tg"/>
@@ -19,7 +19,7 @@
       </children>
       <children xmi:type="notation:Shape" xmi:id="_nJgV-avEEeS17_7FUkLEVQ" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_nJgV-6vEEeS17_7FUkLEVQ" type="5006">
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_nJgV_KvEEeS17_7FUkLEVQ" y="5"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_nJgV_KvEEeS17_7FUkLEVQ" x="-80" y="31"/>
         </children>
         <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_pQ6HUKvEEeS17_7FUkLEVQ">
           <diagramLink xmi:type="notation:Diagram" href="../realtimestatechart/executorRoleRTSC.realtimestatechart_diagram#_zDvSAKrBEeScJ-0YDJS4Tg"/>

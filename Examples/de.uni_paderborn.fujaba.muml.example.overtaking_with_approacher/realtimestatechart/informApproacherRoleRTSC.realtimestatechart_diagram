@@ -44,7 +44,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_f7YF_avFEeS17_7FUkLEVQ"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_LpuiAKL7EeSbmbyTJYAEVw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f7YF8KvFEeS17_7FUkLEVQ" x="446" y="41" width="185" height="125"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f7YF8KvFEeS17_7FUkLEVQ" x="446" y="55" width="185" height="125"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_9of38J6REeSNj-oH_1Kb-Q"/>
@@ -63,6 +63,7 @@
     <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_N5vc0KL7EeSbmbyTJYAEVw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f7YGAKvFEeS17_7FUkLEVQ" points="[6, -17, 0, -20]$[0, -20, -6, -23]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vPMOMKvFEeS17_7FUkLEVQ" id="(0.8666666666666667,0.35802469135802467)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3KXcgKyrEeSIMJvm0m_tjA" id="(0.032432432432432434,0.344)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_f7hP0KvFEeS17_7FUkLEVQ" type="4003" source="_f7YF76vFEeS17_7FUkLEVQ" target="_f7YF4KvFEeS17_7FUkLEVQ" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_f7hP06vFEeS17_7FUkLEVQ" type="6005">

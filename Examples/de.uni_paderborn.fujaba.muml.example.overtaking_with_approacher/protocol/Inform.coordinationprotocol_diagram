@@ -5,7 +5,7 @@
       <children xmi:type="notation:Shape" xmi:id="_dkixYKvFEeS17_7FUkLEVQ" type="3015" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_dkixYqvFEeS17_7FUkLEVQ" type="5023"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../fraunhoferDemo.fujaba#_Oc_zEJ6WEeSB5YpXOU2UeA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkixYavFEeS17_7FUkLEVQ" x="580"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkixYavFEeS17_7FUkLEVQ" x="370" y="24"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_dkixY6vFEeS17_7FUkLEVQ" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_dkjYcKvFEeS17_7FUkLEVQ" type="5006">
@@ -15,7 +15,7 @@
           <diagramLink xmi:type="notation:Diagram" href="../realtimestatechart/informOvertakeeRoleRTSC.realtimestatechart_diagram#_zEL98qrBEeScJ-0YDJS4Tg"/>
         </styles>
         <element xmi:type="protocol:Role" href="../fraunhoferDemo.fujaba#_Oc_zEZ6WEeSB5YpXOU2UeA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkixZKvFEeS17_7FUkLEVQ" x="290" y="158"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkixZKvFEeS17_7FUkLEVQ" x="80" y="98"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_dkjYcqvFEeS17_7FUkLEVQ" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_dkjYdKvFEeS17_7FUkLEVQ" type="5006">
@@ -25,7 +25,7 @@
           <diagramLink xmi:type="notation:Diagram" href="../realtimestatechart/informApproacherRoleRTSC.realtimestatechart_diagram#_zEL98KrBEeScJ-0YDJS4Tg"/>
         </styles>
         <element xmi:type="protocol:Role" href="../fraunhoferDemo.fujaba#_OdJkE56WEeSB5YpXOU2UeA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkjYc6vFEeS17_7FUkLEVQ" x="870" y="158"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkjYc6vFEeS17_7FUkLEVQ" x="660" y="98"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_dkjYdqvFEeS17_7FUkLEVQ" type="3013">
         <children xmi:type="notation:DecorationNode" xmi:id="_dkjYe6vFEeS17_7FUkLEVQ" type="5018"/>
@@ -39,7 +39,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_dkjYeKvFEeS17_7FUkLEVQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_dkjYeavFEeS17_7FUkLEVQ" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../fraunhoferDemo.fujaba#_lNbBcJ6XEeSB5YpXOU2UeA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkjYeqvFEeS17_7FUkLEVQ" x="691" y="258"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkjYeqvFEeS17_7FUkLEVQ" x="400" y="144"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_dkjYgavFEeS17_7FUkLEVQ" type="3014">
         <children xmi:type="notation:DecorationNode" xmi:id="_dkjYhqvFEeS17_7FUkLEVQ" type="5020"/>
@@ -49,7 +49,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_dkjYg6vFEeS17_7FUkLEVQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_dkjYhKvFEeS17_7FUkLEVQ" lineColor="0"/>
         <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../fraunhoferDemo.fujaba#_OdSuAJ6WEeSB5YpXOU2UeA"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkjYhavFEeS17_7FUkLEVQ" x="343" y="294"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dkjYhavFEeS17_7FUkLEVQ" x="40" y="144"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../fraunhoferDemo.fujaba#_Oc_zEJ6WEeSB5YpXOU2UeA"/>
