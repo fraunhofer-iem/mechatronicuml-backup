@@ -44,11 +44,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_U5ZTDarEEeScJ-0YDJS4Tg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_BWMYgKMCEeSbmbyTJYAEVw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U5ZTAKrEEeScJ-0YDJS4Tg" x="502" y="13" width="209" height="149"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U5ZTAKrEEeScJ-0YDJS4Tg" x="395" y="13" width="209" height="149"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_f9MX8JKkEeSSMde45fnrcg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UyPiE6rEEeScJ-0YDJS4Tg" width="949" height="361"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UyPiE6rEEeScJ-0YDJS4Tg" width="751" height="331"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_zC_rIarBEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_f9MX8JKkEeSSMde45fnrcg"/>
@@ -85,6 +85,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_U_DPAarEEeScJ-0YDJS4Tg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_KyjlQKMCEeSbmbyTJYAEVw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U_DPAqrEEeScJ-0YDJS4Tg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U_DPAqrEEeScJ-0YDJS4Tg" points="[104, 49, 64, -25]$[152, 73, 112, -1]$[142, 115, 102, 41]$[52, 115, 12, 41]$[40, 75, 0, 1]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x7JuAKydEeSji-ld3aV1Pw" id="(0.6908212560386473,0.9933333333333333)"/>
   </edges>
 </notation:Diagram>

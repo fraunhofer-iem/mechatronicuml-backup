@@ -5,7 +5,7 @@
       <children xmi:type="notation:Shape" xmi:id="_FQPUIKrBEeScJ-0YDJS4Tg" type="3015" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_FQPUIqrBEeScJ-0YDJS4Tg" type="5023"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../fraunhoferDemo.fujaba#_DB-MoJOSEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FQPUIarBEeScJ-0YDJS4Tg" x="580"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FQPUIarBEeScJ-0YDJS4Tg" x="550" y="69"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_FQPUI6rBEeScJ-0YDJS4Tg" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_FQPUJarBEeScJ-0YDJS4Tg" type="5006">
