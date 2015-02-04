@@ -315,12 +315,19 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			// New implementation considering the whole package registry.
 			org.eclipse.emf.ecore.EPackage.Registry registry = EPackage.Registry.INSTANCE;
 			for (String key : new HashSet<String>(registry.keySet())) {
-			    EPackage ePackage = registry.getEPackage(key);
-			   for (EClassifier eClassifier : ePackage.getEClassifiers()) {
-				   if (eClassifier instanceof EClass) {
-					   EClass eClass = (EClass) eClassifier;
-					   if (eClass != null && !eClass.isAbstract() && feature.getEReferenceType().isSuperTypeOf(eClass)) {
-							eClasses.add(eClass);
+			   EPackage ePackage = null;
+			   try {
+				  ePackage = registry.getEPackage(key);
+			   } catch (Exception e) {
+				   // do nothing here, let Package be null.
+			   }
+			   if (ePackage != null) {
+				   for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+					   if (eClassifier instanceof EClass) {
+						   EClass eClass = (EClass) eClassifier;
+						   if (eClass != null && !eClass.isAbstract() && feature.getEReferenceType().isSuperTypeOf(eClass)) {
+								eClasses.add(eClass);
+						   }
 					   }
 				   }
 			   }
