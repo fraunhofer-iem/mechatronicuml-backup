@@ -1,0 +1,39 @@
+import transforms.UPPAAL2Trace;
+import transforms.UPPAALTrace2MUMLTrace;
+import transforms.lib.ExternalizedStrings;
+import transforms.VerifiableElement2UPPAAL;
+
+modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';
+modeltype uppaal_trace uses 'http://www.uni-paderborn.de/uppaal/trace/0.4.0';
+modeltype reachability_rtsc uses 'http://www.fujaba.de/reachabilityGraph/rtsc/0.4.0';
+modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
+
+/*
+* Transforms a model with a VerifiableElement into a MUML Trace
+*/
+transformation VerifiableElement2Trace(in verifiableElementModel:muml, in options: verification_options, out output:reachability_rtsc);
+
+main() {
+
+	var mumlCic : muml = muml.createEmptyModel().oclAsType(muml);		
+	var staticallyNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var verifiableCIC : muml = muml.createEmptyModel().oclAsType(muml);				
+	var uppaalModel : uppaal = uppaal.createEmptyModel().oclAsType(uppaal);
+	var uppaalReq : uppaal_requirements = uppaal_requirements.createEmptyModel().oclAsType(uppaal_requirements);
+	var uppaalTransformation : VerifiableElement2UPPAAL = new VerifiableElement2UPPAAL(verifiableElementModel, options, uppaalModel, uppaalReq, mumlCic, staticallyNormalizedModel, verifiableCIC);
+	var retcode : Status = uppaalTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('Translation to UPPAAL failed: ' + retcode.raisedException().repr());
+	
+	var uppaalTrace : uppaal_trace = uppaal_trace.createEmptyModel().oclAsType(uppaal_trace);
+	var verifyta : UPPAAL2Trace = new UPPAAL2Trace(uppaalModel,uppaalReq,options,uppaalTrace);
+	verifyta.generateTrace := true;
+	retcode := verifyta.transform();
+	assert fatal (retcode.succeeded()) with log('UPPAAL model checking + trace parsing failed: ' + retcode.raisedException().repr());
+	
+	var traceTransformation : UPPAALTrace2MUMLTrace = new UPPAALTrace2MUMLTrace(mumlCic, uppaalModel, uppaalTrace, output);
+	retcode := traceTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('Trace reverse transformation failed: ' + retcode.raisedException().repr());
+		
+}

@@ -1,0 +1,31 @@
+library ExternalizedStrings;
+
+//NameNormalization
+property mumlPrefix = "MumlElement_";
+
+helper getUnsupportedStrings() : OrderedSet(String){
+	var unsupportedCharacters : OrderedSet(String);
+	unsupportedCharacters += mumlPrefix;
+	unsupportedCharacters += "-";
+	
+	return unsupportedCharacters;
+}
+
+property substituteString = "_"; // The String unsupported Strings are replaced with
+
+
+//Protocol2CIC
+property coordinationProtocol2CICSuffix = "CIC";
+property role2PortSuffix = "Port";
+property role2ComponentSuffix = "ComponentRTSC";
+
+//RTSCDoEventNormalization
+property doRtscName = "DoRTSC";
+property waitState = "Wait";
+property releaseState = "Release";
+property doneState = "Done";
+
+//Migration
+property discreteSubPortInstanceID = "discreteSubPortInstanceID";
+property discretePortInstanceID = "discretePortInstanceID";
+property componentInstanceID = "componentInstanceID";

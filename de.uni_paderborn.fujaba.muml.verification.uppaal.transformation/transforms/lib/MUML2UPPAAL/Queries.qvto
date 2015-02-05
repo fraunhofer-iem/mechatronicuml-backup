@@ -1,0 +1,113 @@
+library Queries;
+
+modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_statements uses uppaal::statements('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_component uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype storydriven_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype storydriven_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+
+modeltype x uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+
+	query State :: getLocationKind() : LocationKind {
+				
+		return switch {
+			case (self.isCommitted()) LocationKind::COMMITED;
+			case (self.urgent) LocationKind::URGENT;
+			else LocationKind::NORMAL;
+		}
+		
+	}
+	
+	query State :: isCommitted() : Boolean {
+		
+		return self.extension->exists(oclIsKindOf(CommittedExtension));
+				
+	}
+	
+	query muml_behavior::Variable :: getOwningStatechart() : RealtimeStatechart {
+		
+		return
+			if (self.container().oclIsKindOf(RealtimeStatechart))
+			then self.container().oclAsType(RealtimeStatechart)
+			else null
+			endif
+		
+	}
+	
+	query Operation :: getOwningStatechart() : RealtimeStatechart {
+		
+		assert fatal (self.container().oclIsKindOf(RealtimeStatechart)) with log('Operation must be contained by statechart.');
+		
+		return self.container().oclAsType(RealtimeStatechart)
+		
+	}
+		
+	query TransitionEvent :: getOwningStatechart() : RealtimeStatechart {
+		
+		assert fatal (self.container().oclIsKindOf(Transition)) with log('Transition event must be contained by statechart.');
+		
+		return self.container().oclAsType(Transition).statechart;
+		
+	}
+	
+	query RealtimeStatechart :: getComponentStatechart() : RealtimeStatechart {
+		
+		var highestParent : RealtimeStatechart = self.getHighestParentStatechart();
+		
+		return
+			if (highestParent.behavioralElement != null and highestParent.behavioralElement.oclIsKindOf(Component))
+			then highestParent
+			else null
+			endif
+		
+	}
+	
+	query RealtimeStatechart :: isPortOrRoleStatechart() : Boolean {
+		
+		return not self.getPortOrRoleStatechart().oclIsUndefined()
+		
+	}
+	
+	query RealtimeStatechart :: isComponentStatechart() : Boolean {
+		
+		return not self.getComponentStatechart().oclIsUndefined()
+		
+	}
+		
+	query muml_behavior::Variable :: isPortOrRoleVariable() : Boolean {
+		
+		var statechart : RealtimeStatechart = self.getOwningStatechart();
+		
+		return (not statechart.oclIsUndefined()) and statechart.isPortOrRoleStatechart()
+		
+	}
+	
+	query muml_behavior::Variable :: isComponentVariable() : Boolean {
+		
+		var statechart : RealtimeStatechart = self.getOwningStatechart();
+		
+		return (not statechart.oclIsUndefined()) and statechart.isComponentStatechart()
+		
+	}
+	
+	query Clock :: isPortOrRoleClock() : Boolean {
+		
+		return self.statechart.isPortOrRoleStatechart()
+		
+	}
+	
+	query Clock :: isComponentClock() : Boolean {
+		
+		return self.statechart.isComponentStatechart()
+		
+	}

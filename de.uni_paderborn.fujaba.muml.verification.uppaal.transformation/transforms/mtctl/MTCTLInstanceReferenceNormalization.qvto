@@ -1,0 +1,34 @@
+import transforms.lib.MUML2MUML;
+import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.MtctlLibrary;
+
+modeltype muml_cic uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+
+modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+modeltype mumlMessageType uses 'http://www.fujaba.de/muml/msgtype/0.4.0';
+modeltype mumlBehavior uses 'http://www.fujaba.de/muml/behavior/0.4.0';
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+
+modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
+modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlPredicates uses mtctl::Predicates('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlSets uses mtctl::Sets('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlComparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+//Sets the 'instance' features in all MumlElemExpr
+transformation MTCTLInstanceReferenceNormalization(in input:muml_cic, out output:muml_cic) extends library MUML2MUML;
+
+main() {
+	input.objects()[RootNode]->map RootNode2RootNode();
+	assert(output.objects()[MumlElemExpr]->forAll(e : MumlElemExpr | e.instance.oclIsUndefined() implies e.elem.oclIsKindOf(BoundVariable) or e.elem.oclIsKindOf(MessageType) or e.eContainer().oclIsKindOf(InstanceSetExpr) or e.eContainer().oclIsKindOf(SubinstanceSetExpr))) with log("MTCTLInstanceReferenceNormalization failed");
+}
+
+mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
+	elem := self.elem.map EObject2EObject();
+	if (self.instance != null) {
+		instance := self.instance.map EObject2EObject();
+	} else
+		instance := inferInstanceFor(self).map EObject2EObject();
+}
