@@ -1,3 +1,0 @@
-within Systemconfiguration.System.YellowSWInstance.RearBehavior.Complex_rearBehavior_init;
-package RearMessagePort1
-end RearMessagePort1;

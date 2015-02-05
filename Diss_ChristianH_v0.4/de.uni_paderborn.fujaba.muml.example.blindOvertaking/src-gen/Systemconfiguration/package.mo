@@ -1,2 +1,0 @@
-package Systemconfiguration
-end Systemconfiguration;

@@ -1,3 +1,0 @@
-within Systemconfiguration.System.YellowSWInstance.RearBehavior;
-package Complex_rearBehavior_init
-end Complex_rearBehavior_init;

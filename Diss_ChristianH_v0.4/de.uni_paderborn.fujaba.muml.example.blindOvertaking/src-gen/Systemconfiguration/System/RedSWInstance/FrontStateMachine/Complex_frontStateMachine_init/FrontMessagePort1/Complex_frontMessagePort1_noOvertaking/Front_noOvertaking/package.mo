@@ -1,3 +1,0 @@
-within Systemconfiguration.System.RedSWInstance.FrontStateMachine.Complex_frontStateMachine_init.FrontMessagePort1.Complex_frontMessagePort1_noOvertaking;
-package Front_noOvertaking
-end Front_noOvertaking;
