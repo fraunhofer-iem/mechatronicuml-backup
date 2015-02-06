@@ -359,8 +359,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 
 			WrappingLabel staticheadlinelabel0 = new WrappingLabel();
 
-			staticheadlinelabel0
-					.setText("role connector quality of service assumptions:");
+			staticheadlinelabel0.setText("QoS Assumptions:");
 
 			staticheadlinelabel0.setFont(STATICHEADLINELABEL0_FONT);
 
@@ -444,7 +443,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	/**
 	 * @generated
 	 */
-	static final Color THIS_BACK = new Color(null, 255, 255, 100);
+	static final Color THIS_BACK = new Color(null, 255, 255, 150);
 
 	/**
 	 * @generated

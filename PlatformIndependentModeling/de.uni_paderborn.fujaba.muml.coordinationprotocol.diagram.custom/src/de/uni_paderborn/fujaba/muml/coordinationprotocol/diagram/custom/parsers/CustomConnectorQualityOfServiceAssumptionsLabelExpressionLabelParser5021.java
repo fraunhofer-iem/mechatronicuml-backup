@@ -9,6 +9,7 @@ import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5021;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl;
 /**
  * custom parser that serializes the expression of the time value and prints it as a string for the corresponding label
  * @author sthiele2
@@ -39,7 +40,7 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 				printString+= expressionText;
 		}		
 		//add the time unit to the displayed string
-		printString += " "+minDelay.getUnit().toString();
+		printString += " "+((TimeValueImpl)minDelay).getUnitRepresentation(minDelay.getUnit());
 		return printString;
 	}
 	

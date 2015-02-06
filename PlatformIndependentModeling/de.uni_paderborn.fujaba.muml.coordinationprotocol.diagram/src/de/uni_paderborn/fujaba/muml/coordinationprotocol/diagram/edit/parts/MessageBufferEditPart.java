@@ -437,25 +437,9 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			this.add(fFigureMessageBufferOverFlowAvoidanceStrategyLabel,
 					constraintFFigureMessageBufferOverFlowAvoidanceStrategyLabel);
 
-			PolylineShape polyline10 = new PolylineShape();
-
-			polyline10.setFillXOR(true);
-			polyline10.setOutline(false);
-			polyline10.setLineWidth(2);
-
-			GridData constraintPolyline10 = new GridData();
-			constraintPolyline10.verticalAlignment = GridData.CENTER;
-			constraintPolyline10.horizontalAlignment = GridData.BEGINNING;
-			constraintPolyline10.horizontalIndent = 0;
-			constraintPolyline10.horizontalSpan = 2;
-			constraintPolyline10.verticalSpan = 1;
-			constraintPolyline10.grabExcessHorizontalSpace = true;
-			constraintPolyline10.grabExcessVerticalSpace = false;
-			this.add(polyline10, constraintPolyline10);
-
 			WrappingLabel messageTypesStaticLabel0 = new WrappingLabel();
 
-			messageTypesStaticLabel0.setText("message types:");
+			messageTypesStaticLabel0.setText("Messages:");
 
 			GridData constraintMessageTypesStaticLabel0 = new GridData();
 			constraintMessageTypesStaticLabel0.verticalAlignment = GridData.BEGINNING;
@@ -496,7 +480,7 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color THIS_BACK = new Color(null, 255, 255, 100);
+	static final Color THIS_BACK = new Color(null, 255, 255, 150);
 
 	/**
 	 * @generated
