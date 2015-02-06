@@ -5,10 +5,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 
-import de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
+import de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl;
 /**
  * custom parser that serializes the expression of the time value and prints it as a string for the corresponding label
  * @author sthiele2
@@ -17,7 +18,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008
 {	
 	public String getPrintString(IAdaptable element, int flags) {
-		String printString ="";
+		String printString ="MinDelay: ";
 		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)element.getAdapter(EObject.class);
 		TimeValue minDelay = quosa.getMinMessageDelay();
 		if(minDelay == null)
@@ -36,10 +37,10 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 				expressionText = LanguageResource.serializeEObjectSafe(minDelayExpr, minDelay);
 			}
 			if(expressionText !=null)
-				printString= expressionText;
+				printString+= expressionText;
 		}		
 		//add the time unit to the displayed string
-		printString += " "+minDelay.getUnit().toString();
+		printString += " "+ ((TimeValueImpl)minDelay).getUnitRepresentation(minDelay.getUnit());
 		return printString;
 	}
 	

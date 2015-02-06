@@ -193,7 +193,7 @@ public class ElementInitializers {
 			instance.setConnectorQualityOfServiceAssumptions(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							15,
+							17,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getConnectorQualityOfServiceAssumptions(),
 							null).evaluate(newInstance_0_0);

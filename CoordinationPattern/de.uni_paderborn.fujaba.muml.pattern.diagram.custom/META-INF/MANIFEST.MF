@@ -17,7 +17,8 @@ Require-Bundle: org.eclipse.ui,
  de.uni_paderborn.fujaba.modelinstance,
  org.eclipse.emf.common,
  org.storydriven.core,
- de.uni_paderborn.fujaba.muml.pattern.diagram;bundle-version="1.0.0"
+ de.uni_paderborn.fujaba.muml.pattern.diagram;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

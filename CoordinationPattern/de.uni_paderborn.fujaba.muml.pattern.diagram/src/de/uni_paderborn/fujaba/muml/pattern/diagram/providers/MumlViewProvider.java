@@ -430,7 +430,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	public Node createMessageBuffer_3004(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles()
+				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID));
@@ -459,11 +463,6 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5006 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
@@ -472,6 +471,14 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				node,
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		Node label5011 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+		Node label5012 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
@@ -584,7 +591,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	public Node createConnectorQualityOfServiceAssumptions_3007(
 			EObject domainElement, View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles()
+				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createLineStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID));
@@ -613,11 +624,6 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5008 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlVisualIDRegistry

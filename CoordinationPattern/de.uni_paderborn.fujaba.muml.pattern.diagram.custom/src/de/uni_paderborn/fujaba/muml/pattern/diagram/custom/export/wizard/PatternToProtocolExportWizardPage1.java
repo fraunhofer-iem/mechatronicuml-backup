@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
+import java.awt.List;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -40,7 +41,7 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 	Combo legalConfigurationCombo;
 	FormToolkit toolkit;
 	Combo patternSelectionCombo;
-	Composite parameterBindingComp;
+	//Composite parameterBindingComp;
 
 	public PatternToProtocolExportWizardPage1(String pageName,
 			FormToolkit toolkit) {
@@ -49,16 +50,37 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 		this.setTitle("Step 1: Selection of a Coordination Pattern");
 	}
 
-	public Combo getPatternSelectionCombobox() {
-		return patternSelectionCombo;
+	public CoordinationPattern getSelectedPattern()
+	{
+		int index = patternSelectionCombo.getSelectionIndex();
+		if(index >=0)
+			return  this.getPatternList().get(index);
+		else return null;
 	}
+	
+	public LegalConfiguration getSelectedLegalConfiguration()
+	{
+		CoordinationPattern selectedPattern = this.getSelectedPattern();
+		if(selectedPattern == null)
+			return null;
+		int lcIndex = legalConfigurationCombo.getSelectionIndex();
+		if (lcIndex != legalConfigurationCombo.getItemCount() - 1
+				&& lcIndex >= 0)
+		{
+			return selectedPattern.getLegalConfigurations().get(lcIndex);
+		}
+		else
+			return null;
+	}
+
+	
 
 	private ArrayList<CoordinationPattern> getPatternList() {
 		return ((ExportWizardPatternToProtocol) this.getWizard())
 				.getPatternList();
 	}
 
-	public int getSelectedPattern() {
+	public int getSelectedPatternIndex() {
 		return patternSelectionCombo.getSelectionIndex();
 	}
 
@@ -105,9 +127,10 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 		legalConfigurationCombo.addSelectionListener(this);
 		patternSelectionCombo.addSelectionListener(this);
 
-		parameterBindingComp = toolkit.createComposite(mainComposite);
-		parameterBindingComp.setLayout(new GridLayout(2, false));
+//		parameterBindingComp = toolkit.createComposite(mainComposite);
+//		parameterBindingComp.setLayout(new GridLayout(2, false));
 		this.setControl(mainComposite);
+		
 	}
 
 	@Override
@@ -141,7 +164,7 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 				legalConfigurationCombo.select(legalConfigurationCombo
 						.getItemCount() - 1);
 				// delete old children
-				Control[] children = parameterBindingComp.getChildren();
+				/*Control[] children = parameterBindingComp.getChildren();
 				for (Control child : children) {
 					child.dispose();
 				}
@@ -162,8 +185,9 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 				parameterBindingComp.layout();
 				parameterBindingComp.redraw();
 				this.getControl().redraw();
-				this.getShell().redraw();
+				this.getShell().redraw();*/
 			}
+			/*
 			if (e.getSource() == legalConfigurationCombo) {
 				int lcIndex = legalConfigurationCombo.getSelectionIndex();
 				if (lcIndex != legalConfigurationCombo.getItemCount() - 1
@@ -189,7 +213,7 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 						t.setText("");
 					}
 				}
-			}
+			}*/
 		}
 
 	}

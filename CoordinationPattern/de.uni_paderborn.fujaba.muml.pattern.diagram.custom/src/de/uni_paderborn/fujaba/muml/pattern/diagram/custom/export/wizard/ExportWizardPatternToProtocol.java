@@ -16,6 +16,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
@@ -40,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
 public class ExportWizardPatternToProtocol extends
 		de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard {
 
-	private static final String patternModelElementCategoryKey = "pattern.category";
+	private static final String patternModelElementCategoryKey = "de.uni_paderborn.fujaba.muml.pattern.category";
 	ArrayList<CoordinationPattern> patternList = new ArrayList<CoordinationPattern>();
 
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
@@ -52,7 +53,8 @@ public class ExportWizardPatternToProtocol extends
 			initialSelection = new StructuredSelection(selectedResources);
 		}
 		setNeedsProgressMonitor(true);
-
+	//	workbench.addWindowListener(listener);
+		
 		// try to infer editing domain from initial selection
 
 		for (Object element : initialSelection.toArray()) {
@@ -129,10 +131,30 @@ public class ExportWizardPatternToProtocol extends
 		}
 	}
 
+	PatternToProtocolExportWizardPage1 page1;
+	PatternToProtocolExportWizardPage2 page2;
 	public void addPages() {
-		addPage(new PatternToProtocolExportWizardPage1("Page 1", toolkit));
-		addPage(new PatternToProtocolExportWizardPage2("Page 2", toolkit));
-
+		page1 = new PatternToProtocolExportWizardPage1("Page 1", toolkit);
+		page2 = new PatternToProtocolExportWizardPage2("Page 2", toolkit, page1);
+		addPage(page1);
+		addPage(page2);		
+	}
+	@Override
+	public IWizardPage getNextPage(IWizardPage page) {
+		// TODO Auto-generated method stub
+		IWizardPage next= super.getNextPage(page);
+		if(next == page2)
+			page2.refresh();
+		return next;
+	}
+	
+	@Override
+	public IWizardPage getPreviousPage(IWizardPage page) {
+		// TODO Auto-generated method stub
+		IWizardPage prev =  super.getPreviousPage(page);
+		if(prev == page2)
+			page2.refresh();
+		return prev;
 	}
 
 	public ArrayList<CoordinationPattern> getPatternList() {
@@ -164,7 +186,7 @@ public class ExportWizardPatternToProtocol extends
 		System.out.println("Finished Pressed!!");
 		 TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE
 				 	.createEditingDomain(this.getResourceSet());
-		 transformPatternToProtocol(domain, this.getPatternList().get(((PatternToProtocolExportWizardPage1)this.getPages()[0]).getSelectedPattern()));
+		 transformPatternToProtocol(domain, page1.getSelectedPattern());
 		return true;
 	}
 	

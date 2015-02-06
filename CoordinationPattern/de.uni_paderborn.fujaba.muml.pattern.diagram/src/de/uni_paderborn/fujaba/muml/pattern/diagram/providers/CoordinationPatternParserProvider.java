@@ -87,6 +87,20 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	private IParser getMessageBufferLabel_5011Parser() {
+		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5011();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser getMessageBufferLabel_5012Parser() {
+		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5012();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser messageTypeName_5005Parser;
 
 	/**
@@ -144,6 +158,10 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 			return getMessageBufferName_5006Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getMessageBufferLabel_5007Parser();
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+			return getMessageBufferLabel_5011Parser();
+		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
+			return getMessageBufferLabel_5012Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
 			return getMessageTypeName_5005Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:

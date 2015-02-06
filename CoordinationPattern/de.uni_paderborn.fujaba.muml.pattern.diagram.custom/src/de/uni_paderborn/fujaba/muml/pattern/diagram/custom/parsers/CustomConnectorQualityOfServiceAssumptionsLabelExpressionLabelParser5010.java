@@ -9,6 +9,7 @@ import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5010;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl;
 /**
  * custom parser that serializes the expression of the time value and prints it as a string for the corresponding label
  * @author sthiele2
@@ -17,7 +18,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5010 extends ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5010 {
 
 	public String getPrintString(IAdaptable element, int flags) {
-		String printString = "";
+		String printString = "MaxDelay: ";
 		ConnectorQualityOfServiceAssumptions quosa = (ConnectorQualityOfServiceAssumptions)element.getAdapter(EObject.class);		
 		TimeValue maxDelay = quosa.getMaxMessageDelay();
 		if(maxDelay == null)
@@ -36,10 +37,10 @@ public class CustomConnectorQualityOfServiceAssumptionsLabelExpressionLabelParse
 				expressionText = LanguageResource.serializeEObjectSafe(maxDelayExpr, maxDelay);
 			}
 			if(expressionText !=null)
-				printString= expressionText;
+				printString+= expressionText;
 		}		
 		//add the time unit to the displayed string
-		printString += " "+maxDelay.getUnit().toString();
+		printString += " "+((TimeValueImpl)maxDelay).getUnitRepresentation(maxDelay.getUnit());
 		return printString;
 	}
 

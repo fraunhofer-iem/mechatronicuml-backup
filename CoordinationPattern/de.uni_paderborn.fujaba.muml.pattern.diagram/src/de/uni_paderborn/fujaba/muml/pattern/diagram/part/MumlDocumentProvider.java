@@ -172,7 +172,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory
 				.getInstance().createEditingDomain();
 		editingDomain
-				.setID("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.EditingDomain"); //$NON-NLS-1$
+				.setID("de.uni_paderborn.fujaba.muml.pattern.diagram.EditingDomain"); //$NON-NLS-1$
 		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 				.createNotifierFilter(editingDomain.getResourceSet())
 				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))

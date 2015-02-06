@@ -45,51 +45,51 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ModelElementCategory_1000 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
+	public static final IElementType ModelElementCategory_1000 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.ModelElementCategory_1000"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationPattern_2001 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.CoordinationPattern_2001"); //$NON-NLS-1$
+	public static final IElementType CoordinationPattern_2001 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationPattern_3003 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.CoordinationPattern_3003"); //$NON-NLS-1$
+	public static final IElementType CoordinationPattern_3003 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_3003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Role_3002 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.Role_3002"); //$NON-NLS-1$
+	public static final IElementType Role_3002 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageBuffer_3004 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.MessageBuffer_3004"); //$NON-NLS-1$
+	public static final IElementType MessageBuffer_3004 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.MessageBuffer_3004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageType_3005 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.MessageType_3005"); //$NON-NLS-1$
+	public static final IElementType MessageType_3005 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.MessageType_3005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Parameter_3006 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.Parameter_3006"); //$NON-NLS-1$
+	public static final IElementType Parameter_3006 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.Parameter_3006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConnectorQualityOfServiceAssumptions_3007 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.ConnectorQualityOfServiceAssumptions_3007"); //$NON-NLS-1$
+	public static final IElementType ConnectorQualityOfServiceAssumptions_3007 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.ConnectorQualityOfServiceAssumptions_3007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AbstractCoordinationSpecificationRoles_4002 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.AbstractCoordinationSpecificationRoles_4002"); //$NON-NLS-1$
+	public static final IElementType AbstractCoordinationSpecificationRoles_4002 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.AbstractCoordinationSpecificationRoles_4002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RoleConnector_4001 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.RoleConnector_4001"); //$NON-NLS-1$
+	public static final IElementType RoleConnector_4001 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnector_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType DiscreteInteractionEndpointReceiverMessageBuffer_4003 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.DiscreteInteractionEndpointReceiverMessageBuffer_4003"); //$NON-NLS-1$
+	public static final IElementType DiscreteInteractionEndpointReceiverMessageBuffer_4003 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.DiscreteInteractionEndpointReceiverMessageBuffer_4003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RoleConnectorConnectorQualityOfServiceAssumptions_4004 = getElementType("de.uni_paderborn.fujaba.muml.coordinationpattern.diagram.RoleConnectorConnectorQualityOfServiceAssumptions_4004"); //$NON-NLS-1$
+	public static final IElementType RoleConnectorConnectorQualityOfServiceAssumptions_4004 = getElementType("de.uni_paderborn.fujaba.muml.pattern.diagram.RoleConnectorConnectorQualityOfServiceAssumptions_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
