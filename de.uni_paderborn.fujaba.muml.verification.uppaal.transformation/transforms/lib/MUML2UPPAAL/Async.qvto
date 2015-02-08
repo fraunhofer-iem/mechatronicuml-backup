@@ -81,9 +81,7 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 
 	mapping createFreeIDsFieldDeclaration() : TypedDeclaration {
-	
-		prefix := DataVariablePrefix::NONE;
-		
+			
 		typeDefinition := object IdentifierExpression {
 			identifier := map createMessageIdType();
 		};
@@ -178,10 +176,13 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping createMessageNullConstantDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object IdentifierExpression {
-			identifier := map createMessageType();
+		typeDefinition := object DataPrefixExpression {
+			
+			prefix := DataVariablePrefix::CONST;
+			
+			dataTypeExpression := object IdentifierExpression {
+				identifier := map createMessageType();
+			};
 		};
 		
 		elements += map createMessageNullConstantVariable();
@@ -275,10 +276,14 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 		
 	mapping createNumberOfMessageKindsDeclaration() : TypedDeclaration {
 					
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object IdentifierExpression {
-			identifier := INT;
+			prefix := DataVariablePrefix::CONST;
+		
+			dataTypeExpression := object IdentifierExpression {
+				identifier := INT;
+			};
+		
 		};
 		
 		elements += map createNumberOfMessageKindsConstant();
@@ -325,10 +330,14 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping createMessageKindConstantsDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
+			
+			prefix := DataVariablePrefix::CONST;
+
+			dataTypeExpression := object IdentifierExpression {
+				identifier := map createMessageKindType();
+			};
 		
-		typeDefinition := object IdentifierExpression {
-			identifier := map createMessageKindType();
 		};
 		
 		elements += map createMessageKindNullConstant();
@@ -340,12 +349,16 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping createCapacityDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object IdentifierExpression {
+			prefix := DataVariablePrefix::CONST;
 			
-			identifier :=  INT;
-			
+			dataTypeExpression := object IdentifierExpression {
+				
+				identifier :=  INT;
+				
+			};
+		
 		};
 		
 		elements += map createCapacityVariable();
@@ -548,92 +561,90 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 		
 		parameter += object ParameterContainer {
 		
-			variableDeclaration := object TypedDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 				
-				typeDefinition := object IdentifierExpression {
+				dataTypeExpression := object IdentifierExpression {
 					
 					identifier := map DiscretePortInstanceType();
 					
 				};
+			};
 							
-				elements += map createSenderParameter()
-			
-			}	
+			elements += map createSenderParameter()
 			
 		};
 		
 		parameter += object ParameterContainer {
 		
-			variableDeclaration := object TypedDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 				
-				typeDefinition := object IdentifierExpression {
+				dataTypeExpression := object IdentifierExpression {
 					
 					identifier := map DiscretePortInstanceType();
 					
 				};
+				
+			};
 							
-				elements += map createReceiverParameter()
-			
-			}	
+			elements += map createReceiverParameter()
 			
 		};
 		
 		parameter += object ParameterContainer {
 		
-			variableDeclaration := object TypedDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 				
-				typeDefinition := object IdentifierExpression {
+				dataTypeExpression := object IdentifierExpression {
 					
 					identifier := INT
 					
 				};
-							
-				elements += map createMinDelayParameter() 
 			
-			}
+			};
+							
+			elements += map createMinDelayParameter()
 			
 		};
 		
 		parameter += object ParameterContainer {
 		
-			variableDeclaration := object TypedDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 				
-				typeDefinition := object IdentifierExpression {
+				dataTypeExpression := object IdentifierExpression {
 					
 					identifier := INT
 					
 				};
+				
+			};
 							
-				elements += map createMaxDelayParameter()
-			
-			}	 
-			
+			elements += map createMaxDelayParameter()
 			
 		};
 		
 		parameter += object ParameterContainer {
 			
-			variableDeclaration := object TypedDeclaration {
+			typeDefinition := object DataPrefixExpression {
 			
 				prefix := DataVariablePrefix::CONST;
 							
-				typeDefinition := object IdentifierExpression {
+				dataTypeExpression := object IdentifierExpression {
 					
 					identifier := BOOL
 					
 				};
+				
+			};
 							
-				elements += map createLossParameter()
-			
-			}	
+			elements += map createLossParameter()
 			
 		};
 
@@ -1257,10 +1268,14 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping createMaximalNumberOfBuffersPerRoleConstantDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object IdentifierExpression {
-			identifier := INT
+			prefix := DataVariablePrefix::CONST;
+			
+			dataTypeExpression := object IdentifierExpression {
+				identifier := INT
+			};
+		
 		};
 	
 		elements := map createMaximalNumberOfBuffersPerRoleConstant();
@@ -1270,32 +1285,36 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 
 	mapping OrderedSet(DiscretePortInstance) :: createBufferAssignmentArrayDeclaration() : TypedDeclaration {
 
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 
-		typeDefinition := object RangeTypeSpecification {
-			
-			bounds := object IntegerBounds {
+			prefix := DataVariablePrefix::CONST;
+	
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
-	
-				upperBound := object ArithmeticExpression {
-	
-					operator := ArithmeticOperator::SUBTRACT;
-	
-					firstExpr := object IdentifierExpression {
-						identifier := map createMaximalNumberOfBuffersPerRoleConstant();
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
 					};
+		
+					upperBound := object ArithmeticExpression {
+		
+						operator := ArithmeticOperator::SUBTRACT;
+		
+						firstExpr := object IdentifierExpression {
+							identifier := map createMaximalNumberOfBuffersPerRoleConstant();
+						};
+		
+						secondExpr := object LiteralExpression {
+							text := 1.repr();
+						}
+		
+					};
+					
+				}
 	
-					secondExpr := object LiteralExpression {
-						text := 1.repr();
-					}
-	
-				};
-				
-			}
-
+			};
+		
 		};
 
 		elements := self->map createBufferAssignmentArrayVariable();
@@ -1304,22 +1323,26 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 
 	mapping OrderedSet(DiscretePortInstance) :: createBufferSizeArrayDeclaration() : TypedDeclaration {
 
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 
-		typeDefinition := object RangeTypeSpecification {
-			
-			bounds := object IntegerBounds {
-				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+			prefix := DataVariablePrefix::CONST;
 	
-				upperBound := object IdentifierExpression {
-					identifier := map createCapacityVariable();
-				};
+			dataTypeExpression := object RangeTypeSpecification {
 				
-			}
-
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map createCapacityVariable();
+					};
+					
+				}
+	
+			};
+		
 		};
 
 		elements := self->map createBufferSizeArrayVariable();
@@ -1328,22 +1351,26 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping OrderedSet(DiscretePortInstance) :: createNextArrayDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
+			};
+		
 		};
 
 		elements := self->map DiscretePortInstances2NextArray();
@@ -1352,22 +1379,26 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 
 	mapping OrderedSet(DiscretePortInstance) :: createPreviousArrayDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
+			};
+		
 		};
 
 		elements := self->map DiscretePortInstances2PreviousArray();
@@ -1376,22 +1407,26 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping OrderedSet(DiscretePortInstance) :: createFirstArrayDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
+			};
+		
 		};
 
 		elements := self->map DiscretePortInstances2FirstArray();
@@ -1400,22 +1435,26 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping OrderedSet(DiscretePortInstance) :: createLastArrayDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
+			};
+		
 		};
 
 		elements := self->map DiscretePortInstances2LastArray();
@@ -1424,22 +1463,26 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping OrderedSet(DiscretePortInstance) :: createSelfArrayDeclaration() : TypedDeclaration {
 		
-		prefix := DataVariablePrefix::CONST;
+		typeDefinition := object DataPrefixExpression {
 		
-		typeDefinition := object RangeTypeSpecification {
+			prefix := DataVariablePrefix::CONST;
 			
-			bounds := object IntegerBounds {
+			dataTypeExpression := object RangeTypeSpecification {
 				
-				lowerBound := object LiteralExpression {
-					text := (-1).repr();
-				};
+				bounds := object IntegerBounds {
+					
+					lowerBound := object LiteralExpression {
+						text := (-1).repr();
+					};
+		
+					upperBound := object IdentifierExpression {
+						identifier := map NumberOfDiscretePortInstancesConstant()
+					};
+					
+				}
 	
-				upperBound := object IdentifierExpression {
-					identifier := map NumberOfDiscretePortInstancesConstant()
-				};
-				
-			}
-
+			};
+		
 		};
 
 		elements := self->map DiscretePortInstances2SelfArray();
