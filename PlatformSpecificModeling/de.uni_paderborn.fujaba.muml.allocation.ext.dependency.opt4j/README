@@ -1,0 +1,13 @@
+This plugin provides the 
+* opt4j-3.1.3.jar
+* opt4j-benchmarks-3.1.3.jar
+* opt4j-core-3.1.3.jar
+* opt4j-operators-3.1.3.jar
+* opt4j-optimizers-3.1.3.jar
+* opt4j-satdecoding-3.1.3.jar
+* opt4j-tutorial-3.1.3.jar
+* opt4j-viewer-3.1.3.jar
+archives that were provided by the
+opt4j-3.1.3.zip archive (http://opt4j.sourceforge.net/download.html).
+
+For more information about opt4j, see http://opt4j.sourceforge.net
