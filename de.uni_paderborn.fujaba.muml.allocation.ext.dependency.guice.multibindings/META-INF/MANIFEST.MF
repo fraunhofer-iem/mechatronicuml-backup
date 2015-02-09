@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Multibindings
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings
+Bundle-Version: 4.0.0.beta5
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava;bundle-version="16.0.1",
+ de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice;bundle-version="4.0.0"
+Export-Package: com.google.inject.multibindings
