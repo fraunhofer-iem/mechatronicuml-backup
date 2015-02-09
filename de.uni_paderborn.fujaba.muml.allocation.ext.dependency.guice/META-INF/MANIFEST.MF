@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Guice
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice
+Bundle-Version: 4.0.0.beta5
+Bundle-ClassPath: .
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)
+Export-Package: com.google.inject,
+ com.google.inject.binder,
+ com.google.inject.internal,
+ com.google.inject.internal.asm,
+ com.google.inject.internal.cglib.core,
+ com.google.inject.internal.cglib.proxy,
+ com.google.inject.internal.cglib.reflect,
+ com.google.inject.internal.cglib.transform,
+ com.google.inject.internal.util,
+ com.google.inject.matcher,
+ com.google.inject.name,
+ com.google.inject.spi,
+ com.google.inject.util
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava;bundle-version="16.0.1"
