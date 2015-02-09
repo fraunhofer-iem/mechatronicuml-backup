@@ -179,8 +179,8 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 		Section section = toolkit.createSection(parent, sectionStyle);
 		section.setText("Target Properties");
 		Composite composite = toolkit.createComposite(section); 
-		section.setClient(composite);
-		final Button createFolderButton = toolkit.createButton(section, "", SWT.PUSH);
+		section.setClient(composite);	
+		final Button createFolderButton = toolkit.createButton(section, null, SWT.PUSH);
 		createFolderButton.setImage(ExportPlugin.imageDescriptorFromPlugin(ExportPlugin.PLUGIN_ID, "images/new_folder.png").createImage());
 		createFolderButton.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent event) {

@@ -40,7 +40,7 @@ public class ExampleFujabaExportWizard extends AbstractFujabaExportWizard {
 
 			@Override
 			public String wizardPageGetSourceFileExtension() {
-				return "fujaba";
+				return "muml";
 			}
 
 			@Override
