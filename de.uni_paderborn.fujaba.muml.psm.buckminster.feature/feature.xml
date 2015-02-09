@@ -51,6 +51,10 @@
       <import plugin="de.uni_paderborn.fujaba.muml.allocation.language.xtext" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.lpsolve" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ilp" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtend.lib" version="2.7.2" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.opt4j" version="3.1.3" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -90,6 +94,13 @@
 
    <plugin
          id="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.lpsolve.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.allocation.algorithm.ilp.opt4j.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
