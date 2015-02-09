@@ -183,7 +183,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_WJQRTmKXEeS-2sR8iwsrMg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../../RailCab.muml#_SMwJoVOoEeSDPNki4Dv8rg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WJQRQWKXEeS-2sR8iwsrMg" width="1095" height="651"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WJQRQWKXEeS-2sR8iwsrMg" width="1095" height="678"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../../RailCab.muml#_SMwJoFOoEeSDPNki4Dv8rg"/>
