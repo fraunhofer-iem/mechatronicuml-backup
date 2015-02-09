@@ -140,6 +140,10 @@ public class ActionlanguageValidator extends EObjectValidator {
 				return validateArrayInitializeExpression((ArrayInitializeExpression)value, diagnostics, context);
 			case ActionlanguagePackage.NONDETERMINISTIC_CHOICE_EXPRESSION:
 				return validateNondeterministicChoiceExpression((NondeterministicChoiceExpression)value, diagnostics, context);
+			case ActionlanguagePackage.PARAMETER_EXPRESSION:
+				return validateParameterExpression((ParameterExpression)value, diagnostics, context);
+			case ActionlanguagePackage.TIME_VALUE_EXPRESSION:
+				return validateTimeValueExpression((TimeValueExpression)value, diagnostics, context);
 			case ActionlanguagePackage.ASSIGN_OPERATOR:
 				return validateAssignOperator((AssignOperator)value, diagnostics, context);
 			case ActionlanguagePackage.INCREMENT_DECREMENT_OPERATOR:
@@ -429,6 +433,24 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 */
 	public boolean validateNondeterministicChoiceExpression(NondeterministicChoiceExpression nondeterministicChoiceExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(nondeterministicChoiceExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameterExpression(ParameterExpression parameterExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(parameterExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTimeValueExpression(TimeValueExpression timeValueExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(timeValueExpression, diagnostics, context);
 	}
 
 	/**

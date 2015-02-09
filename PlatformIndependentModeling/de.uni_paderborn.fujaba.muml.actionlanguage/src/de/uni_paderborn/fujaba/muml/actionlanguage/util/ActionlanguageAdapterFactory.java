@@ -154,6 +154,14 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 				return createNondeterministicChoiceExpressionAdapter();
 			}
 			@Override
+			public Adapter caseParameterExpression(ParameterExpression object) {
+				return createParameterExpressionAdapter();
+			}
+			@Override
+			public Adapter caseTimeValueExpression(TimeValueExpression object) {
+				return createTimeValueExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -406,6 +414,34 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNondeterministicChoiceExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ParameterExpression <em>Parameter Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ParameterExpression
+	 * @generated
+	 */
+	public Adapter createParameterExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.TimeValueExpression <em>Time Value Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.TimeValueExpression
+	 * @generated
+	 */
+	public Adapter createTimeValueExpressionAdapter() {
 		return null;
 	}
 

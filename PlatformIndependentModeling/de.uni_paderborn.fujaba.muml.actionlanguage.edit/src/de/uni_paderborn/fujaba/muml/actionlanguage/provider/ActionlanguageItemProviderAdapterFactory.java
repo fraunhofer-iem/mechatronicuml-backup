@@ -420,6 +420,52 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.actionlanguage.ParameterExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterExpressionItemProvider parameterExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.ParameterExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterExpressionAdapter() {
+		if (parameterExpressionItemProvider == null) {
+			parameterExpressionItemProvider = new ParameterExpressionItemProvider(this);
+		}
+
+		return parameterExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.actionlanguage.TimeValueExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TimeValueExpressionItemProvider timeValueExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.TimeValueExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTimeValueExpressionAdapter() {
+		if (timeValueExpressionItemProvider == null) {
+			timeValueExpressionItemProvider = new TimeValueExpressionItemProvider(this);
+		}
+
+		return timeValueExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -533,6 +579,8 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 		if (typedNamedElementExpressionItemProvider != null) typedNamedElementExpressionItemProvider.dispose();
 		if (arrayInitializeExpressionItemProvider != null) arrayInitializeExpressionItemProvider.dispose();
 		if (nondeterministicChoiceExpressionItemProvider != null) nondeterministicChoiceExpressionItemProvider.dispose();
+		if (parameterExpressionItemProvider != null) parameterExpressionItemProvider.dispose();
+		if (timeValueExpressionItemProvider != null) timeValueExpressionItemProvider.dispose();
 	}
 
 }

@@ -272,6 +272,16 @@ public class TypedNamedElementExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

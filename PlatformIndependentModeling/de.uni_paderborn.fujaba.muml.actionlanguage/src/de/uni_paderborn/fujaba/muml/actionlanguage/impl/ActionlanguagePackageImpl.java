@@ -30,9 +30,11 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationState
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ParameterExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TimeValueExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.WhileLoop;
@@ -43,6 +45,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
+import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
@@ -172,6 +175,20 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass parameterExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass timeValueExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assignOperatorEEnum = null;
 
 	/**
@@ -245,6 +262,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		PatternPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theActionlanguagePackage.createPackageContents();
@@ -689,6 +707,42 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getParameterExpression() {
+		return parameterExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameterExpression_Parameter() {
+		return (EReference)parameterExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTimeValueExpression() {
+		return timeValueExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTimeValueExpression_TimeValue() {
+		return (EReference)timeValueExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -801,6 +855,12 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		createEReference(nondeterministicChoiceExpressionEClass, NONDETERMINISTIC_CHOICE_EXPRESSION__RANGE);
 		createEReference(nondeterministicChoiceExpressionEClass, NONDETERMINISTIC_CHOICE_EXPRESSION__DATA_TYPE);
 
+		parameterExpressionEClass = createEClass(PARAMETER_EXPRESSION);
+		createEReference(parameterExpressionEClass, PARAMETER_EXPRESSION__PARAMETER);
+
+		timeValueExpressionEClass = createEClass(TIME_VALUE_EXPRESSION);
+		createEReference(timeValueExpressionEClass, TIME_VALUE_EXPRESSION__TIME_VALUE);
+
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
@@ -858,6 +918,8 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		typedNamedElementExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		arrayInitializeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		nondeterministicChoiceExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		parameterExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		timeValueExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -921,6 +983,12 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		initEClass(nondeterministicChoiceExpressionEClass, NondeterministicChoiceExpression.class, "NondeterministicChoiceExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNondeterministicChoiceExpression_Range(), theValuetypePackage.getRange(), null, "range", null, 1, 1, NondeterministicChoiceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNondeterministicChoiceExpression_DataType(), theTypesPackage.getPrimitiveDataType(), null, "dataType", null, 1, 1, NondeterministicChoiceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterExpressionEClass, ParameterExpression.class, "ParameterExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterExpression_Parameter(), theBehaviorPackage.getParameter(), null, "parameter", null, 1, 1, ParameterExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(timeValueExpressionEClass, TimeValueExpression.class, "TimeValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTimeValueExpression_TimeValue(), theValuetypePackage.getTimeValue(), null, "timeValue", null, 1, 1, TimeValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");

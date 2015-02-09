@@ -94,6 +94,8 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION: return createTypedNamedElementExpression();
 			case ActionlanguagePackage.ARRAY_INITIALIZE_EXPRESSION: return createArrayInitializeExpression();
 			case ActionlanguagePackage.NONDETERMINISTIC_CHOICE_EXPRESSION: return createNondeterministicChoiceExpression();
+			case ActionlanguagePackage.PARAMETER_EXPRESSION: return createParameterExpression();
+			case ActionlanguagePackage.TIME_VALUE_EXPRESSION: return createTimeValueExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -285,6 +287,26 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	public NondeterministicChoiceExpression createNondeterministicChoiceExpression() {
 		NondeterministicChoiceExpressionImpl nondeterministicChoiceExpression = new NondeterministicChoiceExpressionImpl();
 		return nondeterministicChoiceExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParameterExpression createParameterExpression() {
+		ParameterExpressionImpl parameterExpression = new ParameterExpressionImpl();
+		return parameterExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeValueExpression createTimeValueExpression() {
+		TimeValueExpressionImpl timeValueExpression = new TimeValueExpressionImpl();
+		return timeValueExpression;
 	}
 
 	/**
