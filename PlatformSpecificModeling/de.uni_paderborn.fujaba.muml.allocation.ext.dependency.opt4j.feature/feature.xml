@@ -47,6 +47,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
    </license>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.pb.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice" version="4.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings" version="4.0.0" match="greaterOrEqual"/>
