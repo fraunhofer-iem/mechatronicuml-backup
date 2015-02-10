@@ -77,5 +77,15 @@
             class="de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage"
             genModel="model/psm.genmodel"/>
    </extension>
-
+   <extension
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="de.uni_paderborn.fujaba.muml.psm.allocation.category"
+            name="allocation">
+         <child
+               class="SystemAllocation"
+               packageNsUri="http://www.fujaba.de/muml/psm/allocation/0.4.0/">
+         </child>
+      </category>
+   </extension>
 </plugin>
