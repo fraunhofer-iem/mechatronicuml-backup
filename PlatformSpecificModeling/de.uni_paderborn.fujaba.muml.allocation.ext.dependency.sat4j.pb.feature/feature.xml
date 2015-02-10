@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.pb.feature"
-      label="sat4j.pb"
+      label="sat4j.pb external dependency"
       version="2.3.3.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)">
 
