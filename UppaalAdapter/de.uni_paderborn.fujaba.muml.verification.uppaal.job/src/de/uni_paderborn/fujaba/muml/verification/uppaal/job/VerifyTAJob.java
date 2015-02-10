@@ -149,6 +149,18 @@ public class VerifyTAJob extends SynchronousJob {
 			
 			Process proc = cmd.execute(null, new PrintWriter(System.out), stringWriter, progressWriter);
 			
+			// TODO avoid polling, instead pass the IProgressMonitor on to the Command
+			while (proc.isAlive()) {
+				if(monitor.isCanceled()) {
+					proc.destroy();
+				}
+				
+				try {
+					Thread.sleep(500);
+				}
+				catch(InterruptedException e) {}
+			}
+			
 			int exitCode = proc.waitFor();
 			
 			String result = stringWriter.toString();

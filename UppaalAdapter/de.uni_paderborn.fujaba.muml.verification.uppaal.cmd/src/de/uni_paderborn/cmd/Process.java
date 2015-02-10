@@ -112,6 +112,10 @@ public class Process implements Runnable {
 		}
 	}
 	
+	public boolean isAlive() {
+		return programThread.isAlive();
+	}
+	
 	public OutputStream getOutputStream() {
 		
 		return process.getOutputStream();
